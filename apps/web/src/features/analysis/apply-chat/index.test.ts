@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { localSearchQuery, wantsNewSearch } from "./index.js";
+import { localMetaReply, localSearchQuery, wantsNewSearch } from "./index.js";
 
 describe("wantsNewSearch", () => {
   it("accepts explicit search directives", () => {
@@ -21,5 +21,22 @@ describe("localSearchQuery", () => {
   it("strips directive prefixes", () => {
     expect(localSearchQuery("Уточни модель G102")).toBe("G102");
     expect(localSearchQuery("Найди Logitech G102")).toBe("Logitech G102");
+  });
+});
+
+describe("localMetaReply", () => {
+  it("answers help without snapshot", () => {
+    const reply = localMetaReply("Кто ты и чем помогаешь?", "Администратор", "admin");
+    expect(reply).toMatch(/копайлот закупок/i);
+    expect(reply).not.toMatch(/выберите товар/i);
+  });
+
+  it("answers demo FAQ", () => {
+    expect(localMetaReply("Что такое демо-цены?", "Михаил", "manager")).toMatch(/демо/i);
+  });
+
+  it("defers table-bound asks", () => {
+    expect(localMetaReply("Сравни топ-3", "Михаил", "manager")).toBeUndefined();
+    expect(localMetaReply("Только REAL", "Михаил", "manager")).toBeUndefined();
   });
 });

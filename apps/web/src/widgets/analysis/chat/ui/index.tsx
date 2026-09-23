@@ -1,6 +1,12 @@
 import type { FormEvent } from "react";
+import { useRef, useState } from "react";
 
-import { applyChatResult, localSearchQuery, wantsNewSearch } from "features/analysis";
+import {
+  applyChatResult,
+  localMetaReply,
+  localSearchQuery,
+  wantsNewSearch,
+} from "features/analysis";
 import { useAnalysisStore } from "entities/analysis";
 import { useSearchStore } from "entities/search";
 import { useUserStore } from "entities/user";
@@ -36,43 +42,61 @@ export function AnalysisChat() {
   const snapshot = useSearchStore((state) => state.snapshot);
   const setQuery = useSearchStore((state) => state.setQuery);
   const suggest = useSearchStore((state) => state.suggest);
+  const sendingRef = useRef(false);
+  const [sending, setSending] = useState(false);
 
   if (!user) return null;
 
   const name = firstName(user.displayName);
   const presets = user.role === "admin" ? [...basePresets, ...adminPresets] : basePresets;
+  const locked = busy || sending;
 
   const send = async (text: string) => {
     const trimmed = text.trim();
-    if (trimmed.length < 2 || busy) return;
+    if (trimmed.length < 2 || busy || sendingRef.current) return;
+    sendingRef.current = true;
+    setSending(true);
     setPrompt("");
-    if (!snapshot) {
-      if (wantsNewSearch(trimmed)) {
-        const query = localSearchQuery(trimmed);
-        if (query.length >= 2) {
-          setQuery(query);
-          appendLocal(
-            trimmed,
-            "Уточните модель в карточках слева — после выбора начну сбор предложений.",
-          );
-          await suggest();
+    try {
+      if (!snapshot) {
+        if (wantsNewSearch(trimmed)) {
+          const query = localSearchQuery(trimmed);
+          if (query.length >= 2) {
+            setQuery(query);
+            appendLocal(
+              trimmed,
+              "Уточните модель в карточках слева — после выбора начну сбор предложений.",
+            );
+            await suggest();
+            return;
+          }
+        }
+        const meta = localMetaReply(trimmed, name, user.role);
+        if (meta) {
+          appendLocal(trimmed, meta);
           return;
         }
+        appendLocal(
+          trimmed,
+          `${name}, для фильтра, сравнения и разбора строк нужна таблица слева — выберите товар и дождитесь сбора. ` +
+            "Справочные вопросы (кто я, демо, Excel, ранжирование) отвечаю и без снимка. " +
+            "Новый сбор: «Уточни модель G102».",
+        );
+        return;
       }
-      appendLocal(
-        trimmed,
-        `${name}, сначала выберите товар слева и дождитесь таблицы — тогда смогу объяснить снимок, фильтры и Excel. ` +
-          "Новый сбор: «Уточни модель G102» или «Найди Logitech G102». Обычные вопросы в поисковую строку не копирую.",
-      );
-      return;
+      const result = await run(snapshot.id, trimmed);
+      applyChatResult(result);
+    } finally {
+      sendingRef.current = false;
+      setSending(false);
     }
-    const result = await run(snapshot.id, trimmed);
-    applyChatResult(result);
   };
 
   const onSubmit = async (event: FormEvent) => {
     event.preventDefault();
-    await send(prompt);
+    const text = prompt;
+    setPrompt("");
+    await send(text);
   };
 
   const emptyHint =
@@ -141,7 +165,7 @@ export function AnalysisChat() {
       )}
       <div className="copilot-presets">
         {presets.map((item) => (
-          <button type="button" key={item} disabled={busy} onClick={() => void send(item)}>
+          <button type="button" key={item} disabled={locked} onClick={() => void send(item)}>
             {item}
           </button>
         ))}
@@ -156,17 +180,15 @@ export function AnalysisChat() {
           value={prompt}
           onChange={(event) => setPrompt(event.target.value)}
           placeholder={
-            busy ? "Копайлот думает…" : `${name}, спросите про таблицу, фильтр, Excel или источники…`
+            locked ? "Копайлот думает…" : `${name}, спросите про таблицу, фильтр, Excel или источники…`
           }
-          minLength={2}
-          required
           autoComplete="off"
-          disabled={busy}
-          readOnly={busy}
-          aria-busy={busy}
+          disabled={locked}
+          readOnly={locked}
+          aria-busy={locked}
         />
-        <button type="submit" disabled={busy || prompt.trim().length < 2}>
-          {busy ? "Считаем…" : "Отправить"}
+        <button type="submit" disabled={locked || prompt.trim().length < 2}>
+          {locked ? "Считаем…" : "Отправить"}
         </button>
       </form>
     </section>
