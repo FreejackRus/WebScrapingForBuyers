@@ -46,6 +46,8 @@ const acceptedByKind: Record<MarketplaceKind, readonly string[]> = {
   megamarket: ["query"],
   citilink: ["query"],
   avito: ["query", "page", "location_id"],
+  aliexpress: ["query"],
+  taobao: ["query", "page"],
 };
 
 describe("marketplaceToolArguments", () => {
@@ -57,7 +59,7 @@ describe("marketplaceToolArguments", () => {
       expect(args.query).toBe(query);
       if (kind !== "wb") expect(args).not.toHaveProperty("dest");
       if (kind !== "yandex") expect(args).not.toHaveProperty("limit");
-      if (kind === "dns" || kind === "megamarket" || kind === "citilink") {
+      if (kind === "dns" || kind === "megamarket" || kind === "citilink" || kind === "aliexpress") {
         expect(args).not.toHaveProperty("page");
       }
     },
@@ -176,10 +178,11 @@ describe("presentMarketplaceError", () => {
 
   it("keeps WB 429 short for the operator, without a VNC wall of text", () => {
     const message = presentMarketplaceError("wb", "HTTP 429 Too Many Requests");
-    expect(message).toMatch(/WB rate-limited \(429\)/);
+    expect(message).toMatch(/^WB: лимит запросов\./);
     expect(message).not.toContain("5901");
     expect(message).not.toContain("headed Chrome");
     expect(message).not.toContain("VNC");
+    expect(message).not.toMatch(/MCP|search-goods/i);
     expect(isAntibotTransportError(message)).toBe(true);
   });
 
@@ -415,7 +418,7 @@ describe("McpMarketplaceAdapter", () => {
       kind: "wb",
     });
 
-    await expect(adapter.search(paleGrey)).rejects.toThrow(/пустой каталог/);
+    await expect(adapter.search(paleGrey)).rejects.toThrow(/пустой ответ каталога/);
     expect(callTool).toHaveBeenCalledTimes(2);
   });
 
@@ -428,7 +431,7 @@ describe("McpMarketplaceAdapter", () => {
       kind: "wb",
     });
 
-    await expect(adapter.search(product)).rejects.toThrow(/пустой каталог/);
+    await expect(adapter.search(product)).rejects.toThrow(/пустой ответ каталога/);
     expect(callTool).toHaveBeenCalledTimes(1);
   });
 
@@ -452,7 +455,7 @@ describe("McpMarketplaceAdapter", () => {
       kind: "wb",
     });
 
-    await expect(adapter.search(product)).rejects.toThrow(/отсеяны по модели/);
+    await expect(adapter.search(product)).rejects.toThrow(/нет подходящих карточек.*отсеяны/);
     expect(info).toHaveBeenCalled();
     const mapped = info.mock.calls
       .map((args) => args[0])
@@ -678,9 +681,9 @@ describe("McpMarketplaceAdapter", () => {
       kind: "wb",
     });
 
-    await expect(adapter.search(product)).rejects.toThrow(/WB rate-limited \(429\)/);
+    await expect(adapter.search(product)).rejects.toThrow(/WB: лимит запросов/);
     expect(callTool).toHaveBeenCalledTimes(1);
-    await expect(adapter.search(product)).rejects.toThrow(/WB rate-limited/);
+    await expect(adapter.search(product)).rejects.toThrow(/лимит запросов/);
     expect(callTool).toHaveBeenCalledTimes(1);
   });
 

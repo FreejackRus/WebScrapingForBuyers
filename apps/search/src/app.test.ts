@@ -1,5 +1,5 @@
 import type { Offer, Product, SearchSnapshot } from "@peremena/contracts";
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { buildSearchApp } from "./app.js";
 import type { SourceAdapter } from "./domain/source-adapter.js";
@@ -41,10 +41,29 @@ class TestSource implements SourceAdapter {
 }
 
 const apps: ReturnType<typeof buildSearchApp>[] = [];
-afterEach(async () => Promise.all(apps.splice(0).map((app) => app.close())));
+afterEach(async () => {
+  vi.unstubAllGlobals();
+  await Promise.all(apps.splice(0).map((app) => app.close()));
+});
 
 describe("search", () => {
-  it("suggests catalog products", async () => {
+  it("suggests live products from search engines", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (input: RequestInfo | URL) => {
+        const url = String(input);
+        if (url.includes("suggestqueries.google.com")) {
+          return new Response(
+            JSON.stringify(["мышь logitech", ["мышь logitech mx master 3s", "мышь logitech g102", "мышь logitech m185"]]),
+            { status: 200, headers: { "Content-Type": "application/json" } },
+          );
+        }
+        if (url.includes("duckduckgo.com") || url.includes("yandex.ru") || url.includes("icecat")) {
+          return new Response(JSON.stringify(["q", []]), { status: 200, headers: { "Content-Type": "application/json" } });
+        }
+        return new Response("{}", { status: 404 });
+      }),
+    );
     const app = buildSearchApp({ sources: [new TestSource()] });
     apps.push(app);
     const response = await app.inject({
@@ -53,7 +72,10 @@ describe("search", () => {
       payload: { query: "мышь Logitech" },
     });
     expect(response.statusCode).toBe(200);
-    expect(response.json().products.length).toBeGreaterThan(1);
+    const products = response.json().products as Product[];
+    expect(products.length).toBeGreaterThan(1);
+    expect(products.some((item) => /master|g102|m185/i.test(item.name))).toBe(true);
+    expect(products.every((item) => item.characteristics.источник !== undefined)).toBe(true);
   });
 
   it("collects offers", async () => {
@@ -142,7 +164,7 @@ describe("search", () => {
     const adapter: SourceAdapter = {
       name: "Wildberries",
       async search(product) {
-        if (fail) throw new Error("WB rate-limited (429). Подождите и повторите поиск.");
+        if (fail) throw new Error("WB: лимит запросов. Подождите и повторите поиск.");
         return [
           {
             id: "wb-real-1",
@@ -192,7 +214,7 @@ describe("search", () => {
     expect(reused[0]).toMatchObject({ price: 1_344, demo: false });
     const wb = secondSnap.sources.find((source) => source.source === "Wildberries");
     expect(wb).toMatchObject({ status: "error" });
-    expect(wb?.message).toMatch(/WB rate-limited/);
+    expect(wb?.message).toMatch(/лимит запросов/);
     expect(wb?.message).toMatch(/последние удачные/);
   });
 });

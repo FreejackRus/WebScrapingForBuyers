@@ -9,6 +9,7 @@ const emptySelected: string[] = [];
 
 const columns: { key: OfferSortColumn; label: string }[] = [
   { key: "source", label: "Источник / продавец" },
+  { key: "title", label: "Товар" },
   { key: "match", label: "Совпадение" },
   { key: "price", label: "Цена" },
   { key: "availability", label: "Наличие" },
@@ -46,7 +47,7 @@ export function OfferTable() {
           <input
             value={offerFilter}
             onChange={(event) => setOfferFilter(event.target.value)}
-            placeholder="Источник, продавец, наличие…"
+            placeholder="Источник, продавец, товар…"
           />
         </label>
       </div>
@@ -102,6 +103,10 @@ export function OfferTable() {
                     </span>
                   </div>
                   <small>{offer.seller}</small>
+                </td>
+                <td data-label="Товар">
+                  <div className="offer-title">{offer.title}</div>
+                  {offer.mpn && <small className="offer-mpn">{offer.mpn}</small>}
                 </td>
                 <td data-label="Совпадение">
                   <div className="offer-match">

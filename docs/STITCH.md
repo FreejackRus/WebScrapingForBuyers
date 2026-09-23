@@ -21,6 +21,7 @@
 | --- | --- | --- |
 | Официальный вордмарк | `6059391154288979469` | IMAGE |
 | Рабочее место с боковым чатом | `9a70cf57395b4e5492f1872e167a3fd7` | DESKTOP |
+| Поиск с автокомплитом (live) | `568b7d9653a244eca3758394b0cf1ef1` | DESKTOP |
 | Price Radar Enterprise, PEREMENA Digital | `890cda6847ae4327afa807ea830f0231` | DESKTOP |
 | Вход в систему | `1d4f58b518d54b649cdee88e9c93d02f` | DESKTOP |
 | Мобильный интерфейс менеджера | `d028549d8cbe41678a6b44ae609d7d4a` | MOBILE |

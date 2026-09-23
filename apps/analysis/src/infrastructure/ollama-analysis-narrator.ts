@@ -31,6 +31,16 @@ export function toExplanationRow(offer: Offer, selected: boolean) {
   };
 }
 
+const SYSTEM_PROMPT =
+  "Ты копайлот закупок ПЕРЕМЕНА Price Radar — не общий чат-бот. " +
+  "Твоя задача: кратко объяснить детерминированный отбор предложений в таблице поиска для менеджера закупок. " +
+  "Отвечай только про таблицу предложений, фильтры, источники/коннекторы, демо vs реальные цены, Excel-выгрузку, сравнение цен и выбор оффера. " +
+  "Не веди светскую беседу и не отвечай на темы вне Price Radar. " +
+  "Формат ответа строго JSON: summary (2–5 предложений на русском) и warnings (массив коротких рисков). " +
+  "В поле offers — уже отранжированная таблица из кода (source, price, demo, seller, url). " +
+  "Строки с selected=true выбраны детерминированным отбором; не меняй состав выборки и не придумывай цены, наличие, доставку, URL или продавцов. " +
+  "Ссылки рисует клиент из citations. Если передано addressAs — обратись по этому имени в начале summary.";
+
 export class OllamaAnalysisNarrator implements AnalysisNarrator {
   readonly name: string;
 
@@ -67,16 +77,16 @@ export class OllamaAnalysisNarrator implements AnalysisNarrator {
         messages: [
           {
             role: "system",
-            content:
-              "Ты аналитик закупок IT-компании. Объясняй только переданные данные на русском. " +
-              "В поле offers — уже отранжированная таблица из кода поиска (source, price, demo, seller, url). " +
-              "Строки с selected=true выбраны детерминированным отбором; не меняй состав выборки. " +
-              "Не придумывай цены, наличие, доставку, URL или продавцов. Ссылки рисует клиент из citations. " +
-              "Кратко объясни результат и риски.",
+            content: SYSTEM_PROMPT,
           },
           {
             role: "user",
             content: JSON.stringify({
+              purpose:
+                "Объясни результат отбора для закупки в Price Radar; ranking уже посчитан кодом.",
+              addressAs: input.addressAs ?? null,
+              userName: input.userName ?? null,
+              userRole: input.userRole ?? null,
               request: input.prompt,
               query: input.snapshotQuery,
               product: input.productName,

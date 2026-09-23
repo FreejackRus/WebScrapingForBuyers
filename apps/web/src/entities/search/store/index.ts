@@ -13,24 +13,26 @@ interface SearchState {
   offerFilter: string;
   tableFilter: OfferTableFilter | undefined;
   activity: "suggest" | "search" | null;
+  suggesting: boolean;
   error: string;
   source: EventSource | undefined;
   setQuery: (query: string) => void;
   setOfferFilter: (value: string) => void;
   setTableFilter: (value: OfferTableFilter | undefined) => void;
   reset: () => void;
-  suggest: () => Promise<void>;
+  suggest: (options?: { quiet?: boolean }) => Promise<void>;
   start: (product: Product) => Promise<void>;
   applyEvent: (event: SearchEvent) => void;
 }
 
 export const useSearchStore = create<SearchState>((set, get) => ({
-  query: "мышь Logitech",
+  query: "",
   suggestions: [],
   snapshot: undefined,
   offerFilter: "",
   tableFilter: undefined,
   activity: null,
+  suggesting: false,
   error: "",
   source: undefined,
   setQuery: (query) => set({ query }),
@@ -44,34 +46,49 @@ export const useSearchStore = create<SearchState>((set, get) => ({
       error: "",
       source: undefined,
       tableFilter: undefined,
+      suggesting: false,
     });
   },
-  suggest: async () => {
-    const { query, source } = get();
-    source?.close();
-    set({ activity: "suggest", error: "", suggestions: [], snapshot: undefined, source: undefined });
+  suggest: async (options) => {
+    const { query, source, activity } = get();
+    if (activity === "search") return;
+    const quiet = options?.quiet === true;
+    if (!quiet) source?.close();
+    set({
+      suggesting: true,
+      activity: quiet ? activity : "suggest",
+      error: "",
+      ...(quiet
+        ? {}
+        : { suggestions: [], snapshot: undefined, source: undefined }),
+    });
     try {
       const result = await searchApi.suggest(query.trim());
       set({
         suggestions: result.products,
-        activity: null,
+        suggesting: false,
+        activity: quiet ? get().activity : null,
         error:
           result.products.length === 0
-            ? "Не удалось определить модель. Уточните бренд, артикул или полное название."
+            ? "Подсказок нет. Уточните бренд, модель или MPN."
             : "",
       });
     } catch (reason) {
       set({
-        activity: null,
+        suggesting: false,
+        activity: quiet ? get().activity : null,
         error: reason instanceof Error ? reason.message : "Ошибка поиска",
       });
     }
   },
   start: async (product) => {
-    const { query, source } = get();
+    const { source } = get();
     source?.close();
+    const query = product.name.trim();
     set({
+      query,
       activity: "search",
+      suggesting: false,
       error: "",
       suggestions: [],
       offerFilter: "",
@@ -79,7 +96,7 @@ export const useSearchStore = create<SearchState>((set, get) => ({
       snapshot: undefined,
     });
     try {
-      const created = await searchApi.start(query, product.id);
+      const created = await searchApi.start(query || product.name, product);
       const next = searchApi.subscribe(
         created.id,
         (event) => get().applyEvent(event),

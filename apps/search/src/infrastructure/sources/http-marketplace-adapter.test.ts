@@ -26,14 +26,14 @@ describe("WildberriesHttpAdapter", () => {
       "fetch",
       vi.fn(async () => new Response(null, { status: 429 })),
     );
-    await expect(new WildberriesHttpAdapter().search(g102)).rejects.toThrow(/WB rate-limited \(429\)/);
+    await expect(new WildberriesHttpAdapter().search(g102)).rejects.toThrow(/WB: лимит запросов/);
   });
 
   it("does not hit search.wb.ru while the cooldown is active", async () => {
     noteWbRateLimited();
     const fetch = vi.fn();
     vi.stubGlobal("fetch", fetch);
-    await expect(new WildberriesHttpAdapter().search(g102)).rejects.toThrow(/WB rate-limited/);
+    await expect(new WildberriesHttpAdapter().search(g102)).rejects.toThrow(/лимит запросов/);
     expect(fetch).not.toHaveBeenCalled();
   });
 

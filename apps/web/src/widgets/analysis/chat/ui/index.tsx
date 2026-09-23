@@ -5,18 +5,30 @@ import { useAnalysisStore } from "entities/analysis";
 import { useSearchStore } from "entities/search";
 import { useUserStore } from "entities/user";
 
-const presets = [
+const basePresets = [
+  "Кто ты и чем помогаешь?",
   "Только REAL",
   "Сравни топ-3",
+  "Как выбираешь лучшее?",
+  "Что такое демо-цены?",
+  "Как выгрузить Excel?",
+  "Какие источники в снимке?",
   "Уточни модель G102",
   "Оставь только реальные WB дешевле 6000",
 ];
+
+const adminPresets = ["Где прогревать антибот по VNC?"];
+
+function firstName(displayName: string) {
+  return displayName.trim().split(/\s+/)[0] || displayName;
+}
 
 export function AnalysisChat() {
   const user = useUserStore((state) => state.user);
   const prompt = useAnalysisStore((state) => state.prompt);
   const analysis = useAnalysisStore((state) => state.analysis);
   const messages = useAnalysisStore((state) => state.messages);
+  const safetyNotice = useAnalysisStore((state) => state.safetyNotice);
   const busy = useAnalysisStore((state) => state.busy);
   const setPrompt = useAnalysisStore((state) => state.setPrompt);
   const run = useAnalysisStore((state) => state.run);
@@ -51,25 +63,38 @@ export function AnalysisChat() {
 
   if (!user) return null;
 
+  const name = firstName(user.displayName);
+  const presets = user.role === "admin" ? [...basePresets, ...adminPresets] : basePresets;
+  const emptyHint =
+    `${name}, я копайлот закупок Price Radar — не общий чат. ` +
+    "Спросите про снимок, фильтр таблицы, демо vs реальные цены, Excel, источники или уточните модель. " +
+    "Ранжирование считает код; модель только объясняет.";
+
   return (
     <section className="chat-panel" aria-labelledby="analysis-title">
       <div className="chat-head">
         <div>
           <p className="eyebrow">Закрытый контур</p>
           <h2 id="analysis-title">AI-копайлот закупок</h2>
-          <p>Модель объясняет запрос. Фильтр и отбор строк считает код анализа.</p>
+          <p>
+            Для {name}: объясняю таблицу предложений. Фильтр и отбор строк считает код анализа.
+          </p>
         </div>
         <span className="model-badge">{analysis?.provider ?? "Закрытый контур ПЕРЕМЕНА"}</span>
       </div>
       <div className="chat-thread" role="log" aria-live="polite">
-        {messages.length === 0 && (
-          <p className="chat-empty">
-            Спросите про снимок, попросите отфильтровать таблицу или уточнить модель для нового поиска.
-          </p>
-        )}
+        {messages.length === 0 && <p className="chat-empty">{emptyHint}</p>}
         {messages.map((message) => (
-          <article key={message.id} className={`chat-bubble ${message.role}`}>
+          <article
+            key={message.id}
+            className={`chat-bubble ${message.role}${message.safety ? " blocked" : ""}`}
+          >
             <p>{message.text}</p>
+            {message.safety && (
+              <p className={`chat-safety${message.safety.escalated ? " escalated" : ""}`}>
+                {message.safety.warning}
+              </p>
+            )}
             {message.citations.length > 0 && (
               <ul className="chat-citations">
                 {message.citations.map((citation) => (
@@ -84,6 +109,16 @@ export function AnalysisChat() {
           </article>
         ))}
       </div>
+      {safetyNotice && (
+        <p
+          className={`chat-safety-banner${safetyNotice.escalated ? " escalated" : ""}`}
+          role="status"
+        >
+          {safetyNotice.escalated
+            ? `Повторное нарушение (${safetyNotice.repeatCount}): ${safetyNotice.warning}`
+            : safetyNotice.warning}
+        </p>
+      )}
       {snapshot?.status === "running" && (
         <p className="copilot-hint">Сбор ещё идёт — ответ смотрит только уже загруженные строки.</p>
       )}
@@ -110,7 +145,7 @@ export function AnalysisChat() {
           className="chat-composer-input"
           value={prompt}
           onChange={(event) => setPrompt(event.target.value)}
-          placeholder="Спросите про таблицу или попросите отфильтровать…"
+          placeholder={`${name}, спросите про таблицу, фильтр, Excel или источники…`}
           minLength={2}
           required
           autoComplete="off"

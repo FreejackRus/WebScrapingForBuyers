@@ -43,7 +43,32 @@ services:
       MARKETPLACE_MCP_URL: http://marketplace-mcp:8000/mcp
       MARKETPLACE_MCP_TOKEN: ${MCP_HTTP_AUTH_TOKEN:?Set MCP_HTTP_AUTH_TOKEN}
       MARKETPLACE_MCP_TENANT: ${MCP_HTTP_TENANT_ID:-peremena}
-      MARKETPLACE_SOURCES: wildberries,yandex_market,ozon,dns,megamarket,citilink,avito
+      MARKETPLACE_SOURCES: wildberries,yandex_market,ozon,dns,megamarket,citilink,avito,aliexpress,taobao
+      # Demo stubs off in production (ALLOW_DEMO_SOURCES must stay unset/false).
+      ALLOW_DEMO_SOURCES: "false"
+      # B2B distributors: opt-in only when credentials exist (see docs/DISTRIBUTORS.md).
+      DISTRIBUTOR_SOURCES: ${DISTRIBUTOR_SOURCES:-}
+      OCS_API_KEY: ${OCS_API_KEY:-}
+      OCS_API_URL: ${OCS_API_URL:-}
+      OCS_SEARCH_PATH: ${OCS_SEARCH_PATH:-}
+      OCS_SHIPMENT_CITY: ${OCS_SHIPMENT_CITY:-}
+      OCS_LOCATION: ${OCS_LOCATION:-}
+      MERLION_API_LOGIN: ${MERLION_API_LOGIN:-}
+      MERLION_API_PASSWORD: ${MERLION_API_PASSWORD:-}
+      MERLION_API_TEST: ${MERLION_API_TEST:-}
+      MERLION_API_URL: ${MERLION_API_URL:-}
+      NETLAB_API_LOGIN: ${NETLAB_API_LOGIN:-}
+      NETLAB_API_PASSWORD: ${NETLAB_API_PASSWORD:-}
+      NETLAB_CLIENT_CODE: ${NETLAB_CLIENT_CODE:-}
+      NETLAB_API_URL: ${NETLAB_API_URL:-}
+      SERVERMALL_API_TOKEN: ${SERVERMALL_API_TOKEN:-}
+      ONLINETRADE_API_TOKEN: ${ONLINETRADE_API_TOKEN:-}
+      REGARD_API_TOKEN: ${REGARD_API_TOKEN:-}
+      HARDPRICE_API_TOKEN: ${HARDPRICE_API_TOKEN:-}
+      SRVTRADE_API_TOKEN: ${SRVTRADE_API_TOKEN:-}
+      TORGPC_API_TOKEN: ${TORGPC_API_TOKEN:-}
+      # Taobao prices are CNY; set approximate ₽ rate to map offers (no fake prices without it).
+      CNY_RUB_RATE: ${CNY_RUB_RATE:-}
       APIFY_ENABLED: ${APIFY_ENABLED:-false}
       APIFY_TOKEN: ${APIFY_TOKEN:-}
       APIFY_MAX_ITEMS: ${APIFY_MAX_ITEMS:-12}
@@ -100,12 +125,14 @@ services:
       MCP_HTTP_PATH: /mcp
       MCP_HTTP_AUTH_TOKEN: ${MCP_HTTP_AUTH_TOKEN:?Set MCP_HTTP_AUTH_TOKEN}
       MCP_HTTP_TENANT_ID: ${MCP_HTTP_TENANT_ID:-peremena}
-      MARKETPLACE_SOURCES: wildberries,yandex_market,ozon,dns,megamarket,citilink,avito
+      MARKETPLACE_SOURCES: wildberries,yandex_market,ozon,dns,megamarket,citilink,avito,aliexpress,taobao
       CHROME_CDP_HOST: 172.29.0.10
       CHROME_CDP_PORT: "9222"
       # ru-marketplace-mcp 2.4.2: keep a detected challenge tab for VNC.
       # Does not solve captcha. Default 0, max 300.
       CHROME_CHALLENGE_HANDOFF_S: "120"
+      # Progress Ali/Taobao login walls in the same headed profile (VNC).
+      # Do not recreate chrome when changing this service.
     # No depends_on chrome — CDP connects lazily. Recreating MCP must not
     # bounce the chrome-headed volume.
     networks:

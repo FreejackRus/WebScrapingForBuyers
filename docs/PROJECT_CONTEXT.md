@@ -570,3 +570,99 @@ search-goods id-list — это не пустая витрина. Второй `
 «каталог MCP недоступен (search-goods fallback)… → fallback: WB каталог
 недоступен (403), не мусорный fallback». «Отсеяны по модели» нет.
 Клавиатур нет — search.wb.ru с IP сервера закрыт. Chrome не трогали.
+
+### 2026-09-23 — live autocomplete из поисковиков
+
+Подсказки больше не из хардкод-каталога Logitech. `POST /suggestions`
+параллельно бьёт Google Suggest, DuckDuckGo `/ac/` и Yandex Suggest;
+фразы мапятся в эфемерный `Product` (`productFromQuery`). Icecat
+обогащает только при Brand+MPN. Статический `catalog.ts` остаётся
+seed для старых `productId` в тестах/демо, не для typeahead.
+Фронт: пустой query, debounce 250 мс, dropdown «Подсказки из
+каталогов / live», старт поиска передаёт весь `product`. Stitch API
+ключ в локальном `.env.server` + `.cursor/mcp.json` (gitignore);
+генерация экрана запущена в проект `3120249908671992679` / DS
+`15671525545677379912`. Выложено: search, web (`--no-deps --build`).
+Chrome не пересоздавался. `.env.production` не трогали.
+WB 403 с IP сервера без изменений.
+
+Stitch-экран typeahead: `568b7d9653a244eca3758394b0cf1ef1`
+(«ПЕРЕМЕНА · Price Radar | Поисковый интерфейс с автокомплитом»).
+Проверка на проде: `POST /suggestions` «ноутбук dell» → 8 фраз с
+`источник: google` (dell inspiron / latitude …).
+
+### 2026-09-23 — typeahead UX + короткие WB-статусы
+
+Dropdown закрывается после «Найти» / выбора подсказки; в инпут
+пишется `product.name`, авто-suggest не открывается снова до нового
+ввода. Ряды typeahead: одна строка названия + muted meta (бренд /
+категория / MPN), токены PEREMENA Digital. WB admin: короткое
+`WB: лимит запросов. Подождите N с.` / `WB: каталог недоступен…`;
+цепочка stale→HTTP больше не склеивается через `→ fallback:`, берётся
+последняя actionable строка. Выложено: web + search (`--no-deps
+--build`). Chrome не пересоздавался. `.env.production` не трогали.
+
+### 2026-09-23 — копайлот: имя, Q&A, safety
+
+Копайлот ограничен контуром Price Radar (таблица, фильтры, демо vs
+реальные, Excel, источники, сравнение; VNC/admin — только admin).
+Gateway в `POST …/analyze` подставляет `userName` / `userRole` /
+`userLogin` из сессии. Intent-ы: help, export, sources, ranking, demo,
+admin + прежние explain/filter/search. LLM только объясняет
+структурированным JSON; ранжирование детерминированное.
+
+Safety: оскорбления / jailbreak / offtopic → `intent: blocked`,
+вежливый отказ с именем и напоминанием scope; JSON-лог
+`chat_safety` (login, category, when, repeatCount) без текста
+промпта и без секретов; счётчик повторов в памяти процесса,
+эскалация в UI с 3-го раза. Баннер предупреждения в чате.
+
+Выложено: contracts, analysis, gateway, web (`--no-deps --build`).
+Chrome не пересоздавался (`Up` ~6h). `.env.production` не трогали.
+`graphify update .` на Windows падает access violation у локального
+бинарника; `graph.json` сохранён, query работает.
+
+### 2026-09-23 — таблица: колонка «Товар»
+
+В таблицу предложений добавлена колонка **Товар** (`Offer.title` —
+наименование из карточки маркетплейса) сразу после «Источник /
+продавец», как в Excel-экспорте. Сортировка по названию включена;
+под названием показывается MPN, если есть. DEMO/REAL не менялись.
+Выложено: только web (`--no-deps --build web`). Chrome не
+пересоздавался. `.env.production` не трогали.
+
+### 2026-09-23 — без демо на проде, Ali/Taobao, B2B stubs
+
+Демо-источники больше не подмешиваются в hybrid/production: только
+`ALLOW_DEMO_SOURCES=true` (локально). MERLION/NETLAB/OCS убраны из
+demo-адаптера (фейковые B2B-цены). Добавлены stub-адаптеры дистрибьюторов
+(`DISTRIBUTOR_SOURCES` + ключи; без ключей не монтируются) и матрица
+`docs/DISTRIBUTORS.md`. AliExpress и Taobao в `MARKETPLACE_SOURCES`
+(search + marketplace-mcp); Taobao→₽ через опциональный `CNY_RUB_RATE`.
+Compose: `ALLOW_DEMO_SOURCES=false`, плейсхолдеры B2B env. Chrome headed
+не пересоздавался. Выложено + push — см. запись ниже после деплоя.
+
+### 2026-09-23 — API Merlion / OCS / NetLab (исследование + клиенты)
+
+Поиск по открытым источникам и подготовка подключения:
+
+- **MERLION** — SOAP `mlservice3` (WSDL prod/test подтверждены), Basic Auth,
+  логин `…|API`. Live-клиент: `getShipmentMethods` → `getShipmentDates` →
+  `getItems` → `getItemsAvail` → офферы с `PriceClientRUB`, `demo:false`.
+- **OCS** — Partners Connector `connector.b2b.ocs.ru`, заголовок `X-API-Key`;
+  interactive docs `testconnector.b2b.ocs.ru/docs` (swagger без ключа 404).
+  Клиент ждёт `OCS_SEARCH_PATH` из партнёрского OpenAPI + город/локация.
+- **NETLAB** — REST NLDealer: `token.json` + `getGoodsSearch` + `goodsByUid`.
+  Live-клиент готов; отдельный API-пользователь в NLDealer.
+- DNS/Ситилинк/Regard/Servermall/… — публичного B2B API нет; stubs + MCP/CDP.
+- Env/compose/docs: `docs/DISTRIBUTORS.md`, `.env.example`, production compose.
+
+### 2026-09-23 — выложено + push (sources / Ali-Taobao / demo off)
+
+На прод `/projects/WebScrapingForBuyers`: залиты код и docs; в
+`.env.production` добавлены пустые плейсхолдеры
+`ALLOW_DEMO_SOURCES`/`DISTRIBUTOR_*`/`CNY_RUB_RATE` (без секретов).
+Пересобраны `--no-deps --build`: search, analysis, gateway, web,
+marketplace-mcp. **Chrome не трогали** (`Up` ~7h, started ранее).
+Матрица источников: `docs/DISTRIBUTORS.md`. Push в `origin/main`.
+

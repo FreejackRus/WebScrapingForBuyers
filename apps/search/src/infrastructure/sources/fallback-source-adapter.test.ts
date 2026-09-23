@@ -67,7 +67,7 @@ describe("FallbackSourceAdapter", () => {
     const failing: SourceAdapter = {
       name: "Wildberries",
       search: async () => {
-        throw new Error("WB rate-limited (429). Подождите и повторите поиск.");
+        throw new Error("WB: лимит запросов. Подождите и повторите поиск.");
       },
     };
     const fallback: SourceAdapter = {
@@ -76,7 +76,7 @@ describe("FallbackSourceAdapter", () => {
     };
 
     const source = new FallbackSourceAdapter("Wildberries", [failing, fallback]);
-    await expect(source.search(product)).rejects.toThrow(/WB rate-limited/);
+    await expect(source.search(product)).rejects.toThrow(/лимит запросов/);
     expect(fallback.search).not.toHaveBeenCalled();
   });
 
@@ -84,7 +84,7 @@ describe("FallbackSourceAdapter", () => {
     const failing: SourceAdapter = {
       name: "Wildberries",
       search: async () => {
-        throw new Error("WB: пустой каталог после живого ответа MCP. Повторите поиск один раз.");
+        throw new Error("WB: пустой ответ каталога. Повторите поиск.");
       },
     };
     const fallback: SourceAdapter = {
@@ -93,7 +93,7 @@ describe("FallbackSourceAdapter", () => {
     };
 
     const source = new FallbackSourceAdapter("Wildberries", [failing, fallback]);
-    await expect(source.search(product)).rejects.toThrow(/пустой каталог/);
+    await expect(source.search(product)).rejects.toThrow(/пустой ответ каталога/);
     expect(fallback.search).not.toHaveBeenCalled();
   });
 
@@ -116,9 +116,7 @@ describe("FallbackSourceAdapter", () => {
     const failing: SourceAdapter = {
       name: "Wildberries",
       search: async () => {
-        throw new Error(
-          "WB: каталог MCP недоступен (search-goods fallback), карточки чужой категории.",
-        );
+        throw new Error("WB: каталог недоступен, чужая категория.");
       },
     };
     const fallback: SourceAdapter = {
@@ -130,11 +128,29 @@ describe("FallbackSourceAdapter", () => {
     await expect(source.search(product)).resolves.toEqual([offer]);
   });
 
+  it("keeps a single short WB line when stale catalog then rate-limits", async () => {
+    const failing: SourceAdapter = {
+      name: "Wildberries",
+      search: async () => {
+        throw new Error("WB: каталог недоступен, чужая категория.");
+      },
+    };
+    const fallback: SourceAdapter = {
+      name: "Wildberries",
+      search: async () => {
+        throw new Error("WB: лимит запросов. Подождите 41 с.");
+      },
+    };
+
+    const source = new FallbackSourceAdapter("Wildberries", [failing, fallback]);
+    await expect(source.search(product)).rejects.toThrow(/^WB: лимит запросов\. Подождите 41 с\.$/);
+  });
+
   it("does not HTTP-fallback after a live WB model-drop", async () => {
     const failing: SourceAdapter = {
       name: "Wildberries",
       search: async () => {
-        throw new Error("WB: MCP вернул 28 карточек, все отсеяны по модели.");
+        throw new Error("WB: нет подходящих карточек (28 отсеяны).");
       },
     };
     const fallback: SourceAdapter = {
@@ -143,7 +159,7 @@ describe("FallbackSourceAdapter", () => {
     };
 
     const source = new FallbackSourceAdapter("Wildberries", [failing, fallback]);
-    await expect(source.search(product)).rejects.toThrow(/отсеяны по модели/);
+    await expect(source.search(product)).rejects.toThrow(/нет подходящих карточек/);
     expect(fallback.search).not.toHaveBeenCalled();
   });
 

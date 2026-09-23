@@ -21,8 +21,9 @@ describe("wb rate-limit cooldown", () => {
   it("blocks the next catalog call after a rate-limit and keeps the status short", () => {
     noteWbRateLimited();
     expect(remainingWbCooldownMs()).toBeGreaterThan(0);
-    expect(() => assertWbCatalogAllowed()).toThrow(/WB rate-limited/);
+    expect(() => assertWbCatalogAllowed()).toThrow(/лимит запросов/);
     expect(presentWbRateLimited("HTTP 429")).not.toContain("VNC");
     expect(presentWbRateLimited("HTTP 429")).not.toContain("headed Chrome");
+    expect(presentWbRateLimited("HTTP 429")).toMatch(/^WB: лимит запросов\./);
   });
 });

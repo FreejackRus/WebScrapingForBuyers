@@ -1,4 +1,4 @@
-import type { AnalysisResult, OfferCitation } from "@peremena/contracts";
+import type { AnalysisResult, ChatSafetyInfo, OfferCitation } from "@peremena/contracts";
 import { create } from "zustand";
 
 import { analysisApi } from "../api";
@@ -8,6 +8,7 @@ export interface ChatMessage {
   role: "user" | "assistant";
   text: string;
   citations: OfferCitation[];
+  safety?: ChatSafetyInfo;
 }
 
 interface AnalysisState {
@@ -15,6 +16,7 @@ interface AnalysisState {
   analysis: AnalysisResult | undefined;
   messages: ChatMessage[];
   busy: boolean;
+  safetyNotice: ChatSafetyInfo | undefined;
   setPrompt: (prompt: string) => void;
   reset: () => void;
   appendLocal: (userText: string, assistantText: string) => void;
@@ -32,8 +34,10 @@ export const useAnalysisStore = create<AnalysisState>((set, get) => ({
   analysis: undefined,
   messages: emptyMessages,
   busy: false,
+  safetyNotice: undefined,
   setPrompt: (prompt) => set({ prompt }),
-  reset: () => set({ analysis: undefined, messages: emptyMessages, prompt: "" }),
+  reset: () =>
+    set({ analysis: undefined, messages: emptyMessages, prompt: "", safetyNotice: undefined }),
   appendLocal: (userText, assistantText) =>
     set((current) => ({
       messages: [
@@ -54,6 +58,7 @@ export const useAnalysisStore = create<AnalysisState>((set, get) => ({
         analysis,
         busy: false,
         prompt: "",
+        safetyNotice: analysis.safety,
         messages: [
           ...current.messages,
           {
@@ -61,6 +66,7 @@ export const useAnalysisStore = create<AnalysisState>((set, get) => ({
             role: "assistant",
             text: analysis.summary,
             citations: analysis.citations ?? [],
+            ...(analysis.safety ? { safety: analysis.safety } : {}),
           },
         ],
       }));

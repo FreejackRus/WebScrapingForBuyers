@@ -1,8 +1,36 @@
-import type { AnalysisResult, Offer, OfferCitation, SearchSnapshot } from "@peremena/contracts";
+import type {
+  AnalysisResult,
+  Offer,
+  OfferCitation,
+  SearchSnapshot,
+  UserRole,
+} from "@peremena/contracts";
 
 import type { AnalysisNarrator } from "../domain/analysis-narrator.js";
 
-import { buildTableFilter, classifyIntent, extractSearchQuery, parseMaxPrice, parseSources } from "./prompt-intent.js";
+import {
+  addressName,
+  buildTableFilter,
+  cannedMetaAnswer,
+  classifyIntent,
+  extractSearchQuery,
+  parseMaxPrice,
+  parseSources,
+  withGreeting,
+} from "./prompt-intent.js";
+import {
+  buildBlockedResponse,
+  bumpSafetyCounter,
+  detectSafetyCategory,
+  logSafetyIncident,
+} from "./chat-safety.js";
+
+export interface AnalyzeOptions {
+  userName?: string;
+  userRole?: UserRole;
+  userLogin?: string;
+  searchId?: string;
+}
 
 function money(price: number) {
   return `${price.toLocaleString("ru-RU")} ₽`;
@@ -41,19 +69,94 @@ function matchesSource(offer: Offer, sources: string[]) {
   return sources.some((source) => hay.includes(source.toLocaleLowerCase("ru")));
 }
 
+function sourceLines(snapshot: SearchSnapshot, userRole?: UserRole): string[] {
+  return snapshot.sources.map((source) => {
+    const base = `${source.source}: ${source.status}`;
+    if (userRole === "admin" && source.message?.trim()) {
+      return `${base} (${source.message.trim()})`;
+    }
+    return base;
+  });
+}
+
+const META_INTENTS = new Set(["help", "export", "sources", "ranking", "demo", "admin"]);
+
 export async function analyzeSnapshot(
   snapshot: SearchSnapshot,
   prompt: string,
   narrator?: AnalysisNarrator,
+  options: AnalyzeOptions = {},
 ): Promise<AnalysisResult> {
   const incoming = [...snapshot.offers];
   const realCount = incoming.filter((offer) => !offer.demo).length;
   const demoCount = incoming.length - realCount;
   const normalized = prompt.toLocaleLowerCase("ru");
   const searchQuery = extractSearchQuery(prompt);
+  const userName = options.userName?.trim() || undefined;
+  const userRole = options.userRole;
+  const userLogin = options.userLogin?.trim() || undefined;
+
+  const safetyCategory = detectSafetyCategory(normalized);
+  if (safetyCategory) {
+    const key = userLogin || userName || "anonymous";
+    const repeatCount = bumpSafetyCounter(key);
+    const blocked = buildBlockedResponse({
+      category: safetyCategory,
+      ...(userName ? { userName } : {}),
+      repeatCount,
+    });
+    logSafetyIncident({
+      category: safetyCategory,
+      ...(userLogin ? { userLogin } : {}),
+      ...(userName ? { userName } : {}),
+      ...(userRole ? { userRole } : {}),
+      repeatCount,
+      escalated: blocked.escalated,
+      ...(options.searchId ? { searchId: options.searchId } : {}),
+    });
+    return {
+      summary: blocked.summary,
+      selectedOfferIds: [],
+      appliedFilters: ["Запрос отклонён политикой безопасности копайлота."],
+      warnings: [blocked.warning],
+      citations: [],
+      intent: "blocked",
+      provider: "Политика безопасности Price Radar",
+      safety: {
+        category: safetyCategory,
+        warning: blocked.warning,
+        repeatCount,
+        escalated: blocked.escalated,
+      },
+    };
+  }
+
   const intent = classifyIntent(normalized, searchQuery);
   const sources = parseSources(normalized);
   const maxPrice = parseMaxPrice(normalized);
+
+  if (META_INTENTS.has(intent)) {
+    const meta = cannedMetaAnswer({
+      intent: intent as Exclude<typeof intent, "explain" | "filter" | "search" | "blocked">,
+      ...(userName ? { userName } : {}),
+      ...(userRole ? { userRole } : {}),
+      snapshotQuery: snapshot.query,
+      sourceLines: sourceLines(snapshot, userRole),
+      offerCount: incoming.length,
+      realCount,
+      demoCount,
+    });
+    return {
+      summary: meta.summary,
+      selectedOfferIds: [],
+      appliedFilters: meta.appliedFilters,
+      warnings: meta.warnings,
+      citations: [],
+      intent,
+      provider: "Справочный ответ Price Radar",
+    };
+  }
+
   const filters: string[] = [
     `В снимке поиска «${snapshot.query}»: ${incoming.length} предложений (${realCount} реальных, ${demoCount} демо).`,
   ];
@@ -124,14 +227,23 @@ export async function analyzeSnapshot(
   const best = selected[0];
   const summary =
     intent === "search"
-      ? `Запускаю уточнение модели «${searchQuery}». Выберите карточку слева, чтобы собрать предложения.`
+      ? withGreeting(
+          `Запускаю уточнение модели «${searchQuery}». Выберите карточку слева, чтобы собрать предложения.`,
+          userName,
+        )
       : intent === "filter"
         ? !best
-          ? "По заданным критериям предложений не найдено — таблица пустая."
-          : `Таблица отфильтрована. Лучший вариант: ${offerLabel(best)}. Показано строк: ${selected.length}.`
+          ? withGreeting("По заданным критериям предложений не найдено — таблица пустая.", userName)
+          : withGreeting(
+              `Таблица отфильтрована. Лучший вариант: ${offerLabel(best)}. Показано строк: ${selected.length}.`,
+              userName,
+            )
         : !best
-          ? "По заданным критериям предложений не найдено."
-          : `Лучший вариант: ${offerLabel(best)}. Отобрано предложений: ${selected.length}.`;
+          ? withGreeting("По заданным критериям предложений не найдено.", userName)
+          : withGreeting(
+              `Лучший вариант: ${offerLabel(best)}. Отобрано предложений: ${selected.length}.`,
+              userName,
+            );
 
   if (selected.some((offer) => offer.demo)) {
     warnings.push(
@@ -161,6 +273,7 @@ export async function analyzeSnapshot(
   };
   if (!narrator || selected.length === 0 || intent === "search") return result;
 
+  const addressAs = addressName(userName);
   try {
     const narrated = await narrator.summarize({
       prompt,
@@ -171,6 +284,9 @@ export async function analyzeSnapshot(
       snapshotQuery: snapshot.query,
       snapshotStatus: snapshot.status,
       productName: snapshot.product.name,
+      ...(userName ? { userName } : {}),
+      ...(addressAs ? { addressAs } : {}),
+      ...(userRole ? { userRole } : {}),
     });
     return {
       ...result,

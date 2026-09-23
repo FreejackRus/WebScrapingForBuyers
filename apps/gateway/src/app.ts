@@ -102,8 +102,20 @@ export function buildGatewayApp(options: { logger?: boolean } = {}) {
     void pump();
     return reply;
   });
-  app.post<{ Params: { id: string } }>("/api/v1/searches/:id/analyze", async (request, reply) =>
-    proxyJson(analysis, `/searches/${request.params.id}/analyze`, request, reply),
+  app.post<{ Params: { id: string }; Body: { prompt?: string } }>(
+    "/api/v1/searches/:id/analyze",
+    async (request, reply) => {
+      const prompt = typeof request.body?.prompt === "string" ? request.body.prompt : "";
+      const enriched = {
+        prompt,
+        ...(request.currentUser?.displayName
+          ? { userName: request.currentUser.displayName }
+          : {}),
+        ...(request.currentUser?.role ? { userRole: request.currentUser.role } : {}),
+        ...(request.currentUser?.login ? { userLogin: request.currentUser.login } : {}),
+      };
+      return proxyJson(analysis, `/searches/${request.params.id}/analyze`, request, reply, enriched);
+    },
   );
   app.get<{ Params: { id: string } }>("/api/v1/searches/:id/export.xlsx", async (request, reply) => {
     const upstream = await fetch(`${search}/searches/${request.params.id}/export.xlsx`, {
@@ -149,12 +161,14 @@ async function proxyJson(
   path: string,
   request: FastifyRequest,
   reply: FastifyReply,
+  bodyOverride?: unknown,
 ) {
   const headers: Record<string, string> = {
     ...cookieHeader(request),
     accept: "application/json",
   };
-  const raw = request.body === undefined ? undefined : JSON.stringify(request.body);
+  const payload = bodyOverride !== undefined ? bodyOverride : request.body;
+  const raw = payload === undefined ? undefined : JSON.stringify(payload);
   if (raw) headers["content-type"] = "application/json";
   const response = await fetch(`${base}${path}`, {
     method: request.method,

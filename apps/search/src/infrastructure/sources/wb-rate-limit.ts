@@ -16,11 +16,10 @@ export function remainingWbCooldownMs(now = Date.now()): number {
 }
 
 /** Short admin-facing status. Managers never see source.message. */
-export function presentWbRateLimited(raw?: string): string {
-  const status = raw?.match(/\b(429|403)\b/)?.[1];
+export function presentWbRateLimited(_raw?: string): string {
   const wait = remainingWbCooldownMs();
   const waitHint = wait > 0 ? ` Подождите ${Math.ceil(wait / 1000)} с.` : " Подождите и повторите поиск.";
-  return status ? `WB rate-limited (${status}).${waitHint}` : `WB rate-limited.${waitHint}`;
+  return `WB: лимит запросов.${waitHint}`;
 }
 
 export function assertWbCatalogAllowed(): void {

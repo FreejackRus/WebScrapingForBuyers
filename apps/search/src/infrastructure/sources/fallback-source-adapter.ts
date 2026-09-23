@@ -7,6 +7,19 @@ import {
   isWbStaleCatalogMiss,
 } from "./mcp-marketplace-adapter.js";
 
+/** One short admin line; avoid chaining MCP jargon + rate-limit walls. */
+export function presentChainedSourceErrors(name: string, errors: string[]): string {
+  if (errors.length === 0) return "неизвестная ошибка";
+  if (errors.length === 1) return errors[0]!;
+  if (name === "Wildberries") {
+    const last = errors[errors.length - 1]!;
+    if (/лимит запросов|rate-limited/i.test(last)) return last;
+    if (errors.some(isWbStaleCatalogMiss) && /каталог недоступен/i.test(last)) return last;
+    return last;
+  }
+  return errors.join(" → fallback: ");
+}
+
 export class FallbackSourceAdapter implements SourceAdapter {
   constructor(
     readonly name: string,
@@ -39,7 +52,7 @@ export class FallbackSourceAdapter implements SourceAdapter {
         }
       }
     }
-    if (errors.length > 0) throw new Error(errors.join(" → fallback: "));
+    if (errors.length > 0) throw new Error(presentChainedSourceErrors(this.name, errors));
     return [];
   }
 }

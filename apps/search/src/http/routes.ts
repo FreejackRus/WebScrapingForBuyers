@@ -2,7 +2,9 @@ import type { FastifyPluginAsync } from "fastify";
 
 import { exportSearch } from "../application/export-service.js";
 import type { SearchService } from "../application/search-service.js";
-import { findProduct, suggestProducts } from "../domain/catalog.js";
+import { findProduct } from "../domain/catalog.js";
+import { isProductPayload, productFromQuery } from "../domain/product-from-query.js";
+import { suggestLiveProducts } from "../infrastructure/suggest/live-suggest.js";
 
 const queryBodySchema = {
   type: "object",
@@ -24,31 +26,31 @@ export const searchRoutes: FastifyPluginAsync<{
   app.post<{ Body: { query: string } }>(
     "/suggestions",
     { schema: { body: queryBodySchema } },
-    async (request) => ({ products: suggestProducts(request.body.query) }),
+    async (request) => ({ products: await suggestLiveProducts(request.body.query) }),
   );
 
-  app.post<{ Body: { query: string; productId?: string } }>(
+  app.post<{ Body: { query: string; productId?: string; product?: ProductLike } }>(
     "/searches",
     {
       schema: {
         body: {
-          ...queryBodySchema,
+          type: "object",
+          required: ["query"],
+          additionalProperties: false,
           properties: {
-            ...queryBodySchema.properties,
+            query: { type: "string", minLength: 2, maxLength: 300 },
             productId: { type: "string" },
+            product: { type: "object", additionalProperties: true },
           },
         },
       },
     },
     async (request, reply) => {
       const product =
+        (isProductPayload(request.body.product) ? request.body.product : undefined) ??
         (request.body.productId ? findProduct(request.body.productId) : undefined) ??
-        suggestProducts(request.body.query, 1)[0];
-      if (!product) {
-        return reply.code(422).send({
-          error: "Товар не найден в демонстрационном каталоге. Уточните запрос.",
-        });
-      }
+        (await suggestLiveProducts(request.body.query, 1))[0] ??
+        productFromQuery(request.body.query, "query");
       return reply.code(201).send(searchService.start(request.body.query, product));
     },
   );
@@ -87,3 +89,5 @@ export const searchRoutes: FastifyPluginAsync<{
       .send(file);
   });
 };
+
+type ProductLike = Record<string, unknown>;

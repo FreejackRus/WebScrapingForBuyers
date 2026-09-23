@@ -1,4 +1,4 @@
-import type { Offer, SearchSnapshot } from "@peremena/contracts";
+import type { Offer, SearchSnapshot, UserRole } from "@peremena/contracts";
 
 export interface AnalysisNarration {
   prompt: string;
@@ -9,6 +9,10 @@ export interface AnalysisNarration {
   snapshotQuery: string;
   snapshotStatus: SearchSnapshot["status"];
   productName: string;
+  userName?: string;
+  userRole?: UserRole;
+  /** First token of displayName for greetings. */
+  addressAs?: string;
 }
 
 export interface AnalysisNarrator {

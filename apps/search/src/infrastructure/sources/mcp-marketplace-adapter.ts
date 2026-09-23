@@ -9,7 +9,16 @@ import { assertWbCatalogAllowed, noteWbRateLimited, presentWbRateLimited } from 
 
 type JsonObject = Record<string, unknown>;
 
-export type MarketplaceKind = "wb" | "yandex" | "ozon" | "dns" | "megamarket" | "citilink" | "avito";
+export type MarketplaceKind =
+  | "wb"
+  | "yandex"
+  | "ozon"
+  | "dns"
+  | "megamarket"
+  | "citilink"
+  | "avito"
+  | "aliexpress"
+  | "taobao";
 
 interface MarketplaceSource {
   name: string;
@@ -64,7 +73,10 @@ export function marketplaceToolArguments(
     case "dns":
     case "megamarket":
     case "citilink":
+    case "aliexpress":
       return { query };
+    case "taobao":
+      return { query, page: 1 };
   }
 }
 
@@ -76,6 +88,8 @@ const cdpWarmupHost: Record<MarketplaceKind, string> = {
   megamarket: "megamarket.ru",
   citilink: "citilink.ru",
   avito: "avito.ru",
+  aliexpress: "aliexpress.ru",
+  taobao: "taobao.com",
 };
 
 /**
@@ -91,7 +105,7 @@ export function presentMarketplaceError(kind: MarketplaceKind, raw: string): str
       if (!/не мусорный fallback/i.test(body)) noteWbRateLimited();
       return presentWbCatalogUnavailable(body);
     }
-    if (!/^WB rate-limited/i.test(body)) noteWbRateLimited();
+    if (!/^(WB rate-limited|WB: лимит)/i.test(body)) noteWbRateLimited();
     return presentWbRateLimited(body);
   }
   if (kind === "avito" && isAvitoPowError(body)) {
@@ -140,7 +154,7 @@ export function isAntibotTransportError(raw: string): boolean {
   return (
     isAvitoPowError(raw) ||
     isMegamarketWafError(raw) ||
-    /429|rate-limited|cdp_blocked|qrator|servicepipe|cloudflare|firewallcaptcha|firewall|проблема с ip|execution context was destroyed|navblocked|handoff_expires_at|http 403|\b403\b|не мусорный fallback|http 302|\b302\b|http 401|401 |html doctype|text\/html|<!doctype/i.test(
+    /429|rate-limited|лимит запросов|cdp_blocked|qrator|servicepipe|cloudflare|firewallcaptcha|firewall|проблема с ip|execution context was destroyed|navblocked|handoff_expires_at|http 403|\b403\b|не мусорный fallback|http 302|\b302\b|http 401|401 |html doctype|text\/html|<!doctype|x5sec|punish\?|login.?wall/i.test(
       raw,
     )
   );
@@ -159,17 +173,19 @@ export function isMcpUnavailableError(raw: string): boolean {
  * the search.aspx SERP. One HTTP catalog attempt is allowed; do not map junk
  * as «отсеяны по модели».
  */
-export const WB_STALE_CATALOG_MISS =
-  "WB: каталог MCP недоступен (search-goods fallback), карточки чужой категории.";
+/** Thrown on stale search-goods miss; keep phrases for isWbStaleCatalogMiss. */
+export const WB_STALE_CATALOG_MISS = "WB: каталог недоступен, чужая категория.";
 
-export const WB_CATALOG_UNAVAILABLE_403 = "WB каталог недоступен (403), не мусорный fallback";
+export const WB_CATALOG_UNAVAILABLE_403 = "WB: каталог недоступен (403).";
 
 export function isWbStaleCatalogMiss(raw: string): boolean {
-  return /search-goods fallback|карточки чужой категории|каталог MCP недоступен/i.test(raw);
+  return /search-goods fallback|карточки чужой категории|каталог MCP недоступен|каталог недоступен, чужая категория/i.test(
+    raw,
+  );
 }
 
 export function presentWbCatalogUnavailable(raw?: string): string {
-  if (raw && /не мусорный fallback/i.test(raw)) return raw.trim();
+  if (raw && /не мусорный fallback/i.test(raw)) return WB_CATALOG_UNAVAILABLE_403;
   return WB_CATALOG_UNAVAILABLE_403;
 }
 
@@ -307,8 +323,8 @@ export class McpMarketplaceAdapter implements SourceAdapter {
           if (this.source.kind === "wb") {
             throw new Error(
               wbHealthyItems === 0
-                ? "WB: пустой каталог после живого ответа MCP. Повторите поиск один раз."
-                : `WB: MCP вернул ${wbHealthyItems} карточек, все отсеяны по модели.`,
+                ? "WB: пустой ответ каталога. Повторите поиск."
+                : `WB: нет подходящих карточек (${wbHealthyItems} отсеяны).`,
             );
           }
         } catch (error) {
@@ -470,10 +486,7 @@ export class McpMarketplaceAdapter implements SourceAdapter {
       ...(mappedMpn ? { mpn: mappedMpn } : {}),
       price,
       ...(oldPrice !== undefined && oldPrice > price ? { oldPrice } : {}),
-      priceCondition:
-        firstPrice(item.price_with_plus, item.card_price) !== undefined
-          ? "Есть цена по подписке/карте"
-          : "Публичная цена",
+      priceCondition: marketplacePriceCondition(item, this.source.kind),
       currency: "RUB",
       availability:
         inStock === true ? "В наличии" : inStock === false ? "Нет в наличии" : firstString(item.stock) ?? "Неизвестно",
@@ -500,6 +513,8 @@ export function createMarketplaceSourcesFromEnv(): SourceAdapter[] {
     { name: "Мегамаркет", tool: "megamarket_search", host: "megamarket.ru", kind: "megamarket" },
     { name: "Ситилинк", tool: "citilink_search", host: "citilink.ru", kind: "citilink" },
     { name: "Авито", tool: "avito_search", host: "avito.ru", kind: "avito" },
+    { name: "AliExpress", tool: "aliexpress_search", host: "aliexpress.ru", kind: "aliexpress" },
+    { name: "Taobao", tool: "taobao_search", host: "taobao.com", kind: "taobao" },
   ];
   const enabled = (process.env.MARKETPLACE_SOURCES ?? sources.map((source) => source.kind).join(","))
     .split(",")
@@ -515,6 +530,9 @@ export function createMarketplaceSourcesFromEnv(): SourceAdapter[] {
     megamarket: "megamarket",
     citilink: "citilink",
     avito: "avito",
+    aliexpress: "aliexpress",
+    ali: "aliexpress",
+    taobao: "taobao",
   };
   const allowed = new Set(enabled.map((value) => aliases[value] ?? (value as MarketplaceSource["kind"])));
   return sources
@@ -909,6 +927,12 @@ function marketplaceSearchUrl(source: MarketplaceSource, product: Product): stri
       ? `https://www.avito.ru/all/tovary_dlya_kompyutera?cd=1&q=${encodeURIComponent(q)}`
       : `https://www.avito.ru/all?q=${encodeURIComponent(q)}`;
   }
+  if (source.kind === "aliexpress") {
+    return `https://aliexpress.ru/wholesale?SearchText=${encodeURIComponent(text)}`;
+  }
+  if (source.kind === "taobao") {
+    return `https://s.taobao.com/search?q=${encodeURIComponent(text)}`;
+  }
   return `https://${source.host}/search?q=${encodeURIComponent(text)}`;
 }
 
@@ -1044,12 +1068,32 @@ function sizesPrice(item: JsonObject): number | undefined {
   return undefined;
 }
 
+/** CNY→RUB for Taobao. Unset/invalid → no fake RUB (offer skipped). */
+export function cnyRubRate(): number | undefined {
+  const raw = Number(process.env.CNY_RUB_RATE);
+  return Number.isFinite(raw) && raw > 0 ? raw : undefined;
+}
+
 export function marketplaceItemPrice(item: JsonObject): number | undefined {
-  return (
+  const rub =
     firstPrice(item.price_rub, item.price, item.card_price) ??
     sizesPrice(item) ??
-    kopeckPrice(item.salePriceU, item.priceU)
-  );
+    kopeckPrice(item.salePriceU, item.priceU);
+  if (rub !== undefined) return rub;
+  const cny = firstPrice(item.price_cny);
+  const rate = cnyRubRate();
+  if (cny === undefined || rate === undefined) return undefined;
+  return Math.round(cny * rate);
+}
+
+export function marketplacePriceCondition(item: JsonObject, kind: MarketplaceKind): string {
+  if (kind === "taobao" && firstPrice(item.price_cny) !== undefined && firstPrice(item.price_rub) === undefined) {
+    return "≈ CNY→RUB (CNY_RUB_RATE)";
+  }
+  if (firstPrice(item.price_with_plus, item.card_price) !== undefined) {
+    return "Есть цена по подписке/карте";
+  }
+  return "Публичная цена";
 }
 
 function firstPrice(...values: unknown[]): number | undefined {

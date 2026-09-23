@@ -4,6 +4,10 @@ import { useSearchStore } from "entities/search";
 
 export function applyChatResult(result: AnalysisResult) {
   const search = useSearchStore.getState();
+  if (result.intent === "blocked") {
+    search.setTableFilter(undefined);
+    return;
+  }
   search.setTableFilter(result.intent === "filter" ? result.tableFilter : undefined);
   if (result.intent === "search" && result.searchQuery) {
     search.setQuery(result.searchQuery);

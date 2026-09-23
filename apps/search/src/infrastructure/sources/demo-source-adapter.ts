@@ -58,11 +58,13 @@ export class DemoSourceAdapter implements SourceAdapter {
   }
 }
 
+/**
+ * Local-only fake marketplace rows (`demo: true`).
+ * B2B names (MERLION/NETLAB/OCS) are not demo-stubbed — see b2b-distributor-adapter.
+ * Enabled only when ALLOW_DEMO_SOURCES=true (never in production compose).
+ */
 export function createDemoSources(): SourceAdapter[] {
   return [
-    new DemoSourceAdapter({ name: "MERLION", host: "merlion.com", priceFactor: 0.86, delayMs: 350 }),
-    new DemoSourceAdapter({ name: "NETLAB", host: "netlab.ru", priceFactor: 0.91, delayMs: 550 }),
-    new DemoSourceAdapter({ name: "OCS", host: "ocs.ru", priceFactor: 0.89, delayMs: 750 }),
     new DemoSourceAdapter({ name: "DNS", host: "dns-shop.ru", priceFactor: 1.04, delayMs: 950 }),
     new DemoSourceAdapter({
       name: "Яндекс Маркет",

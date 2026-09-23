@@ -67,7 +67,37 @@ export interface OfferTableFilter {
   selectedOfferIds?: string[];
 }
 
-export type ChatIntent = "explain" | "filter" | "search";
+export type UserRole = "admin" | "manager";
+
+export type ChatSafetyCategory = "insult" | "bypass" | "offtopic";
+
+export type ChatIntent =
+  | "explain"
+  | "filter"
+  | "search"
+  | "help"
+  | "export"
+  | "sources"
+  | "ranking"
+  | "demo"
+  | "admin"
+  | "blocked";
+
+export interface AnalyzeRequest {
+  prompt: string;
+  /** Display name from session/settings (e.g. «Михаил»). Gateway injects it. */
+  userName?: string;
+  userRole?: UserRole;
+  /** Login for safety incident logs only — never a password. Gateway injects it. */
+  userLogin?: string;
+}
+
+export interface ChatSafetyInfo {
+  category: ChatSafetyCategory;
+  warning: string;
+  repeatCount: number;
+  escalated: boolean;
+}
 
 export interface AnalysisResult {
   summary: string;
@@ -79,9 +109,8 @@ export interface AnalysisResult {
   tableFilter?: OfferTableFilter;
   intent?: ChatIntent;
   searchQuery?: string;
+  safety?: ChatSafetyInfo;
 }
-
-export type UserRole = "admin" | "manager";
 
 export interface SessionUser {
   id: string;

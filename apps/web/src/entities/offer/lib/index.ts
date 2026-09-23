@@ -20,7 +20,14 @@ export const matchRank: Record<Offer["match"], number> = {
   doubtful: 3,
 };
 
-export type OfferSortColumn = "source" | "match" | "price" | "availability" | "conditions" | "fetched";
+export type OfferSortColumn =
+  | "source"
+  | "title"
+  | "match"
+  | "price"
+  | "availability"
+  | "conditions"
+  | "fetched";
 export type OfferSortDirection = "asc" | "desc";
 export interface OfferSort {
   column: OfferSortColumn;
@@ -59,6 +66,7 @@ function compareText(left: string, right: string) {
 
 function offerSortValue(offer: Offer, column: OfferSortColumn): string | number {
   if (column === "source") return `${offer.source} ${offer.seller}`;
+  if (column === "title") return offer.title;
   if (column === "match") return matchRank[offer.match];
   if (column === "price") return offer.price;
   if (column === "availability") return offer.availability;

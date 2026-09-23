@@ -1,4 +1,4 @@
-import type { SearchSnapshot } from "@peremena/contracts";
+import type { AnalyzeRequest, SearchSnapshot } from "@peremena/contracts";
 import { createService, serviceUrl } from "@peremena/service-kit";
 
 import { analyzeSnapshot } from "./application/analyze.js";
@@ -20,7 +20,7 @@ export function buildAnalysisApp(options: { narrator?: AnalysisNarrator; logger?
     provider: narrator?.name ?? "Детерминированный анализ",
   }));
 
-  app.post<{ Params: { id: string }; Body: { prompt: string } }>(
+  app.post<{ Params: { id: string }; Body: AnalyzeRequest }>(
     "/searches/:id/analyze",
     {
       schema: {
@@ -28,7 +28,12 @@ export function buildAnalysisApp(options: { narrator?: AnalysisNarrator; logger?
           type: "object",
           required: ["prompt"],
           additionalProperties: false,
-          properties: { prompt: { type: "string", minLength: 2, maxLength: 1_000 } },
+          properties: {
+            prompt: { type: "string", minLength: 2, maxLength: 1_000 },
+            userName: { type: "string", minLength: 1, maxLength: 80 },
+            userRole: { type: "string", enum: ["admin", "manager"] },
+            userLogin: { type: "string", minLength: 1, maxLength: 80 },
+          },
         },
       },
     },
@@ -37,7 +42,12 @@ export function buildAnalysisApp(options: { narrator?: AnalysisNarrator; logger?
       if (response.status === 404) return reply.code(404).send({ error: "Поиск не найден" });
       if (!response.ok) return reply.code(502).send({ error: "Сервис поиска недоступен" });
       const snapshot = (await response.json()) as SearchSnapshot;
-      return analyzeSnapshot(snapshot, request.body.prompt, narrator);
+      return analyzeSnapshot(snapshot, request.body.prompt, narrator, {
+        ...(request.body.userName ? { userName: request.body.userName } : {}),
+        ...(request.body.userRole ? { userRole: request.body.userRole } : {}),
+        ...(request.body.userLogin ? { userLogin: request.body.userLogin } : {}),
+        searchId: request.params.id,
+      });
     },
   );
 
