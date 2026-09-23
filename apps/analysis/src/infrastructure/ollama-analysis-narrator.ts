@@ -8,6 +8,10 @@ import type {
   RelevanceFilterInput,
   RelevanceFilterResult,
 } from "../domain/analysis-narrator.js";
+import {
+  looksStronglyEnglish,
+  narrationNeedsRussianRetry,
+} from "./looks-strongly-english.js";
 
 interface OllamaChatResponse {
   message?: { content?: string };
@@ -30,6 +34,19 @@ const CHAT_INTENTS = new Set<ChatIntent>([
   "admin",
   "blocked",
 ]);
+
+/** Reinforced on one cheap retry if the first summary/warnings look English. */
+const RUSSIAN_RETRY_SUFFIX =
+  "Ответь строго по-русски. Поля summary и warnings — только русский текст для менеджера закупок. " +
+  "Запрещены английская проза и метакомментарии вроде «The provided JSON…». " +
+  "Названия товаров латиницей (Lenovo, MX Master) оставляй как в исходнике.";
+
+const LANGUAGE_RULE =
+  "Язык ответа: всегда русский. Пиши для российского менеджера закупок. " +
+  "Поля summary и warnings (и любой пользовательский текст) — только по-русски, " +
+  "даже если title/JSON-ключи/бренды латиницей. " +
+  "Запрещены английская проза и метакомментарии («The provided JSON…», «contains a list…», «Based on the data…»). " +
+  "Не описывай структуру JSON — сразу суть отбора для закупки.";
 
 export function toExplanationRow(offer: Offer, selected: boolean) {
   return {
@@ -54,29 +71,32 @@ export function toExplanationRow(offer: Offer, selected: boolean) {
 const SYSTEM_PROMPT =
   "Ты копайлот закупок ПЕРЕМЕНА Price Radar — не общий чат-бот. " +
   "Твоя задача: кратко объяснить детерминированный отбор предложений в таблице поиска для менеджера закупок. " +
-  "Отвечай только про таблицу предложений, фильтры, источники/коннекторы, демо vs реальные цены, Excel-выгрузку, сравнение цен и выбор оффера. " +
+  LANGUAGE_RULE +
+  " Отвечай только про таблицу предложений, фильтры, источники/коннекторы, демо vs реальные цены, Excel-выгрузку, сравнение цен и выбор оффера. " +
   "Не веди светскую беседу и не отвечай на темы вне Price Radar. " +
-  "Формат ответа строго JSON: summary (2–5 предложений на русском) и warnings (массив коротких рисков). " +
+  "Формат ответа строго JSON: summary (2–5 предложений на русском) и warnings (массив коротких рисков на русском). " +
   "В поле offers — уже отранжированная таблица из кода (source, price, demo, seller, url). " +
   "Строки с selected=true выбраны детерминированным отбором; не меняй состав выборки и не придумывай цены, наличие, доставку, URL или продавцов. " +
   "Ссылки рисует клиент из citations. Если передано addressAs — обратись по этому имени в начале summary.";
 
 const CHAT_SYSTEM_PROMPT =
   "Ты копайлот закупок ПЕРЕМЕНА Price Radar — не общий чат-бот и не свободный ассистент. " +
-  "Отвечай по-русски, коротко (2–5 предложений), только про Price Radar: кто ты, как пользоваться, " +
+  LANGUAGE_RULE +
+  " Отвечай коротко (2–5 предложений), только про Price Radar: кто ты, как пользоваться, " +
   "таблица предложений, фильтры, источники, демо vs REAL, Excel, ранжирование по цене (его считает код), " +
   "релевантность наименования (модель может отсеять лишние ID), как уточнить модель для нового поиска. " +
   "На приветствие поздоровайся по addressAs (если есть) и кратко напомни, чем помогаешь в закупках. " +
   "Если пользователь просит найти/поискать/уточнить модель товара — поставь intent=«search» и searchQuery = чистый бренд/модель/артикул без глаголов «найди/поищи». " +
   "Не выдумывай цены, наличие, URL и не обещай действий вне UI. " +
-  "Формат строго JSON: summary (строка), warnings (массив строк), опционально intent (строка) и searchQuery (строка).";
+  "Формат строго JSON: summary (строка по-русски), warnings (массив строк по-русски), опционально intent (строка) и searchQuery (строка).";
 
 const RELEVANCE_SYSTEM_PROMPT =
   "Ты фильтр релевантности офферов Price Radar. " +
   "Сравни карточку товара (brand/model/name/mpn) с title/mpn кандидатов. " +
   "Верни JSON: rejectedOfferIds — id явно чужих товаров (другая модель, чехол/кабель/аксессуар вместо самого товара, другой бренд без совпадения). " +
   "Пустой rejectedOfferIds = оставить всех. Не отбрасывай спорные близкие варианты (цвет, комплектация той же модели). " +
-  "Не меняй цены и не ранжируй — только отсев ID. warnings — короткий массив (можно пустой).";
+  "Не меняй цены и не ранжируй — только отсев ID. " +
+  "warnings — короткий массив на русском (можно пустой); без английской прозы.";
 
 export class OllamaAnalysisNarrator implements AnalysisNarrator {
   readonly name: string;
@@ -119,15 +139,52 @@ export class OllamaAnalysisNarrator implements AnalysisNarrator {
     return JSON.parse(content) as T;
   }
 
+  private async narrateWithRussianRetry(
+    system: string,
+    userPayload: unknown,
+    format: Record<string, unknown>,
+  ): Promise<StructuredAnalysis> {
+    const parse = (parsed: Partial<StructuredAnalysis>): StructuredAnalysis => {
+      if (typeof parsed.summary !== "string" || !Array.isArray(parsed.warnings)) {
+        throw new Error("Ollama вернула ответ неверного формата");
+      }
+      return {
+        summary: parsed.summary,
+        warnings: parsed.warnings.filter((warning): warning is string => typeof warning === "string"),
+      };
+    };
+
+    let result = parse(await this.chatJson<Partial<StructuredAnalysis>>(system, userPayload, format));
+    if (!narrationNeedsRussianRetry(result.summary, result.warnings)) {
+      return result;
+    }
+    try {
+      const retried = parse(
+        await this.chatJson<Partial<StructuredAnalysis>>(
+          `${system} ${RUSSIAN_RETRY_SUFFIX}`,
+          userPayload,
+          format,
+        ),
+      );
+      if (!looksStronglyEnglish(retried.summary)) {
+        return retried;
+      }
+    } catch {
+      // Keep the first valid JSON reply if the reinforcement call fails.
+    }
+    return result;
+  }
+
   async summarize(input: AnalysisNarration): Promise<StructuredAnalysis> {
     const selected = new Set(input.selectedOfferIds);
     const compactOffers = input.rankedOffers
       .slice(0, 20)
       .map((offer) => toExplanationRow(offer, selected.has(offer.id)));
-    const parsed = await this.chatJson<Partial<StructuredAnalysis>>(
+    return this.narrateWithRussianRetry(
       SYSTEM_PROMPT,
       {
-        purpose: "Объясни результат отбора для закупки в Price Radar; ranking уже посчитан кодом.",
+        purpose:
+          "Объясни результат отбора для закупки в Price Radar по-русски; ranking уже посчитан кодом. Без английской прозы.",
         addressAs: input.addressAs ?? null,
         userName: input.userName ?? null,
         userRole: input.userRole ?? null,
@@ -149,63 +206,90 @@ export class OllamaAnalysisNarrator implements AnalysisNarrator {
         required: ["summary", "warnings"],
       },
     );
-    if (typeof parsed.summary !== "string" || !Array.isArray(parsed.warnings)) {
-      throw new Error("Ollama вернула ответ неверного формата");
-    }
-    return {
-      summary: parsed.summary,
-      warnings: parsed.warnings.filter((warning): warning is string => typeof warning === "string"),
-    };
   }
 
   async answer(input: CopilotChatInput): Promise<CopilotChatAnswer> {
-    const parsed = await this.chatJson<{
+    const format = {
+      type: "object",
+      properties: {
+        summary: { type: "string" },
+        warnings: { type: "array", items: { type: "string" } },
+        intent: { type: "string" },
+        searchQuery: { type: "string" },
+      },
+      required: ["summary", "warnings"],
+    };
+    const userPayload = {
+      purpose: "Ответь как копайлот Price Radar по-русски на вопрос пользователя (без выдуманных цен).",
+      addressAs: input.addressAs ?? null,
+      userName: input.userName ?? null,
+      userRole: input.userRole ?? null,
+      request: input.prompt,
+      intentHint: input.intentHint ?? null,
+      query: input.snapshotQuery ?? null,
+      product: input.productName ?? null,
+      offerCount: input.offerCount ?? 0,
+      realCount: input.realCount ?? 0,
+      demoCount: input.demoCount ?? 0,
+      sources: input.sourceLines ?? [],
+    };
+
+    const parseAnswer = (parsed: {
       summary?: unknown;
       warnings?: unknown;
       intent?: unknown;
       searchQuery?: unknown;
-    }>(
-      CHAT_SYSTEM_PROMPT,
-      {
-        purpose: "Ответь как копайлот Price Radar на вопрос пользователя (без выдуманных цен).",
-        addressAs: input.addressAs ?? null,
-        userName: input.userName ?? null,
-        userRole: input.userRole ?? null,
-        request: input.prompt,
-        intentHint: input.intentHint ?? null,
-        query: input.snapshotQuery ?? null,
-        product: input.productName ?? null,
-        offerCount: input.offerCount ?? 0,
-        realCount: input.realCount ?? 0,
-        demoCount: input.demoCount ?? 0,
-        sources: input.sourceLines ?? [],
-      },
-      {
-        type: "object",
-        properties: {
-          summary: { type: "string" },
-          warnings: { type: "array", items: { type: "string" } },
-          intent: { type: "string" },
-          searchQuery: { type: "string" },
-        },
-        required: ["summary", "warnings"],
-      },
-    );
-    if (typeof parsed.summary !== "string" || !Array.isArray(parsed.warnings)) {
-      throw new Error("Ollama вернула ответ неверного формата");
-    }
-    const intentRaw = typeof parsed.intent === "string" ? parsed.intent.trim() : "";
-    const intent = CHAT_INTENTS.has(intentRaw as ChatIntent) ? (intentRaw as ChatIntent) : undefined;
-    const searchQuery =
-      typeof parsed.searchQuery === "string" && parsed.searchQuery.trim().length >= 2
-        ? parsed.searchQuery.trim()
+    }): CopilotChatAnswer => {
+      if (typeof parsed.summary !== "string" || !Array.isArray(parsed.warnings)) {
+        throw new Error("Ollama вернула ответ неверного формата");
+      }
+      const warnings = parsed.warnings.filter(
+        (warning): warning is string => typeof warning === "string",
+      );
+      const intentRaw = typeof parsed.intent === "string" ? parsed.intent.trim() : "";
+      const intent = CHAT_INTENTS.has(intentRaw as ChatIntent)
+        ? (intentRaw as ChatIntent)
         : undefined;
-    return {
-      summary: parsed.summary,
-      warnings: parsed.warnings.filter((warning): warning is string => typeof warning === "string"),
-      ...(intent ? { intent } : {}),
-      ...(searchQuery ? { searchQuery } : {}),
+      const searchQuery =
+        typeof parsed.searchQuery === "string" && parsed.searchQuery.trim().length >= 2
+          ? parsed.searchQuery.trim()
+          : undefined;
+      return {
+        summary: parsed.summary,
+        warnings,
+        ...(intent ? { intent } : {}),
+        ...(searchQuery ? { searchQuery } : {}),
+      };
     };
+
+    let result = parseAnswer(
+      await this.chatJson<{
+        summary?: unknown;
+        warnings?: unknown;
+        intent?: unknown;
+        searchQuery?: unknown;
+      }>(CHAT_SYSTEM_PROMPT, userPayload, format),
+    );
+
+    if (narrationNeedsRussianRetry(result.summary, result.warnings)) {
+      try {
+        const retried = parseAnswer(
+          await this.chatJson<{
+            summary?: unknown;
+            warnings?: unknown;
+            intent?: unknown;
+            searchQuery?: unknown;
+          }>(`${CHAT_SYSTEM_PROMPT} ${RUSSIAN_RETRY_SUFFIX}`, userPayload, format),
+        );
+        if (!looksStronglyEnglish(retried.summary)) {
+          result = retried;
+        }
+      } catch {
+        // Keep first valid reply.
+      }
+    }
+
+    return result;
   }
 
   async filterRelevance(input: RelevanceFilterInput): Promise<RelevanceFilterResult> {

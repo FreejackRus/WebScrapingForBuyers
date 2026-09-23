@@ -711,3 +711,8 @@ https://openrouter.ai/blog/tutorials/how-to-use-jev/ , https://huggingface.co/C-
 Logitech G102» → `intent:search`, `searchQuery:Logitech G102`. Push
 `115e479`.
 
+### 2026-09-24 — narrator: summary/warnings всегда по-русски
+
+Усилен SYSTEM/CHAT prompt (запрет англ. прозы / «The provided JSON…»);
+дешёвый retry при `looksStronglyEnglish`. Ранжирование не трогали.
+
