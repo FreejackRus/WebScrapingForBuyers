@@ -704,3 +704,10 @@ https://openrouter.ai/blog/tutorials/how-to-use-jev/ , https://huggingface.co/C-
 `applyChatResult` ставит query при `intent===search`. Gateway
 `POST /api/v1/copilot/chat`.
 
+### 2026-09-24 — выложено (searchQuery + hybrid relevance)
+
+Прод: analysis/gateway/web `--no-cache` build + `up --no-deps`. Chrome не
+трогали (`Up` ~56m). Smoke: `/health` → Ollama Qwen3; `POST /chat` «Найди
+Logitech G102» → `intent:search`, `searchQuery:Logitech G102`. Push
+`115e479`.
+
