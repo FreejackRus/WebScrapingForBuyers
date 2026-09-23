@@ -1,0 +1,19 @@
+---
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_identity.py"
+type: "code"
+community: "Community 30"
+location: "L23"
+tags:
+  - graphify/code
+  - graphify/EXTRACTED
+  - community/Community_30
+---
+
+# test_matching_gtin_is_exact_but_variant_conflict_is_mismatch()
+
+## Connections
+- [[ProductIdentity]] - `uses` [INFERRED]
+- [[match_product_identity()]] - `calls` [EXTRACTED]
+- [[test_identity.py]] - `contains` [EXTRACTED]
+
+#graphify/code #graphify/EXTRACTED #community/Community_30

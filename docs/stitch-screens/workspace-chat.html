@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+
+<html lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ПЕРЕМЕНА · Price Radar | Рабочее место с боковым чатом</title>
+<!-- Google Fonts: Inter & JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@500;600;700&amp;family=Public+Sans:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2569ED',
+            'primary-dark': '#1D4FC4',
+            'primary-soft': '#EAF2FF',
+            graphite: '#181C24',
+            gray: '#6F7782',
+            canvas: '#F4F6F8',
+            white: '#FFFFFF'
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            headline: ["Inter", "sans-serif"],
+            display: ["Inter", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+            label: ["Public Sans", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+      vertical-align: middle;
+      font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: rgba(37, 105, 237, 0.05);
+      border-radius: 8px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(37, 105, 237, 0.25);
+      border-radius: 8px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: rgba(37, 105, 237, 0.4);
+    }
+  </style>
+</head>
+<body class="bg-canvas text-graphite font-body antialiased min-h-screen flex flex-col selection:bg-primary-soft selection:text-primary">
+<!-- TOP APP BAR / HEADER -->
+<header class="sticky top-0 z-40 bg-white border-b border-slate-200 px-6 h-14 flex items-center justify-between shadow-xs">
+<!-- Left: Brand Logo & Product Badge -->
+<div class="flex items-center gap-3.5">
+<a aria-label="ПЕРЕМЕНА Главная" class="flex items-center focus:outline-none" href="#">
+<img alt="ПЕРЕМЕНА" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZDogwIFXWtuzRuANJOI3H3BEgzEIAOmvj-pO4Dy3eeQrTF-2_3UDXhFaB2ERsdOKOAsS2XgdC2PBdxGjnWhntXU6KpUjCozedqRXzvenY4zg5NE0rkSRENvPXHIXIpbxTtlkgqPLGeBVQpFl0akfNQXv4tlQ0VUllTbErSuC53VsHd0u68KzeoaOUh305ceSAixx2lQdl8pqLtX7A6E4p_RAZ-DO9kYxnvhPNI5WmWu5XraVgBQy69uVYbdU8J3BC2bLzcAKV1Kw"/>
+</a>
+<span class="bg-[#EAF2FF] text-primary text-xs font-bold px-2 py-0.5 rounded tracking-wide">
+        Price Radar
+      </span>
+<div class="h-4 w-px bg-slate-200 hidden sm:block"></div>
+<div class="hidden sm:flex items-center gap-1.5 text-xs text-gray font-medium">
+<span class="material-symbols-outlined text-[17px] text-gray">location_on</span>
+<span>Воронеж (ЦФО)</span>
+</div>
+</div>
+<!-- Center: Navigation Links -->
+<nav class="hidden md:flex items-center space-x-6 text-sm">
+<a class="text-primary border-b-2 border-primary font-semibold py-4 flex items-center gap-1.5 transition-colors" href="#">
+<span class="material-symbols-outlined text-[19px]">search</span>
+        Поиск
+      </a>
+<a class="text-gray hover:text-graphite font-medium py-4 transition-colors flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-[19px]">tune</span>
+        Настройки
+      </a>
+</nav>
+<!-- Right: Status chip, notifications, user avatar pill -->
+<div class="flex items-center gap-3">
+<!-- Sync Status Chip -->
+<div class="hidden lg:flex items-center gap-1.5 bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-full border border-slate-200 font-medium">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span>Синхронизировано</span>
+</div>
+<!-- Trailing Icon Action: Notifications -->
+<button class="text-gray hover:text-graphite p-1.5 rounded-lg hover:bg-slate-100 transition-colors relative" title="Уведомления">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-primary rounded-full ring-2 ring-white"></span>
+</button>
+<!-- Trailing Icon Action: Help -->
+<button class="text-gray hover:text-graphite p-1.5 rounded-lg hover:bg-slate-100 transition-colors" title="Справка">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</button>
+<!-- User Pill -->
+<div class="flex items-center gap-2 pl-2 border-l border-slate-200">
+<div class="w-8 h-8 rounded-full bg-primary-soft text-primary font-semibold text-xs flex items-center justify-center border border-blue-200 shadow-xs">
+          МС
+        </div>
+<div class="hidden xl:block text-left leading-tight">
+<div class="text-xs font-semibold text-graphite">Михаил Смирнов</div>
+<div class="text-[11px] text-gray">Отдел закупок IT</div>
+</div>
+</div>
+</div>
+</header>
+<!-- SEARCH & COMMAND SUB-BAR -->
+<div class="bg-white border-b border-slate-200 px-6 py-2.5 shadow-2xs">
+<div class="max-w-[1560px] mx-auto flex flex-col md:flex-row md:items-center justify-between gap-3">
+<!-- Search Input Box -->
+<div class="relative flex-1 max-w-2xl">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="block w-full pl-9 pr-24 py-1.5 text-sm bg-slate-50 border border-slate-200 rounded-lg text-graphite font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition" placeholder="Поиск по наименованию, MPN, вендору или ссылке..." type="text" value="Logitech G102 LIGHTSYNC Black (MPN 910-005823)"/>
+<div class="absolute inset-y-0 right-0 pr-2.5 flex items-center pointer-events-none">
+<kbd class="px-1.5 py-0.5 text-[10px] font-semibold text-gray bg-white border border-slate-200 rounded shadow-2xs">⌘K</kbd>
+</div>
+</div>
+<!-- Action Button & Suggest Chips -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
+<span class="text-xs text-gray font-medium shrink-0">Частые:</span>
+<button class="bg-primary-soft hover:bg-blue-100 text-primary text-xs font-semibold px-2.5 py-1 rounded-md transition-colors shrink-0">
+          Logitech G102 LIGHTSYNC
+        </button>
+<button class="bg-slate-100 hover:bg-slate-200 text-graphite text-xs font-medium px-2.5 py-1 rounded-md transition-colors shrink-0">
+          Logitech MX Master 3S
+        </button>
+<button class="bg-slate-100 hover:bg-slate-200 text-graphite text-xs font-medium px-2.5 py-1 rounded-md transition-colors shrink-0">
+          Клавиатура MX Keys S
+        </button>
+<button class="bg-slate-100 hover:bg-slate-200 text-graphite text-xs font-medium px-2.5 py-1 rounded-md transition-colors shrink-0">
+          Гарнитура Jabra Evolve2 40
+        </button>
+<button class="ml-1 bg-primary hover:bg-primary-dark text-white text-xs font-medium px-3.5 py-1.5 rounded-lg flex items-center gap-1.5 transition-colors shadow-xs shrink-0 active:scale-[0.99]">
+<span>Найти предложения</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- MAIN WORKSPACE CONTAINER -->
+<main class="flex-1 max-w-[1560px] w-full mx-auto px-6 py-4">
+<div class="grid grid-cols-12 gap-5 items-start">
+<!-- LEFT COLUMN (8 cols, ~68% width) -->
+<section class="col-span-12 lg:col-span-8 flex flex-col gap-4">
+<!-- 1. PRODUCT SUMMARY CARD -->
+<div class="bg-white rounded-xl border border-slate-200 p-4 shadow-xs">
+<!-- Header title, specs, and Export Button -->
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pb-3.5 border-b border-slate-100">
+<div>
+<div class="flex items-center gap-2 flex-wrap mb-1">
+<span class="bg-slate-100 text-graphite text-[11px] font-semibold px-2 py-0.5 rounded border border-slate-200 font-mono">
+                  MPN: 910-005823
+                </span>
+<span class="text-xs text-gray font-mono">EAN: 5099206086784</span>
+<span class="inline-flex items-center gap-1 bg-emerald-50 text-emerald-700 text-[11px] font-semibold px-2 py-0.5 rounded border border-emerald-200">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                  EAC Verified
+                </span>
+</div>
+<h1 class="text-lg md:text-xl font-bold font-headline text-graphite tracking-tight">
+                Logitech G102 LIGHTSYNC Optical Gaming Mouse (Black)
+              </h1>
+</div>
+<!-- Export Action Button -->
+<button class="self-start inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-300 hover:border-slate-400 hover:bg-slate-50 text-graphite text-xs font-semibold rounded-lg shadow-2xs transition-colors shrink-0">
+<span class="material-symbols-outlined text-primary text-[17px]">download</span>
+<span>Экспорт в Excel (.xlsx)</span>
+</button>
+</div>
+<!-- Metric Pills in a compact row -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-3.5">
+<div class="bg-slate-50 border border-slate-200/80 rounded-lg p-2.5">
+<span class="text-[11px] font-medium text-gray block">Всего предложений</span>
+<span class="text-base font-bold font-mono text-graphite">24 оффера</span>
+</div>
+<div class="bg-primary-soft border border-blue-200/80 rounded-lg p-2.5">
+<span class="text-[11px] font-semibold text-primary block">REAL онлайн-цены</span>
+<span class="text-base font-bold font-mono text-primary flex items-center gap-1">
+                12 проверено
+                <span class="material-symbols-outlined text-[16px]">check_circle</span>
+</span>
+</div>
+<div class="bg-slate-50 border border-slate-200/80 rounded-lg p-2.5">
+<span class="text-[11px] font-medium text-gray block">Лучшая цена</span>
+<span class="text-base font-bold font-mono text-primary">1 890 ₽</span>
+</div>
+<div class="bg-slate-50 border border-slate-200/80 rounded-lg p-2.5">
+<span class="text-[11px] font-medium text-gray block">Медиана рынка</span>
+<div class="flex items-baseline gap-1.5">
+<span class="text-base font-bold font-mono text-graphite">2 450 ₽</span>
+<span class="text-[11px] font-semibold text-emerald-600">-22% к РРЦ</span>
+</div>
+</div>
+</div>
+<!-- Information Directive Banner -->
+<div class="mt-3.5 bg-blue-50/70 border border-blue-200 rounded-lg px-3 py-2 flex items-center justify-between text-xs text-graphite">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">smart_toy</span>
+<span>
+<strong>Фильтр активен по директиве AI-копайлота:</strong> Wildberries REAL &lt; 6 000 ₽. Отображено 8 релевантных позиций.
+              </span>
+</div>
+<button class="text-primary hover:text-primary-dark font-medium underline text-xs ml-2 shrink-0">
+              Сбросить
+            </button>
+</div>
+</div>
+<!-- 2. DENSE B2B OFFERS TABLE CARD -->
+<div class="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse text-xs">
+<!-- Table Headers with Sorting -->
+<thead>
+<tr class="bg-slate-50 border-b border-slate-200 text-gray font-semibold">
+<th class="py-3 px-3 hover:bg-slate-100 cursor-pointer select-none transition-colors" scope="col">
+<div class="flex items-center gap-1">
+<span>Источник / продавец</span>
+<span class="text-slate-400 font-normal">⇅</span>
+</div>
+</th>
+<th class="py-3 px-3 hover:bg-slate-100 cursor-pointer select-none transition-colors" scope="col">
+<span>Совпадение MPN</span>
+</th>
+<th class="py-3 px-3 bg-blue-50/60 text-primary font-bold cursor-pointer select-none border-x border-blue-100" scope="col">
+<div class="flex items-center gap-1">
+<span>Цена с НДС</span>
+<span class="text-primary font-bold">↑</span>
+</div>
+</th>
+<th class="py-3 px-3 hover:bg-slate-100 cursor-pointer select-none transition-colors" scope="col">
+<div class="flex items-center gap-1">
+<span>Наличие / склад</span>
+<span class="text-slate-400 font-normal">⇅</span>
+</div>
+</th>
+<th class="py-3 px-3" scope="col">Условия и гарантия</th>
+<th class="py-3 px-3" scope="col">Срез</th>
+<th class="py-3 px-3 text-right" scope="col">Ссылка</th>
+</tr>
+</thead>
+<!-- Table Body (Strictly 8 rows) -->
+<tbody class="divide-y divide-slate-200 text-graphite">
+<!-- ROW 1: RECOMMENDED / BEST OFFER -->
+<tr class="bg-[#F8FAFF] border-l-4 border-l-primary hover:bg-blue-50/40 transition-colors">
+<td class="py-3 px-3">
+<div class="font-semibold text-graphite flex items-center gap-1.5">
+<span>Wildberries · LogiStore Direct</span>
+<span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-1.5 py-0.2 rounded">REAL</span>
+</div>
+<div class="text-[11px] text-gray flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">verified</span>
+<span>Проверенный поставщик</span>
+</div>
+</td>
+<td class="py-3 px-3 font-mono text-[11px] text-emerald-700 font-semibold">
+                    100% 910-005823
+                  </td>
+<td class="py-3 px-3 bg-blue-50/40 border-x border-blue-100 font-mono">
+<div class="text-base font-bold text-primary">1 890 ₽</div>
+<div class="text-[10px] text-gray font-sans font-medium">НДС 20% включен</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-medium text-graphite">Воронеж РЦ</div>
+<div class="text-emerald-700 text-[11px] font-semibold">18 шт., завтра</div>
+</td>
+<td class="py-3 px-3 text-gray">
+<span class="font-medium text-graphite">24 мес. СЦ</span>
+<div class="text-[10px]">Возврат 14 дней</div>
+</td>
+<td class="py-3 px-3 text-gray text-[11px]">2 мин назад</td>
+<td class="py-3 px-3 text-right">
+<a class="inline-flex items-center gap-1 bg-primary hover:bg-primary-dark text-white px-2.5 py-1.5 rounded font-semibold text-[11px] transition-colors shadow-2xs" href="#">
+<span>К офферу</span>
+<span>↗</span>
+</a>
+</td>
+</tr>
+<!-- ROW 2 -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="py-3 px-3">
+<div class="font-semibold text-graphite flex items-center gap-1.5">
+<span>Wildberries · ПрофКомплект</span>
+<span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-1.5 py-0.2 rounded">REAL</span>
+</div>
+<div class="text-[11px] text-gray">Рейтинг 4.9 · 1.4k продаж</div>
+</td>
+<td class="py-3 px-3 font-mono text-[11px] text-emerald-700 font-semibold">
+                    100% 910-005823
+                  </td>
+<td class="py-3 px-3 bg-blue-50/20 border-x border-blue-100 font-mono">
+<div class="text-sm font-bold text-graphite">1 940 ₽</div>
+<div class="text-[10px] text-gray font-sans font-medium">НДС 20%</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-medium text-graphite">Москва Коледино</div>
+<div class="text-gray text-[11px]">42 шт., 2 дня</div>
+</td>
+<td class="py-3 px-3 text-gray">
+<span class="font-medium text-graphite">12 мес.</span>
+<div class="text-[10px]">Официал</div>
+</td>
+<td class="py-3 px-3 text-gray text-[11px]">5 мин назад</td>
+<td class="py-3 px-3 text-right">
+<a class="inline-flex items-center gap-1 bg-white border border-slate-300 hover:border-primary hover:text-primary text-graphite px-2.5 py-1.5 rounded font-semibold text-[11px] transition-colors" href="#">
+<span>К офферу</span>
+<span>↗</span>
+</a>
+</td>
+</tr>
+<!-- ROW 3 -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="py-3 px-3">
+<div class="font-semibold text-graphite flex items-center gap-1.5">
+<span>Wildberries · DNS Official Seller</span>
+<span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-1.5 py-0.2 rounded">REAL</span>
+</div>
+<div class="text-[11px] text-gray">Федеральная розничная сеть</div>
+</td>
+<td class="py-3 px-3 font-mono text-[11px] text-emerald-700 font-semibold">
+                    100% 910-005823
+                  </td>
+<td class="py-3 px-3 bg-blue-50/20 border-x border-blue-100 font-mono">
+<div class="text-sm font-bold text-graphite">2 199 ₽</div>
+<div class="text-[10px] text-gray font-sans font-medium">НДС 20%</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-medium text-graphite">Воронеж Град</div>
+<div class="text-emerald-700 text-[11px] font-semibold">6 шт., сегодня</div>
+</td>
+<td class="py-3 px-3 text-gray">
+<span class="font-medium text-graphite">24 мес. АСЦ</span>
+<div class="text-[10px]">Чек с НДС</div>
+</td>
+<td class="py-3 px-3 text-gray text-[11px]">8 мин назад</td>
+<td class="py-3 px-3 text-right">
+<a class="inline-flex items-center gap-1 bg-white border border-slate-300 hover:border-primary hover:text-primary text-graphite px-2.5 py-1.5 rounded font-semibold text-[11px] transition-colors" href="#">
+<span>К офферу</span>
+<span>↗</span>
+</a>
+</td>
+</tr>
+<!-- ROW 4 -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="py-3 px-3">
+<div class="font-semibold text-graphite flex items-center gap-1.5">
+<span>Wildberries · Ресурс-Медиа</span>
+<span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-1.5 py-0.2 rounded">REAL</span>
+</div>
+<div class="text-[11px] text-gray">Дистрибьюторский сток</div>
+</td>
+<td class="py-3 px-3 font-mono text-[11px] text-emerald-700 font-semibold">
+                    100% 910-005823
+                  </td>
+<td class="py-3 px-3 bg-blue-50/20 border-x border-blue-100 font-mono">
+<div class="text-sm font-bold text-graphite">2 250 ₽</div>
+<div class="text-[10px] text-gray font-sans font-medium">НДС 20%</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-medium text-graphite">Тула ЦФО</div>
+<div class="text-gray text-[11px]">15 шт., 1-2 дня</div>
+</td>
+<td class="py-3 px-3 text-gray">
+<span class="font-medium text-graphite">12 мес. вендор</span>
+<div class="text-[10px]">ЭДО Диадок</div>
+</td>
+<td class="py-3 px-3 text-gray text-[11px]">14 мин назад</td>
+<td class="py-3 px-3 text-right">
+<a class="inline-flex items-center gap-1 bg-white border border-slate-300 hover:border-primary hover:text-primary text-graphite px-2.5 py-1.5 rounded font-semibold text-[11px] transition-colors" href="#">
+<span>К офферу</span>
+<span>↗</span>
+</a>
+</td>
+</tr>
+<!-- ROW 5 -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="py-3 px-3">
+<div class="font-semibold text-graphite flex items-center gap-1.5">
+<span>Wildberries · IT-Дистрибьюция</span>
+<span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-1.5 py-0.2 rounded">REAL</span>
+</div>
+<div class="text-[11px] text-gray">Партнер Logi Pro</div>
+</td>
+<td class="py-3 px-3 font-mono text-[11px] text-emerald-700 font-semibold">
+                    100% 910-005823
+                  </td>
+<td class="py-3 px-3 bg-blue-50/20 border-x border-blue-100 font-mono">
+<div class="text-sm font-bold text-graphite">2 310 ₽</div>
+<div class="text-[10px] text-gray font-sans font-medium">НДС 20%</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-medium text-graphite">Подольск</div>
+<div class="text-gray text-[11px]">80 шт., 2-3 дня</div>
+</td>
+<td class="py-3 px-3 text-gray">
+<span class="font-medium text-graphite">12 мес. СЦ</span>
+<div class="text-[10px]">ГТД в наличии</div>
+</td>
+<td class="py-3 px-3 text-gray text-[11px]">21 мин назад</td>
+<td class="py-3 px-3 text-right">
+<a class="inline-flex items-center gap-1 bg-white border border-slate-300 hover:border-primary hover:text-primary text-graphite px-2.5 py-1.5 rounded font-semibold text-[11px] transition-colors" href="#">
+<span>К офферу</span>
+<span>↗</span>
+</a>
+</td>
+</tr>
+<!-- ROW 6: DEMO / B2B PORTAL -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="py-3 px-3">
+<div class="font-semibold text-graphite flex items-center gap-1.5">
+<span>MERLION B2B Portal</span>
+<span class="bg-slate-100 text-slate-600 text-[10px] font-bold px-1.5 py-0.2 rounded border border-slate-200">DEMO</span>
+</div>
+<div class="text-[11px] text-gray">API интегратор</div>
+</td>
+<td class="py-3 px-3 font-mono text-[11px] text-slate-600 font-medium">
+                    100% ОЕМ-партия
+                  </td>
+<td class="py-3 px-3 bg-blue-50/20 border-x border-blue-100 font-mono">
+<div class="text-sm font-bold text-graphite">1 720 ₽</div>
+<div class="text-[10px] text-gray font-sans font-medium">Безнал опт от 20 шт</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-medium text-graphite">ЦС Merlion МО</div>
+<div class="text-gray text-[11px]">&gt;100 шт., 3 дня</div>
+</td>
+<td class="py-3 px-3 text-gray">
+<span class="font-medium text-graphite">24 мес.</span>
+<div class="text-[10px]">Договор поставки</div>
+</td>
+<td class="py-3 px-3 text-gray text-[11px]">Снапшот 09:00</td>
+<td class="py-3 px-3 text-right">
+<button class="inline-flex items-center gap-1 bg-slate-100 hover:bg-slate-200 text-graphite px-2.5 py-1.5 rounded font-medium text-[11px] transition-colors">
+<span>Запросить счет</span>
+</button>
+</td>
+</tr>
+<!-- ROW 7: DEMO -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="py-3 px-3">
+<div class="font-semibold text-graphite flex items-center gap-1.5">
+<span>NETLAB B2B</span>
+<span class="bg-slate-100 text-slate-600 text-[10px] font-bold px-1.5 py-0.2 rounded border border-slate-200">DEMO</span>
+</div>
+<div class="text-[11px] text-gray">Оптовый хаб</div>
+</td>
+<td class="py-3 px-3 font-mono text-[11px] text-slate-600 font-medium">
+                    100% 910-005823
+                  </td>
+<td class="py-3 px-3 bg-blue-50/20 border-x border-blue-100 font-mono">
+<div class="text-sm font-bold text-graphite">1 780 ₽</div>
+<div class="text-[10px] text-gray font-sans font-medium">Партия от 10 шт</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-medium text-graphite">Хаб Тула</div>
+<div class="text-gray text-[11px]">35 шт., 2 дня</div>
+</td>
+<td class="py-3 px-3 text-gray">
+<span class="font-medium text-graphite">12 мес.</span>
+<div class="text-[10px]">Спеццена</div>
+</td>
+<td class="py-3 px-3 text-gray text-[11px]">Снапшот 08:30</td>
+<td class="py-3 px-3 text-right">
+<button class="inline-flex items-center gap-1 bg-slate-100 hover:bg-slate-200 text-graphite px-2.5 py-1.5 rounded font-medium text-[11px] transition-colors">
+<span>Запросить счет</span>
+</button>
+</td>
+</tr>
+<!-- ROW 8: DEMO -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="py-3 px-3">
+<div class="font-semibold text-graphite flex items-center gap-1.5">
+<span>OCS Distribution</span>
+<span class="bg-slate-100 text-slate-600 text-[10px] font-bold px-1.5 py-0.2 rounded border border-slate-200">DEMO</span>
+</div>
+<div class="text-[11px] text-gray">Проектный канал</div>
+</td>
+<td class="py-3 px-3 font-mono text-[11px] text-slate-600 font-medium">
+                    100% Официальная поставка
+                  </td>
+<td class="py-3 px-3 bg-blue-50/20 border-x border-blue-100 font-mono">
+<div class="text-sm font-bold text-graphite">1 810 ₽</div>
+<div class="text-[10px] text-gray font-sans font-medium">Пакет 44-ФЗ</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-medium text-graphite">Воронеж Партнер</div>
+<div class="text-gray text-[11px]">Резерв 12 шт.</div>
+</td>
+<td class="py-3 px-3 text-gray">
+<span class="font-medium text-graphite">24 мес. оф.</span>
+<div class="text-[10px]">Комплект ГОСТ</div>
+</td>
+<td class="py-3 px-3 text-gray text-[11px]">Снапшот 10:15</td>
+<td class="py-3 px-3 text-right">
+<button class="inline-flex items-center gap-1 bg-slate-100 hover:bg-slate-200 text-graphite px-2.5 py-1.5 rounded font-medium text-[11px] transition-colors">
+<span>Запросить счет</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination Footer -->
+<div class="px-4 py-3 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+<span class="text-gray font-medium">
+              Показано <strong>1–8</strong> из <strong>24</strong> предложений (фильтр: WB REAL &lt; 6 000 ₽)
+            </span>
+<div class="inline-flex items-center space-x-1">
+<button class="px-2.5 py-1 rounded border border-slate-200 bg-white text-slate-400 font-medium cursor-not-allowed" disabled="">
+                Предыдущая
+              </button>
+<button class="px-3 py-1 rounded bg-primary text-white font-semibold">
+                1
+              </button>
+<button class="px-3 py-1 rounded border border-slate-200 bg-white text-graphite font-medium hover:bg-slate-100">
+                2
+              </button>
+<button class="px-3 py-1 rounded border border-slate-200 bg-white text-graphite font-medium hover:bg-slate-100">
+                3
+              </button>
+<button class="px-2.5 py-1 rounded border border-slate-200 bg-white text-graphite font-medium hover:bg-slate-100">
+                Следующая
+              </button>
+</div>
+</div>
+</div>
+</section>
+<!-- RIGHT COLUMN: AI COPILOT SIDE CHAT PANEL (4 cols, ~32% width) -->
+<aside class="col-span-12 lg:col-span-4 lg:sticky lg:top-20">
+<div class="bg-[#EAF2FF] border border-[#BFDBFE] rounded-xl p-4 shadow-sm flex flex-col h-[740px]">
+<!-- Top Bar -->
+<div class="pb-3 border-b border-blue-200/80">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">smart_toy</span>
+<span class="font-bold text-graphite text-sm">AI-копайлот закупок</span>
+</div>
+<div class="flex items-center gap-1.5 bg-white px-2 py-0.5 rounded-full border border-blue-200 text-[10px] font-semibold text-graphite shadow-2xs">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span>Закрытый контур Qwen3-32B</span>
+</div>
+</div>
+<div class="text-xs text-gray mt-1">
+              Анализ офферов и комплаенс 44-ФЗ / 223-ФЗ
+            </div>
+</div>
+<!-- Chat Messages Scroll Area -->
+<div class="flex-1 overflow-y-auto custom-scrollbar py-3.5 space-y-3.5 pr-1">
+<!-- User Bubble -->
+<div class="flex flex-col items-end ml-6">
+<div class="bg-white rounded-xl p-3 border border-blue-100 shadow-2xs text-xs text-graphite leading-relaxed">
+                Оставь только реальные WB дешевле 6000
+                <span class="text-[10px] text-gray block text-right mt-1 font-mono">12:44</span>
+</div>
+</div>
+<!-- Assistant Bubble -->
+<div class="flex flex-col items-start mr-2">
+<div class="bg-white/95 backdrop-blur-xs rounded-xl p-3.5 border border-blue-200/80 shadow-xs text-xs text-graphite leading-relaxed space-y-2.5">
+<p>
+                  Применил фильтрацию в таблице слева: оставил 5 подтвержденных офферов от Wildberries со статусом <strong class="text-emerald-700 font-bold">REAL</strong> и ценой до 6 000 ₽.
+                </p>
+<div class="bg-blue-50/60 p-2.5 rounded-lg border border-blue-100 space-y-2">
+<div class="font-semibold text-graphite">Лучшие варианты в наличии:</div>
+<ul class="space-y-1.5 pl-1">
+<li class="flex items-start gap-1.5">
+<span class="text-primary font-bold">•</span>
+<span>
+<a class="text-primary underline font-semibold hover:text-primary-dark" href="#">
+                          Wildberries · LogiStore, 1 890 ₽ — открыть
+                        </a>
+<span class="text-[11px] text-gray block">18 шт. в Воронеже, доставка 24 ч, риск 0%</span>
+</span>
+</li>
+<li class="flex items-start gap-1.5">
+<span class="text-primary font-bold">•</span>
+<span>
+<a class="text-primary underline font-semibold hover:text-primary-dark" href="#">
+                          Wildberries · ПрофКомплект, 1 940 ₽ — открыть
+                        </a>
+<span class="text-[11px] text-gray block">42 шт. в Коледино, 2 дня</span>
+</span>
+</li>
+<li class="flex items-start gap-1.5">
+<span class="text-primary font-bold">•</span>
+<span>
+<a class="text-primary underline font-semibold hover:text-primary-dark" href="#">
+                          Wildberries · DNS, 2 199 ₽ — открыть
+                        </a>
+<span class="text-[11px] text-gray block">самовывоз в Воронеже сегодня</span>
+</span>
+</li>
+</ul>
+</div>
+<p class="text-gray text-[11px]">
+                  Таблица слева автоматически отфильтрована и отсортирована по возрастанию цены с НДС.
+                </p>
+<div class="pt-1 flex items-center justify-between border-t border-slate-100 text-[10px] text-gray font-mono">
+<span>Ответ сформирован за 0.38 сек</span>
+<span>12:44</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Quick Prompts Chips -->
+<div class="pt-2 pb-2.5 border-t border-blue-200/80">
+<div class="text-[11px] text-gray font-medium mb-1.5">Быстрые команды:</div>
+<div class="flex flex-wrap gap-1.5">
+<button class="bg-white hover:bg-blue-50 text-graphite hover:text-primary text-[11px] font-medium px-2 py-1 rounded-md border border-blue-200 transition-colors shadow-2xs">
+                ⚡ Только REAL
+              </button>
+<button class="bg-white hover:bg-blue-50 text-graphite hover:text-primary text-[11px] font-medium px-2 py-1 rounded-md border border-blue-200 transition-colors shadow-2xs">
+                📊 Сравни топ-3
+              </button>
+<button class="bg-white hover:bg-blue-50 text-graphite hover:text-primary text-[11px] font-medium px-2 py-1 rounded-md border border-blue-200 transition-colors shadow-2xs">
+                🔍 Уточни модель G102
+              </button>
+<button class="bg-white hover:bg-blue-50 text-graphite hover:text-primary text-[11px] font-medium px-2 py-1 rounded-md border border-blue-200 transition-colors shadow-2xs">
+                📑 Сформировать НМЦК
+              </button>
+</div>
+</div>
+<!-- Composer Input Area -->
+<div class="pt-2">
+<div class="relative bg-white rounded-lg border border-blue-300 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 shadow-xs transition-all">
+<input class="w-full text-xs text-graphite bg-transparent px-3 py-2.5 pr-10 border-0 focus:outline-none focus:ring-0 placeholder:text-gray" placeholder="Спросить копайлот или дать команду фильтра..." type="text"/>
+<button class="absolute right-1.5 top-1.5 bottom-1.5 px-2 bg-primary hover:bg-primary-dark text-white rounded flex items-center justify-center transition-colors active:scale-95" title="Отправить запрос">
+<span class="material-symbols-outlined text-[17px]">arrow_forward</span>
+</button>
+</div>
+<!-- Security Microcopy -->
+<div class="flex items-center gap-1 mt-2 text-[10px] text-gray justify-center">
+<span class="material-symbols-outlined text-[13px] text-emerald-600">lock</span>
+<span>Локальный инференс vLLM без передачи данных во внешние облака</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- FOOTER -->
+<footer class="mt-auto bg-white border-t border-slate-200 py-3 px-6 text-center text-xs text-gray">
+<div class="max-w-[1560px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+<div>
+        ГК «Перемена» · Платформа мониторинга цен Price Radar Enterprise v2.6.4 · Воронежский филиал
+      </div>
+<div class="flex items-center gap-4 text-[11px]">
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          Шлюз онлайн-маркетплейсов активен
+        </span>
+<a class="hover:underline text-gray hover:text-graphite" href="#">Регламент закупок</a>
+<a class="hover:underline text-gray hover:text-graphite" href="#">Техподдержка</a>
+</div>
+</div>
+</footer>
+</body></html>

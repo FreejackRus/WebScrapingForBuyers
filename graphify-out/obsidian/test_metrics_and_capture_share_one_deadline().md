@@ -1,0 +1,19 @@
+---
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_snapshot.py"
+type: "code"
+community: "Community 69"
+location: "L134"
+tags:
+  - graphify/code
+  - graphify/INFERRED
+  - community/Community_69
+---
+
+# test_metrics_and_capture_share_one_deadline()
+
+## Connections
+- [[delayed()]] - `indirect_call` [INFERRED]
+- [[record_timeout()]] - `indirect_call` [INFERRED]
+- [[test_chrome_cdp_snapshot.py]] - `contains` [EXTRACTED]
+
+#graphify/code #graphify/INFERRED #community/Community_69

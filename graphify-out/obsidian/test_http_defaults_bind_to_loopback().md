@@ -1,0 +1,18 @@
+---
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py"
+type: "code"
+community: "Community 26"
+location: "L81"
+tags:
+  - graphify/code
+  - graphify/EXTRACTED
+  - community/Community_26
+---
+
+# test_http_defaults_bind_to_loopback()
+
+## Connections
+- [[HTTP with no hostport set must default to 127.0.0.1 — never 0.0.0.0. Auth is…]] - `rationale_for` [EXTRACTED]
+- [[test_runtime.py]] - `contains` [EXTRACTED]
+
+#graphify/code #graphify/EXTRACTED #community/Community_26

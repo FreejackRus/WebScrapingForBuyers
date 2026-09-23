@@ -1,0 +1,18 @@
+---
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_errors.py"
+type: "code"
+community: "Community 244"
+location: "L15"
+tags:
+  - graphify/code
+  - graphify/EXTRACTED
+  - community/Community_244
+---
+
+# test_retained_challenge_has_explicit_expiry()
+
+## Connections
+- [[ChallengeRequiredError]] - `uses` [INFERRED]
+- [[test_errors.py]] - `contains` [EXTRACTED]
+
+#graphify/code #graphify/EXTRACTED #community/Community_244

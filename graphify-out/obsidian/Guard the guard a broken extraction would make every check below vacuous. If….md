@@ -1,0 +1,17 @@
+---
+source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_dependency_parity.py"
+type: "rationale"
+community: "Community 100"
+location: "L116"
+tags:
+  - graphify/rationale
+  - graphify/EXTRACTED
+  - community/Community_100
+---
+
+# Guard the guard: a broken extraction would make every check below vacuous. If…
+
+## Connections
+- [[test_the_mounts_table_was_read()]] - `rationale_for` [EXTRACTED]
+
+#graphify/rationale #graphify/EXTRACTED #community/Community_100

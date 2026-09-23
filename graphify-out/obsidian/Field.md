@@ -1,0 +1,18 @@
+---
+source_file: ""
+type: "code"
+community: "Community 10"
+tags:
+  - graphify/code
+  - graphify/EXTRACTED
+  - community/Community_10
+---
+
+# Field
+
+## Connections
+- [[avito_card()]] - `references` [EXTRACTED]
+- [[avito_search()]] - `references` [EXTRACTED]
+- [[avito_seller()]] - `references` [EXTRACTED]
+
+#graphify/code #graphify/EXTRACTED #community/Community_10

@@ -1,0 +1,20 @@
+---
+source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py"
+type: "code"
+community: "Community 264"
+location: "L20"
+tags:
+  - graphify/code
+  - graphify/EXTRACTED
+  - community/Community_264
+---
+
+# offline_cdp_probe()
+
+## Connections
+- [[Even successful doctor runs must not depend on a local Chrome session.]] - `rationale_for` [EXTRACTED]
+- [[fake_probe()]] - `indirect_call` [INFERRED]
+- [[fixture_16]] - `references` [EXTRACTED]
+- [[test_cli.py]] - `contains` [EXTRACTED]
+
+#graphify/code #graphify/EXTRACTED #community/Community_264

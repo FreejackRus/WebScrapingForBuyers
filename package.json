@@ -1,0 +1,25 @@
+{
+  "name": "peremena-price-radar",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "predev": "npm run build -w @peremena/contracts && npm run build -w @peremena/service-kit",
+    "dev": "concurrently -n gateway,identity,search,analysis,web -c blue,magenta,cyan,yellow,green \"npm run dev -w @peremena/gateway\" \"npm run dev -w @peremena/identity\" \"npm run dev -w @peremena/search\" \"npm run dev -w @peremena/analysis\" \"npm run dev -w @peremena/web\"",
+    "build": "npm run build -w @peremena/contracts && npm run build -w @peremena/service-kit && npm run build -w @peremena/identity && npm run build -w @peremena/search && npm run build -w @peremena/analysis && npm run build -w @peremena/gateway && npm run build -w @peremena/web",
+    "pretest": "npm run build -w @peremena/contracts && npm run build -w @peremena/service-kit",
+    "test": "npm run test --workspaces --if-present",
+    "pretypecheck": "npm run build -w @peremena/contracts && npm run build -w @peremena/service-kit",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "typescript": "^5.9.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

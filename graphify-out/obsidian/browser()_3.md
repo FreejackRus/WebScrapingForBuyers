@@ -1,0 +1,19 @@
+---
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py"
+type: "code"
+community: "Community 6"
+location: "L19"
+tags:
+  - graphify/code
+  - graphify/EXTRACTED
+  - community/Community_6
+---
+
+# browser()
+
+## Connections
+- [[fixture_25]] - `references` [EXTRACTED]
+- [[mcp-coreteststest_browser_handoff.py]] - `contains` [EXTRACTED]
+- [[open_page()_4]] - `indirect_call` [INFERRED]
+
+#graphify/code #graphify/EXTRACTED #community/Community_6

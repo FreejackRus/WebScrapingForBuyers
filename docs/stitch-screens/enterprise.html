@@ -1,0 +1,834 @@
+<!DOCTYPE html><html class="h-full bg-[#F4F6F8]" lang="ru" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>ПЕРЕМЕНА · Price Radar Enterprise v2.6</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#2569ED',
+              50: '#F4F8FF',
+              100: '#EAF2FF',
+              200: '#C7DCFE',
+              300: '#94BEFD',
+              400: '#5A9BFB',
+              500: '#2569ED',
+              600: '#1D4FC4',
+              700: '#173DA3',
+              800: '#142F7F',
+              900: '#112563',
+            },
+            primary: {
+              DEFAULT: '#2569ED',
+              dark: '#1D4FC4',
+              soft: '#EAF2FF',
+            },
+            graphite: '#181C24',
+            graytext: '#6F7782',
+            canvas: '#F4F6F8',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          boxShadow: {
+            'xs': '0 1px 2px 0 rgba(24, 28, 36, 0.04)',
+            'card': '0 1px 3px 0 rgba(24, 28, 36, 0.05), 0 1px 2px -1px rgba(24, 28, 36, 0.04)',
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 450, 'GRAD' 0, 'opsz' 20;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      height: 5px;
+      width: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #F4F6F8;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #94A3B8;
+    }
+  </style>
+</head>
+<body class="min-h-full font-sans text-graphite bg-[#F4F6F8] flex flex-col antialiased selection:bg-[#2569ED] selection:text-white">
+<!-- 1. ШАПКА (Header & Navigation - PEREMENA Digital style) -->
+<header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-xs py-2.5">
+<div class="max-w-[1600px] h-full mx-auto px-4 sm:px-6 flex items-center justify-between">
+<!-- Brand & Global Nav -->
+<div class="flex items-center gap-8">
+<!-- Logo -->
+<a class="flex items-center gap-2.5 group" href="#"><div class="flex items-center gap-3"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCITH9coK4enGSSAt80C59ZUCapOW-VYomOBuOvX7WmL9s3oBb9TKiCIo36JATtvOAa7bUSJBoetttxy55EGO-Uy9ZzkUYpqiDbHkAcrdcidOW7pXm3o5I_tW6GlkklsDdAcmY8TlcC1vAXIoXdT-u4ZgI3gI1rYtUFf6p9Q_DAUa8chDeif5dGeWkSDopHEEggIRyaQEXB3W6GQsBXmovDdCRooT_osGjVXTNNYM7rN004uNbX5IS8xHxYvgf8wwAea9P64E_G6Sw" alt="ПЕРЕМЕНА" class="h-7 w-auto object-contain shrink-0"><span class="text-xs font-semibold px-2 py-0.5 rounded bg-slate-100 text-[#6F7782] border border-slate-200 font-mono">Enterprise v2.6</span></div></a>
+<!-- Navigation Links -->
+<nav class="hidden lg:flex items-center space-x-1 text-xs font-medium">
+<a class="px-3 py-1.5 rounded-md text-[#2569ED] bg-[#EAF2FF] font-semibold flex items-center gap-1.5" href="#">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2569ED]"></span>
+            Мониторинг цен
+          </a>
+<a class="px-3 py-1.5 rounded-md text-[#181C24] hover:text-[#2569ED] hover:bg-slate-100/70 transition" href="#">Каталог MPN</a>
+<a class="px-3 py-1.5 rounded-md text-[#181C24] hover:text-[#2569ED] hover:bg-slate-100/70 transition" href="#">Поставщики ЦФО</a>
+<a class="px-3 py-1.5 rounded-md text-[#181C24] hover:text-[#2569ED] hover:bg-slate-100/70 transition" href="#">История парсинга</a>
+<a class="px-3 py-1.5 rounded-md text-[#181C24] hover:text-[#2569ED] hover:bg-slate-100/70 transition" href="#">Аналитика 44-ФЗ</a>
+</nav>
+</div>
+<!-- Right Controls & User Info -->
+<div class="flex items-center gap-3">
+<!-- Region Dropdown -->
+<div class="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 rounded-md border border-slate-200 bg-slate-50 hover:bg-slate-100/80 transition cursor-pointer text-xs text-[#181C24] font-medium">
+<span class="material-symbols-outlined text-[#6F7782] text-base">near_me</span>
+<span class="">Регион: <strong class="text-[#181C24] font-semibold">Воронеж (ЦФО)</strong></span>
+<span class="material-symbols-outlined text-slate-400 text-sm">expand_more</span>
+</div>
+<!-- Sync Status -->
+<div class="hidden md:flex items-center gap-2 px-2.5 py-1.5 rounded-md border border-slate-200 bg-white text-xs text-[#6F7782]">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-[#2569ED]"></span>
+</span>
+<span class="font-mono text-[11px] text-[#6F7782]">Синхр: 12:44:02</span>
+<button class="text-[#6F7782] hover:text-[#2569ED] transition ml-0.5" title="Принудительная синхронизация">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+</button>
+</div>
+<!-- Notification Bell -->
+<button class="relative w-8 h-8 rounded-md border border-slate-200 bg-white hover:bg-slate-50 text-[#181C24] flex items-center justify-center transition" title="Оповещения">
+<span class="material-symbols-outlined text-[18px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-1.5 h-1.5 bg-[#2569ED] rounded-full"></span>
+</button>
+<div class="h-4 w-px bg-slate-200"></div>
+<!-- User Profile Pill -->
+<div class="flex items-center gap-2.5 pl-1 cursor-pointer">
+<div class="w-8 h-8 rounded-full bg-[#181C24] text-white flex items-center justify-center text-xs font-semibold ring-2 ring-[#EAF2FF]">
+            МС
+          </div>
+<div class="hidden xl:flex flex-col text-left">
+<span class="text-xs font-semibold text-[#181C24] leading-tight">М. Смирнов</span>
+<span class="text-[10px] text-[#6F7782] leading-tight">Отдел закупок IT</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- MAIN CONTAINER -->
+<main class="max-w-[1600px] w-full mx-auto px-4 sm:px-6 py-5 flex-1 flex flex-col gap-4">
+<!-- 2. СТРОГИЙ ПОИСКОВО-ФИЛЬТРОВЫЙ БЛОК & КАРТОЧКА MPN -->
+<section class="bg-white border border-slate-200 rounded-xl p-4 shadow-card">
+<!-- Top unified search bar -->
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center gap-2.5 pb-4 border-b border-slate-100">
+<!-- Search Input -->
+<div class="relative flex-1">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 material-symbols-outlined text-lg">search</span>
+<input class="w-full h-10 pl-9 pr-20 text-xs rounded-lg border border-slate-200 bg-slate-50/50 text-[#181C24] font-medium placeholder-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2569ED]/20 focus:border-[#2569ED] transition" placeholder="Поиск по артикулу MPN, наименованию или вендору..." type="text" value="мышь Logitech">
+<span class="absolute right-2.5 top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded border border-slate-200 bg-white text-[10px] font-mono text-slate-400 pointer-events-none">
+            ⌘K
+          </span>
+</div>
+<!-- Filter Selects & Actions in unified row -->
+<div class="flex flex-wrap items-center gap-2">
+<!-- Category -->
+<div class="relative">
+<select class="h-10 pl-3 pr-8 text-xs rounded-lg border border-slate-200 bg-white text-[#181C24] font-medium focus:outline-none focus:border-[#2569ED] focus:ring-1 focus:ring-[#2569ED] cursor-pointer">
+<option>Периферия и манипуляторы</option>
+<option>Сетевое оборудование</option>
+<option>Серверные комплектующие</option>
+</select>
+</div>
+<!-- Delivery -->
+<div class="relative">
+<select class="h-10 pl-3 pr-8 text-xs rounded-lg border border-slate-200 bg-white text-[#181C24] font-medium focus:outline-none focus:border-[#2569ED] focus:ring-1 focus:ring-[#2569ED] cursor-pointer">
+<option>Срок: До 3 дней (Воронеж)</option>
+<option>Срок: В наличии сегодня</option>
+<option>Срок: До 7 дней</option>
+</select>
+</div>
+<!-- VAT Button Toggle -->
+<button class="h-10 px-3 rounded-lg border border-[#2569ED]/30 bg-[#EAF2FF] text-[#2569ED] text-xs font-semibold flex items-center gap-1.5 hover:bg-[#2569ED]/15 transition">
+<span class="material-symbols-outlined text-[16px] text-[#2569ED]">check_circle</span>
+<span class="">С НДС 20%</span>
+</button>
+<!-- Primary CTA Button -->
+<button class="h-10 px-4 bg-[#2569ED] hover:bg-[#1D4FC4] text-white font-semibold text-xs rounded-lg flex items-center gap-2 transition shadow-xs">
+<span class="material-symbols-outlined text-[18px]">radar</span>
+<span class="">Найти предложения</span>
+</button>
+</div>
+</div>
+<!-- Current Selected MPN Summary Detail -->
+<div class="pt-3.5 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="flex items-start gap-3.5">
+<div class="w-12 h-12 rounded-lg bg-[#EAF2FF] border border-blue-100 flex items-center justify-center shrink-0 text-[#2569ED]">
+<span class="material-symbols-outlined text-2xl">mouse</span>
+</div>
+<div class="space-y-1">
+<div class="flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-[#EAF2FF] text-[#2569ED] border border-blue-200">
+<span class="material-symbols-outlined text-xs text-[#2569ED]">verified</span>
+                Верифицированная позиция
+              </span>
+<span class="text-xs font-mono font-semibold bg-slate-100 text-[#181C24] px-2 py-0.5 rounded border border-slate-200">
+                MPN: 910-006559
+              </span>
+<span class="text-xs font-mono text-[#6F7782]">
+                EAN: 5099206103726
+              </span>
+</div>
+<h1 class="text-sm sm:text-base font-bold text-[#181C24] tracking-tight">
+              Logitech MX Master 3S Graphite Performance Wireless Mouse
+            </h1>
+<!-- Spec tags -->
+<div class="flex flex-wrap items-center gap-1.5 pt-0.5 text-xs">
+<span class="px-2 py-0.5 rounded bg-slate-50 border border-slate-200 text-[#6F7782] text-[11px]">Датчик Darkfield 8000 DPI</span>
+<span class="px-2 py-0.5 rounded bg-slate-50 border border-slate-200 text-[#6F7782] text-[11px]">Тихие клики Quiet Clicks</span>
+<span class="px-2 py-0.5 rounded bg-slate-50 border border-slate-200 text-[#6F7782] text-[11px]">Bluetooth / Logi Bolt</span>
+<span class="px-2 py-0.5 rounded bg-slate-50 border border-slate-200 text-[#6F7782] text-[11px]">USB Type-C Fast Charge</span>
+<span class="px-2 py-0.5 rounded bg-slate-50 border border-slate-200 text-[#6F7782] text-[11px]">Эргономика под правую руку</span>
+<span class="px-2 py-0.5 rounded bg-slate-50 border border-slate-200 text-[#6F7782] text-[11px]">До 70 дней работы</span>
+</div>
+</div>
+</div>
+<!-- Right Quick Stats & Switcher -->
+<div class="flex flex-row lg:flex-col items-center lg:items-end justify-between lg:justify-center gap-2 border-t lg:border-t-0 pt-3 lg:pt-0 shrink-0">
+<button class="h-7 px-2.5 rounded-md border border-slate-200 hover:bg-slate-50 text-[#181C24] text-xs font-medium flex items-center gap-1.5 transition">
+<span class="material-symbols-outlined text-sm text-[#6F7782]">swap_horiz</span>
+<span class="">Сменить модель (Alt+M)</span>
+</button>
+<div class="text-xs text-right">
+<span class="text-[#6F7782]">Медиана рынка за 30 дней:</span>
+<span class="font-mono font-bold text-[#181C24] ml-1.5">9 850 ₽</span>
+<span class="inline-flex items-center text-[#2569ED] font-semibold ml-1.5">
+<span class="material-symbols-outlined text-xs">trending_down</span>
+              -4.2%
+            </span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. КАНАЛЫ АГРЕГАЦИИ И СТАТУС КОННЕКТОРОВ (7 Channels Grid) -->
+<section class="bg-white border border-slate-200 rounded-xl p-4 shadow-card">
+<div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold uppercase tracking-wider text-[#181C24]">Каналы агрегации и статус коннекторов</span>
+<span class="w-2 h-2 rounded-full bg-[#2569ED]"></span>
+</div>
+<span class="text-[11px] font-mono text-[#6F7782]">Срез парсинга: 12:44:02 (MSK)</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-7 gap-3">
+<!-- 1. Wildberries -->
+<div class="h-28 rounded-lg border border-blue-200 bg-[#EAF2FF]/60 p-2.5 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-semibold text-xs text-[#181C24]">Wildberries</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-[#2569ED] text-white">УСПЕХ</span>
+</div>
+<div>
+<div class="text-xs font-bold text-[#181C24] font-mono">12 офферов</div>
+<div class="text-[10px] text-[#2569ED] font-medium">Обновлено 4 сек назад</div>
+</div>
+<div class="text-[10px] font-mono text-[#6F7782]">Headless worker #2</div>
+</div>
+<!-- 2. Yandex Market -->
+<div class="h-28 rounded-lg border border-rose-200 bg-rose-50/50 p-2.5 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-semibold text-xs text-[#181C24]">Яндекс Маркет</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-rose-100 text-rose-800 border border-rose-300">503 ШЛЮЗ</span>
+</div>
+<div>
+<div class="text-xs font-semibold text-rose-950">Таймаут шлюза API</div>
+<div class="text-[10px] text-rose-700">Задержка &gt; 8000ms</div>
+</div>
+<button class="w-full h-6 text-[10px] font-medium bg-white hover:bg-rose-100 text-rose-900 rounded border border-rose-200 transition flex items-center justify-center gap-1 shadow-xs">
+<span class="material-symbols-outlined text-[12px]">refresh</span>
+<span class="">Повторить запрос</span>
+</button>
+</div>
+<!-- 3. Ozon -->
+<div class="h-28 rounded-lg border border-amber-200 bg-amber-50/50 p-2.5 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-semibold text-xs text-[#181C24]">Ozon</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-300">WAF БЛОК</span>
+</div>
+<div>
+<div class="text-xs font-semibold text-amber-950">Лимит сессий CF</div>
+<div class="text-[10px] text-amber-700">429 Too Many Requests</div>
+</div>
+<button class="w-full h-6 text-[10px] font-medium bg-white hover:bg-amber-100 text-amber-950 rounded border border-amber-200 transition flex items-center justify-center gap-1 shadow-xs">
+<span class="material-symbols-outlined text-[12px]">alt_route</span>
+<span class="">Сменить IP/Прокси</span>
+</button>
+</div>
+<!-- 4. DNS -->
+<div class="h-28 rounded-lg border border-slate-300 bg-slate-50 p-2.5 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-semibold text-xs text-[#181C24]">DNS Ритейл</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-slate-200 text-[#181C24] border border-slate-300">КАПЧА</span>
+</div>
+<div>
+<div class="text-xs font-semibold text-[#181C24]">Требуется решение</div>
+<div class="text-[10px] text-[#6F7782]">SmartCaptcha на карточке</div>
+</div>
+<button class="w-full h-6 text-[10px] font-medium bg-white hover:bg-slate-100 text-[#181C24] rounded border border-slate-300 transition flex items-center justify-center gap-1 shadow-xs">
+<span class="material-symbols-outlined text-[12px]">open_in_browser</span>
+<span class="">Пройти в окне</span>
+</button>
+</div>
+<!-- 5. MERLION -->
+<div class="h-28 rounded-lg border border-slate-200 bg-slate-50/70 p-2.5 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-semibold text-xs text-[#181C24]">MERLION</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-[#EAF2FF] text-[#2569ED] border border-blue-200">ДЕМО-ФИД</span>
+</div>
+<div>
+<div class="text-xs font-medium text-[#181C24]">Пакетный снапшот API</div>
+<div class="text-[10px] text-[#6F7782]">Дистрибьютор B2B</div>
+</div>
+<div class="text-[10px] font-mono text-slate-400">Синхр: 09:00 MSK</div>
+</div>
+<!-- 6. NETLAB -->
+<div class="h-28 rounded-lg border border-slate-200 bg-slate-50/70 p-2.5 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-semibold text-xs text-[#181C24]">NETLAB</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-[#EAF2FF] text-[#2569ED] border border-blue-200">ДЕМО-ФИД</span>
+</div>
+<div>
+<div class="text-xs font-medium text-[#181C24]">Прайс-лист дистриб.</div>
+<div class="text-[10px] text-[#6F7782]">Оптовый склад РФ</div>
+</div>
+<div class="text-[10px] font-mono text-slate-400">Синхр: 08:30 MSK</div>
+</div>
+<!-- 7. OCS Distribution -->
+<div class="h-28 rounded-lg border border-slate-200 bg-slate-50/70 p-2.5 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-semibold text-xs text-[#181C24]">OCS Distr.</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-[#EAF2FF] text-[#2569ED] border border-blue-200">ДЕМО-ФИД</span>
+</div>
+<div>
+<div class="text-xs font-medium text-[#181C24]">Шлюз EDI B2B</div>
+<div class="text-[10px] text-[#6F7782]">Прямой каталог</div>
+</div>
+<div class="text-[10px] font-mono text-slate-400">Синхр: 10:15 MSK</div>
+</div>
+</div>
+</section>
+<!-- 4. KPI МЕТРИКИ (4 карточки в единой сетке) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+<!-- KPI 1 -->
+<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-card flex flex-col justify-between">
+<div class="flex items-center justify-between text-[#6F7782] text-xs">
+<span class="font-medium">Всего предложений</span>
+<span class="material-symbols-outlined text-slate-400 text-lg">inventory_2</span>
+</div>
+<div class="my-2 flex items-baseline gap-2">
+<span class="text-3xl font-mono font-bold text-[#181C24] tracking-tight">38</span>
+<span class="text-xs text-[#6F7782]">офферов в пуле</span>
+</div>
+<div class="text-[11px] text-[#6F7782] truncate">Включая склады авторизованных дистрибьюторов</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-card flex flex-col justify-between">
+<div class="flex items-center justify-between text-[#6F7782] text-xs">
+<span class="font-medium">Валидные онлайн-цены</span>
+<span class="material-symbols-outlined text-[#2569ED] text-lg">cloud_done</span>
+</div>
+<div class="my-2 flex items-baseline gap-2">
+<span class="text-3xl font-mono font-bold text-[#2569ED] tracking-tight">12</span>
+<span class="text-xs text-[#2569ED] font-medium">позиций валидировано</span>
+</div>
+<div class="text-[11px] text-[#6F7782] truncate">Wildberries: проверенные продавцы с НДС</div>
+</div>
+<!-- KPI 3 (Hero Best Price in brand blue) -->
+<div class="bg-[#EAF2FF] border border-blue-200 rounded-xl p-4 shadow-card flex flex-col justify-between">
+<div class="flex items-center justify-between text-[#181C24] text-xs">
+<span class="font-semibold text-[#181C24]">Лучшая подтвержденная цена</span>
+<span class="material-symbols-outlined text-[#2569ED] text-lg">savings</span>
+</div>
+<div class="my-2 flex items-baseline gap-2">
+<span class="text-3xl font-mono font-bold text-[#2569ED] tracking-tight">8 490 ₽</span>
+<span class="text-xs font-bold text-[#1D4FC4]">(-21% к РРЦ)</span>
+</div>
+<div class="text-[11px] text-[#181C24] font-medium truncate">Склад Воронеж (Экономия: 2 310 ₽ к медиане)</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-white border border-slate-200 rounded-xl p-4 shadow-card flex flex-col justify-between">
+<div class="flex items-center justify-between text-[#6F7782] text-xs">
+<span class="font-medium">Статус сбора данных</span>
+<span class="material-symbols-outlined text-[#2569ED] text-lg">pie_chart</span>
+</div>
+<div class="my-2 flex items-baseline gap-2">
+<span class="text-3xl font-mono font-bold text-[#181C24] tracking-tight">4 из 7</span>
+<span class="text-xs text-[#6F7782]">каналов активно</span>
+</div>
+<div>
+<div class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden mb-1">
+<div class="bg-[#2569ED] h-1.5 rounded-full" style="width: 57%"></div>
+</div>
+<div class="flex items-center justify-between text-[11px]">
+<span class="text-[#6F7782] font-medium">2 источника требуют вмешательства</span>
+<span class="font-mono text-slate-500">57%</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. ТАБЛИЦА ПРЕДЛОЖЕНИЙ (Data Table Enterprise) -->
+<section class="bg-white border border-slate-200 rounded-xl shadow-card flex flex-col overflow-hidden">
+<!-- Toolbar -->
+<div class="p-3.5 border-b border-slate-200 flex flex-wrap items-center justify-between gap-3 bg-slate-50/50">
+<!-- Search & Filter Chips -->
+<div class="flex flex-wrap items-center gap-3">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-2.5 text-[#6F7782] text-base top-2">filter_list</span>
+<input class="h-8 pl-8 pr-2.5 text-xs rounded-lg border border-slate-200 bg-white text-[#181C24] placeholder-[#6F7782] focus:outline-none focus:border-[#2569ED] focus:ring-1 focus:ring-[#2569ED] w-56" placeholder="Фильтр по продавцу / складу..." type="text">
+</div>
+<label class="inline-flex items-center gap-1.5 text-xs text-[#181C24] cursor-pointer select-none">
+<input checked="" class="rounded border-slate-300 text-[#2569ED] focus:ring-[#2569ED] w-4 h-4" type="checkbox">
+<span class="">Только проверенные</span>
+</label>
+<label class="inline-flex items-center gap-1.5 text-xs text-[#181C24] cursor-pointer select-none">
+<input checked="" class="rounded border-slate-300 text-[#2569ED] focus:ring-[#2569ED] w-4 h-4" type="checkbox">
+<span class="">Только с НДС</span>
+</label>
+<label class="inline-flex items-center gap-1.5 text-xs text-[#181C24] cursor-pointer select-none">
+<input class="rounded border-slate-300 text-[#2569ED] focus:ring-[#2569ED] w-4 h-4" type="checkbox">
+<span class="">Исключить Демо-данные</span>
+</label>
+</div>
+<!-- Export & Action Buttons -->
+<div class="flex items-center gap-2">
+<button class="h-8 px-2.5 rounded-lg bg-white hover:bg-slate-50 text-[#181C24] border border-slate-200 text-xs font-medium flex items-center gap-1.5 transition shadow-xs">
+<span class="material-symbols-outlined text-sm text-[#2569ED]">table_view</span>
+<span class="">Экспорт .xlsx</span>
+</button>
+<button class="h-8 px-2.5 rounded-lg bg-white hover:bg-slate-50 text-[#181C24] border border-slate-200 text-xs font-medium flex items-center gap-1.5 transition shadow-xs">
+<span class="material-symbols-outlined text-sm text-[#6F7782]">description</span>
+<span class="">Справка СМК (PDF)</span>
+</button>
+<button class="h-8 px-3 rounded-lg bg-[#181C24] hover:bg-slate-800 text-white text-xs font-medium flex items-center gap-1.5 transition shadow-xs">
+<span class="material-symbols-outlined text-sm text-[#2569ED]">content_copy</span>
+<span class="">Копировать в ТКП</span>
+</button>
+</div>
+</div>
+<!-- High-Density Data Table -->
+<div class="overflow-x-auto custom-scrollbar">
+<table class="w-full text-left border-collapse text-xs">
+<thead>
+<tr class="bg-slate-100/70 border-b border-slate-200 text-[#6F7782] font-mono text-[11px] uppercase tracking-wider">
+<th class="py-2.5 px-3.5">Тип</th>
+<th class="py-2.5 px-3.5">Источник / Продавец</th>
+<th class="py-2.5 px-3.5">Совпадение MPN</th>
+<th class="py-2.5 px-3.5">Сертификация</th>
+<th class="py-2.5 px-3.5 text-right">Цена с НДС 20%</th>
+<th class="py-2.5 px-3.5">Склад / Наличие</th>
+<th class="py-2.5 px-3.5">Срок поставки</th>
+<th class="py-2.5 px-3.5">Гарантия</th>
+<th class="py-2.5 px-3.5">Срез данных</th>
+<th class="py-2.5 px-3.5 text-center">Действие</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200">
+<!-- ROW 1: BEST OFFER (HIGHLIGHTED) -->
+<tr class="bg-[#EAF2FF]/50 hover:bg-[#EAF2FF]/80 transition">
+<td class="py-3 px-3.5">
+<span class="inline-flex items-center gap-1.5 bg-[#EAF2FF] text-[#2569ED] border border-blue-200 rounded-md px-2 py-0.5 text-[10px] font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2569ED]"></span>
+                  Реальные данные
+                </span>
+</td>
+<td class="py-3 px-3.5">
+<div class="font-semibold text-[#181C24] flex items-center gap-1.5">
+                  Wildberries · LogiStore Direct
+                  <span class="bg-[#2569ED] text-white rounded text-[9px] font-bold px-1.5 py-0.5">ЛУЧШИЙ</span>
+</div>
+<div class="text-[11px] text-[#6F7782] flex items-center gap-1 mt-0.5">
+<span class="">ООО «ЛогиТрейд»</span>
+<span class="">·</span>
+<span class="text-amber-600 font-medium">★ 4.95</span>
+<span class="text-slate-400">(12 400 отзывов)</span>
+</div>
+</td>
+<td class="py-3 px-3.5">
+<span class="font-mono font-bold text-[#2569ED] text-[11px] bg-white px-2 py-0.5 rounded border border-blue-200">100% 910-006559</span>
+</td>
+<td class="py-3 px-3.5">
+<div class="font-medium text-[#181C24]">Новый, EAC (РСТ)</div>
+<div class="text-[10px] text-[#6F7782]">Заводская пломба</div>
+</td>
+<td class="py-3 px-3.5 text-right">
+<div class="font-mono font-bold text-sm text-[#181C24]">8 490 ₽</div>
+<div class="text-[11px] text-slate-400 line-through font-mono">10 800 ₽</div>
+<div class="text-[10px] text-[#2569ED] font-semibold font-mono">Скидка -21%</div>
+</td>
+<td class="py-3 px-3.5">
+<div class="font-semibold text-[#181C24]">Воронеж (Местный РЦ)</div>
+<div class="text-[11px] text-[#2569ED] font-medium font-mono">В наличии: 14 шт</div>
+</td>
+<td class="py-3 px-3.5">
+<div class="font-medium text-[#181C24]">Завтра к 11:00</div>
+<div class="text-[10px] text-[#6F7782]">Экспресс-доставка</div>
+</td>
+<td class="py-3 px-3.5 font-medium text-[#181C24]">24 мес. вендор</td>
+<td class="py-3 px-3.5 text-[11px] text-[#6F7782] font-mono">2 мин назад</td>
+<td class="py-3 px-3.5">
+<div class="flex items-center justify-center gap-1.5">
+<button class="h-7 px-2.5 bg-[#2569ED] hover:bg-[#1D4FC4] text-white rounded-md text-[11px] font-semibold transition shadow-xs">
+                    К офферу
+                  </button>
+<button class="h-7 w-7 border border-slate-200 bg-white hover:bg-slate-50 text-[#181C24] rounded-md flex items-center justify-center transition" title="Добавить в проект ТКП">
+<span class="material-symbols-outlined text-sm">bookmark_add</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 1 Subnote: Specialist Justification -->
+<tr class="bg-[#EAF2FF]/30 border-b border-blue-200">
+<td class="py-1.5 px-3.5" colspan="10">
+<div class="flex items-center gap-2 text-[11px] text-[#181C24] font-medium">
+<span class="material-symbols-outlined text-sm text-[#2569ED]">verified_user</span>
+<span class=""><strong>Рекомендация закупщика:</strong> Оптимальное ТКП: минимальная цена среди оригиналов с быстрой отгрузкой в Воронеж. НДС 20% включен, сертификаты вложены в ЭДО.</span>
+</div>
+</td>
+</tr>
+<!-- ROW 2: REAL ONLINE WB (Alternative Seller) -->
+<tr class="hover:bg-slate-50 transition">
+<td class="py-3 px-3.5">
+<span class="inline-flex items-center gap-1.5 bg-[#EAF2FF] text-[#2569ED] border border-blue-200 rounded-md px-2 py-0.5 text-[10px] font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2569ED]"></span>
+                  Реальные данные
+                </span>
+</td>
+<td class="py-3 px-3.5">
+<div class="font-semibold text-[#181C24]">Wildberries · ПрофКомплект</div>
+<div class="text-[11px] text-[#6F7782] flex items-center gap-1 mt-0.5">
+<span class="">ООО «ПрофКомплект-ЦФО»</span>
+<span class="">·</span>
+<span class="text-amber-600 font-medium">★ 4.81</span>
+<span class="text-slate-400">(2 150)</span>
+</div>
+</td>
+<td class="py-3 px-3.5">
+<span class="font-mono text-[#181C24] text-[11px] bg-slate-100 px-2 py-0.5 rounded border border-slate-200">100% 910-006559</span>
+</td>
+<td class="py-3 px-3.5">
+<div class="font-medium text-[#181C24]">Новый, EAC</div>
+<div class="text-[10px] text-[#6F7782]">Запечатан</div>
+</td>
+<td class="py-3 px-3.5 text-right">
+<div class="font-mono font-bold text-sm text-[#181C24]">8 920 ₽</div>
+<div class="text-[11px] text-slate-400 line-through font-mono">9 990 ₽</div>
+<div class="text-[10px] text-[#6F7782] font-mono">Скидка -11%</div>
+</td>
+<td class="py-3 px-3.5">
+<div class="font-medium text-[#181C24]">Москва (Коледино)</div>
+<div class="text-[11px] text-[#6F7782] font-mono">В наличии: 8 шт</div>
+</td>
+<td class="py-3 px-3.5">
+<div class="text-[#181C24] font-medium">2 дня</div>
+<div class="text-[10px] text-[#6F7782]">СДЭК Доставка</div>
+</td>
+<td class="py-3 px-3.5 font-medium text-[#181C24]">12 мес. продавец</td>
+<td class="py-3 px-3.5 text-[11px] text-[#6F7782] font-mono">6 мин назад</td>
+<td class="py-3 px-3.5">
+<div class="flex items-center justify-center gap-1.5">
+<button class="h-7 px-2.5 bg-[#2569ED] hover:bg-[#1D4FC4] text-white rounded-md text-[11px] font-semibold transition shadow-xs">
+                    К офферу
+                  </button>
+<button class="h-7 w-7 border border-slate-200 bg-white hover:bg-slate-50 text-[#181C24] rounded-md flex items-center justify-center transition">
+<span class="material-symbols-outlined text-sm">bookmark_add</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 3: MERLION (DEMO B2B) -->
+<tr class="hover:bg-slate-50 transition bg-slate-50/40">
+<td class="py-3 px-3.5">
+<span class="inline-flex items-center gap-1.5 bg-slate-100 text-[#181C24] border border-slate-200 rounded-md px-2 py-0.5 text-[10px] font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2569ED]"></span>
+                  Демо-источник
+                </span>
+</td>
+<td class="py-3 px-3.5">
+<div class="font-semibold text-[#181C24]">MERLION B2B Portal</div>
+<div class="text-[11px] text-[#6F7782] flex items-center gap-1 mt-0.5">
+<span class="">Прямой дистрибьюторский контракт</span>
+</div>
+</td>
+<td class="py-3 px-3.5">
+<span class="font-mono text-[#181C24] text-[11px] bg-white px-2 py-0.5 rounded border border-slate-200">100% 910-006559</span>
+</td>
+<td class="py-3 px-3.5">
+<div class="font-medium text-[#181C24]">Оригинал, Официал</div>
+<div class="text-[10px] text-[#6F7782]">ГТД / ЭДО</div>
+</td>
+<td class="py-3 px-3.5 text-right">
+<div class="font-mono font-bold text-sm text-[#2569ED]">7 920 ₽</div>
+<div class="text-[10px] text-[#2569ED] font-medium font-mono">B2B Демо-колонка</div>
+</td>
+<td class="py-3 px-3.5">
+<div class="font-medium text-[#181C24]">Центральный склад (МО)</div>
+<div class="text-[11px] text-[#6F7782] font-mono">Квота: &gt; 50 шт</div>
+</td>
+<td class="py-3 px-3.5">
+<div class="text-[#181C24] font-medium">3-4 дня</div>
+<div class="text-[10px] text-[#6F7782]">Фура ЦФО</div>
+</td>
+<td class="py-3 px-3.5 font-medium text-[#181C24]">24 мес. СЦ</td>
+<td class="py-3 px-3.5 text-[11px] text-[#6F7782] font-mono">Демо-снапшот</td>
+<td class="py-3 px-3.5">
+<div class="flex items-center justify-center gap-1.5">
+<button class="h-7 px-2.5 bg-[#EAF2FF] text-[#2569ED] border border-blue-200 hover:bg-[#2569ED] hover:text-white rounded-md text-[11px] font-semibold transition">
+                    Запросить счет
+                  </button>
+<button class="h-7 w-7 border border-slate-200 bg-white hover:bg-slate-50 text-[#181C24] rounded-md flex items-center justify-center transition">
+<span class="material-symbols-outlined text-sm">bookmark_add</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 4: NETLAB (DEMO B2B) -->
+<tr class="hover:bg-slate-50 transition bg-slate-50/40">
+<td class="py-3 px-3.5">
+<span class="inline-flex items-center gap-1.5 bg-slate-100 text-[#181C24] border border-slate-200 rounded-md px-2 py-0.5 text-[10px] font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2569ED]"></span>
+                  Демо-источник
+                </span>
+</td>
+<td class="py-3 px-3.5">
+<div class="font-semibold text-[#181C24]">NETLAB Дистрибуция</div>
+<div class="text-[11px] text-[#6F7782] flex items-center gap-1 mt-0.5">
+<span class="">Прайс-лист дилера</span>
+</div>
+</td>
+<td class="py-3 px-3.5">
+<span class="font-mono text-[#181C24] text-[11px] bg-white px-2 py-0.5 rounded border border-slate-200">100% 910-006559</span>
+</td>
+<td class="py-3 px-3.5">
+<div class="font-medium text-[#181C24]">Новый, EAC</div>
+<div class="text-[10px] text-[#6F7782]">Белый импорт</div>
+</td>
+<td class="py-3 px-3.5 text-right">
+<div class="font-mono font-bold text-sm text-[#181C24]">8 150 ₽</div>
+<div class="text-[10px] text-[#6F7782] font-mono">Партия от 5 шт</div>
+</td>
+<td class="py-3 px-3.5">
+<div class="font-medium text-[#181C24]">Транзитный хаб Тула</div>
+<div class="text-[11px] text-[#6F7782] font-mono">Остаток: 22 шт</div>
+</td>
+<td class="py-3 px-3.5">
+<div class="text-[#181C24] font-medium">2-3 дня</div>
+<div class="text-[10px] text-[#6F7782]">ТК Деловые Линии</div>
+</td>
+<td class="py-3 px-3.5 font-medium text-[#181C24]">12 мес. дилер</td>
+<td class="py-3 px-3.5 text-[11px] text-[#6F7782] font-mono">Демо-снапшот</td>
+<td class="py-3 px-3.5">
+<div class="flex items-center justify-center gap-1.5">
+<button class="h-7 px-2.5 bg-[#EAF2FF] text-[#2569ED] border border-blue-200 hover:bg-[#2569ED] hover:text-white rounded-md text-[11px] font-semibold transition">
+                    Запросить счет
+                  </button>
+<button class="h-7 w-7 border border-slate-200 bg-white hover:bg-slate-50 text-[#181C24] rounded-md flex items-center justify-center transition">
+<span class="material-symbols-outlined text-sm">bookmark_add</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 5: OCS Distribution (DEMO B2B) -->
+<tr class="hover:bg-slate-50 transition bg-slate-50/40">
+<td class="py-3 px-3.5">
+<span class="inline-flex items-center gap-1.5 bg-slate-100 text-[#181C24] border border-slate-200 rounded-md px-2 py-0.5 text-[10px] font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2569ED]"></span>
+                  Демо-источник
+                </span>
+</td>
+<td class="py-3 px-3.5">
+<div class="font-semibold text-[#181C24]">OCS Distribution</div>
+<div class="text-[11px] text-[#6F7782] flex items-center gap-1 mt-0.5">
+<span class="">Корпоративный партнерский канал</span>
+</div>
+</td>
+<td class="py-3 px-3.5">
+<span class="font-mono text-[#181C24] text-[11px] bg-white px-2 py-0.5 rounded border border-slate-200">100% 910-006559</span>
+</td>
+<td class="py-3 px-3.5">
+<div class="font-medium text-[#181C24]">EAC / Сертифицирован</div>
+<div class="text-[10px] text-[#6F7782]">Полный пакет 44-ФЗ</div>
+</td>
+<td class="py-3 px-3.5 text-right">
+<div class="font-mono font-bold text-sm text-[#181C24]">8 310 ₽</div>
+<div class="text-[10px] text-[#6F7782] font-mono">Безнал с НДС</div>
+</td>
+<td class="py-3 px-3.5">
+<div class="font-medium text-[#181C24]">Склад Воронеж (Партнер)</div>
+<div class="text-[11px] text-[#6F7782] font-mono">Резерв: 5 шт</div>
+</td>
+<td class="py-3 px-3.5">
+<div class="text-[#181C24] font-medium">1 день</div>
+<div class="text-[10px] text-[#6F7782]">Самовывоз со склада</div>
+</td>
+<td class="py-3 px-3.5 font-medium text-[#181C24]">24 мес. оф.</td>
+<td class="py-3 px-3.5 text-[11px] text-[#6F7782] font-mono">Демо-снапшот</td>
+<td class="py-3 px-3.5">
+<div class="flex items-center justify-center gap-1.5">
+<button class="h-7 px-2.5 bg-[#EAF2FF] text-[#2569ED] border border-blue-200 hover:bg-[#2569ED] hover:text-white rounded-md text-[11px] font-semibold transition">
+                    Запросить счет
+                  </button>
+<button class="h-7 w-7 border border-slate-200 bg-white hover:bg-slate-50 text-[#181C24] rounded-md flex items-center justify-center transition">
+<span class="material-symbols-outlined text-sm">bookmark_add</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination & Summary -->
+<div class="p-3 border-t border-slate-200 bg-slate-50/70 text-xs flex flex-wrap items-center justify-between text-[#6F7782]">
+<div class="flex items-center gap-2">
+<span class="">Отображено 5 из 38 офферов</span>
+<span class="">·</span>
+<span class="text-[#2569ED] font-medium">2 реальных онлайн-продавца</span>
+<span class="">·</span>
+<span class="text-[#6F7782]">3 дистрибьюторских демо-фида</span>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="h-7 px-2.5 rounded-md border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-50 text-xs text-[#181C24]" disabled="">
+            Предыдущая
+          </button>
+<span class="px-2.5 py-1 font-mono font-bold bg-[#2569ED] text-white border border-[#2569ED] rounded-md text-xs">
+            1
+          </span>
+<button class="h-7 px-2.5 rounded-md border border-slate-200 bg-white hover:bg-slate-50 text-xs text-[#181C24]">
+            Следующая
+          </button>
+</div>
+</div>
+</section>
+<!-- 6. AI-КОПАЙЛОТ И КОМПЛАЕНС (Нижний модуль - PEREMENA Blue & Soft Tint) -->
+<section class="rounded-xl border border-blue-200 bg-[#EAF2FF] p-4 shadow-card">
+<!-- Top Copilot Header -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 pb-3 border-b border-blue-100">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-[#2569ED] text-white flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-xl">smart_toy</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-bold text-sm text-[#181C24]">AI-Копайлот закупок: Qwen3-32B IT-Procurement</span>
+<span class="bg-white text-[#2569ED] text-[10px] font-bold px-2 py-0.5 rounded-full border border-blue-200 uppercase tracking-wider">
+                Закрытый контур ПЕРЕМЕНА
+              </span>
+</div>
+<p class="text-xs text-[#6F7782] mt-0.5">Автономный анализ цен, рисков контрагентов и соответствия регламентам 44-ФЗ / 223-ФЗ</p>
+</div>
+</div>
+<!-- Chips -->
+<div class="flex flex-wrap items-center gap-1.5">
+<button class="px-2.5 py-1 rounded-md bg-white hover:bg-blue-50 border border-blue-200 text-[#181C24] text-xs font-medium transition shadow-xs">
+            Сравнить спецификацию по 44-ФЗ
+          </button>
+<button class="px-2.5 py-1 rounded-md bg-white hover:bg-blue-50 border border-blue-200 text-[#181C24] text-xs font-medium transition shadow-xs">
+            Оценить риски поставщика
+          </button>
+<button class="px-2.5 py-1 rounded-md bg-white hover:bg-blue-50 border border-blue-200 text-[#181C24] text-xs font-medium transition shadow-xs">
+            Сформировать обоснование НМЦК
+          </button>
+</div>
+</div>
+<!-- Query Form -->
+<div class="mt-3.5 flex gap-2">
+<div class="relative flex-1">
+<input class="w-full h-10 pl-3.5 pr-3 text-xs rounded-lg border border-blue-200 bg-white text-[#181C24] placeholder-[#6F7782] focus:outline-none focus:border-[#2569ED] focus:ring-2 focus:ring-[#2569ED]/20" placeholder="Сформулируйте директиву для локальной модели Qwen3 (например: Подготовь расчет НМЦК для тендера на 20 мышей)..." type="text">
+</div>
+<button class="h-10 px-4 bg-[#2569ED] hover:bg-[#1D4FC4] text-white text-xs font-semibold rounded-lg flex items-center gap-1.5 transition shrink-0 shadow-xs">
+<span class="material-symbols-outlined text-[17px]">send</span>
+<span class="">Запросить расчет</span>
+</button>
+</div>
+<!-- 3 Balanced Structured AI Cards -->
+<div class="mt-3.5 grid grid-cols-1 lg:grid-cols-3 gap-3.5">
+<!-- Verdict -->
+<div class="bg-white border border-blue-100 rounded-lg p-3.5 flex flex-col justify-between shadow-xs">
+<div>
+<div class="flex items-center gap-1.5 text-xs font-bold text-[#181C24] uppercase tracking-wide mb-2">
+<span class="material-symbols-outlined text-base text-[#2569ED]">check_circle</span>
+              Вердикт локального ИИ
+            </div>
+<p class="text-xs text-[#181C24] leading-relaxed">
+              Рекомендована закупка позиции <strong class="text-[#2569ED]">№1 (LogiStore Direct)</strong> партией до 10 шт по цене <strong class="font-mono font-bold text-[#181C24]">8 490 ₽ с НДС 20%</strong>. Это фиксирует минимальную стоимость среди физически подтвержденных остатков на складе в Воронеже без риска срыва сроков.
+            </p>
+</div>
+</div>
+<!-- Risks -->
+<div class="bg-white border border-slate-200 rounded-lg p-3.5 flex flex-col justify-between shadow-xs">
+<div>
+<div class="flex items-center gap-1.5 text-xs font-bold text-amber-950 uppercase tracking-wide mb-2">
+<span class="material-symbols-outlined text-base text-amber-600">warning</span>
+              Факторы рисков поставок
+            </div>
+<p class="text-xs text-[#6F7782] leading-relaxed">
+              Цены из Демо-фидов (<strong class="text-[#181C24]">Merlion 7 920 ₽</strong>) отображают базовую колонку дилера. Требуется подтверждение индивидуальной квоты через прикрепленного менеджера. При заказе с маркетплейсов свыше 14 шт требуется разбивка партий.
+            </p>
+</div>
+</div>
+<!-- Compliance -->
+<div class="bg-white border border-rose-200 rounded-lg p-3.5 flex flex-col justify-between shadow-xs">
+<div>
+<div class="flex items-center gap-1.5 text-xs font-bold text-rose-950 uppercase tracking-wide mb-2">
+<span class="material-symbols-outlined text-base text-rose-600">gavel</span>
+              Комплаенс 44-ФЗ / 223-ФЗ
+            </div>
+<p class="text-xs text-rose-950 leading-relaxed font-medium">
+              ВНИМАНИЕ: Цены из источников MERLION, NETLAB и OCS получены из демонстрационного режима интеграции. Запрещено использовать их в качестве финального ТКП без прямого счета поставщика с электронной подписью.
+            </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- 7. FOOTER TELEMETRY & SYSTEM HEALTH -->
+<footer class="mt-auto bg-white border-t border-slate-200 px-4 sm:px-6 py-2.5 text-[11px] text-[#6F7782]">
+<div class="max-w-[1600px] mx-auto flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<span class="font-semibold text-[#181C24]"><span class="inline-flex items-center gap-1.5"><img src="https://lh3.googleusercontent.com/aida/AEtjO1Uaa-KEIQK73iD7h2BQFV2NucPUYbv2_JIiJxiXabtnWVoev19JJR76N5FVgF1RhuCP1W9kPfKqUkwtAxXkTOsibxkJsUIlX41c_s6VyVYKrkqlUjkrvlHM8ZNw60hpAEGcLfrHQTeLj9YJMuqSBNi8DeHD59pSzRJuo_AEoDiRePe5cQxpE5GDCax8ZJjlkbXDLTLVjumYWOMLb0HfnTWqkdAgWPG_7Sju4oxE2stlf2-tYfOCQ0fD9hg" alt="ПЕРЕМЕНА" class="h-4 w-auto object-contain inline-block shrink-0"> <span class="">· IT Procurement Intelligence</span></span></span>
+<span class="text-slate-300">|</span>
+<span class="font-mono text-[#6F7782]">Ядро v2.6.4-prod-cf</span>
+<span class="text-slate-300">|</span>
+<span class="flex items-center gap-1.5 text-[#2569ED] font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2569ED]"></span>
+          Шлюзы ЕИС и ТКП активны
+        </span>
+</div>
+<div class="flex items-center gap-4 font-mono text-[#6F7782]">
+<span class="">Ping: 14ms (Voronezh Node)</span>
+<span class="">Память Redis: 38%</span>
+<span class="">Прокси-пул: 142/150</span>
+</div>
+</div>
+</footer>
+
+
+
+
+
+
+
+
+</body></html>

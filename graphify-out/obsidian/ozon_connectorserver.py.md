@@ -1,0 +1,86 @@
+---
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/server.py"
+type: "code"
+community: "Community 76"
+location: "L1"
+tags:
+  - graphify/code
+  - graphify/EXTRACTED
+  - community/Community_76
+---
+
+# ozon_connector/server.py
+
+## Connections
+- [[Ozon MCP connector. Two-tier strategy (Nov 2026 verified on the operator's…]] - `rationale_for` [EXTRACTED]
+- [[OzonCardResponse]] - `imports` [EXTRACTED]
+- [[OzonReviewsResponse]] - `imports` [EXTRACTED]
+- [[OzonSearchResponse]] - `imports` [EXTRACTED]
+- [[OzonSelfcheckResponse]] - `imports` [EXTRACTED]
+- [[_SyncCallError]] - `contains` [EXTRACTED]
+- [[_SyncCallTimeout]] - `contains` [EXTRACTED]
+- [[_aggregate_offer_warnings()]] - `contains` [EXTRACTED]
+- [[_atom_text()]] - `contains` [EXTRACTED]
+- [[_can_process_call()]] - `contains` [EXTRACTED]
+- [[_canonical_composer_path()]] - `contains` [EXTRACTED]
+- [[_canonical_product_path_from_input()]] - `contains` [EXTRACTED]
+- [[_cdp_fetch_json()]] - `contains` [EXTRACTED]
+- [[_fetch_composer()]] - `contains` [EXTRACTED]
+- [[_is_search_stock_label()]] - `contains` [EXTRACTED]
+- [[_ozon_blocked_error()]] - `contains` [EXTRACTED]
+- [[_ozon_reviews_impl()]] - `contains` [EXTRACTED]
+- [[_ozon_search_impl()]] - `contains` [EXTRACTED]
+- [[_ozon_selfcheck_impl()]] - `contains` [EXTRACTED]
+- [[_parse_review_item()]] - `contains` [EXTRACTED]
+- [[_parse_search_tile()]] - `contains` [EXTRACTED]
+- [[_parse_widgets()]] - `contains` [EXTRACTED]
+- [[_polite_wait()_1]] - `contains` [EXTRACTED]
+- [[_price_str_to_float()]] - `contains` [EXTRACTED]
+- [[_proxy()_1]] - `contains` [EXTRACTED]
+- [[_run_sync_bounded()]] - `contains` [EXTRACTED]
+- [[_safe_review_page_path()]] - `contains` [EXTRACTED]
+- [[_search_items_from_payload()]] - `contains` [EXTRACTED]
+- [[_search_tile_product_link()]] - `contains` [EXTRACTED]
+- [[_sync_call_in_process()]] - `contains` [EXTRACTED]
+- [[_sync_curl_get()_1]] - `contains` [EXTRACTED]
+- [[_ts_to_iso()]] - `contains` [EXTRACTED]
+- [[asyncio_2]] - `imports` [EXTRACTED]
+- [[cache.py]] - `imports_from` [EXTRACTED]
+- [[chrome_cdp.py]] - `imports_from` [EXTRACTED]
+- [[collections_abc]] - `imports_from` [EXTRACTED]
+- [[curl_cffi]] - `imports_from` [EXTRACTED]
+- [[datetime]] - `imports` [EXTRACTED]
+- [[errors.py]] - `imports_from` [EXTRACTED]
+- [[fastmcp_3]] - `imports_from` [EXTRACTED]
+- [[fastmcp_exceptions]] - `imports_from` [EXTRACTED]
+- [[fastmcp_server_middleware_error_handling]] - `imports_from` [EXTRACTED]
+- [[get_settings()_7]] - `imports` [EXTRACTED]
+- [[httpx]] - `imports` [EXTRACTED]
+- [[json]] - `imports` [EXTRACTED]
+- [[logging.py]] - `imports_from` [EXTRACTED]
+- [[mcp_core__init__.py]] - `imports_from` [EXTRACTED]
+- [[mcp_types]] - `imports_from` [EXTRACTED]
+- [[os]] - `imports` [EXTRACTED]
+- [[output_schema.py]] - `imports_from` [EXTRACTED]
+- [[ozon_card()]] - `contains` [EXTRACTED]
+- [[ozon_connectormodels_output.py]] - `imports_from` [EXTRACTED]
+- [[ozon_connectorsettings.py]] - `imports_from` [EXTRACTED]
+- [[ozon_reviews()]] - `contains` [EXTRACTED]
+- [[ozon_search()_2]] - `contains` [EXTRACTED]
+- [[ozon_selfcheck()]] - `contains` [EXTRACTED]
+- [[pacing.py]] - `imports_from` [EXTRACTED]
+- [[pathlib]] - `imports_from` [EXTRACTED]
+- [[pickle]] - `imports` [EXTRACTED]
+- [[posixpath]] - `imports` [EXTRACTED]
+- [[process.py]] - `imports_from` [EXTRACTED]
+- [[pydantic]] - `imports_from` [EXTRACTED]
+- [[re]] - `imports` [EXTRACTED]
+- [[redact.py]] - `imports_from` [EXTRACTED]
+- [[subprocess]] - `imports` [EXTRACTED]
+- [[sys]] - `imports` [EXTRACTED]
+- [[tempfile]] - `imports` [EXTRACTED]
+- [[transport__init__.py]] - `imports_from` [EXTRACTED]
+- [[typing]] - `imports_from` [EXTRACTED]
+- [[urllib_parse]] - `imports` [EXTRACTED]
+
+#graphify/code #graphify/EXTRACTED #community/Community_76

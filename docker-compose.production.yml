@@ -1,0 +1,136 @@
+services:
+  gateway:
+    build:
+      context: .
+      target: gateway
+    image: peremena-price-radar-gateway:latest
+    environment:
+      PORT: "3001"
+      HOST: "0.0.0.0"
+      IDENTITY_URL: http://identity:3002
+      SEARCH_URL: http://search:3003
+      ANALYSIS_URL: http://analysis:3004
+    depends_on:
+      - identity
+      - search
+      - analysis
+    networks:
+      - radar
+    restart: unless-stopped
+
+  identity:
+    build:
+      context: .
+      target: identity
+    image: peremena-price-radar-identity:latest
+    environment:
+      PORT: "3002"
+      HOST: "0.0.0.0"
+      AUTH_SECRET: ${AUTH_SECRET:?Set AUTH_SECRET}
+      AUTH_USERS: ${AUTH_USERS:?Set AUTH_USERS}
+    networks:
+      - radar
+    restart: unless-stopped
+
+  search:
+    build:
+      context: .
+      target: search
+    image: peremena-price-radar-search:latest
+    environment:
+      PORT: "3003"
+      HOST: "0.0.0.0"
+      MARKETPLACE_MCP_URL: http://marketplace-mcp:8000/mcp
+      MARKETPLACE_MCP_TOKEN: ${MCP_HTTP_AUTH_TOKEN:?Set MCP_HTTP_AUTH_TOKEN}
+      MARKETPLACE_MCP_TENANT: ${MCP_HTTP_TENANT_ID:-peremena}
+      MARKETPLACE_SOURCES: wildberries,yandex_market,ozon,dns,megamarket,citilink,avito
+      APIFY_ENABLED: ${APIFY_ENABLED:-false}
+      APIFY_TOKEN: ${APIFY_TOKEN:-}
+      APIFY_MAX_ITEMS: ${APIFY_MAX_ITEMS:-12}
+      APIFY_MAX_CHARGE_USD: ${APIFY_MAX_CHARGE_USD:-0.20}
+    # No depends_on marketplace-mcp/chrome: `up --build search` must not
+    # recreate the headed Chrome profile. Start chrome + MCP separately.
+    networks:
+      - radar
+    restart: unless-stopped
+
+  analysis:
+    build:
+      context: .
+      target: analysis
+    image: peremena-price-radar-analysis:latest
+    environment:
+      PORT: "3004"
+      HOST: "0.0.0.0"
+      SEARCH_URL: http://search:3003
+      OLLAMA_BASE_URL: http://host.docker.internal:11434
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-hf.co/unsloth/Qwen3-30B-A3B-Instruct-2507-GGUF:IQ4_XS}
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    depends_on:
+      - search
+    networks:
+      - radar
+    restart: unless-stopped
+
+  web:
+    build:
+      context: .
+      target: web
+      args:
+        VITE_BASE_PATH: /price-radar/
+    image: peremena-price-radar-web:latest
+    ports:
+      - 127.0.0.1:8086:80
+    depends_on:
+      - gateway
+    networks:
+      - radar
+    restart: unless-stopped
+
+  marketplace-mcp:
+    build:
+      context: ../ru-marketplace-mcp
+    image: ru-marketplace-mcp:2.4.2
+    command: ["marketplace-mcp"]
+    environment:
+      MCP_TRANSPORT: http
+      MCP_HTTP_HOST: 0.0.0.0
+      MCP_HTTP_PORT: "8000"
+      MCP_HTTP_PATH: /mcp
+      MCP_HTTP_AUTH_TOKEN: ${MCP_HTTP_AUTH_TOKEN:?Set MCP_HTTP_AUTH_TOKEN}
+      MCP_HTTP_TENANT_ID: ${MCP_HTTP_TENANT_ID:-peremena}
+      MARKETPLACE_SOURCES: wildberries,yandex_market,ozon,dns,megamarket,citilink,avito
+      CHROME_CDP_HOST: 172.29.0.10
+      CHROME_CDP_PORT: "9222"
+      # ru-marketplace-mcp 2.4.2: keep a detected challenge tab for VNC.
+      # Does not solve captcha. Default 0, max 300.
+      CHROME_CHALLENGE_HANDOFF_S: "120"
+    # No depends_on chrome — CDP connects lazily. Recreating MCP must not
+    # bounce the chrome-headed volume.
+    networks:
+      - radar
+    restart: unless-stopped
+
+  chrome:
+    build:
+      context: ./deploy/chrome
+    image: peremena-headed-chrome:latest
+    shm_size: "2gb"
+    ports:
+      - 127.0.0.1:5901:5900
+    volumes:
+      - chrome-headed:/profile
+    networks:
+      radar:
+        ipv4_address: 172.29.0.10
+    restart: unless-stopped
+
+volumes:
+  chrome-headed:
+
+networks:
+  radar:
+    ipam:
+      config:
+        - subnet: 172.29.0.0/24

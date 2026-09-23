@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+
+<html lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Настройки профиля — ПЕРЕМЕНА · Price Radar Enterprise</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Inter Google Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Public+Sans:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2569ED',
+            'primary-dark': '#1D4FC4',
+            'primary-soft': '#EAF2FF',
+            graphite: '#181C24',
+            gray: '#6F7782',
+            canvas: '#F4F6F8',
+            white: '#FFFFFF'
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            headline: ["Inter", "sans-serif"],
+            display: ["Inter", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #F4F6F8;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-canvas text-graphite font-body antialiased min-h-screen flex flex-col selection:bg-primary-soft selection:text-primary">
+<!-- ================= TOP APP BAR (Shared Component JSON) ================= -->
+<header class="flex items-center justify-between px-6 h-16 w-full max-w-full bg-white dark:bg-graphite border-b border-canvas dark:border-graphite shadow-sm sticky top-0 z-30">
+<div class="flex items-center gap-8">
+<!-- Logo + Enterprise Badge -->
+<a class="flex items-center gap-3 group focus:outline-none" href="#">
+<img alt="ПЕРЕМЕНА Logo" class="w-8 h-8 rounded-lg object-contain bg-canvas p-1 shadow-sm transition-transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1WzxmsBjMGfLA9VO1M-tJ8w0qOstnqZkeuk9wP4wJl7m-8Y43o3ZRUkPqCcEpnDTBZkXL5WSzPSfwEygJmPu78AXOuFSoap31-Zp0kXSg6Pp67YNKQbCk-J25jv96AUhQtiLaT1_NDNhtrlZzU2Z8ZJo_syhUwsm0gWUbeglt0s2hxWtQ99hPUpWaEqViOySCKThGKdAAviSEMv_kjDcKPul6oDTTToGgWo5dmYCYqeiCyEGCvWNZ8hX68"/>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline text-lg font-black tracking-wider text-graphite uppercase">ПЕРЕМЕНА</span>
+<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-primary-soft text-primary tracking-wide uppercase">Price Radar</span>
+</div>
+<span class="text-[11px] text-gray -mt-0.5 tracking-tight font-medium">B2B Procurement Intelligence</span>
+</div>
+</a>
+<!-- Global Navigation Links -->
+<nav class="hidden xl:flex items-center gap-6 font-headline text-sm font-medium">
+<a class="text-gray hover:text-graphite transition-colors py-4 font-normal" href="#">Мониторинг цен</a>
+<a class="text-gray hover:text-graphite transition-colors py-4 font-normal" href="#">Каталог MPN</a>
+<a class="text-gray hover:text-graphite transition-colors py-4 font-normal" href="#">Поставщики ЦФО</a>
+<a class="text-gray hover:text-graphite transition-colors py-4 font-normal" href="#">История парсинга</a>
+<a class="text-gray hover:text-graphite transition-colors py-4 font-normal" href="#">Аналитика 44-ФЗ</a>
+</nav>
+</div>
+<!-- Trailing Action Cluster -->
+<div class="flex items-center gap-3">
+<!-- Region Selector Badge -->
+<div class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-canvas text-xs font-semibold text-graphite border border-[#E2E8F0] hover:bg-slate-100 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="location_on">location_on</span>
+<span>Воронеж ЦФО</span>
+<span class="material-symbols-outlined text-gray text-[16px]" data-icon="expand_more">expand_more</span>
+</div>
+<!-- Sync Status Pill -->
+<div class="hidden md:flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-slate-50 text-[11px] font-mono text-gray border border-[#E2E8F0]">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="material-symbols-outlined text-[14px]" data-icon="sync">sync</span>
+<span>Синхр: 12:44:02</span>
+</div>
+<!-- Notification Icon -->
+<button class="relative p-2 rounded-lg text-gray hover:text-graphite hover:bg-canvas transition-colors focus:outline-none" title="Уведомления">
+<span class="material-symbols-outlined text-[22px]" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-primary rounded-full ring-2 ring-white"></span>
+</button>
+<div class="h-6 w-px bg-slate-200 mx-1"></div>
+<!-- User Profile Header Summary -->
+<div class="flex items-center gap-3 pl-1 cursor-pointer group">
+<div class="w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xs shadow-sm ring-2 ring-primary-soft">
+          МС
+        </div>
+<div class="hidden lg:flex flex-col text-left">
+<span class="text-xs font-semibold text-graphite group-hover:text-primary transition-colors">Михаил Смирнов</span>
+<span class="text-[10px] text-gray">Менеджер закупок IT</span>
+</div>
+<span class="material-symbols-outlined text-gray text-[18px] group-hover:text-graphite" data-icon="arrow_drop_down">arrow_drop_down</span>
+</div>
+</div>
+</header>
+<!-- ================= MAIN LAYOUT CONTAINER ================= -->
+<div class="flex-1 flex max-w-full overflow-hidden">
+<!-- ================= SIDEBAR (Shared Component JSON) ================= -->
+<aside class="h-[calc(100vh-4rem)] w-72 flex flex-col justify-between shrink-0 bg-white border-r border-[#E2E8F0] select-none sticky top-16 z-20">
+<div class="p-4 flex flex-col gap-1 w-full shrink-0">
+<!-- Sidebar Category Header -->
+<div class="px-3 pb-3 pt-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="tune">tune</span>
+<span class="font-headline text-base font-bold text-graphite">Настройки</span>
+</div>
+<p class="text-xs text-gray mt-0.5">Price Radar Enterprise</p>
+</div>
+<!-- Navigation Tabs -->
+<div class="space-y-1">
+<!-- Item 1: Active ("Профиль и аккаунт") -->
+<a class="bg-primary-soft text-primary font-semibold rounded-lg px-3 py-2.5 flex items-center justify-between transition-all" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]" data-icon="manage_accounts">manage_accounts</span>
+<span class="text-sm">Профиль и аккаунт</span>
+</div>
+<span class="w-1.5 h-4 bg-primary rounded-full"></span>
+</a>
+<!-- Item 2 -->
+<a class="text-gray hover:bg-canvas hover:text-graphite rounded-lg px-3 py-2.5 flex items-center gap-3 transition-colors text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="travel_explore">travel_explore</span>
+<span>Параметры поиска и парсинга</span>
+</a>
+<!-- Item 3 -->
+<a class="text-gray hover:bg-canvas hover:text-graphite rounded-lg px-3 py-2.5 flex items-center justify-between transition-colors text-sm font-medium" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]" data-icon="psychology">psychology</span>
+<span>AI-Копайлот Qwen3</span>
+</div>
+<span class="text-[10px] bg-primary/10 text-primary font-bold px-1.5 py-0.5 rounded">NEW</span>
+</a>
+<!-- Item 4 -->
+<a class="text-gray hover:bg-canvas hover:text-graphite rounded-lg px-3 py-2.5 flex items-center gap-3 transition-colors text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="file_download">file_download</span>
+<span>Экспорт и отчетность ТКП</span>
+</a>
+<!-- Item 5 -->
+<a class="text-gray hover:bg-canvas hover:text-graphite rounded-lg px-3 py-2.5 flex items-center gap-3 transition-colors text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="security">security</span>
+<span>Уведомления и безопасность</span>
+</a>
+</div>
+</div>
+<!-- Sidebar Footer Role & Telemetry Restriction Note -->
+<div class="p-4 border-t border-[#E2E8F0] bg-slate-50/70 space-y-3">
+<!-- RBAC Notification Card -->
+<div class="rounded-lg p-3 bg-white border border-[#E2E8F0] shadow-sm">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-gray text-[18px] shrink-0 mt-0.5" data-icon="lock">lock</span>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="text-xs font-semibold text-graphite">Менеджер закупок ЦФО</span>
+</div>
+<p class="text-[11px] text-gray leading-relaxed mt-1">
+                Доступ к управлению прокси-фермами и коннекторами агрегаторов ограничен Администратором системы.
+              </p>
+</div>
+</div>
+</div>
+<button class="w-full py-2 px-3 rounded-lg border border-[#E2E8F0] text-xs font-medium text-gray hover:text-graphite hover:bg-white transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]" data-icon="help_outline">help_outline</span>
+<span>Справка системы</span>
+</button>
+</div>
+</aside>
+<!-- ================= MAIN CONTENT WORKSPACE ================= -->
+<main class="flex-1 overflow-y-auto custom-scrollbar p-6 lg:p-8 bg-canvas">
+<div class="max-w-5xl mx-auto space-y-6 pb-28">
+<!-- Page Header Breadcrumbs & Title -->
+<div class="space-y-1">
+<div class="flex items-center gap-2 text-xs text-gray font-medium">
+<a class="hover:text-primary transition-colors" href="#">Главная</a>
+<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Конфигурация Price Radar</a>
+<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-graphite font-semibold">Профиль и рабочая среда</span>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-1">
+<div>
+<h1 class="font-headline text-2xl font-bold text-graphite tracking-tight">Настройки профиля и рабочей среды</h1>
+<p class="text-sm text-gray mt-1">Управление личными идентификаторами, фильтрацией поставщиков, поведением ИИ и шаблонами формирования КП.</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                Учетная запись активна
+              </span>
+</div>
+</div>
+</div>
+<!-- ================= SECTION 1: Отображаемое имя и профиль ================= -->
+<section class="bg-white rounded-xl border border-[#E2E8F0] p-6 shadow-sm">
+<div class="flex items-center justify-between pb-5 border-b border-[#E2E8F0]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-soft text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]" data-icon="badge">badge</span>
+</div>
+<div>
+<h2 class="font-headline text-base font-bold text-graphite">Отображаемое имя и корпоративный профиль</h2>
+<p class="text-xs text-gray">Персональные данные, используемые в сопроводительных письмах ТКП и логах согласования</p>
+</div>
+</div>
+<span class="text-xs font-medium text-gray bg-canvas px-2.5 py-1 rounded">ID: PR-VNZ-4891</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5 pt-6">
+<!-- Поле 1: Отображаемое имя -->
+<div>
+<label class="block text-xs font-semibold text-graphite mb-1.5">
+                Отображаемое имя <span class="text-primary">*</span>
+</label>
+<div class="relative">
+<input class="w-full px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] text-sm text-graphite font-medium focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" type="text" value="Михаил Смирнов"/>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-gray text-[18px]" data-icon="person">person</span>
+</div>
+<p class="text-[11px] text-gray mt-1">Отображается в шапке коммерческих предложений клиентам</p>
+</div>
+<!-- Поле 2: Должность -->
+<div>
+<label class="block text-xs font-semibold text-graphite mb-1.5">
+                Должность в структуре закупок
+              </label>
+<div class="relative">
+<input class="w-full px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] text-sm text-graphite font-medium focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" type="text" value="Ведущий менеджер по закупкам IT-оборудования"/>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-gray text-[18px]" data-icon="work">work</span>
+</div>
+<p class="text-[11px] text-gray mt-1">Подразделение серверной и сетевой инфраструктуры</p>
+</div>
+<!-- Поле 3: Корпоративный Email (Readonly) -->
+<div>
+<label class="block text-xs font-semibold text-graphite mb-1.5">
+                Корпоративный Email
+              </label>
+<div class="relative">
+<input class="w-full px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] bg-slate-50 text-sm text-gray font-mono cursor-not-allowed select-all" readonly="" type="email" value="m.smirnov@peremena.ru"/>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-gray text-[18px]" data-icon="mail">mail</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] text-gray mt-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="info">info</span>
+<span>Смена привязанного адреса производится через Helpdesk PEREMENA</span>
+</div>
+</div>
+<!-- Поле 4: Рабочий регион по умолчанию -->
+<div>
+<label class="block text-xs font-semibold text-graphite mb-1.5">
+                Рабочий регион по умолчанию
+              </label>
+<div class="relative">
+<select class="w-full px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] text-sm text-graphite font-medium focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none pr-10 bg-white">
+<option selected="" value="voronezh">Воронеж (ЦФО)</option>
+<option value="moscow">Москва и МО</option>
+<option value="lipetsk">Липецк (ЦФО)</option>
+<option value="belgorod">Белгород (ЦФО)</option>
+<option value="tambov">Тамбов (ЦФО)</option>
+<option value="all-cfo">Все регионы ЦФО (консолидированный склад)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-gray text-[20px] pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+<p class="text-[11px] text-gray mt-1">Определяет расчет плеча логистики и базовые сроки доставки на центральный склад</p>
+</div>
+</div>
+</section>
+<!-- ================= SECTION 2: Режим поиска по умолчанию ================= -->
+<section class="bg-white rounded-xl border border-[#E2E8F0] p-6 shadow-sm">
+<div class="flex items-center justify-between pb-5 border-b border-[#E2E8F0]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-soft text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]" data-icon="filter_alt">filter_alt</span>
+</div>
+<div>
+<h2 class="font-headline text-base font-bold text-graphite">Режим поиска и приоритизация поставщиков</h2>
+<p class="text-xs text-gray">Конфигурация автоматического сканирования складов и ценовых матриц агрегаторов</p>
+</div>
+</div>
+<span class="text-xs font-semibold text-primary bg-primary-soft px-3 py-1 rounded-full">Режим Enterprise</span>
+</div>
+<!-- Radio Selection Grid -->
+<div class="pt-6 space-y-3">
+<label class="text-xs font-semibold text-graphite block mb-2">Глубина и источники поиска котировок</label>
+<!-- Option 1: Selected Recommended -->
+<label class="relative flex items-start p-4 rounded-xl border-2 border-primary bg-primary-soft/30 cursor-pointer transition-all">
+<div class="flex items-center h-5">
+<input checked="" class="w-4 h-4 text-primary border-gray focus:ring-primary focus:ring-2" name="search_mode" type="radio" value="hybrid"/>
+</div>
+<div class="ml-3 text-sm">
+<div class="flex items-center gap-2">
+<span class="font-bold text-graphite">Гибридный поиск (Реальные онлайн-офферы + B2B-дистрибьюторы)</span>
+<span class="text-[10px] bg-primary text-white font-bold px-2 py-0.5 rounded-full">Рекомендуемый</span>
+</div>
+<p class="text-xs text-gray mt-1">
+                  Сканирует авторизованные склады прямых дистрибьюторов в реальном времени параллельно с открытым рынком РФ. Максимальная полнота выдачи с защитой от фейковых складских остатков.
+                </p>
+</div>
+</label>
+<!-- Option 2 -->
+<label class="relative flex items-start p-4 rounded-xl border border-[#E2E8F0] hover:border-slate-300 bg-white cursor-pointer transition-all">
+<div class="flex items-center h-5">
+<input class="w-4 h-4 text-primary border-gray focus:ring-primary focus:ring-2" name="search_mode" type="radio" value="official"/>
+</div>
+<div class="ml-3 text-sm">
+<div class="flex items-center gap-2">
+<span class="font-bold text-graphite">Только официальная дистрибуция с ЭДО (Merlion, Netlab, OCS)</span>
+<span class="text-[10px] bg-slate-100 text-gray font-semibold px-2 py-0.5 rounded">Строгий комплаенс</span>
+</div>
+<p class="text-xs text-gray mt-1">
+                  Исключает серый импорт и сторонние маркетплейсы. Фиксация гарантированной цены по API поставщиков с проверкой ЭДО Диадок / СБИС.
+                </p>
+</div>
+</label>
+<!-- Option 3 -->
+<label class="relative flex items-start p-4 rounded-xl border border-[#E2E8F0] hover:border-slate-300 bg-white cursor-pointer transition-all">
+<div class="flex items-center h-5">
+<input class="w-4 h-4 text-primary border-gray focus:ring-primary focus:ring-2" name="search_mode" type="radio" value="marketplaces"/>
+</div>
+<div class="ml-3 text-sm">
+<div class="flex items-center gap-2">
+<span class="font-bold text-graphite">Широкий маркетплейс-мониторинг (WB, Ozon, DNS B2B)</span>
+</div>
+<p class="text-xs text-gray mt-1">
+                  Фокус на экспресс-поставку и быструю спотовую закупку небольших партий с немедленной доставкой в день заказа.
+                </p>
+</div>
+</label>
+</div>
+<!-- Quick Filters Switches -->
+<div class="mt-6 pt-5 border-t border-[#E2E8F0] space-y-4">
+<span class="text-xs font-semibold text-graphite block">Правила предварительной фильтрации</span>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Switch 1 -->
+<label class="flex items-start gap-3 p-3 rounded-lg border border-[#E2E8F0] bg-canvas/40 cursor-pointer hover:bg-canvas transition-colors">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-primary focus:ring-primary border-slate-300" type="checkbox"/>
+<div class="text-xs">
+<span class="font-semibold text-graphite block">Всегда включать НДС 20% в цены</span>
+<span class="text-gray text-[11px]">Автоматический пересчет цен УСН поставщиков</span>
+</div>
+</label>
+<!-- Switch 2 -->
+<label class="flex items-start gap-3 p-3 rounded-lg border border-[#E2E8F0] bg-canvas/40 cursor-pointer hover:bg-canvas transition-colors">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-primary focus:ring-primary border-slate-300" type="checkbox"/>
+<div class="text-xs">
+<span class="font-semibold text-graphite block">Автоматическая проверка MPN/EAN</span>
+<span class="text-gray text-[11px]">Исключение артикулов-дубликатов с расхождением ревизий</span>
+</div>
+</label>
+<!-- Switch 3 -->
+<label class="flex items-start gap-3 p-3 rounded-lg border border-[#E2E8F0] bg-canvas/40 cursor-pointer hover:bg-canvas transition-colors">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-primary focus:ring-primary border-slate-300" type="checkbox"/>
+<div class="text-xs">
+<span class="font-semibold text-graphite block">Скрывать без остатка на складе</span>
+<span class="text-gray text-[11px]">Убирать офферы со статусом «Под заказ» от 21 дня</span>
+</div>
+</label>
+</div>
+</div>
+</section>
+<!-- ================= SECTION 3: Параметры AI-Копайлота закупок ================= -->
+<section class="bg-primary-soft/40 rounded-xl border border-primary/20 p-6 shadow-sm relative overflow-hidden">
+<div class="flex items-center justify-between pb-5 border-b border-primary/15">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary text-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[22px]" data-icon="psychology">psychology</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline text-base font-bold text-graphite">Параметры AI-Копайлота закупок</h2>
+<span class="text-[11px] font-mono font-semibold bg-white text-primary px-2 py-0.5 rounded border border-primary/20">Qwen3-32B Enterprise</span>
+</div>
+<p class="text-xs text-gray">Конфигурация нейросетевого ассистента для аудита спецификаций и обоснования НМЦК</p>
+</div>
+</div>
+<div class="flex items-center gap-1.5 text-xs text-primary font-medium bg-white px-3 py-1 rounded-full border border-primary/20">
+<span class="material-symbols-outlined text-[16px]" data-icon="bolt">bolt</span>
+<span>Модель активна</span>
+</div>
+</div>
+<div class="pt-6 space-y-6">
+<!-- Segmented Control: Verbosity -->
+<div>
+<div class="flex items-center justify-between mb-2">
+<label class="text-xs font-semibold text-graphite">Уровень детализации объяснений ИИ (AI explanation verbosity)</label>
+<span class="text-[11px] text-gray">Влияет на глубину текстового заключения в ТКП</span>
+</div>
+<!-- Segmented Switcher UI -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-2.5 bg-white p-1.5 rounded-xl border border-[#E2E8F0]">
+<!-- Segment 1 -->
+<label class="flex flex-col p-3 rounded-lg border border-transparent hover:bg-canvas cursor-pointer transition-all">
+<div class="flex items-center justify-between">
+<span class="text-xs font-semibold text-graphite">Лаконичный</span>
+<input class="w-3.5 h-3.5 text-primary border-gray focus:ring-primary" name="ai_verbosity" type="radio" value="concise"/>
+</div>
+<span class="text-[11px] text-gray mt-1">Только вердикт, минимальная цена и критические нестыковки</span>
+</label>
+<!-- Segment 2 (Selected) -->
+<label class="flex flex-col p-3 rounded-lg bg-primary-soft text-primary border border-primary/30 cursor-pointer shadow-xs transition-all">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-primary">Стандартный</span>
+<input checked="" class="w-3.5 h-3.5 text-primary border-primary focus:ring-primary" name="ai_verbosity" type="radio" value="standard"/>
+</div>
+<span class="text-[11px] text-graphite/80 mt-1">Обоснование выбора, риски сроков поставки и расчет реальной экономии</span>
+</label>
+<!-- Segment 3 -->
+<label class="flex flex-col p-3 rounded-lg border border-transparent hover:bg-canvas cursor-pointer transition-all">
+<div class="flex items-center justify-between">
+<span class="text-xs font-semibold text-graphite">Развернутый</span>
+<input class="w-3.5 h-3.5 text-primary border-gray focus:ring-primary" name="ai_verbosity" type="radio" value="extended"/>
+</div>
+<span class="text-[11px] text-gray mt-1">Полный комплаенс 44-ФЗ / 223-ФЗ, формулы отклонений и анализ условий КП</span>
+</label>
+</div>
+</div>
+<!-- Law 44-FZ Automatic Calculation Feature -->
+<div class="bg-white rounded-xl p-4 border border-[#E2E8F0] space-y-3">
+<label class="flex items-start gap-3 cursor-pointer">
+<input checked="" class="mt-1 w-4 h-4 rounded text-primary focus:ring-primary border-slate-300" type="checkbox"/>
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold text-graphite">Автоматически рассчитывать коэффициент вариации V по ст. 22 44-ФЗ</span>
+<span class="text-[10px] bg-slate-100 text-gray px-1.5 py-0.5 rounded font-mono font-medium">V &lt; 33%</span>
+</div>
+<p class="text-xs text-gray mt-1">
+                    При выборке от 3 поставщиков алгоритм производит автоматический расчет среднеквадратичного отклонения. Если коэффициент превышает 33%, система помечает выборку как неоднородную и предлагает скорректировать пул позиций.
+                  </p>
+</div>
+</label>
+<!-- Micro Formula Preview Box -->
+<div class="bg-canvas rounded-lg p-3 text-[11px] font-mono text-gray flex items-center justify-between border border-slate-200">
+<span>Формула: V = (σ / Цср) × 100% | Метод сопоставимых рыночных цен (анализ рынка)</span>
+<span class="text-emerald-700 font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+                  Валидация включена
+                </span>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= SECTION 4: Настройки экспорта в Excel/ТКП ================= -->
+<section class="bg-white rounded-xl border border-[#E2E8F0] p-6 shadow-sm">
+<div class="flex items-center justify-between pb-5 border-b border-[#E2E8F0]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-soft text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]" data-icon="table_view">table_view</span>
+</div>
+<div>
+<h2 class="font-headline text-base font-bold text-graphite">Настройки экспорта в Excel и генерации ТКП</h2>
+<p class="text-xs text-gray">Конфигурация столбцов, расчетов наценки и структуры выгружаемых коммерческих спецификаций</p>
+</div>
+</div>
+<div class="flex items-center gap-1.5 text-xs text-gray">
+<span class="material-symbols-outlined text-[16px]" data-icon="description">description</span>
+<span>Формат XLSX / PDF</span>
+</div>
+</div>
+<div class="pt-6 space-y-6">
+<!-- Format Choice -->
+<div>
+<label class="text-xs font-semibold text-graphite block mb-2">Формат выгрузки табличных данных</label>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<label class="flex items-start p-3.5 rounded-lg border-2 border-primary bg-primary-soft/20 cursor-pointer">
+<input checked="" class="mt-0.5 w-4 h-4 text-primary focus:ring-primary border-slate-300" name="export_format" type="radio" value="with_formulas"/>
+<div class="ml-3 text-xs">
+<span class="font-bold text-graphite block">.xlsx со встроенными формулами и расчетом маржинальности</span>
+<span class="text-gray text-[11px] mt-0.5 block">Включает вкладку скрытой себестоимости, расчет чистой прибыли и НДС</span>
+</div>
+</label>
+<label class="flex items-start p-3.5 rounded-lg border border-[#E2E8F0] hover:border-slate-300 cursor-pointer">
+<input class="mt-0.5 w-4 h-4 text-primary focus:ring-primary border-slate-300" name="export_format" type="radio" value="clean"/>
+<div class="ml-3 text-xs">
+<span class="font-bold text-graphite block">.xlsx чистая таблица для заказчика</span>
+<span class="text-gray text-[11px] mt-0.5 block">Только артикулы, наименования, количество, гарантия и итоговая цена продажи</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Mandatory Columns Checkboxes -->
+<div>
+<label class="text-xs font-semibold text-graphite block mb-2">Набор колонок по умолчанию в итоговой таблице</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<label class="flex items-center gap-3 p-3 rounded-lg border border-[#E2E8F0] hover:bg-canvas/50 cursor-pointer">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary border-slate-300" type="checkbox"/>
+<div class="text-xs">
+<span class="font-semibold text-graphite">Включать артикул MPN/EAN</span>
+<span class="text-gray block text-[11px]">Производственный код изготовителя для верификации</span>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg border border-[#E2E8F0] hover:bg-canvas/50 cursor-pointer">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary border-slate-300" type="checkbox"/>
+<div class="text-xs">
+<span class="font-semibold text-graphite">Указывать условия гарантии СЦ</span>
+<span class="text-gray block text-[11px]">Срок (12/24/36 мес.) и тип обслуживания (On-site / Carry-in)</span>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg border border-[#E2E8F0] hover:bg-canvas/50 cursor-pointer">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary border-slate-300" type="checkbox"/>
+<div class="text-xs">
+<span class="font-semibold text-graphite">Добавлять ссылки на счета поставщиков</span>
+<span class="text-gray block text-[11px]">Гиперссылки на внутренние брони в B2B-порталах</span>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg border border-[#E2E8F0] hover:bg-canvas/50 cursor-pointer">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary border-slate-300" type="checkbox"/>
+<div class="text-xs">
+<span class="font-semibold text-graphite">Статус проверки по реестру Минпромторга / РЭП</span>
+<span class="text-gray block text-[11px]">Отметка реестровой записи для преференций по ПП 878</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Corporate Template Selector -->
+<div class="pt-2">
+<label class="text-xs font-semibold text-graphite block mb-1.5">Шаблон оформления листа</label>
+<div class="flex items-center gap-3">
+<div class="relative flex-1">
+<select class="w-full px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] text-sm text-graphite font-medium focus:ring-2 focus:ring-primary/20 focus:border-primary appearance-none pr-10 bg-white">
+<option selected="">Корпоративный бланк PEREMENA Digital (Синий заголовок #2569ED, логотип, печать)</option>
+<option>Строгий нейтральный бланк (ГОСТ Р 7.0.97-2016)</option>
+<option>Форма обоснования НМЦК для ЕИС Закупки (Приложение к ТЗ)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-gray text-[20px] pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+<button class="px-4 py-2.5 rounded-lg border border-[#E2E8F0] text-xs font-semibold text-graphite hover:bg-canvas transition-colors shrink-0 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]" data-icon="visibility">visibility</span>
+<span>Предпросмотр</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+<!-- ================= BOTTOM ACTION BAR (Sticky Bar) ================= -->
+<footer class="fixed bottom-0 left-0 right-0 bg-white border-t border-[#E2E8F0] py-3.5 px-6 z-40 shadow-lg">
+<div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+<!-- Status Indicator -->
+<div class="flex items-center gap-2 text-xs text-gray font-medium">
+<span class="flex h-2 w-2 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+</span>
+<span id="save-status">Все изменения сохранены локально в профиле</span>
+<span class="text-slate-300">•</span>
+<span class="text-[11px] text-gray">Синхронизировано с базой Воронеж ЦФО</span>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<button class="flex-1 sm:flex-none px-4 py-2.5 rounded-lg border border-[#E2E8F0] text-xs font-semibold text-gray hover:text-graphite hover:bg-canvas transition-all flex items-center justify-center gap-1.5 focus:outline-none" id="reset-btn" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="restart_alt">restart_alt</span>
+<span>Сбросить до стандартных настроек</span>
+</button>
+<button class="flex-1 sm:flex-none px-6 py-2.5 rounded-lg bg-primary hover:bg-primary-dark text-white text-xs font-semibold shadow-sm transition-all flex items-center justify-center gap-2 focus:ring-4 focus:ring-primary/20 focus:outline-none" id="save-btn" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="save">save</span>
+<span>Сохранить изменения</span>
+</button>
+</div>
+</div>
+</footer>
+<!-- Notification Toast for Save Action -->
+<div class="fixed top-20 right-6 bg-graphite text-white px-4 py-3 rounded-lg shadow-xl text-xs font-medium flex items-center gap-3 transform translate-y-[-100px] opacity-0 transition-all duration-300 z-50" id="toast">
+<span class="material-symbols-outlined text-emerald-400 text-[18px]" data-icon="check_circle">check_circle</span>
+<span>Параметры профиля и парсинга успешно обновлены</span>
+</div>
+<script>
+    // Micro-interactions for buttons
+    const saveBtn = document.getElementById('save-btn');
+    const resetBtn = document.getElementById('reset-btn');
+    const toast = document.getElementById('toast');
+    const statusText = document.getElementById('save-status');
+
+    saveBtn.addEventListener('click', () => {
+      saveBtn.classList.add('opacity-75');
+      statusText.textContent = 'Сохранение в облаке PEREMENA...';
+      
+      setTimeout(() => {
+        saveBtn.classList.remove('opacity-75');
+        statusText.textContent = 'Все изменения сохранены локально в профиле';
+        
+        // Show Toast
+        toast.classList.remove('translate-y-[-100px]', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+        
+        setTimeout(() => {
+          toast.classList.add('translate-y-[-100px]', 'opacity-0');
+          toast.classList.remove('translate-y-0', 'opacity-100');
+        }, 3000);
+      }, 500);
+    });
+
+    resetBtn.addEventListener('click', () => {
+      if (confirm('Сбросить индивидуальные настройки до корпоративного стандарта?')) {
+        statusText.textContent = 'Стандартные настройки восстановлены';
+        setTimeout(() => {
+          statusText.textContent = 'Все изменения сохранены локально в профиле';
+        }, 2000);
+      }
+    });
+  </script>
+</body></html>

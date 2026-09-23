@@ -1,0 +1,14 @@
+.git/
+**/.git/
+.env
+.env.*
+!.env.example
+.cursor/mcp.json
+.cursor/rules/server-access.mdc
+.codex/migration-backups/
+graphify-out/
+node_modules/
+dist/
+build/
+coverage/
+*.tsbuildinfo

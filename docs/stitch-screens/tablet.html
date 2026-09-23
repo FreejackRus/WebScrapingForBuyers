@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html class="h-full" lang="ru">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+  <title>ПЕРЕМЕНА · Price Radar | Планшет менеджера</title>
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2569ED',
+            'primary-dark': '#1D4FC4',
+            'primary-soft': '#EAF2FF',
+            graphite: '#181C24',
+            gray: '#6F7782',
+            canvas: '#F4F6F8',
+            white: '#FFFFFF',
+            'outline-border': '#E2E8F0',
+            'surface-hover': '#F8FAFC'
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            headline: ["Inter", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings: 'FILL' 1;
+    }
+    .tablet-scroll::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+    .tablet-scroll::-webkit-scrollbar-track {
+      background: #F4F6F8;
+    }
+    .tablet-scroll::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-canvas text-graphite font-body antialiased min-h-screen flex flex-col selection:bg-primary-soft selection:text-primary">
+
+  <!-- TOP APP BAR / BRAND HEADER (White, Uppercase ПЕРЕМЕНА) -->
+  <header class="bg-white border-b border-outline-border sticky top-0 z-40 px-6 py-3 shadow-xs">
+    <div class="max-w-[1024px] mx-auto flex items-center justify-between gap-4">
+      <!-- Brand & Active Workspace Badge -->
+      <div class="flex items-center gap-3 shrink-0">
+        <div class="flex items-baseline gap-2.5">
+          <span class="font-extrabold text-graphite tracking-tight text-xl font-headline">ПЕРЕМЕНА</span>
+          <span class="bg-primary-soft text-primary font-bold text-xs px-2.5 py-0.5 rounded-full border border-primary/20 tracking-wide font-mono">
+            Price Radar · 1024px
+          </span>
+        </div>
+      </div>
+
+      <!-- Tablet Search Bar with Shortcut -->
+      <div class="flex-1 max-w-sm relative">
+        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray">
+          <span class="material-symbols-outlined text-[19px]">search</span>
+        </div>
+        <input class="w-full pl-9 pr-14 py-2 bg-canvas border border-outline-border text-xs rounded-lg text-graphite placeholder:text-gray focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="Поиск MPN, артикула, вендора..." type="text" value="910-006559"/>
+        <div class="absolute inset-y-0 right-0 pr-2.5 flex items-center pointer-events-none">
+          <kbd class="text-[10px] font-mono text-gray bg-white px-1.5 py-0.5 rounded border border-outline-border font-semibold shadow-2xs">⌘K</kbd>
+        </div>
+      </div>
+
+      <!-- Tablet Manager Controls: Region, Freshness, Manager Profile -->
+      <div class="flex items-center gap-3 shrink-0">
+        <!-- Region Selector -->
+        <button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-outline-border bg-canvas hover:bg-slate-100 text-xs font-semibold text-graphite transition-colors">
+          <span class="material-symbols-outlined text-[17px] text-primary">location_on</span>
+          <span>Воронеж (ЦФО)</span>
+          <span class="material-symbols-outlined text-[15px] text-gray">expand_more</span>
+        </button>
+        <!-- Freshness Sync indicator -->
+        <div class="hidden sm:flex items-center gap-1.5 px-2.5 py-1 bg-primary-soft rounded-md border border-primary/20 text-[11px] text-primary font-medium">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+          </span>
+          <span>Синхронизировано</span>
+        </div>
+        <div class="h-5 w-px bg-outline-border"></div>
+        <!-- Manager Profile Badge -->
+        <div class="flex items-center gap-2.5 pl-1">
+          <div class="w-8 h-8 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center tracking-tight shadow-xs">
+            МС
+          </div>
+          <div class="hidden md:block text-left leading-tight">
+            <div class="text-xs font-bold text-graphite">Михаил Смирнов</div>
+            <div class="text-[11px] text-gray">Менеджер закупок</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SUB-NAVIGATION BAR -->
+  <nav class="bg-white border-b border-outline-border px-6 py-1">
+    <div class="max-w-[1024px] mx-auto flex items-center justify-between text-xs overflow-x-auto tablet-scroll">
+      <div class="flex items-center gap-6">
+        <a class="py-2.5 border-b-2 border-primary text-primary font-bold flex items-center gap-1.5 whitespace-nowrap" href="#">
+          <span class="material-symbols-outlined text-[18px]">radar</span>
+          <span>Мониторинг цен</span>
+        </a>
+        <a class="py-2.5 text-gray hover:text-graphite font-medium flex items-center gap-1.5 whitespace-nowrap transition-colors" href="#">
+          <span class="material-symbols-outlined text-[18px]">developer_board</span>
+          <span>Каталог MPN</span>
+        </a>
+        <a class="py-2.5 text-gray hover:text-graphite font-medium flex items-center gap-1.5 whitespace-nowrap transition-colors" href="#">
+          <span class="material-symbols-outlined text-[18px]">hub</span>
+          <span>Поставщики ЦФО</span>
+        </a>
+        <a class="py-2.5 text-gray hover:text-graphite font-medium flex items-center gap-1.5 whitespace-nowrap transition-colors" href="#">
+          <span class="material-symbols-outlined text-[18px]">history</span>
+          <span>История запросов</span>
+        </a>
+        <a class="py-2.5 text-gray hover:text-graphite font-medium flex items-center gap-1.5 whitespace-nowrap transition-colors" href="#">
+          <span class="material-symbols-outlined text-[18px]">verified_user</span>
+          <span>Аналитика 44-ФЗ</span>
+        </a>
+      </div>
+      <div class="flex items-center gap-2 pl-4 py-1">
+        <span class="text-[11px] text-gray">Рабочий профиль: <strong class="text-graphite font-semibold">ЦФО / Воронеж</strong></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CANVAS (Strictly 1024px tablet container) -->
+  <main class="max-w-[1024px] w-full mx-auto px-6 py-5 flex-1 flex flex-col gap-5">
+
+    <!-- 1. COMPACT PRODUCT HERO CARD -->
+    <section class="bg-white border border-outline-border rounded-xl p-4 shadow-xs">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <!-- Product Identity & Spec Tags -->
+        <div class="flex items-start gap-4">
+          <div class="w-16 h-16 rounded-xl bg-primary-soft border border-primary/20 flex items-center justify-center shrink-0 text-primary">
+            <span class="material-symbols-outlined text-[36px]">mouse</span>
+          </div>
+          <div>
+            <div class="flex flex-wrap items-center gap-2 mb-1">
+              <span class="text-xs font-bold text-primary font-mono tracking-tight bg-primary-soft px-2 py-0.5 rounded">Logitech</span>
+              <h1 class="text-base font-bold text-graphite tracking-tight font-headline">
+                Logitech MX Master 3S Graphite Wireless Performance Mouse
+              </h1>
+            </div>
+            <!-- MPN / EAN metadata -->
+            <div class="flex flex-wrap items-center gap-3 text-xs text-gray mb-2">
+              <span>MPN: <strong class="text-graphite font-mono">910-006559</strong></span>
+              <span class="text-slate-300">•</span>
+              <span>EAN: <strong class="text-graphite font-mono">5099206103726</strong></span>
+              <span class="text-slate-300">•</span>
+              <span class="flex items-center gap-1 text-primary font-semibold">
+                <span class="material-symbols-outlined text-[15px]">verified</span>
+                Оригинал EAC
+              </span>
+            </div>
+            <!-- Spec Chips -->
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-[11px] bg-canvas border border-outline-border text-gray px-2 py-0.5 rounded font-medium">Darkfield 8000 DPI</span>
+              <span class="text-[11px] bg-canvas border border-outline-border text-gray px-2 py-0.5 rounded font-medium">Quiet Clicks</span>
+              <span class="text-[11px] bg-canvas border border-outline-border text-gray px-2 py-0.5 rounded font-medium">Logi Bolt / Bluetooth</span>
+              <span class="text-[11px] bg-canvas border border-outline-border text-gray px-2 py-0.5 rounded font-medium">USB-C Quick Charge</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Price Overview & Actions -->
+        <div class="flex md:flex-col items-center md:items-end justify-between md:justify-center border-t md:border-t-0 md:border-l border-outline-border pt-3 md:pt-0 md:pl-6 shrink-0 gap-2">
+          <div class="text-left md:text-right">
+            <span class="text-[11px] font-medium text-gray block">Медиана рынка (ЦФО):</span>
+            <div class="flex items-baseline md:justify-end gap-1.5">
+              <span class="text-xl font-extrabold text-graphite font-headline tracking-tight">9 850 ₽</span>
+              <span class="text-xs font-bold text-primary bg-primary-soft px-1.5 py-0.5 rounded font-mono">-4.2%</span>
+            </div>
+            <span class="text-[10px] text-gray">РРЦ вендора: 10 800 ₽</span>
+          </div>
+          <button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-outline-border text-xs font-semibold text-graphite bg-white hover:bg-slate-50 transition-colors shadow-2xs">
+            <span class="material-symbols-outlined text-[16px] text-primary">sync_alt</span>
+            <span>Сменить позицию</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. QUICK KPI STRIP (3 Manager Summary Cards in official palette) -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="bg-white border border-outline-border rounded-xl p-4 shadow-xs flex items-center justify-between">
+        <div>
+          <span class="text-[11px] font-bold text-gray uppercase tracking-wider block mb-1">
+            Валидные предложения
+          </span>
+          <div class="flex items-baseline gap-2">
+            <span class="text-2xl font-extrabold text-graphite font-headline">12</span>
+            <span class="text-xs text-gray font-medium">офферов с НДС 20%</span>
+          </div>
+          <span class="text-[11px] text-primary flex items-center gap-1 mt-1 font-semibold">
+            <span class="material-symbols-outlined text-[15px]">check_circle</span>
+            5 проверенных складов в ЦФО
+          </span>
+        </div>
+        <div class="w-10 h-10 rounded-lg bg-primary-soft border border-primary/20 flex items-center justify-center text-primary shrink-0">
+          <span class="material-symbols-outlined text-[22px]">inventory_2</span>
+        </div>
+      </div>
+
+      <div class="bg-white border border-outline-border rounded-xl p-4 shadow-xs flex items-center justify-between">
+        <div>
+          <span class="text-[11px] font-bold text-gray uppercase tracking-wider block mb-1">
+            Лучшая цена в наличии
+          </span>
+          <div class="flex items-baseline gap-2">
+            <span class="text-2xl font-extrabold text-primary font-headline">8 490 ₽</span>
+            <span class="text-xs text-graphite font-mono font-semibold">-21% к РРЦ</span>
+          </div>
+          <span class="text-[11px] text-gray flex items-center gap-1 mt-1">
+            <span class="material-symbols-outlined text-[15px] text-primary">local_shipping</span>
+            Склад Воронеж (экономия 2 310 ₽)
+          </span>
+        </div>
+        <div class="w-10 h-10 rounded-lg bg-primary-soft border border-primary/20 flex items-center justify-center text-primary shrink-0">
+          <span class="material-symbols-outlined text-[22px]">sell</span>
+        </div>
+      </div>
+
+      <div class="bg-white border border-outline-border rounded-xl p-4 shadow-xs flex items-center justify-between">
+        <div>
+          <span class="text-[11px] font-bold text-gray uppercase tracking-wider block mb-1">
+            Рекомендованная НМЦК
+          </span>
+          <div class="flex items-baseline gap-2">
+            <span class="text-2xl font-extrabold text-graphite font-headline">82 866 ₽</span>
+            <span class="text-xs text-gray font-medium">(партия 10 шт.)</span>
+          </div>
+          <span class="text-[11px] text-primary flex items-center gap-1 mt-1 font-semibold">
+            <span class="material-symbols-outlined text-[15px]">gavel</span>
+            V = 5.11% по ст. 22 44-ФЗ (Норма)
+          </span>
+        </div>
+        <div class="w-10 h-10 rounded-lg bg-primary-soft border border-primary/20 flex items-center justify-center text-primary shrink-0">
+          <span class="material-symbols-outlined text-[22px]">account_balance</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. DOMINANT AI COPILOT MODULE (Background #EAF2FF, Buttons #2569ED) -->
+    <section class="bg-primary-soft border-2 border-primary/30 rounded-xl p-5 shadow-xs relative overflow-hidden">
+      <!-- Ambient Decorative Shape -->
+      <div class="absolute -right-10 -top-10 w-44 h-44 bg-primary/10 rounded-full blur-2xl pointer-events-none"></div>
+
+      <!-- Header & Copilot identity -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 relative z-10">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center shadow-xs shrink-0">
+            <span class="material-symbols-outlined text-[24px]">smart_toy</span>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h2 class="text-base font-bold text-graphite font-headline tracking-tight">
+                AI-Копайлот закупок: Qwen3-32B IT-Procurement
+              </h2>
+              <span class="inline-flex items-center gap-1 text-[10px] font-bold text-primary bg-white border border-primary/30 px-2 py-0.5 rounded-full font-mono">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Закрытый контур ПЕРЕМЕНА
+              </span>
+            </div>
+            <p class="text-xs text-gray mt-0.5">Анализ КП поставщиков, проверка 44-ФЗ/223-ФЗ и расчет оптимальной маржинальности</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5 text-xs text-primary font-semibold bg-white px-3 py-1 rounded-lg border border-primary/20 shrink-0">
+          <span class="material-symbols-outlined text-[16px]">bolt</span>
+          <span>Отклик: 0.4 сек (vLLM local)</span>
+        </div>
+      </div>
+
+      <!-- Quick Directive Action Chips -->
+      <div class="flex flex-wrap items-center gap-2 mb-4 relative z-10">
+        <span class="text-[11px] font-bold text-gray uppercase tracking-wider mr-1">Быстрые сценарии:</span>
+        <button class="bg-white hover:bg-slate-50 border border-primary/30 text-graphite text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 shadow-2xs">
+          <span class="material-symbols-outlined text-[15px] text-primary">description</span>
+          <span>Сформировать обоснование НМЦК</span>
+        </button>
+        <button class="bg-white hover:bg-slate-50 border border-primary/30 text-graphite text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 shadow-2xs">
+          <span class="material-symbols-outlined text-[15px] text-primary">compare_arrows</span>
+          <span>Сравнить ТЗ со спецификацией вендора</span>
+        </button>
+        <button class="bg-white hover:bg-slate-50 border border-primary/30 text-graphite text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 shadow-2xs">
+          <span class="material-symbols-outlined text-[15px] text-primary">security</span>
+          <span>Оценить риски поставщика и логистику</span>
+        </button>
+        <button class="bg-white hover:bg-slate-50 border border-primary/30 text-graphite text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 shadow-2xs">
+          <span class="material-symbols-outlined text-[15px] text-primary">request_quote</span>
+          <span>Подготовить проект ТКП</span>
+        </button>
+      </div>
+
+      <!-- Prompt Input Bar with #2569ED primary action -->
+      <div class="relative flex items-center mb-4 z-10">
+        <div class="absolute left-3.5 text-primary pointer-events-none">
+          <span class="material-symbols-outlined text-[20px]">prompt_suggestion</span>
+        </div>
+        <input class="w-full bg-white border border-primary/30 rounded-xl pl-11 pr-44 py-2.5 text-xs text-graphite placeholder:text-gray focus:outline-none focus:ring-2 focus:ring-primary shadow-xs" placeholder="Задайте директиву локальной модели..." type="text" value="Сформируй спецификацию для закупки 15 мышей с поставкой в Воронеж на завтра с минимальной ценой"/>
+        <button class="absolute right-1.5 px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded-lg font-bold text-xs transition-colors flex items-center gap-1.5 shadow-xs">
+          <span class="material-symbols-outlined text-[16px]">neurology</span>
+          <span>Сформировать анализ</span>
+        </button>
+      </div>
+
+      <!-- AI Live Findings: 3 Structured Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5 relative z-10">
+        <div class="bg-white rounded-xl p-3.5 border border-outline-border shadow-2xs">
+          <div class="flex items-center gap-2 text-xs font-bold text-graphite mb-1.5 font-headline">
+            <span class="material-symbols-outlined text-primary text-[18px]">task_alt</span>
+            <span>Вердикт ИИ</span>
+          </div>
+          <p class="text-xs text-gray leading-relaxed">
+            Оптимальный выбор — оффер №1 <strong class="text-graphite">LogiStore Direct</strong> (<strong class="text-primary font-mono">8 490 ₽</strong>). 14 шт. физически на складе в Воронеже, поставка 24ч, риск срыва 0%.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-3.5 border border-outline-border shadow-2xs">
+          <div class="flex items-center gap-2 text-xs font-bold text-graphite mb-1.5 font-headline">
+            <span class="material-symbols-outlined text-primary text-[18px]">savings</span>
+            <span>Факторы экономии</span>
+          </div>
+          <p class="text-xs text-gray leading-relaxed">
+            При пакетном заказе с пула Merlion (<strong class="text-primary font-mono">7 920 ₽</strong>) экономия <strong class="text-graphite font-mono">+5 700 ₽</strong>, но срок поставки увеличится до 3–4 дней.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-3.5 border border-outline-border shadow-2xs">
+          <div class="flex items-center gap-2 text-xs font-bold text-graphite mb-1.5 font-headline">
+            <span class="material-symbols-outlined text-primary text-[18px]">balance</span>
+            <span>Комплаенс 44-ФЗ / 223-ФЗ</span>
+          </div>
+          <p class="text-xs text-gray leading-relaxed">
+            Выборка строго удовлетворяет ст. 22 44-ФЗ (коэффициент вариации <strong class="text-graphite font-mono">V = 5.11% &lt; 33%</strong>). Документы и протокол ЭДО сформированы к экспорту.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. MANAGER OFFERS TABLE (Tablet High-Density Workspace) -->
+    <section class="bg-white border border-outline-border rounded-xl shadow-xs overflow-hidden flex flex-col">
+      <!-- Table Controls Bar -->
+      <div class="p-3.5 border-b border-outline-border flex flex-col md:flex-row md:items-center justify-between gap-3 bg-white">
+        <!-- Filter toggles -->
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="text-xs font-bold text-graphite font-headline">Предложения в ЦФО:</span>
+          <label class="inline-flex items-center gap-1.5 text-xs font-medium text-graphite cursor-pointer select-none">
+            <input checked="" class="w-3.5 h-3.5 text-primary border-outline-border rounded focus:ring-primary focus:ring-offset-0" type="checkbox"/>
+            <span>Только проверенные</span>
+          </label>
+          <label class="inline-flex items-center gap-1.5 text-xs font-medium text-graphite cursor-pointer select-none">
+            <input checked="" class="w-3.5 h-3.5 text-primary border-outline-border rounded focus:ring-primary focus:ring-offset-0" type="checkbox"/>
+            <span>С НДС 20%</span>
+          </label>
+          <div class="h-4 w-px bg-outline-border"></div>
+          <div class="relative">
+            <input class="w-40 text-[11px] py-1.5 pl-6 pr-2 bg-canvas border border-outline-border rounded-lg focus:outline-none focus:border-primary" placeholder="Фильтр по юр. лицу..." type="text"/>
+            <span class="material-symbols-outlined absolute left-1.5 top-2 text-[14px] text-gray">filter_list</span>
+          </div>
+        </div>
+        <!-- Export Actions in Primary Palette -->
+        <div class="flex items-center gap-2">
+          <button class="px-3 py-1.5 border border-outline-border rounded-lg bg-canvas hover:bg-slate-100 text-xs font-semibold text-graphite flex items-center gap-1.5 transition-colors shadow-2xs">
+            <span class="material-symbols-outlined text-[16px] text-primary">download</span>
+            <span>Экспорт ТКП (.xlsx)</span>
+          </button>
+          <button class="px-3 py-1.5 border border-primary/30 bg-primary-soft hover:bg-primary-soft/80 rounded-lg text-xs font-bold text-primary flex items-center gap-1.5 transition-colors shadow-2xs">
+            <span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+            <span>Обоснование НМЦК (PDF)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Scrollable Tablet Table View -->
+      <div class="overflow-x-auto tablet-scroll">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-canvas/70 border-b border-outline-border text-[11px] font-bold text-gray uppercase tracking-wider">
+              <th class="py-2.5 px-3">Источник / Поставщик</th>
+              <th class="py-2.5 px-3">MPN соответствие</th>
+              <th class="py-2.5 px-3">Сертификация</th>
+              <th class="py-2.5 px-3">Цена с НДС 20%</th>
+              <th class="py-2.5 px-3">Склад / Срок</th>
+              <th class="py-2.5 px-3">Гарантия</th>
+              <th class="py-2.5 px-3 text-right">Действие</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-outline-border text-xs">
+            <!-- ROW 1 (TOP RECOMMENDED) -->
+            <tr class="hover:bg-primary-soft/20 transition-colors bg-primary-soft/10">
+              <td class="py-3 px-3">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-8 h-8 rounded-lg bg-white border border-primary/30 text-primary flex items-center justify-center font-bold text-[11px] shadow-2xs">
+                    WB
+                  </div>
+                  <div>
+                    <div class="font-bold text-graphite flex items-center gap-1.5">
+                      <span>Wildberries B2B · LogiStore Direct</span>
+                      <span class="text-[10px] bg-primary text-white px-1.5 py-0.2 rounded font-mono font-bold">ТОП</span>
+                    </div>
+                    <div class="text-[11px] text-gray flex items-center gap-1.5 mt-0.5">
+                      <span>ООО «ЛогиТрейд»</span>
+                      <span class="text-slate-300">•</span>
+                      <span class="flex items-center text-primary font-semibold">★ 4.95 (12 400 отзывов)</span>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="py-3 px-3 font-mono text-[11px]">
+                <div class="flex items-center gap-1 text-primary font-bold">
+                  <span class="material-symbols-outlined text-[15px]">check_circle</span>
+                  <span>910-006559</span>
+                </div>
+                <div class="text-[10px] text-gray mt-0.5">100% соответствие</div>
+              </td>
+              <td class="py-3 px-3">
+                <span class="inline-flex items-center gap-1 text-[11px] font-medium text-graphite bg-white px-2 py-0.5 rounded border border-outline-border">
+                  <span class="material-symbols-outlined text-[13px] text-primary">verified</span>
+                  EAC / Декларация
+                </span>
+              </td>
+              <td class="py-3 px-3">
+                <div class="text-sm font-extrabold text-primary font-headline font-mono">8 490 ₽</div>
+                <div class="text-[10px] text-gray">НДС 20% включен (1 415 ₽)</div>
+              </td>
+              <td class="py-3 px-3">
+                <div class="font-bold text-graphite">Воронеж Местный РЦ</div>
+                <div class="text-[11px] text-primary flex items-center gap-1 font-semibold mt-0.5">
+                  <span class="material-symbols-outlined text-[13px]">bolt</span>
+                  В наличии 14 шт. (завтра)
+                </div>
+              </td>
+              <td class="py-3 px-3 text-gray font-medium">
+                12 мес. СЦ
+              </td>
+              <td class="py-3 px-3 text-right">
+                <button class="px-3 py-1.5 bg-primary hover:bg-primary-dark text-white font-bold text-xs rounded-lg transition-colors shadow-2xs">
+                  Выбрать в ТКП
+                </button>
+              </td>
+            </tr>
+
+            <!-- ROW 2 -->
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="py-3 px-3">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-8 h-8 rounded-lg bg-canvas border border-outline-border text-gray flex items-center justify-center font-bold text-[11px]">
+                    WB
+                  </div>
+                  <div>
+                    <div class="font-semibold text-graphite">Wildberries · ПрофКомплект</div>
+                    <div class="text-[11px] text-gray mt-0.5">ООО «ПрофКомплект-ЦФО»</div>
+                  </div>
+                </div>
+              </td>
+              <td class="py-3 px-3 font-mono text-[11px]">
+                <div class="flex items-center gap-1 text-primary">
+                  <span class="material-symbols-outlined text-[15px]">check_circle</span>
+                  <span>910-006559</span>
+                </div>
+                <div class="text-[10px] text-gray mt-0.5">Оригинал вендора</div>
+              </td>
+              <td class="py-3 px-3">
+                <span class="inline-flex items-center gap-1 text-[11px] font-medium text-graphite bg-canvas px-2 py-0.5 rounded border border-outline-border">
+                  <span class="material-symbols-outlined text-[13px] text-primary">verified</span>
+                  EAC
+                </span>
+              </td>
+              <td class="py-3 px-3">
+                <div class="text-sm font-bold text-graphite font-headline font-mono">8 920 ₽</div>
+                <div class="text-[10px] text-gray">НДС 20% включен</div>
+              </td>
+              <td class="py-3 px-3">
+                <div class="font-medium text-graphite">Москва Коледино</div>
+                <div class="text-[11px] text-gray mt-0.5">Срок: 2 дня (8 шт.)</div>
+              </td>
+              <td class="py-3 px-3 text-gray">
+                12 мес. вендор
+              </td>
+              <td class="py-3 px-3 text-right">
+                <button class="px-3 py-1.5 bg-canvas hover:bg-slate-200 border border-outline-border text-graphite font-semibold text-xs rounded-lg transition-colors">
+                  Выбрать в ТКП
+                </button>
+              </td>
+            </tr>
+
+            <!-- ROW 3 -->
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="py-3 px-3">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-8 h-8 rounded-lg bg-primary-soft border border-primary/20 text-primary font-bold text-[11px] flex items-center justify-center">
+                    MRL
+                  </div>
+                  <div>
+                    <div class="font-semibold text-graphite flex items-center gap-1.5">
+                      <span>MERLION B2B Portal</span>
+                      <span class="text-[10px] bg-primary-soft text-primary font-semibold px-1.5 py-0.2 rounded">Дистрибьютор</span>
+                    </div>
+                    <div class="text-[11px] text-gray mt-0.5">Официальный дистрибьюторский пул</div>
+                  </div>
+                </div>
+              </td>
+              <td class="py-3 px-3 font-mono text-[11px]">
+                <div class="flex items-center gap-1 text-primary">
+                  <span class="material-symbols-outlined text-[15px]">check_circle</span>
+                  <span>910-006559</span>
+                </div>
+                <div class="text-[10px] text-gray mt-0.5">Вендорская партия</div>
+              </td>
+              <td class="py-3 px-3">
+                <span class="inline-flex items-center gap-1 text-[11px] font-medium text-graphite bg-canvas px-2 py-0.5 rounded border border-outline-border">
+                  <span class="material-symbols-outlined text-[13px] text-primary">verified</span>
+                  ГТД + Сертификат
+                </span>
+              </td>
+              <td class="py-3 px-3">
+                <div class="text-sm font-bold text-graphite font-headline font-mono">7 920 ₽</div>
+                <div class="text-[10px] text-primary font-semibold">Безнал опт (мин. 5 шт)</div>
+              </td>
+              <td class="py-3 px-3">
+                <div class="font-medium text-graphite">Центральный склад МО</div>
+                <div class="text-[11px] text-gray mt-0.5">Срок: 3–4 дня (&gt;50 шт.)</div>
+              </td>
+              <td class="py-3 px-3 text-gray">
+                24 мес. СЦ
+              </td>
+              <td class="py-3 px-3 text-right">
+                <button class="px-3 py-1.5 bg-primary-soft hover:bg-primary/20 border border-primary/30 text-primary font-bold text-xs rounded-lg transition-colors">
+                  Запросить счет
+                </button>
+              </td>
+            </tr>
+
+            <!-- ROW 4 -->
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="py-3 px-3">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-8 h-8 rounded-lg bg-primary-soft border border-primary/20 text-primary font-bold text-[11px] flex items-center justify-center">
+                    NTL
+                  </div>
+                  <div>
+                    <div class="font-semibold text-graphite flex items-center gap-1.5">
+                      <span>NETLAB Дистрибуция</span>
+                      <span class="text-[10px] bg-primary-soft text-primary font-semibold px-1.5 py-0.2 rounded">Дистрибьютор</span>
+                    </div>
+                    <div class="text-[11px] text-gray mt-0.5">Оптовый B2B каталог</div>
+                  </div>
+                </div>
+              </td>
+              <td class="py-3 px-3 font-mono text-[11px]">
+                <div class="flex items-center gap-1 text-primary">
+                  <span class="material-symbols-outlined text-[15px]">check_circle</span>
+                  <span>910-006559</span>
+                </div>
+                <div class="text-[10px] text-gray mt-0.5">Оригинал</div>
+              </td>
+              <td class="py-3 px-3">
+                <span class="inline-flex items-center gap-1 text-[11px] font-medium text-graphite bg-canvas px-2 py-0.5 rounded border border-outline-border">
+                  <span class="material-symbols-outlined text-[13px] text-primary">verified</span>
+                  Новый EAC
+                </span>
+              </td>
+              <td class="py-3 px-3">
+                <div class="text-sm font-bold text-graphite font-headline font-mono">8 150 ₽</div>
+                <div class="text-[10px] text-gray">НДС 20% включен</div>
+              </td>
+              <td class="py-3 px-3">
+                <div class="font-medium text-graphite">Склад Тула (ЦФО)</div>
+                <div class="text-[11px] text-gray mt-0.5">Срок: 1–2 дня (22 шт.)</div>
+              </td>
+              <td class="py-3 px-3 text-gray">
+                12 мес. дилер
+              </td>
+              <td class="py-3 px-3 text-right">
+                <button class="px-3 py-1.5 bg-primary-soft hover:bg-primary/20 border border-primary/30 text-primary font-bold text-xs rounded-lg transition-colors">
+                  Запросить счет
+                </button>
+              </td>
+            </tr>
+
+            <!-- ROW 5 -->
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="py-3 px-3">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-8 h-8 rounded-lg bg-primary-soft border border-primary/20 text-primary font-bold text-[11px] flex items-center justify-center">
+                    OCS
+                  </div>
+                  <div>
+                    <div class="font-semibold text-graphite flex items-center gap-1.5">
+                      <span>OCS Distribution</span>
+                      <span class="text-[10px] bg-primary-soft text-primary font-semibold px-1.5 py-0.2 rounded">Дистрибьютор</span>
+                    </div>
+                    <div class="text-[11px] text-gray mt-0.5">Корпоративный партнерский канал</div>
+                  </div>
+                </div>
+              </td>
+              <td class="py-3 px-3 font-mono text-[11px]">
+                <div class="flex items-center gap-1 text-primary">
+                  <span class="material-symbols-outlined text-[15px]">check_circle</span>
+                  <span>910-006559</span>
+                </div>
+                <div class="text-[10px] text-gray mt-0.5">Официальная поставка</div>
+              </td>
+              <td class="py-3 px-3">
+                <span class="inline-flex items-center gap-1 text-[11px] font-medium text-graphite bg-canvas px-2 py-0.5 rounded border border-outline-border">
+                  <span class="material-symbols-outlined text-[13px] text-primary">verified</span>
+                  Полный пакет 44-ФЗ
+                </span>
+              </td>
+              <td class="py-3 px-3">
+                <div class="text-sm font-bold text-graphite font-headline font-mono">8 310 ₽</div>
+                <div class="text-[10px] text-gray">Безнал с НДС</div>
+              </td>
+              <td class="py-3 px-3">
+                <div class="font-medium text-graphite">Склад Воронеж (Партнер)</div>
+                <div class="text-[11px] text-primary font-semibold mt-0.5">Резерв: 5 шт. (1 день)</div>
+              </td>
+              <td class="py-3 px-3 text-gray">
+                24 мес. оф.
+              </td>
+              <td class="py-3 px-3 text-right">
+                <button class="px-3 py-1.5 bg-primary-soft hover:bg-primary/20 border border-primary/30 text-primary font-bold text-xs rounded-lg transition-colors">
+                  Запросить счет
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Table Footer / Quick Summary -->
+      <div class="px-4 py-3 bg-canvas/60 border-t border-outline-border flex items-center justify-between text-xs text-gray">
+        <div>
+          Отображено 5 проверенных позиций в регионе Воронеж (ЦФО).
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="flex items-center gap-1 font-medium text-graphite">
+            <span class="w-2 h-2 rounded-full bg-primary"></span>
+            Все цены проверены по API и ЭДО
+          </span>
+          <a class="text-primary font-bold hover:underline flex items-center gap-0.5" href="#">
+            Все предложения (12)
+            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- TABLET MINIMAL FOOTER -->
+  <footer class="bg-white border-t border-outline-border py-3 px-6 mt-auto">
+    <div class="max-w-[1024px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray">
+      <div class="flex items-center gap-3">
+        <span class="font-extrabold text-graphite font-headline">ПЕРЕМЕНА</span>
+        <span>·</span>
+        <span>IT Procurement Intelligence</span>
+        <span>·</span>
+        <span>Режим: <strong class="text-graphite font-semibold">Менеджер ЦФО</strong></span>
+      </div>
+      <div class="flex items-center gap-4">
+        <span class="text-[11px] bg-canvas px-2.5 py-0.5 rounded border border-outline-border font-mono font-medium">Tablet 1024px View</span>
+        <span class="text-[11px]">Поддержка СМК: 8 (800) 200-88-90</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
