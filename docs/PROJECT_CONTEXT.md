@@ -649,6 +649,8 @@ blue (белый список + soft highlight `#EAF2FF`, бейдж LIVE). По
 очищается при отправке и `disabled`/`readOnly` пока `busy`. Выкладка: web
 `--no-deps --build`, chrome не трогали.
 
+### 2026-09-23 — API Merlion / OCS / NetLab (исследование + клиенты)
+
 Поиск по открытым источникам и подготовка подключения:
 
 - **MERLION** — SOAP `mlservice3` (WSDL prod/test подтверждены), Basic Auth,
