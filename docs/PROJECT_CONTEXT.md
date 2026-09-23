@@ -715,4 +715,6 @@ Logitech G102» → `intent:search`, `searchQuery:Logitech G102`. Push
 
 Усилен SYSTEM/CHAT prompt (запрет англ. прозы / «The provided JSON…»);
 дешёвый retry при `looksStronglyEnglish`. Ранжирование не трогали.
+Прод: analysis `--no-deps --build`; smoke `POST /chat` → summary по-русски.
+`ed20a92`.
 
