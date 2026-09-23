@@ -146,7 +146,7 @@ export function SearchCommand() {
             <ul id={listId} className="suggest-dropdown" role="listbox">
               <li className="suggest-meta" role="presentation">
                 <span>Подсказки</span>
-                <span className="suggest-live">{suggesting ? "…" : "live"}</span>
+                <span className="suggest-live">{suggesting ? "…" : "LIVE"}</span>
               </li>
               {suggestions.map((product, index) => {
                 const secondary = suggestSecondary(product);

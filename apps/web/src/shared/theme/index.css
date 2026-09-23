@@ -87,10 +87,19 @@ input, textarea { width: 100%; border: 1px solid var(--line); border-radius: 8px
 input::placeholder, textarea::placeholder { color: var(--muted); opacity: 1; }
 input:focus, textarea:focus { border-color: var(--brand); box-shadow: 0 0 0 3px rgba(37, 105, 237, 0.16); outline: none; }
 textarea { min-height: 88px; resize: vertical; }
-.search button, .login-card button, .copilot form button, .chat-panel form button, .export, .settings-savebar button[type="submit"] {
+/* Primary CTA only — not typeahead .suggest-row (Stitch: white list + soft highlight). */
+.search > button,
+.login-card button,
+.copilot form button,
+.chat-panel form > button,
+.export,
+.settings-savebar button[type="submit"] {
   min-height: 40px; border: 0; border-radius: 8px; padding: 0 16px; background: var(--brand); color: #fff; font-weight: 600;
 }
-.search button:hover, .login-card button:hover, .export:hover, .copilot form button:hover { background: var(--brand-dark); }
+.search > button:hover,
+.login-card button:hover,
+.export:hover,
+.copilot form button:hover { background: var(--brand-dark); }
 .ghost { min-height: 32px; border: 1px solid var(--line); background: #fff; border-radius: 8px; padding: 0 10px; font-size: 13px; }
 .ghost:hover { background: var(--canvas); color: var(--brand); }
 button:disabled { opacity: 0.55; cursor: wait; }
@@ -124,29 +133,38 @@ button:disabled { opacity: 0.55; cursor: wait; }
   z-index: 20;
   left: 0;
   right: 0;
-  top: calc(100% + 4px);
+  top: calc(100% + 6px);
   margin: 0;
-  padding: 4px;
+  padding: 6px;
   list-style: none;
-  background: var(--surface);
+  background: #fff;
   border: 1px solid var(--line);
-  border-radius: 10px;
+  border-radius: 12px;
   box-shadow: var(--shadow-card);
-  max-height: 320px;
+  max-height: 340px;
   overflow: auto;
 }
+.suggest-dropdown > li { margin: 0; padding: 0; }
 .suggest-meta {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 6px 10px 4px;
+  padding: 4px 10px 8px;
   color: var(--muted);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.02em;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 4px;
 }
 .suggest-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   color: var(--brand);
+  background: var(--brand-soft);
+  border-radius: 999px;
+  padding: 2px 8px;
   font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
@@ -161,14 +179,20 @@ button:disabled { opacity: 0.55; cursor: wait; }
   text-align: left;
   border: 0;
   background: transparent;
+  color: var(--ink);
   border-radius: 8px;
-  padding: 8px 10px;
+  padding: 9px 10px;
   cursor: pointer;
+  min-height: auto;
+}
+.suggest-row:disabled {
+  opacity: 0.55;
+  cursor: wait;
 }
 .suggest-primary {
   color: var(--ink);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.35;
 }
 .suggest-secondary {
@@ -180,10 +204,15 @@ button:disabled { opacity: 0.55; cursor: wait; }
 .suggest-row.is-active,
 .suggest-row:hover {
   background: var(--brand-soft);
+  color: var(--ink);
 }
 .suggest-row.is-active .suggest-primary,
 .suggest-row:hover .suggest-primary {
   color: var(--brand-dark);
+}
+.suggest-row.is-active .suggest-secondary,
+.suggest-row:hover .suggest-secondary {
+  color: var(--muted);
 }
 .kbd { color: var(--muted); font-size: 11px; border: 1px solid var(--line); border-radius: 6px; padding: 4px 6px; }
 .panel-heading, .product-summary, .offers-toolbar { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; }
@@ -357,7 +386,7 @@ tr.recommended { box-shadow: inset 4px 0 0 var(--brand); }
   width: 100%;
   background: #fff;
   color: var(--ink);
-  border: 1px solid var(--line);
+  border: 1px solid var(--brand-200);
   border-radius: 8px;
   padding: 10px 12px;
   caret-color: var(--ink);
@@ -372,8 +401,21 @@ tr.recommended { box-shadow: inset 4px 0 0 var(--brand); }
   min-height: 44px; border: 0; border-radius: 8px; padding: 0 16px;
   background: var(--brand); color: #fff; font-weight: 600;
 }
-.chat-composer button:hover,
-.chat-panel form button:hover { background: var(--brand-dark); }
+.chat-composer-input:disabled,
+.chat-panel .chat-composer input:disabled {
+  background: var(--brand-soft);
+  color: var(--muted);
+  cursor: wait;
+}
+.chat-composer button:disabled,
+.chat-panel form > button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+.copilot-presets button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
 
 .settings-page {
   flex: 1;

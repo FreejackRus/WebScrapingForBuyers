@@ -39,8 +39,8 @@ export function AnalysisChat() {
 
   const send = async (text: string) => {
     const trimmed = text.trim();
-    if (trimmed.length < 2) return;
-    setPrompt(trimmed);
+    if (trimmed.length < 2 || busy) return;
+    setPrompt("");
     if (!snapshot) {
       const query = localSearchQuery(trimmed);
       setQuery(query.length >= 2 ? query : trimmed);
@@ -49,10 +49,9 @@ export function AnalysisChat() {
         "Уточните модель в карточках слева — после выбора начну сбор предложений.",
       );
       await suggest();
-      setPrompt("");
       return;
     }
-    const result = await run(snapshot.id);
+    const result = await run(snapshot.id, trimmed);
     applyChatResult(result);
   };
 
@@ -131,7 +130,7 @@ export function AnalysisChat() {
       )}
       <div className="copilot-presets">
         {presets.map((item) => (
-          <button type="button" key={item} onClick={() => void send(item)}>
+          <button type="button" key={item} disabled={busy} onClick={() => void send(item)}>
             {item}
           </button>
         ))}
@@ -145,12 +144,17 @@ export function AnalysisChat() {
           className="chat-composer-input"
           value={prompt}
           onChange={(event) => setPrompt(event.target.value)}
-          placeholder={`${name}, спросите про таблицу, фильтр, Excel или источники…`}
+          placeholder={
+            busy ? "Копайлот думает…" : `${name}, спросите про таблицу, фильтр, Excel или источники…`
+          }
           minLength={2}
           required
           autoComplete="off"
+          disabled={busy}
+          readOnly={busy}
+          aria-busy={busy}
         />
-        <button type="submit" disabled={busy}>
+        <button type="submit" disabled={busy || prompt.trim().length < 2}>
           {busy ? "Считаем…" : "Отправить"}
         </button>
       </form>

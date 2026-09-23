@@ -642,7 +642,12 @@ demo-адаптера (фейковые B2B-цены). Добавлены stub-�
 Compose: `ALLOW_DEMO_SOURCES=false`, плейсхолдеры B2B env. Chrome headed
 не пересоздавался. Выложено + push — см. запись ниже после деплоя.
 
-### 2026-09-23 — API Merlion / OCS / NetLab (исследование + клиенты)
+### 2026-09-24 — typeahead Stitch + AI composer
+
+Подсказки поиска: `.search button` больше не красит `.suggest-row` в brand
+blue (белый список + soft highlight `#EAF2FF`, бейдж LIVE). Поле копайлота
+очищается при отправке и `disabled`/`readOnly` пока `busy`. Выкладка: web
+`--no-deps --build`, chrome не трогали.
 
 Поиск по открытым источникам и подготовка подключения:
 

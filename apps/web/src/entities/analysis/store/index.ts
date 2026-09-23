@@ -20,7 +20,7 @@ interface AnalysisState {
   setPrompt: (prompt: string) => void;
   reset: () => void;
   appendLocal: (userText: string, assistantText: string) => void;
-  run: (searchId: string) => Promise<AnalysisResult>;
+  run: (searchId: string, promptText?: string) => Promise<AnalysisResult>;
 }
 
 const emptyMessages: ChatMessage[] = [];
@@ -46,10 +46,12 @@ export const useAnalysisStore = create<AnalysisState>((set, get) => ({
         { id: nextId(), role: "assistant", text: assistantText, citations: [] },
       ],
     })),
-  run: async (searchId) => {
-    const prompt = get().prompt.trim();
+  run: async (searchId, promptText) => {
+    const prompt = (promptText ?? get().prompt).trim();
+    if (prompt.length < 2) throw new Error("Пустой запрос");
     set((current) => ({
       busy: true,
+      prompt: "",
       messages: [...current.messages, { id: nextId(), role: "user", text: prompt, citations: [] }],
     }));
     try {

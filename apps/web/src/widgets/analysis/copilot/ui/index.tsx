@@ -37,8 +37,10 @@ export function AnalystPanel() {
 
   const onSubmit = async (event: FormEvent) => {
     event.preventDefault();
-    if (!snapshot) return;
-    await run(snapshot.id);
+    if (!snapshot || busy || disabled) return;
+    const text = prompt.trim();
+    if (text.length < 2) return;
+    await run(snapshot.id, text);
   };
 
   if (!user) return null;
@@ -58,7 +60,7 @@ export function AnalystPanel() {
       </div>
       <div className="copilot-presets">
         {presets.map((item) => (
-          <button type="button" key={item} onClick={() => setPrompt(item)}>
+          <button type="button" key={item} disabled={busy} onClick={() => setPrompt(item)}>
             {item}
           </button>
         ))}
@@ -71,11 +73,16 @@ export function AnalystPanel() {
           id="analysis-prompt"
           value={prompt}
           onChange={(event) => setPrompt(event.target.value)}
-          placeholder={`Например: ${user.analysisPrompt}`}
+          placeholder={busy ? "Копайлот думает…" : `Например: ${user.analysisPrompt}`}
           minLength={2}
           required
+          disabled={busy}
+          readOnly={busy}
+          aria-busy={busy}
         />
-        <button disabled={busy || disabled}>{busy ? "Считаем…" : "Запросить расчет"}</button>
+        <button disabled={busy || disabled || prompt.trim().length < 2}>
+          {busy ? "Считаем…" : "Запросить расчет"}
+        </button>
       </form>
       {snapshot?.status === "running" && (
         <p className="copilot-hint">Сбор ещё идёт — расчёт возьмёт только уже загруженные строки.</p>
