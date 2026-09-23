@@ -1,6 +1,6 @@
 import type { FormEvent } from "react";
 
-import { applyChatResult, localSearchQuery } from "features/analysis";
+import { applyChatResult, localSearchQuery, wantsNewSearch } from "features/analysis";
 import { useAnalysisStore } from "entities/analysis";
 import { useSearchStore } from "entities/search";
 import { useUserStore } from "entities/user";
@@ -37,18 +37,33 @@ export function AnalysisChat() {
   const setQuery = useSearchStore((state) => state.setQuery);
   const suggest = useSearchStore((state) => state.suggest);
 
+  if (!user) return null;
+
+  const name = firstName(user.displayName);
+  const presets = user.role === "admin" ? [...basePresets, ...adminPresets] : basePresets;
+
   const send = async (text: string) => {
     const trimmed = text.trim();
     if (trimmed.length < 2 || busy) return;
     setPrompt("");
     if (!snapshot) {
-      const query = localSearchQuery(trimmed);
-      setQuery(query.length >= 2 ? query : trimmed);
+      if (wantsNewSearch(trimmed)) {
+        const query = localSearchQuery(trimmed);
+        if (query.length >= 2) {
+          setQuery(query);
+          appendLocal(
+            trimmed,
+            "Уточните модель в карточках слева — после выбора начну сбор предложений.",
+          );
+          await suggest();
+          return;
+        }
+      }
       appendLocal(
         trimmed,
-        "Уточните модель в карточках слева — после выбора начну сбор предложений.",
+        `${name}, сначала выберите товар слева и дождитесь таблицы — тогда смогу объяснить снимок, фильтры и Excel. ` +
+          "Новый сбор: «Уточни модель G102» или «Найди Logitech G102». Обычные вопросы в поисковую строку не копирую.",
       );
-      await suggest();
       return;
     }
     const result = await run(snapshot.id, trimmed);
@@ -60,10 +75,6 @@ export function AnalysisChat() {
     await send(prompt);
   };
 
-  if (!user) return null;
-
-  const name = firstName(user.displayName);
-  const presets = user.role === "admin" ? [...basePresets, ...adminPresets] : basePresets;
   const emptyHint =
     `${name}, я копайлот закупок Price Radar — не общий чат. ` +
     "Спросите про снимок, фильтр таблицы, демо vs реальные цены, Excel, источники или уточните модель. " +

@@ -1,1 +1,1 @@
-export { applyChatResult, localSearchQuery } from "./apply-chat";
+export { applyChatResult, localSearchQuery, wantsNewSearch } from "./apply-chat";
