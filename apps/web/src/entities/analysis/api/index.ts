@@ -8,4 +8,10 @@ export const analysisApi = {
       method: "POST",
       body: JSON.stringify({ prompt }),
     }),
+  /** Free-form copilot chat via Ollama (no search snapshot required). */
+  chat: (prompt: string) =>
+    request<AnalysisResult>(apiUrl("/copilot/chat"), {
+      method: "POST",
+      body: JSON.stringify({ prompt }),
+    }),
 };

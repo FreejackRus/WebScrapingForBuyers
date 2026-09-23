@@ -1,29 +1,10 @@
 import type { FormEvent } from "react";
 import { useRef, useState } from "react";
 
-import {
-  applyChatResult,
-  localMetaReply,
-  localSearchQuery,
-  wantsNewSearch,
-} from "features/analysis";
+import { applyChatResult } from "features/analysis";
 import { useAnalysisStore } from "entities/analysis";
 import { useSearchStore } from "entities/search";
 import { useUserStore } from "entities/user";
-
-const basePresets = [
-  "Кто ты и чем помогаешь?",
-  "Только REAL",
-  "Сравни топ-3",
-  "Как выбираешь лучшее?",
-  "Что такое демо-цены?",
-  "Как выгрузить Excel?",
-  "Какие источники в снимке?",
-  "Уточни модель G102",
-  "Оставь только реальные WB дешевле 6000",
-];
-
-const adminPresets = ["Где прогревать антибот по VNC?"];
 
 function firstName(displayName: string) {
   return displayName.trim().split(/\s+/)[0] || displayName;
@@ -38,17 +19,14 @@ export function AnalysisChat() {
   const busy = useAnalysisStore((state) => state.busy);
   const setPrompt = useAnalysisStore((state) => state.setPrompt);
   const run = useAnalysisStore((state) => state.run);
-  const appendLocal = useAnalysisStore((state) => state.appendLocal);
+  const chat = useAnalysisStore((state) => state.chat);
   const snapshot = useSearchStore((state) => state.snapshot);
-  const setQuery = useSearchStore((state) => state.setQuery);
-  const suggest = useSearchStore((state) => state.suggest);
   const sendingRef = useRef(false);
   const [sending, setSending] = useState(false);
 
   if (!user) return null;
 
   const name = firstName(user.displayName);
-  const presets = user.role === "admin" ? [...basePresets, ...adminPresets] : basePresets;
   const locked = busy || sending;
 
   const send = async (text: string) => {
@@ -58,30 +36,10 @@ export function AnalysisChat() {
     setSending(true);
     setPrompt("");
     try {
+      // Always send to analysis — model returns searchQuery / filters; client applies via applyChatResult.
       if (!snapshot) {
-        if (wantsNewSearch(trimmed)) {
-          const query = localSearchQuery(trimmed);
-          if (query.length >= 2) {
-            setQuery(query);
-            appendLocal(
-              trimmed,
-              "Уточните модель в карточках слева — после выбора начну сбор предложений.",
-            );
-            await suggest();
-            return;
-          }
-        }
-        const meta = localMetaReply(trimmed, name, user.role);
-        if (meta) {
-          appendLocal(trimmed, meta);
-          return;
-        }
-        appendLocal(
-          trimmed,
-          `${name}, для фильтра, сравнения и разбора строк нужна таблица слева — выберите товар и дождитесь сбора. ` +
-            "Справочные вопросы (кто я, демо, Excel, ранжирование) отвечаю и без снимка. " +
-            "Новый сбор: «Уточни модель G102».",
-        );
+        const result = await chat(trimmed);
+        applyChatResult(result);
         return;
       }
       const result = await run(snapshot.id, trimmed);
@@ -102,7 +60,7 @@ export function AnalysisChat() {
   const emptyHint =
     `${name}, я копайлот закупок Price Radar — не общий чат. ` +
     "Спросите про снимок, фильтр таблицы, демо vs реальные цены, Excel, источники или уточните модель. " +
-    "Ранжирование считает код; модель только объясняет.";
+    "Ранжирование по цене считает код; релевантность названия может уточнять модель.";
 
   return (
     <section className="chat-panel" aria-labelledby="analysis-title">
@@ -163,13 +121,6 @@ export function AnalysisChat() {
           ))}
         </ul>
       )}
-      <div className="copilot-presets">
-        {presets.map((item) => (
-          <button type="button" key={item} disabled={locked} onClick={() => void send(item)}>
-            {item}
-          </button>
-        ))}
-      </div>
       <form className="chat-composer" onSubmit={(event) => void onSubmit(event)}>
         <label className="sr-only" htmlFor="analysis-prompt">
           Сообщение копайлоту

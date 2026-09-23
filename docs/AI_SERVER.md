@@ -36,6 +36,10 @@ MVP использует установленную Qwen3 через Ollama API.
 русскоязычный анализ. Повторная загрузка FP8-checkpoint для первого пилота не
 требуется.
 
+**Jev (TypeSafe «Jev 0» / jev-1.x):** hosted decision-модель, не локальная.
+Для MVP не используется — закрытый контур остаётся на Ollama Qwen. См.
+`docs/PROJECT_CONTEXT.md` (запись 2026-09-24).
+
 Развёрнутый проект: `/projects/WebScrapingForBuyers`. Коннекторы маркетплейсов:
 `/projects/ru-marketplace-mcp`. Внешний адрес:
 URL развёрнутого экземпляра хранится вне публичного репозитория.

@@ -1,8 +1,12 @@
 import type { Offer, SearchSnapshot } from "@peremena/contracts";
 import { describe, expect, it } from "vitest";
 
-import { analyzeSnapshot } from "./application/analyze.js";
-import type { AnalysisNarration } from "./domain/analysis-narrator.js";
+import { analyzeSnapshot, answerCopilot, dropWeakMatchesWhenStrongerExist } from "./application/analyze.js";
+import type {
+  AnalysisNarration,
+  CopilotChatInput,
+  RelevanceFilterInput,
+} from "./domain/analysis-narrator.js";
 import { toExplanationRow } from "./infrastructure/ollama-analysis-narrator.js";
 
 function offer(overrides: Partial<Offer> & Pick<Offer, "id" | "source" | "price" | "demo">): Offer {
@@ -193,6 +197,28 @@ describe("analyzeSnapshot", () => {
     expect(result.provider).toBe("Справочный ответ Price Radar");
   });
 
+  it("routes meta help through narrator.answer when available", async () => {
+    let seen: CopilotChatInput | undefined;
+    const result = await analyzeSnapshot(
+      snapshot([wbReal]),
+      "Кто ты?",
+      {
+        name: "Ollama · mock",
+        summarize: async () => ({ summary: "unused", warnings: [] }),
+        answer: async (input) => {
+          seen = input;
+          return { summary: "Михаил, я из модели — копайлот Price Radar.", warnings: [] };
+        },
+      },
+      { userName: "Михаил", userRole: "manager" },
+    );
+    expect(result.provider).toBe("Ollama · mock");
+    expect(result.summary).toBe("Михаил, я из модели — копайлот Price Radar.");
+    expect(seen?.prompt).toBe("Кто ты?");
+    expect(seen?.addressAs).toBe("Михаил");
+    expect(seen?.intentHint).toBe("help");
+  });
+
   it("explains Excel export without changing selection", async () => {
     const result = await analyzeSnapshot(snapshot([wbReal]), "Как выгрузить Excel?");
     expect(result.intent).toBe("export");
@@ -200,10 +226,99 @@ describe("analyzeSnapshot", () => {
     expect(result.summary).toMatch(/Excel/i);
   });
 
-  it("explains ranking as deterministic", async () => {
+  it("explains ranking as price-deterministic with optional LLM name filter", async () => {
     const result = await analyzeSnapshot(snapshot([wbReal]), "Как выбираешь лучшее?");
     expect(result.intent).toBe("ranking");
-    expect(result.summary).toMatch(/детерминирован/i);
+    expect(result.summary).toMatch(/детерминирован|цене/i);
+  });
+
+  it("soft-drops doubtful when exact/probable rows exist", () => {
+    const relevant = offer({
+      id: "keep",
+      source: "WB",
+      price: 9_000,
+      demo: false,
+      match: "probable",
+      title: "Logitech MX Master 3S",
+    });
+    const junk = offer({
+      id: "drop",
+      source: "WB",
+      price: 500,
+      demo: false,
+      match: "doubtful",
+      title: "Чехол для телефона",
+    });
+    const { kept, dropped } = dropWeakMatchesWhenStrongerExist([junk, relevant]);
+    expect(dropped).toBe(1);
+    expect(kept.map((row) => row.id)).toEqual(["keep"]);
+  });
+
+  it("keeps only-doubtful rows when nothing stronger exists", () => {
+    const only = offer({
+      id: "only",
+      source: "WB",
+      price: 1_000,
+      demo: false,
+      match: "doubtful",
+      title: "Мышь беспроводная",
+    });
+    const { kept, dropped } = dropWeakMatchesWhenStrongerExist([only]);
+    expect(dropped).toBe(0);
+    expect(kept).toHaveLength(1);
+  });
+
+  it("applies LLM rejectedOfferIds after deterministic soft-drop", async () => {
+    const relevant = offer({
+      id: "mx",
+      source: "Wildberries",
+      price: 8_990,
+      demo: false,
+      match: "probable",
+      title: "Logitech MX Master 3S Graphite",
+    });
+    const accessory = offer({
+      id: "case",
+      source: "Ozon",
+      price: 490,
+      demo: false,
+      match: "probable",
+      title: "Чехол для Logitech MX Master 3S",
+    });
+    let seen: RelevanceFilterInput | undefined;
+    const result = await analyzeSnapshot(
+      snapshot([accessory, relevant]),
+      "Выбери лучшее предложение",
+      {
+        name: "Ollama · mock",
+        summarize: async () => ({ summary: "Лучший — MX Master.", warnings: [] }),
+        filterRelevance: async (input) => {
+          seen = input;
+          return { rejectedOfferIds: ["case"], warnings: [] };
+        },
+      },
+    );
+    expect(result.selectedOfferIds).toEqual(["mx"]);
+    expect(result.appliedFilters.some((item) => /LLM отсеяла/i.test(item))).toBe(true);
+    expect(seen?.candidates.some((row) => row.id === "case")).toBe(true);
+  });
+
+  it("falls back to deterministic selection when LLM relevance filter fails", async () => {
+    const result = await analyzeSnapshot(
+      snapshot([wbReal]),
+      "Выбери лучшее предложение",
+      {
+        name: "Ollama · mock",
+        summarize: async () => ({ summary: "WB", warnings: [] }),
+        filterRelevance: async () => {
+          throw new Error("timeout");
+        },
+      },
+    );
+    expect(result.selectedOfferIds).toEqual(["wb-real"]);
+    expect(result.warnings.some((item) => /LLM-фильтр релевантности недоступен/i.test(item))).toBe(
+      true,
+    );
   });
 
   it("explains demo offers", async () => {
@@ -320,6 +435,59 @@ describe("analyzeSnapshot", () => {
     const result = await analyzeSnapshot(snapshot([wbReal]), "Какая погода в Москве?");
     expect(result.intent).toBe("blocked");
     expect(result.safety?.category).toBe("offtopic");
+  });
+});
+
+describe("answerCopilot", () => {
+  it("sends greetings to narrator.answer without a snapshot", async () => {
+    let seen: CopilotChatInput | undefined;
+    const result = await answerCopilot(
+      "привет",
+      {
+        name: "Ollama · mock",
+        summarize: async () => ({ summary: "unused", warnings: [] }),
+        answer: async (input) => {
+          seen = input;
+          return { summary: "Администратор, привет! Я копайлот закупок Price Radar.", warnings: [] };
+        },
+      },
+      { userName: "Администратор", userRole: "admin" },
+    );
+    expect(result.provider).toBe("Ollama · mock");
+    expect(result.intent).toBe("help");
+    expect(result.summary).toMatch(/привет/i);
+    expect(seen?.prompt).toBe("привет");
+    expect(seen?.addressAs).toBe("Администратор");
+  });
+
+  it("prefers model searchQuery for find-style prompts", async () => {
+    const result = await answerCopilot(
+      "Найди мышь logitech g102",
+      {
+        name: "Ollama · mock",
+        summarize: async () => ({ summary: "unused", warnings: [] }),
+        answer: async () => ({
+          summary: "Уточняю модель Logitech G102 в каталоге.",
+          warnings: [],
+          intent: "search",
+          searchQuery: "Logitech G102",
+        }),
+      },
+      { userName: "Михаил" },
+    );
+    expect(result.intent).toBe("search");
+    expect(result.searchQuery).toBe("Logitech G102");
+    expect(result.summary).toMatch(/G102/);
+  });
+
+  it("falls back to canned text when narrator is missing", async () => {
+    const result = await answerCopilot("Кто ты?", undefined, {
+      userName: "Михаил",
+      userRole: "manager",
+    });
+    expect(result.provider).toBe("Справочный ответ Price Radar");
+    expect(result.summary).toMatch(/Михаил,/);
+    expect(result.warnings.some((item) => /не подключена|шаблон/i.test(item))).toBe(true);
   });
 });
 

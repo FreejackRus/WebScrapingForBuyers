@@ -21,6 +21,7 @@ interface AnalysisState {
   reset: () => void;
   appendLocal: (userText: string, assistantText: string) => void;
   run: (searchId: string, promptText?: string) => Promise<AnalysisResult>;
+  chat: (promptText: string) => Promise<AnalysisResult>;
 }
 
 const emptyMessages: ChatMessage[] = [];
@@ -87,6 +88,49 @@ export const useAnalysisStore = create<AnalysisState>((set, get) => ({
         ],
       }));
       throw new Error("Ошибка анализа");
+    }
+  },
+  chat: async (promptText) => {
+    const prompt = promptText.trim();
+    if (prompt.length < 2) throw new Error("Пустой запрос");
+    set((current) => ({
+      busy: true,
+      prompt: "",
+      messages: [...current.messages, { id: nextId(), role: "user", text: prompt, citations: [] }],
+    }));
+    try {
+      const analysis = await analysisApi.chat(prompt);
+      set((current) => ({
+        analysis,
+        busy: false,
+        prompt: "",
+        safetyNotice: analysis.safety,
+        messages: [
+          ...current.messages,
+          {
+            id: nextId(),
+            role: "assistant",
+            text: analysis.summary,
+            citations: analysis.citations ?? [],
+            ...(analysis.safety ? { safety: analysis.safety } : {}),
+          },
+        ],
+      }));
+      return analysis;
+    } catch {
+      set((current) => ({
+        busy: false,
+        messages: [
+          ...current.messages,
+          {
+            id: nextId(),
+            role: "assistant",
+            text: "Не удалось обратиться к модели. Повторите запрос.",
+            citations: [],
+          },
+        ],
+      }));
+      throw new Error("Ошибка чата");
     }
   },
 }));

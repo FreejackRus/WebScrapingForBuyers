@@ -20,7 +20,8 @@
 TypeScript-монорепозиторий: `apps/web` (MSD), `apps/gateway`, `apps/identity`,
 `apps/search`, `apps/analysis`, `packages/contracts`, `packages/service-kit`.
 Источники — `SourceAdapter` только в search. Демо-цены всегда `demo: true`.
-LLM только объясняет; ранжирование детерминированное.
+Ранжирование по цене детерминированное; релевантность наименования может
+уточнять локальная LLM (отсев ID). Объяснение — через Ollama.
 
 ## Дизайн
 
@@ -649,6 +650,13 @@ blue (белый список + soft highlight `#EAF2FF`, бейдж LIVE). По
 очищается при отправке и `disabled`/`readOnly` пока `busy`. Выкладка: web
 `--no-deps --build`, chrome не трогали.
 
+### 2026-09-24 — копайлот: чат через Ollama, без фронтовых заготовок
+
+Убран `localMetaReply` из web. Без снимка поиска UI шлёт
+`POST /api/v1/copilot/chat` → analysis `POST /chat` → `narrator.answer`
+(Ollama). META/приветствия при наличии снимка тоже идут в `answer`,
+не в статичный шаблон (шаблон только fallback без модели).
+
 ### 2026-09-23 — API Merlion / OCS / NetLab (исследование + клиенты)
 
 Поиск по открытым источникам и подготовка подключения:
@@ -672,4 +680,27 @@ blue (белый список + soft highlight `#EAF2FF`, бейдж LIVE). По
 Пересобраны `--no-deps --build`: search, analysis, gateway, web,
 marketplace-mcp. **Chrome не трогали** (`Up` ~7h, started ранее).
 Матрица источников: `docs/DISTRIBUTORS.md`. Push в `origin/main`.
+
+### 2026-09-24 — копайлот: searchQuery + hybrid relevance (без Jev)
+
+**Jev / Jev 0 (TypeSafe AI):** System One decision-модель — typed choice/score/noul
+с калиброванными вероятностями, ~70–500 ms, closed-weight, только hosted API
+(OpenRouter `typesafe/jev-1.13`, jevtypesafeai.com). Весов для Ollama нет;
+в репозитории и на GPU-сервере не установлена. Для закрытого контура Price Radar
+не подключаем (облако + биллинг). Open-weight NanoJev (0.6B) на HF — отдельно,
+в стек не берём. Источники: https://typesafe.ai/blog/introducing-system-one-models-and-jev ,
+https://openrouter.ai/blog/tutorials/how-to-use-jev/ , https://huggingface.co/C-Tianyu/NanoJev .
+
+**Выбрано:** hybrid на текущем Ollama Qwen.
+1) Жёсткие фильтры + soft-drop `doubtful`/`analog`, если есть `exact`/`probable`.
+2) `narrator.filterRelevance` → JSON `{ rejectedOfferIds, warnings }` (cap 40);
+пусто = оставить всех; сбой → детерминированный набор.
+3) Сортировка по цене кодом; `summarize` объясняет уже отфильтрованное.
+Исключение из старого правила «LLM только объясняет» задокументировано:
+ранжирование по цене детерминированное; релевантность названия может уточнять LLM.
+
+**Чат:** убраны preset-чипы; нет фронтового shortcut «найди…»;
+`answer` JSON опционально `intent`+`searchQuery`; UI всегда шлёт в chat/analyze,
+`applyChatResult` ставит query при `intent===search`. Gateway
+`POST /api/v1/copilot/chat`.
 

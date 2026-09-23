@@ -1,7 +1,7 @@
 import type { AnalyzeRequest, SearchSnapshot } from "@peremena/contracts";
 import { createService, serviceUrl } from "@peremena/service-kit";
 
-import { analyzeSnapshot } from "./application/analyze.js";
+import { analyzeSnapshot, answerCopilot } from "./application/analyze.js";
 import type { AnalysisNarrator } from "./domain/analysis-narrator.js";
 import { OllamaAnalysisNarrator } from "./infrastructure/ollama-analysis-narrator.js";
 
@@ -19,6 +19,31 @@ export function buildAnalysisApp(options: { narrator?: AnalysisNarrator; logger?
     service: "analysis",
     provider: narrator?.name ?? "Детерминированный анализ",
   }));
+
+  app.post<{ Body: AnalyzeRequest }>(
+    "/chat",
+    {
+      schema: {
+        body: {
+          type: "object",
+          required: ["prompt"],
+          additionalProperties: false,
+          properties: {
+            prompt: { type: "string", minLength: 2, maxLength: 1_000 },
+            userName: { type: "string", minLength: 1, maxLength: 80 },
+            userRole: { type: "string", enum: ["admin", "manager"] },
+            userLogin: { type: "string", minLength: 1, maxLength: 80 },
+          },
+        },
+      },
+    },
+    async (request) =>
+      answerCopilot(request.body.prompt, narrator, {
+        ...(request.body.userName ? { userName: request.body.userName } : {}),
+        ...(request.body.userRole ? { userRole: request.body.userRole } : {}),
+        ...(request.body.userLogin ? { userLogin: request.body.userLogin } : {}),
+      }),
+  );
 
   app.post<{ Params: { id: string }; Body: AnalyzeRequest }>(
     "/searches/:id/analyze",

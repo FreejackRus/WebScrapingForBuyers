@@ -1,42 +1,63 @@
-import { describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import { localMetaReply, localSearchQuery, wantsNewSearch } from "./index.js";
+const setQuery = vi.fn();
+const suggest = vi.fn();
+const setTableFilter = vi.fn();
 
-describe("wantsNewSearch", () => {
-  it("accepts explicit search directives", () => {
-    expect(wantsNewSearch("Уточни модель G102")).toBe(true);
-    expect(wantsNewSearch("Найди Logitech mouse")).toBe(true);
-    expect(wantsNewSearch("Запусти поиск SSD")).toBe(true);
+vi.mock("entities/search", () => ({
+  useSearchStore: {
+    getState: () => ({ setQuery, suggest, setTableFilter }),
+  },
+}));
+
+import { applyChatResult } from "./index.js";
+
+describe("applyChatResult", () => {
+  beforeEach(() => {
+    setQuery.mockReset();
+    suggest.mockReset();
+    setTableFilter.mockReset();
   });
 
-  it("rejects ordinary chat questions", () => {
-    expect(wantsNewSearch("Кто ты и чем помогаешь?")).toBe(false);
-    expect(wantsNewSearch("Только REAL")).toBe(false);
-    expect(wantsNewSearch("Сравни топ-3")).toBe(false);
-    expect(wantsNewSearch("Что такое демо-цены?")).toBe(false);
-  });
-});
-
-describe("localSearchQuery", () => {
-  it("strips directive prefixes", () => {
-    expect(localSearchQuery("Уточни модель G102")).toBe("G102");
-    expect(localSearchQuery("Найди Logitech G102")).toBe("Logitech G102");
-  });
-});
-
-describe("localMetaReply", () => {
-  it("answers help without snapshot", () => {
-    const reply = localMetaReply("Кто ты и чем помогаешь?", "Администратор", "admin");
-    expect(reply).toMatch(/копайлот закупок/i);
-    expect(reply).not.toMatch(/выберите товар/i);
+  it("applies model searchQuery on search intent", () => {
+    applyChatResult({
+      summary: "Ищу Logitech G102",
+      selectedOfferIds: [],
+      appliedFilters: [],
+      warnings: [],
+      citations: [],
+      intent: "search",
+      searchQuery: "Logitech G102",
+    });
+    expect(setQuery).toHaveBeenCalledWith("Logitech G102");
+    expect(suggest).toHaveBeenCalled();
+    expect(setTableFilter).toHaveBeenCalledWith(undefined);
   });
 
-  it("answers demo FAQ", () => {
-    expect(localMetaReply("Что такое демо-цены?", "Михаил", "manager")).toMatch(/демо/i);
+  it("does not copy arbitrary text into the search box", () => {
+    applyChatResult({
+      summary: "Я копайлот",
+      selectedOfferIds: [],
+      appliedFilters: [],
+      warnings: [],
+      citations: [],
+      intent: "help",
+    });
+    expect(setQuery).not.toHaveBeenCalled();
+    expect(setTableFilter).toHaveBeenCalledWith(undefined);
   });
 
-  it("defers table-bound asks", () => {
-    expect(localMetaReply("Сравни топ-3", "Михаил", "manager")).toBeUndefined();
-    expect(localMetaReply("Только REAL", "Михаил", "manager")).toBeUndefined();
+  it("applies tableFilter on filter intent", () => {
+    applyChatResult({
+      summary: "Только REAL",
+      selectedOfferIds: ["a"],
+      appliedFilters: [],
+      warnings: [],
+      citations: [],
+      intent: "filter",
+      tableFilter: { realOnly: true },
+    });
+    expect(setTableFilter).toHaveBeenCalledWith({ realOnly: true });
+    expect(setQuery).not.toHaveBeenCalled();
   });
 });

@@ -5,16 +5,6 @@ import { useSearchStore } from "entities/search";
 import { useUserStore } from "entities/user";
 import { money } from "shared/lib";
 
-const presets = [
-  "Кто ты и чем помогаешь?",
-  "Выбери три лучших предложения с гарантией и объясни риски",
-  "Сравни только реальные предложения и укажи разрыв цен",
-  "Как выбираешь лучшее предложение?",
-  "Что такое демо-цены?",
-  "Как выгрузить Excel?",
-  "Оцени риски поставщика и сроки доставки в Воронеж",
-];
-
 const emptyFilters = [
   "После сбора здесь появятся конкретные шаги: состав снимка, исключение демо, сортировка по цене, top-N.",
 ];
@@ -53,17 +43,10 @@ export function AnalystPanel() {
           <h2 id="analysis-title">AI-копайлот закупок</h2>
           <p>
             {user.displayName.split(/\s+/)[0]}, локальная модель объясняет таблицу Price Radar — не
-            общий чат. Фильтры и ранжирование остаются детерминированным кодом.
+            общий чат. Цена ранжируется кодом; релевантность названия может уточнять модель.
           </p>
         </div>
         <span className="model-badge">{analysis?.provider ?? "Закрытый контур ПЕРЕМЕНА"}</span>
-      </div>
-      <div className="copilot-presets">
-        {presets.map((item) => (
-          <button type="button" key={item} disabled={busy} onClick={() => setPrompt(item)}>
-            {item}
-          </button>
-        ))}
       </div>
       <form onSubmit={(event) => void onSubmit(event)}>
         <label className="sr-only" htmlFor="analysis-prompt">

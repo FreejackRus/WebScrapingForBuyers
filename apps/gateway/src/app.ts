@@ -117,6 +117,16 @@ export function buildGatewayApp(options: { logger?: boolean } = {}) {
       return proxyJson(analysis, `/searches/${request.params.id}/analyze`, request, reply, enriched);
     },
   );
+  app.post<{ Body: { prompt?: string } }>("/api/v1/copilot/chat", async (request, reply) => {
+    const prompt = typeof request.body?.prompt === "string" ? request.body.prompt : "";
+    const enriched = {
+      prompt,
+      ...(request.currentUser?.displayName ? { userName: request.currentUser.displayName } : {}),
+      ...(request.currentUser?.role ? { userRole: request.currentUser.role } : {}),
+      ...(request.currentUser?.login ? { userLogin: request.currentUser.login } : {}),
+    };
+    return proxyJson(analysis, "/chat", request, reply, enriched);
+  });
   app.get<{ Params: { id: string } }>("/api/v1/searches/:id/export.xlsx", async (request, reply) => {
     const upstream = await fetch(`${search}/searches/${request.params.id}/export.xlsx`, {
       headers: cookieHeader(request),

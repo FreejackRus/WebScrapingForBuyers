@@ -309,12 +309,6 @@ tr.recommended { box-shadow: inset 4px 0 0 var(--brand); }
 .copilot-head { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; }
 .copilot .eyebrow { color: var(--brand); }
 .model-badge { padding: 5px 8px; background: #fff; color: var(--brand); border: 1px solid var(--brand-200); }
-.copilot-presets { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
-.copilot-presets button {
-  min-height: 32px; background: #fff; color: var(--ink); border: 1px solid var(--brand-200);
-  border-radius: 8px; padding: 0 10px; font-size: 12px; font-weight: 600;
-}
-.copilot-presets button:hover { background: var(--brand-50); color: var(--brand); }
 .copilot form { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
 .copilot-grid { grid-template-columns: repeat(3, 1fr); margin-top: 16px; }
 .copilot-grid article { padding: 14px; border: 1px solid var(--brand-200); border-radius: 10px; background: #fff; }
@@ -412,11 +406,6 @@ tr.recommended { box-shadow: inset 4px 0 0 var(--brand); }
   opacity: 0.55;
   cursor: wait;
 }
-.copilot-presets button:disabled {
-  opacity: 0.55;
-  cursor: wait;
-}
-
 .settings-page {
   flex: 1;
   display: grid;
