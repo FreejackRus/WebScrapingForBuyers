@@ -9,6 +9,7 @@ import {
   isAntibotTransportError,
   isAvitoPowError,
   isMegamarketWafError,
+  isMcpSessionLostError,
   isRetryableEmptySearch,
   WB_CATALOG_UNAVAILABLE_403,
   WB_STALE_CATALOG_MISS,
@@ -105,6 +106,14 @@ describe("presentMarketplaceError", () => {
     expect(message).toContain("headed Chrome");
     expect(message).toContain("5901");
     expect(message).toContain("Повтор поиска блок не снимает");
+  });
+
+  it("classifies Streamable HTTP Session not found as a recoverable MCP session loss", () => {
+    const message =
+      'Streamable HTTP error: Error POSTing to endpoint: {"jsonrpc":"2.0","id":"server-error","error":{"code":-32600,"message":"Session not found"}}';
+    expect(isMcpSessionLostError(new Error(message))).toBe(true);
+    expect(isMcpSessionLostError(new Error("WB: пустой ответ каталога"))).toBe(false);
+    expect(isMcpSessionLostError(new Error("HTTP 429 cdp_blocked"))).toBe(false);
   });
 
   it("unwraps MCP connector JSON and appends VNC warmup on antibot", () => {

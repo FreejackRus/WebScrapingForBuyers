@@ -739,3 +739,18 @@ Smoke после выкладки: `wb_search('Logitech K380')` → 100 карт
 Re-fetch того же URL из `page.evaluate` давал 403 — оставлен только как
 fallback; primary = тело Network.response при навигации (как diagnose).
 
+### 2026-09-24 — MCP Session not found после restart marketplace-mcp
+
+Симптом: все маркетплейсы в UI падают с
+`Streamable HTTP error … Session not found` / JSON-RPC `-32600`.
+
+Причина: search держал Streamable HTTP `mcp-session-id` в
+`MarketplaceMcpClient` без переинициализации; после rebuild/restart
+`marketplace-mcp` сессии на сервере пустые, клиент продолжал POST со
+старым id. На проде: marketplace-mcp `Up ~7m`, search `Up ~10h`.
+
+Исправление в search: при `Session not found`/`-32600` сброс клиента,
+новый `initialize`, один retry tool call; один общий MCP-клиент на все
+источники (не N независимых сессий). Chrome не трогали.
+
+

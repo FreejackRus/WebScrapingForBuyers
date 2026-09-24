@@ -168,6 +168,15 @@ export function isMcpUnavailableError(raw: string): boolean {
 }
 
 /**
+ * Streamable HTTP session died on the server (restart/rebuild) while search still
+ * holds the old mcp-session-id. SDK surfaces it as StreamableHTTPError with -32600.
+ */
+export function isMcpSessionLostError(error: unknown): boolean {
+  const raw = error instanceof Error ? error.message : String(error);
+  return /session not found|error code.?-32600|"code"\s*:\s*-32600/i.test(raw);
+}
+
+/**
  * MCP 2.4.2 wb_search: v9 403/empty → search-goods.wildberries.ru id-list
  * (`fallback: true` in logs, warning on meta). That list is stale and is not
  * the search.aspx SERP. One HTTP catalog attempt is allowed; do not map junk
@@ -215,6 +224,7 @@ export interface MarketplaceToolCaller {
 export class MarketplaceMcpClient implements MarketplaceToolCaller {
   private client?: Client;
   private connection?: Promise<Client>;
+  private sessionEpoch = 0;
 
   constructor(
     private readonly endpoint: string,
@@ -223,6 +233,23 @@ export class MarketplaceMcpClient implements MarketplaceToolCaller {
   ) {}
 
   async callTool(name: string, args: JsonObject): Promise<JsonObject> {
+    const epoch = this.sessionEpoch;
+    try {
+      return await this.invoke(name, args);
+    } catch (error) {
+      if (!isMcpSessionLostError(error)) throw error;
+      // Parallel source calls share this client; only one resets per epoch.
+      if (epoch === this.sessionEpoch) {
+        this.sessionEpoch += 1;
+        await this.reset();
+      } else {
+        await this.connect();
+      }
+      return await this.invoke(name, args);
+    }
+  }
+
+  private async invoke(name: string, args: JsonObject): Promise<JsonObject> {
     const client = await this.connect();
     const result = await client.callTool({ name, arguments: args });
     if (result.isError) {
@@ -239,8 +266,25 @@ export class MarketplaceMcpClient implements MarketplaceToolCaller {
 
   private connect(): Promise<Client> {
     if (this.client) return Promise.resolve(this.client);
-    this.connection ??= this.open();
+    if (!this.connection) {
+      this.connection = this.open().catch((error) => {
+        this.connection = undefined;
+        throw error;
+      });
+    }
     return this.connection;
+  }
+
+  private async reset(): Promise<void> {
+    const stale = this.client;
+    this.client = undefined;
+    this.connection = undefined;
+    if (!stale) return;
+    try {
+      await stale.close();
+    } catch {
+      // Stale transport may already be dead after marketplace-mcp restart.
+    }
   }
 
   private async open(): Promise<Client> {
@@ -535,12 +579,12 @@ export function createMarketplaceSourcesFromEnv(): SourceAdapter[] {
     taobao: "taobao",
   };
   const allowed = new Set(enabled.map((value) => aliases[value] ?? (value as MarketplaceSource["kind"])));
+  // One Streamable HTTP session for all marketplace tools — after marketplace-mcp
+  // restart a single reconnect recovers every source instead of N stale sessions.
+  const client = new MarketplaceMcpClient(endpoint, token, tenant);
   return sources
     .filter((source) => allowed.has(source.kind))
-    .map(
-      (source) =>
-        new McpMarketplaceAdapter(new MarketplaceMcpClient(endpoint, token, tenant), source),
-    );
+    .map((source) => new McpMarketplaceAdapter(client, source));
 }
 
 const GENERIC_PRODUCT_TOKENS = new Set([
