@@ -6,9 +6,9 @@ import { useUserStore } from "entities/user";
 import { money } from "shared/lib";
 
 const emptyFilters = [
-  "После сбора здесь появятся конкретные шаги: состав снимка, исключение демо, сортировка по цене, top-N.",
+  "После сбора здесь появятся конкретные шаги: состав снимка, сортировка по цене, top-N.",
 ];
-const emptyWarnings = ["Демо-цены нельзя использовать как основание для счёта или ТКП."];
+const emptyWarnings = ["Проверяйте наличие, доставку и условия продавца перед закупкой."];
 
 export function AnalystPanel() {
   const user = useUserStore((state) => state.user);
@@ -86,8 +86,7 @@ export function AnalystPanel() {
             <ul className="copilot-selected">
               {selectedOffers.map((offer) => (
                 <li key={offer.id}>
-                  Выбрано: {offer.source}, {money.format(offer.price)}
-                  {offer.demo ? " (демо)" : ""}, {offer.seller}
+                  Выбрано: {offer.source}, {money.format(offer.price)}, {offer.seller}
                 </li>
               ))}
             </ul>

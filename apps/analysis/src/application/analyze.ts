@@ -8,6 +8,7 @@ import type {
 } from "@peremena/contracts";
 
 import type { AnalysisNarrator, CopilotChatAnswer } from "../domain/analysis-narrator.js";
+import { narrationFailureMessage } from "../domain/narration-error.js";
 
 import {
   addressName,
@@ -41,14 +42,14 @@ function money(price: number) {
 }
 
 function offerLabel(offer: Offer) {
-  return `${offer.source}, ${money(offer.price)}${offer.demo ? " (демо)" : ""}, ${offer.seller}`;
+  return `${offer.source}, ${money(offer.price)}, ${offer.seller}`;
 }
 
 function citationOf(offer: Offer): OfferCitation {
   return {
     offerId: offer.id,
     url: offer.url,
-    label: `${offer.source}, ${money(offer.price)}${offer.demo ? " (демо)" : ""} — открыть`,
+    label: `${offer.source}, ${money(offer.price)} — открыть`,
   };
 }
 
@@ -83,7 +84,15 @@ function sourceLines(snapshot: SearchSnapshot, userRole?: UserRole): string[] {
   });
 }
 
-const META_INTENTS = new Set(["help", "export", "sources", "ranking", "demo", "admin"]);
+const META_INTENTS = new Set(["help", "export", "sources", "ranking", "admin"]);
+
+type MetaIntent = Exclude<ChatIntent, "explain" | "filter" | "search" | "blocked" | "demo">;
+
+function asMetaIntent(intent: ChatIntent): MetaIntent | undefined {
+  if (intent === "demo") return "help";
+  if (META_INTENTS.has(intent)) return intent as MetaIntent;
+  return undefined;
+}
 
 /**
  * Deterministic soft-drop: when exact/probable rows exist, drop doubtful/analog.
@@ -111,7 +120,11 @@ async function applyLlmRelevanceFilter(
   }
   // Prefer ambiguous residual for the model; if none, skip LLM call.
   const ambiguous = offers.filter((offer) => offer.match === "doubtful" || offer.match === "analog");
-  const candidates = (ambiguous.length > 0 ? ambiguous : offers).slice(0, RELEVANCE_CANDIDATE_CAP);
+  const eligible = ambiguous.length > 0 ? ambiguous : offers;
+  const candidates = eligible.slice(0, RELEVANCE_CANDIDATE_CAP);
+  const coverageWarnings = candidates.length < offers.length
+    ? [`AI-проверка названий получила ${candidates.length} из ${offers.length} строк; остальные строки не проверены моделью.`]
+    : [];
   if (candidates.length === 0) return { offers, rejected: 0, warnings: [] };
 
   try {
@@ -134,8 +147,10 @@ async function applyLlmRelevanceFilter(
       ...(options.userName ? { userName: options.userName } : {}),
       ...(options.addressAs ? { addressAs: options.addressAs } : {}),
     });
-    const reject = new Set(result.rejectedOfferIds);
-    if (reject.size === 0) return { offers, rejected: 0, warnings: result.warnings };
+    const candidateIds = new Set(candidates.map((offer) => offer.id));
+    const reject = new Set(result.rejectedOfferIds.filter((id) => candidateIds.has(id)));
+    const warnings = [...coverageWarnings, ...result.warnings];
+    if (reject.size === 0) return { offers, rejected: 0, warnings };
     const filtered = offers.filter((offer) => !reject.has(offer.id));
     // Never wipe the table if the model rejected everything.
     if (filtered.length === 0) {
@@ -143,7 +158,7 @@ async function applyLlmRelevanceFilter(
         offers,
         rejected: 0,
         warnings: [
-          ...result.warnings,
+          ...warnings,
           "LLM-фильтр релевантности отклонил все строки — оставлен детерминированный набор.",
         ],
       };
@@ -151,14 +166,14 @@ async function applyLlmRelevanceFilter(
     return {
       offers: filtered,
       rejected: offers.length - filtered.length,
-      warnings: result.warnings,
+      warnings,
     };
   } catch (error) {
     return {
       offers,
       rejected: 0,
       warnings: [
-        `LLM-фильтр релевантности недоступен: ${error instanceof Error ? error.message : "неизвестная ошибка"}`,
+        `LLM-фильтр релевантности недоступен: ${narrationFailureMessage(error)}. Оставлен детерминированный набор.`,
       ],
     };
   }
@@ -181,11 +196,11 @@ function resolveChatIntent(
       searchQuery: modelQuery && modelQuery.length >= 2 ? modelQuery : heuristicSearchQuery,
     };
   }
-  if (modelIntent && META_INTENTS.has(modelIntent)) {
-    return { intent: modelIntent };
+  if (modelIntent && asMetaIntent(modelIntent)) {
+    return { intent: asMetaIntent(modelIntent)! };
   }
-  if (META_INTENTS.has(heuristic)) {
-    return { intent: heuristic };
+  if (asMetaIntent(heuristic)) {
+    return { intent: asMetaIntent(heuristic)! };
   }
   return { intent: "help" };
 }
@@ -242,12 +257,13 @@ export async function analyzeSnapshot(
   }
 
   let intent = classifyIntent(normalized, searchQuery);
+  const metaIntent = asMetaIntent(intent);
   const sources = parseSources(normalized);
   const maxPrice = parseMaxPrice(normalized);
 
-  if (META_INTENTS.has(intent)) {
+  if (metaIntent) {
     const meta = cannedMetaAnswer({
-      intent: intent as Exclude<typeof intent, "explain" | "filter" | "search" | "blocked">,
+      intent: metaIntent,
       ...(userName ? { userName } : {}),
       ...(userRole ? { userRole } : {}),
       snapshotQuery: snapshot.query,
@@ -262,14 +278,14 @@ export async function analyzeSnapshot(
       appliedFilters: meta.appliedFilters,
       warnings: meta.warnings,
       citations: [] as OfferCitation[],
-      intent,
+      intent: metaIntent,
       provider: "Справочный ответ Price Radar",
     };
     if (!narrator?.answer) return base;
     try {
       const narrated = await narrator.answer({
         prompt,
-        intentHint: intent,
+        intentHint: metaIntent,
         snapshotQuery: snapshot.query,
         productName: snapshot.product.name,
         offerCount: incoming.length,
@@ -291,7 +307,7 @@ export async function analyzeSnapshot(
         ...base,
         warnings: [
           ...meta.warnings,
-          `AI-ответ недоступен: ${error instanceof Error ? error.message : "неизвестная ошибка"}`,
+          `AI-ответ недоступен: ${narrationFailureMessage(error)}.`,
         ],
         provider: "Справочный fallback Price Radar",
       };
@@ -325,7 +341,7 @@ export async function analyzeSnapshot(
         provider = narrator.name;
       } catch (error) {
         warnings = [
-          `AI-ответ недоступен: ${error instanceof Error ? error.message : "неизвестная ошибка"}`,
+          `AI-ответ недоступен: ${narrationFailureMessage(error)}.`,
         ];
         provider = "Справочный fallback Price Radar";
       }
@@ -343,7 +359,7 @@ export async function analyzeSnapshot(
   }
 
   const filters: string[] = [
-    `В снимке поиска «${snapshot.query}»: ${incoming.length} предложений (${realCount} реальных, ${demoCount} демо).`,
+    `В снимке поиска «${snapshot.query}»: ${incoming.length} предложений.`,
   ];
   const warnings: string[] = [
     snapshot.status === "complete"
@@ -380,18 +396,8 @@ export async function analyzeSnapshot(
 
   const includeDemo = /включая демо|с демо|демо тоже/.test(normalized);
   const wantRealOnly = /реальн|без демо|не демо/.test(normalized);
-  if (includeDemo) {
-    filters.push("Демо-строки оставлены в ранжировании по запросу.");
-  } else if (wantRealOnly || realCount > 0) {
-    const dropped = offers.filter((offer) => offer.demo).length;
+  if (!includeDemo && (wantRealOnly || realCount > 0)) {
     offers = offers.filter((offer) => !offer.demo);
-    filters.push(
-      dropped > 0
-        ? `Демо-цены исключены из ранжирования (${ruCount(dropped, "строка", "строки", "строк")}).`
-        : "Только реальные предложения.",
-    );
-  } else {
-    filters.push("Реальных строк в снимке нет — ранжирование по демо.");
   }
 
   // Hybrid relevance step 1: soft-drop doubtful/analog when stronger matches exist.
@@ -449,12 +455,6 @@ export async function analyzeSnapshot(
             userName,
           );
 
-  if (selected.some((offer) => offer.demo)) {
-    warnings.push(
-      "В выборке есть демонстрационные цены — их нельзя использовать для закупочного решения.",
-    );
-  }
-
   const tableFilter = buildTableFilter({
     intent,
     includeDemo,
@@ -501,7 +501,7 @@ export async function analyzeSnapshot(
       ...result,
       warnings: [
         ...result.warnings,
-        `AI-анализ недоступен: ${error instanceof Error ? error.message : "неизвестная ошибка"}`,
+        `AI-анализ недоступен: ${narrationFailureMessage(error)}. Сохранён детерминированный отбор.`,
       ],
       provider: "Детерминированный fallback",
     };
@@ -590,7 +590,7 @@ export async function answerCopilot(
         ),
         selectedOfferIds: [],
         appliedFilters: ["AI-чат недоступен."],
-        warnings: [`AI-ответ недоступен: ${error instanceof Error ? error.message : "неизвестная ошибка"}`],
+        warnings: [`AI-ответ недоступен: ${narrationFailureMessage(error)}.`],
         citations: [],
         intent: "help",
         provider: "Справочный fallback Price Radar",
@@ -614,9 +614,10 @@ export async function answerCopilot(
     };
   }
 
-  if (META_INTENTS.has(heuristicIntent)) {
+  const chatMetaIntent = asMetaIntent(heuristicIntent);
+  if (chatMetaIntent) {
     const meta = cannedMetaAnswer({
-      intent: heuristicIntent as Exclude<ChatIntent, "explain" | "filter" | "search" | "blocked">,
+      intent: chatMetaIntent,
       ...(userName ? { userName } : {}),
       ...(userRole ? { userRole } : {}),
       snapshotQuery: "",
@@ -631,7 +632,7 @@ export async function answerCopilot(
       appliedFilters: meta.appliedFilters,
       warnings: [...meta.warnings, "Модель не подключена — показан справочный шаблон."],
       citations: [],
-      intent: heuristicIntent,
+      intent: chatMetaIntent,
       provider: "Справочный ответ Price Radar",
     };
   }

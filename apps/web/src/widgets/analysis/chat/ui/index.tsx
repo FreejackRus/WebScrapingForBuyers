@@ -23,6 +23,7 @@ export function AnalysisChat() {
   const snapshot = useSearchStore((state) => state.snapshot);
   const sendingRef = useRef(false);
   const [sending, setSending] = useState(false);
+  const [sendFailed, setSendFailed] = useState(false);
 
   if (!user) return null;
 
@@ -34,6 +35,7 @@ export function AnalysisChat() {
     if (trimmed.length < 2 || busy || sendingRef.current) return;
     sendingRef.current = true;
     setSending(true);
+    setSendFailed(false);
     setPrompt("");
     try {
       // Always send to analysis — model returns searchQuery / filters; client applies via applyChatResult.
@@ -44,6 +46,10 @@ export function AnalysisChat() {
       }
       const result = await run(snapshot.id, trimmed);
       applyChatResult(result);
+    } catch {
+      // The store adds the error to the conversation; retain the request for retry.
+      setPrompt(trimmed);
+      setSendFailed(true);
     } finally {
       sendingRef.current = false;
       setSending(false);
@@ -53,13 +59,12 @@ export function AnalysisChat() {
   const onSubmit = async (event: FormEvent) => {
     event.preventDefault();
     const text = prompt;
-    setPrompt("");
     await send(text);
   };
 
   const emptyHint =
     `${name}, я копайлот закупок Price Radar — не общий чат. ` +
-    "Спросите про снимок, фильтр таблицы, демо vs реальные цены, Excel, источники или уточните модель. " +
+    "Спросите про снимок, фильтр таблицы, Excel, источники или уточните модель. " +
     "Ранжирование по цене считает код; релевантность названия может уточнять модель.";
 
   return (
@@ -100,7 +105,14 @@ export function AnalysisChat() {
             )}
           </article>
         ))}
+        {locked && (
+          <div className="chat-pending" role="status">
+            <span className="pending-dot" aria-hidden="true" />
+            Копайлот готовит ответ…
+          </div>
+        )}
       </div>
+      {sendFailed && <p className="copilot-hint" role="status">Запрос сохранён в поле ввода. Его можно отправить ещё раз.</p>}
       {safetyNotice && (
         <p
           className={`chat-safety-banner${safetyNotice.escalated ? " escalated" : ""}`}

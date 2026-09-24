@@ -65,7 +65,7 @@ export function classifyIntent(normalized: string, searchQuery: string): ChatInt
       normalized,
     )
   ) {
-    return "demo";
+    return "help";
   }
   if (
     /как (?:ты )?выбира|как ранжир|почему лучш|детермин|как считает|по чем(?:у|у) отобр|логик\w* отбор|как работает отбор/.test(
@@ -123,7 +123,7 @@ export function withGreeting(summary: string, userName?: string): string {
 }
 
 export function cannedMetaAnswer(input: {
-  intent: Exclude<ChatIntent, "explain" | "filter" | "search" | "blocked">;
+  intent: Exclude<ChatIntent, "explain" | "filter" | "search" | "blocked" | "demo">;
   userName?: string;
   userRole?: UserRole;
   snapshotQuery: string;
@@ -143,11 +143,10 @@ export function cannedMetaAnswer(input: {
           `${hello}я копайлот закупок ПЕРЕМЕНА Price Radar — не общий чат. ` +
           "Помогаю по уже собранной таблице предложений: объяснить, какой вариант отобрал код, " +
           "сравнить цены, отфильтровать строки, уточнить модель для нового поиска, " +
-          "напомнить про Excel и демо vs реальные цены. Ранжирование считает сервис анализа, " +
+          "напомнить про Excel и источники. Ранжирование считает сервис анализа, " +
           "локальная модель только формулирует объяснение.",
         warnings: [
           "Не отвечаю на вопросы вне закупки, таблицы и источников Price Radar.",
-          "Демо-цены нельзя использовать для счёта или ТКП.",
         ],
         appliedFilters: filters,
       };
@@ -157,25 +156,16 @@ export function cannedMetaAnswer(input: {
           `${hello}Excel выгружается кнопкой «Excel» в рабочей области поиска — ` +
           "это снимок уже загруженных предложений текущего сбора (не пересчёт модели). " +
           "Сначала дождитесь строк в таблице или работайте с уже пришедшими.",
-        warnings: ["В выгрузку попадают и демо-строки, если они есть в снимке — проверяйте столбец demo."],
+        warnings: ["В выгрузку попадают строки текущего снимка поиска."],
         appliedFilters: filters,
       };
     case "ranking":
       return {
         summary:
-          `${hello}ранжирование по цене детерминированное: фильтры из запроса, исключение демо при наличии REAL, ` +
+          `${hello}ранжирование по цене детерминированное: фильтры из запроса, ` +
           "мягкий отсев doubtful при наличии exact/probable, затем сортировка по цене и top-N. " +
           "Релевантность наименования может уточнять локальная модель (отсев ID); она не меняет порядок цен.",
-        warnings: ["Если в снимке только демо, ранжирование идёт по демо с явной пометкой."],
-        appliedFilters: filters,
-      };
-    case "demo":
-      return {
-        summary:
-          `${hello}строки с пометкой «демо» — синтетические цены для отладки контура. ` +
-          "Для закупочного решения берите только реальные предложения (можно сказать «только реальные» / «без демо»). " +
-          "В UI и Excel демо всегда помечены; код анализа по умолчанию их отбрасывает, если есть живые строки.",
-        warnings: ["Демо нельзя класть в счёт, ТКП или сравнение для закупки."],
+        warnings: [],
         appliedFilters: filters,
       };
     case "sources": {
@@ -185,9 +175,8 @@ export function cannedMetaAnswer(input: {
           : "в текущем снимке статусов источников ещё нет";
       return {
         summary:
-          `${hello}сбор идёт адаптерами search (коннекторы/MCP/HTTP/демо). ` +
-          `Запрос «${input.snapshotQuery}»: ${input.offerCount} предложений ` +
-          `(${input.realCount} реальных, ${input.demoCount} демо). Статусы: ${lines}. ` +
+          `${hello}сбор идёт адаптерами search (коннекторы/MCP/HTTP). ` +
+          `Запрос «${input.snapshotQuery}»: ${input.offerCount} предложений. Статусы: ${lines}. ` +
           "Пустая витрина или ошибка площадки — смотрите панель источников; менеджеру видны только статусы без сырого транспорта.",
         warnings:
           input.userRole === "admin"

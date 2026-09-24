@@ -81,12 +81,13 @@ describe("analyzeSnapshot", () => {
     expect(result.selectedOfferIds).toEqual(["wb-real"]);
     expect(result.appliedFilters).toEqual(
       expect.arrayContaining([
-        "В снимке поиска «MX Master»: 3 предложений (2 реальных, 1 демо).",
-        "Демо-цены исключены из ранжирования (1 строка).",
+        "В снимке поиска «MX Master»: 3 предложений.",
         "Сортировка по возрастанию цены.",
         "Отобрано top-1: Wildberries, 8 990 ₽, Marketplace.",
       ]),
     );
+    expect(result.appliedFilters.join("\n")).not.toMatch(/демо/i);
+    expect(result.warnings.join("\n")).not.toMatch(/демо/i);
   });
 
   it("keeps demo rows only when the prompt asks for them", async () => {
@@ -95,7 +96,6 @@ describe("analyzeSnapshot", () => {
       "Сравни включая демо и укажи разрыв цен",
     );
     expect(result.selectedOfferIds[0]).toBe("demo-merlion");
-    expect(result.appliedFilters.some((item) => item.includes("Демо-строки оставлены"))).toBe(true);
   });
 
   it("keeps compare-real prompts as a table filter over all matching rows", async () => {
@@ -321,10 +321,10 @@ describe("analyzeSnapshot", () => {
     );
   });
 
-  it("explains demo offers", async () => {
+  it("routes former demo FAQ to generic help without demo copy", async () => {
     const result = await analyzeSnapshot(snapshot([demoCheap, wbReal]), "Что такое демо-цены?");
-    expect(result.intent).toBe("demo");
-    expect(result.summary).toMatch(/демо/i);
+    expect(result.intent).toBe("help");
+    expect(result.summary).not.toMatch(/демо/i);
   });
 
   it("summarizes sources without raw message for managers", async () => {

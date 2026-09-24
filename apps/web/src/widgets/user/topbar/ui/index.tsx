@@ -30,7 +30,7 @@ export function Topbar({ view, onView }: { view: AppView; onView: (view: AppView
           </span>
           {isAdmin && health && (
             <span className={`mode-badge ${health.mode}`}>
-              {health.mode === "hybrid" ? "Гибридный контур" : "Демо-контур"}
+              {health.mode === "hybrid" ? "Гибридный контур" : "Локальный контур"}
             </span>
           )}
           <button className="ghost" type="button" onClick={() => onView(view === "settings" ? "search" : "settings")}>

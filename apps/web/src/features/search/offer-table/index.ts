@@ -24,6 +24,10 @@ export function useOfferTable() {
     pageSize: OFFER_PAGE_SIZE,
     sort,
     setPage,
+    selectSort: (next: OfferSort | undefined) => {
+      setSort(next);
+      setPage(1);
+    },
     cycleSort: (column: OfferSortColumn) => {
       setSort((current) => nextOfferSort(current, column));
       setPage(1);

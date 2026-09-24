@@ -15,7 +15,7 @@ export interface AnalysisNarration {
   addressAs?: string;
 }
 
-/** Free-form copilot Q&A (help, greetings, Excel, demo FAQ) — still Price Radar scoped. */
+/** Free-form copilot Q&A (help, greetings, Excel, sources FAQ) — still Price Radar scoped. */
 export interface CopilotChatInput {
   prompt: string;
   userName?: string;

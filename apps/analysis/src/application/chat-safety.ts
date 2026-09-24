@@ -40,7 +40,7 @@ export function buildBlockedResponse(input: {
   const hello = name ? `${name}, ` : "";
   const escalated = input.repeatCount >= 3;
   const scope =
-    "Я копайлот закупок ПЕРЕМЕНА Price Radar: таблица предложений, фильтры, сравнение цен, демо vs реальные, Excel и источники. Ранжирование считает код; модель только объясняет.";
+    "Я копайлот закупок ПЕРЕМЕНА Price Radar: таблица предложений, фильтры, сравнение цен, Excel и источники. Ранжирование считает код; модель только объясняет.";
 
   let summary: string;
   switch (input.category) {

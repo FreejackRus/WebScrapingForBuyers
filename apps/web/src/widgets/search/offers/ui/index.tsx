@@ -23,13 +23,16 @@ function sortMark(active: boolean, direction?: "asc" | "desc") {
 }
 
 export function OfferTable() {
-  const { rows, total, page, pageCount, pageSize, sort, setPage, cycleSort } = useOfferTable();
+  const { rows, total, page, pageCount, pageSize, sort, setPage, cycleSort, selectSort } = useOfferTable();
   const filtered = useFilteredOffers();
   const offerFilter = useSearchStore((state) => state.offerFilter);
   const setOfferFilter = useSearchStore((state) => state.setOfferFilter);
   const tableFilter = useSearchStore((state) => state.tableFilter);
   const setTableFilter = useSearchStore((state) => state.setTableFilter);
-  const snapshotTotal = useSearchStore((state) => state.snapshot?.offers.length ?? 0);
+  const snapshot = useSearchStore((state) => state.snapshot);
+  const snapshotTotal = snapshot?.offers.length ?? 0;
+  const running = snapshot?.status === "running";
+  const failedSources = snapshot?.sources.filter((source) => source.status === "error").length ?? 0;
   const selected = useAnalysisStore((state) => state.analysis?.selectedOfferIds ?? emptySelected);
   const recommended = selected[0];
   const from = total === 0 ? 0 : (page - 1) * pageSize + 1;
@@ -51,6 +54,22 @@ export function OfferTable() {
           />
         </label>
       </div>
+      <label className="mobile-sort">
+        Сортировка предложений
+        <select
+          value={sort ? `${sort.column}:${sort.direction}` : ""}
+          onChange={(event) => {
+            const [column, direction] = event.target.value.split(":");
+            selectSort(column ? { column: column as OfferSortColumn, direction: direction === "desc" ? "desc" : "asc" } : undefined);
+          }}
+        >
+          <option value="">По порядку загрузки</option>
+          {columns.flatMap((column) => [
+            <option key={`${column.key}:asc`} value={`${column.key}:asc`}>{column.label}: по возрастанию</option>,
+            <option key={`${column.key}:desc`} value={`${column.key}:desc`}>{column.label}: по убыванию</option>,
+          ])}
+        </select>
+      </label>
       {tableFilter && (
         <div className="data-notice mixed" role="status">
           <span>
@@ -69,14 +88,16 @@ export function OfferTable() {
               {columns.map((column) => {
                 const active = sort?.column === column.key;
                 return (
-                  <th key={column.key} scope="col" className={active ? "sorted" : undefined}>
+                  <th
+                    key={column.key}
+                    scope="col"
+                    className={active ? "sorted" : undefined}
+                    aria-sort={!active ? "none" : sort?.direction === "desc" ? "descending" : "ascending"}
+                  >
                     <button
                       type="button"
                       className="sort-header"
                       onClick={() => cycleSort(column.key)}
-                      aria-sort={
-                        !active ? "none" : sort?.direction === "desc" ? "descending" : "ascending"
-                      }
                     >
                       <span>{column.label}</span>
                       <span aria-hidden="true">{sortMark(Boolean(active), sort?.direction)}</span>
@@ -98,9 +119,6 @@ export function OfferTable() {
                 <td data-label="Источник">
                   <div className="source-name">
                     <b>{offer.source}</b>
-                    <span className={`truth-badge ${offer.demo ? "demo" : "real"}`}>
-                      {offer.demo ? "DEMO" : "REAL"}
-                    </span>
                   </div>
                   <small>{offer.seller}</small>
                 </td>
@@ -138,8 +156,23 @@ export function OfferTable() {
           </tbody>
         </table>
         {total === 0 && (
-          <div className="empty" role="status">
-            {snapshotTotal === 0 ? "Предложения появятся по мере ответа источников." : "Ничего не найдено."}
+          <div className="empty offers-empty" role="status">
+            <span className="empty-mark" aria-hidden="true">{snapshotTotal > 0 ? "⌕" : running ? "…" : "—"}</span>
+            <h3>{snapshotTotal > 0 ? "Нет предложений по этому фильтру" : running ? "Собираем предложения" : failedSources > 0 ? "Не удалось получить предложения" : "Предложения не найдены"}</h3>
+            <p>
+              {snapshotTotal > 0
+                ? "Измените запрос в таблице или сбросьте фильтры — загруженные строки сохранены."
+                : running
+                  ? "Источники отвечают постепенно. Полученные цены появятся здесь автоматически."
+                  : failedSources > 0
+                    ? "Часть источников недоступна. Это не означает, что товара нет в продаже. Повторите поиск позже или уточните модель."
+                    : "Сбор завершён. Уточните название, бренд или артикул в строке поиска."}
+            </p>
+            {snapshotTotal > 0 && (offerFilter || tableFilter) && (
+              <button type="button" className="ghost" onClick={() => { setOfferFilter(""); setTableFilter(undefined); }}>
+                Сбросить все фильтры
+              </button>
+            )}
           </div>
         )}
       </div>

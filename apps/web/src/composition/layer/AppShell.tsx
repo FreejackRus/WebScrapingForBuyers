@@ -29,7 +29,7 @@ export function AppShell({
           <div>
             <span>ПЕРЕМЕНА · Price Radar</span>
             {user?.role === "admin" && health && (
-              <span>{health.mode === "hybrid" ? "Гибридный контур" : "Демо-контур"}</span>
+              <span>{health.mode === "hybrid" ? "Гибридный контур" : "Локальный контур"}</span>
             )}
           </div>
         </footer>

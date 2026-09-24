@@ -10,9 +10,10 @@ export function SearchWorkspace() {
   const snapshot = useSearchStore((state) => state.snapshot);
   const error = useSearchStore((state) => state.error);
   const offers = snapshot?.offers ?? [];
-  const realOffers = offers.filter((offer) => !offer.demo);
-  const bestReal = [...realOffers].sort((left, right) => left.price - right.price)[0]?.price;
-  const bestAny = [...offers].sort((left, right) => left.price - right.price)[0]?.price;
+  const pricedOffers = offers.filter((offer) => !offer.demo);
+  const bestPublic = [...pricedOffers].sort((left, right) => left.price - right.price)[0]?.price;
+  const failedSources = snapshot?.sources.filter((source) => source.status === "error").length ?? 0;
+  const settledSources = snapshot?.sources.filter((source) => source.status === "done" || source.status === "error").length ?? 0;
 
   return (
     <>
@@ -30,7 +31,7 @@ export function SearchWorkspace() {
                 <h2 id="results-title">{snapshot.product.model}</h2>
                 <p>{snapshot.product.name}</p>
                 <div className="chips">
-                  <span className="chip mono">MPN {snapshot.product.mpn}</span>
+                  {snapshot.product.mpn && <span className="chip mono">MPN {snapshot.product.mpn}</span>}
                   {Object.entries(snapshot.product.characteristics).map(([key, value]) => (
                     <span className="chip" key={key}>
                       {key}: {value}
@@ -46,16 +47,18 @@ export function SearchWorkspace() {
           {user?.role === "admin" && <SourceGrid sources={snapshot.sources} role={user.role} />}
           <Metrics
             offerCount={offers.length}
-            realCount={realOffers.length}
-            bestReal={bestReal}
-            bestAny={bestAny}
+            bestPublic={bestPublic}
             running={snapshot.status === "running"}
+            failedSources={failedSources}
+            settledSources={settledSources}
+            sourceCount={snapshot.sources.length}
           />
-          <div className={`data-notice ${realOffers.length > 0 ? "mixed" : "demo-only"}`} role="note">
-            {realOffers.length > 0
-              ? "В таблице есть и реальные, и демо-строки. Для закупки используйте только REAL."
-              : "Сейчас только демонстрационные цены. На их основании закупать нельзя."}
-          </div>
+          {snapshot.status === "complete" && failedSources > 0 && offers.length > 0 && (
+            <div className="data-notice warn" role="status">
+              Сбор завершён частично: {failedSources} из {snapshot.sources.length} источников не ответили успешно.
+              Показаны полученные предложения; сравнение рынка может быть неполным.
+            </div>
+          )}
           <OfferTable />
         </>
       )}
