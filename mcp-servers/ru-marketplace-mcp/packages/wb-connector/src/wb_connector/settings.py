@@ -2,18 +2,20 @@
 
 All tunable parameters are configurable via environment variables with a WB_
 prefix, e.g. WB_TIMEOUT, WB_WALL_TIMEOUT, WB_MIN_GAP, WB_DEFAULT_DEST,
-WB_MAX_BODY_BYTES, WB_NET_RETRIES, WB_NET_BACKOFF_S, WB_CACHE_TTL, WB_PROXY.
+WB_MAX_BODY_BYTES, WB_NET_RETRIES, WB_NET_BACKOFF_S, WB_CACHE_TTL, WB_PROXY,
+WB_SEARCH_TRANSPORT.
 
 WB public catalog APIs need no credentials, so this settings object holds only
 operational knobs — timeouts, rate-limit gap, retry budget, body-size cap, cache
-TTL, and proxy.
+TTL, proxy, and which search transport to use.
 """
 
 from __future__ import annotations
 
 from functools import lru_cache
+from typing import Literal
 
-from pydantic import Field, SecretStr
+from pydantic import Field, SecretStr, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -26,6 +28,16 @@ class WBSettings(BaseSettings):
         case_sensitive=False,
     )
 
+    search_transport: Literal["storefront", "http"] = Field(
+        default="storefront",
+        description=(
+            "How wb_search reads the catalog. "
+            "'storefront' (default): open search.aspx in Chrome CDP and reuse the "
+            "__internal/u-search/exactmatch/.../vN/search response the page itself "
+            "loads (proven path when bare search.wb.ru returns 403). "
+            "'http': legacy direct search.wb.ru/exactmatch/.../v9 (unit tests / rare)."
+        ),
+    )
     timeout: float = Field(
         default=15.0,
         gt=0,
@@ -80,6 +92,13 @@ class WBSettings(BaseSettings):
         pattern=r"^basket-\d+$",
         description="Fallback basket host prefix when SKU vol is not in the lookup table. Must match 'basket-N' pattern.",
     )
+
+    @field_validator("search_transport", mode="before")
+    @classmethod
+    def _normalise_search_transport(cls, value: object) -> object:
+        if isinstance(value, str):
+            return value.strip().lower()
+        return value
 
 
 @lru_cache(maxsize=1)

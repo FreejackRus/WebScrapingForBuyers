@@ -1,0 +1,48 @@
+{
+  "total": 100,
+  "products": [
+    {
+      "id": 9200075841,
+      "name": "Клавиатура беспроводная Logitech K380 Grey",
+      "brand": "Logitech",
+      "supplier": "Logi Store",
+      "supplierId": 1001,
+      "supplierRating": 4.9,
+      "reviewRating": 4.8,
+      "feedbacks": 120,
+      "totalQuantity": 47,
+      "colors": [{ "name": "серый", "id": 1 }],
+      "sizes": [
+        {
+          "name": "",
+          "origName": "0",
+          "price": { "basic": 459900, "product": 389900 }
+        }
+      ]
+    },
+    {
+      "id": 9200075842,
+      "name": "Клавиатура Logitech K380 Multi-Device",
+      "brand": "Logitech",
+      "supplier": "TechMart",
+      "totalQuantity": 12,
+      "sizes": [
+        {
+          "price": { "basic": 420000, "product": 399000 }
+        }
+      ]
+    },
+    {
+      "id": 111,
+      "name": "Чехол для клавиатуры",
+      "brand": "NoName",
+      "supplier": "Other",
+      "totalQuantity": 3,
+      "sizes": [
+        {
+          "price": { "basic": 50000, "product": 45000 }
+        }
+      ]
+    }
+  ]
+}

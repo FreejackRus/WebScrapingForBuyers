@@ -718,3 +718,19 @@ Logitech G102» → `intent:search`, `searchQuery:Logitech G102`. Push
 Прод: analysis `--no-deps --build`; smoke `POST /chat` → summary по-русски.
 `ed20a92`.
 
+### 2026-09-24 — WB storefront v18 через CDP (не v9 HTTP)
+
+Причина пустой выдачи K380: коннектор бил `search.wb.ru/.../v9` (и HTTP
+fallback v14/v5) → 403 с IP сервера; search-goods давал чужой id-list.
+Пробы `local-ops/wb-diagnose.sh` + `wb-storefront-probe.sh`: headed Chrome
+на `172.29.0.10:9222` грузит витрину `search.aspx`, каталог идёт как
+same-origin `__internal/u-search/exactmatch/ru/common/v18/search`
+(~100 карточек с ценами в `sizes[].price`). Голый HTTP на v18 тоже 403.
+
+`wb_search`: `WB_SEARCH_TRANSPORT=storefront` (compose уже выставляет) —
+`open_page(search.aspx)` + Performance Timing + re-fetch ответа страницы.
+Без fallback на search-goods. Режим `http` оставлен для unit-тестов.
+Фикстура v18 + тесты capture/403/no fallback. Chrome не пересоздаём.
+Выкладка: sync в `/projects/ru-marketplace-mcp` + `marketplace-mcp`
+`--no-deps --build`. Search image не обязателен (MCP URL тот же).
+

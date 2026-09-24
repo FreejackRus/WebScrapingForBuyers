@@ -126,6 +126,9 @@ services:
       MCP_HTTP_AUTH_TOKEN: ${MCP_HTTP_AUTH_TOKEN:?Set MCP_HTTP_AUTH_TOKEN}
       MCP_HTTP_TENANT_ID: ${MCP_HTTP_TENANT_ID:-peremena}
       MARKETPLACE_SOURCES: wildberries,yandex_market,ozon,dns,megamarket,citilink,avito,aliexpress,taobao
+      # Observe the catalog response loaded by the existing browser storefront.
+      # Legacy search.wb.ru/v9 no longer represents the current web search.
+      WB_SEARCH_TRANSPORT: storefront
       CHROME_CDP_HOST: 172.29.0.10
       CHROME_CDP_PORT: "9222"
       # ru-marketplace-mcp 2.4.2: keep a detected challenge tab for VNC.

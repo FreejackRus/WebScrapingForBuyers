@@ -1,19 +1,26 @@
 """Wildberries MCP connector.
 
-Public WB internal APIs (catalog parsing, not Seller API). Anti-bot light;
-residential IP works without proxies. No credentials needed.
+Public WB catalog APIs (not Seller API). No credentials stored.
 
-Endpoints (verified Nov 2026 against live data):
-  - https://card.wb.ru/cards/v4/detail        (batch product cards)
-  - https://basket-NN.wbbasket.ru/...          (root_id / variants / specs)
-  - https://feedbacks2.wb.ru/feedbacks/v2/{imt_id}   (review pool)
-  - https://search.wb.ru/exactmatch/...        (search; 429-prone)
+Search transport (WB_SEARCH_TRANSPORT, default ``storefront``):
+  - storefront — open ``search.aspx`` in the headed Chrome CDP session and
+    reuse the same-origin ``/__internal/u-search/exactmatch/ru/common/vN/search``
+    response the storefront itself loads (v18 on current web). Bare HTTP to
+    ``search.wb.ru`` (v9 or v18) returns 403 from datacenter IPs; do not use it
+    as the primary path in production.
+  - http — legacy direct ``search.wb.ru/exactmatch/.../v9`` (unit tests / rare).
+
+Other endpoints (card / basket / reviews) still use HTTP with impersonation:
+
+  - https://card.wb.ru/cards/v4/detail
+  - https://basket-NN.wbbasket.ru/...
+  - https://feedbacks2.wb.ru/feedbacks/v2/{imt_id}
 
 CRITICAL Nov 2026 discovery:
   Top-level priceU/salePriceU are NOW null. Real prices live in
   sizes[0].price.{product, basic} as integer kopecks. Code extracts both.
 
-Mandatory query params:
+Mandatory query params on direct HTTP catalog reads:
   - dest=-1257786 (Moscow). WITHOUT dest: empty stocks/wrong prices/Cloudflare HTML.
   - appType=1 (desktop client).
   - curr=rub.
@@ -34,7 +41,7 @@ import os
 import re
 import string
 from typing import Annotated, Any
-from urllib.parse import urlsplit
+from urllib.parse import quote, urlsplit
 
 import httpx
 from curl_cffi import requests as curl_requests
@@ -57,6 +64,7 @@ from mcp_core.output_schema import apply_compact_output_schemas
 from mcp_core.pacing import Pacer
 from mcp_core.redact import redact_error_text as _redact
 from mcp_core.transport import get_text_budgeted, proxy_from_env
+from mcp_core.transport.chrome_cdp import NavBlocked, cdp_setup_hint, open_page
 from pydantic import Field
 
 from wb_connector.models_output import (
@@ -166,6 +174,106 @@ _WB_REVIEW_SORT_ALIASES = {
 
 _min_gap = _settings.min_gap
 _pacer = Pacer(_min_gap)
+_cdp_lock = asyncio.Lock()
+
+# Same-origin storefront catalog XHR observed by wb-storefront-probe /
+# wb-diagnose: /__internal/u-search/exactmatch/ru/common/v18/search (version
+# rolls; match vN). Bare search.wb.ru/.../v9 is the legacy connector path.
+_STOREFRONT_ORIGIN = "https://www.wildberries.ru"
+_STOREFRONT_SEARCH_PATH = "/catalog/0/search.aspx"
+_STOREFRONT_WAIT_MS = 8000
+_STOREFRONT_FETCH_TIMEOUT_MS = 12000
+_STOREFRONT_CAPTURE_JS = """async (args) => {
+  const pathRe = /\\/(__internal\\/)?u-search\\/exactmatch\\/ru\\/common\\/v\\d+\\/search$/;
+  const candidates = performance.getEntriesByType('resource').map(e => e.name).filter(s => {
+    try {
+      const u = new URL(s);
+      return pathRe.test(u.pathname) && u.searchParams.get('resultset') === 'catalog';
+    } catch (_) { return false; }
+  });
+  if (!candidates.length) {
+    return { ok: false, error: 'no_catalog_xhr', status: 0, url: '', path: '', version: null };
+  }
+  const u = new URL(candidates[candidates.length - 1]);
+  if (args.page && Number(args.page) > 1) {
+    u.searchParams.set('page', String(args.page));
+  }
+  let r;
+  try {
+    r = await fetch(u.toString(), {
+      credentials: 'include',
+      headers: { Accept: 'application/json, text/plain, */*' },
+      signal: AbortSignal.timeout(args.timeoutMs || 12000),
+    });
+  } catch (e) {
+    return {
+      ok: false,
+      error: 'fetch_failed',
+      status: 0,
+      url: u.toString(),
+      path: u.pathname,
+      version: (u.pathname.match(/\\/common\\/(v\\d+)\\//) || [])[1] || null,
+      detail: String(e && e.message || e).slice(0, 160),
+    };
+  }
+  const reader = r.body && r.body.getReader ? r.body.getReader() : null;
+  let raw;
+  if (!reader) {
+    raw = await r.text();
+  } else {
+    let total = 0;
+    const chunks = [];
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      total += value.length;
+      if (total > args.cap) {
+        return {
+          ok: false,
+          error: 'body_cap',
+          status: r.status,
+          url: u.toString(),
+          path: u.pathname,
+          version: (u.pathname.match(/\\/common\\/(v\\d+)\\//) || [])[1] || null,
+        };
+      }
+      chunks.push(value);
+    }
+    const buf = new Uint8Array(total);
+    let off = 0;
+    for (const c of chunks) { buf.set(c, off); off += c.length; }
+    raw = new TextDecoder().decode(buf);
+  }
+  let body;
+  try { body = JSON.parse(raw); }
+  catch (_) {
+    return {
+      ok: false,
+      error: 'invalid_json',
+      status: r.status,
+      url: u.toString(),
+      path: u.pathname,
+      version: (u.pathname.match(/\\/common\\/(v\\d+)\\//) || [])[1] || null,
+      bodyHead: String(raw).slice(0, 120),
+    };
+  }
+  const nested = body && typeof body === 'object' ? body.data : null;
+  const products = (body && body.products)
+    || (nested && nested.products)
+    || [];
+  return {
+    ok: true,
+    status: r.status,
+    url: u.toString(),
+    host: u.hostname,
+    path: u.pathname,
+    query: u.searchParams.get('query'),
+    dest: u.searchParams.get('dest'),
+    version: (u.pathname.match(/\\/common\\/(v\\d+)\\//) || [])[1] || null,
+    total: body.total ?? (body.metadata && body.metadata.total) ?? null,
+    products: Array.isArray(products) ? products : [],
+  };
+}"""
 
 # Bounded retry for TRANSIENT network faults only (connect/read timeout, conn
 # reset). Verified live Nov 2026: wb_search intermittently throws ConnectTimeout
@@ -1411,6 +1519,272 @@ async def wb_questions(
         raise_tool_error(TransportDownError(_redact(str(exc)), provider="wb"))
 
 
+def _search_transport() -> str:
+    """Current WB_SEARCH_TRANSPORT (storefront|http). Re-reads settings for tests."""
+    return get_settings().search_transport
+
+
+def _products_from_search_payload(obj: dict[str, Any]) -> tuple[list[Any], int | None]:
+    """Pull products + total from a search.wb.ru / storefront catalog JSON body."""
+    raw_products = obj.get("products")
+    if not isinstance(raw_products, list):
+        nested = obj.get("data")
+        if isinstance(nested, dict) and isinstance(nested.get("products"), list):
+            raw_products = nested["products"]
+    products = raw_products if isinstance(raw_products, list) else []
+    total_found = R.coerce_int(obj.get("total"))
+    if total_found is None:
+        metadata = obj.get("metadata")
+        if isinstance(metadata, dict):
+            total_found = R.coerce_int(metadata.get("total"))
+    return products, total_found
+
+
+def _storefront_search_url(query: str, page: int) -> str:
+    """Public search.aspx URL that triggers the __internal/u-search XHR."""
+    q = quote(query, safe="")
+    url = f"{_STOREFRONT_ORIGIN}{_STOREFRONT_SEARCH_PATH}?search={q}"
+    if page > 1:
+        url = f"{url}&page={page}"
+    return url
+
+
+def _verify_storefront_capture(capture: dict[str, Any]) -> None:
+    """Raise ToolError when the CDP capture is unusable (empty / 403 / no route)."""
+    status = int(capture.get("status") or 0)
+    error = str(capture.get("error") or "")
+    path = str(capture.get("path") or "")
+    version = capture.get("version")
+    url = str(capture.get("url") or "")[:200]
+
+    if error == "no_catalog_xhr":
+        raise_tool_error(
+            TransportDownError(
+                "WB storefront did not load a catalog XHR "
+                "(/__internal/u-search/exactmatch/.../vN/search). "
+                f"Warm wildberries.ru in headed Chrome (VNC), then retry. {cdp_setup_hint()}",
+                status_code=503,
+                provider="wb",
+            )
+        )
+    if status in (401, 403):
+        raise_tool_error(
+            TransportDownError(
+                f"WB storefront catalog returned HTTP {status} inside Chrome "
+                f"(route={path or 'unknown'} version={version or '?'}). "
+                f"Warm the session via VNC. {cdp_setup_hint()}",
+                status_code=status,
+                provider="wb",
+            )
+        )
+    if status == 429:
+        log_event("wb_search.rate_limited", endpoint="storefront", url=url)
+        raise_tool_error(RateLimitedError("wb", retry_after_s=60.0))
+    if error == "body_cap":
+        raise_tool_error(
+            TransportDownError(
+                "WB storefront catalog body exceeded the connector byte cap.",
+                provider="wb",
+            )
+        )
+    if error == "invalid_json":
+        raise_tool_error(
+            ParserDriftError(
+                f"WB storefront catalog returned non-JSON (HTTP {status}); "
+                f"preview={str(capture.get('bodyHead') or '')[:80]}"
+            )
+        )
+    if error == "fetch_failed":
+        raise_tool_error(
+            TransportDownError(
+                f"WB storefront catalog fetch failed inside Chrome: "
+                f"{str(capture.get('detail') or 'unknown')[:160]}. {cdp_setup_hint()}",
+                provider="wb",
+            )
+        )
+    if not capture.get("ok"):
+        raise_tool_error(
+            TransportDownError(
+                f"WB storefront catalog capture failed ({error or 'unknown'}); "
+                f"HTTP {status} route={path or 'unknown'}. {cdp_setup_hint()}",
+                status_code=status or None,
+                provider="wb",
+            )
+        )
+    if status and status != 200:
+        raise_tool_error(
+            TransportDownError(
+                f"WB storefront catalog HTTP {status} (route={path or 'unknown'}).",
+                status_code=status,
+                provider="wb",
+            )
+        )
+    if path and "u-search/exactmatch" not in path:
+        raise_tool_error(
+            ParserDriftError(
+                f"WB storefront capture URL is not u-search/exactmatch: {path[:120]}"
+            )
+        )
+
+
+async def _search_via_storefront(
+    query: str,
+    page: int,
+    ctx: Context | None,
+) -> tuple[list[Any], int | None, dict[str, Any]]:
+    """Open search.aspx in Chrome and reuse the page's catalog XHR (vN).
+
+    Matches local-ops ``wb-storefront-probe.sh``: Performance Timing finds the
+    ``/__internal/u-search/exactmatch/ru/common/vN/search`` URL the storefront
+    already loaded, then re-fetches it with the browser session cookies.
+    """
+    storefront_url = _storefront_search_url(query, page)
+    if ctx is not None:
+        await ctx.debug(f"wb_search storefront: {storefront_url}")
+
+    async def _attempt() -> dict[str, Any]:
+        async with _cdp_lock:
+            await _polite_wait()
+            async with open_page(
+                storefront_url,
+                wait_ms=_STOREFRONT_WAIT_MS,
+                allowed_hosts={"www.wildberries.ru", "wildberries.ru"},
+            ) as browser_page:
+                raw = await asyncio.wait_for(
+                    browser_page.evaluate(
+                        _STOREFRONT_CAPTURE_JS,
+                        {
+                            "page": page,
+                            "cap": MAX_BODY_BYTES,
+                            "timeoutMs": _STOREFRONT_FETCH_TIMEOUT_MS,
+                        },
+                    ),
+                    timeout=35.0,
+                )
+        capture = json.loads(raw) if isinstance(raw, str) else raw
+        if not isinstance(capture, dict):
+            return {
+                "ok": False,
+                "error": "bad_capture_shape",
+                "status": 0,
+                "path": "",
+                "version": None,
+            }
+        return capture
+
+    try:
+        capture = await asyncio.wait_for(_attempt(), timeout=max(45.0, float(WB_WALL_TIMEOUT)))
+    except NavBlocked as exc:
+        raise_tool_error(
+            TransportDownError(
+                f"WB storefront navigation blocked (HTTP {exc.status}). "
+                f"Warm wildberries.ru via VNC. {cdp_setup_hint()}",
+                status_code=exc.status,
+                provider="wb",
+            )
+        )
+    except TimeoutError:
+        raise_tool_error(
+            TransportDownError(
+                f"WB storefront catalog capture timed out. {cdp_setup_hint()}",
+                provider="wb",
+            )
+        )
+    except ToolError:
+        raise
+    except Exception as exc:
+        raise_tool_error(
+            TransportDownError(
+                f"WB storefront CDP failed: {_redact(str(exc))}. {cdp_setup_hint()}",
+                provider="wb",
+            )
+        )
+
+    _verify_storefront_capture(capture)
+    products = capture.get("products")
+    if not isinstance(products, list):
+        products = []
+    total_found = R.coerce_int(capture.get("total"))
+    log_event(
+        "wb_search.storefront_ok",
+        path=str(capture.get("path") or "")[:120],
+        version=capture.get("version"),
+        status=capture.get("status"),
+        products=len(products),
+        dest=capture.get("dest"),
+        query=(capture.get("query") or query)[:80],
+    )
+    return products, total_found, capture
+
+
+async def _search_via_http_v9(
+    query: str,
+    dest: str,
+    page: int,
+    ctx: Context | None,
+) -> tuple[list[Any], int | None, str | None]:
+    """Legacy bare HTTP to search.wb.ru v9. Used when WB_SEARCH_TRANSPORT=http."""
+    v9_params = httpx.QueryParams(
+        {
+            "appType": "1",
+            "curr": "rub",
+            "dest": dest,
+            "locale": "ru",
+            "query": query,
+            "resultset": "catalog",
+            "page": str(page),
+            "spp": "30",
+        }
+    )
+    v9_url = f"https://search.wb.ru/exactmatch/ru/common/v9/search?{v9_params}"
+    if ctx:
+        await ctx.debug(f"wb_search http v9: {v9_url}")
+    await _polite_wait()
+
+    products: list[Any] = []
+    total_found: int | None = None
+    v9_error: str | None = None
+
+    try:
+        async with _wb_client() as client:
+            status_code, text, err = await _safe_get_text(client, v9_url)
+        if err:
+            v9_error = err
+        elif status_code == 429:
+            log_event("wb_search.rate_limited", endpoint="v9")
+            raise_tool_error(RateLimitedError("wb", retry_after_s=60.0))
+        elif status_code != 200:
+            v9_error = f"HTTP {status_code}"
+        else:
+            try:
+                v9_data = json.loads(text or "")
+            except json.JSONDecodeError as exc:
+                v9_error = f"invalid JSON: {exc}"
+            else:
+                v9_obj, v9_shape_error = _expect_json_object(v9_data, "wb_search v9 response")
+                if v9_shape_error or v9_obj is None:
+                    v9_error = "unexpected response shape"
+                else:
+                    products, total_found = _products_from_search_payload(v9_obj)
+                    if not products and "products" not in v9_obj and not isinstance(
+                        (v9_obj.get("data") or {}), dict
+                    ):
+                        v9_error = "no products array in response"
+                    elif not isinstance(v9_obj.get("products"), list):
+                        nested = v9_obj.get("data")
+                        if not (
+                            isinstance(nested, dict) and isinstance(nested.get("products"), list)
+                        ):
+                            if not products:
+                                v9_error = "no products array in response"
+    except ToolError:
+        raise
+    except httpx.HTTPError as exc:
+        v9_error = f"{type(exc).__name__}: {exc}"
+
+    return products, total_found, v9_error
+
+
 @mcp.tool(
     name="wb_search",
     annotations=ToolAnnotations(
@@ -1449,9 +1823,13 @@ async def wb_search(
 ) -> WbSearchResponse | WbNoResultsResponse:
     """Search WB catalog by text query.
 
-    Uses the lightweight `search-goods.wildberries.ru/search` endpoint which
-    returns just product IDs (no PoW protection, very high rate limit). Then
-    enriches via `wb_card` for full details.
+    Default transport ``storefront`` (WB_SEARCH_TRANSPORT): open search.aspx in
+    the headed Chrome session and reuse the ``/__internal/u-search/.../vN/search``
+    payload the page loads. Bare HTTP to search.wb.ru (v9/v18) gets 403 from
+    datacenter IPs — do not use it as primary in production.
+
+    Legacy ``http`` transport: search.wb.ru v9, with a stale search-goods
+    fallback only when that mode is explicitly selected.
 
     ## Return Format
 
@@ -1463,107 +1841,61 @@ async def wb_search(
     ## Error Format
 
     ToolError: BadRequestError on a page outside 1..20; RateLimitedError on
-    HTTP 429 from the v9 search endpoint; TransportDownError on unexpected
-    internal errors. Plain transport failures of both search paths degrade to
-    a no_results response rather than an error.
+    HTTP 429; TransportDownError when storefront capture fails / 403 / empty
+    route. Legacy http mode may degrade to search-goods with a fallback warning.
 
     Args:
         query: Russian text.
-        dest: Region. Default Moscow.
-        page: 1..20 (each page returns ~30 IDs from the long list).
+        dest: Region. Default Moscow (storefront uses the page's own dest).
+        page: 1..20.
     """
-    log_event("wb_search.start", query=query[:100], page=page, dest=dest)
+    transport = _search_transport()
+    log_event("wb_search.start", query=query[:100], page=page, dest=dest, transport=transport)
     if ctx is not None:
-        await ctx.info(f"wb_search: query={query[:80]!r} page={page} dest={dest}")
+        await ctx.info(
+            f"wb_search: query={query[:80]!r} page={page} dest={dest} transport={transport}"
+        )
 
     if page < 1 or page > 20:
         log_event("wb_search.validation_failed", reason="bad_page", page=page)
         raise_tool_error(BadRequestError("page 1..20"))
 
     try:
-        # PRIMARY: search.wb.ru v9 returns fully-populated product objects — same
-        # shape as card/v4 — in a single request, so prices and stock come straight
-        # from the search index.
-        #
-        # This replaced a two-step search-goods -> card/v4 pipeline (fixed Jul 2026).
-        # search-goods.wildberries.ru serves a *stale* id list: for "кроссовки
-        # мужские" every id it returned was a delisted SKU with totalQuantity=0 and
-        # price=null, while v9 returned 100 in-stock products with real prices. The
-        # old path produced technically-valid responses in which nothing had a
-        # price — worse than an error, because it looked like an answer.
-        v9_params = httpx.QueryParams(
-            {
-                "appType": "1",
-                "curr": "rub",
-                "dest": dest,
-                "locale": "ru",
-                "query": query,
-                "resultset": "catalog",
-                "page": str(page),
-                "spp": "30",
-            }
-        )
-        v9_url = f"https://search.wb.ru/exactmatch/ru/common/v9/search?{v9_params}"
-        if ctx:
-            await ctx.debug(f"wb_search: {v9_url}")
-        await _polite_wait()
-
         products: list[Any] = []
         total_found: int | None = None
-        v9_error: str | None = None
-
-        try:
-            async with _wb_client() as client:
-                status_code, text, err = await _safe_get_text(client, v9_url)
-            if err:
-                v9_error = err
-            elif status_code == 429:
-                # v9 is 429-prone by design; surface it honestly rather than
-                # silently degrading to the stale-id path.
-                log_event("wb_search.rate_limited", endpoint="v9")
-                raise_tool_error(RateLimitedError("wb", retry_after_s=60.0))
-            elif status_code != 200:
-                v9_error = f"HTTP {status_code}"
-            else:
-                try:
-                    v9_data = json.loads(text or "")
-                except json.JSONDecodeError as exc:
-                    v9_error = f"invalid JSON: {exc}"
-                else:
-                    v9_obj, v9_shape_error = _expect_json_object(v9_data, "wb_search v9 response")
-                    if v9_shape_error or v9_obj is None:
-                        v9_error = "unexpected response shape"
-                    else:
-                        raw_products = v9_obj.get("products")
-                        if not isinstance(raw_products, list):
-                            nested = v9_obj.get("data")
-                            if isinstance(nested, dict) and isinstance(nested.get("products"), list):
-                                raw_products = nested["products"]
-                        if isinstance(raw_products, list):
-                            products = raw_products
-                            total_found = R.coerce_int(v9_obj.get("total"))
-                            if total_found is None:
-                                metadata = v9_obj.get("metadata")
-                                if isinstance(metadata, dict):
-                                    total_found = R.coerce_int(metadata.get("total"))
-                        else:
-                            v9_error = "no products array in response"
-        except ToolError:
-            raise
-        except httpx.HTTPError as exc:
-            v9_error = f"{type(exc).__name__}: {exc}"
-
         fallback_used = False
-        if not products:
-            # FALLBACK: the legacy two-step path. Its ids skew stale, but a stale
-            # result beats no result when v9 is unavailable, and the response is
-            # flagged so the caller knows which path produced it.
-            log_event("wb_search.v9_unavailable", error=_redact(v9_error or "empty result"))
-            fallback_used = True
-            products, total_found = await _search_via_search_goods(query, dest, page, ctx)
+        route_note: str | None = None
+
+        if transport == "storefront":
+            # PRIMARY (prod): CDP capture of the storefront catalog XHR.
+            # Never fall through to search-goods — that path returns unrelated
+            # ids when the real catalog is blocked (K380 → diapers incident).
+            products, total_found, capture = await _search_via_storefront(query, page, ctx)
+            version = capture.get("version") or "?"
+            path = str(capture.get("path") or "")
+            route_note = f"storefront:{version}:{path}"
+            if ctx is not None and products:
+                priced_probe = sum(
+                    1
+                    for p in products
+                    if isinstance(p, dict) and _extract_price_rub(p)[0] is not None
+                )
+                await ctx.debug(
+                    f"wb_search storefront ok route={path} version={version} "
+                    f"products={len(products)} priced~={priced_probe} "
+                    f"dest={capture.get('dest')}"
+                )
+        else:
+            products, total_found, v9_error = await _search_via_http_v9(query, dest, page, ctx)
+            if not products:
+                log_event("wb_search.v9_unavailable", error=_redact(v9_error or "empty result"))
+                fallback_used = True
+                products, total_found = await _search_via_search_goods(query, dest, page, ctx)
+            else:
+                route_note = "http:v9"
 
         if not products:
-            log_event("wb_search.no_results", query=query[:100])
+            log_event("wb_search.no_results", query=query[:100], transport=transport)
             return WbNoResultsResponse(query=query, page=page, total_ids=total_found or 0)
 
         # Past the end, WB repeats page 1 rather than returning nothing. Honour
@@ -1578,7 +1910,7 @@ async def wb_search(
             log_event("wb_search.page_wrapped", query=query[:100], page=page)
             return WbNoResultsResponse(query=query, page=page, total_ids=total_found or 0)
 
-        page_size = 100 if not fallback_used else 30
+        page_size = 100 if (transport == "storefront" or not fallback_used) else 30
         item_dicts: list[dict[str, Any]] = []
         for p in products:
             if not isinstance(p, dict):
@@ -1593,7 +1925,16 @@ async def wb_search(
             )
         priced = sum(1 for d in item_dicts if d["price_rub"] is not None)
         if item_dicts and priced == 0:
-            warnings.append("no_prices: every result lacks a price, which usually means the whole page is delisted")
+            if transport == "storefront":
+                raise_tool_error(
+                    ParserDriftError(
+                        "WB storefront catalog returned products without parseable prices "
+                        "(expected sizes[0].price.product kopecks)."
+                    )
+                )
+            warnings.append(
+                "no_prices: every result lacks a price, which usually means the whole page is delisted"
+            )
 
         log_event(
             "wb_search.done",
@@ -1603,6 +1944,8 @@ async def wb_search(
             priced=priced,
             total=total_found,
             fallback=fallback_used,
+            transport=transport,
+            route=route_note,
         )
         return WbSearchResponse(
             query=query,
@@ -2633,114 +2976,187 @@ async def wb_selfcheck(ctx: Context | None = None) -> WbSelfCheckResponse:
             notes=[f"{type(exc).__name__}: {str(exc)[:120]}"],
         )
 
-    # --- search_v9 (the PRIMARY path wb_search prefers) ---
-    #
-    # Probed separately from search_goods, because they fail differently and only
-    # this one is on the path a caller actually takes. When v9 was refused, search
-    # fell through to the legacy id list and answered with unrelated products and
-    # prices attached — and this canary stayed green, because its other probe reads
-    # search-goods and never touched v9. A refused primary path has to be visible.
-    v9_params = httpx.QueryParams(
-        {
-            "appType": "1",
-            "curr": "rub",
-            "dest": WB_DEFAULT_DEST,
-            "locale": "ru",
-            "query": sq,
-            "resultset": "catalog",
-            "page": "1",
-            "spp": "30",
-        }
-    )
-    v9_url = f"https://search.wb.ru/exactmatch/ru/common/v9/search?{v9_params}"
-    await _polite_wait()
-    try:
-        async with asyncio.timeout(45):
-            async with _wb_client() as client:
-                status_code, text, err = await _fresh_get_text(client, v9_url)
-            if err or status_code == 429:
-                checks["search_v9"] = R.selfcheck_entry(
-                    "inconclusive",
-                    baseline=sq,
-                    reason="rate_limited" if status_code == 429 else "transport_down",
-                    notes=[f"http {status_code} err={err} — primary search path (v9) unavailable"],
-                )
-            elif status_code != 200:
-                checks["search_v9"] = R.selfcheck_entry(
-                    "inconclusive",
-                    baseline=sq,
-                    reason="transport_down",
-                    notes=[f"http {status_code} — primary search path refused"],
-                )
-            else:
-                try:
-                    payload = json.loads(text or "")
-                except json.JSONDecodeError as exc:
-                    checks["search_v9"] = R.selfcheck_entry(
-                        "drift",
-                        baseline=sq,
-                        reason="parse_error",
-                        notes=[f"v9 returned HTTP 200 but invalid JSON: {exc}"],
-                    )
-                    payload = None
-                if payload is not None:
-                    v9_products: Any = None
-                    if isinstance(payload, dict):
-                        v9_products = payload.get("products")
-                        if not isinstance(v9_products, list):
-                            nested = payload.get("data")
-                            if isinstance(nested, dict) and isinstance(nested.get("products"), list):
-                                v9_products = nested["products"]
-                    if not isinstance(payload, dict):
-                        checks["search_v9"] = R.selfcheck_entry(
-                            "drift",
-                            baseline=sq,
-                            reason="schema_drift",
-                            notes=[f"v9 returned {type(payload).__name__}, not object"],
-                        )
-                    elif not isinstance(v9_products, list):
-                        checks["search_v9"] = R.selfcheck_entry(
-                            "drift",
-                            baseline=sq,
-                            reason="schema_drift",
-                            notes=["v9 200 body has no products list (wb_search would fall back to stale ids)"],
-                        )
-                    elif not v9_products:
-                        checks["search_v9"] = R.selfcheck_entry(
-                            "drift",
-                            baseline=sq,
-                            reason="empty_products",
-                            notes=["v9 answered 200 with no products for an evergreen query"],
-                        )
-                    else:
-                        identified = [
-                            item
-                            for item in v9_products
-                            if isinstance(item, dict)
-                            and (
-                                (isinstance(item.get("id"), int) and not isinstance(item.get("id"), bool))
-                                or (isinstance(item.get("nmId"), int) and not isinstance(item.get("nmId"), bool))
-                            )
-                        ]
-                        priced = [item for item in identified if item.get("salePriceU") or item.get("priceU")]
-                        if not identified:
-                            checks["search_v9"] = R.selfcheck_entry(
-                                "drift",
-                                baseline=sq,
-                                raw_len=len(v9_products),
-                                notes=["v9 products carry no numeric id (id-shape drift)"],
-                            )
-                        else:
-                            checks["search_v9"] = R.selfcheck_entry(
-                                "healthy", baseline=sq, recovered_ids=len(identified), priced=len(priced)
-                            )
-    except (TimeoutError, Exception) as exc:
+    # --- primary search path (storefront CDP vs legacy v9) ---
+    if _search_transport() == "storefront":
         checks["search_v9"] = R.selfcheck_entry(
             "inconclusive",
             baseline=sq,
-            reason="timeout" if isinstance(exc, asyncio.TimeoutError) else "transport_down",
-            notes=[f"{type(exc).__name__}: {str(exc)[:120]}"],
+            reason="skipped",
+            notes=[
+                "WB_SEARCH_TRANSPORT=storefront — primary path is CDP "
+                "__internal/u-search/.../vN, not bare search.wb.ru v9"
+            ],
         )
+        await _polite_wait()
+        try:
+            async with asyncio.timeout(60):
+                products_sf, _total_sf, capture_sf = await _search_via_storefront(sq, 1, ctx)
+            path = str(capture_sf.get("path") or "")
+            version = capture_sf.get("version")
+            if not products_sf:
+                checks["search_storefront"] = R.selfcheck_entry(
+                    "inconclusive",
+                    baseline=sq,
+                    reason="empty",
+                    notes=[f"storefront no products (route={path} version={version})"],
+                )
+            else:
+                priced_sf = sum(
+                    1
+                    for p in products_sf
+                    if isinstance(p, dict) and _extract_price_rub(p)[0] is not None
+                )
+                if priced_sf == 0:
+                    checks["search_storefront"] = R.selfcheck_entry(
+                        "drift",
+                        baseline=sq,
+                        reason="schema_drift",
+                        notes=[
+                            f"storefront products lack sizes[].price "
+                            f"(route={path} version={version} raw={len(products_sf)})"
+                        ],
+                    )
+                else:
+                    checks["search_storefront"] = R.selfcheck_entry(
+                        "healthy",
+                        baseline=sq,
+                        raw_len=len(products_sf),
+                        notes=[
+                            f"storefront route={path} version={version} "
+                            f"priced={priced_sf}/{len(products_sf)}"
+                        ],
+                    )
+        except ToolError as exc:
+            checks["search_storefront"] = R.selfcheck_entry(
+                "inconclusive",
+                baseline=sq,
+                reason="transport_down",
+                notes=[_redact(str(exc))[:160]],
+            )
+        except (TimeoutError, Exception) as exc:
+            checks["search_storefront"] = R.selfcheck_entry(
+                "inconclusive",
+                baseline=sq,
+                reason="timeout" if isinstance(exc, TimeoutError) else "transport_down",
+                notes=[f"{type(exc).__name__}: {str(exc)[:120]}"],
+            )
+    else:
+        checks["search_storefront"] = R.selfcheck_entry(
+            "inconclusive",
+            baseline=sq,
+            reason="skipped",
+            notes=["WB_SEARCH_TRANSPORT=http — storefront CDP path not active"],
+        )
+        # Legacy: probe search.wb.ru v9 (the PRIMARY path when transport=http).
+        v9_params = httpx.QueryParams(
+            {
+                "appType": "1",
+                "curr": "rub",
+                "dest": WB_DEFAULT_DEST,
+                "locale": "ru",
+                "query": sq,
+                "resultset": "catalog",
+                "page": "1",
+                "spp": "30",
+            }
+        )
+        v9_url = f"https://search.wb.ru/exactmatch/ru/common/v9/search?{v9_params}"
+        await _polite_wait()
+        try:
+            async with asyncio.timeout(45):
+                async with _wb_client() as client:
+                    status_code, text, err = await _fresh_get_text(client, v9_url)
+                if err or status_code == 429:
+                    checks["search_v9"] = R.selfcheck_entry(
+                        "inconclusive",
+                        baseline=sq,
+                        reason="rate_limited" if status_code == 429 else "transport_down",
+                        notes=[f"http {status_code} err={err} — primary search path (v9) unavailable"],
+                    )
+                elif status_code != 200:
+                    checks["search_v9"] = R.selfcheck_entry(
+                        "inconclusive",
+                        baseline=sq,
+                        reason="transport_down",
+                        notes=[f"http {status_code} — primary search path refused"],
+                    )
+                else:
+                    try:
+                        payload = json.loads(text or "")
+                    except json.JSONDecodeError as exc:
+                        checks["search_v9"] = R.selfcheck_entry(
+                            "drift",
+                            baseline=sq,
+                            reason="parse_error",
+                            notes=[f"v9 returned HTTP 200 but invalid JSON: {exc}"],
+                        )
+                        payload = None
+                    if payload is not None:
+                        v9_products: Any = None
+                        if isinstance(payload, dict):
+                            v9_products = payload.get("products")
+                            if not isinstance(v9_products, list):
+                                nested = payload.get("data")
+                                if isinstance(nested, dict) and isinstance(nested.get("products"), list):
+                                    v9_products = nested["products"]
+                        if not isinstance(payload, dict):
+                            checks["search_v9"] = R.selfcheck_entry(
+                                "drift",
+                                baseline=sq,
+                                reason="schema_drift",
+                                notes=[f"v9 returned {type(payload).__name__}, not object"],
+                            )
+                        elif not isinstance(v9_products, list):
+                            checks["search_v9"] = R.selfcheck_entry(
+                                "drift",
+                                baseline=sq,
+                                reason="schema_drift",
+                                notes=["v9 200 body has no products list (wb_search would fall back to stale ids)"],
+                            )
+                        elif not v9_products:
+                            checks["search_v9"] = R.selfcheck_entry(
+                                "drift",
+                                baseline=sq,
+                                reason="empty_products",
+                                notes=["v9 answered 200 with no products for an evergreen query"],
+                            )
+                        else:
+                            identified = [
+                                item
+                                for item in v9_products
+                                if isinstance(item, dict)
+                                and (
+                                    (isinstance(item.get("id"), int) and not isinstance(item.get("id"), bool))
+                                    or (
+                                        isinstance(item.get("nmId"), int)
+                                        and not isinstance(item.get("nmId"), bool)
+                                    )
+                                )
+                            ]
+                            priced = [
+                                item for item in identified if item.get("salePriceU") or item.get("priceU")
+                            ]
+                            if not identified:
+                                checks["search_v9"] = R.selfcheck_entry(
+                                    "drift",
+                                    baseline=sq,
+                                    raw_len=len(v9_products),
+                                    notes=["v9 products carry no numeric id (id-shape drift)"],
+                                )
+                            else:
+                                checks["search_v9"] = R.selfcheck_entry(
+                                    "healthy",
+                                    baseline=sq,
+                                    recovered_ids=len(identified),
+                                    priced=len(priced),
+                                )
+        except (TimeoutError, Exception) as exc:
+            checks["search_v9"] = R.selfcheck_entry(
+                "inconclusive",
+                baseline=sq,
+                reason="timeout" if isinstance(exc, asyncio.TimeoutError) else "transport_down",
+                notes=[f"{type(exc).__name__}: {str(exc)[:120]}"],
+            )
 
     # --- root_basket (wb_root_info imt_id resolution) ---
     await _polite_wait()
@@ -2830,10 +3246,15 @@ async def wb_selfcheck(ctx: Context | None = None) -> WbSelfCheckResponse:
     except Exception:
         tool_count = 0
 
+    required = (
+        ("card", "reviews", "search_storefront", "root_basket")
+        if _search_transport() == "storefront"
+        else ("card", "reviews", "search_goods", "search_v9", "root_basket")
+    )
     result = R.selfcheck_result(
         "wb",
         checks,
-        required=("card", "reviews", "search_goods", "search_v9", "root_basket"),
+        required=required,
         server_version=SERVER_VERSION,
         server_started_at=SERVER_STARTED_AT,
         process_id=os.getpid(),

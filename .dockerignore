@@ -5,3 +5,9 @@ node_modules
 graphify-out
 coverage
 *.log
+.cursor
+.codex/migration-backups
+**/.git
+**/.venv
+**/__pycache__
+mcp-servers

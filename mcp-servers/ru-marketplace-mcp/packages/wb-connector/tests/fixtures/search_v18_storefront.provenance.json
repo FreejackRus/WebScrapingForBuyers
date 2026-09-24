@@ -1,0 +1,5 @@
+{
+  "url": "https://www.wildberries.ru/__internal/u-search/exactmatch/ru/common/v18/search?appType=1&curr=rub&dest=-1257786&query=Logitech%20K380&resultset=catalog&page=1",
+  "captured": "synthetic fixture mirroring the storefront __internal/u-search v18 catalog shape proven by local-ops wb-storefront-probe.sh / wb-diagnose.sh (2026-09-24). Prices in sizes[0].price.product kopecks.",
+  "note": "Not a live capture dump; shape matches search_v9_live products envelope used by _card_item_dict."
+}
