@@ -268,7 +268,7 @@ export class MarketplaceMcpClient implements MarketplaceToolCaller {
     if (this.client) return Promise.resolve(this.client);
     if (!this.connection) {
       this.connection = this.open().catch((error) => {
-        this.connection = undefined;
+        delete this.connection;
         throw error;
       });
     }
@@ -277,8 +277,8 @@ export class MarketplaceMcpClient implements MarketplaceToolCaller {
 
   private async reset(): Promise<void> {
     const stale = this.client;
-    this.client = undefined;
-    this.connection = undefined;
+    delete this.client;
+    delete this.connection;
     if (!stale) return;
     try {
       await stale.close();
