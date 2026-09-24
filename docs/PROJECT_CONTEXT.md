@@ -753,6 +753,12 @@ fallback; primary = тело Network.response при навигации (как 
 новый `initialize`, один retry tool call; один общий MCP-клиент на все
 источники (не N независимых сессий). Chrome не трогали.
 
+Выкладка: search `--no-deps --build` (`f9cd471`). Smoke: после
+`--force-recreate marketplace-mcp` старый session id даёт `-32600`,
+re-initialize + `dns_search`/`citilink_search`/`megamarket_search` без
+`Session not found`. Chrome `Up` с 2026-09-23 (не пересоздавался).
+
+
 ### 2026-09-24 — убраны пользовательские упоминания демо-цен
 
 С продуктовой поверхности сняты баннеры «только демонстрационные цены /
