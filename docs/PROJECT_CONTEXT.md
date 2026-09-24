@@ -797,3 +797,9 @@ stitch.googleapis.com, header X-Goog-Api-Key). В репозитории тол�
 /projects/WebScrapingForBuyers: те же gitignored файлы (chmod 600).
 Значения ключей в docs/коммиты не пишем.
 
+### 2026-09-24 — table-filter на прод (analysis+web)
+
+Выложены contracts/analysis/web с titleIncludeAny/titleExcludeAny и
+filter-intent priority. Compose --no-deps --build analysis web. Chrome
+не трогали. Stamp: notebook-table-filter.
+
