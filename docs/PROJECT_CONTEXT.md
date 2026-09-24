@@ -788,3 +788,12 @@ Fix: filter intent раньше sources/admin; titleIncludeAny/titleExcludeAny
 в contracts + analyze + web applyTableFilter; soft-drop только для explain;
 prompts не уводят filter в VNC; applyChatResult подмешивает selectedOfferIds.
 Тесты: multi-source Legion + «только ноутбуки». Вошло в ba2f78e.
+
+### 2026-09-24 — Stitch MCP + ключ на проде
+
+Локально: gitignored .env.stitch и .cursor/mcp.json (HTTP MCP
+stitch.googleapis.com, header X-Goog-Api-Key). В репозитории только
+примеры .env.stitch.example и .cursor/mcp.json.example. На проде
+/projects/WebScrapingForBuyers: те же gitignored файлы (chmod 600).
+Значения ключей в docs/коммиты не пишем.
+

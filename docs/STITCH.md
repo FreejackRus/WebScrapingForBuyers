@@ -7,6 +7,21 @@
 Старый emerald/indigo Enterprise DS `assets/113dc57828514a76a9ff1e05fbf96264`
 не использовать.
 
+## MCP (Cursor)
+
+Секрет только в gitignored файлах (не коммитить):
+
+- `.env.stitch` — `STITCH_API_KEY=…` (также дублируется в `.env.server`)
+- `.cursor/mcp.json` — HTTP MCP к `https://stitch.googleapis.com/mcp`
+
+Пример (в репозитории):
+
+- `.env.stitch.example`
+- `.cursor/mcp.json.example` — header `X-Goog-Api-Key`: `${STITCH_API_KEY}`
+
+После правки `.cursor/mcp.json` перезапустите Cursor / MCP servers.
+Ключи в логи, коммиты и `PROJECT_CONTEXT` не писать.
+
 Официальный знак — графический вордмарк, не наборные буквы.
 Ассет: `projects/3120249908671992679/screens/6059391154288979469`
 («PEREMENA Official Wordmark»). На экранах только `<img>` этого знака.
