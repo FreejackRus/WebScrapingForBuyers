@@ -817,3 +817,7 @@ mobile login `6f54d513b9174b6fb16efc205d8dbdc8` и settings
 карточки офферов, компактный login/settings. Закупки в nav disabled.
 Chrome не трогали.
 
+Прод: SFTP web-файлов + `compose up -d --no-deps --build web`
+(на сервере нет `.git`). Stamp: stitch-mobile-ui ab19f78. Chrome Up
+без пересоздания.
+
