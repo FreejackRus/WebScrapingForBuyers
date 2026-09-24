@@ -768,5 +768,30 @@ re-initialize + `dns_search`/`citilink_search`/`megamarket_search` Р±РµР·
 В«РґРµРјРѕ vs REALВ». РџРѕР»Рµ `Offer.demo` Рё С‚РёС…РёР№ РѕС‚СЃРµРІ `demo:true` РїСЂРё РЅР°Р»РёС‡РёРё
 Р¶РёРІС‹С… СЃС‚СЂРѕРє СЃРѕС…СЂР°РЅРµРЅС‹ РІ РєРѕРЅС‚СЂР°РєС‚Рµ/СЂР°РЅР¶РёСЂРѕРІР°РЅРёРё. Admin mode badge:
 В«Р›РѕРєР°Р»СЊРЅС‹Р№ РєРѕРЅС‚СѓСЂВ» РІРјРµСЃС‚Рѕ В«Р”РµРјРѕ-РєРѕРЅС‚СѓСЂВ».
+Р’С‹Р»РѕР¶РµРЅРѕ СЂР°РЅРµРµ: commit `9071780` (web + analysis).
 
 
+### 2026-09-24 вЂ” РґРµРјРѕ СѓР±СЂР°РЅРѕ РёР· РєРѕРЅС‚РµРєСЃС‚Р° LLM РєРѕРїР°Р№Р»РѕС‚Р°
+
+РџРѕРІС‚РѕСЂРЅР°СЏ РїСЂРѕРІРµСЂРєР° РїРѕСЃР»Рµ РѕР±СЂС‹РІР° РїСЂРѕС€Р»РѕР№ СЃРµСЃСЃРёРё (403): UI СѓР¶Рµ Р±РµР· РґРµРјРѕ-Р±Р°РЅРЅРµСЂРѕРІ.
+Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅРѕ РёР· model-facing payload СЃРЅСЏС‚С‹ `demo` / `demoCount` /
+`realCount`; РІ SYSTEM/CHAT prompts вЂ” Р·Р°РїСЂРµС‚ СѓРїРѕРјРёРЅР°С‚СЊ РґРµРјРѕ/DEMO/REAL.
+`Offer.demo` Рё С‚РёС…РёР№ РѕС‚СЃРµРІ РІ СЂР°РЅР¶РёСЂРѕРІР°РЅРёРё СЃРѕС…СЂР°РЅРµРЅС‹. Р СЏРґРѕРј РІ С‚РѕРј Р¶Рµ
+РґРµСЂРµРІРµ вЂ” С„РёР»СЊС‚СЂ С‚Р°Р±Р»РёС†С‹ РїРѕ С‚РѕРєРµРЅР°Рј РЅР°Р·РІР°РЅРёСЏ (`titleIncludeAny` /
+`titleExcludeAny`). Р’С‹Р»РѕР¶РµРЅРѕ: contracts, analysis, web (`--no-deps --build`);
+Chrome РЅРµ С‚СЂРѕРіР°Р»Рё.
+
+
+
+### 2026-09-24 — chat filter: ноутбуки across all sources
+
+Root cause: (1) «пробегись по всем источникам» матчило intent `sources`
+(подстрока «источник») > canned VNC/антибот вместо фильтра таблицы;
+(2) не было детерминированного фильтра по типу товара в title — «только
+ноутбуки» не отсекало Legion Go и не держало Ситилинк; soft-drop на filter
+сужал выборку; tableFilter не синхронизировал selectedOfferIds в UI.
+
+Fix: filter intent раньше sources/admin; titleIncludeAny/titleExcludeAny
+в contracts + analyze + web applyTableFilter; soft-drop только для
+explain; prompts не уводят filter в VNC; applyChatResult подмешивает
+selectedOfferIds. Тесты: multi-source Legion + «только ноутбуки».

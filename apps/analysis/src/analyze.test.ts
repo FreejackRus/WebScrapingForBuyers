@@ -105,7 +105,10 @@ describe("analyzeSnapshot", () => {
     );
     expect(result.intent).toBe("filter");
     expect(result.selectedOfferIds).toEqual(["wb-real", "citilink-real"]);
-    expect(result.tableFilter).toEqual({ realOnly: true });
+    expect(result.tableFilter).toEqual({
+      realOnly: true,
+      selectedOfferIds: ["wb-real", "citilink-real"],
+    });
   });
 
   it("sends the ranked real table to the narrator, not only the prompt", async () => {
@@ -146,6 +149,7 @@ describe("analyzeSnapshot", () => {
       realOnly: true,
       sources: ["Wildberries"],
       maxPrice: 6000,
+      selectedOfferIds: ["wb-cheap"],
     });
     expect(result.citations?.[0]).toMatchObject({
       offerId: "wb-cheap",
@@ -164,7 +168,77 @@ describe("analyzeSnapshot", () => {
     expect(result.tableFilter).toEqual({
       realOnly: true,
       sources: ["Wildberries"],
+      selectedOfferIds: ["wb-real"],
     });
+  });
+
+  it("filters notebooks across sources and drops Legion Go handheld without forcing WB-only", async () => {
+    const legionGo = offer({
+      id: "wb-go",
+      source: "Wildberries",
+      seller: "Marketplace",
+      price: 55_000,
+      demo: false,
+      match: "exact",
+      title: "Игровая консоль Lenovo Legion Go 512GB",
+      url: "https://www.wildberries.ru/catalog/go",
+    });
+    const citilinkLaptop = offer({
+      id: "citilink-legion",
+      source: "Ситилинк",
+      seller: "Ситилинк",
+      price: 129_990,
+      demo: false,
+      match: "analog",
+      title: "Ноутбук игровой Lenovo Legion Pro 5 16IRX9",
+      url: "https://www.citilink.ru/product/legion",
+    });
+    const wbLaptop = offer({
+      id: "wb-laptop",
+      source: "Wildberries",
+      seller: "TechStore",
+      price: 134_000,
+      demo: false,
+      match: "probable",
+      title: "Ноутбук Lenovo Legion 5 15ACH6",
+      url: "https://www.wildberries.ru/catalog/laptop",
+    });
+    const result = await analyzeSnapshot(
+      snapshot([legionGo, citilinkLaptop, wbLaptop]),
+      "Отфильтруй только сами ноутбуки",
+    );
+    expect(result.intent).toBe("filter");
+    expect(result.selectedOfferIds).toEqual(["citilink-legion", "wb-laptop"]);
+    expect(result.tableFilter?.sources).toBeUndefined();
+    expect(result.tableFilter?.titleIncludeAny).toEqual(
+      expect.arrayContaining(["ноутбук", "laptop", "notebook"]),
+    );
+    expect(result.tableFilter?.titleExcludeAny).toEqual(expect.arrayContaining(["legion go"]));
+    expect(result.tableFilter?.selectedOfferIds).toEqual(["citilink-legion", "wb-laptop"]);
+  });
+
+  it("treats «пробегись по всем источникам» as table filter, not admin/VNC", async () => {
+    const result = await analyzeSnapshot(
+      snapshot([wbReal, citilinkReal]),
+      "ты не оставил варианты ситилинка, пробегись по всем источникам",
+      undefined,
+      { userRole: "admin", userName: "Администратор" },
+    );
+    expect(result.intent).toBe("filter");
+    expect(result.selectedOfferIds).toEqual(expect.arrayContaining(["wb-real", "citilink-real"]));
+    expect(result.summary).not.toMatch(/VNC|антибот|chrome/i);
+    expect(result.tableFilter?.sources).toBeUndefined();
+  });
+
+  it("does not route notebook filter phrasing to admin intent", async () => {
+    const result = await analyzeSnapshot(
+      snapshot([wbReal]),
+      "опять отфильтруй только ноутбуки",
+      undefined,
+      { userRole: "admin" },
+    );
+    expect(result.intent).toBe("filter");
+    expect(result.provider).not.toBe("Справочный ответ Price Radar");
   });
 
   it("returns search intent so the client can refine the model", async () => {
@@ -492,14 +566,14 @@ describe("answerCopilot", () => {
 });
 
 describe("toExplanationRow", () => {
-  it("keeps source, price, demo, seller and url for the model", () => {
+  it("keeps source, price, seller and url for the model without demo flag", () => {
     expect(toExplanationRow(wbReal, true)).toMatchObject({
       source: "Wildberries",
       price: 8_990,
-      demo: false,
       seller: "Marketplace",
       url: "https://www.wildberries.ru/catalog/123",
       selected: true,
     });
+    expect(toExplanationRow(wbReal, true)).not.toHaveProperty("demo");
   });
 });

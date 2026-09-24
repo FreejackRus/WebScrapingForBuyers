@@ -12,12 +12,14 @@ import { narrationFailureMessage } from "../domain/narration-error.js";
 
 import {
   addressName,
+  applyTitleFilterRules,
   buildTableFilter,
   cannedMetaAnswer,
   classifyIntent,
   extractSearchQuery,
   parseMaxPrice,
   parseSources,
+  parseTitleFilterRules,
   withGreeting,
 } from "./prompt-intent.js";
 import {
@@ -141,7 +143,6 @@ async function applyLlmRelevanceFilter(
         mpn: offer.mpn ?? null,
         match: offer.match,
         price: offer.price,
-        demo: offer.demo,
         source: offer.source,
       })),
       ...(options.userName ? { userName: options.userName } : {}),
@@ -213,7 +214,6 @@ export async function analyzeSnapshot(
 ): Promise<AnalysisResult> {
   const incoming = [...snapshot.offers];
   const realCount = incoming.filter((offer) => !offer.demo).length;
-  const demoCount = incoming.length - realCount;
   const normalized = prompt.toLocaleLowerCase("ru");
   const searchQuery = extractSearchQuery(prompt);
   const userName = options.userName?.trim() || undefined;
@@ -260,6 +260,7 @@ export async function analyzeSnapshot(
   const metaIntent = asMetaIntent(intent);
   const sources = parseSources(normalized);
   const maxPrice = parseMaxPrice(normalized);
+  const titleRules = parseTitleFilterRules(normalized);
 
   if (metaIntent) {
     const meta = cannedMetaAnswer({
@@ -269,8 +270,6 @@ export async function analyzeSnapshot(
       snapshotQuery: snapshot.query,
       sourceLines: sourceLines(snapshot, userRole),
       offerCount: incoming.length,
-      realCount,
-      demoCount,
     });
     const base = {
       summary: meta.summary,
@@ -289,8 +288,6 @@ export async function analyzeSnapshot(
         snapshotQuery: snapshot.query,
         productName: snapshot.product.name,
         offerCount: incoming.length,
-        realCount,
-        demoCount,
         sourceLines: sourceLines(snapshot, userRole),
         ...(userName ? { userName } : {}),
         ...(addressAs ? { addressAs } : {}),
@@ -383,6 +380,7 @@ export async function analyzeSnapshot(
     offers = offers.filter((offer) => offer.condition === "new");
     filters.push(`Только новые товары (${offers.length} из ${before}).`);
   }
+  // Source restriction only when the user named a marketplace — never invent WB-only.
   if (sources.length > 0) {
     const before = offers.length;
     offers = offers.filter((offer) => matchesSource(offer, sources));
@@ -393,6 +391,16 @@ export async function analyzeSnapshot(
     offers = offers.filter((offer) => offer.price <= maxPrice);
     filters.push(`Цена не выше ${money(maxPrice)} (${offers.length} из ${before}).`);
   }
+  if (titleRules) {
+    const before = offers.length;
+    offers = applyTitleFilterRules(offers, titleRules);
+    const bits: string[] = [];
+    if (titleRules.includeAny?.length) bits.push(`тип: ${titleRules.includeAny.slice(0, 4).join("/")}`);
+    if (titleRules.excludeAny?.length) bits.push(`исключить: ${titleRules.excludeAny.slice(0, 4).join("/")}`);
+    filters.push(
+      `Фильтр по названию (${bits.join("; ") || "тип товара"}): ${offers.length} из ${before}.`,
+    );
+  }
 
   const includeDemo = /включая демо|с демо|демо тоже/.test(normalized);
   const wantRealOnly = /реальн|без демо|не демо/.test(normalized);
@@ -400,13 +408,15 @@ export async function analyzeSnapshot(
     offers = offers.filter((offer) => !offer.demo);
   }
 
-  // Hybrid relevance step 1: soft-drop doubtful/analog when stronger matches exist.
-  const weakDrop = dropWeakMatchesWhenStrongerExist(offers);
-  if (weakDrop.dropped > 0) {
-    offers = weakDrop.kept;
-    filters.push(
-      `Детерминированно отсеяны сомнительные совпадения (${ruCount(weakDrop.dropped, "строка", "строки", "строк")}), есть exact/probable.`,
-    );
+  // Soft-drop is for explain/pick-best. Filter intents keep all sources that match criteria.
+  if (intent !== "filter") {
+    const weakDrop = dropWeakMatchesWhenStrongerExist(offers);
+    if (weakDrop.dropped > 0) {
+      offers = weakDrop.kept;
+      filters.push(
+        `Детерминированно отсеяны сомнительные совпадения (${ruCount(weakDrop.dropped, "строка", "строки", "строк")}), есть exact/probable.`,
+      );
+    }
   }
 
   // Hybrid relevance step 2: optional LLM reject list on ambiguous residual (or all if only weak).
@@ -462,6 +472,8 @@ export async function analyzeSnapshot(
     realCount,
     sources,
     ...(maxPrice != null ? { maxPrice } : {}),
+    ...(titleRules ? { titleRules } : {}),
+    selectedOfferIds: selected.map((offer) => offer.id),
   });
   const citations = selected.filter((offer) => offer.url).map(citationOf);
 
@@ -623,8 +635,6 @@ export async function answerCopilot(
       snapshotQuery: "",
       sourceLines: [],
       offerCount: 0,
-      realCount: 0,
-      demoCount: 0,
     });
     return {
       summary: meta.summary,

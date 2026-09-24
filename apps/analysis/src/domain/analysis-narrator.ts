@@ -24,8 +24,6 @@ export interface CopilotChatInput {
   snapshotQuery?: string;
   productName?: string;
   offerCount?: number;
-  realCount?: number;
-  demoCount?: number;
   sourceLines?: string[];
   intentHint?: string;
 }
@@ -56,7 +54,6 @@ export interface RelevanceFilterInput {
     mpn: string | null;
     match: Offer["match"];
     price: number;
-    demo: boolean;
     source: string;
   }>;
   userName?: string;

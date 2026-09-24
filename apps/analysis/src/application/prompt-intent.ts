@@ -1,4 +1,4 @@
-import type { ChatIntent, OfferTableFilter, UserRole } from "@peremena/contracts";
+import type { ChatIntent, Offer, OfferTableFilter, UserRole } from "@peremena/contracts";
 
 const SOURCE_ALIASES = [
   { pattern: /(?<![a-zа-яё0-9])(wb|вб|вайлдберр\w*|wildberries)(?![a-zа-яё0-9])/i, name: "Wildberries" },
@@ -22,6 +22,66 @@ export function parseMaxPrice(normalized: string): number | undefined {
   return Number.isFinite(value) ? value : undefined;
 }
 
+/** Title/product-type tokens for reshaping the offers table (not marketplace sources). */
+export interface TitleFilterRules {
+  includeAny?: string[];
+  excludeAny?: string[];
+}
+
+const NOTEBOOK_INCLUDE = ["ноутбук", "laptop", "notebook", "macbook", "ультрабук", "ultrabook"];
+const HANDHELD_EXCLUDE = [
+  "legion go",
+  "steam deck",
+  "rog ally",
+  "handheld",
+  "игровая консоль",
+  "игровой консол",
+  "портативная консоль",
+  "портативн консол",
+  "приставка",
+];
+
+/**
+ * Category / type filter from the user prompt («только ноутбуки», «не консоль»).
+ * Does not imply a marketplace source restriction.
+ */
+export function parseTitleFilterRules(normalized: string): TitleFilterRules | undefined {
+  const includeAny: string[] = [];
+  const excludeAny: string[] = [];
+
+  const wantsNotebooks = /ноутбук|laptop|notebook|ультрабук|ultrabook/.test(normalized);
+  const excludeHandheld =
+    wantsNotebooks ||
+    /не консол|без консол|не приставк|без приставк|не legion go|без legion go|без\s+go\b|не handheld|без handheld|не портативн\w* консол/.test(
+      normalized,
+    );
+
+  if (wantsNotebooks) includeAny.push(...NOTEBOOK_INCLUDE);
+  if (excludeHandheld) excludeAny.push(...HANDHELD_EXCLUDE);
+
+  if (includeAny.length === 0 && excludeAny.length === 0) return undefined;
+  return {
+    ...(includeAny.length > 0 ? { includeAny } : {}),
+    ...(excludeAny.length > 0 ? { excludeAny } : {}),
+  };
+}
+
+export function applyTitleFilterRules(offers: Offer[], rules: TitleFilterRules): Offer[] {
+  const hayOf = (title: string) => title.toLocaleLowerCase("ru");
+  const afterExclude =
+    rules.excludeAny && rules.excludeAny.length > 0
+      ? offers.filter(
+          (offer) => !rules.excludeAny!.some((token) => hayOf(offer.title).includes(token.toLocaleLowerCase("ru"))),
+        )
+      : offers;
+  if (!rules.includeAny?.length) return afterExclude;
+  const withInclude = afterExclude.filter((offer) =>
+    rules.includeAny!.some((token) => hayOf(offer.title).includes(token.toLocaleLowerCase("ru"))),
+  );
+  // If no title has include tokens, keep exclude-only result (e.g. "Legion 5" without «ноутбук»).
+  return withInclude.length > 0 ? withInclude : afterExclude;
+}
+
 export function extractSearchQuery(prompt: string): string {
   return prompt
     .replace(/уточни(?:те)? модель/gi, "")
@@ -39,6 +99,15 @@ export function addressName(userName?: string): string | undefined {
   return trimmed.split(/\s+/)[0];
 }
 
+/** True when the user is reshaping the current offers table (not asking for VNC/admin). */
+export function wantsTableFilter(normalized: string): boolean {
+  return (
+    /отфильтр|фильтруй|\bфильтр\b|оставь|убери|исключ|покажи только|выдай только|только реальн|только сам|только ноутбук|опять (?:отфильтр|фильтр)|пробегись|по всем источникам|без демо|не демо|дешевл|ниже \d|до \d|под \d|не консол|без консол|не приставк|без legion go|не legion go|только (?:вб|wb|вайлдберр|wildberries|ситилинк|citilink|ozon|озон|dns|днс|avito|авито)/.test(
+      normalized,
+    )
+  );
+}
+
 export function classifyIntent(normalized: string, searchQuery: string): ChatIntent {
   if (/^(?:привет|здравствуй(?:те)?|добрый\s+(?:день|вечер|утро)|hi|hello)(?:[!.\s]|$)/i.test(normalized)) {
     return "help";
@@ -53,8 +122,14 @@ export function classifyIntent(normalized: string, searchQuery: string): ChatInt
   if (/excel|экспорт|выгруз|скачать таблиц|xlsx|выгрузк/.test(normalized)) {
     return "export";
   }
+
+  // Table reshape beats sources/admin: «пробегись по источникам» is a filter, not VNC.
+  if (wantsTableFilter(normalized)) {
+    return "filter";
+  }
+
   if (
-    /vnc|ssh|\bip\b|прогрев|антибот|chrome|консоль админ|админк|удалённ\w* рабоч|удаленн\w* рабоч/.test(
+    /vnc|ssh|\bip\b|прогрев|антибот|консоль админ|админк|удалённ\w* рабоч|удаленн\w* рабоч|chrome[- ]?(?:vnc|контур|headed)|headed chrome/.test(
       normalized,
     )
   ) {
@@ -75,7 +150,7 @@ export function classifyIntent(normalized: string, searchQuery: string): ChatInt
     return "ranking";
   }
   if (
-    /источник|коннектор|статус сбор|пайплайн|почему нет (?:wb|вб|ozon|озон|dns)|почему (?:пусто|ошибк)|какие площадк|какие источник/.test(
+    /какие источник|какие площадк|коннектор|статус сбор|пайплайн|почему нет (?:wb|вб|ozon|озон|dns)|почему (?:пусто|ошибк)|источник(?:и|ов)?\s+(?:в снимке|не ответил|упал|ошиб)|панель источник/.test(
       normalized,
     )
   ) {
@@ -87,13 +162,6 @@ export function classifyIntent(normalized: string, searchQuery: string): ChatInt
       normalized,
     );
   if (wantSearch && searchQuery.length >= 2) return "search";
-  if (
-    /оставь|фильтр|убери|исключ|покажи только|выдай только|только реальн|только (?:вб|wb|вайлдберр|wildberries)|без демо|не демо|дешевл|ниже \d|до \d|под \d/.test(
-      normalized,
-    )
-  ) {
-    return "filter";
-  }
   return "explain";
 }
 
@@ -104,12 +172,17 @@ export function buildTableFilter(input: {
   realCount: number;
   sources: string[];
   maxPrice?: number;
+  titleRules?: TitleFilterRules;
+  selectedOfferIds?: string[];
 }): OfferTableFilter | undefined {
   if (input.intent !== "filter") return undefined;
   const filter: OfferTableFilter = {};
   if (!input.includeDemo && (input.wantRealOnly || input.realCount > 0)) filter.realOnly = true;
   if (input.sources.length > 0) filter.sources = input.sources;
   if (input.maxPrice != null) filter.maxPrice = input.maxPrice;
+  if (input.titleRules?.includeAny?.length) filter.titleIncludeAny = input.titleRules.includeAny;
+  if (input.titleRules?.excludeAny?.length) filter.titleExcludeAny = input.titleRules.excludeAny;
+  if (input.selectedOfferIds) filter.selectedOfferIds = input.selectedOfferIds;
   return Object.keys(filter).length > 0 ? filter : undefined;
 }
 
@@ -129,8 +202,6 @@ export function cannedMetaAnswer(input: {
   snapshotQuery: string;
   sourceLines: string[];
   offerCount: number;
-  realCount: number;
-  demoCount: number;
 }): { summary: string; warnings: string[]; appliedFilters: string[] } {
   const name = addressName(input.userName);
   const hello = name ? `${name}, ` : "";

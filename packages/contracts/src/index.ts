@@ -65,6 +65,10 @@ export interface OfferTableFilter {
   sources?: string[];
   maxPrice?: number;
   selectedOfferIds?: string[];
+  /** Keep rows whose title contains at least one of these tokens (lowercase match). */
+  titleIncludeAny?: string[];
+  /** Drop rows whose title contains any of these tokens (lowercase match). */
+  titleExcludeAny?: string[];
 }
 
 export type UserRole = "admin" | "manager";

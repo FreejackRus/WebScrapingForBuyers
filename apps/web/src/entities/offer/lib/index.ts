@@ -44,7 +44,22 @@ export function applyTableFilter(offers: Offer[], filter?: OfferTableFilter) {
       if (!matched) return false;
     }
     if (filter.maxPrice != null && offer.price > filter.maxPrice) return false;
-    if (filter.selectedOfferIds?.length && !filter.selectedOfferIds.includes(offer.id)) return false;
+    if (filter.titleExcludeAny?.length) {
+      const hay = offer.title.toLocaleLowerCase("ru");
+      if (filter.titleExcludeAny.some((token) => hay.includes(token.toLocaleLowerCase("ru")))) {
+        return false;
+      }
+    }
+    if (filter.titleIncludeAny?.length) {
+      const hay = offer.title.toLocaleLowerCase("ru");
+      const matched = filter.titleIncludeAny.some((token) =>
+        hay.includes(token.toLocaleLowerCase("ru")),
+      );
+      if (!matched) return false;
+    }
+    if (filter.selectedOfferIds !== undefined) {
+      if (!filter.selectedOfferIds.includes(offer.id)) return false;
+    }
     return true;
   });
 }

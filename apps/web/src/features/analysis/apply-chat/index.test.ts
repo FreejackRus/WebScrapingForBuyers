@@ -49,7 +49,7 @@ describe("applyChatResult", () => {
 
   it("applies tableFilter on filter intent", () => {
     applyChatResult({
-      summary: "Только REAL",
+      summary: "Оставлены выбранные строки",
       selectedOfferIds: ["a"],
       appliedFilters: [],
       warnings: [],
@@ -57,7 +57,19 @@ describe("applyChatResult", () => {
       intent: "filter",
       tableFilter: { realOnly: true },
     });
-    expect(setTableFilter).toHaveBeenCalledWith({ realOnly: true });
+    expect(setTableFilter).toHaveBeenCalledWith({ realOnly: true, selectedOfferIds: ["a"] });
     expect(setQuery).not.toHaveBeenCalled();
+  });
+
+  it("falls back to selectedOfferIds when tableFilter is missing", () => {
+    applyChatResult({
+      summary: "Таблица отфильтрована",
+      selectedOfferIds: ["x", "y"],
+      appliedFilters: [],
+      warnings: [],
+      citations: [],
+      intent: "filter",
+    });
+    expect(setTableFilter).toHaveBeenCalledWith({ selectedOfferIds: ["x", "y"] });
   });
 });

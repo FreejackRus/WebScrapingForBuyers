@@ -162,7 +162,6 @@ export function toExplanationRow(offer: Offer, selected: boolean) {
     warranty: offer.warranty ? clip(offer.warranty, 120) : null,
     match: offer.match,
     condition: offer.condition,
-    demo: offer.demo,
     url: offer.url.length <= 500 ? offer.url : null,
     selected,
   };
@@ -173,12 +172,14 @@ const SYSTEM_PROMPT =
   "Твоя задача: кратко объяснить детерминированный отбор предложений в таблице поиска для менеджера закупок. " +
   LANGUAGE_RULE +
   " Отвечай только про таблицу предложений, фильтры, источники/коннекторы, Excel-выгрузку, сравнение цен и выбор оффера. " +
+  "Не уходи в VNC, chrome, captcha или антибот, если request — фильтр/объяснение уже собранной таблицы. " +
   "Не веди светскую беседу и не отвечай на темы вне Price Radar. " +
   "Формат ответа строго JSON: summary (2–5 предложений на русском) и warnings (массив коротких рисков на русском). " +
   "В поле offers — уже отранжированная таблица из кода (source, price, seller, url). " +
   "Строки с selected=true выбраны детерминированным отбором; не меняй состав выборки и не придумывай цены, наличие, доставку, URL или продавцов. " +
   "Ссылки рисует клиент из citations. context описывает полный размер выборки и пропуски; offers — только переданные строки. " +
   "Не утверждай, что видел пропущенные строки. Строки с … сокращены; null URL означает отсутствие URL в контексте. " +
+  "Не упоминай демо-цены, DEMO/REAL и закупочные ограничения демо. " +
   "Если передано addressAs — обратись по этому имени в начале summary.";
 
 const CHAT_SYSTEM_PROMPT =
@@ -188,16 +189,22 @@ const CHAT_SYSTEM_PROMPT =
   "таблица предложений, фильтры, источники, Excel, ранжирование по цене (его считает код), " +
   "релевантность наименования (модель может отсеять лишние ID), как уточнить модель для нового поиска. " +
   "На приветствие поздоровайся по addressAs (если есть) и кратко напомни, чем помогаешь в закупках. " +
+  "Если пользователь просит отфильтровать/оставить/убрать строки таблицы (в т.ч. «только ноутбуки», «пробегись по всем источникам») " +
+  "и snapshotAvailable=true — это фильтр таблицы, не admin/VNC/антибот. Не уходи в chrome/VNC/captcha. " +
   "Если пользователь просит найти/поискать/уточнить модель товара — поставь intent=«search» и searchQuery = чистый бренд/модель/артикул без глаголов «найди/поищи». " +
   "Не выдумывай цены, наличие, URL и не обещай действий вне UI. " +
   "Формат строго JSON: summary (строка по-русски), warnings (массив строк по-русски), опционально intent (строка) и searchQuery (строка). " +
   "searchQuery передавай только при intent=search, непустой, не длиннее 200 символов. " +
-  "Если snapshotAvailable=false, данных текущей таблицы нет; offerCount/realCount/demoCount=null не означают ноль предложений.";
+  "Если snapshotAvailable=false, данных текущей таблицы нет; offerCount=null не означает ноль предложений. " +
+  "Не упоминай демо-цены, DEMO/REAL и закупочные ограничения демо — работай только с предложениями таблицы.";
 
 const RELEVANCE_SYSTEM_PROMPT =
   "Ты фильтр релевантности офферов Price Radar. " +
-  "Сравни карточку товара (brand/model/name/mpn) с title/mpn кандидатов. " +
+  "Сравни карточку товара (brand/model/name/mpn) и request пользователя с title/mpn кандидатов. " +
   "Верни JSON: rejectedOfferIds — id явно чужих товаров (другая модель, чехол/кабель/аксессуар вместо самого товара, другой бренд без совпадения). " +
+  "Если request просит тип товара (ноутбуки / не консоль / без Legion Go) — отклоняй handheld/консоль/приставку " +
+  "(в т.ч. Lenovo Legion Go, Steam Deck), даже если бренд совпадает; оставляй ноутбуки со всех источников. " +
+  "Не сужай выборку до одного маркетплейса, если пользователь не назвал источник явно. " +
   "Пустой rejectedOfferIds = оставить всех. Не отбрасывай спорные близкие варианты (цвет, комплектация той же модели). " +
   "Не меняй цены и не ранжируй — только отсев ID. " +
   "warnings — короткий массив на русском (можно пустой); без английской прозы.";
@@ -359,8 +366,6 @@ export class OllamaAnalysisNarrator implements AnalysisNarrator {
       product: input.productName ?? null,
       snapshotAvailable: input.snapshotQuery !== undefined,
       offerCount: input.offerCount ?? null,
-      realCount: input.realCount ?? null,
-      demoCount: input.demoCount ?? null,
       sources: (input.sourceLines ?? []).slice(0, 30).map((line) => clip(line, 500)),
       omittedSources: Math.max(0, (input.sourceLines?.length ?? 0) - 30),
     };
@@ -369,9 +374,11 @@ export class OllamaAnalysisNarrator implements AnalysisNarrator {
 
   async filterRelevance(input: RelevanceFilterInput): Promise<RelevanceFilterResult> {
     const candidates = input.candidates.slice(0, MAX_RELEVANCE_ROWS).map((row) => ({
-      ...row,
+      id: row.id,
       title: clip(row.title),
       mpn: row.mpn ? clip(row.mpn, 80) : null,
+      match: row.match,
+      price: row.price,
       source: clip(row.source, 80),
     }));
     if (candidates.length === 0) return { rejectedOfferIds: [], warnings: [] };
