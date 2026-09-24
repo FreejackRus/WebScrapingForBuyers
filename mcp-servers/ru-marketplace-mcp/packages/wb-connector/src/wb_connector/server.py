@@ -64,7 +64,8 @@ from mcp_core.output_schema import apply_compact_output_schemas
 from mcp_core.pacing import Pacer
 from mcp_core.redact import redact_error_text as _redact
 from mcp_core.transport import get_text_budgeted, proxy_from_env
-from mcp_core.transport.chrome_cdp import NavBlocked, cdp_setup_hint, open_page
+from mcp_core.transport.cdp_budget import navigation_budget
+from mcp_core.transport.chrome_cdp import NavBlocked, cdp_setup_hint, get_context, open_page
 from pydantic import Field
 
 from wb_connector.models_output import (
@@ -1627,22 +1628,156 @@ def _verify_storefront_capture(capture: dict[str, Any]) -> None:
         )
 
 
+def _is_storefront_catalog_url(url: str) -> bool:
+    """True for the storefront catalog XHR (``__internal/u-search/.../vN/search``)."""
+    try:
+        parts = urlsplit(url)
+    except Exception:
+        return False
+    path = (parts.path or "").lower()
+    if "u-search/exactmatch" not in path or not path.endswith("/search"):
+        return False
+    # resultset=catalog distinguishes the product grid from suggests/other.
+    query = f"&{(parts.query or '').lower()}&"
+    return "resultset=catalog" in query
+
+
+def _capture_from_catalog_response(
+    status: int,
+    url: str,
+    payload: Any,
+) -> dict[str, Any]:
+    """Build the storefront capture dict from a live Network response."""
+    path = urlsplit(url).path
+    version_match = re.search(r"/common/(v\d+)/", path)
+    query_params = httpx.QueryParams(urlsplit(url).query)
+    products: list[Any] = []
+    total: int | None = None
+    if isinstance(payload, dict):
+        products, total = _products_from_search_payload(payload)
+    return {
+        "ok": status == 200 and isinstance(payload, dict),
+        "status": status,
+        "url": url,
+        "host": urlsplit(url).hostname or "",
+        "path": path,
+        "query": query_params.get("query"),
+        "dest": query_params.get("dest"),
+        "version": version_match.group(1) if version_match else None,
+        "total": total,
+        "products": products if isinstance(products, list) else [],
+        "error": None if status == 200 else f"http_{status}",
+    }
+
+
 async def _search_via_storefront(
     query: str,
     page: int,
     ctx: Context | None,
 ) -> tuple[list[Any], int | None, dict[str, Any]]:
-    """Open search.aspx in Chrome and reuse the page's catalog XHR (vN).
+    """Open search.aspx in Chrome and capture the page's catalog XHR body.
 
-    Matches local-ops ``wb-storefront-probe.sh``: Performance Timing finds the
-    ``/__internal/u-search/exactmatch/ru/common/vN/search`` URL the storefront
-    already loaded, then re-fetches it with the browser session cookies.
+    Matches local-ops ``wb-diagnose.sh``: listen for Network responses while the
+    storefront loads (``/__internal/u-search/exactmatch/.../vN/search``). Re-fetch
+    of that URL from ``page.evaluate`` often gets 403 even when the original XHR
+    succeeded — so the live response body is primary; Performance Timing re-fetch
+    is only a fallback.
     """
     storefront_url = _storefront_search_url(query, page)
     if ctx is not None:
         await ctx.debug(f"wb_search storefront: {storefront_url}")
 
-    async def _attempt() -> dict[str, Any]:
+    captured: dict[str, Any] = {}
+    pending: list[asyncio.Task[None]] = []
+
+    async def _observe(response: Any) -> None:
+        try:
+            url = getattr(response, "url", "") or ""
+            if not _is_storefront_catalog_url(url):
+                return
+            status = int(getattr(response, "status", 0) or 0)
+            payload: Any = None
+            if status == 200:
+                try:
+                    payload = await response.json()
+                except Exception as exc:
+                    captured.setdefault(
+                        "body_error",
+                        type(exc).__name__,
+                    )
+                    # Still record the route so errors mention v18 not v9.
+                    if not captured.get("path"):
+                        captured.update(
+                            {
+                                "ok": False,
+                                "status": status,
+                                "url": url,
+                                "path": urlsplit(url).path,
+                                "version": (
+                                    m.group(1)
+                                    if (m := re.search(r"/common/(v\d+)/", urlsplit(url).path))
+                                    else None
+                                ),
+                                "error": "invalid_json",
+                            }
+                        )
+                    return
+            entry = _capture_from_catalog_response(status, url, payload)
+            # Prefer a 200 with products over an earlier empty/error frame.
+            if entry.get("ok") and entry.get("products"):
+                captured.clear()
+                captured.update(entry)
+            elif entry.get("ok") and not captured.get("ok"):
+                captured.update(entry)
+            elif not captured.get("ok") and status in (401, 403, 429):
+                captured.update(entry)
+        except Exception:
+            return
+
+    async def _attempt_live_capture() -> dict[str, Any]:
+        budget = navigation_budget()
+        permit = await budget.acquire("www.wildberries.ru")
+        page_obj: Any = None
+        try:
+            async with _cdp_lock:
+                await _polite_wait()
+                async with get_context() as browser_ctx:
+                    page_obj = await asyncio.wait_for(browser_ctx.new_page(), timeout=25.0)
+                    try:
+
+                        def _on_response(response: Any) -> None:
+                            pending.append(asyncio.create_task(_observe(response)))
+
+                        page_obj.on("response", _on_response)
+                        resp = await page_obj.goto(
+                            storefront_url,
+                            wait_until="domcontentloaded",
+                            timeout=35_000,
+                        )
+                        nav_status = resp.status if resp is not None else None
+                        if nav_status in (401, 403, 407, 429, 500, 502, 503, 504):
+                            raise NavBlocked(nav_status, getattr(page_obj, "url", "") or "")
+                        await page_obj.wait_for_timeout(_STOREFRONT_WAIT_MS)
+                        if pending:
+                            await asyncio.gather(*pending, return_exceptions=True)
+                    finally:
+                        try:
+                            await asyncio.wait_for(page_obj.close(), timeout=25.0)
+                        except Exception:
+                            pass
+            permit.ok()
+        except NavBlocked as exc:
+            permit.refused(exc.status)
+            raise
+        except BaseException:
+            permit.neutral()
+            raise
+        finally:
+            permit.release()
+        return dict(captured)
+
+    async def _attempt_refetch_fallback() -> dict[str, Any]:
+        """Last resort: Performance Timing URL + in-page fetch (may 403)."""
         async with _cdp_lock:
             await _polite_wait()
             async with open_page(
@@ -1661,19 +1796,33 @@ async def _search_via_storefront(
                     ),
                     timeout=35.0,
                 )
-        capture = json.loads(raw) if isinstance(raw, str) else raw
-        if not isinstance(capture, dict):
-            return {
-                "ok": False,
-                "error": "bad_capture_shape",
-                "status": 0,
-                "path": "",
-                "version": None,
-            }
-        return capture
+        result = json.loads(raw) if isinstance(raw, str) else raw
+        return result if isinstance(result, dict) else {"ok": False, "error": "bad_capture_shape", "status": 0}
 
     try:
-        capture = await asyncio.wait_for(_attempt(), timeout=max(45.0, float(WB_WALL_TIMEOUT)))
+        capture = await asyncio.wait_for(_attempt_live_capture(), timeout=max(55.0, float(WB_WALL_TIMEOUT)))
+        if not (capture.get("ok") and capture.get("products")):
+            if ctx is not None:
+                await ctx.debug(
+                    "wb_search storefront: live XHR empty/miss; trying Performance re-fetch fallback"
+                )
+            try:
+                fallback = await asyncio.wait_for(
+                    _attempt_refetch_fallback(),
+                    timeout=max(45.0, float(WB_WALL_TIMEOUT)),
+                )
+                if fallback.get("ok") and fallback.get("products"):
+                    capture = fallback
+                elif not capture.get("path") and fallback.get("path"):
+                    capture = fallback
+            except Exception as exc:
+                if not capture:
+                    raise_tool_error(
+                        TransportDownError(
+                            f"WB storefront CDP failed: {_redact(str(exc))}. {cdp_setup_hint()}",
+                            provider="wb",
+                        )
+                    )
     except NavBlocked as exc:
         raise_tool_error(
             TransportDownError(
@@ -1700,6 +1849,15 @@ async def _search_via_storefront(
             )
         )
 
+    if not capture:
+        capture = {
+            "ok": False,
+            "error": "no_catalog_xhr",
+            "status": 0,
+            "path": "",
+            "version": None,
+        }
+
     _verify_storefront_capture(capture)
     products = capture.get("products")
     if not isinstance(products, list):
@@ -1713,6 +1871,7 @@ async def _search_via_storefront(
         products=len(products),
         dest=capture.get("dest"),
         query=(capture.get("query") or query)[:80],
+        capture_mode="live_xhr" if capture.get("products") else "unknown",
     )
     return products, total_found, capture
 

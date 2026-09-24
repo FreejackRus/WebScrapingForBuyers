@@ -147,42 +147,92 @@ def test_wb_search_storefront_empty_products_is_no_results(monkeypatch, storefro
     asyncio.run(scenario())
 
 
-def test_storefront_capture_js_roundtrip_via_open_page_mock(monkeypatch, storefront_transport):
-    """_search_via_storefront evaluates capture JS against open_page."""
+def test_is_storefront_catalog_url():
+    assert server._is_storefront_catalog_url(
+        "https://www.wildberries.ru/__internal/u-search/exactmatch/ru/common/v18/search?resultset=catalog&query=x"
+    )
+    assert not server._is_storefront_catalog_url(
+        "https://search.wb.ru/exactmatch/ru/common/v9/search?resultset=catalog&query=x"
+    )
+    assert not server._is_storefront_catalog_url(
+        "https://www.wildberries.ru/__internal/u-search/exactmatch/ru/common/v18/search?resultset=suggest"
+    )
+
+
+def test_storefront_live_xhr_capture_via_get_context(monkeypatch, storefront_transport):
+    """Live Network.response body is primary (wb-diagnose), not Performance re-fetch."""
     payload = _v18_payload()
 
+    class FakeResponse:
+        def __init__(self):
+            self.url = (
+                "https://www.wildberries.ru/__internal/u-search/exactmatch/ru/common/v18/search"
+                "?resultset=catalog&query=Logitech%20K380&dest=-1257786"
+            )
+            self.status = 200
+
+        async def json(self):
+            return payload
+
     class FakePage:
-        async def evaluate(self, expression, arg=None):
-            assert "u-search" in expression or "exactmatch" in expression
-            return {
-                "ok": True,
-                "status": 200,
-                "url": "https://www.wildberries.ru/__internal/u-search/exactmatch/ru/common/v18/search?resultset=catalog",
-                "path": "/__internal/u-search/exactmatch/ru/common/v18/search",
-                "version": "v18",
-                "query": "Logitech K380",
-                "dest": "-1257786",
-                "total": payload["total"],
-                "products": payload["products"],
-            }
+        def __init__(self):
+            self._handlers = []
+            self.url = "https://www.wildberries.ru/catalog/0/search.aspx?search=Logitech%20K380"
+
+        def on(self, event, handler):
+            assert event == "response"
+            self._handlers.append(handler)
+
+        async def goto(self, url, wait_until=None, timeout=None):
+            assert "search.aspx" in url
+            # Emit catalog XHR as the storefront would.
+            for h in self._handlers:
+                h(FakeResponse())
+            return type("R", (), {"status": 200})()
+
+        async def wait_for_timeout(self, ms):
+            return None
+
+        async def close(self):
+            return None
+
+    class FakeCtx:
+        async def new_page(self):
+            return FakePage()
 
     @asynccontextmanager
-    async def fake_open_page(url, wait_ms=0, *, allowed_hosts=None):
-        assert "search.aspx" in url
-        assert "Logitech" in url or "K380" in url or "search=" in url
-        yield FakePage()
+    async def fake_get_context():
+        yield FakeCtx()
+
+    class FakePermit:
+        def ok(self):
+            return None
+
+        def refused(self, status=None):
+            return None
+
+        def neutral(self):
+            return None
+
+        def release(self):
+            return None
+
+    class FakeBudget:
+        async def acquire(self, host):
+            return FakePermit()
 
     async def no_wait():
         return None
 
     async def scenario():
-        monkeypatch.setattr(server, "open_page", fake_open_page)
+        monkeypatch.setattr(server, "get_context", fake_get_context)
+        monkeypatch.setattr(server, "navigation_budget", lambda: FakeBudget())
         monkeypatch.setattr(server, "_polite_wait", no_wait)
         products, total, capture = await server._search_via_storefront("Logitech K380", 1, None)
         assert total == 100
         assert len(products) == 3
         assert capture["version"] == "v18"
-        item = server._card_item_dict(products[0])
-        assert item["price_rub"] == 3899.0
+        assert capture["path"].startswith("/__internal/u-search/")
+        assert server._card_item_dict(products[0])["price_rub"] == 3899.0
 
     asyncio.run(scenario())
