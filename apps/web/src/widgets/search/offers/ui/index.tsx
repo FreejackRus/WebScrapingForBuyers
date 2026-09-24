@@ -111,16 +111,20 @@ export function OfferTable() {
             </tr>
           </thead>
           <tbody>
-            {rows.map((offer) => (
+            {rows.map((offer) => {
+              const isBest = offer.id === recommended;
+              return (
               <tr
                 key={offer.id}
-                className={`${selected.includes(offer.id) ? "selected" : ""} ${offer.id === recommended ? "recommended" : ""}`.trim()}
+                className={`${selected.includes(offer.id) ? "selected" : ""} ${isBest ? "recommended" : ""}`.trim()}
               >
                 <td data-label="Источник">
+                  {isBest && <span className="offer-best-badge">Лучший выбор</span>}
                   <div className="source-name">
                     <b>{offer.source}</b>
+                    {offer.seller ? <span className="offer-seller"> · {offer.seller}</span> : null}
                   </div>
-                  <small>{offer.seller}</small>
+                  <small className="offer-seller-desktop">{offer.seller}</small>
                 </td>
                 <td data-label="Товар">
                   <div className="offer-title">{offer.title}</div>
@@ -146,13 +150,14 @@ export function OfferTable() {
                 <td data-label="Съём" className="mono">
                   {fetchedTime.format(new Date(offer.fetchedAt))}
                 </td>
-                <td>
-                  <a href={offer.url} target="_blank" rel="noreferrer">
-                    Открыть
+                <td className="offer-action">
+                  <a className={`offer-cta${isBest ? " primary" : ""}`} href={offer.url} target="_blank" rel="noreferrer">
+                    К офферу
                   </a>
                 </td>
               </tr>
-            ))}
+            );
+            })}
           </tbody>
         </table>
         {total === 0 && (

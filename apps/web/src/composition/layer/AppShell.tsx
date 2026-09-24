@@ -4,6 +4,7 @@ import { useUserStore } from "entities/user";
 import { Topbar } from "widgets/user";
 
 import type { AppView } from "../settings";
+import { MobileNav } from "./MobileNav";
 
 export function AppShell({
   view,
@@ -18,7 +19,7 @@ export function AppShell({
   const health = useUserStore((state) => state.health);
 
   return (
-    <div className="app">
+    <div className={`app${view === "chat" ? " app-chat-focus" : ""}`}>
       <a className="skip-link" href="#main-content">
         К содержимому
       </a>
@@ -34,6 +35,7 @@ export function AppShell({
           </div>
         </footer>
       )}
+      <MobileNav view={view} onView={onView} />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useBootSession, useSearchHotkey } from "composition/hooks";
 import { AppShell, LoginShell } from "composition/layer";
@@ -15,6 +15,12 @@ export default function App() {
   useBootSession();
   useSearchHotkey();
 
+  useEffect(() => {
+    if (view !== "chat") return;
+    const panel = document.getElementById("analysis-panel");
+    panel?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [view]);
+
   if (!bootstrapped) return <div className="boot">Загрузка контура…</div>;
   if (!user) {
     return (
@@ -26,7 +32,11 @@ export default function App() {
 
   return (
     <AppShell view={view} onView={setView}>
-      {view === "settings" ? <SettingsPage onBack={() => setView("search")} /> : <SearchMonitorPage />}
+      {view === "settings" ? (
+        <SettingsPage onBack={() => setView("search")} />
+      ) : (
+        <SearchMonitorPage />
+      )}
     </AppShell>
   );
 }

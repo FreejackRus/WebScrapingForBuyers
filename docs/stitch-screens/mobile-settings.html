@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Настройки и профиль — PEREMENA Price Radar</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Inter & Public Sans Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Public+Sans:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2569ED',
+            'primary-dark': '#1D4FC4',
+            'primary-soft': '#EAF2FF',
+            graphite: '#181C24',
+            gray: '#6F7782',
+            canvas: '#F4F6F8',
+            white: '#FFFFFF',
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            '2xl': "1rem",
+            full: "9999px"
+          },
+          fontFamily: {
+            headline: ["Inter", "sans-serif"],
+            display: ["Inter", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Custom subtle toggle checkbox */
+    .toggle-checkbox:checked {
+      right: 0;
+      border-color: #2569ED;
+      background-color: #2569ED;
+    }
+    .toggle-checkbox:checked + .toggle-label {
+      background-color: #2569ED;
+    }
+    /* Hide scrollbars on mobile frame */
+    body::-webkit-scrollbar {
+      display: none;
+    }
+    body {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-canvas font-body text-graphite antialiased flex justify-center min-h-screen">
+<!-- Main Mobile Container (Strictly 390px layout) -->
+<div class="w-full max-w-[390px] min-h-screen bg-canvas flex flex-col relative pb-32 shadow-xl">
+<!-- Sticky Top Navigation Bar -->
+<header class="docked full-width top-0 sticky z-40 bg-white shadow-sm flex items-center justify-between px-3.5 h-14 border-b border-canvas">
+<!-- Back Action -->
+<a class="inline-flex items-center gap-1 text-graphite hover:text-primary active:opacity-80 transition-colors py-1 pr-1.5 pl-0.5 rounded-lg -ml-1" href="#">
+<span class="material-symbols-outlined text-[20px] text-graphite" data-icon="arrow_back">arrow_back</span>
+<span class="font-label text-xs font-semibold tracking-tight text-gray hover:text-primary">К поиску</span>
+</a>
+<!-- Brand Cluster: Logo + Price Radar Badge -->
+<div class="flex items-center gap-2">
+<img alt="PEREMENA Wordmark" class="h-4 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX-b2XfNmJcBXZoRc5sNMSAmKvQENxOFz356cJOoH-uU_lV1ljXM-KERwDy7KOU6Xl-zoR8tmjyJAsyR1xzHCoSlbwTJy9GXr6PcATs2AkRnqIjdICTn8-3RlAFqKbbRh2eXYgGWGN4Q-aGpoLlW7PY5mOqS9ECWxDZlCg73PXJAb2U-rfq5cY8Y-X2YsUgtMmUXgPFWxLRW_5SgH3hK_CEsQ1x5HgjhxNRdfY_BpJSpe6iANfmakwI2HloH3M6HwstXOAM2Vrs7w"/>
+<span class="bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider font-label">
+          PRICE RADAR
+        </span>
+</div>
+<!-- Node Badge -->
+<div class="flex items-center gap-1 bg-primary-soft text-primary px-2 py-1 rounded-full text-[11px] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="truncate max-w-[70px]">Воронеж</span>
+</div>
+</header>
+<!-- Content Canvas -->
+<main class="flex-1 px-4 pt-4 space-y-4">
+<!-- Screen Title & Subtitle Header -->
+<div class="px-0.5 pt-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="tune">tune</span>
+<h1 class="font-headline font-bold text-xl text-graphite tracking-tight">Настройки и профиль</h1>
+</div>
+<p class="font-body text-xs text-gray mt-1 leading-relaxed">
+          Параметры рабочей среды Price Radar и персональные настройки менеджера
+        </p>
+</div>
+<!-- Card 1: Профиль сотрудника (User Profile) -->
+<section class="bg-white rounded-2xl p-4 shadow-sm border border-canvas space-y-4">
+<!-- Profile Identity Header -->
+<div class="flex items-center justify-between border-b border-canvas pb-3.5">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="w-12 h-12 rounded-full bg-primary-soft text-primary font-headline font-bold text-base flex items-center justify-center border-2 border-white shadow-inner">
+                МС
+              </div>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-primary rounded-full border-2 border-white"></span>
+</div>
+<div>
+<h2 class="font-headline font-bold text-sm text-graphite leading-snug">Михаил Смирнов</h2>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="text-[11px] font-medium text-gray">Онлайн в системе</span>
+</div>
+</div>
+</div>
+<span class="font-label text-[10px] font-bold text-primary bg-primary-soft px-2 py-0.5 rounded-full tracking-wider uppercase">
+            ID: PR-8942
+          </span>
+</div>
+<!-- Form Fields Stack -->
+<div class="space-y-3.5 pt-1">
+<!-- Field: Display Name -->
+<div>
+<label class="block font-label text-xs font-semibold text-gray mb-1">
+              Отображаемое имя
+            </label>
+<div class="relative">
+<input class="w-full text-sm font-medium text-graphite bg-canvas/60 border border-gray/20 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" type="text" value="Михаил Смирнов"/>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-gray/60 text-lg" data-icon="edit">edit</span>
+</div>
+</div>
+<!-- Field: Corporate Email -->
+<div>
+<div class="flex items-center justify-between mb-1">
+<label class="font-label text-xs font-semibold text-gray">Корпоративный email</label>
+<span class="text-[10px] font-semibold text-primary bg-primary-soft px-1.5 py-0.2 rounded font-label flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]" data-icon="verified">verified</span>
+                Подтвержден
+              </span>
+</div>
+<div class="relative">
+<input class="w-full text-sm font-medium text-graphite/80 bg-canvas/70 border border-gray/20 rounded-xl pl-9 pr-3.5 py-2.5 cursor-not-allowed select-all" readonly="" type="email" value="m.smirnov@peremena.ru"/>
+<span class="material-symbols-outlined absolute left-2.5 top-2.5 text-gray text-lg" data-icon="lock">lock</span>
+</div>
+<p class="text-[10px] text-gray mt-1 flex items-center gap-1 font-body">
+<span class="material-symbols-outlined text-[13px] text-gray" data-icon="info">info</span>
+              Синхронизируется через корпоративный каталог Active Directory
+            </p>
+</div>
+<!-- Field: Position -->
+<div>
+<label class="block font-label text-xs font-semibold text-gray mb-1">
+              Должность
+            </label>
+<input class="w-full text-sm font-medium text-graphite bg-canvas/60 border border-gray/20 rounded-xl px-3.5 py-2.5 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" type="text" value="Ведущий менеджер по закупкам IT-оборудования"/>
+</div>
+<!-- Field: Default Region -->
+<div>
+<label class="block font-label text-xs font-semibold text-gray mb-1">
+              Регион поставки по умолчанию
+            </label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-primary text-lg" data-icon="location_on">location_on</span>
+<select class="w-full text-sm font-medium text-graphite bg-canvas/60 border border-gray/20 rounded-xl pl-9 pr-8 py-2.5 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary appearance-none cursor-pointer">
+<option selected="" value="vrn">Воронеж (ЦФО)</option>
+<option value="msk">Москва и МО</option>
+<option value="spb">Санкт-Петербург и СЗФО</option>
+<option value="ekb">Екатеринбург (УФО)</option>
+<option value="kzn">Казань (ПФО)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-gray pointer-events-none text-lg" data-icon="expand_more">expand_more</span>
+</div>
+<p class="text-[10px] text-gray mt-1">Определяет расчет стоимости магистральной логистики складов</p>
+</div>
+</div>
+</section>
+<!-- Card 2: AI-Копайлот закупок (Qwen3-32B) -->
+<section class="bg-[#EAF2FF] rounded-2xl p-4 border border-primary/20 shadow-sm space-y-3.5 relative overflow-hidden">
+<!-- Subtle AI Corner Accent -->
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-primary/10 rounded-full blur-xl pointer-events-none"></div>
+<!-- AI Card Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-lg" data-icon="psychology">psychology</span>
+</div>
+<div>
+<h2 class="font-headline font-bold text-xs text-graphite">AI-Копайлот закупок</h2>
+<span class="font-label text-[10px] font-semibold text-primary">Модель: Qwen3-32B Engine</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 bg-white text-primary text-[10px] font-bold px-2 py-0.5 rounded-full border border-primary/25 shadow-2xs font-label">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            Активен в контуре
+          </span>
+</div>
+<!-- AI Directive Prompt Textarea -->
+<div>
+<label class="block font-label text-xs font-semibold text-graphite mb-1.5 flex items-center justify-between">
+<span>Системная инструкция для ИИ-помощника</span>
+<span class="text-[10px] font-normal text-gray">162 / 500 симв.</span>
+</label>
+<textarea class="w-full text-xs font-normal text-graphite bg-white border border-primary/30 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent leading-relaxed transition shadow-inner resize-none" rows="3">При поиске и оценке офферов отдавать приоритет складам Воронежа и официальным дистрибьюторам с ЭДО. Всегда рассчитывать дельту к РРЦ и помечать партии от 10 шт.</textarea>
+<p class="text-[11px] text-gray mt-1 leading-snug flex items-start gap-1">
+<span class="material-symbols-outlined text-[13px] text-primary shrink-0 mt-0.5" data-icon="auto_awesome">auto_awesome</span>
+<span>ИИ учитывает эту директиву при автоматическом анализе спецификаций и офферов.</span>
+</p>
+</div>
+<!-- Toggles Section -->
+<div class="bg-white/80 rounded-xl p-3 border border-primary/15 space-y-2.5 backdrop-blur-sm">
+<!-- Toggle 1 -->
+<div class="flex items-center justify-between">
+<div class="pr-2">
+<p class="font-label text-xs font-semibold text-graphite">Учитывать оптовые скидки от объема</p>
+<p class="text-[10px] text-gray">Пересчитывать юнит-экономику при кратности паллеты</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-gray/30 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray/30 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="h-px bg-canvas"></div>
+<!-- Toggle 2 -->
+<div class="flex items-center justify-between">
+<div class="pr-2">
+<p class="font-label text-xs font-semibold text-graphite">Выделять риски срыва поставок</p>
+<p class="text-[10px] text-gray">Алерт при нестабильном складском остатке дистрибьютора</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-gray/30 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray/30 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Card 3: Безопасность и доступ -->
+<section class="bg-white rounded-2xl p-4 shadow-sm border border-canvas space-y-4">
+<!-- Header -->
+<div class="flex items-center justify-between border-b border-canvas pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="shield_lock">shield_lock</span>
+<h2 class="font-headline font-bold text-sm text-graphite">Безопасность и доступ</h2>
+</div>
+<span class="text-[10px] font-label font-bold text-gray bg-canvas px-2 py-0.5 rounded">TLS 1.3 Enterprise</span>
+</div>
+<!-- Password Change Subsection -->
+<div class="space-y-3">
+<h3 class="font-label text-xs font-bold uppercase tracking-wider text-gray">Смена пароля</h3>
+<!-- Current Password -->
+<div>
+<label class="block font-label text-xs font-medium text-graphite mb-1">Текущий пароль</label>
+<div class="relative">
+<input class="w-full text-sm font-medium text-graphite bg-canvas/60 border border-gray/20 rounded-xl px-3.5 py-2 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" type="password" value="••••••••••••"/>
+<button class="absolute right-3 top-2 text-gray hover:text-graphite" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="visibility_off">visibility_off</span>
+</button>
+</div>
+</div>
+<!-- New Password -->
+<div>
+<label class="block font-label text-xs font-medium text-graphite mb-1">Новый пароль</label>
+<div class="relative">
+<input class="w-full text-sm font-medium text-graphite bg-canvas/60 border border-gray/20 rounded-xl px-3.5 py-2 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" placeholder="Минимум 10 символов" type="password"/>
+<button class="absolute right-3 top-2 text-gray hover:text-graphite" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="visibility">visibility</span>
+</button>
+</div>
+<!-- Strength Indicator -->
+<div class="mt-1.5 flex items-center justify-between">
+<div class="flex gap-1 w-28">
+<div class="h-1 flex-1 bg-primary rounded-full"></div>
+<div class="h-1 flex-1 bg-primary rounded-full"></div>
+<div class="h-1 flex-1 bg-primary rounded-full"></div>
+<div class="h-1 flex-1 bg-gray/30 rounded-full"></div>
+</div>
+<span class="text-[10px] font-semibold text-primary font-label">Надежный пароль</span>
+</div>
+</div>
+<!-- Confirm Password -->
+<div>
+<label class="block font-label text-xs font-medium text-graphite mb-1">Повторите новый пароль</label>
+<input class="w-full text-sm font-medium text-graphite bg-canvas/60 border border-gray/20 rounded-xl px-3.5 py-2 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" placeholder="Повтор пароля" type="password"/>
+</div>
+</div>
+<div class="border-t border-canvas pt-3 space-y-3">
+<!-- 2FA Block -->
+<div class="flex items-center justify-between">
+<div>
+<p class="font-label text-xs font-bold text-graphite">Двухфакторная аутентификация (2FA)</p>
+<p class="text-[11px] text-gray">Доступ по корпоративным токенам</p>
+</div>
+<span class="inline-flex items-center gap-1 bg-primary-soft text-primary font-label text-[10px] font-semibold px-2 py-0.5 rounded-full border border-primary/20">
+<span class="material-symbols-outlined text-[12px]" data-icon="check_circle">check_circle</span>
+              Подключена
+            </span>
+</div>
+<!-- Active Sessions Block -->
+<div class="bg-canvas/80 p-2.5 rounded-xl border border-gray/10 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-base mt-0.5" data-icon="phone_iphone">phone_iphone</span>
+<div class="text-[11px]">
+<div class="font-semibold text-graphite flex items-center gap-1.5">
+<span>Chrome Mobile (iOS) · Воронеж</span>
+<span class="text-[9px] bg-primary-soft text-primary font-label px-1 py-0.2 rounded font-bold">ТЕКУЩАЯ</span>
+</div>
+<p class="text-gray text-[10px] mt-0.5">IP: 185.129.**.** · Сессия активна 42 мин.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Sticky Save Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
+<div class="w-full max-w-[390px] bg-white/95 backdrop-blur-md border-t border-canvas p-3.5 shadow-[0_-4px_16px_rgba(24,28,36,0.06)] pointer-events-auto">
+<button class="w-full bg-[#2569ED] hover:bg-[#1D4FC4] active:scale-[0.99] text-white font-headline font-semibold text-sm py-3 px-4 rounded-xl flex items-center justify-center gap-2 shadow-sm transition-all duration-150" id="save-button" onclick="handleSaveNotification()" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="check">check</span>
+<span>Сохранить изменения</span>
+</button>
+<div class="flex items-center justify-center gap-1.5 mt-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-label text-[10px] text-gray tracking-tight">Синхронизировано с базой Воронеж ЦФО</span>
+</div>
+</div>
+</div>
+<!-- Notification Toast (Micro-interaction feedback) -->
+<div class="fixed top-16 left-1/2 -translate-x-1/2 z-50 bg-graphite text-white text-xs px-4 py-2.5 rounded-xl shadow-lg flex items-center gap-2 transition-all duration-300 opacity-0 pointer-events-none transform -translate-y-2" id="toast">
+<span class="material-symbols-outlined text-primary text-base" data-icon="cloud_done">cloud_done</span>
+<span>Настройки профиля и AI успешно сохранены</span>
+</div>
+</div>
+<script>
+    function handleSaveNotification() {
+      const toast = document.getElementById('toast');
+      const btn = document.getElementById('save-button');
+      
+      // Button interaction feedback
+      btn.classList.add('bg-primary-dark');
+      
+      // Toast transition
+      toast.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-2');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'pointer-events-none', '-translate-y-2');
+        btn.classList.remove('bg-primary-dark');
+      }, 2500);
+    }
+  </script>
+</body></html>

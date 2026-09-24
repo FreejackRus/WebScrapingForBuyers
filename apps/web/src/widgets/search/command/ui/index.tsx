@@ -112,6 +112,9 @@ export function SearchCommand() {
           Товар для поиска
         </label>
         <div className="search-field">
+          <span className="search-icon" aria-hidden="true">
+            ⌕
+          </span>
           <input
             id="procurement-query"
             value={query}
@@ -132,7 +135,7 @@ export function SearchCommand() {
               window.setTimeout(() => setOpen(false), 120);
             }}
             onKeyDown={onKeyDown}
-            placeholder="Ноутбук, монитор, SSD, MPN или бренд…"
+            placeholder="Поиск по артикулу, MPN, модели…"
             minLength={2}
             required
             aria-describedby={hintId}

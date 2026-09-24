@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PEREMENA Price Radar — Вход в систему</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Public+Sans:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2569ED',
+            'primary-dark': '#1D4FC4',
+            'primary-soft': '#EAF2FF',
+            graphite: '#181C24',
+            gray: '#6F7782',
+            canvas: '#F4F6F8',
+            white: '#FFFFFF'
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          },
+          fontFamily: {
+            headline: ["Inter", "sans-serif"],
+            display: ["Inter", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+            label: ["Public Sans", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+    }
+    .material-symbols-fill {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+    }
+    body {
+      background-color: #E2E6EC;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    input::placeholder {
+      color: #9CA3AF;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-0 sm:py-6 text-graphite selection:bg-primary selection:text-white">
+<!-- Mobile Simulator Canvas Container (Strict 390px Mobile Target) -->
+<main class="w-full max-w-[390px] min-h-screen sm:min-h-[844px] bg-canvas flex flex-col justify-between shadow-2xl relative overflow-x-hidden sm:rounded-[32px] sm:border sm:border-slate-300">
+<!-- Top Security & Meta Status Ribbon (Shared Components Anchor TopAppBar Context) -->
+<header class="w-full max-w-[390px] mx-auto px-4 py-3 flex items-center justify-between bg-white border-b border-canvas shadow-sm">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+</span>
+<span class="text-[11px] font-semibold tracking-tight text-graphite">Защищенный B2B-контур</span>
+</div>
+<div class="flex items-center gap-1.5 text-gray text-[11px] font-medium">
+<span class="material-symbols-outlined text-sm leading-none text-gray" data-icon="location_on">location_on</span>
+<span>Воронеж (ЦФО)</span>
+<button aria-label="Справка" class="ml-1 text-gray hover:text-primary transition-colors flex items-center" type="button">
+<span class="material-symbols-outlined text-[17px]" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<div class="flex-1 px-4 pt-5 pb-6 flex flex-col justify-center">
+<!-- Brand Identity Cluster -->
+<section class="mb-5 flex flex-col items-center">
+<div class="flex items-center gap-2.5">
+<img alt="ПЕРЕМЕНА" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA90DImXTU4xdX8NJMyuaiOAvVj8xTqTP0eINkAgOfwwu4FRDcb_KA9Tb7ohQhKoR7j7R0Tx5aJcOhrn3BorTGKPiCOpWHzOM40xksdnMgqa-j91-e5ThyB9fWOUBQoSRi8Ay3NtbT1T8fADIJNrFgU_dlIvU1s8red6FjAmhw0AbiQD2fYIBMGN3RWY-5aNt8D2wJOojPcy3vPooidiClCZn1u13MBULpjfFAKCsnVJdVJPrDw77Gy0rgaqQoLtJzdD773PH1w-fY"/>
+<span class="bg-primary text-white text-[10px] font-extrabold uppercase px-2 py-0.5 rounded tracking-wide font-headline shadow-sm">
+            PRICE RADAR
+          </span>
+</div>
+<p class="text-[12px] font-medium text-gray mt-2 text-center tracking-tight">
+          Аналитический комплекс государственных и корпоративных закупок
+        </p>
+</section>
+<!-- Primary Credentials Card -->
+<section class="bg-white rounded-2xl p-5 shadow-sm border border-gray/15">
+<div class="border-b border-gray/10 pb-3 mb-4">
+<h1 class="text-xl font-bold text-graphite tracking-tight font-headline">Вход в систему</h1>
+<p class="text-[11px] text-gray mt-1 leading-relaxed">
+            Интеллектуальный мониторинг оптовых цен и расчет НМЦК по 44-ФЗ / 223-ФЗ
+          </p>
+</div>
+<form class="space-y-4" onsubmit="event.preventDefault();">
+<!-- Corporate Login Field -->
+<div>
+<label class="block text-xs font-semibold text-graphite mb-1.5 font-label" for="corporate-login">
+              Корпоративный логин
+            </label>
+<div class="relative flex items-center">
+<span class="absolute left-3 text-gray pointer-events-none flex items-center">
+<span class="material-symbols-outlined text-lg" data-icon="badge">badge</span>
+</span>
+<input class="w-full pl-9 pr-3.5 py-2.5 text-xs text-graphite bg-canvas/40 border border-gray/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all font-body" id="corporate-login" placeholder="m.smirnov@peremena.ru или логин" required="" type="text"/>
+</div>
+</div>
+<!-- Password Field -->
+<div>
+<label class="block text-xs font-semibold text-graphite mb-1.5 font-label" for="user-password">
+              Пароль
+            </label>
+<div class="relative flex items-center">
+<span class="absolute left-3 text-gray pointer-events-none flex items-center">
+<span class="material-symbols-outlined text-lg" data-icon="lock">lock</span>
+</span>
+<input class="w-full pl-9 pr-10 py-2.5 text-xs text-graphite bg-canvas/40 border border-gray/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all font-body tracking-wider" id="user-password" placeholder="••••••••••••" required="" type="password"/>
+<button aria-label="Показать или скрыть пароль" class="absolute right-3 text-gray hover:text-graphite transition-colors flex items-center p-1" id="toggle-password-btn" onclick="const input = document.getElementById('user-password'); const icon = this.querySelector('span'); if (input.type === 'password') { input.type = 'text'; icon.textContent = 'visibility_off'; } else { input.type = 'password'; icon.textContent = 'visibility'; }" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<!-- Utilities Row: Remember & Recovery -->
+<div class="flex items-center justify-between pt-0.5">
+<label class="flex items-center gap-2 cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded text-primary border-gray/40 focus:ring-primary focus:ring-offset-0 transition" type="checkbox"/>
+<span class="text-xs text-gray font-medium">Запомнить меня</span>
+</label>
+<a class="text-xs font-medium text-primary hover:text-primary-dark transition-colors" href="#recovery">
+              Забыли пароль?
+            </a>
+</div>
+<!-- Submit Action Button -->
+<button class="w-full bg-primary hover:bg-primary-dark active:opacity-90 text-white py-3.5 rounded-xl font-semibold text-sm shadow-sm flex items-center justify-center gap-2 transition-all font-headline cursor-pointer mt-1" type="submit">
+<span>Войти в систему</span>
+<span class="material-symbols-outlined text-lg leading-none" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+<!-- Enterprise Alternate Authentication Section -->
+<div class="mt-5">
+<div class="relative flex items-center justify-center mb-3.5">
+<div class="absolute inset-0 flex items-center"><div class="w-full border-t border-gray/15"></div></div>
+<span class="relative bg-white px-2.5 text-[9px] font-bold text-gray tracking-wider uppercase">
+              Или вход через единую учетную запись
+            </span>
+</div>
+<div class="space-y-2">
+<!-- SSO Button -->
+<button class="w-full flex items-center justify-between px-3.5 py-2.5 bg-canvas/60 hover:bg-canvas border border-gray/25 rounded-xl text-graphite transition-colors text-left group" type="button">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-lg bg-primary-soft text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-base" data-icon="corporate_fare">corporate_fare</span>
+</div>
+<div>
+<div class="text-xs font-semibold text-graphite group-hover:text-primary transition-colors">Корпоративный SSO / Active Directory</div>
+<div class="text-[10px] text-gray">Домен PEREMENA (Kerberos / SAML 2.0)</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray group-hover:text-primary transition-colors text-base" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Digital Signature Button -->
+<button class="w-full flex items-center justify-between px-3.5 py-2.5 bg-canvas/60 hover:bg-canvas border border-gray/25 rounded-xl text-graphite transition-colors text-left group" type="button">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-lg bg-primary-soft text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-base" data-icon="approval">approval</span>
+</div>
+<div>
+<div class="text-xs font-semibold text-graphite group-hover:text-primary transition-colors">Вход по ЭЦП / Сертификату Госуслуг (КЭП)</div>
+<div class="text-[10px] text-gray">Плагин КриптоПро ЭЦП Browser plug-in</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray group-hover:text-primary transition-colors text-base" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- AI Price Radar Feature Pill Notice -->
+<div class="mt-4 p-2.5 bg-primary-soft/80 border border-primary/20 rounded-xl flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-base mt-0.5 flex-shrink-0 material-symbols-fill" data-icon="auto_awesome">auto_awesome</span>
+<div class="text-[11px] text-graphite leading-snug">
+<span class="font-semibold text-primary">ИИ-модуль анализа цен:</span> авторасчет коммерческих предложений и верификация реестров ЕИС активны в фоновом режиме.
+          </div>
+</div>
+</section>
+</div>
+<!-- Security, Compliance & Technical Telemetry Footer -->
+<footer class="px-4 pb-4 pt-1">
+<div class="p-3 bg-white/70 border border-gray/15 rounded-xl flex flex-col items-center text-center">
+<div class="flex items-center justify-center gap-1.5 text-xs font-semibold text-graphite mb-0.5">
+<span class="material-symbols-outlined text-base text-primary" data-icon="shield">shield</span>
+<span>Защищенный контур ПЕРЕМЕНА · Версия 2.6.4</span>
+</div>
+<p class="text-[10px] text-gray leading-normal max-w-[310px]">
+          Шифрование канала TLS 1.3 с криптозащитой по ГОСТ Р 57580. Доступ разрешен авторизованным сотрудникам закупочных отделов.
+        </p>
+</div>
+<!-- Legal & System Support Links -->
+<div class="flex items-center justify-center gap-3 mt-2.5 text-[10px] text-gray font-medium">
+<a class="hover:text-primary transition-colors" href="#helpdesk">Техподдержка</a>
+<span class="text-gray/40">·</span>
+<a class="hover:text-primary transition-colors" href="#security">Регламент ИБ</a>
+<span class="text-gray/40">·</span>
+<a class="hover:text-primary transition-colors" href="#certificate">Сертификаты ФСТЭК</a>
+</div>
+</footer>
+</main>
+</body></html>

@@ -25,21 +25,28 @@ export function Topbar({ view, onView }: { view: AppView; onView: (view: AppView
           <span className="product-badge">Price Radar</span>
         </a>
         <div className="topbar-meta">
-          <span className="city">
-            Регион: <b>{user.city}</b>
+          <span className="city city-chip">
+            <span className="city-pin" aria-hidden="true">
+              ⌖
+            </span>
+            <b>{user.city}</b>
           </span>
           {isAdmin && health && (
             <span className={`mode-badge ${health.mode}`}>
               {health.mode === "hybrid" ? "Гибридный контур" : "Локальный контур"}
             </span>
           )}
-          <button className="ghost" type="button" onClick={() => onView(view === "settings" ? "search" : "settings")}>
+          <button
+            className="ghost topbar-settings"
+            type="button"
+            onClick={() => onView(view === "settings" ? "search" : "settings")}
+          >
             {view === "settings" ? "К поиску" : "Настройки"}
           </button>
           <button className="avatar" type="button" onClick={() => onView("settings")} title={user.displayName}>
             {initials(user.displayName)}
           </button>
-          <button className="ghost" type="button" onClick={() => void logout()}>
+          <button className="ghost topbar-logout" type="button" onClick={() => void logout()}>
             Выйти
           </button>
         </div>

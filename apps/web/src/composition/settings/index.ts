@@ -1,1 +1,1 @@
-export type AppView = "search" | "settings";
+export type AppView = "search" | "chat" | "settings";

@@ -1,10 +1,21 @@
 import type { ReactNode } from "react";
 
-export function WorkspaceShell({ main, chat }: { main: ReactNode; chat: ReactNode }) {
+export function WorkspaceShell({
+  lead,
+  chat,
+  offers,
+}: {
+  lead: ReactNode;
+  chat: ReactNode;
+  offers: ReactNode;
+}) {
   return (
     <div className="workspace-split">
-      <div className="workspace-main">{main}</div>
-      <aside className="workspace-chat">{chat}</aside>
+      <div className="workspace-lead">{lead}</div>
+      <aside className="workspace-chat" id="analysis-panel">
+        {chat}
+      </aside>
+      <div className="workspace-offers">{offers}</div>
     </div>
   );
 }

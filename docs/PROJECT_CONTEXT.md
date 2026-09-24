@@ -803,3 +803,17 @@ stitch.googleapis.com, header X-Goog-Api-Key). В репозитории тол�
 filter-intent priority. Compose --no-deps --build analysis web. Chrome
 не трогали. Stamp: notebook-table-filter.
 
+### 2026-09-24 — мобильный UI по Stitch
+
+Stitch MCP в сессии Cursor недоступен как namespace; использован HTTP
+REST/MCP с ключом из `.env.stitch` (ключ не логировали).
+
+Экраны: mobile workspace `d028549d8cbe41678a6b44ae609d7d4a`; сгенерированы
+mobile login `6f54d513b9174b6fb16efc205d8dbdc8` и settings
+`694b41de9c21419a9b720fa3ef0ceac0` (DS PEREMENA Digital). HTML в
+`docs/stitch-screens/`.
+
+В `apps/web`: bottom nav, grid lead→chat→offers на узком viewport,
+карточки офферов, компактный login/settings. Закупки в nav disabled.
+Chrome не трогали.
+

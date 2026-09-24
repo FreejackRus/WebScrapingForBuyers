@@ -4,8 +4,11 @@ export function LoginShell({ children }: { children: ReactNode }) {
   return (
     <div className="login-shell">
       <header className="login-topbar">
-        <span>Корпоративный контур закупок</span>
-        <span>Воронеж</span>
+        <span className="login-secure">
+          <span className="login-secure-dot" aria-hidden="true" />
+          Защищённый B2B-контур
+        </span>
+        <span>Воронеж (ЦФО)</span>
       </header>
       <main className="login-page">{children}</main>
       <footer className="app-footer">

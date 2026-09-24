@@ -1,1 +1,1 @@
-export { SearchWorkspace } from "./ui";
+export { SearchWorkspace, SearchWorkspaceLead, SearchWorkspaceOffers } from "./ui";
