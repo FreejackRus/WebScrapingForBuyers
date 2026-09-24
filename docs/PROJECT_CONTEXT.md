@@ -768,30 +768,23 @@ re-initialize + `dns_search`/`citilink_search`/`megamarket_search` без
 «демо vs REAL». Поле `Offer.demo` и тихий отсев `demo:true` при наличии
 живых строк сохранены в контракте/ранжировании. Admin mode badge:
 «Локальный контур» вместо «Демо-контур».
-Выложено ранее: commit `9071780` (web + analysis).
 
 
 ### 2026-09-24 — демо убрано из контекста LLM копайлота
 
-Повторная проверка после обрыва прошлой сессии (403): UI уже без демо-баннеров.
-Дополнительно из model-facing payload сняты `demo` / `demoCount` /
-`realCount`; в SYSTEM/CHAT prompts — запрет упоминать демо/DEMO/REAL.
-`Offer.demo` и тихий отсев в ранжировании сохранены. Рядом в том же
-дереве — фильтр таблицы по токенам названия (`titleIncludeAny` /
-`titleExcludeAny`). Выложено: contracts, analysis, web (`--no-deps --build`);
-Chrome не трогали.
+Из model-facing payload сняты demo / demoCount / realCount;
+в SYSTEM/CHAT prompts — запрет упоминать демо/DEMO/REAL.
+Offer.demo и тихий отсев в ранжировании сохранены. Commit ba2f78e.
 
+### 2026-09-24 — chat filter: ноутбуки across all sources
 
+Root cause: (1) «пробегись по всем источникам» матчило intent sources
+(подстрока «источник») → canned VNC/антибот вместо фильтра таблицы;
+(2) не было детерминированного фильтра по типу в title — «только ноутбуки»
+не отсекало Legion Go и не держало Ситилинк; soft-drop на filter сужал
+выборку; tableFilter не синхронизировал selectedOfferIds в UI.
 
-### 2026-09-24 � chat filter: �������� across all sources
-
-Root cause: (1) ���������� �� ���� ���������� ������� intent `sources`
-(��������� ���������) > canned VNC/������� ������ ������� �������;
-(2) �� ���� ������������������ ������� �� ���� ������ � title � �������
-�������� �� �������� Legion Go � �� ������� ��������; soft-drop �� filter
-����� �������; tableFilter �� ��������������� selectedOfferIds � UI.
-
-Fix: filter intent ������ sources/admin; titleIncludeAny/titleExcludeAny
-� contracts + analyze + web applyTableFilter; soft-drop ������ ���
-explain; prompts �� ������ filter � VNC; applyChatResult �����������
-selectedOfferIds. �����: multi-source Legion + ������� ��������.
+Fix: filter intent раньше sources/admin; titleIncludeAny/titleExcludeAny
+в contracts + analyze + web applyTableFilter; soft-drop только для explain;
+prompts не уводят filter в VNC; applyChatResult подмешивает selectedOfferIds.
+Тесты: multi-source Legion + «только ноутбуки». Вошло в ba2f78e.
