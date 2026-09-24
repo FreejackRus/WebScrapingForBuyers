@@ -1,22 +1,20 @@
 ---
 source_file: "apps/web/src/widgets/search/workspace/ui/index.tsx"
 type: "code"
-community: "Community 143"
-location: "L8"
+community: "workspace/ui/index.tsx"
+location: "L80"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_143
+  - community/workspace/ui/indextsx
 ---
 
 # SearchWorkspace()
 
 ## Connections
-- [[monitoruiindex.tsx]] - `imports` [EXTRACTED]
-- [[useSearchStore]] - `calls` [EXTRACTED]
-- [[useUserStore]] - `calls` [EXTRACTED]
 - [[widgetssearchindex.ts]] - `re_exports` [EXTRACTED]
 - [[workspaceindex.ts]] - `re_exports` [EXTRACTED]
+- [[workspaceuiindex.test.tsx]] - `imports` [EXTRACTED]
 - [[workspaceuiindex.tsx]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_143
+#graphify/code #graphify/EXTRACTED #community/workspace/ui/indextsx

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_dsh_bundle.py"
 type: "code"
-community: "Community 118"
+community: "test_dsh_bundle.py"
 location: "L29"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_118
+  - community/test_dsh_bundlepy
 ---
 
 # _normalise()
@@ -16,4 +16,4 @@ tags:
 - [[_file_state()]] - `calls` [EXTRACTED]
 - [[test_dsh_bundle.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_118
+#graphify/code #graphify/EXTRACTED #community/test_dsh_bundlepy

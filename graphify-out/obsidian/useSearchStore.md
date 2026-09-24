@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/entities/search/store/index.ts"
 type: "code"
-community: "Community 40"
-location: "L27"
+community: "useSearchStore"
+location: "L28"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_40
+  - community/useSearchStore
 ---
 
 # useSearchStore
@@ -16,7 +16,7 @@ tags:
 - [[AnalystPanel()]] - `calls` [EXTRACTED]
 - [[OfferTable()]] - `calls` [EXTRACTED]
 - [[SearchCommand()]] - `calls` [EXTRACTED]
-- [[SearchWorkspace()]] - `calls` [EXTRACTED]
+- [[SearchWorkspaceOffers()]] - `calls` [EXTRACTED]
 - [[apply-chatindex.ts]] - `imports` [EXTRACTED]
 - [[chatuiindex.tsx]] - `imports` [EXTRACTED]
 - [[commanduiindex.tsx]] - `imports` [EXTRACTED]
@@ -24,7 +24,7 @@ tags:
 - [[entitiessearchindex.ts]] - `re_exports` [EXTRACTED]
 - [[filter-offersindex.ts]] - `imports` [EXTRACTED]
 - [[logoutindex.ts]] - `imports` [EXTRACTED]
-- [[mergeSnapshotOffers()]] - `calls` [EXTRACTED]
+- [[mergeSnapshotOffers()_1]] - `calls` [EXTRACTED]
 - [[offersuiindex.tsx]] - `imports` [EXTRACTED]
 - [[searchstoreindex.ts]] - `contains` [EXTRACTED]
 - [[startindex.ts]] - `imports` [EXTRACTED]
@@ -32,6 +32,7 @@ tags:
 - [[useBootSession.ts]] - `imports` [EXTRACTED]
 - [[useFilteredOffers()]] - `calls` [EXTRACTED]
 - [[useSuggest()]] - `calls` [EXTRACTED]
+- [[useWorkspaceSnapshot()]] - `calls` [EXTRACTED]
 - [[workspaceuiindex.tsx]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_40
+#graphify/code #graphify/EXTRACTED #community/useSearchStore

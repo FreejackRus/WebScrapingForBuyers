@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py"
 type: "code"
-community: "Community 15"
+community: "cian-connector/tests/test_server.py"
 location: "L46"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_15
+  - community/cian-connector/tests/test_serverpy
 ---
 
 # _no_cache()
@@ -16,4 +16,4 @@ tags:
 - [[cian-connectorteststest_server.py]] - `contains` [EXTRACTED]
 - [[fixture_6]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_15
+#graphify/code #graphify/EXTRACTED #community/cian-connector/tests/test_serverpy

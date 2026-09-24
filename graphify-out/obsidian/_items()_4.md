@@ -1,21 +1,24 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_search_parser_live.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_search_extractor_dom.py"
 type: "code"
-community: "Community 74"
-location: "L67"
+community: "_items"
+location: "L62"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_74
+  - community/_items
 ---
 
 # _items()
 
 ## Connections
-- [[test_live_composer_payload_parses_to_the_three_tiles()]] - `calls` [EXTRACTED]
-- [[test_live_price_strings_parse_to_the_displayed_numbers()]] - `calls` [EXTRACTED]
-- [[test_live_stock_labels_survive_the_parse_verbatim()]] - `calls` [EXTRACTED]
-- [[test_live_tiles_carry_a_canonical_card_input()]] - `calls` [EXTRACTED]
-- [[test_search_parser_live.py]] - `contains` [EXTRACTED]
+- [[_extract()_14]] - `calls` [EXTRACTED]
+- [[citilink-connectorteststest_search_extractor_dom.py]] - `contains` [EXTRACTED]
+- [[test_badges_bonuses_and_delivery_counts_are_never_prices()]] - `calls` [EXTRACTED]
+- [[test_exact_meta_price_attribute_is_preferred()]] - `calls` [EXTRACTED]
+- [[test_price_is_found_when_the_currency_glyph_is_a_separate_element()]] - `calls` [EXTRACTED]
+- [[test_search_items_carry_the_wire_shape()]] - `calls` [EXTRACTED]
+- [[test_strikethrough_before_the_current_price_is_read_as_the_old_price()]] - `calls` [EXTRACTED]
+- [[test_title_comes_from_a_text_bearing_anchor_not_the_empty_overlay()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_74
+#graphify/code #graphify/EXTRACTED #community/_items

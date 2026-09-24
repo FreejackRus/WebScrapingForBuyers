@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 86"
+community: "terminate_process_tree"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_86
+  - community/terminate_process_tree
 ---
 
 # Popen
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[terminate_process_tree()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_86
+#graphify/code #graphify/EXTRACTED #community/terminate_process_tree

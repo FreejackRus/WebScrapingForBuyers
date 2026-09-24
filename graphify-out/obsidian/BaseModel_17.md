@@ -1,18 +1,21 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 65"
+community: "test_card_verification_records.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_65
+  - community/test_card_verification_recordspy
 ---
 
 # BaseModel
 
 ## Connections
-- [[CitilinkCardResponse]] - `inherits` [EXTRACTED]
-- [[CitilinkSearchItemOut]] - `inherits` [EXTRACTED]
-- [[CitilinkSearchResponse]] - `inherits` [EXTRACTED]
+- [[OzonCardResponse]] - `inherits` [EXTRACTED]
+- [[OzonReviewItemOut]] - `inherits` [EXTRACTED]
+- [[OzonReviewsResponse]] - `inherits` [EXTRACTED]
+- [[OzonSearchItemOut]] - `inherits` [EXTRACTED]
+- [[OzonSearchResponse]] - `inherits` [EXTRACTED]
+- [[OzonSellerOut]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_65
+#graphify/code #graphify/EXTRACTED #community/test_card_verification_recordspy

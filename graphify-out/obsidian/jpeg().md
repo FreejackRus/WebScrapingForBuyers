@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_snapshot.py"
 type: "code"
-community: "Community 69"
+community: "test_chrome_cdp_snapshot.py"
 location: "L13"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_69
+  - community/test_chrome_cdp_snapshotpy
 ---
 
 # jpeg()
@@ -19,4 +19,4 @@ tags:
 - [[test_jpeg_frame_after_app_segment_and_progressive_frame()]] - `calls` [EXTRACTED]
 - [[test_layout_fallback_small_viewport_is_not_upscaled()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_69
+#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_snapshotpy

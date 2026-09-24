@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 176"
+community: "run_extractor"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_176
+  - community/run_extractor
 ---
 
 # Path
 
 ## Connections
-- [[_scan()]] - `references` [EXTRACTED]
+- [[run_extractor()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_176
+#graphify/code #graphify/EXTRACTED #community/run_extractor

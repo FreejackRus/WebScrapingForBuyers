@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py"
 type: "code"
-community: "Community 6"
+community: "mcp-core/tests/test_browser_handoff.py"
 location: "L137"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_6
+  - community/mcp-core/tests/test_browser_handoffpy
 ---
 
 # test_busy_initial_and_resume_never_open_duplicate()
@@ -16,4 +16,4 @@ tags:
 - [[mcp-coreteststest_browser_handoff.py]] - `contains` [EXTRACTED]
 - [[pending()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_6
+#graphify/code #graphify/EXTRACTED #community/mcp-core/tests/test_browser_handoffpy

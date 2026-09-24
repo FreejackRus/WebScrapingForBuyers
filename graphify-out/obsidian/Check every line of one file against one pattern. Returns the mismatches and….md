@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_versions.py"
 type: "rationale"
-community: "Community 176"
+community: "check_versions.py"
 location: "L54"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_176
+  - community/check_versionspy
 ---
 
 # Check every line of one file against one pattern. Returns the mismatches and…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_scan()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_176
+#graphify/rationale #graphify/EXTRACTED #community/check_versionspy

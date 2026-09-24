@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/widgets/user/topbar/ui/index.tsx"
 type: "code"
-community: "Community 81"
+community: "useUserStore"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_81
+  - community/useUserStore
 ---
 
 # topbar/ui/index.tsx
@@ -23,6 +23,7 @@ tags:
 - [[logout()]] - `imports` [EXTRACTED]
 - [[sharedlibindex.ts]] - `imports_from` [EXTRACTED]
 - [[topbarindex.ts]] - `re_exports` [EXTRACTED]
+- [[topbaruiindex.test.tsx]] - `imports_from` [EXTRACTED]
 - [[useUserStore]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_81
+#graphify/code #graphify/EXTRACTED #community/useUserStore

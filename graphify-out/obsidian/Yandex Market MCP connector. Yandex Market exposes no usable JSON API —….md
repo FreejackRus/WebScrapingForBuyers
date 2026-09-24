@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/server.py"
 type: "rationale"
-community: "Community 49"
+community: "json"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_49
+  - community/json
 ---
 
 # Yandex Market MCP connector. Yandex Market exposes no usable JSON API —…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[yandex_connectorserver.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_49
+#graphify/rationale #graphify/EXTRACTED #community/json

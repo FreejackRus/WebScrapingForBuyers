@@ -1,17 +1,19 @@
 ---
-source_file: "apps/search/src/domain/source-adapter.ts"
+source_file: "apps/search/src/infrastructure/sources/b2b-distributor-adapter.ts"
 type: "code"
-community: "Community 9"
-location: "L5"
+community: "b2b-distributor-adapter.ts"
+location: "L142"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_9
+  - community/b2b-distributor-adapterts
 ---
 
 # .search()
 
 ## Connections
-- [[SourceAdapter]] - `method` [EXTRACTED]
+- [[OcsSourceAdapter]] - `method` [EXTRACTED]
+- [[ocsConfigFromEnv()]] - `calls` [EXTRACTED]
+- [[searchOcs()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_9
+#graphify/code #graphify/EXTRACTED #community/b2b-distributor-adapterts

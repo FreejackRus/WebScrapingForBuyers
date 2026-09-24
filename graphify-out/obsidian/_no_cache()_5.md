@@ -1,18 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py"
 type: "code"
-community: "Community 288"
-location: "L48"
+community: "fake_post"
+location: "L59"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_288
+  - community/fake_post
 ---
 
 # _no_cache()
 
 ## Connections
-- [[citilink-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[fixture_18]] - `references` [EXTRACTED]
+- [[_no_redirect()]] - `indirect_call` [INFERRED]
+- [[fixture_9]] - `references` [EXTRACTED]
+- [[megamarket-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_288
+#graphify/code #graphify/EXTRACTED #community/fake_post

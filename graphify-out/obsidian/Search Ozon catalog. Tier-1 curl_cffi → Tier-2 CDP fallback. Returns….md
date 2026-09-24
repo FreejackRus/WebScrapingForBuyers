@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/server.py"
 type: "rationale"
-community: "Community 185"
+community: "ozon_card"
 location: "L1304"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_185
+  - community/ozon_card
 ---
 
 # Search Ozon catalog. Tier-1 curl_cffi → Tier-2 CDP fallback. Returns…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[ozon_search()_2]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_185
+#graphify/rationale #graphify/EXTRACTED #community/ozon_card

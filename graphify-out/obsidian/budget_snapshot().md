@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/cdp_budget.py"
 type: "code"
-community: "Community 3"
+community: "transport/__init__.py"
 location: "L304"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_3
+  - community/transport/__init__py
 ---
 
 # budget_snapshot()
@@ -22,4 +22,4 @@ tags:
 - [[test_the_host_slot_is_free_while_the_page_is_open()]] - `calls` [EXTRACTED]
 - [[transport__init__.py]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_3
+#graphify/code #graphify/EXTRACTED #community/transport/__init__py

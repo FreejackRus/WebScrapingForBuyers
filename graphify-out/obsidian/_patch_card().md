@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py"
 type: "code"
-community: "Community 12"
+community: "cian-connector/tests/test_server.py"
 location: "L61"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_12
+  - community/cian-connector/tests/test_serverpy
 ---
 
 # _patch_card()
@@ -27,4 +27,4 @@ tags:
 - [[test_selfcheck_is_success_when_search_and_card_parse()]] - `calls` [EXTRACTED]
 - [[test_selfcheck_reports_drift_when_the_card_lost_its_state()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_12
+#graphify/code #graphify/EXTRACTED #community/cian-connector/tests/test_serverpy

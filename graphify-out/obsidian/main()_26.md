@@ -1,19 +1,20 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/examples/price_check.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/src/marketplace_connector/__main__.py"
 type: "code"
-community: "Community 55"
-location: "L19"
+community: "test_dsh_bundle.py"
+location: "L13"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_55
+  - community/test_dsh_bundlepy
 ---
 
 # main()
 
 ## Connections
-- [[compare_prices()]] - `calls` [EXTRACTED]
-- [[compare_sources()]] - `calls` [EXTRACTED]
-- [[price_check.py]] - `contains` [EXTRACTED]
+- [[Run the server, or the installdoctor CLI when a subcommand is given.…]] - `rationale_for` [EXTRACTED]
+- [[main()_25]] - `calls` [EXTRACTED]
+- [[marketplace_connector__main__.py]] - `contains` [EXTRACTED]
+- [[run_server()]] - `calls` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_55
+#graphify/code #graphify/EXTRACTED #community/test_dsh_bundlepy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py"
 type: "code"
-community: "Community 266"
+community: "test_probe_session_reports_reachable_when_only_the_playwright_attach_fails"
 location: "L412"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_266
+  - community/test_probe_session_reports_reachable_when_only_the_playwright_attach_fails
 ---
 
 # test_probe_session_reports_reachable_when_only_the_playwright_attach_fails()
@@ -17,4 +17,4 @@ tags:
 - [[__aexit__()_10]] - `contains` [EXTRACTED]
 - [[test_chrome_cdp.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_266
+#graphify/code #graphify/EXTRACTED #community/test_probe_session_reports_reachable_when_only_the_playwright_attach_fails

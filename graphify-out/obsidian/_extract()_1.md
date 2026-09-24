@@ -1,23 +1,23 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_shape_reference.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_card_extractor_dom.py"
 type: "code"
-community: "Community 102"
-location: "L69"
+community: "dns-connector/tests/test_card_extractor_dom.py"
+location: "L31"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_102
+  - community/dns-connector/tests/test_card_extractor_dompy
 ---
 
 # _extract()
 
 ## Connections
 - [[JsdomUnavailable]] - `uses` [INFERRED]
-- [[Path_1]] - `references` [EXTRACTED]
+- [[dns-connectorteststest_card_extractor_dom.py]] - `contains` [EXTRACTED]
 - [[run_extractor()]] - `calls` [EXTRACTED]
-- [[taobao-connectorteststest_shape_reference.py]] - `contains` [EXTRACTED]
-- [[test_card_payload_shape_matches_the_capture()]] - `calls` [EXTRACTED]
-- [[test_live_search_shape_matches_the_selfcheck_registry()_1]] - `calls` [EXTRACTED]
-- [[test_search_payload_shape_matches_the_capture()_1]] - `calls` [EXTRACTED]
+- [[test_availability_is_read_from_the_avail_wrap()]] - `calls` [EXTRACTED]
+- [[test_card_extractor_reads_the_product_card()]] - `calls` [EXTRACTED]
+- [[test_card_mapping_produces_the_wire_shape()]] - `calls` [EXTRACTED]
+- [[test_the_instalment_line_is_never_the_card_price()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_102
+#graphify/code #graphify/EXTRACTED #community/dns-connector/tests/test_card_extractor_dompy

@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "code"
-community: "Community 131"
-location: "L415"
+community: "log_event"
+location: "L524"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_131
+  - community/log_event
 ---
 
 # _safe_get_text()
 
 ## Connections
-- [[AsyncClient_2]] - `references` [EXTRACTED]
+- [[AsyncClient_4]] - `references` [EXTRACTED]
 - [[GET with body cap, wall-clock budget, and bounded transient-network retry. Thin…]] - `rationale_for` [EXTRACTED]
 - [[_budgeted_get_text()]] - `calls` [EXTRACTED]
 - [[_fetch_first_json()]] - `calls` [EXTRACTED]
@@ -21,6 +21,7 @@ tags:
 - [[_is_edge_wall()]] - `calls` [EXTRACTED]
 - [[_is_usable()]] - `calls` [EXTRACTED]
 - [[_needs_impersonation()]] - `calls` [EXTRACTED]
+- [[_search_via_http_v9()]] - `calls` [EXTRACTED]
 - [[_search_via_search_goods()]] - `calls` [EXTRACTED]
 - [[wb_card()]] - `calls` [EXTRACTED]
 - [[wb_category_products()]] - `calls` [EXTRACTED]
@@ -28,6 +29,5 @@ tags:
 - [[wb_questions()]] - `calls` [EXTRACTED]
 - [[wb_reviews()]] - `calls` [EXTRACTED]
 - [[wb_root_info()]] - `calls` [EXTRACTED]
-- [[wb_search()_1]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_131
+#graphify/code #graphify/EXTRACTED #community/log_event

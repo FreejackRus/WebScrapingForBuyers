@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py"
 type: "code"
-community: "Community 42"
+community: "megamarket-connector/tests/test_server.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_42
+  - community/megamarket-connector/tests/test_serverpy
 ---
 
 # megamarket-connector/tests/test_server.py
 
 ## Connections
 - [[Offline tests for the Megamarket connector. CDP posting is monkeypatched out…]] - `rationale_for` [EXTRACTED]
-- [[_no_cache()_4]] - `contains` [EXTRACTED]
+- [[_no_cache()_5]] - `contains` [EXTRACTED]
 - [[_no_redirect()]] - `contains` [EXTRACTED]
 - [[_patch_page()]] - `contains` [EXTRACTED]
 - [[_patch_post()]] - `contains` [EXTRACTED]
@@ -76,4 +76,4 @@ tags:
 - [[test_the_zero_offers_error_hides_the_raw_address_id()]] - `contains` [EXTRACTED]
 - [[test_url_parse_supplies_the_assumed_collection()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_42
+#graphify/code #graphify/EXTRACTED #community/megamarket-connector/tests/test_serverpy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/server.py"
 type: "rationale"
-community: "Community 33"
+community: "TransportDownError"
 location: "L461"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_33
+  - community/TransportDownError
 ---
 
 # Fetch one Lamoda product card via the anonymous GraphQL endpoint (tier 1). ##…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[lamoda_card()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_33
+#graphify/rationale #graphify/EXTRACTED #community/TransportDownError

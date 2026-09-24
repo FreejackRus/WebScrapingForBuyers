@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/examples/seller_lookup.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/__main__.py"
 type: "code"
-community: "Community 275"
-location: "L19"
+community: "ozon_connector/__main__.py"
+location: "L21"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_275
+  - community/ozon_connector/__main__py
 ---
 
 # main()
 
 ## Connections
-- [[seller_lookup.py]] - `contains` [EXTRACTED]
-- [[wb_card()]] - `calls` [EXTRACTED]
-- [[wb_seller()]] - `calls` [EXTRACTED]
+- [[Run the server on the transport selected by the environment (stdio default)._10]] - `rationale_for` [EXTRACTED]
+- [[ozon_connector__main__.py]] - `contains` [EXTRACTED]
+- [[run_server()]] - `calls` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_275
+#graphify/code #graphify/EXTRACTED #community/ozon_connector/__main__py

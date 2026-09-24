@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "Community 261"
-location: "L739"
+community: "test_tier1_proxy_is_passed_as_an_argument_not_an_env_var"
+location: "L903"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/Community_261
+  - graphify/EXTRACTED
+  - community/test_tier1_proxy_is_passed_as_an_argument_not_an_env_var
 ---
 
 # scenario()
 
 ## Connections
-- [[fake_safe_get_text()_4]] - `indirect_call` [INFERRED]
-- [[no_wait()_4]] - `indirect_call` [INFERRED]
-- [[test_wb_search_handles_v9_shape_drift_by_falling_back()]] - `contains` [EXTRACTED]
+- [[_patch_tier1()]] - `calls` [EXTRACTED]
+- [[capturing_get()]] - `indirect_call` [INFERRED]
+- [[test_tier1_proxy_is_passed_as_an_argument_not_an_env_var()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/Community_261
+#graphify/code #graphify/EXTRACTED #community/test_tier1_proxy_is_passed_as_an_argument_not_an_env_var

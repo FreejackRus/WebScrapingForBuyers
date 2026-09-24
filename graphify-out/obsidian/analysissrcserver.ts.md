@@ -1,12 +1,12 @@
 ---
 source_file: "apps/analysis/src/server.ts"
 type: "code"
-community: "Community 70"
+community: "analysis/src/app.ts"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_70
+  - community/analysis/src/appts
 ---
 
 # analysis/src/server.ts
@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[analysissrcapp.ts]] - `imports_from` [EXTRACTED]
 - [[buildAnalysisApp()]] - `imports` [EXTRACTED]
-- [[listenService()]] - `imports` [EXTRACTED]
-- [[service-kitsrcindex.ts]] - `imports_from` [EXTRACTED]
+- [[packages_service_kit_dist_index]] - `imports_from` [EXTRACTED]
+- [[packages_service_kit_dist_index_listenservice]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_70
+#graphify/code #graphify/EXTRACTED #community/analysis/src/appts

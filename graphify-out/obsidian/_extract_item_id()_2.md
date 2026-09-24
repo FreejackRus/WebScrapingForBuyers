@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/server.py"
 type: "code"
-community: "Community 27"
-location: "L121"
+community: "megamarket_search"
+location: "L135"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_27
+  - community/megamarket_search
 ---
 
 # _extract_item_id()
 
 ## Connections
-- [[Pull the item id out of an item.taobao.com URL or a bare numeric id. Host-…]] - `rationale_for` [EXTRACTED]
-- [[taobao_card()]] - `calls` [EXTRACTED]
-- [[taobao_connectorserver.py]] - `contains` [EXTRACTED]
+- [[Pull a goods id out of a megamarket.ru URL or a bare numeric id.]] - `rationale_for` [EXTRACTED]
+- [[megamarket_card()]] - `calls` [EXTRACTED]
+- [[megamarket_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_27
+#graphify/code #graphify/EXTRACTED #community/megamarket_search

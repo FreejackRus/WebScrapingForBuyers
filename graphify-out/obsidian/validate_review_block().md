@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/resilience.py"
 type: "code"
-community: "Community 66"
+community: "Any"
 location: "L305"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_66
+  - community/Any
 ---
 
 # validate_review_block()
@@ -17,4 +17,4 @@ tags:
 - [[first_present()]] - `calls` [EXTRACTED]
 - [[resilience.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_66
+#graphify/code #graphify/EXTRACTED #community/Any

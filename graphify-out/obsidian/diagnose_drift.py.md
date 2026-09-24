@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/diagnose_drift.py"
 type: "code"
-community: "Community 213"
+community: "chrome_cdp.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_213
+  - community/chrome_cdppy
 ---
 
 # diagnose_drift.py
@@ -20,8 +20,8 @@ tags:
 - [[diagnose()]] - `contains` [EXTRACTED]
 - [[diagnose_megamarket()]] - `contains` [EXTRACTED]
 - [[json]] - `imports` [EXTRACTED]
-- [[main()_20]] - `contains` [EXTRACTED]
+- [[main()_9]] - `contains` [EXTRACTED]
 - [[resilience.py]] - `imports_from` [EXTRACTED]
 - [[urllib_parse]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_213
+#graphify/code #graphify/EXTRACTED #community/chrome_cdppy

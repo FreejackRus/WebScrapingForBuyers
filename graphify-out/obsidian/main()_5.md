@@ -1,18 +1,19 @@
 ---
-source_file: "deploy/chrome/cdp-proxy.py"
+source_file: "mcp-servers/ru-marketplace-mcp/examples/seller_lookup.py"
 type: "code"
-community: "Community 191"
-location: "L132"
+community: "log_event"
+location: "L19"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_191
+  - community/log_event
 ---
 
 # main()
 
 ## Connections
-- [[cdp-proxy.py]] - `contains` [EXTRACTED]
-- [[handle_client()]] - `indirect_call` [INFERRED]
+- [[seller_lookup.py]] - `contains` [EXTRACTED]
+- [[wb_card()]] - `calls` [EXTRACTED]
+- [[wb_seller()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_191
+#graphify/code #graphify/EXTRACTED #community/log_event

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py"
 type: "rationale"
-community: "Community 264"
+community: "offline_cdp_probe"
 location: "L21"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_264
+  - community/offline_cdp_probe
 ---
 
 # Even successful doctor runs must not depend on a local Chrome session.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[offline_cdp_probe()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_264
+#graphify/rationale #graphify/EXTRACTED #community/offline_cdp_probe

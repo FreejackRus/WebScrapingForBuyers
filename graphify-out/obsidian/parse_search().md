@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/ssr.py"
 type: "code"
-community: "Community 5"
+community: "ssr.py"
 location: "L569"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_5
+  - community/ssrpy
 ---
 
 # parse_search()
 
 ## Connections
-- [[Any_20]] - `references` [EXTRACTED]
+- [[Any_24]] - `references` [EXTRACTED]
 - [[Parse a search results page into products plus result metadata. Two prices are…]] - `rationale_for` [EXTRACTED]
 - [[_absolute_url()]] - `calls` [EXTRACTED]
 - [[_additional_price()]] - `calls` [EXTRACTED]
@@ -32,4 +32,4 @@ tags:
 - [[ssr.py]] - `contains` [EXTRACTED]
 - [[yandex_search()_1]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_5
+#graphify/code #graphify/EXTRACTED #community/ssrpy

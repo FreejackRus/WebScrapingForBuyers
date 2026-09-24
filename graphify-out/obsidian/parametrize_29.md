@@ -1,18 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 60"
+community: "wb-connector/tests/test_parser_live.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_60
+  - community/wb-connector/tests/test_parser_livepy
 ---
 
 # parametrize
 
 ## Connections
-- [[test_probe_checks_running_version()]] - `references` [EXTRACTED]
-- [[test_sources_reject_incomplete_or_stale_state()]] - `references` [EXTRACTED]
-- [[test_sources_reject_missing_or_malformed_payload()]] - `references` [EXTRACTED]
+- [[test_ambiguous_or_malformed_colors_do_not_select_a_variant()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_60
+#graphify/code #graphify/EXTRACTED #community/wb-connector/tests/test_parser_livepy

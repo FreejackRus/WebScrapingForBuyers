@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/composition/hooks/useBootSession.ts"
 type: "code"
-community: "Community 64"
+community: "App.tsx"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_64
+  - community/Apptsx
 ---
 
 # useBootSession.ts
@@ -15,9 +15,9 @@ tags:
 - [[entitiessearchindex.ts]] - `imports_from` [EXTRACTED]
 - [[entitiesuserindex.ts]] - `imports_from` [EXTRACTED]
 - [[hooksindex.ts]] - `re_exports` [EXTRACTED]
-- [[react_1]] - `imports_from` [EXTRACTED]
+- [[react]] - `imports_from` [EXTRACTED]
 - [[useBootSession()]] - `contains` [EXTRACTED]
 - [[useSearchStore]] - `imports` [EXTRACTED]
 - [[useUserStore]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_64
+#graphify/code #graphify/EXTRACTED #community/Apptsx

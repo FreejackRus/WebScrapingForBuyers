@@ -1,19 +1,20 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/settings.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/src/mpstats_connector/settings.py"
 type: "code"
-community: "Community 193"
-location: "L60"
+community: "mpstats_connector/server.py"
+location: "L98"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_193
+  - community/mpstats_connector/serverpy
 ---
 
 # get_settings()
 
 ## Connections
-- [[AvitoSettings]] - `calls` [EXTRACTED]
-- [[avito_connectorserver.py]] - `imports` [EXTRACTED]
-- [[avito_connectorsettings.py]] - `contains` [EXTRACTED]
+- [[MPStatsSettings]] - `calls` [EXTRACTED]
+- [[_finalize_selfcheck()]] - `calls` [EXTRACTED]
+- [[mpstats_connectorserver.py]] - `imports` [EXTRACTED]
+- [[mpstats_connectorsettings.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_193
+#graphify/code #graphify/EXTRACTED #community/mpstats_connector/serverpy

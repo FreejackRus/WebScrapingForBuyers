@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_no_print.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py"
 type: "code"
-community: "Community 125"
-location: "L31"
+community: "_FakeWs"
+location: "L497"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_125
+  - community/_FakeWs
 ---
 
 # .__init__()
 
 ## Connections
-- [[StdoutWriteVisitor]] - `method` [EXTRACTED]
+- [[_FakeWs]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_125
+#graphify/code #graphify/EXTRACTED #community/_FakeWs

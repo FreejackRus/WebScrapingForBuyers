@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/http_tier.py"
 type: "code"
-community: "Community 17"
+community: "transport/__init__.py"
 location: "L292"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_17
+  - community/transport/__init__py
 ---
 
 # build_client()
 
 ## Connections
-- [[AsyncClient_3]] - `references` [EXTRACTED]
+- [[AsyncClient_2]] - `references` [EXTRACTED]
 - [[Construct an ``AsyncClient`` configured for marketplace catalog reads.…]] - `rationale_for` [EXTRACTED]
 - [[_graphql_card()]] - `calls` [INFERRED]
 - [[fetch()]] - `calls` [INFERRED]
@@ -21,4 +21,4 @@ tags:
 - [[test_build_client_does_not_follow_redirects_by_default()]] - `calls` [INFERRED]
 - [[transport__init__.py]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_17
+#graphify/code #graphify/EXTRACTED #community/transport/__init__py

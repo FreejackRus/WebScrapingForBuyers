@@ -1,12 +1,12 @@
 ---
 source_file: "apps/gateway/package.json"
 type: "concept"
-community: "Community 114"
+community: "gateway/package.json"
 location: "L22"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_114
+  - community/gateway/packagejson
 ---
 
 # vitest
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[gatewaypackage.json]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_114
+#graphify/concept #graphify/EXTRACTED #community/gateway/packagejson

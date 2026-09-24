@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/models.py"
 type: "rationale"
-community: "Community 41"
+community: "ozon_card"
 location: "L80"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_41
+  - community/ozon_card
 ---
 
 # Shared shape of every ``*_selfcheck()`` tool response. Subclasses narrow…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[SelfCheckResponseBase]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_41
+#graphify/rationale #graphify/EXTRACTED #community/ozon_card

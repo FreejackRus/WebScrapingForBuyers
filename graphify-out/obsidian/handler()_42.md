@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_call_envelope.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_transport.py"
 type: "code"
-community: "Community 31"
-location: "L104"
+community: "test_transport.py"
+location: "L119"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_31
+  - community/test_transportpy
 ---
 
 # handler()
 
 ## Connections
-- [[test_missing_inner_code_is_accepted()]] - `contains` [EXTRACTED]
+- [[test_transport_error_is_classified_when_retries_spent()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_31
+#graphify/code #graphify/EXTRACTED #community/test_transportpy

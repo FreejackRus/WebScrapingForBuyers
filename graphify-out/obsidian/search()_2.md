@@ -1,20 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_source_warnings.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
-community: "Community 136"
-location: "L44"
+community: "search"
+location: "L89"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/Community_136
+  - graphify/INFERRED
+  - community/search
 ---
 
 # search()
 
 ## Connections
-- [[MetaOut_5]] - `calls` [EXTRACTED]
-- [[WbCardItem]] - `calls` [EXTRACTED]
-- [[WbSearchResponse]] - `calls` [EXTRACTED]
-- [[test_warning_does_not_drop_valid_offer_and_is_isolated_per_request()]] - `contains` [EXTRACTED]
+- [[offer()_1]] - `calls` [EXTRACTED]
+- [[test_default_comparison_omits_deselected_sources_but_explicit_request_is_rejected()]] - `indirect_call` [INFERRED]
+- [[test_selected_missing_connector_still_makes_default_comparison_partial()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_136
+#graphify/code #graphify/INFERRED #community/search

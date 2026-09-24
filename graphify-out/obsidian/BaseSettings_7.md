@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 258"
+community: "pydantic"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_258
+  - community/pydantic
 ---
 
 # BaseSettings
 
 ## Connections
-- [[TaobaoSettings]] - `inherits` [EXTRACTED]
+- [[MegamarketSettings]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_258
+#graphify/code #graphify/EXTRACTED #community/pydantic

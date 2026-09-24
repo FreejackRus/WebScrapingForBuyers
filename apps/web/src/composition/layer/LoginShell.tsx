@@ -8,7 +8,7 @@ export function LoginShell({ children }: { children: ReactNode }) {
           <span className="login-secure-dot" aria-hidden="true" />
           Защищённый B2B-контур
         </span>
-        <span>Воронеж (ЦФО)</span>
+        <span className="login-topbar-city">Воронеж (ЦФО)</span>
       </header>
       <main className="login-page">{children}</main>
       <footer className="app-footer">

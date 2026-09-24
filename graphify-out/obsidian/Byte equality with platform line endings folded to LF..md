@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_dsh_bundle.py"
 type: "rationale"
-community: "Community 118"
+community: "test_dsh_bundle.py"
 location: "L30"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_118
+  - community/test_dsh_bundlepy
 ---
 
 # Byte equality with platform line endings folded to LF.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_normalise()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_118
+#graphify/rationale #graphify/EXTRACTED #community/test_dsh_bundlepy

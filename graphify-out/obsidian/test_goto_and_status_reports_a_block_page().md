@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py"
 type: "code"
-community: "Community 172"
+community: "_FakeWs"
 location: "L578"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_172
+  - community/_FakeWs
 ---
 
 # test_goto_and_status_reports_a_block_page()
@@ -16,4 +16,4 @@ tags:
 - [[_FakeWs]] - `calls` [EXTRACTED]
 - [[test_chrome_cdp.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_172
+#graphify/code #graphify/EXTRACTED #community/_FakeWs

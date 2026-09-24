@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 15"
+community: "raw_browser"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_15
+  - community/raw_browser
 ---
 
 # fixture
 
 ## Connections
-- [[_no_cache()_2]] - `references` [EXTRACTED]
+- [[raw_browser()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_15
+#graphify/code #graphify/EXTRACTED #community/raw_browser

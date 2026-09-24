@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
 type: "code"
-community: "Community 0"
-location: "L248"
+community: "mcp-marketplace-adapter.ts"
+location: "L304"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_0
+  - community/mcp-marketplace-adapterts
 ---
 
 # McpMarketplaceAdapter
@@ -17,7 +17,7 @@ tags:
 - [[dot-fetchMappedOffers()]] - `method` [EXTRACTED]
 - [[dot-logMap()]] - `method` [EXTRACTED]
 - [[dot-mapItems()]] - `method` [EXTRACTED]
-- [[dot-search()_1]] - `method` [EXTRACTED]
+- [[dot-search()]] - `method` [EXTRACTED]
 - [[dot-toOffer()]] - `method` [EXTRACTED]
 - [[SourceAdapter]] - `implements` [EXTRACTED]
 - [[app.test.ts]] - `imports` [EXTRACTED]
@@ -26,4 +26,4 @@ tags:
 - [[mcp-marketplace-adapter.test.ts]] - `imports` [EXTRACTED]
 - [[mcp-marketplace-adapter.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_0
+#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts

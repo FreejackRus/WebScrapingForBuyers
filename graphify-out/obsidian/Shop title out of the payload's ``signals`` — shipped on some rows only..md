@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/ssr.py"
 type: "rationale"
-community: "Community 5"
+community: "ssr.py"
 location: "L346"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_5
+  - community/ssrpy
 ---
 
 # Shop title out of the payload's ``signals`` — shipped on some rows only.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_zone_shop_name()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_5
+#graphify/rationale #graphify/EXTRACTED #community/ssrpy

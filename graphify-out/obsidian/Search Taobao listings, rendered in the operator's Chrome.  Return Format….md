@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/server.py"
 type: "rationale"
-community: "Community 27"
+community: "taobao_card"
 location: "L594"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_27
+  - community/taobao_card
 ---
 
 # Search Taobao listings, rendered in the operator's Chrome. ## Return Format…
 
 ## Connections
-- [[taobao_search()_1]] - `rationale_for` [EXTRACTED]
+- [[taobao_search()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_27
+#graphify/rationale #graphify/EXTRACTED #community/taobao_card

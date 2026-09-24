@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/widgets/search/metrics/ui/index.tsx"
 type: "code"
-community: "Community 158"
-location: "L30"
+community: "copilot/ui/index.tsx"
+location: "L36"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_158
+  - community/copilot/ui/indextsx
 ---
 
 # Metric()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[metricsuiindex.tsx]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_158
+#graphify/code #graphify/EXTRACTED #community/copilot/ui/indextsx

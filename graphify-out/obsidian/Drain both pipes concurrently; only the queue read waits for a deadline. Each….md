@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/stdio_probe.py"
 type: "rationale"
-community: "Community 29"
+community: "StdioProbe"
 location: "L23"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_29
+  - community/StdioProbe
 ---
 
 # Drain both pipes concurrently; only the queue read waits for a deadline. Each…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[StdioProbe]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_29
+#graphify/rationale #graphify/EXTRACTED #community/StdioProbe

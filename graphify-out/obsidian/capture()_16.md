@@ -1,19 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py"
 type: "code"
-community: "Community 6"
-location: "L545"
+community: "test_the_graphql_request_carries_a_referer_for_the_sku"
+location: "L392"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_6
+  - community/test_the_graphql_request_carries_a_referer_for_the_sku
 ---
 
 # capture()
 
 ## Connections
-- [[test_snapshot_and_resume_cannot_overlap()]] - `indirect_call` [INFERRED]
-- [[test_snapshot_cancellation_or_deadline_cleans_exact_page()]] - `indirect_call` [INFERRED]
-- [[test_snapshot_rechecks_original_host_policy_before_and_after_capture()]] - `indirect_call` [INFERRED]
+- [[test_the_graphql_request_carries_a_referer_for_the_sku()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Community_6
+#graphify/code #graphify/INFERRED #community/test_the_graphql_request_carries_a_referer_for_the_sku

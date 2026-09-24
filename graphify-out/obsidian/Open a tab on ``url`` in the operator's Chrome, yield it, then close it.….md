@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "rationale"
-community: "Community 7"
+community: "open_page"
 location: "L1039"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_7
+  - community/open_page
 ---
 
 # Open a tab on ``url`` in the operator's Chrome, yield it, then close it.…
 
 ## Connections
-- [[open_page()_5]] - `rationale_for` [EXTRACTED]
+- [[open_page()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_7
+#graphify/rationale #graphify/EXTRACTED #community/open_page

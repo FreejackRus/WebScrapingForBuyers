@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 48"
+community: "test_resilience_properties.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_48
+  - community/test_resilience_propertiespy
 ---
 
 # given
@@ -26,4 +26,4 @@ tags:
 - [[test_flatten_text_is_total_and_honest()]] - `references` [EXTRACTED]
 - [[test_flatten_text_refuses_booleans()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_48
+#graphify/code #graphify/EXTRACTED #community/test_resilience_propertiespy

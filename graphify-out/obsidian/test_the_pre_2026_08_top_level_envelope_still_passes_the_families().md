@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_shape_reference.py"
 type: "code"
-community: "Community 179"
+community: "avito-connector/tests/test_shape_reference.py"
 location: "L84"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_179
+  - community/avito-connector/tests/test_shape_referencepy
 ---
 
 # test_the_pre_2026_08_top_level_envelope_still_passes_the_families()
@@ -16,4 +16,4 @@ tags:
 - [[avito-connectorteststest_shape_reference.py]] - `contains` [EXTRACTED]
 - [[shape_signature()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_179
+#graphify/code #graphify/EXTRACTED #community/avito-connector/tests/test_shape_referencepy

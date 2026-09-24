@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_call_envelope.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_transport.py"
 type: "code"
-community: "Community 31"
-location: "L83"
+community: "test_transport.py"
+location: "L164"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_31
+  - community/test_transportpy
 ---
 
 # handler()
 
 ## Connections
-- [[test_inner_500_behind_http_200_is_transport_down()]] - `contains` [EXTRACTED]
+- [[test_empty_token_sends_no_cookie_header()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_31
+#graphify/code #graphify/EXTRACTED #community/test_transportpy

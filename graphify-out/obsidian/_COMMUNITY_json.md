@@ -1,0 +1,254 @@
+---
+type: community
+cohesion: 0.05
+members: 106
+---
+
+# json
+
+**Cohesion:** 0.05 - loosely connected
+**Members:** 106 nodes
+
+## Members
+- [[dot-__init__()_37]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py
+- [[dot-to_dict()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py
+- [[AuthMissingError]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py
+- [[Avito MCP connector. Avito sits behind an IP-reputation firewall a datacenter…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/server.py
+- [[Bounded, process-local ownership of browser challenge tabs. No browser storage…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/browser_handoff.py
+- [[Citilink MCP connector. Citilink sits behind Qrator's JavaScript proof-of-work…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/src/citilink_connector/server.py
+- [[Compare a product across Russian marketplaces and Taobao side by side. uv run…]] - rationale - mcp-servers/ru-marketplace-mcp/examples/compare_with_china.py
+- [[Compare a product's price across every available marketplace. uv run python…]] - rationale - mcp-servers/ru-marketplace-mcp/examples/price_check.py
+- [[ConnectorError]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py
+- [[Cross-marketplace price comparison. The other connectors each answer what does…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py
+- [[DNS-Shop MCP connector. DNS sits behind Qrator's JavaScript proof-of-work…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/dns-connector/src/dns_connector/server.py
+- [[Detsky Mir MCP connector. The easiest of the Russian marketplaces to read…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/server.py
+- [[ErrorCode]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py
+- [[Exception_1]] - code
+- [[Exception_2]] - code
+- [[Exception_3]] - code
+- [[In-process TTL cache for idempotent upstream reads. Marketplace catalog data is…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
+- [[JavaScript regex for the sibling-text check what remains next to the digits is…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/dom.py
+- [[Lamoda MCP connector. Lamoda's anti-bot wall splits the catalog in two. One…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/server.py
+- [[Map an HTTP status onto the shared error vocabulary. Imported inside the…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/http.py
+- [[Megamarket MCP connector. Megamarket gates its whole site behind ServicePipe…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/server.py
+- [[Middle-sized DSH profile comparison plus one deliberate card inspector. The…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/decision_server.py
+- [[Operator CLI for the marketplace connectors. Two commands cover the two moments…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/src/marketplace_connector/cli.py
+- [[Operator-chosen subset of marketplace sources. Every advertised tool costs its…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/source_selection.py
+- [[PermissionDeniedError]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py
+- [[Preserve typed recovery signals before truncatingredacting error detail. Only…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py
+- [[Query one marketplace, converting any failure into a reported outcome. Never…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py
+- [[Reference shape signature for the Avito jsitems search payload. Measured on…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/shape_reference.py
+- [[Reference shape signatures for the Citilink extractors. Generated from the…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/src/citilink_connector/shape_reference.py
+- [[Reference shape signatures for the DNS extractors. Generated from the captured…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/dns-connector/src/dns_connector/shape_reference.py
+- [[Request pacing and refusal backoff, shared by every connector. Each connector…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/pacing.py
+- [[Search Avito classifieds and show one seller's reputation. uv run python…]] - rationale - mcp-servers/ru-marketplace-mcp/examples/avito_search.py
+- [[Shared JavaScript for the CDP text-scraping tiers, plus its Python side. Four…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/dom.py
+- [[Shared runtime for ru-marketplace-mcp connectors. Every marketplace connector…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/__init__.py
+- [[Show what a Yandex Market star rating is actually made of. uv run python…]] - rationale - mcp-servers/ru-marketplace-mcp/examples/rating_breakdown.py
+- [[SourceOutcome]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/models_output.py
+- [[StrEnum]] - code
+- [[Taobao MCP connector. Taobao's search is a client-side React app whose data…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/server.py
+- [[The _PRICE_GLYPHS as a JavaScript regex literal, escaped like the decoys.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/dom.py
+- [[Timeout]] - code
+- [[Transport selection shared by all connector entry points. Every connector is…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/runtime.py
+- [[Unified marketplace MCP server. One config entry instead of twelve. This server…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/src/marketplace_connector/server.py
+- [[UpstreamTimeoutError]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py
+- [[What happened when one marketplace was queried. Reported for every source,…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/models_output.py
+- [[When a retained page's JPEG may go on the wire. A snapshot of a marketplace…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/vision_policy.py
+- [[Wire-frugal output schemas for stdio MCP servers. FastMCP publishes the full…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/output_schema.py
+- [[Yandex Market MCP connector. Yandex Market exposes no usable JSON API —…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/server.py
+- [[_glyph_remainder_literal()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/dom.py
+- [[_price_glyph_literal()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/dom.py
+- [[_run_source()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py
+- [[_source_error()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py
+- [[asyncio_2]] - concept
+- [[avito_connectorserver.py]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/server.py
+- [[avito_connectorshape_reference.py]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/shape_reference.py
+- [[avito_search.py]] - code - mcp-servers/ru-marketplace-mcp/examples/avito_search.py
+- [[browser_handoff.py]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/browser_handoff.py
+- [[cache.py]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
+- [[citilink_connectorserver.py]] - code - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/src/citilink_connector/server.py
+- [[citilink_connectorshape_reference.py]] - code - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/src/citilink_connector/shape_reference.py
+- [[classify_http_error()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/http.py
+- [[cli.py]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/src/marketplace_connector/cli.py
+- [[collections_abc]] - concept
+- [[compare_connectorserver.py]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py
+- [[compare_with_china.py]] - code - mcp-servers/ru-marketplace-mcp/examples/compare_with_china.py
+- [[datetime]] - concept
+- [[decision_server.py]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/decision_server.py
+- [[detmir_connectorserver.py]] - code - mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/server.py
+- [[dns_connectorserver.py]] - code - mcp-servers/ru-marketplace-mcp/packages/dns-connector/src/dns_connector/server.py
+- [[dns_connectorshape_reference.py]] - code - mcp-servers/ru-marketplace-mcp/packages/dns-connector/src/dns_connector/shape_reference.py
+- [[dom.py]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/dom.py
+- [[email_utils]] - concept
+- [[enum]] - concept
+- [[errors.py]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py
+- [[fastmcp_3]] - concept
+- [[fastmcp_server_dependencies]] - concept
+- [[fastmcp_server_middleware]] - concept
+- [[fastmcp_server_middleware_error_handling]] - concept
+- [[fastmcp_tools]] - concept
+- [[get_timeout()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/http.py
+- [[http.py]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/http.py
+- [[httpx]] - concept
+- [[json]] - concept
+- [[lamoda_connectorserver.py]] - code - mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/server.py
+- [[logging.py]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/logging.py
+- [[marketplace_connectorserver.py]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/src/marketplace_connector/server.py
+- [[math]] - concept
+- [[mcp_core__init__.py]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/__init__.py
+- [[mcp_types]] - concept
+- [[megamarket_connectorserver.py]] - code - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/server.py
+- [[os]] - concept
+- [[output_schema.py]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/output_schema.py
+- [[pacing.py]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/pacing.py
+- [[price_check.py]] - code - mcp-servers/ru-marketplace-mcp/examples/price_check.py
+- [[random]] - concept
+- [[rating_breakdown.py]] - code - mcp-servers/ru-marketplace-mcp/examples/rating_breakdown.py
+- [[re]] - concept
+- [[redact.py]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/redact.py
+- [[runtime.py]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/runtime.py
+- [[secrets]] - concept
+- [[source_selection.py]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/source_selection.py
+- [[taobao_connectorserver.py]] - code - mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/server.py
+- [[time]] - concept
+- [[typing]] - concept
+- [[urllib_parse]] - concept
+- [[vision_policy.py]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/vision_policy.py
+- [[yandex_connectorserver.py]] - code - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/server.py
+
+## Live Query (requires Dataview plugin)
+
+```dataview
+TABLE source_file, type FROM #community/json
+SORT file.name ASC
+```
+
+## Connections to other communities
+- 37 edges to [[_COMMUNITY_pydantic]]
+- 32 edges to [[_COMMUNITY_TransportDownError]]
+- 30 edges to [[_COMMUNITY_pathlib]]
+- 28 edges to [[_COMMUNITY_models.py]]
+- 22 edges to [[_COMMUNITY_ozon_connectorserver.py]]
+- 21 edges to [[_COMMUNITY_avito_seller]]
+- 21 edges to [[_COMMUNITY_wb_connectorserver.py]]
+- 19 edges to [[_COMMUNITY_read_with_handoff]]
+- 19 edges to [[_COMMUNITY_chrome_cdp.py]]
+- 18 edges to [[_COMMUNITY_taobao_card]]
+- 18 edges to [[_COMMUNITY_mpstats_connectorserver.py]]
+- 17 edges to [[_COMMUNITY_aliexpress_connectorserver.py]]
+- 17 edges to [[_COMMUNITY_transport__init__.py]]
+- 16 edges to [[_COMMUNITY_pytest]]
+- 15 edges to [[_COMMUNITY_BadRequestError]]
+- 15 edges to [[_COMMUNITY_cian_connectorserver.py]]
+- 14 edges to [[_COMMUNITY_test_dsh_bundle.py]]
+- 10 edges to [[_COMMUNITY_compare_prices]]
+- 10 edges to [[_COMMUNITY__post]]
+- 9 edges to [[_COMMUNITY_dns_card]]
+- 9 edges to [[_COMMUNITY_OfferBatch]]
+- 9 edges to [[_COMMUNITY_citilink_card]]
+- 9 edges to [[_COMMUNITY_test_card_verification_records.py]]
+- 8 edges to [[_COMMUNITY_compare_verify_offer]]
+- 7 edges to [[_COMMUNITY_detmir_categories]]
+- 7 edges to [[_COMMUNITY_resolve_image_delivery]]
+- 7 edges to [[_COMMUNITY_detmir_connectormodels_output.py]]
+- 7 edges to [[_COMMUNITY_ssr.py]]
+- 7 edges to [[_COMMUNITY_shape_signature]]
+- 6 edges to [[_COMMUNITY_test_source_selection.py]]
+- 6 edges to [[_COMMUNITY_compare-connectorteststest_server.py]]
+- 6 edges to [[_COMMUNITY_dns_connectormodels_output.py]]
+- 6 edges to [[_COMMUNITY_yandex_card]]
+- 6 edges to [[_COMMUNITY__parse_product]]
+- 6 edges to [[_COMMUNITY_test_helpers.py]]
+- 5 edges to [[_COMMUNITY_megamarket_connectormodels_output.py]]
+- 5 edges to [[_COMMUNITY_megamarket_search]]
+- 5 edges to [[_COMMUNITY_test_output_schema.py]]
+- 5 edges to [[_COMMUNITY_resolve_transport]]
+- 5 edges to [[_COMMUNITY_identity.py]]
+- 5 edges to [[_COMMUNITY_test_redact.py]]
+- 5 edges to [[_COMMUNITY_ozon-connectorteststest_server.py]]
+- 4 edges to [[_COMMUNITY_YandexProduct]]
+- 4 edges to [[_COMMUNITY_compare_connectormodels_output.py]]
+- 4 edges to [[_COMMUNITY_test_contract.py]]
+- 4 edges to [[_COMMUNITY_Ключевые изменения выпуска]]
+- 4 edges to [[_COMMUNITY_log_event]]
+- 4 edges to [[_COMMUNITY_compare-connectorteststest_browser_handoff.py]]
+- 4 edges to [[_COMMUNITY_mcp_wire.py]]
+- 3 edges to [[_COMMUNITY_TTLCache]]
+- 3 edges to [[_COMMUNITY_mpstats-connectorteststest_server.py]]
+- 3 edges to [[_COMMUNITY_mcp-coreteststest_browser_handoff.py]]
+- 3 edges to [[_COMMUNITY_test_termination_settles_queued_snapshot_before_getter_resumes]]
+- 3 edges to [[_COMMUNITY_parse_retry_after]]
+- 3 edges to [[_COMMUNITY_run_server]]
+- 3 edges to [[_COMMUNITY_test_http_tier.py]]
+- 3 edges to [[_COMMUNITY_missing_required_families]]
+- 3 edges to [[_COMMUNITY__relevance_warnings]]
+- 3 edges to [[_COMMUNITY_missing_required_families_1]]
+- 3 edges to [[_COMMUNITY_test_call_envelope.py]]
+- 3 edges to [[_COMMUNITY_test_public_contract_snapshot.py]]
+- 2 edges to [[_COMMUNITY_TransportConfig]]
+- 2 edges to [[_COMMUNITY_detmir_selfcheck]]
+- 2 edges to [[_COMMUNITY_ProductIdentity]]
+- 2 edges to [[_COMMUNITY__parse_search_items]]
+- 2 edges to [[_COMMUNITY_yandex_selfcheck]]
+- 2 edges to [[_COMMUNITY__search_wildberries]]
+- 2 edges to [[_COMMUNITY_coerce_price]]
+- 2 edges to [[_COMMUNITY_v1.3.0 — MPStats и разбор аудита]]
+- 2 edges to [[_COMMUNITY_test_dependency_parity.py]]
+- 2 edges to [[_COMMUNITY_test_model_routing_eval.py]]
+- 2 edges to [[_COMMUNITY_check_versions.py]]
+- 2 edges to [[_COMMUNITY_test_dom.py]]
+- 2 edges to [[_COMMUNITY_megamarket-connectorteststest_parser_live.py]]
+- 2 edges to [[_COMMUNITY_detmir-connectorteststest_parser_live.py]]
+- 2 edges to [[_COMMUNITY_marketplace_connector__init__.py]]
+- 2 edges to [[_COMMUNITY_test_search_parser_live.py]]
+- 2 edges to [[_COMMUNITY_test_runtime.py]]
+- 2 edges to [[_COMMUNITY_test_live_payload_contract.py]]
+- 2 edges to [[_COMMUNITY_test_resilience_properties.py]]
+- 2 edges to [[_COMMUNITY_test_transport.py]]
+- 2 edges to [[_COMMUNITY_detmir-connectorteststest_server.py]]
+- 2 edges to [[_COMMUNITY_test_cli.py]]
+- 2 edges to [[_COMMUNITY_test_process.py]]
+- 2 edges to [[_COMMUNITY_test_chrome_cdp_snapshot.py]]
+- 2 edges to [[_COMMUNITY_test_handoff_reporting.py]]
+- 2 edges to [[_COMMUNITY_wb-connectorteststest_parser_live.py]]
+- 2 edges to [[_COMMUNITY_model_routing_eval.py]]
+- 1 edge to [[_COMMUNITY_PageLike]]
+- 1 edge to [[_COMMUNITY_ozon_card]]
+- 1 edge to [[_COMMUNITY_CacheStats]]
+- 1 edge to [[_COMMUNITY_Внешние подходы native vision, challenge UX, browser-резильентность]]
+- 1 edge to [[_COMMUNITY_MarketplaceSourcesResponse]]
+- 1 edge to [[_COMMUNITY_BearerAuthMiddleware]]
+- 1 edge to [[_COMMUNITY_Pacer]]
+- 1 edge to [[_COMMUNITY_prices_from_tile]]
+- 1 edge to [[_COMMUNITY_2.2.0 — 2026-09-11]]
+- 1 edge to [[_COMMUNITY_decision_inspect]]
+- 1 edge to [[_COMMUNITY_title_from_tile]]
+- 1 edge to [[_COMMUNITY_run_extractor]]
+- 1 edge to [[_COMMUNITY_test_resilience.py]]
+- 1 edge to [[_COMMUNITY_taobao-connectorteststest_server.py]]
+- 1 edge to [[_COMMUNITY_cian-connectorteststest_server.py]]
+- 1 edge to [[_COMMUNITY_test_cdp_budget.py]]
+- 1 edge to [[_COMMUNITY_avito-connectorteststest_server.py]]
+- 1 edge to [[_COMMUNITY_citilink-connectorteststest_card_extractor_dom.py]]
+- 1 edge to [[_COMMUNITY_marketplace-connectorteststest_server.py]]
+- 1 edge to [[_COMMUNITY_taobao-connectorteststest_card_extractor_dom.py]]
+- 1 edge to [[_COMMUNITY_test_card_extractor_live_dom.py]]
+- 1 edge to [[_COMMUNITY_cdp-proxy.py]]
+- 1 edge to [[_COMMUNITY_avito-connectorteststest_shape_reference.py]]
+- 1 edge to [[_COMMUNITY_cian-connectorteststest_shape_reference.py]]
+- 1 edge to [[_COMMUNITY_test_card_out_of_stock_dom.py]]
+- 1 edge to [[_COMMUNITY_megamarket-connectorteststest_server.py]]
+- 1 edge to [[_COMMUNITY_test_ci_concurrency.py]]
+- 1 edge to [[_COMMUNITY_lamoda-connectorteststest_server.py]]
+- 1 edge to [[_COMMUNITY_test_pacing.py]]
+- 1 edge to [[_COMMUNITY_test_stdio_probe.py]]
+- 1 edge to [[_COMMUNITY_test_skills_parity.py]]
+- 1 edge to [[_COMMUNITY_yandex-connectorteststest_server.py]]
+
+## Top bridge nodes
+- [[json]] - degree 74, connects to 40 communities
+- [[asyncio_2]] - degree 49, connects to 24 communities
+- [[typing]] - degree 42, connects to 18 communities
+- [[re]] - degree 30, connects to 18 communities
+- [[mcp_core__init__.py]] - degree 40, connects to 15 communities

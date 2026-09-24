@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py"
 type: "code"
-community: "Community 56"
+community: "test_cli.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_56
+  - community/test_clipy
 ---
 
 # test_cli.py
@@ -49,4 +49,4 @@ tags:
 - [[test_run_one_selfcheck_reads_dict_and_model_responses()]] - `contains` [EXTRACTED]
 - [[types_8]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_56
+#graphify/code #graphify/EXTRACTED #community/test_clipy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/test_ops_gates.py"
 type: "code"
-community: "Community 82"
+community: "mcp_wire.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_82
+  - community/mcp_wirepy
 ---
 
 # test_ops_gates.py
@@ -29,4 +29,4 @@ tags:
 - [[test_wire_gate_fails_on_token_regression()]] - `contains` [EXTRACTED]
 - [[test_wire_snapshot_is_machine_readable()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_82
+#graphify/code #graphify/EXTRACTED #community/mcp_wirepy

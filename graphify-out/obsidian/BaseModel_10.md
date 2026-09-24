@@ -1,18 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 30"
+community: "models.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_30
+  - community/modelspy
 ---
 
 # BaseModel
 
 ## Connections
-- [[IdentityMatch]] - `inherits` [EXTRACTED]
-- [[OfferEvidence]] - `inherits` [EXTRACTED]
-- [[ProductIdentity]] - `inherits` [EXTRACTED]
+- [[MetaOutBase]] - `inherits` [EXTRACTED]
+- [[SelfCheckEntryBase]] - `inherits` [EXTRACTED]
+- [[SelfCheckResponseBase]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_30
+#graphify/code #graphify/EXTRACTED #community/modelspy

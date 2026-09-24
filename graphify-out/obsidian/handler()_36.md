@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_call_envelope.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_http_tier.py"
 type: "code"
-community: "Community 31"
-location: "L93"
+community: "test_error_body_cap_can_be_disabled"
+location: "L144"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_31
+  - community/test_error_body_cap_can_be_disabled
 ---
 
 # handler()
 
 ## Connections
-- [[test_inner_200_returns_the_parsed_object()]] - `contains` [EXTRACTED]
+- [[test_error_body_cap_can_be_disabled()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_31
+#graphify/code #graphify/EXTRACTED #community/test_error_body_cap_can_be_disabled

@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 3"
+community: "test_card_rejects_input_without_a_sku"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_3
+  - community/test_card_rejects_input_without_a_sku
 ---
 
 # parametrize
 
 ## Connections
-- [[test_taobao_tools_resume_the_retained_page()]] - `references` [EXTRACTED]
+- [[test_card_rejects_input_without_a_sku()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_3
+#graphify/code #graphify/EXTRACTED #community/test_card_rejects_input_without_a_sku

@@ -1,22 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 30"
+community: "dns_connector/models_output.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_30
+  - community/dns_connector/models_outputpy
 ---
 
 # Any
 
 ## Connections
-- [[_field()]] - `references` [EXTRACTED]
-- [[_text()_1]] - `references` [EXTRACTED]
-- [[identity_from_mapping()]] - `references` [EXTRACTED]
-- [[normalize_gtin()]] - `references` [EXTRACTED]
-- [[normalize_identifier()]] - `references` [EXTRACTED]
-- [[normalize_model()]] - `references` [EXTRACTED]
-- [[normalize_mpn()]] - `references` [EXTRACTED]
+- [[_cdp_render()]] - `references` [EXTRACTED]
+- [[_is_qrator_wall()]] - `references` [EXTRACTED]
+- [[_search_item_from_tile()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_30
+#graphify/code #graphify/EXTRACTED #community/dns_connector/models_outputpy

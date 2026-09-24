@@ -1,12 +1,12 @@
 ---
 source_file: "apps/identity/src/domain/auth-store.ts"
 type: "code"
-community: "Community 32"
+community: "session.ts"
 location: "L10"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_32
+  - community/sessionts
 ---
 
 # .getById()
@@ -15,4 +15,4 @@ tags:
 - [[AuthStore]] - `method` [EXTRACTED]
 - [[readSessionUser()]] - `calls` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_32
+#graphify/code #graphify/EXTRACTED #community/sessionts

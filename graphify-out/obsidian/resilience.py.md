@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/resilience.py"
 type: "code"
-community: "Community 66"
+community: "shape_signature"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_66
+  - community/shape_signature
 ---
 
 # resilience.py
@@ -55,4 +55,4 @@ tags:
 - [[widget_prefixes()]] - `contains` [EXTRACTED]
 - [[yandex-connectorteststest_shape_reference.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_66
+#graphify/code #graphify/EXTRACTED #community/shape_signature

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/server.py"
 type: "rationale"
-community: "Community 2"
+community: "cian_connector/server.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_2
+  - community/cian_connector/serverpy
 ---
 
 # Cian MCP connector: real-estate search and offer cards. Cian (cian.ru) is a…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[cian_connectorserver.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_2
+#graphify/rationale #graphify/EXTRACTED #community/cian_connector/serverpy

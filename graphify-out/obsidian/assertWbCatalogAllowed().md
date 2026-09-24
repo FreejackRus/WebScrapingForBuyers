@@ -1,19 +1,19 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/wb-rate-limit.ts"
 type: "code"
-community: "Community 80"
-location: "L26"
+community: "http-marketplace-adapter.ts"
+location: "L25"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_80
+  - community/http-marketplace-adapterts
 ---
 
 # assertWbCatalogAllowed()
 
 ## Connections
-- [[dot-search()_2]] - `calls` [EXTRACTED]
-- [[dot-search()_1]] - `calls` [EXTRACTED]
+- [[dot-search()_5]] - `calls` [EXTRACTED]
+- [[dot-search()]] - `calls` [EXTRACTED]
 - [[http-marketplace-adapter.ts]] - `imports` [EXTRACTED]
 - [[mcp-marketplace-adapter.ts]] - `imports` [EXTRACTED]
 - [[presentWbRateLimited()]] - `calls` [EXTRACTED]
@@ -21,4 +21,4 @@ tags:
 - [[wb-rate-limit.test.ts]] - `imports` [EXTRACTED]
 - [[wb-rate-limit.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_80
+#graphify/code #graphify/EXTRACTED #community/http-marketplace-adapterts

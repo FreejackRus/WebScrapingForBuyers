@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/__main__.py"
+source_file: "mcp-servers/ru-marketplace-mcp/examples/compare_with_china.py"
 type: "code"
-community: "Community 21"
-location: "L20"
+community: "compare_prices"
+location: "L19"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_21
+  - community/compare_prices
 ---
 
 # main()
 
 ## Connections
-- [[Run the server on the transport selected by the environment (stdio default).]] - `rationale_for` [EXTRACTED]
-- [[avito_connector__main__.py]] - `contains` [EXTRACTED]
-- [[run_server()]] - `calls` [INFERRED]
+- [[compare_prices()]] - `calls` [EXTRACTED]
+- [[compare_with_china.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_21
+#graphify/code #graphify/EXTRACTED #community/compare_prices

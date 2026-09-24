@@ -1,19 +1,20 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_card_verification_records.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_source_warnings.py"
 type: "code"
-community: "Community 49"
-location: "L149"
+community: "wb_connector/server.py"
+location: "L44"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_49
+  - community/wb_connector/serverpy
 ---
 
 # search()
 
 ## Connections
-- [[YandexProduct]] - `calls` [EXTRACTED]
-- [[YandexSearchResponse]] - `calls` [EXTRACTED]
-- [[test_yandex_live_fixture_variant_survives_comparison()]] - `indirect_call` [INFERRED]
+- [[MetaOut_5]] - `calls` [EXTRACTED]
+- [[WbCardItem]] - `calls` [EXTRACTED]
+- [[WbSearchResponse]] - `calls` [EXTRACTED]
+- [[test_warning_does_not_drop_valid_offer_and_is_isolated_per_request()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_49
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

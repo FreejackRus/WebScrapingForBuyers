@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/server.py"
 type: "rationale"
-community: "Community 152"
+community: "TransportDownError"
 location: "L880"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_152
+  - community/TransportDownError
 ---
 
 # ozon_reviews implementation — kept separate so the public tool can wrap it in a…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_ozon_reviews_impl()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_152
+#graphify/rationale #graphify/EXTRACTED #community/TransportDownError

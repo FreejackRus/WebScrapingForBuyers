@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 79"
+community: "test_stdio_probe.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_79
+  - community/test_stdio_probepy
 ---
 
 # MonkeyPatch
@@ -17,4 +17,4 @@ tags:
 - [[test_docker_probe_rejects_call_errors()]] - `references` [EXTRACTED]
 - [[test_docker_timeout_attempts_container_removal()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_79
+#graphify/code #graphify/EXTRACTED #community/test_stdio_probepy

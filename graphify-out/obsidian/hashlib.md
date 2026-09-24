@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "Community 126"
+community: "pathlib"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_126
+  - community/pathlib
 ---
 
 # hashlib
@@ -16,4 +16,4 @@ tags:
 - [[mcp_wire.py]] - `imports` [EXTRACTED]
 - [[test_check_provenance_gate.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_126
+#graphify/concept #graphify/EXTRACTED #community/pathlib

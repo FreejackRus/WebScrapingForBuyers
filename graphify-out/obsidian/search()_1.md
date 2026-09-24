@@ -1,18 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_source_warnings.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_card_verification_records.py"
 type: "code"
-community: "Community 136"
-location: "L64"
+community: "YandexProduct"
+location: "L149"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_136
+  - community/YandexProduct
 ---
 
 # search()
 
 ## Connections
-- [[WbNoResultsResponse]] - `calls` [EXTRACTED]
-- [[test_no_results_without_meta_is_not_invented_degradation()]] - `contains` [EXTRACTED]
+- [[YandexProduct]] - `calls` [EXTRACTED]
+- [[YandexSearchResponse]] - `calls` [EXTRACTED]
+- [[test_yandex_live_fixture_variant_survives_comparison()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_136
+#graphify/code #graphify/EXTRACTED #community/YandexProduct

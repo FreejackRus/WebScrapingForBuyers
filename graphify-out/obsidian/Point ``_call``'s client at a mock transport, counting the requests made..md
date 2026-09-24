@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_call_envelope.py"
 type: "rationale"
-community: "Community 31"
+community: "payload"
 location: "L47"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_31
+  - community/payload
 ---
 
 # Point ``_call``'s client at a mock transport, counting the requests made.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[wire()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_31
+#graphify/rationale #graphify/EXTRACTED #community/payload

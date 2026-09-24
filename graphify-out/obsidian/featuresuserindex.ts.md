@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/features/user/index.ts"
 type: "code"
-community: "Community 81"
+community: "useUserStore"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_81
+  - community/useUserStore
 ---
 
 # features/user/index.ts
@@ -20,5 +20,6 @@ tags:
 - [[topbaruiindex.tsx]] - `imports_from` [EXTRACTED]
 - [[useLogin()]] - `re_exports` [EXTRACTED]
 - [[useUpdateSettings()]] - `re_exports` [EXTRACTED]
+- [[widgetsusersettingsuiindex.tsx]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_81
+#graphify/code #graphify/EXTRACTED #community/useUserStore

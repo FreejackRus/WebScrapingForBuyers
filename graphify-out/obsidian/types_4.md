@@ -1,12 +1,12 @@
 ---
 source_file: "apps/gateway/tsconfig.json"
 type: "code"
-community: "Community 217"
+community: "gateway/tsconfig.json"
 location: "L6"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_217
+  - community/gateway/tsconfigjson
 ---
 
 # types
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[compilerOptions_4]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_217
+#graphify/code #graphify/EXTRACTED #community/gateway/tsconfigjson

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
 type: "code"
-community: "Community 4"
+community: "TransportDownError"
 location: "L604"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_4
+  - community/TransportDownError
 ---
 
 # test_selfcheck_says_blocked_when_the_edge_refuses()
@@ -18,4 +18,4 @@ tags:
 - [[edge_418()_1]] - `contains` [EXTRACTED]
 - [[edge_418()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_4
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

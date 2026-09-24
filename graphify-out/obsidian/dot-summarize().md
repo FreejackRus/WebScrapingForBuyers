@@ -1,18 +1,18 @@
 ---
 source_file: "apps/analysis/src/domain/analysis-narrator.ts"
 type: "code"
-community: "Community 36"
-location: "L16"
+community: "AnalysisNarrator"
+location: "L70"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_36
+  - community/AnalysisNarrator
 ---
 
 # .summarize()
 
 ## Connections
 - [[AnalysisNarrator]] - `method` [EXTRACTED]
-- [[analyzeSnapshot()]] - `calls` [INFERRED]
+- [[analyzeSnapshotRaw()]] - `calls` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_36
+#graphify/code #graphify/EXTRACTED #community/AnalysisNarrator

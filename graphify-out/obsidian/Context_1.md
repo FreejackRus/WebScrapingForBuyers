@@ -1,24 +1,24 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 110"
+community: "_post"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_110
+  - community/_post
 ---
 
 # Context
 
 ## Connections
-- [[_cdp_fetch_json()]] - `references` [EXTRACTED]
-- [[_fetch_composer()]] - `references` [EXTRACTED]
-- [[_ozon_reviews_impl()]] - `references` [EXTRACTED]
-- [[_ozon_search_impl()]] - `references` [EXTRACTED]
-- [[_ozon_selfcheck_impl()]] - `references` [EXTRACTED]
-- [[ozon_card()]] - `references` [EXTRACTED]
-- [[ozon_reviews()]] - `references` [EXTRACTED]
-- [[ozon_search()_2]] - `references` [EXTRACTED]
-- [[ozon_selfcheck()]] - `references` [EXTRACTED]
+- [[_cdp_post_json()]] - `references` [EXTRACTED]
+- [[_final_catalog_url()]] - `references` [EXTRACTED]
+- [[_megamarket_selfcheck_impl()]] - `references` [EXTRACTED]
+- [[_post()]] - `references` [EXTRACTED]
+- [[_resolve_address_id()]] - `references` [EXTRACTED]
+- [[_resolve_search_params()]] - `references` [EXTRACTED]
+- [[megamarket_card()]] - `references` [EXTRACTED]
+- [[megamarket_search()_1]] - `references` [EXTRACTED]
+- [[megamarket_selfcheck()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_110
+#graphify/code #graphify/EXTRACTED #community/_post

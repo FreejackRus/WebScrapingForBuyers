@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py"
 type: "code"
-community: "Community 322"
+community: "test_card_survives_a_drifted_description_images_with_a_warning"
 location: "L444"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_322
+  - community/test_card_survives_a_drifted_description_images_with_a_warning
 ---
 
 # test_card_survives_a_drifted_description_images_with_a_warning()
@@ -16,4 +16,4 @@ tags:
 - [[_patch_render()_1]] - `calls` [EXTRACTED]
 - [[taobao-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_322
+#graphify/code #graphify/EXTRACTED #community/test_card_survives_a_drifted_description_images_with_a_warning

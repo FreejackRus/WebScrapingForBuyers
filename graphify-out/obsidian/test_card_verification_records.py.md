@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_card_verification_records.py"
 type: "code"
-community: "Community 43"
+community: "test_card_verification_records.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_43
+  - community/test_card_verification_recordspy
 ---
 
 # test_card_verification_records.py
@@ -43,4 +43,4 @@ tags:
 - [[yandex_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[yandex_connectormodels_output.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_43
+#graphify/code #graphify/EXTRACTED #community/test_card_verification_recordspy

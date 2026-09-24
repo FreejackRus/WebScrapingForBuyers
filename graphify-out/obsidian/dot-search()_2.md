@@ -1,24 +1,19 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/http-marketplace-adapter.ts"
+source_file: "apps/search/src/infrastructure/sources/b2b-distributor-adapter.ts"
 type: "code"
-community: "Community 80"
-location: "L44"
+community: "b2b-distributor-adapter.ts"
+location: "L132"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_80
+  - community/b2b-distributor-adapterts
 ---
 
 # .search()
 
 ## Connections
-- [[WildberriesHttpAdapter]] - `method` [EXTRACTED]
-- [[assertWbCatalogAllowed()]] - `calls` [EXTRACTED]
-- [[marketplaceSearchQueries()]] - `calls` [EXTRACTED]
-- [[noteWbRateLimited()]] - `calls` [EXTRACTED]
-- [[preferRelevantOffers()]] - `indirect_call` [INFERRED]
-- [[presentWbRateLimited()]] - `calls` [EXTRACTED]
-- [[toWbOffer()]] - `calls` [EXTRACTED]
-- [[wbHttpSearchUrl()]] - `calls` [EXTRACTED]
+- [[MerlionSourceAdapter]] - `method` [EXTRACTED]
+- [[merlionConfigFromEnv()]] - `calls` [EXTRACTED]
+- [[searchMerlion()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_80
+#graphify/code #graphify/EXTRACTED #community/b2b-distributor-adapterts

@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 8"
-location: "L2172"
+community: "test_helpers.py"
+location: "L925"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_8
+  - community/test_helperspy
 ---
 
 # no_wait()
 
 ## Connections
-- [[test_a_refusal_streak_reaches_the_operator()]] - `contains` [EXTRACTED]
+- [[test_wb_selfcheck_null_roots_are_drift()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_8
+#graphify/code #graphify/EXTRACTED #community/test_helperspy

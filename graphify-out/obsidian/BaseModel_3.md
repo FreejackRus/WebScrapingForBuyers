@@ -1,18 +1,19 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 167"
+community: "YandexProduct"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_167
+  - community/YandexProduct
 ---
 
 # BaseModel
 
 ## Connections
-- [[CompareResponse]] - `inherits` [EXTRACTED]
-- [[MarketOffer]] - `inherits` [EXTRACTED]
-- [[SourceOutcome]] - `inherits` [EXTRACTED]
+- [[YandexCardResponse]] - `inherits` [EXTRACTED]
+- [[YandexProduct]] - `inherits` [EXTRACTED]
+- [[YandexReview]] - `inherits` [EXTRACTED]
+- [[YandexSearchResponse]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_167
+#graphify/code #graphify/EXTRACTED #community/YandexProduct

@@ -1,23 +1,18 @@
 ---
-source_file: "apps/search/package.json"
+source_file: "mcp-servers/ru-marketplace-mcp/package.json"
 type: "code"
-community: "Community 219"
-location: "L13"
+community: "ru-marketplace-mcp/package.json"
+location: "L7"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_219
+  - community/ru-marketplace-mcp/packagejson
 ---
 
 # dependencies
 
 ## Connections
-- [[@modelcontextprotocolsdk_1]] - `contains` [EXTRACTED]
-- [[@peremenacontracts_4]] - `contains` [EXTRACTED]
-- [[@peremenaservice-kit_4]] - `contains` [EXTRACTED]
-- [[apify-client_1]] - `contains` [EXTRACTED]
-- [[exceljs_1]] - `contains` [EXTRACTED]
-- [[fastify_4]] - `contains` [EXTRACTED]
-- [[searchpackage.json]] - `contains` [EXTRACTED]
+- [[jsdom]] - `contains` [EXTRACTED]
+- [[ru-marketplace-mcppackage.json]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_219
+#graphify/code #graphify/EXTRACTED #community/ru-marketplace-mcp/packagejson

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py"
 type: "rationale"
-community: "Community 318"
+community: "test_login_wall_markers_ignore_missing_and_garbage_fields"
 location: "L271"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_318
+  - community/test_login_wall_markers_ignore_missing_and_garbage_fields
 ---
 
 # A payload cached by an older build carries no structural fields: the title…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_login_wall_markers_ignore_missing_and_garbage_fields()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_318
+#graphify/rationale #graphify/EXTRACTED #community/test_login_wall_markers_ignore_missing_and_garbage_fields

@@ -1,18 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 41"
+community: "compare_connector/models_output.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_41
+  - community/compare_connector/models_outputpy
 ---
 
 # BaseModel
 
 ## Connections
-- [[DnsCardResponse]] - `inherits` [EXTRACTED]
-- [[DnsSearchItemOut]] - `inherits` [EXTRACTED]
-- [[DnsSearchResponse]] - `inherits` [EXTRACTED]
+- [[CompareResponse]] - `inherits` [EXTRACTED]
+- [[MarketOffer]] - `inherits` [EXTRACTED]
+- [[SourceOutcome]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_41
+#graphify/code #graphify/EXTRACTED #community/compare_connector/models_outputpy

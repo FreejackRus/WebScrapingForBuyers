@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "Community 21"
+community: "pathlib"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_21
+  - community/pathlib
 ---
 
 # sys
@@ -58,4 +58,4 @@ tags:
 - [[wb_connector__main__.py]] - `imports` [EXTRACTED]
 - [[yandex_connector__main__.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_21
+#graphify/concept #graphify/EXTRACTED #community/pathlib

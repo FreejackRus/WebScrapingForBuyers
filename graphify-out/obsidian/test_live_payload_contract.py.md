@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_live_payload_contract.py"
 type: "code"
-community: "Community 47"
+community: "test_live_payload_contract.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_47
+  - community/test_live_payload_contractpy
 ---
 
 # test_live_payload_contract.py
@@ -33,4 +33,4 @@ tags:
 - [[test_price_comes_from_price_detailed_value()]] - `contains` [EXTRACTED]
 - [[test_total_count_is_read_from_the_envelope()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_47
+#graphify/code #graphify/EXTRACTED #community/test_live_payload_contractpy

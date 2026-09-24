@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_call_envelope.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_http_tier.py"
 type: "code"
-community: "Community 31"
-location: "L130"
+community: "test_gateway_statuses_are_retried"
+location: "L75"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_31
+  - community/test_gateway_statuses_are_retried
 ---
 
 # handler()
 
 ## Connections
-- [[test_html_body_reads_as_a_block_not_as_drift()]] - `contains` [EXTRACTED]
+- [[test_gateway_statuses_are_retried()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_31
+#graphify/code #graphify/EXTRACTED #community/test_gateway_statuses_are_retried

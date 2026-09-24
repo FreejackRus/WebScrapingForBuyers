@@ -1,18 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/examples/compare_with_china.py"
+source_file: "mcp-servers/ru-marketplace-mcp/examples/health_check.py"
 type: "code"
-community: "Community 14"
-location: "L19"
+community: "yandex_selfcheck"
+location: "L35"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/Community_14
+  - graphify/INFERRED
+  - community/yandex_selfcheck
 ---
 
 # main()
 
 ## Connections
-- [[compare_prices()]] - `calls` [EXTRACTED]
-- [[compare_with_china.py]] - `contains` [EXTRACTED]
+- [[detmir_selfcheck()]] - `calls` [INFERRED]
+- [[health_check.py]] - `contains` [EXTRACTED]
+- [[ozon_selfcheck()]] - `calls` [INFERRED]
+- [[run_one()]] - `calls` [EXTRACTED]
+- [[wb_selfcheck()]] - `calls` [INFERRED]
+- [[yandex_selfcheck()]] - `calls` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_14
+#graphify/code #graphify/INFERRED #community/yandex_selfcheck

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
 type: "rationale"
-community: "Community 253"
+community: "clear_cache"
 location: "L104"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_253
+  - community/clear_cache
 ---
 
 # Remove the politeness gap so tests do not actually wait.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[no_delay()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_253
+#graphify/rationale #graphify/EXTRACTED #community/clear_cache

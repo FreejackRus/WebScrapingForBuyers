@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
 type: "code"
-community: "Community 0"
-location: "L196"
+community: "mcp-marketplace-adapter.ts"
+location: "L217"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_0
+  - community/mcp-marketplace-adapterts
 ---
 
 # .callTool()
@@ -16,4 +16,4 @@ tags:
 - [[dot-fetchMappedOffers()]] - `calls` [INFERRED]
 - [[MarketplaceToolCaller]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/Community_0
+#graphify/code #graphify/INFERRED #community/mcp-marketplace-adapterts

@@ -1,22 +1,20 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 23"
+community: "models.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_23
+  - community/modelspy
 ---
 
 # BaseModel
 
 ## Connections
-- [[MpStatsItem]] - `inherits` [EXTRACTED]
-- [[MpStatsItemResponse]] - `inherits` [EXTRACTED]
-- [[MpStatsNoResultsResponse]] - `inherits` [EXTRACTED]
-- [[MpStatsStocks]] - `inherits` [EXTRACTED]
-- [[MpStatsTotals]] - `inherits` [EXTRACTED]
-- [[MpStatsWarehousesItem]] - `inherits` [EXTRACTED]
-- [[MpStatsWarehousesResponse]] - `inherits` [EXTRACTED]
+- [[AvitoCardResponse]] - `inherits` [EXTRACTED]
+- [[AvitoSearchItemOut]] - `inherits` [EXTRACTED]
+- [[AvitoSearchResponse]] - `inherits` [EXTRACTED]
+- [[AvitoSellerOut]] - `inherits` [EXTRACTED]
+- [[AvitoSellerResponse]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_23
+#graphify/code #graphify/EXTRACTED #community/modelspy

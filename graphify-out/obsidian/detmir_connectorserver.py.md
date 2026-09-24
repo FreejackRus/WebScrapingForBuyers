@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/server.py"
 type: "code"
-community: "Community 14"
+community: "json"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_14
+  - community/json
 ---
 
 # detmir_connector/server.py
@@ -20,7 +20,7 @@ tags:
 - [[DetmirSelfcheckEntry]] - `imports` [EXTRACTED]
 - [[DetmirSelfcheckResponse]] - `imports` [EXTRACTED]
 - [[Detsky Mir MCP connector. The easiest of the Russian marketplaces to read…]] - `rationale_for` [EXTRACTED]
-- [[MetaOut_9]] - `imports` [EXTRACTED]
+- [[MetaOut_10]] - `imports` [EXTRACTED]
 - [[_as_dict()]] - `contains` [EXTRACTED]
 - [[_as_list()]] - `contains` [EXTRACTED]
 - [[_body_error_status()]] - `contains` [EXTRACTED]
@@ -29,7 +29,7 @@ tags:
 - [[_parse_product()]] - `contains` [EXTRACTED]
 - [[_price_from()]] - `contains` [EXTRACTED]
 - [[_product_node()]] - `contains` [EXTRACTED]
-- [[_proxy()_2]] - `contains` [EXTRACTED]
+- [[_proxy()_1]] - `contains` [EXTRACTED]
 - [[_resolve_region()]] - `contains` [EXTRACTED]
 - [[cache.py]] - `imports_from` [EXTRACTED]
 - [[datetime]] - `imports` [EXTRACTED]
@@ -42,7 +42,7 @@ tags:
 - [[errors.py]] - `imports_from` [EXTRACTED]
 - [[fastmcp_3]] - `imports_from` [EXTRACTED]
 - [[fastmcp_server_middleware_error_handling]] - `imports_from` [EXTRACTED]
-- [[get_settings()_2]] - `imports` [EXTRACTED]
+- [[get_settings()_5]] - `imports` [EXTRACTED]
 - [[httpx]] - `imports` [EXTRACTED]
 - [[json]] - `imports` [EXTRACTED]
 - [[logging.py]] - `imports_from` [EXTRACTED]
@@ -57,4 +57,4 @@ tags:
 - [[typing]] - `imports_from` [EXTRACTED]
 - [[urllib_parse]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_14
+#graphify/code #graphify/EXTRACTED #community/json

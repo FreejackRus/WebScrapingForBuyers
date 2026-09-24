@@ -1,16 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 109"
+community: "megamarket_connector/models_output.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_109
+  - community/megamarket_connector/models_outputpy
 ---
 
 # BaseModel
 
 ## Connections
-- [[_Named]] - `inherits` [EXTRACTED]
+- [[MegamarketCardResponse]] - `inherits` [EXTRACTED]
+- [[MegamarketSearchItemOut]] - `inherits` [EXTRACTED]
+- [[MegamarketSearchResponse]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_109
+#graphify/code #graphify/EXTRACTED #community/megamarket_connector/models_outputpy

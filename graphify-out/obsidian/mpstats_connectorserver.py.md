@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/src/mpstats_connector/server.py"
 type: "code"
-community: "Community 23"
+community: "mpstats_connector/server.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_23
+  - community/mpstats_connector/serverpy
 ---
 
 # mpstats_connector/server.py
 
 ## Connections
 - [[MPStats MCP connector. Salesstock analytics for Ozon and Wildberries items via…]] - `rationale_for` [EXTRACTED]
-- [[MetaOut_6]] - `imports` [EXTRACTED]
+- [[MetaOut_8]] - `imports` [EXTRACTED]
 - [[MpStatsItem]] - `imports` [EXTRACTED]
 - [[MpStatsItemResponse]] - `imports` [EXTRACTED]
 - [[MpStatsSelfCheckResponse]] - `imports` [EXTRACTED]
@@ -22,14 +22,14 @@ tags:
 - [[MpStatsWarehousesItem]] - `imports` [EXTRACTED]
 - [[MpStatsWarehousesResponse]] - `imports` [EXTRACTED]
 - [[_call()_1]] - `contains` [EXTRACTED]
-- [[_client()]] - `contains` [EXTRACTED]
+- [[_client()_1]] - `contains` [EXTRACTED]
 - [[_cookie_header()]] - `contains` [EXTRACTED]
 - [[_finalize_selfcheck()]] - `contains` [EXTRACTED]
 - [[_int_graph()]] - `contains` [EXTRACTED]
 - [[_last_nonzero()]] - `contains` [EXTRACTED]
 - [[_parse_item_entry()]] - `contains` [EXTRACTED]
 - [[_parse_warehouses_entry()]] - `contains` [EXTRACTED]
-- [[_polite_wait()_5]] - `contains` [EXTRACTED]
+- [[_polite_wait()_6]] - `contains` [EXTRACTED]
 - [[_post_json_budgeted()]] - `contains` [EXTRACTED]
 - [[_proxy()_5]] - `contains` [EXTRACTED]
 - [[_validate_skus()]] - `contains` [EXTRACTED]
@@ -40,7 +40,7 @@ tags:
 - [[fastmcp_3]] - `imports_from` [EXTRACTED]
 - [[fastmcp_exceptions]] - `imports_from` [EXTRACTED]
 - [[fastmcp_server_middleware_error_handling]] - `imports_from` [EXTRACTED]
-- [[get_settings()_4]] - `imports` [EXTRACTED]
+- [[get_settings()_1]] - `imports` [EXTRACTED]
 - [[httpx]] - `imports` [EXTRACTED]
 - [[json]] - `imports` [EXTRACTED]
 - [[logging.py]] - `imports_from` [EXTRACTED]
@@ -60,4 +60,4 @@ tags:
 - [[transport__init__.py]] - `imports_from` [EXTRACTED]
 - [[typing]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_23
+#graphify/code #graphify/EXTRACTED #community/mpstats_connector/serverpy

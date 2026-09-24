@@ -1,18 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_server.py"
 type: "code"
-community: "Community 120"
-location: "L419"
+community: "TransportDownError"
+location: "L450"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/Community_120
+  - graphify/INFERRED
+  - community/TransportDownError
 ---
 
 # fake_call()
 
 ## Connections
-- [[_item_payload()]] - `calls` [EXTRACTED]
-- [[test_selfcheck_success_on_healthy_payload()]] - `contains` [EXTRACTED]
+- [[TransportDownError]] - `calls` [INFERRED]
+- [[raise_tool_error()]] - `calls` [INFERRED]
+- [[test_selfcheck_inconclusive_on_transport_failure()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_120
+#graphify/code #graphify/INFERRED #community/TransportDownError

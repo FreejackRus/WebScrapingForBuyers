@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/src/mpstats_connector/settings.py"
 type: "rationale"
-community: "Community 210"
+community: "pydantic"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_210
+  - community/pydantic
 ---
 
 # MPStats connector settings (pydantic-settings BaseSettings,…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[mpstats_connectorsettings.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_210
+#graphify/rationale #graphify/EXTRACTED #community/pydantic

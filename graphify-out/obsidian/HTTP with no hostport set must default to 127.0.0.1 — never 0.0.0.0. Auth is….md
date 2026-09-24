@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py"
 type: "rationale"
-community: "Community 26"
+community: "test_runtime.py"
 location: "L82"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_26
+  - community/test_runtimepy
 ---
 
 # HTTP with no host/port set must default to 127.0.0.1 — never 0.0.0.0. Auth is…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_http_defaults_bind_to_loopback()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_26
+#graphify/rationale #graphify/EXTRACTED #community/test_runtimepy

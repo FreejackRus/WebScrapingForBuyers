@@ -1,12 +1,12 @@
 ---
 source_file: "packages/contracts/tsconfig.json"
 type: "code"
-community: "Community 230"
+community: "contracts/tsconfig.json"
 location: "L2"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_230
+  - community/contracts/tsconfigjson
 ---
 
 # extends
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[contractstsconfig.json]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_230
+#graphify/code #graphify/EXTRACTED #community/contracts/tsconfigjson

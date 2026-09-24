@@ -1,12 +1,12 @@
 ---
 source_file: "deploy/chrome/cdp-proxy.py"
 type: "code"
-community: "Community 191"
+community: "cdp-proxy.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_191
+  - community/cdp-proxypy
 ---
 
 # cdp-proxy.py
@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[Expose Chrome DevTools on 0.0.0.0 and rewrite advertised websocket hosts.]] - `rationale_for` [EXTRACTED]
 - [[handle_client()]] - `contains` [EXTRACTED]
-- [[main()_5]] - `contains` [EXTRACTED]
+- [[main()_6]] - `contains` [EXTRACTED]
 - [[os]] - `imports` [EXTRACTED]
 - [[pipe()]] - `contains` [EXTRACTED]
 - [[read_headers()]] - `contains` [EXTRACTED]
@@ -23,4 +23,4 @@ tags:
 - [[split_http()]] - `contains` [EXTRACTED]
 - [[threading]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_191
+#graphify/code #graphify/EXTRACTED #community/cdp-proxypy

@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 312"
+community: "aliexpress-connector/tests/test_server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_312
+  - community/aliexpress-connector/tests/test_serverpy
 ---
 
 # fixture
 
 ## Connections
-- [[_no_cache()_7]] - `references` [EXTRACTED]
+- [[_no_cache()_8]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_312
+#graphify/code #graphify/EXTRACTED #community/aliexpress-connector/tests/test_serverpy

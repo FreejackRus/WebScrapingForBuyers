@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/app/App.tsx"
 type: "code"
-community: "Community 64"
+community: "App.tsx"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_64
+  - community/Apptsx
 ---
 
 # App.tsx
@@ -28,9 +28,9 @@ tags:
 - [[main.tsx]] - `imports_from` [EXTRACTED]
 - [[pagessearchindex.ts]] - `imports_from` [EXTRACTED]
 - [[pagesuserindex.ts]] - `imports_from` [EXTRACTED]
-- [[react_1]] - `imports_from` [EXTRACTED]
+- [[react]] - `imports_from` [EXTRACTED]
 - [[useBootSession()]] - `imports` [EXTRACTED]
 - [[useSearchHotkey()]] - `imports` [EXTRACTED]
 - [[useUserStore]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_64
+#graphify/code #graphify/EXTRACTED #community/Apptsx

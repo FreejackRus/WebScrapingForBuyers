@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/__main__.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/_win_job_runner.py"
 type: "code"
-community: "Community 21"
-location: "L21"
+community: "_win_job_runner.py"
+location: "L55"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_21
+  - community/_win_job_runnerpy
 ---
 
 # main()
 
 ## Connections
-- [[Run the server on the transport selected by the environment (stdio default).]] - `rationale_for` [EXTRACTED]
-- [[detmir_connector__main__.py]] - `contains` [EXTRACTED]
-- [[run_server()]] - `calls` [INFERRED]
+- [[_ExtendedLimits]] - `calls` [EXTRACTED]
+- [[_win_job_runner.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_21
+#graphify/code #graphify/EXTRACTED #community/_win_job_runnerpy

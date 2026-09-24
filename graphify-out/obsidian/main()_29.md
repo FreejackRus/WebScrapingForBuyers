@@ -1,18 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_test_count.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/mcp_wire.py"
 type: "code"
-community: "Community 71"
-location: "L70"
+community: "mcp_wire.py"
+location: "L100"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_71
+  - community/mcp_wirepy
 ---
 
 # main()
 
 ## Connections
-- [[_collected()]] - `calls` [EXTRACTED]
-- [[check_test_count.py]] - `contains` [EXTRACTED]
+- [[_check_gate()]] - `calls` [EXTRACTED]
+- [[_load_baseline()]] - `calls` [EXTRACTED]
+- [[_snapshot()]] - `calls` [EXTRACTED]
+- [[estimate_tokens()]] - `calls` [EXTRACTED]
+- [[fetch_tools()]] - `calls` [EXTRACTED]
+- [[mcp_wire.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_71
+#graphify/code #graphify/EXTRACTED #community/mcp_wirepy

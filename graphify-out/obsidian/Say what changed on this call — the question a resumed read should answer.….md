@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/browser_handoff.py"
 type: "rationale"
-community: "Community 11"
+community: "read_with_handoff"
 location: "L143"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_11
+  - community/read_with_handoff
 ---
 
 # Say what changed on this call — the question a resumed read should answer.…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_resume_note()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_11
+#graphify/rationale #graphify/EXTRACTED #community/read_with_handoff

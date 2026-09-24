@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/src/aliexpress_connector/__init__.py"
 type: "rationale"
-community: "Community 137"
+community: "aliexpress-connector/tests/test_shape_reference.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_137
+  - community/aliexpress-connector/tests/test_shape_referencepy
 ---
 
 # AliExpress MCP connector.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[aliexpress_connector__init__.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_137
+#graphify/rationale #graphify/EXTRACTED #community/aliexpress-connector/tests/test_shape_referencepy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 28"
+community: "_patch_questions"
 location: "L1614"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_28
+  - community/_patch_questions
 ---
 
 # test_questions_rejects_an_out_of_range_limit()
@@ -16,4 +16,4 @@ tags:
 - [[scenario()_75]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_28
+#graphify/code #graphify/EXTRACTED #community/_patch_questions

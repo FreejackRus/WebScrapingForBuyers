@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/http.py"
 type: "rationale"
-community: "Community 4"
+community: "json"
 location: "L60"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_4
+  - community/json
 ---
 
 # Map an HTTP status onto the shared error vocabulary. Imported inside the…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[classify_http_error()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_4
+#graphify/rationale #graphify/EXTRACTED #community/json

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/process.py"
 type: "code"
-community: "Community 86"
+community: "terminate_process_tree"
 location: "L123"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_86
+  - community/terminate_process_tree
 ---
 
 # taskkill_cmd()
@@ -17,4 +17,4 @@ tags:
 - [[terminate_process_tree()]] - `calls` [EXTRACTED]
 - [[windows_system_dir()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_86
+#graphify/code #graphify/EXTRACTED #community/terminate_process_tree

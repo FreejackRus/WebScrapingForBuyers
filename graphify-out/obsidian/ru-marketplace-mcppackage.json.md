@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/package.json"
 type: "code"
-community: "Community 192"
+community: "ru-marketplace-mcp/package.json"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_192
+  - community/ru-marketplace-mcp/packagejson
 ---
 
 # ru-marketplace-mcp/package.json
 
 ## Connections
-- [[dependencies_3]] - `contains` [EXTRACTED]
+- [[dependencies_4]] - `contains` [EXTRACTED]
 - [[description_5]] - `contains` [EXTRACTED]
 - [[jsdom_1]] - `imports` [EXTRACTED]
 - [[license]] - `contains` [EXTRACTED]
@@ -20,4 +20,4 @@ tags:
 - [[private_6]] - `contains` [EXTRACTED]
 - [[version_7]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_192
+#graphify/code #graphify/EXTRACTED #community/ru-marketplace-mcp/packagejson

@@ -1,17 +1,23 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 39"
-location: "L1887"
+community: "scenario"
+location: "L2022"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_39
+  - community/scenario
 ---
 
 # scenario()
 
 ## Connections
-- [[test_category_products_is_registered_and_v1_tools_are_intact()]] - `contains` [EXTRACTED]
+- [[_FakeCurlResponse]] - `calls` [EXTRACTED]
+- [[_clear_wb_cache()]] - `calls` [EXTRACTED]
+- [[_tool_error_payload()_1]] - `calls` [EXTRACTED]
+- [[fake_budgeted()]] - `contains` [EXTRACTED]
+- [[fake_budgeted()_5]] - `indirect_call` [INFERRED]
+- [[no_wait()_2]] - `indirect_call` [INFERRED]
+- [[test_impersonated_refusal_stays_a_transport_error()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_39
+#graphify/code #graphify/EXTRACTED #community/scenario

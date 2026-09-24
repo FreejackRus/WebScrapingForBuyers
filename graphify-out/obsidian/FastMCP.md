@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 109"
+community: "test_output_schema.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_109
+  - community/test_output_schemapy
 ---
 
 # FastMCP
@@ -14,4 +14,4 @@ tags:
 - [[apply_compact_output_schemas()]] - `references` [EXTRACTED]
 - [[output_schema.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_109
+#graphify/code #graphify/EXTRACTED #community/test_output_schemapy

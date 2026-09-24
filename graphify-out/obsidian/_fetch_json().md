@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/server.py"
 type: "code"
-community: "Community 45"
+community: "detmir_categories"
 location: "L133"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_45
+  - community/detmir_categories
 ---
 
 # _fetch_json()
 
 ## Connections
-- [[Any_18]] - `references` [EXTRACTED]
+- [[Any_10]] - `references` [EXTRACTED]
 - [[Context_11]] - `references` [EXTRACTED]
 - [[GET ``url`` and parse it as JSON, with caching and bounded retries.]] - `rationale_for` [EXTRACTED]
 - [[ParserDriftError]] - `uses` [INFERRED]
@@ -24,4 +24,4 @@ tags:
 - [[detmir_connectorserver.py]] - `contains` [EXTRACTED]
 - [[fetch()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_45
+#graphify/code #graphify/EXTRACTED #community/detmir_categories

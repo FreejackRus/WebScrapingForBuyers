@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/src/citilink_connector/settings.py"
 type: "code"
-community: "Community 88"
+community: "pydantic"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_88
+  - community/pydantic
 ---
 
 # citilink_connector/settings.py
@@ -16,8 +16,8 @@ tags:
 - [[CitilinkSettings]] - `contains` [EXTRACTED]
 - [[citilink_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[functools]] - `imports_from` [EXTRACTED]
-- [[get_settings()_11]] - `contains` [EXTRACTED]
+- [[get_settings()_4]] - `contains` [EXTRACTED]
 - [[pydantic]] - `imports_from` [EXTRACTED]
 - [[pydantic_settings]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_88
+#graphify/code #graphify/EXTRACTED #community/pydantic

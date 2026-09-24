@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_vision_policy.py"
 type: "code"
-community: "Community 73"
+community: "resolve_image_delivery"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_73
+  - community/resolve_image_delivery
 ---
 
 # test_vision_policy.py
@@ -25,4 +25,4 @@ tags:
 - [[test_the_decision_is_reported_in_a_shape_the_caller_can_read()]] - `contains` [EXTRACTED]
 - [[vision_policy.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_73
+#graphify/code #graphify/EXTRACTED #community/resolve_image_delivery

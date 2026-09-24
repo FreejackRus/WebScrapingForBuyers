@@ -1,20 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/settings.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/settings.py"
 type: "code"
-community: "Community 76"
-location: "L57"
+community: "pydantic"
+location: "L37"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_76
+  - community/pydantic
 ---
 
 # get_settings()
 
 ## Connections
-- [[OzonSettings]] - `calls` [EXTRACTED]
-- [[_ozon_selfcheck_impl()]] - `calls` [EXTRACTED]
-- [[ozon_connectorserver.py]] - `imports` [EXTRACTED]
-- [[ozon_connectorsettings.py]] - `contains` [EXTRACTED]
+- [[LamodaSettings]] - `calls` [EXTRACTED]
+- [[lamoda_connectorserver.py]] - `imports` [EXTRACTED]
+- [[lamoda_connectorsettings.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_76
+#graphify/code #graphify/EXTRACTED #community/pydantic

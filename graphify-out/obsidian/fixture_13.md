@@ -1,18 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 247"
+community: "taobao"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_247
+  - community/taobao
 ---
 
 # fixture
 
 ## Connections
-- [[empty_cache()]] - `references` [EXTRACTED]
-- [[no_polite_gap()]] - `references` [EXTRACTED]
-- [[token_present()]] - `references` [EXTRACTED]
+- [[browser()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_247
+#graphify/code #graphify/EXTRACTED #community/taobao

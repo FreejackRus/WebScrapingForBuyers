@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/src/marketplace_connector/cli.py"
 type: "code"
-community: "Community 54"
+community: "json"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_54
+  - community/json
 ---
 
 # cli.py
@@ -27,11 +27,11 @@ tags:
 - [[cmd_install()]] - `contains` [EXTRACTED]
 - [[json]] - `imports` [EXTRACTED]
 - [[logging.py]] - `imports_from` [EXTRACTED]
-- [[main()_24]] - `contains` [EXTRACTED]
+- [[main()_25]] - `contains` [EXTRACTED]
 - [[pathlib]] - `imports` [EXTRACTED]
 - [[shutil]] - `imports` [EXTRACTED]
 - [[source_selection.py]] - `imports_from` [EXTRACTED]
 - [[sys]] - `imports` [EXTRACTED]
 - [[typing]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_54
+#graphify/code #graphify/EXTRACTED #community/json

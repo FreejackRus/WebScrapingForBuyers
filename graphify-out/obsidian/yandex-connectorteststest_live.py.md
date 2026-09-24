@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_live.py"
 type: "code"
-community: "Community 96"
+community: "yandex_selfcheck"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_96
+  - community/yandex_selfcheck
 ---
 
 # yandex-connector/tests/test_live.py
@@ -16,4 +16,4 @@ tags:
 - [[pytest]] - `imports` [EXTRACTED]
 - [[test_yandex_selfcheck_reaches_a_verdict()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_96
+#graphify/code #graphify/EXTRACTED #community/yandex_selfcheck

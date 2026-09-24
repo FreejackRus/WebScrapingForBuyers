@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "Community 3"
+community: "pytest"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_3
+  - community/pytest
 ---
 
 # yaml
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[test_compose_runtime.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_3
+#graphify/concept #graphify/EXTRACTED #community/pytest

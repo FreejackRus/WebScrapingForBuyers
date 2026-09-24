@@ -72,6 +72,8 @@ describe("search workspace data states", () => {
     expect(html).toContain("Не удалось получить предложения");
     expect(html).not.toContain("private-diagnostic");
     expect(html).not.toContain("Собираем предложения");
+    expect(html).not.toContain("Коннекторы");
+    expect(html).not.toContain("Пройти проверку");
   });
 
   it("offers a filter reset when downloaded rows are hidden", () => {

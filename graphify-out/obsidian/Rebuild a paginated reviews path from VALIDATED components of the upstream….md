@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/server.py"
 type: "rationale"
-community: "Community 152"
+community: "TransportDownError"
 location: "L719"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_152
+  - community/TransportDownError
 ---
 
 # Rebuild a paginated reviews path from VALIDATED components of the upstream…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_safe_review_page_path()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_152
+#graphify/rationale #graphify/EXTRACTED #community/TransportDownError

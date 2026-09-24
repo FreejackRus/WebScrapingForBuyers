@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/models_output.py"
 type: "rationale"
-community: "Community 198"
+community: "megamarket_connector/models_output.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_198
+  - community/megamarket_connector/models_outputpy
 ---
 
 # Pydantic output models for the Megamarket MCP connector.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[megamarket_connectormodels_output.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_198
+#graphify/rationale #graphify/EXTRACTED #community/megamarket_connector/models_outputpy

@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_server.py"
 type: "code"
-community: "Community 34"
-location: "L338"
+community: "mpstats-connector/tests/test_server.py"
+location: "L350"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_34
+  - community/mpstats-connector/tests/test_serverpy
 ---
 
 # fake_call()
 
 ## Connections
-- [[test_item_no_results_raises_not_found()]] - `contains` [EXTRACTED]
+- [[test_item_shape_drift_raises_parser_drift()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_34
+#graphify/code #graphify/EXTRACTED #community/mpstats-connector/tests/test_serverpy

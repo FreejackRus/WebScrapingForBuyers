@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_parser_live.py"
 type: "code"
-community: "Community 83"
+community: "wb-connector/tests/test_parser_live.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_83
+  - community/wb-connector/tests/test_parser_livepy
 ---
 
 # wb-connector/tests/test_parser_live.py
@@ -27,4 +27,4 @@ tags:
 - [[wb_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[wb_connectormodels_output.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_83
+#graphify/code #graphify/EXTRACTED #community/wb-connector/tests/test_parser_livepy

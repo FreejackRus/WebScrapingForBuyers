@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py"
 type: "code"
-community: "Community 6"
+community: "mcp-core/tests/test_browser_handoff.py"
 location: "L173"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_6
+  - community/mcp-core/tests/test_browser_handoffpy
 ---
 
 # pending()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_deadline_cancels_extractor_and_closes()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_6
+#graphify/code #graphify/EXTRACTED #community/mcp-core/tests/test_browser_handoffpy

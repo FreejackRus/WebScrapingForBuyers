@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/test_e2e_stdio_check.py"
 type: "code"
-community: "Community 149"
-location: "L487"
+community: "aliexpress-connector/tests/test_parser_live.py"
+location: "L60"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_149
+  - community/aliexpress-connector/tests/test_parser_livepy
 ---
 
 # __aenter__()
 
 ## Connections
-- [[_patch_graphql_response()]] - `contains` [EXTRACTED]
+- [[test_probe_checks_running_version()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_149
+#graphify/code #graphify/EXTRACTED #community/aliexpress-connector/tests/test_parser_livepy

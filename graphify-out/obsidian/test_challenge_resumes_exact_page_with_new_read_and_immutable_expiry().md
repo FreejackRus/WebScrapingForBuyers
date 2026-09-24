@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py"
 type: "code"
-community: "Community 6"
+community: "success"
 location: "L102"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_6
+  - community/success
 ---
 
 # test_challenge_resumes_exact_page_with_new_read_and_immutable_expiry()
@@ -16,4 +16,4 @@ tags:
 - [[mcp-coreteststest_browser_handoff.py]] - `contains` [EXTRACTED]
 - [[success()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_6
+#graphify/code #graphify/EXTRACTED #community/success

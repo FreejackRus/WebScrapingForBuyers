@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/mcp_wire.py"
 type: "rationale"
-community: "Community 82"
+community: "mcp_wire.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_82
+  - community/mcp_wirepy
 ---
 
 # Measure the real MCP wire cost of the hosted servers. Talks MCP over stdio…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[mcp_wire.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_82
+#graphify/rationale #graphify/EXTRACTED #community/mcp_wirepy

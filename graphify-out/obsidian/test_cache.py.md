@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cache.py"
 type: "code"
-community: "Community 52"
+community: "TTLCache"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_52
+  - community/TTLCache
 ---
 
 # test_cache.py
@@ -28,4 +28,4 @@ tags:
 - [[test_stats_hit_rate_is_safe_when_empty()]] - `contains` [EXTRACTED]
 - [[test_zero_ttl_disables_caching()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_52
+#graphify/code #graphify/EXTRACTED #community/TTLCache

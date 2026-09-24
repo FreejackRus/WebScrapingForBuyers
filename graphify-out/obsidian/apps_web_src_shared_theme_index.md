@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "Community 64"
+community: "App.tsx"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_64
+  - community/Apptsx
 ---
 
 # apps_web_src_shared_theme_index
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[main.tsx]] - `imports_from` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_64
+#graphify/concept #graphify/EXTRACTED #community/Apptsx

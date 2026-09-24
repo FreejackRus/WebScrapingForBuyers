@@ -1,20 +1,20 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_search_extractor_dom.py"
 type: "code"
-community: "Community 72"
+community: "pathlib"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_72
+  - community/pathlib
 ---
 
 # citilink-connector/tests/test_search_extractor_dom.py
 
 ## Connections
 - [[Regression tests for the Citilink extractors on captured tile markup. Citilink…]] - `rationale_for` [EXTRACTED]
-- [[_extract()_12]] - `contains` [EXTRACTED]
-- [[_items()_3]] - `contains` [EXTRACTED]
+- [[_extract()_14]] - `contains` [EXTRACTED]
+- [[_items()_4]] - `contains` [EXTRACTED]
 - [[citilink_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[dom.py]] - `imports_from` [EXTRACTED]
 - [[domtest.py]] - `imports_from` [EXTRACTED]
@@ -32,4 +32,4 @@ tags:
 - [[test_strikethrough_before_the_current_price_is_read_as_the_old_price()]] - `contains` [EXTRACTED]
 - [[test_title_comes_from_a_text_bearing_anchor_not_the_empty_overlay()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_72
+#graphify/code #graphify/EXTRACTED #community/pathlib

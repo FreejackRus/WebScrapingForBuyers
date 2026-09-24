@@ -1,17 +1,18 @@
 ---
 source_file: "apps/search/package.json"
-type: "code"
-community: "Community 219"
+type: "concept"
+community: "search/package.json"
 location: "L14"
 tags:
-  - graphify/code
+  - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_219
+  - community/search/packagejson
 ---
 
 # @modelcontextprotocol/sdk
 
 ## Connections
-- [[dependencies_4]] - `contains` [EXTRACTED]
+- [[mcp-marketplace-adapter.ts]] - `imports_from` [EXTRACTED]
+- [[searchpackage.json]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_219
+#graphify/concept #graphify/EXTRACTED #community/search/packagejson

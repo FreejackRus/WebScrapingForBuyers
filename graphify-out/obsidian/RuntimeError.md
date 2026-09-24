@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 121"
+community: "ozon_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_121
+  - community/ozon_connector/serverpy
 ---
 
 # RuntimeError
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[_SyncCallError]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_121
+#graphify/code #graphify/EXTRACTED #community/ozon_connector/serverpy

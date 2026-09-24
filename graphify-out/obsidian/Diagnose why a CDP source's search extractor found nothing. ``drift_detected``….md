@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/diagnose_drift.py"
 type: "rationale"
-community: "Community 213"
+community: "chrome_cdp.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_213
+  - community/chrome_cdppy
 ---
 
 # Diagnose why a CDP source's search extractor found nothing. ``drift_detected``…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[diagnose_drift.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_213
+#graphify/rationale #graphify/EXTRACTED #community/chrome_cdppy

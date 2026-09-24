@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_call_envelope.py"
 type: "code"
-community: "Community 31"
+community: "payload"
 location: "L46"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_31
+  - community/payload
 ---
 
 # wire()
 
 ## Connections
 - [[Point ``_call``'s client at a mock transport, counting the requests made.]] - `rationale_for` [EXTRACTED]
-- [[_client()_1]] - `indirect_call` [INFERRED]
+- [[_client()]] - `indirect_call` [INFERRED]
 - [[counting()]] - `contains` [EXTRACTED]
 - [[test_a_good_call_clears_the_backoff()]] - `calls` [EXTRACTED]
 - [[test_a_refusal_lengthens_the_gap()]] - `calls` [EXTRACTED]
@@ -32,4 +32,4 @@ tags:
 - [[test_non_json_body_is_parser_drift()]] - `calls` [EXTRACTED]
 - [[test_success_is_cached()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_31
+#graphify/code #graphify/EXTRACTED #community/payload

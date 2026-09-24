@@ -1,18 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 41"
+community: "MarketplaceSourcesResponse"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_41
+  - community/MarketplaceSourcesResponse
 ---
 
 # BaseModel
 
 ## Connections
-- [[MetaOutBase]] - `inherits` [EXTRACTED]
-- [[SelfCheckEntryBase]] - `inherits` [EXTRACTED]
-- [[SelfCheckResponseBase]] - `inherits` [EXTRACTED]
+- [[MarketplaceSourcesResponse]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_41
+#graphify/code #graphify/EXTRACTED #community/MarketplaceSourcesResponse

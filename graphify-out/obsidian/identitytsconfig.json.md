@@ -1,20 +1,20 @@
 ---
 source_file: "apps/identity/tsconfig.json"
 type: "code"
-community: "Community 218"
+community: "identity/tsconfig.json"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_218
+  - community/identity/tsconfigjson
 ---
 
 # identity/tsconfig.json
 
 ## Connections
-- [[dot-tsconfig.base.json]] - `extends` [EXTRACTED]
+- [[dot-tsconfig.base.json_4]] - `extends` [EXTRACTED]
 - [[compilerOptions_5]] - `contains` [EXTRACTED]
 - [[extends_4]] - `contains` [EXTRACTED]
 - [[include_4]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_218
+#graphify/code #graphify/EXTRACTED #community/identity/tsconfigjson

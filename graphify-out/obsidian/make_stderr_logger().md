@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/logging.py"
 type: "code"
-community: "Community 287"
+community: "log_event"
 location: "L11"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_287
+  - community/log_event
 ---
 
 # make_stderr_logger()
@@ -16,4 +16,4 @@ tags:
 - [[log_event()]] - `calls` [EXTRACTED]
 - [[logging.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_287
+#graphify/code #graphify/EXTRACTED #community/log_event

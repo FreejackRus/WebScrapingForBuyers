@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_resilience.py"
 type: "rationale"
-community: "Community 53"
+community: "test_resilience.py"
 location: "L198"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_53
+  - community/test_resiliencepy
 ---
 
 # The tile order that matters: badge first, price second.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_a_discount_badge_does_not_outrank_the_real_price()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_53
+#graphify/rationale #graphify/EXTRACTED #community/test_resiliencepy

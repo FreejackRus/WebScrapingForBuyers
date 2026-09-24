@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 137"
+community: "StdioProbe"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_137
+  - community/StdioProbe
 ---
 
 # Path
 
 ## Connections
-- [[_extract()_4]] - `references` [EXTRACTED]
+- [[measure()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_137
+#graphify/code #graphify/EXTRACTED #community/StdioProbe

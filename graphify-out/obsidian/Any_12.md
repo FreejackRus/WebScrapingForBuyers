@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 243"
+community: "decision_inspect"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_243
+  - community/decision_inspect
 ---
 
 # Any
 
 ## Connections
-- [[dot-as_dict()_1]] - `references` [EXTRACTED]
+- [[decision_inspect()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_243
+#graphify/code #graphify/EXTRACTED #community/decision_inspect

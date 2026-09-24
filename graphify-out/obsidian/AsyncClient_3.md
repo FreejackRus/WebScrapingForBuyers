@@ -1,18 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 17"
+community: "_client"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_17
+  - community/_client
 ---
 
 # AsyncClient
 
 ## Connections
-- [[build_client()]] - `references` [EXTRACTED]
-- [[get_text_budgeted()]] - `references` [EXTRACTED]
-- [[get_text_with_retries()]] - `references` [EXTRACTED]
+- [[_client()_1]] - `references` [EXTRACTED]
+- [[_post_json_budgeted()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_17
+#graphify/code #graphify/EXTRACTED #community/_client

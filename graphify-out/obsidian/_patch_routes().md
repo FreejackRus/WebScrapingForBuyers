@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py"
 type: "code"
-community: "Community 58"
+community: "_patch_routes"
 location: "L427"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_58
+  - community/_patch_routes
 ---
 
 # _patch_routes()
@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[Answer per endpoint, so address resolution and search are separable.]] - `rationale_for` [EXTRACTED]
 - [[fake_post()_7]] - `contains` [EXTRACTED]
-- [[fake_post()_2]] - `indirect_call` [INFERRED]
+- [[fake_post()_3]] - `indirect_call` [INFERRED]
 - [[megamarket-connectorteststest_server.py]] - `contains` [EXTRACTED]
 - [[test_a_failing_url_parse_does_not_block_the_search()]] - `calls` [EXTRACTED]
 - [[test_a_genuine_zero_result_stays_a_success()]] - `calls` [EXTRACTED]
@@ -33,4 +33,4 @@ tags:
 - [[test_the_zero_offers_error_hides_the_raw_address_id()]] - `calls` [EXTRACTED]
 - [[test_url_parse_supplies_the_assumed_collection()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_58
+#graphify/code #graphify/EXTRACTED #community/_patch_routes

@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
 type: "code"
-community: "Community 0"
-location: "L561"
+community: "mcp-marketplace-adapter.ts"
+location: "L617"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_0
+  - community/mcp-marketplace-adapterts
 ---
 
 # escapeRegExp()
@@ -15,4 +15,4 @@ tags:
 - [[mcp-marketplace-adapter.ts]] - `contains` [EXTRACTED]
 - [[tokenIn()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_0
+#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts

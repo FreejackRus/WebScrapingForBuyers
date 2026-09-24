@@ -1,17 +1,17 @@
 ---
-source_file: "packages/service-kit/package.json"
+source_file: "apps/search/package.json"
 type: "code"
-community: "Community 99"
-location: "L18"
+community: "search/package.json"
+location: "L22"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_99
+  - community/search/packagejson
 ---
 
 # @types/node
 
 ## Connections
-- [[devDependencies_6]] - `contains` [EXTRACTED]
+- [[devDependencies_2]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_99
+#graphify/code #graphify/EXTRACTED #community/search/packagejson

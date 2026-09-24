@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_dependency_parity.py"
 type: "code"
-community: "Community 100"
+community: "test_dependency_parity.py"
 location: "L180"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_100
+  - community/test_dependency_paritypy
 ---
 
 # test_every_connector_dependency_is_mounted_or_a_known_profile()
@@ -17,4 +17,4 @@ tags:
 - [[_mounted_distributions()]] - `calls` [EXTRACTED]
 - [[test_dependency_parity.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_100
+#graphify/code #graphify/EXTRACTED #community/test_dependency_paritypy

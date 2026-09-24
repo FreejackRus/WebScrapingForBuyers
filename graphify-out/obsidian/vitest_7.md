@@ -1,17 +1,17 @@
 ---
 source_file: "apps/identity/package.json"
-type: "code"
-community: "Community 251"
+type: "concept"
+community: "identity/package.json"
 location: "L23"
 tags:
-  - graphify/code
+  - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_251
+  - community/identity/packagejson
 ---
 
 # vitest
 
 ## Connections
-- [[devDependencies_4]] - `contains` [EXTRACTED]
+- [[identitypackage.json]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_251
+#graphify/concept #graphify/EXTRACTED #community/identity/packagejson

@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/features/analysis/index.ts"
 type: "code"
-community: "Community 92"
+community: "useSearchStore"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_92
+  - community/useSearchStore
 ---
 
 # features/analysis/index.ts
@@ -15,6 +15,5 @@ tags:
 - [[apply-chatindex.ts]] - `re_exports` [EXTRACTED]
 - [[applyChatResult()]] - `re_exports` [EXTRACTED]
 - [[chatuiindex.tsx]] - `imports_from` [EXTRACTED]
-- [[localSearchQuery()]] - `re_exports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_92
+#graphify/code #graphify/EXTRACTED #community/useSearchStore

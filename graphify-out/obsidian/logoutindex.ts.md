@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/features/user/logout/index.ts"
 type: "code"
-community: "Community 81"
+community: "useSearchStore"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_81
+  - community/useSearchStore
 ---
 
 # logout/index.ts
@@ -21,4 +21,4 @@ tags:
 - [[useSearchStore]] - `imports` [EXTRACTED]
 - [[useUserStore]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_81
+#graphify/code #graphify/EXTRACTED #community/useSearchStore

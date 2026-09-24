@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_pacing.py"
 type: "rationale"
-community: "Community 93"
+community: "test_pacing.py"
 location: "L34"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_93
+  - community/test_pacingpy
 ---
 
 # Deterministic by default: the jitter factor is pinned to 0. Jitter is real…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_pacer()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_93
+#graphify/rationale #graphify/EXTRACTED #community/test_pacingpy

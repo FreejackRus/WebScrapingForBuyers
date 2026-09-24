@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py"
 type: "code"
-community: "Community 302"
+community: "test_chrome_cdp.py"
 location: "L267"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_302
+  - community/test_chrome_cdppy
 ---
 
 # refuse()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_port_probe_reports_false_when_nothing_listens()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Community_302
+#graphify/code #graphify/INFERRED #community/test_chrome_cdppy

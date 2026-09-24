@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 151"
+community: "NavigationBudget"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_151
+  - community/NavigationBudget
 ---
 
 # Semaphore
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[dot-_host_semaphore()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_151
+#graphify/code #graphify/EXTRACTED #community/NavigationBudget

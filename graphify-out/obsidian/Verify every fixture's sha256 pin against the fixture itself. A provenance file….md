@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_provenance.py"
 type: "rationale"
-community: "Community 126"
+community: "pathlib"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_126
+  - community/pathlib
 ---
 
 # Verify every fixture's sha256 pin against the fixture itself. A provenance file…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[check_provenance.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_126
+#graphify/rationale #graphify/EXTRACTED #community/pathlib

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_contract.py"
 type: "code"
-community: "Community 147"
+community: "test_contract.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_147
+  - community/test_contractpy
 ---
 
 # test_contract.py
@@ -24,4 +24,4 @@ tags:
 - [[test_megamarket_pricelss_item_is_none_not_zero()]] - `contains` [EXTRACTED]
 - [[test_megamarket_reports_whether_an_items_container_existed()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_147
+#graphify/code #graphify/EXTRACTED #community/test_contractpy

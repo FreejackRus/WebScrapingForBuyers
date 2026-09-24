@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py"
 type: "rationale"
-community: "Community 24"
+community: "Ключевые изменения выпуска"
 location: "L390"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_24
+  - community/Ключевые_изменения_выпуска
 ---
 
 # Coerce a rating/review count, tolerating "24 086 отзывов"-style text. Parity…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_as_count()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_24
+#graphify/rationale #graphify/EXTRACTED #community/Ключевые_изменения_выпуска

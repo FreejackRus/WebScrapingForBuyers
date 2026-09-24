@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_ssr.py"
 type: "rationale"
-community: "Community 334"
+community: "test_search_rounds_float32_ratings"
 location: "L143"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_334
+  - community/test_search_rounds_float32_ratings
 ---
 
 # Yandex serialises ratings as float32: 4.8 arrives as 4.800000190734863.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_search_rounds_float32_ratings()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_334
+#graphify/rationale #graphify/EXTRACTED #community/test_search_rounds_float32_ratings

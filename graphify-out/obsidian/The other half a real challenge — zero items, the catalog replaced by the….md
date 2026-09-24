@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_anti_bot_challenge_dom.py"
 type: "rationale"
-community: "Community 163"
+community: "test_anti_bot_challenge_dom.py"
 location: "L93"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_163
+  - community/test_anti_bot_challenge_dompy
 ---
 
 # The other half: a real challenge — zero items, the catalog replaced by the…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_a_genuine_challenge_page_reads_as_blocked()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_163
+#graphify/rationale #graphify/EXTRACTED #community/test_anti_bot_challenge_dompy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
 type: "code"
-community: "Community 4"
+community: "json"
 location: "L108"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_4
+  - community/json
 ---
 
 # PermissionDeniedError
@@ -17,4 +17,4 @@ tags:
 - [[errors.py]] - `contains` [EXTRACTED]
 - [[mcp_core__init__.py]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_4
+#graphify/code #graphify/EXTRACTED #community/json

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_pacing.py"
 type: "code"
-community: "Community 85"
+community: "Pacer"
 location: "L249"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_85
+  - community/Pacer
 ---
 
 # test_an_error_delay_below_the_normal_gap_is_raised_to_it()
@@ -16,4 +16,4 @@ tags:
 - [[Pacer]] - `uses` [INFERRED]
 - [[test_pacing.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_85
+#graphify/code #graphify/EXTRACTED #community/Pacer

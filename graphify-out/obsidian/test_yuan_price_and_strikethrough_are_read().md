@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_card_extractor_dom.py"
 type: "code"
-community: "Community 148"
+community: "taobao-connector/tests/test_card_extractor_dom.py"
 location: "L49"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_148
+  - community/taobao-connector/tests/test_card_extractor_dompy
 ---
 
 # test_yuan_price_and_strikethrough_are_read()
 
 ## Connections
-- [[_extract()_5]] - `calls` [EXTRACTED]
+- [[_extract()_7]] - `calls` [EXTRACTED]
 - [[prices_from_tile()]] - `calls` [EXTRACTED]
 - [[taobao-connectorteststest_card_extractor_dom.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_148
+#graphify/code #graphify/EXTRACTED #community/taobao-connector/tests/test_card_extractor_dompy

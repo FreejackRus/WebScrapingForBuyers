@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/model_routing_eval.py"
 type: "code"
-community: "Community 91"
+community: "model_routing_eval.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_91
+  - community/model_routing_evalpy
 ---
 
 # model_routing_eval.py
@@ -32,4 +32,4 @@ tags:
 - [[typing]] - `imports_from` [EXTRACTED]
 - [[validate_bundle()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_91
+#graphify/code #graphify/EXTRACTED #community/model_routing_evalpy

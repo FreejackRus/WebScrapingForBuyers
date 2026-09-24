@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cdp_budget.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
-community: "Community 171"
-location: "L22"
+community: "_FakeResponse"
+location: "L537"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_171
+  - community/_FakeResponse
 ---
 
 # .__init__()
 
 ## Connections
-- [[Clock]] - `method` [EXTRACTED]
+- [[_FakeResponse]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_171
+#graphify/code #graphify/EXTRACTED #community/_FakeResponse

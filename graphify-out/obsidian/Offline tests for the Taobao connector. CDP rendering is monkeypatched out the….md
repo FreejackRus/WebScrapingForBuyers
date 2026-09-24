@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py"
 type: "rationale"
-community: "Community 106"
+community: "taobao-connector/tests/test_server.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_106
+  - community/taobao-connector/tests/test_serverpy
 ---
 
 # Offline tests for the Taobao connector. CDP rendering is monkeypatched out: the…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[taobao-connectorteststest_server.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_106
+#graphify/rationale #graphify/EXTRACTED #community/taobao-connector/tests/test_serverpy

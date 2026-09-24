@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/src/marketplace_connector/cli.py"
 type: "rationale"
-community: "Community 54"
+community: "json"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_54
+  - community/json
 ---
 
 # Operator CLI for the marketplace connectors. Two commands cover the two moments…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[cli.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_54
+#graphify/rationale #graphify/EXTRACTED #community/json

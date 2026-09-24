@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/server.py"
 type: "code"
-community: "Community 4"
+community: "TransportDownError"
 location: "L415"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_4
+  - community/TransportDownError
 ---
 
 # read()
@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[ParserDriftError]] - `calls` [EXTRACTED]
 - [[TransportDownError]] - `calls` [EXTRACTED]
-- [[_cdp_render()]] - `contains` [EXTRACTED]
+- [[_cdp_render()_1]] - `contains` [EXTRACTED]
 - [[raise_tool_error()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_4
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

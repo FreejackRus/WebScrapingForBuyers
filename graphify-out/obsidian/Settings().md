@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/pages/user/settings/ui/index.tsx"
 type: "code"
-community: "Community 135"
+community: "useUserStore"
 location: "L3"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_135
+  - community/useUserStore
 ---
 
 # Settings()
@@ -17,4 +17,4 @@ tags:
 - [[pagesusersettingsindex.ts]] - `re_exports` [EXTRACTED]
 - [[pagesusersettingsuiindex.tsx]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_135
+#graphify/code #graphify/EXTRACTED #community/useUserStore

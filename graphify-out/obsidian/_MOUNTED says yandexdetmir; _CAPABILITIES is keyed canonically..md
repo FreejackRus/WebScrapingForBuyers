@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_source_selection.py"
 type: "rationale"
-community: "Community 146"
+community: "test_source_selection.py"
 location: "L68"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_146
+  - community/test_source_selectionpy
 ---
 
 # _MOUNTED says "yandex"/"detmir"; _CAPABILITIES is keyed canonically.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_capabilities_flag_survives_the_naming_mismatch()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_146
+#graphify/rationale #graphify/EXTRACTED #community/test_source_selectionpy

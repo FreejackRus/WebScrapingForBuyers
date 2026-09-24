@@ -1,17 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 163"
+community: "aliexpress-connector/tests/test_shape_reference.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_163
+  - community/aliexpress-connector/tests/test_shape_referencepy
 ---
 
 # Path
 
 ## Connections
-- [[_extract()_7]] - `references` [EXTRACTED]
-- [[_grid_with_hidden_widget()]] - `references` [EXTRACTED]
+- [[_extract()_11]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_163
+#graphify/code #graphify/EXTRACTED #community/aliexpress-connector/tests/test_shape_referencepy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_shape_reference.py"
 type: "code"
-community: "Community 102"
+community: "taobao-connector/tests/test_shape_reference.py"
 location: "L132"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_102
+  - community/taobao-connector/tests/test_shape_referencepy
 ---
 
 # test_missing_required_families_sees_lost_wall_markers()
@@ -16,4 +16,4 @@ tags:
 - [[missing_required_families()_2]] - `calls` [EXTRACTED]
 - [[taobao-connectorteststest_shape_reference.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_102
+#graphify/code #graphify/EXTRACTED #community/taobao-connector/tests/test_shape_referencepy

@@ -1,17 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 45"
+community: "taobao_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_45
+  - community/taobao_card
 ---
 
 # le
 
 ## Connections
-- [[detmir_categories()]] - `references` [EXTRACTED]
-- [[detmir_category()]] - `references` [EXTRACTED]
+- [[taobao_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_45
+#graphify/code #graphify/EXTRACTED #community/taobao_card

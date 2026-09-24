@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
 type: "code"
-community: "Community 51"
+community: "detmir-connector/tests/test_server.py"
 location: "L108"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_51
+  - community/detmir-connector/tests/test_serverpy
 ---
 
 # stub_json()
@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[Route ``_fetch_json`` to canned payloads, matched by URL substring.]] - `rationale_for` [EXTRACTED]
 - [[detmir-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[fake_fetch()_15]] - `indirect_call` [INFERRED]
+- [[fake_fetch()_14]] - `indirect_call` [INFERRED]
 - [[test_card_falls_back_through_price_shapes()]] - `calls` [EXTRACTED]
 - [[test_card_never_reports_zero_as_a_price()]] - `calls` [EXTRACTED]
 - [[test_card_parses_price_rating_and_stock()]] - `calls` [EXTRACTED]
@@ -33,4 +33,4 @@ tags:
 - [[test_selfcheck_flags_drift_on_unparseable_payload()]] - `calls` [EXTRACTED]
 - [[test_selfcheck_reports_success_when_every_family_is_healthy()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_51
+#graphify/code #graphify/EXTRACTED #community/detmir-connector/tests/test_serverpy

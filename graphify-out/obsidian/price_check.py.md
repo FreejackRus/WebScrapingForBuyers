@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/examples/price_check.py"
 type: "code"
-community: "Community 55"
+community: "json"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_55
+  - community/json
 ---
 
 # price_check.py
@@ -15,7 +15,7 @@ tags:
 - [[Compare a product's price across every available marketplace. uv run python…]] - `rationale_for` [EXTRACTED]
 - [[asyncio_2]] - `imports` [EXTRACTED]
 - [[compare_connectorserver.py]] - `imports_from` [EXTRACTED]
-- [[main()_26]] - `contains` [EXTRACTED]
+- [[main()_8]] - `contains` [EXTRACTED]
 - [[sys]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_55
+#graphify/code #graphify/EXTRACTED #community/json

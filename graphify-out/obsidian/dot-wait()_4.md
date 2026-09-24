@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_process.py"
 type: "code"
-community: "Community 8"
-location: "L2114"
+community: "test_process.py"
+location: "L37"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_8
+  - community/test_processpy
 ---
 
 # .wait()
 
 ## Connections
-- [[_RecordingPacer]] - `method` [EXTRACTED]
+- [[_FakeProc]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_8
+#graphify/code #graphify/EXTRACTED #community/test_processpy

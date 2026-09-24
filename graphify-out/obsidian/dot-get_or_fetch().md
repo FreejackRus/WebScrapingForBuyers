@@ -1,21 +1,21 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py"
 type: "code"
-community: "Community 203"
+community: ".get"
 location: "L120"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_203
+  - community/get
 ---
 
 # .get_or_fetch()
 
 ## Connections
-- [[dot-get()_1]] - `calls` [EXTRACTED]
+- [[dot-get()]] - `calls` [EXTRACTED]
 - [[Hashable]] - `references` [EXTRACTED]
 - [[Return the cached value or await ``factory`` to produce it. A per-cache lock…]] - `rationale_for` [EXTRACTED]
 - [[T]] - `references` [EXTRACTED]
 - [[TTLCache]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_203
+#graphify/code #graphify/EXTRACTED #community/get

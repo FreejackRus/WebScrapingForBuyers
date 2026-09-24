@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "code"
-community: "Community 46"
+community: "wb_connector/server.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_46
+  - community/wb_connector/serverpy
 ---
 
 # wb_connector/server.py
@@ -27,11 +27,12 @@ tags:
 - [[WbSearchResponse]] - `imports` [EXTRACTED]
 - [[WbSelfCheckResponse]] - `imports` [EXTRACTED]
 - [[WbSellerResponse]] - `imports` [EXTRACTED]
-- [[Wildberries MCP connector. Public WB internal APIs (catalog parsing, not Seller…]] - `rationale_for` [EXTRACTED]
+- [[Wildberries MCP connector. Public WB catalog APIs (not Seller API). No…]] - `rationale_for` [EXTRACTED]
 - [[_PoliteGate]] - `contains` [EXTRACTED]
-- [[_aggregate_offer_warnings()_1]] - `contains` [EXTRACTED]
+- [[_aggregate_offer_warnings()]] - `contains` [EXTRACTED]
 - [[_basket_for_sku()]] - `contains` [EXTRACTED]
 - [[_budgeted_get_text()]] - `contains` [EXTRACTED]
+- [[_capture_from_catalog_response()]] - `contains` [EXTRACTED]
 - [[_card_item_dict()]] - `contains` [EXTRACTED]
 - [[_card_products()]] - `contains` [EXTRACTED]
 - [[_card_products_checked()]] - `contains` [EXTRACTED]
@@ -44,33 +45,42 @@ tags:
 - [[_fresh_get_text()]] - `contains` [EXTRACTED]
 - [[_impersonated_get_text()]] - `contains` [EXTRACTED]
 - [[_is_edge_wall()]] - `contains` [EXTRACTED]
+- [[_is_storefront_catalog_url()]] - `contains` [EXTRACTED]
 - [[_is_usable()]] - `contains` [EXTRACTED]
 - [[_kopeck_to_rub()]] - `contains` [EXTRACTED]
 - [[_menu_node()]] - `contains` [EXTRACTED]
 - [[_needs_impersonation()]] - `contains` [EXTRACTED]
 - [[_normalise_ws()]] - `contains` [EXTRACTED]
 - [[_page_fingerprint()]] - `contains` [EXTRACTED]
-- [[_polite_wait()_4]] - `contains` [EXTRACTED]
-- [[_proxy()_4]] - `contains` [EXTRACTED]
+- [[_polite_wait()_7]] - `contains` [EXTRACTED]
+- [[_products_from_search_payload()]] - `contains` [EXTRACTED]
+- [[_proxy()_6]] - `contains` [EXTRACTED]
 - [[_recover_search_ids()]] - `contains` [EXTRACTED]
 - [[_refusal_hint()]] - `contains` [EXTRACTED]
 - [[_require_object()]] - `contains` [EXTRACTED]
 - [[_safe_get_text()]] - `contains` [EXTRACTED]
+- [[_search_transport()]] - `contains` [EXTRACTED]
+- [[_search_via_http_v9()]] - `contains` [EXTRACTED]
 - [[_search_via_search_goods()]] - `contains` [EXTRACTED]
+- [[_search_via_storefront()]] - `contains` [EXTRACTED]
 - [[_single_product_color()]] - `contains` [EXTRACTED]
 - [[_static_menu_urls()]] - `contains` [EXTRACTED]
 - [[_static_seller_urls()]] - `contains` [EXTRACTED]
+- [[_storefront_search_url()]] - `contains` [EXTRACTED]
+- [[_verify_storefront_capture()]] - `contains` [EXTRACTED]
 - [[_wb_client()]] - `contains` [EXTRACTED]
 - [[_wb_review_date_ts()]] - `contains` [EXTRACTED]
 - [[asyncio_2]] - `imports` [EXTRACTED]
 - [[cache.py]] - `imports_from` [EXTRACTED]
+- [[cdp_budget.py]] - `imports_from` [EXTRACTED]
+- [[chrome_cdp.py]] - `imports_from` [EXTRACTED]
 - [[curl_cffi]] - `imports_from` [EXTRACTED]
 - [[datetime]] - `imports` [EXTRACTED]
 - [[errors.py]] - `imports_from` [EXTRACTED]
 - [[fastmcp_3]] - `imports_from` [EXTRACTED]
 - [[fastmcp_exceptions]] - `imports_from` [EXTRACTED]
 - [[fastmcp_server_middleware_error_handling]] - `imports_from` [EXTRACTED]
-- [[get_settings()_8]] - `imports` [EXTRACTED]
+- [[get_settings()_12]] - `imports` [EXTRACTED]
 - [[httpx]] - `imports` [EXTRACTED]
 - [[json]] - `imports` [EXTRACTED]
 - [[logging.py]] - `imports_from` [EXTRACTED]
@@ -96,8 +106,8 @@ tags:
 - [[wb_questions()]] - `contains` [EXTRACTED]
 - [[wb_reviews()]] - `contains` [EXTRACTED]
 - [[wb_root_info()]] - `contains` [EXTRACTED]
-- [[wb_search()_1]] - `contains` [EXTRACTED]
+- [[wb_search()]] - `contains` [EXTRACTED]
 - [[wb_selfcheck()]] - `contains` [EXTRACTED]
 - [[wb_seller()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_46
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

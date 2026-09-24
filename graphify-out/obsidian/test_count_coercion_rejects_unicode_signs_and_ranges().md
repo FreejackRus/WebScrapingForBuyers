@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
-community: "Community 16"
+community: "compare-connector/tests/test_server.py"
 location: "L661"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_16
+  - community/compare-connector/tests/test_serverpy
 ---
 
 # test_count_coercion_rejects_unicode_signs_and_ranges()
@@ -15,4 +15,4 @@ tags:
 - [[The sign guard must cover the unicode minusen-dashem-dash, not only ASCII…]] - `rationale_for` [EXTRACTED]
 - [[compare-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_16
+#graphify/code #graphify/EXTRACTED #community/compare-connector/tests/test_serverpy

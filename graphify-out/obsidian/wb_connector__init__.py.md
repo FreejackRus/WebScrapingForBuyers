@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/__init__.py"
 type: "code"
-community: "Community 83"
+community: "pytest"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_83
+  - community/pytest
 ---
 
 # wb_connector/__init__.py
@@ -18,7 +18,8 @@ tags:
 - [[test_identity_verification.py]] - `imports_from` [EXTRACTED]
 - [[test_pagination_wrap.py]] - `imports_from` [EXTRACTED]
 - [[test_search_offer_integrity.py]] - `imports_from` [EXTRACTED]
+- [[test_storefront_search.py]] - `imports_from` [EXTRACTED]
 - [[wb-connectorteststest_parser_live.py]] - `imports_from` [EXTRACTED]
 - [[wb-connectorteststest_shape_reference.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_83
+#graphify/code #graphify/EXTRACTED #community/pytest

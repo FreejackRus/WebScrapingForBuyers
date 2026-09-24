@@ -1,12 +1,12 @@
 ---
 source_file: "apps/gateway/src/present.ts"
 type: "code"
-community: "Community 70"
+community: "gateway/src/app.ts"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_70
+  - community/gateway/src/appts
 ---
 
 # present.ts
@@ -22,4 +22,4 @@ tags:
 - [[presentSnapshot()]] - `contains` [EXTRACTED]
 - [[presentSource()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_70
+#graphify/code #graphify/EXTRACTED #community/gateway/src/appts

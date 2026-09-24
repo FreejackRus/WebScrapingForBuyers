@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_search_login_wall_live_dom.py"
 type: "code"
-community: "Community 105"
+community: "compare-connector/tests/test_browser_handoff.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_105
+  - community/compare-connector/tests/test_browser_handoffpy
 ---
 
 # test_search_login_wall_live_dom.py
@@ -29,4 +29,4 @@ tags:
 - [[test_the_fixture_carries_no_session_data()]] - `contains` [EXTRACTED]
 - [[test_the_title_less_wall_is_classified_as_a_login_wall()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_105
+#graphify/code #graphify/EXTRACTED #community/compare-connector/tests/test_browser_handoffpy

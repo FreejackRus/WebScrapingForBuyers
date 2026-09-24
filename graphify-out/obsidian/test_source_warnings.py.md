@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_source_warnings.py"
 type: "code"
-community: "Community 136"
+community: "wb_connector/server.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_136
+  - community/wb_connector/serverpy
 ---
 
 # test_source_warnings.py
@@ -25,4 +25,4 @@ tags:
 - [[types_8]] - `imports_from` [EXTRACTED]
 - [[wb_connectormodels_output.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_136
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

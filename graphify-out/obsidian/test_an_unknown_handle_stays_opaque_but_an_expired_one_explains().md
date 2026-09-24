@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_handoff_reporting.py"
 type: "code"
-community: "Community 87"
+community: "test_handoff_reporting.py"
 location: "L170"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_87
+  - community/test_handoff_reportingpy
 ---
 
 # test_an_unknown_handle_stays_opaque_but_an_expired_one_explains()
@@ -18,4 +18,4 @@ tags:
 - [[call()_2]] - `calls` [EXTRACTED]
 - [[test_handoff_reporting.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_87
+#graphify/code #graphify/EXTRACTED #community/test_handoff_reportingpy

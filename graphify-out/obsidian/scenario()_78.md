@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
 type: "code"
-community: "Community 285"
-location: "L122"
+community: "pytest"
+location: "L141"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_285
+  - community/pytest
 ---
 
 # scenario()
 
 ## Connections
-- [[local()]] - `indirect_call` [INFERRED]
-- [[test_run_sync_bounded_rejects_local_callables()]] - `contains` [EXTRACTED]
+- [[empty_storefront()]] - `indirect_call` [INFERRED]
+- [[test_wb_search_storefront_empty_products_is_no_results()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_285
+#graphify/code #graphify/EXTRACTED #community/pytest

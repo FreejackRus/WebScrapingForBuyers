@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "Community 100"
+community: "pathlib"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_100
+  - community/pathlib
 ---
 
 # tomllib
@@ -22,4 +22,4 @@ tags:
 - [[test_skills_parity.py]] - `imports` [EXTRACTED]
 - [[yandex-connectorteststest_server.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_100
+#graphify/concept #graphify/EXTRACTED #community/pathlib

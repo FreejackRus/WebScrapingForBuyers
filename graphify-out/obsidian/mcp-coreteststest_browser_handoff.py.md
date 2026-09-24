@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py"
 type: "code"
-community: "Community 6"
+community: "mcp-core/tests/test_browser_handoff.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_6
+  - community/mcp-core/tests/test_browser_handoffpy
 ---
 
 # mcp-core/tests/test_browser_handoff.py
@@ -60,4 +60,4 @@ tags:
 - [[unittest_mock]] - `imports_from` [EXTRACTED]
 - [[weakref]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_6
+#graphify/code #graphify/EXTRACTED #community/mcp-core/tests/test_browser_handoffpy

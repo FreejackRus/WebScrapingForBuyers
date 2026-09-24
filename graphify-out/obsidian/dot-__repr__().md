@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/vision_policy.py"
 type: "code"
-community: "Community 237"
+community: "resolve_image_delivery"
 location: "L51"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_237
+  - community/resolve_image_delivery
 ---
 
 # .__repr__()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[ImageDelivery]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_237
+#graphify/code #graphify/EXTRACTED #community/resolve_image_delivery

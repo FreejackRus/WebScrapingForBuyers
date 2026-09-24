@@ -1,12 +1,12 @@
 ---
 source_file: "apps/analysis/src/analyze.test.ts"
 type: "code"
-community: "Community 36"
-location: "L54"
+community: "analyze.test.ts"
+location: "L58"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_36
+  - community/analyzetestts
 ---
 
 # citilinkReal
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[analyze.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_36
+#graphify/code #graphify/EXTRACTED #community/analyzetestts

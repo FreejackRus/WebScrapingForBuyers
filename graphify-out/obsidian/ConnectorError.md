@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
 type: "code"
-community: "Community 4"
+community: "json"
 location: "L31"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_4
+  - community/json
 ---
 
 # ConnectorError
 
 ## Connections
-- [[dot-__init__()_27]] - `method` [EXTRACTED]
+- [[dot-__init__()_37]] - `method` [EXTRACTED]
 - [[dot-to_dict()_1]] - `method` [EXTRACTED]
 - [[AuthMissingError]] - `inherits` [EXTRACTED]
 - [[BadRequestError]] - `inherits` [EXTRACTED]
@@ -32,4 +32,4 @@ tags:
 - [[mcp_core__init__.py]] - `imports` [EXTRACTED]
 - [[raise_tool_error()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_4
+#graphify/code #graphify/EXTRACTED #community/json

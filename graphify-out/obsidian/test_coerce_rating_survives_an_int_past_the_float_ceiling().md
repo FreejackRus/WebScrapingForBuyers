@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_resilience.py"
 type: "code"
-community: "Community 66"
+community: "Any"
 location: "L57"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_66
+  - community/Any
 ---
 
 # test_coerce_rating_survives_an_int_past_the_float_ceiling()
@@ -16,4 +16,4 @@ tags:
 - [[coerce_rating()]] - `calls` [EXTRACTED]
 - [[test_resilience.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_66
+#graphify/code #graphify/EXTRACTED #community/Any

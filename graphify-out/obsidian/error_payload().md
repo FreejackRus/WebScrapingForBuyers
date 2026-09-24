@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
 type: "code"
-community: "Community 128"
+community: "error_payload"
 location: "L122"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_128
+  - community/error_payload
 ---
 
 # error_payload()
@@ -20,4 +20,4 @@ tags:
 - [[test_categories_rejects_non_numeric_parent()]] - `calls` [EXTRACTED]
 - [[test_category_rejects_non_slug_aliases()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_128
+#graphify/code #graphify/EXTRACTED #community/error_payload

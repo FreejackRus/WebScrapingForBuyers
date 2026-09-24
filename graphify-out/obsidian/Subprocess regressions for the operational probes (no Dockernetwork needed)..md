@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/test_stdio_probe.py"
 type: "rationale"
-community: "Community 79"
+community: "test_stdio_probe.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_79
+  - community/test_stdio_probepy
 ---
 
 # Subprocess regressions for the operational probes (no Docker/network needed).
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_stdio_probe.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_79
+#graphify/rationale #graphify/EXTRACTED #community/test_stdio_probepy

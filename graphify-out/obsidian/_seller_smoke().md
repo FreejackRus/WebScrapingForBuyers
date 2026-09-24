@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/server.py"
 type: "code"
-community: "Community 10"
+community: "avito_seller"
 location: "L767"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_10
+  - community/avito_seller
 ---
 
 # _seller_smoke()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_avito_selfcheck_impl()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Community_10
+#graphify/code #graphify/INFERRED #community/avito_seller

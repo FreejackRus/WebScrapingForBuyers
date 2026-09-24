@@ -1,12 +1,12 @@
 ---
 source_file: "deploy/chrome/entrypoint.sh"
 type: "code"
-community: "Community 274"
+community: "entrypoint.sh"
 location: "L4"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_274
+  - community/entrypointsh
 ---
 
 # DISPLAY
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[entrypoint.sh]] - `defines` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_274
+#graphify/code #graphify/EXTRACTED #community/entrypointsh

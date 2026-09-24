@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_process.py"
 type: "code"
-community: "Community 7"
-location: "L489"
+community: "test_process.py"
+location: "L24"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_7
+  - community/test_processpy
 ---
 
 # .__init__()
 
 ## Connections
-- [[dot-__init__()_37]] - `calls` [EXTRACTED]
-- [[NavBlocked]] - `method` [EXTRACTED]
+- [[_FakeProc]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_7
+#graphify/code #graphify/EXTRACTED #community/test_processpy

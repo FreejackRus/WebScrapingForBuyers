@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/server.py"
 type: "code"
-community: "Community 4"
+community: "TransportDownError"
 location: "L131"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_4
+  - community/TransportDownError
 ---
 
 # fetch()
@@ -21,4 +21,4 @@ tags:
 - [[get_text_with_retries()]] - `calls` [INFERRED]
 - [[raise_tool_error()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_4
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

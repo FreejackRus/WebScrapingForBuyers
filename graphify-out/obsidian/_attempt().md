@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/server.py"
 type: "code"
-community: "Community 119"
-location: "L153"
+community: "avito_seller"
+location: "L170"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_119
+  - community/avito_seller
 ---
 
 # _attempt()
 
 ## Connections
-- [[_cdp_post_json()]] - `contains` [EXTRACTED]
-- [[_polite_wait()_2]] - `calls` [EXTRACTED]
-- [[open_page()_5]] - `calls` [EXTRACTED]
+- [[_cdp_fetch()]] - `contains` [EXTRACTED]
+- [[open_page()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_119
+#graphify/code #graphify/EXTRACTED #community/avito_seller

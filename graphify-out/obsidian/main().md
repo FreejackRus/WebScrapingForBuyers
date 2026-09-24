@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/examples/avito_search.py"
 type: "code"
-community: "Community 10"
+community: "avito_seller"
 location: "L18"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_10
+  - community/avito_seller
 ---
 
 # main()
@@ -16,4 +16,4 @@ tags:
 - [[avito_search.py]] - `contains` [EXTRACTED]
 - [[avito_seller()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_10
+#graphify/code #graphify/EXTRACTED #community/avito_seller

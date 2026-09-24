@@ -1,33 +1,33 @@
 ---
 source_file: "apps/search/package.json"
 type: "code"
-community: "Community 134"
+community: "search/package.json"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_134
+  - community/search/packagejson
 ---
 
 # search/package.json
 
 ## Connections
-- [[@modelcontextprotocolsdk]] - `imports` [EXTRACTED]
-- [[@peremenacontracts_2]] - `imports` [EXTRACTED]
-- [[@peremenaservice-kit_3]] - `imports` [EXTRACTED]
+- [[@modelcontextprotocolsdk_1]] - `imports` [EXTRACTED]
+- [[@peremenacontracts_5]] - `imports` [EXTRACTED]
+- [[@peremenaservice-kit_5]] - `imports` [EXTRACTED]
 - [[@typesnode_5]] - `imports` [EXTRACTED]
-- [[apify-client]] - `imports` [EXTRACTED]
-- [[dependencies_4]] - `contains` [EXTRACTED]
+- [[apify-client_1]] - `imports` [EXTRACTED]
+- [[dependencies_2]] - `contains` [EXTRACTED]
 - [[devDependencies_2]] - `contains` [EXTRACTED]
-- [[exceljs]] - `imports` [EXTRACTED]
-- [[fastify_1]] - `imports` [EXTRACTED]
+- [[exceljs_1]] - `imports` [EXTRACTED]
+- [[fastify_5]] - `imports` [EXTRACTED]
 - [[name_3]] - `contains` [EXTRACTED]
 - [[private_2]] - `contains` [EXTRACTED]
-- [[scripts_5]] - `contains` [EXTRACTED]
+- [[scripts_2]] - `contains` [EXTRACTED]
 - [[tsx_5]] - `imports` [EXTRACTED]
 - [[type_2]] - `contains` [EXTRACTED]
-- [[typescript_4]] - `imports` [EXTRACTED]
+- [[typescript_5]] - `imports` [EXTRACTED]
 - [[version_3]] - `contains` [EXTRACTED]
 - [[vitest_5]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_134
+#graphify/code #graphify/EXTRACTED #community/search/packagejson

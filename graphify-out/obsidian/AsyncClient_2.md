@@ -1,19 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 131"
+community: "transport/__init__.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_131
+  - community/transport/__init__py
 ---
 
 # AsyncClient
 
 ## Connections
-- [[_budgeted_get_text()]] - `references` [EXTRACTED]
-- [[_fresh_get_text()]] - `references` [EXTRACTED]
-- [[_safe_get_text()]] - `references` [EXTRACTED]
-- [[_wb_client()]] - `references` [EXTRACTED]
+- [[build_client()]] - `references` [EXTRACTED]
+- [[get_text_budgeted()]] - `references` [EXTRACTED]
+- [[get_text_with_retries()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_131
+#graphify/code #graphify/EXTRACTED #community/transport/__init__py

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
-community: "Community 10"
+community: "models.py"
 location: "L855"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_10
+  - community/modelspy
 ---
 
 # avito_search()
@@ -16,4 +16,4 @@ tags:
 - [[_FakeResponse]] - `calls` [EXTRACTED]
 - [[test_avito_adapter_maps_classified_fields()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_10
+#graphify/code #graphify/EXTRACTED #community/modelspy

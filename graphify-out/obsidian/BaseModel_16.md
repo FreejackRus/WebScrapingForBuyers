@@ -1,19 +1,20 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 49"
+community: "detmir_connector/models_output.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_49
+  - community/detmir_connector/models_outputpy
 ---
 
 # BaseModel
 
 ## Connections
-- [[YandexCardResponse]] - `inherits` [EXTRACTED]
-- [[YandexProduct]] - `inherits` [EXTRACTED]
-- [[YandexReview]] - `inherits` [EXTRACTED]
-- [[YandexSearchResponse]] - `inherits` [EXTRACTED]
+- [[DetmirCardResponse]] - `inherits` [EXTRACTED]
+- [[DetmirCategoriesResponse]] - `inherits` [EXTRACTED]
+- [[DetmirCategory]] - `inherits` [EXTRACTED]
+- [[DetmirListResponse]] - `inherits` [EXTRACTED]
+- [[DetmirProduct]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_49
+#graphify/code #graphify/EXTRACTED #community/detmir_connector/models_outputpy

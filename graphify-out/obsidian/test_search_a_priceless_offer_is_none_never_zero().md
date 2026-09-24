@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py"
 type: "code"
-community: "Community 12"
+community: "cian-connector/tests/test_server.py"
 location: "L224"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_12
+  - community/cian-connector/tests/test_serverpy
 ---
 
 # test_search_a_priceless_offer_is_none_never_zero()
@@ -17,4 +17,4 @@ tags:
 - [[_patch_search()]] - `calls` [EXTRACTED]
 - [[cian-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_12
+#graphify/code #graphify/EXTRACTED #community/cian-connector/tests/test_serverpy

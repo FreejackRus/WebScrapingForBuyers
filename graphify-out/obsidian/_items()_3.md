@@ -1,24 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_search_extractor_dom.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_search_extractor_live_dom.py"
 type: "code"
-community: "Community 72"
-location: "L62"
+community: "run_extractor"
+location: "L63"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_72
+  - community/run_extractor
 ---
 
 # _items()
 
 ## Connections
-- [[_extract()_12]] - `calls` [EXTRACTED]
-- [[citilink-connectorteststest_search_extractor_dom.py]] - `contains` [EXTRACTED]
-- [[test_badges_bonuses_and_delivery_counts_are_never_prices()]] - `calls` [EXTRACTED]
-- [[test_exact_meta_price_attribute_is_preferred()]] - `calls` [EXTRACTED]
-- [[test_price_is_found_when_the_currency_glyph_is_a_separate_element()]] - `calls` [EXTRACTED]
-- [[test_search_items_carry_the_wire_shape()]] - `calls` [EXTRACTED]
-- [[test_strikethrough_before_the_current_price_is_read_as_the_old_price()]] - `calls` [EXTRACTED]
-- [[test_title_comes_from_a_text_bearing_anchor_not_the_empty_overlay()]] - `calls` [EXTRACTED]
+- [[JsdomUnavailable]] - `uses` [INFERRED]
+- [[run_extractor()]] - `calls` [EXTRACTED]
+- [[taobao-connectorteststest_search_extractor_live_dom.py]] - `contains` [EXTRACTED]
+- [[test_live_items_carry_shop_sales_location()]] - `calls` [EXTRACTED]
+- [[test_live_prices_survive_the_split_price_layout()]] - `calls` [EXTRACTED]
+- [[test_live_titles_are_the_product_name_not_the_whole_tile()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_72
+#graphify/code #graphify/EXTRACTED #community/run_extractor

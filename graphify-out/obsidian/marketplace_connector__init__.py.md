@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/src/marketplace_connector/__init__.py"
 type: "code"
-community: "Community 199"
+community: "marketplace_connector/__init__.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_199
+  - community/marketplace_connector/__init__py
 ---
 
 # marketplace_connector/__init__.py
@@ -20,4 +20,4 @@ tags:
 - [[test_tool_docstring_sections.py]] - `imports_from` [EXTRACTED]
 - [[test_wire_frugality.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_199
+#graphify/code #graphify/EXTRACTED #community/marketplace_connector/__init__py

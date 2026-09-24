@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "Community 14"
+community: "json"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_14
+  - community/json
 ---
 
 # time
@@ -27,4 +27,4 @@ tags:
 - [[test_helpers.py]] - `imports` [EXTRACTED]
 - [[test_stdio_probe.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_14
+#graphify/concept #graphify/EXTRACTED #community/json

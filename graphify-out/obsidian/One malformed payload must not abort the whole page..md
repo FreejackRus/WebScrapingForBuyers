@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_ssr.py"
 type: "rationale"
-community: "Community 350"
+community: "test_zone_snippets_skip_unparseable_payloads"
 location: "L519"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_350
+  - community/test_zone_snippets_skip_unparseable_payloads
 ---
 
 # One malformed payload must not abort the whole page.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_zone_snippets_skip_unparseable_payloads()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_350
+#graphify/rationale #graphify/EXTRACTED #community/test_zone_snippets_skip_unparseable_payloads

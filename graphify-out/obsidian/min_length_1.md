@@ -1,17 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 154"
+community: "dns_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_154
+  - community/dns_card
 ---
 
 # min_length
 
 ## Connections
-- [[megamarket_card()]] - `references` [EXTRACTED]
-- [[megamarket_search()]] - `references` [EXTRACTED]
+- [[dns_card()]] - `references` [EXTRACTED]
+- [[dns_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_154
+#graphify/code #graphify/EXTRACTED #community/dns_card

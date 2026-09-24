@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_model_routing_eval.py"
 type: "code"
-community: "Community 127"
+community: "test_model_routing_eval.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_127
+  - community/test_model_routing_evalpy
 ---
 
 # test_model_routing_eval.py
@@ -30,4 +30,4 @@ tags:
 - [[test_wrapper_form_and_unknown_ids_are_handled()]] - `contains` [EXTRACTED]
 - [[typing]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_127
+#graphify/code #graphify/EXTRACTED #community/test_model_routing_evalpy

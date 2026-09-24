@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/ssr.py"
 type: "code"
-community: "Community 5"
+community: "ssr.py"
 location: "L842"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_5
+  - community/ssrpy
 ---
 
 # parse_card()
 
 ## Connections
-- [[Any_20]] - `references` [EXTRACTED]
+- [[Any_24]] - `references` [EXTRACTED]
 - [[Parse a product page into a card, its rating breakdown and its reviews. Three…]] - `rationale_for` [EXTRACTED]
 - [[_as_dict()_1]] - `calls` [EXTRACTED]
 - [[_empty_product_shell()]] - `calls` [EXTRACTED]
@@ -30,4 +30,4 @@ tags:
 - [[ssr.py]] - `contains` [EXTRACTED]
 - [[yandex_card()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_5
+#graphify/code #graphify/EXTRACTED #community/ssrpy

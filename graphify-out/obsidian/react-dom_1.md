@@ -1,18 +1,17 @@
 ---
 source_file: "apps/web/package.json"
-type: "concept"
-community: "Community 64"
-location: "L16"
+type: "code"
+community: "web/package.json"
+location: "L17"
 tags:
-  - graphify/concept
+  - graphify/code
   - graphify/EXTRACTED
-  - community/Community_64
+  - community/web/packagejson
 ---
 
 # react-dom
 
 ## Connections
-- [[main.tsx]] - `imports_from` [EXTRACTED]
-- [[webpackage.json]] - `imports` [EXTRACTED]
+- [[dependencies_5]] - `contains` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_64
+#graphify/code #graphify/EXTRACTED #community/web/packagejson

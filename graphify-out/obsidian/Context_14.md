@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 77"
+community: "yandex_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_77
+  - community/yandex_card
 ---
 
 # Context
@@ -16,4 +16,4 @@ tags:
 - [[yandex_search()_1]] - `references` [EXTRACTED]
 - [[yandex_selfcheck()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_77
+#graphify/code #graphify/EXTRACTED #community/yandex_card

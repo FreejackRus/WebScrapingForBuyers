@@ -1,17 +1,20 @@
 ---
-source_file: "apps/search/src/app.test.ts"
+source_file: "apps/web/src/entities/search/store/merge.ts"
 type: "code"
-community: "Community 9"
-location: "L8"
+community: "useSearchStore"
+location: "L9"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_9
+  - community/useSearchStore
 ---
 
 # mergeSnapshotOffers()
 
 ## Connections
-- [[app.test.ts]] - `contains` [EXTRACTED]
+- [[merge.ts]] - `contains` [EXTRACTED]
+- [[searchstoreindex.ts]] - `re_exports` [EXTRACTED]
+- [[sourceRank()]] - `calls` [EXTRACTED]
+- [[useSearchStore]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_9
+#graphify/code #graphify/EXTRACTED #community/useSearchStore

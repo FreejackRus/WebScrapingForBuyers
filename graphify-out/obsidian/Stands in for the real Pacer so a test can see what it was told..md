@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "rationale"
-community: "Community 8"
+community: "_RecordingPacer"
 location: "L2099"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_8
+  - community/_RecordingPacer
 ---
 
 # Stands in for the real Pacer so a test can see what it was told.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_RecordingPacer]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_8
+#graphify/rationale #graphify/EXTRACTED #community/_RecordingPacer

@@ -1,20 +1,20 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 156"
-location: "L328"
+community: "_tool_error_payload"
+location: "L1605"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_156
+  - community/_tool_error_payload
 ---
 
 # scenario()
 
 ## Connections
+- [[_patch_questions()]] - `calls` [EXTRACTED]
 - [[_tool_error_payload()_1]] - `calls` [EXTRACTED]
-- [[fake_safe_get_text()_4]] - `indirect_call` [INFERRED]
-- [[no_wait()_4]] - `indirect_call` [INFERRED]
-- [[test_wb_card_rejects_non_object_json()]] - `contains` [EXTRACTED]
+- [[responder()_8]] - `indirect_call` [INFERRED]
+- [[test_questions_surfaces_rate_limiting()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_156
+#graphify/code #graphify/EXTRACTED #community/_tool_error_payload

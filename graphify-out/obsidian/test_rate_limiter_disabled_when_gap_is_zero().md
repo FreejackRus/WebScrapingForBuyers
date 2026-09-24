@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_http_tier.py"
 type: "code"
-community: "Community 17"
+community: "test_http_tier.py"
 location: "L174"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_17
+  - community/test_http_tierpy
 ---
 
 # test_rate_limiter_disabled_when_gap_is_zero()
@@ -16,4 +16,4 @@ tags:
 - [[fail_sleep()]] - `indirect_call` [INFERRED]
 - [[test_http_tier.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/Community_17
+#graphify/code #graphify/INFERRED #community/test_http_tierpy

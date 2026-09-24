@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "Community 36"
+community: "packages_contracts_dist_index"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_36
+  - community/packages_contracts_dist_index
 ---
 
 # packages_contracts_dist_index_searchsnapshot
@@ -23,5 +23,6 @@ tags:
 - [[search-service.ts]] - `imports` [EXTRACTED]
 - [[searchapiindex.ts]] - `imports` [EXTRACTED]
 - [[searchstoreindex.ts]] - `imports` [EXTRACTED]
+- [[workspaceuiindex.test.tsx]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_36
+#graphify/concept #graphify/EXTRACTED #community/packages_contracts_dist_index

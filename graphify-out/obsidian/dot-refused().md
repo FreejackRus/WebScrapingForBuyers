@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/cdp_budget.py"
 type: "code"
-community: "Community 129"
+community: "Slot"
 location: "L106"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_129
+  - community/Slot
 ---
 
 # .refused()
@@ -15,4 +15,4 @@ tags:
 - [[Slot]] - `method` [EXTRACTED]
 - [[The navigation was refused (4xx5xxblockauth) as reported by the caller. A…]] - `rationale_for` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_129
+#graphify/code #graphify/EXTRACTED #community/Slot

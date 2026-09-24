@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/server.py"
 type: "code"
-community: "Community 184"
+community: "test_contract.py"
 location: "L564"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_184
+  - community/test_contractpy
 ---
 
 # pick()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_parse_items()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_184
+#graphify/code #graphify/EXTRACTED #community/test_contractpy

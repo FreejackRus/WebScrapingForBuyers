@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/demo-source-adapter.ts"
 type: "code"
-community: "Community 9"
-location: "L61"
+community: "packages_contracts_dist_index"
+location: "L66"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_9
+  - community/packages_contracts_dist_index
 ---
 
 # createDemoSources()
@@ -17,4 +17,4 @@ tags:
 - [[demo-source-adapter.ts]] - `contains` [EXTRACTED]
 - [[searchsrcapp.ts]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_9
+#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index

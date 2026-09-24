@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/shared/api/index.ts"
 type: "code"
-community: "Community 124"
+community: "useAnalysisStore"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_124
+  - community/useAnalysisStore
 ---
 
 # shared/api/index.ts
@@ -20,4 +20,4 @@ tags:
 - [[searchapiindex.ts]] - `imports_from` [EXTRACTED]
 - [[userapiindex.ts]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_124
+#graphify/code #graphify/EXTRACTED #community/useAnalysisStore

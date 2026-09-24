@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_call_envelope.py"
 type: "code"
-community: "Community 31"
+community: "test_call_envelope.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_31
+  - community/test_call_envelopepy
 ---
 
 # test_call_envelope.py
@@ -41,4 +41,4 @@ tags:
 - [[token_present()]] - `contains` [EXTRACTED]
 - [[wire()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_31
+#graphify/code #graphify/EXTRACTED #community/test_call_envelopepy

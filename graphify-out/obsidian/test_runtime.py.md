@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py"
 type: "code"
-community: "Community 26"
+community: "test_runtime.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_26
+  - community/test_runtimepy
 ---
 
 # test_runtime.py
@@ -39,4 +39,4 @@ tags:
 - [[test_stdio_ignores_a_bad_http_port()]] - `contains` [EXTRACTED]
 - [[test_transport_is_case_insensitive_and_trimmed()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_26
+#graphify/code #graphify/EXTRACTED #community/test_runtimepy

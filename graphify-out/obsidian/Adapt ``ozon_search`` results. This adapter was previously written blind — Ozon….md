@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py"
 type: "rationale"
-community: "Community 24"
+community: "Ключевые изменения выпуска"
 location: "L533"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_24
+  - community/Ключевые_изменения_выпуска
 ---
 
 # Adapt ``ozon_search`` results. This adapter was previously written blind — Ozon…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_search_ozon()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_24
+#graphify/rationale #graphify/EXTRACTED #community/Ключевые_изменения_выпуска

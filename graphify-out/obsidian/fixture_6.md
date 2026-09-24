@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 15"
+community: "cian-connector/tests/test_server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_15
+  - community/cian-connector/tests/test_serverpy
 ---
 
 # fixture
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[_no_cache()_3]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_15
+#graphify/code #graphify/EXTRACTED #community/cian-connector/tests/test_serverpy

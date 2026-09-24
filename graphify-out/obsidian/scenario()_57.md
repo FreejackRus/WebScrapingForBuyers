@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "Community 248"
-location: "L144"
+community: "test_ozon_selfcheck_includes_runtime_identity"
+location: "L606"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_248
+  - community/test_ozon_selfcheck_includes_runtime_identity
 ---
 
 # scenario()
 
 ## Connections
-- [[test_safe_get_text_does_not_retry_after_wall_timeout()]] - `contains` [EXTRACTED]
+- [[fake_fetch()]] - `indirect_call` [INFERRED]
+- [[test_reviews_marks_partial_when_later_page_fails()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_248
+#graphify/code #graphify/EXTRACTED #community/test_ozon_selfcheck_includes_runtime_identity

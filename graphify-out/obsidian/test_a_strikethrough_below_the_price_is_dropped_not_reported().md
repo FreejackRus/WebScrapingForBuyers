@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py"
 type: "code"
-community: "Community 18"
+community: "test_dom.py"
 location: "L135"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_18
+  - community/test_dompy
 ---
 
 # test_a_strikethrough_below_the_price_is_dropped_not_reported()
@@ -16,4 +16,4 @@ tags:
 - [[prices_from_tile()]] - `calls` [EXTRACTED]
 - [[test_dom.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_18
+#graphify/code #graphify/EXTRACTED #community/test_dompy

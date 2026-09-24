@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "rationale"
-community: "Community 46"
-location: "L578"
+community: "wb_connector/server.py"
+location: "L687"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_46
+  - community/wb_connector/serverpy
 ---
 
 # Collapse runs of whitespace into single spaces. Seller answers to buyer…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_normalise_ws()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_46
+#graphify/rationale #graphify/EXTRACTED #community/wb_connector/serverpy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/vision_policy.py"
 type: "code"
-community: "Community 73"
+community: "resolve_image_delivery"
 location: "L64"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_73
+  - community/resolve_image_delivery
 ---
 
 # client_vision_hint()
@@ -19,4 +19,4 @@ tags:
 - [[test_client_hint_is_read_from_the_capability_extra_bags()]] - `calls` [EXTRACTED]
 - [[vision_policy.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_73
+#graphify/code #graphify/EXTRACTED #community/resolve_image_delivery

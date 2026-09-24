@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/server.py"
 type: "rationale"
-community: "Community 45"
+community: "detmir_categories"
 location: "L560"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_45
+  - community/detmir_categories
 ---
 
 # Browse the Detsky Mir catalog tree and get the aliases `detmir_category` needs.…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[detmir_categories()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_45
+#graphify/rationale #graphify/EXTRACTED #community/detmir_categories

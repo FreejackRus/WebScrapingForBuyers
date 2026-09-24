@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_output_schema.py"
 type: "code"
-community: "Community 109"
+community: "test_output_schema.py"
 location: "L62"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_109
+  - community/test_output_schemapy
 ---
 
 # test_registered_tool_reaches_clients_with_a_compact_schema()
@@ -16,4 +16,4 @@ tags:
 - [[apply_compact_output_schemas()]] - `calls` [EXTRACTED]
 - [[test_output_schema.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_109
+#graphify/code #graphify/EXTRACTED #community/test_output_schemapy

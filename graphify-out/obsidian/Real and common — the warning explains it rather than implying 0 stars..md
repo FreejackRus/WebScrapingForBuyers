@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py"
 type: "rationale"
-community: "Community 94"
+community: "stub_html"
 location: "L230"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_94
+  - community/stub_html
 ---
 
 # Real and common — the warning explains it rather than implying 0 stars.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_card_warns_when_a_resale_offer_has_no_rating()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_94
+#graphify/rationale #graphify/EXTRACTED #community/stub_html

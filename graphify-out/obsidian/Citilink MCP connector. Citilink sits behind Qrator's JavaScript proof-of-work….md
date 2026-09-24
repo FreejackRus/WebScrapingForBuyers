@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/src/citilink_connector/server.py"
 type: "rationale"
-community: "Community 14"
+community: "json"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_14
+  - community/json
 ---
 
 # Citilink MCP connector. Citilink sits behind Qrator's JavaScript proof-of-work:…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[citilink_connectorserver.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_14
+#graphify/rationale #graphify/EXTRACTED #community/json

@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 39"
-location: "L563"
+community: "test_cache_can_be_disabled_by_ttl_zero"
+location: "L1369"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/Community_39
+  - graphify/EXTRACTED
+  - community/test_cache_can_be_disabled_by_ttl_zero
 ---
 
 # scenario()
 
 ## Connections
-- [[fake_safe_get_text()_4]] - `indirect_call` [INFERRED]
-- [[no_wait()_4]] - `indirect_call` [INFERRED]
-- [[test_wb_search_warns_when_no_result_has_a_price()]] - `contains` [EXTRACTED]
+- [[TTLCache]] - `calls` [EXTRACTED]
+- [[no_wait()_2]] - `indirect_call` [INFERRED]
+- [[test_cache_can_be_disabled_by_ttl_zero()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/Community_39
+#graphify/code #graphify/EXTRACTED #community/test_cache_can_be_disabled_by_ttl_zero

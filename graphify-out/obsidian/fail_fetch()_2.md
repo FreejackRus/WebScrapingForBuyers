@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py"
 type: "code"
-community: "Community 250"
+community: "test_card_rejects_non_numeric_ids"
 location: "L247"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_250
+  - community/test_card_rejects_non_numeric_ids
 ---
 
 # fail_fetch()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_card_rejects_non_numeric_ids()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_250
+#graphify/code #graphify/EXTRACTED #community/test_card_rejects_non_numeric_ids

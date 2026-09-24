@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_transport.py"
 type: "rationale"
-community: "Community 13"
+community: "test_transport.py"
 location: "L101"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_13
+  - community/test_transportpy
 ---
 
 # 429/5xx come back immediately: a status is an answer, not a transient fault.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_http_status_is_never_retried()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_13
+#graphify/rationale #graphify/EXTRACTED #community/test_transportpy

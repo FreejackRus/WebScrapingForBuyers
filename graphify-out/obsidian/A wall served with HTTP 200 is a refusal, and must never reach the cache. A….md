@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "rationale"
-community: "Community 8"
+community: "_clear_wb_cache"
 location: "L2265"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_8
+  - community/_clear_wb_cache
 ---
 
 # A wall served with HTTP 200 is a refusal, and must never reach the cache. A…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_an_edge_wall_is_not_a_success_and_is_not_cached()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_8
+#graphify/rationale #graphify/EXTRACTED #community/_clear_wb_cache

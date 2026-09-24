@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py"
 type: "code"
-community: "Community 61"
+community: "test_selfcheck_graphql_down_is_inconclusive"
 location: "L64"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_61
+  - community/test_selfcheck_graphql_down_is_inconclusive
 ---
 
 # fake_graphql()
@@ -16,4 +16,4 @@ tags:
 - [[test_card_maps_an_empty_product_list_to_not_found()]] - `indirect_call` [INFERRED]
 - [[test_selfcheck_graphql_down_is_inconclusive()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Community_61
+#graphify/code #graphify/INFERRED #community/test_selfcheck_graphql_down_is_inconclusive

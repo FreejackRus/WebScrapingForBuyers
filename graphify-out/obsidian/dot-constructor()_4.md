@@ -1,17 +1,17 @@
 ---
-source_file: "apps/analysis/src/infrastructure/ollama-analysis-narrator.ts"
+source_file: "apps/identity/src/infrastructure/memory-auth-store.ts"
 type: "code"
-community: "Community 36"
-location: "L37"
+community: "memory-auth-store.ts"
+location: "L16"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_36
+  - community/memory-auth-storets
 ---
 
 # .constructor()
 
 ## Connections
-- [[OllamaAnalysisNarrator]] - `method` [EXTRACTED]
+- [[MemoryAuthStore]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_36
+#graphify/code #graphify/EXTRACTED #community/memory-auth-storets

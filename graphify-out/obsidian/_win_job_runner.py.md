@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/_win_job_runner.py"
 type: "code"
-community: "Community 71"
+community: "_win_job_runner.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_71
+  - community/_win_job_runnerpy
 ---
 
 # _win_job_runner.py
@@ -17,8 +17,8 @@ tags:
 - [[_ExtendedLimits]] - `contains` [EXTRACTED]
 - [[_IoCounters]] - `contains` [EXTRACTED]
 - [[ctypes]] - `imports_from` [EXTRACTED]
-- [[main()_30]] - `contains` [EXTRACTED]
+- [[main()_11]] - `contains` [EXTRACTED]
 - [[subprocess]] - `imports` [EXTRACTED]
 - [[sys]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_71
+#graphify/code #graphify/EXTRACTED #community/_win_job_runnerpy

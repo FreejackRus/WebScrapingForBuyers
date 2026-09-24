@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/server.py"
 type: "code"
-community: "Community 110"
+community: "ozon_card"
 location: "L1586"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_110
+  - community/ozon_card
 ---
 
 # _smoke_reviews()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_ozon_selfcheck_impl()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Community_110
+#graphify/code #graphify/INFERRED #community/ozon_card

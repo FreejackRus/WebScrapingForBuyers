@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
 type: "code"
-community: "Community 138"
+community: "capture"
 location: "L544"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_138
+  - community/capture
 ---
 
 # test_categories_tree_passes_the_region_through()
 
 ## Connections
-- [[capture()_2]] - `contains` [EXTRACTED]
-- [[capture()_4]] - `indirect_call` [INFERRED]
+- [[capture()_8]] - `contains` [EXTRACTED]
+- [[capture()_10]] - `indirect_call` [INFERRED]
 - [[detmir-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_138
+#graphify/code #graphify/EXTRACTED #community/capture

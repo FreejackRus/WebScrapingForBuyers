@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/server.py"
 type: "code"
-community: "Community 152"
+community: "TransportDownError"
 location: "L874"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_152
+  - community/TransportDownError
 ---
 
 # _ozon_reviews_impl()
 
 ## Connections
 - [[BadRequestError]] - `uses` [INFERRED]
-- [[Context_1]] - `references` [EXTRACTED]
+- [[Context_4]] - `references` [EXTRACTED]
 - [[OzonReviewsResponse]] - `calls` [EXTRACTED]
 - [[ParserDriftError]] - `uses` [INFERRED]
 - [[TransportDownError]] - `uses` [INFERRED]
@@ -29,4 +29,4 @@ tags:
 - [[ozon_reviews()]] - `calls` [EXTRACTED]
 - [[raise_tool_error()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_152
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

@@ -1,17 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 38"
+community: "taobao_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_38
+  - community/taobao_card
 ---
 
 # max_length
 
 ## Connections
-- [[aliexpress_card()]] - `references` [EXTRACTED]
-- [[aliexpress_search()]] - `references` [EXTRACTED]
+- [[taobao_card()]] - `references` [EXTRACTED]
+- [[taobao_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_38
+#graphify/code #graphify/EXTRACTED #community/taobao_card

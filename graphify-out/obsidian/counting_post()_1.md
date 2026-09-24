@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py"
 type: "code"
-community: "Community 225"
+community: "test_resolved_params_are_cached_per_query"
 location: "L970"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_225
+  - community/test_resolved_params_are_cached_per_query
 ---
 
 # counting_post()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_resolved_params_are_cached_per_query()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_225
+#graphify/code #graphify/EXTRACTED #community/test_resolved_params_are_cached_per_query

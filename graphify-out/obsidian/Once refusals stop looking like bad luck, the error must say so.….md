@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "rationale"
-community: "Community 8"
+community: "_RecordingPacer"
 location: "L2164"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_8
+  - community/_RecordingPacer
 ---
 
 # Once refusals stop looking like bad luck, the error must say so.…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_a_refusal_streak_reaches_the_operator()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_8
+#graphify/rationale #graphify/EXTRACTED #community/_RecordingPacer

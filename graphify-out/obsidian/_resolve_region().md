@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/server.py"
 type: "code"
-community: "Community 45"
+community: "detmir_categories"
 location: "L114"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_45
+  - community/detmir_categories
 ---
 
 # _resolve_region()
@@ -20,4 +20,4 @@ tags:
 - [[detmir_connectorserver.py]] - `contains` [EXTRACTED]
 - [[raise_tool_error()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_45
+#graphify/code #graphify/EXTRACTED #community/detmir_categories

@@ -1,17 +1,17 @@
 ---
-source_file: "apps/gateway/src/app.ts"
-type: "code"
-community: "Community 70"
-location: "L132"
+source_file: "apps/search/package.json"
+type: "concept"
+community: "search/package.json"
+location: "L19"
 tags:
-  - graphify/code
+  - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_70
+  - community/search/packagejson
 ---
 
 # fastify
 
 ## Connections
-- [[gatewaysrcapp.ts]] - `contains` [EXTRACTED]
+- [[searchpackage.json]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_70
+#graphify/concept #graphify/EXTRACTED #community/search/packagejson

@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/test_ci_concurrency.py"
 type: "code"
-community: "Community 59"
+community: "test_ci_concurrency.py"
 location: "L97"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_59
+  - community/test_ci_concurrencypy
 ---
 
 # _Reader
 
 ## Connections
-- [[dot-__init__()_34]] - `method` [EXTRACTED]
+- [[dot-__init__()_35]] - `method` [EXTRACTED]
 - [[dot-_operand()]] - `method` [EXTRACTED]
 - [[dot-_peek()]] - `method` [EXTRACTED]
 - [[dot-parse_and()]] - `method` [EXTRACTED]
@@ -23,4 +23,4 @@ tags:
 - [[_cancels()]] - `calls` [EXTRACTED]
 - [[test_ci_concurrency.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_59
+#graphify/code #graphify/EXTRACTED #community/test_ci_concurrencypy

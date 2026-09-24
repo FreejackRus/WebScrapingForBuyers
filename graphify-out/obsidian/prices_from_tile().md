@@ -1,24 +1,25 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/dom.py"
 type: "code"
-community: "Community 18"
+community: "prices_from_tile"
 location: "L260"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_18
+  - community/prices_from_tile
 ---
 
 # prices_from_tile()
 
 ## Connections
-- [[Any_5]] - `references` [EXTRACTED]
+- [[5a. If you read a rendered page, reuse the shared extractor]] - `references` [INFERRED]
+- [[Any_20]] - `references` [EXTRACTED]
 - [[Return ``(price, old_price)`` for one extracted tile. Reads the shapes the…]] - `rationale_for` [EXTRACTED]
 - [[_page_challenge_kind()]] - `calls` [EXTRACTED]
 - [[_parsed()]] - `contains` [EXTRACTED]
 - [[_search_item_from_tile()_3]] - `calls` [EXTRACTED]
+- [[_search_item_from_tile()_2]] - `calls` [EXTRACTED]
 - [[_search_item_from_tile()_1]] - `calls` [EXTRACTED]
-- [[_search_item_from_tile()]] - `calls` [EXTRACTED]
 - [[citilink_card()]] - `calls` [EXTRACTED]
 - [[coerce_price()]] - `calls` [EXTRACTED]
 - [[dom.py]] - `contains` [EXTRACTED]
@@ -54,4 +55,4 @@ tags:
 - [[test_yuan_price_and_strikethrough_are_read()]] - `calls` [EXTRACTED]
 - [[test_zero_is_not_a_price()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_18
+#graphify/code #graphify/EXTRACTED #community/prices_from_tile

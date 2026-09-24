@@ -1,20 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 27"
+community: "taobao_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_27
+  - community/taobao_card
 ---
 
 # Context
 
 ## Connections
-- [[_cdp_render()]] - `references` [EXTRACTED]
-- [[_taobao_selfcheck_impl()]] - `references` [EXTRACTED]
-- [[taobao_card()]] - `references` [EXTRACTED]
-- [[taobao_search()_1]] - `references` [EXTRACTED]
-- [[taobao_selfcheck()]] - `references` [EXTRACTED]
+- [[current_mcp_session_id()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_27
+#graphify/code #graphify/EXTRACTED #community/taobao_card

@@ -1,20 +1,19 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 65"
+community: "compare_verify_offer"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_65
+  - community/compare_verify_offer
 ---
 
 # Context
 
 ## Connections
-- [[_cdp_render()_2]] - `references` [EXTRACTED]
-- [[_citilink_selfcheck_impl()]] - `references` [EXTRACTED]
-- [[citilink_card()]] - `references` [EXTRACTED]
-- [[citilink_search()]] - `references` [EXTRACTED]
-- [[citilink_selfcheck()]] - `references` [EXTRACTED]
+- [[_client_capabilities()]] - `references` [EXTRACTED]
+- [[compare_browser_snapshot()]] - `references` [EXTRACTED]
+- [[compare_prices()]] - `references` [EXTRACTED]
+- [[compare_sources()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_65
+#graphify/code #graphify/EXTRACTED #community/compare_verify_offer

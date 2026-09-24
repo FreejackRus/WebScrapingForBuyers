@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/server.py"
 type: "code"
-community: "Community 152"
+community: "TransportDownError"
 location: "L543"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_152
+  - community/TransportDownError
 ---
 
 # _ozon_blocked_error()
@@ -19,4 +19,4 @@ tags:
 - [[ozon_card()]] - `calls` [EXTRACTED]
 - [[ozon_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_152
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

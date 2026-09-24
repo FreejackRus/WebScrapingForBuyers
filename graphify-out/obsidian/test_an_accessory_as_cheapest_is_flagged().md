@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
-community: "Community 16"
+community: "compare-connector/tests/test_server.py"
 location: "L1029"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_16
+  - community/compare-connector/tests/test_serverpy
 ---
 
 # test_an_accessory_as_cheapest_is_flagged()
@@ -15,4 +15,4 @@ tags:
 - [[MarketOffer]] - `uses` [INFERRED]
 - [[compare-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_16
+#graphify/code #graphify/EXTRACTED #community/compare-connector/tests/test_serverpy

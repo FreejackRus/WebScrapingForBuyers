@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 191"
+community: "cdp-proxy.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_191
+  - community/cdp-proxypy
 ---
 
 # socket
@@ -18,4 +18,4 @@ tags:
 - [[read_headers()]] - `references` [EXTRACTED]
 - [[test_chrome_cdp.py]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_191
+#graphify/code #graphify/EXTRACTED #community/cdp-proxypy

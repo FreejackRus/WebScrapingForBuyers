@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_call_envelope.py"
 type: "code"
-community: "Community 144"
+community: "test_no_token_fails_before_any_request"
 location: "L159"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_144
+  - community/test_no_token_fails_before_any_request
 ---
 
 # test_no_token_fails_before_any_request()
@@ -17,4 +17,4 @@ tags:
 - [[payload()]] - `calls` [EXTRACTED]
 - [[test_call_envelope.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_144
+#graphify/code #graphify/EXTRACTED #community/test_no_token_fails_before_any_request

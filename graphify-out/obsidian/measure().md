@@ -1,21 +1,21 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/mcp_startup.py"
 type: "code"
-community: "Community 29"
+community: "StdioProbe"
 location: "L19"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_29
+  - community/StdioProbe
 ---
 
 # measure()
 
 ## Connections
-- [[Path_11]] - `references` [EXTRACTED]
+- [[Path_7]] - `references` [EXTRACTED]
 - [[ProbeError]] - `uses` [INFERRED]
 - [[StdioProbe]] - `calls` [EXTRACTED]
-- [[main()_22]] - `calls` [EXTRACTED]
+- [[main()_10]] - `calls` [EXTRACTED]
 - [[mcp_startup.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_29
+#graphify/code #graphify/EXTRACTED #community/StdioProbe

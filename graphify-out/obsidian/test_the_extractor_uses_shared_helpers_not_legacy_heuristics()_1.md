@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_search_extractor_dom.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_search_extractor_dom.py"
 type: "code"
-community: "Community 148"
-location: "L96"
+community: "lamoda-connector/tests/test_search_extractor_dom.py"
+location: "L102"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_148
+  - community/lamoda-connector/tests/test_search_extractor_dompy
 ---
 
 # test_the_extractor_uses_shared_helpers_not_legacy_heuristics()
 
 ## Connections
-- [[Guard against a regression back to closest()innerTextparseFloatMath.min.]] - `rationale_for` [EXTRACTED]
-- [[taobao-connectorteststest_search_extractor_dom.py]] - `contains` [EXTRACTED]
+- [[Guard against a regression back to closest()innerTextparseFloatMath.min._2]] - `rationale_for` [EXTRACTED]
+- [[lamoda-connectorteststest_search_extractor_dom.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_148
+#graphify/code #graphify/EXTRACTED #community/lamoda-connector/tests/test_search_extractor_dompy

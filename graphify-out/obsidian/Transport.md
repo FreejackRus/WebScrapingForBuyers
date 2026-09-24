@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 67"
+community: "resolve_transport"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_67
+  - community/resolve_transport
 ---
 
 # Transport
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[_parse_transport()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_67
+#graphify/code #graphify/EXTRACTED #community/resolve_transport

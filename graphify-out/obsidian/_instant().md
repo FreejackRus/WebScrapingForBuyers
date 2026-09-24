@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_call_envelope.py"
 type: "code"
-community: "Community 247"
+community: "test_call_envelope.py"
 location: "L27"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_247
+  - community/test_call_envelopepy
 ---
 
 # _instant()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[no_polite_gap()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Community_247
+#graphify/code #graphify/INFERRED #community/test_call_envelopepy

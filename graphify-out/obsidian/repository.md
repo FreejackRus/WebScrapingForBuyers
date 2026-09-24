@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/server.json"
 type: "code"
-community: "Community 132"
+community: "server.json"
 location: "L8"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_132
+  - community/serverjson
 ---
 
 # repository
@@ -16,4 +16,4 @@ tags:
 - [[source]] - `contains` [EXTRACTED]
 - [[url]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_132
+#graphify/code #graphify/EXTRACTED #community/serverjson

@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/package.json"
 type: "code"
-community: "Community 63"
-location: "L19"
+community: "web/package.json"
+location: "L20"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_63
+  - community/web/packagejson
 ---
 
 # devDependencies
@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[@typesreact]] - `contains` [EXTRACTED]
 - [[@typesreact-dom]] - `contains` [EXTRACTED]
-- [[typescript_6]] - `contains` [EXTRACTED]
+- [[typescript_10]] - `contains` [EXTRACTED]
 - [[webpackage.json]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_63
+#graphify/code #graphify/EXTRACTED #community/web/packagejson

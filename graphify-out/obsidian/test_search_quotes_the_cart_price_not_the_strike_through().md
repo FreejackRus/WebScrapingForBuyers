@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py"
 type: "code"
-community: "Community 94"
+community: "stub_html"
 location: "L87"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_94
+  - community/stub_html
 ---
 
 # test_search_quotes_the_cart_price_not_the_strike_through()
@@ -17,4 +17,4 @@ tags:
 - [[stub_html()]] - `calls` [EXTRACTED]
 - [[yandex-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_94
+#graphify/code #graphify/EXTRACTED #community/stub_html

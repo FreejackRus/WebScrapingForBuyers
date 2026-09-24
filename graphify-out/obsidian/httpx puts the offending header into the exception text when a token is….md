@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_call_envelope.py"
 type: "rationale"
-community: "Community 144"
+community: "payload"
 location: "L238"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_144
+  - community/payload
 ---
 
 # httpx puts the offending header into the exception text when a token is…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_a_transport_exception_does_not_carry_the_token()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_144
+#graphify/rationale #graphify/EXTRACTED #community/payload

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_identity_verification.py"
 type: "code"
-community: "Community 83"
+community: "pytest"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_83
+  - community/pytest
 ---
 
 # test_identity_verification.py
@@ -26,4 +26,4 @@ tags:
 - [[wb_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[wb_connectormodels_output.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_83
+#graphify/code #graphify/EXTRACTED #community/pytest

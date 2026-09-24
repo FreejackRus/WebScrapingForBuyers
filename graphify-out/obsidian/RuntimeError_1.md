@@ -1,16 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 183"
+community: "open_page"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_183
+  - community/open_page
 ---
 
 # RuntimeError
 
 ## Connections
-- [[HostRefusingError]] - `inherits` [EXTRACTED]
+- [[NavBlocked]] - `inherits` [EXTRACTED]
+- [[NavigationPolicyError]] - `inherits` [EXTRACTED]
+- [[_CdpConnectTimeout]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_183
+#graphify/code #graphify/EXTRACTED #community/open_page

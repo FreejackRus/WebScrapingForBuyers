@@ -1,12 +1,12 @@
 ---
 source_file: "apps/identity/src/domain/auth-store.ts"
 type: "code"
-community: "Community 32"
+community: "entities/user/index.ts"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_32
+  - community/entities/user/indexts
 ---
 
 # auth-store.ts
@@ -22,4 +22,4 @@ tags:
 - [[packages_contracts_dist_index_usersettings]] - `imports` [EXTRACTED]
 - [[session.ts]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_32
+#graphify/code #graphify/EXTRACTED #community/entities/user/indexts

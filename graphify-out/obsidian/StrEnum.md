@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 4"
+community: "json"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_4
+  - community/json
 ---
 
 # StrEnum
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[ErrorCode]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_4
+#graphify/code #graphify/EXTRACTED #community/json

@@ -1,0 +1,21 @@
+---
+source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
+type: "document"
+community: "compare_prices"
+location: "L339"
+tags:
+  - graphify/document
+  - graphify/INFERRED
+  - community/compare_prices
+---
+
+# Added
+
+## Connections
+- [[2.2.0 — 2026-09-11]] - `contains` [EXTRACTED]
+- [[cian_card()]] - `references` [INFERRED]
+- [[cian_search()]] - `references` [INFERRED]
+- [[compare_prices()]] - `references` [INFERRED]
+- [[marketplace_sources()]] - `references` [INFERRED]
+
+#graphify/document #graphify/INFERRED #community/compare_prices

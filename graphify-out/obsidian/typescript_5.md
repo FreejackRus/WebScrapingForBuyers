@@ -1,17 +1,17 @@
 ---
-source_file: "apps/identity/package.json"
-type: "code"
-community: "Community 251"
-location: "L22"
+source_file: "apps/search/package.json"
+type: "concept"
+community: "search/package.json"
+location: "L24"
 tags:
-  - graphify/code
+  - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_251
+  - community/search/packagejson
 ---
 
 # typescript
 
 ## Connections
-- [[devDependencies_4]] - `contains` [EXTRACTED]
+- [[searchpackage.json]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_251
+#graphify/concept #graphify/EXTRACTED #community/search/packagejson

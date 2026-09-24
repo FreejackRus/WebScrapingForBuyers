@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 28"
+community: "_patch_questions"
 location: "L1615"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_28
+  - community/_patch_questions
 ---
 
 # forbidden()
@@ -19,4 +19,4 @@ tags:
 - [[scenario()_75]] - `indirect_call` [INFERRED]
 - [[test_questions_rejects_an_out_of_range_limit()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/Community_28
+#graphify/code #graphify/INFERRED #community/_patch_questions

@@ -1,16 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 242"
+community: "models.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_242
+  - community/modelspy
 ---
 
 # BaseModel
 
 ## Connections
-- [[MarketplaceSourcesResponse]] - `inherits` [EXTRACTED]
+- [[CitilinkCardResponse]] - `inherits` [EXTRACTED]
+- [[CitilinkSearchItemOut]] - `inherits` [EXTRACTED]
+- [[CitilinkSearchResponse]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_242
+#graphify/code #graphify/EXTRACTED #community/modelspy

@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "Community 285"
+community: "test_run_sync_bounded_rejects_local_callables"
 location: "L123"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_285
+  - community/test_run_sync_bounded_rejects_local_callables
 ---
 
 # local()
 
 ## Connections
-- [[scenario()_78]] - `indirect_call` [INFERRED]
+- [[scenario()_77]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Community_285
+#graphify/code #graphify/INFERRED #community/test_run_sync_bounded_rejects_local_callables

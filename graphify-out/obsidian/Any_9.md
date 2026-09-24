@@ -1,16 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 22"
+community: "YandexProduct"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_22
+  - community/YandexProduct
 ---
 
 # Any
 
 ## Connections
-- [[log_event()]] - `references` [EXTRACTED]
+- [[_guard_values_drift()]] - `references` [EXTRACTED]
+- [[_to_product()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_22
+#graphify/code #graphify/EXTRACTED #community/YandexProduct

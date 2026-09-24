@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/tsconfig.json"
 type: "code"
-community: "Community 220"
+community: "search/tsconfig.json"
 location: "L3"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_220
+  - community/search/tsconfigjson
 ---
 
 # compilerOptions
@@ -17,4 +17,4 @@ tags:
 - [[searchtsconfig.json]] - `contains` [EXTRACTED]
 - [[types_6]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_220
+#graphify/code #graphify/EXTRACTED #community/search/tsconfigjson

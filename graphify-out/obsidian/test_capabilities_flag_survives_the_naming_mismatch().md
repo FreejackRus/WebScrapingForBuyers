@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_source_selection.py"
 type: "code"
-community: "Community 146"
+community: "test_source_selection.py"
 location: "L67"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_146
+  - community/test_source_selectionpy
 ---
 
 # test_capabilities_flag_survives_the_naming_mismatch()
@@ -16,4 +16,4 @@ tags:
 - [[test_source_selection.py]] - `contains` [EXTRACTED]
 - [[unified_env()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_146
+#graphify/code #graphify/EXTRACTED #community/test_source_selectionpy

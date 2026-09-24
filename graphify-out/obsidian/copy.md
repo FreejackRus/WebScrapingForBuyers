@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "Community 95"
+community: "test_public_contract_snapshot.py"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_95
+  - community/test_public_contract_snapshotpy
 ---
 
 # copy
@@ -14,4 +14,4 @@ tags:
 - [[cian-connectorteststest_server.py]] - `imports` [EXTRACTED]
 - [[test_public_contract_snapshot.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_95
+#graphify/concept #graphify/EXTRACTED #community/test_public_contract_snapshotpy

@@ -1,4 +1,5 @@
 import type { ChatIntent, Offer, OfferTableFilter, UserRole } from "@peremena/contracts";
+import { hasInfraLeak } from "./infra-leak.js";
 
 const SOURCE_ALIASES = [
   { pattern: /(?<![a-zа-яё0-9])(wb|вб|вайлдберр\w*|wildberries)(?![a-zа-яё0-9])/i, name: "Wildberries" },
@@ -84,6 +85,7 @@ export function applyTitleFilterRules(offers: Offer[], rules: TitleFilterRules):
 
 export function extractSearchQuery(prompt: string): string {
   return prompt
+    .replace(/покажи\s+(?:реальн[а-яё]*\s+)?предложени[а-яё]*\s+по\s+/gi, "")
     .replace(/уточни(?:те)? модель/gi, "")
     .replace(/запусти(?:те)? поиск/gi, "")
     .replace(/найд[иу]|найти|поищи|\bищи\b/gi, "")
@@ -129,7 +131,7 @@ export function classifyIntent(normalized: string, searchQuery: string): ChatInt
   }
 
   if (
-    /vnc|ssh|\bip\b|прогрев|антибот|консоль админ|админк|удалённ\w* рабоч|удаленн\w* рабоч|chrome[- ]?(?:vnc|контур|headed)|headed chrome/.test(
+    hasInfraLeak(normalized) || /\bip\b|консоль админ|админк|удалённ\w* рабоч|удаленн\w* рабоч|chrome[- ]?контур/.test(
       normalized,
     )
   ) {
@@ -158,7 +160,7 @@ export function classifyIntent(normalized: string, searchQuery: string): ChatInt
   }
 
   const wantSearch =
-    /уточни(?:те)? модель|запусти(?:те)? поиск|найд[иу]|найти|поищи|\bищи\b|новый поиск|собери предлож/.test(
+    /уточни(?:те)? модель|запусти(?:те)? поиск|найд[иу]|найти|поищи|\bищи\b|новый поиск|собери предлож|покажи\s+(?:реальн[а-яё]*\s+)?предложени[а-яё]*\s+по\s+/.test(
       normalized,
     );
   if (wantSearch && searchQuery.length >= 2) return "search";
@@ -189,7 +191,9 @@ export function buildTableFilter(input: {
 export function withGreeting(summary: string, userName?: string): string {
   const name = addressName(userName);
   if (!name) return summary;
-  if (new RegExp(`^${name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}[,!]`, "i").test(summary.trim())) {
+  const start = summary.trim().toLocaleLowerCase("ru");
+  const greeting = name.toLocaleLowerCase("ru");
+  if (start.startsWith(`${greeting},`) || start.startsWith(`${greeting}!`)) {
     return summary;
   }
   return `${name}, ${summary.charAt(0).toLocaleLowerCase("ru")}${summary.slice(1)}`;
@@ -205,7 +209,7 @@ export function cannedMetaAnswer(input: {
 }): { summary: string; warnings: string[]; appliedFilters: string[] } {
   const name = addressName(input.userName);
   const hello = name ? `${name}, ` : "";
-  const filters = [`Ответ по справочному сценарию «${input.intent}» (без смены ранжирования).`];
+  const filters = ["Справочный ответ: отбор предложений не изменён."];
 
   switch (input.intent) {
     case "help":
@@ -233,45 +237,42 @@ export function cannedMetaAnswer(input: {
     case "ranking":
       return {
         summary:
-          `${hello}ранжирование по цене детерминированное: фильтры из запроса, ` +
-          "мягкий отсев doubtful при наличии exact/probable, затем сортировка по цене и top-N. " +
-          "Релевантность наименования может уточнять локальная модель (отсев ID); она не меняет порядок цен.",
+          `${hello}сначала учитываю ваши условия и убираю явно неподходящие товары, ` +
+          "затем сортирую предложения по цене. Модель может помочь проверить соответствие названия товара, " +
+          "но не меняет цены и порядок подходящих предложений.",
         warnings: [],
         appliedFilters: filters,
       };
     case "sources": {
+      if (!input.snapshotQuery) {
+        return {
+          summary:
+            `${hello}сейчас нет открытого поиска, поэтому статусы площадок неизвестны. ` +
+            "Выберите товар и дождитесь результатов — тогда покажу, какие источники ответили.",
+          warnings: [],
+          appliedFilters: filters,
+        };
+      }
       const lines =
         input.sourceLines.length > 0
           ? input.sourceLines.join("; ")
           : "в текущем снимке статусов источников ещё нет";
       return {
         summary:
-          `${hello}сбор идёт адаптерами search (коннекторы/MCP/HTTP). ` +
-          `Запрос «${input.snapshotQuery}»: ${input.offerCount} предложений. Статусы: ${lines}. ` +
-          "Пустая витрина или ошибка площадки — смотрите панель источников; менеджеру видны только статусы без сырого транспорта.",
-        warnings:
-          input.userRole === "admin"
-            ? ["Админу доступны сырые message источника (VNC/ssh-подсказки) в панели статусов."]
-            : ["Детали транспорта (IP, VNC, ssh) скрыты для роли manager."],
+          `${hello}запрос «${input.snapshotQuery}»: ${input.offerCount} предложений. ` +
+          `Статусы площадок: ${lines}. ` +
+          "Если площадка не ответила — источник временно недоступен.",
+        warnings: [],
         appliedFilters: filters,
       };
     }
     case "admin":
-      if (input.userRole === "admin") {
-        return {
-          summary:
-            `${hello}для прогрева антибота используйте VNC к chrome-контуру на сервере, не ссылки на витрину в UI. ` +
-            "Сырые message источников (в т.ч. ssh/VNC-подсказки) видны в панели статусов. " +
-            "Копайлот не выполняет ssh и не открывает VNC — только поясняет, куда смотреть.",
-          warnings: ["Не публикуйте реквизиты сервера в чате и тикетах."],
-          appliedFilters: filters,
-        };
-      }
       return {
         summary:
-          `${hello}темы VNC, ssh и сырого транспорта источников доступны только администратору. ` +
-          "Как менеджер вы видите статусы сбора и предложения в таблице; прогрев антибота — зона admin.",
-        warnings: ["Запрос вне вашей роли отклонён без технических деталей."],
+          `${hello}этот вопрос не про выбор предложений в таблице. ` +
+          "Если площадка не ответила, источник временно недоступен. " +
+          "В чате нет технических подробностей сбора.",
+        warnings: ["Запрос вне сценария закупки отклонён без технических деталей."],
         appliedFilters: filters,
       };
   }

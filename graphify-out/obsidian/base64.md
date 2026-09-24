@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "Community 3"
+community: "compare-connector/tests/test_browser_handoff.py"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_3
+  - community/compare-connector/tests/test_browser_handoffpy
 ---
 
 # base64
@@ -15,4 +15,4 @@ tags:
 - [[compare-connectorteststest_browser_handoff.py]] - `imports` [EXTRACTED]
 - [[test_chrome_cdp_snapshot.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_3
+#graphify/concept #graphify/EXTRACTED #community/compare-connector/tests/test_browser_handoffpy

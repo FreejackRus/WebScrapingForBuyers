@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "Community 82"
+community: "json"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_82
+  - community/json
 ---
 
 # json
@@ -77,6 +77,7 @@ tags:
 - [[test_search_offer_integrity.py]] - `imports` [EXTRACTED]
 - [[test_search_parser_live.py]] - `imports` [EXTRACTED]
 - [[test_search_variants.py]] - `imports` [EXTRACTED]
+- [[test_storefront_search.py]] - `imports` [EXTRACTED]
 - [[test_zone_tag_scanning.py]] - `imports` [EXTRACTED]
 - [[wb-connectorteststest_parser_live.py]] - `imports` [EXTRACTED]
 - [[wb-connectorteststest_settings_secrets.py]] - `imports` [EXTRACTED]
@@ -85,4 +86,4 @@ tags:
 - [[yandex-connectorteststest_server.py]] - `imports` [EXTRACTED]
 - [[yandex-connectorteststest_settings_secrets.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_82
+#graphify/concept #graphify/EXTRACTED #community/json

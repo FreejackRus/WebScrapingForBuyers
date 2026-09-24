@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/runtime.py"
 type: "code"
-community: "Community 67"
+community: "resolve_transport"
 location: "L194"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_67
+  - community/resolve_transport
 ---
 
 # resolve_transport()
@@ -21,4 +21,4 @@ tags:
 - [[run_server()]] - `calls` [EXTRACTED]
 - [[runtime.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_67
+#graphify/code #graphify/EXTRACTED #community/resolve_transport

@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/entities/analysis/store/index.ts"
 type: "code"
-community: "Community 92"
-location: "L26"
+community: "useAnalysisStore"
+location: "L29"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_92
+  - community/useAnalysisStore
 ---
 
 # nextId()
@@ -15,4 +15,4 @@ tags:
 - [[analysisstoreindex.ts]] - `contains` [EXTRACTED]
 - [[useAnalysisStore]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_92
+#graphify/code #graphify/EXTRACTED #community/useAnalysisStore

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/test_ci_concurrency.py"
 type: "code"
-community: "Community 59"
+community: "test_ci_concurrency.py"
 location: "L43"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_59
+  - community/test_ci_concurrencypy
 ---
 
 # _child_scalar()
@@ -18,4 +18,4 @@ tags:
 - [[test_ci_concurrency.py]] - `contains` [EXTRACTED]
 - [[test_the_live_job_stays_schedule_and_dispatch_only()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_59
+#graphify/code #graphify/EXTRACTED #community/test_ci_concurrencypy

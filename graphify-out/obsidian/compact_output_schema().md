@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/output_schema.py"
 type: "code"
-community: "Community 109"
+community: "test_output_schema.py"
 location: "L32"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_109
+  - community/test_output_schemapy
 ---
 
 # compact_output_schema()
@@ -19,4 +19,4 @@ tags:
 - [[test_compact_falls_back_to_permissive_object_for_unknown_shapes()]] - `calls` [EXTRACTED]
 - [[test_compact_keeps_only_top_level_names()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_109
+#graphify/code #graphify/EXTRACTED #community/test_output_schemapy

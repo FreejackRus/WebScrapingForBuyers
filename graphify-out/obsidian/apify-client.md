@@ -1,18 +1,17 @@
 ---
 source_file: "apps/search/package.json"
-type: "concept"
-community: "Community 134"
+type: "code"
+community: "search/package.json"
 location: "L17"
 tags:
-  - graphify/concept
+  - graphify/code
   - graphify/EXTRACTED
-  - community/Community_134
+  - community/search/packagejson
 ---
 
 # apify-client
 
 ## Connections
-- [[apify-marketplace-adapter.ts]] - `imports_from` [EXTRACTED]
-- [[searchpackage.json]] - `imports` [EXTRACTED]
+- [[dependencies_2]] - `contains` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_134
+#graphify/code #graphify/EXTRACTED #community/search/packagejson

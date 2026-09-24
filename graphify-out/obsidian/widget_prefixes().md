@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/resilience.py"
 type: "code"
-community: "Community 66"
+community: "shape_signature"
 location: "L356"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_66
+  - community/shape_signature
 ---
 
 # widget_prefixes()
@@ -15,4 +15,4 @@ tags:
 - [[Reduce Ozon widgetStates keys to their stable prefixes (strip the numeric…]] - `rationale_for` [EXTRACTED]
 - [[resilience.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_66
+#graphify/code #graphify/EXTRACTED #community/shape_signature

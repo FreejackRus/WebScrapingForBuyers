@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_handoff_liveness_consistency.py"
 type: "code"
-community: "Community 3"
+community: "pytest"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_3
+  - community/pytest
 ---
 
 # test_handoff_liveness_consistency.py
@@ -25,4 +25,4 @@ tags:
 - [[types_8]] - `imports_from` [EXTRACTED]
 - [[unittest_mock]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_3
+#graphify/code #graphify/EXTRACTED #community/pytest

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/src/marketplace_connector/cli.py"
 type: "rationale"
-community: "Community 54"
+community: "test_dsh_bundle.py"
 location: "L75"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_54
+  - community/test_dsh_bundlepy
 ---
 
 # Find the source checkout this CLI is running from, if it is one. Walks up from…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_workspace_root()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_54
+#graphify/rationale #graphify/EXTRACTED #community/test_dsh_bundlepy

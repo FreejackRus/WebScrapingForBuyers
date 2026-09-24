@@ -28,6 +28,7 @@ import {
   detectSafetyCategory,
   logSafetyIncident,
 } from "./chat-safety.js";
+import { publicSourceLines, sanitizeAnalysisResult } from "./infra-leak.js";
 
 export interface AnalyzeOptions {
   userName?: string;
@@ -76,14 +77,8 @@ function matchesSource(offer: Offer, sources: string[]) {
   return sources.some((source) => hay.includes(source.toLocaleLowerCase("ru")));
 }
 
-function sourceLines(snapshot: SearchSnapshot, userRole?: UserRole): string[] {
-  return snapshot.sources.map((source) => {
-    const base = `${source.source}: ${source.status}`;
-    if (userRole === "admin" && source.message?.trim()) {
-      return `${base} (${source.message.trim()})`;
-    }
-    return base;
-  });
+function sourceLines(snapshot: SearchSnapshot): string[] {
+  return publicSourceLines(snapshot.sources);
 }
 
 const META_INTENTS = new Set(["help", "export", "sources", "ranking", "admin"]);
@@ -160,7 +155,7 @@ async function applyLlmRelevanceFilter(
         rejected: 0,
         warnings: [
           ...warnings,
-          "LLM-фильтр релевантности отклонил все строки — оставлен детерминированный набор.",
+          "Проверка соответствия отклонила все предложения, поэтому исходные варианты сохранены.",
         ],
       };
     }
@@ -174,7 +169,7 @@ async function applyLlmRelevanceFilter(
       offers,
       rejected: 0,
       warnings: [
-        `LLM-фильтр релевантности недоступен: ${narrationFailureMessage(error)}. Оставлен детерминированный набор.`,
+        `Проверка соответствия временно недоступна: ${narrationFailureMessage(error)}. Предложения сохранены.`,
       ],
     };
   }
@@ -187,6 +182,12 @@ function resolveChatIntent(
 ): { intent: ChatIntent; searchQuery?: string } {
   const modelQuery = narrated?.searchQuery?.trim();
   const modelIntent = narrated?.intent;
+
+  // An explicit help/source/admin/filter request must not become a catalog
+  // search just because the model returned a searchQuery.
+  if (heuristic !== "search" && heuristic !== "explain") {
+    return { intent: heuristic };
+  }
 
   if (modelIntent === "search" && modelQuery && modelQuery.length >= 2) {
     return { intent: "search", searchQuery: modelQuery };
@@ -207,6 +208,15 @@ function resolveChatIntent(
 }
 
 export async function analyzeSnapshot(
+  snapshot: SearchSnapshot,
+  prompt: string,
+  narrator?: AnalysisNarrator,
+  options: AnalyzeOptions = {},
+): Promise<AnalysisResult> {
+  return sanitizeAnalysisResult(await analyzeSnapshotRaw(snapshot, prompt, narrator, options), options.userRole);
+}
+
+async function analyzeSnapshotRaw(
   snapshot: SearchSnapshot,
   prompt: string,
   narrator?: AnalysisNarrator,
@@ -268,7 +278,7 @@ export async function analyzeSnapshot(
       ...(userName ? { userName } : {}),
       ...(userRole ? { userRole } : {}),
       snapshotQuery: snapshot.query,
-      sourceLines: sourceLines(snapshot, userRole),
+      sourceLines: sourceLines(snapshot),
       offerCount: incoming.length,
     });
     const base = {
@@ -280,7 +290,8 @@ export async function analyzeSnapshot(
       intent: metaIntent,
       provider: "Справочный ответ Price Radar",
     };
-    if (!narrator?.answer) return base;
+    // These answers must describe only application state, never a model's guess about operations.
+    if (!narrator?.answer || metaIntent === "admin" || metaIntent === "sources") return base;
     try {
       const narrated = await narrator.answer({
         prompt,
@@ -288,7 +299,7 @@ export async function analyzeSnapshot(
         snapshotQuery: snapshot.query,
         productName: snapshot.product.name,
         offerCount: incoming.length,
-        sourceLines: sourceLines(snapshot, userRole),
+        sourceLines: sourceLines(snapshot),
         ...(userName ? { userName } : {}),
         ...(addressAs ? { addressAs } : {}),
         ...(userRole ? { userRole } : {}),
@@ -414,7 +425,7 @@ export async function analyzeSnapshot(
     if (weakDrop.dropped > 0) {
       offers = weakDrop.kept;
       filters.push(
-        `Детерминированно отсеяны сомнительные совпадения (${ruCount(weakDrop.dropped, "строка", "строки", "строк")}), есть exact/probable.`,
+        `Убраны сомнительные совпадения (${ruCount(weakDrop.dropped, "строка", "строки", "строк")}); оставлены более подходящие товары.`,
       );
     }
   }
@@ -429,7 +440,7 @@ export async function analyzeSnapshot(
     warnings.push(...llm.warnings);
     if (llm.rejected > 0) {
       filters.push(
-        `LLM отсеяла нерелевантные по названию (${ruCount(llm.rejected, "строка", "строки", "строк")}).`,
+        `Убраны предложения с неподходящим названием (${ruCount(llm.rejected, "строка", "строки", "строк")}).`,
       );
     }
   }
@@ -443,10 +454,10 @@ export async function analyzeSnapshot(
     selected.length === 0
       ? intent === "filter"
         ? "В таблицу ничего не подошло."
-        : `Отобрано top-${requested}: ничего не подошло.`
+        : "Подходящих предложений не найдено."
       : intent === "filter"
         ? `В таблицу отобраны ${ruCount(selected.length, "строка", "строки", "строк")}: ${selected.map(offerLabel).join("; ")}.`
-        : `Отобрано top-${selected.length}: ${selected.map(offerLabel).join("; ")}.`,
+        : `${selected.length === 1 ? "Выбран" : "Выбраны"} ${ruCount(selected.length, "вариант", "варианта", "вариантов")}: ${selected.map(offerLabel).join("; ")}.`,
   );
 
   const best = selected[0];
@@ -528,6 +539,14 @@ export async function answerCopilot(
   narrator?: AnalysisNarrator,
   options: AnalyzeOptions = {},
 ): Promise<AnalysisResult> {
+  return sanitizeAnalysisResult(await answerCopilotRaw(prompt, narrator, options), options.userRole);
+}
+
+async function answerCopilotRaw(
+  prompt: string,
+  narrator?: AnalysisNarrator,
+  options: AnalyzeOptions = {},
+): Promise<AnalysisResult> {
   const normalized = prompt.toLocaleLowerCase("ru");
   const searchQuery = extractSearchQuery(prompt);
   const userName = options.userName?.trim() || undefined;
@@ -571,6 +590,42 @@ export async function answerCopilot(
 
   const heuristicIntent = classifyIntent(normalized, searchQuery);
 
+  if (heuristicIntent === "filter" || heuristicIntent === "explain") {
+    return {
+      summary: withGreeting(
+        "Сейчас нет таблицы предложений. Сначала выберите товар и дождитесь результатов поиска — тогда смогу отфильтровать или объяснить конкретные строки.",
+        userName,
+      ),
+      selectedOfferIds: [],
+      appliedFilters: ["Нет снимка поиска."],
+      warnings: [],
+      citations: [],
+      intent: "help",
+      provider: "Справочный ответ Price Radar",
+    };
+  }
+
+  const standaloneMeta = asMetaIntent(heuristicIntent);
+  if (standaloneMeta === "sources" || standaloneMeta === "admin" || standaloneMeta === "ranking") {
+    const meta = cannedMetaAnswer({
+      intent: standaloneMeta,
+      ...(userName ? { userName } : {}),
+      ...(userRole ? { userRole } : {}),
+      snapshotQuery: "",
+      sourceLines: [],
+      offerCount: 0,
+    });
+    return {
+      summary: meta.summary,
+      selectedOfferIds: [],
+      appliedFilters: meta.appliedFilters,
+      warnings: meta.warnings,
+      citations: [],
+      intent: standaloneMeta,
+      provider: "Справочный ответ Price Radar",
+    };
+  }
+
   if (narrator?.answer) {
     try {
       const narrated = await narrator.answer({
@@ -582,19 +637,58 @@ export async function answerCopilot(
       });
       const resolved = resolveChatIntent(heuristicIntent, narrated, searchQuery);
       return {
-        summary: narrated.summary,
+        summary: resolved.intent === "search" && resolved.searchQuery
+          ? withGreeting(
+              `Уточняю модель «${resolved.searchQuery}». Выберите найденную карточку, чтобы собрать предложения.`,
+              userName,
+            )
+          : narrated.summary,
         selectedOfferIds: [],
         appliedFilters:
           resolved.intent === "search"
             ? [`Новый поиск по запросу «${resolved.searchQuery}».`]
-            : ["Ответ локальной модели Ollama (без снимка поиска)."],
-        warnings: narrated.warnings,
+            : ["Ответ на справочный вопрос без открытого поиска."],
+        warnings: resolved.intent === "search" ? [] : narrated.warnings,
         citations: [],
         intent: resolved.intent,
         ...(resolved.searchQuery ? { searchQuery: resolved.searchQuery } : {}),
         provider: narrator.name,
       };
     } catch (error) {
+      if (heuristicIntent === "search" && searchQuery.length >= 2) {
+        return {
+          summary: withGreeting(
+            `Уточняю модель «${searchQuery}». Выберите найденную карточку, чтобы собрать предложения.`,
+            userName,
+          ),
+          selectedOfferIds: [],
+          appliedFilters: [`Новый поиск по запросу «${searchQuery}».`],
+          warnings: [`AI-ответ недоступен: ${narrationFailureMessage(error)}. Запрос извлечён из текста.`],
+          citations: [],
+          intent: "search",
+          searchQuery,
+          provider: "Справочный fallback Price Radar",
+        };
+      }
+      if (standaloneMeta) {
+        const meta = cannedMetaAnswer({
+          intent: standaloneMeta,
+          ...(userName ? { userName } : {}),
+          ...(userRole ? { userRole } : {}),
+          snapshotQuery: "",
+          sourceLines: [],
+          offerCount: 0,
+        });
+        return {
+          summary: meta.summary,
+          selectedOfferIds: [],
+          appliedFilters: meta.appliedFilters,
+          warnings: [...meta.warnings, `AI-ответ недоступен: ${narrationFailureMessage(error)}.`],
+          citations: [],
+          intent: standaloneMeta,
+          provider: "Справочный fallback Price Radar",
+        };
+      }
       return {
         summary: withGreeting(
           "Сейчас не удалось получить ответ модели. Повторите вопрос или выберите товар слева для анализа таблицы.",
@@ -618,7 +712,7 @@ export async function answerCopilot(
       ),
       selectedOfferIds: [],
       appliedFilters: [`Новый поиск по запросу «${searchQuery}».`],
-      warnings: ["Модель не подключена — searchQuery извлечён эвристикой."],
+      warnings: ["Модель не подключена — запрос определён по вашему сообщению."],
       citations: [],
       intent: "search",
       searchQuery,
@@ -654,7 +748,7 @@ export async function answerCopilot(
     ),
     selectedOfferIds: [],
     appliedFilters: ["Нет снимка поиска и нет модели."],
-    warnings: ["Ollama не настроена (OLLAMA_BASE_URL / OLLAMA_MODEL)."],
+    warnings: ["Модель сейчас не подключена."],
     citations: [],
     intent: "help",
     provider: "Справочный ответ Price Radar",

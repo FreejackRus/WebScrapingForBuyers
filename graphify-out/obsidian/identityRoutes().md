@@ -1,12 +1,12 @@
 ---
 source_file: "apps/identity/src/http/routes.ts"
 type: "code"
-community: "Community 32"
+community: "session.ts"
 location: "L6"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_32
+  - community/sessionts
 ---
 
 # identityRoutes()
@@ -20,4 +20,4 @@ tags:
 - [[requireUser()]] - `calls` [EXTRACTED]
 - [[writeSession()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_32
+#graphify/code #graphify/EXTRACTED #community/sessionts

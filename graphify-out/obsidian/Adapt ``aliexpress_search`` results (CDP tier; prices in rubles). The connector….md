@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py"
 type: "rationale"
-community: "Community 24"
+community: "OfferBatch"
 location: "L732"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_24
+  - community/OfferBatch
 ---
 
 # Adapt ``aliexpress_search`` results (CDP tier; prices in rubles). The connector…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_search_aliexpress()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_24
+#graphify/rationale #graphify/EXTRACTED #community/OfferBatch

@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/__main__.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/mcp_startup.py"
 type: "code"
-community: "Community 21"
-location: "L21"
+community: "StdioProbe"
+location: "L39"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_21
+  - community/StdioProbe
 ---
 
 # main()
 
 ## Connections
-- [[Run the server on the transport selected by the environment (stdio default).]] - `rationale_for` [EXTRACTED]
-- [[compare_connector__main__.py]] - `contains` [EXTRACTED]
-- [[run_server()]] - `calls` [INFERRED]
+- [[mcp_startup.py]] - `contains` [EXTRACTED]
+- [[measure()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_21
+#graphify/code #graphify/EXTRACTED #community/StdioProbe

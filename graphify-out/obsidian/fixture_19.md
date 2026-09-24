@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 293"
+community: "pytest"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_293
+  - community/pytest
 ---
 
 # fixture
 
 ## Connections
-- [[_no_cache()_6]] - `references` [EXTRACTED]
+- [[browser()_2]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_293
+#graphify/code #graphify/EXTRACTED #community/pytest

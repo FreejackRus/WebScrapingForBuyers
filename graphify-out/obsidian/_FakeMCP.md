@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py"
 type: "code"
-community: "Community 26"
+community: "test_runtime.py"
 location: "L22"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_26
+  - community/test_runtimepy
 ---
 
 # _FakeMCP
@@ -24,4 +24,4 @@ tags:
 - [[test_run_server_warns_when_bound_beyond_loopback()]] - `calls` [EXTRACTED]
 - [[test_runtime.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_26
+#graphify/code #graphify/EXTRACTED #community/test_runtimepy

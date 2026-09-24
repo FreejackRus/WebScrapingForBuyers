@@ -1,17 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 23"
+community: "test_transport.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_23
+  - community/test_transportpy
 ---
 
 # AsyncClient
 
 ## Connections
-- [[_client()]] - `references` [EXTRACTED]
-- [[_post_json_budgeted()]] - `references` [EXTRACTED]
+- [[make_client()_2]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_23
+#graphify/code #graphify/EXTRACTED #community/test_transportpy

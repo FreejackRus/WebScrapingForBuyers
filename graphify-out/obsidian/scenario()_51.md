@@ -1,19 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "Community 20"
-location: "L1464"
+community: "test_cdp_fetch_json_times_out_open_page_and_releases_lock"
+location: "L351"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_20
+  - community/test_cdp_fetch_json_times_out_open_page_and_releases_lock
 ---
 
 # scenario()
 
 ## Connections
-- [[_patch_questions()]] - `calls` [EXTRACTED]
-- [[responder()_9]] - `indirect_call` [INFERRED]
-- [[test_questions_treats_null_questions_as_empty()]] - `contains` [EXTRACTED]
+- [[test_cdp_fetch_json_times_out_open_page_and_releases_lock()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_20
+#graphify/code #graphify/EXTRACTED #community/test_cdp_fetch_json_times_out_open_page_and_releases_lock

@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "Community 83"
+community: "pytest"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_83
+  - community/pytest
 ---
 
 # types
@@ -30,4 +30,4 @@ tags:
 - [[test_source_warnings.py]] - `imports_from` [EXTRACTED]
 - [[test_test_count_gate.py]] - `imports_from` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_83
+#graphify/concept #graphify/EXTRACTED #community/pytest

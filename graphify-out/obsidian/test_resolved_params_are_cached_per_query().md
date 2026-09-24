@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py"
 type: "code"
-community: "Community 225"
+community: "test_resolved_params_are_cached_per_query"
 location: "L966"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_225
+  - community/test_resolved_params_are_cached_per_query
 ---
 
 # test_resolved_params_are_cached_per_query()
@@ -18,4 +18,4 @@ tags:
 - [[counting_post()_2]] - `indirect_call` [INFERRED]
 - [[megamarket-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_225
+#graphify/code #graphify/EXTRACTED #community/test_resolved_params_are_cached_per_query

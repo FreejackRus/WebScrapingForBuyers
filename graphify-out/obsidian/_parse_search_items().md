@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/server.py"
 type: "code"
-community: "Community 47"
+community: "_parse_search_items"
 location: "L336"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_47
+  - community/_parse_search_items
 ---
 
 # _parse_search_items()
 
 ## Connections
-- [[Any_19]] - `references` [EXTRACTED]
+- [[Any_2]] - `references` [EXTRACTED]
 - [[Best-effort extraction of items + total from a jsitems payload. The endpoint…]] - `rationale_for` [EXTRACTED]
 - [[_items()_2]] - `calls` [EXTRACTED]
 - [[_posted_at()]] - `calls` [EXTRACTED]
@@ -25,4 +25,4 @@ tags:
 - [[test_the_parser_bindings_survive_in_the_reference_shape()]] - `calls` [INFERRED]
 - [[test_total_count_is_read_from_the_envelope()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_47
+#graphify/code #graphify/EXTRACTED #community/_parse_search_items

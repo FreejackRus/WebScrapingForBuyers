@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/models_output.py"
 type: "rationale"
-community: "Community 22"
+community: "log_event"
 location: "L19"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_22
+  - community/log_event
 ---
 
 # WB carries the shared envelope unchanged.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[MetaOut_5]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_22
+#graphify/rationale #graphify/EXTRACTED #community/log_event

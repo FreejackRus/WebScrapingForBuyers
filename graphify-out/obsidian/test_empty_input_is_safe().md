@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_redact.py"
 type: "code"
-community: "Community 35"
+community: "test_redact.py"
 location: "L208"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_35
+  - community/test_redactpy
 ---
 
 # test_empty_input_is_safe()
@@ -16,4 +16,4 @@ tags:
 - [[redact_url()]] - `calls` [EXTRACTED]
 - [[test_redact.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_35
+#graphify/code #graphify/EXTRACTED #community/test_redactpy

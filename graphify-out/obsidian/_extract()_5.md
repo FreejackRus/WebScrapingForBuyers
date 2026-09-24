@@ -1,12 +1,12 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_card_extractor_dom.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_search_extractor_dom.py"
 type: "code"
-community: "Community 148"
-location: "L34"
+community: "taobao-connector/tests/test_search_extractor_dom.py"
+location: "L45"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_148
+  - community/taobao-connector/tests/test_search_extractor_dompy
 ---
 
 # _extract()
@@ -14,9 +14,10 @@ tags:
 ## Connections
 - [[JsdomUnavailable]] - `uses` [INFERRED]
 - [[run_extractor()]] - `calls` [EXTRACTED]
-- [[taobao-connectorteststest_card_extractor_dom.py]] - `contains` [EXTRACTED]
-- [[test_card_extractor_reads_the_item_page()]] - `calls` [EXTRACTED]
-- [[test_the_coupon_price_is_never_the_price_or_the_strikethrough()]] - `calls` [EXTRACTED]
-- [[test_yuan_price_and_strikethrough_are_read()]] - `calls` [EXTRACTED]
+- [[taobao-connectorteststest_search_extractor_dom.py]] - `contains` [EXTRACTED]
+- [[test_a_hidden_price_is_none_never_zero()]] - `calls` [EXTRACTED]
+- [[test_items_carry_the_wire_shape()]] - `calls` [EXTRACTED]
+- [[test_search_extractor_reads_the_real_grid()]] - `calls` [EXTRACTED]
+- [[test_yuan_glued_price_is_read_from_the_card()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_148
+#graphify/code #graphify/EXTRACTED #community/taobao-connector/tests/test_search_extractor_dompy

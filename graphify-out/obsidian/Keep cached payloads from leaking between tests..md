@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
 type: "rationale"
-community: "Community 253"
+community: "clear_cache"
 location: "L96"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_253
+  - community/clear_cache
 ---
 
 # Keep cached payloads from leaking between tests.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[clear_cache()_1]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_253
+#graphify/rationale #graphify/EXTRACTED #community/clear_cache

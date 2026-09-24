@@ -1,18 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 186"
-location: "L520"
+community: "_tool_error_payload"
+location: "L81"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_186
+  - community/_tool_error_payload
 ---
 
 # scenario()
 
 ## Connections
-- [[fake_fetch()]] - `indirect_call` [INFERRED]
-- [[test_ozon_selfcheck_includes_runtime_identity()]] - `contains` [EXTRACTED]
+- [[_tool_error_payload()_1]] - `calls` [EXTRACTED]
+- [[forbidden_wait()]] - `indirect_call` [INFERRED]
+- [[test_wb_card_rejects_non_positive_nm_ids_before_network()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_186
+#graphify/code #graphify/EXTRACTED #community/_tool_error_payload

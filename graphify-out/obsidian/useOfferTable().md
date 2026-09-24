@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/features/search/offer-table/index.ts"
 type: "code"
-community: "Community 40"
+community: "offers/ui/index.tsx"
 location: "L10"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_40
+  - community/offers/ui/indextsx
 ---
 
 # useOfferTable()
@@ -20,4 +20,4 @@ tags:
 - [[sortOffers()]] - `calls` [EXTRACTED]
 - [[useFilteredOffers()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_40
+#graphify/code #graphify/EXTRACTED #community/offers/ui/indextsx

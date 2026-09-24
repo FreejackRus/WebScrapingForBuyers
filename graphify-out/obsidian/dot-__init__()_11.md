@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_stealth.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "code"
-community: "Community 19"
-location: "L133"
+community: "open_page"
+location: "L489"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_19
+  - community/open_page
 ---
 
 # .__init__()
 
 ## Connections
-- [[_FakeCdp]] - `method` [EXTRACTED]
+- [[dot-__init__()_12]] - `calls` [EXTRACTED]
+- [[NavBlocked]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_19
+#graphify/code #graphify/EXTRACTED #community/open_page

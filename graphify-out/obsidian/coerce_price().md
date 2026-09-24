@@ -1,21 +1,30 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/resilience.py"
 type: "code"
-community: "Community 53"
+community: "coerce_price"
 location: "L122"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_53
+  - community/coerce_price
 ---
 
 # coerce_price()
 
 ## Connections
-- [[Any_25]] - `references` [EXTRACTED]
+- [[2.2 dns 24 ссылки, `title=None`, `price=None` — подтверждён, исправлен, и он был хуже, чем в отчёте]] - `references` [INFERRED]
+- [[4. Write the tools]] - `references` [INFERRED]
+- [[5a. If you read a rendered page, reuse the shared extractor]] - `references` [INFERRED]
+- [[Added_16]] - `references` [INFERRED]
+- [[Any_7]] - `references` [EXTRACTED]
 - [[Coerce a price (int rubles, float, or display string like '3u2009983u2009₽')…]] - `rationale_for` [EXTRACTED]
+- [[Fixed_21]] - `references` [INFERRED]
+- [[Fixed_13]] - `references` [INFERRED]
+- [[Fixed_19]] - `references` [INFERRED]
+- [[What this codebase cares about]] - `references` [INFERRED]
 - [[_parse_money_string()]] - `calls` [EXTRACTED]
 - [[_parsed()]] - `calls` [EXTRACTED]
+- [[`resilience` — tolerant readers]] - `references` [INFERRED]
 - [[dom.py]] - `imports` [EXTRACTED]
 - [[price_from_texts()]] - `calls` [EXTRACTED]
 - [[prices_from_tile()]] - `calls` [EXTRACTED]
@@ -32,5 +41,13 @@ tags:
 - [[test_real_prices_parse()]] - `calls` [EXTRACTED]
 - [[test_zero_and_negative_are_not_prices()]] - `calls` [EXTRACTED]
 - [[validate_offer()]] - `calls` [EXTRACTED]
+- [[Добавлено_18]] - `references` [INFERRED]
+- [[Исправлено_17]] - `references` [INFERRED]
+- [[Исправлено_18]] - `references` [INFERRED]
+- [[Исправлено_12]] - `references` [INFERRED]
+- [[Исправлено_10]] - `references` [INFERRED]
+- [[Ключевые изменения выпуска]] - `references` [INFERRED]
+- [[Что важно в этой кодовой базе]] - `references` [INFERRED]
+- [[Что чинилось]] - `references` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_53
+#graphify/code #graphify/EXTRACTED #community/coerce_price

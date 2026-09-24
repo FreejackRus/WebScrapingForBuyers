@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/widgets/search/command/ui/index.tsx"
 type: "code"
-community: "Community 40"
+community: "workspace/ui/index.tsx"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_40
+  - community/workspace/ui/indextsx
 ---
 
 # command/ui/index.tsx
@@ -16,8 +16,12 @@ tags:
 - [[commandindex.ts]] - `re_exports` [EXTRACTED]
 - [[entitiessearchindex.ts]] - `imports_from` [EXTRACTED]
 - [[featuressearchindex.ts]] - `imports_from` [EXTRACTED]
-- [[react_1]] - `imports_from` [EXTRACTED]
+- [[packages_contracts_dist_index]] - `imports_from` [EXTRACTED]
+- [[packages_contracts_dist_index_product]] - `imports` [EXTRACTED]
+- [[productFromTypedQuery()]] - `contains` [EXTRACTED]
+- [[react]] - `imports_from` [EXTRACTED]
 - [[startSearch()]] - `imports` [EXTRACTED]
+- [[suggestSecondary()]] - `contains` [EXTRACTED]
 - [[useSearchStore]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_40
+#graphify/code #graphify/EXTRACTED #community/workspace/ui/indextsx

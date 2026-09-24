@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 2"
+community: "decision_inspect"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_2
+  - community/decision_inspect
 ---
 
 # min_length
 
 ## Connections
-- [[cian_card()]] - `references` [EXTRACTED]
+- [[decision_inspect()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_2
+#graphify/code #graphify/EXTRACTED #community/decision_inspect

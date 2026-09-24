@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py"
 type: "rationale"
-community: "Community 15"
+community: "avito-connector/tests/test_server.py"
 location: "L158"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_15
+  - community/avito-connector/tests/test_serverpy
 ---
 
 # A 200 carrying the HTML block page instead of JSON is drift, not success.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_search_maps_non_json_to_parser_drift()_1]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_15
+#graphify/rationale #graphify/EXTRACTED #community/avito-connector/tests/test_serverpy

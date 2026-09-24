@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/resilience.py"
 type: "code"
-community: "Community 150"
+community: "test_resilience.py"
 location: "L498"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_150
+  - community/test_resiliencepy
 ---
 
 # selfcheck_result()
@@ -21,4 +21,4 @@ tags:
 - [[test_selfcheck_result_missing_required_check_is_injected_inconclusive()]] - `calls` [EXTRACTED]
 - [[test_selfcheck_result_no_checks_is_inconclusive_not_vacuous_success()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_150
+#graphify/code #graphify/EXTRACTED #community/test_resiliencepy

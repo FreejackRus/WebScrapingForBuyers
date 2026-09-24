@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 77"
+community: "yandex_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_77
+  - community/yandex_card
 ---
 
 # max_length
@@ -14,4 +14,4 @@ tags:
 - [[yandex_card()]] - `references` [EXTRACTED]
 - [[yandex_search()_1]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_77
+#graphify/code #graphify/EXTRACTED #community/yandex_card

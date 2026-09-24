@@ -1,21 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 164"
+community: "fake_post"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_164
+  - community/fake_post
 ---
 
 # fixture
 
 ## Connections
-- [[card_no_rating()]] - `references` [EXTRACTED]
-- [[card_washer()]] - `references` [EXTRACTED]
-- [[search_iphone()]] - `references` [EXTRACTED]
-- [[search_kettle()]] - `references` [EXTRACTED]
-- [[search_telefon_zone()]] - `references` [EXTRACTED]
-- [[search_washer()]] - `references` [EXTRACTED]
+- [[_no_cache()_5]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_164
+#graphify/code #graphify/EXTRACTED #community/fake_post

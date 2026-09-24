@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/server.py"
 type: "code"
-community: "Community 17"
+community: "test_http_tier.py"
 location: "L124"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_17
+  - community/test_http_tierpy
 ---
 
 # _proxy()
@@ -16,4 +16,4 @@ tags:
 - [[proxy_from_env()]] - `calls` [INFERRED]
 - [[yandex_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_17
+#graphify/code #graphify/EXTRACTED #community/test_http_tierpy

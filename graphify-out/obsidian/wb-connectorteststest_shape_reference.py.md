@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_shape_reference.py"
 type: "code"
-community: "Community 74"
+community: "pathlib"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_74
+  - community/pathlib
 ---
 
 # wb-connector/tests/test_shape_reference.py
@@ -19,4 +19,4 @@ tags:
 - [[test_search_normalization_matches_shape_golden()]] - `contains` [EXTRACTED]
 - [[wb_connector__init__.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_74
+#graphify/code #graphify/EXTRACTED #community/pathlib

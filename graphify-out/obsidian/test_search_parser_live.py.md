@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_search_parser_live.py"
 type: "code"
-community: "Community 74"
+community: "test_search_parser_live.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_74
+  - community/test_search_parser_livepy
 ---
 
 # test_search_parser_live.py
 
 ## Connections
 - [[The Ozon search parse path against a LIVE captured composer payload.…]] - `rationale_for` [EXTRACTED]
-- [[_items()_4]] - `contains` [EXTRACTED]
+- [[_items()_1]] - `contains` [EXTRACTED]
 - [[json]] - `imports` [EXTRACTED]
 - [[ozon_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]
@@ -23,4 +23,4 @@ tags:
 - [[test_live_stock_labels_survive_the_parse_verbatim()]] - `contains` [EXTRACTED]
 - [[test_live_tiles_carry_a_canonical_card_input()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_74
+#graphify/code #graphify/EXTRACTED #community/test_search_parser_livepy

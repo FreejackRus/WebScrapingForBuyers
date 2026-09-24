@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_browser_handoff.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py"
 type: "code"
-community: "Community 3"
-location: "L199"
+community: "test_termination_settles_queued_snapshot_before_getter_resumes"
+location: "L582"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_3
+  - community/test_termination_settles_queued_snapshot_before_getter_resumes
 ---
 
 # capture()
 
 ## Connections
-- [[test_snapshot_rejects_other_session_and_unknown_handle_without_capture()]] - `contains` [EXTRACTED]
+- [[test_snapshot_rechecks_original_host_policy_before_and_after_capture()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_3
+#graphify/code #graphify/EXTRACTED #community/test_termination_settles_queued_snapshot_before_getter_resumes

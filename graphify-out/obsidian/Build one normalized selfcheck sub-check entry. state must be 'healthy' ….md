@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/resilience.py"
 type: "rationale"
-community: "Community 150"
+community: "test_resilience.py"
 location: "L480"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_150
+  - community/test_resiliencepy
 ---
 
 # Build one normalized selfcheck sub-check entry. state must be 'healthy' |…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[selfcheck_entry()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_150
+#graphify/rationale #graphify/EXTRACTED #community/test_resiliencepy

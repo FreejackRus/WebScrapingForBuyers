@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cache.py"
 type: "code"
-community: "Community 52"
+community: "test_get_or_fetch_collapses_concurrent_misses"
 location: "L105"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_52
+  - community/test_get_or_fetch_collapses_concurrent_misses
 ---
 
 # test_get_or_fetch_collapses_concurrent_misses()
@@ -17,4 +17,4 @@ tags:
 - [[slow_factory()]] - `indirect_call` [INFERRED]
 - [[test_cache.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_52
+#graphify/code #graphify/EXTRACTED #community/test_get_or_fetch_collapses_concurrent_misses

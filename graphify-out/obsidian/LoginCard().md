@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/widgets/user/login-card/ui/index.tsx"
 type: "code"
-community: "Community 135"
+community: "useUserStore"
 location: "L6"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_135
+  - community/useUserStore
 ---
 
 # LoginCard()
@@ -18,4 +18,4 @@ tags:
 - [[useLogin()]] - `calls` [EXTRACTED]
 - [[widgetsuserindex.ts]] - `re_exports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_135
+#graphify/code #graphify/EXTRACTED #community/useUserStore

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/server.py"
 type: "rationale"
-community: "Community 2"
+community: "cian_connector/server.py"
 location: "L287"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_2
+  - community/cian_connector/serverpy
 ---
 
 # Read one offer's card state over CDP. Returns (status, body, tier). The page is…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_fetch_card()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_2
+#graphify/rationale #graphify/EXTRACTED #community/cian_connector/serverpy

@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/examples/rating_breakdown.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_coverage_floor.py"
 type: "code"
-community: "Community 77"
-location: "L19"
+community: "pathlib"
+location: "L83"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_77
+  - community/pathlib
 ---
 
 # main()
 
 ## Connections
-- [[rating_breakdown.py]] - `contains` [EXTRACTED]
-- [[yandex_card()]] - `calls` [EXTRACTED]
-- [[yandex_search()_1]] - `calls` [EXTRACTED]
+- [[_documented_floor()]] - `calls` [EXTRACTED]
+- [[_measured_coverage()]] - `calls` [EXTRACTED]
+- [[check_coverage_floor.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_77
+#graphify/code #graphify/EXTRACTED #community/pathlib

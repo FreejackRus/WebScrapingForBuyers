@@ -1,0 +1,23 @@
+---
+source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
+type: "document"
+community: "compare_prices"
+location: "L1825"
+tags:
+  - graphify/document
+  - graphify/INFERRED
+  - community/compare_prices
+---
+
+# Fixed
+
+## Connections
+- [[Pacer]] - `references` [INFERRED]
+- [[1.2.0 — 2026-07-28 (English)]] - `contains` [EXTRACTED]
+- [[citilink_card()]] - `references` [INFERRED]
+- [[compare_prices()]] - `references` [INFERRED]
+- [[dns_card()]] - `references` [INFERRED]
+- [[marketplace_sources()]] - `references` [INFERRED]
+- [[shape_signature()]] - `references` [INFERRED]
+
+#graphify/document #graphify/INFERRED #community/compare_prices

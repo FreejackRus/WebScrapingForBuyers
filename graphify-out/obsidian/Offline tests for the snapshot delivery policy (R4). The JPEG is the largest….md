@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_vision_policy.py"
 type: "rationale"
-community: "Community 73"
+community: "resolve_image_delivery"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_73
+  - community/resolve_image_delivery
 ---
 
 # Offline tests for the snapshot delivery policy (R4). The JPEG is the largest…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_vision_policy.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_73
+#graphify/rationale #graphify/EXTRACTED #community/resolve_image_delivery

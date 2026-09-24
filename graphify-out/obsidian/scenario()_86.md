@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 8"
-location: "L2152"
+community: "test_wb_search_falls_back_to_legacy_path_when_v9_fails"
+location: "L529"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/Community_8
+  - graphify/INFERRED
+  - community/test_wb_search_falls_back_to_legacy_path_when_v9_fails
 ---
 
 # scenario()
 
 ## Connections
-- [[_clear_wb_cache()]] - `calls` [EXTRACTED]
-- [[fake_budgeted()_5]] - `indirect_call` [INFERRED]
-- [[test_a_transient_fault_is_not_counted_as_a_refusal()]] - `contains` [EXTRACTED]
+- [[fake_safe_get_text()_2]] - `indirect_call` [INFERRED]
+- [[no_wait()_2]] - `indirect_call` [INFERRED]
+- [[test_wb_search_falls_back_to_legacy_path_when_v9_fails()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_8
+#graphify/code #graphify/INFERRED #community/test_wb_search_falls_back_to_legacy_path_when_v9_fails

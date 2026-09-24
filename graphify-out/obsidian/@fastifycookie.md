@@ -1,17 +1,17 @@
 ---
 source_file: "apps/identity/package.json"
 type: "code"
-community: "Community 142"
+community: "identity/package.json"
 location: "L14"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_142
+  - community/identity/packagejson
 ---
 
 # @fastify/cookie
 
 ## Connections
-- [[dependencies_2]] - `contains` [EXTRACTED]
+- [[dependencies_3]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_142
+#graphify/code #graphify/EXTRACTED #community/identity/packagejson

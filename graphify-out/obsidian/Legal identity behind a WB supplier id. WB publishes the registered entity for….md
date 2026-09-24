@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/models_output.py"
 type: "rationale"
-community: "Community 46"
+community: "wb_connector/server.py"
 location: "L165"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_46
+  - community/wb_connector/serverpy
 ---
 
 # Legal identity behind a WB supplier id. WB publishes the registered entity for…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[WbSellerResponse]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_46
+#graphify/rationale #graphify/EXTRACTED #community/wb_connector/serverpy

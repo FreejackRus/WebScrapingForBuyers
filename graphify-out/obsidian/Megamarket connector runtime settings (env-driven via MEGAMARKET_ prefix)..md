@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/settings.py"
 type: "rationale"
-community: "Community 162"
+community: "pydantic"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_162
+  - community/pydantic
 ---
 
 # Megamarket connector runtime settings (env-driven via MEGAMARKET_ prefix).
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[megamarket_connectorsettings.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_162
+#graphify/rationale #graphify/EXTRACTED #community/pydantic

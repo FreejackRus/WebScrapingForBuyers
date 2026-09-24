@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/__main__.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/__main__.py"
 type: "code"
-community: "Community 21"
-location: "L21"
+community: "lamoda_connector/__main__.py"
+location: "L13"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_21
+  - community/lamoda_connector/__main__py
 ---
 
 # main()
 
 ## Connections
-- [[Run the server on the transport selected by the environment (stdio default).]] - `rationale_for` [EXTRACTED]
+- [[Run the server on the transport selected by the environment (stdio default)._7]] - `rationale_for` [EXTRACTED]
+- [[lamoda_connector__main__.py]] - `contains` [EXTRACTED]
 - [[run_server()]] - `calls` [INFERRED]
-- [[wb_connector__main__.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_21
+#graphify/code #graphify/EXTRACTED #community/lamoda_connector/__main__py

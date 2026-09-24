@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/models_output.py"
 type: "code"
-community: "Community 10"
+community: "models.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_10
+  - community/modelspy
 ---
 
 # avito_connector/models_output.py
@@ -26,4 +26,4 @@ tags:
 - [[pydantic]] - `imports_from` [EXTRACTED]
 - [[test_live_payload_contract.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_10
+#graphify/code #graphify/EXTRACTED #community/modelspy

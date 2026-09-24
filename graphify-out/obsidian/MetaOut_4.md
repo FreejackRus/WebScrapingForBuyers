@@ -1,22 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/models_output.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/models_output.py"
 type: "code"
-community: "Community 2"
-location: "L15"
+community: "megamarket_search"
+location: "L9"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_2
+  - community/megamarket_search
 ---
 
 # MetaOut
 
 ## Connections
+- [[Megamarket carries the shared envelope unchanged.]] - `rationale_for` [EXTRACTED]
 - [[MetaOutBase]] - `inherits` [EXTRACTED]
-- [[Validation metadata attached to every response.]] - `rationale_for` [EXTRACTED]
-- [[cian_card()]] - `uses` [INFERRED]
-- [[cian_connectormodels_output.py]] - `contains` [EXTRACTED]
-- [[cian_connectorserver.py]] - `imports` [EXTRACTED]
-- [[cian_search()]] - `uses` [INFERRED]
+- [[megamarket_card()]] - `uses` [INFERRED]
+- [[megamarket_connectormodels_output.py]] - `contains` [EXTRACTED]
+- [[megamarket_connectorserver.py]] - `imports` [EXTRACTED]
+- [[megamarket_search()_1]] - `uses` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_2
+#graphify/code #graphify/EXTRACTED #community/megamarket_search

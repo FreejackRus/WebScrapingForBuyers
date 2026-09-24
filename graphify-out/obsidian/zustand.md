@@ -1,20 +1,17 @@
 ---
 source_file: "apps/web/package.json"
-type: "concept"
-community: "Community 124"
-location: "L17"
+type: "code"
+community: "web/package.json"
+location: "L18"
 tags:
-  - graphify/concept
+  - graphify/code
   - graphify/EXTRACTED
-  - community/Community_124
+  - community/web/packagejson
 ---
 
 # zustand
 
 ## Connections
-- [[analysisstoreindex.ts]] - `imports_from` [EXTRACTED]
-- [[searchstoreindex.ts]] - `imports_from` [EXTRACTED]
-- [[userstoreindex.ts]] - `imports_from` [EXTRACTED]
-- [[webpackage.json]] - `imports` [EXTRACTED]
+- [[dependencies_5]] - `contains` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_124
+#graphify/code #graphify/EXTRACTED #community/web/packagejson

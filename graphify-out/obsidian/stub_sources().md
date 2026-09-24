@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
-community: "Community 25"
+community: "offer"
 location: "L28"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_25
+  - community/offer
 ---
 
 # stub_sources()
@@ -33,4 +33,4 @@ tags:
 - [[test_unknown_source_names_are_rejected()]] - `calls` [EXTRACTED]
 - [[test_unpriced_offers_are_kept_at_the_end()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_25
+#graphify/code #graphify/EXTRACTED #community/offer

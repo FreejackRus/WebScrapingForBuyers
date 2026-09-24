@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/server.py"
 type: "code"
-community: "Community 17"
+community: "TransportDownError"
 location: "L136"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_17
+  - community/TransportDownError
 ---
 
 # fetch()
@@ -16,9 +16,9 @@ tags:
 - [[RateLimitedError]] - `calls` [EXTRACTED]
 - [[TransportDownError]] - `calls` [EXTRACTED]
 - [[_fetch_json()]] - `indirect_call` [INFERRED]
-- [[_proxy()_2]] - `calls` [EXTRACTED]
+- [[_proxy()_1]] - `calls` [EXTRACTED]
 - [[build_client()]] - `calls` [INFERRED]
 - [[get_text_with_retries()]] - `calls` [INFERRED]
 - [[raise_tool_error()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_17
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

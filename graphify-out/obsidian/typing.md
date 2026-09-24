@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "Community 14"
+community: "json"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_14
+  - community/json
 ---
 
 # typing
@@ -50,7 +50,8 @@ tags:
 - [[vision_policy.py]] - `imports_from` [EXTRACTED]
 - [[wb_connectormodels_output.py]] - `imports_from` [EXTRACTED]
 - [[wb_connectorserver.py]] - `imports_from` [EXTRACTED]
+- [[wb_connectorsettings.py]] - `imports_from` [EXTRACTED]
 - [[yandex_connectormodels_output.py]] - `imports_from` [EXTRACTED]
 - [[yandex_connectorserver.py]] - `imports_from` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_14
+#graphify/concept #graphify/EXTRACTED #community/json

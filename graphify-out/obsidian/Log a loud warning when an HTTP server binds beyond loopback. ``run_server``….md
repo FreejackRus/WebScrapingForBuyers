@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/runtime.py"
 type: "rationale"
-community: "Community 67"
+community: "TransportConfig"
 location: "L270"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_67
+  - community/TransportConfig
 ---
 
 # Log a loud warning when an HTTP server binds beyond loopback. ``run_server``…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_warn_if_exposed()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_67
+#graphify/rationale #graphify/EXTRACTED #community/TransportConfig

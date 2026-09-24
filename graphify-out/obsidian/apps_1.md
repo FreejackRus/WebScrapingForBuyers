@@ -1,12 +1,12 @@
 ---
 source_file: "apps/gateway/src/gateway.test.ts"
 type: "code"
-community: "Community 70"
+community: "gateway/src/app.ts"
 location: "L6"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_70
+  - community/gateway/src/appts
 ---
 
 # apps
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[gateway.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_70
+#graphify/code #graphify/EXTRACTED #community/gateway/src/appts

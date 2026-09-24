@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/cdp_budget.py"
 type: "code"
-community: "Community 129"
+community: "Slot"
 location: "L201"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_129
+  - community/Slot
 ---
 
 # .acquire()
@@ -19,4 +19,4 @@ tags:
 - [[Slot]] - `calls` [EXTRACTED]
 - [[Take one navigation permit for ``host``. Order matters the breaker is checked…]] - `rationale_for` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_129
+#graphify/code #graphify/EXTRACTED #community/Slot

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/package.json"
 type: "concept"
-community: "Community 192"
+community: "ru-marketplace-mcp/package.json"
 location: "L8"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_192
+  - community/ru-marketplace-mcp/packagejson
 ---
 
 # jsdom
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[ru-marketplace-mcppackage.json]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_192
+#graphify/concept #graphify/EXTRACTED #community/ru-marketplace-mcp/packagejson

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_dsh_bundle.py"
 type: "code"
-community: "Community 118"
+community: "test_dsh_bundle.py"
 location: "L99"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_118
+  - community/test_dsh_bundlepy
 ---
 
 # test_dsh_manifest_points_at_the_patch_and_has_no_scoped_name()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_dsh_bundle.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_118
+#graphify/code #graphify/EXTRACTED #community/test_dsh_bundlepy

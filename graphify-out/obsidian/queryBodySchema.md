@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/http/routes.ts"
 type: "code"
-community: "Community 9"
-location: "L7"
+community: "live-suggest.ts"
+location: "L9"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_9
+  - community/live-suggestts
 ---
 
 # queryBodySchema
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[searchsrchttproutes.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_9
+#graphify/code #graphify/EXTRACTED #community/live-suggestts

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_http_tier_budgeted.py"
 type: "code"
-community: "Community 13"
+community: "get_text_budgeted"
 location: "L179"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_13
+  - community/get_text_budgeted
 ---
 
 # test_http_statuses_are_never_retried()
@@ -20,4 +20,4 @@ tags:
 - [[parametrize_6]] - `references` [EXTRACTED]
 - [[test_http_tier_budgeted.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_13
+#graphify/code #graphify/EXTRACTED #community/get_text_budgeted

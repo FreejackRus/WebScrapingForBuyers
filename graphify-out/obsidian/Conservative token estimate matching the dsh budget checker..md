@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/mcp_wire.py"
 type: "rationale"
-community: "Community 82"
+community: "mcp_wire.py"
 location: "L24"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_82
+  - community/mcp_wirepy
 ---
 
 # Conservative token estimate matching the dsh budget checker.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[estimate_tokens()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_82
+#graphify/rationale #graphify/EXTRACTED #community/mcp_wirepy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/cdp_budget.py"
 type: "rationale"
-community: "Community 129"
+community: "Slot"
 location: "L190"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_129
+  - community/Slot
 ---
 
 # Raise when this host's breaker is open and still cooling down.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[dot-check()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_129
+#graphify/rationale #graphify/EXTRACTED #community/Slot

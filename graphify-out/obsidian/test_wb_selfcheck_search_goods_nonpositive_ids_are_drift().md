@@ -1,20 +1,20 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 1"
+community: "no_wait"
 location: "L1060"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_1
+  - community/no_wait
 ---
 
 # test_wb_selfcheck_search_goods_nonpositive_ids_are_drift()
 
 ## Connections
-- [[fake_safe_get_text()_20]] - `contains` [EXTRACTED]
-- [[no_wait()_19]] - `contains` [EXTRACTED]
-- [[scenario()_19]] - `contains` [EXTRACTED]
+- [[fake_safe_get_text()_19]] - `contains` [EXTRACTED]
+- [[no_wait()_18]] - `contains` [EXTRACTED]
+- [[scenario()_18]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_1
+#graphify/code #graphify/EXTRACTED #community/no_wait

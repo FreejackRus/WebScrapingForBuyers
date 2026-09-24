@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "rationale"
-community: "Community 7"
+community: "open_page"
 location: "L1015"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_7
+  - community/open_page
 ---
 
 # Reject a navigation that escaped the caller's host policy.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_check_final_host()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_7
+#graphify/rationale #graphify/EXTRACTED #community/open_page

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/test_ci_concurrency.py"
 type: "code"
-community: "Community 59"
+community: "test_ci_concurrency.py"
 location: "L190"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_59
+  - community/test_ci_concurrencypy
 ---
 
 # test_a_superseded_push_still_cancels()
@@ -16,4 +16,4 @@ tags:
 - [[_concurrency()]] - `calls` [EXTRACTED]
 - [[test_ci_concurrency.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_59
+#graphify/code #graphify/EXTRACTED #community/test_ci_concurrencypy

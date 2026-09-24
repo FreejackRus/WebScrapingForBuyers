@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/stdio_probe.py"
 type: "code"
-community: "Community 29"
+community: "StdioProbe"
 location: "L22"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_29
+  - community/StdioProbe
 ---
 
 # StdioProbe
@@ -35,7 +35,7 @@ tags:
 - [[mcp_startup.py]] - `imports` [EXTRACTED]
 - [[mcp_wire.py]] - `imports` [EXTRACTED]
 - [[measure()]] - `calls` [EXTRACTED]
-- [[probe()]] - `calls` [EXTRACTED]
+- [[probe()_2]] - `calls` [EXTRACTED]
 - [[replace_command()]] - `calls` [EXTRACTED]
 - [[stdio_probe.py]] - `contains` [EXTRACTED]
 - [[test_cleanup_stops_wrapper_and_its_child()]] - `uses` [INFERRED]
@@ -45,4 +45,4 @@ tags:
 - [[test_silent_child_obeys_deadline_and_is_reaped()]] - `calls` [EXTRACTED]
 - [[test_stdio_probe.py]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_29
+#graphify/code #graphify/EXTRACTED #community/StdioProbe

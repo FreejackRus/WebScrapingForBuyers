@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_main.py"
 type: "code"
-community: "Community 161"
+community: "pytest"
 location: "L34"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_161
+  - community/pytest
 ---
 
 # fake_command()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_operator_subcommands_forward_their_arguments()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Community_161
+#graphify/code #graphify/INFERRED #community/pytest

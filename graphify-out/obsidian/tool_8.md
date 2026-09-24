@@ -1,17 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 27"
+community: "compare_prices"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_27
+  - community/compare_prices
 ---
 
 # tool
 
 ## Connections
-- [[taobao_card()]] - `references` [EXTRACTED]
-- [[taobao_search()_1]] - `references` [EXTRACTED]
+- [[marketplace_sources()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_27
+#graphify/code #graphify/EXTRACTED #community/compare_prices

@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 212"
+community: "pydantic"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_212
+  - community/pydantic
 ---
 
 # BaseSettings
 
 ## Connections
-- [[YandexSettings]] - `inherits` [EXTRACTED]
+- [[DnsSettings]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_212
+#graphify/code #graphify/EXTRACTED #community/pydantic

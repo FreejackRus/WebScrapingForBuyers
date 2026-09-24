@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py"
 type: "code"
-community: "Community 58"
+community: "_patch_routes"
 location: "L430"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_58
+  - community/_patch_routes
 ---
 
 # fake_post()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_patch_routes()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_58
+#graphify/code #graphify/EXTRACTED #community/_patch_routes

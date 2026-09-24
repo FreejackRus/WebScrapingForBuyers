@@ -1,12 +1,12 @@
 ---
 source_file: "tsconfig.base.json"
 type: "code"
-community: "Community 177"
+community: "compilerOptions"
 location: "L11"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_177
+  - community/compilerOptions
 ---
 
 # forceConsistentCasingInFileNames
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[compilerOptions_1]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_177
+#graphify/code #graphify/EXTRACTED #community/compilerOptions

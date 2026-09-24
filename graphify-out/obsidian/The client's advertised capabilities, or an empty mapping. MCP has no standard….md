@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py"
 type: "rationale"
-community: "Community 55"
+community: "compare_verify_offer"
 location: "L1356"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_55
+  - community/compare_verify_offer
 ---
 
 # The client's advertised capabilities, or an empty mapping. MCP has no standard…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_client_capabilities()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_55
+#graphify/rationale #graphify/EXTRACTED #community/compare_verify_offer

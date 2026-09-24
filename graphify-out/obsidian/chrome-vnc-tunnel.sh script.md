@@ -1,12 +1,12 @@
 ---
 source_file: "scripts/chrome-vnc-tunnel.sh"
 type: "code"
-community: "Community 357"
+community: "chrome-vnc-tunnel.sh"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_357
+  - community/chrome-vnc-tunnelsh
 ---
 
 # chrome-vnc-tunnel.sh script
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[chrome-vnc-tunnel.sh]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_357
+#graphify/code #graphify/EXTRACTED #community/chrome-vnc-tunnelsh

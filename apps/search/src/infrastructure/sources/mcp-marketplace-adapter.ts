@@ -17,8 +17,7 @@ export type MarketplaceKind =
   | "megamarket"
   | "citilink"
   | "avito"
-  | "aliexpress"
-  | "taobao";
+  | "aliexpress";
 
 interface MarketplaceSource {
   name: string;
@@ -75,8 +74,6 @@ export function marketplaceToolArguments(
     case "citilink":
     case "aliexpress":
       return { query };
-    case "taobao":
-      return { query, page: 1 };
   }
 }
 
@@ -89,7 +86,6 @@ const cdpWarmupHost: Record<MarketplaceKind, string> = {
   citilink: "citilink.ru",
   avito: "avito.ru",
   aliexpress: "aliexpress.ru",
-  taobao: "taobao.com",
 };
 
 /**
@@ -558,7 +554,6 @@ export function createMarketplaceSourcesFromEnv(): SourceAdapter[] {
     { name: "Ситилинк", tool: "citilink_search", host: "citilink.ru", kind: "citilink" },
     { name: "Авито", tool: "avito_search", host: "avito.ru", kind: "avito" },
     { name: "AliExpress", tool: "aliexpress_search", host: "aliexpress.ru", kind: "aliexpress" },
-    { name: "Taobao", tool: "taobao_search", host: "taobao.com", kind: "taobao" },
   ];
   const enabled = (process.env.MARKETPLACE_SOURCES ?? sources.map((source) => source.kind).join(","))
     .split(",")
@@ -576,7 +571,6 @@ export function createMarketplaceSourcesFromEnv(): SourceAdapter[] {
     avito: "avito",
     aliexpress: "aliexpress",
     ali: "aliexpress",
-    taobao: "taobao",
   };
   const allowed = new Set(enabled.map((value) => aliases[value] ?? (value as MarketplaceSource["kind"])));
   // One Streamable HTTP session for all marketplace tools — after marketplace-mcp
@@ -974,9 +968,6 @@ function marketplaceSearchUrl(source: MarketplaceSource, product: Product): stri
   if (source.kind === "aliexpress") {
     return `https://aliexpress.ru/wholesale?SearchText=${encodeURIComponent(text)}`;
   }
-  if (source.kind === "taobao") {
-    return `https://s.taobao.com/search?q=${encodeURIComponent(text)}`;
-  }
   return `https://${source.host}/search?q=${encodeURIComponent(text)}`;
 }
 
@@ -1112,28 +1103,15 @@ function sizesPrice(item: JsonObject): number | undefined {
   return undefined;
 }
 
-/** CNY→RUB for Taobao. Unset/invalid → no fake RUB (offer skipped). */
-export function cnyRubRate(): number | undefined {
-  const raw = Number(process.env.CNY_RUB_RATE);
-  return Number.isFinite(raw) && raw > 0 ? raw : undefined;
-}
-
 export function marketplaceItemPrice(item: JsonObject): number | undefined {
-  const rub =
+  return (
     firstPrice(item.price_rub, item.price, item.card_price) ??
     sizesPrice(item) ??
-    kopeckPrice(item.salePriceU, item.priceU);
-  if (rub !== undefined) return rub;
-  const cny = firstPrice(item.price_cny);
-  const rate = cnyRubRate();
-  if (cny === undefined || rate === undefined) return undefined;
-  return Math.round(cny * rate);
+    kopeckPrice(item.salePriceU, item.priceU)
+  );
 }
 
-export function marketplacePriceCondition(item: JsonObject, kind: MarketplaceKind): string {
-  if (kind === "taobao" && firstPrice(item.price_cny) !== undefined && firstPrice(item.price_rub) === undefined) {
-    return "≈ CNY→RUB (CNY_RUB_RATE)";
-  }
+export function marketplacePriceCondition(item: JsonObject, _kind: MarketplaceKind): string {
   if (firstPrice(item.price_with_plus, item.card_price) !== undefined) {
     return "Есть цена по подписке/карте";
   }

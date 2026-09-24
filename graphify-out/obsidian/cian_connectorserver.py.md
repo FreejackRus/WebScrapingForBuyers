@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/server.py"
 type: "code"
-community: "Community 2"
+community: "cian_connector/server.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_2
+  - community/cian_connector/serverpy
 ---
 
 # cian_connector/server.py
@@ -20,7 +20,7 @@ tags:
 - [[CianSearchItemOut]] - `imports` [EXTRACTED]
 - [[CianSearchResponse]] - `imports` [EXTRACTED]
 - [[CianSelfcheckResponse]] - `imports` [EXTRACTED]
-- [[MetaOut_4]] - `imports` [EXTRACTED]
+- [[MetaOut_3]] - `imports` [EXTRACTED]
 - [[_address()]] - `contains` [EXTRACTED]
 - [[_agent()]] - `contains` [EXTRACTED]
 - [[_as_float()]] - `contains` [EXTRACTED]
@@ -41,7 +41,7 @@ tags:
 - [[_offer_row()]] - `contains` [EXTRACTED]
 - [[_parse_card()]] - `contains` [EXTRACTED]
 - [[_parse_offers()]] - `contains` [EXTRACTED]
-- [[_polite_wait()_3]] - `contains` [EXTRACTED]
+- [[_polite_wait()_5]] - `contains` [EXTRACTED]
 - [[_price_history()]] - `contains` [EXTRACTED]
 - [[_price_of()]] - `contains` [EXTRACTED]
 - [[_price_unit()]] - `contains` [EXTRACTED]
@@ -64,7 +64,7 @@ tags:
 - [[fastmcp_3]] - `imports_from` [EXTRACTED]
 - [[fastmcp_exceptions]] - `imports_from` [EXTRACTED]
 - [[fastmcp_server_middleware_error_handling]] - `imports_from` [EXTRACTED]
-- [[get_settings()_10]] - `imports` [EXTRACTED]
+- [[get_settings()]] - `imports` [EXTRACTED]
 - [[json]] - `imports` [EXTRACTED]
 - [[logging.py]] - `imports_from` [EXTRACTED]
 - [[mcp_core__init__.py]] - `imports_from` [EXTRACTED]
@@ -76,4 +76,4 @@ tags:
 - [[redact.py]] - `imports_from` [EXTRACTED]
 - [[typing]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_2
+#graphify/code #graphify/EXTRACTED #community/cian_connector/serverpy

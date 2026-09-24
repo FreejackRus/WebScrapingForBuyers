@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 86"
+community: "resolve_image_delivery"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_86
+  - community/resolve_image_delivery
 ---
 
 # Any
 
 ## Connections
-- [[worker_process_kwargs()]] - `references` [EXTRACTED]
+- [[dot-as_dict()_1]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_86
+#graphify/code #graphify/EXTRACTED #community/resolve_image_delivery

@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "Community 46"
+community: "wb_connector/server.py"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_46
+  - community/wb_connector/serverpy
 ---
 
 # string
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[wb_connectorserver.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_46
+#graphify/concept #graphify/EXTRACTED #community/wb_connector/serverpy

@@ -1,17 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 82"
+community: "pathlib"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_82
+  - community/pathlib
 ---
 
 # Path
 
 ## Connections
-- [[_load_baseline()]] - `references` [EXTRACTED]
-- [[fetch_tools()]] - `references` [EXTRACTED]
+- [[pins()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_82
+#graphify/code #graphify/EXTRACTED #community/pathlib

@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
 type: "code"
-community: "Community 271"
-location: "L326"
+community: "test_storefront_live_xhr_capture_via_get_context"
+location: "L196"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_271
+  - community/test_storefront_live_xhr_capture_via_get_context
 ---
 
 # close()
 
 ## Connections
-- [[test_sync_curl_get_closes_non_context_manager_response()]] - `contains` [EXTRACTED]
+- [[test_storefront_live_xhr_capture_via_get_context()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_271
+#graphify/code #graphify/EXTRACTED #community/test_storefront_live_xhr_capture_via_get_context

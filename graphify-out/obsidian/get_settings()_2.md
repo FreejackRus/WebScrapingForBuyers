@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/settings.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/src/aliexpress_connector/settings.py"
 type: "code"
-community: "Community 205"
-location: "L88"
+community: "pydantic"
+location: "L29"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_205
+  - community/pydantic
 ---
 
 # get_settings()
 
 ## Connections
-- [[DetmirSettings]] - `calls` [EXTRACTED]
-- [[detmir_connectorserver.py]] - `imports` [EXTRACTED]
-- [[detmir_connectorsettings.py]] - `contains` [EXTRACTED]
+- [[AliSettings]] - `calls` [EXTRACTED]
+- [[aliexpress_connectorserver.py]] - `imports` [EXTRACTED]
+- [[aliexpress_connectorsettings.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_205
+#graphify/code #graphify/EXTRACTED #community/pydantic

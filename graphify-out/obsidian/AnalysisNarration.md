@@ -1,12 +1,12 @@
 ---
 source_file: "apps/analysis/src/domain/analysis-narrator.ts"
 type: "code"
-community: "Community 36"
+community: "ollama-analysis-narrator.ts"
 location: "L3"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_36
+  - community/ollama-analysis-narratorts
 ---
 
 # AnalysisNarration
@@ -17,4 +17,4 @@ tags:
 - [[analyze.test.ts]] - `imports` [EXTRACTED]
 - [[ollama-analysis-narrator.ts]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_36
+#graphify/code #graphify/EXTRACTED #community/ollama-analysis-narratorts

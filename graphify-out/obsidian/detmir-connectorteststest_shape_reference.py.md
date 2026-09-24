@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_shape_reference.py"
 type: "code"
-community: "Community 66"
+community: "shape_signature"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_66
+  - community/shape_signature
 ---
 
 # detmir-connector/tests/test_shape_reference.py
@@ -19,4 +19,4 @@ tags:
 - [[resilience.py]] - `imports_from` [EXTRACTED]
 - [[test_card_normalization_matches_shape_golden()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_66
+#graphify/code #graphify/EXTRACTED #community/shape_signature

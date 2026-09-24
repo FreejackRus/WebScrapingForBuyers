@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py"
 type: "code"
-community: "Community 323"
+community: "test_selfcheck_title_less_wall_is_inconclusive_never_drift"
 location: "L483"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_323
+  - community/test_selfcheck_title_less_wall_is_inconclusive_never_drift
 ---
 
 # test_selfcheck_title_less_wall_is_inconclusive_never_drift()
@@ -16,4 +16,4 @@ tags:
 - [[_patch_render()_1]] - `calls` [EXTRACTED]
 - [[taobao-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_323
+#graphify/code #graphify/EXTRACTED #community/test_selfcheck_title_less_wall_is_inconclusive_never_drift

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/test_ci_concurrency.py"
 type: "rationale"
-community: "Community 59"
+community: "test_ci_concurrency.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_59
+  - community/test_ci_concurrencypy
 ---
 
 # A push to main must not cancel the nightly live canary, and the canary must not…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_ci_concurrency.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_59
+#graphify/rationale #graphify/EXTRACTED #community/test_ci_concurrencypy

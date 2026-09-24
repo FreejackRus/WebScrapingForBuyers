@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py"
 type: "rationale"
-community: "Community 98"
+community: "yandex-connector/tests/test_server.py"
 location: "L569"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_98
+  - community/yandex-connector/tests/test_serverpy
 ---
 
 # Yandex's ordering is the result of the search and must survive.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_dedupe_preserves_upstream_ranking_order()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_98
+#graphify/rationale #graphify/EXTRACTED #community/yandex-connector/tests/test_serverpy

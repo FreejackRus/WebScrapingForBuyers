@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/entities/user/types/index.ts"
 type: "code"
-community: "Community 32"
+community: "entities/user/index.ts"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_32
+  - community/entities/user/indexts
 ---
 
 # types/index.ts
@@ -17,4 +17,4 @@ tags:
 - [[packages_contracts_dist_index_sessionuser]] - `re_exports` [EXTRACTED]
 - [[packages_contracts_dist_index_usersettings]] - `re_exports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_32
+#graphify/code #graphify/EXTRACTED #community/entities/user/indexts

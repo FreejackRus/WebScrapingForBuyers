@@ -1,18 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "code"
-community: "Community 78"
-location: "L548"
+community: "log_event"
+location: "L657"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_78
+  - community/log_event
 ---
 
 # _card_item_dict()
 
 ## Connections
-- [[Any_27]] - `references` [EXTRACTED]
+- [[Any_16]] - `references` [EXTRACTED]
+- [[Changed_8]] - `references` [INFERRED]
 - [[Flatten one WB product object into the shared card-item shape. Used by wb_card,…]] - `rationale_for` [EXTRACTED]
 - [[_decode_mojibake()]] - `calls` [EXTRACTED]
 - [[_extract_price_rub()]] - `calls` [EXTRACTED]
@@ -20,6 +21,7 @@ tags:
 - [[wb_card()]] - `calls` [EXTRACTED]
 - [[wb_category_products()]] - `calls` [EXTRACTED]
 - [[wb_connectorserver.py]] - `contains` [EXTRACTED]
-- [[wb_search()_1]] - `calls` [EXTRACTED]
+- [[wb_search()]] - `calls` [EXTRACTED]
+- [[Изменено_7]] - `references` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_78
+#graphify/code #graphify/EXTRACTED #community/log_event

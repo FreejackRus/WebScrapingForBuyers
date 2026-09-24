@@ -1,12 +1,12 @@
 ---
 source_file: "apps/analysis/package.json"
 type: "concept"
-community: "Community 113"
+community: "analysis/package.json"
 location: "L22"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_113
+  - community/analysis/packagejson
 ---
 
 # vitest
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[analysispackage.json]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_113
+#graphify/concept #graphify/EXTRACTED #community/analysis/packagejson

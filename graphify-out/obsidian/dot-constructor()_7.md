@@ -1,18 +1,17 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/fallback-source-adapter.ts"
+source_file: "apps/search/src/infrastructure/sources/apify-marketplace-adapter.ts"
 type: "code"
-community: "Community 9"
-location: "L11"
+community: "packages_contracts_dist_index"
+location: "L20"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_9
+  - community/packages_contracts_dist_index
 ---
 
 # .constructor()
 
 ## Connections
-- [[FallbackSourceAdapter]] - `method` [EXTRACTED]
-- [[SourceAdapter]] - `references` [EXTRACTED]
+- [[ApifyMarketplaceAdapter]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_9
+#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index

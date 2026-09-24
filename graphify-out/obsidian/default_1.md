@@ -1,17 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 185"
+community: "decision_inspect"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_185
+  - community/decision_inspect
 ---
 
 # default
 
 ## Connections
-- [[ozon_reviews()]] - `references` [EXTRACTED]
-- [[ozon_search()_2]] - `references` [EXTRACTED]
+- [[decision_inspect()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_185
+#graphify/code #graphify/EXTRACTED #community/decision_inspect

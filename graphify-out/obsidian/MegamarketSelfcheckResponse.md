@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/models_output.py"
 type: "code"
-community: "Community 119"
+community: "megamarket_connector/models_output.py"
 location: "L61"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_119
+  - community/megamarket_connector/models_outputpy
 ---
 
 # MegamarketSelfcheckResponse
@@ -18,4 +18,4 @@ tags:
 - [[megamarket_connectorserver.py]] - `imports` [EXTRACTED]
 - [[megamarket_selfcheck()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_119
+#graphify/code #graphify/EXTRACTED #community/megamarket_connector/models_outputpy

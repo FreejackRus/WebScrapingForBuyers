@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/process.py"
 type: "code"
-community: "Community 86"
+community: "ozon_connector/server.py"
 location: "L70"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_86
+  - community/ozon_connector/serverpy
 ---
 
 # is_windows()
@@ -18,4 +18,4 @@ tags:
 - [[terminate_process_tree()]] - `calls` [EXTRACTED]
 - [[worker_process_kwargs()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_86
+#graphify/code #graphify/EXTRACTED #community/ozon_connector/serverpy

@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/pages/user/login/ui/index.tsx"
 type: "code"
-community: "Community 135"
+community: "useUserStore"
 location: "L3"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_135
+  - community/useUserStore
 ---
 
 # LoginPage()
@@ -17,4 +17,4 @@ tags:
 - [[pagesuserindex.ts]] - `re_exports` [EXTRACTED]
 - [[pagesuserloginindex.ts]] - `re_exports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_135
+#graphify/code #graphify/EXTRACTED #community/useUserStore

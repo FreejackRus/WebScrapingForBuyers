@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py"
 type: "code"
-community: "Community 24"
+community: "OfferBatch"
 location: "L445"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_24
+  - community/OfferBatch
 ---
 
 # OfferBatch
@@ -27,4 +27,4 @@ tags:
 - [[_search_yandex()]] - `calls` [EXTRACTED]
 - [[compare_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_24
+#graphify/code #graphify/EXTRACTED #community/OfferBatch

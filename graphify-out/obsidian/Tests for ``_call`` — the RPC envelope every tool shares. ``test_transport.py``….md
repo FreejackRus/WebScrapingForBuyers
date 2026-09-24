@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_call_envelope.py"
 type: "rationale"
-community: "Community 31"
+community: "test_call_envelope.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_31
+  - community/test_call_envelopepy
 ---
 
 # Tests for ``_call`` — the RPC envelope every tool shares. ``test_transport.py``…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_call_envelope.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_31
+#graphify/rationale #graphify/EXTRACTED #community/test_call_envelopepy

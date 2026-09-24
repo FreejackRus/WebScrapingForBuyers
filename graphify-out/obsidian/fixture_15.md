@@ -1,16 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 256"
+community: "no_delay"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_256
+  - community/no_delay
 ---
 
 # fixture
 
 ## Connections
-- [[fake_browser()]] - `references` [EXTRACTED]
+- [[clear_cache()_2]] - `references` [EXTRACTED]
+- [[no_delay()_1]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_256
+#graphify/code #graphify/EXTRACTED #community/no_delay

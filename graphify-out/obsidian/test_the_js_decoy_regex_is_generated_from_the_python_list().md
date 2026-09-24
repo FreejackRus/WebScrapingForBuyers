@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py"
 type: "code"
-community: "Community 18"
+community: "test_dom.py"
 location: "L26"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_18
+  - community/test_dompy
 ---
 
 # test_the_js_decoy_regex_is_generated_from_the_python_list()
@@ -15,4 +15,4 @@ tags:
 - [[One list, two consumers. Hand-writing the regex is how they drift apart.]] - `rationale_for` [EXTRACTED]
 - [[test_dom.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_18
+#graphify/code #graphify/EXTRACTED #community/test_dompy

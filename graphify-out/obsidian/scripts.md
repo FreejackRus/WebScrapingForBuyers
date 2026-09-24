@@ -1,19 +1,22 @@
 ---
-source_file: "packages/contracts/package.json"
+source_file: "apps/analysis/package.json"
 type: "code"
-community: "Community 189"
-location: "L8"
+community: "analysis/package.json"
+location: "L6"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_189
+  - community/analysis/packagejson
 ---
 
 # scripts
 
 ## Connections
+- [[analysispackage.json]] - `contains` [EXTRACTED]
 - [[build]] - `contains` [EXTRACTED]
-- [[contractspackage.json]] - `contains` [EXTRACTED]
+- [[dev]] - `contains` [EXTRACTED]
+- [[start]] - `contains` [EXTRACTED]
+- [[test]] - `contains` [EXTRACTED]
 - [[typecheck]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_189
+#graphify/code #graphify/EXTRACTED #community/analysis/packagejson

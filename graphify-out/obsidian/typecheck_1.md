@@ -1,12 +1,12 @@
 ---
-source_file: "package.json"
+source_file: "apps/gateway/package.json"
 type: "code"
-community: "Community 215"
-location: "L16"
+community: "gateway/package.json"
+location: "L11"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_215
+  - community/gateway/packagejson
 ---
 
 # typecheck
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[scripts_1]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_215
+#graphify/code #graphify/EXTRACTED #community/gateway/packagejson

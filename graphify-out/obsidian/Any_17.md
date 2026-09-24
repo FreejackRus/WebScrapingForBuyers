@@ -1,18 +1,22 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 41"
+community: "mpstats_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_41
+  - community/mpstats_connector/serverpy
 ---
 
 # Any
 
 ## Connections
-- [[_cdp_render()_1]] - `references` [EXTRACTED]
-- [[_is_qrator_wall()]] - `references` [EXTRACTED]
-- [[_search_item_from_tile()_2]] - `references` [EXTRACTED]
+- [[_call()_1]] - `references` [EXTRACTED]
+- [[_finalize_selfcheck()]] - `references` [EXTRACTED]
+- [[_int_graph()]] - `references` [EXTRACTED]
+- [[_last_nonzero()]] - `references` [EXTRACTED]
+- [[_parse_item_entry()]] - `references` [EXTRACTED]
+- [[_parse_warehouses_entry()]] - `references` [EXTRACTED]
+- [[_post_json_budgeted()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_41
+#graphify/code #graphify/EXTRACTED #community/mpstats_connector/serverpy

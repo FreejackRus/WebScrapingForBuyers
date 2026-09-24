@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 60"
+community: "aliexpress-connector/tests/test_parser_live.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_60
+  - community/aliexpress-connector/tests/test_parser_livepy
 ---
 
 # cdp
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[test_live_cdp_reads_a_real_grid_and_card()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_60
+#graphify/code #graphify/EXTRACTED #community/aliexpress-connector/tests/test_parser_livepy

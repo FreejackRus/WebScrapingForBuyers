@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py"
 type: "code"
-community: "Community 224"
+community: "_patch_page"
 location: "L915"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_224
+  - community/_patch_page
 ---
 
 # test_no_redirect_keeps_the_original_url()
@@ -15,4 +15,4 @@ tags:
 - [[_patch_page()]] - `calls` [EXTRACTED]
 - [[megamarket-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_224
+#graphify/code #graphify/EXTRACTED #community/_patch_page

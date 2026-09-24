@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/widgets/search/offers/ui/index.tsx"
 type: "code"
-community: "Community 40"
+community: "offers/ui/index.tsx"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_40
+  - community/offers/ui/indextsx
 ---
 
 # offers/ui/index.tsx
@@ -32,4 +32,4 @@ tags:
 - [[useOfferTable()]] - `imports` [EXTRACTED]
 - [[useSearchStore]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_40
+#graphify/code #graphify/EXTRACTED #community/offers/ui/indextsx

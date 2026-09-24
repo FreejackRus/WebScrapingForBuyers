@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_http_tier.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_call_envelope.py"
 type: "code"
-community: "Community 17"
-location: "L122"
+community: "payload"
+location: "L93"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_17
+  - community/payload
 ---
 
 # handler()
 
 ## Connections
-- [[test_exhausted_gateway_retries_return_the_real_response()]] - `contains` [EXTRACTED]
+- [[test_inner_200_returns_the_parsed_object()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_17
+#graphify/code #graphify/EXTRACTED #community/payload

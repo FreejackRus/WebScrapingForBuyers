@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_ssr.py"
 type: "code"
-community: "Community 141"
+community: "test_ssr.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_141
+  - community/test_ssrpy
 ---
 
 # test_ssr.py
@@ -64,4 +64,4 @@ tags:
 - [[test_zone_undiscounted_row_treats_the_base_price_as_the_everyday_price()]] - `contains` [EXTRACTED]
 - [[yandex_connector__init__.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_141
+#graphify/code #graphify/EXTRACTED #community/test_ssrpy

@@ -1,21 +1,21 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/http-marketplace-adapter.ts"
 type: "code"
-community: "Community 80"
+community: "http-marketplace-adapter.ts"
 location: "L41"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_80
+  - community/http-marketplace-adapterts
 ---
 
 # WildberriesHttpAdapter
 
 ## Connections
-- [[dot-search()_2]] - `method` [EXTRACTED]
+- [[dot-search()_5]] - `method` [EXTRACTED]
 - [[SourceAdapter]] - `implements` [EXTRACTED]
 - [[createHttpMarketplaceSources()]] - `calls` [EXTRACTED]
 - [[http-marketplace-adapter.test.ts]] - `imports` [EXTRACTED]
 - [[http-marketplace-adapter.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_80
+#graphify/code #graphify/EXTRACTED #community/http-marketplace-adapterts

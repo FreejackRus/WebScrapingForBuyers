@@ -1,18 +1,24 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/server.py"
 type: "code"
-community: "Community 7"
-location: "L368"
+community: "TransportDownError"
+location: "L344"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_7
+  - community/TransportDownError
 ---
 
 # _attempt()
 
 ## Connections
-- [[_cdp_fetch_json()]] - `contains` [EXTRACTED]
-- [[open_page()_5]] - `calls` [EXTRACTED]
+- [[_anti_bot_challenge()_1]] - `calls` [EXTRACTED]
+- [[_cdp_render_search()_1]] - `contains` [EXTRACTED]
+- [[_polite_wait()_9]] - `calls` [EXTRACTED]
+- [[get_handoff_id()]] - `calls` [EXTRACTED]
+- [[open_page()]] - `calls` [EXTRACTED]
+- [[payload()]] - `indirect_call` [INFERRED]
+- [[read()]] - `contains` [EXTRACTED]
+- [[read_with_handoff()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_7
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

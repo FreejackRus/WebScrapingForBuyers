@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 19"
+community: "test_chrome_cdp_stealth.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_19
+  - community/test_chrome_cdp_stealthpy
 ---
 
 # CompletedProcess
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[_completed()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_19
+#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_stealthpy

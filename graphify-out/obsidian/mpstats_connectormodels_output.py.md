@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/src/mpstats_connector/models_output.py"
 type: "code"
-community: "Community 23"
+community: "mpstats_connector/server.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_23
+  - community/mpstats_connector/serverpy
 ---
 
 # mpstats_connector/models_output.py
 
 ## Connections
-- [[MetaOut_6]] - `contains` [EXTRACTED]
+- [[MetaOut_8]] - `contains` [EXTRACTED]
 - [[MpStatsItem]] - `contains` [EXTRACTED]
 - [[MpStatsItemResponse]] - `contains` [EXTRACTED]
 - [[MpStatsNoResultsResponse]] - `contains` [EXTRACTED]
@@ -29,4 +29,4 @@ tags:
 - [[pydantic]] - `imports_from` [EXTRACTED]
 - [[typing]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_23
+#graphify/code #graphify/EXTRACTED #community/mpstats_connector/serverpy

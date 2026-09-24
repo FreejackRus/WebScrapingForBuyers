@@ -73,11 +73,11 @@ export function AnalysisChat() {
         <div>
           <p className="eyebrow">Закрытый контур</p>
           <h2 id="analysis-title">AI-копайлот закупок</h2>
-          <p>
+          <p className="chat-head-lead">
             Для {name}: объясняю таблицу предложений. Фильтр и отбор строк считает код анализа.
           </p>
         </div>
-        <span className="model-badge">{analysis?.provider ?? "Закрытый контур ПЕРЕМЕНА"}</span>
+        <span className="model-badge">{user.role === "admin" ? (analysis?.provider ?? "Закрытый контур ПЕРЕМЕНА") : "Закрытый контур ПЕРЕМЕНА"}</span>
       </div>
       <div className="chat-thread" role="log" aria-live="polite">
         {messages.length === 0 && <p className="chat-empty">{emptyHint}</p>}
@@ -150,8 +150,8 @@ export function AnalysisChat() {
           readOnly={locked}
           aria-busy={locked}
         />
-        <button type="submit" disabled={locked || prompt.trim().length < 2}>
-          {locked ? "Считаем…" : "Отправить"}
+        <button className="chat-send" type="submit" disabled={locked || prompt.trim().length < 2}>
+          {locked ? "…" : "Отправить"}
         </button>
       </form>
     </section>

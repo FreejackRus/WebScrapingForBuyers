@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/server.py"
 type: "rationale"
-community: "Community 33"
+community: "TransportDownError"
 location: "L515"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_33
+  - community/TransportDownError
 ---
 
 # Structural drift canary for Lamoda (tri-state). Probes the GraphQL card path…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[lamoda_selfcheck()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_33
+#graphify/rationale #graphify/EXTRACTED #community/TransportDownError

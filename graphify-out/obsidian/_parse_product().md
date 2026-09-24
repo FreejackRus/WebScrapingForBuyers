@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/server.py"
 type: "code"
-community: "Community 45"
+community: "_parse_product"
 location: "L248"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_45
+  - community/_parse_product
 ---
 
 # _parse_product()
 
 ## Connections
-- [[Any_18]] - `references` [EXTRACTED]
+- [[Any_10]] - `references` [EXTRACTED]
 - [[DetmirProduct]] - `calls` [EXTRACTED]
 - [[Flatten one raw API product into the connector's output shape.]] - `rationale_for` [EXTRACTED]
 - [[_as_dict()]] - `calls` [EXTRACTED]
@@ -23,4 +23,4 @@ tags:
 - [[detmir_category()]] - `calls` [EXTRACTED]
 - [[detmir_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_45
+#graphify/code #graphify/EXTRACTED #community/_parse_product

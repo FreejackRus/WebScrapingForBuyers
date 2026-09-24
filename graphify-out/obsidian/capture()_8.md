@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
 type: "code"
-community: "Community 195"
-location: "L259"
+community: "capture"
+location: "L547"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/Community_195
+  - graphify/EXTRACTED
+  - community/capture
 ---
 
 # capture()
 
 ## Connections
-- [[test_card_accepts_a_bare_product_id()]] - `indirect_call` [INFERRED]
-- [[test_card_navigates_a_rebuilt_site_base_url()]] - `indirect_call` [INFERRED]
+- [[test_categories_tree_passes_the_region_through()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/Community_195
+#graphify/code #graphify/EXTRACTED #community/capture

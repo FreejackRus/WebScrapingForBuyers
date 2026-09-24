@@ -1,19 +1,18 @@
 ---
 source_file: "apps/gateway/src/app.ts"
 type: "code"
-community: "Community 70"
+community: "gateway/src/app.ts"
 location: "L7"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_70
+  - community/gateway/src/appts
 ---
 
 # buildGatewayApp()
 
 ## Connections
 - [[cookieHeader()]] - `calls` [EXTRACTED]
-- [[createService()]] - `calls` [EXTRACTED]
 - [[gateway.test.ts]] - `imports` [EXTRACTED]
 - [[gatewaysrcapp.ts]] - `contains` [EXTRACTED]
 - [[gatewaysrcserver.ts]] - `imports` [EXTRACTED]
@@ -22,6 +21,5 @@ tags:
 - [[presentSnapshot()]] - `calls` [EXTRACTED]
 - [[proxyJson()]] - `calls` [EXTRACTED]
 - [[resolveUser()]] - `calls` [EXTRACTED]
-- [[serviceUrl()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_70
+#graphify/code #graphify/EXTRACTED #community/gateway/src/appts

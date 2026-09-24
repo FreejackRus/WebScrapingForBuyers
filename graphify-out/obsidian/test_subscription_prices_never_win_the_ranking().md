@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
-community: "Community 25"
+community: "offer"
 location: "L153"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_25
+  - community/offer
 ---
 
 # test_subscription_prices_never_win_the_ranking()
@@ -20,4 +20,4 @@ tags:
 - [[ya()_1]] - `contains` [EXTRACTED]
 - [[ya()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_25
+#graphify/code #graphify/EXTRACTED #community/offer

@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
 type: "code"
-community: "Community 0"
-location: "L575"
+community: "mcp-marketplace-adapter.ts"
+location: "L631"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_0
+  - community/mcp-marketplace-adapterts
 ---
 
 # compactIdentity()
@@ -19,4 +19,4 @@ tags:
 - [[productModelStems()]] - `calls` [EXTRACTED]
 - [[skuStemsIn()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_0
+#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts

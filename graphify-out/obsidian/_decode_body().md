@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "code"
-community: "Community 228"
-location: "L280"
+community: "wb_connector/server.py"
+location: "L389"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_228
+  - community/wb_connector/serverpy
 ---
 
 # _decode_body()
@@ -16,4 +16,4 @@ tags:
 - [[_fetch()_1]] - `calls` [EXTRACTED]
 - [[wb_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_228
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

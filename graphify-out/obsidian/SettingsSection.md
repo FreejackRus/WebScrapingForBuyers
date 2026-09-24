@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/widgets/user/settings/ui/index.tsx"
 type: "code"
-community: "Community 135"
-location: "L11"
+community: "useUserStore"
+location: "L12"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_135
+  - community/useUserStore
 ---
 
 # SettingsSection
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[widgetsusersettingsuiindex.tsx]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_135
+#graphify/code #graphify/EXTRACTED #community/useUserStore

@@ -1,19 +1,21 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/http_tier.py"
 type: "code"
-community: "Community 13"
+community: "get_text_budgeted"
 location: "L181"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_13
+  - community/get_text_budgeted
 ---
 
 # get_text_budgeted()
 
 ## Connections
 - [[dot-response()]] - `indirect_call` [INFERRED]
-- [[AsyncClient_3]] - `references` [EXTRACTED]
+- [[Added_16]] - `references` [INFERRED]
+- [[AsyncClient_2]] - `references` [EXTRACTED]
+- [[Changed_8]] - `references` [INFERRED]
 - [[GET ``url`` under a hard wall-clock budget, returning ``(status, text, err)``.…]] - `rationale_for` [EXTRACTED]
 - [[PoliteGate]] - `references` [EXTRACTED]
 - [[_budgeted_get_text()]] - `calls` [INFERRED]
@@ -33,5 +35,7 @@ tags:
 - [[test_transport_error_is_retried_then_succeeds()]] - `calls` [INFERRED]
 - [[test_wall_clock_budget_bounds_a_single_slow_attempt()]] - `calls` [INFERRED]
 - [[transport__init__.py]] - `imports` [EXTRACTED]
+- [[Добавлено_18]] - `references` [INFERRED]
+- [[Изменено_7]] - `references` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Community_13
+#graphify/code #graphify/INFERRED #community/get_text_budgeted

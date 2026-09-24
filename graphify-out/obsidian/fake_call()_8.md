@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_server.py"
 type: "code"
-community: "Community 34"
-location: "L437"
+community: "mpstats-connector/tests/test_server.py"
+location: "L362"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_34
+  - community/mpstats-connector/tests/test_serverpy
 ---
 
 # fake_call()
 
 ## Connections
-- [[payload()]] - `indirect_call` [INFERRED]
-- [[test_selfcheck_drift_when_anchors_missing()]] - `contains` [EXTRACTED]
+- [[_warehouses_payload()]] - `calls` [EXTRACTED]
+- [[test_warehouses_happy_path()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_34
+#graphify/code #graphify/EXTRACTED #community/mpstats-connector/tests/test_serverpy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py"
 type: "rationale"
-community: "Community 240"
+community: "test_a_graphql_error_block_is_reported_verbatim"
 location: "L332"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_240
+  - community/test_a_graphql_error_block_is_reported_verbatim
 ---
 
 # The server's own message beats a generic drift verdict.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_a_graphql_error_block_is_reported_verbatim()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_240
+#graphify/rationale #graphify/EXTRACTED #community/test_a_graphql_error_block_is_reported_verbatim

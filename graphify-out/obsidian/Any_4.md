@@ -1,17 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 127"
+community: "ozon_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_127
+  - community/ozon_connector/serverpy
 ---
 
 # Any
 
 ## Connections
-- [[_bundle()]] - `references` [EXTRACTED]
-- [[_load_runner()]] - `references` [EXTRACTED]
+- [[worker_process_kwargs()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_127
+#graphify/code #graphify/EXTRACTED #community/ozon_connector/serverpy

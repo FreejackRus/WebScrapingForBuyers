@@ -1,12 +1,12 @@
 ---
 source_file: "package.json"
 type: "concept"
-community: "Community 165"
+community: "package.json"
 location: "L19"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_165
+  - community/packagejson
 ---
 
 # concurrently
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[package.json]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_165
+#graphify/concept #graphify/EXTRACTED #community/packagejson

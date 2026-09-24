@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 161"
+community: "avito-connector/tests/test_server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_161
+  - community/avito-connector/tests/test_serverpy
 ---
 
 # fixture
 
 ## Connections
-- [[no_server_start()]] - `references` [EXTRACTED]
+- [[_no_cache()_4]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_161
+#graphify/code #graphify/EXTRACTED #community/avito-connector/tests/test_serverpy

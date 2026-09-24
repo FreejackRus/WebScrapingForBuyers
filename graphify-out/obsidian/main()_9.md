@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/src/citilink_connector/__main__.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/diagnose_drift.py"
 type: "code"
-community: "Community 21"
-location: "L13"
+community: "chrome_cdp.py"
+location: "L291"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_21
+  - community/chrome_cdppy
 ---
 
 # main()
 
 ## Connections
-- [[Run the server on the transport selected by the environment (stdio default).]] - `rationale_for` [EXTRACTED]
-- [[citilink_connector__main__.py]] - `contains` [EXTRACTED]
-- [[run_server()]] - `calls` [INFERRED]
+- [[diagnose()]] - `calls` [EXTRACTED]
+- [[diagnose_drift.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_21
+#graphify/code #graphify/EXTRACTED #community/chrome_cdppy

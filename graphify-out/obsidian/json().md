@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
 type: "code"
-community: "Community 149"
-location: "L483"
+community: "test_storefront_live_xhr_capture_via_get_context"
+location: "L174"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_149
+  - community/test_storefront_live_xhr_capture_via_get_context
 ---
 
 # json()
 
 ## Connections
-- [[_patch_graphql_response()]] - `contains` [EXTRACTED]
 - [[payload()]] - `indirect_call` [INFERRED]
+- [[test_storefront_live_xhr_capture_via_get_context()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_149
+#graphify/code #graphify/EXTRACTED #community/test_storefront_live_xhr_capture_via_get_context

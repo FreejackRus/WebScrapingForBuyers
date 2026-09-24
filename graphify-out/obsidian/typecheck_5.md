@@ -1,12 +1,12 @@
 ---
-source_file: "apps/search/package.json"
+source_file: "packages/contracts/package.json"
 type: "code"
-community: "Community 234"
-location: "L11"
+community: "contracts/package.json"
+location: "L10"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_234
+  - community/contracts/packagejson
 ---
 
 # typecheck
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[scripts_5]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_234
+#graphify/code #graphify/EXTRACTED #community/contracts/packagejson

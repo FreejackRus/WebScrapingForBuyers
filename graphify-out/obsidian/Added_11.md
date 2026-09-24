@@ -1,0 +1,28 @@
+---
+source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
+type: "document"
+community: "TransportDownError"
+location: "L1761"
+tags:
+  - graphify/document
+  - graphify/INFERRED
+  - community/TransportDownError
+---
+
+# Added
+
+## Connections
+- [[1.2.0 — 2026-07-28 (English)]] - `contains` [EXTRACTED]
+- [[avito_card()]] - `references` [INFERRED]
+- [[avito_selfcheck()]] - `references` [INFERRED]
+- [[avito_seller()]] - `references` [INFERRED]
+- [[lamoda_card()]] - `references` [INFERRED]
+- [[lamoda_search()]] - `references` [INFERRED]
+- [[lamoda_selfcheck()]] - `references` [INFERRED]
+- [[megamarket_card()]] - `references` [INFERRED]
+- [[megamarket_selfcheck()]] - `references` [INFERRED]
+- [[probe_session()]] - `references` [INFERRED]
+- [[taobao_card()]] - `references` [INFERRED]
+- [[taobao_selfcheck()]] - `references` [INFERRED]
+
+#graphify/document #graphify/INFERRED #community/TransportDownError

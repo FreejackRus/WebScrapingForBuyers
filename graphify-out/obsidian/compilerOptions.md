@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/tsconfig.json"
 type: "code"
-community: "Community 159"
+community: "compilerOptions"
 location: "L3"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_159
+  - community/compilerOptions
 ---
 
 # compilerOptions
@@ -23,4 +23,4 @@ tags:
 - [[types]] - `contains` [EXTRACTED]
 - [[webtsconfig.json]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_159
+#graphify/code #graphify/EXTRACTED #community/compilerOptions

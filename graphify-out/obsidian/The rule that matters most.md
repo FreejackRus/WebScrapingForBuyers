@@ -1,0 +1,17 @@
+---
+source_file: "mcp-servers/ru-marketplace-mcp/docs/ADDING_A_SOURCE.md"
+type: "document"
+community: "Adding a marketplace"
+location: "L235"
+tags:
+  - graphify/document
+  - graphify/EXTRACTED
+  - community/Adding_a_marketplace
+---
+
+# The rule that matters most
+
+## Connections
+- [[Adding a marketplace_2]] - `contains` [EXTRACTED]
+
+#graphify/document #graphify/EXTRACTED #community/Adding_a_marketplace

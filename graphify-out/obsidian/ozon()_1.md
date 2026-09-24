@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
-community: "Community 25"
+community: "offer"
 location: "L213"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_25
+  - community/offer
 ---
 
 # ozon()
@@ -17,4 +17,4 @@ tags:
 - [[test_relevance_warnings_reach_the_response()]] - `indirect_call` [INFERRED]
 - [[test_stock_filter_ranks_only_confirmed_available_offers()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Community_25
+#graphify/code #graphify/INFERRED #community/offer

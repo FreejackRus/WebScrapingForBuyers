@@ -1,17 +1,17 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/demo-source-adapter.ts"
+source_file: "apps/analysis/src/infrastructure/ollama-analysis-narrator.ts"
 type: "code"
-community: "Community 9"
-location: "L20"
+community: "ollama-analysis-narrator.ts"
+location: "L223"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_9
+  - community/ollama-analysis-narratorts
 ---
 
 # .constructor()
 
 ## Connections
-- [[DemoSourceAdapter]] - `method` [EXTRACTED]
+- [[OllamaAnalysisNarrator]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_9
+#graphify/code #graphify/EXTRACTED #community/ollama-analysis-narratorts

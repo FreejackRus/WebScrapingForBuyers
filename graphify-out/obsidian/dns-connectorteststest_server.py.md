@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py"
 type: "code"
-community: "Community 108"
+community: "dns-connector/tests/test_server.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_108
+  - community/dns-connector/tests/test_serverpy
 ---
 
 # dns-connector/tests/test_server.py
 
 ## Connections
 - [[Offline tests for the DNS-Shop connector. CDP rendering is monkeypatched out…]] - `rationale_for` [EXTRACTED]
-- [[_no_cache()_1]] - `contains` [EXTRACTED]
+- [[_no_cache()_2]] - `contains` [EXTRACTED]
 - [[_patch_render()_3]] - `contains` [EXTRACTED]
 - [[dns_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[fastmcp_exceptions]] - `imports_from` [EXTRACTED]
@@ -38,4 +38,4 @@ tags:
 - [[test_selfcheck_zero_tiles_is_drift()_1]] - `contains` [EXTRACTED]
 - [[test_the_dom_extractor_and_the_python_parser_agree()_1]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_108
+#graphify/code #graphify/EXTRACTED #community/dns-connector/tests/test_serverpy

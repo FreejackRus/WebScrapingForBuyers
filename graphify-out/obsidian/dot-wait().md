@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/http_tier.py"
 type: "code"
-community: "Community 131"
-location: "L384"
+community: "get_text_budgeted"
+location: "L67"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_131
+  - community/get_text_budgeted
 ---
 
 # .wait()
 
 ## Connections
-- [[_PoliteGate]] - `method` [EXTRACTED]
-- [[_polite_wait()_4]] - `calls` [EXTRACTED]
+- [[PoliteGate]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_131
+#graphify/code #graphify/EXTRACTED #community/get_text_budgeted

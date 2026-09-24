@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 3"
+community: "test_gateway_statuses_are_retried"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_3
+  - community/test_gateway_statuses_are_retried
 ---
 
 # parametrize
 
 ## Connections
-- [[test_compose_service_passes_http_startup_auth_gate()]] - `references` [EXTRACTED]
+- [[test_gateway_statuses_are_retried()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_3
+#graphify/code #graphify/EXTRACTED #community/test_gateway_statuses_are_retried
