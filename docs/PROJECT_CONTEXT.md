@@ -734,3 +734,8 @@ same-origin `__internal/u-search/exactmatch/ru/common/v18/search`
 Выкладка: sync в `/projects/ru-marketplace-mcp` + `marketplace-mcp`
 `--no-deps --build`. Search image не обязателен (MCP URL тот же).
 
+Smoke после выкладки: `wb_search('Logitech K380')` → 100 карточек,
+100 с ценами, route `__internal/u-search/.../v18`, `capture_mode=live_xhr`.
+Re-fetch того же URL из `page.evaluate` давал 403 — оставлен только как
+fallback; primary = тело Network.response при навигации (как diagnose).
+
