@@ -90,7 +90,6 @@ ssh -N -o ExitOnForwardFailure=yes -o ServerAliveInterval=30 \
 - https://market.yandex.ru
 - https://megamarket.ru
 - https://aliexpress.ru
-- https://www.taobao.com
 
 Затем один повтор поиска в приложении. Не входить в банки, почту и рабочие
 аккаунты — профиль только для витрин.

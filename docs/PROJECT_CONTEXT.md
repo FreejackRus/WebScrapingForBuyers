@@ -821,3 +821,59 @@ Chrome не трогали.
 (на сервере нет `.git`). Stamp: stitch-mobile-ui ab19f78. Chrome Up
 без пересоздания.
 
+### 2026-09-24 — локальная копия догнана до GitHub; Taobao снят
+
+Локальный workspace привязан к `origin/main` `7423adf`
+(https://github.com/FreejackRus/WebScrapingForBuyers). `.env.server`
+не копировали. Taobao убран из контура Price Radar: нет kind/адаптера,
+нет `taobao` в `MARKETPLACE_SOURCES`, нет `CNY_RUB_RATE` и конвертации
+юаней. AliExpress остаётся. Вендорный `mcp-servers/ru-marketplace-mcp`
+не вырезали — это чужой бандл; search его `taobao_search` больше не
+вызывает.
+
+### 2026-09-24 — дистрибьюторы без API (повторная проверка)
+
+У Servermall, Онлайнтрейд, Регард, СРВТрейд, ТоргPC публичного
+каталожного API нет; Хардпрайс — сравниватель, не поставщик. План без
+фейковых цен: сначала партнёрский XLSX/YML в индекс по MPN, иначе
+витрина через headed Chrome (`SourceAdapter` в search, розницу помечать
+явно). Подробности в `docs/DISTRIBUTORS.md`.
+
+### 2026-09-24 — Taobao снят на проде; регрессии first-party
+
+Локально закрыт контур Taobao: kind/адаптер/`CNY_RUB_RATE` нет; AliExpress
+остаётся. Тесты: `MARKETPLACE_SOURCES` с leftover `taobao` не монтирует
+источник; `price_cny` не конвертируется в ₽. README больше не обещает
+демо-MERLION и явно говорит, что Taobao нет. Дубли OCS в `.env.example`
+сняты. Вендорный `mcp-servers/ru-marketplace-mcp` не трогали.
+
+Прод: SFTP compose + search adapter + docs; `up -d --no-deps --build search`
+и `--no-deps --force-recreate marketplace-mcp` (env list без taobao).
+Chrome `31d4ef9c3dae` не пересоздавался (Up ~11h). После выкладки
+`MARKETPLACE_SOURCES` search/MCP: без taobao; `CNY_RUB_RATE` в search нет.
+Неиспользуемый ключ в `.env.production` снят без логирования значения.
+Дистрибьюторские stubs/фиды не трогали. Stamp: taobao-off-prod.
+
+### 2026-09-24 — UI polish mobile + desktop
+
+Продолжение Stitch/MSD без новой DS: палитра `#2569ED`, вордмарк картинкой.
+
+Desktop/tablet ≥900px: боковой чат `minmax(320px, 32%)` по
+`9a70cf57395b4e5492f1872e167a3fd7`, таблица не сжимает колонки
+(min-width + скролл `.table-wrap`). Поиск и композер больше не
+складываются в одну колонку на 1100px.
+
+Mobile ≤720px: Радар / AI Копилот (фокус скрывает поиск и карточки) /
+Профиль; поле поиска + «Найти» в ряд; композер input+кнопка;
+карточки офферов; tap ≥44px; `overflow-x: clip`; выход в настройках
+(кнопка шапки на узком экране скрыта). Коннекторы и телеметрия —
+только admin; «Пройти проверку» нет.
+
+Проверка: typecheck, test, build. Локального `.env` нет, в
+`.env.example` только заглушки — в браузере без выдуманных паролей
+не логинились. Cursor browser MCP не открыл вкладку; login preview
+собирался локально.
+
+Выкладка: только web `--no-deps --build`. Chrome `31d4ef9c3dae` не
+пересоздавался (Up ~12h). Stamp: stitch-ui-polish.
+

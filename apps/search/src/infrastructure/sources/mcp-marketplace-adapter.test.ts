@@ -5,6 +5,8 @@ import {
   AVITO_CATEGORY_COMPUTER,
   AVITO_LOCATION_ALL,
   McpMarketplaceAdapter,
+  createMarketplaceSourcesFromEnv,
+  marketplaceItemPrice,
   assessMarketplaceOfferRelevance,
   isAntibotTransportError,
   isAvitoPowError,
@@ -48,7 +50,6 @@ const acceptedByKind: Record<MarketplaceKind, readonly string[]> = {
   citilink: ["query"],
   avito: ["query", "page", "location_id"],
   aliexpress: ["query"],
-  taobao: ["query", "page"],
 };
 
 describe("marketplaceToolArguments", () => {
@@ -89,7 +90,53 @@ describe("marketplaceToolArguments", () => {
       category_id: AVITO_CATEGORY_COMPUTER,
     });
   });
+
+  it("has no taobao kind after removal", () => {
+    expect(Object.keys(acceptedByKind)).not.toContain("taobao");
+  });
 });
+
+describe("createMarketplaceSourcesFromEnv", () => {
+  const previous = {
+    url: process.env.MARKETPLACE_MCP_URL,
+    token: process.env.MARKETPLACE_MCP_TOKEN,
+    tenant: process.env.MARKETPLACE_MCP_TENANT,
+    sources: process.env.MARKETPLACE_SOURCES,
+    cny: process.env.CNY_RUB_RATE,
+  };
+
+  afterEach(() => {
+    restoreEnv("MARKETPLACE_MCP_URL", previous.url);
+    restoreEnv("MARKETPLACE_MCP_TOKEN", previous.token);
+    restoreEnv("MARKETPLACE_MCP_TENANT", previous.tenant);
+    restoreEnv("MARKETPLACE_SOURCES", previous.sources);
+    restoreEnv("CNY_RUB_RATE", previous.cny);
+  });
+
+  it("ignores leftover taobao in MARKETPLACE_SOURCES", () => {
+    process.env.MARKETPLACE_MCP_URL = "http://marketplace-mcp.test/mcp";
+    process.env.MARKETPLACE_MCP_TOKEN = "token";
+    process.env.MARKETPLACE_MCP_TENANT = "peremena";
+    process.env.MARKETPLACE_SOURCES = "wildberries,aliexpress,taobao";
+    const names = createMarketplaceSourcesFromEnv().map((source) => source.name);
+    expect(names).toEqual(["Wildberries", "AliExpress"]);
+    expect(names.join(",")).not.toMatch(/taobao/i);
+  });
+});
+
+describe("marketplaceItemPrice", () => {
+  it("does not convert leftover CNY into rubles", () => {
+    process.env.CNY_RUB_RATE = "12.5";
+    expect(marketplaceItemPrice({ price_cny: 100 })).toBeUndefined();
+    expect(marketplaceItemPrice({ price_rub: 1_990 })).toBe(1_990);
+    delete process.env.CNY_RUB_RATE;
+  });
+});
+
+function restoreEnv(name: string, value: string | undefined): void {
+  if (value === undefined) delete process.env[name];
+  else process.env[name] = value;
+}
 
 afterEach(() => {
   resetWbRateLimitForTests();

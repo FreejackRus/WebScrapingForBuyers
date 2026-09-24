@@ -47,7 +47,7 @@ CDP: headed Google Chrome в Docker (`172.29.0.10:9222`, прокси повер
 localhost:9221). Ручной challenge — VNC `127.0.0.1:5901` через
 `ssh -L 5901:127.0.0.1:5901` или `./scripts/chrome-vnc-tunnel.sh`.
 Прогреть avito.ru / ozon.ru / dns-shop.ru / citilink.ru / market.yandex.ru /
-megamarket.ru / aliexpress.ru / taobao.com в профиле `chrome-headed`.
+megamarket.ru / aliexpress.ru в профиле `chrome-headed`.
 Процедура: `docs/CHROME_VNC.md`. B2B-дистрибьюторы: `docs/DISTRIBUTORS.md`.
 
 ## Рекомендация для MVP

@@ -101,16 +101,16 @@ docker compose --env-file .env.production -f docker-compose.production.yml \
   up -d --no-deps --build search analysis
 ```
 
-- Wildberries, Яндекс Маркет, Ozon, DNS, Мегамаркет, Ситилинк и Авито
-  подключены через `Vladimir-Human/ru-marketplace-mcp` 2.4.2 по MCP.
-  Для Wildberries есть прямой HTTP-запас, если MCP молчит.
-- Ozon, DNS, Ситилинк, Авито, Яндекс и Мегамаркет опираются на headed Chrome
+- Wildberries, Яндекс Маркет, Ozon, DNS, Мегамаркет, Ситилинк, Авито и
+  AliExpress подключены через `Vladimir-Human/ru-marketplace-mcp` 2.4.2 по MCP.
+  Для Wildberries есть прямой HTTP-запас, если MCP молчит. Taobao в контуре нет.
+- Ozon, DNS, Ситилинк, Авито, Яндекс, Мегамаркет и AliExpress опираются на headed Chrome
   + CDP (`172.29.0.10:9222`, профиль `chrome-headed`). Chrome 154 слушает
   DevTools только на localhost:9221; `cdp-proxy` отдаёт `0.0.0.0:9222`.
   Challenge один раз вручную: `./scripts/chrome-vnc-tunnel.sh` или
   `ssh -L 5901:127.0.0.1:5901`, VNC на `127.0.0.1:5901`, открыть
   avito.ru / ozon.ru / dns-shop.ru / citilink.ru / market.yandex.ru /
-  megamarket.ru. Пошагово: [`docs/CHROME_VNC.md`](docs/CHROME_VNC.md).
+  megamarket.ru / aliexpress.ru. Пошагово: [`docs/CHROME_VNC.md`](docs/CHROME_VNC.md).
   `CHROME_CHALLENGE_HANDOFF_S=120` держит вкладку челленджа для VNC,
   капчу не решает. Search не `depends_on` chrome — обычный `--build search`
   больше не пересоздаёт сессию.
@@ -122,7 +122,7 @@ docker compose --env-file .env.production -f docker-compose.production.yml \
   `crawlerbros/dns-shop-scraper`, Мегамаркет —
   `crawlerbros/megamarket-scraper`. Включается только с `APIFY_TOKEN` и лимитом
   `APIFY_MAX_CHARGE_USD`. Мегамаркет перед постоянным включением нужен пилот.
-- MERLION, NETLAB и OCS остаются явно помеченными демонстрационными адаптерами
-  до получения API/прайсов.
+- MERLION, NETLAB и OCS имеют live-клиенты и монтируются только с партнёрскими
+  ключами. Остальные дистрибьюторы — stubs без фейковых цен (`docs/DISTRIBUTORS.md`).
 - Аналитическое объяснение формирует уже установленная локальная Qwen3 через
   Ollama. Фильтрация и выбор строк выполняются детерминированным кодом.

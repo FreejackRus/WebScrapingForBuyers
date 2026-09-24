@@ -25,8 +25,8 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; min-width: 320px; }
+html { scroll-behavior: smooth; overflow-x: clip; }
+body { margin: 0; min-width: 320px; overflow-x: clip; }
 button, input, textarea, select { font: inherit; }
 button { color: inherit; cursor: pointer; }
 .mono { font-family: "JetBrains Mono", ui-monospace, monospace; }
@@ -37,7 +37,7 @@ button { color: inherit; cursor: pointer; }
 .skip-link { position: absolute; left: 12px; top: -40px; padding: 8px 10px; background: var(--brand); color: #fff; text-decoration: none; }
 .skip-link:focus { top: 10px; }
 .boot { min-height: 100vh; display: grid; place-items: center; color: var(--muted); }
-.app { min-height: 100vh; display: flex; flex-direction: column; }
+.app { min-height: 100vh; display: flex; flex-direction: column; overflow-x: clip; }
 
 .brand-logo { height: 28px; width: auto; max-width: 220px; display: block; object-fit: contain; }
 .login-card .brand-logo { height: 40px; max-width: 280px; }
@@ -79,7 +79,8 @@ button { color: inherit; cursor: pointer; }
 .login-card h1, h1, h2, h3 { margin: 0; letter-spacing: -0.02em; }
 h1 { font-size: 1.5rem; }
 h2 { font-size: 1.15rem; }
-.login-lead, .command-copy p, .product-summary p { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
+.login-lead, .command-copy p, .command-lead, .product-summary p { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
+.command-lead { max-width: 52rem; line-height: 1.45; }
 .eyebrow { margin: 0 0 6px; color: var(--brand); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
 
 label { display: grid; gap: 6px; font-size: 13px; font-weight: 600; }
@@ -109,7 +110,7 @@ button:disabled { opacity: 0.55; cursor: wait; }
 .command { margin-top: 20px; }
 .workspace-split {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(300px, 380px);
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 32%);
   grid-template-areas:
     "lead chat"
     "offers chat";
@@ -269,8 +270,11 @@ button:disabled { opacity: 0.55; cursor: wait; }
 .linkish:hover { color: var(--brand-dark); }
 .offer-search input { width: min(320px, 100%); }
 .mobile-sort { display: none; }
-.table-wrap { overflow: auto; margin-top: 12px; }
+.table-wrap { overflow: auto; margin-top: 12px; -webkit-overflow-scrolling: touch; }
 table { width: 100%; border-collapse: collapse; }
+@media (min-width: 721px) {
+  .offers-panel table { min-width: 920px; }
+}
 th {
   text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em;
   color: var(--muted); padding: 6px 8px; background: #f1f5f9; font-family: "JetBrains Mono", ui-monospace, monospace;
@@ -282,7 +286,7 @@ th.sorted { background: var(--brand-soft); color: var(--brand); }
   text-transform: inherit; letter-spacing: inherit; text-align: left; cursor: pointer;
 }
 .sort-header:hover { color: var(--brand); }
-td { padding: 12px 10px; border-top: 1px solid var(--line); font-size: 13px; vertical-align: top; }
+td { padding: 12px 10px; border-top: 1px solid var(--line); font-size: 13px; vertical-align: top; overflow-wrap: anywhere; }
 tr.selected, tr.recommended { background: rgba(234, 242, 255, 0.7); }
 tr.recommended { box-shadow: inset 4px 0 0 var(--brand); }
 .offers-pager {
@@ -423,7 +427,7 @@ tr.recommended { box-shadow: inset 4px 0 0 var(--brand); }
 
 .chat-panel {
   display: flex; flex-direction: column; gap: 10px;
-  min-height: 560px; max-height: calc(100vh - 96px);
+  min-height: 480px; max-height: calc(100vh - 96px);
   padding: 16px; margin: 16px 0 32px;
   border-color: var(--brand-200); background: var(--brand-soft);
 }
@@ -575,7 +579,9 @@ tr.recommended { box-shadow: inset 4px 0 0 var(--brand); }
 
 @media (max-width: 1100px) {
   .source-grid, .metrics, .copilot-grid { grid-template-columns: 1fr 1fr; }
-  .copilot form, .chat-panel form, .chat-composer, .search { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 900px) {
   .workspace-split {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -584,15 +590,15 @@ tr.recommended { box-shadow: inset 4px 0 0 var(--brand); }
       "offers";
   }
   .workspace-chat { position: static; }
-  .chat-panel { max-height: none; }
+  .chat-panel { max-height: none; min-height: 0; }
 }
 
 @media (max-width: 720px) {
-  .app { padding-bottom: 72px; }
-  .topbar nav, main, .app-footer > div { width: calc(100% - 20px); }
+  .app { padding-bottom: 72px; overflow-x: clip; }
+  .topbar nav, main, .app-footer > div { width: calc(100% - 20px); max-width: 100%; }
   .topbar nav { height: 56px; padding: 0; gap: 10px; }
   .brand-logo { height: 22px; max-width: 140px; }
-  .topbar-settings, .topbar-logout, .mode-badge, .kbd, .app-footer { display: none; }
+  .topbar-settings, .topbar-logout, .mode-badge, .kbd, .app-footer, .command-lead { display: none; }
   .city-chip {
     padding: 6px 10px;
     background: var(--canvas);
@@ -600,8 +606,8 @@ tr.recommended { box-shadow: inset 4px 0 0 var(--brand); }
     font-size: 12px;
   }
   .avatar {
-    width: 32px;
-    height: 32px;
+    width: 44px;
+    height: 44px;
     background: var(--brand-soft);
     color: var(--brand);
     border: 1px solid var(--brand-200);
@@ -610,9 +616,10 @@ tr.recommended { box-shadow: inset 4px 0 0 var(--brand); }
 
   .command { margin-top: 12px; padding: 14px; }
   .command-copy h1 { font-size: 1.05rem; }
+  .search { grid-template-columns: minmax(0, 1fr) auto; }
   .search-icon { display: block; }
-  .search-field input { padding-left: 38px; border-radius: 12px; font-size: 13px; min-height: 44px; }
-  .search > button { width: 100%; min-height: 44px; border-radius: 10px; }
+  .search-field input { padding-left: 38px; border-radius: 12px; font-size: 16px; min-height: 44px; }
+  .search > button { width: auto; min-width: 88px; min-height: 44px; border-radius: 10px; }
 
   .product-panel { padding: 14px; }
   .product-panel .eyebrow { font-size: 10px; }
@@ -631,20 +638,33 @@ tr.recommended { box-shadow: inset 4px 0 0 var(--brand); }
   .app-chat-focus .workspace-chat {
     scroll-margin-top: 72px;
   }
+  .app-chat-focus .command,
+  .app-chat-focus .workspace-lead,
+  .app-chat-focus .workspace-offers { display: none; }
+  .app-chat-focus .workspace-split {
+    grid-template-areas: "chat";
+  }
+  .app-chat-focus .chat-panel {
+    min-height: calc(100dvh - 148px);
+    margin: 12px 0 16px;
+  }
   .chat-panel { padding: 14px; }
   .chat-head h2 { font-size: 0.9rem; }
-  .chat-composer { grid-template-columns: 1fr auto; }
+  .chat-composer { grid-template-columns: minmax(0, 1fr) auto; }
+  .chat-composer-input,
+  .chat-panel .chat-composer input { font-size: 16px; }
   .chat-composer button {
     min-width: 44px;
-    padding: 0 12px;
+    padding: 0 14px;
     border-radius: 8px;
   }
 
   .mobile-sort { display: grid; margin-top: 14px; color: var(--muted); font-size: 12px; }
-  .mobile-sort select { width: 100%; min-width: 0; min-height: 40px; padding: 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); }
+  .mobile-sort select { width: 100%; min-width: 0; min-height: 44px; padding: 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); }
   .offer-search { width: 100%; }
   .panel-heading, .product-summary, .offers-toolbar, .copilot-head, .chat-head, .offers-pager { flex-direction: column; }
-  .offer-search input, .export { width: 100%; }
+  .offer-search input, .export { width: 100%; min-height: 44px; }
+  .ghost, .offers-pager .ghost, .settings-savebar button { min-height: 44px; }
   .offers-panel { padding: 14px; }
   .offers-panel h2 { font-size: 0.9rem; }
 
@@ -681,9 +701,10 @@ tr.recommended { box-shadow: inset 4px 0 0 var(--brand); }
     border-radius: 10px;
     padding: 10px;
   }
+  td[data-label="Съём"] { display: none; }
   .offer-cta {
     width: 100%;
-    min-height: 42px;
+    min-height: 44px;
     margin-top: 4px;
   }
 
@@ -732,7 +753,8 @@ tr.recommended { box-shadow: inset 4px 0 0 var(--brand); }
   .login-card .brand-logo { height: 32px; }
   .login-card h1 { font-size: 1.25rem; text-align: center; }
   .login-lead { text-align: center; font-size: 13px; }
-  .login-card button { min-height: 44px; width: 100%; }
+  .login-card input, .login-card button, .settings-card input, .settings-card textarea { min-height: 44px; }
+  .login-card button { width: 100%; }
 
   .settings-page {
     grid-template-columns: 1fr;
@@ -749,10 +771,12 @@ tr.recommended { box-shadow: inset 4px 0 0 var(--brand); }
     display: flex;
     gap: 8px;
     overflow-x: auto;
+    max-width: 100%;
   }
   .settings-nav button {
     white-space: nowrap;
     flex: 0 0 auto;
+    min-height: 44px;
   }
   .settings-grid { grid-template-columns: 1fr; }
   .settings-savebar {

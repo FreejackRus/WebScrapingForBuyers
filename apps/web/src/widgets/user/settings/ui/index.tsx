@@ -1,5 +1,6 @@
 import { FormEvent, useState } from "react";
 
+import { logout } from "features/user";
 import { useAnalysisStore } from "entities/analysis";
 import { useUserStore } from "entities/user";
 
@@ -208,6 +209,9 @@ export function UserSettings({ onBack }: { onBack: () => void }) {
           </button>
           <button className="ghost" type="button" onClick={onBack}>
             К поиску
+          </button>
+          <button className="ghost settings-logout" type="button" onClick={() => void logout()}>
+            Выйти
           </button>
           <button type="submit" disabled={busy}>
             {busy ? "Сохраняем…" : "Сохранить изменения"}

@@ -106,6 +106,9 @@ export function SearchCommand() {
       <div className="command-copy">
         <p className="eyebrow">Поиск закупок</p>
         <h1 id="search-title">Сбор публичных предложений</h1>
+        <p className="command-lead">
+          Введите артикул, MPN или модель. Подсказки подтягиваются из живых каталогов.
+        </p>
       </div>
       <form className="search search-typeahead" onSubmit={onSubmit} role="search">
         <label className="sr-only" htmlFor="procurement-query">

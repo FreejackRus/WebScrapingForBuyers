@@ -16,7 +16,6 @@
 | Ситилинк | MCP `citilink_search` | live / Qrator | CDP VNC (публичного B2B API нет) |
 | Авито | MCP `avito_search` | live / PoW 439 | CDP VNC |
 | AliExpress | MCP `aliexpress_search` | **wired** / x5sec CDP | `aliexpress` in `MARKETPLACE_SOURCES` |
-| Taobao | MCP `taobao_search` | **wired** / login wall + CNY | `taobao`; `CNY_RUB_RATE` |
 | **OCS** | REST Partners Connector | **клиент готов** | `OCS_API_KEY` **и** `OCS_SEARCH_PATH` (оба обязательны для mount); опц. `OCS_API_URL` / `OCS_SHIPMENT_CITY` / `OCS_LOCATION` |
 | **MERLION** | SOAP `mlservice3` | **клиент готов** | `MERLION_API_LOGIN` (`…\|API`), `MERLION_API_PASSWORD`, опц. `MERLION_API_TEST=true` |
 | **NETLAB** | REST NLDealer | **клиент готов** | `NETLAB_API_LOGIN`, `NETLAB_API_PASSWORD`, опц. `NETLAB_CLIENT_CODE`, `NETLAB_API_URL` |
@@ -113,9 +112,44 @@ NETLAB_API_PASSWORD='…'
 
 ### Servermall / Онлайнтрейд / Регард / Хардпрайс / СРВТрейд / ТоргPC
 
-Публичной стабильной API-документации нет. Следующий шаг — письмо менеджеру
-на партнёрский прайс/EDI/API; токены уже зарезервированы в env/compose.
-Пока stub честно падает с текстом «partner access».
+Повторная проверка 2026-09-24: **публичного каталожного API нет**.
+В коде это `B2bDistributorStubAdapter` — источник монтируется только с
+токеном в env и сразу бросает hint, без фейковых цен.
+
+| Источник | Что есть | Чего нет |
+| --- | --- | --- |
+| **Servermall** | Витрина `servermall.ru/catalog`, datasheet, партнёрские спеццены через менеджера (`info@servermall.ru`). Сайт сам пишет: цены уточнять у менеджеров, не оферта. | REST/SOAP/YML |
+| **Онлайнтрейд** | Розничный каталог `onlinetrade.ru`. `robots.txt` закрывает `/search.html`, `/ajax.php`, пагинацию `?page=`. Сторонние парсеры есть; официального API нет. | Partner OpenAPI |
+| **Регард** | Розница `regard.ru`. Есть сторонние мониторы каталога, не партнёрский канал. Контакт `sales@regard.ru`. | B2B API / YML |
+| **Хардпрайс** | Это **сравниватель цен**, не дистрибьютор. Цены из выгрузок магазинов-партнёров; своего каталога поставки нет. `partners@hardprice.ru`. | Не B2B-источник |
+| **СРВТрейд** | `srv-trade.ru/catalog` — «скачать прайс-лист» + менеджеры (`sale@srv-trade.ru`). Прайс по запросу, не URL API. | Документированный API |
+| **ТоргPC** | Розница `torg-pc.ru`, опт `opt@torg-pc.ru` / `info@torg-pc.ru`. | API / фид |
+
+Не путать с Inline i2b (`inline-online.ru`) — это другой поставщик с XML API.
+
+## Если API так и не выдадут — как собирать
+
+Приоритет тот же, что у живых B2B: **официальный файл важнее скрейпа**.
+
+1. **Партнёрский фид (предпочтительно).** Письмо менеджеру: XLSX/CSV/YML
+   раз в 1–2 ч, колонки MPN / бренд / цена / склад / URL. Адаптер:
+   качать по `HTTPS` + basic/token, индексировать по `mpn` и
+   `brand+model`, отдавать `Offer` с `demo: false`. Тот же паттерн, что
+   офлайн-прайс NETLAB (`pricexml.zip`), только live search бьёт индекс,
+   а не SOAP. Env уже зарезервированы (`SERVERMALL_API_TOKEN` и т.д.) —
+   токен тогда = URL фида или basic, не «магический REST».
+2. **Витрина через headed Chrome (запас).** Новый `SourceAdapter` в
+   `apps/search`, не второй MCP и не Apify. Query = title / brand+model /
+   MPN, как Citilink. Тот же профиль `chrome-headed` + VNC. Онлайнтрейд
+   и Регард — розничные цены, не закупочные; помечать
+   `priceCondition: «витрина, не B2B»`. Не ходить в URL из `robots.txt`
+   disallow (у Онлайнтрейда это поиск и ajax).
+3. **Не делать.** Хардпрайс как источник (дубль чужих витрин).
+   Платные каталог-парсеры. Ломать логин B2B-кабинета без договора.
+
+Порядок внедрения, если решите кодить: СРВТрейд (прайс по письму) →
+Онлайнтрейд/Регард (витрина CDP, один адаптер на шаблон поиска) →
+Servermall/ТоргPC (менеджер или витрина) → Хардпрайс не подключать.
 
 ## Compose
 
