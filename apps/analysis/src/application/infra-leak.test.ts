@@ -18,6 +18,7 @@ describe("infra-leak", () => {
     expect(hasInfraLeak("HTTP 403 на search.wb.ru")).toBe(true);
     expect(hasInfraLeak("C-D-P 9222")).toBe(true);
     expect(hasInfraLeak("Ответила Qwen3 через Ollama hf.co")).toBe(true);
+    expect(hasInfraLeak("Ozon через scrapling StealthyFetcher")).toBe(true);
     expect(hasInfraLeak("Лучший вариант: Wildberries, 8 990 ₽.")).toBe(false);
   });
 

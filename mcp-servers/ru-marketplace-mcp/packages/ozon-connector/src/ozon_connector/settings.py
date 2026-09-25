@@ -8,6 +8,9 @@ Env vars (all optional, defaults match the pre-settings constants):
   OZON_SELFCHECK_SKU   - golden-fixture SKU for ozon_selfcheck, default 3015796642
   OZON_CACHE_TTL       - seconds to cache upstream reads, 0 disables, default 120
   OZON_PROXY           - proxy URL for the tier-1 fetch, default unset (honours HTTPS_PROXY)
+  OZON_SCRAPLING       - enable StealthyFetcher between curl_cffi and CDP, default false
+  OZON_SCRAPLING_CHROME - Chrome for Testing binary for Scrapling (empty = library default)
+  OZON_SCRAPLING_TIMEOUT - StealthyFetcher timeout seconds, default 60
 
 Settings are read once at import; callers that need to override in tests
 patch the module-level constants in server.py (TIMEOUT, _min_gap, ...) as
@@ -50,6 +53,19 @@ class OzonSettings(BaseSettings):
             "May carry user:pass credentials, so it is a SecretStr: repr/dump show '**********', "
             "and only the outbound fetch ever unwraps it."
         ),
+    )
+    scrapling: bool = Field(
+        default=False,
+        description="Enable the StealthyFetcher composer tier between curl_cffi and headed CDP.",
+    )
+    scrapling_chrome: str = Field(
+        default="",
+        description="Absolute path to a Chrome-for-Testing binary. Empty lets Scrapling pick its browser.",
+    )
+    scrapling_timeout: float = Field(
+        default=60.0,
+        gt=0,
+        description="StealthyFetcher timeout seconds. Cloudflare auto-click needs at least 60.",
     )
 
 

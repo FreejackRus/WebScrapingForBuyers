@@ -82,6 +82,42 @@ WORKDIR /app
 COPY --from=builder --chown=app:app /app/.venv /app/.venv
 COPY --from=builder --chown=app:app /app/packages /app/packages
 
+# Ozon stealth tier: Chrome-for-Testing + Scrapling, isolated from compose chrome.
+# GCS host (not cdn.playwright.dev) — the GPU DC can time out the Playwright CDN.
+# Pin stays in this Dockerfile so `uv sync --frozen` is unchanged.
+USER root
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        ca-certificates \
+        curl \
+        unzip \
+        fonts-liberation \
+        libasound2 \
+        libatk-bridge2.0-0 \
+        libatk1.0-0 \
+        libcups2 \
+        libdrm2 \
+        libgbm1 \
+        libgtk-3-0 \
+        libnspr4 \
+        libnss3 \
+        libx11-6 \
+        libxcb1 \
+        libxcomposite1 \
+        libxdamage1 \
+        libxext6 \
+        libxfixes3 \
+        libxkbcommon0 \
+        libxrandr2 \
+    && rm -rf /var/lib/apt/lists/* \
+    && curl -fsSL --retry 3 \
+        "https://storage.googleapis.com/chrome-for-testing-public/153.0.8010.12/linux64/chrome-linux64.zip" \
+        -o /tmp/chrome-linux64.zip \
+    && unzip -q /tmp/chrome-linux64.zip -d /opt \
+    && rm /tmp/chrome-linux64.zip \
+    && /app/.venv/bin/pip install --no-cache-dir "scrapling[fetchers]==0.4.15" \
+    && chown -R app:app /opt/chrome-linux64 /app/.venv
+
 # The skills travel with the servers. Each connector has one, and it is how an
 # agent learns the tool exists, when to reach for it, and which of its answers
 # need a second look. A container with the servers but not the skills runs
@@ -92,7 +128,10 @@ COPY --chown=app:app skills/ /app/skills/
 # directly, and keep Python from writing .pyc files or buffering stdout/stderr.
 ENV PATH="/app/.venv/bin:$PATH" \
     PYTHONUNBUFFERED=1 \
-    PYTHONDONTWRITEBYTECODE=1
+    PYTHONDONTWRITEBYTECODE=1 \
+    OZON_SCRAPLING=1 \
+    OZON_SCRAPLING_CHROME=/opt/chrome-linux64/chrome \
+    OZON_SCRAPLING_TIMEOUT=60
 
 # HTTP transport is the only mode that makes sense in a detached container:
 # stdio needs a client attached to this process's stdin/stdout, which nothing

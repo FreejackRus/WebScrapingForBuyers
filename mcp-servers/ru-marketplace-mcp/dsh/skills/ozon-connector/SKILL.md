@@ -1,6 +1,6 @@
 ---
 name: ozon-connector
-description: Use this skill when the operator needs Ozon marketplace data — product details, search, prices, ratings, or reviews. Trigger on Russian queries like "найди на озоне", "цена ozon", "отзывы на озоне", or English mentions of Ozon. Tier 1 (TLS impersonation) handles most queries with no browser; Chrome CDP is only the tier-2 fallback when Cloudflare challenges. Skip for non-Ozon tasks.
+description: Use this skill when the operator needs Ozon marketplace data — product details, search, prices, ratings, or reviews. Trigger on Russian queries like "найди на озоне", "цена ozon", "отзывы на озоне", or English mentions of Ozon. Tier 1 is TLS impersonation; optional Scrapling StealthyFetcher (own Chrome, Cloudflare auto-click) sits before headed CDP. Skip for non-Ozon tasks.
 ---
 
 # Ozon Connector

@@ -1,11 +1,11 @@
 """Ozon MCP connector.
 
-Two-tier strategy (Nov 2026 verified on the operator's residential IP):
-  Tier 1: curl_cffi impersonate=chrome124 — usually 403 because Cloudflare __cf_bm
-    JS challenge. Tried first since 0 setup cost.
-  Tier 2: Chrome CDP — connect to the operator's logged-in browser at 127.0.0.1:9222,
-    fetch composer-api.bx from inside live session. Required Chrome started
-    via scripts/start_chrome_cdp.ps1 (Windows) or scripts/start_chrome_cdp.sh (Linux/macOS).
+Three-tier strategy:
+  Tier 1: curl_cffi impersonate — cheap, usually 403 on datacenter IPs (Cloudflare __cf_bm).
+  Tier 1.5: Scrapling StealthyFetcher (OZON_SCRAPLING=1) — own Chrome-for-Testing,
+    solve_cloudflare=True. Verified 2026-09-25 from the GPU-server DC IP: composer-api.bx
+    search JSON with widgetStates. Does not attach to compose chrome :9222.
+  Tier 2: Chrome CDP — operator headed profile when stealth fetch is off or fails.
 
 SECURITY: Tier-2 fetch() runs INSIDE the operator's authenticated ozon.ru session.
 sku_or_path inputs are normalized + allowlisted to prevent SSRF that would
@@ -123,6 +123,9 @@ IMPERSONATE = _settings.impersonate
 TIMEOUT = _settings.timeout
 MAX_BODY_BYTES = _settings.max_body_bytes  # 50 MB hard cap default; OZON_MAX_BODY_BYTES
 _SELFCHECK_SKU = _settings.selfcheck_sku  # golden-fixture baseline SKU; OZON_SELFCHECK_SKU
+SCRAPLING = _settings.scrapling
+SCRAPLING_CHROME = _settings.scrapling_chrome
+SCRAPLING_TIMEOUT = _settings.scrapling_timeout
 
 # Polite rate limit (Ozon Cloudflare more aggressive than WB v4)
 _min_gap = _settings.min_gap
@@ -316,6 +319,53 @@ def _sync_curl_get(url: str, proxy: str | None = None) -> tuple[int, str]:
             pass
 
 
+def _scrapling_enabled() -> bool:
+    """Stealth tier is off unless explicitly enabled and importable.
+
+    A missing Chrome path disables the tier instead of launching a surprise
+    browser. Tests stay on curl_cffi → CDP unless they turn this on.
+    """
+    if not SCRAPLING:
+        return False
+    chrome = (SCRAPLING_CHROME or "").strip()
+    if chrome and not Path(chrome).is_file():
+        return False
+    try:
+        from scrapling.fetchers import StealthyFetcher  # noqa: F401
+    except ImportError:
+        return False
+    return True
+
+
+def _sync_scrapling_get(url: str) -> tuple[int, str]:
+    """Fetch composer-api.bx with StealthyFetcher. Own browser, not compose CDP."""
+    from scrapling.fetchers import StealthyFetcher
+
+    timeout_ms = max(60_000, int(float(SCRAPLING_TIMEOUT) * 1000))
+    kwargs: dict[str, Any] = {
+        "solve_cloudflare": True,
+        "timeout": timeout_ms,
+        "retries": 1,
+        "google_search": True,
+        "extra_flags": ["--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu"],
+    }
+    chrome = (SCRAPLING_CHROME or "").strip()
+    if chrome:
+        kwargs["executable_path"] = chrome
+    page = StealthyFetcher.fetch(url, **kwargs)
+    raw = getattr(page, "body", "")
+    if raw is None:
+        text = ""
+    elif isinstance(raw, bytes):
+        text = raw.decode("utf-8", errors="replace")
+    else:
+        text = str(raw)
+    if len(text.encode("utf-8", errors="replace")) > MAX_BODY_BYTES:
+        raise ValueError(f"body exceeds {MAX_BODY_BYTES} bytes")
+    status = int(getattr(page, "status", 0) or 0)
+    return status, text
+
+
 def _canonical_composer_path(api_path: str) -> str:
     parts = urllib.parse.urlsplit(api_path)
     if parts.scheme or parts.netloc or parts.fragment:
@@ -492,16 +542,16 @@ def _parse_widgets(payload: dict) -> dict[str, Any]:
 
 
 async def _fetch_composer(api_path: str, ctx: Context | None) -> tuple[int, str, str]:
-    """Try Tier-1 (curl_cffi); fall back to Tier-2 (CDP) on 403/non-200.
+    """Try curl_cffi, then optional Scrapling, then CDP.
 
     Returns (status_code, body, tier_used).
 
     Successful reads are cached for ``OZON_CACHE_TTL``, keyed by the canonical
     composer path. Caching matters more here than in any other connector: a miss
-    can cost a Cloudflare challenge plus a full browser round-trip through CDP,
-    so replaying a known-good body is the difference between a fast answer and a
-    multi-second one. Only 200s are stored — a cached 403 would keep reporting a
-    block after the challenge cleared.
+    can cost a Cloudflare challenge plus a browser round-trip, so replaying a
+    known-good body is the difference between a fast answer and a multi-second
+    one. Only 200s are stored — a cached 403 would keep reporting a block after
+    the challenge cleared.
     """
     try:
         safe_path = _canonical_composer_path(api_path)
@@ -522,10 +572,25 @@ async def _fetch_composer(api_path: str, ctx: Context | None) -> tuple[int, str,
             _cache.set(safe_path, (status, body))
             return status, body, "curl_cffi"
         if ctx and status == 403:
-            await ctx.debug("Ozon Tier-1 403 (Cloudflare __cf_bm); trying CDP")
+            await ctx.debug("Ozon Tier-1 403 (Cloudflare __cf_bm); trying next tier")
     except Exception as exc:
         if ctx:
-            await ctx.debug(f"Ozon Tier-1 exception: {exc}; trying CDP")
+            await ctx.debug(f"Ozon Tier-1 exception: {type(exc).__name__}; trying next tier")
+
+    if _scrapling_enabled():
+        try:
+            status, body = await asyncio.wait_for(
+                asyncio.to_thread(_sync_scrapling_get, api_url),
+                timeout=max(65.0, float(SCRAPLING_TIMEOUT) + 15.0),
+            )
+            if status == 200 and body and not body.lstrip().startswith("<"):
+                _cache.set(safe_path, (status, body))
+                return status, body, "scrapling"
+            if ctx and status == 403:
+                await ctx.debug("Ozon scrapling 403; trying CDP")
+        except Exception as exc:
+            if ctx:
+                await ctx.debug(f"Ozon scrapling exception: {type(exc).__name__}; trying CDP")
 
     try:
         status, body = await _cdp_fetch_json(api_url, ctx)
@@ -1301,7 +1366,7 @@ async def ozon_search(
     ] = 1,
     ctx: Context | None = None,
 ) -> OzonSearchResponse:
-    """Search Ozon catalog. Tier-1 curl_cffi → Tier-2 CDP fallback.
+    """Search Ozon catalog. curl_cffi → optional Scrapling → CDP.
 
     Returns sku/title/price/rating per item. Schema parses Nov 2026
     `tileGridDesktop-*` widgets with `mainState` atom structure.
@@ -1394,8 +1459,7 @@ async def _ozon_search_impl(
     if status_code == 0:
         raise_tool_error(
             TransportDownError(
-                f"Tier-1 (curl_cffi) blocked AND Tier-2 (CDP) unreachable. "
-                f"Start Chrome ({cdp_setup_hint()}) and ensure the CDP port is open. "
+                f"Ozon composer fetch failed on every enabled tier. "
                 f"Last error: {body[:300]}"
             )
         )

@@ -1,7 +1,7 @@
 [project]
 name = "ozon-connector"
 version = "2.4.2"
-description = "Ozon MCP connector — two-tier transport (TLS impersonation + authenticated Chrome CDP)"
+description = "Ozon MCP connector — curl_cffi, optional Scrapling stealth, Chrome CDP"
 requires-python = ">=3.12"
 license = { text = "MIT" }
 authors = [{ name = "Vladimir-Human", email = "39053957+Vladimir-Human@users.noreply.github.com" }]

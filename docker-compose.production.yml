@@ -134,6 +134,10 @@ services:
       CHROME_CHALLENGE_HANDOFF_S: "120"
       # Progress AliExpress login walls in the same headed profile (VNC).
       # Do not recreate chrome when changing this service.
+      # Ozon stealth: own Chrome-for-Testing inside this image, not :9222.
+      OZON_SCRAPLING: "1"
+      OZON_SCRAPLING_CHROME: /opt/chrome-linux64/chrome
+      OZON_SCRAPLING_TIMEOUT: "60"
     # No depends_on chrome — CDP connects lazily. Recreating MCP must not
     # bounce the chrome-headed volume.
     networks:

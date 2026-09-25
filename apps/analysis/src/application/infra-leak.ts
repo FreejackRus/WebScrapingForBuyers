@@ -9,7 +9,7 @@ const REPLY_UNAVAILABLE = "Не удалось подготовить ответ
  * Admin connector `source.message` stays on the sources panel, not in the LLM.
  */
 const INFRA_LEAK_SOURCE =
-  String.raw`(?<![a-zа-яё0-9])(?:v[\s._-]*(?:n[\s._-]*c|c[\s._-]*n)|m[\s._-]*c[\s._-]*p|c[\s._-]*d[\s._-]*p)(?![a-zа-яё0-9])|\b(?:ssh|qrator|handoff|docker(?:-compose)?|chrome[-_ ]?cdp|chrome[- ]headed|headed\s+chrome|chrome\s+profile|marketplace-mcp|ru-marketplace-mcp|wb_search|ozon_search|avito_search|yandex_search|citilink_search|dns_search|compose\s+up|captcha|ollama|qwen\w*|gguf|vllm|llm)\b|(?<![a-zа-яё0-9])(?:антибот|прогрев|капч\w*)(?![a-zа-яё0-9])|\b(?:http\s*(?:403|429|5\d\d)|(?:search|card)\.wb\.ru|hf\.co)\b|ssh\s+-L|:5901\b|:9222\b|\b5901\b|\b9222\b|CHROME_CDP`;
+  String.raw`(?<![a-zа-яё0-9])(?:v[\s._-]*(?:n[\s._-]*c|c[\s._-]*n)|m[\s._-]*c[\s._-]*p|c[\s._-]*d[\s._-]*p)(?![a-zа-яё0-9])|\b(?:ssh|qrator|handoff|docker(?:-compose)?|chrome[-_ ]?cdp|chrome[- ]headed|headed\s+chrome|chrome\s+profile|marketplace-mcp|ru-marketplace-mcp|wb_search|ozon_search|avito_search|yandex_search|citilink_search|dns_search|compose\s+up|captcha|scrapling|stealthyfetcher|solve_cloudflare|ollama|qwen\w*|gguf|vllm|llm)\b|(?<![a-zа-яё0-9])(?:антибот|прогрев|капч\w*)(?![a-zа-яё0-9])|\b(?:http\s*(?:403|429|5\d\d)|(?:search|card)\.wb\.ru|hf\.co)\b|ssh\s+-L|:5901\b|:9222\b|\b5901\b|\b9222\b|CHROME_CDP`;
 
 function leakRe(): RegExp {
   return new RegExp(INFRA_LEAK_SOURCE, "i");

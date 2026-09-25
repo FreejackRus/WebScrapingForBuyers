@@ -1052,3 +1052,17 @@ chrome-headed и порты не попадают в промпт и ответ�
 убирает `source.message` у менеджера. В `docs/DISTRIBUTORS.md` сохранено
 исследование Treolan (SOAP есть, клиент не wired, секретов нет).
 
+### 2026-09-25 — Ozon Scrapling throwaway → MCP stealth-tier
+
+Одноразовый `StealthyFetcher` с GPU-сервера (тот же публичный DC-IP, что у
+marketplace-mcp; Chrome compose не трогали): `solve_cloudflare=True`, свой
+Chrome-for-Testing в `/tmp/scrapling-ozon-probe`. Поиск Logitech K380 —
+не interstitial, HTTP 200, 24 `/product/` и composer-api JSON с
+`widgetStates`/`tileGridDesktop` за ~3–6 с. Клейм переносится.
+
+В `ozon-connector`: curl_cffi → Scrapling (свой браузер, не :9222) → CDP.
+Образ MCP ставит Chrome-for-Testing с GCS и `scrapling[fetchers]==0.4.15`.
+Менеджеру по-прежнему режутся MCP/VNC/`scrapling`. Venv на сервере оставлен
+в `/tmp/scrapling-ozon-probe`. В прод без отдельного солвер-флага: пользователь
+явно попросил выкладку, если сработает.
+

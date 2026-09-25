@@ -917,3 +917,89 @@ def test_ozon_proxy_falls_back_to_standard_variables(monkeypatch):
     monkeypatch.delenv("OZON_PROXY", raising=False)
     monkeypatch.setenv("HTTPS_PROXY", "http://generic:8080")
     assert server._proxy() == "http://generic:8080"
+
+
+def test_scrapling_disabled_by_default():
+    assert server.SCRAPLING is False
+    assert server._scrapling_enabled() is False
+
+
+def test_scrapling_disabled_when_chrome_path_missing(monkeypatch, tmp_path):
+    monkeypatch.setattr(server, "SCRAPLING", True)
+    monkeypatch.setattr(server, "SCRAPLING_CHROME", str(tmp_path / "no-such-chrome"))
+    assert server._scrapling_enabled() is False
+
+
+def test_fetch_composer_uses_scrapling_before_cdp(monkeypatch):
+    cdp_calls = {"n": 0}
+
+    def always_blocked(url, proxy=None):
+        return 403, "<html>challenge</html>"
+
+    def stealth_ok(url):
+        assert "composer-api.bx" in url
+        return 200, '{"widgetStates": {"tileGridDesktop-1": "{}"}}'
+
+    async def ok_cdp(api_url, ctx):
+        cdp_calls["n"] += 1
+        return 200, '{"from": "cdp"}'
+
+    async def scenario():
+        monkeypatch.setattr(server, "_min_gap", 0)
+        monkeypatch.setattr(server, "SCRAPLING", True)
+        monkeypatch.setattr(server, "SCRAPLING_CHROME", "")
+        monkeypatch.setattr(server, "_scrapling_enabled", lambda: True)
+        monkeypatch.setattr(server, "_sync_scrapling_get", stealth_ok)
+        _patch_tier1(monkeypatch, always_blocked)
+        monkeypatch.setattr(server, "_cdp_fetch_json", ok_cdp)
+
+        status, body, tier = await server._fetch_composer("/search/?text=abc&page=1", None)
+        assert (status, tier) == (200, "scrapling")
+        assert "widgetStates" in body
+        assert cdp_calls["n"] == 0
+
+        _, _, cached_tier = await server._fetch_composer("/search/?text=abc&page=1", None)
+        assert cached_tier == "cache"
+
+    _run(scenario())
+
+
+def test_fetch_composer_falls_through_html_scrapling_to_cdp(monkeypatch):
+    def always_blocked(url, proxy=None):
+        return 403, "<html>challenge</html>"
+
+    def stealth_html(url):
+        return 200, "<html>just a moment</html>"
+
+    async def ok_cdp(api_url, ctx):
+        return 200, '{"widgetStates": {}}'
+
+    async def scenario():
+        monkeypatch.setattr(server, "_min_gap", 0)
+        monkeypatch.setattr(server, "_scrapling_enabled", lambda: True)
+        monkeypatch.setattr(server, "_sync_scrapling_get", stealth_html)
+        _patch_tier1(monkeypatch, always_blocked)
+        monkeypatch.setattr(server, "_cdp_fetch_json", ok_cdp)
+
+        status, body, tier = await server._fetch_composer("/product/123/", None)
+        assert status == 200
+        assert json.loads(body) == {"widgetStates": {}}
+        assert tier == "cdp"
+
+    _run(scenario())
+
+
+def test_ozon_search_zero_status_does_not_mention_cdp_setup(monkeypatch):
+    async def dead_fetch(path, ctx):
+        return 0, "browser missing", "scrapling"
+
+    async def scenario():
+        monkeypatch.setattr(server, "_fetch_composer", dead_fetch)
+        with pytest.raises(ToolError) as excinfo:
+            await server.ozon_search("Logitech K380")
+        msg = str(excinfo.value)
+        assert "transport_down" in msg
+        assert "9222" not in msg
+        assert "cdp_setup" not in msg.lower()
+
+    _run(scenario())
