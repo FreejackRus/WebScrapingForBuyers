@@ -1061,6 +1061,7 @@ Chrome-for-Testing в `/tmp/scrapling-ozon-probe`. Поиск Logitech K380 —
 `widgetStates`/`tileGridDesktop` за ~3–6 с. Клейм переносится.
 
 В `ozon-connector`: curl_cffi → Scrapling (свой браузер, не :9222) → CDP.
+`--no-sandbox` в контейнере давал 403; без extra_flags composer JSON 200.
 Образ MCP ставит Chrome-for-Testing с GCS и `scrapling[fetchers]==0.4.15`.
 Менеджеру по-прежнему режутся MCP/VNC/`scrapling`. Venv на сервере оставлен
 в `/tmp/scrapling-ozon-probe`. В прод без отдельного солвер-флага: пользователь

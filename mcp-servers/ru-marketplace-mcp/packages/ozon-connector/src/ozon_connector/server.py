@@ -347,7 +347,8 @@ def _sync_scrapling_get(url: str) -> tuple[int, str]:
         "timeout": timeout_ms,
         "retries": 1,
         "google_search": True,
-        "extra_flags": ["--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu"],
+        # Do not add --no-sandbox/--disable-gpu: on the DC IP those flags make
+        # Ozon 307 to ?__rr=1 and 403. Stock StealthyFetcher works in this image.
     }
     chrome = (SCRAPLING_CHROME or "").strip()
     if chrome:
