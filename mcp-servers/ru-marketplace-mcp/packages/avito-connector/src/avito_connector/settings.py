@@ -4,7 +4,7 @@ Env vars (all optional):
   AVITO_TIMEOUT         - per-tier HTTP/CDP timeout seconds, default 20
   AVITO_MAX_BODY_BYTES  - hard cap on any HTTP response body, default 50 MiB
   AVITO_MIN_GAP         - polite inter-request gap seconds, default 2.5
-  AVITO_IMPERSONATE     - curl_cffi fingerprint profile, default "chrome"
+  AVITO_IMPERSONATE     - curl_cffi fingerprint profile, default "firefox147"
   AVITO_CACHE_TTL       - seconds to cache upstream reads, 0 disables, default 120
   AVITO_PROXY           - proxy URL for the tier-1 fetch, default unset (honours HTTPS_PROXY)
   AVITO_LOCATION_ID     - default Avito location id for search, default 637640 (Moscow)
@@ -35,7 +35,11 @@ class AvitoSettings(BaseSettings):
     timeout: float = Field(default=20.0, gt=0)
     max_body_bytes: int = Field(default=_DEFAULT_MAX_BODY_BYTES, gt=0)
     min_gap: float = Field(default=2.5, ge=0)
-    impersonate: str = Field(default="chrome", min_length=1)
+    impersonate: str = Field(
+        default="firefox147",
+        min_length=1,
+        description="curl_cffi TLS profile. firefox147 matches the live JSON-439 PoW path.",
+    )
     cache_ttl: float = Field(
         default=120.0,
         ge=0,

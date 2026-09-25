@@ -1023,6 +1023,24 @@ mobile 390px); продовые источники и вход в этом smoke
 публичный HTTP — 200, новый бандл содержит подсказку. Реальные источники
 и авторизованный сценарий на проде не проверялись.
 
+### 2026-09-25 — Avito JSON-439 PoW на DC-IP, DNS нет
+
+Повторная проверка mickberrad659-sketch/Avito-Parser: GeeTest/QRATOR/ddddocr
+не копировали. На GPU-сервере (тот же marketplace-mcp, Chrome не трогали)
+сработало узкое: `curl_cffi` firefox147 + document warmup +
+`X-Source: client-browser` → JSON 439 с `pow_challenge` → один локальный
+SHA-256 firewallPow → повтор `js/items` дал 50 объявлений. HTML 439 без
+JSON по-прежнему уходит в CDP/VNC.
+
+В существующий `avito-connector`: сессия, прогрев, XHR-заголовки, один
+PoW, без второго парсера и без платных API. Адаптер search только уточнил
+админский текст. Тот же механизм на DNS: warmup и search — HTTP 401,
+`Server: QRATOR`, без `pow_challenge` и без карточек. DNS не меняли.
+
+Проверено: 40 тестов avito-connector. Выкладка: sync avito-connector в
+`/projects/ru-marketplace-mcp` + `marketplace-mcp --no-deps --build`.
+Chrome не пересоздавали.
+
 ### 2026-09-25 — merge local/main + sanitization + Treolan
 
 Локальный `main` смержен с `origin/main` без rebase: оставлены более новые

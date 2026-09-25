@@ -1,12 +1,12 @@
 """Avito MCP connector.
 
-Avito sits behind an IP-reputation firewall: a datacenter address gets HTTP 403
-with a captcha challenge on every route that matters, including the internal
-``/web/1/js/items`` search API. TLS impersonation alone does not clear it — the
-endpoint answers from a residential Russian IP with a warmed-up session, and
-always from the operator's logged-in Chrome over CDP. This connector therefore
-mirrors the Ozon two-tier layout: try impersonated HTTPS first, fall back to a
-fetch inside the real browser.
+Avito sits behind an IP-reputation firewall. A bare GET of ``/web/1/js/items``
+from a datacenter IP often returns HTML 439. A warmed curl_cffi session
+(Firefox impersonation, document GET, ``X-Source: client-browser``) gets JSON
+439 with ``pow_challenge``; one local firewallPow (SHA-256 nonce, no captcha
+farm) can unlock the same session. GeeTest / QRATOR solvers are not used.
+Tier 2 still fetches inside headed Chrome over CDP when JSON PoW is absent
+or fails.
 
 Verified live July 2026 from a datacenter IP (docs/ANTI_BOT.md):
   - ``https://www.avito.ru/web/1/js/items`` — 403 + firewall captcha from a DC
@@ -61,6 +61,17 @@ from mcp_core.redact import redact_error_text as _redact
 from mcp_core.transport.chrome_cdp import NavBlocked, open_page
 from pydantic import Field
 
+from avito_connector.firewall_pow import (
+    POW_GET_PATH,
+    POW_VERIFY_PATH,
+    build_get_payload,
+    build_verify_payload,
+    challenge_jwt_from_get_body,
+    decode_pow_params,
+    find_pow_nonce,
+    pow_challenge_from_body,
+    verified_from_verify_body,
+)
 from avito_connector.models_output import (
     AvitoCardResponse,
     AvitoSearchItemOut,
@@ -88,12 +99,24 @@ _min_gap = _settings.min_gap
 
 AVITO_HEADERS = {
     "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-        "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+        "Mozilla/5.0 (X11; Linux x86_64; rv:152.0) Gecko/20100101 Firefox/152.0"
     ),
     "Accept": "application/json, text/plain, */*",
     "Accept-Language": "ru-RU,ru;q=0.9",
     "Referer": f"{SITE_BASE}/",
+}
+
+AVITO_DOC_HEADERS = {
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "ru-RU,ru;q=0.9",
+    "User-Agent": AVITO_HEADERS["User-Agent"],
+}
+
+AVITO_XHR_HEADERS = {
+    **AVITO_HEADERS,
+    "Accept": "application/json",
+    "X-Requested-With": "XMLHttpRequest",
+    "X-Source": "client-browser",
 }
 
 # Item URL slugs: /moskva/noutbuki/thinkpad_x1_1234567890 — the id is the tail.
@@ -131,32 +154,114 @@ async def _polite_wait() -> None:
     await _pacer.wait(min_gap=_min_gap)
 
 
-def _sync_curl_get(url: str, proxy: str | None = None) -> tuple[int, str]:
-    """Tier-1: curl_cffi GET with an incremental body cap (see ozon_connector)."""
-    kwargs: dict[str, Any] = {}
-    if proxy:
-        kwargs["proxies"] = {"http": proxy, "https": proxy}
+def _read_capped_response(response: Any) -> tuple[int, str]:
+    """Read a curl_cffi response with the same body cap as the old one-shot GET."""
     chunks: list[bytes] = []
     total = 0
-    r = cffi.get(url, headers=AVITO_HEADERS, impersonate=cast(Any, IMPERSONATE), timeout=TIMEOUT, stream=True, **kwargs)
     try:
-        encoding = r.encoding or "utf-8"
-        for chunk in r.iter_content(chunk_size=64 * 1024):
-            total += len(chunk)
-            if total > MAX_BODY_BYTES:
-                raise ValueError(f"body exceeds {MAX_BODY_BYTES} bytes (aborted at {total} during stream)")
-            chunks.append(chunk)
-        body = b"".join(chunks)
-        try:
-            text = body.decode(encoding, errors="replace")
-        except (LookupError, TypeError):
-            text = body.decode("utf-8", errors="replace")
-        return r.status_code, text
+        encoding = getattr(response, "encoding", None) or "utf-8"
+        iterator = getattr(response, "iter_content", None)
+        if callable(iterator):
+            for chunk in response.iter_content(chunk_size=64 * 1024):
+                total += len(chunk)
+                if total > MAX_BODY_BYTES:
+                    raise ValueError(f"body exceeds {MAX_BODY_BYTES} bytes (aborted at {total} during stream)")
+                chunks.append(chunk)
+            body = b"".join(chunks)
+            try:
+                text = body.decode(encoding, errors="replace")
+            except (LookupError, TypeError):
+                text = body.decode("utf-8", errors="replace")
+        else:
+            text = getattr(response, "text", "") or ""
+        return int(response.status_code), text
     finally:
-        try:
-            r.close()
-        except Exception:
-            pass
+        close = getattr(response, "close", None)
+        if callable(close):
+            try:
+                close()
+            except Exception:
+                pass
+
+
+def _open_curl_session(proxy: str | None = None) -> Any:
+    kwargs: dict[str, Any] = {"impersonate": cast(Any, IMPERSONATE), "timeout": TIMEOUT}
+    if proxy:
+        kwargs["proxies"] = {"http": proxy, "https": proxy}
+    try:
+        return cffi.Session(**kwargs)
+    except Exception:
+        kwargs["impersonate"] = cast(Any, "chrome")
+        return cffi.Session(**kwargs)
+
+
+def _warmup_avito_session(session: Any) -> None:
+    """Document GET so the jar gets Avito cookies before the items XHR."""
+    try:
+        response = session.get(f"{SITE_BASE}/", headers=AVITO_DOC_HEADERS, timeout=TIMEOUT)
+        _read_capped_response(response)
+    except Exception:
+        pass
+
+
+def _session_xhr_get(session: Any, url: str) -> tuple[int, str]:
+    response = session.get(url, headers=AVITO_XHR_HEADERS, timeout=TIMEOUT, stream=True)
+    return _read_capped_response(response)
+
+
+def _try_firewall_pow(session: Any, body: str) -> bool:
+    """One local firewallPow on JSON 439. Never logs challenge/JWT/nonce."""
+    challenge = pow_challenge_from_body(body)
+    if not challenge:
+        return False
+    get_response = session.post(
+        f"{SITE_BASE}{POW_GET_PATH}",
+        json=build_get_payload(challenge),
+        headers=AVITO_HEADERS,
+        timeout=TIMEOUT,
+    )
+    try:
+        get_body = get_response.json()
+    except Exception:
+        return False
+    jwt = challenge_jwt_from_get_body(get_body) if isinstance(get_body, dict) else None
+    if not jwt:
+        return False
+    try:
+        challenge_id, complexity = decode_pow_params(jwt)
+        nonce = find_pow_nonce(challenge_id, complexity)
+    except ValueError:
+        return False
+    verify_response = session.post(
+        f"{SITE_BASE}{POW_VERIFY_PATH}",
+        json=build_verify_payload(jwt, nonce),
+        headers=AVITO_HEADERS,
+        timeout=TIMEOUT,
+    )
+    try:
+        verify_body = verify_response.json()
+    except Exception:
+        return False
+    return isinstance(verify_body, dict) and verified_from_verify_body(verify_body)
+
+
+def _sync_curl_get(url: str, proxy: str | None = None) -> tuple[int, str]:
+    """Tier-1: warmed session + X-Source XHR; one JSON-439 firewallPow retry."""
+    session = _open_curl_session(proxy)
+    try:
+        _warmup_avito_session(session)
+        status, text = _session_xhr_get(session, url)
+        if status == 439 and _try_firewall_pow(session, text):
+            log_event("avito_firewall_pow_verified")
+            status, text = _session_xhr_get(session, url)
+        return status, text
+    finally:
+        close = getattr(session, "close", None)
+        if callable(close):
+            try:
+                close()
+            except Exception:
+                pass
 
 
 async def _cdp_fetch(url: str, ctx: Context | None) -> tuple[int, str]:
@@ -231,7 +336,7 @@ async def _fetch(url: str, ctx: Context | None) -> tuple[int, str, str]:
             _pacer.record_success()
             _cache.set(url, (status, body))
             return status, body, "curl_cffi"
-        if ctx and status in (401, 403, 429):
+        if ctx and status in (401, 403, 429, 439):
             await ctx.debug(f"Avito tier-1 HTTP {status} (firewall); trying CDP")
     except Exception as exc:
         if ctx:

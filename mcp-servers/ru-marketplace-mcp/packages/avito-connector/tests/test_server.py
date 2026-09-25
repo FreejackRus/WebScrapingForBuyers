@@ -429,3 +429,82 @@ async def test_fetch_debug_never_leaks_tier1_exception_secrets(monkeypatch):
     debugged = "\n".join(ctx.messages)
     assert "p/ss" not in debugged, f"proxy password leaked into ctx.debug: {debugged}"
     assert "proxy.example:3128" in debugged, "redaction ate the host — the diagnosis must survive"
+
+
+class _FakeResponse:
+    def __init__(self, status: int, text: str = "", payload=None):
+        self.status_code = status
+        self.encoding = "utf-8"
+        self._text = text
+        self._payload = payload
+        self.closed = False
+
+    def iter_content(self, chunk_size=64 * 1024):
+        yield self._text.encode()
+
+    def json(self):
+        if self._payload is None:
+            raise ValueError("no json")
+        return self._payload
+
+    def close(self):
+        self.closed = True
+
+
+class _FakeSession:
+    def __init__(self):
+        self.gets: list[str] = []
+        self.posts: list[str] = []
+        self.items_hits = 0
+
+    def get(self, url, **kwargs):
+        self.gets.append(url)
+        if "/web/1/js/items" in url:
+            self.items_hits += 1
+            if self.items_hits == 1:
+                return _FakeResponse(439, '{"pow_challenge":"tok"}')
+            return _FakeResponse(200, '{"catalog":{"items":[{"id":1,"title":"ok"}]}}')
+        return _FakeResponse(200, "<html>ok</html>")
+
+    def post(self, url, **kwargs):
+        self.posts.append(url)
+        if url.endswith("/firewallPow/get"):
+            return _FakeResponse(
+                200,
+                payload={"success": {"result": {"challenge_jwt": _TEST_JWT}}},
+            )
+        return _FakeResponse(200, payload={"success": {"result": {"verified": True}}})
+
+    def close(self):
+        return None
+
+
+def _unsigned_jwt() -> str:
+    import base64
+
+    header = base64.urlsafe_b64encode(b'{"alg":"none"}').rstrip(b"=").decode()
+    body = base64.urlsafe_b64encode(
+        json.dumps({"id": "b360b677-17c2-840d-5758-60e59982ded8", "compl": 4}).encode()
+    ).rstrip(b"=").decode()
+    return f"{header}.{body}.sig"
+
+
+_TEST_JWT = _unsigned_jwt()
+
+
+def test_html_439_does_not_start_pow():
+    class SilentSession:
+        def post(self, *args, **kwargs):
+            raise AssertionError("HTML 439 must not POST firewallPow")
+
+    assert server._try_firewall_pow(SilentSession(), "<!doctype html>") is False
+
+
+def test_sync_curl_get_retries_after_json_439_pow(monkeypatch):
+    session = _FakeSession()
+    monkeypatch.setattr(server, "_open_curl_session", lambda proxy=None: session)
+    status, body = server._sync_curl_get("https://www.avito.ru/web/1/js/items?q=x")
+    assert status == 200
+    assert "catalog" in body
+    assert any(url.endswith("/firewallPow/verify") for url in session.posts)
+    assert session.items_hits == 2

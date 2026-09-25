@@ -108,7 +108,7 @@ export function presentMarketplaceError(kind: MarketplaceKind, raw: string): str
     const handoff = body.match(/handoff_expires_at[=: ]\S+/i)?.[0];
     return (
       "Avito HTTP 439 (firewallPow / PoW) на js/items — срыв уже прогретой сессии, " +
-      "не вечный блок DC-IP. MCP сам открывает avito.ru/ перед fetch. Не долбить. " +
+      "не вечный блок DC-IP. MCP греет curl-сессию и на JSON 439 делает один локальный firewallPow. Не долбить. " +
       (handoff
         ? `Вкладка оставлена для VNC (${handoff}). Пройти PoW в headed Chrome и повторить поиск один раз.`
         : "Если в VNC на вкладке avito.ru виден PoW — пройти и повторить поиск один раз.")
