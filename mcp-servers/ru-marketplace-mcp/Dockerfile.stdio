@@ -58,7 +58,6 @@ COPY packages/dns-connector/pyproject.toml packages/dns-connector/pyproject.toml
 COPY packages/citilink-connector/pyproject.toml packages/citilink-connector/pyproject.toml
 COPY packages/aliexpress-connector/pyproject.toml packages/aliexpress-connector/pyproject.toml
 COPY packages/cian-connector/pyproject.toml packages/cian-connector/pyproject.toml
-COPY packages/mpstats-connector/pyproject.toml packages/mpstats-connector/pyproject.toml
 COPY packages/marketplace-connector/pyproject.toml packages/marketplace-connector/pyproject.toml
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --all-packages --frozen --no-dev --no-install-project
@@ -117,7 +116,7 @@ EXPOSE 8000
 # Default to the Wildberries server; override the command to run any of the
 # other fourteen entry points — ozon-mcp, yandex-mcp, detmir-mcp, compare-mcp,
 # avito-mcp, taobao-mcp, megamarket-mcp, lamoda-mcp, dns-mcp, citilink-mcp,
-# aliexpress-mcp, cian-mcp, mpstats-mcp, or the unified marketplace-mcp (all
+# aliexpress-mcp, cian-mcp, or the unified marketplace-mcp (all
 # sources in one server). docker-compose.yml shows running several at once, each on its
 # own published port.
 # The advertised package runs the unified 40-tool server over stdio. Override

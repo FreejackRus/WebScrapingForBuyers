@@ -116,12 +116,6 @@ docker compose --env-file .env.production -f docker-compose.production.yml \
   больше не пересоздаёт сессию.
 - Яндекс Маркет может отклонять серверный IP капчей/редиректом; это ошибка
   источника, а не отсутствие товара.
-- Платный Apify-fallback уже прописан, но выключен (`APIFY_ENABLED=false`):
-  Ozon — `zen-studio/ozon-scraper-pro`, Яндекс Маркет —
-  `zen-studio/yandex-market-scraper-parser`, DNS —
-  `crawlerbros/dns-shop-scraper`, Мегамаркет —
-  `crawlerbros/megamarket-scraper`. Включается только с `APIFY_TOKEN` и лимитом
-  `APIFY_MAX_CHARGE_USD`. Мегамаркет перед постоянным включением нужен пилот.
 - MERLION, NETLAB и OCS имеют live-клиенты и монтируются только с партнёрскими
   ключами. Остальные дистрибьюторы — stubs без фейковых цен (`docs/DISTRIBUTORS.md`).
 - Аналитическое объяснение формирует уже установленная локальная Qwen3 через

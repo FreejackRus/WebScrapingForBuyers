@@ -14,7 +14,6 @@
     "@modelcontextprotocol/sdk": "^1.29.0",
     "@peremena/contracts": "*",
     "@peremena/service-kit": "*",
-    "apify-client": "^2.25.0",
     "exceljs": "^4.4.0",
     "fastify": "^5.6.0"
   },

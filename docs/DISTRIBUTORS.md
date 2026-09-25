@@ -189,7 +189,7 @@ NETLAB_API_PASSWORD='…'
    а не SOAP. Env уже зарезервированы (`SERVERMALL_API_TOKEN` и т.д.) —
    токен тогда = URL фида или basic, не «магический REST».
 2. **Витрина через headed Chrome (запас).** Новый `SourceAdapter` в
-   `apps/search`, не второй MCP и не Apify. Query = title / brand+model /
+   `apps/search`, не второй MCP. Query = title / brand+model /
    MPN, как Citilink. Тот же профиль `chrome-headed` + VNC. Онлайнтрейд
    и Регард — розничные цены, не закупочные; помечать
    `priceCondition: «витрина, не B2B»`. Не ходить в URL из `robots.txt`

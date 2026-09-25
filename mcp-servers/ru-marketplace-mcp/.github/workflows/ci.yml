@@ -231,7 +231,6 @@ jobs:
               "citilink": 2,
               "aliexpress": 2,
               "cian": 2,
-              "mpstats": 2,
           }
 
           async def main() -> None:
@@ -248,7 +247,6 @@ jobs:
               from citilink_connector.server import mcp as citilink_mcp
               from aliexpress_connector.server import mcp as aliexpress_mcp
               from cian_connector.server import mcp as cian_mcp
-              from mpstats_connector.server import mcp as mpstats_mcp
 
               servers = {
                   "wb": wb_mcp,
@@ -264,12 +262,8 @@ jobs:
                   "citilink": citilink_mcp,
                   "aliexpress": aliexpress_mcp,
                   "cian": cian_mcp,
-                  "mpstats": mpstats_mcp,
               }
-              # Guard the guard: mpstats was listed in EXPECTED but never added to
-              # `servers`, so the loop skipped it and the step still printed "all
-              # servers registered their expected tools" while checking 11 of 12.
-              # A key mismatch is now the first failure, not a silent omission.
+              # A key mismatch is the first failure, not a silent omission.
               if set(servers) != set(EXPECTED):
                   raise SystemExit(
                       f"servers/EXPECTED disagree: only in servers {sorted(set(servers) - set(EXPECTED))}, "
@@ -304,7 +298,6 @@ jobs:
           uv run which citilink-mcp
           uv run which aliexpress-mcp
           uv run which cian-mcp
-          uv run which mpstats-mcp
           uv run which marketplace-mcp
 
       - name: Real MCP session over stdio

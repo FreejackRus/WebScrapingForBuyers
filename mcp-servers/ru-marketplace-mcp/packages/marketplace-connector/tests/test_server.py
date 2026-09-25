@@ -31,7 +31,6 @@ def test_all_installed_sources_are_mounted():
         "dns_search",
         "citilink_search",
         "compare_prices",
-        "mpstats_item",
     }
     missing = expected_markers - names
     assert not missing, f"sources not mounted: {missing}"
@@ -51,20 +50,20 @@ def test_tool_names_keep_their_source_prefixes():
 def test_the_mounted_count_matches_the_imported_sources():
     tools = asyncio.run(server.mcp.list_tools())
     names = {t.name for t in tools}
-    # 8 + 3 + 2 + 3 + 3 + 2 + 2 + 2 + 2 + 2 + 2 + 2 + 4 + 2 = 39 mounted tools across
-    # 14 servers, plus marketplace_sources, which this server owns rather than
+    # 8 + 3 + 2 + 3 + 3 + 2 + 2 + 2 + 2 + 2 + 2 + 2 + 4 = 37 mounted tools across
+    # 13 servers, plus marketplace_sources, which this server owns rather than
     # mounts. Operator-only *_selfcheck diagnostics are not MCP tools.
     own = {"marketplace_sources"}
     assert own <= names
-    assert len(tools) == 40, f"expected 39 mounted tools + 1 own, got {len(tools)}"
-    assert len(names - own) == 39
+    assert len(tools) == 38, f"expected 37 mounted tools + 1 own, got {len(tools)}"
+    assert len(names - own) == 37
 
 
 def test_marketplace_sources_reports_what_mounted():
     """A skipped source must be visible to the client, not just to stderr."""
     result = asyncio.run(server.marketplace_sources())
 
-    assert result.mounted_count == 14
+    assert result.mounted_count == 13
     assert result.skipped_count == 0
     assert result.skipped == {}
     assert "wildberries" in result.mounted
@@ -73,7 +72,6 @@ def test_marketplace_sources_reports_what_mounted():
     assert "cian" in result.mounted
     assert result.capabilities["cian"]["requires_cdp"] is True
     assert result.capabilities["cian"]["text_search"] is False
-    assert "mpstats" in result.mounted
     assert result.server_version == server.SERVER_VERSION
     assert result.capabilities["taobao"]["currency"] == "cny"
     assert result.capabilities["taobao"]["requires_login"] is True

@@ -37,7 +37,6 @@ KNOWN_SOURCES = frozenset(
         "aliexpress",
         "cian",
         "compare",
-        "mpstats",
     }
 )
 

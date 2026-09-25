@@ -34,7 +34,7 @@ is the entire mitigation. The other three layers:
 
 **No credentials are ever stored, read or transmitted by this project.** You log in
 by hand, in a browser you control. There is no credential store to leak. (The
-optional MPStats connector is the one exception — you supply `MPSTATS_MP_AUTH`
+all connectors use public catalog access or the operator's own Chrome session
 yourself via env; it is never stored by the project either.)
 
 ## Setup

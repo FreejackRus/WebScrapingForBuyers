@@ -67,10 +67,6 @@ services:
       HARDPRICE_API_TOKEN: ${HARDPRICE_API_TOKEN:-}
       SRVTRADE_API_TOKEN: ${SRVTRADE_API_TOKEN:-}
       TORGPC_API_TOKEN: ${TORGPC_API_TOKEN:-}
-      APIFY_ENABLED: ${APIFY_ENABLED:-false}
-      APIFY_TOKEN: ${APIFY_TOKEN:-}
-      APIFY_MAX_ITEMS: ${APIFY_MAX_ITEMS:-12}
-      APIFY_MAX_CHARGE_USD: ${APIFY_MAX_CHARGE_USD:-0.20}
     # No depends_on marketplace-mcp/chrome: `up --build search` must not
     # recreate the headed Chrome profile. Start chrome + MCP separately.
     networks:

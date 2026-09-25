@@ -35,9 +35,6 @@ def test_install_prints_a_config_block_for_every_source(capsys):
     assert '"wildberries"' in out
     assert '"taobao"' in out
     assert '"aliexpress"' in out
-    assert '"mpstats"' in out
-    assert "optional paid analytics" in out
-    assert "MPSTATS_MP_AUTH" in out
     assert "marketplace-mcp" in out
 
 

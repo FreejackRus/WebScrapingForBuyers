@@ -180,7 +180,7 @@ describe("FallbackSourceAdapter", () => {
   });
 
   it("reports all errors when every adapter fails", async () => {
-    const sources: SourceAdapter[] = ["MCP blocked", "Apify failed"].map((message) => ({
+    const sources: SourceAdapter[] = ["MCP blocked", "HTTP catalog failed"].map((message) => ({
       name: "DNS",
       search: async () => {
         throw new Error(message);
@@ -188,6 +188,6 @@ describe("FallbackSourceAdapter", () => {
     }));
 
     const source = new FallbackSourceAdapter("DNS", sources);
-    await expect(source.search(product)).rejects.toThrow("MCP blocked → fallback: Apify failed");
+    await expect(source.search(product)).rejects.toThrow("MCP blocked → fallback: HTTP catalog failed");
   });
 });

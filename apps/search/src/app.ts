@@ -3,7 +3,6 @@ import { createService } from "@peremena/service-kit";
 import { SearchService } from "./application/search-service.js";
 import type { SourceAdapter } from "./domain/source-adapter.js";
 import { searchRoutes } from "./http/routes.js";
-import { createApifySourcesFromEnv } from "./infrastructure/sources/apify-marketplace-adapter.js";
 import { createDistributorSourcesFromEnv } from "./infrastructure/sources/b2b-distributor-adapter.js";
 import { createDemoSources } from "./infrastructure/sources/demo-source-adapter.js";
 import { mergeSourceFallbacks } from "./infrastructure/sources/fallback-source-adapter.js";
@@ -21,7 +20,6 @@ export function buildSearchApp(options: { sources?: SourceAdapter[]; logger?: bo
   const realSources = mergeSourceFallbacks([
     createMarketplaceSourcesFromEnv(),
     createHttpMarketplaceSources(),
-    createApifySourcesFromEnv(),
     createDistributorSourcesFromEnv(),
   ]);
   const realNames = new Set(realSources.map((source) => source.name));

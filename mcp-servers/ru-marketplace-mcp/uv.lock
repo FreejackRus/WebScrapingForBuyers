@@ -22,7 +22,6 @@ members = [
     "marketplace-connector",
     "mcp-core",
     "megamarket-connector",
-    "mpstats-connector",
     "ozon-connector",
     "ru-marketplace-mcp",
     "taobao-connector",
@@ -1245,7 +1244,6 @@ dependencies = [
     { name = "lamoda-connector" },
     { name = "mcp-core" },
     { name = "megamarket-connector" },
-    { name = "mpstats-connector" },
     { name = "ozon-connector" },
     { name = "pydantic" },
     { name = "taobao-connector" },
@@ -1266,7 +1264,6 @@ requires-dist = [
     { name = "lamoda-connector", editable = "packages/lamoda-connector" },
     { name = "mcp-core", editable = "packages/mcp-core" },
     { name = "megamarket-connector", editable = "packages/megamarket-connector" },
-    { name = "mpstats-connector", editable = "packages/mpstats-connector" },
     { name = "ozon-connector", editable = "packages/ozon-connector" },
     { name = "pydantic", specifier = ">=2.6" },
     { name = "taobao-connector", editable = "packages/taobao-connector" },
@@ -1368,27 +1365,6 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/de/1d/f4da6f02cdffe04d6362210b807146a26044c88d839208aec273bb0d9184/more_itertools-11.1.0.tar.gz", hash = "sha256:48e8f4d9e7e5878571ecf6f2b4e57634f93cd474cc8cfbd2376f2d11b396e30d", size = 145772, upload-time = "2026-05-22T14:14:29.909Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/e8/3d/1087453384dbde46a8c7f9356eead2c58be8a7bf156bca40243377c85715/more_itertools-11.1.0-py3-none-any.whl", hash = "sha256:4b65538ae22f6fed0ce4874efd317463a7489796a0939fa66824dd542125a192", size = 72226, upload-time = "2026-05-22T14:14:28.824Z" },
-]
-
-[[package]]
-name = "mpstats-connector"
-version = "2.4.2"
-source = { editable = "packages/mpstats-connector" }
-dependencies = [
-    { name = "fastmcp" },
-    { name = "httpx" },
-    { name = "mcp-core" },
-    { name = "pydantic" },
-    { name = "pydantic-settings" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "fastmcp", specifier = ">=3.4.6,<4" },
-    { name = "httpx", specifier = ">=0.27" },
-    { name = "mcp-core", editable = "packages/mcp-core" },
-    { name = "pydantic", specifier = ">=2.6" },
-    { name = "pydantic-settings", specifier = ">=2.2" },
 ]
 
 [[package]]
@@ -2079,7 +2055,6 @@ dependencies = [
     { name = "marketplace-connector" },
     { name = "mcp-core" },
     { name = "megamarket-connector" },
-    { name = "mpstats-connector" },
     { name = "ozon-connector" },
     { name = "taobao-connector" },
     { name = "wb-connector" },
@@ -2111,7 +2086,6 @@ requires-dist = [
     { name = "marketplace-connector", editable = "packages/marketplace-connector" },
     { name = "mcp-core", editable = "packages/mcp-core" },
     { name = "megamarket-connector", editable = "packages/megamarket-connector" },
-    { name = "mpstats-connector", editable = "packages/mpstats-connector" },
     { name = "ozon-connector", editable = "packages/ozon-connector" },
     { name = "taobao-connector", editable = "packages/taobao-connector" },
     { name = "wb-connector", editable = "packages/wb-connector" },

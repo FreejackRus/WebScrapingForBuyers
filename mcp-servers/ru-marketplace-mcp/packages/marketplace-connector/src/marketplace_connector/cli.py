@@ -51,7 +51,6 @@ SERVERS: list[tuple[str, str, str]] = [
     ("aliexpress", "aliexpress-mcp", "needs your Chrome — AliExpress Russia"),
     ("cian", "cian-mcp", "real estate; needs your Chrome — WAF by IP"),
     ("compare-prices", "compare-mcp", "fans out across all of the above"),
-    ("mpstats", "mpstats-mcp", "optional paid analytics — requires MPSTATS_MP_AUTH in the server environment"),
 ]
 
 _SELFCHECKS: list[tuple[str, str, str]] = [
@@ -67,7 +66,6 @@ _SELFCHECKS: list[tuple[str, str, str]] = [
     ("citilink", "citilink_connector.server", "citilink_selfcheck"),
     ("aliexpress", "aliexpress_connector.server", "aliexpress_selfcheck"),
     ("cian", "cian_connector.server", "cian_selfcheck"),
-    ("mpstats", "mpstats_connector.server", "mpstats_selfcheck"),
 ]
 
 

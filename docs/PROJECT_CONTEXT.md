@@ -1153,3 +1153,14 @@ XP-Pen и китайские Legion R9000P/R7000P как «Сомнительн�
 частично…» убран. Перед поиском можно выбрать поставщиков — search
 принимает `sources[]`, gateway отдаёт `GET /api/v1/sources`. Chrome не
 трогали.
+
+### 2026-09-25 — убраны платные источники
+
+Из продукта сняты платные SaaS: Apify (`apify-client`,
+`ApifyMarketplaceAdapter`) и MPStats (`mpstats-connector`, `mpstats-mcp`,
+`MPSTATS_MP_AUTH`). Search больше не делает fallback в Apify. Unified MCP
+держит 38 инструментов (37 площадок + `marketplace_sources`), без платного
+токена аналитики. Исторические release notes/changelog не переписывались.
+Оставлены бесплатные контуры: MCP + headed Chrome, HTTP-запас WB, Icecat
+Open Catalog, opt-in партнёрские API дистрибьюторов. Капча-фермы и
+платные cookie API не добавлялись.

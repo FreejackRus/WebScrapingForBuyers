@@ -49,7 +49,6 @@ def test_subset_drops_unlisted_sources(unified_env):
     assert any(name.startswith("wb_") for name in names)
     assert any(name.startswith("avito_") for name in names)
     assert not any(name.startswith("taobao_") for name in names)
-    assert not any(name.startswith("mpstats_") for name in names)
     # marketplace_sources belongs to the unified server itself, never to a source.
     assert "marketplace_sources" in names
 

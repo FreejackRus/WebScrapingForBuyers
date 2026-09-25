@@ -15,7 +15,7 @@
     "missing": "a case with no answer in the answers file is reported as `missing` and counts as failed for overall accuracy"
   },
   "system_context": {
-    "role": "You are the routing layer for the ru-marketplace-mcp DSH bundle: an MCP server family for Russian marketplaces, classifieds, real estate and sales analytics. For each case, decide which single catalog entry handles it.",
+    "role": "You are the routing layer for the ru-marketplace-mcp DSH bundle: an MCP server family for Russian marketplaces, classifieds and real estate. For each case, decide which single catalog entry handles it.",
     "answer_contract": "Answer with EXACTLY ONE id from the catalogs below: a skill id when the case asks which source/tool handles a request, or a failure-vocabulary id when the case asks how a failure (or non-failure) classifies. Output the bare id only — no prose, no punctuation.",
     "skills": [
       {"id": "aliexpress-connector", "trigger": "Search AliExpress or read one product card (aliexpress_search, aliexpress_card); prices in RUB; CDP-only, no anonymous tier. Triggers: «алиэкспресс», «найди на али», «цена на aliexpress», «сколько на алиэкспрессе». Skip other marketplaces — use their per-marketplace skills."},
@@ -28,7 +28,6 @@
       {"id": "lamoda-connector", "trigger": "Lamoda fashion: search (CDP) and one product's price/old price/per-size availability (lamoda_search, lamoda_card). Lamoda exposes NO ratings or reviews anywhere. Triggers: «ламода», «lamoda», «кроссовки lamoda»."},
       {"id": "marketplace", "trigger": "The full unified mount, routing metadata, or client setup: one server mounting every connector as namespaced tools plus marketplace_sources(), which reports {mounted, skipped, capabilities} and tells an installed-but-quiet source from one that never loaded. Operator CLI: marketplace-mcp install/doctor. Triggers: «один MCP», «все источники», «marketplace_sources», «настроить marketplace», «full marketplace». Route price questions («где дешевле», «compare prices») to compare-prices; skip single-source tasks."},
       {"id": "megamarket-connector", "trigger": "Megamarket: catalog search and product card (megamarket_search, megamarket_card); always needs the operator's LOGGED-IN Chrome over CDP (ServicePipe gates the whole site by IP reputation). Triggers: «мегамаркет», «megamarket», «цена мегамаркет»."},
-      {"id": "mpstats-connector", "trigger": "MPStats paid sales/stock analytics for a specific Ozon or Wildberries SKU: per-day 30-day orders/price/stock graphs, current price and stock, FBS/FBO warehouse split, seller/brand identity, orders-per-day (mpstats_item, mpstats_warehouses). Requires MPSTATS_MP_AUTH (paid account). Triggers: «продажи товара на озон», «аналитика ozon sku», «mpstats по артикулу», «продажи за 30 дней». Skip bare price/availability checks with no account — use wb_card / ozon_card; no text search or reviews."},
       {"id": "ozon-connector", "trigger": "Ozon marketplace: product details, search, prices, ratings, reviews (ozon_card, ozon_search, ozon_reviews). Tier 1 is TLS impersonation with no browser; Chrome CDP is only the tier-2 fallback when Cloudflare challenges. Triggers: «найди на озоне», «цена ozon», «отзывы на озоне», English mentions of Ozon."},
       {"id": "taobao-connector", "trigger": "Taobao: search Chinese listings and read one item card (taobao_search, taobao_card); prices are in YUAN (CNY), never converted; always needs the operator's Chrome over CDP (signed mtop API). Triggers: «taobao», «淘宝», «найди на таобао», «цена taobao»."},
       {"id": "wb-connector", "trigger": "Wildberries: price/availability checks, review-pool analysis by imt_id, seller identity and tax details (INN/OGRN), catalog category browsing, variant discovery via root_id, buyer questions (wb_search, wb_card, wb_root_info, wb_reviews, wb_seller, wb_categories, wb_category_products, wb_questions). Triggers: «цена на WB», «отзывы на вб», «найди на вайлдберриз», «кто продавец», «какие категории»."},
@@ -41,7 +40,7 @@
       {"id": "challenge_required", "meaning": "A login/CAPTCHA/DOM challenge wall was detected (requires_user_action=true). A human must complete it in the connected scraping profile, then the SAME call is repeated. Retryable, but never self-retryable."},
       {"id": "parser_drift", "meaning": "The transport answered, but the payload shape/selector contract moved, or extraction came back empty with NO challenge evidence. Code change needed; never readable as «no results»."},
       {"id": "not_found", "meaning": "The specific item/offer does not exist (including loose upstream contracts such as HTTP 200 carrying a body-level 404)."},
-      {"id": "auth_missing", "meaning": "A required credential/token is missing or expired (e.g. MPSTATS_MP_AUTH). Not retryable until configured."},
+      {"id": "auth_missing", "meaning": "A required credential/token is missing or expired (e.g. MCP_HTTP_AUTH_TOKEN for HTTP transport). Not retryable until configured."},
       {"id": "bad_request", "meaning": "The call itself was invalid: wrong argument type or combination."},
       {"id": "permission_denied", "meaning": "The operation is refused for the current access tier or profile."},
       {"id": "no_error", "meaning": "HTTP 200 with a valid result — including honest nulls (price_rub null = no data, never 0), delisted items, empty pools from a successful call, and partial multi-source results reported with per-source outcomes. Nothing failed at tool level."},
@@ -153,11 +152,11 @@
       "id": "routing-011",
       "slice": "routing",
       "lang": "ru",
-      "query": "Покажи аналитику продаж по артикулу 5107857210 на Озоне за 30 дней: заказы по дням, остатки, FBS/FBO. Аккаунт MPStats подключён.",
-      "expected": "mpstats-connector",
+      "query": "Покажи карточку товара 5107857210 на Озоне: текущая цена, рейтинг и свежие отзывы.",
+      "expected": "ozon-connector",
       "acceptable_alternatives": [],
-      "forbidden": ["ozon-connector"],
-      "evidence": "skills/mpstats-connector/SKILL.md — trigger «продажи за 30 дней»/«аналитика ozon sku»; mpstats_item + mpstats_warehouses; catalog connectors do not expose sales graphs."
+      "forbidden": ["compare-prices"],
+      "evidence": "skills/ozon-connector/SKILL.md — ozon_card + ozon_reviews; single-marketplace SKU lookup, not a cross-shop compare."
     },
     {
       "id": "routing-012",
@@ -214,11 +213,11 @@
       "id": "routing-017",
       "slice": "routing",
       "lang": "ru",
-      "query": "Проверь текущую цену и наличие по артикулу 123456789 на Озоне. Платной аналитики нет, просто карточка товара.",
+      "query": "Проверь текущую цену и наличие по артикулу 123456789 на Озоне. Нужна только карточка товара, без сравнения с другими площадками.",
       "expected": "ozon-connector",
       "acceptable_alternatives": [],
-      "forbidden": ["mpstats-connector"],
-      "evidence": "skills/mpstats-connector/SKILL.md — «Skip raw catalog price checks — use wb_/ozon_ connectors (no account needed)»; skills/ozon-connector/SKILL.md — ozon_card."
+      "forbidden": ["compare-prices"],
+      "evidence": "skills/ozon-connector/SKILL.md — ozon_card; skip compare-prices for a single-marketplace SKU lookup."
     },
     {
       "id": "routing-018",
@@ -295,11 +294,11 @@
       "id": "error-006",
       "slice": "error-classification",
       "lang": "ru",
-      "query": "Классифицируй сбой: сервер поднялся чисто, но каждый вызов mpstats_item сразу возвращает ошибку — переменную MPSTATS_MP_AUTH не задавали.",
+      "query": "Классифицируй сбой: HTTP-транспорт marketplace-mcp поднялся чисто, но каждый вызов сразу возвращает ошибку — переменную MCP_HTTP_AUTH_TOKEN не задавали.",
       "expected": "auth_missing",
       "acceptable_alternatives": [],
       "forbidden": [],
-      "evidence": "skills/mpstats-connector/SKILL.md — «Without it, every tool returns an auth_missing error (retryable: false) and the server still boots cleanly»."
+      "evidence": "mcp_core/errors.py — ErrorCode.AUTH_MISSING; a required credential is absent, retryable: false, server still boots."
     },
     {
       "id": "error-007",

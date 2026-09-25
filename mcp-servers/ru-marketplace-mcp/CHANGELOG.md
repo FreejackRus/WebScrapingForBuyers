@@ -9,6 +9,12 @@
 
 ## [Unreleased]
 
+### Removed
+
+- Paid MPStats analytics (`mpstats-connector`, `mpstats-mcp`, `MPSTATS_MP_AUTH`)
+  is no longer shipped. Catalog and compare tools stay free of paid tokens.
+- Apify actors and `apify-client` are not part of this tree.
+
 ### Fixed
 
 - Wildberries reads `card.wb.ru`, `search.wb.ru` and `catalog.wb.ru` through

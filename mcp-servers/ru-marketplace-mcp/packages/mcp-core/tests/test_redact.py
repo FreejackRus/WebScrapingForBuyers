@@ -180,9 +180,9 @@ _JWT = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.dozjgNryP4J3jVmNHl0w5N_
     ],
 )
 def test_session_cookies_and_jwts_are_scrubbed(text):
-    """The MPStats connector holds the only secret this project ever sees — a
-    live paid-session JWT. Nothing is known to put it in an error string today,
-    but its docstring claimed this scrubbing existed before it did, so the claim
+    """A connected browser or reverse proxy may expose a session JWT in a
+    diagnostic. Nothing is known to put it in an error string today, but the
+    redaction contract claims this scrubbing exists, so the claim
     is pinned here rather than trusted."""
     assert _JWT not in redact_error_text(text)
     assert "eyJ" not in redact_error_text(text)
@@ -190,8 +190,8 @@ def test_session_cookies_and_jwts_are_scrubbed(text):
 
 def test_redaction_keeps_the_diagnosis_readable():
     """Scrubbing must not eat the part that says what went wrong."""
-    out = redact_error_text(f"POST plugin.mpstats.io timed out; Cookie: mp_auth={_JWT}")
-    assert "plugin.mpstats.io" in out
+    out = redact_error_text(f"POST marketplace.example timed out; Cookie: session_auth={_JWT}")
+    assert "marketplace.example" in out
     assert "timed out" in out
 
 

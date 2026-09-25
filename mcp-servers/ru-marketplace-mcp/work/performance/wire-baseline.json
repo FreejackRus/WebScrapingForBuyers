@@ -57,10 +57,10 @@
     },
     "marketplace-mcp": {
       "script": "marketplace-mcp",
-      "tool_count": 40,
-      "wire_tokens": 16549,
+      "tool_count": 38,
+      "wire_tokens": 15578,
       "latency_ms": 1793.6,
-      "schema_sha256": "2f22553e7ad814641ffba1ac877ca35451c425203ecf362ac83f5c689a7e3870",
+      "schema_sha256": "e0326266ad9f5794c1a154ec83aace367f54d61634724b9b428e9fca5c706e86",
       "tools": [
         {
           "name": "aliexpress_card",
@@ -153,14 +153,6 @@
         {
           "name": "megamarket_search",
           "tokens": 381
-        },
-        {
-          "name": "mpstats_item",
-          "tokens": 544
-        },
-        {
-          "name": "mpstats_warehouses",
-          "tokens": 427
         },
         {
           "name": "ozon_card",
