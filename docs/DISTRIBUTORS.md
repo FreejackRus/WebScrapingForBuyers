@@ -19,6 +19,7 @@
 | **OCS** | REST Partners Connector | **клиент готов** | `OCS_API_KEY` **и** `OCS_SEARCH_PATH` (оба обязательны для mount); опц. `OCS_API_URL` / `OCS_SHIPMENT_CITY` / `OCS_LOCATION` |
 | **MERLION** | SOAP `mlservice3` | **клиент готов** | `MERLION_API_LOGIN` (`…\|API`), `MERLION_API_PASSWORD`, опц. `MERLION_API_TEST=true` |
 | **NETLAB** | REST NLDealer | **клиент готов** | `NETLAB_API_LOGIN`, `NETLAB_API_PASSWORD`, опц. `NETLAB_CLIENT_CODE`, `NETLAB_API_URL` |
+| **Treolan** | SOAP B2B (`ws/service.asmx`) | документирован, клиент не wired | партнёрский логин; `b2b-info@treolan.ru` (не публичный анонимный API) |
 | Servermall | stub | нет публичного API | `SERVERMALL_API_TOKEN` + запрос менеджеру |
 | Онлайнтрейд | stub | нет публичного API | `ONLINETRADE_API_TOKEN` |
 | Регард | stub | нет публичного API | `REGARD_API_TOKEN` |
@@ -105,6 +106,55 @@ NETLAB_API_PASSWORD='…'
 # NETLAB_API_URL=http://services.netlab.ru
 ```
 
+### TREOLAN (SOAP есть, клиент не wired)
+
+Широкопрофильный ИТ-дистрибьютор (серверы, СХД, ПК, сеть, ПО, ИБ). Юрлицо
+в открытых источниках — ООО «Ланит Трейдинг»; бренд Treolan с 2010
+(департамент дистрибуции ЛАНИТ). **Группа ЛАНИТ / Ланит-Холдинг, не Merlion.**
+~150 вендоров, ~3500 партнёров РФ/СНГ. Офисы: Москва, Екатеринбург,
+Новосибирск, Самара. Склад: Котельники, Яничкин пр. 6. Конечным
+заказчикам не продают.
+
+Публичный сайт [treolan.ru](https://www.treolan.ru) — новости, вендоры
+([/vendor](https://www.treolan.ru/vendor)), дерево каталога
+([/catalog](https://www.treolan.ru/catalog)). Дилерские цены и остатки
+там нет: «действующая цена отображена в системе b2b», в у.е. (USD) на
+условиях «склад Треолан, Москва». Кабинет
+[b2b.treolan.ru](https://b2b.treolan.ru/) — логин/пароль. Новый партнёр:
+`newpartner@treolan.ru`. Полные прайс-листы в B2B есть, но портал сам
+пишет, что они не онлайн (исключение из realtime).
+
+`robots.txt` маркетингового сайта открыт (`User-agent: *` + sitemap;
+`sitemap.xml` на проверке отдавал 500). Скрейп витрины бессмысленен:
+закупочных цен нет. Ломать кабинет без договора не надо.
+
+Официальный партнёрский SOAP (WSDL без ключа открывается, вызовы —
+только с логином партнёра):
+
+1. Страница: [b2b.treolan.ru/info/325/api](https://b2b.treolan.ru/info/325/api)
+2. PDF v1.42: [Веб-сервисы v1.x](https://static.treolan.ru/files/api/%D0%92%D0%B5%D0%B1-%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D1%8B%20v1.42.pdf)
+3. Заявка: `b2b-info@treolan.ru` (нужен уже партнёрский договор).
+4. WSDL prod: `https://api.treolan.ru/ws/service.asmx?wsdl`  
+   тест: `https://demo-api.treolan.ru/ws/service.asmx?wsdl`  
+   legacy help: `https://api.treolan.ru/webservice2008/Service.asmx`
+5. Auth: логин/пароль **в параметрах SOAP**, не HTTP Basic (не как MERLION).
+6. Поиск/цены для Radar: `GetCategories` → `GenCatalogV2` (keywords /
+   articul / name, `criterion` 0|1|2, `vendorid`) → при необходимости
+   `ProductInfoV2(Articul)`. В XML: `@articul`, `@name`, `@vendor`,
+   `@price` / `@dprice`, `@currency`, склад `@freenom`, транзит
+   `@freeptrans`, GTIN. Заказы/счета/накладные в WSDL есть — в collect
+   не нужны.
+7. Анонимного REST/YML/EDI-фида нет. Сторонние 1С-коннекторы бьют тот же SOAP.
+
+Рекомендуемый путь: **партнёрский SOAP** (как MERLION), не витрина CDP
+и не капча. Пока нет договора — файл из кабинета (XLSX прайс, не realtime)
+по письму менеджеру. Env не резервировать в compose, пока нет учётки:
+клиент в `apps/search` не писать без live-логина.
+
+Пересечение каталога с MERLION / OCS / 3Logic / Marvel ожидаемо
+(широкий ИТ-опт). Хардпрайс — сравниватель, не поставщик; Treolan
+ему не дубль.
+
 ### DNS / Ситилинк / остальные витрины
 
 Публичного партнёрского API каталога **не найдено**. Остаются через
@@ -174,3 +224,5 @@ Servermall/ТоргPC (менеджер или витрина) → Хардпр�
 2. MERLION: при необходимости офлайн-индекс `getCatalog`/`getItems` для полнотекста.
 3. NETLAB: при необходимости явный выбор склада/колонки цены через `NETLAB_CLIENT_CODE`.
 4. Не включать `ALLOW_DEMO_SOURCES` на проде.
+5. Treolan: после договора и логина SOAP — клиент `GenCatalogV2` /
+   `ProductInfoV2`; до этого только файл из B2B, не скрейп treolan.ru.
