@@ -1,20 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 118"
+community: "check_versions.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_118
+  - community/check_versionspy
 ---
 
 # Path
 
 ## Connections
-- [[_assert_tree_matches()]] - `references` [EXTRACTED]
-- [[_file_state()]] - `references` [EXTRACTED]
-- [[_files()]] - `references` [EXTRACTED]
-- [[_tree_diff()]] - `references` [EXTRACTED]
-- [[test_the_vendor_gate_detects_every_drift_class()]] - `references` [EXTRACTED]
+- [[_scan()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_118
+#graphify/code #graphify/EXTRACTED #community/check_versionspy

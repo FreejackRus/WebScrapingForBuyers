@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/pacing.py"
 type: "code"
-community: "Community 85"
+community: "Pacer"
 location: "L127"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_85
+  - community/Pacer
 ---
 
 # .rotation_hint()
@@ -15,4 +15,4 @@ tags:
 - [[A sentence for the operator, empty until rotation is warranted. Connectors…]] - `rationale_for` [EXTRACTED]
 - [[Pacer]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_85
+#graphify/code #graphify/EXTRACTED #community/Pacer

@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_settings_secrets.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_settings_secrets.py"
 type: "code"
-community: "Community 76"
+community: "pydantic"
 location: "L29"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_76
+  - community/pydantic
 ---
 
 # test_the_proxy_secret_is_still_available_to_the_fetch()
 
 ## Connections
-- [[OzonSettings]] - `uses` [INFERRED]
-- [[ozon-connectorteststest_settings_secrets.py]] - `contains` [EXTRACTED]
+- [[YandexSettings]] - `uses` [INFERRED]
+- [[yandex-connectorteststest_settings_secrets.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_76
+#graphify/code #graphify/EXTRACTED #community/pydantic

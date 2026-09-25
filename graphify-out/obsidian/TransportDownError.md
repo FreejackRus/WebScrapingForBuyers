@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
 type: "code"
-community: "Community 4"
+community: "TransportDownError"
 location: "L79"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_4
+  - community/TransportDownError
 ---
 
 # TransportDownError
@@ -15,15 +15,16 @@ tags:
 - [[dot-__init__()_32]] - `method` [EXTRACTED]
 - [[ConnectorError]] - `inherits` [EXTRACTED]
 - [[HandoffBusyError]] - `inherits` [EXTRACTED]
+- [[S1 — MPStats error redaction bypass (confirmed)]] - `references` [INFERRED]
 - [[_blocked_error()]] - `uses` [INFERRED]
 - [[_blocked_error()_2]] - `uses` [INFERRED]
 - [[_blocked_error()_1]] - `uses` [INFERRED]
 - [[_call()_1]] - `uses` [INFERRED]
 - [[_cdp_card()]] - `uses` [INFERRED]
 - [[_cdp_render()_2]] - `uses` [INFERRED]
-- [[_cdp_render()_1]] - `uses` [INFERRED]
 - [[_cdp_render()]] - `uses` [INFERRED]
-- [[_cdp_render_search()]] - `uses` [INFERRED]
+- [[_cdp_render()_1]] - `uses` [INFERRED]
+- [[_cdp_render_search()_1]] - `uses` [INFERRED]
 - [[_challenge_error()]] - `uses` [INFERRED]
 - [[_fetch_first_json()]] - `uses` [INFERRED]
 - [[_fetch_html()]] - `uses` [INFERRED]
@@ -36,7 +37,9 @@ tags:
 - [[_raise_for_fetch_failure()]] - `uses` [INFERRED]
 - [[_raise_for_fetch_failure()_1]] - `uses` [INFERRED]
 - [[_run()]] - `calls` [EXTRACTED]
+- [[_search_via_storefront()]] - `uses` [INFERRED]
 - [[_unwrap_extract()]] - `uses` [INFERRED]
+- [[_verify_storefront_capture()]] - `uses` [INFERRED]
 - [[aliexpress_card()]] - `uses` [INFERRED]
 - [[aliexpress_search()]] - `uses` [INFERRED]
 - [[aliexpress_selfcheck()]] - `uses` [INFERRED]
@@ -62,7 +65,8 @@ tags:
 - [[dns_selfcheck()]] - `uses` [INFERRED]
 - [[edge_418()_1]] - `calls` [INFERRED]
 - [[errors.py]] - `contains` [EXTRACTED]
-- [[fake_call()_10]] - `calls` [INFERRED]
+- [[failing_storefront()]] - `calls` [INFERRED]
+- [[fake_call()_2]] - `calls` [INFERRED]
 - [[fetch()]] - `calls` [EXTRACTED]
 - [[fetch()_1]] - `calls` [EXTRACTED]
 - [[http.py]] - `imports` [EXTRACTED]
@@ -71,7 +75,7 @@ tags:
 - [[lamoda_selfcheck()]] - `uses` [INFERRED]
 - [[mcp_core__init__.py]] - `imports` [EXTRACTED]
 - [[megamarket_card()]] - `uses` [INFERRED]
-- [[megamarket_search()]] - `uses` [INFERRED]
+- [[megamarket_search()_1]] - `uses` [INFERRED]
 - [[megamarket_selfcheck()]] - `uses` [INFERRED]
 - [[ozon_card()]] - `uses` [INFERRED]
 - [[ozon_reviews()]] - `uses` [INFERRED]
@@ -80,19 +84,21 @@ tags:
 - [[read()]] - `calls` [EXTRACTED]
 - [[read()_1]] - `calls` [EXTRACTED]
 - [[taobao_card()]] - `uses` [INFERRED]
-- [[taobao_search()_1]] - `uses` [INFERRED]
+- [[taobao_search()]] - `uses` [INFERRED]
 - [[taobao_selfcheck()]] - `uses` [INFERRED]
 - [[test_blocked_and_not_found_are_distinct_taxonomy_codes()]] - `uses` [INFERRED]
 - [[test_selfcheck_inconclusive_on_transport_failure()]] - `uses` [INFERRED]
 - [[test_selfcheck_is_inconclusive_when_transport_fails()]] - `uses` [INFERRED]
 - [[test_selfcheck_is_inconclusive_when_transport_fails()_1]] - `uses` [INFERRED]
 - [[test_selfcheck_says_blocked_when_the_edge_refuses()]] - `uses` [INFERRED]
+- [[test_wb_search_storefront_does_not_fall_back_to_search_goods()]] - `uses` [INFERRED]
 - [[wb_card()]] - `uses` [INFERRED]
 - [[wb_category_products()]] - `uses` [INFERRED]
 - [[wb_questions()]] - `uses` [INFERRED]
 - [[wb_reviews()]] - `uses` [INFERRED]
 - [[wb_root_info()]] - `uses` [INFERRED]
-- [[wb_search()_1]] - `uses` [INFERRED]
+- [[wb_search()]] - `uses` [INFERRED]
 - [[yandex_card()]] - `uses` [INFERRED]
+- [[Исправлено_17]] - `references` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Community_4
+#graphify/code #graphify/INFERRED #community/TransportDownError

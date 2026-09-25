@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_search_parser_live.py"
 type: "rationale"
-community: "Community 74"
+community: "test_search_parser_live.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_74
+  - community/test_search_parser_livepy
 ---
 
 # The Ozon search parse path against a LIVE captured composer payload.…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_search_parser_live.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_74
+#graphify/rationale #graphify/EXTRACTED #community/test_search_parser_livepy

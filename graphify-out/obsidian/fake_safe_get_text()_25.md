@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 261"
-location: "L724"
+community: "_RecordingPacer"
+location: "L2175"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_261
+  - community/_RecordingPacer
 ---
 
 # fake_safe_get_text()
 
 ## Connections
-- [[test_wb_search_handles_v9_shape_drift_by_falling_back()]] - `contains` [EXTRACTED]
+- [[test_a_refusal_streak_reaches_the_operator()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_261
+#graphify/code #graphify/EXTRACTED #community/_RecordingPacer

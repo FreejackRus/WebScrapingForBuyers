@@ -1,12 +1,12 @@
 ---
 source_file: "apps/identity/src/infrastructure/memory-auth-store.ts"
 type: "code"
-community: "Community 32"
+community: "memory-auth-store.ts"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_32
+  - community/memory-auth-storets
 ---
 
 # memory-auth-store.ts
@@ -30,4 +30,4 @@ tags:
 - [[toSession()]] - `contains` [EXTRACTED]
 - [[verifyPassword()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_32
+#graphify/code #graphify/EXTRACTED #community/memory-auth-storets

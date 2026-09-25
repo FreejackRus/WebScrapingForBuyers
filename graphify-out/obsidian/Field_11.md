@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 45"
+community: "detmir_categories"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_45
+  - community/detmir_categories
 ---
 
 # Field
@@ -15,4 +15,4 @@ tags:
 - [[detmir_categories()]] - `references` [EXTRACTED]
 - [[detmir_category()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_45
+#graphify/code #graphify/EXTRACTED #community/detmir_categories

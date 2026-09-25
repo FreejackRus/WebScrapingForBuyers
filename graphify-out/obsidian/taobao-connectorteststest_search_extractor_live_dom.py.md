@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_search_extractor_live_dom.py"
 type: "code"
-community: "Community 187"
+community: "run_extractor"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_187
+  - community/run_extractor
 ---
 
 # taobao-connector/tests/test_search_extractor_live_dom.py
 
 ## Connections
 - [[The Taobao search extractor against a LIVE captured grid. Companion to…]] - `rationale_for` [EXTRACTED]
-- [[_items()_1]] - `contains` [EXTRACTED]
+- [[_items()_3]] - `contains` [EXTRACTED]
 - [[domtest.py]] - `imports_from` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]
 - [[pytest]] - `imports` [EXTRACTED]
@@ -22,4 +22,4 @@ tags:
 - [[test_live_prices_survive_the_split_price_layout()]] - `contains` [EXTRACTED]
 - [[test_live_titles_are_the_product_name_not_the_whole_tile()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_187
+#graphify/code #graphify/EXTRACTED #community/run_extractor

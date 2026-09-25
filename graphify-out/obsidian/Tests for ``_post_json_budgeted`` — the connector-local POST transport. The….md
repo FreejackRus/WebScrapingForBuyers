@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_transport.py"
 type: "rationale"
-community: "Community 49"
+community: "test_transport.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_49
+  - community/test_transportpy
 ---
 
 # Tests for ``_post_json_budgeted`` — the connector-local POST transport. The…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_transport.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_49
+#graphify/rationale #graphify/EXTRACTED #community/test_transportpy

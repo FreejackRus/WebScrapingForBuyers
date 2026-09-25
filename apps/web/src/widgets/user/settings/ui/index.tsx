@@ -70,10 +70,12 @@ export function UserSettings({ onBack }: { onBack: () => void }) {
         </div>
         <nav>
           <button className={section === "profile" ? "active" : ""} type="button" onClick={() => setSection("profile")}>
-            Профиль и аккаунт
+            <span className="settings-nav-full">Профиль и аккаунт</span>
+            <span className="settings-nav-short">Профиль</span>
           </button>
           <button className={section === "ai" ? "active" : ""} type="button" onClick={() => setSection("ai")}>
-            AI-копайлот
+            <span className="settings-nav-full">AI-копайлот</span>
+            <span className="settings-nav-short">Копайлот</span>
           </button>
           <button className={section === "security" ? "active" : ""} type="button" onClick={() => setSection("security")}>
             Безопасность
@@ -99,7 +101,10 @@ export function UserSettings({ onBack }: { onBack: () => void }) {
         </div>
         <div className="settings-heading">
           <div>
-            <h1 id="settings-title">Настройки профиля и рабочей среды</h1>
+            <h1 id="settings-title">
+              <span className="settings-title-full">Настройки профиля и рабочей среды</span>
+              <span className="settings-title-short">Настройки и профиль</span>
+            </h1>
             <p>Имя в шапке, город закупки и запрос AI по умолчанию. Пароль меняется только здесь.</p>
           </div>
           <span className="status-pill">Учетная запись активна</span>
@@ -203,7 +208,7 @@ export function UserSettings({ onBack }: { onBack: () => void }) {
 
       <footer className="settings-savebar">
         <p>{saved ? "Изменения записаны в профиль" : "Сохраняется только имя, город, запрос AI и пароль"}</p>
-        <div>
+        <div className="settings-save-actions">
           <button className="ghost" type="button" onClick={resetForm}>
             Сбросить
           </button>

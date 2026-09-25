@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "Community 7"
+community: "json"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_7
+  - community/json
 ---
 
 # math
@@ -23,4 +23,4 @@ tags:
 - [[wb-connectorteststest_parser_live.py]] - `imports` [EXTRACTED]
 - [[wb_connectorserver.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_7
+#graphify/concept #graphify/EXTRACTED #community/json

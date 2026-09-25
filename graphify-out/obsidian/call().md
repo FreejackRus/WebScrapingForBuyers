@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_review_regressions.py"
 type: "code"
-community: "Community 3"
+community: "pytest"
 location: "L45"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_3
+  - community/pytest
 ---
 
 # call()
@@ -17,4 +17,4 @@ tags:
 - [[test_review_regressions.py]] - `contains` [EXTRACTED]
 - [[test_the_registry_does_not_retain_the_payload()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_3
+#graphify/code #graphify/EXTRACTED #community/pytest

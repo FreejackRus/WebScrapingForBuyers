@@ -1,17 +1,17 @@
 ---
-source_file: "package.json"
-type: "code"
-community: "Community 165"
-location: "L20"
+source_file: "apps/gateway/package.json"
+type: "concept"
+community: "gateway/package.json"
+location: "L21"
 tags:
-  - graphify/code
+  - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_165
+  - community/gateway/packagejson
 ---
 
 # typescript
 
 ## Connections
-- [[devDependencies_3]] - `contains` [EXTRACTED]
+- [[gatewaypackage.json]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_165
+#graphify/concept #graphify/EXTRACTED #community/gateway/packagejson

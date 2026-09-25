@@ -1,12 +1,12 @@
 ---
 source_file: "deploy/chrome/cdp-proxy.py"
 type: "rationale"
-community: "Community 191"
+community: "cdp-proxy.py"
 location: "L2"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_191
+  - community/cdp-proxypy
 ---
 
 # Expose Chrome DevTools on 0.0.0.0 and rewrite advertised websocket hosts.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[cdp-proxy.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_191
+#graphify/rationale #graphify/EXTRACTED #community/cdp-proxypy

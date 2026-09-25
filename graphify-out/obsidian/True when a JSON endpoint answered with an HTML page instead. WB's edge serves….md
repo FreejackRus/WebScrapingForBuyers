@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "rationale"
-community: "Community 131"
-location: "L304"
+community: "wb_connector/server.py"
+location: "L413"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_131
+  - community/wb_connector/serverpy
 ---
 
 # True when a JSON endpoint answered with an HTML page instead. WB's edge serves…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_is_edge_wall()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_131
+#graphify/rationale #graphify/EXTRACTED #community/wb_connector/serverpy

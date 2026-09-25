@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 13"
+community: "make_client"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_13
+  - community/make_client
 ---
 
 # AsyncClient
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[make_client()_1]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_13
+#graphify/code #graphify/EXTRACTED #community/make_client

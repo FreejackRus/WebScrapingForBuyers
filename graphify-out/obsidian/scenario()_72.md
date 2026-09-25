@@ -1,20 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 28"
-location: "L1856"
+community: "_patch_questions"
+location: "L1802"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_28
+  - community/_patch_questions
 ---
 
 # scenario()
 
 ## Connections
 - [[_patch_questions()]] - `calls` [EXTRACTED]
-- [[_tool_error_payload()_1]] - `calls` [EXTRACTED]
-- [[responder()_9]] - `indirect_call` [INFERRED]
-- [[test_category_products_treats_cloudflare_html_as_transport_down()]] - `contains` [EXTRACTED]
+- [[responder()_8]] - `indirect_call` [INFERRED]
+- [[test_category_products_reports_has_more_on_a_full_page()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_28
+#graphify/code #graphify/EXTRACTED #community/_patch_questions

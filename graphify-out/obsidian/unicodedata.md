@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "Community 30"
+community: "identity.py"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_30
+  - community/identitypy
 ---
 
 # unicodedata
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[identity.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_30
+#graphify/concept #graphify/EXTRACTED #community/identitypy

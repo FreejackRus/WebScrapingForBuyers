@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "Community 186"
+community: "test_ozon_selfcheck_includes_runtime_identity"
 location: "L50"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_186
+  - community/test_ozon_selfcheck_includes_runtime_identity
 ---
 
 # _reviews_body()
@@ -17,4 +17,4 @@ tags:
 - [[ozon-connectorteststest_server.py]] - `contains` [EXTRACTED]
 - [[test_ozon_selfcheck_includes_runtime_identity()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_186
+#graphify/code #graphify/EXTRACTED #community/test_ozon_selfcheck_includes_runtime_identity

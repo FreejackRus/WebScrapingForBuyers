@@ -1,16 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 102"
+community: "test_dependency_parity.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_102
+  - community/test_dependency_paritypy
 ---
 
 # Path
 
 ## Connections
-- [[_extract()]] - `references` [EXTRACTED]
+- [[check_file()]] - `references` [EXTRACTED]
+- [[collect_default_paths()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_102
+#graphify/code #graphify/EXTRACTED #community/test_dependency_paritypy

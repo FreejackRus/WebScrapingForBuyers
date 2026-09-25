@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/apify-marketplace-adapter.ts"
 type: "code"
-community: "Community 9"
+community: "packages_contracts_dist_index"
 location: "L203"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_9
+  - community/packages_contracts_dist_index
 ---
 
 # boundedNumber()
@@ -15,4 +15,4 @@ tags:
 - [[apify-marketplace-adapter.ts]] - `contains` [EXTRACTED]
 - [[createApifySourcesFromEnv()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_9
+#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index

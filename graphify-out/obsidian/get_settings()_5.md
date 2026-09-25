@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/settings.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/settings.py"
 type: "code"
-community: "Community 212"
-location: "L74"
+community: "pydantic"
+location: "L88"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_212
+  - community/pydantic
 ---
 
 # get_settings()
 
 ## Connections
-- [[YandexSettings]] - `calls` [EXTRACTED]
-- [[yandex_connectorserver.py]] - `imports` [EXTRACTED]
-- [[yandex_connectorsettings.py]] - `contains` [EXTRACTED]
+- [[DetmirSettings]] - `calls` [EXTRACTED]
+- [[detmir_connectorserver.py]] - `imports` [EXTRACTED]
+- [[detmir_connectorsettings.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_212
+#graphify/code #graphify/EXTRACTED #community/pydantic

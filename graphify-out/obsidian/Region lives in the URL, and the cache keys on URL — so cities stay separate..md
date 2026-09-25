@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
 type: "rationale"
-community: "Community 138"
+community: "capture"
 location: "L560"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_138
+  - community/capture
 ---
 
 # Region lives in the URL, and the cache keys on URL — so cities stay separate.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_different_regions_do_not_share_a_cache_entry()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_138
+#graphify/rationale #graphify/EXTRACTED #community/capture

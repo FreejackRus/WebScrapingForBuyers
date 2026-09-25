@@ -1,17 +1,17 @@
 ---
 source_file: "apps/analysis/package.json"
 type: "code"
-community: "Community 231"
+community: "analysis/package.json"
 location: "L9"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_231
+  - community/analysis/packagejson
 ---
 
 # start
 
 ## Connections
-- [[scripts_2]] - `contains` [EXTRACTED]
+- [[scripts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_231
+#graphify/code #graphify/EXTRACTED #community/analysis/packagejson

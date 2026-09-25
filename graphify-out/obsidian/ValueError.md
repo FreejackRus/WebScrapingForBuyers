@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 101"
+community: "test_source_selection.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_101
+  - community/test_source_selectionpy
 ---
 
 # ValueError
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[SourceSelectionError]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_101
+#graphify/code #graphify/EXTRACTED #community/test_source_selectionpy

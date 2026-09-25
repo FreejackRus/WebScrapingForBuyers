@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/settings.py"
 type: "rationale"
-community: "Community 76"
+community: "pydantic"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_76
+  - community/pydantic
 ---
 
 # Ozon connector runtime settings (env-driven via OZON_ prefix). Env vars (all…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[ozon_connectorsettings.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_76
+#graphify/rationale #graphify/EXTRACTED #community/pydantic

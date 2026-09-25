@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_search_extractor_dom.py"
 type: "code"
-community: "Community 97"
+community: "lamoda-connector/tests/test_search_extractor_dom.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_97
+  - community/lamoda-connector/tests/test_search_extractor_dompy
 ---
 
 # lamoda-connector/tests/test_search_extractor_dom.py
@@ -27,7 +27,7 @@ tags:
 - [[test_script_only_challenge_is_not_a_blocked_page()]] - `contains` [EXTRACTED]
 - [[test_search_extractor_reads_the_real_grid()_2]] - `contains` [EXTRACTED]
 - [[test_strikethrough_is_reported_as_the_old_price()]] - `contains` [EXTRACTED]
-- [[test_the_extractor_uses_shared_helpers_not_legacy_heuristics()]] - `contains` [EXTRACTED]
+- [[test_the_extractor_uses_shared_helpers_not_legacy_heuristics()_1]] - `contains` [EXTRACTED]
 - [[test_visible_challenge_blocks_only_an_empty_result()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_97
+#graphify/code #graphify/EXTRACTED #community/lamoda-connector/tests/test_search_extractor_dompy

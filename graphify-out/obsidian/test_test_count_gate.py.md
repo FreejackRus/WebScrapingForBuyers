@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/test_test_count_gate.py"
 type: "code"
-community: "Community 71"
+community: "pathlib"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_71
+  - community/pathlib
 ---
 
 # test_test_count_gate.py
@@ -21,4 +21,4 @@ tags:
 - [[test_successful_collection_returns_selected_count()]] - `contains` [EXTRACTED]
 - [[types_8]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_71
+#graphify/code #graphify/EXTRACTED #community/pathlib

@@ -1,23 +1,23 @@
 ---
 source_file: "apps/web/package.json"
 type: "code"
-community: "Community 63"
-location: "L11"
+community: "web/package.json"
+location: "L12"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_63
+  - community/web/packagejson
 ---
 
 # dependencies
 
 ## Connections
-- [[@peremenacontracts_5]] - `contains` [EXTRACTED]
+- [[@peremenacontracts_8]] - `contains` [EXTRACTED]
 - [[@vitejsplugin-react]] - `contains` [EXTRACTED]
-- [[react]] - `contains` [EXTRACTED]
-- [[react-dom]] - `contains` [EXTRACTED]
+- [[react_1]] - `contains` [EXTRACTED]
+- [[react-dom_1]] - `contains` [EXTRACTED]
 - [[vite]] - `contains` [EXTRACTED]
 - [[webpackage.json]] - `contains` [EXTRACTED]
-- [[zustand_1]] - `contains` [EXTRACTED]
+- [[zustand]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_63
+#graphify/code #graphify/EXTRACTED #community/web/packagejson

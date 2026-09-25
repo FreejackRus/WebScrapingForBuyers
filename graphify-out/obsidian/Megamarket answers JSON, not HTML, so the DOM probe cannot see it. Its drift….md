@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/diagnose_drift.py"
 type: "rationale"
-community: "Community 213"
+community: "chrome_cdp.py"
 location: "L189"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_213
+  - community/chrome_cdppy
 ---
 
 # Megamarket answers JSON, not HTML, so the DOM probe cannot see it. Its drift…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[diagnose_megamarket()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_213
+#graphify/rationale #graphify/EXTRACTED #community/chrome_cdppy

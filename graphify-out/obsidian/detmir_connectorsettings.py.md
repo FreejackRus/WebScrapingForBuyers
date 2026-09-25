@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/settings.py"
 type: "code"
-community: "Community 205"
+community: "pydantic"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_205
+  - community/pydantic
 ---
 
 # detmir_connector/settings.py
@@ -17,8 +17,8 @@ tags:
 - [[detmir-connectorteststest_settings_secrets.py]] - `imports_from` [EXTRACTED]
 - [[detmir_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[functools]] - `imports_from` [EXTRACTED]
-- [[get_settings()_2]] - `contains` [EXTRACTED]
+- [[get_settings()_5]] - `contains` [EXTRACTED]
 - [[pydantic]] - `imports_from` [EXTRACTED]
 - [[pydantic_settings]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_205
+#graphify/code #graphify/EXTRACTED #community/pydantic

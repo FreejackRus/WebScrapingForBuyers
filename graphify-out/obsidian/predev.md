@@ -1,17 +1,17 @@
 ---
 source_file: "package.json"
 type: "code"
-community: "Community 215"
+community: "package.json"
 location: "L10"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_215
+  - community/packagejson
 ---
 
 # predev
 
 ## Connections
-- [[scripts_1]] - `contains` [EXTRACTED]
+- [[scripts_4]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_215
+#graphify/code #graphify/EXTRACTED #community/packagejson

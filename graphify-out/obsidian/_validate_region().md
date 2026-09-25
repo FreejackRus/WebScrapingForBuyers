@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/server.py"
 type: "code"
-community: "Community 4"
+community: "BadRequestError"
 location: "L676"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_4
+  - community/BadRequestError
 ---
 
 # _validate_region()
@@ -18,4 +18,4 @@ tags:
 - [[cian_search()]] - `calls` [EXTRACTED]
 - [[raise_tool_error()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_4
+#graphify/code #graphify/EXTRACTED #community/BadRequestError

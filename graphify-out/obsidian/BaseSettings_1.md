@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 193"
+community: "pydantic"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_193
+  - community/pydantic
 ---
 
 # BaseSettings
 
 ## Connections
-- [[AvitoSettings]] - `inherits` [EXTRACTED]
+- [[AliSettings]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_193
+#graphify/code #graphify/EXTRACTED #community/pydantic

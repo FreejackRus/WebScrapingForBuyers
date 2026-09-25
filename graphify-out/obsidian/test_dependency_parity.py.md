@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_dependency_parity.py"
 type: "code"
-community: "Community 100"
+community: "test_dependency_parity.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_100
+  - community/test_dependency_paritypy
 ---
 
 # test_dependency_parity.py
@@ -26,4 +26,4 @@ tags:
 - [[test_the_mounts_table_was_read()]] - `contains` [EXTRACTED]
 - [[tomllib]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_100
+#graphify/code #graphify/EXTRACTED #community/test_dependency_paritypy

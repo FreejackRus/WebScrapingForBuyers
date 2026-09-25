@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
 type: "code"
-community: "Community 0"
-location: "L685"
+community: "mcp-marketplace-adapter.ts"
+location: "L741"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_0
+  - community/mcp-marketplace-adapterts
 ---
 
 # hasOppositeCategory()
@@ -19,4 +19,4 @@ tags:
 - [[oppositeCategoryMarkers()]] - `calls` [EXTRACTED]
 - [[tokenIn()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_0
+#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts

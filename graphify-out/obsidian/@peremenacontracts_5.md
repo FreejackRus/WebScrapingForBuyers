@@ -1,17 +1,17 @@
 ---
-source_file: "apps/web/package.json"
-type: "code"
-community: "Community 63"
-location: "L12"
+source_file: "apps/search/package.json"
+type: "concept"
+community: "search/package.json"
+location: "L15"
 tags:
-  - graphify/code
+  - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_63
+  - community/search/packagejson
 ---
 
 # @peremena/contracts
 
 ## Connections
-- [[dependencies_5]] - `contains` [EXTRACTED]
+- [[searchpackage.json]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_63
+#graphify/concept #graphify/EXTRACTED #community/search/packagejson

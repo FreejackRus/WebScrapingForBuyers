@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py"
 type: "rationale"
-community: "Community 157"
+community: "fake_get"
 location: "L445"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_157
+  - community/fake_get
 ---
 
 # Pages are 2 MB; refetching one inside a conversation is pure waste.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_fetch_html_caches_within_the_ttl()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_157
+#graphify/rationale #graphify/EXTRACTED #community/fake_get

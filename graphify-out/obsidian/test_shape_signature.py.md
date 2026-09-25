@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_shape_signature.py"
 type: "code"
-community: "Community 57"
+community: "shape_signature"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_57
+  - community/shape_signature
 ---
 
 # test_shape_signature.py
@@ -25,4 +25,4 @@ tags:
 - [[test_recursion_is_bounded()]] - `contains` [EXTRACTED]
 - [[test_the_same_shape_with_different_values_fingerprints_identically()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_57
+#graphify/code #graphify/EXTRACTED #community/shape_signature

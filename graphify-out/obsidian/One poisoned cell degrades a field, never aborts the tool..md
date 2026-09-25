@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_resilience_properties.py"
 type: "rationale"
-community: "Community 48"
+community: "test_resilience_properties.py"
 location: "L108"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_48
+  - community/test_resilience_propertiespy
 ---
 
 # One poisoned cell degrades a field, never aborts the tool.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_coerce_int_is_total()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_48
+#graphify/rationale #graphify/EXTRACTED #community/test_resilience_propertiespy

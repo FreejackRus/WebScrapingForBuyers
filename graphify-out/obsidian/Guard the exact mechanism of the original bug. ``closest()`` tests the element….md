@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_search_extractor_dom.py"
 type: "rationale"
-community: "Community 84"
+community: "dns-connector/tests/test_search_extractor_dom.py"
 location: "L107"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_84
+  - community/dns-connector/tests/test_search_extractor_dompy
 ---
 
 # Guard the exact mechanism of the original bug. ``closest()`` tests the element…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_tile_root_is_not_the_image_anchor()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_84
+#graphify/rationale #graphify/EXTRACTED #community/dns-connector/tests/test_search_extractor_dompy

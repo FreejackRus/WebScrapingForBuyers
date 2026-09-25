@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/widgets/analysis/chat/ui/index.tsx"
 type: "code"
-community: "Community 92"
-location: "L15"
+community: "useSearchStore"
+location: "L13"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_92
+  - community/useSearchStore
 ---
 
 # AnalysisChat()
@@ -14,12 +14,13 @@ tags:
 ## Connections
 - [[applyChatResult()]] - `calls` [EXTRACTED]
 - [[chatindex.ts]] - `re_exports` [EXTRACTED]
+- [[chatuiindex.test.tsx]] - `imports` [EXTRACTED]
 - [[chatuiindex.tsx]] - `contains` [EXTRACTED]
-- [[localSearchQuery()]] - `calls` [EXTRACTED]
+- [[firstName()]] - `calls` [EXTRACTED]
 - [[monitoruiindex.tsx]] - `imports` [EXTRACTED]
 - [[useAnalysisStore]] - `calls` [EXTRACTED]
 - [[useSearchStore]] - `calls` [EXTRACTED]
 - [[useUserStore]] - `calls` [EXTRACTED]
 - [[widgetsanalysisindex.ts]] - `re_exports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_92
+#graphify/code #graphify/EXTRACTED #community/useSearchStore

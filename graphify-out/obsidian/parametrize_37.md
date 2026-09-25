@@ -1,17 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 89"
+community: "pathlib"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_89
+  - community/pathlib
 ---
 
 # parametrize
 
 ## Connections
-- [[test_native_ozon_explicit_absence_survives_both_label_channels()]] - `references` [EXTRACTED]
-- [[test_native_yandex_distinct_sku_reaches_cheapest_comparable()]] - `references` [EXTRACTED]
+- [[test_probe_checks_running_version()]] - `references` [EXTRACTED]
+- [[test_sources_reject_incomplete_or_stale_state()]] - `references` [EXTRACTED]
+- [[test_sources_reject_missing_or_malformed_payload()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_89
+#graphify/code #graphify/EXTRACTED #community/pathlib

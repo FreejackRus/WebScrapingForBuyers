@@ -1,17 +1,17 @@
 ---
-source_file: "packages/service-kit/package.json"
-type: "code"
-community: "Community 99"
-location: "L19"
+source_file: "apps/identity/package.json"
+type: "concept"
+community: "identity/package.json"
+location: "L22"
 tags:
-  - graphify/code
+  - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_99
+  - community/identity/packagejson
 ---
 
 # typescript
 
 ## Connections
-- [[devDependencies_6]] - `contains` [EXTRACTED]
+- [[identitypackage.json]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_99
+#graphify/concept #graphify/EXTRACTED #community/identity/packagejson

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/model_routing_eval.py"
 type: "rationale"
-community: "Community 91"
+community: "model_routing_eval.py"
 location: "L229"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_91
+  - community/model_routing_evalpy
 ---
 
 # Score an answers mapping (case id -> answer id) against the bundle.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[evaluate_answers()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_91
+#graphify/rationale #graphify/EXTRACTED #community/model_routing_evalpy

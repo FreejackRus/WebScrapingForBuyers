@@ -1,16 +1,21 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 196"
+community: "log_event"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_196
+  - community/log_event
 ---
 
 # default
 
 ## Connections
-- [[decision_inspect()]] - `references` [EXTRACTED]
+- [[wb_card()]] - `references` [EXTRACTED]
+- [[wb_categories()]] - `references` [EXTRACTED]
+- [[wb_category_products()]] - `references` [EXTRACTED]
+- [[wb_questions()]] - `references` [EXTRACTED]
+- [[wb_reviews()]] - `references` [EXTRACTED]
+- [[wb_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_196
+#graphify/code #graphify/EXTRACTED #community/log_event

@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/settings.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/settings.py"
 type: "code"
-community: "Community 162"
-location: "L48"
+community: "cian_connector/server.py"
+location: "L56"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_162
+  - community/cian_connector/serverpy
 ---
 
 # get_settings()
 
 ## Connections
-- [[MegamarketSettings]] - `calls` [EXTRACTED]
-- [[megamarket_connectorserver.py]] - `imports` [EXTRACTED]
-- [[megamarket_connectorsettings.py]] - `contains` [EXTRACTED]
+- [[CianSettings]] - `calls` [EXTRACTED]
+- [[cian_connectorserver.py]] - `imports` [EXTRACTED]
+- [[cian_connectorsettings.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_162
+#graphify/code #graphify/EXTRACTED #community/cian_connector/serverpy

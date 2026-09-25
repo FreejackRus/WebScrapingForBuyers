@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/src/mpstats_connector/models_output.py"
 type: "rationale"
-community: "Community 37"
+community: "models.py"
 location: "L147"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_37
+  - community/modelspy
 ---
 
 # MPStats sub-check entry: adds the baseline-comparison fields MPStats reports.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[MpStatsSelfCheckEntry]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_37
+#graphify/rationale #graphify/EXTRACTED #community/modelspy

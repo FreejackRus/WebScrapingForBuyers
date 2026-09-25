@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/src/aliexpress_connector/settings.py"
 type: "code"
-community: "Community 88"
+community: "pydantic"
 location: "L13"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_88
+  - community/pydantic
 ---
 
 # AliSettings
 
 ## Connections
-- [[BaseSettings_9]] - `inherits` [EXTRACTED]
+- [[BaseSettings_1]] - `inherits` [EXTRACTED]
 - [[aliexpress_connectorsettings.py]] - `contains` [EXTRACTED]
-- [[get_settings()_9]] - `calls` [EXTRACTED]
+- [[get_settings()_2]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_88
+#graphify/code #graphify/EXTRACTED #community/pydantic

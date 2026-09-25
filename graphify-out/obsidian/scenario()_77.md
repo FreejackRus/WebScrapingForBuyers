@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "Community 28"
-location: "L81"
+community: "test_run_sync_bounded_rejects_local_callables"
+location: "L122"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_28
+  - community/test_run_sync_bounded_rejects_local_callables
 ---
 
 # scenario()
 
 ## Connections
-- [[_tool_error_payload()_1]] - `calls` [EXTRACTED]
-- [[forbidden_wait()]] - `indirect_call` [INFERRED]
-- [[test_wb_card_rejects_non_positive_nm_ids_before_network()]] - `contains` [EXTRACTED]
+- [[local()]] - `indirect_call` [INFERRED]
+- [[test_run_sync_bounded_rejects_local_callables()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_28
+#graphify/code #graphify/EXTRACTED #community/test_run_sync_bounded_rejects_local_callables

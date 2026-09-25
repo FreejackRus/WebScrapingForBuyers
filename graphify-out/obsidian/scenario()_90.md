@@ -1,18 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 8"
-location: "L2079"
+community: "_clear_wb_cache"
+location: "L2152"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_8
+  - community/_clear_wb_cache
 ---
 
 # scenario()
 
 ## Connections
 - [[_clear_wb_cache()]] - `calls` [EXTRACTED]
-- [[test_impersonated_body_cap_refuses_an_oversized_payload()]] - `contains` [EXTRACTED]
+- [[fake_budgeted()_5]] - `indirect_call` [INFERRED]
+- [[test_a_transient_fault_is_not_counted_as_a_refusal()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_8
+#graphify/code #graphify/EXTRACTED #community/_clear_wb_cache

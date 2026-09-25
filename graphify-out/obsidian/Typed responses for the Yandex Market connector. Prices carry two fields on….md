@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/models_output.py"
 type: "rationale"
-community: "Community 49"
+community: "models.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_49
+  - community/modelspy
 ---
 
 # Typed responses for the Yandex Market connector. Prices carry two fields on…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[yandex_connectormodels_output.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_49
+#graphify/rationale #graphify/EXTRACTED #community/modelspy

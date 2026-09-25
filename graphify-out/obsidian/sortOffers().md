@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/entities/offer/lib/index.ts"
 type: "code"
-community: "Community 40"
-location: "L69"
+community: "offers/ui/index.tsx"
+location: "L92"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_40
+  - community/offers/ui/indextsx
 ---
 
 # sortOffers()
@@ -19,4 +19,4 @@ tags:
 - [[offerSortValue()]] - `calls` [EXTRACTED]
 - [[useOfferTable()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_40
+#graphify/code #graphify/EXTRACTED #community/offers/ui/indextsx

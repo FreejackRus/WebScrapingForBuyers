@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/http/routes.ts"
 type: "code"
-community: "Community 9"
-location: "L16"
+community: "live-suggest.ts"
+location: "L18"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_9
+  - community/live-suggestts
 ---
 
 # searchRoutes()
@@ -15,8 +15,10 @@ tags:
 - [[buildSearchApp()]] - `indirect_call` [INFERRED]
 - [[exportSearch()]] - `calls` [EXTRACTED]
 - [[findProduct()]] - `calls` [EXTRACTED]
+- [[isProductPayload()]] - `calls` [EXTRACTED]
+- [[productFromQuery()]] - `calls` [EXTRACTED]
 - [[searchsrcapp.ts]] - `imports` [EXTRACTED]
 - [[searchsrchttproutes.ts]] - `contains` [EXTRACTED]
-- [[suggestProducts()]] - `calls` [EXTRACTED]
+- [[suggestLiveProducts()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_9
+#graphify/code #graphify/EXTRACTED #community/live-suggestts

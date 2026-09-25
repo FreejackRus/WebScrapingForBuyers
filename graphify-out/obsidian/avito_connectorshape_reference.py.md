@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/shape_reference.py"
 type: "code"
-community: "Community 10"
+community: "json"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_10
+  - community/json
 ---
 
 # avito_connector/shape_reference.py
@@ -17,4 +17,4 @@ tags:
 - [[collections_abc]] - `imports_from` [EXTRACTED]
 - [[missing_required_families()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_10
+#graphify/code #graphify/EXTRACTED #community/json

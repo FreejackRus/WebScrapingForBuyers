@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/model_routing_eval.py"
 type: "code"
-community: "Community 91"
+community: "model_routing_eval.py"
 location: "L52"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_91
+  - community/model_routing_evalpy
 ---
 
 # evaluate()
@@ -18,4 +18,4 @@ tags:
 - [[test_model_routing_matrix_is_complete()]] - `calls` [EXTRACTED]
 - [[test_ops_gates.py]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_91
+#graphify/code #graphify/EXTRACTED #community/model_routing_evalpy

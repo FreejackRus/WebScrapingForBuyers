@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_resilience.py"
 type: "rationale"
-community: "Community 53"
+community: "coerce_price"
 location: "L86"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_53
+  - community/coerce_price
 ---
 
 # A dead listing rendered as 0 must not win a "cheapest" comparison.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_zero_and_negative_are_not_prices()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_53
+#graphify/rationale #graphify/EXTRACTED #community/coerce_price

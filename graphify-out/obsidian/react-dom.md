@@ -1,17 +1,24 @@
 ---
 source_file: "apps/web/package.json"
-type: "code"
-community: "Community 63"
-location: "L16"
+type: "concept"
+community: "App.tsx"
+location: "L17"
 tags:
-  - graphify/code
+  - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_63
+  - community/Apptsx
 ---
 
 # react-dom
 
 ## Connections
-- [[dependencies_5]] - `contains` [EXTRACTED]
+- [[AppShell.test.tsx]] - `imports_from` [EXTRACTED]
+- [[chatuiindex.test.tsx]] - `imports_from` [EXTRACTED]
+- [[main.tsx]] - `imports_from` [EXTRACTED]
+- [[settingsuiindex.test.tsx]] - `imports_from` [EXTRACTED]
+- [[sourcesuiindex.test.tsx]] - `imports_from` [EXTRACTED]
+- [[topbaruiindex.test.tsx]] - `imports_from` [EXTRACTED]
+- [[webpackage.json]] - `imports` [EXTRACTED]
+- [[workspaceuiindex.test.tsx]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_63
+#graphify/concept #graphify/EXTRACTED #community/Apptsx

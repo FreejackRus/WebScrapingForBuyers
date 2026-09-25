@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 185"
+community: "ozon_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_185
+  - community/ozon_card
 ---
 
 # Field
@@ -15,4 +15,4 @@ tags:
 - [[ozon_reviews()]] - `references` [EXTRACTED]
 - [[ozon_search()_2]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_185
+#graphify/code #graphify/EXTRACTED #community/ozon_card

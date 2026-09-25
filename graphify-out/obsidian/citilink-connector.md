@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/pyproject.toml"
 type: "code"
-community: "Community 123"
+community: "marketplace-connector"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_123
+  - community/marketplace-connector
 ---
 
 # citilink-connector
@@ -16,4 +16,4 @@ tags:
 - [[mcp-core]] - `depends_on` [EXTRACTED]
 - [[ru-marketplace-mcp]] - `depends_on` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_123
+#graphify/code #graphify/EXTRACTED #community/marketplace-connector

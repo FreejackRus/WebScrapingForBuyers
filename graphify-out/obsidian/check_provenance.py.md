@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_provenance.py"
 type: "code"
-community: "Community 126"
+community: "pathlib"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_126
+  - community/pathlib
 ---
 
 # check_provenance.py
@@ -16,9 +16,9 @@ tags:
 - [[check()]] - `contains` [EXTRACTED]
 - [[hashlib]] - `imports` [EXTRACTED]
 - [[json]] - `imports` [EXTRACTED]
-- [[main()_2]] - `contains` [EXTRACTED]
+- [[main()_32]] - `contains` [EXTRACTED]
 - [[pathlib]] - `imports` [EXTRACTED]
 - [[pins()]] - `contains` [EXTRACTED]
 - [[test_check_provenance_gate.py]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_126
+#graphify/code #graphify/EXTRACTED #community/pathlib

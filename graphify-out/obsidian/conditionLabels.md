@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/entities/offer/lib/index.ts"
 type: "code"
-community: "Community 40"
+community: "offers/ui/index.tsx"
 location: "L10"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_40
+  - community/offers/ui/indextsx
 ---
 
 # conditionLabels
@@ -16,4 +16,4 @@ tags:
 - [[offerlibindex.ts]] - `contains` [EXTRACTED]
 - [[offersuiindex.tsx]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_40
+#graphify/code #graphify/EXTRACTED #community/offers/ui/indextsx

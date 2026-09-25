@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 11"
+community: "read_with_handoff"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_11
+  - community/read_with_handoff
 ---
 
 # Any
@@ -17,4 +17,4 @@ tags:
 - [[read_with_handoff()]] - `references` [EXTRACTED]
 - [[snapshot_handoff()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_11
+#graphify/code #graphify/EXTRACTED #community/read_with_handoff

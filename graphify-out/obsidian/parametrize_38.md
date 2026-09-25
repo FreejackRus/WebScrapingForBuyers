@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 89"
+community: "pathlib"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_89
+  - community/pathlib
 ---
 
 # parametrize
 
 ## Connections
-- [[test_zone_search_keeps_distinct_skus_and_dedupes_repeated_variant_before_limit()]] - `references` [EXTRACTED]
+- [[test_successful_collection_returns_selected_count()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_89
+#graphify/code #graphify/EXTRACTED #community/pathlib

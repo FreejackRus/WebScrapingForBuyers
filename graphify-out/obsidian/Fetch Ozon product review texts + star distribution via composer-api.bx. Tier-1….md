@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/server.py"
 type: "rationale"
-community: "Community 185"
+community: "ozon_card"
 location: "L826"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_185
+  - community/ozon_card
 ---
 
 # Fetch Ozon product review texts + star distribution via composer-api.bx. Tier-1…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[ozon_reviews()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_185
+#graphify/rationale #graphify/EXTRACTED #community/ozon_card

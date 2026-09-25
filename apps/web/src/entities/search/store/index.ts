@@ -68,16 +68,15 @@ export const useSearchStore = create<SearchState>((set, get) => ({
         suggestions: result.products,
         suggesting: false,
         activity: quiet ? get().activity : null,
-        error:
-          result.products.length === 0
-            ? "Подсказок нет. Уточните бренд, модель или MPN."
-            : "",
+        error: !quiet && result.products.length === 0
+          ? "Подсказок нет. Уточните бренд, модель или MPN."
+          : "",
       });
     } catch (reason) {
       set({
         suggesting: false,
         activity: quiet ? get().activity : null,
-        error: reason instanceof Error ? reason.message : "Ошибка поиска",
+        error: quiet ? "" : reason instanceof Error ? reason.message : "Ошибка поиска",
       });
     }
   },

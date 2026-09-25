@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 8"
-location: "L2149"
+community: "_clear_wb_cache"
+location: "L2314"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_8
+  - community/_clear_wb_cache
 ---
 
 # fake_budgeted()
 
 ## Connections
-- [[test_a_transient_fault_is_not_counted_as_a_refusal()]] - `contains` [EXTRACTED]
+- [[test_a_gated_host_falls_back_when_impersonation_fails()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_8
+#graphify/code #graphify/EXTRACTED #community/_clear_wb_cache

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "code"
-community: "Community 7"
+community: "TransportDownError"
 location: "L550"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_7
+  - community/TransportDownError
 ---
 
 # _raw_page_count()
@@ -16,4 +16,4 @@ tags:
 - [[chrome_cdp.py]] - `contains` [EXTRACTED]
 - [[probe_session()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_7
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

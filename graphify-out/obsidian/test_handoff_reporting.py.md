@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_handoff_reporting.py"
 type: "code"
-community: "Community 87"
+community: "test_handoff_reporting.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_87
+  - community/test_handoff_reportingpy
 ---
 
 # test_handoff_reporting.py
@@ -33,4 +33,4 @@ tags:
 - [[types_8]] - `imports_from` [EXTRACTED]
 - [[unittest_mock]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_87
+#graphify/code #graphify/EXTRACTED #community/test_handoff_reportingpy

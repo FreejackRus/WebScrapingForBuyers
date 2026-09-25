@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/test_e2e_stdio_check.py"
 type: "rationale"
-community: "Community 60"
+community: "pathlib"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_60
+  - community/pathlib
 ---
 
 # The release probe must reject a stale or incomplete server, not just count…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_e2e_stdio_check.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_60
+#graphify/rationale #graphify/EXTRACTED #community/pathlib

@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 55"
+community: "compare_verify_offer"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_55
+  - community/compare_verify_offer
 ---
 
 # ge
@@ -14,4 +14,4 @@ tags:
 - [[compare_prices()]] - `references` [EXTRACTED]
 - [[compare_verify_offer()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_55
+#graphify/code #graphify/EXTRACTED #community/compare_verify_offer

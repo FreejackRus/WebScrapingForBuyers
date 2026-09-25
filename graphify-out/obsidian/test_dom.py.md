@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py"
 type: "code"
-community: "Community 18"
+community: "test_dom.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_18
+  - community/test_dompy
 ---
 
 # test_dom.py
@@ -42,4 +42,4 @@ tags:
 - [[test_yuan_glyph_in_a_sibling_element_counts_as_a_price()]] - `contains` [EXTRACTED]
 - [[test_zero_is_not_a_price()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_18
+#graphify/code #graphify/EXTRACTED #community/test_dompy

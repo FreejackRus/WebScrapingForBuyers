@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/vision_policy.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py"
 type: "code"
-community: "Community 237"
-location: "L48"
+community: "CacheStats"
+location: "L43"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_237
+  - community/CacheStats
 ---
 
 # .as_dict()
 
 ## Connections
-- [[Any_11]] - `references` [EXTRACTED]
-- [[ImageDelivery]] - `method` [EXTRACTED]
+- [[Any_18]] - `references` [EXTRACTED]
+- [[CacheStats]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_237
+#graphify/code #graphify/EXTRACTED #community/CacheStats

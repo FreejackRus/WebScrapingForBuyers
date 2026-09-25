@@ -1,21 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/src/mpstats_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_call_envelope.py"
 type: "code"
-community: "Community 23"
-location: "L145"
+community: "payload"
+location: "L54"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/Community_23
+  - graphify/INFERRED
+  - community/payload
 ---
 
 # _client()
 
 ## Connections
-- [[AsyncClient_5]] - `references` [EXTRACTED]
-- [[Build the MPStats HTTP client. Redirects stay off (matching the runtime…]] - `rationale_for` [EXTRACTED]
-- [[_call()_1]] - `calls` [EXTRACTED]
-- [[_proxy()_5]] - `calls` [EXTRACTED]
-- [[mpstats_connectorserver.py]] - `contains` [EXTRACTED]
+- [[counting()]] - `indirect_call` [INFERRED]
+- [[wire()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_23
+#graphify/code #graphify/INFERRED #community/payload

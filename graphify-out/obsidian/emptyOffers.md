@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/features/search/filter-offers/index.ts"
 type: "code"
-community: "Community 40"
+community: "offers/ui/index.tsx"
 location: "L6"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_40
+  - community/offers/ui/indextsx
 ---
 
 # emptyOffers
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[filter-offersindex.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_40
+#graphify/code #graphify/EXTRACTED #community/offers/ui/indextsx

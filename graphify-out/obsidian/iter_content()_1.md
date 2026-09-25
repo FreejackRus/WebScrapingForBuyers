@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 8"
+community: "_clear_wb_cache"
 location: "L2074"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_8
+  - community/_clear_wb_cache
 ---
 
 # iter_content()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_impersonated_body_cap_refuses_an_oversized_payload()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_8
+#graphify/code #graphify/EXTRACTED #community/_clear_wb_cache

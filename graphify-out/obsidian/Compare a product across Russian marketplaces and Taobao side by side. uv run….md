@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/examples/compare_with_china.py"
 type: "rationale"
-community: "Community 14"
+community: "json"
 location: "L2"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_14
+  - community/json
 ---
 
 # Compare a product across Russian marketplaces and Taobao side by side. uv run…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[compare_with_china.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_14
+#graphify/rationale #graphify/EXTRACTED #community/json

@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_call_envelope.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_transport.py"
 type: "code"
-community: "Community 31"
-location: "L140"
+community: "test_transport.py"
+location: "L85"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_31
+  - community/test_transportpy
 ---
 
 # handler()
 
 ## Connections
-- [[test_non_json_body_is_parser_drift()]] - `contains` [EXTRACTED]
+- [[test_transport_error_is_retried_then_succeeds()_2]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_31
+#graphify/code #graphify/EXTRACTED #community/test_transportpy

@@ -1,22 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/src/mpstats_connector/models_output.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/models_output.py"
 type: "code"
-community: "Community 23"
-location: "L31"
+community: "taobao_card"
+location: "L14"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_23
+  - community/taobao_card
 ---
 
 # MetaOut
 
 ## Connections
-- [[MPStats carries the shared envelope unchanged.]] - `rationale_for` [EXTRACTED]
 - [[MetaOutBase]] - `inherits` [EXTRACTED]
-- [[mpstats_connectormodels_output.py]] - `contains` [EXTRACTED]
-- [[mpstats_connectorserver.py]] - `imports` [EXTRACTED]
-- [[mpstats_item()]] - `uses` [INFERRED]
-- [[mpstats_warehouses()]] - `uses` [INFERRED]
+- [[Taobao carries the shared envelope unchanged.]] - `rationale_for` [EXTRACTED]
+- [[taobao_card()]] - `uses` [INFERRED]
+- [[taobao_connectormodels_output.py]] - `contains` [EXTRACTED]
+- [[taobao_connectorserver.py]] - `imports` [EXTRACTED]
+- [[taobao_search()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_23
+#graphify/code #graphify/EXTRACTED #community/taobao_card

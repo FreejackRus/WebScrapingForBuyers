@@ -1,17 +1,17 @@
 ---
-source_file: "apps/gateway/package.json"
+source_file: "apps/search/package.json"
 type: "code"
-community: "Community 232"
+community: "search/package.json"
 location: "L7"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_232
+  - community/search/packagejson
 ---
 
 # dev
 
 ## Connections
-- [[scripts_3]] - `contains` [EXTRACTED]
+- [[scripts_2]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_232
+#graphify/code #graphify/EXTRACTED #community/search/packagejson

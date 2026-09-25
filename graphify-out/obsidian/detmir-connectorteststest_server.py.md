@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
 type: "code"
-community: "Community 51"
+community: "detmir-connector/tests/test_server.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_51
+  - community/detmir-connector/tests/test_serverpy
 ---
 
 # detmir-connector/tests/test_server.py
@@ -64,4 +64,4 @@ tags:
 - [[tomllib]] - `imports` [EXTRACTED]
 - [[urllib_parse]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_51
+#graphify/code #graphify/EXTRACTED #community/detmir-connector/tests/test_serverpy

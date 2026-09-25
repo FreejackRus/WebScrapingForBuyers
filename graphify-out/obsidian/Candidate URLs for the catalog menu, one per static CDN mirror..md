@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "rationale"
-community: "Community 46"
-location: "L1676"
+community: "wb_connector/server.py"
+location: "L2178"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_46
+  - community/wb_connector/serverpy
 ---
 
 # Candidate URLs for the catalog menu, one per static CDN mirror.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_static_menu_urls()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_46
+#graphify/rationale #graphify/EXTRACTED #community/wb_connector/serverpy

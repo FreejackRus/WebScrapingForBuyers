@@ -1,17 +1,17 @@
 ---
-source_file: "apps/identity/package.json"
+source_file: "apps/gateway/package.json"
 type: "code"
-community: "Community 142"
-location: "L16"
+community: "gateway/package.json"
+location: "L15"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_142
+  - community/gateway/packagejson
 ---
 
 # @peremena/service-kit
 
 ## Connections
-- [[dependencies_2]] - `contains` [EXTRACTED]
+- [[dependencies_1]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_142
+#graphify/code #graphify/EXTRACTED #community/gateway/packagejson

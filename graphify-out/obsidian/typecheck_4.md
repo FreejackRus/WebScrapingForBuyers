@@ -1,12 +1,12 @@
 ---
-source_file: "apps/identity/package.json"
+source_file: "package.json"
 type: "code"
-community: "Community 233"
-location: "L11"
+community: "package.json"
+location: "L16"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_233
+  - community/packagejson
 ---
 
 # typecheck
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[scripts_4]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_233
+#graphify/code #graphify/EXTRACTED #community/packagejson

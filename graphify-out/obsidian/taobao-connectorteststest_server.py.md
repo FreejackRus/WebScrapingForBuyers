@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py"
 type: "code"
-community: "Community 106"
+community: "taobao-connector/tests/test_server.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_106
+  - community/taobao-connector/tests/test_serverpy
 ---
 
 # taobao-connector/tests/test_server.py
@@ -59,4 +59,4 @@ tags:
 - [[test_the_card_navigates_a_rebuilt_item_base_url()]] - `contains` [EXTRACTED]
 - [[test_titled_and_title_less_walls_classify_identically()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_106
+#graphify/code #graphify/EXTRACTED #community/taobao-connector/tests/test_serverpy

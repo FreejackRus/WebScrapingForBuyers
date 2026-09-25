@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_search_extractor_dom.py"
 type: "code"
-community: "Community 97"
+community: "lamoda-connector/tests/test_search_extractor_dom.py"
 location: "L50"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_97
+  - community/lamoda-connector/tests/test_search_extractor_dompy
 ---
 
 # _extract()
@@ -23,4 +23,4 @@ tags:
 - [[test_script_only_challenge_is_not_a_blocked_page()]] - `calls` [EXTRACTED]
 - [[test_visible_challenge_blocks_only_an_empty_result()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_97
+#graphify/code #graphify/EXTRACTED #community/lamoda-connector/tests/test_search_extractor_dompy

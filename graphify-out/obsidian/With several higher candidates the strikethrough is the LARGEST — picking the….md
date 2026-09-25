@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py"
 type: "rationale"
-community: "Community 18"
+community: "test_the_largest_candidate_above_the_price_is_the_strikethrough"
 location: "L201"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_18
+  - community/test_the_largest_candidate_above_the_price_is_the_strikethrough
 ---
 
 # With several higher candidates the strikethrough is the LARGEST — picking the…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_the_largest_candidate_above_the_price_is_the_strikethrough()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_18
+#graphify/rationale #graphify/EXTRACTED #community/test_the_largest_candidate_above_the_price_is_the_strikethrough

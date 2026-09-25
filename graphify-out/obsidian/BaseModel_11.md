@@ -1,19 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 33"
+community: "models.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_33
+  - community/modelspy
 ---
 
 # BaseModel
 
 ## Connections
-- [[LamodaCardResponse]] - `inherits` [EXTRACTED]
-- [[LamodaSearchItemOut]] - `inherits` [EXTRACTED]
-- [[LamodaSearchResponse]] - `inherits` [EXTRACTED]
-- [[LamodaSizeOut]] - `inherits` [EXTRACTED]
+- [[TaobaoCardResponse]] - `inherits` [EXTRACTED]
+- [[TaobaoSearchItemOut]] - `inherits` [EXTRACTED]
+- [[TaobaoSearchResponse]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_33
+#graphify/code #graphify/EXTRACTED #community/modelspy

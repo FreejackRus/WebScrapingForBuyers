@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py"
 type: "code"
-community: "Community 6"
-location: "L582"
+community: "capture"
+location: "L134"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_6
+  - community/capture
 ---
 
 # capture()
 
 ## Connections
-- [[test_snapshot_rechecks_original_host_policy_before_and_after_capture()]] - `contains` [EXTRACTED]
+- [[load()_1]] - `calls` [EXTRACTED]
+- [[test_search_percent_encodes_cyrillic_queries()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_6
+#graphify/code #graphify/EXTRACTED #community/capture

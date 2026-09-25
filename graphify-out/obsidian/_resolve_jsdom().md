@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/domtest.py"
 type: "code"
-community: "Community 50"
+community: "run_extractor"
 location: "L88"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_50
+  - community/run_extractor
 ---
 
 # _resolve_jsdom()
@@ -18,4 +18,4 @@ tags:
 - [[jsdom_available()]] - `calls` [EXTRACTED]
 - [[run_extractor()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_50
+#graphify/code #graphify/EXTRACTED #community/run_extractor

@@ -1,22 +1,24 @@
 ---
-source_file: "apps/identity/package.json"
+source_file: "package.json"
 type: "code"
-community: "Community 233"
-location: "L6"
+community: "package.json"
+location: "L9"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_233
+  - community/packagejson
 ---
 
 # scripts
 
 ## Connections
 - [[build_4]] - `contains` [EXTRACTED]
-- [[dev_3]] - `contains` [EXTRACTED]
-- [[identitypackage.json]] - `contains` [EXTRACTED]
-- [[start_2]] - `contains` [EXTRACTED]
-- [[test_3]] - `contains` [EXTRACTED]
+- [[dev_4]] - `contains` [EXTRACTED]
+- [[package.json]] - `contains` [EXTRACTED]
+- [[predev]] - `contains` [EXTRACTED]
+- [[pretest]] - `contains` [EXTRACTED]
+- [[pretypecheck]] - `contains` [EXTRACTED]
+- [[test_4]] - `contains` [EXTRACTED]
 - [[typecheck_4]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_233
+#graphify/code #graphify/EXTRACTED #community/packagejson

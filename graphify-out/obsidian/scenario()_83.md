@@ -1,19 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 52"
-location: "L1369"
+community: "test_helpers.py"
+location: "L1887"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_52
+  - community/test_helperspy
 ---
 
 # scenario()
 
 ## Connections
-- [[TTLCache]] - `calls` [EXTRACTED]
-- [[no_wait()_4]] - `indirect_call` [INFERRED]
-- [[test_cache_can_be_disabled_by_ttl_zero()]] - `contains` [EXTRACTED]
+- [[test_category_products_is_registered_and_v1_tools_are_intact()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_52
+#graphify/code #graphify/EXTRACTED #community/test_helperspy

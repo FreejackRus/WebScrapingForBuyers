@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_server.py"
 type: "code"
-community: "Community 144"
-location: "L382"
+community: "mpstats-connector/tests/test_server.py"
+location: "L325"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_144
+  - community/mpstats-connector/tests/test_serverpy
 ---
 
 # fake_call()
 
 ## Connections
 - [[payload()]] - `indirect_call` [INFERRED]
-- [[test_warehouses_stamps_sku_from_request_when_upstream_omits_it()]] - `contains` [EXTRACTED]
+- [[test_item_batch_preserves_request_order_and_warns_missing()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_144
+#graphify/code #graphify/EXTRACTED #community/mpstats-connector/tests/test_serverpy

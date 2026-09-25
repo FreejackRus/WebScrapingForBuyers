@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_zone_tag_scanning.py"
 type: "rationale"
-community: "Community 5"
+community: "ssr.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_5
+  - community/ssrpy
 ---
 
 # A zone snippet whose attribute holds a raw '>' must still be parsed (review…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_zone_tag_scanning.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_5
+#graphify/rationale #graphify/EXTRACTED #community/ssrpy

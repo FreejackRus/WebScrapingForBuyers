@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/src/dns_connector/server.py"
 type: "code"
-community: "Community 41"
+community: "dns_card"
 location: "L114"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_41
+  - community/dns_card
 ---
 
 # _extract_product_id()
@@ -16,4 +16,4 @@ tags:
 - [[dns_card()]] - `calls` [EXTRACTED]
 - [[dns_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_41
+#graphify/code #graphify/EXTRACTED #community/dns_card

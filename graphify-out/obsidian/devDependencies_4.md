@@ -1,21 +1,19 @@
 ---
-source_file: "apps/identity/package.json"
+source_file: "package.json"
 type: "code"
-community: "Community 251"
-location: "L19"
+community: "package.json"
+location: "L18"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_251
+  - community/packagejson
 ---
 
 # devDependencies
 
 ## Connections
-- [[@typesnode_3]] - `contains` [EXTRACTED]
-- [[identitypackage.json]] - `contains` [EXTRACTED]
-- [[tsx_7]] - `contains` [EXTRACTED]
-- [[typescript_5]] - `contains` [EXTRACTED]
-- [[vitest_7]] - `contains` [EXTRACTED]
+- [[concurrently]] - `contains` [EXTRACTED]
+- [[package.json]] - `contains` [EXTRACTED]
+- [[typescript_8]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_251
+#graphify/code #graphify/EXTRACTED #community/packagejson

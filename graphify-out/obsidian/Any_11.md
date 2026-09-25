@@ -1,16 +1,19 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 237"
+community: "PageLike"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_237
+  - community/PageLike
 ---
 
 # Any
 
 ## Connections
-- [[dot-as_dict()]] - `references` [EXTRACTED]
+- [[dot-evaluate()_1]] - `references` [EXTRACTED]
+- [[dot-evaluate()]] - `references` [EXTRACTED]
+- [[_handoff_jpeg()]] - `references` [EXTRACTED]
+- [[capture_owned_viewport()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_237
+#graphify/code #graphify/EXTRACTED #community/PageLike

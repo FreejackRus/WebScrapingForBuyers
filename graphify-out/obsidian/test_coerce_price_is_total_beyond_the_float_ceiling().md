@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_resilience_properties.py"
 type: "code"
-community: "Community 48"
+community: "test_resilience_properties.py"
 location: "L93"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_48
+  - community/test_resilience_propertiespy
 ---
 
 # test_coerce_price_is_total_beyond_the_float_ceiling()
@@ -16,4 +16,4 @@ tags:
 - [[coerce_price()]] - `calls` [EXTRACTED]
 - [[test_resilience_properties.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_48
+#graphify/code #graphify/EXTRACTED #community/test_resilience_propertiespy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_card_verification_records.py"
 type: "code"
-community: "Community 43"
+community: "WbCardItem"
 location: "L88"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_43
+  - community/WbCardItem
 ---
 
 # test_missing_requested_wb_row_does_not_use_another_price()
@@ -14,8 +14,8 @@ tags:
 ## Connections
 - [[WbCardItem]] - `uses` [INFERRED]
 - [[WbCardResponse]] - `uses` [INFERRED]
-- [[card()_9]] - `contains` [EXTRACTED]
-- [[card()_10]] - `indirect_call` [INFERRED]
+- [[card()_7]] - `contains` [EXTRACTED]
+- [[card()_8]] - `indirect_call` [INFERRED]
 - [[test_card_verification_records.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/Community_43
+#graphify/code #graphify/INFERRED #community/WbCardItem

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_http.py"
 type: "code"
-community: "Community 207"
+community: "parse_retry_after"
 location: "L24"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_207
+  - community/parse_retry_after
 ---
 
 # test_parse_retry_after_absent_or_junk_is_none()
@@ -15,4 +15,4 @@ tags:
 - [[parse_retry_after()]] - `calls` [EXTRACTED]
 - [[test_http.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_207
+#graphify/code #graphify/EXTRACTED #community/parse_retry_after

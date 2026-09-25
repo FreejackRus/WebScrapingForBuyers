@@ -1,22 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/models_output.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/src/mpstats_connector/models_output.py"
 type: "code"
-community: "Community 33"
-location: "L9"
+community: "BadRequestError"
+location: "L31"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_33
+  - community/BadRequestError
 ---
 
 # MetaOut
 
 ## Connections
-- [[Lamoda carries the shared envelope unchanged.]] - `rationale_for` [EXTRACTED]
+- [[MPStats carries the shared envelope unchanged.]] - `rationale_for` [EXTRACTED]
 - [[MetaOutBase]] - `inherits` [EXTRACTED]
-- [[lamoda_card()]] - `uses` [INFERRED]
-- [[lamoda_connectormodels_output.py]] - `contains` [EXTRACTED]
-- [[lamoda_connectorserver.py]] - `imports` [EXTRACTED]
-- [[lamoda_search()]] - `uses` [INFERRED]
+- [[mpstats_connectormodels_output.py]] - `contains` [EXTRACTED]
+- [[mpstats_connectorserver.py]] - `imports` [EXTRACTED]
+- [[mpstats_item()]] - `uses` [INFERRED]
+- [[mpstats_warehouses()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_33
+#graphify/code #graphify/EXTRACTED #community/BadRequestError

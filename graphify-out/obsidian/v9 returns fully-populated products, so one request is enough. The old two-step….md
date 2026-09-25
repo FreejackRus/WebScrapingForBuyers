@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "rationale"
-community: "Community 260"
+community: "no_wait"
 location: "L460"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_260
+  - community/no_wait
 ---
 
 # v9 returns fully-populated products, so one request is enough. The old two-step…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_wb_search_reads_products_straight_from_v9()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_260
+#graphify/rationale #graphify/EXTRACTED #community/no_wait

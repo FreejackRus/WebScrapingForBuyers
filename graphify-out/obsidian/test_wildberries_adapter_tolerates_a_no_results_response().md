@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
-community: "Community 136"
+community: "wb_connector/server.py"
 location: "L808"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_136
+  - community/wb_connector/serverpy
 ---
 
 # test_wildberries_adapter_tolerates_a_no_results_response()
@@ -15,6 +15,6 @@ tags:
 - [[WbNoResultsResponse]] - `uses` [INFERRED]
 - [[compare-connectorteststest_server.py]] - `contains` [EXTRACTED]
 - [[wb_search can return a distinct no-results model with no items at all.]] - `rationale_for` [EXTRACTED]
-- [[wb_search()]] - `contains` [EXTRACTED]
+- [[wb_search()_2]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_136
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

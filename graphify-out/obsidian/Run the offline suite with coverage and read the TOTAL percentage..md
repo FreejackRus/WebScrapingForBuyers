@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_coverage_floor.py"
 type: "rationale"
-community: "Community 71"
+community: "pathlib"
 location: "L62"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_71
+  - community/pathlib
 ---
 
 # Run the offline suite with coverage and read the TOTAL percentage.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_measured_coverage()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_71
+#graphify/rationale #graphify/EXTRACTED #community/pathlib

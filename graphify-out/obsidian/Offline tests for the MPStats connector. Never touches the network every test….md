@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_server.py"
 type: "rationale"
-community: "Community 34"
+community: "mpstats-connector/tests/test_server.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_34
+  - community/mpstats-connector/tests/test_serverpy
 ---
 
 # Offline tests for the MPStats connector. Never touches the network: every test…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[mpstats-connectorteststest_server.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_34
+#graphify/rationale #graphify/EXTRACTED #community/mpstats-connector/tests/test_serverpy

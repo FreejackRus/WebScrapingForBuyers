@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py"
 type: "code"
-community: "Community 208"
+community: "parametrize"
 location: "L231"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_208
+  - community/parametrize
 ---
 
 # test_setup_hint_names_the_shell_script_elsewhere()
 
 ## Connections
-- [[parametrize_14]] - `references` [EXTRACTED]
+- [[parametrize_8]] - `references` [EXTRACTED]
 - [[test_chrome_cdp.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_208
+#graphify/code #graphify/EXTRACTED #community/parametrize

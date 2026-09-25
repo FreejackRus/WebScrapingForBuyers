@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 34"
+community: "mpstats-connector/tests/test_server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_34
+  - community/mpstats-connector/tests/test_serverpy
 ---
 
 # asyncio
@@ -31,4 +31,4 @@ tags:
 - [[test_warehouses_shape_drift_raises_parser_drift()]] - `references` [EXTRACTED]
 - [[test_warehouses_stamps_sku_from_request_when_upstream_omits_it()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_34
+#graphify/code #graphify/EXTRACTED #community/mpstats-connector/tests/test_serverpy

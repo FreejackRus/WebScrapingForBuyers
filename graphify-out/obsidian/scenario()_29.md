@@ -1,20 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "Community 122"
-location: "L2317"
+community: "_patch_tier1"
+location: "L881"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_122
+  - community/_patch_tier1
 ---
 
 # scenario()
 
 ## Connections
-- [[_clear_wb_cache()]] - `calls` [EXTRACTED]
-- [[fake_budgeted()_5]] - `indirect_call` [INFERRED]
-- [[fake_impersonated()_1]] - `indirect_call` [INFERRED]
-- [[test_a_gated_host_falls_back_when_impersonation_fails()]] - `contains` [EXTRACTED]
+- [[_patch_tier1()]] - `calls` [EXTRACTED]
+- [[counting_get()_1]] - `indirect_call` [INFERRED]
+- [[test_cache_is_keyed_by_canonical_path_not_raw_input()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_122
+#graphify/code #graphify/EXTRACTED #community/_patch_tier1

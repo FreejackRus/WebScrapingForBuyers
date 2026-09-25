@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_card_verification_records.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
-community: "Community 145"
-location: "L75"
+community: "compare-connector/tests/test_server.py"
+location: "L78"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/Community_145
+  - graphify/INFERRED
+  - community/compare-connector/tests/test_serverpy
 ---
 
 # card()
 
 ## Connections
-- [[OzonCardResponse]] - `calls` [EXTRACTED]
-- [[test_ozon_verifies_regular_price_not_card_discount()]] - `contains` [EXTRACTED]
+- [[test_megamarket_card_dispatch_uses_native_argument_in_both_profiles()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_145
+#graphify/code #graphify/INFERRED #community/compare-connector/tests/test_serverpy

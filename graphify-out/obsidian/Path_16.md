@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 79"
+community: "pathlib"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_79
+  - community/pathlib
 ---
 
 # Path
 
 ## Connections
-- [[test_cleanup_stops_wrapper_and_its_child()]] - `references` [EXTRACTED]
+- [[test_the_runner_exit_code_follows_the_verdict()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_79
+#graphify/code #graphify/EXTRACTED #community/pathlib

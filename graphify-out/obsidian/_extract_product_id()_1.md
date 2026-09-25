@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/src/citilink_connector/server.py"
 type: "code"
-community: "Community 65"
+community: "citilink_card"
 location: "L114"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_65
+  - community/citilink_card
 ---
 
 # _extract_product_id()
@@ -16,4 +16,4 @@ tags:
 - [[citilink_card()]] - `calls` [EXTRACTED]
 - [[citilink_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_65
+#graphify/code #graphify/EXTRACTED #community/citilink_card

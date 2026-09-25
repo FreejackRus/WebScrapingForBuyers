@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py"
 type: "rationale"
-community: "Community 314"
+community: "test_login_wall_markers_read_the_document_title_per_payload_kind"
 location: "L212"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_314
+  - community/test_login_wall_markers_read_the_document_title_per_payload_kind
 ---
 
 # The title marker selects its field by payload kind: a ``page_title`` key…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_login_wall_markers_read_the_document_title_per_payload_kind()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_314
+#graphify/rationale #graphify/EXTRACTED #community/test_login_wall_markers_read_the_document_title_per_payload_kind

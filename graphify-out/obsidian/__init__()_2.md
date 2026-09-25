@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cache.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
 type: "code"
-community: "Community 171"
-location: "L20"
+community: "test_storefront_live_xhr_capture_via_get_context"
+location: "L167"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_171
+  - community/test_storefront_live_xhr_capture_via_get_context
 ---
 
 # __init__()
 
 ## Connections
-- [[clock()]] - `contains` [EXTRACTED]
+- [[test_storefront_live_xhr_capture_via_get_context()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_171
+#graphify/code #graphify/EXTRACTED #community/test_storefront_live_xhr_capture_via_get_context

@@ -42,6 +42,15 @@ describe("search workspace data states", () => {
     };
   });
 
+  it("shows an honest starting state before the first search", () => {
+    state.snapshot = undefined;
+    const html = renderToStaticMarkup(<SearchWorkspace />);
+    expect(html).toContain("Найдите модель — покажем предложения");
+    expect(html).toContain("Укажите товар");
+    expect(html).not.toContain("Таблица предложений");
+    expect(html).not.toMatch(/демо|DEMO|демонстрацион/i);
+  });
+
   it("does not present non-public rows as the best public price", () => {
     state.snapshot!.offers = [offer(true, 100)];
     const html = renderToStaticMarkup(<SearchWorkspace />);

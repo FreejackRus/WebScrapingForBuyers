@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/source_selection.py"
 type: "code"
-community: "Community 101"
+community: "json"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_101
+  - community/json
 ---
 
 # source_selection.py
@@ -23,4 +23,4 @@ tags:
 - [[test_source_selection.py]] - `imports_from` [EXTRACTED]
 - [[wanted()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_101
+#graphify/code #graphify/EXTRACTED #community/json

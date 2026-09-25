@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py"
 type: "rationale"
-community: "Community 149"
+community: "_patch_graphql_response"
 location: "L545"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_149
+  - community/_patch_graphql_response
 ---
 
 # Fallback if Lamoda ever moves to data.products.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_the_standard_graphql_shape_still_works()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_149
+#graphify/rationale #graphify/EXTRACTED #community/_patch_graphql_response

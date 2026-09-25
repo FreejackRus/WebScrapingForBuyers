@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py"
 type: "code"
-community: "Community 15"
+community: "avito-connector/tests/test_server.py"
 location: "L93"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_15
+  - community/avito-connector/tests/test_serverpy
 ---
 
 # fake_fetch()
@@ -18,4 +18,4 @@ tags:
 - [[test_selfcheck_flags_drift_when_a_key_family_vanishes()]] - `indirect_call` [INFERRED]
 - [[test_selfcheck_reports_healthy_when_probes_parse()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Community_15
+#graphify/code #graphify/INFERRED #community/avito-connector/tests/test_serverpy

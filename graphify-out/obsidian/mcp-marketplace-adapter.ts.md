@@ -1,18 +1,18 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
 type: "code"
-community: "Community 0"
+community: "mcp-marketplace-adapter.ts"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_0
+  - community/mcp-marketplace-adapterts
 ---
 
 # mcp-marketplace-adapter.ts
 
 ## Connections
-- [[@modelcontextprotocolsdk]] - `imports_from` [EXTRACTED]
+- [[@modelcontextprotocolsdk_1]] - `imports_from` [EXTRACTED]
 - [[AVITO_CATEGORY_COMPUTER]] - `contains` [EXTRACTED]
 - [[AVITO_LOCATION_ALL]] - `contains` [EXTRACTED]
 - [[FOREIGN_CATEGORY_MARKERS]] - `contains` [EXTRACTED]
@@ -37,7 +37,7 @@ tags:
 - [[categorySelfTokens()]] - `contains` [EXTRACTED]
 - [[cdpWarmupHost]] - `contains` [EXTRACTED]
 - [[citilinkIdentityUrls()]] - `contains` [EXTRACTED]
-- [[collapseWs()]] - `contains` [EXTRACTED]
+- [[collapseWs()_1]] - `contains` [EXTRACTED]
 - [[compactAlnum()]] - `contains` [EXTRACTED]
 - [[compactIdentity()]] - `contains` [EXTRACTED]
 - [[createMarketplaceSourcesFromEnv()]] - `contains` [EXTRACTED]
@@ -58,6 +58,7 @@ tags:
 - [[isAntibotTransportError()]] - `contains` [EXTRACTED]
 - [[isAvitoPowError()]] - `contains` [EXTRACTED]
 - [[isIdentityToken()]] - `contains` [EXTRACTED]
+- [[isMcpSessionLostError()]] - `contains` [EXTRACTED]
 - [[isMcpUnavailableError()]] - `contains` [EXTRACTED]
 - [[isMegamarketWafError()]] - `contains` [EXTRACTED]
 - [[isObject()]] - `contains` [EXTRACTED]
@@ -70,6 +71,7 @@ tags:
 - [[marketplaceItemPrice()]] - `contains` [EXTRACTED]
 - [[marketplacePayloadBlockReason()]] - `contains` [EXTRACTED]
 - [[marketplacePayloadItems()]] - `contains` [EXTRACTED]
+- [[marketplacePriceCondition()]] - `contains` [EXTRACTED]
 - [[marketplaceSearchQueries()]] - `contains` [EXTRACTED]
 - [[marketplaceSearchUrl()]] - `contains` [EXTRACTED]
 - [[marketplaceToolArguments()]] - `contains` [EXTRACTED]
@@ -102,4 +104,4 @@ tags:
 - [[wb-rate-limit.ts]] - `imports_from` [EXTRACTED]
 - [[wbItemsClashSelectedCategory()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_0
+#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py"
 type: "rationale"
-community: "Community 15"
+community: "avito-connector/tests/test_server.py"
 location: "L365"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_15
+  - community/avito-connector/tests/test_serverpy
 ---
 
 # 404 means the ad is gone. Slowing down does not bring it back.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_a_not_found_is_not_counted_as_a_refusal()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_15
+#graphify/rationale #graphify/EXTRACTED #community/avito-connector/tests/test_serverpy

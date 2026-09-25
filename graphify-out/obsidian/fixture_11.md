@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 171"
+community: "Clock"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_171
+  - community/Clock
 ---
 
 # fixture
 
 ## Connections
-- [[Clock]] - `references` [EXTRACTED]
+- [[clock()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_171
+#graphify/code #graphify/EXTRACTED #community/Clock

@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_process.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "code"
-community: "Community 62"
-location: "L37"
+community: "wb_connector/server.py"
+location: "L493"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_62
+  - community/wb_connector/serverpy
 ---
 
 # .wait()
 
 ## Connections
-- [[_FakeProc]] - `method` [EXTRACTED]
+- [[_PoliteGate]] - `method` [EXTRACTED]
+- [[_polite_wait()_7]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_62
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

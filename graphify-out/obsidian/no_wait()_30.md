@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 28"
-location: "L1420"
+community: "scenario"
+location: "L2019"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_28
+  - community/scenario
 ---
 
 # no_wait()
 
 ## Connections
-- [[_patch_questions()]] - `contains` [EXTRACTED]
+- [[test_impersonated_refusal_stays_a_transport_error()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_28
+#graphify/code #graphify/EXTRACTED #community/scenario

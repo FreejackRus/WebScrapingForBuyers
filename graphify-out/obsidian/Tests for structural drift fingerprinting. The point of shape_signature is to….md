@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_shape_signature.py"
 type: "rationale"
-community: "Community 57"
+community: "shape_signature"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_57
+  - community/shape_signature
 ---
 
 # Tests for structural drift fingerprinting. The point of shape_signature is to…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_shape_signature.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_57
+#graphify/rationale #graphify/EXTRACTED #community/shape_signature

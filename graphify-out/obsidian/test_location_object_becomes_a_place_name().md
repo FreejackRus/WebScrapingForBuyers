@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_live_payload_contract.py"
 type: "code"
-community: "Community 47"
+community: "test_live_payload_contract.py"
 location: "L51"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_47
+  - community/test_live_payload_contractpy
 ---
 
 # test_location_object_becomes_a_place_name()
@@ -16,4 +16,4 @@ tags:
 - [[``location`` is an object upstream; the wire field is a string.]] - `rationale_for` [EXTRACTED]
 - [[test_live_payload_contract.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_47
+#graphify/code #graphify/EXTRACTED #community/test_live_payload_contractpy

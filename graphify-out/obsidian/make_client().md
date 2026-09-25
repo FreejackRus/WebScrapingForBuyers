@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_http_tier_budgeted.py"
 type: "code"
-community: "Community 13"
+community: "get_text_budgeted"
 location: "L21"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_13
+  - community/get_text_budgeted
 ---
 
 # make_client()
@@ -27,4 +27,4 @@ tags:
 - [[test_transport_error_is_retried_then_succeeds()]] - `calls` [EXTRACTED]
 - [[test_wall_clock_budget_bounds_a_single_slow_attempt()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_13
+#graphify/code #graphify/EXTRACTED #community/get_text_budgeted

@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_source_warnings.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
-community: "Community 178"
-location: "L97"
+community: "search"
+location: "L104"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_178
+  - community/search
 ---
 
 # search()
 
 ## Connections
-- [[test_coupon_warning_keeps_regular_price_and_does_not_claim_failure()]] - `contains` [EXTRACTED]
+- [[offer()_1]] - `calls` [EXTRACTED]
+- [[test_selected_missing_connector_still_makes_default_comparison_partial()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_178
+#graphify/code #graphify/EXTRACTED #community/search

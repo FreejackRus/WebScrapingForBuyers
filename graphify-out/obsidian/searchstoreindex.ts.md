@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/entities/search/store/index.ts"
 type: "code"
-community: "Community 124"
+community: "useSearchStore"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_124
+  - community/useSearchStore
 ---
 
 # search/store/index.ts
@@ -15,7 +15,7 @@ tags:
 - [[SearchState]] - `contains` [EXTRACTED]
 - [[entitiessearchindex.ts]] - `re_exports` [EXTRACTED]
 - [[merge.ts]] - `re_exports` [EXTRACTED]
-- [[mergeSnapshotOffers()]] - `re_exports` [EXTRACTED]
+- [[mergeSnapshotOffers()_1]] - `re_exports` [EXTRACTED]
 - [[packages_contracts_dist_index]] - `imports_from` [EXTRACTED]
 - [[packages_contracts_dist_index_offertablefilter]] - `imports` [EXTRACTED]
 - [[packages_contracts_dist_index_product]] - `imports` [EXTRACTED]
@@ -24,6 +24,6 @@ tags:
 - [[searchapiindex.ts]] - `imports_from` [EXTRACTED]
 - [[searchApi]] - `imports` [EXTRACTED]
 - [[useSearchStore]] - `contains` [EXTRACTED]
-- [[zustand]] - `imports_from` [EXTRACTED]
+- [[zustand_1]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_124
+#graphify/code #graphify/EXTRACTED #community/useSearchStore

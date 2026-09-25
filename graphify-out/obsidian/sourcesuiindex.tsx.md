@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/widgets/search/sources/ui/index.tsx"
 type: "code"
-community: "Community 143"
+community: "packages_contracts_dist_index"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_143
+  - community/packages_contracts_dist_index
 ---
 
 # sources/ui/index.tsx
@@ -18,5 +18,6 @@ tags:
 - [[packages_contracts_dist_index_userrole]] - `imports` [EXTRACTED]
 - [[sourceLabels]] - `contains` [EXTRACTED]
 - [[sourcesindex.ts]] - `re_exports` [EXTRACTED]
+- [[sourcesuiindex.test.tsx]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_143
+#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index

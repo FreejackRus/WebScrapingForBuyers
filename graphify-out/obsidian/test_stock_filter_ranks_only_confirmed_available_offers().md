@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
-community: "Community 25"
+community: "offer"
 location: "L1127"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_25
+  - community/offer
 ---
 
 # test_stock_filter_ranks_only_confirmed_available_offers()
@@ -19,4 +19,4 @@ tags:
 - [[wb()_13]] - `contains` [EXTRACTED]
 - [[wb()_7]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_25
+#graphify/code #graphify/EXTRACTED #community/offer

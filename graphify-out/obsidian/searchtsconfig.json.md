@@ -1,20 +1,20 @@
 ---
 source_file: "apps/search/tsconfig.json"
 type: "code"
-community: "Community 220"
+community: "search/tsconfig.json"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_220
+  - community/search/tsconfigjson
 ---
 
 # search/tsconfig.json
 
 ## Connections
-- [[dot-tsconfig.base.json]] - `extends` [EXTRACTED]
+- [[dot-tsconfig.base.json_5]] - `extends` [EXTRACTED]
 - [[compilerOptions_6]] - `contains` [EXTRACTED]
 - [[extends_5]] - `contains` [EXTRACTED]
 - [[include_5]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_220
+#graphify/code #graphify/EXTRACTED #community/search/tsconfigjson

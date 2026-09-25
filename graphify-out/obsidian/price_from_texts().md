@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/resilience.py"
 type: "code"
-community: "Community 53"
+community: "test_resilience.py"
 location: "L599"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_53
+  - community/test_resiliencepy
 ---
 
 # price_from_texts()
 
 ## Connections
-- [[Any_25]] - `references` [EXTRACTED]
+- [[Any_7]] - `references` [EXTRACTED]
 - [[First candidate that parses to a real positive price, else None. DOM extractors…]] - `rationale_for` [EXTRACTED]
 - [[coerce_price()]] - `calls` [EXTRACTED]
 - [[resilience.py]] - `contains` [EXTRACTED]
@@ -21,4 +21,4 @@ tags:
 - [[test_price_from_texts_skips_zero_and_discount_badges()]] - `calls` [EXTRACTED]
 - [[test_price_from_texts_takes_the_first_real_price()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_53
+#graphify/code #graphify/EXTRACTED #community/test_resiliencepy

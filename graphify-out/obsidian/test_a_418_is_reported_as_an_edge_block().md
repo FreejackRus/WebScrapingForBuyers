@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
 type: "code"
-community: "Community 279"
+community: "test_a_418_is_reported_as_an_edge_block"
 location: "L581"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_279
+  - community/test_a_418_is_reported_as_an_edge_block
 ---
 
 # test_a_418_is_reported_as_an_edge_block()
@@ -16,4 +16,4 @@ tags:
 - [[detmir-connectorteststest_server.py]] - `contains` [EXTRACTED]
 - [[edge_418()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_279
+#graphify/code #graphify/EXTRACTED #community/test_a_418_is_reported_as_an_edge_block

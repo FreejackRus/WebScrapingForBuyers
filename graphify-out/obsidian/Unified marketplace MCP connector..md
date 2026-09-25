@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/src/marketplace_connector/__init__.py"
 type: "rationale"
-community: "Community 199"
+community: "marketplace_connector/__init__.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_199
+  - community/marketplace_connector/__init__py
 ---
 
 # Unified marketplace MCP connector.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[marketplace_connector__init__.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_199
+#graphify/rationale #graphify/EXTRACTED #community/marketplace_connector/__init__py

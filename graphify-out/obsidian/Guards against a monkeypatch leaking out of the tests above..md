@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py"
 type: "rationale"
-community: "Community 300"
+community: "test_socket_module_is_the_real_one"
 location: "L375"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_300
+  - community/test_socket_module_is_the_real_one
 ---
 
 # Guards against a monkeypatch leaking out of the tests above.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_socket_module_is_the_real_one()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_300
+#graphify/rationale #graphify/EXTRACTED #community/test_socket_module_is_the_real_one

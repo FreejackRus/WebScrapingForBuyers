@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_vision_policy.py"
 type: "rationale"
-community: "Community 73"
+community: "resolve_image_delivery"
 location: "L48"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_73
+  - community/resolve_image_delivery
 ---
 
 # The tool exists to be used: absent an explicit signal, pixels flow.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_default_delivers_the_image()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_73
+#graphify/rationale #graphify/EXTRACTED #community/resolve_image_delivery

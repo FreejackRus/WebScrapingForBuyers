@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 97"
+community: "lamoda-connector/tests/test_search_extractor_dom.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_97
+  - community/lamoda-connector/tests/test_search_extractor_dompy
 ---
 
 # Path
@@ -17,4 +17,4 @@ tags:
 - [[test_script_only_challenge_is_not_a_blocked_page()]] - `references` [EXTRACTED]
 - [[test_visible_challenge_blocks_only_an_empty_result()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_97
+#graphify/code #graphify/EXTRACTED #community/lamoda-connector/tests/test_search_extractor_dompy

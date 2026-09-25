@@ -1,21 +1,22 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 2"
+community: "mpstats_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_2
+  - community/mpstats_connector/serverpy
 ---
 
 # BaseModel
 
 ## Connections
-- [[CianAgentOut]] - `inherits` [EXTRACTED]
-- [[CianCardResponse]] - `inherits` [EXTRACTED]
-- [[CianMetroOut]] - `inherits` [EXTRACTED]
-- [[CianPriceChangeOut]] - `inherits` [EXTRACTED]
-- [[CianSearchItemOut]] - `inherits` [EXTRACTED]
-- [[CianSearchResponse]] - `inherits` [EXTRACTED]
+- [[MpStatsItem]] - `inherits` [EXTRACTED]
+- [[MpStatsItemResponse]] - `inherits` [EXTRACTED]
+- [[MpStatsNoResultsResponse]] - `inherits` [EXTRACTED]
+- [[MpStatsStocks]] - `inherits` [EXTRACTED]
+- [[MpStatsTotals]] - `inherits` [EXTRACTED]
+- [[MpStatsWarehousesItem]] - `inherits` [EXTRACTED]
+- [[MpStatsWarehousesResponse]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_2
+#graphify/code #graphify/EXTRACTED #community/mpstats_connector/serverpy

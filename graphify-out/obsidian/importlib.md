@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "Community 136"
+community: "wb_connector/server.py"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_136
+  - community/wb_connector/serverpy
 ---
 
 # importlib
@@ -14,4 +14,4 @@ tags:
 - [[test_source_selection.py]] - `imports` [EXTRACTED]
 - [[test_source_warnings.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_136
+#graphify/concept #graphify/EXTRACTED #community/wb_connector/serverpy

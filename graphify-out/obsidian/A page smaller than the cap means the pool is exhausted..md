@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "rationale"
-community: "Community 20"
+community: "responder"
 location: "L1499"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_20
+  - community/responder
 ---
 
 # A page smaller than the cap means the pool is exhausted.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_questions_stops_at_a_short_page()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_20
+#graphify/rationale #graphify/EXTRACTED #community/responder

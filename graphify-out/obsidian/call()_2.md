@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_handoff_reporting.py"
 type: "code"
-community: "Community 87"
+community: "test_handoff_reporting.py"
 location: "L64"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_87
+  - community/test_handoff_reportingpy
 ---
 
 # call()
@@ -22,4 +22,4 @@ tags:
 - [[test_the_note_is_optional()]] - `calls` [EXTRACTED]
 - [[test_the_resume_that_clears_the_challenge_reports_both_facts()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_87
+#graphify/code #graphify/EXTRACTED #community/test_handoff_reportingpy

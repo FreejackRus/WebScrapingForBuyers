@@ -1,32 +1,22 @@
 ---
 source_file: "apps/analysis/src/application/analyze.ts"
 type: "code"
-community: "Community 36"
-location: "L44"
+community: "analysis/src/app.ts"
+location: "L210"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_36
+  - community/analysis/src/appts
 ---
 
 # analyzeSnapshot()
 
 ## Connections
-- [[dot-summarize()]] - `calls` [INFERRED]
 - [[analysissrcapp.ts]] - `imports` [EXTRACTED]
 - [[analyze.test.ts]] - `imports` [EXTRACTED]
 - [[analyze.ts]] - `contains` [EXTRACTED]
+- [[analyzeSnapshotRaw()]] - `calls` [EXTRACTED]
 - [[buildAnalysisApp()]] - `calls` [EXTRACTED]
-- [[buildTableFilter()]] - `calls` [EXTRACTED]
-- [[citationOf()]] - `indirect_call` [INFERRED]
-- [[classifyIntent()]] - `calls` [EXTRACTED]
-- [[extractSearchQuery()]] - `calls` [EXTRACTED]
-- [[matchesSource()]] - `calls` [EXTRACTED]
-- [[money()]] - `calls` [EXTRACTED]
-- [[offerLabel()]] - `indirect_call` [INFERRED]
-- [[parseMaxPrice()]] - `calls` [EXTRACTED]
-- [[parseSources()]] - `calls` [EXTRACTED]
-- [[ruCount()]] - `calls` [EXTRACTED]
-- [[selectionLimit()]] - `calls` [EXTRACTED]
+- [[sanitizeAnalysisResult()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_36
+#graphify/code #graphify/EXTRACTED #community/analysis/src/appts

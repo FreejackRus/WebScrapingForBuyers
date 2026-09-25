@@ -1,12 +1,12 @@
 ---
 source_file: "packages/service-kit/package.json"
 type: "code"
-community: "Community 99"
+community: "service-kit/package.json"
 location: "L3"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_99
+  - community/service-kit/packagejson
 ---
 
 # version
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[service-kitpackage.json]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_99
+#graphify/code #graphify/EXTRACTED #community/service-kit/packagejson

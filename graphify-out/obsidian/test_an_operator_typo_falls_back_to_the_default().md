@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_vision_policy.py"
 type: "code"
-community: "Community 73"
+community: "resolve_image_delivery"
 location: "L24"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_73
+  - community/resolve_image_delivery
 ---
 
 # test_an_operator_typo_falls_back_to_the_default()
@@ -16,4 +16,4 @@ tags:
 - [[normalize_policy()]] - `calls` [EXTRACTED]
 - [[test_vision_policy.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_73
+#graphify/code #graphify/EXTRACTED #community/resolve_image_delivery

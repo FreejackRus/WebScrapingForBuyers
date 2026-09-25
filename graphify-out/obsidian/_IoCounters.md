@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/_win_job_runner.py"
 type: "code"
-community: "Community 71"
+community: "_win_job_runner.py"
 location: "L33"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_71
+  - community/_win_job_runnerpy
 ---
 
 # _IoCounters
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_win_job_runner.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_71
+#graphify/code #graphify/EXTRACTED #community/_win_job_runnerpy

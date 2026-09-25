@@ -1,18 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py"
 type: "code"
-community: "Community 273"
-location: "L134"
+community: "test_termination_settles_queued_snapshot_before_getter_resumes"
+location: "L545"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/Community_273
+  - graphify/INFERRED
+  - community/test_termination_settles_queued_snapshot_before_getter_resumes
 ---
 
 # capture()
 
 ## Connections
-- [[load()_1]] - `calls` [EXTRACTED]
-- [[test_search_percent_encodes_cyrillic_queries()]] - `contains` [EXTRACTED]
+- [[test_snapshot_and_resume_cannot_overlap()]] - `indirect_call` [INFERRED]
+- [[test_snapshot_cancellation_or_deadline_cleans_exact_page()]] - `indirect_call` [INFERRED]
+- [[test_snapshot_rechecks_original_host_policy_before_and_after_capture()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_273
+#graphify/code #graphify/INFERRED #community/test_termination_settles_queued_snapshot_before_getter_resumes

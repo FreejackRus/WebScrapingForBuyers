@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py"
 type: "code"
-community: "Community 264"
+community: "offline_cdp_probe"
 location: "L24"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_264
+  - community/offline_cdp_probe
 ---
 
 # fake_probe()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[offline_cdp_probe()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Community_264
+#graphify/code #graphify/INFERRED #community/offline_cdp_probe

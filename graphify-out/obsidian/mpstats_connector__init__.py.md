@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/src/mpstats_connector/__init__.py"
 type: "code"
-community: "Community 120"
+community: "test_call_envelope.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_120
+  - community/test_call_envelopepy
 ---
 
 # mpstats_connector/__init__.py
@@ -18,4 +18,4 @@ tags:
 - [[test_call_envelope.py]] - `imports_from` [EXTRACTED]
 - [[test_transport.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_120
+#graphify/code #graphify/EXTRACTED #community/test_call_envelopepy

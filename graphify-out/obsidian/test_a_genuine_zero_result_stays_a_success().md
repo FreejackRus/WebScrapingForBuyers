@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py"
 type: "code"
-community: "Community 58"
+community: "_patch_routes"
 location: "L584"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_58
+  - community/_patch_routes
 ---
 
 # test_a_genuine_zero_result_stays_a_success()
@@ -16,4 +16,4 @@ tags:
 - [[listingSize 0 means the catalog really matched nothing.]] - `rationale_for` [EXTRACTED]
 - [[megamarket-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_58
+#graphify/code #graphify/EXTRACTED #community/_patch_routes

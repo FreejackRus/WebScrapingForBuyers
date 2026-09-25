@@ -1,18 +1,18 @@
 ---
 source_file: "apps/web/src/entities/search/store/merge.ts"
 type: "code"
-community: "Community 124"
+community: "useSearchStore"
 location: "L3"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_124
+  - community/useSearchStore
 ---
 
 # sourceRank()
 
 ## Connections
 - [[merge.ts]] - `contains` [EXTRACTED]
-- [[mergeSnapshotOffers()]] - `calls` [EXTRACTED]
+- [[mergeSnapshotOffers()_1]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_124
+#graphify/code #graphify/EXTRACTED #community/useSearchStore

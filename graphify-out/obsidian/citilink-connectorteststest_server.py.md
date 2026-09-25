@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py"
 type: "code"
-community: "Community 107"
+community: "citilink-connector/tests/test_server.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_107
+  - community/citilink-connector/tests/test_serverpy
 ---
 
 # citilink-connector/tests/test_server.py
 
 ## Connections
 - [[Offline tests for the Citilink connector. CDP rendering is monkeypatched out…]] - `rationale_for` [EXTRACTED]
-- [[_no_cache()_5]] - `contains` [EXTRACTED]
+- [[_no_cache()_1]] - `contains` [EXTRACTED]
 - [[_patch_render()_2]] - `contains` [EXTRACTED]
 - [[citilink_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[fastmcp_exceptions]] - `imports_from` [EXTRACTED]
@@ -40,4 +40,4 @@ tags:
 - [[test_selfcheck_zero_tiles_is_drift()]] - `contains` [EXTRACTED]
 - [[test_the_dom_extractor_and_the_python_parser_agree()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_107
+#graphify/code #graphify/EXTRACTED #community/citilink-connector/tests/test_serverpy

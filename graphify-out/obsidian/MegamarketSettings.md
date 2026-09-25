@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/settings.py"
 type: "code"
-community: "Community 162"
+community: "pydantic"
 location: "L13"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_162
+  - community/pydantic
 ---
 
 # MegamarketSettings
 
 ## Connections
-- [[BaseSettings]] - `inherits` [EXTRACTED]
-- [[get_settings()]] - `calls` [EXTRACTED]
+- [[BaseSettings_7]] - `inherits` [EXTRACTED]
+- [[get_settings()_8]] - `calls` [EXTRACTED]
 - [[megamarket_connectorsettings.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_162
+#graphify/code #graphify/EXTRACTED #community/pydantic

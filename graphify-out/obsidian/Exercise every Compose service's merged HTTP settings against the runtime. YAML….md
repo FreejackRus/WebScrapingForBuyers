@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_compose_runtime.py"
 type: "rationale"
-community: "Community 3"
+community: "pytest"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_3
+  - community/pytest
 ---
 
 # Exercise every Compose service's merged HTTP settings against the runtime. YAML…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_compose_runtime.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_3
+#graphify/rationale #graphify/EXTRACTED #community/pytest

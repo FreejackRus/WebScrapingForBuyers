@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 8"
-location: "L1315"
+community: "_clear_wb_cache"
+location: "L1264"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_8
+  - community/_clear_wb_cache
 ---
 
 # __aenter__()
 
 ## Connections
-- [[test_cache_does_not_remember_a_rate_limit()]] - `contains` [EXTRACTED]
+- [[test_cache_does_not_remember_a_transient_failure()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_8
+#graphify/code #graphify/EXTRACTED #community/_clear_wb_cache

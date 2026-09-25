@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 287"
+community: "log_event"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_287
+  - community/log_event
 ---
 
 # Logger
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[make_stderr_logger()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_287
+#graphify/code #graphify/EXTRACTED #community/log_event

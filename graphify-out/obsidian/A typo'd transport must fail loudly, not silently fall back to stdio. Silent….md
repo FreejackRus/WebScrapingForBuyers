@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py"
 type: "rationale"
-community: "Community 26"
+community: "test_runtime.py"
 location: "L127"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_26
+  - community/test_runtimepy
 ---
 
 # A typo'd transport must fail loudly, not silently fall back to stdio. Silent…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_invalid_transport_is_rejected_with_a_clear_message()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_26
+#graphify/rationale #graphify/EXTRACTED #community/test_runtimepy

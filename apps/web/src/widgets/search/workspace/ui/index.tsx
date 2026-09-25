@@ -27,6 +27,19 @@ export function SearchWorkspaceLead() {
           {error}
         </div>
       )}
+      {!snapshot && (
+        <section className="panel search-empty-panel" aria-labelledby="search-empty-title">
+          <span className="search-empty-mark" aria-hidden="true">⌕</span>
+          <p className="eyebrow">Начните с товара</p>
+          <h2 id="search-empty-title">Найдите модель — покажем предложения</h2>
+          <p>Введите название или артикул в строке поиска. Цены, наличие и условия появятся здесь по мере загрузки источников.</p>
+          <div className="search-empty-steps" aria-label="Как пользоваться радаром">
+            <span><b>1</b> Укажите товар</span>
+            <span><b>2</b> Сравните предложения</span>
+            <span><b>3</b> Уточните выбор с копайлотом</span>
+          </div>
+        </section>
+      )}
       {snapshot && (
         <>
           <section className="panel product-panel" aria-labelledby="results-title">

@@ -1,12 +1,12 @@
 ---
 source_file: "apps/identity/src/domain/auth-store.ts"
 type: "code"
-community: "Community 32"
+community: "memory-auth-store.ts"
 location: "L3"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_32
+  - community/memory-auth-storets
 ---
 
 # PasswordChange
@@ -16,4 +16,4 @@ tags:
 - [[auth-store.ts]] - `contains` [EXTRACTED]
 - [[memory-auth-store.ts]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_32
+#graphify/code #graphify/EXTRACTED #community/memory-auth-storets

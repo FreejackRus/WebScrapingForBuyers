@@ -1,21 +1,21 @@
 ---
 source_file: "apps/search/src/application/search-service.ts"
 type: "code"
-community: "Community 190"
+community: "SearchService"
 location: "L13"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_190
+  - community/SearchService
 ---
 
 # SearchService
 
 ## Connections
 - [[dot-collect()]] - `method` [EXTRACTED]
-- [[dot-constructor()_2]] - `method` [EXTRACTED]
+- [[dot-constructor()_3]] - `method` [EXTRACTED]
 - [[dot-emit()]] - `method` [EXTRACTED]
-- [[dot-get()]] - `method` [EXTRACTED]
+- [[dot-get()_1]] - `method` [EXTRACTED]
 - [[dot-start()]] - `method` [EXTRACTED]
 - [[dot-subscribe()]] - `method` [EXTRACTED]
 - [[dot-updateSource()]] - `method` [EXTRACTED]
@@ -24,4 +24,4 @@ tags:
 - [[searchsrcapp.ts]] - `imports` [EXTRACTED]
 - [[searchsrchttproutes.ts]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_190
+#graphify/code #graphify/EXTRACTED #community/SearchService

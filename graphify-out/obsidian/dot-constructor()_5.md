@@ -1,17 +1,17 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/apify-marketplace-adapter.ts"
+source_file: "apps/analysis/src/domain/narration-error.ts"
 type: "code"
-community: "Community 9"
+community: "ollama-analysis-narrator.ts"
 location: "L20"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_9
+  - community/ollama-analysis-narratorts
 ---
 
 # .constructor()
 
 ## Connections
-- [[ApifyMarketplaceAdapter]] - `method` [EXTRACTED]
+- [[NarrationError]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_9
+#graphify/code #graphify/EXTRACTED #community/ollama-analysis-narratorts

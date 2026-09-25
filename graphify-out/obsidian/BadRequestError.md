@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
 type: "code"
-community: "Community 4"
+community: "BadRequestError"
 location: "L98"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_4
+  - community/BadRequestError
 ---
 
 # BadRequestError
 
 ## Connections
-- [[dot-__init__()_25]] - `method` [EXTRACTED]
+- [[dot-__init__()_26]] - `method` [EXTRACTED]
 - [[ConnectorError]] - `inherits` [EXTRACTED]
 - [[_call_card_tool()]] - `uses` [INFERRED]
 - [[_numeric_card_id()]] - `uses` [INFERRED]
@@ -47,8 +47,8 @@ tags:
 - [[wb_category_products()]] - `uses` [INFERRED]
 - [[wb_questions()]] - `uses` [INFERRED]
 - [[wb_reviews()]] - `uses` [INFERRED]
-- [[wb_search()_1]] - `uses` [INFERRED]
+- [[wb_search()]] - `uses` [INFERRED]
 - [[yandex_card()]] - `uses` [INFERRED]
 - [[yandex_search()_1]] - `uses` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Community_4
+#graphify/code #graphify/INFERRED #community/BadRequestError

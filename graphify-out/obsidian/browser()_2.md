@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_review_regressions.py"
 type: "code"
-community: "Community 3"
+community: "pytest"
 location: "L18"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_3
+  - community/pytest
 ---
 
 # browser()
 
 ## Connections
-- [[fixture_21]] - `references` [EXTRACTED]
-- [[open_page()_3]] - `indirect_call` [INFERRED]
+- [[fixture_19]] - `references` [EXTRACTED]
+- [[open_page()_4]] - `indirect_call` [INFERRED]
 - [[test_review_regressions.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_3
+#graphify/code #graphify/EXTRACTED #community/pytest

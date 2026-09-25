@@ -1,12 +1,12 @@
 ---
 source_file: "apps/gateway/src/app.ts"
 type: "code"
-community: "Community 70"
-location: "L133"
+community: "gateway/src/app.ts"
+location: "L155"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_70
+  - community/gateway/src/appts
 ---
 
 # FastifyRequest
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[gatewaysrcapp.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_70
+#graphify/code #graphify/EXTRACTED #community/gateway/src/appts

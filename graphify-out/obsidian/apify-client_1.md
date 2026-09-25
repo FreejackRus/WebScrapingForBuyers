@@ -1,17 +1,18 @@
 ---
 source_file: "apps/search/package.json"
-type: "code"
-community: "Community 219"
+type: "concept"
+community: "packages_contracts_dist_index"
 location: "L17"
 tags:
-  - graphify/code
+  - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_219
+  - community/packages_contracts_dist_index
 ---
 
 # apify-client
 
 ## Connections
-- [[dependencies_4]] - `contains` [EXTRACTED]
+- [[apify-marketplace-adapter.ts]] - `imports_from` [EXTRACTED]
+- [[searchpackage.json]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_219
+#graphify/concept #graphify/EXTRACTED #community/packages_contracts_dist_index

@@ -1,18 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 198"
+community: "dns_connector/models_output.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_198
+  - community/dns_connector/models_outputpy
 ---
 
 # BaseModel
 
 ## Connections
-- [[MegamarketCardResponse]] - `inherits` [EXTRACTED]
-- [[MegamarketSearchItemOut]] - `inherits` [EXTRACTED]
-- [[MegamarketSearchResponse]] - `inherits` [EXTRACTED]
+- [[DnsCardResponse]] - `inherits` [EXTRACTED]
+- [[DnsSearchItemOut]] - `inherits` [EXTRACTED]
+- [[DnsSearchResponse]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_198
+#graphify/code #graphify/EXTRACTED #community/dns_connector/models_outputpy

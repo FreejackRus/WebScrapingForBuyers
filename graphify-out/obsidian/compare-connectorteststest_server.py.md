@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
-community: "Community 16"
+community: "compare-connector/tests/test_server.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_16
+  - community/compare-connector/tests/test_serverpy
 ---
 
 # compare-connector/tests/test_server.py
@@ -23,7 +23,7 @@ tags:
 - [[fastmcp_exceptions]] - `imports_from` [EXTRACTED]
 - [[json]] - `imports` [EXTRACTED]
 - [[mcp_core__init__.py]] - `imports_from` [EXTRACTED]
-- [[offer()]] - `contains` [EXTRACTED]
+- [[offer()_1]] - `contains` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]
 - [[pydantic]] - `imports_from` [EXTRACTED]
 - [[pytest]] - `imports` [EXTRACTED]
@@ -99,4 +99,4 @@ tags:
 - [[tomllib]] - `imports` [EXTRACTED]
 - [[types_8]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_16
+#graphify/code #graphify/EXTRACTED #community/compare-connector/tests/test_serverpy

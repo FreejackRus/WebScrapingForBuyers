@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "Community 74"
+community: "pathlib"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_74
+  - community/pathlib
 ---
 
 # pathlib
@@ -80,10 +80,11 @@ tags:
 - [[test_skills_parity.py]] - `imports_from` [EXTRACTED]
 - [[test_ssr.py]] - `imports_from` [EXTRACTED]
 - [[test_stdio_probe.py]] - `imports_from` [EXTRACTED]
+- [[test_storefront_search.py]] - `imports_from` [EXTRACTED]
 - [[test_test_count_gate.py]] - `imports_from` [EXTRACTED]
 - [[wb-connectorteststest_parser_live.py]] - `imports_from` [EXTRACTED]
 - [[wb-connectorteststest_shape_reference.py]] - `imports_from` [EXTRACTED]
 - [[yandex-connectorteststest_server.py]] - `imports_from` [EXTRACTED]
 - [[yandex-connectorteststest_shape_reference.py]] - `imports_from` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_74
+#graphify/concept #graphify/EXTRACTED #community/pathlib

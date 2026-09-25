@@ -1,17 +1,19 @@
 ---
 source_file: "apps/analysis/src/domain/analysis-narrator.ts"
 type: "code"
-community: "Community 36"
-location: "L14"
+community: "AnalysisNarrator"
+location: "L68"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_36
+  - community/AnalysisNarrator
 ---
 
 # AnalysisNarrator
 
 ## Connections
+- [[dot-answer()]] - `method` [EXTRACTED]
+- [[dot-filterRelevance()]] - `method` [EXTRACTED]
 - [[dot-summarize()]] - `method` [EXTRACTED]
 - [[OllamaAnalysisNarrator]] - `implements` [EXTRACTED]
 - [[analysis-narrator.ts]] - `contains` [EXTRACTED]
@@ -19,4 +21,4 @@ tags:
 - [[analyze.ts]] - `imports` [EXTRACTED]
 - [[ollama-analysis-narrator.ts]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_36
+#graphify/code #graphify/EXTRACTED #community/AnalysisNarrator

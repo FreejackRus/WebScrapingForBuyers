@@ -1,18 +1,21 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "code"
-community: "Community 4"
-location: "L121"
+community: "wb_connector/server.py"
+location: "L327"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_4
+  - community/wb_connector/serverpy
 ---
 
 # _proxy()
 
 ## Connections
-- [[_graphql_card()]] - `calls` [EXTRACTED]
-- [[lamoda_connectorserver.py]] - `contains` [EXTRACTED]
+- [[Resolve WB's proxy explicit ``WB_PROXY`` first, then the standard vars.]] - `rationale_for` [EXTRACTED]
+- [[_fetch()_1]] - `calls` [EXTRACTED]
+- [[_wb_client()]] - `calls` [EXTRACTED]
+- [[proxy_from_env()]] - `calls` [INFERRED]
+- [[wb_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_4
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

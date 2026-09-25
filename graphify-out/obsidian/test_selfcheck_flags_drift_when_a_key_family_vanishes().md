@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py"
 type: "code"
-community: "Community 15"
+community: "avito-connector/tests/test_server.py"
 location: "L302"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_15
+  - community/avito-connector/tests/test_serverpy
 ---
 
 # test_selfcheck_flags_drift_when_a_key_family_vanishes()
@@ -17,4 +17,4 @@ tags:
 - [[fake_fetch()_5]] - `indirect_call` [INFERRED]
 - [[id' renamed past every alias while the titles survive the parse smoke would…]] - `rationale_for` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_15
+#graphify/code #graphify/EXTRACTED #community/avito-connector/tests/test_serverpy

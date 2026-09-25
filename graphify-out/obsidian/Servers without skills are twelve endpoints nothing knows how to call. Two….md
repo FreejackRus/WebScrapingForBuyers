@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_skills_parity.py"
 type: "rationale"
-community: "Community 75"
+community: "test_skills_parity.py"
 location: "L320"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_75
+  - community/test_skills_paritypy
 ---
 
 # Servers without skills are twelve endpoints nothing knows how to call. Two…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_the_docker_image_ships_the_skills()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_75
+#graphify/rationale #graphify/EXTRACTED #community/test_skills_paritypy

@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/application/search-service.ts"
 type: "code"
-community: "Community 190"
+community: "SearchService"
 location: "L9"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_190
+  - community/SearchService
 ---
 
 # lastGoodKey()
@@ -15,4 +15,4 @@ tags:
 - [[dot-collect()]] - `calls` [EXTRACTED]
 - [[search-service.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_190
+#graphify/code #graphify/EXTRACTED #community/SearchService

@@ -1,23 +1,24 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 2"
+community: "ozon_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_2
+  - community/ozon_card
 ---
 
 # Context
 
 ## Connections
-- [[_cdp_page_config()]] - `references` [EXTRACTED]
-- [[_cdp_post_json()_1]] - `references` [EXTRACTED]
-- [[_cian_selfcheck_impl()]] - `references` [EXTRACTED]
-- [[_fetch_card()]] - `references` [EXTRACTED]
-- [[_fetch_search()]] - `references` [EXTRACTED]
-- [[cian_card()]] - `references` [EXTRACTED]
-- [[cian_search()]] - `references` [EXTRACTED]
-- [[cian_selfcheck()]] - `references` [EXTRACTED]
+- [[_cdp_fetch_json()]] - `references` [EXTRACTED]
+- [[_fetch_composer()]] - `references` [EXTRACTED]
+- [[_ozon_reviews_impl()]] - `references` [EXTRACTED]
+- [[_ozon_search_impl()]] - `references` [EXTRACTED]
+- [[_ozon_selfcheck_impl()]] - `references` [EXTRACTED]
+- [[ozon_card()]] - `references` [EXTRACTED]
+- [[ozon_reviews()]] - `references` [EXTRACTED]
+- [[ozon_search()_2]] - `references` [EXTRACTED]
+- [[ozon_selfcheck()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_2
+#graphify/code #graphify/EXTRACTED #community/ozon_card

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/routing_eval.py"
 type: "code"
-community: "Community 82"
+community: "mcp_wire.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_82
+  - community/mcp_wirepy
 ---
 
 # routing_eval.py
@@ -18,9 +18,9 @@ tags:
 - [[dataclasses]] - `imports_from` [EXTRACTED]
 - [[evaluate()_2]] - `contains` [EXTRACTED]
 - [[json]] - `imports` [EXTRACTED]
-- [[main()_34]] - `contains` [EXTRACTED]
+- [[main()_30]] - `contains` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]
 - [[route()]] - `contains` [EXTRACTED]
 - [[test_ops_gates.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_82
+#graphify/code #graphify/EXTRACTED #community/mcp_wirepy

@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/apify-marketplace-adapter.ts"
 type: "code"
-community: "Community 9"
+community: "packages_contracts_dist_index"
 location: "L192"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_9
+  - community/packages_contracts_dist_index
 ---
 
 # sellerName()
@@ -17,4 +17,4 @@ tags:
 - [[firstString()_1]] - `calls` [EXTRACTED]
 - [[isObject()_1]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_9
+#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index

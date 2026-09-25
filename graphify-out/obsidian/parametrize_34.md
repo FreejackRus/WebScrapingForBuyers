@@ -1,18 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 83"
+community: "test_card_verification_records.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_83
+  - community/test_card_verification_recordspy
 ---
 
 # parametrize
 
 ## Connections
-- [[test_identity_is_verified_through_mcp_tool()]] - `references` [EXTRACTED]
-- [[test_wb_fixture_color_survives_card_model_and_mcp_verification()]] - `references` [EXTRACTED]
-- [[test_wb_verification_uses_requested_row_not_first()]] - `references` [EXTRACTED]
+- [[test_zone_search_keeps_distinct_skus_and_dedupes_repeated_variant_before_limit()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_83
+#graphify/code #graphify/EXTRACTED #community/test_card_verification_recordspy

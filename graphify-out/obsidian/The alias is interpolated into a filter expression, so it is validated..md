@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
 type: "rationale"
-community: "Community 128"
+community: "error_payload"
 location: "L263"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_128
+  - community/error_payload
 ---
 
 # The alias is interpolated into a filter expression, so it is validated.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_category_rejects_non_slug_aliases()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_128
+#graphify/rationale #graphify/EXTRACTED #community/error_payload

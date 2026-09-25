@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/server.py"
 type: "code"
-community: "Community 2"
+community: "cian_connector/server.py"
 location: "L479"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_2
+  - community/cian_connector/serverpy
 ---
 
 # _offer_row()
 
 ## Connections
-- [[Any_8]] - `references` [EXTRACTED]
+- [[Any_13]] - `references` [EXTRACTED]
 - [[The fields shared by a search hit and a card, read from one offer object.]] - `rationale_for` [EXTRACTED]
 - [[_address()]] - `calls` [EXTRACTED]
 - [[_as_float()]] - `calls` [EXTRACTED]
@@ -29,4 +29,4 @@ tags:
 - [[_s()]] - `calls` [EXTRACTED]
 - [[cian_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_2
+#graphify/code #graphify/EXTRACTED #community/cian_connector/serverpy

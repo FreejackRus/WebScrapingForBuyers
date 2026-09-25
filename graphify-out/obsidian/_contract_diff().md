@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_public_contract_snapshot.py"
 type: "code"
-community: "Community 95"
+community: "test_public_contract_snapshot.py"
 location: "L67"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_95
+  - community/test_public_contract_snapshotpy
 ---
 
 # _contract_diff()
@@ -21,4 +21,4 @@ tags:
 - [[test_public_contract_snapshot.py]] - `contains` [EXTRACTED]
 - [[test_the_live_contract_matches_the_committed_snapshot()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_95
+#graphify/code #graphify/EXTRACTED #community/test_public_contract_snapshotpy

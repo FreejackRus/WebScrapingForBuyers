@@ -1,18 +1,17 @@
 ---
-source_file: "apps/search/src/application/search-service.ts"
+source_file: "apps/search/src/infrastructure/sources/b2b-distributor-adapter.ts"
 type: "code"
-community: "Community 190"
-location: "L18"
+community: "b2b-distributor-adapter.ts"
+location: "L120"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_190
+  - community/b2b-distributor-adapterts
 ---
 
 # .constructor()
 
 ## Connections
-- [[SearchService]] - `method` [EXTRACTED]
-- [[SourceAdapter]] - `references` [EXTRACTED]
+- [[B2bDistributorStubAdapter]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_190
+#graphify/code #graphify/EXTRACTED #community/b2b-distributor-adapterts

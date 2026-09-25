@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/features/user/login/index.ts"
 type: "code"
-community: "Community 81"
+community: "useUserStore"
 location: "L3"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_81
+  - community/useUserStore
 ---
 
 # useLogin()
@@ -18,4 +18,4 @@ tags:
 - [[login-carduiindex.tsx]] - `imports` [EXTRACTED]
 - [[useUserStore]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_81
+#graphify/code #graphify/EXTRACTED #community/useUserStore

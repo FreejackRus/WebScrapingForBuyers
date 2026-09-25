@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/server.py"
 type: "rationale"
-community: "Community 47"
+community: "_parse_search_items"
 location: "L337"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_47
+  - community/_parse_search_items
 ---
 
 # Best-effort extraction of items + total from a js/items payload. The endpoint…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_parse_search_items()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_47
+#graphify/rationale #graphify/EXTRACTED #community/_parse_search_items

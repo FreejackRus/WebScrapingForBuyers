@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/src/mpstats_connector/models_output.py"
 type: "code"
-community: "Community 23"
+community: "ozon_card"
 location: "L154"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_23
+  - community/ozon_card
 ---
 
 # MpStatsSelfCheckResponse
@@ -18,4 +18,4 @@ tags:
 - [[mpstats_connectorserver.py]] - `imports` [EXTRACTED]
 - [[mpstats_selfcheck()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_23
+#graphify/code #graphify/EXTRACTED #community/ozon_card

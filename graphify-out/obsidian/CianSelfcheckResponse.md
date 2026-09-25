@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/models_output.py"
 type: "code"
-community: "Community 2"
+community: "cian_connector/server.py"
 location: "L209"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_2
+  - community/cian_connector/serverpy
 ---
 
 # CianSelfcheckResponse
@@ -18,4 +18,4 @@ tags:
 - [[cian_connectorserver.py]] - `imports` [EXTRACTED]
 - [[cian_selfcheck()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_2
+#graphify/code #graphify/EXTRACTED #community/cian_connector/serverpy

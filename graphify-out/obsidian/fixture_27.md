@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 79"
+community: "test_stdio_probe.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_79
+  - community/test_stdio_probepy
 ---
 
 # fixture
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[unrelated_process()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_79
+#graphify/code #graphify/EXTRACTED #community/test_stdio_probepy

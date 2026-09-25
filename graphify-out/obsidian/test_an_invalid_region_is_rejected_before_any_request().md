@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
 type: "code"
-community: "Community 128"
+community: "error_payload"
 location: "L514"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_128
+  - community/error_payload
 ---
 
 # test_an_invalid_region_is_rejected_before_any_request()
@@ -18,4 +18,4 @@ tags:
 - [[forbidden()]] - `indirect_call` [INFERRED]
 - [[parametrize_5]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_128
+#graphify/code #graphify/EXTRACTED #community/error_payload

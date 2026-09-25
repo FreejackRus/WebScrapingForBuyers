@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py"
 type: "code"
-community: "Community 6"
+community: "test_termination_settles_queued_snapshot_before_getter_resumes"
 location: "L480"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_6
+  - community/test_termination_settles_queued_snapshot_before_getter_resumes
 ---
 
 # test_snapshot_keeps_exact_lease_deadline_page_and_returns_sanitized_origin()
@@ -17,4 +17,4 @@ tags:
 - [[snapshot_id()]] - `calls` [EXTRACTED]
 - [[success()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_6
+#graphify/code #graphify/EXTRACTED #community/test_termination_settles_queued_snapshot_before_getter_resumes

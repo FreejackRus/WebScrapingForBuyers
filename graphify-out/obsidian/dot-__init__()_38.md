@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/vision_policy.py"
 type: "code"
-community: "Community 8"
-location: "L2101"
+community: "resolve_image_delivery"
+location: "L43"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_8
+  - community/resolve_image_delivery
 ---
 
 # .__init__()
 
 ## Connections
-- [[_RecordingPacer]] - `method` [EXTRACTED]
+- [[ImageDelivery]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_8
+#graphify/code #graphify/EXTRACTED #community/resolve_image_delivery

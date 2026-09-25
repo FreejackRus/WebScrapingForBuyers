@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/widgets/analysis/copilot/ui/index.tsx"
 type: "code"
-community: "Community 158"
-location: "L17"
+community: "copilot/ui/index.tsx"
+location: "L11"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_158
+  - community/copilot/ui/indextsx
 ---
 
 # emptyWarnings
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[copilotuiindex.tsx]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_158
+#graphify/code #graphify/EXTRACTED #community/copilot/ui/indextsx

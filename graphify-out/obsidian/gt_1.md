@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 22"
+community: "log_event"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_22
+  - community/log_event
 ---
 
 # gt
@@ -16,4 +16,4 @@ tags:
 - [[wb_root_info()]] - `references` [EXTRACTED]
 - [[wb_seller()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_22
+#graphify/code #graphify/EXTRACTED #community/log_event

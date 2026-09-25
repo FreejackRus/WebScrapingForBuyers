@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
 type: "code"
-community: "Community 4"
+community: "TransportDownError"
 location: "L398"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_4
+  - community/TransportDownError
 ---
 
 # test_selfcheck_is_inconclusive_when_transport_fails()
@@ -17,4 +17,4 @@ tags:
 - [[always_down()]] - `indirect_call` [INFERRED]
 - [[detmir-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_4
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

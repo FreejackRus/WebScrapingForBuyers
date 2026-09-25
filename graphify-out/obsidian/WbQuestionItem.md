@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/models_output.py"
 type: "code"
-community: "Community 46"
+community: "wb_connector/server.py"
 location: "L85"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_46
+  - community/wb_connector/serverpy
 ---
 
 # WbQuestionItem
@@ -18,4 +18,4 @@ tags:
 - [[wb_connectorserver.py]] - `imports` [EXTRACTED]
 - [[wb_questions()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_46
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_call_envelope.py"
 type: "code"
-community: "Community 31"
-location: "L192"
+community: "payload"
+location: "L178"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_31
+  - community/payload
 ---
 
 # handler()
 
 ## Connections
-- [[test_auth_failure_is_not_cached()]] - `contains` [EXTRACTED]
+- [[test_success_is_cached()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_31
+#graphify/code #graphify/EXTRACTED #community/payload

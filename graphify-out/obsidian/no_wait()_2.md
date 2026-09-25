@@ -1,17 +1,52 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 1"
-location: "L440"
+community: "no_wait"
+location: "L287"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/Community_1
+  - graphify/INFERRED
+  - community/no_wait
 ---
 
 # no_wait()
 
 ## Connections
-- [[test_wb_reviews_reports_all_review_host_failures()]] - `contains` [EXTRACTED]
+- [[_patch_questions()]] - `indirect_call` [INFERRED]
+- [[run_case()]] - `indirect_call` [INFERRED]
+- [[scenario()_59]] - `indirect_call` [INFERRED]
+- [[scenario()_82]] - `indirect_call` [INFERRED]
+- [[scenario()_81]] - `indirect_call` [INFERRED]
+- [[scenario()_92]] - `indirect_call` [INFERRED]
+- [[scenario()_93]] - `indirect_call` [INFERRED]
+- [[scenario()_79]] - `indirect_call` [INFERRED]
+- [[scenario()_28]] - `indirect_call` [INFERRED]
+- [[scenario()_37]] - `indirect_call` [INFERRED]
+- [[scenario()_38]] - `indirect_call` [INFERRED]
+- [[scenario()]] - `indirect_call` [INFERRED]
+- [[scenario()_40]] - `indirect_call` [INFERRED]
+- [[scenario()_41]] - `indirect_call` [INFERRED]
+- [[scenario()_1]] - `indirect_call` [INFERRED]
+- [[scenario()_2]] - `indirect_call` [INFERRED]
+- [[scenario()_3]] - `indirect_call` [INFERRED]
+- [[scenario()_86]] - `indirect_call` [INFERRED]
+- [[scenario()_4]] - `indirect_call` [INFERRED]
+- [[scenario()_42]] - `indirect_call` [INFERRED]
+- [[scenario()_5]] - `indirect_call` [INFERRED]
+- [[scenario()_6]] - `indirect_call` [INFERRED]
+- [[scenario()_7]] - `indirect_call` [INFERRED]
+- [[scenario()_87]] - `indirect_call` [INFERRED]
+- [[scenario()_8]] - `indirect_call` [INFERRED]
+- [[scenario()_9]] - `indirect_call` [INFERRED]
+- [[scenario()_10]] - `indirect_call` [INFERRED]
+- [[scenario()_11]] - `indirect_call` [INFERRED]
+- [[scenario()_12]] - `indirect_call` [INFERRED]
+- [[scenario()_13]] - `indirect_call` [INFERRED]
+- [[scenario()_14]] - `indirect_call` [INFERRED]
+- [[scenario()_15]] - `indirect_call` [INFERRED]
+- [[scenario()_16]] - `indirect_call` [INFERRED]
+- [[scenario()_17]] - `indirect_call` [INFERRED]
+- [[scenario()_18]] - `indirect_call` [INFERRED]
+- [[test_wb_root_info_rejects_unusable_imt_id()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_1
+#graphify/code #graphify/INFERRED #community/no_wait

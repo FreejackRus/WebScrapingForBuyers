@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_skills_parity.py"
 type: "code"
-community: "Community 75"
+community: "test_skills_parity.py"
 location: "L281"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_75
+  - community/test_skills_paritypy
 ---
 
 # test_selfchecks_are_absent_from_every_mcp_surface()
@@ -16,4 +16,4 @@ tags:
 - [[_mcp_registered_tools()]] - `calls` [EXTRACTED]
 - [[test_skills_parity.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_75
+#graphify/code #graphify/EXTRACTED #community/test_skills_paritypy

@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/composition/hooks/index.ts"
 type: "code"
-community: "Community 64"
+community: "App.tsx"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_64
+  - community/Apptsx
 ---
 
 # hooks/index.ts
@@ -19,4 +19,4 @@ tags:
 - [[useSearchHotkey()]] - `re_exports` [EXTRACTED]
 - [[useSearchHotkey.ts]] - `re_exports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_64
+#graphify/code #graphify/EXTRACTED #community/Apptsx

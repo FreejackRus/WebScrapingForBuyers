@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 206"
+community: "pydantic"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_206
+  - community/pydantic
 ---
 
 # BaseSettings
 
 ## Connections
-- [[LamodaSettings]] - `inherits` [EXTRACTED]
+- [[CitilinkSettings]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_206
+#graphify/code #graphify/EXTRACTED #community/pydantic

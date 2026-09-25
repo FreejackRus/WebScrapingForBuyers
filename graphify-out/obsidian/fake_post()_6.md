@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_call_envelope.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py"
 type: "code"
-community: "Community 284"
-location: "L261"
+community: "fake_post"
+location: "L946"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/Community_284
+  - graphify/EXTRACTED
+  - community/fake_post
 ---
 
 # fake_post()
 
 ## Connections
-- [[test_a_transport_error_string_does_not_carry_the_token()]] - `indirect_call` [INFERRED]
+- [[test_the_category_url_is_what_yields_a_collection()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/Community_284
+#graphify/code #graphify/EXTRACTED #community/fake_post

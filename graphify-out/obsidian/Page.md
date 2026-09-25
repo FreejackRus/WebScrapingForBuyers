@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 7"
+community: "_hide_chrome_windows"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_7
+  - community/_hide_chrome_windows
 ---
 
 # Page
@@ -14,4 +14,4 @@ tags:
 - [[_new_tab()]] - `references` [EXTRACTED]
 - [[_playwright_page()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_7
+#graphify/code #graphify/EXTRACTED #community/_hide_chrome_windows

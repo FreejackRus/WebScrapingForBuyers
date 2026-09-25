@@ -1,18 +1,20 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 186"
-location: "L544"
+community: "_tool_error_payload"
+location: "L328"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_186
+  - community/_tool_error_payload
 ---
 
 # scenario()
 
 ## Connections
-- [[fake_fetch()]] - `indirect_call` [INFERRED]
-- [[test_card_and_reviews_accept_search_slug_product_url()]] - `contains` [EXTRACTED]
+- [[_tool_error_payload()_1]] - `calls` [EXTRACTED]
+- [[fake_safe_get_text()_2]] - `indirect_call` [INFERRED]
+- [[no_wait()_2]] - `indirect_call` [INFERRED]
+- [[test_wb_card_rejects_non_object_json()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_186
+#graphify/code #graphify/EXTRACTED #community/_tool_error_payload

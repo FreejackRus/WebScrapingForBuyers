@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/shared/lib/index.ts"
 type: "code"
-community: "Community 158"
+community: "copilot/ui/index.tsx"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_158
+  - community/copilot/ui/indextsx
 ---
 
 # shared/lib/index.ts
@@ -20,4 +20,4 @@ tags:
 - [[offersuiindex.tsx]] - `imports_from` [EXTRACTED]
 - [[topbaruiindex.tsx]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_158
+#graphify/code #graphify/EXTRACTED #community/copilot/ui/indextsx

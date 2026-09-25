@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_process.py"
 type: "code"
-community: "Community 62"
+community: "test_process.py"
 location: "L131"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_62
+  - community/test_processpy
 ---
 
 # test_terminate_worker_tree_kills_process_group_on_posix()
@@ -16,4 +16,4 @@ tags:
 - [[_FakeProc]] - `calls` [EXTRACTED]
 - [[test_process.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_62
+#graphify/code #graphify/EXTRACTED #community/test_processpy

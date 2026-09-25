@@ -1,0 +1,17 @@
+---
+source_file: "apps/web/src/widgets/search/sources/ui/index.test.tsx"
+type: "code"
+community: "packages_contracts_dist_index"
+location: "L7"
+tags:
+  - graphify/code
+  - graphify/EXTRACTED
+  - community/packages_contracts_dist_index
+---
+
+# sources
+
+## Connections
+- [[sourcesuiindex.test.tsx]] - `contains` [EXTRACTED]
+
+#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index

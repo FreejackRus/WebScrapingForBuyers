@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py"
 type: "rationale"
-community: "Community 262"
+community: "_drifted_values_search_html"
 location: "L399"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_262
+  - community/_drifted_values_search_html
 ---
 
 # The washer capture with its title/price nodes renamed in the SSR state. This is…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_drifted_values_search_html()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_262
+#graphify/rationale #graphify/EXTRACTED #community/_drifted_values_search_html

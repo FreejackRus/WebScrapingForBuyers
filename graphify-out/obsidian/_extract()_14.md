@@ -1,22 +1,21 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_domtest_utf8.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_search_extractor_dom.py"
 type: "code"
-community: "Community 96"
-location: "L29"
+community: "run_extractor"
+location: "L67"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_96
+  - community/run_extractor
 ---
 
 # _extract()
 
 ## Connections
 - [[JsdomUnavailable]] - `uses` [INFERRED]
+- [[Run the connector's real extractor over the captured markup. Skips rather than…_1]] - `rationale_for` [EXTRACTED]
+- [[_items()_4]] - `calls` [EXTRACTED]
+- [[citilink-connectorteststest_search_extractor_dom.py]] - `contains` [EXTRACTED]
 - [[run_extractor()]] - `calls` [EXTRACTED]
-- [[test_broken_json_is_refused_loudly()]] - `calls` [EXTRACTED]
-- [[test_cyrillic_stderr_reaches_the_assertion_intact()]] - `calls` [EXTRACTED]
-- [[test_cyrillic_stdout_survives_the_run()]] - `calls` [EXTRACTED]
-- [[test_domtest_utf8.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_96
+#graphify/code #graphify/EXTRACTED #community/run_extractor

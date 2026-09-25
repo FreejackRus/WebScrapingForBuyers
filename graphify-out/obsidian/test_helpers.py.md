@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 39"
+community: "test_helpers.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_39
+  - community/test_helperspy
 ---
 
 # test_helpers.py
@@ -125,4 +125,4 @@ tags:
 - [[types_8]] - `imports_from` [EXTRACTED]
 - [[wb_connector__init__.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_39
+#graphify/code #graphify/EXTRACTED #community/test_helperspy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
 type: "code"
-community: "Community 4"
+community: "BadRequestError"
 location: "L103"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_4
+  - community/BadRequestError
 ---
 
 # NotFoundError
@@ -38,4 +38,4 @@ tags:
 - [[wb_root_info()]] - `uses` [INFERRED]
 - [[wb_seller()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Community_4
+#graphify/code #graphify/INFERRED #community/BadRequestError

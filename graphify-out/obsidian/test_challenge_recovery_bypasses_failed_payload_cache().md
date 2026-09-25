@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py"
 type: "code"
-community: "Community 280"
+community: "test_challenge_recovery_bypasses_failed_payload_cache"
 location: "L172"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_280
+  - community/test_challenge_recovery_bypasses_failed_payload_cache
 ---
 
 # test_challenge_recovery_bypasses_failed_payload_cache()
@@ -15,6 +15,6 @@ tags:
 - [[TTLCache]] - `uses` [INFERRED]
 - [[evaluate()_1]] - `contains` [EXTRACTED]
 - [[lamoda-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[open_page()_1]] - `indirect_call` [INFERRED]
+- [[open_page()_2]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_280
+#graphify/code #graphify/EXTRACTED #community/test_challenge_recovery_bypasses_failed_payload_cache

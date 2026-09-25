@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_search_login_wall_live_dom.py"
 type: "code"
-community: "Community 144"
-location: "L53"
+community: "compare-connector/tests/test_browser_handoff.py"
+location: "L48"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_144
+  - community/compare-connector/tests/test_browser_handoffpy
 ---
 
 # fake_render()
 
 ## Connections
-- [[_patch_render()_2]] - `indirect_call` [INFERRED]
+- [[_patch_render()]] - `indirect_call` [INFERRED]
 - [[payload()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Community_144
+#graphify/code #graphify/INFERRED #community/compare-connector/tests/test_browser_handoffpy

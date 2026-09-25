@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/src/dns_connector/models_output.py"
 type: "code"
-community: "Community 41"
+community: "dns_card"
 location: "L52"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_41
+  - community/dns_card
 ---
 
 # DnsSelfcheckResponse
@@ -18,4 +18,4 @@ tags:
 - [[dns_connectorserver.py]] - `imports` [EXTRACTED]
 - [[dns_selfcheck()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_41
+#graphify/code #graphify/EXTRACTED #community/dns_card

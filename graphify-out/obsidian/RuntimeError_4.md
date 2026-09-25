@@ -1,18 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 7"
+community: "run_extractor"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_7
+  - community/run_extractor
 ---
 
 # RuntimeError
 
 ## Connections
-- [[NavBlocked]] - `inherits` [EXTRACTED]
-- [[NavigationPolicyError]] - `inherits` [EXTRACTED]
-- [[_CdpConnectTimeout]] - `inherits` [EXTRACTED]
+- [[JsdomUnavailable]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_7
+#graphify/code #graphify/EXTRACTED #community/run_extractor

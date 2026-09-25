@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_search_offer_integrity.py"
 type: "code"
-community: "Community 89"
+community: "test_card_verification_records.py"
 location: "L18"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_89
+  - community/test_card_verification_recordspy
 ---
 
 # test_native_wb_unknown_quantity_stays_unknown_in_comparison()
@@ -16,4 +16,4 @@ tags:
 - [[search()_9]] - `indirect_call` [INFERRED]
 - [[test_search_offer_integrity.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/Community_89
+#graphify/code #graphify/INFERRED #community/test_card_verification_recordspy

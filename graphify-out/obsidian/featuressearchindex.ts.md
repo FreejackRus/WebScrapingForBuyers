@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/features/search/index.ts"
 type: "code"
-community: "Community 40"
+community: "offers/ui/index.tsx"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_40
+  - community/offers/ui/indextsx
 ---
 
 # features/search/index.ts
@@ -24,4 +24,4 @@ tags:
 - [[useOfferTable()]] - `re_exports` [EXTRACTED]
 - [[useSuggest()]] - `re_exports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_40
+#graphify/code #graphify/EXTRACTED #community/offers/ui/indextsx

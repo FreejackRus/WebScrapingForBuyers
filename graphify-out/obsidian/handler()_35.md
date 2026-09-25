@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_call_envelope.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_http_tier.py"
 type: "code"
-community: "Community 31"
-location: "L117"
+community: "test_rate_limit_status_is_never_retried"
+location: "L94"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_31
+  - community/test_rate_limit_status_is_never_retried
 ---
 
 # handler()
 
 ## Connections
-- [[test_http_429_is_rate_limited()]] - `contains` [EXTRACTED]
+- [[test_rate_limit_status_is_never_retried()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_31
+#graphify/code #graphify/EXTRACTED #community/test_rate_limit_status_is_never_retried

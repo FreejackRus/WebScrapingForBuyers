@@ -1,17 +1,19 @@
 ---
 source_file: "packages/contracts/src/index.ts"
 type: "code"
-community: "Community 133"
+community: "packages_contracts_dist_index"
 location: "L15"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/Community_133
+  - graphify/INFERRED
+  - community/packages_contracts_dist_index
 ---
 
 # Offer
 
 ## Connections
 - [[contractssrcindex.ts]] - `contains` [EXTRACTED]
+- [[Если API так и не выдадут — как собирать]] - `references` [INFERRED]
+- [[Подключение реального источника]] - `references` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_133
+#graphify/code #graphify/INFERRED #community/packages_contracts_dist_index

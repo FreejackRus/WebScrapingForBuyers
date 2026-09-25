@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_model_routing_eval_verdict.py"
 type: "rationale"
-community: "Community 169"
+community: "pathlib"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_169
+  - community/pathlib
 ---
 
 # The case-run verdict must be machine-checkable (independent review,…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_model_routing_eval_verdict.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_169
+#graphify/rationale #graphify/EXTRACTED #community/pathlib

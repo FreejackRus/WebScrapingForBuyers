@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 8"
+community: "_RecordingPacer"
 location: "L2111"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_8
+  - community/_RecordingPacer
 ---
 
 # .rotation_hint()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_RecordingPacer]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_8
+#graphify/code #graphify/EXTRACTED #community/_RecordingPacer

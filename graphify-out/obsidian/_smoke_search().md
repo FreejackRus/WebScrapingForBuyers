@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/server.py"
 type: "code"
-community: "Community 76"
+community: "ozon_connector/server.py"
 location: "L1574"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_76
+  - community/ozon_connector/serverpy
 ---
 
 # _smoke_search()
@@ -15,4 +15,4 @@ tags:
 - [[_ozon_selfcheck_impl()]] - `indirect_call` [INFERRED]
 - [[_parse_search_tile()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_76
+#graphify/code #graphify/EXTRACTED #community/ozon_connector/serverpy

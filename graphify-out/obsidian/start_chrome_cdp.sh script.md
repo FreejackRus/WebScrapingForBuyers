@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/start_chrome_cdp.sh"
 type: "code"
-community: "Community 286"
+community: "find_chrome"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_286
+  - community/find_chrome
 ---
 
 # start_chrome_cdp.sh script
@@ -15,4 +15,4 @@ tags:
 - [[find_chrome()]] - `calls` [EXTRACTED]
 - [[start_chrome_cdp.sh]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_286
+#graphify/code #graphify/EXTRACTED #community/find_chrome

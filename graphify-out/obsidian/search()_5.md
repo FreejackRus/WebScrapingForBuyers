@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_source_warnings.py"
 type: "code"
-community: "Community 263"
-location: "L104"
+community: "wb_connector/server.py"
+location: "L64"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_263
+  - community/wb_connector/serverpy
 ---
 
 # search()
 
 ## Connections
-- [[offer()]] - `calls` [EXTRACTED]
-- [[test_selected_missing_connector_still_makes_default_comparison_partial()]] - `contains` [EXTRACTED]
+- [[WbNoResultsResponse]] - `calls` [EXTRACTED]
+- [[test_no_results_without_meta_is_not_invented_degradation()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_263
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

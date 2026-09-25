@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/vision_policy.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/cdp_budget.py"
 type: "code"
-community: "Community 237"
-location: "L43"
+community: "HostRefusingError"
+location: "L150"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_237
+  - community/HostRefusingError
 ---
 
 # .__init__()
 
 ## Connections
-- [[ImageDelivery]] - `method` [EXTRACTED]
+- [[dot-__init__()_14]] - `calls` [EXTRACTED]
+- [[NavigationBudget]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_237
+#graphify/code #graphify/EXTRACTED #community/HostRefusingError

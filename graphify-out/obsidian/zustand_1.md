@@ -1,17 +1,20 @@
 ---
 source_file: "apps/web/package.json"
-type: "code"
-community: "Community 63"
-location: "L17"
+type: "concept"
+community: "useSearchStore"
+location: "L18"
 tags:
-  - graphify/code
+  - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_63
+  - community/useSearchStore
 ---
 
 # zustand
 
 ## Connections
-- [[dependencies_5]] - `contains` [EXTRACTED]
+- [[analysisstoreindex.ts]] - `imports_from` [EXTRACTED]
+- [[searchstoreindex.ts]] - `imports_from` [EXTRACTED]
+- [[userstoreindex.ts]] - `imports_from` [EXTRACTED]
+- [[webpackage.json]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_63
+#graphify/concept #graphify/EXTRACTED #community/useSearchStore

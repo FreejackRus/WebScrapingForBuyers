@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_skills_parity.py"
 type: "code"
-community: "Community 103"
+community: "test_skills_parity.py"
 location: "L159"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_103
+  - community/test_skills_paritypy
 ---
 
 # _has_nullable_price_field()
@@ -16,4 +16,4 @@ tags:
 - [[test_skill_states_the_price_null_boundary()]] - `calls` [EXTRACTED]
 - [[test_skills_parity.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_103
+#graphify/code #graphify/EXTRACTED #community/test_skills_paritypy

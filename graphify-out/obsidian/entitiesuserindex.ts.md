@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/entities/user/index.ts"
 type: "code"
-community: "Community 81"
+community: "entities/user/index.ts"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_81
+  - community/entities/user/indexts
 ---
 
 # entities/user/index.ts
@@ -32,4 +32,4 @@ tags:
 - [[widgetsusersettingsuiindex.tsx]] - `imports_from` [EXTRACTED]
 - [[workspaceuiindex.tsx]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_81
+#graphify/code #graphify/EXTRACTED #community/entities/user/indexts

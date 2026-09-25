@@ -1,26 +1,23 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 22"
+community: "cian_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_22
+  - community/cian_connector/serverpy
 ---
 
 # Context
 
 ## Connections
-- [[_fetch_first_json()]] - `references` [EXTRACTED]
-- [[_search_via_search_goods()]] - `references` [EXTRACTED]
-- [[wb_card()]] - `references` [EXTRACTED]
-- [[wb_categories()]] - `references` [EXTRACTED]
-- [[wb_category_products()]] - `references` [EXTRACTED]
-- [[wb_questions()]] - `references` [EXTRACTED]
-- [[wb_reviews()]] - `references` [EXTRACTED]
-- [[wb_root_info()]] - `references` [EXTRACTED]
-- [[wb_search()_1]] - `references` [EXTRACTED]
-- [[wb_selfcheck()]] - `references` [EXTRACTED]
-- [[wb_seller()]] - `references` [EXTRACTED]
+- [[_cdp_page_config()]] - `references` [EXTRACTED]
+- [[_cdp_post_json()_1]] - `references` [EXTRACTED]
+- [[_cian_selfcheck_impl()]] - `references` [EXTRACTED]
+- [[_fetch_card()]] - `references` [EXTRACTED]
+- [[_fetch_search()]] - `references` [EXTRACTED]
+- [[cian_card()]] - `references` [EXTRACTED]
+- [[cian_search()]] - `references` [EXTRACTED]
+- [[cian_selfcheck()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_22
+#graphify/code #graphify/EXTRACTED #community/cian_connector/serverpy

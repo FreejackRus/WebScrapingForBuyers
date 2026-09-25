@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/server.py"
 type: "code"
-community: "Community 77"
+community: "yandex_card"
 location: "L246"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_77
+  - community/yandex_card
 ---
 
 # yandex_search()
@@ -28,7 +28,7 @@ tags:
 - [[ge_6]] - `references` [EXTRACTED]
 - [[le_6]] - `references` [EXTRACTED]
 - [[log_event()]] - `calls` [EXTRACTED]
-- [[main()_31]] - `calls` [EXTRACTED]
+- [[main()_28]] - `calls` [EXTRACTED]
 - [[max_length_12]] - `references` [EXTRACTED]
 - [[min_length_12]] - `references` [EXTRACTED]
 - [[parse_search()]] - `calls` [EXTRACTED]
@@ -37,4 +37,4 @@ tags:
 - [[yandex_connectorserver.py]] - `contains` [EXTRACTED]
 - [[yandex_selfcheck()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_77
+#graphify/code #graphify/EXTRACTED #community/yandex_card

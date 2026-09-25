@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/src/mpstats_connector/server.py"
 type: "rationale"
-community: "Community 23"
+community: "success"
 location: "L773"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_23
+  - community/success
 ---
 
 # Health canary for the MPStats connector. Tri-state, matching the shared…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[mpstats_selfcheck()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_23
+#graphify/rationale #graphify/EXTRACTED #community/success

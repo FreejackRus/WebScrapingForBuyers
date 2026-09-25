@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py"
 type: "code"
-community: "Community 6"
+community: "success"
 location: "L294"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_6
+  - community/success
 ---
 
 # test_hide_guard_is_active_only_for_owned_workers()
@@ -16,4 +16,4 @@ tags:
 - [[mcp-coreteststest_browser_handoff.py]] - `contains` [EXTRACTED]
 - [[success()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_6
+#graphify/code #graphify/EXTRACTED #community/success

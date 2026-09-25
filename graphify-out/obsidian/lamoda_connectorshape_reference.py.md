@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/shape_reference.py"
 type: "code"
-community: "Community 166"
+community: "missing_required_families"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_166
+  - community/missing_required_families
 ---
 
 # lamoda_connector/shape_reference.py
@@ -19,4 +19,4 @@ tags:
 - [[lamoda_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[missing_required_families()_1]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_166
+#graphify/code #graphify/EXTRACTED #community/missing_required_families

@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 162"
+community: "cian_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_162
+  - community/cian_connector/serverpy
 ---
 
 # BaseSettings
 
 ## Connections
-- [[MegamarketSettings]] - `inherits` [EXTRACTED]
+- [[CianSettings]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_162
+#graphify/code #graphify/EXTRACTED #community/cian_connector/serverpy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py"
 type: "code"
-community: "Community 324"
+community: "test_selfcheck_anti_bot_page_is_inconclusive"
 location: "L527"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_324
+  - community/test_selfcheck_anti_bot_page_is_inconclusive
 ---
 
 # test_selfcheck_anti_bot_page_is_inconclusive()
@@ -16,4 +16,4 @@ tags:
 - [[_patch_render()_1]] - `calls` [EXTRACTED]
 - [[taobao-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_324
+#graphify/code #graphify/EXTRACTED #community/test_selfcheck_anti_bot_page_is_inconclusive

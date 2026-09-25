@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_resilience.py"
 type: "code"
-community: "Community 53"
+community: "test_resilience.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_53
+  - community/test_resiliencepy
 ---
 
 # test_resilience.py
@@ -48,4 +48,4 @@ tags:
 - [[test_selfcheck_result_no_checks_is_inconclusive_not_vacuous_success()]] - `contains` [EXTRACTED]
 - [[test_zero_and_negative_are_not_prices()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_53
+#graphify/code #graphify/EXTRACTED #community/test_resiliencepy

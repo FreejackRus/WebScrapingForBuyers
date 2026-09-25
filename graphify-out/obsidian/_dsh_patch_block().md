@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/src/marketplace_connector/cli.py"
 type: "code"
-community: "Community 54"
+community: "test_dsh_bundle.py"
 location: "L174"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_54
+  - community/test_dsh_bundlepy
 ---
 
 # _dsh_patch_block()
@@ -20,4 +20,4 @@ tags:
 - [[cmd_install()]] - `calls` [EXTRACTED]
 - [[test_dsh_profile_flags_activate_exactly_the_requested_mount()]] - `calls` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_54
+#graphify/code #graphify/EXTRACTED #community/test_dsh_bundlepy

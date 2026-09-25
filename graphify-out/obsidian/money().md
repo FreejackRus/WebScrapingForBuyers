@@ -1,20 +1,20 @@
 ---
 source_file: "apps/analysis/src/application/analyze.ts"
 type: "code"
-community: "Community 36"
-location: "L7"
+community: "analyze.ts"
+location: "L43"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_36
+  - community/analyzets
 ---
 
 # money()
 
 ## Connections
 - [[analyze.ts]] - `contains` [EXTRACTED]
-- [[analyzeSnapshot()]] - `calls` [EXTRACTED]
+- [[analyzeSnapshotRaw()]] - `calls` [EXTRACTED]
 - [[citationOf()]] - `calls` [EXTRACTED]
 - [[offerLabel()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_36
+#graphify/code #graphify/EXTRACTED #community/analyzets

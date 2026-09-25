@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
 type: "code"
-community: "Community 4"
+community: "TransportDownError"
 location: "L140"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_4
+  - community/TransportDownError
 ---
 
 # raise_tool_error()
@@ -16,7 +16,7 @@ tags:
 - [[NoReturn]] - `references` [EXTRACTED]
 - [[_call()_1]] - `calls` [EXTRACTED]
 - [[_call_card_tool()]] - `calls` [EXTRACTED]
-- [[_cdp_render_search()]] - `calls` [EXTRACTED]
+- [[_cdp_render_search()_1]] - `calls` [EXTRACTED]
 - [[_fetch_first_json()]] - `calls` [EXTRACTED]
 - [[_graphql_card()]] - `calls` [EXTRACTED]
 - [[_guard_parse_status()]] - `calls` [EXTRACTED]
@@ -29,8 +29,11 @@ tags:
 - [[_raise_for_fetch_failure()_1]] - `calls` [EXTRACTED]
 - [[_require_object()]] - `calls` [EXTRACTED]
 - [[_resolve_region()]] - `calls` [EXTRACTED]
+- [[_search_via_http_v9()]] - `calls` [EXTRACTED]
+- [[_search_via_storefront()]] - `calls` [EXTRACTED]
 - [[_validate_region()]] - `calls` [EXTRACTED]
 - [[_validate_skus()]] - `calls` [EXTRACTED]
+- [[_verify_storefront_capture()]] - `calls` [EXTRACTED]
 - [[aliexpress_card()]] - `calls` [EXTRACTED]
 - [[aliexpress_search()]] - `calls` [EXTRACTED]
 - [[aliexpress_selfcheck()]] - `calls` [EXTRACTED]
@@ -57,8 +60,9 @@ tags:
 - [[dns_selfcheck()]] - `calls` [EXTRACTED]
 - [[edge_418()_1]] - `calls` [INFERRED]
 - [[errors.py]] - `contains` [EXTRACTED]
-- [[fake_call()_5]] - `calls` [INFERRED]
-- [[fake_call()_10]] - `calls` [INFERRED]
+- [[failing_storefront()]] - `calls` [INFERRED]
+- [[fake_call()_3]] - `calls` [INFERRED]
+- [[fake_call()_2]] - `calls` [INFERRED]
 - [[fetch()]] - `calls` [EXTRACTED]
 - [[fetch()_1]] - `calls` [EXTRACTED]
 - [[lamoda_card()]] - `calls` [EXTRACTED]
@@ -66,7 +70,7 @@ tags:
 - [[lamoda_selfcheck()]] - `calls` [EXTRACTED]
 - [[mcp_core__init__.py]] - `imports` [EXTRACTED]
 - [[megamarket_card()]] - `calls` [EXTRACTED]
-- [[megamarket_search()]] - `calls` [EXTRACTED]
+- [[megamarket_search()_1]] - `calls` [EXTRACTED]
 - [[megamarket_selfcheck()]] - `calls` [EXTRACTED]
 - [[mpstats_item()]] - `calls` [EXTRACTED]
 - [[mpstats_warehouses()]] - `calls` [EXTRACTED]
@@ -78,7 +82,7 @@ tags:
 - [[read()_1]] - `calls` [EXTRACTED]
 - [[taobao()]] - `calls` [EXTRACTED]
 - [[taobao_card()]] - `calls` [EXTRACTED]
-- [[taobao_search()_1]] - `calls` [EXTRACTED]
+- [[taobao_search()]] - `calls` [EXTRACTED]
 - [[taobao_selfcheck()]] - `calls` [EXTRACTED]
 - [[wb_card()]] - `calls` [EXTRACTED]
 - [[wb_categories()]] - `calls` [EXTRACTED]
@@ -86,9 +90,9 @@ tags:
 - [[wb_questions()]] - `calls` [EXTRACTED]
 - [[wb_reviews()]] - `calls` [EXTRACTED]
 - [[wb_root_info()]] - `calls` [EXTRACTED]
-- [[wb_search()_1]] - `calls` [EXTRACTED]
+- [[wb_search()]] - `calls` [EXTRACTED]
 - [[wb_seller()]] - `calls` [EXTRACTED]
 - [[yandex_card()]] - `calls` [EXTRACTED]
 - [[yandex_search()_1]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_4
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

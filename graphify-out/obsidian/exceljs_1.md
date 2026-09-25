@@ -1,17 +1,18 @@
 ---
 source_file: "apps/search/package.json"
-type: "code"
-community: "Community 219"
+type: "concept"
+community: "search/package.json"
 location: "L18"
 tags:
-  - graphify/code
+  - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_219
+  - community/search/packagejson
 ---
 
 # exceljs
 
 ## Connections
-- [[dependencies_4]] - `contains` [EXTRACTED]
+- [[export-service.ts]] - `imports_from` [EXTRACTED]
+- [[searchpackage.json]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_219
+#graphify/concept #graphify/EXTRACTED #community/search/packagejson

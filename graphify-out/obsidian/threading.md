@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "Community 29"
+community: "cdp-proxy.py"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_29
+  - community/cdp-proxypy
 ---
 
 # threading
@@ -14,4 +14,4 @@ tags:
 - [[cdp-proxy.py]] - `imports` [EXTRACTED]
 - [[stdio_probe.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_29
+#graphify/concept #graphify/EXTRACTED #community/cdp-proxypy

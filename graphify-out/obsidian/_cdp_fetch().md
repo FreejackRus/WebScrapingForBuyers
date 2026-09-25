@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/server.py"
 type: "code"
-community: "Community 10"
+community: "avito_seller"
 location: "L162"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_10
+  - community/avito_seller
 ---
 
 # _cdp_fetch()
@@ -14,8 +14,8 @@ tags:
 ## Connections
 - [[Context]] - `references` [EXTRACTED]
 - [[Tier-2 run the fetch inside the operator's logged-in Chrome. Serialized via…]] - `rationale_for` [EXTRACTED]
-- [[_attempt()_4]] - `contains` [EXTRACTED]
+- [[_attempt()]] - `contains` [EXTRACTED]
 - [[_fetch()]] - `calls` [EXTRACTED]
 - [[avito_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_10
+#graphify/code #graphify/EXTRACTED #community/avito_seller

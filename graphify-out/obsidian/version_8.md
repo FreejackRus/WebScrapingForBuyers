@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/dsh/package.json"
 type: "code"
-community: "Community 204"
+community: "dsh/package.json"
 location: "L3"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_204
+  - community/dsh/packagejson
 ---
 
 # version
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[dshpackage.json]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_204
+#graphify/code #graphify/EXTRACTED #community/dsh/packagejson

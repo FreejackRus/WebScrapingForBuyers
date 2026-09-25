@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/__main__.py"
 type: "rationale"
-community: "Community 21"
+community: "run_server"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_21
+  - community/run_server
 ---
 
 # Entry point for the Avito MCP server. Exposed as the ``avito-mcp`` console…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[avito_connector__main__.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_21
+#graphify/rationale #graphify/EXTRACTED #community/run_server

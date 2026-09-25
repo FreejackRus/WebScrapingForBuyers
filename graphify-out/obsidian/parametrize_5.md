@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 128"
+community: "error_payload"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_128
+  - community/error_payload
 ---
 
 # parametrize
@@ -16,4 +16,4 @@ tags:
 - [[test_category_normalises_case_and_whitespace()]] - `references` [EXTRACTED]
 - [[test_category_rejects_non_slug_aliases()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_128
+#graphify/code #graphify/EXTRACTED #community/error_payload

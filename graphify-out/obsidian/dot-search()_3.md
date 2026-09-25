@@ -1,17 +1,19 @@
 ---
-source_file: "apps/search/src/app.test.ts"
+source_file: "apps/search/src/infrastructure/sources/b2b-distributor-adapter.ts"
 type: "code"
-community: "Community 9"
-location: "L20"
+community: "b2b-distributor-adapter.ts"
+location: "L152"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_9
+  - community/b2b-distributor-adapterts
 ---
 
 # .search()
 
 ## Connections
-- [[TestSource]] - `method` [EXTRACTED]
+- [[NetlabSourceAdapter]] - `method` [EXTRACTED]
+- [[netlabConfigFromEnv()]] - `calls` [EXTRACTED]
+- [[searchNetlab()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_9
+#graphify/code #graphify/EXTRACTED #community/b2b-distributor-adapterts

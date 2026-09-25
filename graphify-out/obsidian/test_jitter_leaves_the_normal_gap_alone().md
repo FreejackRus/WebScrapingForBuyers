@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_pacing.py"
 type: "code"
-community: "Community 304"
+community: "test_jitter_leaves_the_normal_gap_alone"
 location: "L147"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_304
+  - community/test_jitter_leaves_the_normal_gap_alone
 ---
 
 # test_jitter_leaves_the_normal_gap_alone()
@@ -16,4 +16,4 @@ tags:
 - [[_pacer()]] - `calls` [EXTRACTED]
 - [[test_pacing.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_304
+#graphify/code #graphify/EXTRACTED #community/test_jitter_leaves_the_normal_gap_alone

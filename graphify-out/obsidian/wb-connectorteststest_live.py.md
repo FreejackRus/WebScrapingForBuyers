@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_live.py"
 type: "code"
-community: "Community 96"
+community: "wb-connector/tests/test_live.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_96
+  - community/wb-connector/tests/test_livepy
 ---
 
 # wb-connector/tests/test_live.py
@@ -17,4 +17,4 @@ tags:
 - [[test_wb_search_returns_priced_items()]] - `contains` [EXTRACTED]
 - [[test_wb_selfcheck_reaches_a_verdict()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_96
+#graphify/code #graphify/EXTRACTED #community/wb-connector/tests/test_livepy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
 type: "code"
-community: "Community 253"
+community: "clear_cache"
 location: "L103"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_253
+  - community/clear_cache
 ---
 
 # no_delay()
@@ -16,4 +16,4 @@ tags:
 - [[detmir-connectorteststest_server.py]] - `contains` [EXTRACTED]
 - [[fixture_14]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_253
+#graphify/code #graphify/EXTRACTED #community/clear_cache

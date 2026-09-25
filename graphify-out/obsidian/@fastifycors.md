@@ -1,17 +1,18 @@
 ---
 source_file: "packages/service-kit/package.json"
-type: "code"
-community: "Community 99"
+type: "concept"
+community: "service-kit/src/index.ts"
 location: "L14"
 tags:
-  - graphify/code
+  - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_99
+  - community/service-kit/src/indexts
 ---
 
 # @fastify/cors
 
 ## Connections
-- [[dependencies_6]] - `contains` [EXTRACTED]
+- [[service-kitpackage.json]] - `imports` [EXTRACTED]
+- [[service-kitsrcindex.ts]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_99
+#graphify/concept #graphify/EXTRACTED #community/service-kit/src/indexts

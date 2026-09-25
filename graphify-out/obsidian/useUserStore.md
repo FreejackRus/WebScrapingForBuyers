@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/entities/user/store/index.ts"
 type: "code"
-community: "Community 81"
+community: "useUserStore"
 location: "L24"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_81
+  - community/useUserStore
 ---
 
 # useUserStore
@@ -18,7 +18,6 @@ tags:
 - [[App.tsx]] - `imports` [EXTRACTED]
 - [[AppShell()]] - `calls` [EXTRACTED]
 - [[AppShell.tsx]] - `imports` [EXTRACTED]
-- [[SearchWorkspace()]] - `calls` [EXTRACTED]
 - [[Topbar()]] - `calls` [EXTRACTED]
 - [[UserSettings()]] - `calls` [EXTRACTED]
 - [[chatuiindex.tsx]] - `imports` [EXTRACTED]
@@ -32,8 +31,9 @@ tags:
 - [[useLogin()]] - `calls` [EXTRACTED]
 - [[useSessionUser()]] - `calls` [EXTRACTED]
 - [[useUpdateSettings()]] - `calls` [EXTRACTED]
+- [[useWorkspaceSnapshot()]] - `calls` [EXTRACTED]
 - [[userstoreindex.ts]] - `contains` [EXTRACTED]
 - [[widgetsusersettingsuiindex.tsx]] - `imports` [EXTRACTED]
 - [[workspaceuiindex.tsx]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_81
+#graphify/code #graphify/EXTRACTED #community/useUserStore

@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
-community: "Community 25"
+community: "offer"
 location: "L136"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_25
+  - community/offer
 ---
 
 # wb()
 
 ## Connections
-- [[offer()]] - `calls` [EXTRACTED]
+- [[offer()_1]] - `calls` [EXTRACTED]
 - [[test_a_generic_failure_is_reported_as_error_not_blocked()]] - `indirect_call` [INFERRED]
 - [[test_a_missing_connector_is_distinguished_from_a_block()]] - `indirect_call` [INFERRED]
 - [[test_a_timeout_is_reported_as_a_timeout()]] - `indirect_call` [INFERRED]
@@ -31,4 +31,4 @@ tags:
 - [[test_unknown_source_names_are_rejected()]] - `indirect_call` [INFERRED]
 - [[test_unpriced_offers_are_kept_at_the_end()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Community_25
+#graphify/code #graphify/INFERRED #community/offer

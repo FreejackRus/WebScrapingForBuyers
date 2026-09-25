@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 229"
+community: "pydantic"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_229
+  - community/pydantic
 ---
 
 # BaseSettings
 
 ## Connections
-- [[WBSettings]] - `inherits` [EXTRACTED]
+- [[LamodaSettings]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_229
+#graphify/code #graphify/EXTRACTED #community/pydantic

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
 type: "rationale"
-community: "Community 292"
+community: "test_parse_product_survives_a_non_dict_input"
 location: "L433"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_292
+  - community/test_parse_product_survives_a_non_dict_input
 ---
 
 # A tolerant reader must degrade, not raise, on drifted payloads.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_parse_product_survives_a_non_dict_input()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_292
+#graphify/rationale #graphify/EXTRACTED #community/test_parse_product_survives_a_non_dict_input

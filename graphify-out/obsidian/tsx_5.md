@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/package.json"
 type: "concept"
-community: "Community 134"
+community: "search/package.json"
 location: "L23"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_134
+  - community/search/packagejson
 ---
 
 # tsx
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[searchpackage.json]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_134
+#graphify/concept #graphify/EXTRACTED #community/search/packagejson

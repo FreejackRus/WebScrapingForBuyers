@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/settings.py"
 type: "rationale"
-community: "Community 229"
+community: "pydantic"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_229
+  - community/pydantic
 ---
 
 # WB connector settings (pydantic-settings BaseSettings, env_prefix='WB_'). All…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[wb_connectorsettings.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_229
+#graphify/rationale #graphify/EXTRACTED #community/pydantic

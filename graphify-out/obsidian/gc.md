@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "Community 6"
+community: "mcp-core/tests/test_browser_handoff.py"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_6
+  - community/mcp-core/tests/test_browser_handoffpy
 ---
 
 # gc
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[mcp-coreteststest_browser_handoff.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_6
+#graphify/concept #graphify/EXTRACTED #community/mcp-core/tests/test_browser_handoffpy

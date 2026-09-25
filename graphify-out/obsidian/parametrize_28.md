@@ -1,23 +1,22 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 6"
+community: "test_stdio_probe.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_6
+  - community/test_stdio_probepy
 ---
 
 # parametrize
 
 ## Connections
-- [[test_caller_cancellation_cleans_worker_and_owned_page()]] - `references` [EXTRACTED]
-- [[test_disabled_or_invalid_duration_preserves_short_lifecycle()]] - `references` [EXTRACTED]
-- [[test_other_endpoint_or_profile_never_adopts_retained_page()]] - `references` [EXTRACTED]
-- [[test_other_session_operation_or_query_never_adopts_retained_page()]] - `references` [EXTRACTED]
-- [[test_snapshot_cancellation_or_deadline_cleans_exact_page()]] - `references` [EXTRACTED]
-- [[test_snapshot_rechecks_original_host_policy_before_and_after_capture()]] - `references` [EXTRACTED]
-- [[test_termination_settles_queued_snapshot_before_getter_resumes()]] - `references` [EXTRACTED]
-- [[test_unavailable_snapshot_never_opens_or_captures()]] - `references` [EXTRACTED]
+- [[test_all_probe_entrypoints_check_protocol()]] - `references` [EXTRACTED]
+- [[test_all_probe_entrypoints_fail_on_silence()]] - `references` [EXTRACTED]
+- [[test_cleanup_stops_wrapper_and_its_child()]] - `references` [EXTRACTED]
+- [[test_docker_probe_rejects_call_errors()]] - `references` [EXTRACTED]
+- [[test_docker_probe_rejects_wrong_or_missing_versions()]] - `references` [EXTRACTED]
+- [[test_invalid_results_fail()]] - `references` [EXTRACTED]
+- [[test_noisy_and_interleaved_child_completes()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_6
+#graphify/code #graphify/EXTRACTED #community/test_stdio_probepy

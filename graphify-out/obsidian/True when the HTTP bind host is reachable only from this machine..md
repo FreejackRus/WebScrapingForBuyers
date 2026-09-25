@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/runtime.py"
 type: "rationale"
-community: "Community 67"
+community: "TransportConfig"
 location: "L109"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_67
+  - community/TransportConfig
 ---
 
 # True when the HTTP bind host is reachable only from this machine.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[dot-is_loopback()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_67
+#graphify/rationale #graphify/EXTRACTED #community/TransportConfig

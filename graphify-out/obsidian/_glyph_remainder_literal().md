@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/dom.py"
 type: "code"
-community: "Community 14"
+community: "json"
 location: "L114"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_14
+  - community/json
 ---
 
 # _glyph_remainder_literal()
@@ -15,4 +15,4 @@ tags:
 - [[JavaScript regex for the sibling-text check what remains next to the digits is…]] - `rationale_for` [EXTRACTED]
 - [[dom.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_14
+#graphify/code #graphify/EXTRACTED #community/json

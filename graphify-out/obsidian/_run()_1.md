@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "Community 111"
+community: "_run"
 location: "L46"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_111
+  - community/_run
 ---
 
 # _run()
@@ -32,4 +32,4 @@ tags:
 - [[test_reviews_tolerates_malformed_uuid_next_button_and_score()]] - `calls` [EXTRACTED]
 - [[test_tier1_proxy_is_passed_as_an_argument_not_an_env_var()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_111
+#graphify/code #graphify/EXTRACTED #community/_run

@@ -1,21 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py"
+source_file: "apps/search/src/application/search-service.ts"
 type: "code"
-community: "Community 203"
-location: "L78"
+community: "SearchService"
+location: "L34"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_203
+  - community/SearchService
 ---
 
 # .get()
 
 ## Connections
-- [[dot-get_or_fetch()]] - `calls` [EXTRACTED]
-- [[Hashable]] - `references` [EXTRACTED]
-- [[Return a live value, or ``None`` on missexpiry.]] - `rationale_for` [EXTRACTED]
-- [[T]] - `references` [EXTRACTED]
-- [[TTLCache]] - `method` [EXTRACTED]
+- [[SearchService]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_203
+#graphify/code #graphify/EXTRACTED #community/SearchService

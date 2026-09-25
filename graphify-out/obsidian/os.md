@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "Community 3"
+community: "json"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_3
+  - community/json
 ---
 
 # os
@@ -33,4 +33,4 @@ tags:
 - [[wb_connectorserver.py]] - `imports` [EXTRACTED]
 - [[yandex_connectorserver.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_3
+#graphify/concept #graphify/EXTRACTED #community/json

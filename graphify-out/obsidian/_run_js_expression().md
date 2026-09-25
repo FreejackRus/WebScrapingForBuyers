@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py"
 type: "code"
-community: "Community 200"
+community: "_run_js_expression"
 location: "L443"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_200
+  - community/_run_js_expression
 ---
 
 # _run_js_expression()
@@ -20,4 +20,4 @@ tags:
 - [[test_evaluate_wrapper_invokes_a_function_with_the_arg()]] - `calls` [EXTRACTED]
 - [[test_evaluate_wrapper_passes_plain_expressions_through()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_200
+#graphify/code #graphify/EXTRACTED #community/_run_js_expression

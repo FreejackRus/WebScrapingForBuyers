@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_call_envelope.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_transport.py"
 type: "code"
-community: "Community 31"
-location: "L206"
+community: "test_transport.py"
+location: "L104"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_31
+  - community/test_transportpy
 ---
 
 # handler()
 
 ## Connections
-- [[test_inner_error_is_not_cached()]] - `contains` [EXTRACTED]
+- [[test_http_status_is_never_retried()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_31
+#graphify/code #graphify/EXTRACTED #community/test_transportpy

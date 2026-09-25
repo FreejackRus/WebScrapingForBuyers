@@ -1,20 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_parser_live.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_shape_reference.py"
 type: "code"
-community: "Community 74"
-location: "L22"
+community: "shape_signature"
+location: "L69"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_74
+  - community/shape_signature
 ---
 
 # _load()
 
 ## Connections
-- [[detmir-connectorteststest_parser_live.py]] - `contains` [EXTRACTED]
-- [[test_live_card_parses_to_the_displayed_values()]] - `calls` [EXTRACTED]
-- [[test_live_category_parses_its_products_and_meta()]] - `calls` [EXTRACTED]
-- [[test_live_prices_are_finite_positive_rubles()_1]] - `calls` [EXTRACTED]
+- [[test_card_shape_matches_the_no_rating_capture()]] - `calls` [EXTRACTED]
+- [[test_card_shape_matches_the_washer_capture()]] - `calls` [EXTRACTED]
+- [[test_empty_search_shape_is_its_own_reference()]] - `calls` [EXTRACTED]
+- [[test_search_shape_matches_the_iphone_capture()]] - `calls` [EXTRACTED]
+- [[test_search_shape_matches_the_washer_capture()]] - `calls` [EXTRACTED]
+- [[yandex-connectorteststest_shape_reference.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_74
+#graphify/code #graphify/EXTRACTED #community/shape_signature

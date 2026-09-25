@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/src/aliexpress_connector/models_output.py"
 type: "code"
-community: "Community 38"
+community: "aliexpress_connector/server.py"
 location: "L58"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_38
+  - community/aliexpress_connector/serverpy
 ---
 
 # AliSelfcheckResponse
@@ -18,4 +18,4 @@ tags:
 - [[aliexpress_connectorserver.py]] - `imports` [EXTRACTED]
 - [[aliexpress_selfcheck()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_38
+#graphify/code #graphify/EXTRACTED #community/aliexpress_connector/serverpy

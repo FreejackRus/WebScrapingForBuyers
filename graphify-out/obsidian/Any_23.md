@@ -1,21 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 55"
+community: "models.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_55
+  - community/modelspy
 ---
 
 # Any
 
 ## Connections
-- [[_available_sources()]] - `references` [EXTRACTED]
-- [[_call_card_tool()]] - `references` [EXTRACTED]
-- [[_client_capabilities()]] - `references` [EXTRACTED]
-- [[_source_error()]] - `references` [EXTRACTED]
-- [[compare_sources()]] - `references` [EXTRACTED]
-- [[compare_verify_offer()]] - `references` [EXTRACTED]
+- [[_cdp_render()_2]] - `references` [EXTRACTED]
+- [[_is_qrator_wall()_1]] - `references` [EXTRACTED]
+- [[_search_item_from_tile()_3]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_55
+#graphify/code #graphify/EXTRACTED #community/modelspy

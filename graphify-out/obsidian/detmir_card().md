@@ -1,22 +1,25 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/server.py"
 type: "code"
-community: "Community 45"
+community: "detmir_categories"
 location: "L320"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_45
+  - community/detmir_categories
 ---
 
 # detmir_card()
 
 ## Connections
+- [[Added_14]] - `references` [INFERRED]
 - [[Context_11]] - `references` [EXTRACTED]
 - [[DetmirCardResponse]] - `uses` [INFERRED]
+- [[Detsky Mir — open JSON API, refused by address]] - `references` [INFERRED]
 - [[Fetch price, rating, stock and seller for one Detsky Mir product. Covers the…]] - `rationale_for` [EXTRACTED]
 - [[Field_11]] - `references` [EXTRACTED]
-- [[MetaOut_9]] - `uses` [INFERRED]
+- [[Fixed_11]] - `references` [INFERRED]
+- [[MetaOut_10]] - `uses` [INFERRED]
 - [[NotFoundError]] - `uses` [INFERRED]
 - [[ParserDriftError]] - `uses` [INFERRED]
 - [[TransportDownError]] - `uses` [INFERRED]
@@ -35,4 +38,4 @@ tags:
 - [[raise_tool_error()]] - `calls` [EXTRACTED]
 - [[tool_12]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_45
+#graphify/code #graphify/EXTRACTED #community/detmir_categories

@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py"
 type: "code"
-community: "Community 15"
+community: "avito-connector/tests/test_server.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_15
+  - community/avito-connector/tests/test_serverpy
 ---
 
 # avito-connector/tests/test_server.py
 
 ## Connections
 - [[Offline tests for the Avito connector. Every upstream call is monkeypatched, so…]] - `rationale_for` [EXTRACTED]
-- [[_no_cache()_2]] - `contains` [EXTRACTED]
+- [[_no_cache()_4]] - `contains` [EXTRACTED]
 - [[_ok()_1]] - `contains` [EXTRACTED]
 - [[_patch_fetch()]] - `contains` [EXTRACTED]
 - [[avito_connector__init__.py]] - `imports_from` [EXTRACTED]
@@ -46,4 +46,4 @@ tags:
 - [[test_seller_parses_reputation_and_active_count()]] - `contains` [EXTRACTED]
 - [[test_seller_warns_when_identity_is_missing()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_15
+#graphify/code #graphify/EXTRACTED #community/avito-connector/tests/test_serverpy

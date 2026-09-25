@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "Community 32"
+community: "entities/user/index.ts"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_32
+  - community/entities/user/indexts
 ---
 
 # packages_contracts_dist_index_usersettings
@@ -16,4 +16,4 @@ tags:
 - [[typesindex.ts]] - `re_exports` [EXTRACTED]
 - [[userapiindex.ts]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_32
+#graphify/concept #graphify/EXTRACTED #community/entities/user/indexts

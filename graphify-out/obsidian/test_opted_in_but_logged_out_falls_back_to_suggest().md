@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py"
 type: "code"
-community: "Community 58"
+community: "_patch_routes"
 location: "L494"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_58
+  - community/_patch_routes
 ---
 
 # test_opted_in_but_logged_out_falls_back_to_suggest()
@@ -16,4 +16,4 @@ tags:
 - [[_patch_routes()]] - `calls` [EXTRACTED]
 - [[megamarket-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_58
+#graphify/code #graphify/EXTRACTED #community/_patch_routes

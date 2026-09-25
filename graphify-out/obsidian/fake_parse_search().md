@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py"
 type: "code"
-community: "Community 98"
+community: "yandex-connector/tests/test_server.py"
 location: "L513"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_98
+  - community/yandex-connector/tests/test_serverpy
 ---
 
 # fake_parse_search()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_stub_parsed_items()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Community_98
+#graphify/code #graphify/INFERRED #community/yandex-connector/tests/test_serverpy

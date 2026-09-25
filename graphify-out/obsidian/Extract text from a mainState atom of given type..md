@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/server.py"
 type: "rationale"
-community: "Community 76"
+community: "ozon_connector/server.py"
 location: "L1091"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_76
+  - community/ozon_connector/serverpy
 ---
 
 # Extract text from a mainState atom of given type.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_atom_text()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_76
+#graphify/rationale #graphify/EXTRACTED #community/ozon_connector/serverpy

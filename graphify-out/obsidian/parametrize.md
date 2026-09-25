@@ -1,21 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 103"
+community: "compare-connector/tests/test_browser_handoff.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_103
+  - community/compare-connector/tests/test_browser_handoffpy
 ---
 
 # parametrize
 
 ## Connections
-- [[test_every_connector_has_a_skill()]] - `references` [EXTRACTED]
-- [[test_skill_documents_every_tool_the_server_exposes()]] - `references` [EXTRACTED]
-- [[test_skill_frontmatter_matches_the_published_spec()]] - `references` [EXTRACTED]
-- [[test_skill_invents_no_tools()]] - `references` [EXTRACTED]
-- [[test_skill_states_the_price_null_boundary()]] - `references` [EXTRACTED]
-- [[test_tool_sections_offer_only_mcp_callable_names()]] - `references` [EXTRACTED]
+- [[test_taobao_tools_resume_the_retained_page()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_103
+#graphify/code #graphify/EXTRACTED #community/compare-connector/tests/test_browser_handoffpy

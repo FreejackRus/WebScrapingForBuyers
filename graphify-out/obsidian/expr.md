@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 125"
+community: "test_dependency_parity.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_125
+  - community/test_dependency_paritypy
 ---
 
 # expr
@@ -15,4 +15,4 @@ tags:
 - [[_is_sys_stderr()]] - `references` [EXTRACTED]
 - [[_is_sys_stdout()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_125
+#graphify/code #graphify/EXTRACTED #community/test_dependency_paritypy

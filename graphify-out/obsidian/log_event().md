@@ -1,18 +1,20 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/logging.py"
 type: "code"
-community: "Community 22"
+community: "log_event"
 location: "L28"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_22
+  - community/log_event
 ---
 
 # log_event()
 
 ## Connections
-- [[Any_9]] - `references` [EXTRACTED]
+- [[Any_15]] - `references` [EXTRACTED]
+- [[Project gates]] - `references` [INFERRED]
+- [[What this codebase cares about]] - `references` [INFERRED]
 - [[_available_sources()]] - `calls` [EXTRACTED]
 - [[_basket_for_sku()]] - `calls` [EXTRACTED]
 - [[_call()_1]] - `calls` [EXTRACTED]
@@ -20,7 +22,10 @@ tags:
 - [[_mount_all()]] - `calls` [EXTRACTED]
 - [[_resolve_address_id()]] - `calls` [EXTRACTED]
 - [[_resolve_search_params()]] - `calls` [EXTRACTED]
+- [[_search_via_http_v9()]] - `calls` [EXTRACTED]
 - [[_search_via_search_goods()]] - `calls` [EXTRACTED]
+- [[_search_via_storefront()]] - `calls` [EXTRACTED]
+- [[_verify_storefront_capture()]] - `calls` [EXTRACTED]
 - [[_warn_if_exposed()]] - `calls` [EXTRACTED]
 - [[aliexpress_card()]] - `calls` [EXTRACTED]
 - [[aliexpress_search()]] - `calls` [EXTRACTED]
@@ -48,11 +53,11 @@ tags:
 - [[lamoda_search()]] - `calls` [EXTRACTED]
 - [[lamoda_selfcheck()]] - `calls` [EXTRACTED]
 - [[logging.py]] - `contains` [EXTRACTED]
-- [[main()_24]] - `calls` [EXTRACTED]
+- [[main()_25]] - `calls` [EXTRACTED]
 - [[make_stderr_logger()]] - `calls` [EXTRACTED]
 - [[mcp_core__init__.py]] - `imports` [EXTRACTED]
 - [[megamarket_card()]] - `calls` [EXTRACTED]
-- [[megamarket_search()]] - `calls` [EXTRACTED]
+- [[megamarket_search()_1]] - `calls` [EXTRACTED]
 - [[megamarket_selfcheck()]] - `calls` [EXTRACTED]
 - [[mpstats_item()]] - `calls` [EXTRACTED]
 - [[mpstats_selfcheck()]] - `calls` [EXTRACTED]
@@ -63,8 +68,9 @@ tags:
 - [[ozon_selfcheck()]] - `calls` [EXTRACTED]
 - [[run_server()]] - `calls` [EXTRACTED]
 - [[runtime.py]] - `imports` [EXTRACTED]
+- [[stdout belongs to JSON-RPC]] - `references` [INFERRED]
 - [[taobao_card()]] - `calls` [EXTRACTED]
-- [[taobao_search()_1]] - `calls` [EXTRACTED]
+- [[taobao_search()]] - `calls` [EXTRACTED]
 - [[taobao_selfcheck()]] - `calls` [EXTRACTED]
 - [[wb_card()]] - `calls` [EXTRACTED]
 - [[wb_categories()]] - `calls` [EXTRACTED]
@@ -72,11 +78,12 @@ tags:
 - [[wb_questions()]] - `calls` [EXTRACTED]
 - [[wb_reviews()]] - `calls` [EXTRACTED]
 - [[wb_root_info()]] - `calls` [EXTRACTED]
-- [[wb_search()_1]] - `calls` [EXTRACTED]
+- [[wb_search()]] - `calls` [EXTRACTED]
 - [[wb_selfcheck()]] - `calls` [EXTRACTED]
 - [[wb_seller()]] - `calls` [EXTRACTED]
 - [[yandex_card()]] - `calls` [EXTRACTED]
 - [[yandex_search()_1]] - `calls` [EXTRACTED]
 - [[yandex_selfcheck()]] - `calls` [EXTRACTED]
+- [[Что важно в этой кодовой базе]] - `references` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_22
+#graphify/code #graphify/EXTRACTED #community/log_event

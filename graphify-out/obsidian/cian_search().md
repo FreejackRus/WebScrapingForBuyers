@@ -1,25 +1,27 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/server.py"
 type: "code"
-community: "Community 2"
+community: "cian_connector/server.py"
 location: "L699"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_2
+  - community/cian_connector/serverpy
 ---
 
 # cian_search()
 
 ## Connections
+- [[Added_9]] - `references` [INFERRED]
+- [[Added_5]] - `references` [INFERRED]
 - [[BadRequestError]] - `uses` [INFERRED]
 - [[CianMetroOut]] - `uses` [INFERRED]
 - [[CianSearchItemOut]] - `uses` [INFERRED]
 - [[CianSearchResponse]] - `uses` [INFERRED]
-- [[Context_4]] - `references` [EXTRACTED]
+- [[Context_5]] - `references` [EXTRACTED]
 - [[DealType]] - `references` [EXTRACTED]
 - [[Field_5]] - `references` [EXTRACTED]
-- [[MetaOut_4]] - `uses` [INFERRED]
+- [[MetaOut_3]] - `uses` [INFERRED]
 - [[OfferType]] - `references` [EXTRACTED]
 - [[ParserDriftError]] - `uses` [INFERRED]
 - [[Search Cian offers by filters (there is no free-text search). Long-term rent…]] - `rationale_for` [EXTRACTED]
@@ -37,5 +39,6 @@ tags:
 - [[log_event()]] - `calls` [EXTRACTED]
 - [[raise_tool_error()]] - `calls` [EXTRACTED]
 - [[tool_5]] - `references` [EXTRACTED]
+- [[Добавлено_9]] - `references` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_2
+#graphify/code #graphify/EXTRACTED #community/cian_connector/serverpy

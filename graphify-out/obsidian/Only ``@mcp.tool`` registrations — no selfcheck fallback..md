@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_skills_parity.py"
 type: "rationale"
-community: "Community 75"
+community: "test_skills_parity.py"
 location: "L229"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_75
+  - community/test_skills_paritypy
 ---
 
 # Only ``@mcp.tool`` registrations — no selfcheck fallback.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_mcp_registered_tools()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_75
+#graphify/rationale #graphify/EXTRACTED #community/test_skills_paritypy

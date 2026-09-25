@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "code"
-community: "Community 78"
-location: "L1634"
+community: "log_event"
+location: "L2136"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_78
+  - community/log_event
 ---
 
 # _as_int()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_recover_search_ids()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_78
+#graphify/code #graphify/EXTRACTED #community/log_event

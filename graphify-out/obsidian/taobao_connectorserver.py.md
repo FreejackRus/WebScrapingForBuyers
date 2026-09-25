@@ -1,31 +1,31 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/server.py"
 type: "code"
-community: "Community 14"
+community: "json"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_14
+  - community/json
 ---
 
 # taobao_connector/server.py
 
 ## Connections
-- [[MetaOut_7]] - `imports` [EXTRACTED]
+- [[MetaOut_6]] - `imports` [EXTRACTED]
 - [[Taobao MCP connector. Taobao's search is a client-side React app whose data…]] - `rationale_for` [EXTRACTED]
 - [[TaobaoCardResponse]] - `imports` [EXTRACTED]
 - [[TaobaoSearchItemOut]] - `imports` [EXTRACTED]
 - [[TaobaoSearchResponse]] - `imports` [EXTRACTED]
 - [[TaobaoSelfcheckResponse]] - `imports` [EXTRACTED]
 - [[_anti_bot_challenge()]] - `contains` [EXTRACTED]
-- [[_cdp_render()]] - `contains` [EXTRACTED]
-- [[_extract_item_id()_2]] - `contains` [EXTRACTED]
+- [[_cdp_render()_1]] - `contains` [EXTRACTED]
+- [[_extract_item_id()_3]] - `contains` [EXTRACTED]
 - [[_login_wall()]] - `contains` [EXTRACTED]
 - [[_login_wall_markers()]] - `contains` [EXTRACTED]
 - [[_page_challenge_kind()]] - `contains` [EXTRACTED]
-- [[_polite_wait()_9]] - `contains` [EXTRACTED]
-- [[_search_item_from_tile()]] - `contains` [EXTRACTED]
+- [[_polite_wait()_8]] - `contains` [EXTRACTED]
+- [[_search_item_from_tile()_1]] - `contains` [EXTRACTED]
 - [[_taobao_selfcheck_impl()]] - `contains` [EXTRACTED]
 - [[asyncio_2]] - `imports` [EXTRACTED]
 - [[browser_handoff.py]] - `imports_from` [EXTRACTED]
@@ -36,7 +36,7 @@ tags:
 - [[errors.py]] - `imports_from` [EXTRACTED]
 - [[fastmcp_3]] - `imports_from` [EXTRACTED]
 - [[fastmcp_server_middleware_error_handling]] - `imports_from` [EXTRACTED]
-- [[get_settings()_6]] - `imports` [EXTRACTED]
+- [[get_settings()_10]] - `imports` [EXTRACTED]
 - [[json]] - `imports` [EXTRACTED]
 - [[logging.py]] - `imports_from` [EXTRACTED]
 - [[mcp_core__init__.py]] - `imports_from` [EXTRACTED]
@@ -52,9 +52,9 @@ tags:
 - [[taobao_connectormodels_output.py]] - `imports_from` [EXTRACTED]
 - [[taobao_connectorsettings.py]] - `imports_from` [EXTRACTED]
 - [[taobao_connectorshape_reference.py]] - `imports_from` [EXTRACTED]
-- [[taobao_search()_1]] - `contains` [EXTRACTED]
+- [[taobao_search()]] - `contains` [EXTRACTED]
 - [[taobao_selfcheck()]] - `contains` [EXTRACTED]
 - [[typing]] - `imports_from` [EXTRACTED]
 - [[urllib_parse]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_14
+#graphify/code #graphify/EXTRACTED #community/json

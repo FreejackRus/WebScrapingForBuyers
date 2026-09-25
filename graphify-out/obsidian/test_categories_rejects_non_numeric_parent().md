@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
 type: "code"
-community: "Community 128"
+community: "error_payload"
 location: "L365"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_128
+  - community/error_payload
 ---
 
 # test_categories_rejects_non_numeric_parent()
@@ -18,4 +18,4 @@ tags:
 - [[fail_fetch()_1]] - `indirect_call` [INFERRED]
 - [[parametrize_5]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_128
+#graphify/code #graphify/EXTRACTED #community/error_payload

@@ -1,20 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 10"
+community: "test_output_schema.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_10
+  - community/test_output_schemapy
 ---
 
 # BaseModel
 
 ## Connections
-- [[AvitoCardResponse]] - `inherits` [EXTRACTED]
-- [[AvitoSearchItemOut]] - `inherits` [EXTRACTED]
-- [[AvitoSearchResponse]] - `inherits` [EXTRACTED]
-- [[AvitoSellerOut]] - `inherits` [EXTRACTED]
-- [[AvitoSellerResponse]] - `inherits` [EXTRACTED]
+- [[_Named]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_10
+#graphify/code #graphify/EXTRACTED #community/test_output_schemapy

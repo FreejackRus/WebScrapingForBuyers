@@ -1,18 +1,18 @@
 ---
 source_file: "apps/analysis/src/application/analyze.ts"
 type: "code"
-community: "Community 36"
-location: "L30"
+community: "analyze.ts"
+location: "L66"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_36
+  - community/analyzets
 ---
 
 # ruCount()
 
 ## Connections
 - [[analyze.ts]] - `contains` [EXTRACTED]
-- [[analyzeSnapshot()]] - `calls` [EXTRACTED]
+- [[analyzeSnapshotRaw()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_36
+#graphify/code #graphify/EXTRACTED #community/analyzets

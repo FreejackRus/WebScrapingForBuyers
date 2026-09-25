@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/http_tier.py"
 type: "code"
-community: "Community 17"
+community: "transport/__init__.py"
 location: "L114"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_17
+  - community/transport/__init__py
 ---
 
 # get_text_with_retries()
 
 ## Connections
-- [[AsyncClient_3]] - `references` [EXTRACTED]
+- [[AsyncClient_2]] - `references` [EXTRACTED]
 - [[GET ``url`` and return ``(status_code, body_text)``. Retries genuine transport…]] - `rationale_for` [EXTRACTED]
 - [[RateLimiter]] - `references` [EXTRACTED]
 - [[fetch()]] - `calls` [INFERRED]
@@ -27,8 +27,8 @@ tags:
 - [[test_gateway_statuses_are_retried()]] - `calls` [INFERRED]
 - [[test_rate_limit_status_is_never_retried()]] - `calls` [INFERRED]
 - [[test_returns_status_and_body()]] - `calls` [INFERRED]
-- [[test_transport_error_is_retried_then_succeeds()_2]] - `calls` [INFERRED]
+- [[test_transport_error_is_retried_then_succeeds()_1]] - `calls` [INFERRED]
 - [[test_transport_error_propagates_when_budget_exhausted()]] - `calls` [INFERRED]
 - [[transport__init__.py]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/Community_17
+#graphify/code #graphify/INFERRED #community/transport/__init__py

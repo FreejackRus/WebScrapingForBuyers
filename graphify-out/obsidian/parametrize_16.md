@@ -1,17 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 250"
+community: "test_redact.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_250
+  - community/test_redactpy
 ---
 
 # parametrize
 
 ## Connections
-- [[test_card_rejects_non_numeric_ids()]] - `references` [EXTRACTED]
-- [[test_search_rejects_too_short_queries()]] - `references` [EXTRACTED]
+- [[test_known_secret_shapes_are_scrubbed()]] - `references` [EXTRACTED]
+- [[test_proxy_userinfo_never_survives_redaction()]] - `references` [EXTRACTED]
+- [[test_session_cookies_and_jwts_are_scrubbed()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_250
+#graphify/code #graphify/EXTRACTED #community/test_redactpy

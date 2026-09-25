@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "Community 104"
+community: "ozon-connector/tests/test_server.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_104
+  - community/ozon-connector/tests/test_serverpy
 ---
 
 # ozon-connector/tests/test_server.py
@@ -63,4 +63,4 @@ tags:
 - [[time]] - `imports` [EXTRACTED]
 - [[tomllib]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_104
+#graphify/code #graphify/EXTRACTED #community/ozon-connector/tests/test_serverpy

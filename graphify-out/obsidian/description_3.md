@@ -1,17 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 173"
+community: "aliexpress_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_173
+  - community/aliexpress_connector/serverpy
 ---
 
 # description
 
 ## Connections
-- [[mpstats_item()]] - `references` [EXTRACTED]
-- [[mpstats_warehouses()]] - `references` [EXTRACTED]
+- [[aliexpress_card()]] - `references` [EXTRACTED]
+- [[aliexpress_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_173
+#graphify/code #graphify/EXTRACTED #community/aliexpress_connector/serverpy

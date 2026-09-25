@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py"
 type: "code"
-community: "Community 157"
+community: "fake_get"
 location: "L448"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_157
+  - community/fake_get
 ---
 
 # fake_get()
@@ -19,4 +19,4 @@ tags:
 - [[test_fetch_html_rejects_an_empty_body()]] - `indirect_call` [INFERRED]
 - [[test_fetch_html_treats_an_empty_302_as_transport_failure()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Community_157
+#graphify/code #graphify/INFERRED #community/fake_get

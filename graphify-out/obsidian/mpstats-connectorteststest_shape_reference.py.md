@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_shape_reference.py"
 type: "code"
-community: "Community 120"
+community: "mpstats-connector/tests/test_server.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_120
+  - community/mpstats-connector/tests/test_serverpy
 ---
 
 # mpstats-connector/tests/test_shape_reference.py
@@ -20,4 +20,4 @@ tags:
 - [[resilience.py]] - `imports_from` [EXTRACTED]
 - [[test_item_and_warehouse_normalization_match_shape_golden()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_120
+#graphify/code #graphify/EXTRACTED #community/mpstats-connector/tests/test_serverpy

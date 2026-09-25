@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/server.py"
 type: "code"
-community: "Community 33"
+community: "json"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_33
+  - community/json
 ---
 
 # lamoda_connector/server.py
@@ -18,15 +18,15 @@ tags:
 - [[LamodaSearchResponse]] - `imports` [EXTRACTED]
 - [[LamodaSelfcheckResponse]] - `imports` [EXTRACTED]
 - [[LamodaSizeOut]] - `imports` [EXTRACTED]
-- [[MetaOut_8]] - `imports` [EXTRACTED]
+- [[MetaOut_7]] - `imports` [EXTRACTED]
 - [[_anti_bot_challenge()_1]] - `contains` [EXTRACTED]
-- [[_cdp_render_search()]] - `contains` [EXTRACTED]
+- [[_cdp_render_search()_1]] - `contains` [EXTRACTED]
 - [[_extract_sku()]] - `contains` [EXTRACTED]
 - [[_graphql_card()]] - `contains` [EXTRACTED]
 - [[_lamoda_selfcheck_impl()]] - `contains` [EXTRACTED]
-- [[_polite_wait()_8]] - `contains` [EXTRACTED]
-- [[_proxy()_6]] - `contains` [EXTRACTED]
-- [[_search_item_from_tile()_1]] - `contains` [EXTRACTED]
+- [[_polite_wait()_9]] - `contains` [EXTRACTED]
+- [[_proxy()_4]] - `contains` [EXTRACTED]
+- [[_search_item_from_tile()_2]] - `contains` [EXTRACTED]
 - [[asyncio_2]] - `imports` [EXTRACTED]
 - [[browser_handoff.py]] - `imports_from` [EXTRACTED]
 - [[cache.py]] - `imports_from` [EXTRACTED]
@@ -36,7 +36,7 @@ tags:
 - [[errors.py]] - `imports_from` [EXTRACTED]
 - [[fastmcp_3]] - `imports_from` [EXTRACTED]
 - [[fastmcp_server_middleware_error_handling]] - `imports_from` [EXTRACTED]
-- [[get_settings()_3]] - `imports` [EXTRACTED]
+- [[get_settings()_7]] - `imports` [EXTRACTED]
 - [[httpx]] - `imports` [EXTRACTED]
 - [[json]] - `imports` [EXTRACTED]
 - [[lamoda_card()]] - `contains` [EXTRACTED]
@@ -59,4 +59,4 @@ tags:
 - [[typing]] - `imports_from` [EXTRACTED]
 - [[urllib_parse]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_33
+#graphify/code #graphify/EXTRACTED #community/json

@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/cdp_budget.py"
 type: "code"
-community: "Community 151"
+community: "NavigationBudget"
 location: "L143"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_151
+  - community/NavigationBudget
 ---
 
 # NavigationBudget
 
 ## Connections
-- [[dot-__init__()_9]] - `method` [EXTRACTED]
+- [[dot-__init__()_15]] - `method` [EXTRACTED]
 - [[dot-_host_semaphore()]] - `method` [EXTRACTED]
 - [[dot-_note_refusal()]] - `method` [EXTRACTED]
 - [[dot-_note_success()]] - `method` [EXTRACTED]
@@ -20,7 +20,7 @@ tags:
 - [[dot-_state()]] - `method` [EXTRACTED]
 - [[dot-acquire()]] - `method` [EXTRACTED]
 - [[dot-check()]] - `method` [EXTRACTED]
-- [[dot-reset()]] - `method` [EXTRACTED]
+- [[dot-reset()_1]] - `method` [EXTRACTED]
 - [[dot-slot()]] - `method` [EXTRACTED]
 - [[dot-snapshot()]] - `method` [EXTRACTED]
 - [[Global + per-host bounds for CDP navigations, with a refusal breaker. One…]] - `rationale_for` [EXTRACTED]
@@ -41,4 +41,4 @@ tags:
 - [[test_the_same_host_is_serialized_even_when_the_budget_is_free()]] - `uses` [INFERRED]
 - [[transport__init__.py]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_151
+#graphify/code #graphify/EXTRACTED #community/NavigationBudget

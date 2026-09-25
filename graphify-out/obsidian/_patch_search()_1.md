@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py"
 type: "code"
-community: "Community 44"
+community: "aliexpress-connector/tests/test_server.py"
 location: "L67"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_44
+  - community/aliexpress-connector/tests/test_serverpy
 ---
 
 # _patch_search()
@@ -20,4 +20,4 @@ tags:
 - [[test_search_maps_zero_tiles_to_parser_drift()_2]] - `calls` [EXTRACTED]
 - [[test_search_parses_tiles_current_not_base()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_44
+#graphify/code #graphify/EXTRACTED #community/aliexpress-connector/tests/test_serverpy

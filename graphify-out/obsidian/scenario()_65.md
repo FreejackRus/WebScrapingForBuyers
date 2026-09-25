@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 270"
-location: "L377"
+community: "_patch_questions"
+location: "L1830"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/Community_270
+  - graphify/EXTRACTED
+  - community/_patch_questions
 ---
 
 # scenario()
 
 ## Connections
-- [[blocking_get()]] - `indirect_call` [INFERRED]
-- [[fake_cdp()]] - `indirect_call` [INFERRED]
-- [[test_fetch_composer_times_out_blocking_curl_and_falls_back_to_cdp()]] - `contains` [EXTRACTED]
+- [[_patch_questions()]] - `calls` [EXTRACTED]
+- [[responder()_8]] - `indirect_call` [INFERRED]
+- [[test_category_products_honours_an_explicit_region()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/Community_270
+#graphify/code #graphify/EXTRACTED #community/_patch_questions

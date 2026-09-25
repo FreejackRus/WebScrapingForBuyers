@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_skills_parity.py"
 type: "rationale"
-community: "Community 75"
+community: "test_skills_parity.py"
 location: "L43"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_75
+  - community/test_skills_paritypy
 ---
 
 # Packages that expose a console script — i.e. runnable MCP servers.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_connector_packages()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_75
+#graphify/rationale #graphify/EXTRACTED #community/test_skills_paritypy

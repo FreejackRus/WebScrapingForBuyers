@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/test_stdio_probe.py"
 type: "code"
-community: "Community 79"
+community: "test_stdio_probe.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_79
+  - community/test_stdio_probepy
 ---
 
 # test_stdio_probe.py
@@ -39,4 +39,4 @@ tags:
 - [[time]] - `imports` [EXTRACTED]
 - [[unrelated_process()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_79
+#graphify/code #graphify/EXTRACTED #community/test_stdio_probepy

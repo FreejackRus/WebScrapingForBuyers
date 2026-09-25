@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_http_tier.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_call_envelope.py"
 type: "code"
-community: "Community 17"
-location: "L37"
+community: "payload"
+location: "L244"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_17
+  - community/payload
 ---
 
 # handler()
 
 ## Connections
-- [[test_body_cap_is_enforced()]] - `contains` [EXTRACTED]
+- [[test_a_transport_exception_does_not_carry_the_token()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_17
+#graphify/code #graphify/EXTRACTED #community/payload

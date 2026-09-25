@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "Community 29"
+community: "pathlib"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_29
+  - community/pathlib
 ---
 
 # queue
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[stdio_probe.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_29
+#graphify/concept #graphify/EXTRACTED #community/pathlib

@@ -13,7 +13,7 @@ export function SourceGrid({ sources, role }: { sources: SourceState[]; role: Us
   const completed = sources.filter(({ status }) => status === "done").length;
   const failed = sources.filter(({ status }) => status === "error").length;
   return (
-    <section className="panel" aria-labelledby="sources-title">
+    <section className="panel sources-panel" aria-labelledby="sources-title">
       <div className="panel-heading">
         <div>
           <p className="eyebrow">Администратор</p>

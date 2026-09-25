@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_provenance.py"
 type: "rationale"
-community: "Community 126"
+community: "pathlib"
 location: "L28"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_126
+  - community/pathlib
 ---
 
 # Every (provenance, fixture, declared sha256) triple we can check.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[pins()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_126
+#graphify/rationale #graphify/EXTRACTED #community/pathlib

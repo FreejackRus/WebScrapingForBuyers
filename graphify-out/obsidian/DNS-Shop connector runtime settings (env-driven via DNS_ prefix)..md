@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/src/dns_connector/settings.py"
 type: "rationale"
-community: "Community 88"
+community: "pydantic"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_88
+  - community/pydantic
 ---
 
 # DNS-Shop connector runtime settings (env-driven via DNS_ prefix).
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[dns_connectorsettings.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_88
+#graphify/rationale #graphify/EXTRACTED #community/pydantic

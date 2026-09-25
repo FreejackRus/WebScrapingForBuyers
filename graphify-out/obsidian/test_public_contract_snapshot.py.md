@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_public_contract_snapshot.py"
 type: "code"
-community: "Community 95"
+community: "test_public_contract_snapshot.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_95
+  - community/test_public_contract_snapshotpy
 ---
 
 # test_public_contract_snapshot.py
@@ -31,4 +31,4 @@ tags:
 - [[test_the_snapshot_projection_is_deterministic()]] - `contains` [EXTRACTED]
 - [[typing]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_95
+#graphify/code #graphify/EXTRACTED #community/test_public_contract_snapshotpy

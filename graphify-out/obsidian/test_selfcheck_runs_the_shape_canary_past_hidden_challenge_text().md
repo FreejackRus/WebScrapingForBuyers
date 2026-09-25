@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py"
 type: "code"
-community: "Community 326"
+community: "test_selfcheck_runs_the_shape_canary_past_hidden_challenge_text"
 location: "L565"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_326
+  - community/test_selfcheck_runs_the_shape_canary_past_hidden_challenge_text
 ---
 
 # test_selfcheck_runs_the_shape_canary_past_hidden_challenge_text()
@@ -16,4 +16,4 @@ tags:
 - [[_patch_render()_1]] - `calls` [EXTRACTED]
 - [[taobao-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_326
+#graphify/code #graphify/EXTRACTED #community/test_selfcheck_runs_the_shape_canary_past_hidden_challenge_text

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py"
 type: "code"
-community: "Community 139"
+community: "fake_selfcheck"
 location: "L112"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_139
+  - community/fake_selfcheck
 ---
 
 # fake_selfcheck()
@@ -20,4 +20,4 @@ tags:
 - [[test_doctor_survives_a_selfcheck_that_raises()]] - `indirect_call` [INFERRED]
 - [[test_doctor_writes_a_status_file()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Community_139
+#graphify/code #graphify/INFERRED #community/fake_selfcheck

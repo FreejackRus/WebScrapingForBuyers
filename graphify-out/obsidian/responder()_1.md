@@ -1,18 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 20"
-location: "L1868"
+community: "_tool_error_payload"
+location: "L1840"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_20
+  - community/_tool_error_payload
 ---
 
 # responder()
 
 ## Connections
-- [[_catalog_payload()]] - `calls` [EXTRACTED]
-- [[test_category_item_shape_matches_wb_card()]] - `contains` [EXTRACTED]
+- [[test_category_products_raises_drift_on_an_unexpected_payload()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_20
+#graphify/code #graphify/EXTRACTED #community/_tool_error_payload

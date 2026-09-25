@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/server.py"
 type: "rationale"
-community: "Community 37"
+community: "detmir_selfcheck"
 location: "L660"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_37
+  - community/detmir_selfcheck
 ---
 
 # Probe every Detsky Mir endpoint family and report a tri-state verdict.…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[detmir_selfcheck()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_37
+#graphify/rationale #graphify/EXTRACTED #community/detmir_selfcheck

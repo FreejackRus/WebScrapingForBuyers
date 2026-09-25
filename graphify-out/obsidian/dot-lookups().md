@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py"
 type: "code"
-community: "Community 243"
+community: "CacheStats"
 location: "L36"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_243
+  - community/CacheStats
 ---
 
 # .lookups()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[CacheStats]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_243
+#graphify/code #graphify/EXTRACTED #community/CacheStats

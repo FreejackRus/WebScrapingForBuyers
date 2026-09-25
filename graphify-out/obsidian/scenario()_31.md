@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "Community 122"
-location: "L2251"
+community: "_patch_tier1"
+location: "L803"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_122
+  - community/_patch_tier1
 ---
 
 # scenario()
 
 ## Connections
-- [[_healthy_selfcheck_responder()]] - `calls` [EXTRACTED]
-- [[no_wait()_4]] - `indirect_call` [INFERRED]
-- [[test_the_canary_sees_the_primary_search_path()]] - `contains` [EXTRACTED]
+- [[_patch_tier1()]] - `calls` [EXTRACTED]
+- [[counting_get()_1]] - `indirect_call` [INFERRED]
+- [[test_fetch_composer_serves_a_repeat_read_from_cache()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_122
+#graphify/code #graphify/EXTRACTED #community/_patch_tier1

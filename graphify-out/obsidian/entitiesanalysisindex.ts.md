@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/entities/analysis/index.ts"
 type: "code"
-community: "Community 92"
+community: "useAnalysisStore"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_92
+  - community/useAnalysisStore
 ---
 
 # entities/analysis/index.ts
@@ -25,4 +25,4 @@ tags:
 - [[useAnalysisStore]] - `re_exports` [EXTRACTED]
 - [[widgetsusersettingsuiindex.tsx]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_92
+#graphify/code #graphify/EXTRACTED #community/useAnalysisStore

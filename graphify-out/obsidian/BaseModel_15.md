@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 46"
+community: "wb_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_46
+  - community/wb_connector/serverpy
 ---
 
 # BaseModel
@@ -25,4 +25,4 @@ tags:
 - [[WbSearchResponse]] - `inherits` [EXTRACTED]
 - [[WbSellerResponse]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_46
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

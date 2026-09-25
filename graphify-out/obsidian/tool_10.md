@@ -1,17 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 38"
+community: "TransportDownError"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_38
+  - community/TransportDownError
 ---
 
 # tool
 
 ## Connections
-- [[aliexpress_card()]] - `references` [EXTRACTED]
-- [[aliexpress_search()]] - `references` [EXTRACTED]
+- [[lamoda_card()]] - `references` [EXTRACTED]
+- [[lamoda_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_38
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

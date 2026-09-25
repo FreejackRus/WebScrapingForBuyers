@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_transport.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_http_tier.py"
 type: "code"
-community: "Community 13"
-location: "L133"
+community: "make_client"
+location: "L122"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_13
+  - community/make_client
 ---
 
 # handler()
 
 ## Connections
-- [[test_httpx_timeout_is_classified_as_timeout()_1]] - `contains` [EXTRACTED]
+- [[test_exhausted_gateway_retries_return_the_real_response()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_13
+#graphify/code #graphify/EXTRACTED #community/make_client

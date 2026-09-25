@@ -1,17 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "code"
-community: "Community 172"
-location: "L501"
+community: "PageLike"
+location: "L597"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_172
+  - community/PageLike
 ---
 
 # .send()
 
 ## Connections
-- [[_FakeWs]] - `method` [EXTRACTED]
+- [[_WsLike]] - `method` [EXTRACTED]
+- [[capture_owned_viewport()]] - `calls` [EXTRACTED]
+- [[reveal_owned_page()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_172
+#graphify/code #graphify/EXTRACTED #community/PageLike

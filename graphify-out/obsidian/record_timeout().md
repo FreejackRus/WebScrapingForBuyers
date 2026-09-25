@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_snapshot.py"
 type: "code"
-community: "Community 69"
+community: "test_chrome_cdp_snapshot.py"
 location: "L139"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_69
+  - community/test_chrome_cdp_snapshotpy
 ---
 
 # record_timeout()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_metrics_and_capture_share_one_deadline()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Community_69
+#graphify/code #graphify/INFERRED #community/test_chrome_cdp_snapshotpy

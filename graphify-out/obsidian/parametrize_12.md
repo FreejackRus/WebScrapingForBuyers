@@ -1,16 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 17"
+community: "pytest"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_17
+  - community/pytest
 ---
 
 # parametrize
 
 ## Connections
-- [[test_gateway_statuses_are_retried()]] - `references` [EXTRACTED]
+- [[test_help_does_not_start_the_server()]] - `references` [EXTRACTED]
+- [[test_operator_subcommands_forward_their_arguments()]] - `references` [EXTRACTED]
+- [[test_unknown_argument_exits_with_error()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_17
+#graphify/code #graphify/EXTRACTED #community/pytest

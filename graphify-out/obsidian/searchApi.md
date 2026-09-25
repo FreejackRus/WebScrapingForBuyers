@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/entities/search/api/index.ts"
 type: "code"
-community: "Community 124"
+community: "useSearchStore"
 location: "L5"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_124
+  - community/useSearchStore
 ---
 
 # searchApi
@@ -19,4 +19,4 @@ tags:
 - [[searchstoreindex.ts]] - `imports` [EXTRACTED]
 - [[workspaceuiindex.tsx]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_124
+#graphify/code #graphify/EXTRACTED #community/useSearchStore

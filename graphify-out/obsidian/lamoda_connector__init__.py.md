@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/__init__.py"
 type: "code"
-community: "Community 168"
+community: "lamoda-connector/tests/test_shape_reference.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_168
+  - community/lamoda-connector/tests/test_shape_referencepy
 ---
 
 # lamoda_connector/__init__.py
@@ -19,4 +19,4 @@ tags:
 - [[lamoda-connectorteststest_server.py]] - `imports_from` [EXTRACTED]
 - [[lamoda-connectorteststest_shape_reference.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_168
+#graphify/code #graphify/EXTRACTED #community/lamoda-connector/tests/test_shape_referencepy

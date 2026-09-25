@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/package.json"
 type: "concept"
-community: "Community 63"
-location: "L21"
+community: "web/package.json"
+location: "L22"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_63
+  - community/web/packagejson
 ---
 
 # @types/react-dom
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[webpackage.json]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_63
+#graphify/concept #graphify/EXTRACTED #community/web/packagejson

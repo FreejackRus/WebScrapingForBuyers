@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py"
 type: "code"
-community: "Community 52"
+community: "TTLCache"
 location: "L53"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_52
+  - community/TTLCache
 ---
 
 # TTLCache
@@ -16,7 +16,7 @@ tags:
 - [[dot-__len__()]] - `method` [EXTRACTED]
 - [[dot-clear()]] - `method` [EXTRACTED]
 - [[dot-enabled()]] - `method` [EXTRACTED]
-- [[dot-get()_1]] - `method` [EXTRACTED]
+- [[dot-get()]] - `method` [EXTRACTED]
 - [[dot-get_or_fetch()]] - `method` [EXTRACTED]
 - [[dot-invalidate()]] - `method` [EXTRACTED]
 - [[dot-purge_expired()]] - `method` [EXTRACTED]
@@ -25,7 +25,7 @@ tags:
 - [[Bounded LRU cache whose entries expire after ``ttl_s`` seconds. ``ttl_s = 0``…]] - `rationale_for` [EXTRACTED]
 - [[browser()]] - `uses` [INFERRED]
 - [[cache.py]] - `contains` [EXTRACTED]
-- [[scenario()_83]] - `calls` [EXTRACTED]
+- [[scenario()_82]] - `calls` [EXTRACTED]
 - [[test_cache_can_be_disabled_by_ttl_zero()]] - `uses` [INFERRED]
 - [[test_challenge_recovery_bypasses_failed_payload_cache()]] - `uses` [INFERRED]
 - [[test_challenge_recovery_reads_browser_again_and_caches_only_success()]] - `uses` [INFERRED]
@@ -40,4 +40,4 @@ tags:
 - [[test_stats_hit_rate_is_safe_when_empty()]] - `uses` [INFERRED]
 - [[test_zero_ttl_disables_caching()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Community_52
+#graphify/code #graphify/INFERRED #community/TTLCache

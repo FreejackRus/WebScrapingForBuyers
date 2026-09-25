@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_raw_lifecycle.py"
 type: "code"
-community: "Community 26"
-location: "L215"
+community: "pytest"
+location: "L123"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_26
+  - community/pytest
 ---
 
 # run()
 
 ## Connections
-- [[test_run_server_treats_broken_pipe_as_clean_exit()]] - `contains` [EXTRACTED]
+- [[test_raw_cleanup_is_bounded_and_preserves_original_failure()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_26
+#graphify/code #graphify/EXTRACTED #community/pytest

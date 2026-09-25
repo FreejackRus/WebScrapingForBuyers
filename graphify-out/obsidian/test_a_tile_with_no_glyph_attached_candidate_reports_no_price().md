@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_search_extractor_dom.py"
 type: "code"
-community: "Community 72"
+community: "prices_from_tile"
 location: "L135"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_72
+  - community/prices_from_tile
 ---
 
 # test_a_tile_with_no_glyph_attached_candidate_reports_no_price()
@@ -16,4 +16,4 @@ tags:
 - [[citilink-connectorteststest_search_extractor_dom.py]] - `contains` [EXTRACTED]
 - [[prices_from_tile()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_72
+#graphify/code #graphify/EXTRACTED #community/prices_from_tile

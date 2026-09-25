@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 29"
+community: "HostRefusingError"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_29
+  - community/HostRefusingError
 ---
 
 # RuntimeError
 
 ## Connections
-- [[ProbeError]] - `inherits` [EXTRACTED]
+- [[HostRefusingError]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_29
+#graphify/code #graphify/EXTRACTED #community/HostRefusingError

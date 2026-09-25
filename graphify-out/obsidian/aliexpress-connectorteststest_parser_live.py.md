@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_parser_live.py"
 type: "code"
-community: "Community 137"
+community: "aliexpress-connector/tests/test_parser_live.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_137
+  - community/aliexpress-connector/tests/test_parser_livepy
 ---
 
 # aliexpress-connector/tests/test_parser_live.py
@@ -23,4 +23,4 @@ tags:
 - [[test_search_extractor_pairing_agrees_with_python()]] - `contains` [EXTRACTED]
 - [[test_search_extractor_reads_the_captured_grid()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_137
+#graphify/code #graphify/EXTRACTED #community/aliexpress-connector/tests/test_parser_livepy

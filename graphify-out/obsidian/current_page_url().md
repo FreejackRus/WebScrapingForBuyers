@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "code"
-community: "Community 11"
+community: "PageLike"
 location: "L804"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_11
+  - community/PageLike
 ---
 
 # current_page_url()
@@ -17,4 +17,4 @@ tags:
 - [[_run()]] - `calls` [EXTRACTED]
 - [[chrome_cdp.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_11
+#graphify/code #graphify/EXTRACTED #community/PageLike

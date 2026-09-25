@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_main.py"
 type: "code"
-community: "Community 161"
+community: "pytest"
 location: "L53"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_161
+  - community/pytest
 ---
 
 # test_no_arguments_starts_the_default_server()
@@ -15,4 +15,4 @@ tags:
 - [[fake_run_server()]] - `indirect_call` [INFERRED]
 - [[test_main.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_161
+#graphify/code #graphify/EXTRACTED #community/pytest

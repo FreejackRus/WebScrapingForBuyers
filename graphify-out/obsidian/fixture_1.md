@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 105"
+community: "ozon-connector/tests/test_server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_105
+  - community/ozon-connector/tests/test_serverpy
 ---
 
 # fixture
 
 ## Connections
-- [[_no_cache()]] - `references` [EXTRACTED]
+- [[clear_cache()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_105
+#graphify/code #graphify/EXTRACTED #community/ozon-connector/tests/test_serverpy

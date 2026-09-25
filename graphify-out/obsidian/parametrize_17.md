@@ -1,18 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 259"
+community: "ProductIdentity"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_259
+  - community/ProductIdentity
 ---
 
 # parametrize
 
 ## Connections
-- [[test_card_rejects_input_without_an_item_id()_1]] - `references` [EXTRACTED]
-- [[test_challenge_recovery_reads_browser_again_and_caches_only_success()]] - `references` [EXTRACTED]
-- [[test_extract_item_id_refuses_off_host_input()]] - `references` [EXTRACTED]
+- [[test_gtin_rejects_malformed_values()]] - `references` [EXTRACTED]
+- [[test_non_latin_variant_conflicts_are_not_erased()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_259
+#graphify/code #graphify/EXTRACTED #community/ProductIdentity

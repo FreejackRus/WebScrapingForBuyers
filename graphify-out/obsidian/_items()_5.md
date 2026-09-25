@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_search_extractor_dom.py"
 type: "code"
-community: "Community 97"
+community: "lamoda-connector/tests/test_search_extractor_dom.py"
 location: "L45"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_97
+  - community/lamoda-connector/tests/test_search_extractor_dompy
 ---
 
 # _items()
@@ -19,4 +19,4 @@ tags:
 - [[test_search_extractor_reads_the_real_grid()_2]] - `calls` [EXTRACTED]
 - [[test_strikethrough_is_reported_as_the_old_price()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_97
+#graphify/code #graphify/EXTRACTED #community/lamoda-connector/tests/test_search_extractor_dompy

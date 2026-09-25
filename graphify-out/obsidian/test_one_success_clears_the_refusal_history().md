@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cdp_budget.py"
 type: "code"
-community: "Community 130"
+community: "test_cdp_budget.py"
 location: "L163"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_130
+  - community/test_cdp_budgetpy
 ---
 
 # test_one_success_clears_the_refusal_history()
@@ -16,4 +16,4 @@ tags:
 - [[NavigationBudget]] - `uses` [INFERRED]
 - [[test_cdp_budget.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_130
+#graphify/code #graphify/EXTRACTED #community/test_cdp_budgetpy

@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "Community 9"
+community: "packages_contracts_dist_index"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_9
+  - community/packages_contracts_dist_index
 ---
 
 # packages_contracts_dist_index_offer
@@ -22,9 +22,14 @@ tags:
 - [[filter-offersindex.ts]] - `imports` [EXTRACTED]
 - [[http-marketplace-adapter.ts]] - `imports` [EXTRACTED]
 - [[mcp-marketplace-adapter.ts]] - `imports` [EXTRACTED]
+- [[merlion-client.ts]] - `imports` [EXTRACTED]
+- [[netlab-client.ts]] - `imports` [EXTRACTED]
+- [[ocs-client.ts]] - `imports` [EXTRACTED]
 - [[offerlibindex.ts]] - `imports` [EXTRACTED]
 - [[ollama-analysis-narrator.ts]] - `imports` [EXTRACTED]
+- [[prompt-intent.ts]] - `imports` [EXTRACTED]
 - [[search-service.ts]] - `imports` [EXTRACTED]
 - [[source-adapter.ts]] - `imports` [EXTRACTED]
+- [[workspaceuiindex.test.tsx]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_9
+#graphify/concept #graphify/EXTRACTED #community/packages_contracts_dist_index

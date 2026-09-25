@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/test_e2e_stdio_check.py"
 type: "code"
-community: "Community 15"
-location: "L417"
+community: "aliexpress-connector/tests/test_parser_live.py"
+location: "L57"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_15
+  - community/aliexpress-connector/tests/test_parser_livepy
 ---
 
 # __init__()
 
 ## Connections
-- [[test_fetch_debug_never_leaks_tier1_exception_secrets()]] - `contains` [EXTRACTED]
+- [[test_probe_checks_running_version()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_15
+#graphify/code #graphify/EXTRACTED #community/aliexpress-connector/tests/test_parser_livepy

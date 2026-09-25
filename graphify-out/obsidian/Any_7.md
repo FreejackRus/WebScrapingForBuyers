@@ -1,16 +1,26 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 196"
+community: "Any"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_196
+  - community/Any
 ---
 
 # Any
 
 ## Connections
-- [[decision_inspect()]] - `references` [EXTRACTED]
+- [[_type_tag()]] - `references` [EXTRACTED]
+- [[_walk_shape()]] - `references` [EXTRACTED]
+- [[coerce_int()]] - `references` [EXTRACTED]
+- [[coerce_price()]] - `references` [EXTRACTED]
+- [[coerce_rating()]] - `references` [EXTRACTED]
+- [[deep_first()]] - `references` [EXTRACTED]
+- [[first_present()]] - `references` [EXTRACTED]
+- [[flatten_text()]] - `references` [EXTRACTED]
+- [[price_from_texts()]] - `references` [EXTRACTED]
+- [[selfcheck_entry()]] - `references` [EXTRACTED]
+- [[shape_signature()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_196
+#graphify/code #graphify/EXTRACTED #community/Any

@@ -1,21 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 145"
+community: "aliexpress_connector/models_output.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_145
+  - community/aliexpress_connector/models_outputpy
 ---
 
 # BaseModel
 
 ## Connections
-- [[OzonCardResponse]] - `inherits` [EXTRACTED]
-- [[OzonReviewItemOut]] - `inherits` [EXTRACTED]
-- [[OzonReviewsResponse]] - `inherits` [EXTRACTED]
-- [[OzonSearchItemOut]] - `inherits` [EXTRACTED]
-- [[OzonSearchResponse]] - `inherits` [EXTRACTED]
-- [[OzonSellerOut]] - `inherits` [EXTRACTED]
+- [[AliCardResponse]] - `inherits` [EXTRACTED]
+- [[AliSearchItemOut]] - `inherits` [EXTRACTED]
+- [[AliSearchResponse]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_145
+#graphify/code #graphify/EXTRACTED #community/aliexpress_connector/models_outputpy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py"
 type: "code"
-community: "Community 106"
+community: "taobao-connector/tests/test_server.py"
 location: "L87"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_106
+  - community/taobao-connector/tests/test_serverpy
 ---
 
 # _patch_render()
@@ -38,4 +38,4 @@ tags:
 - [[test_selfcheck_zero_items_is_drift()]] - `calls` [EXTRACTED]
 - [[test_titled_and_title_less_walls_classify_identically()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_106
+#graphify/code #graphify/EXTRACTED #community/taobao-connector/tests/test_serverpy

@@ -1,18 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 111"
-location: "L766"
+community: "test_safe_get_text_does_not_retry_http_status_errors"
+location: "L270"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/Community_111
+  - graphify/INFERRED
+  - community/test_safe_get_text_does_not_retry_http_status_errors
 ---
 
 # scenario()
 
 ## Connections
-- [[fake_fetch()]] - `indirect_call` [INFERRED]
-- [[test_reviews_tolerates_malformed_uuid_next_button_and_score()]] - `contains` [EXTRACTED]
+- [[fake_polite_wait()_2]] - `indirect_call` [INFERRED]
+- [[fake_sleep()_1]] - `indirect_call` [INFERRED]
+- [[test_safe_get_text_does_not_retry_http_status_errors()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_111
+#graphify/code #graphify/INFERRED #community/test_safe_get_text_does_not_retry_http_status_errors

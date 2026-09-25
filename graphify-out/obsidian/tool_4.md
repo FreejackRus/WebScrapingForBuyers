@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 196"
+community: "decision_inspect"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_196
+  - community/decision_inspect
 ---
 
 # tool
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[decision_inspect()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_196
+#graphify/code #graphify/EXTRACTED #community/decision_inspect

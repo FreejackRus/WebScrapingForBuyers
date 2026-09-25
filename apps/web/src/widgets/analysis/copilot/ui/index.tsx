@@ -6,7 +6,7 @@ import { useUserStore } from "entities/user";
 import { money } from "shared/lib";
 
 const emptyFilters = [
-  "После сбора здесь появятся конкретные шаги: состав снимка, сортировка по цене, top-N.",
+  "После сбора здесь появятся конкретные шаги: состав предложений, отбор и сортировка по цене.",
 ];
 const emptyWarnings = ["Проверяйте наличие, доставку и условия продавца перед закупкой."];
 
@@ -46,7 +46,7 @@ export function AnalystPanel() {
             общий чат. Цена ранжируется кодом; релевантность названия может уточнять модель.
           </p>
         </div>
-        <span className="model-badge">{analysis?.provider ?? "Закрытый контур ПЕРЕМЕНА"}</span>
+        <span className="model-badge">{user.role === "admin" ? (analysis?.provider ?? "Закрытый контур ПЕРЕМЕНА") : "Закрытый контур ПЕРЕМЕНА"}</span>
       </div>
       <form onSubmit={(event) => void onSubmit(event)}>
         <label className="sr-only" htmlFor="analysis-prompt">

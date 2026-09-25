@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/pyproject.toml"
 type: "code"
-community: "Community 123"
+community: "marketplace-connector"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_123
+  - community/marketplace-connector
 ---
 
 # ru-marketplace-mcp
@@ -29,4 +29,4 @@ tags:
 - [[wb-connector]] - `depends_on` [EXTRACTED]
 - [[yandex-connector]] - `depends_on` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_123
+#graphify/code #graphify/EXTRACTED #community/marketplace-connector

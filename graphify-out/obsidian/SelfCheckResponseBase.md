@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/models.py"
 type: "code"
-community: "Community 41"
+community: "ozon_card"
 location: "L79"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_41
+  - community/ozon_card
 ---
 
 # SelfCheckResponseBase
@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[AliSelfcheckResponse]] - `inherits` [EXTRACTED]
 - [[AvitoSelfcheckResponse]] - `inherits` [EXTRACTED]
-- [[BaseModel_14]] - `inherits` [EXTRACTED]
+- [[BaseModel_10]] - `inherits` [EXTRACTED]
 - [[CianSelfcheckResponse]] - `inherits` [EXTRACTED]
 - [[CitilinkSelfcheckResponse]] - `inherits` [EXTRACTED]
 - [[DetmirSelfcheckResponse]] - `inherits` [EXTRACTED]
@@ -29,4 +29,4 @@ tags:
 - [[YandexSelfcheckResponse]] - `inherits` [EXTRACTED]
 - [[models.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_41
+#graphify/code #graphify/EXTRACTED #community/ozon_card

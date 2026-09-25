@@ -1,17 +1,17 @@
 ---
-source_file: "apps/gateway/package.json"
-type: "code"
-community: "Community 114"
+source_file: "apps/analysis/package.json"
+type: "concept"
+community: "analysis/package.json"
 location: "L19"
 tags:
-  - graphify/code
+  - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_114
+  - community/analysis/packagejson
 ---
 
 # @types/node
 
 ## Connections
-- [[devDependencies_1]] - `contains` [EXTRACTED]
+- [[analysispackage.json]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_114
+#graphify/concept #graphify/EXTRACTED #community/analysis/packagejson

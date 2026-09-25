@@ -1,18 +1,19 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
+source_file: "apps/search/src/domain/product-from-query.ts"
 type: "code"
-community: "Community 80"
-location: "L855"
+community: "live-suggest.ts"
+location: "L52"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_80
+  - community/live-suggestts
 ---
 
 # collapseWs()
 
 ## Connections
-- [[marketplaceSearchQueries()]] - `calls` [EXTRACTED]
-- [[mcp-marketplace-adapter.ts]] - `contains` [EXTRACTED]
+- [[product-from-query.ts]] - `contains` [EXTRACTED]
+- [[productFromQuery()]] - `calls` [EXTRACTED]
+- [[splitBrandModel()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_80
+#graphify/code #graphify/EXTRACTED #community/live-suggestts

@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_handoff_liveness_consistency.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py"
 type: "code"
-community: "Community 3"
-location: "L30"
+community: "test_challenge_recovery_bypasses_failed_payload_cache"
+location: "L187"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_3
+  - community/test_challenge_recovery_bypasses_failed_payload_cache
 ---
 
 # open_page()
 
 ## Connections
-- [[browser()_1]] - `indirect_call` [INFERRED]
+- [[test_challenge_recovery_bypasses_failed_payload_cache()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Community_3
+#graphify/code #graphify/INFERRED #community/test_challenge_recovery_bypasses_failed_payload_cache

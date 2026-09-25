@@ -1,22 +1,23 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_card_out_of_stock_dom.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_search_extractor_dom.py"
 type: "code"
-community: "Community 50"
-location: "L31"
+community: "_extract"
+location: "L54"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_50
+  - community/_extract
 ---
 
 # _extract()
 
 ## Connections
 - [[JsdomUnavailable]] - `uses` [INFERRED]
+- [[Run the connector's real extractor over the captured markup. Skips rather than…]] - `rationale_for` [EXTRACTED]
+- [[dns-connectorteststest_search_extractor_dom.py]] - `contains` [EXTRACTED]
 - [[run_extractor()]] - `calls` [EXTRACTED]
-- [[test_a_recommendation_price_is_never_the_products()]] - `calls` [EXTRACTED]
-- [[test_card_out_of_stock_dom.py]] - `contains` [EXTRACTED]
-- [[test_out_of_stock_card_reports_no_price()]] - `calls` [EXTRACTED]
-- [[test_out_of_stock_is_read_from_the_page_text()]] - `calls` [EXTRACTED]
+- [[test_search_extractor_ignores_the_instalment_line()]] - `calls` [EXTRACTED]
+- [[test_search_extractor_reads_the_real_grid()_1]] - `calls` [EXTRACTED]
+- [[test_search_items_match_the_prices_on_the_page()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_50
+#graphify/code #graphify/EXTRACTED #community/_extract

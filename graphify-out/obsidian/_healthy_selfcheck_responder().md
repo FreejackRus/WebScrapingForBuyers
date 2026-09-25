@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 122"
+community: "_healthy_selfcheck_responder"
 location: "L2192"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_122
+  - community/_healthy_selfcheck_responder
 ---
 
 # _healthy_selfcheck_responder()
@@ -14,8 +14,8 @@ tags:
 ## Connections
 - [[Every canary probe healthy except v9, which answers with ``v9_response``.]] - `rationale_for` [EXTRACTED]
 - [[responder()]] - `contains` [EXTRACTED]
-- [[responder()_9]] - `indirect_call` [INFERRED]
-- [[scenario()_31]] - `calls` [EXTRACTED]
+- [[responder()_8]] - `indirect_call` [INFERRED]
+- [[scenario()_28]] - `calls` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_122
+#graphify/code #graphify/EXTRACTED #community/_healthy_selfcheck_responder

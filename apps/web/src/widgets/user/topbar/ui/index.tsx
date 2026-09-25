@@ -29,7 +29,7 @@ export function Topbar({ view, onView }: { view: AppView; onView: (view: AppView
             <span className="city-pin" aria-hidden="true">
               ⌖
             </span>
-            <b>{user.city}</b>
+            <b className="city-label">{user.city}</b>
           </span>
           {isAdmin && health && (
             <span className={`mode-badge ${health.mode}`}>
@@ -43,7 +43,13 @@ export function Topbar({ view, onView }: { view: AppView; onView: (view: AppView
           >
             {view === "settings" ? "К поиску" : "Настройки"}
           </button>
-          <button className="avatar" type="button" onClick={() => onView("settings")} title={user.displayName}>
+          <button
+            className="avatar"
+            type="button"
+            onClick={() => onView("settings")}
+            title={user.displayName}
+            aria-label={`Профиль, ${user.displayName}`}
+          >
             {initials(user.displayName)}
           </button>
           <button className="ghost topbar-logout" type="button" onClick={() => void logout()}>

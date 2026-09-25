@@ -83,7 +83,7 @@ describe("analyzeSnapshot", () => {
       expect.arrayContaining([
         "В снимке поиска «MX Master»: 3 предложений.",
         "Сортировка по возрастанию цены.",
-        "Отобрано top-1: Wildberries, 8 990 ₽, Marketplace.",
+        "Выбран 1 вариант: Wildberries, 8 990 ₽, Marketplace.",
       ]),
     );
     expect(result.appliedFilters.join("\n")).not.toMatch(/демо/i);
@@ -268,7 +268,7 @@ describe("analyzeSnapshot", () => {
     expect(result.summary).toMatch(/^Михаил,/);
     expect(result.summary).toMatch(/копайлот закупок|Price Radar/i);
     expect(result.summary).toMatch(/не общий чат/i);
-    expect(result.provider).toBe("Справочный ответ Price Radar");
+    expect(result.provider).toBe("Закрытый контур ПЕРЕМЕНА");
   });
 
   it("routes meta help through narrator.answer when available", async () => {
@@ -286,7 +286,7 @@ describe("analyzeSnapshot", () => {
       },
       { userName: "Михаил", userRole: "manager" },
     );
-    expect(result.provider).toBe("Ollama · mock");
+    expect(result.provider).toBe("Закрытый контур ПЕРЕМЕНА");
     expect(result.summary).toBe("Михаил, я из модели — копайлот Price Radar.");
     expect(seen?.prompt).toBe("Кто ты?");
     expect(seen?.addressAs).toBe("Михаил");
@@ -304,6 +304,7 @@ describe("analyzeSnapshot", () => {
     const result = await analyzeSnapshot(snapshot([wbReal]), "Как выбираешь лучшее?");
     expect(result.intent).toBe("ranking");
     expect(result.summary).toMatch(/детерминирован|цене/i);
+    expect(JSON.stringify(result)).not.toMatch(/doubtful|exact\/probable|top-N|\bID\b/i);
   });
 
   it("soft-drops doubtful when exact/probable rows exist", () => {
@@ -373,7 +374,7 @@ describe("analyzeSnapshot", () => {
       },
     );
     expect(result.selectedOfferIds).toEqual(["mx"]);
-    expect(result.appliedFilters.some((item) => /LLM отсеяла/i.test(item))).toBe(true);
+    expect(result.appliedFilters.some((item) => /убраны предложения с неподходящим названием/i.test(item))).toBe(true);
     expect(seen?.candidates.some((row) => row.id === "case")).toBe(true);
   });
 
@@ -390,7 +391,7 @@ describe("analyzeSnapshot", () => {
       },
     );
     expect(result.selectedOfferIds).toEqual(["wb-real"]);
-    expect(result.warnings.some((item) => /LLM-фильтр релевантности недоступен/i.test(item))).toBe(
+    expect(result.warnings.some((item) => /проверка соответствия временно недоступна/i.test(item))).toBe(
       true,
     );
   });
@@ -404,7 +405,7 @@ describe("analyzeSnapshot", () => {
   it("summarizes sources without raw message for managers", async () => {
     const withSources = snapshot([wbReal]);
     withSources.sources = [
-      { source: "Wildberries", status: "error", message: "VNC: ssh -L …" },
+      { source: "Wildberries", status: "error", message: "VNC: ssh -L 5901… MCP wb_search" },
       { source: "Ситилинк", status: "done" },
     ];
     const result = await analyzeSnapshot(withSources, "Какие источники в снимке?", undefined, {
@@ -412,34 +413,101 @@ describe("analyzeSnapshot", () => {
       userName: "Анна",
     });
     expect(result.intent).toBe("sources");
-    expect(result.summary).toContain("Wildberries: error");
-    expect(result.summary).not.toContain("VNC");
-    expect(result.warnings.some((item) => /manager/i.test(item))).toBe(true);
+    expect(result.summary).toContain("Wildberries: источник временно недоступен");
+    expect(result.summary).toContain("Ситилинк: данные получены");
+    expect(JSON.stringify(result)).not.toMatch(/VNC|ssh\s+-L|5901|wb_search|MCP|marketplace-mcp/i);
   });
 
-  it("includes source message for admin and answers VNC topic", async () => {
+  it("does not put source.message or VNC runbooks into copilot replies", async () => {
     const withSources = snapshot([wbReal]);
     withSources.sources = [
-      { source: "Wildberries", status: "error", message: "прогрев VNC" },
+      { source: "Wildberries", status: "error", message: "прогрев VNC: ssh -L 5901" },
     ];
     const sources = await analyzeSnapshot(withSources, "Какие источники в снимке?", undefined, {
       userRole: "admin",
     });
-    expect(sources.summary).toContain("прогрев VNC");
+    expect(sources.summary).toContain("источник временно недоступен");
+    expect(JSON.stringify(sources)).not.toMatch(/VNC|ssh\s+-L|5901|прогрев/i);
 
     const denied = await analyzeSnapshot(withSources, "Где прогревать антибот по VNC?", undefined, {
       userRole: "manager",
       userName: "Михаил",
     });
     expect(denied.intent).toBe("admin");
-    expect(denied.summary).toMatch(/только администратору/i);
+    expect(denied.summary).toMatch(/не про выбор предложений/i);
+    expect(JSON.stringify(denied)).not.toMatch(/VNC|ssh|MCP|chrome|5901/i);
 
     const allowed = await analyzeSnapshot(withSources, "Где прогревать антибот по VNC?", undefined, {
       userRole: "admin",
       userName: "Администратор",
     });
-    expect(allowed.summary).toMatch(/VNC/i);
-    expect(allowed.summary).not.toMatch(/только администратору/i);
+    expect(allowed.summary).toMatch(/временно недоступен|не про выбор предложений/i);
+    expect(JSON.stringify(allowed)).not.toMatch(/VNC|ssh\s+-L|5901|chrome-headed/i);
+  });
+
+  it("answers operational questions without invoking the narrator", async () => {
+    let called = false;
+    const result = await analyzeSnapshot(
+      snapshot([wbReal]),
+      "Как подключиться к VCN и M.C.P?",
+      {
+        name: "Ollama · mock",
+        summarize: async () => ({ summary: "unused", warnings: [] }),
+        answer: async () => {
+          called = true;
+          return { summary: "HTTP 403 на search.wb.ru", warnings: [] };
+        },
+      },
+      { userRole: "manager" },
+    );
+    expect(called).toBe(false);
+    expect(result.intent).toBe("admin");
+    expect(JSON.stringify(result)).not.toMatch(/VCN|M\.C\.P|HTTP 403|search\.wb\.ru/i);
+  });
+
+  it("answers source status without passing source.message to the narrator", async () => {
+    let seen: CopilotChatInput | undefined;
+    const withSources = snapshot([wbReal]);
+    withSources.sources = [
+      { source: "Wildberries", status: "error", message: "VNC: ssh -L 5901… MCP wb_search" },
+    ];
+    await analyzeSnapshot(
+      withSources,
+      "Какие источники в снимке?",
+      {
+        name: "Ollama · mock",
+        summarize: async () => ({ summary: "unused", warnings: [] }),
+        answer: async (input) => {
+          seen = input;
+          return { summary: "Анна, площадки в сборе перечислены по статусам.", warnings: [] };
+        },
+      },
+      { userRole: "admin", userName: "Анна" },
+    );
+    expect(seen).toBeUndefined();
+  });
+
+  it("does not ask the model to answer manager source questions", async () => {
+    const withSources = snapshot([wbReal]);
+    withSources.sources = [
+      { source: "Wildberries", status: "error", message: "VNC: ssh -L 5901… MCP wb_search" },
+    ];
+    const result = await analyzeSnapshot(
+      withSources,
+      "Какие источники в снимке?",
+      {
+        name: "Ollama · mock",
+        summarize: async () => ({ summary: "unused", warnings: [] }),
+        answer: async () => ({
+          summary: "Площадка упала. VNC: ssh -L 5901:127.0.0.1:5901, MCP wb_search.",
+          warnings: ["CHROME_CDP 9222 chrome-headed"],
+        }),
+      },
+      { userRole: "manager", userName: "Анна" },
+    );
+    expect(result.summary).toContain("Wildberries: источник временно недоступен");
+    expect(result.provider).toBe("Закрытый контур ПЕРЕМЕНА");
+    expect(JSON.stringify(result)).not.toMatch(/VNC|ssh\s+-L|5901|wb_search|MCP|9222|chrome-headed/i);
   });
 
   it("greets by name in deterministic explain summary and passes addressAs to narrator", async () => {
@@ -554,14 +622,142 @@ describe("answerCopilot", () => {
     expect(result.summary).toMatch(/G102/);
   });
 
+  it("does not invent offer facts or call the model without a search snapshot", async () => {
+    const result = await answerCopilot(
+      "Объясни, почему первое предложение лучше остальных",
+      {
+        name: "Ollama · mock",
+        summarize: async () => ({ summary: "unused", warnings: [] }),
+        answer: async () => { throw new Error("model must not explain unseen offers"); },
+      },
+      { userName: "Анна" },
+    );
+    expect(result.intent).toBe("help");
+    expect(result.summary).toMatch(/нет таблицы предложений/i);
+    expect(result.summary).not.toMatch(/цена|доставка|гарантия/i);
+  });
+
+  it("keeps a no-snapshot table filter out of the model and catalog search", async () => {
+    const result = await answerCopilot(
+      "Только ноутбуки по всем источникам, без игровых консолей",
+      {
+        name: "Ollama · mock",
+        summarize: async () => ({ summary: "unused", warnings: [] }),
+        answer: async () => { throw new Error("model must not filter without offers"); },
+      },
+    );
+    expect(result.intent).toBe("help");
+    expect(result.searchQuery).toBeUndefined();
+    expect(result.summary).toMatch(/нет таблицы предложений/i);
+  });
+
+  it("starts a new search for real offers by model when no snapshot exists", async () => {
+    const result = await answerCopilot("Покажи реальные предложения по MX Master 3S");
+    expect(result.intent).toBe("search");
+    expect(result.searchQuery).toBe("MX Master 3S");
+    expect(result.summary).toMatch(/MX Master 3S/);
+  });
+
+  it("does not report zero available sources when no snapshot exists", async () => {
+    const result = await answerCopilot("Какие источники сейчас доступны?");
+    expect(result.intent).toBe("sources");
+    expect(result.summary).toMatch(/статусы площадок неизвестны/i);
+    expect(result.summary).not.toMatch(/0 предложений/);
+  });
+
+  it("explains ranking rules without evaluating an unseen first offer", async () => {
+    const result = await answerCopilot(
+      "Почему лучше первый вариант?",
+      {
+        name: "Ollama · mock",
+        summarize: async () => ({ summary: "unused", warnings: [] }),
+        answer: async () => { throw new Error("model must not evaluate unseen offers"); },
+      },
+    );
+    expect(result.intent).toBe("ranking");
+    expect(result.summary).toMatch(/сортирую предложения по цене/i);
+    expect(result.summary).not.toMatch(/первый вариант стоит|доставка|гарантия/i);
+  });
+
+  it("does not let model output turn an admin question into a search", async () => {
+    const result = await answerCopilot(
+      "Как подключиться к VNC и открыть MCP?",
+      {
+        name: "Ollama · mock",
+        summarize: async () => ({ summary: "unused", warnings: [] }),
+        answer: async () => ({
+          summary: "Найду MCP VNC",
+          warnings: [],
+          intent: "search",
+          searchQuery: "MCP VNC",
+        }),
+      },
+      { userRole: "manager" },
+    );
+    expect(result.intent).toBe("admin");
+    expect(result.searchQuery).toBeUndefined();
+    expect(result.summary).not.toMatch(/VNC|MCP/i);
+  });
+
+  it("keeps a search useful when the model returns an invalid response", async () => {
+    const result = await answerCopilot(
+      "Найди Logitech K380",
+      {
+        name: "Ollama · mock",
+        summarize: async () => ({ summary: "unused", warnings: [] }),
+        answer: async () => { throw new Error("invalid_response"); },
+      },
+    );
+    expect(result.intent).toBe("search");
+    expect(result.searchQuery).toBe("Logitech K380");
+    expect(result.summary).toMatch(/уточняю модель/i);
+  });
+
+  it("uses the model only to extract a no-snapshot search query, not invent status", async () => {
+    const result = await answerCopilot(
+      "Найди Logitech K380",
+      {
+        name: "Ollama · mock",
+        summarize: async () => ({ summary: "unused", warnings: [] }),
+        answer: async () => ({
+          summary: "Источник временно недоступен, но цена 100 ₽.",
+          warnings: ["Нет товаров"],
+          intent: "search",
+          searchQuery: "Logitech K380",
+        }),
+      },
+    );
+    expect(result.intent).toBe("search");
+    expect(result.summary).toMatch(/уточняю модель/i);
+    expect(result.summary).not.toMatch(/недоступен|100 ₽/i);
+    expect(result.warnings).toEqual([]);
+  });
+
   it("falls back to canned text when narrator is missing", async () => {
     const result = await answerCopilot("Кто ты?", undefined, {
       userName: "Михаил",
       userRole: "manager",
     });
-    expect(result.provider).toBe("Справочный ответ Price Radar");
+    expect(result.provider).toBe("Закрытый контур ПЕРЕМЕНА");
     expect(result.summary).toMatch(/Михаил,/);
     expect(result.warnings.some((item) => /не подключена|шаблон/i.test(item))).toBe(true);
+  });
+
+  it("strips VNC runbooks from standalone chat for a manager", async () => {
+    const result = await answerCopilot(
+      "Почему пусто по WB?",
+      {
+        name: "Ollama · mock",
+        summarize: async () => ({ summary: "unused", warnings: [] }),
+        answer: async () => ({
+          summary: "Нужен прогрев. VNC: ssh -L 5901:127.0.0.1:5901, MCP wb_search.",
+          warnings: [],
+        }),
+      },
+      { userName: "Анна", userRole: "manager" },
+    );
+    expect(result.summary).not.toMatch(/VNC|ssh\s+-L|5901|wb_search|MCP/i);
+    expect(result.summary).toMatch(/статусы площадок неизвестны/);
   });
 });
 

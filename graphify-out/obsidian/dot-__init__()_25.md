@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
 type: "code"
-community: "Community 4"
-location: "L99"
+community: "BadRequestError"
+location: "L59"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_4
+  - community/BadRequestError
 ---
 
 # .__init__()
 
 ## Connections
-- [[dot-__init__()_26]] - `calls` [EXTRACTED]
-- [[BadRequestError]] - `method` [EXTRACTED]
+- [[dot-__init__()_27]] - `calls` [EXTRACTED]
+- [[AuthMissingError]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_4
+#graphify/code #graphify/EXTRACTED #community/BadRequestError

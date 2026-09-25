@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_http_tier_budgeted.py"
 type: "code"
-community: "Community 49"
+community: "pytest"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_49
+  - community/pytest
 ---
 
 # test_http_tier_budgeted.py
@@ -31,4 +31,4 @@ tags:
 - [[test_wall_clock_budget_bounds_a_single_slow_attempt()]] - `contains` [EXTRACTED]
 - [[transport__init__.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_49
+#graphify/code #graphify/EXTRACTED #community/pytest

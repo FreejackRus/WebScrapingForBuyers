@@ -1,17 +1,17 @@
 ---
-source_file: "apps/web/package.json"
+source_file: "apps/identity/package.json"
 type: "code"
-community: "Community 63"
+community: "identity/package.json"
 location: "L22"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_63
+  - community/identity/packagejson
 ---
 
 # typescript
 
 ## Connections
-- [[devDependencies_5]] - `contains` [EXTRACTED]
+- [[devDependencies_3]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_63
+#graphify/code #graphify/EXTRACTED #community/identity/packagejson

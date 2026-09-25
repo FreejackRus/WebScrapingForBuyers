@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py"
 type: "rationale"
-community: "Community 24"
+community: "OfferBatch"
 location: "L708"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_24
+  - community/OfferBatch
 ---
 
 # Adapt ``citilink_search`` results (CDP tier; electronics).
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_search_citilink()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_24
+#graphify/rationale #graphify/EXTRACTED #community/OfferBatch

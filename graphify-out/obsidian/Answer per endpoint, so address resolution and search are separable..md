@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py"
 type: "rationale"
-community: "Community 58"
+community: "_patch_routes"
 location: "L428"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_58
+  - community/_patch_routes
 ---
 
 # Answer per endpoint, so address resolution and search are separable.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_patch_routes()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_58
+#graphify/rationale #graphify/EXTRACTED #community/_patch_routes

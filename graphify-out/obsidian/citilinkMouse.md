@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.test.ts"
 type: "code"
-community: "Community 0"
-location: "L211"
+community: "mcp-marketplace-adapter.ts"
+location: "L270"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_0
+  - community/mcp-marketplace-adapterts
 ---
 
 # citilinkMouse
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[mcp-marketplace-adapter.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_0
+#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts

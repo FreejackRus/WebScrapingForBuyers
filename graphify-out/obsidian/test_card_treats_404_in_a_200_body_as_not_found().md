@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
 type: "code"
-community: "Community 128"
+community: "error_payload"
 location: "L174"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_128
+  - community/error_payload
 ---
 
 # test_card_treats_404_in_a_200_body_as_not_found()
@@ -17,4 +17,4 @@ tags:
 - [[error_payload()]] - `calls` [EXTRACTED]
 - [[stub_json()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_128
+#graphify/code #graphify/EXTRACTED #community/error_payload

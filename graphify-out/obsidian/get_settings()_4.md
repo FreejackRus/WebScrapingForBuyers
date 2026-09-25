@@ -1,20 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/src/mpstats_connector/settings.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/src/citilink_connector/settings.py"
 type: "code"
-community: "Community 210"
-location: "L98"
+community: "pydantic"
+location: "L29"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_210
+  - community/pydantic
 ---
 
 # get_settings()
 
 ## Connections
-- [[MPStatsSettings]] - `calls` [EXTRACTED]
-- [[_finalize_selfcheck()]] - `calls` [EXTRACTED]
-- [[mpstats_connectorserver.py]] - `imports` [EXTRACTED]
-- [[mpstats_connectorsettings.py]] - `contains` [EXTRACTED]
+- [[CitilinkSettings]] - `calls` [EXTRACTED]
+- [[citilink_connectorserver.py]] - `imports` [EXTRACTED]
+- [[citilink_connectorsettings.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_210
+#graphify/code #graphify/EXTRACTED #community/pydantic

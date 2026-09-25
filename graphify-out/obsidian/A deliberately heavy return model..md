@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_output_schema.py"
 type: "rationale"
-community: "Community 109"
+community: "test_output_schema.py"
 location: "L19"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_109
+  - community/test_output_schemapy
 ---
 
 # A deliberately heavy return model.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_Named]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_109
+#graphify/rationale #graphify/EXTRACTED #community/test_output_schemapy

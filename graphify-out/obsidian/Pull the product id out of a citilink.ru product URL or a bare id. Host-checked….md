@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/src/citilink_connector/server.py"
 type: "rationale"
-community: "Community 65"
+community: "citilink_card"
 location: "L115"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_65
+  - community/citilink_card
 ---
 
 # Pull the product id out of a citilink.ru product URL or a bare id. Host-checked…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_extract_product_id()_1]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_65
+#graphify/rationale #graphify/EXTRACTED #community/citilink_card

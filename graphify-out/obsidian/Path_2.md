@@ -1,17 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 103"
+community: "dns-connector/tests/test_card_extractor_dom.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_103
+  - community/dns-connector/tests/test_card_extractor_dompy
 ---
 
 # Path
 
 ## Connections
-- [[_frontmatter()]] - `references` [EXTRACTED]
-- [[_skill_dir()]] - `references` [EXTRACTED]
+- [[_extract()_2]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_103
+#graphify/code #graphify/EXTRACTED #community/dns-connector/tests/test_card_extractor_dompy

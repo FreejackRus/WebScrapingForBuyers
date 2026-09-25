@@ -1,12 +1,12 @@
 ---
 source_file: "apps/analysis/src/infrastructure/ollama-analysis-narrator.ts"
 type: "code"
-community: "Community 36"
-location: "L9"
+community: "ollama-analysis-narrator.ts"
+location: "L14"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_36
+  - community/ollama-analysis-narratorts
 ---
 
 # StructuredAnalysis
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[ollama-analysis-narrator.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_36
+#graphify/code #graphify/EXTRACTED #community/ollama-analysis-narratorts

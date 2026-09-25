@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_http_tier_budgeted.py"
 type: "code"
-community: "Community 13"
+community: "get_text_budgeted"
 location: "L26"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_13
+  - community/get_text_budgeted
 ---
 
 # handler()
@@ -25,4 +25,4 @@ tags:
 - [[test_transport_error_is_retried_then_succeeds()]] - `indirect_call` [INFERRED]
 - [[test_wall_clock_budget_bounds_a_single_slow_attempt()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Community_13
+#graphify/code #graphify/INFERRED #community/get_text_budgeted

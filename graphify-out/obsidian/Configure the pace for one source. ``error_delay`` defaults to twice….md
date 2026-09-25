@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/pacing.py"
 type: "rationale"
-community: "Community 85"
+community: "Pacer"
 location: "L55"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_85
+  - community/Pacer
 ---
 
 # Configure the pace for one source. ``error_delay`` defaults to twice…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[dot-__init__()_39]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_85
+#graphify/rationale #graphify/EXTRACTED #community/Pacer

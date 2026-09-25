@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/examples/seller_lookup.py"
 type: "code"
-community: "Community 275"
+community: "pathlib"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_275
+  - community/pathlib
 ---
 
 # seller_lookup.py
@@ -14,8 +14,8 @@ tags:
 ## Connections
 - [[Find out who actually sells a Wildberries product. uv run python…]] - `rationale_for` [EXTRACTED]
 - [[asyncio_2]] - `imports` [EXTRACTED]
-- [[main()_21]] - `contains` [EXTRACTED]
+- [[main()_5]] - `contains` [EXTRACTED]
 - [[sys]] - `imports` [EXTRACTED]
 - [[wb_connectorserver.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_275
+#graphify/code #graphify/EXTRACTED #community/pathlib

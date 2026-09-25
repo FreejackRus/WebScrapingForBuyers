@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 24"
+community: "._mirror_rouble_price_into_native"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_24
+  - community/_mirror_rouble_price_into_native
 ---
 
 # model_validator
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[dot-_mirror_rouble_price_into_native()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_24
+#graphify/code #graphify/EXTRACTED #community/_mirror_rouble_price_into_native

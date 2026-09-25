@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py"
 type: "code"
-community: "Community 236"
+community: "_relevance_warnings"
 location: "L290"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_236
+  - community/_relevance_warnings
 ---
 
 # _looks_like_another_condition()
@@ -17,4 +17,4 @@ tags:
 - [[compare_connectorserver.py]] - `contains` [EXTRACTED]
 - [[compare_prices()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_236
+#graphify/code #graphify/EXTRACTED #community/_relevance_warnings

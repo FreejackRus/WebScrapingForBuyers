@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 1"
-location: "L701"
+community: "no_wait"
+location: "L1203"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_1
+  - community/no_wait
 ---
 
 # scenario()
 
 ## Connections
-- [[fake_safe_get_text()_4]] - `indirect_call` [INFERRED]
-- [[no_wait()_4]] - `indirect_call` [INFERRED]
-- [[test_wb_selfcheck_reviews_uses_feedbacks_fallback_host()]] - `contains` [EXTRACTED]
+- [[fake_safe_get_text()_2]] - `indirect_call` [INFERRED]
+- [[no_wait()_2]] - `indirect_call` [INFERRED]
+- [[test_wb_selfcheck_rich_text_feedback_body_is_drift()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/Community_1
+#graphify/code #graphify/INFERRED #community/no_wait

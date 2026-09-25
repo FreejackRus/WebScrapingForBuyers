@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 10"
+community: "avito_seller"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_10
+  - community/avito_seller
 ---
 
 # min_length
@@ -15,4 +15,4 @@ tags:
 - [[avito_search()]] - `references` [EXTRACTED]
 - [[avito_seller()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_10
+#graphify/code #graphify/EXTRACTED #community/avito_seller

@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_search_extractor_dom.py"
 type: "code"
-community: "Community 84"
+community: "dns-connector/tests/test_search_extractor_dom.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_84
+  - community/dns-connector/tests/test_search_extractor_dompy
 ---
 
 # dns-connector/tests/test_search_extractor_dom.py
 
 ## Connections
 - [[Regression tests for the DNS searchcard extractors, on a real captured DOM.…]] - `rationale_for` [EXTRACTED]
-- [[_extract()_13]] - `contains` [EXTRACTED]
+- [[_extract()_10]] - `contains` [EXTRACTED]
 - [[dns_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[domtest.py]] - `imports_from` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]
@@ -29,4 +29,4 @@ tags:
 - [[test_tile_root_is_not_the_image_anchor()]] - `contains` [EXTRACTED]
 - [[test_zero_price_is_none_never_zero()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_84
+#graphify/code #graphify/EXTRACTED #community/dns-connector/tests/test_search_extractor_dompy

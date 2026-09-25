@@ -1,19 +1,20 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/src/aliexpress_connector/settings.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/settings.py"
 type: "code"
-community: "Community 88"
-location: "L29"
+community: "pydantic"
+location: "L57"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_88
+  - community/pydantic
 ---
 
 # get_settings()
 
 ## Connections
-- [[AliSettings]] - `calls` [EXTRACTED]
-- [[aliexpress_connectorserver.py]] - `imports` [EXTRACTED]
-- [[aliexpress_connectorsettings.py]] - `contains` [EXTRACTED]
+- [[OzonSettings]] - `calls` [EXTRACTED]
+- [[_ozon_selfcheck_impl()]] - `calls` [EXTRACTED]
+- [[ozon_connectorserver.py]] - `imports` [EXTRACTED]
+- [[ozon_connectorsettings.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_88
+#graphify/code #graphify/EXTRACTED #community/pydantic

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_search_extractor_live_dom.py"
 type: "code"
-community: "Community 168"
+community: "lamoda-connector/tests/test_shape_reference.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_168
+  - community/lamoda-connector/tests/test_shape_referencepy
 ---
 
 # lamoda-connector/tests/test_search_extractor_live_dom.py
@@ -22,4 +22,4 @@ tags:
 - [[test_live_prices_survive_the_tile_noise()]] - `contains` [EXTRACTED]
 - [[test_live_titles_are_product_names_not_discount_badges()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_168
+#graphify/code #graphify/EXTRACTED #community/lamoda-connector/tests/test_shape_referencepy

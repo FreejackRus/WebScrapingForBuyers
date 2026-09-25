@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/examples/rating_breakdown.py"
 type: "rationale"
-community: "Community 77"
+community: "json"
 location: "L2"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_77
+  - community/json
 ---
 
 # Show what a Yandex Market star rating is actually made of. uv run python…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[rating_breakdown.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_77
+#graphify/rationale #graphify/EXTRACTED #community/json

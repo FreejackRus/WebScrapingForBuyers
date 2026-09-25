@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "rationale"
-community: "Community 11"
+community: "PageLike"
 location: "L741"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_11
+  - community/PageLike
 ---
 
 # Capture only the current owned viewport through CDP. This deliberately avoids…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[capture_owned_viewport()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_11
+#graphify/rationale #graphify/EXTRACTED #community/PageLike

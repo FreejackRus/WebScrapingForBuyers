@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_browser_handoff.py"
 type: "code"
-community: "Community 3"
+community: "compare-connector/tests/test_browser_handoff.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_3
+  - community/compare-connector/tests/test_browser_handoffpy
 ---
 
 # compare-connector/tests/test_browser_handoff.py
@@ -35,4 +35,4 @@ tags:
 - [[test_taobao_tools_resume_the_retained_page()]] - `contains` [EXTRACTED]
 - [[transport__init__.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_3
+#graphify/code #graphify/EXTRACTED #community/compare-connector/tests/test_browser_handoffpy

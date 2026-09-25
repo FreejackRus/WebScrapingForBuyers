@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cdp_budget.py"
 type: "code"
-community: "Community 130"
+community: "test_cdp_budget.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_130
+  - community/test_cdp_budgetpy
 ---
 
 # test_cdp_budget.py
@@ -35,4 +35,4 @@ tags:
 - [[test_the_same_host_is_serialized_even_when_the_budget_is_free()]] - `contains` [EXTRACTED]
 - [[transport__init__.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_130
+#graphify/code #graphify/EXTRACTED #community/test_cdp_budgetpy

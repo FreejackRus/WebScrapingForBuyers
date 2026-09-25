@@ -1,19 +1,39 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 20"
-location: "L1480"
+community: "responder"
+location: "L1428"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/Community_20
+  - graphify/INFERRED
+  - community/responder
 ---
 
 # responder()
 
 ## Connections
+- [[_healthy_selfcheck_responder()]] - `indirect_call` [INFERRED]
 - [[_question()]] - `calls` [EXTRACTED]
 - [[_questions_payload()]] - `calls` [EXTRACTED]
-- [[test_questions_paginates_past_the_upstream_take_cap()]] - `contains` [EXTRACTED]
+- [[scenario()_64]] - `indirect_call` [INFERRED]
+- [[scenario()_65]] - `indirect_call` [INFERRED]
+- [[scenario()_66]] - `indirect_call` [INFERRED]
+- [[scenario()_67]] - `indirect_call` [INFERRED]
+- [[scenario()_34]] - `indirect_call` [INFERRED]
+- [[scenario()_72]] - `indirect_call` [INFERRED]
+- [[scenario()_73]] - `indirect_call` [INFERRED]
+- [[scenario()_35]] - `indirect_call` [INFERRED]
+- [[scenario()_43]] - `indirect_call` [INFERRED]
+- [[scenario()_44]] - `indirect_call` [INFERRED]
+- [[scenario()_45]] - `indirect_call` [INFERRED]
+- [[scenario()_74]] - `indirect_call` [INFERRED]
+- [[scenario()_46]] - `indirect_call` [INFERRED]
+- [[scenario()_47]] - `indirect_call` [INFERRED]
+- [[scenario()_48]] - `indirect_call` [INFERRED]
+- [[scenario()_36]] - `indirect_call` [INFERRED]
+- [[scenario()_76]] - `indirect_call` [INFERRED]
+- [[scenario()_49]] - `indirect_call` [INFERRED]
+- [[scenario()_50]] - `indirect_call` [INFERRED]
+- [[test_questions_returns_pairs_and_marks_answered()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_20
+#graphify/code #graphify/INFERRED #community/responder

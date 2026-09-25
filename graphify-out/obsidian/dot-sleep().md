@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_pacing.py"
 type: "code"
-community: "Community 245"
+community: "FakeClock"
 location: "L25"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_245
+  - community/FakeClock
 ---
 
 # .sleep()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[FakeClock]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_245
+#graphify/code #graphify/EXTRACTED #community/FakeClock

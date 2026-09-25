@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/ssr.py"
 type: "code"
-community: "Community 5"
+community: "ssr.py"
 location: "L153"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_5
+  - community/ssrpy
 ---
 
 # _as_dict()
 
 ## Connections
-- [[Any_20]] - `references` [EXTRACTED]
+- [[Any_24]] - `references` [EXTRACTED]
 - [[Return ``value`` when it is a dict, else an empty dict. SSR fields drift…]] - `rationale_for` [EXTRACTED]
 - [[_empty_product_shell()]] - `calls` [EXTRACTED]
 - [[_rating_from_snippets()]] - `calls` [EXTRACTED]
@@ -26,4 +26,4 @@ tags:
 - [[parse_zone_items()]] - `calls` [EXTRACTED]
 - [[ssr.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_5
+#graphify/code #graphify/EXTRACTED #community/ssrpy

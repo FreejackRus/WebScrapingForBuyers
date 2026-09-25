@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 27"
+community: "taobao_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_27
+  - community/taobao_card
 ---
 
 # ge
 
 ## Connections
-- [[taobao_search()_1]] - `references` [EXTRACTED]
+- [[taobao_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_27
+#graphify/code #graphify/EXTRACTED #community/taobao_card

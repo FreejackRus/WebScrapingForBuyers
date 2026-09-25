@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py"
 type: "code"
-community: "Community 4"
+community: "json"
 location: "L775"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_4
+  - community/json
 ---
 
 # _source_error()
 
 ## Connections
-- [[Any_23]] - `references` [EXTRACTED]
+- [[Any_27]] - `references` [EXTRACTED]
 - [[ConnectorError]] - `uses` [INFERRED]
 - [[ErrorCode]] - `uses` [INFERRED]
 - [[Exception_1]] - `references` [EXTRACTED]
@@ -20,4 +20,4 @@ tags:
 - [[_run_source()]] - `calls` [EXTRACTED]
 - [[compare_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_4
+#graphify/code #graphify/EXTRACTED #community/json

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
 type: "code"
-community: "Community 4"
+community: "TransportDownError"
 location: "L93"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_4
+  - community/TransportDownError
 ---
 
 # ParserDriftError
@@ -16,9 +16,9 @@ tags:
 - [[ConnectorError]] - `inherits` [EXTRACTED]
 - [[_call()_1]] - `uses` [INFERRED]
 - [[_cdp_render()_2]] - `uses` [INFERRED]
-- [[_cdp_render()_1]] - `uses` [INFERRED]
 - [[_cdp_render()]] - `uses` [INFERRED]
-- [[_cdp_render_search()]] - `uses` [INFERRED]
+- [[_cdp_render()_1]] - `uses` [INFERRED]
+- [[_cdp_render_search()_1]] - `uses` [INFERRED]
 - [[_fetch_json()]] - `uses` [INFERRED]
 - [[_graphql_card()]] - `uses` [INFERRED]
 - [[_guard_parse_status()]] - `uses` [INFERRED]
@@ -28,6 +28,7 @@ tags:
 - [[_post()]] - `uses` [INFERRED]
 - [[_require_object()]] - `uses` [INFERRED]
 - [[_unwrap_extract()]] - `uses` [INFERRED]
+- [[_verify_storefront_capture()]] - `uses` [INFERRED]
 - [[aliexpress_card()]] - `uses` [INFERRED]
 - [[aliexpress_search()]] - `uses` [INFERRED]
 - [[avito_card()]] - `uses` [INFERRED]
@@ -46,21 +47,22 @@ tags:
 - [[fetch()]] - `calls` [EXTRACTED]
 - [[lamoda_search()]] - `uses` [INFERRED]
 - [[mcp_core__init__.py]] - `imports` [EXTRACTED]
-- [[megamarket_search()]] - `uses` [INFERRED]
+- [[megamarket_search()_1]] - `uses` [INFERRED]
 - [[mpstats_item()]] - `uses` [INFERRED]
 - [[mpstats_warehouses()]] - `uses` [INFERRED]
 - [[ozon_card()]] - `uses` [INFERRED]
 - [[read()]] - `calls` [EXTRACTED]
 - [[read()_1]] - `calls` [EXTRACTED]
 - [[taobao_card()]] - `uses` [INFERRED]
-- [[taobao_search()_1]] - `uses` [INFERRED]
+- [[taobao_search()]] - `uses` [INFERRED]
 - [[wb_card()]] - `uses` [INFERRED]
 - [[wb_categories()]] - `uses` [INFERRED]
 - [[wb_category_products()]] - `uses` [INFERRED]
 - [[wb_questions()]] - `uses` [INFERRED]
 - [[wb_reviews()]] - `uses` [INFERRED]
 - [[wb_root_info()]] - `uses` [INFERRED]
+- [[wb_search()]] - `uses` [INFERRED]
 - [[wb_seller()]] - `uses` [INFERRED]
 - [[yandex_card()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Community_4
+#graphify/code #graphify/INFERRED #community/TransportDownError

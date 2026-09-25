@@ -1,26 +1,28 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_transport.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_http_tier.py"
 type: "code"
-community: "Community 13"
-location: "L37"
+community: "make_client"
+location: "L21"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_13
+  - community/make_client
 ---
 
 # make_client()
 
 ## Connections
 - [[AsyncClient_1]] - `references` [EXTRACTED]
-- [[test_body_cap_returns_error_instead_of_raising()_1]] - `calls` [EXTRACTED]
-- [[test_empty_token_sends_no_cookie_header()]] - `calls` [EXTRACTED]
-- [[test_http_status_is_never_retried()]] - `calls` [EXTRACTED]
-- [[test_httpx_timeout_is_classified_as_timeout()_1]] - `calls` [EXTRACTED]
-- [[test_posts_json_with_cookie_and_returns_status_text()]] - `calls` [EXTRACTED]
-- [[test_transport.py]] - `contains` [EXTRACTED]
-- [[test_transport_error_is_classified_when_retries_spent()]] - `calls` [EXTRACTED]
+- [[test_body_cap_is_enforced()]] - `calls` [EXTRACTED]
+- [[test_client_error_is_not_retried()]] - `calls` [EXTRACTED]
+- [[test_error_bodies_are_truncated_by_default()]] - `calls` [EXTRACTED]
+- [[test_error_body_cap_can_be_disabled()]] - `calls` [EXTRACTED]
+- [[test_exhausted_gateway_retries_return_the_real_response()]] - `calls` [EXTRACTED]
+- [[test_gateway_statuses_are_retried()]] - `calls` [EXTRACTED]
+- [[test_http_tier.py]] - `contains` [EXTRACTED]
+- [[test_rate_limit_status_is_never_retried()]] - `calls` [EXTRACTED]
+- [[test_returns_status_and_body()]] - `calls` [EXTRACTED]
 - [[test_transport_error_is_retried_then_succeeds()_1]] - `calls` [EXTRACTED]
-- [[test_wall_clock_budget_bounds_a_hung_attempt()]] - `calls` [EXTRACTED]
+- [[test_transport_error_propagates_when_budget_exhausted()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_13
+#graphify/code #graphify/EXTRACTED #community/make_client

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "rationale"
-community: "Community 22"
-location: "L659"
+community: "log_event"
+location: "L768"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_22
+  - community/log_event
 ---
 
 # Return ``(obj, None)`` for a JSON object, else ``(None, error_dict)``. Exactly…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_expect_json_object()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_22
+#graphify/rationale #graphify/EXTRACTED #community/log_event

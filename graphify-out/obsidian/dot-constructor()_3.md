@@ -1,17 +1,18 @@
 ---
-source_file: "apps/identity/src/infrastructure/memory-auth-store.ts"
+source_file: "apps/search/src/application/search-service.ts"
 type: "code"
-community: "Community 32"
-location: "L16"
+community: "SearchService"
+location: "L18"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_32
+  - community/SearchService
 ---
 
 # .constructor()
 
 ## Connections
-- [[MemoryAuthStore]] - `method` [EXTRACTED]
+- [[SearchService]] - `method` [EXTRACTED]
+- [[SourceAdapter]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_32
+#graphify/code #graphify/EXTRACTED #community/SearchService

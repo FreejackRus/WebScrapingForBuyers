@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_browser_handoff.py"
 type: "code"
-community: "Community 138"
-location: "L353"
+community: "compare-connector/tests/test_browser_handoff.py"
+location: "L199"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_138
+  - community/compare-connector/tests/test_browser_handoffpy
 ---
 
 # capture()
 
 ## Connections
-- [[test_categories_numeric_parent_uses_parent_id_filter()]] - `contains` [EXTRACTED]
+- [[test_snapshot_rejects_other_session_and_unknown_handle_without_capture()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_138
+#graphify/code #graphify/EXTRACTED #community/compare-connector/tests/test_browser_handoffpy

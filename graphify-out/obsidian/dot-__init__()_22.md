@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/http_tier.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/browser_handoff.py"
 type: "code"
-community: "Community 3"
-location: "L92"
+community: "Внешние подходы: native vision, challenge UX, browser-резильентность"
+location: "L52"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_3
+  - community/Внешние_подходы_native_vision_challenge_UX_browser-резильентность
 ---
 
 # .__init__()
 
 ## Connections
-- [[BodyTooLargeError]] - `method` [EXTRACTED]
+- [[dot-__init__()_22]] - `calls` [EXTRACTED]
+- [[HandoffBusyError]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_3
+#graphify/code #graphify/EXTRACTED #community/Внешние_подходы_native_vision_challenge_UX_browser-резильентность

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_server.py"
 type: "code"
-community: "Community 34"
+community: "mpstats-connector/tests/test_server.py"
 location: "L114"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_34
+  - community/mpstats-connector/tests/test_serverpy
 ---
 
 # test_parse_item_entry_all_zero_price_is_none_all_zero_stock_is_zero()
@@ -15,4 +15,4 @@ tags:
 - [[A delisted item (all-zero graphs) reports None pricestock, never 0.0.]] - `rationale_for` [EXTRACTED]
 - [[mpstats-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_34
+#graphify/code #graphify/EXTRACTED #community/mpstats-connector/tests/test_serverpy

@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "Community 71"
+community: "_win_job_runner.py"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_71
+  - community/_win_job_runnerpy
 ---
 
 # ctypes
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[_win_job_runner.py]] - `imports_from` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_71
+#graphify/concept #graphify/EXTRACTED #community/_win_job_runnerpy

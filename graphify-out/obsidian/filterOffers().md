@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/entities/offer/lib/index.ts"
 type: "code"
-community: "Community 40"
-location: "L45"
+community: "offers/ui/index.tsx"
+location: "L67"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_40
+  - community/offers/ui/indextsx
 ---
 
 # filterOffers()
@@ -18,4 +18,4 @@ tags:
 - [[offerlibindex.ts]] - `contains` [EXTRACTED]
 - [[useFilteredOffers()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_40
+#graphify/code #graphify/EXTRACTED #community/offers/ui/indextsx

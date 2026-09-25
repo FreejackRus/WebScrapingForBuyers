@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 39"
-location: "L240"
+community: "test_cache_can_be_disabled_by_ttl_zero"
+location: "L1362"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_39
+  - community/test_cache_can_be_disabled_by_ttl_zero
 ---
 
 # stream()
 
 ## Connections
-- [[test_safe_get_text_classifies_httpx_timeout_as_timeout()]] - `contains` [EXTRACTED]
+- [[test_cache_can_be_disabled_by_ttl_zero()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_39
+#graphify/code #graphify/EXTRACTED #community/test_cache_can_be_disabled_by_ttl_zero

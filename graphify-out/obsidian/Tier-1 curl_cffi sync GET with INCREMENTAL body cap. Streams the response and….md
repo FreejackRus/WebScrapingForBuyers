@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/server.py"
 type: "rationale"
-community: "Community 110"
+community: "ozon_card"
 location: "L266"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_110
+  - community/ozon_card
 ---
 
 # Tier-1: curl_cffi sync GET with INCREMENTAL body cap. Streams the response and…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_sync_curl_get()_1]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_110
+#graphify/rationale #graphify/EXTRACTED #community/ozon_card

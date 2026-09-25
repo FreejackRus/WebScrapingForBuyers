@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/features/search/offer-table/index.ts"
 type: "code"
-community: "Community 40"
+community: "offers/ui/index.tsx"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_40
+  - community/offers/ui/indextsx
 ---
 
 # offer-table/index.ts
@@ -19,9 +19,9 @@ tags:
 - [[filter-offersindex.ts]] - `imports_from` [EXTRACTED]
 - [[nextOfferSort()]] - `imports` [EXTRACTED]
 - [[offerindex.ts]] - `imports_from` [EXTRACTED]
-- [[react_1]] - `imports_from` [EXTRACTED]
+- [[react]] - `imports_from` [EXTRACTED]
 - [[sortOffers()]] - `imports` [EXTRACTED]
 - [[useFilteredOffers()]] - `imports` [EXTRACTED]
 - [[useOfferTable()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_40
+#graphify/code #graphify/EXTRACTED #community/offers/ui/indextsx

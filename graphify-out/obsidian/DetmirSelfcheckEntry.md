@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/models_output.py"
 type: "code"
-community: "Community 37"
+community: "detmir_selfcheck"
 location: "L94"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_37
+  - community/detmir_selfcheck
 ---
 
 # DetmirSelfcheckEntry
@@ -18,4 +18,4 @@ tags:
 - [[detmir_selfcheck()]] - `calls` [EXTRACTED]
 - [[probe()_1]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_37
+#graphify/code #graphify/EXTRACTED #community/detmir_selfcheck

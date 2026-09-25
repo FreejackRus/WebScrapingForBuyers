@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 12"
+community: "cian-connector/tests/test_server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_12
+  - community/cian-connector/tests/test_serverpy
 ---
 
 # parametrize
@@ -16,4 +16,4 @@ tags:
 - [[test_search_rejects_a_malformed_region()]] - `references` [EXTRACTED]
 - [[test_search_rejects_unknown_room_codes()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_12
+#graphify/code #graphify/EXTRACTED #community/cian-connector/tests/test_serverpy

@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/features/user/settings/index.ts"
 type: "code"
-community: "Community 81"
+community: "useUserStore"
 location: "L3"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_81
+  - community/useUserStore
 ---
 
 # useUpdateSettings()
@@ -16,4 +16,4 @@ tags:
 - [[featuresusersettingsindex.ts]] - `contains` [EXTRACTED]
 - [[useUserStore]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_81
+#graphify/code #graphify/EXTRACTED #community/useUserStore

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "rationale"
-community: "Community 277"
+community: "offer"
 location: "L363"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_277
+  - community/offer
 ---
 
 # Not installed' needs a different fix than 'refused us', so they differ.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_a_missing_connector_is_distinguished_from_a_block()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_277
+#graphify/rationale #graphify/EXTRACTED #community/offer

@@ -1,17 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 30"
+community: "test_wb_verification_uses_requested_row_not_first"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_30
+  - community/test_wb_verification_uses_requested_row_not_first
 ---
 
 # parametrize
 
 ## Connections
-- [[test_gtin_rejects_malformed_values()]] - `references` [EXTRACTED]
-- [[test_non_latin_variant_conflicts_are_not_erased()]] - `references` [EXTRACTED]
+- [[test_identity_is_verified_through_mcp_tool()]] - `references` [EXTRACTED]
+- [[test_wb_fixture_color_survives_card_model_and_mcp_verification()]] - `references` [EXTRACTED]
+- [[test_wb_verification_uses_requested_row_not_first()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_30
+#graphify/code #graphify/EXTRACTED #community/test_wb_verification_uses_requested_row_not_first

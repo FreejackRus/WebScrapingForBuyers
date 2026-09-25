@@ -1,20 +1,20 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/identity.py"
 type: "code"
-community: "Community 30"
+community: "identity.py"
 location: "L74"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_30
+  - community/identitypy
 ---
 
 # _field()
 
 ## Connections
-- [[Any_14]] - `references` [EXTRACTED]
+- [[Any_21]] - `references` [EXTRACTED]
 - [[_text()_1]] - `calls` [EXTRACTED]
 - [[identity.py]] - `contains` [EXTRACTED]
 - [[identity_from_mapping()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_30
+#graphify/code #graphify/EXTRACTED #community/identitypy

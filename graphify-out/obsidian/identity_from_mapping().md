@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/identity.py"
 type: "code"
-community: "Community 30"
+community: "identity.py"
 location: "L82"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_30
+  - community/identitypy
 ---
 
 # identity_from_mapping()
 
 ## Connections
-- [[Any_14]] - `references` [EXTRACTED]
+- [[Any_21]] - `references` [EXTRACTED]
 - [[Build identity evidence from typed upstream fields only. Free-form titles are…]] - `rationale_for` [EXTRACTED]
 - [[ProductIdentity]] - `calls` [EXTRACTED]
 - [[_field()]] - `calls` [EXTRACTED]
@@ -27,4 +27,4 @@ tags:
 - [[test_mapping_does_not_promote_seller_article_to_manufacturer_id()]] - `calls` [EXTRACTED]
 - [[test_mapping_uses_typed_identifiers_and_variants_only()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_30
+#graphify/code #graphify/EXTRACTED #community/identitypy

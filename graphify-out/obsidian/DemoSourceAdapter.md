@@ -1,21 +1,22 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/demo-source-adapter.ts"
 type: "code"
-community: "Community 9"
+community: "packages_contracts_dist_index"
 location: "L17"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_9
+  - community/packages_contracts_dist_index
 ---
 
 # DemoSourceAdapter
 
 ## Connections
-- [[dot-constructor()_6]] - `method` [EXTRACTED]
-- [[dot-search()_6]] - `method` [EXTRACTED]
+- [[dot-constructor()_8]] - `method` [EXTRACTED]
+- [[dot-search()_9]] - `method` [EXTRACTED]
 - [[SourceAdapter]] - `implements` [EXTRACTED]
 - [[createDemoSources()]] - `calls` [EXTRACTED]
 - [[demo-source-adapter.ts]] - `contains` [EXTRACTED]
+- [[Матрица]] - `references` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_9
+#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index

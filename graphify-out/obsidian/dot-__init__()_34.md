@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/test_ci_concurrency.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/runtime.py"
 type: "code"
-community: "Community 59"
-location: "L100"
+community: "BearerAuthMiddleware"
+location: "L120"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_59
+  - community/BearerAuthMiddleware
 ---
 
 # .__init__()
 
 ## Connections
-- [[_Reader]] - `method` [EXTRACTED]
-- [[_tokenize()]] - `calls` [EXTRACTED]
+- [[BearerAuthMiddleware]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_59
+#graphify/code #graphify/EXTRACTED #community/BearerAuthMiddleware

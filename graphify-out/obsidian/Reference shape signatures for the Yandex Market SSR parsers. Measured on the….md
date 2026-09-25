@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/shape_reference.py"
 type: "rationale"
-community: "Community 329"
+community: "yandex_connector/shape_reference.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_329
+  - community/yandex_connector/shape_referencepy
 ---
 
 # Reference shape signatures for the Yandex Market SSR parsers. Measured on the…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[yandex_connectorshape_reference.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_329
+#graphify/rationale #graphify/EXTRACTED #community/yandex_connector/shape_referencepy

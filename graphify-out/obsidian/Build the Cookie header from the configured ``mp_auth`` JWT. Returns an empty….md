@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/src/mpstats_connector/server.py"
 type: "rationale"
-community: "Community 23"
+community: "_post_json_budgeted"
 location: "L172"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_23
+  - community/_post_json_budgeted
 ---
 
 # Build the Cookie header from the configured ``mp_auth`` JWT. Returns an empty…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_cookie_header()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_23
+#graphify/rationale #graphify/EXTRACTED #community/_post_json_budgeted

@@ -1,18 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 43"
+community: "test_cli.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_43
+  - community/test_clipy
 ---
 
 # parametrize
 
 ## Connections
-- [[test_ambiguous_or_wrong_record_never_verifies_price()]] - `references` [EXTRACTED]
-- [[test_invalid_observed_price_stays_unknown()]] - `references` [EXTRACTED]
-- [[test_numeric_card_identifier_does_not_pick_unrelated_digits()]] - `references` [EXTRACTED]
+- [[test_install_rejects_extra_arguments_and_unknown_flags()]] - `references` [EXTRACTED]
+- [[test_invalid_doctor_arguments_fail_before_any_checks()]] - `references` [EXTRACTED]
+- [[test_run_one_selfcheck_reads_dict_and_model_responses()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_43
+#graphify/code #graphify/EXTRACTED #community/test_clipy

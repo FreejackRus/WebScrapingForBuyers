@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 95"
+community: "test_public_contract_snapshot.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_95
+  - community/test_public_contract_snapshotpy
 ---
 
 # Any
@@ -16,4 +16,4 @@ tags:
 - [[_project()]] - `references` [EXTRACTED]
 - [[_strip_prose()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_95
+#graphify/code #graphify/EXTRACTED #community/test_public_contract_snapshotpy

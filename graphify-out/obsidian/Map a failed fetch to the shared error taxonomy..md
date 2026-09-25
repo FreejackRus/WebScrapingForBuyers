@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/server.py"
 type: "rationale"
-community: "Community 4"
+community: "TransportDownError"
 location: "L328"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_4
+  - community/TransportDownError
 ---
 
 # Map a failed fetch to the shared error taxonomy.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_raise_for_fetch_failure()_1]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_4
+#graphify/rationale #graphify/EXTRACTED #community/TransportDownError

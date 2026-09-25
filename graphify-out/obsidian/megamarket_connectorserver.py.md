@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/server.py"
 type: "code"
-community: "Community 162"
+community: "json"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_162
+  - community/json
 ---
 
 # megamarket_connector/server.py
@@ -17,17 +17,17 @@ tags:
 - [[MegamarketSearchItemOut]] - `imports` [EXTRACTED]
 - [[MegamarketSearchResponse]] - `imports` [EXTRACTED]
 - [[MegamarketSelfcheckResponse]] - `imports` [EXTRACTED]
-- [[MetaOut_2]] - `imports` [EXTRACTED]
+- [[MetaOut_4]] - `imports` [EXTRACTED]
 - [[_address_cache_key()]] - `contains` [EXTRACTED]
 - [[_address_warnings()]] - `contains` [EXTRACTED]
 - [[_blocked_error()_1]] - `contains` [EXTRACTED]
 - [[_cdp_post_json()]] - `contains` [EXTRACTED]
-- [[_extract_item_id()_1]] - `contains` [EXTRACTED]
+- [[_extract_item_id()_2]] - `contains` [EXTRACTED]
 - [[_final_catalog_url()]] - `contains` [EXTRACTED]
 - [[_is_ip_block()]] - `contains` [EXTRACTED]
 - [[_megamarket_selfcheck_impl()]] - `contains` [EXTRACTED]
 - [[_parse_items()]] - `contains` [EXTRACTED]
-- [[_polite_wait()_2]] - `contains` [EXTRACTED]
+- [[_polite_wait()_1]] - `contains` [EXTRACTED]
 - [[_post()]] - `contains` [EXTRACTED]
 - [[_resolve_address_id()]] - `contains` [EXTRACTED]
 - [[_resolve_search_params()]] - `contains` [EXTRACTED]
@@ -40,7 +40,7 @@ tags:
 - [[errors.py]] - `imports_from` [EXTRACTED]
 - [[fastmcp_3]] - `imports_from` [EXTRACTED]
 - [[fastmcp_server_middleware_error_handling]] - `imports_from` [EXTRACTED]
-- [[get_settings()]] - `imports` [EXTRACTED]
+- [[get_settings()_8]] - `imports` [EXTRACTED]
 - [[json]] - `imports` [EXTRACTED]
 - [[logging.py]] - `imports_from` [EXTRACTED]
 - [[mcp_core__init__.py]] - `imports_from` [EXTRACTED]
@@ -48,7 +48,7 @@ tags:
 - [[megamarket_card()]] - `contains` [EXTRACTED]
 - [[megamarket_connectormodels_output.py]] - `imports_from` [EXTRACTED]
 - [[megamarket_connectorsettings.py]] - `imports_from` [EXTRACTED]
-- [[megamarket_search()]] - `contains` [EXTRACTED]
+- [[megamarket_search()_1]] - `contains` [EXTRACTED]
 - [[megamarket_selfcheck()]] - `contains` [EXTRACTED]
 - [[os]] - `imports` [EXTRACTED]
 - [[output_schema.py]] - `imports_from` [EXTRACTED]
@@ -59,4 +59,4 @@ tags:
 - [[typing]] - `imports_from` [EXTRACTED]
 - [[urllib_parse]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_162
+#graphify/code #graphify/EXTRACTED #community/json

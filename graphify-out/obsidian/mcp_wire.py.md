@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/mcp_wire.py"
 type: "code"
-community: "Community 82"
+community: "mcp_wire.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_82
+  - community/mcp_wirepy
 ---
 
 # mcp_wire.py
@@ -23,7 +23,7 @@ tags:
 - [[fetch_tools()]] - `contains` [EXTRACTED]
 - [[hashlib]] - `imports` [EXTRACTED]
 - [[json]] - `imports` [EXTRACTED]
-- [[main()_33]] - `contains` [EXTRACTED]
+- [[main()_29]] - `contains` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]
 - [[stdio_probe.py]] - `imports_from` [EXTRACTED]
 - [[sys]] - `imports` [EXTRACTED]
@@ -31,4 +31,4 @@ tags:
 - [[test_stdio_probe.py]] - `imports` [EXTRACTED]
 - [[time]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_82
+#graphify/code #graphify/EXTRACTED #community/mcp_wirepy

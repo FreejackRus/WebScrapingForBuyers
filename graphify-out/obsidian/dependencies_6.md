@@ -1,20 +1,20 @@
 ---
 source_file: "packages/service-kit/package.json"
 type: "code"
-community: "Community 99"
+community: "service-kit/package.json"
 location: "L12"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_99
+  - community/service-kit/packagejson
 ---
 
 # dependencies
 
 ## Connections
 - [[@fastifycookie_2]] - `contains` [EXTRACTED]
-- [[@fastifycors]] - `contains` [EXTRACTED]
-- [[fastify_6]] - `contains` [EXTRACTED]
+- [[@fastifycors_1]] - `contains` [EXTRACTED]
+- [[fastify_9]] - `contains` [EXTRACTED]
 - [[service-kitpackage.json]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_99
+#graphify/code #graphify/EXTRACTED #community/service-kit/packagejson

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
-community: "Community 25"
+community: "offer"
 location: "L207"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_25
+  - community/offer
 ---
 
 # test_one_source_failing_does_not_sink_the_comparison()
@@ -19,4 +19,4 @@ tags:
 - [[wb()_8]] - `contains` [EXTRACTED]
 - [[wb()_7]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_25
+#graphify/code #graphify/EXTRACTED #community/offer

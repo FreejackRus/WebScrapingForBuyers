@@ -1,22 +1,25 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 122"
+community: "parametrize"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_122
+  - community/parametrize
 ---
 
 # parametrize
 
 ## Connections
-- [[test_a_gated_host_falls_back_when_impersonation_fails()]] - `references` [EXTRACTED]
-- [[test_category_products_rejects_an_unsafe_selector()]] - `references` [EXTRACTED]
-- [[test_category_products_rejects_an_unsafe_shard()]] - `references` [EXTRACTED]
-- [[test_gated_hosts_read_through_the_impersonated_transport()]] - `references` [EXTRACTED]
-- [[test_refusals_reach_the_pacer_and_other_statuses_do_not()]] - `references` [EXTRACTED]
-- [[test_the_canary_sees_the_primary_search_path()]] - `references` [EXTRACTED]
-- [[test_ungated_hosts_keep_the_budgeted_transport()]] - `references` [EXTRACTED]
+- [[test_challenge_keeps_partial_results_and_recovers_only_failed_source()]] - `references` [EXTRACTED]
+- [[test_count_coercion_handles_russian_review_labels()]] - `references` [EXTRACTED]
+- [[test_invalid_handoff_expiry_does_not_become_recovery_instructions()]] - `references` [EXTRACTED]
+- [[test_invalid_handoff_id_does_not_become_a_snapshot_target()]] - `references` [EXTRACTED]
+- [[test_malformed_error_envelope_does_not_break_comparison()]] - `references` [EXTRACTED]
+- [[test_price_coercion_handles_ozon_display_strings()]] - `references` [EXTRACTED]
+- [[test_price_coercion_keeps_coerce_price_parity_on_live_ozon_formats()]] - `references` [EXTRACTED]
+- [[test_short_queries_are_rejected()]] - `references` [EXTRACTED]
+- [[test_stock_label_coercion()]] - `references` [EXTRACTED]
+- [[test_structured_error_code_takes_precedence_over_message()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_122
+#graphify/code #graphify/EXTRACTED #community/parametrize

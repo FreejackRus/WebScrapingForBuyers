@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/domain/source-adapter.ts"
 type: "code"
-community: "Community 9"
+community: "packages_contracts_dist_index"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_9
+  - community/packages_contracts_dist_index
 ---
 
 # source-adapter.ts
@@ -15,6 +15,7 @@ tags:
 - [[SourceAdapter]] - `contains` [EXTRACTED]
 - [[apify-marketplace-adapter.ts]] - `imports_from` [EXTRACTED]
 - [[app.test.ts]] - `imports_from` [EXTRACTED]
+- [[b2b-distributor-adapter.ts]] - `imports_from` [EXTRACTED]
 - [[demo-source-adapter.ts]] - `imports_from` [EXTRACTED]
 - [[fallback-source-adapter.test.ts]] - `imports_from` [EXTRACTED]
 - [[fallback-source-adapter.ts]] - `imports_from` [EXTRACTED]
@@ -26,4 +27,4 @@ tags:
 - [[search-service.ts]] - `imports_from` [EXTRACTED]
 - [[searchsrcapp.ts]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_9
+#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index

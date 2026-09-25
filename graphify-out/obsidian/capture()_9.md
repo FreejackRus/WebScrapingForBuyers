@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
 type: "code"
-community: "Community 195"
-location: "L227"
+community: "capture"
+location: "L530"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_195
+  - community/capture
 ---
 
 # capture()
 
 ## Connections
-- [[test_card_accepts_a_bare_product_id()_1]] - `contains` [EXTRACTED]
+- [[test_category_listing_passes_the_region_through()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_195
+#graphify/code #graphify/EXTRACTED #community/capture

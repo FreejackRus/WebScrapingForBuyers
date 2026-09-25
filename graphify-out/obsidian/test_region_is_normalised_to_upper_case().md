@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
 type: "code"
-community: "Community 51"
+community: "detmir-connector/tests/test_server.py"
 location: "L503"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_51
+  - community/detmir-connector/tests/test_serverpy
 ---
 
 # test_region_is_normalised_to_upper_case()
@@ -15,4 +15,4 @@ tags:
 - [[detmir-connectorteststest_server.py]] - `contains` [EXTRACTED]
 - [[stub_json()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_51
+#graphify/code #graphify/EXTRACTED #community/detmir-connector/tests/test_serverpy

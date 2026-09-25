@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_pacing.py"
 type: "code"
-community: "Community 308"
+community: "test_a_zero_gap_disables_pacing"
 location: "L85"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_308
+  - community/test_a_zero_gap_disables_pacing
 ---
 
 # test_a_zero_gap_disables_pacing()
@@ -16,4 +16,4 @@ tags:
 - [[_pacer()]] - `calls` [EXTRACTED]
 - [[test_pacing.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_308
+#graphify/code #graphify/EXTRACTED #community/test_a_zero_gap_disables_pacing

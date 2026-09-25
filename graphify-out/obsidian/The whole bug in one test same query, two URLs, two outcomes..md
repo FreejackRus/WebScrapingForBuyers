@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py"
 type: "rationale"
-community: "Community 155"
+community: "fake_post"
 location: "L943"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_155
+  - community/fake_post
 ---
 
 # The whole bug in one test: same query, two URLs, two outcomes.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_the_category_url_is_what_yields_a_collection()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_155
+#graphify/rationale #graphify/EXTRACTED #community/fake_post

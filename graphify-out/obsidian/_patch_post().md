@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py"
 type: "code"
-community: "Community 42"
+community: "megamarket-connector/tests/test_server.py"
 location: "L80"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_42
+  - community/megamarket-connector/tests/test_serverpy
 ---
 
 # _patch_post()
 
 ## Connections
-- [[fake_post()_2]] - `indirect_call` [INFERRED]
+- [[fake_post()_3]] - `indirect_call` [INFERRED]
 - [[megamarket-connectorteststest_server.py]] - `contains` [EXTRACTED]
 - [[test_a_flat_payload_still_parses()]] - `calls` [EXTRACTED]
 - [[test_a_nested_missing_price_is_none_never_zero()]] - `calls` [EXTRACTED]
@@ -32,4 +32,4 @@ tags:
 - [[test_selfcheck_still_calls_a_missing_container_drift()]] - `calls` [EXTRACTED]
 - [[test_the_real_nested_payload_parses()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_42
+#graphify/code #graphify/EXTRACTED #community/megamarket-connector/tests/test_serverpy

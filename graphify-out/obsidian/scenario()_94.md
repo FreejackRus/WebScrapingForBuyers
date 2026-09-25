@@ -1,20 +1,20 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 8"
-location: "L1992"
+community: "_clear_wb_cache"
+location: "L1969"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_8
+  - community/_clear_wb_cache
 ---
 
 # scenario()
 
 ## Connections
 - [[_clear_wb_cache()]] - `calls` [EXTRACTED]
-- [[fake_budgeted()_5]] - `indirect_call` [INFERRED]
-- [[forbidden_impersonation()]] - `indirect_call` [INFERRED]
-- [[test_ungated_hosts_keep_the_budgeted_transport()]] - `contains` [EXTRACTED]
+- [[fake_impersonated()_1]] - `indirect_call` [INFERRED]
+- [[forbidden_budgeted()]] - `indirect_call` [INFERRED]
+- [[test_gated_hosts_read_through_the_impersonated_transport()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_8
+#graphify/code #graphify/EXTRACTED #community/_clear_wb_cache

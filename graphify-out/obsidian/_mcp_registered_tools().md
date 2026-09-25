@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_skills_parity.py"
 type: "code"
-community: "Community 75"
+community: "test_skills_parity.py"
 location: "L228"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_75
+  - community/test_skills_paritypy
 ---
 
 # _mcp_registered_tools()
@@ -17,4 +17,4 @@ tags:
 - [[test_skills_parity.py]] - `contains` [EXTRACTED]
 - [[test_tool_sections_offer_only_mcp_callable_names()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_75
+#graphify/code #graphify/EXTRACTED #community/test_skills_paritypy

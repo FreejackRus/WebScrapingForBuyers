@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 330"
+community: "wb_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_330
+  - community/wb_connector/serverpy
 ---
 
 # parametrize
 
 ## Connections
-- [[test_number_coercion()]] - `references` [EXTRACTED]
+- [[test_every_native_adapter_preserves_warnings()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_330
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

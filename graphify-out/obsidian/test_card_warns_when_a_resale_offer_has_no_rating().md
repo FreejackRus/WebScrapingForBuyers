@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py"
 type: "code"
-community: "Community 94"
+community: "stub_html"
 location: "L229"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_94
+  - community/stub_html
 ---
 
 # test_card_warns_when_a_resale_offer_has_no_rating()
@@ -17,4 +17,4 @@ tags:
 - [[stub_html()]] - `calls` [EXTRACTED]
 - [[yandex-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_94
+#graphify/code #graphify/EXTRACTED #community/stub_html

@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_handoff_liveness_consistency.py"
 type: "code"
-community: "Community 3"
+community: "pytest"
 location: "L24"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_3
+  - community/pytest
 ---
 
 # browser()
 
 ## Connections
-- [[fixture_20]] - `references` [EXTRACTED]
-- [[open_page()_2]] - `indirect_call` [INFERRED]
+- [[fixture_18]] - `references` [EXTRACTED]
+- [[open_page()_3]] - `indirect_call` [INFERRED]
 - [[test_handoff_liveness_consistency.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_3
+#graphify/code #graphify/EXTRACTED #community/pytest

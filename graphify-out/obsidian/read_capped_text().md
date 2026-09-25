@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/http_tier.py"
 type: "code"
-community: "Community 3"
+community: "transport/__init__.py"
 location: "L97"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_3
+  - community/transport/__init__py
 ---
 
 # read_capped_text()
@@ -19,4 +19,4 @@ tags:
 - [[http_tier.py]] - `contains` [EXTRACTED]
 - [[transport__init__.py]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_3
+#graphify/code #graphify/EXTRACTED #community/transport/__init__py

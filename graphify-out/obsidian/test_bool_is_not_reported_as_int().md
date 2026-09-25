@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_shape_signature.py"
 type: "code"
-community: "Community 57"
+community: "shape_signature"
 location: "L87"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_57
+  - community/shape_signature
 ---
 
 # test_bool_is_not_reported_as_int()
@@ -16,4 +16,4 @@ tags:
 - [[shape_signature()]] - `calls` [EXTRACTED]
 - [[test_shape_signature.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_57
+#graphify/code #graphify/EXTRACTED #community/shape_signature

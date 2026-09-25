@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/server.py"
 type: "rationale"
-community: "Community 27"
+community: "taobao_card"
 location: "L408"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_27
+  - community/taobao_card
 ---
 
 # Open ``url`` in the operator's Chrome, wait for client-side render, extract.…
 
 ## Connections
-- [[_cdp_render()]] - `rationale_for` [EXTRACTED]
+- [[_cdp_render()_1]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_27
+#graphify/rationale #graphify/EXTRACTED #community/taobao_card

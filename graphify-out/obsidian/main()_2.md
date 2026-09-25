@@ -1,19 +1,20 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_provenance.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_versions.py"
 type: "code"
-community: "Community 126"
-location: "L73"
+community: "check_versions.py"
+location: "L85"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_126
+  - community/check_versionspy
 ---
 
 # main()
 
 ## Connections
-- [[check()]] - `calls` [EXTRACTED]
-- [[check_provenance.py]] - `contains` [EXTRACTED]
-- [[pins()]] - `calls` [EXTRACTED]
+- [[Mismatch]] - `calls` [EXTRACTED]
+- [[_root_version()]] - `calls` [EXTRACTED]
+- [[check_versions.py]] - `contains` [EXTRACTED]
+- [[sweep()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_126
+#graphify/code #graphify/EXTRACTED #community/check_versionspy

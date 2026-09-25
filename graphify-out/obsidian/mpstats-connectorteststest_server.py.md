@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_server.py"
 type: "code"
-community: "Community 34"
+community: "mpstats-connector/tests/test_server.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_34
+  - community/mpstats-connector/tests/test_serverpy
 ---
 
 # mpstats-connector/tests/test_server.py
@@ -55,4 +55,4 @@ tags:
 - [[test_warehouses_stamps_sku_from_request_when_upstream_omits_it()]] - `contains` [EXTRACTED]
 - [[tomllib]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_34
+#graphify/code #graphify/EXTRACTED #community/mpstats-connector/tests/test_serverpy

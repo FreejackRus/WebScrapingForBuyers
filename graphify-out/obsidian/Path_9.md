@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 169"
+community: "test_card_out_of_stock_dom.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_169
+  - community/test_card_out_of_stock_dompy
 ---
 
 # Path
 
 ## Connections
-- [[test_the_runner_exit_code_follows_the_verdict()]] - `references` [EXTRACTED]
+- [[_extract()_13]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_169
+#graphify/code #graphify/EXTRACTED #community/test_card_out_of_stock_dompy

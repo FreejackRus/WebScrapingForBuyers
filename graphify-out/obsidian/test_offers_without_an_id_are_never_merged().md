@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
-community: "Community 24"
+community: "compare-connector/tests/test_server.py"
 location: "L1010"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_24
+  - community/compare-connector/tests/test_serverpy
 ---
 
 # test_offers_without_an_id_are_never_merged()
@@ -16,4 +16,4 @@ tags:
 - [[MarketOffer]] - `uses` [INFERRED]
 - [[compare-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_24
+#graphify/code #graphify/EXTRACTED #community/compare-connector/tests/test_serverpy

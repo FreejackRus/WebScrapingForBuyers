@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/test_stdio_probe.py"
 type: "code"
-community: "Community 79"
+community: "test_stdio_probe.py"
 location: "L149"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_79
+  - community/test_stdio_probepy
 ---
 
 # start()
@@ -15,4 +15,4 @@ tags:
 - [[command()]] - `calls` [EXTRACTED]
 - [[replace_command()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_79
+#graphify/code #graphify/EXTRACTED #community/test_stdio_probepy

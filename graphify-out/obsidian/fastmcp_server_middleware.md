@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "Community 67"
+community: "json"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_67
+  - community/json
 ---
 
 # fastmcp_server_middleware
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[runtime.py]] - `imports_from` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_67
+#graphify/concept #graphify/EXTRACTED #community/json

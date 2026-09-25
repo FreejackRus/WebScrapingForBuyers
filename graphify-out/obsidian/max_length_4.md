@@ -1,17 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 22"
+community: "cian_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_22
+  - community/cian_connector/serverpy
 ---
 
 # max_length
 
 ## Connections
-- [[wb_categories()]] - `references` [EXTRACTED]
-- [[wb_category_products()]] - `references` [EXTRACTED]
+- [[cian_card()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_22
+#graphify/code #graphify/EXTRACTED #community/cian_connector/serverpy

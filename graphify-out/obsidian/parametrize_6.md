@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 13"
+community: "get_text_budgeted"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_13
+  - community/get_text_budgeted
 ---
 
 # parametrize
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[test_http_statuses_are_never_retried()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_13
+#graphify/code #graphify/EXTRACTED #community/get_text_budgeted

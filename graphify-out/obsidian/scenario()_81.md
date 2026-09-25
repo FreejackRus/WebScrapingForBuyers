@@ -1,17 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "Community 39"
-location: "L243"
+community: "test_cache_does_not_remember_a_rate_limit"
+location: "L1332"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_39
+  - community/test_cache_does_not_remember_a_rate_limit
 ---
 
 # scenario()
 
 ## Connections
-- [[test_safe_get_text_classifies_httpx_timeout_as_timeout()]] - `contains` [EXTRACTED]
+- [[_clear_wb_cache()]] - `calls` [EXTRACTED]
+- [[no_wait()_2]] - `indirect_call` [INFERRED]
+- [[test_cache_does_not_remember_a_rate_limit()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_39
+#graphify/code #graphify/EXTRACTED #community/test_cache_does_not_remember_a_rate_limit

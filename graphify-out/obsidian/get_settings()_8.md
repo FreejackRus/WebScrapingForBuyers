@@ -1,21 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/settings.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/settings.py"
 type: "code"
-community: "Community 78"
-location: "L86"
+community: "pydantic"
+location: "L48"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_78
+  - community/pydantic
 ---
 
 # get_settings()
 
 ## Connections
-- [[WBSettings]] - `calls` [EXTRACTED]
-- [[_basket_for_sku()]] - `calls` [EXTRACTED]
-- [[wb_connectorserver.py]] - `imports` [EXTRACTED]
-- [[wb_connectorsettings.py]] - `contains` [EXTRACTED]
-- [[wb_selfcheck()]] - `calls` [EXTRACTED]
+- [[MegamarketSettings]] - `calls` [EXTRACTED]
+- [[megamarket_connectorserver.py]] - `imports` [EXTRACTED]
+- [[megamarket_connectorsettings.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_78
+#graphify/code #graphify/EXTRACTED #community/pydantic

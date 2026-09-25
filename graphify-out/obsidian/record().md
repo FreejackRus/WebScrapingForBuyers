@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_stealth.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py"
 type: "code"
-community: "Community 19"
-location: "L79"
+community: "test_termination_settles_queued_snapshot_before_getter_resumes"
+location: "L601"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/Community_19
+  - graphify/INFERRED
+  - community/test_termination_settles_queued_snapshot_before_getter_resumes
 ---
 
 # record()
 
 ## Connections
-- [[_completed()]] - `calls` [EXTRACTED]
-- [[test_macos_hide_sends_one_osascript_per_profile_pid()]] - `indirect_call` [INFERRED]
+- [[test_snapshot_cancellation_or_deadline_cleans_exact_page()]] - `indirect_call` [INFERRED]
+- [[test_termination_settles_queued_snapshot_before_getter_resumes()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_19
+#graphify/code #graphify/INFERRED #community/test_termination_settles_queued_snapshot_before_getter_resumes

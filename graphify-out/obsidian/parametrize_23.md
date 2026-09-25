@@ -1,18 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "Community 35"
+community: "test_dsh_bundle.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_35
+  - community/test_dsh_bundlepy
 ---
 
 # parametrize
 
 ## Connections
-- [[test_known_secret_shapes_are_scrubbed()]] - `references` [EXTRACTED]
-- [[test_proxy_userinfo_never_survives_redaction()]] - `references` [EXTRACTED]
-- [[test_session_cookies_and_jwts_are_scrubbed()]] - `references` [EXTRACTED]
+- [[test_dsh_profile_flags_activate_exactly_the_requested_mount()]] - `references` [EXTRACTED]
+- [[test_the_vendor_gate_detects_every_drift_class()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_35
+#graphify/code #graphify/EXTRACTED #community/test_dsh_bundlepy

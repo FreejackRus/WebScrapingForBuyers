@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/fallback-source-adapter.test.ts"
 type: "code"
-community: "Community 9"
+community: "packages_contracts_dist_index"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_9
+  - community/packages_contracts_dist_index
 ---
 
 # fallback-source-adapter.test.ts
@@ -23,4 +23,4 @@ tags:
 - [[ref_vitest]] - `imports_from` [EXTRACTED]
 - [[source-adapter.ts]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_9
+#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index

@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "Community 100"
+community: "test_dependency_parity.py"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Community_100
+  - community/test_dependency_paritypy
 ---
 
 # ast
@@ -15,4 +15,4 @@ tags:
 - [[test_dependency_parity.py]] - `imports` [EXTRACTED]
 - [[test_distribution_contract.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Community_100
+#graphify/concept #graphify/EXTRACTED #community/test_dependency_paritypy

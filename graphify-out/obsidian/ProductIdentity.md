@@ -1,20 +1,21 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/identity.py"
 type: "code"
-community: "Community 30"
+community: "ProductIdentity"
 location: "L13"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_30
+  - community/ProductIdentity
 ---
 
 # ProductIdentity
 
 ## Connections
-- [[BaseModel_10]] - `inherits` [EXTRACTED]
+- [[BaseModel_12]] - `inherits` [EXTRACTED]
 - [[MarketOffer]] - `uses` [INFERRED]
 - [[Product-familyvariant evidence, independent of a seller offer.]] - `rationale_for` [EXTRACTED]
+- [[WP1 — Evidence model]] - `references` [INFERRED]
 - [[compare_connectormodels_output.py]] - `imports` [EXTRACTED]
 - [[compare_connectorserver.py]] - `imports` [EXTRACTED]
 - [[compare_verify_offer()]] - `uses` [INFERRED]
@@ -37,4 +38,4 @@ tags:
 - [[test_wb_verification_uses_requested_row_not_first()]] - `uses` [INFERRED]
 - [[test_zero_padded_gtin_represents_the_same_trade_item()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Community_30
+#graphify/code #graphify/INFERRED #community/ProductIdentity

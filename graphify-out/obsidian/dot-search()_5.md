@@ -1,19 +1,24 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/apify-marketplace-adapter.ts"
+source_file: "apps/search/src/infrastructure/sources/http-marketplace-adapter.ts"
 type: "code"
-community: "Community 9"
-location: "L29"
+community: "http-marketplace-adapter.ts"
+location: "L44"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_9
+  - community/http-marketplace-adapterts
 ---
 
 # .search()
 
 ## Connections
-- [[dot-toOffer()_1]] - `calls` [EXTRACTED]
-- [[ApifyMarketplaceAdapter]] - `method` [EXTRACTED]
-- [[isObject()_1]] - `indirect_call` [INFERRED]
+- [[WildberriesHttpAdapter]] - `method` [EXTRACTED]
+- [[assertWbCatalogAllowed()]] - `calls` [EXTRACTED]
+- [[marketplaceSearchQueries()]] - `calls` [EXTRACTED]
+- [[noteWbRateLimited()]] - `calls` [EXTRACTED]
+- [[preferRelevantOffers()]] - `indirect_call` [INFERRED]
+- [[presentWbRateLimited()]] - `calls` [EXTRACTED]
+- [[toWbOffer()]] - `calls` [EXTRACTED]
+- [[wbHttpSearchUrl()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_9
+#graphify/code #graphify/EXTRACTED #community/http-marketplace-adapterts

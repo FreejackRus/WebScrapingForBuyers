@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/server.py"
 type: "code"
-community: "Community 76"
+community: "ozon_connector/server.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_76
+  - community/ozon_connector/serverpy
 ---
 
 # ozon_connector/server.py
@@ -19,7 +19,7 @@ tags:
 - [[OzonSelfcheckResponse]] - `imports` [EXTRACTED]
 - [[_SyncCallError]] - `contains` [EXTRACTED]
 - [[_SyncCallTimeout]] - `contains` [EXTRACTED]
-- [[_aggregate_offer_warnings()]] - `contains` [EXTRACTED]
+- [[_aggregate_offer_warnings()_1]] - `contains` [EXTRACTED]
 - [[_atom_text()]] - `contains` [EXTRACTED]
 - [[_can_process_call()]] - `contains` [EXTRACTED]
 - [[_canonical_composer_path()]] - `contains` [EXTRACTED]
@@ -34,9 +34,9 @@ tags:
 - [[_parse_review_item()]] - `contains` [EXTRACTED]
 - [[_parse_search_tile()]] - `contains` [EXTRACTED]
 - [[_parse_widgets()]] - `contains` [EXTRACTED]
-- [[_polite_wait()_1]] - `contains` [EXTRACTED]
+- [[_polite_wait()_4]] - `contains` [EXTRACTED]
 - [[_price_str_to_float()]] - `contains` [EXTRACTED]
-- [[_proxy()_1]] - `contains` [EXTRACTED]
+- [[_proxy()_2]] - `contains` [EXTRACTED]
 - [[_run_sync_bounded()]] - `contains` [EXTRACTED]
 - [[_safe_review_page_path()]] - `contains` [EXTRACTED]
 - [[_search_items_from_payload()]] - `contains` [EXTRACTED]
@@ -54,7 +54,7 @@ tags:
 - [[fastmcp_3]] - `imports_from` [EXTRACTED]
 - [[fastmcp_exceptions]] - `imports_from` [EXTRACTED]
 - [[fastmcp_server_middleware_error_handling]] - `imports_from` [EXTRACTED]
-- [[get_settings()_7]] - `imports` [EXTRACTED]
+- [[get_settings()_9]] - `imports` [EXTRACTED]
 - [[httpx]] - `imports` [EXTRACTED]
 - [[json]] - `imports` [EXTRACTED]
 - [[logging.py]] - `imports_from` [EXTRACTED]
@@ -83,4 +83,4 @@ tags:
 - [[typing]] - `imports_from` [EXTRACTED]
 - [[urllib_parse]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_76
+#graphify/code #graphify/EXTRACTED #community/ozon_connector/serverpy

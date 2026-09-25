@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/mcp_startup.py"
 type: "code"
-community: "Community 29"
+community: "pathlib"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_29
+  - community/pathlib
 ---
 
 # mcp_startup.py
@@ -16,7 +16,7 @@ tags:
 - [[ProbeError]] - `imports` [EXTRACTED]
 - [[StdioProbe]] - `imports` [EXTRACTED]
 - [[argparse]] - `imports` [EXTRACTED]
-- [[main()_22]] - `contains` [EXTRACTED]
+- [[main()_10]] - `contains` [EXTRACTED]
 - [[measure()]] - `contains` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]
 - [[stdio_probe.py]] - `imports_from` [EXTRACTED]
@@ -24,4 +24,4 @@ tags:
 - [[test_stdio_probe.py]] - `imports` [EXTRACTED]
 - [[time]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_29
+#graphify/code #graphify/EXTRACTED #community/pathlib

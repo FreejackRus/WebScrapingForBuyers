@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
-community: "Community 252"
+community: "test_sources_run_concurrently"
 location: "L418"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Community_252
+  - community/test_sources_run_concurrently
 ---
 
 # impl()
@@ -14,6 +14,6 @@ tags:
 ## Connections
 - [[fake_runner()]] - `calls` [INFERRED]
 - [[make()]] - `indirect_call` [INFERRED]
-- [[offer()]] - `calls` [EXTRACTED]
+- [[offer()_1]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/Community_252
+#graphify/code #graphify/INFERRED #community/test_sources_run_concurrently

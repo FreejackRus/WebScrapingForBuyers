@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_compose_runtime.py"
 type: "code"
-community: "Community 3"
+community: "pytest"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_3
+  - community/pytest
 ---
 
 # test_compose_runtime.py
@@ -22,4 +22,4 @@ tags:
 - [[unittest_mock]] - `imports_from` [EXTRACTED]
 - [[yaml]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_3
+#graphify/code #graphify/EXTRACTED #community/pytest

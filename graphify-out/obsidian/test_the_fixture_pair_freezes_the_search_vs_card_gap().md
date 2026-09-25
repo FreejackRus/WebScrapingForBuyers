@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_parser_live.py"
 type: "code"
-community: "Community 83"
+community: "wb-connector/tests/test_parser_live.py"
 location: "L128"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_83
+  - community/wb-connector/tests/test_parser_livepy
 ---
 
 # test_the_fixture_pair_freezes_the_search_vs_card_gap()
@@ -16,4 +16,4 @@ tags:
 - [[nm 1280469586 priced differently on the two endpoints the same minute. If a…]] - `rationale_for` [EXTRACTED]
 - [[wb-connectorteststest_parser_live.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_83
+#graphify/code #graphify/EXTRACTED #community/wb-connector/tests/test_parser_livepy

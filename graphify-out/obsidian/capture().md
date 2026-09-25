@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_browser_handoff.py"
 type: "code"
-community: "Community 138"
-location: "L467"
+community: "compare-connector/tests/test_browser_handoff.py"
+location: "L171"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/Community_138
+  - graphify/INFERRED
+  - community/compare-connector/tests/test_browser_handoffpy
 ---
 
 # capture()
 
 ## Connections
-- [[test_card_sends_the_region_as_a_filter_not_a_query_parameter()]] - `contains` [EXTRACTED]
+- [[test_snapshot_mcp_transmits_image_without_ending_or_extending_handoff()]] - `indirect_call` [INFERRED]
+- [[test_snapshot_rejects_other_session_and_unknown_handle_without_capture()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_138
+#graphify/code #graphify/INFERRED #community/compare-connector/tests/test_browser_handoffpy
