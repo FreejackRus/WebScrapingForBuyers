@@ -1,4 +1,4 @@
-import { useFilteredOffers, useOfferTable } from "features/search";
+import { useFilteredOffers, useOfferCard, useOfferTable } from "features/search";
 import { useAnalysisStore } from "entities/analysis";
 import { conditionLabels, matchLabels } from "entities/offer";
 import type { OfferSortColumn } from "entities/offer";
@@ -24,6 +24,7 @@ function sortMark(active: boolean, direction?: "asc" | "desc") {
 
 export function OfferTable() {
   const { rows, total, page, pageCount, pageSize, sort, setPage, cycleSort, selectSort } = useOfferTable();
+  const { openOffer } = useOfferCard();
   const filtered = useFilteredOffers();
   const offerFilter = useSearchStore((state) => state.offerFilter);
   const setOfferFilter = useSearchStore((state) => state.setOfferFilter);
@@ -106,7 +107,7 @@ export function OfferTable() {
                 );
               })}
               <th scope="col">
-                <span className="sr-only">Ссылка</span>
+                <span className="sr-only">Карточка</span>
               </th>
             </tr>
           </thead>
@@ -116,7 +117,8 @@ export function OfferTable() {
               return (
               <tr
                 key={offer.id}
-                className={`${selected.includes(offer.id) ? "selected" : ""} ${isBest ? "recommended" : ""}`.trim()}
+                className={`offer-row ${selected.includes(offer.id) ? "selected" : ""} ${isBest ? "recommended" : ""}`.trim()}
+                onClick={() => openOffer(offer.id)}
               >
                 <td data-label="Источник">
                   {isBest && <span className="offer-best-badge">Лучший выбор</span>}
@@ -151,9 +153,16 @@ export function OfferTable() {
                   {fetchedTime.format(new Date(offer.fetchedAt))}
                 </td>
                 <td className="offer-action">
-                  <a className={`offer-cta${isBest ? " primary" : ""}`} href={offer.url} target="_blank" rel="noreferrer">
-                    К офферу
-                  </a>
+                  <button
+                    type="button"
+                    className={`offer-cta${isBest ? " primary" : ""}`}
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      openOffer(offer.id);
+                    }}
+                  >
+                    Карточка
+                  </button>
                 </td>
               </tr>
             );

@@ -1067,3 +1067,25 @@ Chrome-for-Testing в `/tmp/scrapling-ozon-probe`. Поиск Logitech K380 —
 в `/tmp/scrapling-ozon-probe`. В прод без отдельного солвер-флага: пользователь
 явно попросил выкладку, если сработает.
 
+
+### 2026-09-25 — внутренняя карточка предложения
+
+Клик по строке таблицы и мобильной карточке открывает наш drawer, а не
+витрину. Ссылка магазина — вторичная «Открыть на площадке». Поля только
+из `Offer`: title, price, source, seller, url, demo, availability и уже
+известные match/condition/mpn/delivery/warranty/fetchedAt. MCP/VNC/CDP/
+`source.message` на карточке нет.
+
+**Фото: нет.** В контракте `Offer` нет `image`/`imageUrl`. Search
+`toOffer` не мапит thumbnail/image из MCP. Сырые фикстуры коннекторов
+иногда содержат картинки, но в payload карточки их нет. Дополнительно
+страницы не скрейпим; proxy не добавляли — нечего проксировать.
+Карточка показывает честный блок «Фото нет в данных предложения».
+
+Stitch MCP `generate_screen_from_text` для проекта
+`3120249908671992679` / DS `15671525545677379912` вернул `fetch failed`.
+Верстка по существующей теме, без фейкового экрана.
+
+Проверка: `npm run typecheck`, web tests 32/32. Браузер MCP не открыл
+вкладку; локального логина нет. Выкладка: только web `--no-deps --build`.
+Chrome не трогали. Stamp: offer-internal-card.

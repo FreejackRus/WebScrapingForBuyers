@@ -37,4 +37,11 @@ describe("catalog suggestions", () => {
     await useSearchStore.getState().suggest();
     expect(useSearchStore.getState().error).toContain("Подсказок нет");
   });
+
+  it("opens and closes the internal offer card", () => {
+    useSearchStore.getState().openOffer("ozon-1");
+    expect(useSearchStore.getState().selectedOfferId).toBe("ozon-1");
+    useSearchStore.getState().closeOffer();
+    expect(useSearchStore.getState().selectedOfferId).toBeUndefined();
+  });
 });

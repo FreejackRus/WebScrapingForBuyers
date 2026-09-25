@@ -12,6 +12,7 @@ interface SearchState {
   snapshot: SearchSnapshot | undefined;
   offerFilter: string;
   tableFilter: OfferTableFilter | undefined;
+  selectedOfferId: string | undefined;
   activity: "suggest" | "search" | null;
   suggesting: boolean;
   error: string;
@@ -19,6 +20,8 @@ interface SearchState {
   setQuery: (query: string) => void;
   setOfferFilter: (value: string) => void;
   setTableFilter: (value: OfferTableFilter | undefined) => void;
+  openOffer: (id: string) => void;
+  closeOffer: () => void;
   reset: () => void;
   suggest: (options?: { quiet?: boolean }) => Promise<void>;
   start: (product: Product) => Promise<void>;
@@ -31,6 +34,7 @@ export const useSearchStore = create<SearchState>((set, get) => ({
   snapshot: undefined,
   offerFilter: "",
   tableFilter: undefined,
+  selectedOfferId: undefined,
   activity: null,
   suggesting: false,
   error: "",
@@ -38,6 +42,8 @@ export const useSearchStore = create<SearchState>((set, get) => ({
   setQuery: (query) => set({ query }),
   setOfferFilter: (offerFilter) => set({ offerFilter }),
   setTableFilter: (tableFilter) => set({ tableFilter }),
+  openOffer: (selectedOfferId) => set({ selectedOfferId }),
+  closeOffer: () => set({ selectedOfferId: undefined }),
   reset: () => {
     get().source?.close();
     set({
@@ -46,6 +52,7 @@ export const useSearchStore = create<SearchState>((set, get) => ({
       error: "",
       source: undefined,
       tableFilter: undefined,
+      selectedOfferId: undefined,
       suggesting: false,
     });
   },
@@ -60,7 +67,7 @@ export const useSearchStore = create<SearchState>((set, get) => ({
       error: "",
       ...(quiet
         ? {}
-        : { suggestions: [], snapshot: undefined, source: undefined }),
+        : { suggestions: [], snapshot: undefined, source: undefined, selectedOfferId: undefined }),
     });
     try {
       const result = await searchApi.suggest(query.trim());
@@ -92,6 +99,7 @@ export const useSearchStore = create<SearchState>((set, get) => ({
       suggestions: [],
       offerFilter: "",
       tableFilter: undefined,
+      selectedOfferId: undefined,
       snapshot: undefined,
     });
     try {

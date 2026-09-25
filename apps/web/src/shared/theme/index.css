@@ -402,6 +402,125 @@ tr.recommended { box-shadow: inset 4px 0 0 var(--brand); }
 }
 .offer-cta:hover { border-color: var(--brand); color: var(--brand); }
 .offer-cta.primary:hover { background: var(--brand-dark); color: #fff; }
+.offer-row { cursor: pointer; }
+.offer-row:hover { background: var(--brand-50); }
+
+body.offer-card-open { overflow: hidden; }
+.offer-card-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: flex-end;
+  background: rgba(24, 28, 36, 0.36);
+}
+.offer-card-drawer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: min(420px, 100%);
+  height: 100%;
+  overflow: auto;
+  padding: 20px 20px 24px;
+  background: var(--surface);
+  border-left: 1px solid var(--line);
+  box-shadow: -16px 0 40px rgba(24, 28, 36, 0.12);
+}
+.offer-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+.offer-card-head h2 {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.35;
+}
+.offer-card-close { flex-shrink: 0; }
+.offer-card-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+}
+.offer-card-price b { font-size: 1.6rem; letter-spacing: -0.03em; }
+.offer-card-price del { color: var(--muted); }
+.offer-demo-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: var(--brand-soft);
+  color: var(--brand);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.offer-card-photo {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 28px 16px;
+  border: 1px dashed var(--brand-200);
+  border-radius: 12px;
+  background: var(--brand-50);
+  color: var(--muted);
+  text-align: center;
+  font-size: 13px;
+}
+.offer-card-photo p { margin: 0; }
+.offer-card-photo-mark {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--brand);
+  font-size: 18px;
+}
+.offer-card-facts {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+.offer-card-facts > div {
+  display: grid;
+  gap: 4px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.offer-card-facts dt {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.offer-card-facts dd { margin: 0; font-size: 14px; }
+.offer-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+.offer-card-shop {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+.offer-card-shop:hover { border-color: var(--brand); color: var(--brand); }
 
 .mobile-nav { display: none; }
 .login-secure {
@@ -838,6 +957,24 @@ tr.recommended { box-shadow: inset 4px 0 0 var(--brand); }
     min-height: 44px;
     margin-top: 4px;
   }
+  .offer-card-backdrop {
+    align-items: flex-end;
+    justify-content: stretch;
+  }
+  .offer-card-drawer {
+    width: 100%;
+    height: auto;
+    max-height: min(88vh, 720px);
+    border-left: 0;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    box-shadow: 0 -12px 32px rgba(24, 28, 36, 0.12);
+    padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  }
+  .offer-card-close,
+  .offer-card-shop,
+  .offer-card-actions .ghost { min-height: 44px; }
+  .offer-card-actions { flex-direction: column; }
 
   .mobile-nav {
     display: flex;

@@ -46,6 +46,11 @@ JSON-RPC `tools/call` на `https://stitch.googleapis.com/mcp`.
 | Мобильный интерфейс менеджера | `d028549d8cbe41678a6b44ae609d7d4a` | MOBILE |
 | Мобильный вход | `6f54d513b9174b6fb16efc205d8dbdc8` | MOBILE |
 | Мобильные настройки / профиль | `694b41de9c21419a9b720fa3ef0ceac0` | MOBILE |
+| Внутренняя карточка предложения | не сгенерирован | DESKTOP |
+
+Генерация экрана карточки через Stitch MCP 2026-09-25 вернула
+`fetch failed` (повтор тоже). Реализована в теме PEREMENA Digital
+`#2569ED` без нового Stitch HTML.
 
 Снимки и HTML: `docs/stitch-screens/` (`mobile.html`, `mobile-login.html`,
 `mobile-settings.html`).

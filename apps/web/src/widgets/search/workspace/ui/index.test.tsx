@@ -7,8 +7,11 @@ const state = vi.hoisted(() => ({
   error: "",
   offerFilter: "",
   tableFilter: undefined,
+  selectedOfferId: undefined,
   setOfferFilter: vi.fn(),
   setTableFilter: vi.fn(),
+  openOffer: vi.fn(),
+  closeOffer: vi.fn(),
 }));
 
 vi.mock("entities/search", () => ({

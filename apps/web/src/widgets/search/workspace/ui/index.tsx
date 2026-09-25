@@ -2,6 +2,7 @@ import { exportApi } from "features/export";
 import { useSearchStore } from "entities/search";
 import { useUserStore } from "entities/user";
 import { Metrics } from "widgets/search/metrics";
+import { OfferCard } from "widgets/search/offer-card";
 import { OfferTable } from "widgets/search/offers";
 import { SourceGrid } from "widgets/search/sources";
 
@@ -86,7 +87,12 @@ export function SearchWorkspaceLead() {
 export function SearchWorkspaceOffers() {
   const snapshot = useSearchStore((state) => state.snapshot);
   if (!snapshot) return null;
-  return <OfferTable />;
+  return (
+    <>
+      <OfferTable />
+      <OfferCard />
+    </>
+  );
 }
 
 /** Full workspace block for tests and desktop fallbacks. */
