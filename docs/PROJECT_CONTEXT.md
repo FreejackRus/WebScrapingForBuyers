@@ -1089,3 +1089,47 @@ Stitch MCP `generate_screen_from_text` для проекта
 Проверка: `npm run typecheck`, web tests 32/32. Браузер MCP не открыл
 вкладку; локального логина нет. Выкладка: только web `--no-deps --build`.
 Chrome не трогали. Stamp: offer-internal-card.
+
+### 2026-09-25 — DNS Qrator и Яндекс 302: публичные репо не дают карточки
+
+Проверено на GPU-сервере (тот же DC-IP, что у marketplace-mcp). Chrome
+`31d4ef9c3dae` не трогали. Пробы в `/tmp/dns-yandex-probes`, без
+`:9222`. Запрос как у MCP: Logitech K380. Солвер в коннекторы не
+копировали: `count>0` с живыми title/price не было.
+
+Публичные репо (что делают на самом деле):
+
+- [Polodashvili-Iosif/parser-scraper_DNS](https://github.com/Polodashvili-Iosif/parser-scraper_DNS)
+  `5a14d8e` (2022): Selenium `webdriver.Chrome` + BeautifulSoup по
+  каталогу игровых ноутбуков, паузы 6–10 с, выгрузка xlsx/csv/xml/json/
+  PostgreSQL. Нет Qrator/cookies/Playwright/официального API.
+- [Alexandr3-7/dns_price_monitor](https://github.com/Alexandr3-7/dns_price_monitor)
+  `711eb1d`: Selenium + `undetected-chromedriver`, скролл/мышь, монитор
+  уже известных карточек, Telegram/Flask. Солвера Qrator нет.
+- [Antiarchitect/spree-yandex-market-scraper](https://github.com/Antiarchitect/spree-yandex-market-scraper)
+  `0b1caa6` (v0.4.1): старый Ruby/Spree `open-uri` + Nokogiri. Берёт
+  готовую ссылку товара и тащит описание/картинки (`#full-spec-cont`,
+  `.bigpic`). Не поиск, не обход 302/SmartCaptcha, не Partner API.
+- Avito-Parser `run_qrator_cookie_flow` (`2d09315`): только Avito —
+  HTTP 302 `Server: QRATOR`, скрипт `/[0-9a-f]{20}.js`, POST
+  `avito.ru/web/2/ft` (fingerprint `f`/`s`) и pixel `/web/1/u`. На DNS
+  другой контур: HTTP 401 + `/__qrator/qauth_utm_v2d_v9118.js` и cookie
+  `qrator_jsr` без `pow_challenge`. Flow на dns-shop.ru не применяли.
+
+Живые пробы (карточек нет):
+
+- DNS HTTP/`curl_cffi` firefox147: 401 `Server: QRATOR`, body ~6 KB с
+  qauth, `Set-Cookie: qrator_jsr` (challenge, Max-Age=300), 0 `/product/`.
+  Sitemap 200 (индекс URL, не цены). `/ajax-state/product-buy/` тоже 401.
+- DNS Scrapling StealthyFetcher (свой Chrome-for-Testing, не compose):
+  401, «No Cloudflare challenge», 0 карточек.
+- DNS Playwright и Patchright, тот же Chrome, wait 25 с: title
+  `HTTP 403`, 0 `/product/`. JS qauth отработал, витрина не открылась.
+- Яндекс HTTP: 200 «Вы не робот?». `curl_cffi`: 302 → `/showcaptcha`.
+  Scrapling: 302→200 «Are you not a robot?». Playwright/Patchright:
+  тот же SmartCaptcha, 0 product id.
+
+Вывод: с DC-IP нет локального солвера, который даёт DNS `/product/`
+или выдачу Маркета. Адаптеры `dns-connector` / `yandex-connector` и
+search не меняли. marketplace-mcp/search не выкладывали. Chrome Up
+без пересоздания.
