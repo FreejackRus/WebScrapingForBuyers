@@ -55,6 +55,8 @@ describe("OfferCard", () => {
     expect(html).toContain("KSM48E40BD8KI-32HA");
     expect(html).toContain("Открыть на площадке");
     expect(html).toContain(offer.url);
+    expect(html).toContain("Время запроса");
+    expect(html).not.toContain("Съём");
     expect(html).toContain("Фото нет в данных предложения");
     expect(html).not.toContain("<img");
     expect(html).not.toMatch(/MCP|VNC|CDP|source\.message|Пройти проверку|wb_search/i);

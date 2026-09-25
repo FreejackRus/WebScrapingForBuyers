@@ -78,6 +78,40 @@ describe("search", () => {
     expect(products.every((item) => item.characteristics.источник !== undefined)).toBe(true);
   });
 
+  it("lists adapters and collects only the chosen sources", async () => {
+    const other: SourceAdapter = {
+      name: "Ozon",
+      async search() {
+        throw new Error("should not run");
+      },
+    };
+    const app = buildSearchApp({ sources: [new TestSource(), other] });
+    apps.push(app);
+    const listed = await app.inject({ method: "GET", url: "/sources" });
+    expect(listed.json()).toEqual({ sources: ["TEST", "Ozon"] });
+    const created = await app.inject({
+      method: "POST",
+      url: "/searches",
+      payload: { query: "MX Master", productId: "logitech-mx-master-3s-graphite", sources: ["TEST"] },
+    });
+    expect(created.statusCode).toBe(201);
+    expect(created.json().sources.map((source: { source: string }) => source.source)).toEqual(["TEST"]);
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    const snapshot = await app.inject({ method: "GET", url: `/searches/${created.json().id}` });
+    expect(snapshot.json()).toMatchObject({ status: "complete", offers: [{ source: "TEST" }] });
+  });
+
+  it("rejects a search when none of the requested sources exist", async () => {
+    const app = buildSearchApp({ sources: [new TestSource()] });
+    apps.push(app);
+    const response = await app.inject({
+      method: "POST",
+      url: "/searches",
+      payload: { query: "MX Master", sources: ["NoSuchShop"] },
+    });
+    expect(response.statusCode).toBe(400);
+  });
+
   it("collects offers", async () => {
     const app = buildSearchApp({ sources: [new TestSource()] });
     apps.push(app);

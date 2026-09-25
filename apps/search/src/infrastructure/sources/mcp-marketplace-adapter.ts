@@ -600,6 +600,20 @@ const GENERIC_PRODUCT_TOKENS = new Set([
   "черный",
   "белый",
   "серый",
+  // Marketing suffixes: "Pro" matches Roborock Q8 Max Pro on a Legion Pro 5 query.
+  "pro",
+  "plus",
+  "max",
+  "ultra",
+  "mini",
+  "lite",
+  "air",
+  "gen",
+  "gen2",
+  "new",
+  "wifi",
+  "rgb",
+  "usb",
 ]);
 
 type OfferRelevance = { kind: "drop" } | { kind: "weak"; rejectUrl?: boolean } | { kind: "strong"; rejectUrl?: boolean };
@@ -690,6 +704,12 @@ const FOREIGN_CATEGORY_MARKERS = [
   "аэрогрил",
   "полотенц",
   "батончик",
+  "пылесос",
+  "пылесборник",
+  "планшет",
+  "проектор",
+  "сканер",
+  "графическ",
 ];
 
 function categorySelfTokens(product: Product): string[] {
@@ -703,6 +723,11 @@ function categorySelfTokens(product: Product): string[] {
   if (category.includes("клавиатур")) {
     tokens.add("клавиатур");
     tokens.add("keyboard");
+  }
+  if (category.includes("ноутбук")) {
+    tokens.add("ноутбук");
+    tokens.add("laptop");
+    tokens.add("notebook");
   }
   for (const token of tokenizeProduct(product.name)) {
     if (token === "мышь" || token === "мыши" || token === "mouse") tokens.add(token);
@@ -767,6 +792,20 @@ function productModelStems(product: Product): string[] {
   return [...stems];
 }
 
+/** "pro 5" → pro5. Used only to drop rival SKUs, not to widen family cards. */
+function productPhraseStems(product: Product): string[] {
+  const stems = new Set<string>();
+  const tokens = [...tokenizeProduct(product.model), ...tokenizeProduct(product.name)];
+  for (let index = 0; index < tokens.length - 1; index += 1) {
+    const word = compactIdentity(tokens[index]!);
+    const digits = compactIdentity(tokens[index + 1]!);
+    if (/^[a-zа-яё]{1,8}$/.test(word) && /^\d{1,4}[a-z]?$/.test(digits)) {
+      stems.add(`${word}${digits}`);
+    }
+  }
+  return [...stems];
+}
+
 function skuStemsIn(hay: string): string[] {
   const stems = new Set<string>();
   const tokens = tokenizeProduct(hay);
@@ -783,7 +822,7 @@ function skuStemsIn(hay: string): string[] {
 }
 
 function hasRivalModelSku(product: Product, hay: string): boolean {
-  const ours = productModelStems(product);
+  const ours = [...new Set([...productModelStems(product), ...productPhraseStems(product)])];
   if (ours.length === 0) return false;
   const compactHay = compactIdentity(hay);
   if (ours.some((stem) => compactHay.includes(stem))) return false;
@@ -862,6 +901,7 @@ export function assessMarketplaceOfferRelevance(
   if (hasOppositeCategory(product, identityHay) && strongHits.length === 0) return { kind: "drop" };
   if (hasForeignCategoryMarker(categoryHay) && strongHits.length === 0) return { kind: "drop" };
   if (hasForeignCategoryClash(product, identityHay)) return { kind: "drop" };
+  if (hasRivalModelSku(product, titleHay)) return { kind: "drop" };
 
   if (strongHits.length === 0 && weakHits.length === 0 && !familyCard) {
     if (kind === "wb" && strong.length === 0 && hasSelfCategory(product, titleHay)) return { kind: "weak" };

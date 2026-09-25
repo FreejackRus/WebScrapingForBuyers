@@ -1,4 +1,5 @@
-import { useFilteredOffers, useOfferCard, useOfferTable } from "features/search";
+import { useState, type PointerEvent, type ReactNode } from "react";
+import { useFilteredOffers, useOfferCard, useOfferColumns, useOfferTable } from "features/search";
 import { useAnalysisStore } from "entities/analysis";
 import { conditionLabels, matchLabels } from "entities/offer";
 import type { OfferSortColumn } from "entities/offer";
@@ -6,16 +7,6 @@ import { useSearchStore } from "entities/search";
 import { fetchedTime, money } from "shared/lib";
 
 const emptySelected: string[] = [];
-
-const columns: { key: OfferSortColumn; label: string }[] = [
-  { key: "source", label: "Источник / продавец" },
-  { key: "title", label: "Товар" },
-  { key: "match", label: "Совпадение" },
-  { key: "price", label: "Цена" },
-  { key: "availability", label: "Наличие" },
-  { key: "conditions", label: "Условия" },
-  { key: "fetched", label: "Съём" },
-];
 
 function sortMark(active: boolean, direction?: "asc" | "desc") {
   if (!active) return "⇅";
@@ -25,6 +16,8 @@ function sortMark(active: boolean, direction?: "asc" | "desc") {
 export function OfferTable() {
   const { rows, total, page, pageCount, pageSize, sort, setPage, cycleSort, selectSort } = useOfferTable();
   const { openOffer } = useOfferCard();
+  const { columns, visible, hidden, widthOf, toggle, setWidth, reset } = useOfferColumns();
+  const [menuOpen, setMenuOpen] = useState(false);
   const filtered = useFilteredOffers();
   const offerFilter = useSearchStore((state) => state.offerFilter);
   const setOfferFilter = useSearchStore((state) => state.setOfferFilter);
@@ -39,6 +32,28 @@ export function OfferTable() {
   const from = total === 0 ? 0 : (page - 1) * pageSize + 1;
   const to = Math.min(page * pageSize, total);
 
+  const startResize = (key: OfferSortColumn, event: PointerEvent<HTMLSpanElement>) => {
+    event.preventDefault();
+    event.stopPropagation();
+    const origin = event.clientX;
+    const start = widthOf(key);
+    const move = (next: PointerEvent | globalThis.PointerEvent) => {
+      setWidth(key, start + next.clientX - origin);
+    };
+    const up = () => {
+      window.removeEventListener("pointermove", move);
+      window.removeEventListener("pointerup", up);
+    };
+    window.addEventListener("pointermove", move);
+    window.addEventListener("pointerup", up);
+  };
+
+  const cell = (key: OfferSortColumn, node: ReactNode, extra?: string) => {
+    if (hidden.includes(key)) return null;
+    const label = columns.find((column) => column.key === key)?.label;
+    return extra ? <td className={extra} data-label={label}>{node}</td> : <td data-label={label}>{node}</td>;
+  };
+
   return (
     <section className="panel offers-panel" aria-labelledby="offers-title">
       <div className="offers-toolbar">
@@ -46,14 +61,45 @@ export function OfferTable() {
           <p className="eyebrow">Сравнение</p>
           <h2 id="offers-title">Таблица предложений</h2>
         </div>
-        <label className="offer-search">
-          <span className="sr-only">Фильтр предложений</span>
-          <input
-            value={offerFilter}
-            onChange={(event) => setOfferFilter(event.target.value)}
-            placeholder="Источник, продавец, товар…"
-          />
-        </label>
+        <div className="offers-toolbar-actions">
+          <label className="offer-search">
+            <span className="sr-only">Фильтр предложений</span>
+            <input
+              value={offerFilter}
+              onChange={(event) => setOfferFilter(event.target.value)}
+              placeholder="Источник, продавец, товар…"
+            />
+          </label>
+          <div className="column-menu-wrap">
+            <button
+              type="button"
+              className="ghost column-menu-toggle"
+              aria-expanded={menuOpen}
+              aria-controls="offer-columns-menu"
+              onClick={() => setMenuOpen((open) => !open)}
+            >
+              Столбцы
+            </button>
+            {menuOpen && (
+              <div id="offer-columns-menu" className="column-menu" role="group" aria-label="Видимость столбцов">
+                {columns.map((column) => (
+                  <label key={column.key} className="column-menu-item">
+                    <input
+                      type="checkbox"
+                      checked={!hidden.includes(column.key)}
+                      disabled={column.key === "title"}
+                      onChange={() => toggle(column.key)}
+                    />
+                    {column.label}
+                  </label>
+                ))}
+                <button type="button" className="linkish" onClick={reset}>
+                  Сбросить ширину
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
       <label className="mobile-sort">
         Сортировка предложений
@@ -83,10 +129,16 @@ export function OfferTable() {
         </div>
       )}
       <div className="table-wrap">
-        <table>
+        <table style={{ minWidth: visible.reduce((sum, column) => sum + widthOf(column.key), 88) }}>
+          <colgroup>
+            {visible.map((column) => (
+              <col key={column.key} style={{ width: widthOf(column.key) }} />
+            ))}
+            <col style={{ width: 88 }} />
+          </colgroup>
           <thead>
             <tr>
-              {columns.map((column) => {
+              {visible.map((column) => {
                 const active = sort?.column === column.key;
                 return (
                   <th
@@ -103,6 +155,13 @@ export function OfferTable() {
                       <span>{column.label}</span>
                       <span aria-hidden="true">{sortMark(Boolean(active), sort?.direction)}</span>
                     </button>
+                    <span
+                      className="col-resize"
+                      role="separator"
+                      aria-orientation="vertical"
+                      aria-label={`Ширина столбца «${column.label}»`}
+                      onPointerDown={(event) => startResize(column.key, event)}
+                    />
                   </th>
                 );
               })}
@@ -120,38 +179,42 @@ export function OfferTable() {
                 className={`offer-row ${selected.includes(offer.id) ? "selected" : ""} ${isBest ? "recommended" : ""}`.trim()}
                 onClick={() => openOffer(offer.id)}
               >
-                <td data-label="Источник">
-                  {isBest && <span className="offer-best-badge">Лучший выбор</span>}
-                  <div className="source-name">
-                    <b>{offer.source}</b>
-                    {offer.seller ? <span className="offer-seller"> · {offer.seller}</span> : null}
-                  </div>
-                  <small className="offer-seller-desktop">{offer.seller}</small>
-                </td>
-                <td data-label="Товар">
-                  <div className="offer-title">{offer.title}</div>
-                  {offer.mpn && <small className="offer-mpn">{offer.mpn}</small>}
-                </td>
-                <td data-label="Совпадение">
+                {cell("source", (
+                  <>
+                    {isBest && <span className="offer-best-badge">Лучший выбор</span>}
+                    <div className="source-name">
+                      <b>{offer.source}</b>
+                      {offer.seller ? <span className="offer-seller"> · {offer.seller}</span> : null}
+                    </div>
+                    <small className="offer-seller-desktop">{offer.seller}</small>
+                  </>
+                ))}
+                {cell("title", (
+                  <>
+                    <div className="offer-title">{offer.title}</div>
+                    {offer.mpn && <small className="offer-mpn">{offer.mpn}</small>}
+                  </>
+                ))}
+                {cell("match", (
                   <div className="offer-match">
                     <span className={`match ${offer.match}`}>{matchLabels[offer.match]}</span>
                     <small>{conditionLabels[offer.condition]}</small>
                   </div>
-                </td>
-                <td className="price" data-label="Цена">
-                  <b className="mono">{money.format(offer.price)}</b>
-                  {offer.oldPrice && <del className="mono">{money.format(offer.oldPrice)}</del>}
-                </td>
-                <td data-label="Наличие">{offer.availability}</td>
-                <td data-label="Условия">
+                ))}
+                {cell("price", (
+                  <>
+                    <b className="mono">{money.format(offer.price)}</b>
+                    {offer.oldPrice && <del className="mono">{money.format(offer.oldPrice)}</del>}
+                  </>
+                ), "price")}
+                {cell("availability", <>{offer.availability}</>)}
+                {cell("conditions", (
                   <div className="offer-conditions">
                     <span>{offer.delivery ?? "Доставка неизвестна"}</span>
                     <small>{offer.warranty ?? "Гарантия не указана"}</small>
                   </div>
-                </td>
-                <td data-label="Съём" className="mono">
-                  {fetchedTime.format(new Date(offer.fetchedAt))}
-                </td>
+                ))}
+                {cell("fetched", <>{fetchedTime.format(new Date(offer.fetchedAt))}</>, "mono")}
                 <td className="offer-action">
                   <button
                     type="button"

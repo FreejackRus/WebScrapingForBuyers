@@ -6,6 +6,26 @@ import { mergeSnapshotOffers } from "./merge";
 
 export { mergeSnapshotOffers } from "./merge";
 
+const SELECTED_SOURCES_KEY = "peremena.selected-sources";
+
+function readSelectedSources(): string[] {
+  try {
+    const raw = localStorage.getItem(SELECTED_SOURCES_KEY);
+    const parsed = raw ? (JSON.parse(raw) as unknown) : [];
+    return Array.isArray(parsed) ? parsed.filter((item): item is string => typeof item === "string") : [];
+  } catch {
+    return [];
+  }
+}
+
+function writeSelectedSources(sources: string[]) {
+  try {
+    localStorage.setItem(SELECTED_SOURCES_KEY, JSON.stringify(sources));
+  } catch {
+    /* ignore quota */
+  }
+}
+
 interface SearchState {
   query: string;
   suggestions: Product[];
@@ -13,6 +33,8 @@ interface SearchState {
   offerFilter: string;
   tableFilter: OfferTableFilter | undefined;
   selectedOfferId: string | undefined;
+  availableSources: string[];
+  selectedSources: string[];
   activity: "suggest" | "search" | null;
   suggesting: boolean;
   error: string;
@@ -20,6 +42,8 @@ interface SearchState {
   setQuery: (query: string) => void;
   setOfferFilter: (value: string) => void;
   setTableFilter: (value: OfferTableFilter | undefined) => void;
+  setSelectedSources: (sources: string[]) => void;
+  loadSources: () => Promise<void>;
   openOffer: (id: string) => void;
   closeOffer: () => void;
   reset: () => void;
@@ -35,6 +59,8 @@ export const useSearchStore = create<SearchState>((set, get) => ({
   offerFilter: "",
   tableFilter: undefined,
   selectedOfferId: undefined,
+  availableSources: [],
+  selectedSources: typeof localStorage === "undefined" ? [] : readSelectedSources(),
   activity: null,
   suggesting: false,
   error: "",
@@ -42,6 +68,22 @@ export const useSearchStore = create<SearchState>((set, get) => ({
   setQuery: (query) => set({ query }),
   setOfferFilter: (offerFilter) => set({ offerFilter }),
   setTableFilter: (tableFilter) => set({ tableFilter }),
+  setSelectedSources: (selectedSources) => {
+    writeSelectedSources(selectedSources);
+    set({ selectedSources });
+  },
+  loadSources: async () => {
+    try {
+      const result = await searchApi.sources();
+      const availableSources = result.sources.filter(Boolean);
+      const remembered = get().selectedSources.filter((name) => availableSources.includes(name));
+      const selectedSources = remembered.length > 0 ? remembered : availableSources;
+      writeSelectedSources(selectedSources);
+      set({ availableSources, selectedSources });
+    } catch {
+      set({ availableSources: get().availableSources });
+    }
+  },
   openOffer: (selectedOfferId) => set({ selectedOfferId }),
   closeOffer: () => set({ selectedOfferId: undefined }),
   reset: () => {
@@ -103,7 +145,7 @@ export const useSearchStore = create<SearchState>((set, get) => ({
       snapshot: undefined,
     });
     try {
-      const created = await searchApi.start(query || product.name, product);
+      const created = await searchApi.start(query || product.name, product, get().selectedSources);
       const next = searchApi.subscribe(
         created.id,
         (event) => get().applyEvent(event),

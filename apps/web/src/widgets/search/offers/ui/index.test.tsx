@@ -51,6 +51,31 @@ vi.mock("features/search", () => ({
     selectSort: vi.fn(),
   }),
   useOfferCard: () => ({ offer: undefined, openOffer, closeOffer: vi.fn() }),
+  useOfferColumns: () => ({
+    columns: [
+      { key: "source", label: "Источник / продавец" },
+      { key: "title", label: "Товар" },
+      { key: "match", label: "Совпадение" },
+      { key: "price", label: "Цена" },
+      { key: "availability", label: "Наличие" },
+      { key: "conditions", label: "Условия" },
+      { key: "fetched", label: "Время запроса" },
+    ],
+    visible: [
+      { key: "source", label: "Источник / продавец" },
+      { key: "title", label: "Товар" },
+      { key: "match", label: "Совпадение" },
+      { key: "price", label: "Цена" },
+      { key: "availability", label: "Наличие" },
+      { key: "conditions", label: "Условия" },
+      { key: "fetched", label: "Время запроса" },
+    ],
+    hidden: [],
+    widthOf: () => 120,
+    toggle: vi.fn(),
+    setWidth: vi.fn(),
+    reset: vi.fn(),
+  }),
 }));
 vi.mock("entities/search", () => ({
   useSearchStore: (
@@ -82,6 +107,9 @@ describe("OfferTable", () => {
     const html = renderToStaticMarkup(<OfferTable />);
     expect(html).toContain("offer-row");
     expect(html).toContain(">Карточка</button>");
+    expect(html).toContain("Время запроса");
+    expect(html).toContain("Столбцы");
+    expect(html).not.toContain("Съём");
     expect(html).not.toContain("К офферу");
     expect(html).not.toContain(`href="${offer.url}"`);
     expect(html).not.toMatch(/MCP|VNC|CDP|source\.message/i);

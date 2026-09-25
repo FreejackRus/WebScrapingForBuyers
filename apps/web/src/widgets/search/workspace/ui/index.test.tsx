@@ -97,9 +97,9 @@ describe("search workspace data states", () => {
     expect(html).not.toContain("Собираем предложения");
   });
 
-  it("warns when only part of the market could be collected", () => {
+  it("does not show a partial-collection banner to managers", () => {
     state.snapshot!.offers = [offer(false, 500)];
     state.snapshot!.sources.push({ source: "Unavailable", status: "error" });
-    expect(renderToStaticMarkup(<SearchWorkspace />)).toContain("Сбор завершён частично");
+    expect(renderToStaticMarkup(<SearchWorkspace />)).not.toContain("Сбор завершён частично");
   });
 });

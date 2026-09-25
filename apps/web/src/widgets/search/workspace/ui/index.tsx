@@ -72,12 +72,6 @@ export function SearchWorkspaceLead() {
             />
           </section>
           {user?.role === "admin" && <SourceGrid sources={snapshot.sources} role={user.role} />}
-          {snapshot.status === "complete" && failedSources > 0 && offers.length > 0 && (
-            <div className="data-notice warn" role="status">
-              Сбор завершён частично: {failedSources} из {snapshot.sources.length} источников не ответили успешно.
-              Показаны полученные предложения; сравнение рынка может быть неполным.
-            </div>
-          )}
         </>
       )}
     </>

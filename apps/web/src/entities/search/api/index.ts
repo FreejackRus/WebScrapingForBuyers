@@ -8,12 +8,15 @@ export const searchApi = {
       method: "POST",
       body: JSON.stringify({ query }),
     }),
-  start: (query: string, product: Product | string) =>
+  sources: () => request<{ sources: string[] }>(apiUrl("/sources")),
+  start: (query: string, product: Product | string, sources?: string[]) =>
     request<SearchSnapshot>(apiUrl("/searches"), {
       method: "POST",
-      body: JSON.stringify(
-        typeof product === "string" ? { query, productId: product } : { query, product },
-      ),
+      body: JSON.stringify({
+        query,
+        ...(typeof product === "string" ? { productId: product } : { product }),
+        ...(sources?.length ? { sources } : {}),
+      }),
     }),
   subscribe: (searchId: string, onEvent: (event: SearchEvent) => void, onError: () => void) => {
     const source = new EventSource(apiUrl(`/searches/${searchId}/events`), { withCredentials: true });

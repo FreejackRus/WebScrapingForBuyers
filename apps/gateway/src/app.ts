@@ -46,6 +46,9 @@ export function buildGatewayApp(options: { logger?: boolean } = {}) {
     proxyJson(identity, "/auth/settings", request, reply),
   );
 
+  app.get("/api/v1/sources", async (request, reply) =>
+    proxyJson(search, "/sources", request, reply),
+  );
   app.post("/api/v1/suggestions", async (request, reply) =>
     proxyJson(search, "/suggestions", request, reply),
   );

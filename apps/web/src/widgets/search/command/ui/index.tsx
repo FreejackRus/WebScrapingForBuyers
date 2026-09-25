@@ -43,6 +43,15 @@ export function SearchCommand() {
   const inputRef = useRef<HTMLInputElement>(null);
   const shortcutLabel = typeof navigator !== "undefined" && /Mac|iPhone|iPad/.test(navigator.platform) ? "⌘K" : "Ctrl+K";
 
+  const availableSources = useSearchStore((state) => state.availableSources);
+  const selectedSources = useSearchStore((state) => state.selectedSources);
+  const setSelectedSources = useSearchStore((state) => state.setSelectedSources);
+  const loadSources = useSearchStore((state) => state.loadSources);
+
+  useEffect(() => {
+    void loadSources();
+  }, [loadSources]);
+
   useEffect(() => {
     window.clearTimeout(debounceRef.current);
     if (suppressSuggestRef.current) {
@@ -78,7 +87,7 @@ export function SearchCommand() {
   const onSubmit = (event: FormEvent) => {
     event.preventDefault();
     const trimmed = query.trim();
-    if (trimmed.length < 2 || activity === "search") return;
+    if (trimmed.length < 2 || activity === "search" || selectedSources.length === 0) return;
     const selected = open && suggestions[activeIndex];
     if (selected) {
       commitProduct(selected);
@@ -203,10 +212,52 @@ export function SearchCommand() {
         <span id={hintId} className="kbd">
           {shortcutLabel}
         </span>
-        <button disabled={activity === "search" || query.trim().length < 2}>
+        <button disabled={activity === "search" || query.trim().length < 2 || selectedSources.length === 0}>
           {activity === "search" ? "Ищем…" : "Найти"}
         </button>
       </form>
+      {availableSources.length > 0 && (
+        <fieldset className="source-picker" disabled={activity === "search"}>
+          <legend>Поставщики для запроса</legend>
+          <div className="source-picker-actions">
+            <button
+              type="button"
+              className="linkish"
+              onClick={() => setSelectedSources(availableSources)}
+              disabled={selectedSources.length === availableSources.length}
+            >
+              Все
+            </button>
+            <button
+              type="button"
+              className="linkish"
+              onClick={() => setSelectedSources([])}
+              disabled={selectedSources.length === 0}
+            >
+              Снять
+            </button>
+          </div>
+          <div className="source-picker-list">
+            {availableSources.map((name) => {
+              const checked = selectedSources.includes(name);
+              return (
+                <label key={name} className={`source-chip${checked ? " is-on" : ""}`}>
+                  <input
+                    type="checkbox"
+                    checked={checked}
+                    onChange={() => {
+                      setSelectedSources(
+                        checked ? selectedSources.filter((item) => item !== name) : [...selectedSources, name],
+                      );
+                    }}
+                  />
+                  {name}
+                </label>
+              );
+            })}
+          </div>
+        </fieldset>
+      )}
     </section>
   );
 }

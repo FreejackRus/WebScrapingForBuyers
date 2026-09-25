@@ -17,17 +17,22 @@ export class SearchService {
 
   constructor(private readonly sources: SourceAdapter[]) {}
 
-  start(query: string, product: Product): SearchSnapshot {
+  listSources(): string[] {
+    return this.sources.map((source) => source.name);
+  }
+
+  start(query: string, product: Product, sourceNames?: string[]): SearchSnapshot {
+    const selected = this.resolveSources(sourceNames);
     const snapshot: SearchSnapshot = {
       id: randomUUID(),
       query,
       product,
       status: "running",
       offers: [],
-      sources: this.sources.map((source) => ({ source: source.name, status: "pending" })),
+      sources: selected.map((source) => ({ source: source.name, status: "pending" })),
     };
     this.searches.set(snapshot.id, snapshot);
-    queueMicrotask(() => void this.collect(snapshot.id));
+    queueMicrotask(() => void this.collect(snapshot.id, selected));
     return structuredClone(snapshot);
   }
 
@@ -46,12 +51,18 @@ export class SearchService {
     };
   }
 
-  private async collect(id: string): Promise<void> {
+  resolveSources(sourceNames?: string[]): SourceAdapter[] {
+    if (!sourceNames?.length) return this.sources;
+    const wanted = new Set(sourceNames.map((name) => name.trim().toLocaleLowerCase("ru")).filter(Boolean));
+    return this.sources.filter((source) => wanted.has(source.name.toLocaleLowerCase("ru")));
+  }
+
+  private async collect(id: string, sources = this.sources): Promise<void> {
     const snapshot = this.searches.get(id);
     if (!snapshot) return;
 
     await Promise.allSettled(
-      this.sources.map(async (source) => {
+      sources.map(async (source) => {
         this.updateSource(snapshot, source.name, { source: source.name, status: "loading" });
         try {
           const offers = await source.search(snapshot.product);

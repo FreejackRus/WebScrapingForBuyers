@@ -301,6 +301,33 @@ button:disabled { opacity: 0.55; cursor: wait; }
 .data-notice.warn { background: #fff6e5; color: var(--warn); }
 .data-notice.mixed { background: var(--brand-soft); color: var(--brand-dark); }
 .offers-panel .data-notice { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.offers-toolbar-actions { display: flex; gap: 10px; align-items: flex-start; flex-wrap: wrap; }
+.column-menu-wrap { position: relative; }
+.column-menu {
+  position: absolute; right: 0; top: calc(100% + 6px); z-index: 12;
+  display: grid; gap: 8px; min-width: 220px; padding: 12px;
+  background: #fff; border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow-card);
+}
+.column-menu-item { display: flex; gap: 8px; align-items: center; font-size: 13px; color: var(--ink); }
+.column-menu-toggle { white-space: nowrap; }
+th { position: relative; }
+.col-resize {
+  position: absolute; top: 0; right: 0; width: 8px; height: 100%; cursor: col-resize;
+}
+.col-resize:hover, .col-resize:active { background: var(--brand-200); }
+.source-picker {
+  margin: 12px 0 0; padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px;
+  background: var(--canvas);
+}
+.source-picker legend { padding: 0 4px; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; }
+.source-picker-actions { display: flex; gap: 12px; margin: 0 0 8px; }
+.source-picker-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.source-chip {
+  display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px;
+  border: 1px solid var(--line); border-radius: 999px; background: #fff; font-size: 12px; cursor: pointer;
+}
+.source-chip.is-on { border-color: var(--brand-200); background: var(--brand-soft); color: var(--brand-dark); }
+.source-chip input { margin: 0; }
 .linkish { border: 0; background: none; color: var(--brand); font: inherit; font-weight: 600; cursor: pointer; padding: 0; }
 .linkish:hover { color: var(--brand-dark); }
 .offer-search input { width: min(320px, 100%); }
@@ -308,7 +335,7 @@ button:disabled { opacity: 0.55; cursor: wait; }
 .table-wrap { overflow: auto; margin-top: 12px; -webkit-overflow-scrolling: touch; }
 table { width: 100%; border-collapse: collapse; }
 @media (min-width: 721px) {
-  .offers-panel table { min-width: 920px; }
+  .offers-panel table { table-layout: fixed; }
 }
 th {
   text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em;
@@ -951,7 +978,10 @@ body.offer-card-open { overflow: hidden; }
     border-radius: 10px;
     padding: 10px;
   }
-  td[data-label="Съём"] { display: none; }
+  td[data-label="Время запроса"] { display: none; }
+  .col-resize { display: none; }
+  .source-picker { padding: 8px 10px; }
+  .source-chip { min-height: 36px; }
   .offer-cta {
     width: 100%;
     min-height: 44px;

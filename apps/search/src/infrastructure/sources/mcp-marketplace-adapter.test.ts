@@ -27,6 +27,7 @@ import {
   type MarketplaceKind,
   type MarketplaceToolCaller,
 } from "./mcp-marketplace-adapter.js";
+import { productFromQuery } from "../../domain/product-from-query.js";
 import { resetWbRateLimitForTests } from "./wb-rate-limit.js";
 
 const product: Product = {
@@ -1078,6 +1079,37 @@ describe("McpMarketplaceAdapter", () => {
     }
     expect(productIdentityTokens(paleGrey).strong).toEqual(expect.arrayContaining(["master", "3s"]));
     expect(productIdentityTokens(paleGrey).strong).not.toContain("k380");
+  });
+
+  it("drops AliExpress Pro-suffix junk on a Lenovo Legion Pro 5 query", () => {
+    const legion = productFromQuery("lenovo legion pro 5");
+    expect(legion.brand.toLocaleLowerCase("ru")).toBe("lenovo");
+    expect(legion.category).toBe("Ноутбуки");
+    expect(productIdentityTokens(legion).strong).toContain("legion");
+    expect(productIdentityTokens(legion).strong).not.toContain("pro");
+    const ali = "aliexpress" as const;
+    expect(
+      assessMarketplaceOfferRelevance(
+        "Игровой Lenovo Legion Pro 5 на Core i7 + RTX 4070",
+        undefined,
+        "https://www.avito.ru/item/1",
+        legion,
+        "avito",
+      ).kind,
+    ).not.toBe("drop");
+    for (const junk of [
+      "Робот-пылесос Roborock Q8 Max Pro, <500 Вт, беспроводной, влажная уборка, пылесборник",
+      "Робот-пылесос Roborock Qrevo C Pro, 60 Вт",
+      "Creality CR-Scan Raptor Pro 3D-сканер",
+      "XPpen Artist 13.3 Pro V2 графический планшет",
+      "Dess C4 PRO 1080P проектор",
+      "Игровой ноутбук Lenovo Legion R9000P, 16\", 32ГБ/1ТБ, R9 8945HX, RTX 5060, Windows",
+      "Игровой ноутбук Lenovo Legion R7000P, 16\", 32ГБ/1ТБ, R9 8945HX, RTX 5060, Windows",
+    ]) {
+      expect(assessMarketplaceOfferRelevance(junk, undefined, "https://aliexpress.ru/item/1", legion, ali).kind).toBe(
+        "drop",
+      );
+    }
   });
 
   it("keeps real K380 keyboard cards instead of dropping the whole WB page", async () => {

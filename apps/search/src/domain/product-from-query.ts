@@ -35,7 +35,22 @@ const KNOWN_BRANDS = [
 ];
 
 const CATEGORY_HINTS: Array<{ tokens: string[]; category: string }> = [
-  { tokens: ["ноутбук", "laptop", "notebook", "macbook"], category: "Ноутбуки" },
+  {
+    tokens: [
+      "ноутбук",
+      "laptop",
+      "notebook",
+      "macbook",
+      "legion",
+      "thinkpad",
+      "ideapad",
+      "latitude",
+      "inspiron",
+      "vivobook",
+      "zenbook",
+    ],
+    category: "Ноутбуки",
+  },
   { tokens: ["монитор", "monitor", "display"], category: "Мониторы" },
   { tokens: ["клавиатур", "keyboard"], category: "Клавиатуры" },
   { tokens: ["мышь", "мыши", "mouse"], category: "Мыши" },

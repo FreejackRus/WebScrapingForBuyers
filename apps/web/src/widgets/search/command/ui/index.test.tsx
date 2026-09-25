@@ -6,7 +6,11 @@ const state = vi.hoisted(() => ({
   suggestions: [],
   activity: "idle",
   suggesting: false,
+  availableSources: ["Wildberries", "Ozon"],
+  selectedSources: ["Wildberries", "Ozon"],
   setQuery: vi.fn(),
+  setSelectedSources: vi.fn(),
+  loadSources: vi.fn(),
   suggest: vi.fn(),
 }));
 
@@ -48,5 +52,12 @@ describe("SearchCommand", () => {
     const html = renderToStaticMarkup(<SearchCommand />);
     expect(html).toContain(">Найти</button>");
     state.suggesting = false;
+  });
+
+  it("lets the buyer pick sources for the request", () => {
+    const html = renderToStaticMarkup(<SearchCommand />);
+    expect(html).toContain("Поставщики для запроса");
+    expect(html).toContain("Wildberries");
+    expect(html).toContain("Ozon");
   });
 });

@@ -96,7 +96,7 @@ export function OfferCard() {
             </div>
           ) : null}
           <div>
-            <dt>Съём</dt>
+            <dt>Время запроса</dt>
             <dd className="mono">{fetchedTime.format(new Date(offer.fetchedAt))}</dd>
           </div>
         </dl>

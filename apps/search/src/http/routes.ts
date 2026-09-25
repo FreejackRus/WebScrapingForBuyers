@@ -23,13 +23,15 @@ export const searchRoutes: FastifyPluginAsync<{
 
   app.get("/health", async () => ({ status: "ok", service: "search", mode: options.mode }));
 
+  app.get("/sources", async () => ({ sources: searchService.listSources() }));
+
   app.post<{ Body: { query: string } }>(
     "/suggestions",
     { schema: { body: queryBodySchema } },
     async (request) => ({ products: await suggestLiveProducts(request.body.query) }),
   );
 
-  app.post<{ Body: { query: string; productId?: string; product?: ProductLike } }>(
+  app.post<{ Body: { query: string; productId?: string; product?: ProductLike; sources?: string[] } }>(
     "/searches",
     {
       schema: {
@@ -41,6 +43,7 @@ export const searchRoutes: FastifyPluginAsync<{
             query: { type: "string", minLength: 2, maxLength: 300 },
             productId: { type: "string" },
             product: { type: "object", additionalProperties: true },
+            sources: { type: "array", items: { type: "string", minLength: 1, maxLength: 80 }, maxItems: 32 },
           },
         },
       },
@@ -51,7 +54,11 @@ export const searchRoutes: FastifyPluginAsync<{
         (request.body.productId ? findProduct(request.body.productId) : undefined) ??
         (await suggestLiveProducts(request.body.query, 1))[0] ??
         productFromQuery(request.body.query, "query");
-      return reply.code(201).send(searchService.start(request.body.query, product));
+      const selected = searchService.resolveSources(request.body.sources);
+      if (request.body.sources?.length && selected.length === 0) {
+        return reply.code(400).send({ error: "Нет выбранных источников" });
+      }
+      return reply.code(201).send(searchService.start(request.body.query, product, request.body.sources));
     },
   );
 

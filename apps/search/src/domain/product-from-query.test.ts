@@ -24,6 +24,7 @@ describe("productFromQuery", () => {
   it("extracts Logitech-style MPN", () => {
     expect(extractMpn("Logitech MX Master 910-006559")).toBe("910-006559");
     expect(inferCategory("клавиатура logitech k380")).toBe("Клавиатуры");
+    expect(inferCategory("lenovo legion pro 5")).toBe("Ноутбуки");
   });
 });
 
