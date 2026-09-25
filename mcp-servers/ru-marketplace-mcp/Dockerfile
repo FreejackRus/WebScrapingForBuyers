@@ -65,7 +65,8 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 # thin layer rebuilds when application code changes.
 COPY packages/ packages/
 RUN --mount=type=cache,target=/root/.cache/uv \
-    uv sync --all-packages --frozen --no-dev
+    uv sync --all-packages --frozen --no-dev \
+    && uv pip install --python /app/.venv "scrapling[fetchers]==0.4.15"
 
 # ---- Stage 2: runtime -------------------------------------------------------
 FROM python:3.12-slim-trixie AS runtime
@@ -115,8 +116,7 @@ RUN apt-get update \
         -o /tmp/chrome-linux64.zip \
     && unzip -q /tmp/chrome-linux64.zip -d /opt \
     && rm /tmp/chrome-linux64.zip \
-    && /app/.venv/bin/pip install --no-cache-dir "scrapling[fetchers]==0.4.15" \
-    && chown -R app:app /opt/chrome-linux64 /app/.venv
+    && chown -R app:app /opt/chrome-linux64
 
 # The skills travel with the servers. Each connector has one, and it is how an
 # agent learns the tool exists, when to reach for it, and which of its answers
