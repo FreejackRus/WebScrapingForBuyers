@@ -40,6 +40,8 @@ export function SearchCommand() {
   const [activeIndex, setActiveIndex] = useState(0);
   const debounceRef = useRef<number | undefined>(undefined);
   const suppressSuggestRef = useRef(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const shortcutLabel = typeof navigator !== "undefined" && /Mac|iPhone|iPad/.test(navigator.platform) ? "⌘K" : "Ctrl+K";
 
   useEffect(() => {
     window.clearTimeout(debounceRef.current);
@@ -119,6 +121,7 @@ export function SearchCommand() {
             ⌕
           </span>
           <input
+            ref={inputRef}
             id="procurement-query"
             value={query}
             onChange={(event) => {
@@ -148,6 +151,22 @@ export function SearchCommand() {
             autoComplete="off"
             disabled={activity === "search"}
           />
+          {query && activity !== "search" && (
+            <button
+              type="button"
+              className="search-clear"
+              aria-label="Очистить поиск"
+              onMouseDown={(event) => event.preventDefault()}
+              onClick={() => {
+                suppressSuggestRef.current = false;
+                setQuery("");
+                setOpen(false);
+                inputRef.current?.focus();
+              }}
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          )}
           {open && suggestions.length > 0 && (
             <ul id={listId} className="suggest-dropdown" role="listbox">
               <li className="suggest-meta" role="presentation">
@@ -176,7 +195,7 @@ export function SearchCommand() {
           )}
         </div>
         <span id={hintId} className="kbd">
-          ⌘K
+          {shortcutLabel}
         </span>
         <button disabled={activity === "search" || query.trim().length < 2}>
           {activity === "search" ? "Ищем…" : suggesting ? "…" : "Найти"}

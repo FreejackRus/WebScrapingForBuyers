@@ -21,6 +21,7 @@ export function AnalysisChat() {
   const run = useAnalysisStore((state) => state.run);
   const chat = useAnalysisStore((state) => state.chat);
   const snapshot = useSearchStore((state) => state.snapshot);
+  const promptRef = useRef<HTMLInputElement>(null);
   const sendingRef = useRef(false);
   const [sending, setSending] = useState(false);
   const [sendFailed, setSendFailed] = useState(false);
@@ -62,10 +63,9 @@ export function AnalysisChat() {
     await send(text);
   };
 
-  const emptyHint =
-    `${name}, я копайлот закупок Price Radar — не общий чат. ` +
-    "Спросите про снимок, фильтр таблицы, Excel, источники или уточните модель. " +
-    "Ранжирование по цене считает код; релевантность названия может уточнять модель.";
+  const starterPrompts = snapshot
+    ? ["Сравни лучшие предложения", "Что есть в наличии?", "Покажи самую низкую цену"]
+    : ["Помоги уточнить модель", "Как сравнить предложения?"];
 
   return (
     <section className="chat-panel" aria-labelledby="analysis-title">
@@ -74,13 +74,39 @@ export function AnalysisChat() {
           <p className="eyebrow">Закрытый контур</p>
           <h2 id="analysis-title">AI-копайлот закупок</h2>
           <p className="chat-head-lead">
-            Для {name}: объясняю таблицу предложений. Фильтр и отбор строк считает код анализа.
+            {snapshot
+              ? "Помогу сравнить цены, наличие и условия найденных предложений."
+              : "Помогу уточнить товар, а после поиска — сравнить предложения."}
           </p>
         </div>
         <span className="model-badge">{user.role === "admin" ? (analysis?.provider ?? "Закрытый контур ПЕРЕМЕНА") : "Закрытый контур ПЕРЕМЕНА"}</span>
       </div>
       <div className="chat-thread" role="log" aria-live="polite">
-        {messages.length === 0 && <p className="chat-empty">{emptyHint}</p>}
+        {messages.length === 0 && (
+          <div className="chat-empty">
+            <strong>С чего начнём, {name}?</strong>
+            <p>
+              {snapshot
+                ? "Спросите о ценах, наличии или сравнении найденных предложений."
+                : "Найдите товар или попросите помочь с выбором модели."}
+            </p>
+            <div className="chat-starters" aria-label="Примеры вопросов">
+              {starterPrompts.map((starter) => (
+                <button
+                  key={starter}
+                  type="button"
+                  disabled={locked}
+                  onClick={() => {
+                    setPrompt(starter);
+                    promptRef.current?.focus();
+                  }}
+                >
+                  {starter}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
         {messages.map((message) => (
           <article
             key={message.id}
@@ -126,24 +152,22 @@ export function AnalysisChat() {
       {snapshot?.status === "running" && (
         <p className="copilot-hint">Сбор ещё идёт — ответ смотрит только уже загруженные строки.</p>
       )}
-      {analysis?.appliedFilters && analysis.appliedFilters.length > 0 && (
-        <ul className="chat-filters">
-          {analysis.appliedFilters.slice(0, 4).map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      )}
       <form className="chat-composer" onSubmit={(event) => void onSubmit(event)}>
         <label className="sr-only" htmlFor="analysis-prompt">
           Сообщение копайлоту
         </label>
         <input
+          ref={promptRef}
           id="analysis-prompt"
           className="chat-composer-input"
           value={prompt}
           onChange={(event) => setPrompt(event.target.value)}
           placeholder={
-            locked ? "Копайлот думает…" : `${name}, спросите про таблицу, фильтр, Excel или источники…`
+            locked
+              ? "Копайлот думает…"
+              : snapshot
+                ? "Спросите про цены, наличие или фильтр…"
+                : "Спросите о товаре или модели…"
           }
           autoComplete="off"
           disabled={locked}

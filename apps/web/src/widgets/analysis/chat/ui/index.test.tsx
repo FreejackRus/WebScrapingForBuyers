@@ -33,7 +33,7 @@ describe("AnalysisChat composer", () => {
     const html = renderToStaticMarkup(<AnalysisChat />);
     expect(html).toContain("chat-composer");
     expect(html).toContain('id="analysis-prompt"');
-    expect(html).toContain("спросите про таблицу");
+    expect(html).toContain("Спросите о товаре или модели");
     expect(html).toContain("Отправить");
     expect(html).toContain("chat-send");
     expect(html).toContain("chat-head-lead");
@@ -47,5 +47,23 @@ describe("AnalysisChat composer", () => {
     expect(html).not.toContain("Ollama");
     expect(html).not.toContain("Qwen3");
     analysisState.analysis = undefined;
+  });
+
+  it("does not render applied filters below the conversation", () => {
+    analysisState.analysis = {
+      provider: "Закрытый контур ПЕРЕМЕНА",
+      appliedFilters: ["Справочный ответ: отбор предложений не изменён."],
+    };
+    const html = renderToStaticMarkup(<AnalysisChat />);
+    expect(html).not.toContain("Справочный ответ: отбор предложений не изменён.");
+    expect(html).not.toContain("chat-filters");
+    analysisState.analysis = undefined;
+  });
+
+  it("offers plain-language starter questions without exposing internal ranking details", () => {
+    const html = renderToStaticMarkup(<AnalysisChat />);
+    expect(html).toContain("Помоги уточнить модель");
+    expect(html).toContain("Как сравнить предложения?");
+    expect(html).not.toContain("Ранжирование по цене считает код");
   });
 });
