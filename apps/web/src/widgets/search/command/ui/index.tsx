@@ -126,6 +126,7 @@ export function SearchCommand() {
             value={query}
             onChange={(event) => {
               suppressSuggestRef.current = false;
+              setOpen(false);
               setQuery(event.target.value);
             }}
             onFocus={() => {
@@ -147,7 +148,7 @@ export function SearchCommand() {
             aria-describedby={hintId}
             aria-autocomplete="list"
             aria-controls={listId}
-            aria-expanded={open}
+            aria-expanded={open && suggestions.length > 0}
             autoComplete="off"
             disabled={activity === "search"}
           />
@@ -193,12 +194,17 @@ export function SearchCommand() {
               })}
             </ul>
           )}
+          {open && suggestions.length === 0 && !suggesting && (
+            <p className="suggest-empty" role="status">
+              Нет подходящего варианта? Нажмите «Найти» для поиска по тексту.
+            </p>
+          )}
         </div>
         <span id={hintId} className="kbd">
           {shortcutLabel}
         </span>
         <button disabled={activity === "search" || query.trim().length < 2}>
-          {activity === "search" ? "Ищем…" : suggesting ? "…" : "Найти"}
+          {activity === "search" ? "Ищем…" : "Найти"}
         </button>
       </form>
     </section>

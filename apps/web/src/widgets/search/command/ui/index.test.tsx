@@ -41,4 +41,12 @@ describe("SearchCommand", () => {
     state.activity = "search";
     expect(renderToStaticMarkup(<SearchCommand />)).not.toContain("Очистить поиск");
   });
+
+  it("keeps the search action visible while autocomplete is loading", () => {
+    state.query = "Logitech MX Master 3S";
+    state.suggesting = true;
+    const html = renderToStaticMarkup(<SearchCommand />);
+    expect(html).toContain(">Найти</button>");
+    state.suggesting = false;
+  });
 });

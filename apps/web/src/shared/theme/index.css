@@ -161,7 +161,7 @@ button:disabled { opacity: 0.55; cursor: wait; }
   display: none;
   position: absolute;
   left: 12px;
-  top: 50%;
+  top: 22px;
   transform: translateY(-50%);
   color: var(--brand);
   font-size: 16px;
@@ -170,7 +170,7 @@ button:disabled { opacity: 0.55; cursor: wait; }
 }
 .search-field input { width: 100%; padding-right: 44px; }
 .search-clear {
-  position: absolute; z-index: 1; top: 50%; right: 0; transform: translateY(-50%);
+  position: absolute; z-index: 1; top: 0; right: 0;
   display: grid; place-items: center; width: 44px; height: 44px;
   border: 0; border-radius: 8px; background: transparent; color: var(--muted);
   font-size: 22px; line-height: 1;
@@ -191,6 +191,11 @@ button:disabled { opacity: 0.55; cursor: wait; }
   box-shadow: var(--shadow-card);
   max-height: 340px;
   overflow: auto;
+}
+.suggest-empty {
+  margin: 6px 0 0; padding: 8px 10px; border: 1px solid var(--brand-200);
+  border-radius: 8px; background: var(--brand-50);
+  color: var(--muted); font-size: 12px; line-height: 1.4;
 }
 .suggest-dropdown > li { margin: 0; padding: 0; }
 .suggest-meta {
