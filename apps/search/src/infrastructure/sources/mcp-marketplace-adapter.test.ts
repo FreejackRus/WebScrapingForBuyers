@@ -133,6 +133,14 @@ describe("marketplaceItemPrice", () => {
     expect(marketplaceItemPrice({ price_rub: 1_990 })).toBe(1_990);
     delete process.env.CNY_RUB_RATE;
   });
+
+  it("reads Ozon display prices grouped with a thin space", () => {
+    // Live Ozon tile, 2026-09-29: "2\u2009939\u2009₽" was read as 2 ₽.
+    expect(marketplaceItemPrice({ price: "2\u2009939\u2009₽" })).toBe(2_939);
+    expect(marketplaceItemPrice({ price: "39\u2009534\u2009₽" })).toBe(39_534);
+    expect(marketplaceItemPrice({ price: "12\u202f990 ₽" })).toBe(12_990);
+    expect(marketplaceItemPrice({ price: "4\u00a0990,50 ₽" })).toBe(4_990.5);
+  });
 });
 
 function restoreEnv(name: string, value: string | undefined): void {

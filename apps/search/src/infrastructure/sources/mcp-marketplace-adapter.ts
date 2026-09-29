@@ -1203,7 +1203,9 @@ function firstPrice(...values: unknown[]): number | undefined {
   for (const value of values) {
     if (typeof value === "number" && Number.isFinite(value) && value > 0) return value;
     if (typeof value === "string") {
-      const match = value.replaceAll("\u00a0", " ").match(/\d[\d ]*(?:[.,]\d+)?/);
+      // Shops group thousands with any Unicode space: NBSP, and Ozon's thin
+      // space U+2009 \u2014 missing it turned "2 939 \u20bd" into 2 \u20bd.
+      const match = value.replace(/\s/gu, " ").match(/\d[\d ]*(?:[.,]\d+)?/);
       if (!match) continue;
       const parsed = Number(match[0].replaceAll(" ", "").replace(",", "."));
       if (Number.isFinite(parsed) && parsed > 0) return parsed;

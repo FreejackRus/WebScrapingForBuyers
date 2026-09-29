@@ -50,7 +50,42 @@ localhost:9221). Ручной challenge — VNC `127.0.0.1:5901` через
 megamarket.ru / aliexpress.ru в профиле `chrome-headed`.
 Процедура: `docs/CHROME_VNC.md`. B2B-дистрибьюторы: `docs/DISTRIBUTORS.md`.
 
-## Рекомендация для MVP
+## Модель в проде (с 2026-09-29)
+
+`OLLAMA_MODEL=gemma4:26b-a4b-it-q8_0` — Gemma 4 26B A4B (MoE: 25.2B параметров,
+3.8B активных на токен), квантизация Q8_0, ~28 GB VRAM. Ollama обновлена
+до 0.34.4 (0.12.3 Gemma 4 не поддерживала). Прежняя
+`hf.co/unsloth/Qwen3-30B-A3B-Instruct-2507-GGUF:IQ4_XS` оставлена на сервере
+для отката: поменять `OLLAMA_MODEL` в `.env.production` и
+`./scripts/deploy.sh origin/main analysis`.
+
+Выбор сделан A/B на реальных данных, а не по бенчмаркам: 8 живых снимков
+поиска (272 предложения) × 3 вопроса + 4 чат-вопроса через полный пайплайн
+`analyzeSnapshot` / `answerCopilot`, по 51 вызову модели на каждую.
+
+| | Qwen3-30B-A3B IQ4_XS | Gemma 4 26B A4B Q8_0 |
+|---|---|---|
+| Ошибки / невалидный JSON | 0 | 0 |
+| Утечки тех. терминов (до санитайзера) | 0 | 0 |
+| Ответы <80% кириллицы (до ретрая) | 1 | 4 |
+| Задержка p50 / p95 | 1.9 / 3.6 с | 2.2 / 4.0 с |
+
+Решила точность отсева (`filterRelevance`), от которого зависят строки для
+менеджера. На «HP LaserJet Pro M404dn» Qwen оставила картриджи и назвала
+лучшей покупкой картридж за 1 774 ₽; Gemma отсеяла расходники и отобрала пять
+принтеров. На «Samsung 990 PRO 2TB» Qwen оставила одно предложение из 37,
+Gemma — пять корректных. На «Dell P2422H» Gemma убрала сомнительную позицию
+за 1 029 ₽. На остальных пяти товарах отбор совпал. Больше латинских ответов
+у Gemma закрывает уже существующий русский ретрай в narrator.
+
+Повторить сравнение (Ollama через SSH-туннель, снимки из сервиса search):
+
+```bash
+OLLAMA_BASE_URL=http://127.0.0.1:11435 npx tsx apps/analysis/scripts/compare-models.ts \
+  snapshots.json compare.md <модель-A> <модель-B>
+```
+
+## Исходная рекомендация для MVP (vLLM, не внедрена)
 
 Основной вариант: официальный
 [`Qwen/Qwen3-30B-A3B-Instruct-2507-FP8`](https://huggingface.co/Qwen/Qwen3-30B-A3B-Instruct-2507-FP8)
