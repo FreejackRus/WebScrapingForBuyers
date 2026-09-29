@@ -1190,3 +1190,17 @@ Web: карточка грузит фото с `referrerPolicy="no-referrer"`. �
 test_dependency_parity`. Semgrep по diff — чисто. В браузере не
 проверялось: локально нет marketplace-mcp, а демо-предложения без фото.
 Не выкладывалось: нужна пересборка marketplace-mcp, search и web.
+
+Выкладка (2026-09-29, `7b2e47c`): 13 изменённых файлов залиты tar'ом после
+сверки md5 серверных копий с `efae95b` (совпали все). Пересобраны
+`marketplace-mcp`, `search`, `web` (`--no-deps --build`); Chrome, gateway,
+analysis, identity не трогали. Smoke в контейнере: `avito_search('Logitech
+K380')` → 50 объявлений, у всех `image_url` на `img.avito.st`.
+`citilink_search` → 429 Qrator: профиль Chrome нужно прогреть через VNC,
+с фото не связано.
+
+Модель: на сервере Ollama 0.12.3 — Gemma 4 не поддерживает. Кандидат на
+замену Qwen3-30B-A3B `IQ4_XS` — `gemma4:26b-a4b-it-q8_0` (MoE 25.2B/3.8B
+активных, ~28 GB). Перед переключением: обновить Ollama (установщик
+перезаписывает `/etc/systemd/system/ollama.service` — сохранить
+`OLLAMA_HOST=0.0.0.0:11434`) и сравнить на реальных запросах.
