@@ -38,8 +38,7 @@ npm run build
 graphify update .      # после изменений кода, если установлен graphify CLI
 ```
 Отдельный workspace: `npm run test -w @peremena/search`. Lint-скрипта в проекте нет.
-Прод (на сервере, не локально): `docker compose --env-file .env.production -f docker-compose.production.yml up -d --build`.
-Пересборка без пересоздания Chrome: `... up -d --no-deps --build search analysis`.
+Прод: `/projects/WebScrapingForBuyers` на сервере — git-клон; деплой `./scripts/deploy.sh [ref] [сервисы]` (сначала `git push`; Chrome не пересоздаёт). Правки прямо на сервере запрещены — скрипт на них остановится.
 
 ## Архитектурные правила
 - Зависимости направлены внутрь. Новый источник = реализация `SourceAdapter` в `apps/search/src/infrastructure/sources`, приводит данные к общему `Offer`.

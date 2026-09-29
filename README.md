@@ -86,19 +86,26 @@ packages/service-kit        Fastify bootstrap
 
 ## Текущий серверный MVP
 
-На GPU-сервере проект находится в `/projects/WebScrapingForBuyers`, а
-MIT-коннекторы — в `/projects/ru-marketplace-mcp`. Production-контур запускается:
+На GPU-сервере `/projects/WebScrapingForBuyers` — git-клон этого репозитория.
+MCP-коннекторы собираются из `mcp-servers/ru-marketplace-mcp` внутри клона.
+`.env.production` лежит только на сервере и в git не попадает.
+
+Деплой — скриптом из git (по умолчанию `origin/main`, все сервисы, кроме Chrome):
 
 ```bash
 cd /projects/WebScrapingForBuyers
-docker compose --env-file .env.production -f docker-compose.production.yml up -d --build
+./scripts/deploy.sh                       # origin/main, всё кроме chrome
+./scripts/deploy.sh origin/main search web  # только нужные сервисы
+./scripts/deploy.sh <commit|tag> search     # откат или конкретная версия
 ```
 
-Пересборка search/analysis **без** recreate Chrome (профиль `chrome-headed`):
+Скрипт отказывается работать, если на сервере правили отслеживаемые файлы:
+правки идут через репозиторий. История деплоев — в `.deploy-log`.
+Chrome (профиль `chrome-headed`) скрипт не пересоздаёт. Первый запуск
+Chrome или его пересборка — вручную:
 
 ```bash
-docker compose --env-file .env.production -f docker-compose.production.yml \
-  up -d --no-deps --build search analysis
+docker compose --env-file .env.production -f docker-compose.production.yml up -d --build chrome
 ```
 
 - Wildberries, Яндекс Маркет, Ozon, DNS, Мегамаркет, Ситилинк, Авито и
