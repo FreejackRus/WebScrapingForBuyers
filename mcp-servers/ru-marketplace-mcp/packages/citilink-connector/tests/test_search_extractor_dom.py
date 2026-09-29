@@ -120,6 +120,20 @@ def test_search_items_carry_the_wire_shape() -> None:
         assert got.old_price_rub == expected_old
 
 
+def test_search_items_carry_the_tile_photo() -> None:
+    """The captured tiles carry real cdn.citilink.ru product photos."""
+    items = [server._search_item_from_tile(t) for t in _items()]
+    assert items[0].image_url is not None
+    assert items[0].image_url.startswith("https://cdn.citilink.ru/")
+    assert "product-images" in items[0].image_url
+
+
+def test_placeholder_and_plain_http_photos_are_dropped() -> None:
+    assert server._https_image_url("data:image/gif;base64,R0lGOD") is None
+    assert server._https_image_url("http://cdn.citilink.ru/p.jpg") is None
+    assert server._https_image_url("//cdn.citilink.ru/p.jpg") == "https://cdn.citilink.ru/p.jpg"
+
+
 # ---------------------------------------------------------------------------
 # Pure-Python half: always runs, no Node needed.
 # ---------------------------------------------------------------------------

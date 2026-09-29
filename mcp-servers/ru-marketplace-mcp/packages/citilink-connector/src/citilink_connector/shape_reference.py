@@ -17,6 +17,7 @@ captured page and replacing the fingerprint.
 from __future__ import annotations
 
 SEARCH_SHAPE_REFERENCE: tuple[str, ...] = (
+    "items[].image_url:str",
     "items[].old_price_text:null",
     "items[].old_price_text:str",
     "items[].price_meta:str",

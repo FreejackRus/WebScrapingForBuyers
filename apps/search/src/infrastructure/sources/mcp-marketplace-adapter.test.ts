@@ -6,6 +6,7 @@ import {
   AVITO_LOCATION_ALL,
   McpMarketplaceAdapter,
   createMarketplaceSourcesFromEnv,
+  marketplaceImageUrl,
   marketplaceItemPrice,
   assessMarketplaceOfferRelevance,
   isAntibotTransportError,
@@ -142,6 +143,37 @@ function restoreEnv(name: string, value: string | undefined): void {
 afterEach(() => {
   resetWbRateLimitForTests();
   delete process.env.AVITO_POW_RETRY_MS;
+});
+
+describe("marketplaceImageUrl", () => {
+  it("reads a plain https image string", () => {
+    expect(marketplaceImageUrl({ image: "https://avatars.mds.yandex.net/a/orig" })).toBe(
+      "https://avatars.mds.yandex.net/a/orig",
+    );
+  });
+
+  it("upgrades protocol-relative URLs and takes the first images entry", () => {
+    expect(marketplaceImageUrl({ images: ["//cdn.citilink.ru/p.jpg", "https://x/2.jpg"] })).toBe(
+      "https://cdn.citilink.ru/p.jpg",
+    );
+    expect(marketplaceImageUrl({ images: [{ url: "https://img.avito.st/1.jpg" }] })).toBe(
+      "https://img.avito.st/1.jpg",
+    );
+  });
+
+  it("picks the widest variant from an Avito size map", () => {
+    expect(
+      marketplaceImageUrl({
+        image_url: { "208x156": "https://img.avito.st/s.jpg", "636x476": "https://img.avito.st/l.jpg" },
+      }),
+    ).toBe("https://img.avito.st/l.jpg");
+  });
+
+  it("rejects non-https and junk values", () => {
+    expect(marketplaceImageUrl({ image: "http://plain.example/p.jpg" })).toBeUndefined();
+    expect(marketplaceImageUrl({ image: "javascript:alert(1)" })).toBeUndefined();
+    expect(marketplaceImageUrl({ image: "" , images: 3 })).toBeUndefined();
+  });
 });
 
 describe("presentMarketplaceError", () => {
@@ -308,6 +340,21 @@ describe("McpMarketplaceAdapter", () => {
       price: 8_990,
       demo: false,
     });
+  });
+
+  it("carries the listing photo into the offer and drops it when absent", async () => {
+    const callTool = vi.fn<MarketplaceToolCaller["callTool"]>(async () => ({
+      items: [
+        { ...citilinkMouse, image_url: "https://items.s1.citilink.ru/1412345_v01_m.jpg" },
+        { ...citilinkMouse, price_rub: 2_290, url: citilinkMouse.url.replace("1412345", "1412346") },
+      ],
+    }));
+    const offers = await citilinkAdapter(callTool).search(g102);
+    expect(offers.map((offer) => offer.imageUrl)).toEqual([
+      "https://items.s1.citilink.ru/1412345_v01_m.jpg",
+      undefined,
+    ]);
+    expect(offers[1]).not.toHaveProperty("imageUrl");
   });
 
   it("maps a WB MCP card payload to a visible REAL Wildberries offer", async () => {

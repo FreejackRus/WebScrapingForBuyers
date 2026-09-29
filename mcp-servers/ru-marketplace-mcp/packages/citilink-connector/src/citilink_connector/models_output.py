@@ -16,6 +16,7 @@ class CitilinkSearchItemOut(BaseModel):
     price_rub: float | None = Field(default=None, description="Price in rubles; None when absent — never 0.")
     old_price_rub: float | None = Field(default=None, description="Strikethrough price in rubles.")
     url: str | None = Field(default=None, description="Canonical product URL.")
+    image_url: str | None = Field(default=None, description="Tile photo URL, https only.")
 
 
 class CitilinkSearchResponse(BaseModel):

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { conditionLabels, matchLabels } from "entities/offer";
 import { useOfferCard } from "features/search";
@@ -47,10 +47,7 @@ export function OfferCard() {
           {offer.demo ? <span className="offer-demo-badge">Демо</span> : null}
         </div>
 
-        <div className="offer-card-photo" role="status">
-          <span className="offer-card-photo-mark" aria-hidden="true">◇</span>
-          <p>Фото нет в данных предложения</p>
-        </div>
+        <OfferPhoto key={offer.id} src={offer.imageUrl} title={offer.title} />
 
         <dl className="offer-card-facts">
           <div>
@@ -110,6 +107,31 @@ export function OfferCard() {
           </button>
         </footer>
       </aside>
+    </div>
+  );
+}
+
+function OfferPhoto({ src, title }: { src: string | undefined; title: string }) {
+  const [broken, setBroken] = useState(false);
+
+  if (src && !broken) {
+    return (
+      <div className="offer-card-photo offer-card-photo--image">
+        <img
+          src={src}
+          alt={title}
+          loading="lazy"
+          referrerPolicy="no-referrer"
+          onError={() => setBroken(true)}
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div className="offer-card-photo" role="status">
+      <span className="offer-card-photo-mark" aria-hidden="true">◇</span>
+      <p>{src ? "Фото не загрузилось с площадки" : "Фото нет в данных предложения"}</p>
     </div>
   );
 }
