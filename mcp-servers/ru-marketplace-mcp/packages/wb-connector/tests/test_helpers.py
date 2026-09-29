@@ -2348,3 +2348,35 @@ def test_a_canary_probe_cannot_be_answered_from_its_own_cache(monkeypatch):
 
     asyncio.run(scenario())
     _clear_wb_cache()
+
+
+def test_attach_image_urls_uses_the_table_and_skips_unknown_vols(monkeypatch):
+    import asyncio
+
+    async def no_probe(client, gate, nm_id):
+        return None
+
+    monkeypatch.setattr(server, "_probe_basket", no_probe)
+    monkeypatch.setattr(server, "_probed_baskets", {})
+    items = [{"nm_id": 444_653_831}, {"nm_id": 762_101_558}, {"nm_id": None}]
+    asyncio.run(server._attach_image_urls(items))
+    assert items[0]["image_url"] == (
+        "https://basket-25.wbbasket.ru/vol4446/part444653/444653831/images/c246x328/1.webp"
+    )
+    assert "image_url" not in items[1]
+    assert "image_url" not in items[2]
+
+
+def test_attach_image_urls_uses_a_probed_host_for_new_vols(monkeypatch):
+    import asyncio
+
+    async def probe(client, gate, nm_id):
+        server._probed_baskets[nm_id // 100000] = "basket-35.wbbasket.ru"
+
+    monkeypatch.setattr(server, "_probe_basket", probe)
+    monkeypatch.setattr(server, "_probed_baskets", {})
+    items = [{"nm_id": 762_101_558}, {"nm_id": 762_199_999}]
+    asyncio.run(server._attach_image_urls(items))
+    assert items[0]["image_url"].startswith("https://basket-35.wbbasket.ru/vol7621/")
+    assert items[1]["image_url"].startswith("https://basket-35.wbbasket.ru/vol7621/")
+    assert server._basket_for_sku(762_101_558) == "basket-35.wbbasket.ru"

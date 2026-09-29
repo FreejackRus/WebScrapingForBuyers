@@ -1191,6 +1191,19 @@ def _is_search_stock_label(text: str) -> bool:
     )
 
 
+def _search_tile_image(tile_image: Any) -> str | None:
+    """First gallery photo of a search tile: tileImage.items[].image.link (https only)."""
+    items = tile_image.get("items") if isinstance(tile_image, dict) else None
+    if not isinstance(items, list):
+        return None
+    for entry in items:
+        image = entry.get("image") if isinstance(entry, dict) else None
+        link = image.get("link") if isinstance(image, dict) else None
+        if isinstance(link, str) and link.startswith("https://"):
+            return link
+    return None
+
+
 def _parse_search_tile(item: Any) -> dict[str, Any]:
     """Parse a single tileGridDesktop item (Ozon search result, Nov 2026 schema).
 
@@ -1214,6 +1227,10 @@ def _parse_search_tile(item: Any) -> dict[str, Any]:
             out["url"] = url
             out["canonical_path"] = canonical
             out["card_input"] = canonical
+
+    image_url = _search_tile_image(item.get("tileImage"))
+    if image_url:
+        out["image_url"] = image_url
 
     main_state = item.get("mainState") or []
     if not isinstance(main_state, list):

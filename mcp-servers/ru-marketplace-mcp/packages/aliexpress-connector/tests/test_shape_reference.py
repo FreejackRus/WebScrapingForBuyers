@@ -27,6 +27,7 @@ def test_search_extractor_shape_matches_golden() -> None:
     )
 
     assert shape_signature(payload) == [
+        "items[].image_url:str",
         "items[].item_id:str",
         "items[].orders:str",
         "items[].price_texts.attached[]:str",

@@ -99,3 +99,16 @@ def test_live_tiles_carry_a_canonical_card_input() -> None:
     for got in _items():
         assert got.get("card_input"), "a live product tile lost its card_input"
         assert got.get("url", "").startswith("https://www.ozon.ru/product/")
+
+
+def test_live_tiles_carry_the_first_gallery_photo() -> None:
+    """tileImage.items[0].image.link is the photo Ozon shows on the tile."""
+    items = _items()
+    assert items[0]["image_url"] == "https://ir.ozone.ru/s3/multimedia-1-w/11637109436.jpg"
+    assert all(item["image_url"].startswith("https://ir.ozone.ru/") for item in items)
+
+
+def test_tile_image_skips_non_https_and_junk() -> None:
+    assert server._search_tile_image({"items": [{"image": {"link": "http://x/1.jpg"}}]}) is None
+    assert server._search_tile_image({"items": "nope"}) is None
+    assert server._search_tile_image(None) is None

@@ -19,6 +19,7 @@ class AliSearchItemOut(BaseModel):
     orders_count: int | None = Field(default=None, description="'N купили' from the tile — orders, not reviews.")
     sku_id: str | None = Field(default=None, description="sku_id query parameter, when the tile carries one.")
     url: str | None = Field(default=None, description="Canonical item URL.")
+    image_url: str | None = Field(default=None, description="First tile photo URL, https only.")
 
 
 class AliSearchResponse(BaseModel):
