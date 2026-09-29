@@ -26,6 +26,7 @@ class AvitoSearchItemOut(BaseModel):
     is_company: bool | None = Field(default=None, description="Whether the seller is a company profile.")
     posted_at: str | None = Field(default=None, description="Publication time as reported by Avito.")
     images: int = Field(default=0, description="Number of images attached to the listing.")
+    image_url: str | None = Field(default=None, description="First listing photo (widest variant), https only.")
 
 
 class AvitoSearchResponse(BaseModel):

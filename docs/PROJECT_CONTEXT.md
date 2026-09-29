@@ -1164,3 +1164,29 @@ XP-Pen и китайские Legion R9000P/R7000P как «Сомнительн�
 Оставлены бесплатные контуры: MCP + headed Chrome, HTTP-запас WB, Icecat
 Open Catalog, opt-in партнёрские API дистрибьюторов. Капча-фермы и
 платные cookie API не добавлялись.
+
+### 2026-09-29 — фото товара во внутренней карточке
+
+Раньше карточка всегда показывала «Фото нет в данных предложения»: в `Offer`
+не было поля картинки. Добавлено опциональное `Offer.imageUrl` (только
+https). Search (`marketplaceImageUrl`) принимает строку, `{url}`, первый
+элемент `images[]` и карту размеров Avito `{"208x156": url, …}` — берёт
+самый широкий вариант. `http:`, `data:` и мусор отбрасываются.
+
+Коннекторы MCP: Avito отдаёт `image_url` из первого фото объявления
+(`images` по-прежнему считает их количество), Ситилинк — `image_url` из
+`<img>` плитки (`currentSrc`/`data-src`/`src`, только https). Эталон формы
+`SEARCH_SHAPE_REFERENCE` Ситилинка дополнен `items[].image_url:str`,
+ключ не обязательный. Яндекс уже отдавал `image`, но с DC-IP закрыт
+капчей. WB, Ozon, DNS, Мегамаркет, AliExpress фото пока не отдают.
+
+Web: карточка грузит фото с `referrerPolicy="no-referrer"`. Если площадка
+не отдала картинку — «Фото не загрузилось с площадки». Без фото —
+прежняя заглушка.
+
+Проверка: typecheck, npm test (197), build, pytest MCP 1810 passed (DOM-тесты
+Ситилинка на сохранённой разметке через jsdom). Падают без этих правок:
+`wb-connector test_live` (сеть) и `marketplace-connector
+test_dependency_parity`. Semgrep по diff — чисто. В браузере не
+проверялось: локально нет marketplace-mcp, а демо-предложения без фото.
+Не выкладывалось: нужна пересборка marketplace-mcp, search и web.

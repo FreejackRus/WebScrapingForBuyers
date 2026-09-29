@@ -62,6 +62,15 @@ describe("OfferCard", () => {
     expect(html).not.toMatch(/MCP|VNC|CDP|source\.message|Пройти проверку|wb_search/i);
   });
 
+  it("shows the listing photo without leaking the referrer", () => {
+    state.offer = { ...offer, imageUrl: "https://ir.ozone.ru/s3/multimedia-1/wc1000/1.jpg" };
+    const html = renderToStaticMarkup(<OfferCard />);
+    expect(html).toContain('src="https://ir.ozone.ru/s3/multimedia-1/wc1000/1.jpg"');
+    expect(html).toContain('referrerPolicy="no-referrer"');
+    expect(html).toContain('alt="Kingston Server Premier 32GB"');
+    expect(html).not.toContain("Фото нет в данных предложения");
+  });
+
   it("omits the demo badge for public offers", () => {
     state.offer = { ...offer, demo: false };
     const html = renderToStaticMarkup(<OfferCard />);

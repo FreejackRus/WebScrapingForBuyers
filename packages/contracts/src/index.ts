@@ -28,6 +28,8 @@ export interface Offer {
   condition: ProductCondition;
   match: MatchKind;
   url: string;
+  /** Public https product photo from the source listing, when it provides one. */
+  imageUrl?: string;
   fetchedAt: string;
   demo: boolean;
 }

@@ -498,6 +498,17 @@ body.offer-card-open { overflow: hidden; }
   font-size: 13px;
 }
 .offer-card-photo p { margin: 0; }
+.offer-card-photo--image {
+  padding: 12px;
+  border-style: solid;
+  background: #fff;
+}
+.offer-card-photo--image img {
+  display: block;
+  max-width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+}
 .offer-card-photo-mark {
   display: grid;
   place-items: center;

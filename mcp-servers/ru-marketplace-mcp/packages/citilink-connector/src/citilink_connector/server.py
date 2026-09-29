@@ -202,6 +202,11 @@ _SEARCH_EXTRACT_TEMPLATE = """
         const oldPriceEl = card.querySelector('[data-meta-name="Snippet__old-price"]');
 
         const candidates = priceTextsIn(card);
+        // Lazy tiles keep the real photo in data-src/srcset until scrolled in.
+        const imgEl = card.querySelector('img');
+        const imageRaw = imgEl
+            ? (imgEl.currentSrc || imgEl.getAttribute('data-src') || imgEl.getAttribute('src') || '')
+            : '';
         out.push({
             product_id: m[1],
             title: title,
@@ -209,6 +214,7 @@ _SEARCH_EXTRACT_TEMPLATE = """
             price_text: cleanText(priceEl),
             old_price_text: cleanText(oldPriceEl),
             price_texts: candidates,
+            image_url: imageRaw,
             url: href
         });
         if (out.length >= 48) break;
@@ -284,7 +290,18 @@ def _search_item_from_tile(tile: dict[str, Any]) -> CitilinkSearchItemOut:
         price_rub=price,
         old_price_rub=old_price,
         url=tile.get("url"),
+        image_url=_https_image_url(tile.get("image_url")),
     )
+
+
+def _https_image_url(raw: Any) -> str | None:
+    """Keep only a real https photo URL; placeholders are data: URIs."""
+    if not isinstance(raw, str):
+        return None
+    url = raw.strip()
+    if url.startswith("//"):
+        url = "https:" + url
+    return url if url.startswith("https://") else None
 
 
 async def _cdp_render(url: str, extract_js: str, wait_ms: int, ctx: Context | None) -> dict[str, Any]:

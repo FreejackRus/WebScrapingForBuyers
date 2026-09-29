@@ -113,6 +113,15 @@ async def test_search_parses_items_and_total(monkeypatch):
     assert first.url == "https://www.avito.ru/moskva/noutbuki/noutbuk_thinkpad_x1_carbon_4612345678"
     assert first.seller_name == "ИП Сидоров"
     assert first.images == 2
+    assert first.image_url == "https://img.avito.st/1.jpg"
+    assert result.items[1].image_url is None
+
+
+def test_first_image_url_takes_the_widest_size_variant():
+    images = [{"208x156": "https://00.img.avito.st/s.jpg", "636x476": "https://00.img.avito.st/l.jpg"}]
+    assert server._first_image_url(images) == "https://00.img.avito.st/l.jpg"
+    assert server._first_image_url([{"url": "http://plain/1.jpg"}]) is None
+    assert server._first_image_url(3) is None
 
 
 async def test_search_a_pricelss_listing_is_none_never_zero(monkeypatch):

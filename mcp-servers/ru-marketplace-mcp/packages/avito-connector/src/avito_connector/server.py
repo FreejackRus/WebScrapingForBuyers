@@ -513,9 +513,36 @@ def _parse_search_items(payload: dict) -> tuple[list[dict[str, Any]], int | None
                 "is_company": R.first_present(seller, "isCompany", "is_company") if seller else None,
                 "posted_at": _posted_at(it),
                 "images": images_count,
+                "image_url": _first_image_url(images),
             }
         )
     return out, total
+
+
+def _first_image_url(images: Any) -> str | None:
+    """First listing photo. Avito ships each image as a size map
+    ``{"208x156": url, "636x476": url}``; older shapes carry ``{"url": ...}``."""
+    if not isinstance(images, list) or not images:
+        return None
+    first = images[0]
+    url: Any = None
+    if isinstance(first, str):
+        url = first
+    elif isinstance(first, dict):
+        url = first.get("url")
+        if not isinstance(url, str):
+            sized = [
+                (int(key.split("x", 1)[0]), value)
+                for key, value in first.items()
+                if isinstance(value, str) and re.fullmatch(r"\d+x\d+", str(key))
+            ]
+            url = max(sized)[1] if sized else None
+    if not isinstance(url, str):
+        return None
+    url = url.strip()
+    if url.startswith("//"):
+        url = "https:" + url
+    return url if url.startswith("https://") else None
 
 
 def _build_search_url(query: str, page: int, location_id: str, category_id: str | None) -> str:

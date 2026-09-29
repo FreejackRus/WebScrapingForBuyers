@@ -511,6 +511,7 @@ export class McpMarketplaceAdapter implements SourceAdapter {
         : matchKind(title, offerMpn, product);
     const inStock = firstBoolean(item.in_stock, item.is_available);
     const delivery = firstString(item.delivery);
+    const imageUrl = marketplaceImageUrl(item);
     const digest = createHash("sha256")
       .update(`${this.source.name}:${sourceId}:${price}`)
       .digest("hex")
@@ -534,6 +535,7 @@ export class McpMarketplaceAdapter implements SourceAdapter {
       condition: "new",
       match,
       url,
+      ...(imageUrl ? { imageUrl } : {}),
       fetchedAt: new Date().toISOString(),
       demo: false,
     };
@@ -1046,6 +1048,45 @@ function firstString(...values: unknown[]): string | undefined {
     if (typeof value === "number") return String(value);
   }
   return undefined;
+}
+
+/**
+ * Connectors name the listing photo differently: a plain URL string, `{ url }`,
+ * or Avito's size map `{ "208x156": url, "636x476": url }`. Only absolute https
+ * URLs pass — the manager's browser loads them directly.
+ */
+export function marketplaceImageUrl(item: JsonObject): string | undefined {
+  const candidates = [item.image_url, item.image, item.thumbnail, item.picture, item.photo];
+  if (Array.isArray(item.images)) candidates.push(item.images[0]);
+  for (const candidate of candidates) {
+    const url = imageCandidateUrl(candidate);
+    if (url) return url;
+  }
+  return undefined;
+}
+
+function imageCandidateUrl(value: unknown): string | undefined {
+  if (typeof value === "string") return httpsUrl(value);
+  if (!isObject(value)) return undefined;
+  const direct = httpsUrl(firstString(value.url, value.src) ?? "");
+  if (direct) return direct;
+  // Size map: take the widest variant.
+  let best: { width: number; url: string } | undefined;
+  for (const [key, raw] of Object.entries(value)) {
+    const width = Number(/^(\d+)x\d+$/.exec(key)?.[1]);
+    const url = typeof raw === "string" ? httpsUrl(raw) : undefined;
+    if (url && Number.isFinite(width) && (!best || width > best.width)) best = { width, url };
+  }
+  return best?.url;
+}
+
+function httpsUrl(raw: string): string | undefined {
+  const value = raw.trim().startsWith("//") ? `https:${raw.trim()}` : raw.trim();
+  try {
+    return new URL(value).protocol === "https:" ? value : undefined;
+  } catch {
+    return undefined;
+  }
 }
 
 function firstBoolean(...values: unknown[]): boolean | undefined {
