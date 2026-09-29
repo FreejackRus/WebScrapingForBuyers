@@ -109,7 +109,7 @@ services:
 
   marketplace-mcp:
     build:
-      context: ../ru-marketplace-mcp
+      context: ./mcp-servers/ru-marketplace-mcp
     image: ru-marketplace-mcp:2.4.2
     command: ["marketplace-mcp"]
     environment:
