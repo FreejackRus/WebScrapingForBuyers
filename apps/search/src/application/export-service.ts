@@ -13,6 +13,7 @@ export async function exportSearch(snapshot: SearchSnapshot): Promise<Buffer> {
     { header: "Артикул", key: "mpn", width: 18 },
     { header: "Совпадение", key: "match", width: 15 },
     { header: "Цена, ₽", key: "price", width: 14 },
+    { header: "Проверка цены", key: "priceAnomaly", width: 20 },
     { header: "Условие цены", key: "priceCondition", width: 22 },
     { header: "Наличие", key: "availability", width: 16 },
     { header: "Доставка", key: "delivery", width: 28 },
@@ -22,7 +23,7 @@ export async function exportSearch(snapshot: SearchSnapshot): Promise<Buffer> {
     { header: "Демо", key: "demo", width: 10 },
   ];
   sheet.getRow(1).font = { bold: true };
-  sheet.autoFilter = "A1:M1";
+  sheet.autoFilter = "A1:N1";
   sheet.views = [{ state: "frozen", ySplit: 1 }];
 
   for (const offer of snapshot.offers) {
@@ -31,6 +32,7 @@ export async function exportSearch(snapshot: SearchSnapshot): Promise<Buffer> {
       mpn: offer.mpn ?? "не указан",
       delivery: offer.delivery ?? "неизвестно",
       warranty: offer.warranty ?? "не указана",
+      priceAnomaly: offer.priceAnomaly ? "Цена под сомнением" : "",
       demo: offer.demo ? "Да" : "Нет",
     });
   }

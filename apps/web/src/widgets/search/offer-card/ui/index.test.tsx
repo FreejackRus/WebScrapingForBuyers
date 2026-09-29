@@ -71,6 +71,13 @@ describe("OfferCard", () => {
     expect(html).not.toContain("Фото нет в данных предложения");
   });
 
+  it("warns about a price search marked as implausibly low", () => {
+    state.offer = { ...offer, price: 2, priceAnomaly: "too_low" };
+    const html = renderToStaticMarkup(<OfferCard />);
+    expect(html).toContain("Цена под сомнением");
+    expect(html).toContain("В лучшую цену не входит");
+  });
+
   it("omits the demo badge for public offers", () => {
     state.offer = { ...offer, demo: false };
     const html = renderToStaticMarkup(<OfferCard />);

@@ -11,7 +11,7 @@ function useWorkspaceSnapshot() {
   const snapshot = useSearchStore((state) => state.snapshot);
   const error = useSearchStore((state) => state.error);
   const offers = snapshot?.offers ?? [];
-  const pricedOffers = offers.filter((offer) => !offer.demo);
+  const pricedOffers = offers.filter((offer) => !offer.demo && !offer.priceAnomaly);
   const bestPublic = [...pricedOffers].sort((left, right) => left.price - right.price)[0]?.price;
   const failedSources = snapshot?.sources.filter((source) => source.status === "error").length ?? 0;
   const settledSources = snapshot?.sources.filter((source) => source.status === "done" || source.status === "error").length ?? 0;

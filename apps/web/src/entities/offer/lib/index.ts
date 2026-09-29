@@ -7,6 +7,11 @@ export const matchLabels = {
   doubtful: "Сомнительное",
 };
 
+/** Shown next to a price search marked as implausibly low. */
+export const PRICE_ANOMALY_LABEL = "Цена под сомнением";
+export const PRICE_ANOMALY_HINT =
+  "Цена намного ниже остальных предложений — вероятна ошибка площадки. В лучшую цену не входит, проверьте на сайте.";
+
 export const conditionLabels: Record<Offer["condition"], string> = {
   new: "Новый товар",
   refurbished: "Восстановленный",

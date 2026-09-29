@@ -2,6 +2,7 @@ import { randomUUID } from "node:crypto";
 
 import type { Offer, Product, SearchEvent, SearchSnapshot, SourceState } from "@peremena/contracts";
 
+import { flagPriceAnomalies } from "../domain/price-anomaly.js";
 import type { SourceAdapter } from "../domain/source-adapter.js";
 
 type Listener = (event: SearchEvent) => void;
@@ -67,6 +68,7 @@ export class SearchService {
         try {
           const offers = await source.search(snapshot.product);
           snapshot.offers.push(...offers);
+          flagPriceAnomalies(snapshot.offers);
           const real = offers.filter((offer) => !offer.demo);
           if (real.length > 0) {
             this.lastGoodReal.set(lastGoodKey(source.name, snapshot.product), structuredClone(real));
@@ -87,6 +89,7 @@ export class SearchService {
           if (cached && cached.length > 0) {
             const reused = structuredClone(cached);
             snapshot.offers.push(...reused);
+            flagPriceAnomalies(snapshot.offers);
             this.emit(id, { type: "offers", data: reused });
           }
           this.updateSource(snapshot, source.name, {

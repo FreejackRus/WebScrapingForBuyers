@@ -1,7 +1,7 @@
 import { useState, type PointerEvent, type ReactNode } from "react";
 import { useFilteredOffers, useOfferCard, useOfferColumns, useOfferTable } from "features/search";
 import { useAnalysisStore } from "entities/analysis";
-import { conditionLabels, matchLabels } from "entities/offer";
+import { conditionLabels, matchLabels, PRICE_ANOMALY_HINT, PRICE_ANOMALY_LABEL } from "entities/offer";
 import type { OfferSortColumn } from "entities/offer";
 import { useSearchStore } from "entities/search";
 import { fetchedTime, money } from "shared/lib";
@@ -205,6 +205,11 @@ export function OfferTable() {
                   <>
                     <b className="mono">{money.format(offer.price)}</b>
                     {offer.oldPrice && <del className="mono">{money.format(offer.oldPrice)}</del>}
+                    {offer.priceAnomaly ? (
+                      <span className="price-anomaly" title={PRICE_ANOMALY_HINT}>
+                        {PRICE_ANOMALY_LABEL}
+                      </span>
+                    ) : null}
                   </>
                 ), "price")}
                 {cell("availability", <>{offer.availability}</>)}

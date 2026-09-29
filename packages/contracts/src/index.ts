@@ -30,6 +30,12 @@ export interface Offer {
   url: string;
   /** Public https product photo from the source listing, when it provides one. */
   imageUrl?: string;
+  /**
+   * Set by search when the price is implausibly low against the other offers
+   * for the same product (typically a parser or shop-side error). Such rows stay
+   * visible but never count as the best price.
+   */
+  priceAnomaly?: "too_low";
   fetchedAt: string;
   demo: boolean;
 }

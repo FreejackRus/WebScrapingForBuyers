@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { conditionLabels, matchLabels } from "entities/offer";
+import { conditionLabels, matchLabels, PRICE_ANOMALY_HINT, PRICE_ANOMALY_LABEL } from "entities/offer";
 import { useOfferCard } from "features/search";
 import { fetchedTime, money } from "shared/lib";
 
@@ -46,6 +46,11 @@ export function OfferCard() {
           {offer.oldPrice ? <del className="mono">{money.format(offer.oldPrice)}</del> : null}
           {offer.demo ? <span className="offer-demo-badge">Демо</span> : null}
         </div>
+        {offer.priceAnomaly ? (
+          <p className="data-notice warn" role="note">
+            <b>{PRICE_ANOMALY_LABEL}.</b> {PRICE_ANOMALY_HINT}
+          </p>
+        ) : null}
 
         <OfferPhoto key={offer.id} src={offer.imageUrl} title={offer.title} />
 
