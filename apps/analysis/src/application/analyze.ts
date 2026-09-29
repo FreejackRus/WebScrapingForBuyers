@@ -419,6 +419,19 @@ async function analyzeSnapshotRaw(
     offers = offers.filter((offer) => !offer.demo);
   }
 
+  // Search marks prices far below the rest (parser or shop-side slips). They must
+  // never become "the best offer"; the table still shows them with a mark.
+  const anomalous = offers.filter((offer) => offer.priceAnomaly === "too_low");
+  if (anomalous.length > 0) {
+    offers = offers.filter((offer) => offer.priceAnomaly !== "too_low");
+    filters.push(
+      `Не учтены цены, намного ниже остальных (${ruCount(anomalous.length, "строка", "строки", "строк")}).`,
+    );
+    warnings.push(
+      `${ruCount(anomalous.length, "предложение", "предложения", "предложений")} с ценой намного ниже остальных не участвуют в выборе лучшего: вероятна ошибка площадки. Проверьте цену на сайте перед закупкой.`,
+    );
+  }
+
   // Soft-drop is for explain/pick-best. Filter intents keep all sources that match criteria.
   if (intent !== "filter") {
     const weakDrop = dropWeakMatchesWhenStrongerExist(offers);

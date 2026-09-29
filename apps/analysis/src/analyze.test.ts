@@ -90,6 +90,15 @@ describe("analyzeSnapshot", () => {
     expect(result.warnings.join("\n")).not.toMatch(/демо/i);
   });
 
+  it("never picks a price search marked as implausibly low", async () => {
+    const slip = offer({ id: "ozon-slip", source: "Ozon", price: 2, demo: false, priceAnomaly: "too_low" });
+    const result = await analyzeSnapshot(snapshot([slip, wbReal, citilinkReal]), "Сравни лучшие предложения");
+    expect(result.selectedOfferIds).not.toContain("ozon-slip");
+    expect(result.selectedOfferIds[0]).toBe("wb-real");
+    expect(result.warnings.join("\n")).toMatch(/ценой намного ниже остальных/);
+    expect(result.summary).not.toMatch(/\b2 ₽/);
+  });
+
   it("keeps demo rows only when the prompt asks for them", async () => {
     const result = await analyzeSnapshot(
       snapshot([demoCheap, wbReal]),
