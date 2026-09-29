@@ -95,7 +95,7 @@ describe("analyzeSnapshot", () => {
     const result = await analyzeSnapshot(snapshot([slip, wbReal, citilinkReal]), "Сравни лучшие предложения");
     expect(result.selectedOfferIds).not.toContain("ozon-slip");
     expect(result.selectedOfferIds[0]).toBe("wb-real");
-    expect(result.warnings.join("\n")).toMatch(/ценой намного ниже остальных/);
+    expect(result.warnings.join("\n")).toMatch(/1 предложение с ценой намного ниже остальных не участвует/);
     expect(result.summary).not.toMatch(/\b2 ₽/);
   });
 
