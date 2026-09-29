@@ -1235,3 +1235,9 @@ vol 4997 (basket-27), а на живом «Logitech K380» 24 из 40 SKU нов
 Проверка: pytest MCP 1812 passed (падает старый `test_dependency_parity`),
 DOM-тесты Ситилинка и AliExpress на сохранённой разметке через jsdom,
 typecheck и npm test зелёные, semgrep по diff без новых находок.
+
+Живая проверка после `./scripts/deploy.sh origin/main marketplace-mcp`
+(`3b225f0`), запрос «Logitech K380»: WB — фото у 79 из 100, выборка из 15 URL
+открывается без ошибок, найдено 12 новых хостов basket-29…49, холодный
+поиск 14 с (≈5 с — проба хостов, дальше кэш). Ozon — 8/8, AliExpress —
+16/16, Avito — 50/50. Ситилинк — 429 Qrator, нужен прогрев Chrome через VNC.
