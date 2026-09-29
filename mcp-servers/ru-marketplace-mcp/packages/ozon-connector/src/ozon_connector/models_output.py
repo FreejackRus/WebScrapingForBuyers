@@ -105,6 +105,7 @@ class OzonSearchItemOut(BaseModel):
     rating: str | None = Field(default=None, description="Rating display string.")
     rating_count: int | str | None = Field(default=None, description="Review count (int or display string).")
     stock: str | None = Field(default=None, description="Stock label string.")
+    image_url: str | None = Field(default=None, description="First tile photo URL, https only.")
 
 
 class OzonSearchResponse(BaseModel):

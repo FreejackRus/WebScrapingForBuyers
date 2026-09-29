@@ -68,6 +68,17 @@ def test_search_extractor_pairing_agrees_with_python():
     assert realme.old_price_rub == 6967.0
 
 
+def test_search_tiles_carry_the_gallery_photo():
+    """The captured Realme tile shows an ae-pic CDN photo; it reaches the wire."""
+    payload = _run(server._SEARCH_EXTRACT_JS, SEARCH_FIXTURE, SEARCH_PAGE_URL)
+    items = [t for t in payload.get("items") or [] if isinstance(t, dict)]
+    parsed = {p.item_id: p for p in (server._item_from_payload(t) for t in items)}
+    realme = parsed["1005010003103368"]
+    assert realme.image_url is not None
+    assert realme.image_url.startswith("https://ae-pic-")
+    assert server._https_image_url("data:image/png;base64,AA") is None
+
+
 def test_card_extractor_reads_the_captured_modules():
     payload = _run(server._CARD_EXTRACT_JS, CARD_FIXTURE, "https://aliexpress.ru/item/1005010003103368.html")
 

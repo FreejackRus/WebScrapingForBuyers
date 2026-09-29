@@ -1204,3 +1204,34 @@ K380')` → 50 объявлений, у всех `image_url` на `img.avito.st`
 активных, ~28 GB). Перед переключением: обновить Ollama (установщик
 перезаписывает `/etc/systemd/system/ollama.service` — сохранить
 `OLLAMA_HOST=0.0.0.0:11434`) и сравнить на реальных запросах.
+
+### 2026-09-29 — деплой из git и фото WB / Ozon / AliExpress
+
+**Деплой.** До этого на прод код заливали вручную: сервер отставал от `main`
+(там ещё лежали Apify/MPStats), а `/projects/ru-marketplace-mcp` был клоном
+upstream с 20 локальными правками. Теперь `/projects/WebScrapingForBuyers` —
+git-клон публичного репо. `marketplace-mcp` собирается из
+`./mcp-servers/ru-marketplace-mcp`. Деплой: `./scripts/deploy.sh [ref]
+[сервисы]` — останавливается, если на сервере правили отслеживаемые файлы;
+Chrome не пересоздаёт; журнал в `.deploy-log`. Секреты (`.env.production`,
+`.env.stitch`, `.cursor/*`) перенесены в клон, в git их нет. Перед переходом
+пофайлово сверили сервер с историей git: всё, что отличалось, — старые
+версии, серверных правок не было. Бэкап:
+`/projects/WebScrapingForBuyers-backups/pre-git-2026-09-29/`, старые каталоги —
+`/projects/WebScrapingForBuyers.pre-git` и `/projects/ru-marketplace-mcp`
+(больше не используется). Первый деплой `73104b9`: пересобраны все сервисы,
+кроме Chrome, ошибок в логах нет.
+
+**Фото.** Ozon — `tileImage.items[].image.link`. AliExpress — `<img>` плитки,
+как у Ситилинка. WB картинку в выдаче не отдаёт: URL строится из `nm_id`
+через `basket-NN.wbbasket.ru`. Таблица хостов в коннекторе кончается на
+vol 4997 (basket-27), а на живом «Logitech K380» 24 из 40 SKU новее
+(vol 7621 → basket-35, vol 15733 → basket-48; проверено curl с сервера).
+Неизвестный vol разрешается HEAD-пробой хостов 28–79 с кэшем на процесс
+(все SKU одного vol на одном хосте), семафор 24, бюджет 5 с. Не нашли —
+фото нет, битого URL не отдаём. `_basket_for_sku` (card.json/отзывы)
+теперь тоже берёт найденный хост вместо слепого `basket-28`.
+
+Проверка: pytest MCP 1812 passed (падает старый `test_dependency_parity`),
+DOM-тесты Ситилинка и AliExpress на сохранённой разметке через jsdom,
+typecheck и npm test зелёные, semgrep по diff без новых находок.

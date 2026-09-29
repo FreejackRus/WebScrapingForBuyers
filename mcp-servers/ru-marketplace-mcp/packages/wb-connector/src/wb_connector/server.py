@@ -587,9 +587,8 @@ async def _polite_wait() -> None:
     await _pacer.wait(min_gap=_min_gap)
 
 
-def _basket_for_sku(nm_id: int) -> str:
-    """Compute basket CDN host. Probe range up to 28 for new SKUs."""
-    vol = nm_id // 100000
+def _basket_from_table(vol: int) -> str | None:
+    """Basket host for ``vol`` from the known table, or None past its end."""
     table = [
         (143, "01"),
         (287, "02"),
@@ -622,8 +621,85 @@ def _basket_for_sku(nm_id: int) -> str:
     for upper, nn in table:
         if vol <= upper:
             return f"basket-{nn}.wbbasket.ru"
+    return None
+
+
+def _basket_for_sku(nm_id: int) -> str:
+    """Compute basket CDN host. Probe range up to 28 for new SKUs."""
+    vol = nm_id // 100000
+    host = _basket_from_table(vol) or _probed_baskets.get(vol)
+    if host:
+        return host
     log_event("wb.basket_fallback_used", vol=vol, fallback=get_settings().basket_fallback)
     return f"{get_settings().basket_fallback}.wbbasket.ru"
+
+
+# The table above stops at vol 4997 (basket-27); WB keeps adding hosts for newer
+# SKUs (verified 2026-09-29: vol 7621 -> basket-35, vol 15733 -> basket-48).
+# Rather than guess new boundaries, an unknown vol is resolved once by asking
+# every candidate host for the SKU's first photo, and the answer is cached:
+# all SKUs of one vol live on the same host.
+_probed_baskets: dict[int, str] = {}
+_BASKET_PROBE_RANGE = range(28, 80)
+_BASKET_PROBE_BUDGET_S = 5.0
+
+
+def _wb_image_path(nm_id: int) -> str:
+    return f"/vol{nm_id // 100000}/part{nm_id // 1000}/{nm_id}/images/c246x328/1.webp"
+
+
+async def _probe_basket(client: httpx.AsyncClient, gate: asyncio.Semaphore, nm_id: int) -> None:
+    """Find the host serving ``nm_id``'s photo and cache it for its vol."""
+    vol = nm_id // 100000
+    path = _wb_image_path(nm_id)
+
+    async def hit(nn: int) -> None:
+        if vol in _probed_baskets:
+            return
+        host = f"basket-{nn:02d}.wbbasket.ru"
+        async with gate:
+            try:
+                resp = await client.head(f"https://{host}{path}")
+            except httpx.HTTPError:
+                return
+        if resp.status_code == 200:
+            _probed_baskets[vol] = host
+
+    await asyncio.gather(*(hit(nn) for nn in _BASKET_PROBE_RANGE))
+
+
+async def _attach_image_urls(item_dicts: list[dict[str, Any]]) -> None:
+    """Set ``image_url`` on WB items whose basket host is known or resolvable.
+
+    Unknown vols are probed in parallel under one time budget; an item whose
+    host stays unknown gets no photo rather than a guessed, broken URL.
+    """
+    nm_ids = [d["nm_id"] for d in item_dicts if isinstance(d.get("nm_id"), int) and d["nm_id"] > 0]
+    unknown: dict[int, int] = {}
+    for nm_id in nm_ids:
+        vol = nm_id // 100000
+        if _basket_from_table(vol) is None and vol not in _probed_baskets:
+            unknown.setdefault(vol, nm_id)
+    if unknown:
+        try:
+            async with httpx.AsyncClient(
+                timeout=httpx.Timeout(3.0, connect=2.0), headers=WB_HEADERS, proxy=_proxy()
+            ) as client:
+                gate = asyncio.Semaphore(24)
+                await asyncio.wait_for(
+                    asyncio.gather(*(_probe_basket(client, gate, nm_id) for nm_id in unknown.values())),
+                    timeout=_BASKET_PROBE_BUDGET_S,
+                )
+        except (TimeoutError, httpx.HTTPError):
+            log_event("wb.basket_probe_timeout", vols=len(unknown))
+    for d in item_dicts:
+        nm_id = d.get("nm_id")
+        if not isinstance(nm_id, int) or nm_id <= 0:
+            continue
+        vol = nm_id // 100000
+        host = _basket_from_table(vol) or _probed_baskets.get(vol)
+        if host:
+            d["image_url"] = f"https://{host}{_wb_image_path(nm_id)}"
 
 
 def _decode_mojibake(s: object) -> str:
@@ -2075,6 +2151,7 @@ async def wb_search(
             if not isinstance(p, dict):
                 continue  # a non-object entry must never crash the tool
             item_dicts.append(_card_item_dict(p))
+        await _attach_image_urls(item_dicts)
 
         warnings = _aggregate_offer_warnings(item_dicts)
         if fallback_used:

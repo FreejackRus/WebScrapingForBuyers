@@ -21,6 +21,7 @@ class MetaOut(MetaOutBase):
 
 class WbCardItem(BaseModel):
     nm_id: int | None = Field(default=None, description="WB product nmId.")
+    image_url: str | None = Field(default=None, description="First product photo on the WB basket CDN.")
     name: str = Field(default="", description="Product name (mojibake-decoded).")
     brand: str = Field(default="", description="Brand name (mojibake-decoded).")
     color: str = Field(

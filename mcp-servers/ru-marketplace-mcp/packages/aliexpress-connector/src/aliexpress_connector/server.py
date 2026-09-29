@@ -221,6 +221,11 @@ _SEARCH_EXTRACT_TEMPLATE = """
             if (t.length > best) { best = t.length; title = t; }
         }
         const sku = (href.match(/sku_id=(\\d+)/) || [])[1] || null;
+        // First gallery photo; lazy tiles keep the real URL in data-src.
+        const imgEl = tile.querySelector('img');
+        const imageRaw = imgEl
+            ? (imgEl.currentSrc || imgEl.getAttribute('data-src') || imgEl.getAttribute('src') || '')
+            : '';
         out.push({
             item_id: m[1],
             title: title,
@@ -228,6 +233,7 @@ _SEARCH_EXTRACT_TEMPLATE = """
             rating: ratingLeaf(tile),
             orders: ordersLeaf(tile),
             sku_id: sku,
+            image_url: imageRaw,
             url: href
         });
     }
@@ -351,7 +357,18 @@ def _item_from_payload(
         orders_count=orders,
         sku_id=tile.get("sku_id"),
         url=tile.get("url"),
+        image_url=_https_image_url(tile.get("image_url")),
     )
+
+
+def _https_image_url(raw: Any) -> str | None:
+    """Keep only a real https photo URL; lazy placeholders are data: URIs."""
+    if not isinstance(raw, str):
+        return None
+    url = raw.strip()
+    if url.startswith("//"):
+        url = "https:" + url
+    return url if url.startswith("https://") else None
 
 
 async def _cdp_render_search(url: str, ctx: Context | None) -> dict[str, Any]:

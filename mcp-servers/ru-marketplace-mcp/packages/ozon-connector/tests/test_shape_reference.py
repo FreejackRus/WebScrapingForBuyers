@@ -18,6 +18,7 @@ def test_live_composer_normalization_matches_shape_golden() -> None:
     assert shape_signature({"items": items}) == [
         "items[].canonical_path:str",
         "items[].card_input:str",
+        "items[].image_url:str",
         "items[].price:str",
         "items[].price_original:null",
         "items[].price_original:str",
