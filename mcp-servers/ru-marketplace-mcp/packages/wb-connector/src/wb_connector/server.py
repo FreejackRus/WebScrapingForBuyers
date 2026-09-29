@@ -641,7 +641,7 @@ def _basket_for_sku(nm_id: int) -> str:
 # all SKUs of one vol live on the same host.
 _probed_baskets: dict[int, str] = {}
 _BASKET_PROBE_RANGE = range(28, 80)
-_BASKET_PROBE_BUDGET_S = 5.0
+_BASKET_PROBE_BUDGET_S = 8.0
 
 
 def _wb_image_path(nm_id: int) -> str:
