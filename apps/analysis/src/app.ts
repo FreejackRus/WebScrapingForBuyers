@@ -1,5 +1,5 @@
 import type { AnalyzeRequest, SearchSnapshot } from "@peremena/contracts";
-import { createService, serviceUrl } from "@peremena/service-kit";
+import { createService, fetchWithTimeout, serviceUrl } from "@peremena/service-kit";
 
 import { analyzeSnapshot, answerCopilot } from "./application/analyze.js";
 import type { AnalysisNarrator } from "./domain/analysis-narrator.js";
@@ -63,7 +63,12 @@ export function buildAnalysisApp(options: { narrator?: AnalysisNarrator; logger?
       },
     },
     async (request, reply) => {
-      const response = await fetch(`${searchBase}/searches/${request.params.id}`);
+      let response: Response;
+      try {
+        response = await fetchWithTimeout(`${searchBase}/searches/${request.params.id}`, {}, 10_000);
+      } catch {
+        return reply.code(502).send({ error: "Сервис поиска недоступен" });
+      }
       if (response.status === 404) return reply.code(404).send({ error: "Поиск не найден" });
       if (!response.ok) return reply.code(502).send({ error: "Сервис поиска недоступен" });
       const snapshot = (await response.json()) as SearchSnapshot;
