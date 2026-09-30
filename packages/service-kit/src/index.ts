@@ -29,3 +29,16 @@ export function requiredEnv(name: string): string {
 export function serviceUrl(name: string, fallback: string): string {
   return (process.env[name] ?? fallback).replace(/\/$/, "");
 }
+
+/** `fetch` that gives up after `timeoutMs`; the rejection is a `TimeoutError` DOMException. */
+export function fetchWithTimeout(
+  url: string | URL,
+  init: RequestInit = {},
+  timeoutMs = 15_000,
+): Promise<Response> {
+  return fetch(url, { ...init, signal: AbortSignal.timeout(timeoutMs) });
+}
+
+export function isTimeoutError(error: unknown): boolean {
+  return error instanceof Error && (error.name === "TimeoutError" || error.name === "AbortError");
+}

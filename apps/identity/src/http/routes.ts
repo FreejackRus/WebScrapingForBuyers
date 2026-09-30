@@ -1,10 +1,15 @@
 import type { FastifyPluginAsync, FastifyReply, FastifyRequest } from "fastify";
 
 import type { AuthStore } from "../domain/auth-store.js";
+import { LoginLimiter } from "./login-limiter.js";
 import { clearSession, readSessionUser, writeSession } from "./session.js";
 
-export const identityRoutes: FastifyPluginAsync<{ authStore: AuthStore }> = async (app, options) => {
+export const identityRoutes: FastifyPluginAsync<{ authStore: AuthStore; loginLimiter?: LoginLimiter }> = async (
+  app,
+  options,
+) => {
   const { authStore } = options;
+  const limiter = options.loginLimiter ?? new LoginLimiter();
 
   app.get("/health", async () => ({ status: "ok", service: "identity" }));
 
@@ -24,8 +29,19 @@ export const identityRoutes: FastifyPluginAsync<{ authStore: AuthStore }> = asyn
       },
     },
     async (request, reply) => {
-      const user = authStore.authenticate(request.body.login, request.body.password);
-      if (!user) return reply.code(401).send({ error: "Неверный логин или пароль" });
+      const wait = limiter.retryAfterSeconds(request.body.login);
+      if (wait > 0) {
+        return reply
+          .header("retry-after", String(wait))
+          .code(429)
+          .send({ error: "Слишком много попыток входа. Повторите позже." });
+      }
+      const user = await authStore.authenticate(request.body.login, request.body.password);
+      if (!user) {
+        limiter.recordFailure(request.body.login);
+        return reply.code(401).send({ error: "Неверный логин или пароль" });
+      }
+      limiter.reset(request.body.login);
       writeSession(reply, user.id);
       return { user };
     },
@@ -73,7 +89,7 @@ export const identityRoutes: FastifyPluginAsync<{ authStore: AuthStore }> = asyn
         if (!request.body.currentPassword) {
           return reply.code(400).send({ error: "Укажите текущий пароль" });
         }
-        const changed = authStore.changePassword(user.id, {
+        const changed = await authStore.changePassword(user.id, {
           currentPassword: request.body.currentPassword,
           newPassword: request.body.newPassword,
         });

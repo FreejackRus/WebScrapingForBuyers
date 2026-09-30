@@ -103,3 +103,18 @@ describe("SearchService last-good fallback", () => {
     expect((service as unknown as { lastGoodReal: Map<string, Offer[]> }).lastGoodReal.size).toBe(2);
   });
 });
+
+describe("SearchService source deadline", () => {
+  it("marks a hung source as failed and still completes the search", async () => {
+    const hung = source("HUNG", () => new Promise<Offer[]>(() => undefined));
+    const fast = source("FAST", async () => [offer("FAST")]);
+    const service = new SearchService([hung, fast], undefined, Date.now, 50);
+    const snap = service.start("q", product);
+    await finish(service, snap.id);
+    const result = service.get(snap.id)!;
+    expect(result.status).toBe("complete");
+    expect(result.sources.find((s) => s.source === "HUNG")?.status).toBe("error");
+    expect(result.sources.find((s) => s.source === "FAST")?.status).toBe("done");
+    expect(result.offers.map((o) => o.source)).toEqual(["FAST"]);
+  });
+});
