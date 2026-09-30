@@ -26,6 +26,17 @@ export const DEFAULT_RETENTION: SearchRetention = {
   maxLastGood: 200,
 };
 
+/** One slow or hung source must not keep a whole search in "running" forever. */
+export const DEFAULT_SOURCE_TIMEOUT_MS = 120_000;
+
+function withDeadline<T>(work: Promise<T>, ms: number, label: string): Promise<T> {
+  let timer: NodeJS.Timeout | undefined;
+  const deadline = new Promise<never>((_resolve, reject) => {
+    timer = setTimeout(() => reject(new Error(`${label}: источник не ответил за ${Math.round(ms / 1000)} с.`)), ms);
+  });
+  return Promise.race([work, deadline]).finally(() => clearTimeout(timer));
+}
+
 export class SearchService {
   private readonly searches = new Map<string, SearchSnapshot>();
   private readonly finishedAt = new Map<string, number>();
@@ -36,6 +47,7 @@ export class SearchService {
     private readonly sources: SourceAdapter[],
     private readonly retention: SearchRetention = DEFAULT_RETENTION,
     private readonly now: () => number = Date.now,
+    private readonly sourceTimeoutMs: number = Number(process.env.SOURCE_TIMEOUT_MS) || DEFAULT_SOURCE_TIMEOUT_MS,
   ) {}
 
   listSources(): string[] {
@@ -87,7 +99,11 @@ export class SearchService {
       sources.map(async (source) => {
         this.updateSource(snapshot, source.name, { source: source.name, status: "loading" });
         try {
-          const offers = await source.search(snapshot.product);
+          const offers = await withDeadline(
+            source.search(snapshot.product, AbortSignal.timeout(this.sourceTimeoutMs)),
+            this.sourceTimeoutMs,
+            source.name,
+          );
           snapshot.offers.push(...offers);
           flagPriceAnomalies(snapshot.offers);
           const real = offers.filter((offer) => !offer.demo);
