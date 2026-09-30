@@ -11,12 +11,32 @@ function lastGoodKey(source: string, product: Product): string {
   return `${source}\0${product.mpn}\0${product.model}`.toLocaleLowerCase("ru");
 }
 
+export interface SearchRetention {
+  /** How long a finished search stays readable (SSE replay, Excel export). */
+  ttlMs: number;
+  /** Upper bound on stored searches; oldest finished ones go first. */
+  maxSearches: number;
+  /** Upper bound on remembered per-source "last good" result sets. */
+  maxLastGood: number;
+}
+
+export const DEFAULT_RETENTION: SearchRetention = {
+  ttlMs: 6 * 60 * 60 * 1000,
+  maxSearches: 200,
+  maxLastGood: 200,
+};
+
 export class SearchService {
   private readonly searches = new Map<string, SearchSnapshot>();
+  private readonly finishedAt = new Map<string, number>();
   private readonly listeners = new Map<string, Set<Listener>>();
   private readonly lastGoodReal = new Map<string, Offer[]>();
 
-  constructor(private readonly sources: SourceAdapter[]) {}
+  constructor(
+    private readonly sources: SourceAdapter[],
+    private readonly retention: SearchRetention = DEFAULT_RETENTION,
+    private readonly now: () => number = Date.now,
+  ) {}
 
   listSources(): string[] {
     return this.sources.map((source) => source.name);
@@ -32,6 +52,7 @@ export class SearchService {
       offers: [],
       sources: selected.map((source) => ({ source: source.name, status: "pending" })),
     };
+    this.prune();
     this.searches.set(snapshot.id, snapshot);
     queueMicrotask(() => void this.collect(snapshot.id, selected));
     return structuredClone(snapshot);
@@ -71,7 +92,7 @@ export class SearchService {
           flagPriceAnomalies(snapshot.offers);
           const real = offers.filter((offer) => !offer.demo);
           if (real.length > 0) {
-            this.lastGoodReal.set(lastGoodKey(source.name, snapshot.product), structuredClone(real));
+            this.rememberLastGood(lastGoodKey(source.name, snapshot.product), real);
           }
           console.info(
             JSON.stringify({
@@ -105,7 +126,37 @@ export class SearchService {
     );
 
     snapshot.status = "complete";
+    this.finishedAt.set(id, this.now());
     this.emit(id, { type: "complete", data: structuredClone(snapshot) });
+  }
+
+  private rememberLastGood(key: string, real: Offer[]): void {
+    // Delete first so a refreshed key moves to the newest position of the Map.
+    this.lastGoodReal.delete(key);
+    this.lastGoodReal.set(key, structuredClone(real));
+    while (this.lastGoodReal.size > this.retention.maxLastGood) {
+      const oldest = this.lastGoodReal.keys().next().value;
+      if (oldest === undefined) break;
+      this.lastGoodReal.delete(oldest);
+    }
+  }
+
+  /** Drops expired finished searches, then the oldest finished ones above the cap. Running searches are never dropped. */
+  private prune(): void {
+    const cutoff = this.now() - this.retention.ttlMs;
+    for (const [id, finished] of this.finishedAt) {
+      if (finished <= cutoff) this.forget(id);
+    }
+    for (const id of this.finishedAt.keys()) {
+      if (this.searches.size < this.retention.maxSearches) break;
+      this.forget(id);
+    }
+  }
+
+  private forget(id: string): void {
+    this.searches.delete(id);
+    this.finishedAt.delete(id);
+    this.listeners.delete(id);
   }
 
   private updateSource(snapshot: SearchSnapshot, sourceName: string, state: SourceState): void {
