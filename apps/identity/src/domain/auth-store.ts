@@ -6,8 +6,8 @@ export interface PasswordChange {
 }
 
 export interface AuthStore {
-  authenticate(login: string, password: string): SessionUser | undefined;
+  authenticate(login: string, password: string): Promise<SessionUser | undefined>;
   getById(id: string): SessionUser | undefined;
   updateSettings(id: string, settings: Partial<UserSettings>): SessionUser | undefined;
-  changePassword(id: string, change: PasswordChange): SessionUser | undefined;
+  changePassword(id: string, change: PasswordChange): Promise<SessionUser | undefined>;
 }

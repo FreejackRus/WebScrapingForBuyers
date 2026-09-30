@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it } from "vitest";
 
 import { buildIdentityApp } from "./app.js";
+import { LoginLimiter } from "./http/login-limiter.js";
 
 const apps: ReturnType<typeof buildIdentityApp>[] = [];
 afterEach(async () => Promise.all(apps.splice(0).map((app) => app.close())));
@@ -34,5 +35,42 @@ describe("identity", () => {
       headers: { cookie: String(cookie) },
     });
     expect(me.json().user.displayName).toBe("Менеджер закупок");
+  });
+});
+
+describe("login rate limit", () => {
+  async function attempt(app: ReturnType<typeof buildIdentityApp>, login: string, password: string) {
+    return app.inject({ method: "POST", url: "/auth/login", payload: { login, password } });
+  }
+
+  it("blocks a login after repeated failures, even with the right password", async () => {
+    const app = buildIdentityApp({ loginLimiter: new LoginLimiter(3, 60_000) });
+    apps.push(app);
+    for (let i = 0; i < 3; i += 1) expect((await attempt(app, "manager", "wrong")).statusCode).toBe(401);
+    const blocked = await attempt(app, "manager", "peremena-manager");
+    expect(blocked.statusCode).toBe(429);
+    expect(Number(blocked.headers["retry-after"])).toBeGreaterThan(0);
+    // other accounts are unaffected
+    expect((await attempt(app, "admin", "peremena-admin")).statusCode).toBe(200);
+  });
+
+  it("a successful login clears the failure count", async () => {
+    const app = buildIdentityApp({ loginLimiter: new LoginLimiter(3, 60_000) });
+    apps.push(app);
+    for (let i = 0; i < 2; i += 1) await attempt(app, "manager", "wrong");
+    expect((await attempt(app, "manager", "peremena-manager")).statusCode).toBe(200);
+    for (let i = 0; i < 2; i += 1) expect((await attempt(app, "manager", "wrong")).statusCode).toBe(401);
+  });
+});
+
+describe("LoginLimiter", () => {
+  it("frees the login when the window ends", () => {
+    let now = 0;
+    const limiter = new LoginLimiter(2, 1000, 10, () => now);
+    limiter.recordFailure("A");
+    limiter.recordFailure("a ");
+    expect(limiter.retryAfterSeconds("a")).toBe(1);
+    now = 1001;
+    expect(limiter.retryAfterSeconds("a")).toBe(0);
   });
 });

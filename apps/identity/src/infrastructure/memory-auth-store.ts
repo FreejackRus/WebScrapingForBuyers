@@ -1,4 +1,5 @@
-import { randomBytes, scryptSync, timingSafeEqual } from "node:crypto";
+import { randomBytes, scrypt, scryptSync, timingSafeEqual } from "node:crypto";
+import { promisify } from "node:util";
 
 import type { SessionUser, UserRole, UserSettings } from "@peremena/contracts";
 
@@ -7,6 +8,11 @@ import type { AuthStore, PasswordChange } from "../domain/auth-store.js";
 interface StoredUser extends SessionUser {
   passwordHash: string;
 }
+
+const scryptAsync = promisify(scrypt) as (password: string, salt: string, keylen: number) => Promise<Buffer>;
+
+// Checked when the login is unknown, so a missing user costs the same time as a wrong password.
+const DUMMY_HASH = hashPassword("dummy-password-for-timing");
 
 const defaultPrompt = "Выбери три лучших предложения с гарантией и объясни риски";
 
@@ -23,12 +29,12 @@ export class MemoryAuthStore implements AuthStore {
     return new MemoryAuthStore(parsed);
   }
 
-  authenticate(login: string, password: string): SessionUser | undefined {
+  async authenticate(login: string, password: string): Promise<SessionUser | undefined> {
     const user = [...this.users.values()].find(
       (candidate) => candidate.login.toLocaleLowerCase("ru") === login.trim().toLocaleLowerCase("ru"),
     );
-    if (!user || !verifyPassword(password, user.passwordHash)) return undefined;
-    return toSession(user);
+    const valid = await verifyPassword(password, user?.passwordHash ?? DUMMY_HASH);
+    return user && valid ? toSession(user) : undefined;
   }
 
   getById(id: string): SessionUser | undefined {
@@ -45,11 +51,11 @@ export class MemoryAuthStore implements AuthStore {
     return toSession(user);
   }
 
-  changePassword(id: string, change: PasswordChange): SessionUser | undefined {
+  async changePassword(id: string, change: PasswordChange): Promise<SessionUser | undefined> {
     const user = this.users.get(id);
-    if (!user || !verifyPassword(change.currentPassword, user.passwordHash)) return undefined;
+    if (!user || !(await verifyPassword(change.currentPassword, user.passwordHash))) return undefined;
     if (change.newPassword.trim().length < 8) return undefined;
-    user.passwordHash = hashPassword(change.newPassword);
+    user.passwordHash = await hashPasswordAsync(change.newPassword);
     return toSession(user);
   }
 }
@@ -108,10 +114,16 @@ function hashPassword(password: string): string {
   return `${salt}:${hash}`;
 }
 
-function verifyPassword(password: string, stored: string): boolean {
+async function hashPasswordAsync(password: string): Promise<string> {
+  const salt = randomBytes(16).toString("hex");
+  const hash = (await scryptAsync(password, salt, 32)).toString("hex");
+  return `${salt}:${hash}`;
+}
+
+async function verifyPassword(password: string, stored: string): Promise<boolean> {
   const [salt, hash] = stored.split(":");
   if (!salt || !hash) return false;
-  const actual = scryptSync(password, salt, 32);
+  const actual = await scryptAsync(password, salt, 32);
   const expected = Buffer.from(hash, "hex");
   return actual.length === expected.length && timingSafeEqual(actual, expected);
 }
