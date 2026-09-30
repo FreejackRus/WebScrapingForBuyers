@@ -129,12 +129,12 @@ export function OfferTable() {
         </div>
       )}
       <div className="table-wrap">
-        <table style={{ minWidth: visible.reduce((sum, column) => sum + widthOf(column.key), 88) }}>
+        <table style={{ minWidth: visible.reduce((sum, column) => sum + widthOf(column.key), 116) }}>
           <colgroup>
             {visible.map((column) => (
               <col key={column.key} style={{ width: widthOf(column.key) }} />
             ))}
-            <col style={{ width: 88 }} />
+            <col style={{ width: 116 }} />
           </colgroup>
           <thead>
             <tr>

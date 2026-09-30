@@ -3,13 +3,13 @@ import { useCallback, useSyncExternalStore } from "react";
 import type { OfferSortColumn } from "entities/offer";
 
 export const OFFER_COLUMNS: { key: OfferSortColumn; label: string; width: number }[] = [
-  { key: "source", label: "Источник / продавец", width: 168 },
-  { key: "title", label: "Товар", width: 280 },
-  { key: "match", label: "Совпадение", width: 128 },
-  { key: "price", label: "Цена", width: 112 },
-  { key: "availability", label: "Наличие", width: 120 },
+  { key: "source", label: "Источник / продавец", width: 152 },
+  { key: "title", label: "Товар", width: 240 },
+  { key: "match", label: "Совпадение", width: 112 },
+  { key: "price", label: "Цена", width: 108 },
+  { key: "availability", label: "Наличие", width: 108 },
   { key: "conditions", label: "Условия", width: 168 },
-  { key: "fetched", label: "Время запроса", width: 128 },
+  { key: "fetched", label: "Время запроса", width: 120 },
 ];
 
 const STORAGE_KEY = "peremena.offer-columns";
@@ -21,7 +21,8 @@ export type OfferColumnPrefs = {
   widths: Partial<Record<OfferSortColumn, number>>;
 };
 
-const defaultPrefs: OfferColumnPrefs = { hidden: [], widths: {} };
+// "Время запроса" is secondary (it is in the offer card), so a fresh profile fits the table without side scroll.
+const defaultPrefs: OfferColumnPrefs = { hidden: ["fetched"], widths: {} };
 const listeners = new Set<() => void>();
 let prefs: OfferColumnPrefs = readPrefs();
 
