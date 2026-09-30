@@ -114,7 +114,7 @@ button:disabled { opacity: 0.55; cursor: wait; }
 .command { margin-top: 20px; }
 .workspace-split {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 32%);
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 28%);
   grid-template-areas:
     "lead chat"
     "offers chat";
@@ -325,6 +325,7 @@ th { position: relative; }
 .source-chip {
   display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px;
   border: 1px solid var(--line); border-radius: 999px; background: #fff; font-size: 12px; cursor: pointer;
+  white-space: nowrap; flex: 0 0 auto;
 }
 .source-chip.is-on { border-color: var(--brand-200); background: var(--brand-soft); color: var(--brand-dark); }
 .source-chip input { margin: 0; }
@@ -336,6 +337,10 @@ th { position: relative; }
 table { width: 100%; border-collapse: collapse; }
 @media (min-width: 721px) {
   .offers-panel table { table-layout: fixed; }
+  /* The card button stays reachable when the table scrolls sideways. */
+  th:last-child, td.offer-action { position: sticky; right: 0; background: #fff; box-shadow: -8px 0 8px -8px rgba(24, 28, 36, 0.12); }
+  th:last-child { background: #f1f5f9; }
+  tr.selected td.offer-action, tr.recommended td.offer-action, .offer-row:hover td.offer-action { background: #eef4ff; }
 }
 th {
   text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em;
@@ -421,6 +426,7 @@ tr.recommended { box-shadow: inset 4px 0 0 var(--brand); }
   text-decoration: none;
   font-size: 13px;
   font-weight: 600;
+  white-space: nowrap;
 }
 .offer-cta.primary {
   background: var(--brand);
@@ -801,7 +807,7 @@ body.offer-card-open { overflow: hidden; }
 .settings-nav-short, .settings-title-short { display: none; }
 
 @media (max-width: 1100px) {
-  .source-grid, .metrics, .copilot-grid { grid-template-columns: 1fr 1fr; }
+  .source-grid, .copilot-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 900px) {
@@ -809,8 +815,8 @@ body.offer-card-open { overflow: hidden; }
     grid-template-columns: 1fr;
     grid-template-areas:
       "lead"
-      "chat"
-      "offers";
+      "offers"
+      "chat";
   }
   .workspace-chat { position: static; }
   .chat-panel { max-height: none; min-height: 0; }
@@ -954,6 +960,10 @@ body.offer-card-open { overflow: hidden; }
   .offers-panel .data-notice { flex-direction: column; align-items: flex-start; }
   .pager-buttons { width: 100%; justify-content: space-between; }
 
+  .column-menu-wrap { display: none; }
+  .offers-toolbar-actions { width: 100%; }
+  .table-wrap { overflow: visible; }
+  table { min-width: 0 !important; }
   table, thead, tbody, tr, td { display: block; width: 100%; }
   thead { display: none; }
   tbody { display: grid; gap: 10px; }
