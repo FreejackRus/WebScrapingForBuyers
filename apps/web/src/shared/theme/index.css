@@ -335,7 +335,7 @@ th { position: relative; }
 .mobile-sort { display: none; }
 .table-wrap { overflow: auto; margin-top: 12px; -webkit-overflow-scrolling: touch; }
 table { width: 100%; border-collapse: collapse; }
-@media (min-width: 721px) {
+@media (min-width: 901px) {
   .offers-panel table { table-layout: fixed; }
   /* The card button stays reachable when the table scrolls sideways. */
   th:last-child, td.offer-action { position: sticky; right: 0; background: #fff; box-shadow: -8px 0 8px -8px rgba(24, 28, 36, 0.12); }
@@ -810,7 +810,8 @@ body.offer-card-open { overflow: hidden; }
   .source-grid, .copilot-grid { grid-template-columns: 1fr 1fr; }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1359px) {
+  /* Beside the chat the table has under ~950px and cuts off "Условия", so the chat goes below. */
   .workspace-split {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -820,6 +821,70 @@ body.offer-card-open { overflow: hidden; }
   }
   .workspace-chat { position: static; }
   .chat-panel { max-height: none; min-height: 0; }
+}
+
+
+@media (max-width: 900px) {
+  .mobile-sort { display: grid; margin-top: 14px; color: var(--muted); font-size: 12px; }
+  .mobile-sort select { width: 100%; min-width: 0; min-height: 44px; padding: 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); }
+
+  .column-menu-wrap { display: none; }
+  .offers-toolbar-actions { width: 100%; }
+  .table-wrap { overflow: visible; }
+  table { min-width: 0 !important; }
+  table, thead, tbody, tr, td { display: block; width: 100%; }
+  thead { display: none; }
+  tbody { display: grid; gap: 10px; }
+  tbody tr {
+    display: flex;
+    flex-direction: column;
+    padding: 14px;
+    border: 1px solid rgba(111, 119, 130, 0.15);
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: var(--shadow-xs);
+  }
+  td[data-label="Источник"] { order: 1; }
+  td.price { order: 2; }
+  td[data-label="Товар"] { order: 3; }
+  td[data-label="Совпадение"] { order: 4; }
+  td[data-label="Наличие"] { order: 5; }
+  td[data-label="Условия"] { order: 6; }
+  td.offer-action { order: 7; }
+  tr.recommended {
+    border: 2px solid rgba(37, 105, 237, 0.4);
+    box-shadow: var(--shadow-card);
+  }
+  tr.recommended, tr.selected { background: #fff; }
+  td { border: 0; padding: 6px 0; }
+  td::before { content: attr(data-label); display: block; font-size: 10px; color: var(--muted); text-transform: uppercase; }
+  td[data-label="Источник"]::before,
+  td[data-label="Товар"]::before,
+  td[data-label="Цена"]::before,
+  td[data-label="Наличие"]::before,
+  td.offer-action::before { display: none; }
+  .offer-title { max-width: none; font-size: 13px; }
+  .offer-best-badge { display: inline-flex; align-items: center; }
+  .offer-seller { display: inline; }
+  .offer-seller-desktop { display: none; }
+  td.price b {
+    font-size: 1.05rem;
+    color: var(--ink);
+  }
+  tr.recommended td.price b { color: var(--brand); }
+  td.price del { margin-left: 8px; color: var(--muted); }
+  .offer-conditions {
+    background: var(--canvas);
+    border-radius: 10px;
+    padding: 10px;
+  }
+  td[data-label="Время запроса"] { display: none; }
+  .col-resize { display: none; }
+  .offer-cta {
+    width: 100%;
+    min-height: 44px;
+    margin-top: 4px;
+  }
 }
 
 @media (max-width: 899px) {
@@ -948,8 +1013,6 @@ body.offer-card-open { overflow: hidden; }
     white-space: nowrap;
   }
 
-  .mobile-sort { display: grid; margin-top: 14px; color: var(--muted); font-size: 12px; }
-  .mobile-sort select { width: 100%; min-width: 0; min-height: 44px; padding: 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); }
   .offer-search { width: 100%; }
   .panel-heading, .product-summary, .offers-toolbar, .copilot-head, .offers-pager { flex-direction: column; }
   .offer-search input, .export { width: 100%; min-height: 44px; }
@@ -960,65 +1023,8 @@ body.offer-card-open { overflow: hidden; }
   .offers-panel .data-notice { flex-direction: column; align-items: flex-start; }
   .pager-buttons { width: 100%; justify-content: space-between; }
 
-  .column-menu-wrap { display: none; }
-  .offers-toolbar-actions { width: 100%; }
-  .table-wrap { overflow: visible; }
-  table { min-width: 0 !important; }
-  table, thead, tbody, tr, td { display: block; width: 100%; }
-  thead { display: none; }
-  tbody { display: grid; gap: 10px; }
-  tbody tr {
-    display: flex;
-    flex-direction: column;
-    padding: 14px;
-    border: 1px solid rgba(111, 119, 130, 0.15);
-    border-radius: 12px;
-    background: #fff;
-    box-shadow: var(--shadow-xs);
-  }
-  td[data-label="Источник"] { order: 1; }
-  td.price { order: 2; }
-  td[data-label="Товар"] { order: 3; }
-  td[data-label="Совпадение"] { order: 4; }
-  td[data-label="Наличие"] { order: 5; }
-  td[data-label="Условия"] { order: 6; }
-  td.offer-action { order: 7; }
-  tr.recommended {
-    border: 2px solid rgba(37, 105, 237, 0.4);
-    box-shadow: var(--shadow-card);
-  }
-  tr.recommended, tr.selected { background: #fff; }
-  td { border: 0; padding: 6px 0; }
-  td::before { content: attr(data-label); display: block; font-size: 10px; color: var(--muted); text-transform: uppercase; }
-  td[data-label="Источник"]::before,
-  td[data-label="Товар"]::before,
-  td[data-label="Цена"]::before,
-  td[data-label="Наличие"]::before,
-  td.offer-action::before { display: none; }
-  .offer-title { max-width: none; font-size: 13px; }
-  .offer-best-badge { display: inline-flex; align-items: center; }
-  .offer-seller { display: inline; }
-  .offer-seller-desktop { display: none; }
-  td.price b {
-    font-size: 1.05rem;
-    color: var(--ink);
-  }
-  tr.recommended td.price b { color: var(--brand); }
-  td.price del { margin-left: 8px; color: var(--muted); }
-  .offer-conditions {
-    background: var(--canvas);
-    border-radius: 10px;
-    padding: 10px;
-  }
-  td[data-label="Время запроса"] { display: none; }
-  .col-resize { display: none; }
   .source-picker { padding: 8px 10px; }
   .source-chip { min-height: 36px; }
-  .offer-cta {
-    width: 100%;
-    min-height: 44px;
-    margin-top: 4px;
-  }
   .offer-card-backdrop {
     align-items: flex-end;
     justify-content: stretch;
@@ -1074,9 +1080,10 @@ body.offer-card-open { overflow: hidden; }
   .mobile-nav-item.is-disabled { opacity: 0.45; cursor: not-allowed; }
   .mobile-nav-icon { font-size: 18px; line-height: 1; }
 
-  .login-page { padding: 16px; align-items: stretch; }
+  .login-page { padding: 16px; align-items: start; }
   .login-card {
     width: 100%;
+    align-content: start;
     padding: 24px 18px;
     border-radius: 16px;
   }
@@ -1158,7 +1165,7 @@ body.offer-card-open { overflow: hidden; }
     padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px));
     gap: 8px;
   }
-  .settings-savebar p { font-size: 11px; }
+  .settings-savebar p { display: none; }
   .settings-save-actions {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
