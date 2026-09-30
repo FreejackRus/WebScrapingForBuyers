@@ -229,8 +229,6 @@ async function proxyJson(
   const headers: Record<string, string> = {
     ...cookieHeader(request),
     accept: "application/json",
-    // identity rate-limits sign-in per client address, not per gateway address
-    "x-forwarded-for": request.ip,
   };
   const payload = bodyOverride !== undefined ? bodyOverride : request.body;
   const raw = payload === undefined ? undefined : JSON.stringify(payload);
