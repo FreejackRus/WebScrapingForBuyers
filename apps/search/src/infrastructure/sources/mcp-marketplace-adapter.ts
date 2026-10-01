@@ -124,8 +124,20 @@ export function presentMarketplaceError(kind: MarketplaceKind, raw: string): str
         : "Если в VNC на вкладке avito.ru виден PoW — пройти и повторить поиск один раз.")
     );
   }
+  if (kind === "yandex" && /challenge_required|SmartCaptcha/i.test(raw)) {
+    const until = raw.match(/"handoff_expires_at"\s*:\s*"([^"]+)"/)?.[1];
+    return (
+      "Яндекс Маркет показал SmartCaptcha в headed Chrome. " +
+      (until
+        ? `Вкладка с проверкой оставлена до ${until}: VNC (ssh -L 5901:127.0.0.1:5901, docs/CHROME_VNC.md) — пройти проверку и повторить тот же поиск.`
+        : "VNC (ssh -L 5901:127.0.0.1:5901, docs/CHROME_VNC.md): открыть market.yandex.ru в chrome-headed, пройти проверку и повторить поиск.")
+    );
+  }
   if (kind === "yandex" && /http 302|\b302\b/i.test(body)) {
-    return `Яндекс 302 без окна проверки (тихий редирект по IP/капче). ${vncWarmupHint(kind)}`;
+    return (
+      "Яндекс 302 без окна проверки (тихий редирект на /showcaptcha). HTTP-транспорт куки Chrome не видит, " +
+      "поэтому прогрев в VNC его не лечит: нужен YANDEX_TRANSPORT=cdp у marketplace-mcp."
+    );
   }
   if (kind === "megamarket" && isMegamarketWafError(body)) {
     return `Мегамаркет HTTP 405 (nginx WAF/антибот). Не долбить поиск. ${vncWarmupHint(kind)}`;

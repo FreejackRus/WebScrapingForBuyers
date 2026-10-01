@@ -54,6 +54,7 @@ NEVER write to stdout in a stdio MCP server — it corrupts JSON-RPC. Use
 
 from __future__ import annotations
 
+import asyncio
 import datetime
 import os
 import urllib.parse
@@ -66,6 +67,7 @@ from mcp.types import ToolAnnotations
 from mcp_core.cache import TTLCache
 from mcp_core.errors import (
     BadRequestError,
+    ChallengeRequiredError,
     NotFoundError,
     ParserDriftError,
     RateLimitedError,
@@ -75,7 +77,10 @@ from mcp_core.errors import (
 from mcp_core.logging import log_event
 from mcp_core.output_schema import apply_compact_output_schemas
 from mcp_core.redact import redact_error_text as _redact
+from mcp_core.runtime import browser_handoff_lifespan, current_mcp_session_id
 from mcp_core.transport import RateLimiter, build_client, get_text_with_retries, proxy_from_env
+from mcp_core.transport.browser_handoff import get_handoff_id, read_with_handoff
+from mcp_core.transport.chrome_cdp import NavBlocked
 from pydantic import Field
 
 from yandex_connector import ssr
@@ -114,7 +119,7 @@ HEADERS = {
 # following — retried alongside the usual gateway statuses.
 _RETRY_STATUSES = frozenset({302, 502, 503, 504})
 
-mcp = FastMCP(name="yandex-connector", version=SERVER_VERSION)
+mcp = FastMCP(name="yandex-connector", version=SERVER_VERSION, lifespan=browser_handoff_lifespan)
 mcp.add_middleware(RetryMiddleware(max_retries=2, base_delay=1.0))
 
 _limiter = RateLimiter(min_gap_s=_settings.min_gap)
@@ -166,6 +171,76 @@ async def _fetch_html(url: str, label: str, ctx: Context | None) -> str:
             )
         if not html.strip():
             raise_tool_error(TransportDownError(f"{label}: empty response body", provider="yandex"))
+        return html
+
+    return await _cache.get_or_fetch(url, fetch)
+
+
+_cdp_lock = asyncio.Lock()
+_CDP_HOSTS = frozenset({"market.yandex.ru", "yandex.ru"})
+_CDP_WAIT_MS = 8000
+
+
+def _cdp_challenge(payload: dict[str, Any]) -> str | None:
+    """SmartCaptcha shows up as a /showcaptcha page or captcha markup in the DOM."""
+    url = str(payload.get("url") or "")
+    html = str(payload.get("html") or "")
+    return "captcha" if "/showcaptcha" in url or ssr.looks_like_captcha(html) else None
+
+
+async def _fetch_html_cdp(url: str, label: str, ctx: Context | None) -> str:
+    """Render ``url`` in the operator's headed Chrome and return its HTML.
+
+    A SmartCaptcha is not solved here. With CHROME_CHALLENGE_HANDOFF_S set, the
+    challenge tab is kept open for the operator to complete over VNC; repeating
+    the same search in the same MCP session then resumes that tab. Pages that
+    show a challenge are never cached.
+    """
+    scope = current_mcp_session_id(ctx)
+
+    async def read(page: Any) -> dict[str, Any]:
+        html = await page.evaluate("() => document.documentElement.outerHTML")
+        return {"url": page.url, "html": html if isinstance(html, str) else ""}
+
+    async def fetch() -> str:
+        if ctx is not None:
+            await ctx.debug(f"{label} (cdp): {url}")
+        async with _cdp_lock:
+            try:
+                data, expires_at = await asyncio.wait_for(
+                    read_with_handoff(
+                        url=url,
+                        wait_ms=_CDP_WAIT_MS,
+                        scope=scope,
+                        operation=label,
+                        read=read,
+                        challenge=_cdp_challenge,
+                        allowed_hosts=_CDP_HOSTS,
+                    ),
+                    timeout=_settings.timeout + _CDP_WAIT_MS / 1000,
+                )
+            except NavBlocked as exc:
+                raise_tool_error(
+                    TransportDownError(f"{label}: navigation blocked (HTTP {exc.status})", provider="yandex")
+                )
+                raise AssertionError("unreachable") from exc  # pragma: no cover
+            except TimeoutError as exc:
+                raise_tool_error(TransportDownError(f"{label}: Chrome render timed out", provider="yandex"))
+                raise AssertionError("unreachable") from exc  # pragma: no cover
+        if _cdp_challenge(data):
+            log_event("yandex.challenge", label=label, handoff=bool(expires_at))
+            raise_tool_error(
+                ChallengeRequiredError(
+                    "Yandex Market shows SmartCaptcha in the connected Chrome. Complete it over VNC "
+                    "(docs/CHROME_VNC.md), then repeat the same search.",
+                    provider="yandex",
+                    handoff_expires_at=expires_at,
+                    handoff_id=get_handoff_id(scope=scope, operation=label, url=url) if expires_at else None,
+                )
+            )
+        html = str(data.get("html") or "")
+        if not html.strip():
+            raise_tool_error(TransportDownError(f"{label}: empty page in Chrome", provider="yandex"))
         return html
 
     return await _cache.get_or_fetch(url, fetch)
@@ -308,7 +383,10 @@ async def yandex_search(
         params["page"] = str(page)
     url = f"{SITE_BASE}/search?{urllib.parse.urlencode(params)}"
 
-    html = await _fetch_html(url, "yandex_search", ctx)
+    if _settings.transport == "cdp":
+        html = await _fetch_html_cdp(url, "yandex_search", ctx)
+    else:
+        html = await _fetch_html(url, "yandex_search", ctx)
     parsed = ssr.parse_search(html)
     _guard_parse_status(parsed["status"], "yandex_search")
     _guard_values_drift(parsed, "yandex_search")

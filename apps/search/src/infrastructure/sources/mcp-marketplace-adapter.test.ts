@@ -153,6 +153,22 @@ afterEach(() => {
   delete process.env.AVITO_POW_RETRY_MS;
 });
 
+describe("presentMarketplaceError · Yandex SmartCaptcha handoff", () => {
+  it("points the operator at the retained challenge tab", () => {
+    const raw = JSON.stringify({
+      error: "challenge_required",
+      message: "Yandex Market shows SmartCaptcha in the connected Chrome.",
+      requires_user_action: true,
+      handoff_expires_at: "2026-10-01T09:02:00+00:00",
+    });
+    const message = presentMarketplaceError("yandex", raw);
+    expect(message).toMatch(/SmartCaptcha/);
+    expect(message).toContain("2026-10-01T09:02:00+00:00");
+    expect(message).toContain("5901");
+    expect(message).toMatch(/повторить тот же поиск/);
+  });
+});
+
 describe("marketplaceImageUrl", () => {
   it("reads a plain https image string", () => {
     expect(marketplaceImageUrl({ image: "https://avatars.mds.yandex.net/a/orig" })).toBe(
@@ -250,12 +266,11 @@ describe("presentMarketplaceError", () => {
     expect(message).not.toMatch(/Пройти проверку/);
   });
 
-  it("keeps a VNC hint for silent Yandex 302, without shop challenge links", () => {
+  it("explains that a silent Yandex 302 needs the Chrome transport, not a VNC warm-up", () => {
     const message = presentMarketplaceError("yandex", "HTTP 302 after retries");
     expect(message).toMatch(/302/);
     expect(message).toMatch(/без окна проверки/);
-    expect(message).toContain("market.yandex.ru");
-    expect(message).toContain("5901");
+    expect(message).toContain("YANDEX_TRANSPORT=cdp");
     expect(message).not.toMatch(/Пройти проверку/);
     expect(isAntibotTransportError("HTTP 302 after retries")).toBe(true);
     expect(isRetryableEmptySearch("HTTP 302 after retries")).toBe(false);

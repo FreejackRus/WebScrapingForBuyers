@@ -123,6 +123,11 @@ services:
       # Observe the catalog response loaded by the existing browser storefront.
       # Legacy search.wb.ru/v9 no longer represents the current web search.
       WB_SEARCH_TRANSPORT: storefront
+      # Yandex search via the headed Chrome: plain HTTP gets a silent 302 to
+      # /showcaptcha on this IP; in Chrome SmartCaptcha is a visible page the
+      # operator completes over VNC (handoff below), and the warmed session
+      # serves later searches. Not a solver.
+      YANDEX_TRANSPORT: cdp
       CHROME_CDP_HOST: 172.29.0.10
       CHROME_CDP_PORT: "9222"
       # ru-marketplace-mcp 2.4.2: keep a detected challenge tab for VNC.

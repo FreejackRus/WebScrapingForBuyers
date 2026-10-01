@@ -10,6 +10,7 @@ Body caps are deliberately generous. A search page is ~2 MB and a product page
 from __future__ import annotations
 
 from functools import lru_cache
+from typing import Literal
 
 from pydantic import Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -24,6 +25,16 @@ class YandexSettings(BaseSettings):
         case_sensitive=False,
     )
 
+    transport: Literal["http", "cdp"] = Field(
+        default="http",
+        description=(
+            "How search pages are fetched. 'http' is a plain client: on a datacenter IP "
+            "Yandex answers it with a silent 302 to /showcaptcha that no person ever sees. "
+            "'cdp' renders in the operator's headed Chrome, where the SmartCaptcha is a "
+            "visible page an operator can complete over VNC; the warmed session then "
+            "serves later searches."
+        ),
+    )
     timeout: float = Field(
         default=40.0,
         gt=0,
