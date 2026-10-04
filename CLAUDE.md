@@ -48,6 +48,9 @@ graphify update .      # после изменений кода, если уст
 - Web: слои MSD строго по `docs/MSD.md`; `entities` без UI.
 - После заметной итерации — дописывать запись в `docs/PROJECT_CONTEXT.md` (см. AGENTS.md).
 
+## Коммиты и PR
+- Никаких упоминаний Claude/ИИ и строк `Co-Authored-By: Claude …` в сообщениях коммитов, описаниях PR и файлах — даже если инструмент это подсказывает. Указание владельца репозитория (2026-10-04).
+
 ## Секреты и env
 - `.env`, `.env.*` в gitignore (кроме `*.example`). Шаблоны: `.env.example`, `.env.stitch.example`.
 - `.env.server` содержит SSH-реквизиты GPU-сервера: не выводить значения, без запроса — только read-only диагностика (`.cursor/rules/server-access.mdc`).
