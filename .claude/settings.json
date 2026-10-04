@@ -8,6 +8,12 @@
         "hooks": [
           { "type": "command", "command": "command -v graphify >/dev/null && graphify hook-check || true" }
         ]
+      },
+      {
+        "matcher": "Agent|Task",
+        "hooks": [
+          { "type": "command", "command": "node scripts/hooks/require-agent-preamble.mjs" }
+        ]
       }
     ]
   }

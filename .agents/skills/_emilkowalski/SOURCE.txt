@@ -1,0 +1,1 @@
+Source: https://github.com/emilkowalski/skills (installed 2026-10-04, MIT). Skills copied: emil-design-eng animate review-animations find-animation-opportunities improve-animations animation-vocabulary apple-design mobile-native break-ui pick-ui-library prototype.
