@@ -51,7 +51,10 @@ export function SearchWorkspaceLead() {
                 <p>{snapshot.product.name}</p>
                 <div className="chips">
                   {snapshot.product.mpn && <span className="chip mono">MPN {snapshot.product.mpn}</span>}
-                  {Object.entries(snapshot.product.characteristics).map(([key, value]) => (
+                  {Object.entries(snapshot.product.characteristics)
+                    // "источник" names the suggestion engine (typed, google, icecat): internal, not for buyers.
+                    .filter(([key]) => key !== "источник")
+                    .map(([key, value]) => (
                     <span className="chip" key={key}>
                       {key}: {value}
                     </span>

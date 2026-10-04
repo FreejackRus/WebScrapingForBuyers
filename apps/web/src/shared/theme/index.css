@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..800&family=JetBrains+Mono:wght@500;700&display=swap");
 
 /* Tokens from Stitch DS PEREMENA Digital, assets/15671525545677379912 */
 :root {
@@ -1354,3 +1354,126 @@ button, [role="button"], summary, .source-chip, .example-chip, .search-history-i
 .offer-card-backdrop { transition: opacity 200ms var(--ease-out); @starting-style { opacity: 0; } }
 .offer-card-drawer { transition: transform 260ms var(--ease-drawer); @starting-style { transform: translateX(100%); } }
 @media (prefers-reduced-motion: reduce) { .offer-card-drawer { transition: none; } }
+
+/* ---- Premium pass (apple-design + emil-design-eng) ----
+   Materials: translucent chrome over scrolling content. Depth: layered soft shadows and
+   alpha hairlines instead of grey borders. Type: optical sizing, size-specific tracking and
+   leading, tabular figures. Restraint: one brand accent, deeper ink, quieter secondary text. */
+:root {
+  --ink: #0f1419;
+  --muted: #5f6b7a;
+  --canvas: #f5f6f8;
+  --hairline: rgba(15, 20, 25, 0.08);
+  --hairline-strong: rgba(15, 20, 25, 0.12);
+  --shadow-xs: 0 1px 2px rgba(15, 20, 25, 0.05);
+  --shadow-card: 0 0 0 1px var(--hairline), 0 1px 2px rgba(15, 20, 25, 0.04), 0 6px 16px -6px rgba(15, 20, 25, 0.08);
+  --shadow-lift: 0 0 0 1px var(--hairline), 0 2px 4px rgba(15, 20, 25, 0.04), 0 18px 40px -18px rgba(15, 20, 25, 0.22);
+  --ring: 0 0 0 4px rgba(37, 105, 237, 0.16);
+  --surface-tint: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
+}
+html { font-optical-sizing: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+body { line-height: 1.5; letter-spacing: -0.005em; }
+
+/* Type scale: tight leading and negative tracking as text grows, open tracking on small caps. */
+h1 { line-height: 1.1; letter-spacing: -0.035em; font-weight: 700; }
+h2 { line-height: 1.2; letter-spacing: -0.025em; font-weight: 650; }
+h3 { line-height: 1.3; letter-spacing: -0.015em; }
+.eyebrow { letter-spacing: 0.08em; font-weight: 650; }
+.command-lead, .product-summary p { color: var(--muted); }
+
+/* Depth: cards are lifted by shadow rings, not drawn with grey borders. */
+.login-card, .panel, .metric, .copilot, .chat-panel, .settings-card {
+  border-color: transparent; background: var(--surface-tint); box-shadow: var(--shadow-card);
+}
+.command.panel { box-shadow: var(--shadow-lift); }
+
+/* Material: translucent top bar, content scrolls underneath; the edge is a soft fade, not a line. */
+.topbar {
+  background: rgba(255, 255, 255, 0.72);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-bottom-color: var(--hairline);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 8px 24px -20px rgba(15, 20, 25, 0.25);
+}
+@media (prefers-reduced-transparency: reduce) {
+  .topbar { background: #fff; -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
+
+/* Primary actions: a physical highlight on top, a tinted contact shadow below. */
+.search > button, .login-card button, .export, .copilot form button, .offer-cta.primary {
+  background: linear-gradient(180deg, #3477f0 0%, var(--brand) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 1px 2px rgba(37, 105, 237, 0.35), 0 6px 14px -6px rgba(37, 105, 237, 0.45);
+}
+@media (hover: hover) and (pointer: fine) {
+  .search > button:hover:not(:disabled), .login-card button:hover:not(:disabled), .export:hover, .copilot form button:hover:not(:disabled), .offer-cta.primary:hover {
+    background: linear-gradient(180deg, #2b6de6 0%, var(--brand-dark) 100%);
+  }
+}
+.search > button:disabled { background: #a9c4f7; box-shadow: none; }
+
+/* Inputs and quiet controls share one hairline and one focus ring. */
+.search-field input, .offer-search input, input, textarea, select { border-color: var(--hairline-strong); }
+.ghost, .city, .source-picker > summary, .source-chip { border-color: var(--hairline-strong); }
+input:focus, textarea:focus, .search-field input:focus, .offer-search input:focus { box-shadow: var(--ring); }
+
+/* Numbers are compared, so they get tabular Inter figures instead of a monospace face. */
+.metric b, td.price b, .offer-card-price b {
+  font-family: Inter, system-ui, sans-serif; font-variant-numeric: tabular-nums; font-feature-settings: "tnum", "cv11";
+  letter-spacing: -0.03em; font-weight: 700;
+}
+.metric span { letter-spacing: 0.06em; text-transform: uppercase; font-size: 10.5px; }
+.metric.accent { background: linear-gradient(180deg, #eef4ff 0%, #ffffff 120%); box-shadow: 0 0 0 1px rgba(37, 105, 237, 0.18), 0 6px 16px -8px rgba(37, 105, 237, 0.25); }
+
+/* Offer table: quiet header, airy rows, the recommended row marked by a brand edge. */
+th { color: var(--muted); font-weight: 600; letter-spacing: 0.05em; border-bottom: 1px solid var(--hairline); }
+td { border-bottom-color: var(--hairline); }
+tr.recommended td:first-child { box-shadow: inset 3px 0 0 var(--brand); }
+.offer-best-badge { background: var(--success-soft); color: var(--success); font-weight: 650; letter-spacing: 0.01em; }
+@media (max-width: 900px) {
+  tbody tr { border-color: transparent; box-shadow: var(--shadow-card); }
+  tr.recommended { box-shadow: 0 0 0 1.5px var(--brand), 0 10px 24px -14px rgba(37, 105, 237, 0.45); }
+}
+
+/* Chips and history: one radius family, hairline outlines, brand only when selected. */
+.example-chip { border-style: solid; border-color: var(--hairline-strong); color: var(--ink); background: #fff; }
+.search-history-item { border-color: var(--hairline-strong); background: #fff; }
+.source-chip.is-on { box-shadow: 0 0 0 1px rgba(37, 105, 237, 0.25) inset; }
+
+@media (prefers-contrast: more) {
+  :root { --hairline: rgba(15, 20, 25, 0.35); --hairline-strong: rgba(15, 20, 25, 0.5); --muted: #3d4652; }
+  .topbar { background: #fff; -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
+
+/* ---- Motion pass (animate + find-animation-opportunities, Emil Kowalski) ----
+   Only transform/opacity, project curves, <= 300ms. Reduced motion keeps the fade, drops movement. */
+:root { --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1); }
+
+/* 1. Copilot messages: tens a day, so quiet. Prevents text from teleporting in. */
+.chat-bubble { transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out); @starting-style { opacity: 0; transform: translateY(6px); } }
+.chat-bubble.user { transition-duration: 140ms; }
+
+/* 2. Waiting for the model: state indication. Shown after 120ms so fast answers do not flash. */
+.chat-pending { transition: opacity 160ms var(--ease-out) 120ms; @starting-style { opacity: 0; } }
+.pending-dot { animation: pending-pulse 1.1s var(--ease-in-out) infinite; }
+@keyframes pending-pulse { 0%, 100% { opacity: 0.35; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1); } }
+
+/* 3. Offers arriving over SSE: opacity only (rows already push neighbours), only while collecting,
+   so paging, sorting and filtering stay instant. */
+.offers-panel[data-live] .offer-row { transition: opacity 180ms var(--ease-out); @starting-style { opacity: 0; } }
+
+/* 4. Summary appears once per search; metrics follow 40ms later. */
+.product-panel { transition: opacity 220ms var(--ease-out), transform 220ms var(--ease-out); @starting-style { opacity: 0; transform: translateY(8px); } }
+.product-panel .metrics { transition: opacity 220ms var(--ease-out) 40ms, transform 220ms var(--ease-out) 40ms; @starting-style { opacity: 0; transform: translateY(6px); } }
+
+/* 5. Drawer leaves the way it came in; exit is shorter than enter (260ms). */
+.offer-card-backdrop.is-closing { opacity: 0; transition: opacity 160ms var(--ease-out); }
+.offer-card-backdrop.is-closing .offer-card-drawer { transform: translateX(100%); transition: transform 200ms var(--ease-drawer); }
+
+@media (prefers-reduced-motion: reduce) {
+  .chat-bubble, .product-panel, .product-panel .metrics { @starting-style { transform: none; } }
+  .pending-dot { opacity: 0.7; }
+  .offer-card-backdrop.is-closing .offer-card-drawer { transform: none; }
+}
+
+/* Copilot badge: one line, it is a label, not a paragraph. */
+.model-badge { white-space: nowrap; font-size: 11px; flex-shrink: 0; }

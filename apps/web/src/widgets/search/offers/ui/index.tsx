@@ -55,7 +55,7 @@ export function OfferTable() {
   };
 
   return (
-    <section className="panel offers-panel" aria-labelledby="offers-title">
+    <section className="panel offers-panel" aria-labelledby="offers-title" data-live={running ? "" : undefined}>
       <div className="offers-toolbar">
         <div>
           <p className="eyebrow">Сравнение</p>

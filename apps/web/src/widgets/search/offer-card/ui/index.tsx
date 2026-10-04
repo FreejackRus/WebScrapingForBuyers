@@ -1,4 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+/** Mirrors the drawer exit transition in the theme (200ms --ease-drawer). */
+const CLOSE_MS = 200;
+
+function prefersReducedMotion(): boolean {
+  return typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches === true;
+}
 
 import { conditionLabels, matchLabels, PRICE_ANOMALY_HINT, PRICE_ANOMALY_LABEL } from "entities/offer";
 import { useOfferCard } from "features/search";
@@ -6,6 +13,26 @@ import { fetchedTime, money } from "shared/lib";
 
 export function OfferCard() {
   const { offer, closeOffer } = useOfferCard();
+  const [closing, setClosing] = useState(false);
+  const closeTimerRef = useRef<number | undefined>(undefined);
+
+  // The drawer leaves the way it came in. Escape is a keyboard action and closes instantly.
+  const requestClose = () => {
+    if (prefersReducedMotion()) {
+      closeOffer();
+      return;
+    }
+    setClosing(true);
+    window.clearTimeout(closeTimerRef.current);
+    closeTimerRef.current = window.setTimeout(closeOffer, CLOSE_MS);
+  };
+
+  useEffect(() => {
+    setClosing(false);
+    window.clearTimeout(closeTimerRef.current);
+  }, [offer?.id]);
+
+  useEffect(() => () => window.clearTimeout(closeTimerRef.current), []);
 
   useEffect(() => {
     if (!offer) return;
@@ -23,7 +50,7 @@ export function OfferCard() {
   if (!offer) return null;
 
   return (
-    <div className="offer-card-backdrop" onClick={closeOffer}>
+    <div className={`offer-card-backdrop${closing ? " is-closing" : ""}`} onClick={requestClose}>
       <aside
         className="offer-card-drawer"
         role="dialog"
@@ -36,7 +63,7 @@ export function OfferCard() {
             <p className="eyebrow">Внутренняя карточка</p>
             <h2 id="offer-card-title">{offer.title}</h2>
           </div>
-          <button type="button" className="ghost offer-card-close" onClick={closeOffer}>
+          <button type="button" className="ghost offer-card-close" onClick={requestClose}>
             Закрыть
           </button>
         </header>
