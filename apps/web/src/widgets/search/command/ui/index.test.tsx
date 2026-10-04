@@ -91,4 +91,13 @@ describe("SearchCommand", () => {
     expect(html).toContain("Wildberries");
     expect(html).toContain("Ozon");
   });
+
+  it("keeps the supplier picker compact: a one-line summary that expands on demand", () => {
+    const html = renderToStaticMarkup(<SearchCommand />);
+    expect(html).toContain("<details");
+    expect(html).toContain("Поставщики: 2 из 2");
+    state.selectedSources = ["Ozon"];
+    expect(renderToStaticMarkup(<SearchCommand />)).toContain("Поставщики: 1 из 2");
+    state.selectedSources = ["Wildberries", "Ozon"];
+  });
 });

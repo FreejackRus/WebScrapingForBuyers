@@ -1226,3 +1226,104 @@ body.offer-card-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+
+/* ---- Design pass 2026-10-04: calm precision ----
+   Search is the hero, supporting controls stay quiet, numbers use tabular figures. */
+:root {
+  --ring: 0 0 0 4px rgba(37, 105, 237, 0.14);
+  --radius-lg: 16px;
+  --shadow-lift: 0 12px 32px -14px rgba(24, 28, 36, 0.2), 0 2px 6px rgba(24, 28, 36, 0.05);
+}
+body { background: radial-gradient(1100px 340px at 50% -140px, var(--brand-soft), transparent 72%), var(--canvas); }
+.panel { border-radius: var(--radius-lg); }
+.command.panel { padding: 22px 24px 20px; box-shadow: var(--shadow-lift); }
+.command-copy h1 { font-size: clamp(1.35rem, 1.05rem + 1vw, 1.8rem); letter-spacing: -0.03em; text-wrap: balance; }
+.command-lead { text-wrap: pretty; }
+.search { grid-template-columns: minmax(0, 1fr) auto auto; gap: 10px; margin-top: 16px; }
+.search-field input {
+  height: 54px; padding: 0 48px 0 18px; border: 1px solid var(--line); border-radius: 14px;
+  background: #fff; box-shadow: var(--shadow-xs); font-size: 16px;
+  transition-property: border-color, box-shadow; transition-duration: 150ms; transition-timing-function: ease-out;
+}
+.search-field input::placeholder { color: #9aa3ae; }
+.search-field input:hover:not(:disabled) { border-color: var(--brand-200); }
+.search-field input:focus { outline: none; border-color: var(--brand); box-shadow: var(--ring); }
+.search-clear { height: 54px; }
+.search > button { min-height: 54px; border-radius: 14px; padding: 0 24px; font-size: 15px; letter-spacing: -0.01em; transition: background-color 150ms ease-out, transform 150ms ease-out; }
+.search > button:active:not(:disabled) { transform: scale(0.98); }
+.kbd { align-self: center; padding: 4px 8px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--muted); font-size: 11px; font-weight: 600; }
+
+.source-picker { margin: 12px 0 0; padding: 0; border: 0; background: transparent; }
+.source-picker > summary {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 36px; padding: 0 14px; list-style: none;
+  border: 1px solid var(--line); border-radius: 999px; background: #fff;
+  color: var(--ink); font-size: 13px; font-weight: 600; cursor: pointer; user-select: none;
+  transition-property: border-color, background-color; transition-duration: 150ms; transition-timing-function: ease-out;
+}
+.source-picker > summary::-webkit-details-marker { display: none; }
+.source-picker > summary:hover { border-color: var(--brand-200); background: var(--brand-50); }
+.source-picker > summary:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+.source-picker-chevron {
+  width: 7px; height: 7px; margin-top: -3px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted);
+  transform: rotate(45deg); transition: transform 150ms ease-out;
+}
+.source-picker[open] > summary .source-picker-chevron { margin-top: 3px; transform: rotate(-135deg); }
+.source-picker fieldset { min-width: 0; margin: 10px 0 0; padding: 14px; border: 1px solid var(--line); border-radius: 14px; background: #fff; box-shadow: var(--shadow-card); }
+.source-picker-actions { margin-bottom: 10px; }
+.source-chip { transition-property: background-color, border-color; transition-duration: 150ms; transition-timing-function: ease-out; }
+
+.metric { border-radius: 14px; }
+.metric b { font-variant-numeric: tabular-nums; }
+.metric.accent { background: linear-gradient(180deg, var(--brand-soft), #fff 130%); }
+.metric.accent b { font-size: 1.9rem; }
+@media (prefers-reduced-motion: reduce) {
+  .search-field input, .search > button, .source-picker > summary, .source-picker-chevron, .source-chip { transition: none; }
+  .search > button:active:not(:disabled) { transform: none; }
+}
+@media (max-width: 720px) {
+  .command.panel { padding: 16px 14px 14px; }
+  .search-field input, .search > button { height: 50px; min-height: 50px; }
+  .search-clear { height: 50px; }
+  .source-picker { padding: 0; }
+}
+
+/* Offers toolbar, history link and compact offer cards (design pass). */
+.search-history-head .linkish { color: var(--muted); font-size: 12px; font-weight: 500; }
+.search-history-head .linkish:hover { color: var(--brand); }
+.offers-toolbar { flex-wrap: wrap; align-items: flex-end; }
+.offers-toolbar h2 { text-wrap: balance; }
+.offers-toolbar-actions { flex: 1 1 280px; justify-content: flex-end; align-items: center; }
+.offer-search { flex: 1 1 220px; max-width: 360px; }
+.offer-search input {
+  width: 100%; height: 40px; padding: 0 12px; border: 1px solid var(--line); border-radius: 10px; background: #fff;
+  transition-property: border-color, box-shadow; transition-duration: 150ms; transition-timing-function: ease-out;
+}
+.offer-search input:hover { border-color: var(--brand-200); }
+.offer-search input:focus { outline: none; border-color: var(--brand); box-shadow: var(--ring); }
+td.price b { font-variant-numeric: tabular-nums; }
+@media (max-width: 900px) {
+  .mobile-sort select { border-radius: 10px; }
+  .offers-toolbar-actions { flex-basis: 100%; justify-content: stretch; }
+  .offer-search { max-width: none; }
+  tbody tr {
+    display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; column-gap: 12px; row-gap: 4px;
+    grid-template-areas: "src price" "title title" "match stock" "cond cond" "act act";
+    padding: 14px 16px; border-radius: 14px;
+  }
+  td { padding: 0; min-width: 0; }
+  td[data-label="Источник"] { grid-area: src; }
+  td.price { grid-area: price; text-align: right; white-space: nowrap; }
+  td.price b { font-size: 1.25rem; letter-spacing: -0.02em; }
+  td.price del { display: block; margin: 0; font-size: 12px; }
+  td[data-label="Товар"] { grid-area: title; margin: 6px 0 4px; }
+  td[data-label="Совпадение"] { grid-area: match; align-self: center; }
+  td[data-label^="Источник"]::before, td[data-label="Совпадение"]::before, td[data-label="Условия"]::before { display: none; }
+  .offer-match { display: flex; flex-direction: row; align-items: center; justify-content: flex-start; gap: 8px; text-align: left; }
+  td[data-label="Наличие"] { grid-area: stock; align-self: center; text-align: right; color: var(--muted); font-size: 12px; }
+  td[data-label="Условия"] { grid-area: cond; }
+  .offer-conditions { display: flex; flex-wrap: wrap; gap: 2px 10px; margin-top: 6px; padding: 8px 0 0; border-top: 1px solid var(--line); border-radius: 0; background: transparent; color: var(--muted); font-size: 12px; }
+  td.offer-action { grid-area: act; }
+  .offer-cta { min-height: 40px; margin-top: 8px; border-radius: 10px; }
+  tr.recommended { border: 1px solid var(--brand); box-shadow: 0 0 0 3px rgba(37, 105, 237, 0.12), var(--shadow-card); }
+}
+@media (prefers-reduced-motion: reduce) { .offer-search input { transition: none; } }

@@ -277,46 +277,52 @@ export function SearchCommand() {
         </div>
       )}
       {availableSources.length > 0 && (
-        <fieldset className="source-picker" disabled={activity === "search"}>
-          <legend>Поставщики для запроса</legend>
-          <div className="source-picker-actions">
-            <button
-              type="button"
-              className="linkish"
-              onClick={() => setSelectedSources(availableSources)}
-              disabled={selectedSources.length === availableSources.length}
-            >
-              Все
-            </button>
-            <button
-              type="button"
-              className="linkish"
-              onClick={() => setSelectedSources([])}
-              disabled={selectedSources.length === 0}
-            >
-              Снять
-            </button>
-          </div>
-          <div className="source-picker-list">
-            {availableSources.map((name) => {
-              const checked = selectedSources.includes(name);
-              return (
-                <label key={name} className={`source-chip${checked ? " is-on" : ""}`}>
-                  <input
-                    type="checkbox"
-                    checked={checked}
-                    onChange={() => {
-                      setSelectedSources(
-                        checked ? selectedSources.filter((item) => item !== name) : [...selectedSources, name],
-                      );
-                    }}
-                  />
-                  {name}
-                </label>
-              );
-            })}
-          </div>
-        </fieldset>
+        <details className="source-picker">
+          <summary>
+            <span>Поставщики: {selectedSources.length} из {availableSources.length}</span>
+            <span className="source-picker-chevron" aria-hidden="true" />
+          </summary>
+          <fieldset disabled={activity === "search"}>
+            <legend className="sr-only">Поставщики для запроса</legend>
+            <div className="source-picker-actions">
+              <button
+                type="button"
+                className="linkish"
+                onClick={() => setSelectedSources(availableSources)}
+                disabled={selectedSources.length === availableSources.length}
+              >
+                Все
+              </button>
+              <button
+                type="button"
+                className="linkish"
+                onClick={() => setSelectedSources([])}
+                disabled={selectedSources.length === 0}
+              >
+                Снять
+              </button>
+            </div>
+            <div className="source-picker-list">
+              {availableSources.map((name) => {
+                const checked = selectedSources.includes(name);
+                return (
+                  <label key={name} className={`source-chip${checked ? " is-on" : ""}`}>
+                    <input
+                      type="checkbox"
+                      checked={checked}
+                      onChange={() => {
+                        setSelectedSources(
+                          checked ? selectedSources.filter((item) => item !== name) : [...selectedSources, name],
+                        );
+                      }}
+                    />
+                    {name}
+                  </label>
+                );
+              })}
+            </div>
+          </fieldset>
+        </details>
       )}
     </section>
   );
