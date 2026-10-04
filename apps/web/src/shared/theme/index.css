@@ -1477,3 +1477,76 @@ tr.recommended td:first-child { box-shadow: inset 3px 0 0 var(--brand); }
 
 /* Copilot badge: one line, it is a label, not a paragraph. */
 .model-badge { white-space: nowrap; font-size: 11px; flex-shrink: 0; }
+
+/* ---- Brand pass: hybrid of the Price Radar DS and the ГК «Перемена» corporate palette ----
+   Blue #2569ED (the logo) is the colour of action. Corporate indigo gives depth: headings, the
+   product badge, the best-price metric, the copilot head. Coral is a rare accent and is used only
+   as a fill or an edge; text on it is the darker coral (4.8:1). Neutrals return to DS tokens. */
+:root {
+  --brand: #2569ed;
+  --brand-dark: #1d4fc4;
+  --ink: #181c24;
+  --muted: #6f7782;
+  --indigo-900: #21145f;
+  --indigo-800: #2c2067;
+  --indigo-700: #33286d;
+  --indigo-muted: #a9a3c9;
+  --coral: #ea6952;
+  --coral-text: #b8432e;
+  --coral-soft: #fdeeea;
+  --canvas: #f3f2f7;
+  --hairline: rgba(33, 20, 95, 0.08);
+  --hairline-strong: rgba(33, 20, 95, 0.13);
+  --shadow-card: 0 0 0 1px var(--hairline), 0 1px 2px rgba(33, 20, 95, 0.04), 0 6px 16px -6px rgba(33, 20, 95, 0.08);
+  --shadow-lift: 0 0 0 1px var(--hairline), 0 2px 4px rgba(33, 20, 95, 0.04), 0 18px 40px -18px rgba(33, 20, 95, 0.24);
+}
+body {
+  background:
+    radial-gradient(900px 320px at 12% -120px, rgba(37, 105, 237, 0.10), transparent 70%),
+    radial-gradient(900px 320px at 88% -140px, rgba(33, 20, 95, 0.08), transparent 70%),
+    var(--canvas);
+}
+
+/* Depth colour: headings and the product badge speak corporate indigo. */
+h1, h2, .command-copy h1, .product-summary h2, .copilot h2, .chat-panel h2 { color: var(--indigo-900); }
+.eyebrow { color: var(--indigo-700); opacity: 0.8; }
+.topbar .product-badge, .product-badge { background: var(--indigo-900); color: #fff; }
+
+/* Actions: brand blue only, no off-brand tints. */
+.search > button, .login-card button, .export, .copilot form button, .offer-cta.primary {
+  background: linear-gradient(180deg, var(--brand) 0%, var(--brand-dark) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(33, 20, 95, 0.25), 0 8px 18px -8px rgba(37, 105, 237, 0.55);
+}
+@media (hover: hover) and (pointer: fine) {
+  .search > button:hover:not(:disabled), .login-card button:hover:not(:disabled), .export:hover, .copilot form button:hover:not(:disabled), .offer-cta.primary:hover {
+    background: linear-gradient(180deg, var(--brand-dark) 0%, #173f9e 100%);
+  }
+}
+
+/* The best-price metric is the hero number: a deep indigo card. */
+.metric.accent {
+  background: radial-gradient(120% 140% at 100% 0%, var(--indigo-700) 0%, var(--indigo-900) 60%);
+  box-shadow: 0 0 0 1px rgba(33, 20, 95, 0.6), 0 14px 30px -14px rgba(33, 20, 95, 0.55);
+}
+.metric.accent span, .metric.accent small { color: var(--indigo-muted); }
+.metric.accent b { color: #fff; }
+
+/* Coral marks the recommended offer: a fill for the badge, an edge for the row. */
+.offer-best-badge { background: var(--coral-soft); color: var(--coral-text); }
+tr.recommended td:first-child { box-shadow: inset 3px 0 0 var(--coral); }
+@media (max-width: 900px) {
+  tr.recommended { box-shadow: 0 0 0 1.5px var(--coral), 0 10px 24px -14px rgba(234, 105, 82, 0.45); }
+}
+
+/* Copilot: the «закрытый контур» gets an indigo head band, the rest stays light and readable. */
+.copilot, .chat-panel { background: linear-gradient(180deg, rgba(33, 20, 95, 0.045) 0px, #fff 120px); }
+.model-badge { background: var(--indigo-900); color: #fff; border-color: transparent; }
+
+/* Selected states use brand blue tints; hairlines carry a hint of indigo. */
+.source-chip.is-on { background: var(--brand-soft); color: var(--brand-dark); }
+.search-history-item { border-color: var(--hairline-strong); }
+
+@media (prefers-contrast: more) {
+  .eyebrow { opacity: 1; }
+  .metric.accent { background: var(--indigo-900); }
+}
