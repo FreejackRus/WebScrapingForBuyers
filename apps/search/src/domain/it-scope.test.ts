@@ -81,4 +81,14 @@ describe("IT assortment scope", () => {
     const phrases = ["игрушки для кошек", "игрушки", "игрушка lego", "игровая мышь logitech", "ноутбук lenovo legion 5", "игровой монитор 144 гц"];
     expect(filterItSuggestions(phrases)).toEqual(["игровая мышь logitech", "ноутбук lenovo legion 5", "игровой монитор 144 гц"]);
   });
+
+  it("classifies by the head noun, so an equipment word in the tail does not admit a toy", () => {
+    for (const text of ["игрушки для детей на 3д принтере", "кофе для офиса с принтером", "игровое кресло для компьютера"]) {
+      expect(classifyQuery(productFromQuery(text))).not.toBe("ok");
+    }
+    expect(filterItSuggestions(["игрушки для детей на 3д принтере", "принтер для 3д печати", "ssd для ноутбука"])).toEqual(["принтер для 3д печати", "ssd для ноутбука"]);
+    expect(inferCategory("Подставка для ноутбука")).toBe("Аксессуары IT");
+    expect(inferCategory("Клавиатура для iPad Air")).toBe("Клавиатуры");
+    expect(inferCategory("лучший SSD для ноутбука")).toBe("SSD");
+  });
 });

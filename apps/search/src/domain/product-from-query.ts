@@ -86,14 +86,27 @@ function titleCaseWords(value: string): string {
     .join(" ");
 }
 
-export function inferCategory(text: string): string {
-  const hay = text.toLocaleLowerCase("ru");
+function matchCategory(hay: string, hints: typeof CATEGORY_HINTS): string | undefined {
   let best: { index: number; category: string } | undefined;
-  for (const hint of CATEGORY_HINTS) {
+  for (const hint of hints) {
     const index = hay.search(new RegExp(`(?<![a-zа-яё0-9])(?:${hint.pattern.source})`, "u"));
     if (index >= 0 && (!best || index < best.index)) best = { index, category: hint.category };
   }
-  return best?.category ?? "Каталог";
+  return best?.category;
+}
+
+const ACCESSORY_HINTS = CATEGORY_HINTS.filter((hint) => hint.category === "Аксессуары IT");
+
+/**
+ * The product type is the head noun: the text before the first preposition. "Игрушки для
+ * детей на 3д принтере" is a toy even though "принтер" appears later, while "SSD для
+ * ноутбука" is an SSD. Accessory phrases such as "подставка для ноутбука" are matched
+ * on the full text because their rule includes the preposition.
+ */
+export function inferCategory(text: string): string {
+  const hay = text.toLocaleLowerCase("ru");
+  const head = hay.split(/\s+(?:для|на|под|от|к|с|со|из|без|по|при)\s+/u)[0] ?? hay;
+  return matchCategory(head, CATEGORY_HINTS) ?? matchCategory(hay, ACCESSORY_HINTS) ?? "Каталог";
 }
 
 export function hasKnownBrand(text: string): boolean {
