@@ -77,6 +77,22 @@ describe("IT assortment scope", () => {
     expect(isOfferInItScope(productFromQuery("мышь Logitech G102"), offer("Logitech G102 Lightsync"))).toBe(true);
   });
 
+  it("requires product identity for an IT offer when the query names no IT category", () => {
+    const bareCode = productFromQuery("G102");
+    expect(isItOfferForProduct(bareCode, offer("Чехол для ноутбука"))).toBe(false);
+    expect(isItOfferForProduct(bareCode, offer("Мышь Logitech G102 Lightsync"))).toBe(true);
+  });
+
+  it("treats a bare 'switch' as network gear only next to network signals", () => {
+    expect(classifyQuery(productFromQuery("Nintendo Switch"))).not.toBe("ok");
+    expect(isItOfferForProduct(productFromQuery("коммутатор TP-Link"), offer("Игровая консоль Nintendo Switch OLED"))).toBe(false);
+    expect(classifyQuery(productFromQuery("switch 8 port gigabit"))).toBe("ok");
+    expect(classifyQuery(productFromQuery("управляемый switch PoE"))).toBe("ok");
+    expect(
+      isItOfferForProduct(productFromQuery("коммутатор TP-Link TL-SG108"), offer("Switch TP-Link TL-SG108 8 портов")),
+    ).toBe(true);
+  });
+
   it("filters live suggestions down to equipment", () => {
     const phrases = ["игрушки для кошек", "игрушки", "игрушка lego", "игровая мышь logitech", "ноутбук lenovo legion 5", "игровой монитор 144 гц"];
     expect(filterItSuggestions(phrases)).toEqual(["игровая мышь logitech", "ноутбук lenovo legion 5", "игровой монитор 144 гц"]);
@@ -90,5 +106,40 @@ describe("IT assortment scope", () => {
     expect(inferCategory("Подставка для ноутбука")).toBe("Аксессуары IT");
     expect(inferCategory("Клавиатура для iPad Air")).toBe("Клавиатуры");
     expect(inferCategory("лучший SSD для ноутбука")).toBe("SSD");
+  });
+
+  it("does not treat quantities or a non-IT head word plus a code as a model identifier", () => {
+    for (const text of ["Сахар 500г", "Крем SPF50", "Футболка 2XL", "Корм 5кг", "пазл 1000 деталей"]) {
+      expect(classifyQuery(productFromQuery(text))).not.toBe("ok");
+    }
+    expect(isItIdentifier("500gb")).toBe(false);
+    expect(classifyQuery(productFromQuery("G102"))).toBe("ok");
+    expect(classifyQuery(productFromQuery("Logitech G102 беспроводная"))).toBe("ok");
+  });
+
+  it("lets the specific product type win over modifiers and generic words", () => {
+    expect(inferCategory("Компьютерная мышь Logitech")).toBe("Мыши");
+    expect(inferCategory("Компьютерная клавиатура Defender")).toBe("Клавиатуры");
+    expect(inferCategory("ASUS ROG Strix Z790 Wi-Fi материнская плата")).toBe("Материнские платы");
+    expect(inferCategory("MSI Nitro видеокарта RTX 4060")).toBe("Видеокарты");
+    expect(inferCategory("Lenovo Legion Pro 5")).toBe("Ноутбуки");
+    expect(inferCategory("Wi-Fi роутер TP-Link")).toBe("Сеть");
+  });
+
+  it("matches rules that contain a preposition against the full text", () => {
+    expect(inferCategory("Корпус для ПК Zalman")).toBe("Корпуса ПК");
+    expect(inferCategory("Вентилятор для корпуса Arctic P12")).toBe("Охлаждение ПК");
+  });
+
+  it("accepts brands typed in Cyrillic and rejects household goods of IT brands in English", () => {
+    expect(classifyQuery(productFromQuery("самсунг галакси"))).toBe("ok");
+    expect(classifyQuery(productFromQuery("леново")) ).toBe("ok");
+    expect(classifyQuery(productFromQuery("Samsung vacuum cleaner"))).not.toBe("ok");
+    expect(classifyQuery(productFromQuery("Xiaomi robot vacuum"))).not.toBe("ok");
+  });
+
+  it("classifies by the product text, not by a category the client claims", () => {
+    const doll = { ...productFromQuery("Кукла Barbie"), category: "Ноутбуки" };
+    expect(classifyQuery(doll)).not.toBe("ok");
   });
 });

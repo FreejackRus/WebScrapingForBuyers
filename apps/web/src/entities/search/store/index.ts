@@ -102,16 +102,15 @@ export const useSearchStore = create<SearchState>((set, get) => ({
     try {
       await searchApi.removeHistory(id);
     } catch {
-      set({ history: previous });
+      void get().loadHistory();
     }
   },
   clearHistory: async () => {
-    const previous = get().history;
     set({ history: [] });
     try {
       await searchApi.clearHistory();
     } catch {
-      set({ history: previous });
+      void get().loadHistory();
     }
   },
   openOffer: (selectedOfferId) => set({ selectedOfferId }),

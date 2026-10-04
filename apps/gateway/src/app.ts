@@ -22,6 +22,10 @@ export function buildGatewayApp(options: { logger?: boolean; history?: SearchHis
   const search = serviceUrl("SEARCH_URL", "http://127.0.0.1:3003");
   const analysis = serviceUrl("ANALYSIS_URL", "http://127.0.0.1:3004");
   const users = new UserCache();
+  // Debounced history writes must not be lost on shutdown.
+  app.addHook("onClose", async () => {
+    await history.flush();
+  });
 
   app.addHook("preHandler", async (request, reply) => {
     const open =
@@ -79,7 +83,12 @@ export function buildGatewayApp(options: { logger?: boolean; history?: SearchHis
     if (reply.statusCode === 201 && result && typeof result === "object") {
       const snapshot = result as SearchSnapshot;
       if (request.currentUser) {
-        history.record(request.currentUser.id, { id: snapshot.id, query: snapshot.query, product: snapshot.product });
+        // The search is already running upstream; history must never turn that into an error.
+        try {
+          history.record(request.currentUser.id, { id: snapshot.id, query: snapshot.query, product: snapshot.product });
+        } catch (error) {
+          request.log.warn({ err: error }, "search history record failed");
+        }
       }
       return presentSnapshot(snapshot, request.currentUser);
     }

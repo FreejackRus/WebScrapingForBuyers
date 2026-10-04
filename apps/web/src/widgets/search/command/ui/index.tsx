@@ -29,6 +29,61 @@ function suggestSecondary(product: Product): string {
   return bits.join(" · ");
 }
 
+export function suggestOptionId(listId: string, index: number): string {
+  return `${listId}-opt-${index}`;
+}
+
+export function SuggestionList({
+  listId,
+  suggestions,
+  activeIndex,
+  suggesting,
+  disabled,
+  onHover,
+  onPick,
+}: {
+  listId: string;
+  suggestions: Product[];
+  activeIndex: number;
+  suggesting: boolean;
+  disabled: boolean;
+  onHover: (index: number) => void;
+  onPick: (product: Product) => void;
+}) {
+  return (
+    <ul id={listId} className="suggest-dropdown" role="listbox" aria-label="Подсказки">
+      <li className="suggest-meta" role="presentation">
+        <span>Подсказки</span>
+        <span className="suggest-live">{suggesting ? "…" : "LIVE"}</span>
+      </li>
+      {suggestions.map((product, index) => {
+        const secondary = suggestSecondary(product);
+        return (
+          <li
+            key={product.id}
+            id={suggestOptionId(listId, index)}
+            role="option"
+            aria-selected={index === activeIndex}
+          >
+            <button
+              type="button"
+              tabIndex={-1}
+              className={index === activeIndex ? "suggest-row is-active" : "suggest-row"}
+              onMouseEnter={() => onHover(index)}
+              onMouseDown={(event) => event.preventDefault()}
+              onClick={() => onPick(product)}
+              disabled={disabled}
+            >
+              <span className="suggest-primary">{product.name}</span>
+              {secondary ? <span className="suggest-secondary">{secondary}</span> : null}
+            </button>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
 export function SearchCommand() {
   const query = useSearchStore((state) => state.query);
   const suggestions = useSearchStore((state) => state.suggestions);
@@ -38,9 +93,13 @@ export function SearchCommand() {
   const suggest = useSearchStore((state) => state.suggest);
   const hintId = useId();
   const listId = useId();
+  const noSourcesId = useId();
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const debounceRef = useRef<number | undefined>(undefined);
+  // Bumped whenever the query changes or a product is committed, so a late suggest response is ignored.
+  const suggestTokenRef = useRef(0);
+  const blurTimerRef = useRef<number | undefined>(undefined);
   const suppressSuggestRef = useRef(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const shortcutLabel = typeof navigator !== "undefined" && /Mac|iPhone|iPad/.test(navigator.platform) ? "⌘K" : "Ctrl+K";
@@ -49,6 +108,9 @@ export function SearchCommand() {
   const selectedSources = useSearchStore((state) => state.selectedSources);
   const setSelectedSources = useSearchStore((state) => state.setSelectedSources);
   const loadSources = useSearchStore((state) => state.loadSources);
+
+  const noSources = selectedSources.length === 0;
+  const listOpen = open && suggestions.length > 0;
 
   const history = useSearchStore((state) => state.history);
   const loadHistory = useSearchStore((state) => state.loadHistory);
@@ -72,8 +134,10 @@ export function SearchCommand() {
       setOpen(false);
       return;
     }
+    const token = ++suggestTokenRef.current;
     debounceRef.current = window.setTimeout(() => {
       void suggest({ quiet: true }).then(() => {
+        if (token !== suggestTokenRef.current) return;
         if (suppressSuggestRef.current) {
           setOpen(false);
           return;
@@ -82,11 +146,17 @@ export function SearchCommand() {
         setActiveIndex(0);
       });
     }, 250);
-    return () => window.clearTimeout(debounceRef.current);
+    return () => {
+      window.clearTimeout(debounceRef.current);
+      suggestTokenRef.current += 1;
+    };
   }, [query, activity, suggest]);
+
+  useEffect(() => () => window.clearTimeout(blurTimerRef.current), []);
 
   const commitProduct = (product: Product) => {
     suppressSuggestRef.current = true;
+    suggestTokenRef.current += 1;
     window.clearTimeout(debounceRef.current);
     setOpen(false);
     setQuery(product.name);
@@ -148,6 +218,7 @@ export function SearchCommand() {
               setQuery(event.target.value);
             }}
             onFocus={() => {
+              window.clearTimeout(blurTimerRef.current);
               if (
                 !suppressSuggestRef.current &&
                 suggestions.length > 0 &&
@@ -157,16 +228,20 @@ export function SearchCommand() {
               }
             }}
             onBlur={() => {
-              window.setTimeout(() => setOpen(false), 120);
+              window.clearTimeout(blurTimerRef.current);
+              blurTimerRef.current = window.setTimeout(() => setOpen(false), 120);
             }}
             onKeyDown={onKeyDown}
             placeholder="Например: мышь Logitech G102 или SSD Kingston NV2"
             minLength={2}
             required
+            role="combobox"
             aria-describedby={hintId}
             aria-autocomplete="list"
-            aria-controls={listId}
-            aria-expanded={open && suggestions.length > 0}
+            aria-haspopup="listbox"
+            aria-controls={listOpen ? listId : undefined}
+            aria-expanded={listOpen}
+            aria-activedescendant={listOpen ? suggestOptionId(listId, activeIndex) : undefined}
             autoComplete="off"
             disabled={activity === "search"}
           />
@@ -186,31 +261,16 @@ export function SearchCommand() {
               <span aria-hidden="true">×</span>
             </button>
           )}
-          {open && suggestions.length > 0 && (
-            <ul id={listId} className="suggest-dropdown" role="listbox">
-              <li className="suggest-meta" role="presentation">
-                <span>Подсказки</span>
-                <span className="suggest-live">{suggesting ? "…" : "LIVE"}</span>
-              </li>
-              {suggestions.map((product, index) => {
-                const secondary = suggestSecondary(product);
-                return (
-                  <li key={product.id} role="option" aria-selected={index === activeIndex}>
-                    <button
-                      type="button"
-                      className={index === activeIndex ? "suggest-row is-active" : "suggest-row"}
-                      onMouseEnter={() => setActiveIndex(index)}
-                      onMouseDown={(event) => event.preventDefault()}
-                      onClick={() => commitProduct(product)}
-                      disabled={activity === "search"}
-                    >
-                      <span className="suggest-primary">{product.name}</span>
-                      {secondary ? <span className="suggest-secondary">{secondary}</span> : null}
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
+          {listOpen && (
+            <SuggestionList
+              listId={listId}
+              suggestions={suggestions}
+              activeIndex={activeIndex}
+              suggesting={suggesting}
+              disabled={activity === "search"}
+              onHover={setActiveIndex}
+              onPick={commitProduct}
+            />
           )}
           {open && suggestions.length === 0 && !suggesting && (
             <p className="suggest-empty" role="status">
@@ -218,10 +278,17 @@ export function SearchCommand() {
             </p>
           )}
         </div>
-        <span id={hintId} className="kbd">
+        <span id={hintId} className="sr-only">
+          Сочетание клавиш Ctrl+K (⌘K на Mac) фокусирует поиск
+        </span>
+        <span className="kbd" aria-hidden="true">
           {shortcutLabel}
         </span>
-        <button disabled={activity === "search" || query.trim().length < 2 || selectedSources.length === 0}>
+        <button
+          type="submit"
+          aria-describedby={noSources ? noSourcesId : undefined}
+          disabled={activity === "search" || query.trim().length < 2 || noSources}
+        >
           {activity === "search" ? "Ищем…" : "Найти"}
         </button>
       </form>
@@ -277,7 +344,7 @@ export function SearchCommand() {
         </div>
       )}
       {availableSources.length > 0 && (
-        <details className="source-picker">
+        <details className="source-picker" open={noSources || undefined}>
           <summary>
             <span>Поставщики: {selectedSources.length} из {availableSources.length}</span>
             <span className="source-picker-chevron" aria-hidden="true" />
@@ -322,6 +389,11 @@ export function SearchCommand() {
               })}
             </div>
           </fieldset>
+          {noSources && (
+            <p id={noSourcesId} className="source-picker-hint" role="status">
+              Выберите хотя бы одного поставщика
+            </p>
+          )}
         </details>
       )}
     </section>

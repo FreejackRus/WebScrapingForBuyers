@@ -118,7 +118,9 @@ export class SearchService {
               msg: "source_collect",
               searchId: id,
               source: source.name,
+              found: found.length,
               offers: offers.length,
+              droppedByItScope: found.length - offers.length,
             }),
           );
           this.emit(id, { type: "offers", data: structuredClone(offers) });

@@ -32,43 +32,81 @@ const KNOWN_BRANDS = [
   "zte",
   "tp-link",
   "ubiquiti",
+  "самсунг",
+  "леново",
+  "асус",
+  "асер",
+  "эйсер",
+  "хуавей",
+  "ксиаоми",
+  "сяоми",
+  "эппл",
+  "делл",
+  "кингстон",
+  "интел",
+  "логитеч",
 ];
 
 /**
- * Category rules. The rule whose keyword appears FIRST in the text wins, so
- * "SSD для ноутбука" is an SSD and "Ноутбук ... SSD" is a laptop. Keywords match
- * from a word start only ("ups" must not hit "groups"). On equal positions the
- * earlier rule wins.
+ * Category rules. The product type is the head noun (text before the first preposition) and,
+ * within it, the rule whose keyword appears FIRST wins: "SSD для ноутбука" is an SSD, "Ноутбук … SSD"
+ * a laptop. Keywords match from a word start; short Latin tokens also need a word end ("ups" must not
+ * hit "upstream"). Weak rules are modifiers or series names (Wi-Fi, Legion, "компьютер") and only
+ * decide when no specific product type is present.
  */
-const CATEGORY_HINTS: Array<{ pattern: RegExp; category: string }> = [
+interface CategoryHint {
+  pattern: RegExp;
+  category: string;
+  weak?: true;
+}
+
+const CATEGORY_HINTS: CategoryHint[] = [
   { pattern: /чех(?:ол|л)|коврик|защитн[а-яё]* (?:стекло|плёнк|пленк)|подставк[а-яё]* для (?:ноутбук|телефон|планшет)|сумк[а-яё]* для ноутбук|рюкзак для ноутбук/u, category: "Аксессуары IT" },
-  { pattern: /кабел|displayport|hdmi|переходник|адаптер|type-c|usb-c|патч-корд|patch ?cord/u, category: "Кабели и адаптеры" },
+  { pattern: /кабел|displayport|hdmi(?![a-z])|переходник|адаптер|type-c|usb-c|патч-корд|patch ?cord/u, category: "Кабели и адаптеры" },
   { pattern: /графическ[а-яё]* планшет|graphics tablet|wacom|xp-?pen/u, category: "Графические планшеты" },
   { pattern: /клавиатур|keyboard/u, category: "Клавиатуры" },
   { pattern: /мышь|мыши|мышк|mouse/u, category: "Мыши" },
-  { pattern: /ssd|nvme|накопител/u, category: "SSD" },
-  { pattern: /жестк[а-яё]* диск|жёстк[а-яё]* диск|hdd/u, category: "Жёсткие диски" },
-  { pattern: /оперативн|ddr[2-5]|dimm|sodimm|модул[а-яё]* памяти|ram/u, category: "ОЗУ" },
-  { pattern: /видеокарт|geforce|radeon|rtx ?\d|gpu/u, category: "Видеокарты" },
-  { pattern: /процессор|cpu|ryzen|core i[3579]|xeon/u, category: "Процессоры" },
+  { pattern: /ssd(?![a-z])|nvme|накопител/u, category: "SSD" },
+  { pattern: /жестк[а-яё]* диск|жёстк[а-яё]* диск|hdd(?![a-z0-9])/u, category: "Жёсткие диски" },
+  { pattern: /оперативн|ddr[2-5]|s?o?dimm(?![a-z])|модул[а-яё]* памяти|ram(?![a-z0-9])/u, category: "ОЗУ" },
+  { pattern: /видеокарт|geforce|radeon|rtx ?\d|gpu(?![a-z0-9])/u, category: "Видеокарты" },
+  { pattern: /процессор|cpu(?![a-z0-9])|ryzen|core i[3579]|xeon/u, category: "Процессоры" },
   { pattern: /материнск|motherboard/u, category: "Материнские платы" },
-  { pattern: /блок[а-яё]* питания|psu/u, category: "Блоки питания" },
-  { pattern: /корпус[а-яё]* (?:для )?(?:пк|компьютер)|pc case|midi tower/u, category: "Корпуса ПК" },
-  { pattern: /кулер|охлажден|водян[а-яё]* охлажд|вентилятор для (?:пк|корпус)/u, category: "Охлаждение ПК" },
-  { pattern: /сервер|poweredge|proliant|thinksystem|rack|стоечн/u, category: "Серверы" },
-  { pattern: /ибп|ups|источник бесперебойн/u, category: "ИБП" },
-  { pattern: /принтер|мфу|сканер|scanner|картридж|тонер/u, category: "Печать" },
-  { pattern: /коммутатор|switch|маршрутиз|router|роутер|wi-?fi|точк[а-яё]* доступа|access point|nas|mikrotik|ubiquiti|tp-link/u, category: "Сеть" },
-  { pattern: /док-станц|docking|dock/u, category: "Док-станции" },
+  { pattern: /блок[а-яё]* питания|psu(?![a-z0-9])/u, category: "Блоки питания" },
+  { pattern: /корпус[а-яё]* (?:для )?(?:пк|компьютер)|pc case|midi tower/u, category: "Корпуса ПК" },
+  { pattern: /кулер|охлажден|вентилятор[а-яё]* для (?:пк|корпус)/u, category: "Охлаждение ПК" },
+  { pattern: /сервер|poweredge|proliant|thinksystem|rack(?![a-z])|стоечн/u, category: "Серверы" },
+  { pattern: /ибп(?![а-яё])|ups(?![a-z0-9])|источник[а-яё]* бесперебойн/u, category: "ИБП" },
+  { pattern: /принтер|мфу(?![а-яё])|сканер|scanner|картридж|тонер/u, category: "Печать" },
+  { pattern: /коммутатор|switch(?![a-z])|маршрутиз|router|роутер|точк[а-яё]* доступа|access point|nas(?![a-z0-9])|mikrotik|ubiquiti|tp-link/u, category: "Сеть" },
+  { pattern: /wi-?fi(?![a-z])/u, category: "Сеть", weak: true },
+  { pattern: /док-станц|docking|dock(?![a-z])/u, category: "Док-станции" },
   { pattern: /наушник|гарнитур|headset|headphone/u, category: "Гарнитуры" },
   { pattern: /веб-?камер|webcam|камер[а-яё]* для (?:пк|компьютер)/u, category: "Веб-камеры" },
   { pattern: /проектор|projector/u, category: "Проекторы" },
   { pattern: /монитор|monitor/u, category: "Мониторы" },
-  { pattern: /ноутбук|laptop|notebook|macbook|legion|thinkpad|ideapad|latitude|inspiron|vivobook|zenbook|nitro|omen|predator/u, category: "Ноутбуки" },
-  { pattern: /планшет|ipad|galaxy tab|matepad|mi pad|redmi pad|tablet/u, category: "Планшеты" },
-  { pattern: /смартфон|телефон|iphone|galaxy [sazm]\d|pixel \d|redmi|poco|honor|realme/u, category: "Смартфоны" },
-  { pattern: /системн[а-яё]* блок|десктоп|настольн[а-яё]* (?:пк|компьютер)|мини-?пк|моноблок|компьютер|mac mini|nuc/u, category: "Компьютеры" },
+  { pattern: /ноутбук|laptop|notebook|macbook|thinkpad|ideapad|latitude|inspiron|vivobook|zenbook/u, category: "Ноутбуки" },
+  { pattern: /legion|nitro|omen(?![a-z])|predator/u, category: "Ноутбуки", weak: true },
+  { pattern: /планшет|ipad(?![a-z])|galaxy tab|matepad|mi pad|redmi pad|tablet/u, category: "Планшеты" },
+  { pattern: /смартфон|телефон|iphone|galaxy [sazm]\d|галакси|pixel \d|redmi|poco(?![a-z])|honor(?![a-z])|realme/u, category: "Смартфоны" },
+  { pattern: /системн[а-яё]* блок|десктоп|настольн[а-яё]* (?:пк|компьютер)|мини-?пк|моноблок|mac mini|nuc(?![a-z0-9])/u, category: "Компьютеры" },
+  { pattern: /компьютер(?!н)/u, category: "Компьютеры", weak: true },
 ];
+
+interface CompiledHint {
+  re: RegExp;
+  category: string;
+  weak: boolean;
+  /** Rules that spell out a preposition ("корпус для ПК") can only match the full text. */
+  fullText: boolean;
+}
+
+const COMPILED_HINTS: CompiledHint[] = CATEGORY_HINTS.map((hint) => ({
+  re: new RegExp(`(?<![a-zа-яё0-9])(?:${hint.pattern.source})`, "u"),
+  category: hint.category,
+  weak: hint.weak === true,
+  fullText: /\bдля\b|для /u.test(hint.pattern.source) || hint.category === "Аксессуары IT",
+}));
 
 function collapseWs(value: string): string {
   return value.replace(/\s+/g, " ").trim();
@@ -86,32 +124,72 @@ function titleCaseWords(value: string): string {
     .join(" ");
 }
 
-function matchCategory(hay: string, hints: typeof CATEGORY_HINTS): string | undefined {
+function matchCategory(hay: string, hints: CompiledHint[]): string | undefined {
   let best: { index: number; category: string } | undefined;
   for (const hint of hints) {
-    const index = hay.search(new RegExp(`(?<![a-zа-яё0-9])(?:${hint.pattern.source})`, "u"));
+    const index = hay.search(hint.re);
     if (index >= 0 && (!best || index < best.index)) best = { index, category: hint.category };
   }
   return best?.category;
 }
 
-const ACCESSORY_HINTS = CATEGORY_HINTS.filter((hint) => hint.category === "Аксессуары IT");
+const STRONG_HINTS = COMPILED_HINTS.filter((hint) => !hint.weak);
+const WEAK_HINTS = COMPILED_HINTS.filter((hint) => hint.weak);
+const FULL_TEXT_HINTS = STRONG_HINTS.filter((hint) => hint.fullText);
+const PREPOSITION_SPLIT = /\s+(?:для|на|под|от|к|с|со|из|без|по|при)\s+/u;
+
+/** Search classifies the same product name for every offer, so results are remembered. */
+const categoryCache = new Map<string, string>();
+const CATEGORY_CACHE_LIMIT = 2000;
 
 /**
  * The product type is the head noun: the text before the first preposition. "Игрушки для
  * детей на 3д принтере" is a toy even though "принтер" appears later, while "SSD для
- * ноутбука" is an SSD. Accessory phrases such as "подставка для ноутбука" are matched
- * on the full text because their rule includes the preposition.
+ * ноутбука" is an SSD. Rules that contain a preposition are matched on the full text.
  */
+function categorize(hay: string): string {
+  const head = hay.split(PREPOSITION_SPLIT)[0] ?? hay;
+  return (
+    matchCategory(head, STRONG_HINTS) ??
+    matchCategory(hay, FULL_TEXT_HINTS) ??
+    matchCategory(head, WEAK_HINTS) ??
+    "Каталог"
+  );
+}
+
+/**
+ * "Switch" is ambiguous (game consoles, light switches, KVM). Instead of listing what else it can
+ * be, it counts as network gear only when the rest of the text still points to networking.
+ */
+const AMBIGUOUS_SWITCH = /switch(?![a-z])/gu;
+const NETWORK_SIGNALS = /(?<![a-z])(?:ports?|lan|poe\+?|sfp\+?|rj-?45|ethernet|gigabit|managed|unmanaged|l2|l3)(?![a-z])|порт|гигабит|управляем|сетев|\d+\s*(?:x\s*)?(?:gbe|gbps|mbps)(?![a-z])/u;
+
 export function inferCategory(text: string): string {
   const hay = text.toLocaleLowerCase("ru");
-  const head = hay.split(/\s+(?:для|на|под|от|к|с|со|из|без|по|при)\s+/u)[0] ?? hay;
-  return matchCategory(head, CATEGORY_HINTS) ?? matchCategory(hay, ACCESSORY_HINTS) ?? "Каталог";
+  const cached = categoryCache.get(hay);
+  if (cached) return cached;
+  let category = categorize(hay);
+  if (category === "Сеть" && hay.search(AMBIGUOUS_SWITCH) >= 0) {
+    const rest = hay.replace(AMBIGUOUS_SWITCH, " ").replace(/\s+/gu, " ").trim();
+    const withoutSwitch = categorize(rest);
+    category = withoutSwitch === "Сеть" || NETWORK_SIGNALS.test(rest) ? "Сеть" : withoutSwitch;
+  }
+  if (categoryCache.size >= CATEGORY_CACHE_LIMIT) categoryCache.clear();
+  categoryCache.set(hay, category);
+  return category;
+}
+
+function textTokens(text: string): string[] {
+  return text.toLocaleLowerCase("ru").match(/[a-zа-яё0-9-]+/giu) ?? [];
 }
 
 export function hasKnownBrand(text: string): boolean {
-  const tokens = text.toLocaleLowerCase("ru").match(/[a-zа-яё0-9-]+/giu) ?? [];
-  return tokens.some((token) => KNOWN_BRANDS.includes(token));
+  return textTokens(text).some((token) => KNOWN_BRANDS.includes(token));
+}
+
+/** The words of a query without brand names, Latin or Cyrillic ("самсунг", "логитек"). */
+export function withoutKnownBrands(text: string): string[] {
+  return textTokens(text).filter((token) => !KNOWN_BRANDS.includes(token));
 }
 
 export function extractMpn(text: string): string {

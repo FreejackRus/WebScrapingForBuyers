@@ -3,7 +3,7 @@ import type { FastifyPluginAsync } from "fastify";
 import { exportSearch } from "../application/export-service.js";
 import type { SearchService } from "../application/search-service.js";
 import { findProduct } from "../domain/catalog.js";
-import { classifyQuery } from "../domain/it-scope.js";
+import { classifyQuery, isExplicitlyNonIt } from "../domain/it-scope.js";
 import { isProductPayload, productFromQuery } from "../domain/product-from-query.js";
 import { suggestLiveProducts } from "../infrastructure/suggest/live-suggest.js";
 
@@ -55,7 +55,8 @@ export const searchRoutes: FastifyPluginAsync<{
         (request.body.productId ? findProduct(request.body.productId) : undefined) ??
         (await suggestLiveProducts(request.body.query, 1))[0] ??
         productFromQuery(request.body.query, "query");
-      if (classifyQuery(product) !== "ok") {
+      // The typed query is what lands in the history, so it is judged as well as the chosen product.
+      if (classifyQuery(product) !== "ok" || isExplicitlyNonIt(request.body.query)) {
         return reply.code(422).send({
           error: "Price Radar ищет только IT-оборудование и комплектующие. Уточните запрос: тип устройства, бренд или артикул.",
         });

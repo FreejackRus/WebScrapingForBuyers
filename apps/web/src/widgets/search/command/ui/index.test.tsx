@@ -23,13 +23,14 @@ vi.mock("entities/search", () => ({
 }));
 vi.mock("features/search", () => ({ startSearch: vi.fn() }));
 
-import { SearchCommand } from "./index";
+import { SearchCommand, SuggestionList } from "./index";
 
 describe("SearchCommand", () => {
   beforeEach(() => {
     state.query = "";
     state.activity = "idle";
     state.history = [];
+    state.selectedSources = ["Wildberries", "Ozon"];
   });
 
   it("shows the keyboard shortcut without an unnecessary clear button", () => {
@@ -99,5 +100,60 @@ describe("SearchCommand", () => {
     state.selectedSources = ["Ozon"];
     expect(renderToStaticMarkup(<SearchCommand />)).toContain("Поставщики: 1 из 2");
     state.selectedSources = ["Wildberries", "Ozon"];
+  });
+
+  it("exposes the field as a combobox that is collapsed while no suggestions are shown", () => {
+    const html = renderToStaticMarkup(<SearchCommand />);
+    expect(html).toContain('role="combobox"');
+    expect(html).toContain('aria-expanded="false"');
+    expect(html).not.toContain("aria-controls");
+    expect(html).not.toContain("aria-activedescendant");
+  });
+
+  it("gives every suggestion a stable option id and keeps its inner button out of the tab order", () => {
+    const products = [
+      { id: "a", name: "Мышь A", brand: "Logitech", category: "Мыши", mpn: "", model: "A", characteristics: {} },
+      { id: "b", name: "Мышь B", brand: "Logitech", category: "Мыши", mpn: "", model: "B", characteristics: {} },
+    ] as never[];
+    const html = renderToStaticMarkup(
+      <SuggestionList
+        listId="L"
+        suggestions={products}
+        activeIndex={1}
+        suggesting={false}
+        disabled={false}
+        onHover={() => undefined}
+        onPick={() => undefined}
+      />,
+    );
+    expect(html).toContain('id="L"');
+    expect(html).toContain('id="L-opt-0"');
+    expect(html).toContain('id="L-opt-1"');
+    expect(html).toContain('role="option"');
+    expect(html).toContain('tabindex="-1"');
+  });
+
+  it("explains a disabled search when no supplier is selected and opens the supplier picker", () => {
+    state.selectedSources = [];
+    state.query = "Logitech MX Master 3S";
+    const html = renderToStaticMarkup(<SearchCommand />);
+    expect(html).toContain("Выберите хотя бы одного поставщика");
+    expect(html).toContain('role="status"');
+    expect(html).toMatch(/<details[^>]*\sopen=""/);
+    const id = /id="([^"]+)"[^>]*>Выберите хотя бы одного поставщика/.exec(html)?.[1];
+    expect(id).toBeTruthy();
+    expect(html).toContain(`aria-describedby="${id}"`);
+    expect(html).toContain('type="submit"');
+    state.selectedSources = ["Wildberries", "Ozon"];
+    state.query = "";
+    const ok = renderToStaticMarkup(<SearchCommand />);
+    expect(ok).not.toContain("Выберите хотя бы одного поставщика");
+    expect(ok).not.toMatch(/<details[^>]*\sopen=""/);
+  });
+
+  it("describes the Ctrl+K shortcut for assistive tech and hides the visible badge", () => {
+    const html = renderToStaticMarkup(<SearchCommand />);
+    expect(html).toContain("Сочетание клавиш Ctrl+K (⌘K на Mac) фокусирует поиск");
+    expect(html).toMatch(/<span[^>]*aria-hidden="true"[^>]*>Ctrl\+K<\/span>/);
   });
 });

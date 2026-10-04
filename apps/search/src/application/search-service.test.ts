@@ -1,5 +1,5 @@
 import type { Offer, Product } from "@peremena/contracts";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import type { SourceAdapter } from "../domain/source-adapter.js";
 import { SearchService } from "./search-service.js";
@@ -101,6 +101,24 @@ describe("SearchService last-good fallback", () => {
     const snap = service.start("q", product);
     await finish(service, snap.id);
     expect((service as unknown as { lastGoodReal: Map<string, Offer[]> }).lastGoodReal.size).toBe(2);
+  });
+});
+
+describe("SearchService IT scope logging", () => {
+  it("logs how many source offers the IT filter dropped", async () => {
+    const accessory = { ...offer("A", 500), id: "A-case", title: "Чехол для ноутбука" };
+    const service = new SearchService([source("A", async () => [offer("A"), accessory])]);
+    const spy = vi.spyOn(console, "info").mockImplementation(() => undefined);
+    try {
+      const snap = service.start("q", product);
+      await finish(service, snap.id);
+      const line = spy.mock.calls
+        .map((call) => JSON.parse(String(call[0])) as Record<string, unknown>)
+        .find((entry) => entry.msg === "source_collect");
+      expect(line).toMatchObject({ source: "A", found: 2, offers: 1, droppedByItScope: 1 });
+    } finally {
+      spy.mockRestore();
+    }
   });
 });
 

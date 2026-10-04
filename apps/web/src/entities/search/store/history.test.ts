@@ -56,4 +56,20 @@ describe("search history", () => {
     await useSearchStore.getState().start(entry("s1", "ssd nv2").product);
     await vi.waitFor(() => expect(useSearchStore.getState().history).toHaveLength(1));
   });
+
+  it("resynchronizes on cascading errors instead of restoring stale snapshots", async () => {
+    useSearchStore.setState({ history: [entry("1", "a1"), entry("2", "b2")] });
+    api.removeHistory.mockRejectedValue(new Error("network error"));
+    // Simulate server still has both after first failed removal attempt
+    api.history.mockResolvedValue({ history: [entry("1", "a1"), entry("2", "b2")] });
+
+    // First removal fails: optimistically set to [b2], then error calls loadHistory
+    await useSearchStore.getState().removeHistoryEntry("1");
+    expect(useSearchStore.getState().history).toEqual([entry("1", "a1"), entry("2", "b2")]);
+
+    // Second removal also fails: should resync via loadHistory, not restore old snapshot
+    // This prevents the ghost resurrection of already-attempted-deletion items
+    await useSearchStore.getState().removeHistoryEntry("2");
+    expect(useSearchStore.getState().history).toEqual([entry("1", "a1"), entry("2", "b2")]);
+  });
 });

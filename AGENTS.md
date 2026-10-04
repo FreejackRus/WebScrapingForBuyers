@@ -17,7 +17,8 @@ When the user types `/graphify`, use the installed Graphify skill or instruction
 
 0. **Сначала окружение, потом работа.** Любой skill, MCP-сервер или плагин, который нужен задаче, должен быть **настроен и реально работать до первой правки кода**. Если инструмент не отвечает, не активирован, без языкового сервера, без авторизации или установлен частично, сначала чиним его (или честно сообщаем пользователю, что без него нельзя), и только потом приступаем к задаче. Нельзя «обойтись без него» молча. Проверка: `bash scripts/check-env.sh`.
    Известные особенности Windows-окружения:
-   - Serena: `activate_project` → `get_symbols_overview` на `.ts` должен вернуть символы; для этого в `.serena/project.yml` в `language_servers` стоит `typescript`.
+   - Serena: `activate_project` → `get_symbols_overview` на `.ts` должен вернуть символы; для этого в `.serena/project.yml` в `language_servers` стоит `typescript`. Рабочий сервер — `serena-local`; копия `plugin:serena:serena` из плагина может не стартовать (таймаут), это не значит, что Serena недоступна. Дашборд рабочего экземпляра — `http://127.0.0.1:24283/dashboard/` (порт может сдвинуться, ищите экземпляр с активным проектом WebScrapingForBuyers).
+   - Context7 подключён как коннектор claude.ai (`resolve-library-id`, `query-docs`).
    - Graphify: если `graphify` из `~/.local/bin` не стартует (кириллица в пути профиля), запускать через `python -m graphify <команда>` из `uv tool` (`%APPDATA%\uv\tools\graphifyy\Scripts\python.exe`).
    - Проектные skills в `.claude/skills/` — симлинки на `.agents/skills`; нужен `git config core.symlinks true` и пересоздание (`git checkout -- .claude/skills`), иначе это текстовые заглушки и skills не загружаются.
 

@@ -5,7 +5,8 @@ export const request = async <T>(url: string, init?: RequestInit): Promise<T> =>
     ...init,
     credentials: "include",
     // Fastify rejects an empty body that claims to be JSON (DELETE), so only label real bodies.
-    headers: { ...(init?.body ? { "Content-Type": "application/json" } : {}), ...init?.headers },
+    // FormData should not receive JSON header; it will set its own Content-Type boundary.
+    headers: { ...(typeof init?.body === "string" ? { "Content-Type": "application/json" } : {}), ...init?.headers },
   });
   if (!response.ok) {
     const payload = (await response.json().catch(() => ({}))) as { error?: string };
