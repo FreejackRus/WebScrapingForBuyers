@@ -54,6 +54,16 @@ describe("SearchCommand", () => {
     state.suggesting = false;
   });
 
+  it("states the equipment scope and offers example queries while the field is empty", () => {
+    const html = renderToStaticMarkup(<SearchCommand />);
+    expect(html).toContain("IT-оборудование и комплектующие");
+    expect(html).toContain('role="group"');
+    expect(html).toContain("Мышь Logitech G102");
+    state.query = "Logitech";
+    expect(renderToStaticMarkup(<SearchCommand />)).not.toContain("Мышь Logitech G102");
+    state.query = "";
+  });
+
   it("lets the buyer pick sources for the request", () => {
     const html = renderToStaticMarkup(<SearchCommand />);
     expect(html).toContain("Поставщики для запроса");

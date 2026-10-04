@@ -1,0 +1,84 @@
+import type { Offer } from "@peremena/contracts";
+import { describe, expect, it } from "vitest";
+
+import {
+  classifyQuery,
+  filterItSuggestions,
+  isExplicitlyNonIt,
+  isItIdentifier,
+  isItOfferForProduct,
+  isItProduct,
+  isOfferInItScope,
+} from "./it-scope.js";
+import { inferCategory, productFromQuery } from "./product-from-query.js";
+
+function offer(title: string): Offer {
+  return {
+    id: title,
+    source: "TEST",
+    seller: "TEST",
+    title,
+    price: 1_000,
+    priceCondition: "Публичная цена",
+    currency: "RUB",
+    availability: "В наличии",
+    condition: "new",
+    match: "probable",
+    url: "https://example.com/product",
+    fetchedAt: "2026-09-25T00:00:00.000Z",
+    demo: true,
+  };
+}
+
+describe("IT assortment scope", () => {
+  it("includes smartphones, tablets and their accessories", () => {
+    expect(inferCategory("Apple iPhone 15 Pro")).toBe("Смартфоны");
+    expect(inferCategory("Samsung Galaxy S24")).toBe("Смартфоны");
+    expect(inferCategory("Samsung Galaxy Tab S9")).toBe("Планшеты");
+    expect(inferCategory("Чехол для iPhone 15")).toBe("Аксессуары IT");
+    expect(inferCategory("Клавиатура для iPad Air")).toBe("Клавиатуры");
+    expect(inferCategory("Графический планшет XP-Pen Artist")).toBe("Графические планшеты");
+    expect(inferCategory("DisplayPort кабель 2 м")).toBe("Кабели и адаптеры");
+    expect(inferCategory("Коврик для мыши Logitech")).toBe("Аксессуары IT");
+    expect(isItProduct(productFromQuery("планшет Apple iPad Air"))).toBe(true);
+  });
+
+  it("keeps components separate from complete devices", () => {
+    expect(inferCategory("SSD Kingston NV2 для ноутбука")).toBe("SSD");
+    expect(inferCategory("Ноутбук Lenovo Legion Pro 5 512GB SSD")).toBe("Ноутбуки");
+    expect(inferCategory("Блок питания для компьютера 650W")).toBe("Блоки питания");
+    expect(inferCategory("Сервер Dell PowerEdge R750")).toBe("Серверы");
+    expect(isItOfferForProduct(productFromQuery("Apple iPhone 15"), offer("Чехол для iPhone 15"))).toBe(false);
+    expect(isItOfferForProduct(productFromQuery("Чехол для iPhone 15"), offer("Чехол для iPhone 15"))).toBe(true);
+    expect(isItOfferForProduct(productFromQuery("Ноутбук Lenovo Legion Pro 5"), offer("SSD для ноутбука Lenovo"))).toBe(false);
+  });
+
+  it("excludes household goods even when their brand also makes electronics", () => {
+    expect(isExplicitlyNonIt("Пылесос Samsung Jet 75")).toBe(true);
+    expect(isItProduct(productFromQuery("Пылесос Samsung Jet 75"))).toBe(false);
+    expect(isItOfferForProduct(productFromQuery("смартфон Samsung Galaxy S24"), offer("Пылесос Samsung Jet 75"))).toBe(false);
+    expect(isItIdentifier("G102")).toBe(true);
+    expect(isItIdentifier("обычный товар")).toBe(false);
+  });
+
+  it("keeps toys and other non-equipment goods out of queries, suggestions and offers", () => {
+    // No toy/food/clothes dictionary: anything not recognised as equipment is rejected.
+    for (const text of ["игрушки", "кукла Barbie", "LEGO Technic конструктор", "пазл 1000 деталей", "авокадо", "Logitech игрушка"]) {
+      expect(classifyQuery(productFromQuery(text))).not.toBe("ok");
+    }
+    expect(classifyQuery(productFromQuery("Пылесос Samsung Jet 75"))).toBe("non_it");
+    expect(classifyQuery(productFromQuery("игрушки"))).toBe("unclear");
+    expect(classifyQuery(productFromQuery("что-то красивое"))).toBe("unclear");
+    expect(classifyQuery(productFromQuery("мышь Logitech G102"))).toBe("ok");
+    expect(classifyQuery(productFromQuery("Logitech"))).toBe("ok");
+    expect(classifyQuery(productFromQuery("G102"))).toBe("ok");
+    expect(isOfferInItScope(productFromQuery("мышь Logitech G102"), offer("Мягкая игрушка зайка"))).toBe(false);
+    expect(isOfferInItScope(productFromQuery("мышь Logitech G102"), offer("Клавиатура Logitech K380"))).toBe(false);
+    expect(isOfferInItScope(productFromQuery("мышь Logitech G102"), offer("Logitech G102 Lightsync"))).toBe(true);
+  });
+
+  it("filters live suggestions down to equipment", () => {
+    const phrases = ["игрушки для кошек", "игрушки", "игрушка lego", "игровая мышь logitech", "ноутбук lenovo legion 5", "игровой монитор 144 гц"];
+    expect(filterItSuggestions(phrases)).toEqual(["игровая мышь logitech", "ноутбук lenovo legion 5", "игровой монитор 144 гц"]);
+  });
+});

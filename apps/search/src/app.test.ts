@@ -14,6 +14,10 @@ function mergeSnapshotOffers(current: SearchSnapshot | undefined, incoming: Sear
   };
 }
 
+function productPayload(name: string): Product {
+  return { id: "x", brand: "", model: name, name, mpn: "", category: "Каталог", characteristics: {} } as Product;
+}
+
 class TestSource implements SourceAdapter {
   readonly name = "TEST";
 
@@ -110,6 +114,20 @@ describe("search", () => {
       payload: { query: "MX Master", sources: ["NoSuchShop"] },
     });
     expect(response.statusCode).toBe(400);
+  });
+
+  it("rejects queries that are not IT equipment before any source is called", async () => {
+    const app = buildSearchApp({ sources: [new TestSource()] });
+    apps.push(app);
+    for (const query of ["игрушки для детей", "Пылесос Samsung Jet 75"]) {
+      const response = await app.inject({
+        method: "POST",
+        url: "/searches",
+        payload: { query, product: productPayload(query) },
+      });
+      expect(response.statusCode).toBe(422);
+      expect(response.json().error).toContain("IT-оборудование");
+    }
   });
 
   it("collects offers", async () => {

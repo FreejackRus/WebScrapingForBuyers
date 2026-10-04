@@ -1,5 +1,6 @@
 import type { Product } from "@peremena/contracts";
 
+import { filterItSuggestions } from "../../domain/it-scope.js";
 import { extractMpn, productFromQuery, splitBrandModel } from "../../domain/product-from-query.js";
 
 const BROWSER_HEADERS = {
@@ -164,12 +165,13 @@ export async function suggestLiveProducts(query: string, limit = 8, signal?: Abo
   const anyEngineOk = settled.some((result) => result.status === "fulfilled" && result.value.length > 0);
   if (!anyEngineOk) {
     // Engines blocked/down: still return the typed query as a single live candidate.
-    return [productFromQuery(trimmed, "query")];
+    return filterItSuggestions([trimmed]).length > 0 ? [productFromQuery(trimmed, "query")] : [];
   }
 
   // Prefer engine phrases; keep typed query only if engines did not echo it.
   const ordered = phrases.filter((phrase) => phrase.toLocaleLowerCase("ru") !== trimmed.toLocaleLowerCase("ru"));
-  const candidates = [trimmed, ...ordered].slice(0, Math.max(limit, 10));
+  // Equipment only: toys, food and clothes from the engines never reach the dropdown.
+  const candidates = filterItSuggestions([trimmed, ...ordered]).slice(0, Math.max(limit, 10));
 
   const products: Product[] = [];
   for (const phrase of candidates) {

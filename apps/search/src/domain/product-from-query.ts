@@ -34,34 +34,40 @@ const KNOWN_BRANDS = [
   "ubiquiti",
 ];
 
-const CATEGORY_HINTS: Array<{ tokens: string[]; category: string }> = [
-  {
-    tokens: [
-      "ноутбук",
-      "laptop",
-      "notebook",
-      "macbook",
-      "legion",
-      "thinkpad",
-      "ideapad",
-      "latitude",
-      "inspiron",
-      "vivobook",
-      "zenbook",
-    ],
-    category: "Ноутбуки",
-  },
-  { tokens: ["монитор", "monitor", "display"], category: "Мониторы" },
-  { tokens: ["клавиатур", "keyboard"], category: "Клавиатуры" },
-  { tokens: ["мышь", "мыши", "mouse"], category: "Мыши" },
-  { tokens: ["ssd", "nvme", "накопител"], category: "SSD" },
-  { tokens: ["наушник", "гарнитур", "headset"], category: "Гарнитуры" },
-  { tokens: ["камер", "webcam"], category: "Веб-камеры" },
-  { tokens: ["коммутатор", "switch", "маршрутиз", "router"], category: "Сеть" },
-  { tokens: ["ибп", "ups"], category: "ИБП" },
-  { tokens: ["принтер", "мфу", "scanner"], category: "Печать" },
-  { tokens: ["док", "dock"], category: "Док-станции" },
-  { tokens: ["оперативн", "ddr", "память", "ram"], category: "ОЗУ" },
+/**
+ * Category rules. The rule whose keyword appears FIRST in the text wins, so
+ * "SSD для ноутбука" is an SSD and "Ноутбук ... SSD" is a laptop. Keywords match
+ * from a word start only ("ups" must not hit "groups"). On equal positions the
+ * earlier rule wins.
+ */
+const CATEGORY_HINTS: Array<{ pattern: RegExp; category: string }> = [
+  { pattern: /чех(?:ол|л)|коврик|защитн[а-яё]* (?:стекло|плёнк|пленк)|подставк[а-яё]* для (?:ноутбук|телефон|планшет)|сумк[а-яё]* для ноутбук|рюкзак для ноутбук/u, category: "Аксессуары IT" },
+  { pattern: /кабел|displayport|hdmi|переходник|адаптер|type-c|usb-c|патч-корд|patch ?cord/u, category: "Кабели и адаптеры" },
+  { pattern: /графическ[а-яё]* планшет|graphics tablet|wacom|xp-?pen/u, category: "Графические планшеты" },
+  { pattern: /клавиатур|keyboard/u, category: "Клавиатуры" },
+  { pattern: /мышь|мыши|мышк|mouse/u, category: "Мыши" },
+  { pattern: /ssd|nvme|накопител/u, category: "SSD" },
+  { pattern: /жестк[а-яё]* диск|жёстк[а-яё]* диск|hdd/u, category: "Жёсткие диски" },
+  { pattern: /оперативн|ddr[2-5]|dimm|sodimm|модул[а-яё]* памяти|ram/u, category: "ОЗУ" },
+  { pattern: /видеокарт|geforce|radeon|rtx ?\d|gpu/u, category: "Видеокарты" },
+  { pattern: /процессор|cpu|ryzen|core i[3579]|xeon/u, category: "Процессоры" },
+  { pattern: /материнск|motherboard/u, category: "Материнские платы" },
+  { pattern: /блок[а-яё]* питания|psu/u, category: "Блоки питания" },
+  { pattern: /корпус[а-яё]* (?:для )?(?:пк|компьютер)|pc case|midi tower/u, category: "Корпуса ПК" },
+  { pattern: /кулер|охлажден|водян[а-яё]* охлажд|вентилятор для (?:пк|корпус)/u, category: "Охлаждение ПК" },
+  { pattern: /сервер|poweredge|proliant|thinksystem|rack|стоечн/u, category: "Серверы" },
+  { pattern: /ибп|ups|источник бесперебойн/u, category: "ИБП" },
+  { pattern: /принтер|мфу|сканер|scanner|картридж|тонер/u, category: "Печать" },
+  { pattern: /коммутатор|switch|маршрутиз|router|роутер|wi-?fi|точк[а-яё]* доступа|access point|nas|mikrotik|ubiquiti|tp-link/u, category: "Сеть" },
+  { pattern: /док-станц|docking|dock/u, category: "Док-станции" },
+  { pattern: /наушник|гарнитур|headset|headphone/u, category: "Гарнитуры" },
+  { pattern: /веб-?камер|webcam|камер[а-яё]* для (?:пк|компьютер)/u, category: "Веб-камеры" },
+  { pattern: /проектор|projector/u, category: "Проекторы" },
+  { pattern: /монитор|monitor/u, category: "Мониторы" },
+  { pattern: /ноутбук|laptop|notebook|macbook|legion|thinkpad|ideapad|latitude|inspiron|vivobook|zenbook|nitro|omen|predator/u, category: "Ноутбуки" },
+  { pattern: /планшет|ipad|galaxy tab|matepad|mi pad|redmi pad|tablet/u, category: "Планшеты" },
+  { pattern: /смартфон|телефон|iphone|galaxy [sazm]\d|pixel \d|redmi|poco|honor|realme/u, category: "Смартфоны" },
+  { pattern: /системн[а-яё]* блок|десктоп|настольн[а-яё]* (?:пк|компьютер)|мини-?пк|моноблок|компьютер|mac mini|nuc/u, category: "Компьютеры" },
 ];
 
 function collapseWs(value: string): string {
@@ -82,10 +88,17 @@ function titleCaseWords(value: string): string {
 
 export function inferCategory(text: string): string {
   const hay = text.toLocaleLowerCase("ru");
+  let best: { index: number; category: string } | undefined;
   for (const hint of CATEGORY_HINTS) {
-    if (hint.tokens.some((token) => hay.includes(token))) return hint.category;
+    const index = hay.search(new RegExp(`(?<![a-zа-яё0-9])(?:${hint.pattern.source})`, "u"));
+    if (index >= 0 && (!best || index < best.index)) best = { index, category: hint.category };
   }
-  return "Каталог";
+  return best?.category ?? "Каталог";
+}
+
+export function hasKnownBrand(text: string): boolean {
+  const tokens = text.toLocaleLowerCase("ru").match(/[a-zа-яё0-9-]+/giu) ?? [];
+  return tokens.some((token) => KNOWN_BRANDS.includes(token));
 }
 
 export function extractMpn(text: string): string {

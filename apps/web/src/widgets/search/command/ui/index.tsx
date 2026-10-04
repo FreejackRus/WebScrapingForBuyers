@@ -18,6 +18,8 @@ function productFromTypedQuery(query: string): Product {
   };
 }
 
+const EXAMPLE_QUERIES = ["Мышь Logitech G102", "SSD Kingston NV2 1 ТБ", "Ноутбук Lenovo Legion 5", "Монитор Dell P2422H"];
+
 function suggestSecondary(product: Product): string {
   const bits = [
     product.brand && product.brand !== "—" ? product.brand : "",
@@ -118,7 +120,7 @@ export function SearchCommand() {
         <p className="eyebrow">Поиск закупок</p>
         <h1 id="search-title">Сбор публичных предложений</h1>
         <p className="command-lead">
-          Введите артикул, MPN или модель. Подсказки подтягиваются из живых каталогов.
+          Ищем IT-оборудование и комплектующие: введите тип устройства, бренд, модель или артикул.
         </p>
       </div>
       <form className="search search-typeahead" onSubmit={onSubmit} role="search">
@@ -151,7 +153,7 @@ export function SearchCommand() {
               window.setTimeout(() => setOpen(false), 120);
             }}
             onKeyDown={onKeyDown}
-            placeholder="Поиск по артикулу, MPN, модели…"
+            placeholder="Например: мышь Logitech G102 или SSD Kingston NV2"
             minLength={2}
             required
             aria-describedby={hintId}
@@ -205,7 +207,7 @@ export function SearchCommand() {
           )}
           {open && suggestions.length === 0 && !suggesting && (
             <p className="suggest-empty" role="status">
-              Нет подходящего варианта? Нажмите «Найти» для поиска по тексту.
+              Не похоже на IT-оборудование. Уточните тип устройства, бренд или артикул.
             </p>
           )}
         </div>
@@ -216,6 +218,25 @@ export function SearchCommand() {
           {activity === "search" ? "Ищем…" : "Найти"}
         </button>
       </form>
+      {!query.trim() && activity !== "search" && (
+        <div className="example-queries" role="group" aria-label="Примеры запросов">
+          <span className="example-label">Например:</span>
+          {EXAMPLE_QUERIES.map((example) => (
+            <button
+              key={example}
+              type="button"
+              className="example-chip"
+              disabled={selectedSources.length === 0}
+              onClick={() => {
+                setQuery(example);
+                inputRef.current?.focus();
+              }}
+            >
+              {example}
+            </button>
+          ))}
+        </div>
+      )}
       {availableSources.length > 0 && (
         <fieldset className="source-picker" disabled={activity === "search"}>
           <legend>Поставщики для запроса</legend>

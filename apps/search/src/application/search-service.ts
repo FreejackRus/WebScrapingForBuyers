@@ -2,6 +2,7 @@ import { randomUUID } from "node:crypto";
 
 import type { Offer, Product, SearchEvent, SearchSnapshot, SourceState } from "@peremena/contracts";
 
+import { isOfferInItScope } from "../domain/it-scope.js";
 import { flagPriceAnomalies } from "../domain/price-anomaly.js";
 import type { SourceAdapter } from "../domain/source-adapter.js";
 
@@ -99,11 +100,13 @@ export class SearchService {
       sources.map(async (source) => {
         this.updateSource(snapshot, source.name, { source: source.name, status: "loading" });
         try {
-          const offers = await withDeadline(
+          const found = await withDeadline(
             source.search(snapshot.product, AbortSignal.timeout(this.sourceTimeoutMs)),
             this.sourceTimeoutMs,
             source.name,
           );
+          // Demo rows are labelled fixtures; real rows must positively look like equipment.
+          const offers = found.filter((offer) => offer.demo || isOfferInItScope(snapshot.product, offer));
           snapshot.offers.push(...offers);
           flagPriceAnomalies(snapshot.offers);
           const real = offers.filter((offer) => !offer.demo);

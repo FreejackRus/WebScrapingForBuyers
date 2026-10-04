@@ -118,7 +118,7 @@ export const useSearchStore = create<SearchState>((set, get) => ({
         suggesting: false,
         activity: quiet ? get().activity : null,
         error: !quiet && result.products.length === 0
-          ? "Подсказок нет. Уточните бренд, модель или MPN."
+          ? "Не нашли IT-оборудование по запросу. Уточните тип устройства, бренд, модель или артикул."
           : "",
       });
     } catch (reason) {

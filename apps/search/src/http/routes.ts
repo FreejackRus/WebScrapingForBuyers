@@ -3,6 +3,7 @@ import type { FastifyPluginAsync } from "fastify";
 import { exportSearch } from "../application/export-service.js";
 import type { SearchService } from "../application/search-service.js";
 import { findProduct } from "../domain/catalog.js";
+import { classifyQuery } from "../domain/it-scope.js";
 import { isProductPayload, productFromQuery } from "../domain/product-from-query.js";
 import { suggestLiveProducts } from "../infrastructure/suggest/live-suggest.js";
 
@@ -54,6 +55,11 @@ export const searchRoutes: FastifyPluginAsync<{
         (request.body.productId ? findProduct(request.body.productId) : undefined) ??
         (await suggestLiveProducts(request.body.query, 1))[0] ??
         productFromQuery(request.body.query, "query");
+      if (classifyQuery(product) !== "ok") {
+        return reply.code(422).send({
+          error: "Price Radar ищет только IT-оборудование и комплектующие. Уточните запрос: тип устройства, бренд или артикул.",
+        });
+      }
       const selected = searchService.resolveSources(request.body.sources);
       if (request.body.sources?.length && selected.length === 0) {
         return reply.code(400).send({ error: "Нет выбранных источников" });

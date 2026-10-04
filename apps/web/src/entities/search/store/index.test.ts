@@ -35,7 +35,7 @@ describe("catalog suggestions", () => {
   it("retains feedback for an explicitly requested catalog suggestion", async () => {
     api.suggest.mockResolvedValue({ products: [] });
     await useSearchStore.getState().suggest();
-    expect(useSearchStore.getState().error).toContain("Подсказок нет");
+    expect(useSearchStore.getState().error).toContain("Не нашли IT-оборудование");
   });
 
   it("opens and closes the internal offer card", () => {

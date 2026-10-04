@@ -322,6 +322,18 @@ th { position: relative; }
 .source-picker legend { padding: 0 4px; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; }
 .source-picker-actions { display: flex; gap: 12px; margin: 0 0 8px; }
 .source-picker-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.example-queries { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; margin-top: 10px; }
+.example-label { color: var(--muted); font-size: 12px; }
+.example-chip {
+  min-height: 28px; padding: 3px 10px; border: 1px dashed var(--brand-200); border-radius: 999px;
+  background: transparent; color: var(--brand-dark); font-size: 12px; cursor: pointer;
+  transition-property: background-color, border-color, transform; transition-duration: 150ms; transition-timing-function: ease-out;
+}
+.example-chip:active:not(:disabled) { transform: scale(0.97); }
+@media (prefers-reduced-motion: reduce) { .example-chip { transition: none; } .example-chip:active:not(:disabled) { transform: none; } }
+.example-chip:hover:not(:disabled) { background: var(--brand-soft); border-style: solid; }
+.example-chip:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+.example-chip:disabled { opacity: 0.5; cursor: default; }
 .source-chip {
   display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px;
   border: 1px solid var(--line); border-radius: 999px; background: #fff; font-size: 12px; cursor: pointer;
@@ -1025,6 +1037,7 @@ body.offer-card-open { overflow: hidden; }
 
   .source-picker { padding: 8px 10px; }
   .source-chip { min-height: 36px; }
+  .example-chip { min-height: 36px; }
   .offer-card-backdrop {
     align-items: flex-end;
     justify-content: stretch;

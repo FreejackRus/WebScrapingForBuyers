@@ -11,6 +11,23 @@ When the user types `/graphify`, use the installed Graphify skill or instruction
 - Confirm graph-derived conclusions by inspecting exact source files and, when useful, runtime behavior or tests.
 - After modifying code, run `graphify update .` to keep the graph current.
 
+## Жёсткое правило: плагины, skills и MCP (обязательно)
+
+Это правило сильнее «минимального набора инструментов» ниже. Нарушение — ошибка процесса.
+
+1. **До первой правки кода** в любой нетривиальной задаче: `graphify query/explain/path` (если есть `graphify-out/graph.json`), затем загрузить подходящие skills через Skill. Если skill подходит под задачу, его нельзя пропускать, даже если «и так понятно».
+2. **Обязательные соответствия:**
+   - реализация или багфикс → `tdd-workflow` (сначала красный тест);
+   - UI/UX → `frontend-design-direction`, `frontend-a11y`, `make-interfaces-feel-better`; тесты компонентов → `react-testing`;
+   - навигация по символам → Serena MCP (`find_symbol`, `get_symbols_overview`) вместо слепого чтения больших файлов;
+   - сторонние библиотеки и API → Context7 (`docs-lookup`);
+   - поведение в браузере → Playwright / встроенный браузер, проверка на живом приложении;
+   - безопасность → `security-review` + Semgrep;
+   - перед сообщением «готово» → `verification-gate` / `verification-loop`.
+3. **Подключённые плагины и MCP** (ecc, serena, chrome-devtools, figma и др.) сначала проверяются на пригодность через ToolSearch/SearchSkills; «не знал, что есть» не причина.
+4. **Отчёт.** В финальном ответе перечислить, какие skills и MCP использованы. Если подходящий не использован, указать причину (недоступен, не применим). Не заявлять использование того, что не вызывалось.
+5. После правок кода: `graphify update .`.
+
 ## Tool routing
 
 For internal architecture and dependency analysis, use Graphify first, then inspect the exact source files.
@@ -25,7 +42,7 @@ For security-sensitive changes, run relevant tests and Semgrep Community Edition
 
 Before declaring a non-trivial implementation complete, run the `verification-gate` skill.
 
-Do not invoke every tool for every task. Use the smallest set of tools that produces reliable evidence. Repository source code and executable verification remain the final source of truth. Do not fabricate tool output or test results.
+Не вызывайте инструменты ради галочки: набор выбирается по задаче, но обязательные соответствия из жёсткого правила выше выполняются всегда. Use the smallest set of tools that produces reliable evidence. Repository source code and executable verification remain the final source of truth. Do not fabricate tool output or test results.
 
 ## Project-specific supplement
 
