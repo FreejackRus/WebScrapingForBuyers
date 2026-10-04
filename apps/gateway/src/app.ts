@@ -3,6 +3,7 @@ import { createService, fetchWithTimeout, isTimeoutError, serviceUrl } from "@pe
 import type { FastifyReply, FastifyRequest } from "fastify";
 
 import { presentEvent, presentSnapshot } from "./present.js";
+import { SearchHistory } from "./search-history.js";
 import { UserCache } from "./user-cache.js";
 
 const IDENTITY_TIMEOUT_MS = 5_000;
@@ -13,8 +14,10 @@ const ANALYSIS_TIMEOUT_MS = 180_000;
 const EXPORT_TIMEOUT_MS = 60_000;
 const STREAM_CONNECT_TIMEOUT_MS = 10_000;
 
-export function buildGatewayApp(options: { logger?: boolean } = {}) {
+export function buildGatewayApp(options: { logger?: boolean; history?: SearchHistory } = {}) {
   const app = createService({ logger: options.logger ?? false, cookies: true });
+  // HISTORY_FILE points at a mounted volume in production; without it history lives in memory only.
+  const history = options.history ?? new SearchHistory(process.env.HISTORY_FILE);
   const identity = serviceUrl("IDENTITY_URL", "http://127.0.0.1:3002");
   const search = serviceUrl("SEARCH_URL", "http://127.0.0.1:3003");
   const analysis = serviceUrl("ANALYSIS_URL", "http://127.0.0.1:3004");
@@ -74,9 +77,24 @@ export function buildGatewayApp(options: { logger?: boolean } = {}) {
   app.post("/api/v1/searches", async (request, reply) => {
     const result = await proxyJson(search, "/searches", request, reply);
     if (reply.statusCode === 201 && result && typeof result === "object") {
-      return presentSnapshot(result as SearchSnapshot, request.currentUser);
+      const snapshot = result as SearchSnapshot;
+      if (request.currentUser) {
+        history.record(request.currentUser.id, { id: snapshot.id, query: snapshot.query, product: snapshot.product });
+      }
+      return presentSnapshot(snapshot, request.currentUser);
     }
     return result;
+  });
+  app.get("/api/v1/history", async (request) => ({
+    history: request.currentUser ? history.list(request.currentUser.id) : [],
+  }));
+  app.delete("/api/v1/history", async (request) => {
+    if (request.currentUser) history.clear(request.currentUser.id);
+    return { ok: true };
+  });
+  app.delete<{ Params: { id: string } }>("/api/v1/history/:id", async (request, reply) => {
+    const removed = request.currentUser ? history.remove(request.currentUser.id, request.params.id) : false;
+    return removed ? { ok: true } : reply.code(404).send({ error: "Запись истории не найдена" });
   });
   app.get<{ Params: { id: string } }>("/api/v1/searches/:id", async (request, reply) => {
     const result = await proxyJson(search, `/searches/${request.params.id}`, request, reply);

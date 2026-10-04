@@ -56,6 +56,14 @@ export interface SearchSnapshot {
   sources: SourceState[];
 }
 
+/** One remembered search of one user; `product` lets the buyer repeat it exactly. */
+export interface SearchHistoryEntry {
+  id: string;
+  query: string;
+  product: Product;
+  createdAt: string;
+}
+
 export type SearchEvent =
   | { type: "snapshot"; data: SearchSnapshot }
   | { type: "source"; data: SourceState }

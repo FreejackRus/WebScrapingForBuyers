@@ -334,6 +334,21 @@ th { position: relative; }
 .example-chip:hover:not(:disabled) { background: var(--brand-soft); border-style: solid; }
 .example-chip:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
 .example-chip:disabled { opacity: 0.5; cursor: default; }
+.search-history { margin-top: 12px; }
+.search-history-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.search-history-head h2 { margin: 0; color: var(--muted); font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+.search-history-list { display: flex; flex-wrap: wrap; gap: 6px 8px; margin: 8px 0 0; padding: 0; list-style: none; }
+.search-history-item { display: inline-flex; align-items: stretch; border: 1px solid var(--brand-200); border-radius: 999px; overflow: hidden; }
+.search-history-run, .search-history-remove {
+  border: 0; background: transparent; color: var(--brand-dark); font-size: 12px; cursor: pointer;
+  transition-property: background-color; transition-duration: 150ms; transition-timing-function: ease-out;
+}
+.search-history-run { min-height: 28px; max-width: 22rem; padding: 3px 6px 3px 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.search-history-remove { min-width: 28px; padding: 0 8px 0 4px; color: var(--muted); }
+.search-history-run:hover:not(:disabled), .search-history-remove:hover { background: var(--brand-soft); }
+.search-history-run:focus-visible, .search-history-remove:focus-visible { outline: 2px solid var(--brand); outline-offset: -2px; }
+.search-history-run:disabled { opacity: 0.5; cursor: default; }
+@media (prefers-reduced-motion: reduce) { .search-history-run, .search-history-remove { transition: none; } }
 .source-chip {
   display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px;
   border: 1px solid var(--line); border-radius: 999px; background: #fff; font-size: 12px; cursor: pointer;
@@ -1038,6 +1053,7 @@ body.offer-card-open { overflow: hidden; }
   .source-picker { padding: 8px 10px; }
   .source-chip { min-height: 36px; }
   .example-chip { min-height: 36px; }
+  .search-history-run, .search-history-remove { min-height: 36px; }
   .offer-card-backdrop {
     align-items: flex-end;
     justify-content: stretch;

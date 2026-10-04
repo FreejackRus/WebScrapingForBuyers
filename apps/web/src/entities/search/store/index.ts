@@ -1,4 +1,4 @@
-import type { OfferTableFilter, Product, SearchEvent, SearchSnapshot } from "@peremena/contracts";
+import type { OfferTableFilter, Product, SearchEvent, SearchHistoryEntry, SearchSnapshot } from "@peremena/contracts";
 import { create } from "zustand";
 
 import { searchApi } from "../api";
@@ -35,6 +35,7 @@ interface SearchState {
   selectedOfferId: string | undefined;
   availableSources: string[];
   selectedSources: string[];
+  history: SearchHistoryEntry[];
   activity: "suggest" | "search" | null;
   suggesting: boolean;
   error: string;
@@ -44,6 +45,9 @@ interface SearchState {
   setTableFilter: (value: OfferTableFilter | undefined) => void;
   setSelectedSources: (sources: string[]) => void;
   loadSources: () => Promise<void>;
+  loadHistory: () => Promise<void>;
+  removeHistoryEntry: (id: string) => Promise<void>;
+  clearHistory: () => Promise<void>;
   openOffer: (id: string) => void;
   closeOffer: () => void;
   reset: () => void;
@@ -61,6 +65,7 @@ export const useSearchStore = create<SearchState>((set, get) => ({
   selectedOfferId: undefined,
   availableSources: [],
   selectedSources: typeof localStorage === "undefined" ? [] : readSelectedSources(),
+  history: [],
   activity: null,
   suggesting: false,
   error: "",
@@ -82,6 +87,31 @@ export const useSearchStore = create<SearchState>((set, get) => ({
       set({ availableSources, selectedSources });
     } catch {
       set({ availableSources: get().availableSources });
+    }
+  },
+  loadHistory: async () => {
+    try {
+      set({ history: (await searchApi.history()).history });
+    } catch {
+      // History is a convenience: a failed load must not show an error or hide the search box.
+    }
+  },
+  removeHistoryEntry: async (id) => {
+    const previous = get().history;
+    set({ history: previous.filter((entry) => entry.id !== id) });
+    try {
+      await searchApi.removeHistory(id);
+    } catch {
+      set({ history: previous });
+    }
+  },
+  clearHistory: async () => {
+    const previous = get().history;
+    set({ history: [] });
+    try {
+      await searchApi.clearHistory();
+    } catch {
+      set({ history: previous });
     }
   },
   openOffer: (selectedOfferId) => set({ selectedOfferId }),
@@ -161,6 +191,7 @@ export const useSearchStore = create<SearchState>((set, get) => ({
         source: next,
         activity: null,
       }));
+      void get().loadHistory();
     } catch (reason) {
       set({
         activity: null,

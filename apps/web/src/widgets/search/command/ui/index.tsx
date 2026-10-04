@@ -50,9 +50,16 @@ export function SearchCommand() {
   const setSelectedSources = useSearchStore((state) => state.setSelectedSources);
   const loadSources = useSearchStore((state) => state.loadSources);
 
+  const history = useSearchStore((state) => state.history);
+  const loadHistory = useSearchStore((state) => state.loadHistory);
+  const removeHistoryEntry = useSearchStore((state) => state.removeHistoryEntry);
+  const clearHistory = useSearchStore((state) => state.clearHistory);
+  const historyId = useId();
+
   useEffect(() => {
     void loadSources();
-  }, [loadSources]);
+    void loadHistory();
+  }, [loadSources, loadHistory]);
 
   useEffect(() => {
     window.clearTimeout(debounceRef.current);
@@ -218,7 +225,39 @@ export function SearchCommand() {
           {activity === "search" ? "Ищем…" : "Найти"}
         </button>
       </form>
-      {!query.trim() && activity !== "search" && (
+      {!query.trim() && activity !== "search" && history.length > 0 && (
+        <section className="search-history" aria-labelledby={historyId}>
+          <div className="search-history-head">
+            <h2 id={historyId}>Недавние запросы</h2>
+            <button type="button" className="linkish" onClick={() => void clearHistory()}>
+              Очистить историю
+            </button>
+          </div>
+          <ul className="search-history-list">
+            {history.slice(0, 8).map((entry) => (
+              <li key={entry.id} className="search-history-item">
+                <button
+                  type="button"
+                  className="search-history-run"
+                  disabled={selectedSources.length === 0}
+                  onClick={() => commitProduct(entry.product)}
+                >
+                  {entry.query}
+                </button>
+                <button
+                  type="button"
+                  className="search-history-remove"
+                  aria-label={`Удалить «${entry.query}» из истории`}
+                  onClick={() => void removeHistoryEntry(entry.id)}
+                >
+                  <span aria-hidden="true">×</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+      {!query.trim() && activity !== "search" && history.length === 0 && (
         <div className="example-queries" role="group" aria-label="Примеры запросов">
           <span className="example-label">Например:</span>
           {EXAMPLE_QUERIES.map((example) => (

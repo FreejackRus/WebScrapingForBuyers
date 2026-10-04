@@ -12,6 +12,10 @@ const state = vi.hoisted(() => ({
   setSelectedSources: vi.fn(),
   loadSources: vi.fn(),
   suggest: vi.fn(),
+  history: [] as Array<{ id: string; query: string; createdAt: string; product: object }>,
+  loadHistory: vi.fn(),
+  removeHistoryEntry: vi.fn(),
+  clearHistory: vi.fn(),
 }));
 
 vi.mock("entities/search", () => ({
@@ -25,6 +29,7 @@ describe("SearchCommand", () => {
   beforeEach(() => {
     state.query = "";
     state.activity = "idle";
+    state.history = [];
   });
 
   it("shows the keyboard shortcut without an unnecessary clear button", () => {
@@ -61,6 +66,22 @@ describe("SearchCommand", () => {
     expect(html).toContain("Мышь Logitech G102");
     state.query = "Logitech";
     expect(renderToStaticMarkup(<SearchCommand />)).not.toContain("Мышь Logitech G102");
+    state.query = "";
+  });
+
+  it("shows the remembered searches instead of examples and lets the buyer manage them", () => {
+    state.history = [
+      { id: "1", query: "SSD Kingston NV2", createdAt: "2026-10-04T10:00:00.000Z", product: {} },
+      { id: "2", query: "Мышь Logitech G102", createdAt: "2026-10-04T09:00:00.000Z", product: {} },
+    ];
+    const html = renderToStaticMarkup(<SearchCommand />);
+    expect(html).toContain("Недавние запросы");
+    expect(html).toContain("SSD Kingston NV2");
+    expect(html).toContain('aria-label="Удалить «SSD Kingston NV2» из истории"');
+    expect(html).toContain("Очистить историю");
+    expect(html).not.toContain("Например:</span>");
+    state.query = "ssd";
+    expect(renderToStaticMarkup(<SearchCommand />)).not.toContain("Недавние запросы");
     state.query = "";
   });
 

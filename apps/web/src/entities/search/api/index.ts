@@ -1,4 +1,4 @@
-import type { Product, SearchEvent, SearchSnapshot } from "@peremena/contracts";
+import type { Product, SearchEvent, SearchHistoryEntry, SearchSnapshot } from "@peremena/contracts";
 
 import { apiUrl, request } from "shared/api";
 
@@ -9,6 +9,9 @@ export const searchApi = {
       body: JSON.stringify({ query }),
     }),
   sources: () => request<{ sources: string[] }>(apiUrl("/sources")),
+  history: () => request<{ history: SearchHistoryEntry[] }>(apiUrl("/history")),
+  removeHistory: (id: string) => request<{ ok: boolean }>(apiUrl(`/history/${encodeURIComponent(id)}`), { method: "DELETE" }),
+  clearHistory: () => request<{ ok: boolean }>(apiUrl("/history"), { method: "DELETE" }),
   start: (query: string, product: Product | string, sources?: string[]) =>
     request<SearchSnapshot>(apiUrl("/searches"), {
       method: "POST",

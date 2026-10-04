@@ -10,6 +10,9 @@ services:
       IDENTITY_URL: http://identity:3002
       SEARCH_URL: http://search:3003
       ANALYSIS_URL: http://analysis:3004
+      HISTORY_FILE: /data/search-history.json
+    volumes:
+      - gateway-data:/data
     depends_on:
       - identity
       - search
@@ -161,6 +164,7 @@ services:
 
 volumes:
   chrome-headed:
+  gateway-data:
 
 networks:
   radar:
