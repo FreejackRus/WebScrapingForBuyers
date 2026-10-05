@@ -15,6 +15,9 @@ describe("chat next to an open table", () => {
     ["понятно, а по ссылке ты можешь сам просмотреть?", "help"],
     ["так ты со мной говоришь?", "help"],
     ["ты меня обманул", "help"],
+    ["пон6ятно а где есть наличие", "filter"],
+    ["так стопэ, было же наличие", "help"],
+    ["а че так", "help"],
     ["сравни лучшие предложения", "explain"],
     ["покажи самую низкую цену", "explain"],
   ])("«%s» → %s", (prompt, intent) => {
@@ -49,6 +52,30 @@ describe("chat next to an open table", () => {
     expect(result.tableFilter?.inStockOnly).toBe(true);
     expect(result.selectedOfferIds).toEqual(["wb", "ozon"]);
     expect(result.warnings.join(" ")).toMatch(/не сообщает наличие/);
+  });
+
+  it("asking for stock when nobody confirms it keeps the table and says why", async () => {
+    const onlyAvito: SearchSnapshot = { ...snap, offers: offers.filter((offer) => offer.source === "Авито") };
+    const result = await analyzeSnapshot(onlyAvito, "понятно а где есть наличие");
+    expect(result.tableFilter).toBeUndefined();
+    expect(result.intent).toBe("help");
+    expect(result.summary).toMatch(/Подтверждённого наличия нет ни у одного из 1 предложения \(Авито — 1\)/);
+    expect(result.summary).not.toMatch(/таблица пустая/);
+  });
+
+  it("a remark mid-conversation is sent as chat, without the canned help warning", async () => {
+    let hint: string | undefined;
+    const narrator: AnalysisNarrator = {
+      name: "test",
+      summarize: async () => ({ summary: "", warnings: [] }),
+      answer: async (input) => {
+        hint = input.intentHint;
+        return { summary: "По сути.", warnings: [] };
+      },
+    };
+    const result = await analyzeSnapshot(snap, "а че так", narrator);
+    expect(hint).toBe("chat");
+    expect(result.warnings.join(" ")).not.toMatch(/Не отвечаю на вопросы вне/);
   });
 
   it("a complaint reaches the model as a question, with table facts, not as a re-told pick", async () => {

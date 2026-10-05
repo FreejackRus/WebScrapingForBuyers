@@ -104,7 +104,20 @@ export function addressName(userName?: string): string | undefined {
 /** True when the user is reshaping the current offers table (not asking for VNC/admin). */
 /** «в наличии», «по наличию», «что есть на складе». */
 export function wantsInStock(normalized: string): boolean {
-  return /наличи|на складе/.test(normalized);
+  // A request, not a mention: «было же наличие» is a complaint for the chat, not a filter.
+  return /(?:в|по)\s+наличи|где\s+(?:есть\s+|будет\s+)?наличи|наличие\s+есть|только\s+(?:с\s+)?наличи|на складе/.test(
+    normalized,
+  );
+}
+
+/** Greeting or an explicit «what can you do» — the only time the copilot introduces itself. */
+export function isHelpRequest(normalized: string): boolean {
+  return (
+    /^(?:привет|здравствуй(?:те)?|добрый\s+(?:день|вечер|утро)|hi|hello)(?:[!.\s]|$)/i.test(normalized) ||
+    /кто ты|что ты (?:умеешь|можешь|такое)|зачем ты|для чего ты|помощь|справк|как пользоват|что умеешь|что такое копайлот|о себе|тво[ея] задач/.test(
+      normalized,
+    )
+  );
 }
 
 /** Confirmed stock only: «В наличии» / «В наличии: 12». «Неизвестно», «Под заказ», «Уточнять» are not. */
@@ -124,8 +137,9 @@ function wantsSelection(normalized: string): boolean {
 }
 
 export function wantsTableFilter(normalized: string): boolean {
+  if (wantsInStock(normalized)) return true;
   return (
-    /наличи|на складе|отфильтр|фильтруй|\bфильтр\b|оставь|убери|исключ|покажи только|выдай только|только реальн|только сам|только ноутбук|опять (?:отфильтр|фильтр)|пробегись|по всем источникам|без демо|не демо|дешевл|ниже \d|до \d|под \d|не консол|без консол|не приставк|без legion go|не legion go|только (?:вб|wb|вайлдберр|wildberries|ситилинк|citilink|ozon|озон|dns|днс|avito|авито)/.test(
+    /отфильтр|фильтруй|\bфильтр\b|оставь|убери|исключ|покажи только|выдай только|только реальн|только сам|только ноутбук|опять (?:отфильтр|фильтр)|пробегись|по всем источникам|без демо|не демо|дешевл|ниже \d|до \d|под \d|не консол|без консол|не приставк|без legion go|не legion go|только (?:вб|wb|вайлдберр|wildberries|ситилинк|citilink|ozon|озон|dns|днс|avito|авито)/.test(
       normalized,
     )
   );

@@ -17,7 +17,9 @@ export function applyChatResult(result: AnalysisResult) {
         ? fromResult
         : { ...fromResult, selectedOfferIds: result.selectedOfferIds };
     search.setTableFilter(withSelection ?? { selectedOfferIds: result.selectedOfferIds });
-  } else {
+  } else if (result.intent !== "help") {
+    // A conversational reply («почему?», «было же наличие») must not silently drop the
+    // filter the manager just applied; only a new pick or search resets the table.
     search.setTableFilter(undefined);
   }
   // Never mirror arbitrary chat text into the search box — only explicit search intent.

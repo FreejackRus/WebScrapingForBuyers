@@ -17,6 +17,7 @@ import {
   cannedMetaAnswer,
   classifyIntent,
   extractSearchQuery,
+  isHelpRequest,
   isInStock,
   parseMaxPrice,
   parseSources,
@@ -97,6 +98,16 @@ function tableFacts(offers: Offer[]): string[] {
   const facts = [
     `В таблице ${real.length} предложений; с подтверждённым наличием — ${inStock.length}, наличие не сообщается — ${unknown.length}.`,
   ];
+  const bySource = new Map<string, { total: number; stock: number }>();
+  for (const offer of real) {
+    const row = bySource.get(offer.source) ?? { total: 0, stock: 0 };
+    row.total += 1;
+    if (isInStock(offer.availability)) row.stock += 1;
+    bySource.set(offer.source, row);
+  }
+  facts.push(
+    `По площадкам (всего / в наличии): ${[...bySource].map(([source, row]) => `${source} ${row.total}/${row.stock}`).join(", ")}.`,
+  );
   if (cheapest) facts.push(`Самое дешёвое: ${offerLabel(cheapest)}, наличие: ${cheapest.availability}.`);
   if (cheapestInStock && cheapestInStock !== cheapest) {
     facts.push(`Самое дешёвое с подтверждённым наличием: ${offerLabel(cheapestInStock)}.`);
@@ -316,7 +327,8 @@ async function analyzeSnapshotRaw(
     try {
       const narrated = await narrator.answer({
         prompt,
-        intentHint: metaIntent,
+        // A remark in a running conversation is not a help request: no self-introduction.
+        intentHint: metaIntent === "help" && !isHelpRequest(normalized) ? "chat" : metaIntent,
         tableFacts: tableFacts(incoming),
         snapshotQuery: snapshot.query,
         productName: snapshot.product.name,
@@ -329,7 +341,10 @@ async function analyzeSnapshotRaw(
       return {
         ...base,
         summary: narrated.summary,
-        warnings: [...meta.warnings, ...narrated.warnings],
+        warnings:
+          metaIntent === "help" && !isHelpRequest(normalized)
+            ? narrated.warnings
+            : [...meta.warnings, ...narrated.warnings],
         provider: narrator.name,
       };
     } catch (error) {
@@ -420,6 +435,26 @@ async function analyzeSnapshotRaw(
     filters.push(`Только источники ${sources.join(", ")} (${offers.length} из ${before}).`);
   }
   const inStockOnly = wantsInStock(normalized);
+  if (inStockOnly && !offers.some((offer) => isInStock(offer.availability))) {
+    // Filtering to zero would blank the table and read like «nothing exists».
+    // Say why instead and leave the table as it is.
+    const bySource = new Map<string, number>();
+    for (const offer of offers) bySource.set(offer.source, (bySource.get(offer.source) ?? 0) + 1);
+    const sourcesLine = [...bySource].map(([source, count]) => `${source} — ${count}`).join(", ");
+    return {
+      summary: withGreeting(
+        `Подтверждённого наличия нет ни у одного из ${ruCount(offers.length, "предложения", "предложений", "предложений")} (${sourcesLine}): ` +
+          "площадки не сообщают остаток, а на Авито это частные объявления — наличие уточняйте у продавца. Таблицу оставил без изменений.",
+        userName,
+      ),
+      selectedOfferIds: [],
+      appliedFilters: [...filters, "Фильтр «в наличии» не применён: подтверждённого наличия нет."],
+      warnings,
+      citations: [],
+      intent: "help",
+      provider: "Детерминированный отбор Price Radar",
+    };
+  }
   if (inStockOnly) {
     const before = offers.length;
     const unknown = offers.filter((offer) => /неизвестн|уточн/i.test(offer.availability)).length;

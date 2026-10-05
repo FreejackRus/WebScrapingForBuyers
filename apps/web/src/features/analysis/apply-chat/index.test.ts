@@ -44,7 +44,19 @@ describe("applyChatResult", () => {
       intent: "help",
     });
     expect(setQuery).not.toHaveBeenCalled();
-    expect(setTableFilter).toHaveBeenCalledWith(undefined);
+  });
+
+  it("keeps the manager's table filter on a conversational reply", () => {
+    // «так стопэ, было же наличие» after «только в наличии» must not bring back every row.
+    applyChatResult({
+      summary: "Подтверждённое наличие только у двух предложений.",
+      selectedOfferIds: [],
+      appliedFilters: [],
+      warnings: [],
+      citations: [],
+      intent: "help",
+    });
+    expect(setTableFilter).not.toHaveBeenCalled();
   });
 
   it("applies tableFilter on filter intent", () => {
