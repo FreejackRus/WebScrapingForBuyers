@@ -20,6 +20,28 @@ import type { AnalysisNarrator } from "../src/domain/analysis-narrator.js";
 import { OllamaAnalysisNarrator } from "../src/infrastructure/ollama-analysis-narrator.js";
 
 const SNAPSHOT_PROMPTS = ["Сравни лучшие предложения", "Что есть в наличии?", "Покажи самую низкую цену"];
+
+/**
+ * Lines a manager typed next to an open table (prod, 2026-10-05). Each has a
+ * deterministic grader: the answer must address the question, not re-tell the pick.
+ */
+const CONVERSATION: Array<{ prompt: string; check: string; pass: (text: string) => boolean }> = [
+  {
+    prompt: "понятно, а по ссылке ты можешь сам просмотреть?",
+    check: "честно: ссылки не открывает",
+    pass: (t) => /не (?:могу|открыва|просматрива|захож|имею доступ)|только (?:данные|таблиц|то, что)|не вижу (?:сайт|страниц)/i.test(t),
+  },
+  {
+    prompt: "так ты со мной говоришь?",
+    check: "отвечает прямо, без пересказа выбора",
+    pass: (t) => /\bда\b/i.test(t) && !/лучш\w* (?:вариант|предложени)/i.test(t),
+  },
+  {
+    prompt: "ты меня обманул",
+    check: "объясняет основание и предлагает шаг",
+    pass: (t) => /цен/i.test(t) && /наличи|бюджет|фильтр|уточн/i.test(t) && !/лучшим вариантом (?:выбран|признан)/i.test(t),
+  },
+];
 const CHAT_PROMPTS = [
   "Привет! Что ты умеешь?",
   "Найди клавиатуру Logitech MX Keys",
@@ -106,6 +128,18 @@ async function evaluate(model: string, snapshots: SearchSnapshot[], baseUrl: str
       process.stderr.write(`${model} | ${label}\n`);
     }
   }
+  for (const snapshot of snapshots) {
+    for (const { prompt } of CONVERSATION) {
+      const started = performance.now();
+      const label = `${snapshot.query} · ${prompt}`;
+      try {
+        runs.push({ label, result: await analyzeSnapshot(snapshot, prompt, narrator, options), ms: performance.now() - started });
+      } catch (error) {
+        runs.push({ label, error: String(error), ms: performance.now() - started });
+      }
+      process.stderr.write(`${model} | ${label}\n`);
+    }
+  }
   for (const prompt of CHAT_PROMPTS) {
     const started = performance.now();
     try {
@@ -145,6 +179,14 @@ async function main() {
         texts.filter((c) => cyrillicShare(c.text) < 0.8).length
       } | ${percentile(ms, 50).toFixed(1)} | ${percentile(ms, 95).toFixed(1)} | ${Math.max(0, ...ms).toFixed(1)} |`,
     );
+  }
+  lines.push("", "## Разговор рядом с таблицей (code-based graders)", "");
+  for (const { model, runs } of results) {
+    for (const { prompt, check, pass } of CONVERSATION) {
+      const mine = runs.filter((r) => r.label.endsWith(` · ${prompt}`));
+      const ok = mine.filter((r) => r.result && pass(r.result.summary)).length;
+      lines.push(`- ${model} · «${prompt}» (${check}): ${ok}/${mine.length}`);
+    }
   }
   lines.push("", "## По методам", "");
   for (const { model, calls } of results) {

@@ -80,6 +80,8 @@ export interface OfferTableFilter {
   realOnly?: boolean;
   sources?: string[];
   maxPrice?: number;
+  /** Keep only rows whose availability is a confirmed «В наличии». */
+  inStockOnly?: boolean;
   selectedOfferIds?: string[];
   /** Keep rows whose title contains at least one of these tokens (lowercase match). */
   titleIncludeAny?: string[];

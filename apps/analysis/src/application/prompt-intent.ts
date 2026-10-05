@@ -102,9 +102,30 @@ export function addressName(userName?: string): string | undefined {
 }
 
 /** True when the user is reshaping the current offers table (not asking for VNC/admin). */
+/** «в наличии», «по наличию», «что есть на складе». */
+export function wantsInStock(normalized: string): boolean {
+  return /наличи|на складе/.test(normalized);
+}
+
+/** Confirmed stock only: «В наличии» / «В наличии: 12». «Неизвестно», «Под заказ», «Уточнять» are not. */
+export function isInStock(availability: string): boolean {
+  return /^в наличии/i.test(availability.trim());
+}
+
+/**
+ * Asks about the offers themselves: compare, pick, explain the choice, price.
+ * Anything else typed next to a table («посмотришь ссылку?», «ты меня обманул»)
+ * is a conversation and must be answered, not replaced by a re-told selection.
+ */
+function wantsSelection(normalized: string): boolean {
+  return /сравн|оцен|риск|поставщ|продавц|доставк|срок|гарант|надёжн|надежн|лучш|выбер|выбор|выгодн|дешев|дорож|дорог|посовет|рекоменд|какой\s+(?:взять|купить|лучше)|что\s+(?:взять|купить)|объясн|почему\s+(?:этот|выбран|он|именно)|итог|анализ|предложени|цен[аыуе]|стоимост|оффер/.test(
+    normalized,
+  );
+}
+
 export function wantsTableFilter(normalized: string): boolean {
   return (
-    /отфильтр|фильтруй|\bфильтр\b|оставь|убери|исключ|покажи только|выдай только|только реальн|только сам|только ноутбук|опять (?:отфильтр|фильтр)|пробегись|по всем источникам|без демо|не демо|дешевл|ниже \d|до \d|под \d|не консол|без консол|не приставк|без legion go|не legion go|только (?:вб|wb|вайлдберр|wildberries|ситилинк|citilink|ozon|озон|dns|днс|avito|авито)/.test(
+    /наличи|на складе|отфильтр|фильтруй|\bфильтр\b|оставь|убери|исключ|покажи только|выдай только|только реальн|только сам|только ноутбук|опять (?:отфильтр|фильтр)|пробегись|по всем источникам|без демо|не демо|дешевл|ниже \d|до \d|под \d|не консол|без консол|не приставк|без legion go|не legion go|только (?:вб|wb|вайлдберр|wildberries|ситилинк|citilink|ozon|озон|dns|днс|avito|авито)/.test(
       normalized,
     )
   );
@@ -164,7 +185,7 @@ export function classifyIntent(normalized: string, searchQuery: string): ChatInt
       normalized,
     );
   if (wantSearch && searchQuery.length >= 2) return "search";
-  return "explain";
+  return wantsSelection(normalized) ? "explain" : "help";
 }
 
 export function buildTableFilter(input: {
@@ -176,12 +197,14 @@ export function buildTableFilter(input: {
   maxPrice?: number;
   titleRules?: TitleFilterRules;
   selectedOfferIds?: string[];
+  inStockOnly?: boolean;
 }): OfferTableFilter | undefined {
   if (input.intent !== "filter") return undefined;
   const filter: OfferTableFilter = {};
   if (!input.includeDemo && (input.wantRealOnly || input.realCount > 0)) filter.realOnly = true;
   if (input.sources.length > 0) filter.sources = input.sources;
   if (input.maxPrice != null) filter.maxPrice = input.maxPrice;
+  if (input.inStockOnly) filter.inStockOnly = true;
   if (input.titleRules?.includeAny?.length) filter.titleIncludeAny = input.titleRules.includeAny;
   if (input.titleRules?.excludeAny?.length) filter.titleExcludeAny = input.titleRules.excludeAny;
   if (input.selectedOfferIds) filter.selectedOfferIds = input.selectedOfferIds;

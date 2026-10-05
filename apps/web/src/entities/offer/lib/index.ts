@@ -49,6 +49,7 @@ export function applyTableFilter(offers: Offer[], filter?: OfferTableFilter) {
       if (!matched) return false;
     }
     if (filter.maxPrice != null && offer.price > filter.maxPrice) return false;
+    if (filter.inStockOnly && !/^в наличии/i.test(offer.availability.trim())) return false;
     if (filter.titleExcludeAny?.length) {
       const hay = offer.title.toLocaleLowerCase("ru");
       if (filter.titleExcludeAny.some((token) => hay.includes(token.toLocaleLowerCase("ru")))) {

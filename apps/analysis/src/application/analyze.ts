@@ -17,9 +17,11 @@ import {
   cannedMetaAnswer,
   classifyIntent,
   extractSearchQuery,
+  isInStock,
   parseMaxPrice,
   parseSources,
   parseTitleFilterRules,
+  wantsInStock,
   withGreeting,
 } from "./prompt-intent.js";
 import {
@@ -84,6 +86,25 @@ function sourceLines(snapshot: SearchSnapshot): string[] {
 const META_INTENTS = new Set(["help", "export", "sources", "ranking", "admin"]);
 
 type MetaIntent = Exclude<ChatIntent, "explain" | "filter" | "search" | "blocked" | "demo">;
+
+/** What the copilot may say about the open table; computed here, never by the model. */
+function tableFacts(offers: Offer[]): string[] {
+  const real = offers.filter((offer) => !offer.demo && offer.priceAnomaly !== "too_low");
+  const inStock = real.filter((offer) => isInStock(offer.availability));
+  const unknown = real.filter((offer) => /неизвестн|уточн/i.test(offer.availability));
+  const cheapest = [...real].sort((a, b) => a.price - b.price)[0];
+  const cheapestInStock = [...inStock].sort((a, b) => a.price - b.price)[0];
+  const facts = [
+    `В таблице ${real.length} предложений; с подтверждённым наличием — ${inStock.length}, наличие не сообщается — ${unknown.length}.`,
+  ];
+  if (cheapest) facts.push(`Самое дешёвое: ${offerLabel(cheapest)}, наличие: ${cheapest.availability}.`);
+  if (cheapestInStock && cheapestInStock !== cheapest) {
+    facts.push(`Самое дешёвое с подтверждённым наличием: ${offerLabel(cheapestInStock)}.`);
+  }
+  facts.push("Отбор «лучшего» — самая низкая цена среди подходящих по названию; наличие и продавца он не проверяет.");
+  facts.push("Копайлот не открывает ссылки и сайты: видит только эти данные таблицы.");
+  return facts;
+}
 
 function asMetaIntent(intent: ChatIntent): MetaIntent | undefined {
   if (intent === "demo") return "help";
@@ -296,6 +317,7 @@ async function analyzeSnapshotRaw(
       const narrated = await narrator.answer({
         prompt,
         intentHint: metaIntent,
+        tableFacts: tableFacts(incoming),
         snapshotQuery: snapshot.query,
         productName: snapshot.product.name,
         offerCount: incoming.length,
@@ -396,6 +418,18 @@ async function analyzeSnapshotRaw(
     const before = offers.length;
     offers = offers.filter((offer) => matchesSource(offer, sources));
     filters.push(`Только источники ${sources.join(", ")} (${offers.length} из ${before}).`);
+  }
+  const inStockOnly = wantsInStock(normalized);
+  if (inStockOnly) {
+    const before = offers.length;
+    const unknown = offers.filter((offer) => /неизвестн|уточн/i.test(offer.availability)).length;
+    offers = offers.filter((offer) => isInStock(offer.availability));
+    filters.push(`Только с подтверждённым наличием (${offers.length} из ${before}).`);
+    if (unknown > 0) {
+      warnings.push(
+        `У ${ruCount(unknown, "предложения", "предложений", "предложений")} площадка не сообщает наличие (обычно Авито) — они скрыты; уточняйте у продавца.`,
+      );
+    }
   }
   if (maxPrice != null) {
     const before = offers.length;
@@ -499,6 +533,7 @@ async function analyzeSnapshotRaw(
     sources,
     ...(maxPrice != null ? { maxPrice } : {}),
     ...(titleRules ? { titleRules } : {}),
+    ...(inStockOnly ? { inStockOnly } : {}),
     selectedOfferIds: selected.map((offer) => offer.id),
   });
   const citations = selected.filter((offer) => offer.url).map(citationOf);

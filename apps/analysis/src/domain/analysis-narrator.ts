@@ -26,6 +26,8 @@ export interface CopilotChatInput {
   offerCount?: number;
   sourceLines?: string[];
   intentHint?: string;
+  /** Deterministic facts about the open table (counts, cheapest, stock) — the only offers the model may mention. */
+  tableFacts?: string[];
 }
 
 export interface CopilotChatAnswer {
