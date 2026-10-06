@@ -1,4 +1,4 @@
-import type { SearchSnapshot, SessionUser } from "@peremena/contracts";
+import type { ChatTurn, SearchSnapshot, SessionUser } from "@peremena/contracts";
 import { createService, fetchWithTimeout, isTimeoutError, serviceUrl } from "@peremena/service-kit";
 import type { FastifyReply, FastifyRequest } from "fastify";
 
@@ -171,12 +171,12 @@ export function buildGatewayApp(options: { logger?: boolean; history?: SearchHis
     void pump();
     return reply;
   });
-  app.post<{ Params: { id: string }; Body: { prompt?: string } }>(
+  app.post<{ Params: { id: string }; Body: { prompt?: string; history?: unknown } }>(
     "/api/v1/searches/:id/analyze",
     async (request, reply) =>
       proxyJson(analysis, `/searches/${request.params.id}/analyze`, request, reply, userPrompt(request), ANALYSIS_TIMEOUT_MS),
   );
-  app.post<{ Body: { prompt?: string } }>("/api/v1/copilot/chat", async (request, reply) =>
+  app.post<{ Body: { prompt?: string; history?: unknown } }>("/api/v1/copilot/chat", async (request, reply) =>
     proxyJson(analysis, "/chat", request, reply, userPrompt(request), ANALYSIS_TIMEOUT_MS),
   );
   app.get<{ Params: { id: string } }>("/api/v1/searches/:id/export.xlsx", async (request, reply) => {
@@ -217,11 +217,29 @@ declare module "fastify" {
 }
 
 /** The prompt plus who is asking, so analysis can tailor and sanitise its answer. */
-function userPrompt(request: FastifyRequest<{ Body: { prompt?: string } }>) {
+/** Last chat turns from the browser: keep only well-formed ones, newest 6, each clipped. */
+export function chatHistory(raw: unknown): ChatTurn[] {
+  if (!Array.isArray(raw)) return [];
+  return raw
+    .filter(
+      (turn): turn is ChatTurn =>
+        typeof turn === "object" &&
+        turn !== null &&
+        ((turn as ChatTurn).role === "user" || (turn as ChatTurn).role === "assistant") &&
+        typeof (turn as ChatTurn).text === "string" &&
+        (turn as ChatTurn).text.trim().length > 0,
+    )
+    .slice(-6)
+    .map((turn) => ({ role: turn.role, text: turn.text.slice(0, 1_000) }));
+}
+
+function userPrompt(request: FastifyRequest<{ Body: { prompt?: string; history?: unknown } }>) {
   const prompt = typeof request.body?.prompt === "string" ? request.body.prompt : "";
   const user = request.currentUser;
+  const history = chatHistory(request.body?.history);
   return {
     prompt,
+    ...(history.length ? { history } : {}),
     ...(user?.displayName ? { userName: user.displayName } : {}),
     ...(user?.role ? { userRole: user.role } : {}),
     ...(user?.login ? { userLogin: user.login } : {}),

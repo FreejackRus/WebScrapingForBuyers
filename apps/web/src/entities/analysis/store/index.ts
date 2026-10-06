@@ -1,4 +1,4 @@
-import type { AnalysisResult, ChatSafetyInfo, OfferCitation } from "@peremena/contracts";
+import type { AnalysisResult, ChatSafetyInfo, ChatTurn, OfferCitation } from "@peremena/contracts";
 import { create } from "zustand";
 
 import { analysisApi } from "../api";
@@ -26,6 +26,21 @@ interface AnalysisState {
 
 const emptyMessages: ChatMessage[] = [];
 
+/** Turns that never reached the model are not conversation. */
+const TRANSPORT_FAILURES = new Set([
+  "Не удалось обратиться к анализу. Повторите запрос.",
+  "Не удалось обратиться к модели. Повторите запрос.",
+]);
+const HISTORY_TURNS = 6;
+
+/** The last turns shown in the chat, oldest first, sent so the copilot can follow the thread. */
+export function chatHistory(messages: ChatMessage[]): ChatTurn[] {
+  return messages
+    .filter((message) => !TRANSPORT_FAILURES.has(message.text))
+    .slice(-HISTORY_TURNS)
+    .map((message) => ({ role: message.role, text: message.text }));
+}
+
 function nextId() {
   return `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
 }
@@ -50,13 +65,14 @@ export const useAnalysisStore = create<AnalysisState>((set, get) => ({
   run: async (searchId, promptText) => {
     const prompt = (promptText ?? get().prompt).trim();
     if (prompt.length < 2) throw new Error("Пустой запрос");
+    const history = chatHistory(get().messages);
     set((current) => ({
       busy: true,
       prompt: "",
       messages: [...current.messages, { id: nextId(), role: "user", text: prompt, citations: [] }],
     }));
     try {
-      const analysis = await analysisApi.analyze(searchId, prompt);
+      const analysis = await analysisApi.analyze(searchId, prompt, history);
       set((current) => ({
         analysis,
         busy: false,
@@ -93,13 +109,14 @@ export const useAnalysisStore = create<AnalysisState>((set, get) => ({
   chat: async (promptText) => {
     const prompt = promptText.trim();
     if (prompt.length < 2) throw new Error("Пустой запрос");
+    const history = chatHistory(get().messages);
     set((current) => ({
       busy: true,
       prompt: "",
       messages: [...current.messages, { id: nextId(), role: "user", text: prompt, citations: [] }],
     }));
     try {
-      const analysis = await analysisApi.chat(prompt);
+      const analysis = await analysisApi.chat(prompt, history);
       set((current) => ({
         analysis,
         busy: false,

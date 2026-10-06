@@ -1,6 +1,7 @@
 import type {
   AnalysisResult,
   ChatIntent,
+  ChatTurn,
   Offer,
   OfferCitation,
   SearchSnapshot,
@@ -34,6 +35,8 @@ import {
 import { publicSourceLines, sanitizeAnalysisResult } from "./infra-leak.js";
 
 export interface AnalyzeOptions {
+  /** Earlier turns of this chat, oldest first; context for the model only, never facts. */
+  history?: ChatTurn[];
   userName?: string;
   userRole?: UserRole;
   userLogin?: string;
@@ -87,6 +90,11 @@ function sourceLines(snapshot: SearchSnapshot): string[] {
 const META_INTENTS = new Set(["help", "export", "sources", "ranking", "admin"]);
 
 type MetaIntent = Exclude<ChatIntent, "explain" | "filter" | "search" | "blocked" | "demo">;
+
+/** Earlier turns for the model's context; omitted when empty so payloads stay unchanged. */
+function historyOf(options: AnalyzeOptions): { history?: ChatTurn[] } {
+  return options.history?.length ? { history: options.history } : {};
+}
 
 /** What the copilot may say about the open table; computed here, never by the model. */
 function tableFacts(offers: Offer[]): string[] {
@@ -326,6 +334,7 @@ async function analyzeSnapshotRaw(
     if (!narrator?.answer || metaIntent === "admin" || metaIntent === "sources") return base;
     try {
       const narrated = await narrator.answer({
+        ...historyOf(options),
         prompt,
         // A remark in a running conversation is not a help request: no self-introduction.
         intentHint: metaIntent === "help" && !isHelpRequest(normalized) ? "chat" : metaIntent,
@@ -371,6 +380,7 @@ async function analyzeSnapshotRaw(
     if (narrator?.answer) {
       try {
         const narrated = await narrator.answer({
+        ...historyOf(options),
           prompt,
           intentHint: "search",
           snapshotQuery: snapshot.query,
@@ -586,6 +596,7 @@ async function analyzeSnapshotRaw(
 
   try {
     const narrated = await narrator.summarize({
+      ...historyOf(options),
       prompt,
       rankedOffers: offers,
       selectedOfferIds: result.selectedOfferIds,
@@ -714,6 +725,7 @@ async function answerCopilotRaw(
   if (narrator?.answer) {
     try {
       const narrated = await narrator.answer({
+        ...historyOf(options),
         prompt,
         intentHint: heuristicIntent,
         ...(userName ? { userName } : {}),

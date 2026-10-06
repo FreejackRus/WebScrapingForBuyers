@@ -5,6 +5,21 @@ import { analyzeSnapshot, answerCopilot } from "./application/analyze.js";
 import type { AnalysisNarrator } from "./domain/analysis-narrator.js";
 import { OllamaAnalysisNarrator } from "./infrastructure/ollama-analysis-narrator.js";
 
+/** Earlier chat turns from the client; untrusted, bounded, context only. */
+const HISTORY_SCHEMA = {
+  type: "array",
+  maxItems: 8,
+  items: {
+    type: "object",
+    required: ["role", "text"],
+    additionalProperties: false,
+    properties: {
+      role: { type: "string", enum: ["user", "assistant"] },
+      text: { type: "string", maxLength: 2_000 },
+    },
+  },
+} as const;
+
 export function buildAnalysisApp(options: { narrator?: AnalysisNarrator; logger?: boolean } = {}) {
   const app = createService({ logger: options.logger ?? false });
   const narrator =
@@ -33,6 +48,7 @@ export function buildAnalysisApp(options: { narrator?: AnalysisNarrator; logger?
             userName: { type: "string", minLength: 1, maxLength: 80 },
             userRole: { type: "string", enum: ["admin", "manager"] },
             userLogin: { type: "string", minLength: 1, maxLength: 80 },
+            history: HISTORY_SCHEMA,
           },
         },
       },
@@ -42,6 +58,7 @@ export function buildAnalysisApp(options: { narrator?: AnalysisNarrator; logger?
         ...(request.body.userName ? { userName: request.body.userName } : {}),
         ...(request.body.userRole ? { userRole: request.body.userRole } : {}),
         ...(request.body.userLogin ? { userLogin: request.body.userLogin } : {}),
+        ...(request.body.history?.length ? { history: request.body.history } : {}),
       }),
   );
 
@@ -58,6 +75,7 @@ export function buildAnalysisApp(options: { narrator?: AnalysisNarrator; logger?
             userName: { type: "string", minLength: 1, maxLength: 80 },
             userRole: { type: "string", enum: ["admin", "manager"] },
             userLogin: { type: "string", minLength: 1, maxLength: 80 },
+            history: HISTORY_SCHEMA,
           },
         },
       },
@@ -76,6 +94,7 @@ export function buildAnalysisApp(options: { narrator?: AnalysisNarrator; logger?
         ...(request.body.userName ? { userName: request.body.userName } : {}),
         ...(request.body.userRole ? { userRole: request.body.userRole } : {}),
         ...(request.body.userLogin ? { userLogin: request.body.userLogin } : {}),
+        ...(request.body.history?.length ? { history: request.body.history } : {}),
         searchId: request.params.id,
       });
     },

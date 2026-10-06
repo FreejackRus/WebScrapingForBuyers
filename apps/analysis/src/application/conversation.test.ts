@@ -78,6 +78,24 @@ describe("chat next to an open table", () => {
     expect(result.warnings.join(" ")).not.toMatch(/Не отвечаю на вопросы вне/);
   });
 
+  it("passes earlier turns to the model so «было же наличие» has a referent", async () => {
+    let seen: CopilotChatInput | undefined;
+    const narrator: AnalysisNarrator = {
+      name: "test",
+      summarize: async () => ({ summary: "", warnings: [] }),
+      answer: async (input) => {
+        seen = input;
+        return { summary: "Ок.", warnings: [] };
+      },
+    };
+    const history = [
+      { role: "user" as const, text: "где есть наличие" },
+      { role: "assistant" as const, text: "Подтверждённое наличие у двух: WB и Ozon." },
+    ];
+    await analyzeSnapshot(snap, "так стопэ, было же наличие", narrator, { history });
+    expect(seen?.history).toEqual(history);
+  });
+
   it("a complaint reaches the model as a question, with table facts, not as a re-told pick", async () => {
     let seen: CopilotChatInput | undefined;
     const narrator: AnalysisNarrator = {

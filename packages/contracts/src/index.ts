@@ -105,8 +105,16 @@ export type ChatIntent =
   | "admin"
   | "blocked";
 
+/** One earlier line of the copilot conversation, oldest first. */
+export interface ChatTurn {
+  role: "user" | "assistant";
+  text: string;
+}
+
 export interface AnalyzeRequest {
   prompt: string;
+  /** Last turns before `prompt` so «было же наличие» has something to refer to. Untrusted. */
+  history?: ChatTurn[];
   /** Display name from session/settings (e.g. «Михаил»). Gateway injects it. */
   userName?: string;
   userRole?: UserRole;

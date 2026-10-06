@@ -1,7 +1,8 @@
-import type { ChatIntent, Offer, SearchSnapshot, UserRole } from "@peremena/contracts";
+import type { ChatIntent, ChatTurn, Offer, SearchSnapshot, UserRole } from "@peremena/contracts";
 
 export interface AnalysisNarration {
   prompt: string;
+  history?: ChatTurn[];
   rankedOffers: Offer[];
   selectedOfferIds: string[];
   deterministicSummary: string;
@@ -18,6 +19,7 @@ export interface AnalysisNarration {
 /** Free-form copilot Q&A (help, greetings, Excel, sources FAQ) — still Price Radar scoped. */
 export interface CopilotChatInput {
   prompt: string;
+  history?: ChatTurn[];
   userName?: string;
   userRole?: UserRole;
   addressAs?: string;
