@@ -14,3 +14,5 @@ coverage/
 .DS_Store
 .deploy-log
 .deploy-stamp
+.serena/cache/
+.serena/project.local.yml
