@@ -34,7 +34,8 @@ const CONVERSATION: Array<{ prompt: string; check: string; pass: (text: string) 
   {
     prompt: "так ты со мной говоришь?",
     check: "отвечает прямо, без пересказа выбора",
-    pass: (t) => /\bда\b/i.test(t) && !/лучш\w* (?:вариант|предложени)/i.test(t),
+    // \b is ASCII-only in JS regex: it never matches around Cyrillic letters.
+    pass: (t) => /(?:^|[^а-яё])да(?:[^а-яё]|$)/i.test(t) && !/лучш[а-яё]* (?:вариант|предложени)/i.test(t),
   },
   {
     prompt: "ты меня обманул",

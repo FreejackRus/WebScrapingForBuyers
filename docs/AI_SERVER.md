@@ -50,7 +50,23 @@ localhost:9221). Ручной challenge — VNC `127.0.0.1:5901` через
 megamarket.ru / aliexpress.ru в профиле `chrome-headed`.
 Процедура: `docs/CHROME_VNC.md`. B2B-дистрибьюторы: `docs/DISTRIBUTORS.md`.
 
-## Модель в проде (с 2026-09-29)
+## Модель в проде (с 2026-10-06)
+
+`OLLAMA_MODEL=qwen3.8:27b-q8_0` — Qwen 3.8 27B (плотная, август 2026), Q8_0, 29 GB.
+Сменила Gemma 4 26B A4B по A/B 2026-10-05 на 6 живых снимках с разговорными
+фразами менеджера (`compare-models.ts`, code-based graders): обе модели 0 ошибок
+JSON, 0 утечек, 18/18 разговорных проверок. Qwen 3.8 опирается на факты таблицы
+(«Вижу 15 предложений, подтверждённого наличия нет…») и не повторяет
+самопредставление; Gemma отвечает шаблоннее. Цена — задержка: медиана 2.6 с
+против 1.0 с, p95 7.4 с против 2.0 с, сводка 6.2 с против 1.9 с.
+Thinking у Qwen 3.8 включён по умолчанию — narrator шлёт `think: false`.
+
+Откат: `OLLAMA_MODEL=gemma4:26b-a4b-it-q8_0` в `.env.production` и
+`./scripts/deploy.sh origin/main analysis` (Gemma и Qwen3-30B оставлены на сервере).
+Кандидаты на потом (исследование `docs/research/2026-10-05-llm-copilot-best-practices.md`):
+Gemma 4 31B QAT, Qwen 3.6 35B-A3B.
+
+## Прежняя модель (2026-09-29 — 2026-10-05)
 
 `OLLAMA_MODEL=gemma4:26b-a4b-it-q8_0` — Gemma 4 26B A4B (MoE: 25.2B параметров,
 3.8B активных на токен), квантизация Q8_0, ~28 GB VRAM. Ollama обновлена
