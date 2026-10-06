@@ -3,7 +3,11 @@ import { createService, fetchWithTimeout, serviceUrl } from "@peremena/service-k
 
 import { analyzeSnapshot, answerCopilot } from "./application/analyze.js";
 import type { AnalysisNarrator } from "./domain/analysis-narrator.js";
-import { OllamaAnalysisNarrator } from "./infrastructure/ollama-analysis-narrator.js";
+import {
+  keepAliveFromEnv,
+  OllamaAnalysisNarrator,
+  samplingFromEnv,
+} from "./infrastructure/ollama-analysis-narrator.js";
 
 /** Earlier chat turns from the client; untrusted, bounded, context only. */
 const HISTORY_SCHEMA = {
@@ -25,14 +29,19 @@ export function buildAnalysisApp(options: { narrator?: AnalysisNarrator; logger?
   const narrator =
     options.narrator ??
     (process.env.OLLAMA_BASE_URL && process.env.OLLAMA_MODEL
-      ? new OllamaAnalysisNarrator(process.env.OLLAMA_BASE_URL, process.env.OLLAMA_MODEL)
+      ? new OllamaAnalysisNarrator(
+          process.env.OLLAMA_BASE_URL,
+          process.env.OLLAMA_MODEL,
+          samplingFromEnv(process.env.OLLAMA_SAMPLING),
+          keepAliveFromEnv(process.env.OLLAMA_KEEP_ALIVE),
+        )
       : undefined);
   const searchBase = serviceUrl("SEARCH_URL", "http://127.0.0.1:3003");
 
   app.get("/health", async () => ({
     status: "ok",
     service: "analysis",
-    provider: narrator?.name ?? "Детерминированный анализ",
+    provider: narrator?.name ?? "Анализ Price Radar без AI",
   }));
 
   app.post<{ Body: AnalyzeRequest }>(

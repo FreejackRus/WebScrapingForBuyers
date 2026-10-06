@@ -86,7 +86,11 @@ services:
       HOST: "0.0.0.0"
       SEARCH_URL: http://search:3003
       OLLAMA_BASE_URL: http://host.docker.internal:11434
-      OLLAMA_MODEL: ${OLLAMA_MODEL:-hf.co/unsloth/Qwen3-30B-A3B-Instruct-2507-GGUF:IQ4_XS}
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-qwen3.8:27b-q8_0}
+      # Dedicated GPU host: keep the model resident, no ~20 s reload after idle.
+      OLLAMA_KEEP_ALIVE: ${OLLAMA_KEEP_ALIVE:--1}
+      # Optional JSON override of sampling (see ollama-analysis-narrator.ts).
+      OLLAMA_SAMPLING: ${OLLAMA_SAMPLING:-}
     extra_hosts:
       - host.docker.internal:host-gateway
     depends_on:

@@ -17,7 +17,29 @@ import type { AnalysisResult, SearchSnapshot } from "@peremena/contracts";
 import { analyzeSnapshot, answerCopilot } from "../src/application/analyze.js";
 import { hasInfraLeak } from "../src/application/infra-leak.js";
 import type { AnalysisNarrator } from "../src/domain/analysis-narrator.js";
-import { OllamaAnalysisNarrator } from "../src/infrastructure/ollama-analysis-narrator.js";
+import {
+  DEFAULT_SAMPLING,
+  OllamaAnalysisNarrator,
+  type SamplingOptions,
+} from "../src/infrastructure/ollama-analysis-narrator.js";
+
+/**
+ * `model@preset` compares sampling settings of one model. `vendor` is Qwen 3.8's
+ * documented non-thinking recommendation; `mid` sits between it and our default.
+ */
+const PRESETS: Record<string, SamplingOptions> = {
+  current: DEFAULT_SAMPLING,
+  old: { temperature: 0.1, top_p: 0.9 },
+  vendor: { temperature: 0.7, top_p: 0.8, top_k: 20, min_p: 0, presence_penalty: 1.5 },
+  mid: { temperature: 0.3, top_p: 0.8, top_k: 20, min_p: 0 },
+};
+
+function narratorFor(spec: string, baseUrl: string) {
+  const [model, preset = "current"] = spec.split("@");
+  const sampling = PRESETS[preset];
+  if (!model || !sampling) throw new Error(`unknown model spec ${spec}`);
+  return new OllamaAnalysisNarrator(baseUrl, model, sampling, -1);
+}
 
 const SNAPSHOT_PROMPTS = ["Сравни лучшие предложения", "Что есть в наличии?", "Покажи самую низкую цену"];
 
@@ -65,6 +87,9 @@ interface Run {
   ms: number;
 }
 
+/** Words a procurement manager should never have to read. */
+const JARGON = /детерминир|алгоритм|ранжир|релевантн|эвристик|оффер|\bID\b|JSON|LLM|нейросет|пайплайн/i;
+
 function cyrillicShare(text: string): number {
   const letters = text.match(/\p{L}/gu) ?? [];
   if (!letters.length) return 1;
@@ -110,12 +135,12 @@ function percentile(values: number[], p: number): number {
 
 async function evaluate(model: string, snapshots: SearchSnapshot[], baseUrl: string) {
   const calls: Call[] = [];
-  const narrator = recording(new OllamaAnalysisNarrator(baseUrl, model), calls);
+  const narrator = recording(narratorFor(model, baseUrl), calls);
   const runs: Run[] = [];
   const options = { userRole: "manager" as const, userName: "Анна Петрова", addressAs: "Анна" };
 
   // Warm-up: the first call pays model load into VRAM; keep it out of latency.
-  await answerCopilot("Привет", new OllamaAnalysisNarrator(baseUrl, model), options).catch(() => undefined);
+  await answerCopilot("Привет", narratorFor(model, baseUrl), options).catch(() => undefined);
 
   for (const snapshot of snapshots) {
     for (const prompt of SNAPSHOT_PROMPTS) {
@@ -169,14 +194,16 @@ async function main() {
   const lines: string[] = [`# Сравнение моделей: ${models.join(" vs ")}`, ""];
   lines.push(`Снимков: ${snapshots.length} (${snapshots.map((s) => `${s.query} — ${s.offers.length}`).join("; ")})`, "");
   lines.push(
-    "| Модель | Вызовов | Ошибок/невалидный JSON | Утечки тех. терминов (сырые) | Не по-русски (<80% кириллицы) | p50, с | p95, с | max, с |",
-    "|---|---|---|---|---|---|---|---|",
+    "| Модель | Вызовов | Ошибок/невалидный JSON | Утечки тех. терминов (сырые) | Жаргон для менеджера | Не по-русски (<80% кириллицы) | p50, с | p95, с | max, с |",
+    "|---|---|---|---|---|---|---|---|---|",
   );
   for (const { model, calls } of results) {
     const ms = calls.map((c) => c.ms / 1000);
     const texts = calls.filter((c) => c.ok && c.text.trim());
     lines.push(
       `| ${model} | ${calls.length} | ${calls.filter((c) => !c.ok).length} | ${texts.filter((c) => hasInfraLeak(c.text)).length} | ${
+        texts.filter((c) => JARGON.test(c.text)).length
+      } | ${
         texts.filter((c) => cyrillicShare(c.text) < 0.8).length
       } | ${percentile(ms, 50).toFixed(1)} | ${percentile(ms, 95).toFixed(1)} | ${Math.max(0, ...ms).toFixed(1)} |`,
     );

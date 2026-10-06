@@ -376,7 +376,7 @@ async function analyzeSnapshotRaw(
       userName,
     );
     let warnings: string[] = [];
-    let provider = "Детерминированный поиск Price Radar";
+    let provider = "Поиск Price Radar";
     if (narrator?.answer) {
       try {
         const narrated = await narrator.answer({
@@ -462,7 +462,7 @@ async function analyzeSnapshotRaw(
       warnings,
       citations: [],
       intent: "help",
-      provider: "Детерминированный отбор Price Radar",
+      provider: "Отбор Price Radar",
     };
   }
   if (inStockOnly) {
@@ -620,9 +620,9 @@ async function analyzeSnapshotRaw(
       ...result,
       warnings: [
         ...result.warnings,
-        `AI-анализ недоступен: ${narrationFailureMessage(error)}. Сохранён детерминированный отбор.`,
+        `AI-анализ недоступен: ${narrationFailureMessage(error)}. Показан отбор по цене без пояснения.`,
       ],
-      provider: "Детерминированный fallback",
+      provider: "Отбор Price Radar без AI-пояснения",
     };
   }
 }
