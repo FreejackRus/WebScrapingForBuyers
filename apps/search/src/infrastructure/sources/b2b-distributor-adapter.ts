@@ -3,6 +3,7 @@ import type { Product } from "@peremena/contracts";
 import type { SourceAdapter } from "../../domain/source-adapter.js";
 import { merlionConfigFromEnv, searchMerlion } from "./merlion-client.js";
 import { netlabConfigFromEnv, searchNetlab } from "./netlab-client.js";
+import { NetlabPriceFeedAdapter, netlabFeedOptionsFromEnv } from "./netlab-price-feed.js";
 import { ocsConfigFromEnv, searchOcs } from "./ocs-client.js";
 import { StorefrontDistributorAdapter } from "./storefront-distributor-adapter.js";
 
@@ -28,7 +29,7 @@ interface DistributorSpec {
   name: string;
   /** Env keys that must all be non-empty to mount (credentials). */
   requiredEnv: string[];
-  status: "needs_credentials" | "stub_pending_api" | "partner_portal" | "live_client" | "storefront";
+  status: "needs_credentials" | "stub_pending_api" | "partner_portal" | "live_client" | "storefront" | "price_feed";
   hint: string;
 }
 
@@ -50,9 +51,9 @@ const DISTRIBUTORS: DistributorSpec[] = [
   {
     kind: "netlab",
     name: "NETLAB",
-    requiredEnv: ["NETLAB_API_LOGIN", "NETLAB_API_PASSWORD"],
-    status: "live_client",
-    hint: "NETLAB NLDealer REST ready when credentials are set.",
+    requiredEnv: [],
+    status: "price_feed",
+    hint: "NETLAB: public hourly price list (pricexml.zip). NETLAB_TRANSPORT=api + credentials switch to NLDealer REST.",
   },
   {
     kind: "servermall",
@@ -176,16 +177,24 @@ export function createDistributorSourcesFromEnv(): SourceAdapter[] {
       .map((value) => ALIASES[value] ?? (value as DistributorKind)),
   );
   return DISTRIBUTORS.filter((spec) => wanted.has(spec.kind) && envFilled(spec.requiredEnv)).map(
-    (spec) => {
+    (spec): SourceAdapter | undefined => {
       if (spec.kind === "merlion") return new MerlionSourceAdapter();
       if (spec.kind === "ocs") return new OcsSourceAdapter();
-      if (spec.kind === "netlab") return new NetlabSourceAdapter();
+      if (spec.kind === "netlab") {
+        if (process.env.NETLAB_TRANSPORT?.trim().toLowerCase() === "api") {
+          return envFilled(["NETLAB_API_LOGIN", "NETLAB_API_PASSWORD"]) ? new NetlabSourceAdapter() : undefined;
+        }
+        const feed = new NetlabPriceFeedAdapter(netlabFeedOptionsFromEnv());
+        // Warm the hourly price list so the first search does not wait for the download.
+        if (process.env.NODE_ENV === "production") void feed.load().catch(() => undefined);
+        return feed;
+      }
       if (spec.kind === "srvtrade" || spec.kind === "servermall") {
         return new StorefrontDistributorAdapter(spec.kind);
       }
       return new B2bDistributorStubAdapter(spec);
     },
-  );
+  ).filter((source): source is SourceAdapter => source !== undefined);
 }
 
 export function listDistributorSpecs(): readonly DistributorSpec[] {

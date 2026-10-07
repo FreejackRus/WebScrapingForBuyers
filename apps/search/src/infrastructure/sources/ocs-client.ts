@@ -2,7 +2,6 @@ import { createHash } from "node:crypto";
 
 import type { MatchKind, Offer, Product } from "@peremena/contracts";
 
-import { OFFERS_PER_SOURCE } from "../../domain/source-adapter.js";
 
 /**
  * OCS Distribution Partners Connector (REST).
@@ -205,7 +204,8 @@ export async function searchOcs(
     if (item.mpn) offer.mpn = item.mpn;
     offers.push(offer);
   }
-  return offers.slice(0, OFFERS_PER_SOURCE);
+  // Distributor rows are not capped (marketplaces keep OFFERS_PER_SOURCE).
+  return offers;
 }
 
 export function ocsConfigFromEnv(): OcsConfig | undefined {

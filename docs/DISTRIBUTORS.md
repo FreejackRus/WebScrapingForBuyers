@@ -18,7 +18,7 @@
 | AliExpress | MCP `aliexpress_search` | **wired** / x5sec CDP | `aliexpress` in `MARKETPLACE_SOURCES` |
 | **OCS** | REST Partners Connector | **клиент готов** | `OCS_API_KEY` **и** `OCS_SEARCH_PATH` (оба обязательны для mount); опц. `OCS_API_URL` / `OCS_SHIPMENT_CITY` / `OCS_LOCATION` |
 | **MERLION** | SOAP `mlservice3` | **клиент готов** | `MERLION_API_LOGIN` (`…\|API`), `MERLION_API_PASSWORD`, опц. `MERLION_API_TEST=true` |
-| **NETLAB** | REST NLDealer | **клиент готов** | `NETLAB_API_LOGIN`, `NETLAB_API_PASSWORD`, опц. `NETLAB_CLIENT_CODE`, `NETLAB_API_URL` |
+| **NETLAB** | прайс-лист `pricexml.zip` (публичная ссылка, раз в час) | **live (дилерский прайс)** | `netlab` в `DISTRIBUTOR_SOURCES`, ключ не нужен; `NETLAB_PRICE_COLUMN` (R/B–F, по умолчанию R); API — `NETLAB_TRANSPORT=api` + логин |
 | **Treolan** | SOAP B2B (`ws/service.asmx`) | документирован, клиент не wired | партнёрский логин; `b2b-info@treolan.ru` (не публичный анонимный API) |
 | **Servermall** | витрина HTTP `/search/?q=` | **live (витрина, не B2B)** | `servermall` в `DISTRIBUTOR_SOURCES`, ключ не нужен |
 | Онлайнтрейд | stub | robots.txt запрещает поиск | `ONLINETRADE_API_TOKEN` |
@@ -84,7 +84,25 @@ OCS_SHIPMENT_CITY=Москва
 OCS_LOCATION=МСК
 ```
 
-### NETLAB (готово к включению)
+### NETLAB — прайс-лист по ссылке (live с 2026-10-07)
+
+`apps/search/src/infrastructure/sources/netlab-price-feed.ts`. Публичный
+`https://www.netlab.ru/products/pricexml.zip` (≈14 МБ zip, ≈120 МБ XML в
+windows-1251, ≈67 тыс. позиций, обновляется NETLAB раз в час; формат —
+`http://www.netlab.ru/products/NL_XML_Price.doc`). Search качает его не чаще
+`NETLAB_PRICE_TTL_MIN` (60) и держит компактный индекс (~70 МБ кучи);
+загрузка ≈20 с — в production прогревается при старте, поиск ≈0,3–0,6 с.
+
+- Цены в USD (`priceR`, `priceB`…`priceF`), пересчёт по курсу из самого
+  прайса. Колонка — `NETLAB_PRICE_COLUMN` (по умолчанию R). Какая колонка
+  соответствует категории ГК «Перемена», уточнить у менеджера NETLAB.
+- Остатки звёздочками: `count` центральный склад, `remote` удалённый,
+  `transit` + `transitdate`; * 1–20, ** 21–50, *** > 50.
+- Совпадение: PN/артикул (точное), иначе цифровые токены модели целиком.
+- Строки дистрибьюторов не ограничиваются по количеству (маркетплейсы — 30).
+- При ошибке обновления остаётся предыдущий прайс.
+
+### NETLAB API (запасной вариант)
 
 1. Страница: [netlab.ru/partnyeram/servisy-b2b-i-api](https://www.netlab.ru/partnyeram/servisy-b2b-i-api/)
 2. PDF: [how_to_start](https://www.netlab.ru/nldealer/docs/web_services_netlab_how_to_start.pdf),

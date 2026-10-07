@@ -2,7 +2,6 @@ import { createHash } from "node:crypto";
 
 import type { MatchKind, Offer, Product } from "@peremena/contracts";
 
-import { OFFERS_PER_SOURCE } from "../../domain/source-adapter.js";
 
 /**
  * MERLION B2B SOAP mlservice3.
@@ -311,7 +310,8 @@ export async function searchMerlion(
     if (item.warranty) offer.warranty = `${item.warranty} мес.`;
     offers.push(offer);
   }
-  return offers.slice(0, OFFERS_PER_SOURCE);
+  // Distributor rows are not capped (marketplaces keep OFFERS_PER_SOURCE).
+  return offers;
 }
 
 export function merlionConfigFromEnv(): MerlionConfig | undefined {

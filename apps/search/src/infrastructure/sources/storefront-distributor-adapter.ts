@@ -3,7 +3,7 @@ import { createHash } from "node:crypto";
 import type { MatchKind, Offer, Product, ProductCondition } from "@peremena/contracts";
 
 import { assessMarketplaceOfferRelevance } from "../../domain/marketplace-relevance.js";
-import { OFFERS_PER_SOURCE, type SourceAdapter } from "../../domain/source-adapter.js";
+import type { SourceAdapter } from "../../domain/source-adapter.js";
 import { preferRelevantOffers } from "./mcp-marketplace-adapter.js";
 
 /**
@@ -274,7 +274,7 @@ export class StorefrontDistributorAdapter implements SourceAdapter {
       .parse(html, STOREFRONTS[this.kind].origin)
       .map((card) => toStorefrontOffer(card, product, this.kind))
       .filter((offer): offer is Offer => offer !== undefined)
-      .sort(preferRelevantOffers)
-      .slice(0, OFFERS_PER_SOURCE);
+      // Distributor rows are not capped (marketplaces keep OFFERS_PER_SOURCE).
+      .sort(preferRelevantOffers);
   }
 }

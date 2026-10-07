@@ -6,6 +6,7 @@ import {
 } from "./b2b-distributor-adapter.js";
 import * as merlion from "./merlion-client.js";
 import * as netlab from "./netlab-client.js";
+import { NetlabPriceFeedAdapter } from "./netlab-price-feed.js";
 import * as ocs from "./ocs-client.js";
 
 const sampleProduct = {
@@ -31,6 +32,7 @@ afterEach(() => {
     "NETLAB_API_LOGIN",
     "NETLAB_API_PASSWORD",
     "NETLAB_CLIENT_CODE",
+    "NETLAB_TRANSPORT",
   ]) {
     delete process.env[key];
   }
@@ -75,8 +77,22 @@ describe("createDistributorSourcesFromEnv", () => {
     expect(spy).toHaveBeenCalledOnce();
   });
 
-  it("mounts NETLAB without client code", async () => {
+  it("mounts the NETLAB price list without credentials", () => {
     process.env.DISTRIBUTOR_SOURCES = "netlab";
+    const sources = createDistributorSourcesFromEnv();
+    expect(sources).toHaveLength(1);
+    expect(sources[0]).toBeInstanceOf(NetlabPriceFeedAdapter);
+  });
+
+  it("skips the NETLAB API transport without credentials", () => {
+    process.env.DISTRIBUTOR_SOURCES = "netlab";
+    process.env.NETLAB_TRANSPORT = "api";
+    expect(createDistributorSourcesFromEnv()).toEqual([]);
+  });
+
+  it("mounts NETLAB API without client code", async () => {
+    process.env.DISTRIBUTOR_SOURCES = "netlab";
+    process.env.NETLAB_TRANSPORT = "api";
     process.env.NETLAB_API_LOGIN = "api-user";
     process.env.NETLAB_API_PASSWORD = "secret";
     const spy = vi.spyOn(netlab, "searchNetlab").mockResolvedValue([]);
