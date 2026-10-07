@@ -68,6 +68,7 @@ from mcp_core.transport.cdp_budget import navigation_budget
 from mcp_core.transport.chrome_cdp import (
     NavBlocked,
     _CdpConnectTimeout,
+    _raw_cdp_page,
     cdp_setup_hint,
     get_context,
     open_page,
@@ -1858,6 +1859,46 @@ async def _search_via_storefront(
             permit.release()
         return dict(captured)
 
+    async def _attempt_raw_live_capture() -> dict[str, Any]:
+        """Live XHR capture over raw CDP when Playwright cannot attach (Chrome 151+).
+
+        Records the page's own catalog response and reads its body with
+        Network.getResponseBody — no second request, so no re-fetch 403.
+        """
+        budget = navigation_budget()
+        permit = await budget.acquire("www.wildberries.ru")
+        try:
+            async with _cdp_lock:
+                await _polite_wait()
+                async with _raw_cdp_page(storefront_url, 0) as raw_page:
+                    await raw_page.pump_events(_STOREFRONT_WAIT_MS / 1000)
+                    entries = [e for e in raw_page.responses if _is_storefront_catalog_url(e["url"])]
+                    best: dict[str, Any] = {}
+                    for entry in reversed(entries):
+                        status = int(entry.get("status") or 0)
+                        payload: Any = None
+                        if status == 200 and entry.get("finished"):
+                            try:
+                                payload = json.loads(await raw_page.response_body(entry["requestId"]))
+                            except Exception:
+                                payload = None
+                        candidate = _capture_from_catalog_response(status, entry["url"], payload)
+                        if candidate.get("ok") and candidate.get("products"):
+                            best = candidate
+                            break
+                        if not best or (candidate.get("ok") and not best.get("ok")):
+                            best = candidate
+            permit.ok()
+        except NavBlocked as exc:
+            permit.refused(exc.status)
+            raise
+        except BaseException:
+            permit.neutral()
+            raise
+        finally:
+            permit.release()
+        return best
+
     async def _attempt_refetch_fallback() -> dict[str, Any]:
         """Last resort: Performance Timing URL + in-page fetch (may 403)."""
         async with _cdp_lock:
@@ -1886,9 +1927,18 @@ async def _search_via_storefront(
             capture = await asyncio.wait_for(_attempt_live_capture(), timeout=max(55.0, float(WB_WALL_TIMEOUT)))
         except _CdpConnectTimeout:
             # Chrome 151+ can stop completing Playwright's attach handshake.
-            # open_page has a bounded raw-CDP fallback, so continue through the
-            # existing in-page catalog refetch instead of requiring VNC.
-            capture = {}
+            # Capture the page's own catalog XHR over raw CDP; the in-page
+            # refetch below stays as the last resort (WB often 403s it).
+            try:
+                capture = await asyncio.wait_for(
+                    _attempt_raw_live_capture(),
+                    timeout=max(55.0, float(WB_WALL_TIMEOUT)),
+                )
+            except NavBlocked:
+                raise
+            except Exception as exc:
+                log_event("wb_search.raw_live_failed", error=_redact(str(exc))[:200])
+                capture = {}
         if not (capture.get("ok") and capture.get("products")):
             if ctx is not None:
                 await ctx.debug(

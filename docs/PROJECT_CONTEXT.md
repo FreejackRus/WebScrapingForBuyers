@@ -1765,3 +1765,19 @@ narrator кладёт в payload ≤ 6 реплик по 400 символов. �
   exact у СРВТрейда; SR650 V2 → 5 конфигураций Servermall), typecheck, test,
   build. Ограничение: по запросу сервера без MPN СРВТрейд отдаёт и
   комплектующие к нему; их оценивает общая релевантность.
+
+### 2026-10-07 — Wildberries: живой XHR каталога через raw CDP
+
+- Симптом в проде: «WB: каталог недоступен (403)» на любой запрос.
+- Причина: Playwright 1.63 не подключается к Chrome 154 (`_CdpConnectTimeout`),
+  поэтому WB всегда уходил в запасной путь — повторный `fetch` URL каталога
+  из страницы. WB отвечает на такой повтор 403; основной перехват настоящего
+  XHR не выполнялся вообще. Антибот-сессия Chrome при этом исправна.
+- Исправление: `_RawCdpPage` (mcp-core) записывает `Network.responseReceived`
+  / `loadingFinished` и умеет `Network.getResponseBody`; WB при отказе
+  Playwright открывает поиск по raw CDP и берёт тело ответа самой страницы
+  (`capture_mode: live_xhr`). Повторный fetch остался последним запасом.
+- Проверка: одноразовый контейнер на prod-образе и сети — «Мышь Logitech G102»
+  100 товаров, «SSD Kingston NV2 1 ТБ» 5, HTTP 200. Офлайн-тесты:
+  mcp-core + wb + aliexpress 719 passed; ozon/dns/citilink/avito/megamarket/
+  yandex 365 passed. Новый регрессионный тест на путь raw live XHR.

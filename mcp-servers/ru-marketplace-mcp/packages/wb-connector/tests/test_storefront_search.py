@@ -279,14 +279,93 @@ def test_storefront_falls_back_to_raw_cdp_when_playwright_attach_times_out(monke
     async def no_wait():
         return None
 
+    @asynccontextmanager
+    async def raw_live_unavailable(url, wait_ms=0):
+        raise RuntimeError("raw CDP unavailable")
+        yield
+
     async def scenario():
         monkeypatch.setattr(server, "get_context", incompatible_playwright)
+        monkeypatch.setattr(server, "_raw_cdp_page", raw_live_unavailable)
         monkeypatch.setattr(server, "open_page", fake_open_page)
         monkeypatch.setattr(server, "navigation_budget", lambda: FakeBudget())
         monkeypatch.setattr(server, "_polite_wait", no_wait)
         products, total, result = await server._search_via_storefront("Logitech K380", 1, None)
         assert total == 100
         assert len(products) == 3
+        assert result["version"] == "v18"
+
+    asyncio.run(scenario())
+
+
+def test_storefront_reads_live_xhr_body_over_raw_cdp_when_playwright_cannot_attach(
+    monkeypatch, storefront_transport
+):
+    """Chrome 151+: take the page's own catalog response body, never the 403-prone refetch."""
+    payload = _v18_payload()
+    catalog_url = (
+        "https://www.wildberries.ru/__internal/u-search/exactmatch/ru/common/v18/search"
+        "?resultset=catalog&query=Logitech%20K380&dest=-1257786"
+    )
+
+    @asynccontextmanager
+    async def incompatible_playwright():
+        raise server._CdpConnectTimeout("Chrome newer than Playwright")
+        yield
+
+    class FakeRawLivePage:
+        def __init__(self):
+            self.responses = [
+                {"requestId": "doc", "url": "https://www.wildberries.ru/catalog/0/search.aspx", "status": 200, "type": "Document", "finished": True},
+                {"requestId": "xhr", "url": catalog_url, "status": 200, "type": "XHR", "finished": True},
+            ]
+
+        async def pump_events(self, seconds):
+            return None
+
+        async def response_body(self, request_id):
+            assert request_id == "xhr"
+            return json.dumps(payload)
+
+    @asynccontextmanager
+    async def fake_raw_page(url, wait_ms=0):
+        yield FakeRawLivePage()
+
+    @asynccontextmanager
+    async def refetch_must_not_run(url, wait_ms=0, *, allowed_hosts=None):
+        raise AssertionError("refetch fallback must not run when the live XHR body was captured")
+        yield
+
+    class FakePermit:
+        def ok(self):
+            return None
+
+        def refused(self, status=None):
+            return None
+
+        def neutral(self):
+            return None
+
+        def release(self):
+            return None
+
+    class FakeBudget:
+        async def acquire(self, host):
+            return FakePermit()
+
+    async def no_wait():
+        return None
+
+    async def scenario():
+        monkeypatch.setattr(server, "get_context", incompatible_playwright)
+        monkeypatch.setattr(server, "_raw_cdp_page", fake_raw_page)
+        monkeypatch.setattr(server, "open_page", refetch_must_not_run)
+        monkeypatch.setattr(server, "navigation_budget", lambda: FakeBudget())
+        monkeypatch.setattr(server, "_polite_wait", no_wait)
+        products, total, result = await server._search_via_storefront("Logitech K380", 1, None)
+        assert total == 100
+        assert len(products) == 3
+        assert result["status"] == 200
         assert result["version"] == "v18"
 
     asyncio.run(scenario())

@@ -607,6 +607,11 @@ class _RawCdpPage:
         self._target_id = target_id
         self._next_id = 0
         self._url = "about:blank"
+        # Network.responseReceived seen on this tab, oldest first:
+        # {"requestId", "url", "status", "type", "finished"}. Lets callers read
+        # the page's own XHR body (Network.getResponseBody) instead of
+        # re-fetching it, which anti-bot storefronts answer with 403.
+        self.responses: list[dict[str, Any]] = []
 
     @property
     def url(self) -> str:
@@ -627,10 +632,57 @@ class _RawCdpPage:
             return msg.get("result") or {}
 
     def _note_event(self, msg: dict) -> None:
-        if msg.get("method") == "Page.frameNavigated":
-            frame = msg.get("params", {}).get("frame", {})
+        method = msg.get("method")
+        params = msg.get("params") or {}
+        if method == "Page.frameNavigated":
+            frame = params.get("frame", {})
             if isinstance(frame, dict) and not frame.get("parentId"):
                 self._url = frame.get("url") or self._url
+        elif method == "Network.responseReceived":
+            response = params.get("response") or {}
+            request_id = params.get("requestId")
+            if isinstance(request_id, str) and isinstance(response, dict):
+                self.responses.append(
+                    {
+                        "requestId": request_id,
+                        "url": str(response.get("url") or ""),
+                        "status": response.get("status") if isinstance(response.get("status"), int) else 0,
+                        "type": params.get("type"),
+                        "finished": False,
+                    }
+                )
+        elif method in ("Network.loadingFinished", "Network.loadingFailed"):
+            request_id = params.get("requestId")
+            for entry in self.responses:
+                if entry["requestId"] == request_id:
+                    entry["finished"] = method == "Network.loadingFinished"
+
+    async def pump_events(self, seconds: float) -> None:
+        """Read and record pending CDP events for up to ``seconds``."""
+        loop = asyncio.get_running_loop()
+        deadline = loop.time() + max(0.0, seconds)
+        while True:
+            remaining = deadline - loop.time()
+            if remaining <= 0:
+                return
+            try:
+                raw = await asyncio.wait_for(self._ws.recv(), timeout=remaining)
+            except TimeoutError:
+                return
+            try:
+                self._note_event(json.loads(raw))
+            except Exception:
+                continue
+
+    async def response_body(self, request_id: str) -> str:
+        """Body of a response this tab already received (Network.getResponseBody)."""
+        result = await self._send("Network.getResponseBody", {"requestId": request_id}, timeout=20.0)
+        body = result.get("body") or ""
+        if result.get("base64Encoded"):
+            import base64
+
+            return base64.b64decode(body).decode("utf-8", errors="replace")
+        return str(body)
 
     async def evaluate(self, expression: str, arg: object = None) -> Any:
         result = await self._send(
@@ -675,6 +727,8 @@ class _RawCdpPage:
                 nav_error = msg["error"]
             method = msg.get("method", "")
             params = msg.get("params", {})
+            if method.startswith("Network."):
+                self._note_event(msg)
             if method == "Network.responseReceived" and params.get("type") == "Document":
                 response_frame_id = params.get("frameId")
                 if main_frame_id and response_frame_id and response_frame_id != main_frame_id:
