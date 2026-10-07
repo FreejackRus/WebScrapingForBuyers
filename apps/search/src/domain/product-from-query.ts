@@ -61,6 +61,7 @@ interface CategoryHint {
 }
 
 const CATEGORY_HINTS: CategoryHint[] = [
+  { pattern: /legion go(?:\s|$)|rog ally|steam deck|msi claw|портативн[а-яё]* (?:игров[а-яё]* )?(?:консол|приставк)|handheld gaming/u, category: "Игровые консоли" },
   { pattern: /чех(?:ол|л)|коврик|защитн[а-яё]* (?:стекло|плёнк|пленк)|подставк[а-яё]* для (?:ноутбук|телефон|планшет)|сумк[а-яё]* для ноутбук|рюкзак для ноутбук/u, category: "Аксессуары IT" },
   { pattern: /кабел|displayport|hdmi(?![a-z])|переходник|адаптер|type-c|usb-c|патч-корд|patch ?cord/u, category: "Кабели и адаптеры" },
   { pattern: /графическ[а-яё]* планшет|graphics tablet|wacom|xp-?pen/u, category: "Графические планшеты" },

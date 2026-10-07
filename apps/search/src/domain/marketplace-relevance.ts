@@ -51,8 +51,7 @@ function tokenizeProduct(value: string): string[] {
 
 function isIdentityToken(token: string): boolean {
   if (GENERIC_PRODUCT_TOKENS.has(token)) return false;
-  if (token.length >= 3) return true;
-  return token.length >= 2 && /\d/.test(token);
+  return token.length >= 2;
 }
 
 function escapeRegExp(value: string): string {
@@ -258,6 +257,30 @@ function hasRivalModelSku(product: Product, hay: string): boolean {
   );
 }
 
+function missesShortModelQualifier(product: Product, hay: string): boolean {
+  return tokenizeProduct(product.model)
+    .filter((token) => token.length === 2 && /^[a-zа-яё]+$/iu.test(token) && !GENERIC_PRODUCT_TOKENS.has(token))
+    .some((token) => !identityTokenIn(hay, token));
+}
+
+const ACCESSORY_PREFIX =
+  /чех(?:ол|л)|наклейк|коннектор|зарядк|док-?станц|подставк|сумк|кабел|адаптер|защитн|стекл|пл[её]нк|\bcase\b|\bcover\b|\bskin\b|\bdock\b|\bcable\b|\badapter\b/iu;
+
+function hasAccessoryPrefixClash(product: Product, hay: string): boolean {
+  const category = product.category.toLocaleLowerCase("ru");
+  if (category.includes("аксессуар") || category.includes("кабел") || category.includes("док-станц")) {
+    return false;
+  }
+  const accessory = ACCESSORY_PREFIX.exec(hay);
+  if (!accessory || accessory.index === undefined) return false;
+  const modelPositions = tokenizeProduct(product.model)
+    .filter((token) => isIdentityToken(token))
+    .map((token) => hay.search(new RegExp(`(?:^|[^a-zа-яё0-9])${escapeRegExp(token)}(?:$|[^a-zа-яё0-9])`, "iu")))
+    .filter((index) => index >= 0);
+  if (modelPositions.length === 0) return false;
+  return accessory.index < Math.min(...modelPositions);
+}
+
 /** Brand + own category, no rival SKU (K120 vs K380) and no coffee/mice swap.
  * Compact SKUs (k380, g102) may omit the token on WB. Phrase models (MX Master 3S)
  * still need mx/master/3s — «Мышь Logitech» is not that mouse. */
@@ -325,6 +348,8 @@ export function assessMarketplaceOfferRelevance(
   const strongHits = tokensIn(identityHay, strong);
   const weakHits = tokensIn(identityHay, weak);
   const familyCard = isProductFamilyCard(product, titleHay);
+  if (missesShortModelQualifier(product, identityHay)) return { kind: "drop" };
+  if (hasAccessoryPrefixClash(product, titleHay)) return { kind: "drop" };
   if (hasOppositeCategory(product, identityHay) && strongHits.length === 0) return { kind: "drop" };
   if (hasForeignCategoryMarker(categoryHay) && strongHits.length === 0) return { kind: "drop" };
   if (hasForeignCategoryClash(product, identityHay)) return { kind: "drop" };

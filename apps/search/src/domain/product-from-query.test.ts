@@ -26,6 +26,11 @@ describe("productFromQuery", () => {
     expect(inferCategory("клавиатура logitech k380")).toBe("Клавиатуры");
     expect(inferCategory("lenovo legion pro 5")).toBe("Ноутбуки");
   });
+
+  it("distinguishes the Lenovo Legion Go handheld from Legion laptops", () => {
+    expect(inferCategory("Lenovo Legion Go")).toBe("Игровые консоли");
+    expect(inferCategory("Lenovo Legion Pro 5")).toBe("Ноутбуки");
+  });
 });
 
 describe("suggestLiveProducts", () => {
