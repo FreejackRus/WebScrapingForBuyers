@@ -306,15 +306,15 @@
     "semantic_hash": ""
   },
   "apps/search/src/domain/marketplace-relevance.test.ts": {
-    "mtime": 1791370735.7017434,
-    "seen": 1791370835.9461935,
-    "ast_hash": "d69c264efa03c8327c043e85a46beb4c",
+    "mtime": 1790841349.8812861,
+    "seen": 1791215666.7927856,
+    "ast_hash": "e8c85199d283537fab4d3f7cd0d6d8eb",
     "semantic_hash": ""
   },
   "apps/search/src/domain/marketplace-relevance.ts": {
-    "mtime": 1791370871.679654,
-    "seen": 1791370895.3291886,
-    "ast_hash": "85d739eae3b1ab15b8be7a4dfc002c7e",
+    "mtime": 1790841349.8812861,
+    "seen": 1791215666.7927861,
+    "ast_hash": "b98055b56e77b037d18345f177ec1e6d",
     "semantic_hash": ""
   },
   "apps/search/src/domain/price-anomaly.test.ts": {
@@ -330,21 +330,21 @@
     "semantic_hash": ""
   },
   "apps/search/src/domain/product-from-query.test.ts": {
-    "mtime": 1791370735.6997433,
-    "seen": 1791370835.9462,
-    "ast_hash": "95927ae84401eb0d56e8f13ad473bb19",
+    "mtime": 1790340845.6664615,
+    "seen": 1791215666.792788,
+    "ast_hash": "9bd17f5c4a48375bb46e6932cc07c1a8",
     "semantic_hash": ""
   },
   "apps/search/src/domain/product-from-query.ts": {
-    "mtime": 1791370887.1895807,
-    "seen": 1791370895.3291922,
-    "ast_hash": "419779872a0d5e62078d5d8edb38c385",
+    "mtime": 1791213407.8852208,
+    "seen": 1791215666.7927885,
+    "ast_hash": "a261fed03726bfc6d97bbf6965288b4f",
     "semantic_hash": ""
   },
   "apps/search/src/domain/source-adapter.ts": {
-    "mtime": 1791293903.6661496,
-    "seen": 1791370086.595747,
-    "ast_hash": "fed4b3c0ab23a9cd52abe385fbdecc61",
+    "mtime": 1790342579.1800227,
+    "seen": 1791215666.792789,
+    "ast_hash": "60388420071c709dfef83975594f0d04",
     "semantic_hash": ""
   },
   "apps/search/src/http/routes.ts": {
@@ -354,15 +354,15 @@
     "semantic_hash": ""
   },
   "apps/search/src/infrastructure/sources/b2b-distributor-adapter.test.ts": {
-    "mtime": 1791375066.9056706,
-    "seen": 1791375212.745451,
-    "ast_hash": "acea4fc18918e852629c6abd5cf0c5f3",
+    "mtime": 1790239007.0978384,
+    "seen": 1791215666.7927902,
+    "ast_hash": "e32d1944c7ba5c7040ca6142dc3c0717",
     "semantic_hash": ""
   },
   "apps/search/src/infrastructure/sources/b2b-distributor-adapter.ts": {
-    "mtime": 1791375051.0897644,
-    "seen": 1791375212.7454524,
-    "ast_hash": "1d715c1f1388efa3180c34ebc8d1736b",
+    "mtime": 1790239007.0978384,
+    "seen": 1791215666.792791,
+    "ast_hash": "8974e7328e8285bb98374f1f574500e0",
     "semantic_hash": ""
   },
   "apps/search/src/infrastructure/sources/blocked-source-cooldown-adapter.test.ts": {
@@ -402,39 +402,39 @@
     "semantic_hash": ""
   },
   "apps/search/src/infrastructure/sources/http-marketplace-adapter.ts": {
-    "mtime": 1791293911.0415351,
-    "seen": 1791370086.595756,
-    "ast_hash": "9338da25e478d005af491a8b4a24d16d",
+    "mtime": 1790239007.0978384,
+    "seen": 1791215666.7927947,
+    "ast_hash": "4e91d8363aee8ecbf7df38e3ffac73a6",
     "semantic_hash": ""
   },
   "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.test.ts": {
-    "mtime": 1791293922.7981448,
-    "seen": 1791370086.5957568,
-    "ast_hash": "4c6b4b045fdd69ab2ac2de9227ee5281",
+    "mtime": 1790842209.622392,
+    "seen": 1791215666.7927954,
+    "ast_hash": "8cbe1f3723d9feded33f1626c521f99a",
     "semantic_hash": ""
   },
   "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts": {
-    "mtime": 1791293903.668979,
-    "seen": 1791370086.5957572,
-    "ast_hash": "347aa485ee5c2a9f04fa4c200aea16ae",
+    "mtime": 1790842209.620835,
+    "seen": 1791215666.792796,
+    "ast_hash": "ea030947daa1011442682b2808d6d4c8",
     "semantic_hash": ""
   },
   "apps/search/src/infrastructure/sources/merlion-client.ts": {
-    "mtime": 1791293911.0417798,
-    "seen": 1791370086.595758,
-    "ast_hash": "c8cdc894c94d3221a040c340fa4556cc",
+    "mtime": 1790239007.0984454,
+    "seen": 1791215666.7927964,
+    "ast_hash": "614493d6483b4015da093ed16902954d",
     "semantic_hash": ""
   },
   "apps/search/src/infrastructure/sources/netlab-client.ts": {
-    "mtime": 1791373250.3161864,
-    "seen": 1791375212.7454615,
-    "ast_hash": "2b8a53b2b91eaae775b97ca5e3f98646",
+    "mtime": 1790239007.0984454,
+    "seen": 1791215666.7927969,
+    "ast_hash": "01dddb870faf5798435a14231ac9e20a",
     "semantic_hash": ""
   },
   "apps/search/src/infrastructure/sources/ocs-client.ts": {
-    "mtime": 1791293911.0416875,
-    "seen": 1791370086.5957594,
-    "ast_hash": "83d7157f65b78190670a74be2e85c56f",
+    "mtime": 1790239007.0984454,
+    "seen": 1791215666.7927973,
+    "ast_hash": "8f04798b8cc7bb03fb6fa9aa718e1d77",
     "semantic_hash": ""
   },
   "apps/search/src/infrastructure/sources/wb-rate-limit.test.ts": {
@@ -2088,9 +2088,9 @@
     "semantic_hash": ""
   },
   "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py": {
-    "mtime": 1791369980.23103,
-    "seen": 1791370086.595966,
-    "ast_hash": "7295a0356332cefb1b3964b9caa32515",
+    "mtime": 1790239007.3226905,
+    "seen": 1791215666.7929766,
+    "ast_hash": "1c352bfa5ad4a13e7a21a52d0dbb7de3",
     "semantic_hash": ""
   },
   "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/http_tier.py": {
@@ -2124,9 +2124,9 @@
     "semantic_hash": ""
   },
   "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py": {
-    "mtime": 1791369964.493578,
-    "seen": 1791370086.5959704,
-    "ast_hash": "3b987494eec7712833cf3c96ec4befb3",
+    "mtime": 1790239007.32349,
+    "seen": 1791215666.7929802,
+    "ast_hash": "d0539ac04f6e7904385b7cef3531dc31",
     "semantic_hash": ""
   },
   "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_raw_lifecycle.py": {
@@ -2556,9 +2556,9 @@
     "semantic_hash": ""
   },
   "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py": {
-    "mtime": 1791370133.3634284,
-    "seen": 1791370147.065392,
-    "ast_hash": "bcbceaf227c2929c9ce978ad99085dcb",
+    "mtime": 1790677887.570452,
+    "seen": 1791215666.7930217,
+    "ast_hash": "00b42a71b302d198ac71a47f64306375",
     "semantic_hash": ""
   },
   "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/settings.py": {
@@ -2646,9 +2646,9 @@
     "semantic_hash": ""
   },
   "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py": {
-    "mtime": 1791370133.3634284,
-    "seen": 1791370147.0654035,
-    "ast_hash": "44fba4ea45d190e023a44c5c69d76b07",
+    "mtime": 1790239007.3318584,
+    "seen": 1791215666.7930307,
+    "ast_hash": "d05e0a4a5b3335c427f4f7a5a671ba7b",
     "semantic_hash": ""
   },
   "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/pyproject.toml": {
@@ -3390,9 +3390,9 @@
     "semantic_hash": ""
   },
   "docs/DISTRIBUTORS.md": {
-    "mtime": 1791375181.4330966,
-    "seen": 1791375212.7458856,
-    "ast_hash": "4fb174dcfeb39c86b4c26f6b8fe4b43c",
+    "mtime": 1790343021.064285,
+    "seen": 1791215666.7931037,
+    "ast_hash": "ae6cfb77461c480ea2496e5409cdd56d",
     "semantic_hash": ""
   },
   "docs/IT_SCOPE.md": {
@@ -3408,9 +3408,9 @@
     "semantic_hash": ""
   },
   "docs/PROJECT_CONTEXT.md": {
-    "mtime": 1791375202.9568033,
-    "seen": 1791375212.7458882,
-    "ast_hash": "eb0371e274e9b18443c3e0e2b5588e21",
+    "mtime": 1791289313.9176326,
+    "seen": 1791289324.5954893,
+    "ast_hash": "61d07ac89cd20d04a5e6728fdec3154e",
     "semantic_hash": ""
   },
   "docs/STITCH.md": {
@@ -4263,24 +4263,6 @@
     "mtime": 1791289260.4268548,
     "seen": 1791289324.5948195,
     "ast_hash": "fc6c7b769be13981c1d7c8a323295f22",
-    "semantic_hash": ""
-  },
-  "apps/search/src/infrastructure/sources/netlab-client.test.ts": {
-    "mtime": 1791373224.936462,
-    "seen": 1791375212.7454607,
-    "ast_hash": "27b4bdb22993d2ceca05e57c67ea86e5",
-    "semantic_hash": ""
-  },
-  "apps/search/src/infrastructure/sources/storefront-distributor-adapter.test.ts": {
-    "mtime": 1791374990.968936,
-    "seen": 1791375212.7454636,
-    "ast_hash": "5e43abde81b5a83659279b95afb25aa6",
-    "semantic_hash": ""
-  },
-  "apps/search/src/infrastructure/sources/storefront-distributor-adapter.ts": {
-    "mtime": 1791374990.5176594,
-    "seen": 1791375212.7454684,
-    "ast_hash": "73d0a62dbf96932abd8dcc074ef0bd22",
     "semantic_hash": ""
   }
 }

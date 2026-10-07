@@ -1,5 +1,54 @@
 {
-  "generated_at": "2026-09-24T17:46:34.156837+00:00",
-  "nodes": {},
+  "generated_at": "2026-10-07T11:32:21.708030+00:00",
+  "nodes": {
+    "apps_analysis_src_application_infra_leak_sanitizeanalysisresult": {
+      "code_fingerprint": "707c4dff8e07efdfde2b19b69921a82b8c720236b2aa3ec3ec337042ace4593e",
+      "label": "sanitizeAnalysisResult()",
+      "last": "2026-09-24T18:07:11.826801+00:00",
+      "provenance": [
+        {
+          "date": "2026-09-24T18:07:11.826801+00:00",
+          "outcome": "useful",
+          "q": "Как не показывать менеджеру технические термины в ответах Qwen?"
+        }
+      ],
+      "score": 0.745255164,
+      "source_file": "apps/analysis/src/application/infra-leak.ts",
+      "status": "tentative",
+      "uses": 1
+    },
+    "apps_analysis_src_application_prompt_intent_cannedmetaanswer": {
+      "code_fingerprint": "5628f5f11a3b39c511babf02e97b951dc7867b4b0e25114e5fcf0a457e10884f",
+      "label": "cannedMetaAnswer()",
+      "last": "2026-09-24T18:07:11.826801+00:00",
+      "provenance": [
+        {
+          "date": "2026-09-24T18:07:11.826801+00:00",
+          "outcome": "useful",
+          "q": "Как не показывать менеджеру технические термины в ответах Qwen?"
+        }
+      ],
+      "score": 0.745255164,
+      "source_file": "apps/analysis/src/application/prompt-intent.ts",
+      "status": "tentative",
+      "uses": 1
+    },
+    "apps_web_src_widgets_analysis_chat_ui_index_analysischat": {
+      "code_fingerprint": "42191a7731224386eaa14e235213c36753898e1f6c6603e54b3bc8f2ab26aea1",
+      "label": "AnalysisChat()",
+      "last": "2026-09-24T18:07:11.826801+00:00",
+      "provenance": [
+        {
+          "date": "2026-09-24T18:07:11.826801+00:00",
+          "outcome": "useful",
+          "q": "Как не показывать менеджеру технические термины в ответах Qwen?"
+        }
+      ],
+      "score": 0.745255164,
+      "source_file": "apps/web/src/widgets/analysis/chat/ui/index.tsx",
+      "status": "tentative",
+      "uses": 1
+    }
+  },
   "version": 1
 }

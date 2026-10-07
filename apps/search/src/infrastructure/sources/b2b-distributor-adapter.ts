@@ -4,6 +4,7 @@ import type { SourceAdapter } from "../../domain/source-adapter.js";
 import { merlionConfigFromEnv, searchMerlion } from "./merlion-client.js";
 import { netlabConfigFromEnv, searchNetlab } from "./netlab-client.js";
 import { ocsConfigFromEnv, searchOcs } from "./ocs-client.js";
+import { StorefrontDistributorAdapter } from "./storefront-distributor-adapter.js";
 
 /**
  * Official RU IT B2B / shop integrations. No fake prices.
@@ -27,7 +28,7 @@ interface DistributorSpec {
   name: string;
   /** Env keys that must all be non-empty to mount (credentials). */
   requiredEnv: string[];
-  status: "needs_credentials" | "stub_pending_api" | "partner_portal" | "live_client";
+  status: "needs_credentials" | "stub_pending_api" | "partner_portal" | "live_client" | "storefront";
   hint: string;
 }
 
@@ -56,9 +57,9 @@ const DISTRIBUTORS: DistributorSpec[] = [
   {
     kind: "servermall",
     name: "Servermall",
-    requiredEnv: ["SERVERMALL_API_TOKEN"],
-    status: "partner_portal",
-    hint: "Servermall: partner/API access required. Stub only.",
+    requiredEnv: [],
+    status: "storefront",
+    hint: "Servermall: public storefront search (servermall.ru/search), not B2B prices.",
   },
   {
     kind: "onlinetrade",
@@ -84,9 +85,9 @@ const DISTRIBUTORS: DistributorSpec[] = [
   {
     kind: "srvtrade",
     name: "СРВТрейд",
-    requiredEnv: ["SRVTRADE_API_TOKEN"],
-    status: "partner_portal",
-    hint: "СРВТрейд: partner access. Stub only.",
+    requiredEnv: [],
+    status: "storefront",
+    hint: "СРВТрейд: public storefront search (srv-trade.ru/search), not B2B prices.",
   },
   {
     kind: "torgpc",
@@ -179,6 +180,9 @@ export function createDistributorSourcesFromEnv(): SourceAdapter[] {
       if (spec.kind === "merlion") return new MerlionSourceAdapter();
       if (spec.kind === "ocs") return new OcsSourceAdapter();
       if (spec.kind === "netlab") return new NetlabSourceAdapter();
+      if (spec.kind === "srvtrade" || spec.kind === "servermall") {
+        return new StorefrontDistributorAdapter(spec.kind);
+      }
       return new B2bDistributorStubAdapter(spec);
     },
   );

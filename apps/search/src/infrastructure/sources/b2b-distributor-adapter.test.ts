@@ -86,6 +86,12 @@ describe("createDistributorSourcesFromEnv", () => {
     expect(spy).toHaveBeenCalledOnce();
   });
 
+  it("mounts storefront distributors without credentials", () => {
+    process.env.DISTRIBUTOR_SOURCES = "srvtrade,servermall,regard";
+    const names = createDistributorSourcesFromEnv().map((source) => source.name);
+    expect(names).toEqual(["Servermall", "СРВТрейд"]);
+  });
+
   it("documents the expected distributor set", () => {
     const kinds = listDistributorSpecs().map((spec) => spec.kind);
     expect(kinds).toEqual(

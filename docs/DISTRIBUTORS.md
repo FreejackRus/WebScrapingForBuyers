@@ -20,12 +20,12 @@
 | **MERLION** | SOAP `mlservice3` | **клиент готов** | `MERLION_API_LOGIN` (`…\|API`), `MERLION_API_PASSWORD`, опц. `MERLION_API_TEST=true` |
 | **NETLAB** | REST NLDealer | **клиент готов** | `NETLAB_API_LOGIN`, `NETLAB_API_PASSWORD`, опц. `NETLAB_CLIENT_CODE`, `NETLAB_API_URL` |
 | **Treolan** | SOAP B2B (`ws/service.asmx`) | документирован, клиент не wired | партнёрский логин; `b2b-info@treolan.ru` (не публичный анонимный API) |
-| Servermall | stub | нет публичного API | `SERVERMALL_API_TOKEN` + запрос менеджеру |
-| Онлайнтрейд | stub | нет публичного API | `ONLINETRADE_API_TOKEN` |
-| Регард | stub | нет публичного API | `REGARD_API_TOKEN` |
-| Хардпрайс | stub | нет публичного API | `HARDPRICE_API_TOKEN` |
-| СРВТрейд | stub | нет публичного API | `SRVTRADE_API_TOKEN` |
-| ТоргPC | stub | нет публичного API | `TORGPC_API_TOKEN` |
+| **Servermall** | витрина HTTP `/search/?q=` | **live (витрина, не B2B)** | `servermall` в `DISTRIBUTOR_SOURCES`, ключ не нужен |
+| Онлайнтрейд | stub | robots.txt запрещает поиск | `ONLINETRADE_API_TOKEN` |
+| Регард | stub | robots.txt запрещает `?search=` и `*?*` | `REGARD_API_TOKEN` |
+| Хардпрайс | stub | сравниватель, не поставщик | `HARDPRICE_API_TOKEN` |
+| **СРВТрейд** | витрина HTTP `/search/?q=` | **live (витрина, не B2B)** | `srvtrade` в `DISTRIBUTOR_SOURCES`, ключ не нужен |
+| ТоргPC | stub | robots.txt запрещает `/search/` | `TORGPC_API_TOKEN` |
 | Demo marketplaces | `DemoSourceAdapter` | local-only | `ALLOW_DEMO_SOURCES=true` |
 
 Дистрибьюторы монтируются только если перечислены в `DISTRIBUTOR_SOURCES`
@@ -176,6 +176,21 @@ NETLAB_API_PASSWORD='…'
 | **ТоргPC** | Розница `torg-pc.ru`, опт `opt@torg-pc.ru` / `info@torg-pc.ru`. | API / фид |
 
 Не путать с Inline i2b (`inline-online.ru`) — это другой поставщик с XML API.
+
+### Витрины без API (2026-10-07)
+
+`apps/search/src/infrastructure/sources/storefront-distributor-adapter.ts`.
+Обычный HTTPS, серверный HTML, антибота нет, Chrome не нужен.
+
+- **СРВТрейд** — `srv-trade.ru/search/?q=<MPN|бренд модель>`, карточки
+  `search-card`, парт-номер в `search-card__part`. «Цену уточняйте» — строка
+  пропускается. Пустой поиск рисует «Популярные товары» тем же шаблоном —
+  они отбрасываются.
+- **Servermall** — `servermall.ru/search/?q=…`, цена в `data-price` карточки
+  (у серверов это базовая конфигурация), состояние Новый / Refurbished.
+- `priceCondition` всегда «Цена на сайте…, не B2B»; `demo: false`.
+- Регард, Онлайнтрейд, ТоргPC: поиск закрыт в robots.txt — не парсим.
+  Хардпрайс не поставщик. Для них по-прежнему путь — фид от менеджера.
 
 ## Если API так и не выдадут — как собирать
 
