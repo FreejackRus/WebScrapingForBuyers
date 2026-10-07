@@ -9,10 +9,10 @@
 | Источник | Канал | Статус | Env / заметки |
 | --- | --- | --- | --- |
 | Wildberries | MCP `wb_search` (+ HTTP fallback) | **live** (антибот/429) | `MARKETPLACE_SOURCES` |
-| Яндекс Маркет | MCP `yandex_search` | live / antibot | CDP VNC |
+| Яндекс Маркет | MCP `yandex_search` | **выключен** (SmartCaptcha по IP) | убран из `MARKETPLACE_SOURCES` 2026-10-07 |
 | Ozon | MCP `ozon_search` | live / Cloudflare | CDP VNC |
 | DNS | MCP `dns_search` | live / Qrator | CDP VNC (публичного B2B API нет) |
-| Мегамаркет | MCP `megamarket_search` | live / WAF | CDP VNC |
+| Мегамаркет | MCP `megamarket_search` | **выключен** (ServicePipe по IP) | убран из `MARKETPLACE_SOURCES` 2026-10-07 |
 | Ситилинк | MCP `citilink_search` | live / Qrator | CDP VNC (публичного B2B API нет) |
 | Авито | MCP `avito_search` | live / PoW 439 | CDP VNC |
 | AliExpress | MCP `aliexpress_search` | **wired** / x5sec CDP | `aliexpress` in `MARKETPLACE_SOURCES` |

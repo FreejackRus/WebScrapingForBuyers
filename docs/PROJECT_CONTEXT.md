@@ -1821,3 +1821,11 @@ narrator кладёт в payload ≤ 6 реплик по 400 символов. �
   не обрезаются до 30; маркетплейсы — по-прежнему `OFFERS_PER_SOURCE = 30`.
 - API-клиент NETLAB сохранён: `NETLAB_TRANSPORT=api` + логин/пароль.
 - Проверки: search 172 passed, всё — typecheck, test, build.
+
+### 2026-10-07 — Яндекс Маркет и Мегамаркет выключены
+
+- По решению пользователя площадки временно убраны из `MARKETPLACE_SOURCES`
+  в `docker-compose.production.yml` (search и marketplace-mcp): с IP сервера
+  Яндекс отдаёт SmartCaptcha, Мегамаркет — ServicePipe, данных нет, а в
+  интерфейсе они висели ошибкой и тормозили сбор. Код коннекторов не удалён;
+  вернуть — добавить `yandex_market,megamarket` в оба списка.

@@ -46,7 +46,9 @@ services:
       MARKETPLACE_MCP_URL: http://marketplace-mcp:8000/mcp
       MARKETPLACE_MCP_TOKEN: ${MCP_HTTP_AUTH_TOKEN:?Set MCP_HTTP_AUTH_TOKEN}
       MARKETPLACE_MCP_TENANT: ${MCP_HTTP_TENANT_ID:-peremena}
-      MARKETPLACE_SOURCES: wildberries,yandex_market,ozon,dns,megamarket,citilink,avito,aliexpress
+      # Яндекс Маркет и Мегамаркет выключены 2026-10-07: SmartCaptcha / ServicePipe блокируют IP
+      # сервера. Вернуть: добавить yandex_market,megamarket в оба списка (search и marketplace-mcp).
+      MARKETPLACE_SOURCES: wildberries,ozon,dns,citilink,avito,aliexpress
       # Demo stubs off in production (ALLOW_DEMO_SOURCES must stay unset/false).
       ALLOW_DEMO_SOURCES: "false"
       # B2B distributors: opt-in only when credentials exist (see docs/DISTRIBUTORS.md).
@@ -131,7 +133,9 @@ services:
       MCP_HTTP_PATH: /mcp
       MCP_HTTP_AUTH_TOKEN: ${MCP_HTTP_AUTH_TOKEN:?Set MCP_HTTP_AUTH_TOKEN}
       MCP_HTTP_TENANT_ID: ${MCP_HTTP_TENANT_ID:-peremena}
-      MARKETPLACE_SOURCES: wildberries,yandex_market,ozon,dns,megamarket,citilink,avito,aliexpress
+      # Яндекс Маркет и Мегамаркет выключены 2026-10-07: SmartCaptcha / ServicePipe блокируют IP
+      # сервера. Вернуть: добавить yandex_market,megamarket в оба списка (search и marketplace-mcp).
+      MARKETPLACE_SOURCES: wildberries,ozon,dns,citilink,avito,aliexpress
       # Observe the catalog response loaded by the existing browser storefront.
       # Legacy search.wb.ru/v9 no longer represents the current web search.
       WB_SEARCH_TRANSPORT: storefront
