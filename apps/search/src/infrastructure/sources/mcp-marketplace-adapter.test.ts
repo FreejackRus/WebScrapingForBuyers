@@ -78,7 +78,7 @@ describe("marketplaceToolArguments", () => {
     expect(marketplaceToolArguments("yandex", query)).toEqual({
       query,
       page: 1,
-      limit: 12,
+      limit: 30,
     });
     expect(marketplaceToolArguments("avito", query)).toEqual({
       query,
@@ -166,6 +166,18 @@ describe("presentMarketplaceError · Yandex SmartCaptcha handoff", () => {
     expect(message).toContain("2026-10-01T09:02:00+00:00");
     expect(message).toContain("5901");
     expect(message).toMatch(/повторить тот же поиск/);
+  });
+});
+
+describe("offers per source", () => {
+  it("keeps up to 30 relevant offers from one marketplace answer", async () => {
+    const items = Array.from({ length: 45 }, (_, i) => ({
+      title: `Мышь проводная Logitech G102 Lightsync Black вариант ${i}`,
+      price_rub: 2_000 + i * 10,
+      url: `https://www.citilink.ru/product/mysh-provodnaya-logitech-g102-lightsync-${1_400_000 + i}/`,
+    }));
+    const offers = await citilinkAdapter(vi.fn(async () => ({ items }))).search(g102);
+    expect(offers).toHaveLength(30);
   });
 });
 

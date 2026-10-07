@@ -2,6 +2,13 @@ import { createHash } from "node:crypto";
 
 import type { MatchKind, Offer, Product } from "@peremena/contracts";
 
+import { OFFERS_PER_SOURCE } from "../../domain/source-adapter.js";
+
+/** At most this many per-item price lookups per search (one HTTP call each). */
+const NETLAB_PRICE_LOOKUPS = 12;
+/** Enough candidates to replace every row that exhausts one capped price lookup. */
+const NETLAB_CANDIDATES = OFFERS_PER_SOURCE + NETLAB_PRICE_LOOKUPS;
+
 /**
  * NETLAB NLDealer REST (preferred over SOAP for search).
  * Docs:
@@ -169,7 +176,7 @@ export async function netlabGoodsSearch(
   return asArray(list)
     .map(parseGoods)
     .filter((item): item is NetlabGoods => item !== undefined)
-    .slice(0, 24);
+    .slice(0, NETLAB_CANDIDATES);
 }
 
 export async function netlabGoodsByUid(
@@ -209,17 +216,23 @@ export async function searchNetlab(
   let goods = await netlabGoodsSearch(config, token, keywords, signal);
 
   // Enrich missing prices via goodsByUid (search payload sometimes omits dealer price).
+  // One goodsByUid round-trip per priceless row: cap those, not the rows we show.
   const enriched: NetlabGoods[] = [];
-  for (const item of goods.slice(0, 12)) {
-    if (item.price !== undefined) {
+  let priceLookups = 0;
+  for (const item of goods) {
+    if (enriched.length >= OFFERS_PER_SOURCE) break;
+    if (item.price !== undefined && item.price > 0) {
       enriched.push(item);
       continue;
     }
+    if (priceLookups >= NETLAB_PRICE_LOOKUPS) continue;
+    priceLookups += 1;
     try {
       const detail = await netlabGoodsByUid(config, token, item.id, signal);
-      enriched.push(detail ? { ...item, ...detail, title: detail.title || item.title } : item);
+      const resolved = detail ? { ...item, ...detail, title: detail.title || item.title } : item;
+      if (resolved.price !== undefined && resolved.price > 0) enriched.push(resolved);
     } catch {
-      enriched.push(item);
+      // A failed detail lookup must not hide later catalog rows with ready prices.
     }
   }
   goods = enriched;
@@ -246,7 +259,7 @@ export async function searchNetlab(
     if (item.mpn) offer.mpn = item.mpn;
     offers.push(offer);
   }
-  return offers.slice(0, 12);
+  return offers.slice(0, OFFERS_PER_SOURCE);
 }
 
 export function netlabConfigFromEnv(): NetlabConfig | undefined {

@@ -2,6 +2,8 @@ import { createHash } from "node:crypto";
 
 import type { MatchKind, Offer, Product } from "@peremena/contracts";
 
+import { OFFERS_PER_SOURCE } from "../../domain/source-adapter.js";
+
 /**
  * OCS Distribution Partners Connector (REST).
  * Interactive docs (partner key required): https://testconnector.b2b.ocs.ru/docs/index.html
@@ -203,7 +205,7 @@ export async function searchOcs(
     if (item.mpn) offer.mpn = item.mpn;
     offers.push(offer);
   }
-  return offers.slice(0, 12);
+  return offers.slice(0, OFFERS_PER_SOURCE);
 }
 
 export function ocsConfigFromEnv(): OcsConfig | undefined {

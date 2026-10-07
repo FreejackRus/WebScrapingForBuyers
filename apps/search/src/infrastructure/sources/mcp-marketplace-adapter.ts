@@ -11,7 +11,7 @@ import {
   productIdentityTokens,
   tokensIn,
 } from "../../domain/marketplace-relevance.js";
-import type { SourceAdapter } from "../../domain/source-adapter.js";
+import { OFFERS_PER_SOURCE, type SourceAdapter } from "../../domain/source-adapter.js";
 import { assertWbCatalogAllowed, noteWbRateLimited, presentWbRateLimited } from "./wb-rate-limit.js";
 
 // The relevance rules moved to the domain layer; re-exported so existing imports keep working.
@@ -70,7 +70,7 @@ export function marketplaceToolArguments(
     case "wb":
       return { query, dest: WB_DEFAULT_DEST, page: 1 };
     case "yandex":
-      return { query, page: 1, limit: 12 };
+      return { query, page: 1, limit: OFFERS_PER_SOURCE };
     case "ozon":
       return { query, page: 1 };
     case "avito": {
@@ -369,7 +369,7 @@ export class McpMarketplaceAdapter implements SourceAdapter {
                   () => undefined,
                   2,
                 );
-                return mergeUniqueOffers(offers, more).slice(0, 12);
+                return mergeUniqueOffers(offers, more).slice(0, OFFERS_PER_SOURCE);
               } catch (extraPageError) {
                 const extraRaw =
                   extraPageError instanceof Error ? extraPageError.message : String(extraPageError);
@@ -450,7 +450,7 @@ export class McpMarketplaceAdapter implements SourceAdapter {
       .map((item, index) => this.toOffer(item, product, index))
       .filter((offer): offer is Offer => offer !== undefined)
       .sort(preferRelevantOffers)
-      .slice(0, 12);
+      .slice(0, OFFERS_PER_SOURCE);
   }
 
   private logMap(query: string, items: JsonObject[], offers: Offer[]): void {
@@ -493,7 +493,7 @@ export class McpMarketplaceAdapter implements SourceAdapter {
       }
     }
     this.logMap("citilink_card", urls.map((url) => ({ url })), offers);
-    return offers.sort(preferRelevantOffers).slice(0, 12);
+    return offers.sort(preferRelevantOffers).slice(0, OFFERS_PER_SOURCE);
   }
 
   private toOffer(item: JsonObject, product: Product, index: number): Offer | undefined {

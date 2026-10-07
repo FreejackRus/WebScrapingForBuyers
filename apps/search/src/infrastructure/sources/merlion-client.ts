@@ -2,6 +2,8 @@ import { createHash } from "node:crypto";
 
 import type { MatchKind, Offer, Product } from "@peremena/contracts";
 
+import { OFFERS_PER_SOURCE } from "../../domain/source-adapter.js";
+
 /**
  * MERLION B2B SOAP mlservice3.
  * WSDL prod: https://api.merlion.com/rl/mlservice3?wsdl
@@ -309,7 +311,7 @@ export async function searchMerlion(
     if (item.warranty) offer.warranty = `${item.warranty} мес.`;
     offers.push(offer);
   }
-  return offers.slice(0, 12);
+  return offers.slice(0, OFFERS_PER_SOURCE);
 }
 
 export function merlionConfigFromEnv(): MerlionConfig | undefined {

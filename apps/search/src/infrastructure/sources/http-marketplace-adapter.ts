@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 
 import type { MatchKind, Offer, Product } from "@peremena/contracts";
 
-import type { SourceAdapter } from "../../domain/source-adapter.js";
+import { OFFERS_PER_SOURCE, type SourceAdapter } from "../../domain/source-adapter.js";
 import {
   WB_CATALOG_UNAVAILABLE_403,
   WB_DEFAULT_DEST,
@@ -70,7 +70,7 @@ export class WildberriesHttpAdapter implements SourceAdapter {
         .map((item, index) => toWbOffer(item, product, index))
         .filter((offer): offer is Offer => offer !== undefined)
         .sort(preferRelevantOffers)
-        .slice(0, 12);
+        .slice(0, OFFERS_PER_SOURCE);
       if (offers.length > 0) return offers;
     }
     if (lastStatus && lastStatus >= 400) {
