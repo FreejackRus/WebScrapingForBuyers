@@ -136,3 +136,47 @@ describe("SearchService source deadline", () => {
     expect(result.offers.map((o) => o.source)).toEqual(["FAST"]);
   });
 });
+
+describe("SearchService query intent", () => {
+  const cartridge: Product = {
+    id: "c",
+    name: "Картридж Pantum TL-5120",
+    brand: "Pantum",
+    model: "TL-5120",
+    mpn: "TL-5120",
+    category: "Картриджи",
+    characteristics: {},
+  };
+  const titled = (title: string, price: number): Offer => ({ ...offer("WB", price), title });
+  const rows = [
+    titled("Картридж Pantum TL-5120 оригинальный", 9000),
+    titled("Картридж NV Print TL-5120 совместимый", 2500),
+    titled("Чип для картриджа Pantum TL-5120", 300),
+    titled("Картридж Pantum TL-5120", 8800),
+  ];
+
+  async function titles(query: string): Promise<string[]> {
+    const service = new SearchService([source("WB", async () => structuredClone(rows))]);
+    const snap = service.start(query, cartridge);
+    await finish(service, snap.id);
+    return service.get(snap.id)!.offers.map((o) => o.title);
+  }
+
+  it("drops compatible rows and chips for «оригинальный»", async () => {
+    expect(await titles("картридж pantum tl-5120 оригинальный")).toEqual([
+      "Картридж Pantum TL-5120 оригинальный",
+      "Картридж Pantum TL-5120",
+    ]);
+  });
+
+  it("drops explicit originals for «совместимый»", async () => {
+    expect(await titles("картридж tl-5120 совместимый")).toEqual([
+      "Картридж NV Print TL-5120 совместимый",
+      "Картридж Pantum TL-5120",
+    ]);
+  });
+
+  it("keeps original and compatible cartridges without intent, still without chips", async () => {
+    expect(await titles("картридж 5120")).toHaveLength(3);
+  });
+});

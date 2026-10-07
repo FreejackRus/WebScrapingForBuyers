@@ -2,7 +2,9 @@ import { randomUUID } from "node:crypto";
 
 import type { Offer, Product, SearchEvent, SearchSnapshot, SourceState } from "@peremena/contracts";
 
+import { isUnrequestedConsumablePart } from "../domain/consumable-parts.js";
 import { isOfferInItScope } from "../domain/it-scope.js";
+import { matchesOriginIntent, originIntent } from "../domain/origin-intent.js";
 import { flagPriceAnomalies } from "../domain/price-anomaly.js";
 import type { SourceAdapter } from "../domain/source-adapter.js";
 
@@ -106,10 +108,12 @@ export class SearchService {
             source.name,
           );
           // Demo rows are labelled fixtures; real rows must positively look like equipment.
-          const offers = found.filter((offer) => offer.demo || isOfferInItScope(snapshot.product, offer));
+          const inScope = found.filter((offer) => offer.demo || isOfferInItScope(snapshot.product, offer));
+          const offers = this.matchingQuery(snapshot, inScope);
           snapshot.offers.push(...offers);
           flagPriceAnomalies(snapshot.offers);
-          const real = offers.filter((offer) => !offer.demo);
+          // Cache before the query-intent filter: the next query for the same item may ask the opposite.
+          const real = inScope.filter((offer) => !offer.demo);
           if (real.length > 0) {
             this.rememberLastGood(lastGoodKey(source.name, snapshot.product), real);
           }
@@ -120,7 +124,8 @@ export class SearchService {
               source: source.name,
               found: found.length,
               offers: offers.length,
-              droppedByItScope: found.length - offers.length,
+              droppedByItScope: found.length - inScope.length,
+              droppedByQueryIntent: inScope.length - offers.length,
             }),
           );
           this.emit(id, { type: "offers", data: structuredClone(offers) });
@@ -129,7 +134,7 @@ export class SearchService {
           const message = error instanceof Error ? error.message : "Неизвестная ошибка";
           const cached = this.lastGoodReal.get(lastGoodKey(source.name, snapshot.product));
           if (cached && cached.length > 0) {
-            const reused = structuredClone(cached);
+            const reused = this.matchingQuery(snapshot, structuredClone(cached));
             snapshot.offers.push(...reused);
             flagPriceAnomalies(snapshot.offers);
             this.emit(id, { type: "offers", data: reused });
@@ -149,6 +154,19 @@ export class SearchService {
     snapshot.status = "complete";
     this.finishedAt.set(id, this.now());
     this.emit(id, { type: "complete", data: structuredClone(snapshot) });
+  }
+
+  /**
+   * What the typed query says beyond the product itself: «оригинальный» /
+   * «совместимый», and no cartridge chips/toner unless asked for.
+   */
+  private matchingQuery(snapshot: SearchSnapshot, offers: Offer[]): Offer[] {
+    const intent = originIntent(snapshot.query);
+    return offers.filter(
+      (offer) =>
+        offer.demo ||
+        (matchesOriginIntent(offer, snapshot.product, intent) && !isUnrequestedConsumablePart(offer, snapshot.query)),
+    );
   }
 
   private rememberLastGood(key: string, real: Offer[]): void {
