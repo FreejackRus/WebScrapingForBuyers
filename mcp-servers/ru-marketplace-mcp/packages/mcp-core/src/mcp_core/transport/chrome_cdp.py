@@ -654,6 +654,7 @@ class _RawCdpPage:
         msg_id = self._next_id
         await self._ws.send(json.dumps({"id": msg_id, "method": "Page.navigate", "params": {"url": url}}))
         statuses: list[int] = []
+        main_frame_id: str | None = None
         loop = asyncio.get_running_loop()
         deadline = loop.time() + _RAW_NAV_TIMEOUT_S
         nav_error: object = None
@@ -666,11 +667,18 @@ class _RawCdpPage:
             except TimeoutError:
                 break
             msg = json.loads(raw)
+            if msg.get("id") == msg_id:
+                result = msg.get("result")
+                if isinstance(result, dict) and isinstance(result.get("frameId"), str):
+                    main_frame_id = result["frameId"]
             if msg.get("id") == msg_id and "error" in msg:
                 nav_error = msg["error"]
             method = msg.get("method", "")
             params = msg.get("params", {})
             if method == "Network.responseReceived" and params.get("type") == "Document":
+                response_frame_id = params.get("frameId")
+                if main_frame_id and response_frame_id and response_frame_id != main_frame_id:
+                    continue
                 response = params.get("response", {})
                 status = response.get("status")
                 if isinstance(status, int):

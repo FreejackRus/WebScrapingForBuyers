@@ -575,6 +575,38 @@ def test_goto_and_status_returns_the_last_document_status_and_stops_on_load():
     assert page.url == "https://x/final"
 
 
+def test_goto_and_status_ignores_document_responses_from_child_frames():
+    """An advertising iframe must not replace the marketplace's final URL/status."""
+    import asyncio
+
+    ws = _FakeWs(
+        [
+            {"id": 1, "result": {"frameId": "MAIN"}},
+            {
+                "method": "Network.responseReceived",
+                "params": {
+                    "type": "Document",
+                    "frameId": "MAIN",
+                    "response": {"status": 200, "url": "https://aliexpress.ru/wholesale"},
+                },
+            },
+            {
+                "method": "Network.responseReceived",
+                "params": {
+                    "type": "Document",
+                    "frameId": "AD-FRAME",
+                    "response": {"status": 200, "url": "https://content.adriver.ru/banner.html"},
+                },
+            },
+            {"method": "Page.loadEventFired", "params": {}},
+        ]
+    )
+    page = chrome_cdp._RawCdpPage(ws, "T1")
+
+    assert asyncio.run(page.goto_and_status("https://aliexpress.ru/wholesale")) == 200
+    assert page.url == "https://aliexpress.ru/wholesale"
+
+
 def test_goto_and_status_reports_a_block_page():
     """A 403 main document is a verdict open_page turns into NavBlocked."""
     import asyncio

@@ -8,7 +8,6 @@ from contextlib import asynccontextmanager
 from pathlib import Path
 
 import pytest
-
 from wb_connector import server
 from wb_connector.settings import get_settings
 
@@ -234,5 +233,60 @@ def test_storefront_live_xhr_capture_via_get_context(monkeypatch, storefront_tra
         assert capture["version"] == "v18"
         assert capture["path"].startswith("/__internal/u-search/")
         assert server._card_item_dict(products[0])["price_rub"] == 3899.0
+
+    asyncio.run(scenario())
+
+
+def test_storefront_falls_back_to_raw_cdp_when_playwright_attach_times_out(monkeypatch, storefront_transport):
+    """Chrome 151+ must still use the raw-CDP Performance refetch path."""
+    payload = _v18_payload()
+    catalog_url = (
+        "https://www.wildberries.ru/__internal/u-search/exactmatch/ru/common/v18/search"
+        "?resultset=catalog&query=Logitech%20K380&dest=-1257786"
+    )
+    capture = server._capture_from_catalog_response(200, catalog_url, payload)
+
+    @asynccontextmanager
+    async def incompatible_playwright():
+        raise server._CdpConnectTimeout("Chrome newer than Playwright")
+        yield
+
+    class FakeRawPage:
+        async def evaluate(self, expression, arg):
+            return capture
+
+    @asynccontextmanager
+    async def fake_open_page(url, wait_ms=0, *, allowed_hosts=None):
+        yield FakeRawPage()
+
+    class FakePermit:
+        def ok(self):
+            return None
+
+        def refused(self, status=None):
+            return None
+
+        def neutral(self):
+            return None
+
+        def release(self):
+            return None
+
+    class FakeBudget:
+        async def acquire(self, host):
+            return FakePermit()
+
+    async def no_wait():
+        return None
+
+    async def scenario():
+        monkeypatch.setattr(server, "get_context", incompatible_playwright)
+        monkeypatch.setattr(server, "open_page", fake_open_page)
+        monkeypatch.setattr(server, "navigation_budget", lambda: FakeBudget())
+        monkeypatch.setattr(server, "_polite_wait", no_wait)
+        products, total, result = await server._search_via_storefront("Logitech K380", 1, None)
+        assert total == 100
+        assert len(products) == 3
+        assert result["version"] == "v18"
 
     asyncio.run(scenario())

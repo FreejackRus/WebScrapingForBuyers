@@ -65,7 +65,13 @@ from mcp_core.pacing import Pacer
 from mcp_core.redact import redact_error_text as _redact
 from mcp_core.transport import get_text_budgeted, proxy_from_env
 from mcp_core.transport.cdp_budget import navigation_budget
-from mcp_core.transport.chrome_cdp import NavBlocked, cdp_setup_hint, get_context, open_page
+from mcp_core.transport.chrome_cdp import (
+    NavBlocked,
+    _CdpConnectTimeout,
+    cdp_setup_hint,
+    get_context,
+    open_page,
+)
 from pydantic import Field
 
 from wb_connector.models_output import (
@@ -1876,7 +1882,13 @@ async def _search_via_storefront(
         return result if isinstance(result, dict) else {"ok": False, "error": "bad_capture_shape", "status": 0}
 
     try:
-        capture = await asyncio.wait_for(_attempt_live_capture(), timeout=max(55.0, float(WB_WALL_TIMEOUT)))
+        try:
+            capture = await asyncio.wait_for(_attempt_live_capture(), timeout=max(55.0, float(WB_WALL_TIMEOUT)))
+        except _CdpConnectTimeout:
+            # Chrome 151+ can stop completing Playwright's attach handshake.
+            # open_page has a bounded raw-CDP fallback, so continue through the
+            # existing in-page catalog refetch instead of requiring VNC.
+            capture = {}
         if not (capture.get("ok") and capture.get("products")):
             if ctx is not None:
                 await ctx.debug(
