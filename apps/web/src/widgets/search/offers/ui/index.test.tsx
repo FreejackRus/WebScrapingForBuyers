@@ -18,11 +18,23 @@ const offer: Offer = {
   demo: false,
 };
 
+const reviewOffer = {
+  ...offer,
+  id: "wb-review",
+  title: "Logitech MX Master 3S compatible shell",
+  assessment: {
+    group: "needs_review" as const,
+    reasons: ["В названии есть признаки другого товара"],
+  },
+};
+
+const rows = [offer, reviewOffer];
+
 const snapshot: SearchSnapshot = {
   id: "search",
   query: "MX Master",
   status: "complete",
-  offers: [offer],
+  offers: rows,
   product: {
     id: "mouse",
     brand: "Logitech",
@@ -38,10 +50,10 @@ const snapshot: SearchSnapshot = {
 const openOffer = vi.fn();
 
 vi.mock("features/search", () => ({
-  useFilteredOffers: () => [offer],
+  useFilteredOffers: () => rows,
   useOfferTable: () => ({
-    rows: [offer],
-    total: 1,
+    rows,
+    total: rows.length,
     page: 1,
     pageCount: 1,
     pageSize: 8,
@@ -96,8 +108,8 @@ vi.mock("entities/search", () => ({
     }),
 }));
 vi.mock("entities/analysis", () => ({
-  useAnalysisStore: (selector: (value: { analysis: undefined }) => unknown) =>
-    selector({ analysis: undefined }),
+  useAnalysisStore: (selector: (value: { analysis: { selectedOfferIds: string[] } }) => unknown) =>
+    selector({ analysis: { selectedOfferIds: [reviewOffer.id] } }),
 }));
 
 import { OfferTable } from "./index";
@@ -113,5 +125,18 @@ describe("OfferTable", () => {
     expect(html).not.toContain("К офферу");
     expect(html).not.toContain(`href="${offer.url}"`);
     expect(html).not.toMatch(/MCP|VNC|CDP|source\.message/i);
+  });
+
+  it("keeps legacy offers in the main table and collapses offers that need review", () => {
+    const html = renderToStaticMarkup(<OfferTable />);
+
+    expect(html).toContain("<details");
+    expect(html).not.toMatch(/<details[^>]*\sopen(?:=|\s|>)/);
+    expect(html).toContain("Требует уточнения — 1");
+    expect(html).toContain("В названии есть признаки другого товара");
+    expect(html.indexOf(offer.title)).toBeLessThan(html.indexOf("Требует уточнения — 1"));
+    expect(html.indexOf("Требует уточнения — 1")).toBeLessThan(html.indexOf(reviewOffer.title));
+    expect(html).not.toContain("Лучший выбор");
+    expect(html).not.toContain("offer-cta primary");
   });
 });
