@@ -23,6 +23,16 @@ export const NETLAB_PRICE_URL_DEFAULT = "https://www.netlab.ru/products/pricexml
 export const NETLAB_PRICE_COLUMNS = ["R", "B", "C", "D", "E", "F"] as const;
 export type NetlabPriceColumn = (typeof NETLAB_PRICE_COLUMNS)[number];
 
+/** NL_XML_Price.doc: priceR — розничная, priceB…priceF — цены дилерских категорий. */
+export const NETLAB_PRICE_LABEL: Record<NetlabPriceColumn, string> = {
+  R: "NETLAB, розничная цена",
+  B: "NETLAB, дилерская категория B",
+  C: "NETLAB, дилерская категория C",
+  D: "NETLAB, дилерская категория D",
+  E: "NETLAB, дилерская категория E",
+  F: "NETLAB, дилерская категория F",
+};
+
 export interface NetlabFeedItem {
   id: string;
   name: string;
@@ -244,7 +254,7 @@ export function toNetlabOffer(
     title: item.name,
     ...(item.pn ? { mpn: item.pn } : {}),
     price,
-    priceCondition: `Прайс NETLAB, колонка ${column}: $${usd} по курсу ${feed.usdRate} (${feed.date})`,
+    priceCondition: `${NETLAB_PRICE_LABEL[column]}: $${usd} по курсу ${feed.usdRate} (прайс ${feed.date})`,
     currency: "RUB",
     availability: netlabAvailability(item),
     ...(item.warranty ? { warranty: item.warranty } : {}),

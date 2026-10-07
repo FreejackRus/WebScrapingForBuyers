@@ -121,7 +121,7 @@ describe("NetlabPriceFeedAdapter", () => {
       availability: "удалённый склад: более 50 шт.",
       demo: false,
     });
-    expect(offers[0]?.priceCondition).toContain("колонка B");
+    expect(offers[0]?.priceCondition).toContain("дилерская категория B");
   });
 
   it("keeps the previous feed when a refresh fails", async () => {
