@@ -276,15 +276,15 @@
     "semantic_hash": ""
   },
   "apps/search/src/application/search-service.test.ts": {
-    "mtime": 1791213407.8832207,
-    "seen": 1791215666.7927823,
-    "ast_hash": "4d2e46676734db3b41da89b7dca97612",
+    "mtime": 1791380099.6515682,
+    "seen": 1791380118.8405583,
+    "ast_hash": "cfd0e4d86ef5a3cdcb3c463033690308",
     "semantic_hash": ""
   },
   "apps/search/src/application/search-service.ts": {
-    "mtime": 1791213407.8842206,
-    "seen": 1791215666.7927828,
-    "ast_hash": "367134dc2ec4f9d794b13b753d693d0c",
+    "mtime": 1791380099.6530337,
+    "seen": 1791380118.84056,
+    "ast_hash": "a04d81a4e8c6ff972e5772a498c5d028",
     "semantic_hash": ""
   },
   "apps/search/src/domain/catalog.ts": {
@@ -354,15 +354,15 @@
     "semantic_hash": ""
   },
   "apps/search/src/infrastructure/sources/b2b-distributor-adapter.test.ts": {
-    "mtime": 1790239007.0978384,
-    "seen": 1791215666.7927902,
-    "ast_hash": "e32d1944c7ba5c7040ca6142dc3c0717",
+    "mtime": 1791380397.7381036,
+    "seen": 1791380612.9615824,
+    "ast_hash": "55edc2c8bed92722caaa655c5ca88faf",
     "semantic_hash": ""
   },
   "apps/search/src/infrastructure/sources/b2b-distributor-adapter.ts": {
-    "mtime": 1790239007.0978384,
-    "seen": 1791215666.792791,
-    "ast_hash": "8974e7328e8285bb98374f1f574500e0",
+    "mtime": 1791380413.7431386,
+    "seen": 1791380612.961584,
+    "ast_hash": "8822de8ae895567e6095386baad9ec1b",
     "semantic_hash": ""
   },
   "apps/search/src/infrastructure/sources/blocked-source-cooldown-adapter.test.ts": {
@@ -420,21 +420,21 @@
     "semantic_hash": ""
   },
   "apps/search/src/infrastructure/sources/merlion-client.ts": {
-    "mtime": 1791293911.0417798,
-    "seen": 1791370086.595758,
-    "ast_hash": "c8cdc894c94d3221a040c340fa4556cc",
+    "mtime": 1791380370.4723234,
+    "seen": 1791380612.9615927,
+    "ast_hash": "fdb618f588d407eac6f44aac3a9e15fb",
     "semantic_hash": ""
   },
   "apps/search/src/infrastructure/sources/netlab-client.ts": {
-    "mtime": 1791372828.1459565,
-    "seen": 1791372894.453245,
-    "ast_hash": "bdeecc48b2373ce18722594baa21177f",
+    "mtime": 1791373250.3161864,
+    "seen": 1791375212.7454615,
+    "ast_hash": "2b8a53b2b91eaae775b97ca5e3f98646",
     "semantic_hash": ""
   },
   "apps/search/src/infrastructure/sources/ocs-client.ts": {
-    "mtime": 1791293911.0416875,
-    "seen": 1791370086.5957594,
-    "ast_hash": "83d7157f65b78190670a74be2e85c56f",
+    "mtime": 1791380370.472518,
+    "seen": 1791380612.9615974,
+    "ast_hash": "ba74252167beede51227fda9c52e6216",
     "semantic_hash": ""
   },
   "apps/search/src/infrastructure/sources/wb-rate-limit.test.ts": {
@@ -2088,9 +2088,9 @@
     "semantic_hash": ""
   },
   "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py": {
-    "mtime": 1791369980.23103,
-    "seen": 1791370086.595966,
-    "ast_hash": "7295a0356332cefb1b3964b9caa32515",
+    "mtime": 1791377390.8512983,
+    "seen": 1791377457.10186,
+    "ast_hash": "0babd5f33311b5e64b2a5540872dc1e2",
     "semantic_hash": ""
   },
   "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/http_tier.py": {
@@ -2556,9 +2556,9 @@
     "semantic_hash": ""
   },
   "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py": {
-    "mtime": 1791370133.3634284,
-    "seen": 1791370147.065392,
-    "ast_hash": "bcbceaf227c2929c9ce978ad99085dcb",
+    "mtime": 1791377390.8519077,
+    "seen": 1791377457.1019156,
+    "ast_hash": "725f955bad681f612366bfe452fc8c6f",
     "semantic_hash": ""
   },
   "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/settings.py": {
@@ -2646,9 +2646,9 @@
     "semantic_hash": ""
   },
   "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py": {
-    "mtime": 1791370133.3634284,
-    "seen": 1791370147.0654035,
-    "ast_hash": "44fba4ea45d190e023a44c5c69d76b07",
+    "mtime": 1791377390.8519895,
+    "seen": 1791377457.101926,
+    "ast_hash": "405b156727a5bf12c772688d70372fc7",
     "semantic_hash": ""
   },
   "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/pyproject.toml": {
@@ -3360,9 +3360,9 @@
     "semantic_hash": ""
   },
   "docker-compose.production.yml": {
-    "mtime": 1791286769.471989,
-    "seen": 1791289324.5954828,
-    "ast_hash": "fdec546504a97fd290af7fa67328f1b3",
+    "mtime": 1791380598.1476212,
+    "seen": 1791380612.9619503,
+    "ast_hash": "0eecd2d96c739549b77c6124fae34eb5",
     "semantic_hash": ""
   },
   "docs/AGENT_PREAMBLE.md": {
@@ -3390,9 +3390,9 @@
     "semantic_hash": ""
   },
   "docs/DISTRIBUTORS.md": {
-    "mtime": 1790343021.064285,
-    "seen": 1791215666.7931037,
-    "ast_hash": "ae6cfb77461c480ea2496e5409cdd56d",
+    "mtime": 1791387614.3598676,
+    "seen": 1791387629.9330328,
+    "ast_hash": "0bb529a033070b1a6fc2d7eb3ee63334",
     "semantic_hash": ""
   },
   "docs/IT_SCOPE.md": {
@@ -3408,9 +3408,9 @@
     "semantic_hash": ""
   },
   "docs/PROJECT_CONTEXT.md": {
-    "mtime": 1791372721.478818,
-    "seen": 1791372741.5043774,
-    "ast_hash": "de79c24c4fec53be7d2e52321599b042",
+    "mtime": 1791387614.3566866,
+    "seen": 1791387629.933035,
+    "ast_hash": "46b54ac2ab1aee82179aa34268c7585f",
     "semantic_hash": ""
   },
   "docs/STITCH.md": {
@@ -4266,9 +4266,51 @@
     "semantic_hash": ""
   },
   "apps/search/src/infrastructure/sources/netlab-client.test.ts": {
-    "mtime": 1791372817.3966403,
-    "seen": 1791372894.453243,
-    "ast_hash": "47d382596227cab011d7b729082892cb",
+    "mtime": 1791373224.936462,
+    "seen": 1791375212.7454607,
+    "ast_hash": "27b4bdb22993d2ceca05e57c67ea86e5",
+    "semantic_hash": ""
+  },
+  "apps/search/src/infrastructure/sources/storefront-distributor-adapter.test.ts": {
+    "mtime": 1791374990.968936,
+    "seen": 1791375212.7454636,
+    "ast_hash": "5e43abde81b5a83659279b95afb25aa6",
+    "semantic_hash": ""
+  },
+  "apps/search/src/infrastructure/sources/storefront-distributor-adapter.ts": {
+    "mtime": 1791380370.473462,
+    "seen": 1791380612.9615993,
+    "ast_hash": "6fcb8b7bbd6129ad95fd1848982a1d8b",
+    "semantic_hash": ""
+  },
+  "apps/search/src/domain/consumable-parts.ts": {
+    "mtime": 1791379842.4218304,
+    "seen": 1791380118.840562,
+    "ast_hash": "9e1e5cabb2ce57c423d38657fcad902d",
+    "semantic_hash": ""
+  },
+  "apps/search/src/domain/origin-intent.test.ts": {
+    "mtime": 1791379873.7712138,
+    "seen": 1791380118.8405662,
+    "ast_hash": "a540ea052ab6b8d06a4bfaa097252b11",
+    "semantic_hash": ""
+  },
+  "apps/search/src/domain/origin-intent.ts": {
+    "mtime": 1791379818.1864026,
+    "seen": 1791380118.8405674,
+    "ast_hash": "14dfc98f1d64f8776b05bed7c948a24c",
+    "semantic_hash": ""
+  },
+  "apps/search/src/infrastructure/sources/netlab-price-feed.test.ts": {
+    "mtime": 1791387614.3526313,
+    "seen": 1791387629.932684,
+    "ast_hash": "e02752952d4286ce6d037a11d19b52b0",
+    "semantic_hash": ""
+  },
+  "apps/search/src/infrastructure/sources/netlab-price-feed.ts": {
+    "mtime": 1791387611.5453792,
+    "seen": 1791387629.9326854,
+    "ast_hash": "8e725999e474737d104245a92f533a5c",
     "semantic_hash": ""
   }
 }

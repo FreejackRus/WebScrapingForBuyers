@@ -16,3 +16,4 @@ coverage/
 .deploy-stamp
 .serena/cache/
 .serena/project.local.yml
+mcp-servers/ru-marketplace-mcp/graphify-out/
