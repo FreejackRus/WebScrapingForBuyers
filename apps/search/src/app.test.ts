@@ -130,6 +130,17 @@ describe("search", () => {
     }
   });
 
+  it.each(["12400F", "i5-12400F", "процессор 12400F"])("normalizes typed CPU search %s before collecting", async (query) => {
+    const app = buildSearchApp({ sources: [new TestSource()] });
+    apps.push(app);
+    const response = await app.inject({ method: "POST", url: "/searches", payload: {
+      query, product: { ...productPayload(query), characteristics: { источник: "typed" } },
+    } });
+    expect(response.statusCode).toBe(201);
+    expect(response.json().product.category).toBe("Процессоры");
+    expect(response.json().query).toBe(query);
+  });
+
   it("collects offers", async () => {
     const app = buildSearchApp({ sources: [new TestSource()] });
     apps.push(app);

@@ -51,7 +51,11 @@ export const searchRoutes: FastifyPluginAsync<{
     },
     async (request, reply) => {
       const product =
-        (isProductPayload(request.body.product) ? request.body.product : undefined) ??
+        (isProductPayload(request.body.product)
+          ? request.body.product.characteristics.источник === "typed"
+            ? productFromQuery(request.body.product.name, "query")
+            : request.body.product
+          : undefined) ??
         (request.body.productId ? findProduct(request.body.productId) : undefined) ??
         (await suggestLiveProducts(request.body.query, 1))[0] ??
         productFromQuery(request.body.query, "query");

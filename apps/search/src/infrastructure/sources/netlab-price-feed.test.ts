@@ -1,3 +1,4 @@
+import { productFromQuery } from "../../domain/product-from-query.js";
 import { deflateRawSync } from "node:zlib";
 
 import { describe, expect, it, vi } from "vitest";
@@ -149,4 +150,16 @@ describe("NetlabPriceFeedAdapter", () => {
     const mouse = parseNetlabOffer(XML.slice(XML.indexOf('<offer id="1000179"'), XML.lastIndexOf("</offer>")))!;
     expect(isNetlabCandidate(mouse, cartridge)).toBe(false);
   });
+});
+
+it.each(["12400F", "i5-12400F", "процессор 12400F"])("finds the CPU in the feed for %s", async (query) => {
+  const xml = XML.replace("<offers>", '<offers><offer id="900"><name>Intel Core i5-12400F OEM Процессор LGA1700</name><PN>CM8071504650609</PN><Model>i5-12400F</Model><Vendor>Intel</Vendor><priceR>100</priceR><count>*</count></offer>');
+  const adapter = new NetlabPriceFeedAdapter({ fetchImpl: vi.fn(async () => new Response(new Uint8Array(zipOf("Price.xml", cp1251(xml))))) });
+  const offers = await adapter.search(productFromQuery(query));
+  expect(offers.map((row) => row.title)).toEqual(["Intel Core i5-12400F OEM Процессор LGA1700"]);
+});
+
+it("uses NETLAB's product type to exclude complete systems with the requested CPU", () => {
+  const pc = parseNetlabOffer('<offer id="10"><name>NORBEL i5-12400F / 16GB / SSD</name><RussianName>[Компьютер] NORBEL i5-12400F</RussianName><priceR>100</priceR>')!;
+  expect(isNetlabCandidate(pc, productFromQuery("12400F"))).toBe(false);
 });

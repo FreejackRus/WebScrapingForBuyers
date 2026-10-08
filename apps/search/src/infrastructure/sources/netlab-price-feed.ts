@@ -4,6 +4,7 @@ import { createInflateRaw } from "node:zlib";
 import type { MatchKind, Offer, Product } from "@peremena/contracts";
 
 import { assessMarketplaceOfferRelevance } from "../../domain/marketplace-relevance.js";
+import { inferCategory } from "../../domain/product-from-query.js";
 import type { SourceAdapter } from "../../domain/source-adapter.js";
 import { preferRelevantOffers } from "./mcp-marketplace-adapter.js";
 
@@ -36,6 +37,7 @@ export const NETLAB_PRICE_LABEL: Record<NetlabPriceColumn, string> = {
 export interface NetlabFeedItem {
   id: string;
   name: string;
+  category?: string;
   pn: string;
   vendor: string;
   model: string;
@@ -99,6 +101,7 @@ export function parseNetlabOffer(block: string): NetlabFeedItem | undefined {
   return {
     id,
     name,
+    category: /^\[([^\]]+)\]/.exec(tag(block, "RussianName"))?.[1] ?? "",
     pn: tag(block, "PN"),
     vendor: tag(block, "Vendor"),
     model: tag(block, "Model"),
@@ -214,6 +217,9 @@ function identityTokens(value: string): string[] {
 
 /** Cheap pre-filter before the shared relevance check: part number or model digits must appear. */
 export function isNetlabCandidate(item: NetlabFeedItem, product: Product): boolean {
+  const expected = inferCategory(product.name);
+  const actual = inferCategory(item.category ?? "");
+  if (expected !== "Каталог" && actual !== "Каталог" && expected !== actual) return false;
   const mpn = normalizeCode(product.mpn);
   const haystack = normalizeCode(`${item.pn} ${item.name} ${item.model}`);
   if (mpn.length >= 4 && haystack.includes(mpn)) return true;

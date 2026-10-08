@@ -16,6 +16,13 @@ export function Metrics({
   sourceCount: number;
 }) {
   return (
+    <>
+    {running && <div className="collection-progress" role="status" aria-live="polite">
+      <span className="collection-spinner" aria-hidden="true" />
+      <div><strong>{offerCount > 0 ? "Ожидаем остальных поставщиков" : "Собираем предложения"}</strong>
+        <p>Завершено {settledSources} из {sourceCount}. Предложения появляются по мере загрузки.</p>
+      </div>
+    </div>}
     <section className="metrics" aria-label="Сводка">
       <Metric label="Предложений" value={String(offerCount)} />
       <Metric
@@ -30,6 +37,7 @@ export function Metrics({
         hint={`${settledSources} из ${sourceCount} источников завершено${failedSources > 0 ? ` · ошибок: ${failedSources}` : ""}`}
       />
     </section>
+    </>
   );
 }
 

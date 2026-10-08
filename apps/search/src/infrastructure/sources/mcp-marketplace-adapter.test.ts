@@ -1351,3 +1351,10 @@ describe("McpMarketplaceAdapter", () => {
     delete process.env.AVITO_POW_RETRY_MS;
   });
 });
+
+it("preserves DNS store-specific availability instead of guessing from missing flags", async () => {
+  const callTool = vi.fn<MarketplaceToolCaller["callTool"]>(async () => ({items: [{title: product.name, price_rub: 8990, availability_text: "В магазинах: нет. Под заказ: 15 октября", url: "https://www.dns-shop.ru/product/mx-master-3s/"}]}));
+  const adapter = new McpMarketplaceAdapter({callTool}, {name:"DNS",tool:"dns_search",host:"dns-shop.ru",kind:"dns"});
+  const offers = await adapter.search(product);
+  expect(offers[0]?.availability).toBe("В магазинах: нет. Под заказ: 15 октября");
+});

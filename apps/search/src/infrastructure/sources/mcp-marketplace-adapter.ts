@@ -552,7 +552,9 @@ export class McpMarketplaceAdapter implements SourceAdapter {
       priceCondition: marketplacePriceCondition(item, this.source.kind),
       currency: "RUB",
       availability:
-        inStock === true ? "В наличии" : inStock === false ? "Нет в наличии" : firstString(item.stock) ?? "Неизвестно",
+        this.source.kind === "dns" && firstString(item.availability_text)
+          ? firstString(item.availability_text)!
+          : inStock === true ? "В наличии" : inStock === false ? "Нет в наличии" : firstString(item.stock) ?? "Неизвестно",
       ...(delivery ? { delivery } : {}),
       condition: "new",
       match,

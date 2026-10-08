@@ -94,8 +94,10 @@ export function SearchCommand() {
   const hintId = useId();
   const listId = useId();
   const noSourcesId = useId();
+  const [category, setCategory] = useState("");
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const navigatedSuggestion = useRef(false);
   const debounceRef = useRef<number | undefined>(undefined);
   // Bumped whenever the query changes or a product is committed, so a late suggest response is ignored.
   const suggestTokenRef = useRef(0);
@@ -134,6 +136,7 @@ export function SearchCommand() {
       setOpen(false);
       return;
     }
+    navigatedSuggestion.current = false;
     const token = ++suggestTokenRef.current;
     debounceRef.current = window.setTimeout(() => {
       void suggest({ quiet: true }).then(() => {
@@ -160,19 +163,17 @@ export function SearchCommand() {
     window.clearTimeout(debounceRef.current);
     setOpen(false);
     setQuery(product.name);
-    void startSearch(product);
+    const categoryName = category && !product.name.toLocaleLowerCase("ru").startsWith(category.toLocaleLowerCase("ru"))
+      ? `${category} ${product.name}` : product.name;
+    void startSearch(category ? productFromTypedQuery(categoryName) : product);
   };
 
   const onSubmit = (event: FormEvent) => {
     event.preventDefault();
     const trimmed = query.trim();
     if (trimmed.length < 2 || activity === "search" || selectedSources.length === 0) return;
-    const selected = open && suggestions[activeIndex];
-    if (selected) {
-      commitProduct(selected);
-      return;
-    }
-    commitProduct(productFromTypedQuery(trimmed));
+    const chosen = navigatedSuggestion.current && open ? suggestions[activeIndex] : undefined;
+    commitProduct(chosen || productFromTypedQuery(trimmed));
   };
 
   const onKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
@@ -181,9 +182,11 @@ export function SearchCommand() {
       return;
     }
     if (event.key === "ArrowDown") {
+      navigatedSuggestion.current = true;
       event.preventDefault();
       setActiveIndex((index) => (index + 1) % suggestions.length);
     } else if (event.key === "ArrowUp") {
+      navigatedSuggestion.current = true;
       event.preventDefault();
       setActiveIndex((index) => (index - 1 + suggestions.length) % suggestions.length);
     } else if (event.key === "Escape") {
@@ -200,6 +203,14 @@ export function SearchCommand() {
           Ищем IT-оборудование и комплектующие: введите тип устройства, бренд, модель или артикул.
         </p>
       </div>
+      <label className="category-picker">
+        <span>Категория товара</span>
+        <select aria-label="Категория товара" value={category} disabled={activity === "search"}
+          onChange={(event) => { setCategory(event.target.value); setOpen(false); }}>
+          <option value="">Определить автоматически</option>
+          {["Процессор", "Материнская плата", "Видеокарта", "Оперативная память", "SSD", "Жёсткий диск", "Блок питания", "Корпус для ПК", "Кулер", "Ноутбук", "Компьютер", "Сервер", "Монитор", "Мышь", "Клавиатура", "Принтер", "Картридж", "Коммутатор", "ИБП", "Кабель", "Смартфон", "Планшет"].map((value) => <option key={value} value={value}>{value}</option>)}
+        </select>
+      </label>
       <form className="search search-typeahead" onSubmit={onSubmit} role="search">
         <label className="sr-only" htmlFor="procurement-query">
           Товар для поиска

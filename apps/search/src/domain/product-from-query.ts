@@ -61,6 +61,7 @@ interface CategoryHint {
 }
 
 const CATEGORY_HINTS: CategoryHint[] = [
+  { pattern: /(?:i[3579][- ](?:\d{4,5})(?:kf|ks|k|f|t)?|1\d{4}(?:kf|ks|k|f|t)?)(?![a-z0-9])/u, category: "Процессоры", weak: true },
   { pattern: /legion go(?:\s|$)|rog ally|steam deck|msi claw|портативн[а-яё]* (?:игров[а-яё]* )?(?:консол|приставк)|handheld gaming/u, category: "Игровые консоли" },
   { pattern: /чех(?:ол|л)|коврик|защитн[а-яё]* (?:стекло|плёнк|пленк)|подставк[а-яё]* для (?:ноутбук|телефон|планшет)|сумк[а-яё]* для ноутбук|рюкзак для ноутбук/u, category: "Аксессуары IT" },
   { pattern: /кабел|displayport|hdmi(?![a-z])|переходник|адаптер|type-c|usb-c|патч-корд|patch ?cord/u, category: "Кабели и адаптеры" },
@@ -91,7 +92,7 @@ const CATEGORY_HINTS: CategoryHint[] = [
   { pattern: /планшет|ipad(?![a-z])|galaxy tab|matepad|mi pad|redmi pad|tablet/u, category: "Планшеты" },
   { pattern: /смартфон|телефон|iphone|galaxy [sazm]\d|галакси|pixel \d|redmi|poco(?![a-z])|honor(?![a-z])|realme/u, category: "Смартфоны" },
   { pattern: /системн[а-яё]* блок|десктоп|настольн[а-яё]* (?:пк|компьютер)|мини-?пк|моноблок|mac mini|nuc(?![a-z0-9])/u, category: "Компьютеры" },
-  { pattern: /компьютер(?!н)/u, category: "Компьютеры", weak: true },
+  { pattern: /компьютер(?!н)/u, category: "Компьютеры" },
 ];
 
 interface CompiledHint {
@@ -220,7 +221,11 @@ export function splitBrandModel(text: string): { brand: string; model: string } 
 
 /** Build a Product from free-text suggestion or typed query (no static catalog). */
 export function productFromQuery(text: string, source = "suggest"): Product {
-  const name = collapseWs(text);
+  let name = collapseWs(text);
+  const cpu = name.match(/(?:^|\s)(?:i[3579][- ])?(1\d{4}(?:kf|ks|k|f|t)?)(?=\s|$)/i);
+  if (cpu && inferCategory(name) === "Процессоры") {
+    name = `Процессор Intel ${name.replace(/^процессор\s+/i, "").replace(/^intel\s+(?:core\s+)?/i, "")}`;
+  }
   if (!name) throw new Error("Пустой запрос");
   const { brand, model } = splitBrandModel(name);
   const mpn = extractMpn(name);
