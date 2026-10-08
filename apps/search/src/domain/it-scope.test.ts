@@ -143,3 +143,13 @@ describe("IT assortment scope", () => {
     expect(classifyQuery(doll)).not.toBe("ok");
   });
 });
+
+describe("CPU shorthand", () => {
+  it.each(["12400F", "i5-12400F", "процессор 12400F"])("accepts %s and excludes complete PCs", (query) => {
+    const product = productFromQuery(query);
+    expect(classifyQuery(product)).toBe("ok");
+    expect(product.category).toBe("Процессоры");
+    expect(isItOfferForProduct(product, offer("Процессор Intel Core i5-12400F OEM"))).toBe(true);
+    expect(isItOfferForProduct(product, offer("Компьютер Intel Core i5-12400F"))).toBe(false);
+  });
+});

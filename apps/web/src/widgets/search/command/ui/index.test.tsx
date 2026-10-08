@@ -157,3 +157,7 @@ describe("SearchCommand", () => {
     expect(html).toMatch(/<span[^>]*aria-hidden="true"[^>]*>Ctrl\+K<\/span>/);
   });
 });
+
+it("offers a labelled product category selector", () => {
+  expect(renderToStaticMarkup(<SearchCommand />)).toContain('aria-label="Категория товара"');
+});

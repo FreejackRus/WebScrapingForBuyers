@@ -103,3 +103,11 @@ describe("search workspace data states", () => {
     expect(renderToStaticMarkup(<SearchWorkspace />)).not.toContain("Сбор завершён частично");
   });
 });
+
+it("keeps collection progress visible after the first offer and removes it on completion", () => {
+  state.snapshot!.status = "running";
+  state.snapshot!.offers = [offer(false, 500)];
+  expect(renderToStaticMarkup(<SearchWorkspace />)).toContain("Ожидаем остальных поставщиков");
+  state.snapshot!.status = "complete";
+  expect(renderToStaticMarkup(<SearchWorkspace />)).not.toContain("Ожидаем остальных поставщиков");
+});
