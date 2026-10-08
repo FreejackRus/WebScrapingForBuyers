@@ -77,6 +77,16 @@ describe("offer assessment", () => {
     });
   });
 
+  it("treats a known compatible maker in the title as compatible even when it says original", () => {
+    expect(
+      assessOffer(
+        product(),
+        offer("Оригинальный картридж TL-5120 от NV Print"),
+        "оригинальный картридж Pantum TL-5120",
+      ),
+    ).toBeNull();
+  });
+
   it("keeps unknown origin for review rather than silently treating it as original", () => {
     const assessed = assessOffer(product(), offer("Картридж Pantum TL-5120"), "оригинальный Pantum TL-5120");
     expect(assessed?.assessment).toEqual({
@@ -87,6 +97,11 @@ describe("offer assessment", () => {
 
   it("rejects a different full article even when the digits coincide", () => {
     expect(assessOffer(product(), offer("Картридж Pantum DL-5120"), "Pantum TL-5120")).toBeNull();
+    expect(assessOffer(product(), offer("Картридж Pantum TL-51200"), "Pantum TL-5120")).toBeNull();
+    const mouse = product({ name: "Logitech G102", brand: "Logitech", model: "G102", mpn: "", category: "Мыши" });
+    expect(assessOffer(mouse, offer("Мышь Logitech G1020"), mouse.name)).toBeNull();
+    const ssd = product({ name: "SSD Kingston NV3", brand: "Kingston", model: "NV3", mpn: "", category: "SSD" });
+    expect(assessOffer(ssd, offer("SSD Kingston NV30"), ssd.name)).toBeNull();
   });
 
   it("rejects spare parts for a device request", () => {
@@ -121,5 +136,106 @@ describe("offer assessment", () => {
       group: "needs_review",
       reasons: expect.arrayContaining(["Количество в комплекте не указано"]),
     });
+  });
+
+  it("uses selected product characteristics when the typed query omits capacity", () => {
+    const ssd = product({
+      name: "SSD Kingston NV3",
+      brand: "Kingston",
+      model: "NV3",
+      mpn: "",
+      category: "SSD",
+      characteristics: { Объём: "1 ТБ" },
+    });
+    expect(assessOffer(ssd, offer("SSD Kingston NV3 2 ТБ"), "Kingston NV3")).toBeNull();
+  });
+
+  it("gives the explicit typed capacity precedence over stale selected-product capacity", () => {
+    const ssd = product({
+      name: "SSD Kingston NV3 2 ТБ",
+      brand: "Kingston",
+      model: "NV3",
+      mpn: "",
+      category: "SSD",
+      characteristics: { Объём: "2 ТБ" },
+    });
+    expect(assessOffer(ssd, offer("SSD Kingston NV3 1 ТБ"), "Kingston NV3 1 ТБ")?.assessment?.group).toBe("match");
+  });
+
+  it("distinguishes RAM kit layout even when total capacity is equal", () => {
+    const ram = product({
+      name: "Kingston Fury Beast 2x16 GB",
+      brand: "Kingston",
+      model: "Fury Beast",
+      mpn: "",
+      category: "Оперативная память",
+    });
+    expect(assessOffer(ram, offer("Kingston Fury Beast 1x32 GB"), ram.name)).toBeNull();
+    expect(assessOffer(ram, offer("Kingston Fury Beast 2x16 GB"), ram.name)?.assessment?.group).toBe("match");
+  });
+
+  it("keeps the selected RAM kit quantity when the typed query omits its layout", () => {
+    const ram = product({
+      name: "Kingston Fury Beast 2x16 GB",
+      brand: "Kingston",
+      model: "Fury Beast",
+      mpn: "",
+      category: "Оперативная память",
+    });
+    const query = "Kingston Fury Beast";
+
+    expect(assessOffer(ram, offer("Kingston Fury Beast 1x32 GB"), query)).toBeNull();
+    expect(assessOffer(ram, offer("Kingston Fury Beast 32 GB"), query)?.assessment).toEqual({
+      group: "needs_review",
+      reasons: expect.arrayContaining(["Количество в комплекте не указано"]),
+    });
+  });
+
+  it("keeps the selected RAM kit quantity when the typed query only overrides total capacity", () => {
+    const ram = product({
+      name: "Kingston Fury Beast 2x16 GB",
+      brand: "Kingston",
+      model: "Fury Beast",
+      mpn: "",
+      category: "Оперативная память",
+    });
+
+    expect(assessOffer(ram, offer("Kingston Fury Beast 1x32 GB"), "Kingston Fury Beast 32 GB")).toBeNull();
+  });
+
+  it("lets an explicit typed RAM kit layout override the selected layout", () => {
+    const ram = product({
+      name: "Kingston Fury Beast 2x16 GB",
+      brand: "Kingston",
+      model: "Fury Beast",
+      mpn: "",
+      category: "Оперативная память",
+    });
+
+    expect(
+      assessOffer(ram, offer("Kingston Fury Beast 1x32 GB"), "Kingston Fury Beast 1x32 GB")?.assessment?.group,
+    ).toBe("match");
+  });
+
+  it("normalizes RAM kit total capacity and module quantity", () => {
+    const ram = product({
+      name: "Kingston Fury Beast 32 GB комплект 2 шт",
+      brand: "Kingston",
+      model: "Fury Beast",
+      mpn: "",
+      category: "Оперативная память",
+    });
+    expect(assessOffer(ram, offer("Kingston Fury Beast 2x16 GB комплект 2 шт"), ram.name)?.assessment?.group).toBe("match");
+  });
+
+  it("rejects conflicting toner yield and reviews an absent yield", () => {
+    const query = "Картридж Pantum TL-5120 ресурс 3000 страниц";
+    expect(assessOffer(product(), offer("Картридж Pantum TL-5120 6000 страниц"), query)).toBeNull();
+    expect(assessOffer(product(), offer("Картридж Pantum TL-5120"), query)?.assessment).toEqual({
+      group: "needs_review",
+      reasons: expect.arrayContaining(["Ресурс не указан"]),
+    });
+    expect(assessOffer(product(), offer("Картридж Pantum TL-5120 ресурс 3000 страниц"), query)?.assessment?.group).toBe("match");
+    expect(assessOffer(product(), offer("Картридж Pantum TL-5120 3000 страниц"), query)?.assessment?.group).toBe("match");
   });
 });
