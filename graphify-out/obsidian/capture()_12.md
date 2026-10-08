@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_browser_handoff.py"
 type: "code"
-community: "capture"
-location: "L563"
+community: "json"
+location: "L171"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/capture
+  - graphify/INFERRED
+  - community/json
 ---
 
 # capture()
 
 ## Connections
-- [[test_different_regions_do_not_share_a_cache_entry()]] - `contains` [EXTRACTED]
+- [[test_snapshot_mcp_transmits_image_without_ending_or_extending_handoff()]] - `indirect_call` [INFERRED]
+- [[test_snapshot_rejects_other_session_and_unknown_handle_without_capture()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/capture
+#graphify/code #graphify/INFERRED #community/json

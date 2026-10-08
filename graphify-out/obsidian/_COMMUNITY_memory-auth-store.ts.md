@@ -1,30 +1,39 @@
 ---
 type: community
-cohesion: 0.21
-members: 17
+cohesion: 0.13
+members: 26
 ---
 
 # memory-auth-store.ts
 
-**Cohesion:** 0.21 - loosely connected
-**Members:** 17 nodes
+**Cohesion:** 0.13 - loosely connected
+**Members:** 26 nodes
 
 ## Members
+- [[dot-authenticate()]] - code - apps/identity/src/domain/auth-store.ts
 - [[dot-authenticate()_1]] - code - apps/identity/src/infrastructure/memory-auth-store.ts
+- [[dot-changePassword()]] - code - apps/identity/src/domain/auth-store.ts
 - [[dot-changePassword()_1]] - code - apps/identity/src/infrastructure/memory-auth-store.ts
-- [[dot-constructor()_4]] - code - apps/identity/src/infrastructure/memory-auth-store.ts
+- [[dot-constructor()_9]] - code - apps/identity/src/infrastructure/memory-auth-store.ts
 - [[dot-fromEnv()]] - code - apps/identity/src/infrastructure/memory-auth-store.ts
+- [[dot-getById()]] - code - apps/identity/src/domain/auth-store.ts
 - [[dot-getById()_1]] - code - apps/identity/src/infrastructure/memory-auth-store.ts
+- [[dot-updateSettings()]] - code - apps/identity/src/domain/auth-store.ts
 - [[dot-updateSettings()_1]] - code - apps/identity/src/infrastructure/memory-auth-store.ts
+- [[AuthStore]] - code - apps/identity/src/domain/auth-store.ts
+- [[DUMMY_HASH]] - code - apps/identity/src/infrastructure/memory-auth-store.ts
 - [[MemoryAuthStore]] - code - apps/identity/src/infrastructure/memory-auth-store.ts
 - [[PasswordChange]] - code - apps/identity/src/domain/auth-store.ts
 - [[StoredUser]] - code - apps/identity/src/infrastructure/memory-auth-store.ts
+- [[auth-store.ts]] - code - apps/identity/src/domain/auth-store.ts
 - [[defaultUsers()]] - code - apps/identity/src/infrastructure/memory-auth-store.ts
 - [[hashPassword()]] - code - apps/identity/src/infrastructure/memory-auth-store.ts
+- [[hashPasswordAsync()]] - code - apps/identity/src/infrastructure/memory-auth-store.ts
 - [[makeUser()]] - code - apps/identity/src/infrastructure/memory-auth-store.ts
 - [[memory-auth-store.ts]] - code - apps/identity/src/infrastructure/memory-auth-store.ts
 - [[parseUserLines()]] - code - apps/identity/src/infrastructure/memory-auth-store.ts
-- [[ref_node_crypto]] - concept
+- [[ref_node_util]] - concept
+- [[scryptAsync]] - code - apps/identity/src/infrastructure/memory-auth-store.ts
 - [[toSession()]] - code - apps/identity/src/infrastructure/memory-auth-store.ts
 - [[verifyPassword()]] - code - apps/identity/src/infrastructure/memory-auth-store.ts
 
@@ -36,21 +45,17 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 4 edges to [[_COMMUNITY_entitiesuserindex.ts]]
-- 4 edges to [[_COMMUNITY_packages_contracts_dist_index]]
-- 3 edges to [[_COMMUNITY_session.ts]]
-- 3 edges to [[_COMMUNITY_identitysrcapp.ts]]
-- 1 edge to [[_COMMUNITY_mcp-marketplace-adapter.ts]]
-- 1 edge to [[_COMMUNITY_b2b-distributor-adapter.ts]]
-- 1 edge to [[_COMMUNITY_merlion-client.ts]]
-- 1 edge to [[_COMMUNITY_live-suggest.ts]]
-- 1 edge to [[_COMMUNITY_netlab-client.ts]]
-- 1 edge to [[_COMMUNITY_analyze.ts]]
-- 1 edge to [[_COMMUNITY_http-marketplace-adapter.ts]]
+- 5 edges to [[_COMMUNITY_identitysrcapp.ts]]
+- 5 edges to [[_COMMUNITY_identitysrchttproutes.ts]]
+- 2 edges to [[_COMMUNITY_gatewaysrcapp.ts]]
+- 2 edges to [[_COMMUNITY_useUserStore]]
+- 2 edges to [[_COMMUNITY_packages_contracts_dist_index]]
+- 1 edge to [[_COMMUNITY_analyze.test.ts]]
+- 1 edge to [[_COMMUNITY_SourceAdapter]]
 
 ## Top bridge nodes
-- [[ref_node_crypto]] - degree 11, connects to 8 communities
-- [[memory-auth-store.ts]] - degree 17, connects to 5 communities
-- [[MemoryAuthStore]] - degree 9, connects to 2 communities
+- [[memory-auth-store.ts]] - degree 21, connects to 6 communities
+- [[auth-store.ts]] - degree 9, connects to 5 communities
+- [[AuthStore]] - degree 10, connects to 2 communities
+- [[MemoryAuthStore]] - degree 9, connects to 1 community
 - [[dot-fromEnv()]] - degree 4, connects to 1 community
-- [[PasswordChange]] - degree 3, connects to 1 community

@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/lamoda-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/taobao-connector/SKILL.md"
 type: "document"
-community: "Lamoda Connector"
-location: "L26"
+community: "Taobao Connector"
+location: "L28"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Lamoda_Connector
+  - community/Taobao_Connector
 ---
 
 # Gotchas
 
 ## Connections
-- [[Lamoda Connector]] - `contains` [EXTRACTED]
+- [[Taobao Connector_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Lamoda_Connector
+#graphify/document #graphify/EXTRACTED #community/Taobao_Connector

@@ -14,6 +14,6 @@ tags:
 ## Connections
 - [[StdioProbe]] - `uses` [INFERRED]
 - [[e2e_stdio_check_docker.py]] - `contains` [EXTRACTED]
-- [[probe()_2]] - `calls` [EXTRACTED]
+- [[probe()_1]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_stdio_probepy

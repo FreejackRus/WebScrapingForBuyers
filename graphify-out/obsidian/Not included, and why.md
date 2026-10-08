@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
-community: "terminate_process_tree"
-location: "L2261"
+community: "detmir_categories"
+location: "L2267"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/terminate_process_tree
+  - community/detmir_categories
 ---
 
 # Not included, and why
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[1.0.0 — 2026-07-26]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/terminate_process_tree
+#graphify/document #graphify/EXTRACTED #community/detmir_categories

@@ -12,13 +12,13 @@ tags:
 # Yandex Market Connector
 
 ## Connections
-- [[DSH activation_13]] - `contains` [EXTRACTED]
-- [[Gotchas_17]] - `contains` [EXTRACTED]
+- [[DSH activation_12]] - `contains` [EXTRACTED]
+- [[Gotchas_2]] - `contains` [EXTRACTED]
 - [[The price field that matters most]] - `contains` [EXTRACTED]
 - [[Tools_2]] - `contains` [EXTRACTED]
-- [[Trust boundary_5]] - `contains` [EXTRACTED]
-- [[When to use_19]] - `contains` [EXTRACTED]
-- [[Workflow patterns_6]] - `contains` [EXTRACTED]
+- [[Trust boundary_3]] - `contains` [EXTRACTED]
+- [[When to use_2]] - `contains` [EXTRACTED]
+- [[Workflow patterns_2]] - `contains` [EXTRACTED]
 - [[dshskillsyandex-connectorSKILL]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/Yandex_Market_Connector

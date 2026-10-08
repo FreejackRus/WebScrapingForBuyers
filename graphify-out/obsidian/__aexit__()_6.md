@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "test_a_non_200_carries_a_body_preview"
-location: "L422"
+community: "test_cache_does_not_remember_a_rate_limit"
+location: "L1318"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_a_non_200_carries_a_body_preview
+  - community/test_cache_does_not_remember_a_rate_limit
 ---
 
 # __aexit__()
 
 ## Connections
-- [[test_a_non_200_carries_a_body_preview()]] - `contains` [EXTRACTED]
+- [[test_cache_does_not_remember_a_rate_limit()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_a_non_200_carries_a_body_preview
+#graphify/code #graphify/EXTRACTED #community/test_cache_does_not_remember_a_rate_limit

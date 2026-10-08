@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[dot-response()]] - `calls` [EXTRACTED]
-- [[dot-send()_4]] - `calls` [EXTRACTED]
+- [[dot-send()]] - `calls` [EXTRACTED]
 - [[ProbeError]] - `calls` [EXTRACTED]
 - [[StdioProbe]] - `method` [EXTRACTED]
 

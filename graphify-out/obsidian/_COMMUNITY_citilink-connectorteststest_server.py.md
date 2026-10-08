@@ -1,13 +1,13 @@
 ---
 type: community
 cohesion: 0.08
-members: 37
+members: 38
 ---
 
 # citilink-connector/tests/test_server.py
 
 **Cohesion:** 0.08 - loosely connected
-**Members:** 37 nodes
+**Members:** 38 nodes
 
 ## Members
 - [[A page that still yields tiles but lost a parser-critical field is structural…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py
@@ -18,14 +18,15 @@ members: 37
 - [[Search and card must read the same id shape. If the JS running in the page…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py
 - [[The tool docstring promises a product id or a URL; honour both.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py
 - [[Tiles extracting is not enough the shape must still match the captured…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py
-- [[_no_cache()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py
-- [[_patch_render()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py
-- [[capture()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py
-- [[capture()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py
+- [[_no_cache()]] - code - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py
+- [[_patch_render()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py
+- [[capture()]] - code - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py
+- [[capture()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py
 - [[citilink-connectorteststest_server.py]] - code - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py
 - [[explode()]] - code - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py
-- [[fixture_3]] - code
-- [[parametrize_1]] - code
+- [[fake_render()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py
+- [[fixture_1]] - code
+- [[parametrize]] - code
 - [[test_a_real_bare_id_is_accepted()]] - code - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py
 - [[test_an_id_never_carries_query_fragment_or_traversal()]] - code - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py
 - [[test_card_accepts_a_bare_product_id()]] - code - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py
@@ -56,11 +57,9 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 1 edge to [[_COMMUNITY_payload]]
 - 1 edge to [[_COMMUNITY_pytest]]
-- 1 edge to [[_COMMUNITY_test_card_out_of_stock_dom.py]]
-- 1 edge to [[_COMMUNITY_test_card_verification_records.py]]
+- 1 edge to [[_COMMUNITY_citilink-connectorteststest_card_extractor_dom.py]]
+- 1 edge to [[_COMMUNITY_json]]
 
 ## Top bridge nodes
 - [[citilink-connectorteststest_server.py]] - degree 27, connects to 3 communities
-- [[_patch_render()_2]] - degree 13, connects to 1 community

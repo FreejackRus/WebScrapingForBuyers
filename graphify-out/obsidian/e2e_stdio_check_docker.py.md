@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/e2e_stdio_check_docker.py"
 type: "code"
-community: "pathlib"
+community: "test_stdio_probe.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/test_stdio_probepy
 ---
 
 # e2e_stdio_check_docker.py
@@ -15,14 +15,14 @@ tags:
 - [[End-to-end stdio MCP check through the published OCI package. The local e2e…]] - `rationale_for` [EXTRACTED]
 - [[StdioProbe]] - `imports` [EXTRACTED]
 - [[_probe()_1]] - `contains` [EXTRACTED]
-- [[main()_27]] - `contains` [EXTRACTED]
+- [[main()_26]] - `contains` [EXTRACTED]
 - [[os]] - `imports` [EXTRACTED]
-- [[probe()_2]] - `contains` [EXTRACTED]
+- [[probe()_1]] - `contains` [EXTRACTED]
 - [[stdio_probe.py]] - `imports_from` [EXTRACTED]
 - [[subprocess]] - `imports` [EXTRACTED]
 - [[sys]] - `imports` [EXTRACTED]
 - [[test_stdio_probe.py]] - `imports` [EXTRACTED]
-- [[time]] - `imports` [EXTRACTED]
+- [[time_1]] - `imports` [EXTRACTED]
 - [[uuid]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pathlib
+#graphify/code #graphify/EXTRACTED #community/test_stdio_probepy

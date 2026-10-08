@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/aliexpress-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/compare-prices/SKILL.md"
 type: "document"
-community: "AliExpress connector"
-location: "L53"
+community: "Cross-Marketplace Price Comparison"
+location: "L125"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/AliExpress_connector
+  - community/Cross-Marketplace_Price_Comparison
 ---
 
 # Gotchas
 
 ## Connections
-- [[AliExpress connector_1]] - `contains` [EXTRACTED]
-- [[aliexpress_selfcheck()]] - `references` [INFERRED]
+- [[Cross-Marketplace Price Comparison_1]] - `contains` [EXTRACTED]
+- [[detmir_category()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/AliExpress_connector
+#graphify/document #graphify/EXTRACTED #community/Cross-Marketplace_Price_Comparison

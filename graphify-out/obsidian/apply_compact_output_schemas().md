@@ -12,7 +12,7 @@ tags:
 # apply_compact_output_schemas()
 
 ## Connections
-- [[FastMCP]] - `references` [EXTRACTED]
+- [[FastMCP_1]] - `references` [EXTRACTED]
 - [[Re-write every registered tool's ``output_schema`` to the compact form. FastMCP…]] - `rationale_for` [EXTRACTED]
 - [[compact_output_schema()]] - `calls` [EXTRACTED]
 - [[output_schema.py]] - `contains` [EXTRACTED]

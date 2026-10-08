@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[fail_fetch()_3]] - `indirect_call` [INFERRED]
-- [[parametrize_9]] - `references` [EXTRACTED]
+- [[parametrize_17]] - `references` [EXTRACTED]
 - [[yandex-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_card_rejects_non_numeric_ids

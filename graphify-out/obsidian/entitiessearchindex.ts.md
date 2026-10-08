@@ -20,6 +20,7 @@ tags:
 - [[filter-offersindex.ts]] - `imports_from` [EXTRACTED]
 - [[logoutindex.ts]] - `imports_from` [EXTRACTED]
 - [[offersuiindex.tsx]] - `imports_from` [EXTRACTED]
+- [[open-offerindex.ts]] - `imports_from` [EXTRACTED]
 - [[searchapiindex.ts]] - `re_exports` [EXTRACTED]
 - [[searchstoreindex.ts]] - `re_exports` [EXTRACTED]
 - [[searchApi]] - `re_exports` [EXTRACTED]

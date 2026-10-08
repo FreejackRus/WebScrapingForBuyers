@@ -12,10 +12,10 @@ tags:
 # test_cleanup_stops_wrapper_and_its_child()
 
 ## Connections
-- [[Path_13]] - `references` [EXTRACTED]
-- [[Popen]] - `references` [EXTRACTED]
+- [[Path_10]] - `references` [EXTRACTED]
+- [[Popen_1]] - `references` [EXTRACTED]
 - [[StdioProbe]] - `uses` [INFERRED]
-- [[parametrize_28]] - `references` [EXTRACTED]
+- [[parametrize_21]] - `references` [EXTRACTED]
 - [[test_stdio_probe.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_stdio_probepy

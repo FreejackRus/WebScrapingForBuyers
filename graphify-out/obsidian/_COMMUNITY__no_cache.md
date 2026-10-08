@@ -10,8 +10,8 @@ members: 2
 **Members:** 2 nodes
 
 ## Members
-- [[_no_cache()_6]] - code - mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py
-- [[fixture_16]] - code
+- [[_no_cache()_5]] - code - mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py
+- [[fixture_19]] - code
 
 ## Live Query (requires Dataview plugin)
 
@@ -21,7 +21,7 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 1 edge to [[_COMMUNITY_lamoda-connectorteststest_server.py]]
+- 1 edge to [[_COMMUNITY_taobao-connectorteststest_server.py]]
 
 ## Top bridge nodes
-- [[_no_cache()_6]] - degree 2, connects to 1 community
+- [[_no_cache()_5]] - degree 2, connects to 1 community

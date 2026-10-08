@@ -12,6 +12,6 @@ tags:
 # dsh/skills/compare-prices/SKILL.md
 
 ## Connections
-- [[Cross-Marketplace Price Comparison_1]] - `contains` [EXTRACTED]
+- [[Cross-Marketplace Price Comparison]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/Cross-Marketplace_Price_Comparison

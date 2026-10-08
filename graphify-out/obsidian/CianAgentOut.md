@@ -12,7 +12,7 @@ tags:
 # CianAgentOut
 
 ## Connections
-- [[BaseModel_4]] - `inherits` [EXTRACTED]
+- [[BaseModel_6]] - `inherits` [EXTRACTED]
 - [[cian_card()]] - `uses` [INFERRED]
 - [[cian_connectormodels_output.py]] - `contains` [EXTRACTED]
 - [[cian_connectorserver.py]] - `imports` [EXTRACTED]

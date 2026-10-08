@@ -1,22 +1,22 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/models_output.py"
 type: "code"
-community: "WbCardItem"
+community: "test_card_verification_records.py"
 location: "L22"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/WbCardItem
+  - community/test_card_verification_recordspy
 ---
 
 # WbCardItem
 
 ## Connections
 - [[BaseModel_15]] - `inherits` [EXTRACTED]
-- [[card()_7]] - `calls` [EXTRACTED]
-- [[card()_8]] - `calls` [EXTRACTED]
+- [[card()_4]] - `calls` [EXTRACTED]
+- [[card()_5]] - `calls` [EXTRACTED]
 - [[fixture_card()]] - `calls` [EXTRACTED]
-- [[search()_6]] - `calls` [EXTRACTED]
+- [[search()_4]] - `calls` [EXTRACTED]
 - [[test_ambiguous_or_malformed_colors_do_not_select_a_variant()]] - `uses` [INFERRED]
 - [[test_live_items_build_the_wire_model()]] - `uses` [INFERRED]
 - [[test_missing_requested_wb_row_does_not_use_another_price()]] - `uses` [INFERRED]
@@ -28,7 +28,7 @@ tags:
 - [[wb_category_products()]] - `uses` [INFERRED]
 - [[wb_connectormodels_output.py]] - `contains` [EXTRACTED]
 - [[wb_connectorserver.py]] - `imports` [EXTRACTED]
-- [[wb_search()_1]] - `calls` [INFERRED]
-- [[wb_search()]] - `uses` [INFERRED]
+- [[wb_search()]] - `calls` [INFERRED]
+- [[wb_search()_2]] - `uses` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/WbCardItem
+#graphify/code #graphify/INFERRED #community/test_card_verification_recordspy

@@ -18,7 +18,6 @@ tags:
 - [[dot-message()]] - `calls` [EXTRACTED]
 - [[ProbeError]] - `calls` [EXTRACTED]
 - [[StdioProbe]] - `method` [EXTRACTED]
-- [[_post_json_budgeted()]] - `indirect_call` [INFERRED]
 - [[get_text_budgeted()]] - `indirect_call` [INFERRED]
 
 #graphify/code #graphify/EXTRACTED #community/StdioProbe

@@ -1,19 +1,20 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/settings.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/settings.py"
 type: "code"
-community: "pydantic"
-location: "L45"
+community: "ozon_connector/settings.py"
+location: "L73"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pydantic
+  - community/ozon_connector/settingspy
 ---
 
 # get_settings()
 
 ## Connections
-- [[TaobaoSettings]] - `calls` [EXTRACTED]
-- [[taobao_connectorserver.py]] - `imports` [EXTRACTED]
-- [[taobao_connectorsettings.py]] - `contains` [EXTRACTED]
+- [[OzonSettings]] - `calls` [EXTRACTED]
+- [[_ozon_selfcheck_impl()]] - `calls` [EXTRACTED]
+- [[ozon_connectorserver.py]] - `imports` [EXTRACTED]
+- [[ozon_connectorsettings.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pydantic
+#graphify/code #graphify/EXTRACTED #community/ozon_connector/settingspy

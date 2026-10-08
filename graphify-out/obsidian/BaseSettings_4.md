@@ -11,6 +11,6 @@ tags:
 # BaseSettings
 
 ## Connections
-- [[DetmirSettings]] - `inherits` [EXTRACTED]
+- [[CitilinkSettings]] - `inherits` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/pydantic

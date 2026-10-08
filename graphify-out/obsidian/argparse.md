@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "pathlib"
+community: "StdioProbe"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/StdioProbe
 ---
 
 # argparse
@@ -17,4 +17,4 @@ tags:
 - [[model_routing_eval.py]] - `imports` [EXTRACTED]
 - [[routing_eval.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/pathlib
+#graphify/concept #graphify/EXTRACTED #community/StdioProbe

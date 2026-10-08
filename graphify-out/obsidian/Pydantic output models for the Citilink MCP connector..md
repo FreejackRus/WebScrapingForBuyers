@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/src/citilink_connector/models_output.py"
 type: "rationale"
-community: "models.py"
+community: "citilink_connector/models_output.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/modelspy
+  - community/citilink_connector/models_outputpy
 ---
 
 # Pydantic output models for the Citilink MCP connector.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[citilink_connectormodels_output.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/modelspy
+#graphify/rationale #graphify/EXTRACTED #community/citilink_connector/models_outputpy

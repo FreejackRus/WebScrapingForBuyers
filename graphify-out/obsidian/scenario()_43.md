@@ -1,19 +1,20 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "responder"
-location: "L1530"
+community: "_tool_error_payload"
+location: "L585"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/responder
+  - community/_tool_error_payload
 ---
 
 # scenario()
 
 ## Connections
-- [[_patch_questions()]] - `calls` [EXTRACTED]
-- [[responder()_8]] - `indirect_call` [INFERRED]
-- [[test_questions_answered_only_keeps_filling_across_pages()]] - `contains` [EXTRACTED]
+- [[_tool_error_payload()]] - `calls` [EXTRACTED]
+- [[fake_safe_get_text()_2]] - `indirect_call` [INFERRED]
+- [[no_wait()_2]] - `indirect_call` [INFERRED]
+- [[test_wb_search_rate_limit_is_surfaced_not_masked_by_fallback()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/responder
+#graphify/code #graphify/EXTRACTED #community/_tool_error_payload

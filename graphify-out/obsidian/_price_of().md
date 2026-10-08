@@ -12,7 +12,7 @@ tags:
 # _price_of()
 
 ## Connections
-- [[Any_13]] - `references` [EXTRACTED]
+- [[Any_7]] - `references` [EXTRACTED]
 - [[The price is ``bargainTerms.priceRur``; a new-building card carries only…]] - `rationale_for` [EXTRACTED]
 - [[_d()]] - `calls` [EXTRACTED]
 - [[_offer_row()]] - `calls` [EXTRACTED]

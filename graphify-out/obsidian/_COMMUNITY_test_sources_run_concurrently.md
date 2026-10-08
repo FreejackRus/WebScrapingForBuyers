@@ -25,8 +25,8 @@ SORT file.name ASC
 
 ## Connections to other communities
 - 2 edges to [[_COMMUNITY_offer]]
-- 1 edge to [[_COMMUNITY__patch_tier1]]
 - 1 edge to [[_COMMUNITY_compare-connectorteststest_server.py]]
+- 1 edge to [[_COMMUNITY__patch_tier1]]
 
 ## Top bridge nodes
 - [[test_sources_run_concurrently()]] - degree 4, connects to 2 communities

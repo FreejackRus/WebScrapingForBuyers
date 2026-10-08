@@ -1,19 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "YandexProduct"
+community: "compare-connector/tests/test_server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/YandexProduct
+  - community/compare-connector/tests/test_serverpy
 ---
 
 # BaseModel
 
 ## Connections
-- [[YandexCardResponse]] - `inherits` [EXTRACTED]
-- [[YandexProduct]] - `inherits` [EXTRACTED]
-- [[YandexReview]] - `inherits` [EXTRACTED]
-- [[YandexSearchResponse]] - `inherits` [EXTRACTED]
+- [[CompareResponse]] - `inherits` [EXTRACTED]
+- [[MarketOffer]] - `inherits` [EXTRACTED]
+- [[SourceOutcome]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/YandexProduct
+#graphify/code #graphify/EXTRACTED #community/compare-connector/tests/test_serverpy

@@ -12,7 +12,7 @@ tags:
 # HostRefusingError
 
 ## Connections
-- [[dot-__init__()_14]] - `method` [EXTRACTED]
+- [[dot-__init__()_22]] - `method` [EXTRACTED]
 - [[dot-check()]] - `calls` [EXTRACTED]
 - [[A host answered 4xx often enough that the breaker is open. Carries the host and…]] - `rationale_for` [EXTRACTED]
 - [[RuntimeError_2]] - `inherits` [EXTRACTED]

@@ -13,10 +13,10 @@ tags:
 
 ## Connections
 - [[A card from the ``offerData`` subtree. ValueError on the wrong shape.]] - `rationale_for` [EXTRACTED]
-- [[Any_13]] - `references` [EXTRACTED]
+- [[Any_7]] - `references` [EXTRACTED]
 - [[_agent()]] - `calls` [EXTRACTED]
 - [[_as_float()]] - `calls` [EXTRACTED]
-- [[_card_smoke()_1]] - `calls` [EXTRACTED]
+- [[_card_smoke()]] - `calls` [EXTRACTED]
 - [[_d()]] - `calls` [EXTRACTED]
 - [[_offer_row()]] - `calls` [EXTRACTED]
 - [[_price_history()]] - `calls` [EXTRACTED]

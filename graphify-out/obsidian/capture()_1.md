@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_browser_handoff.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py"
 type: "code"
-community: "compare-connector/tests/test_browser_handoff.py"
-location: "L199"
+community: "citilink-connector/tests/test_server.py"
+location: "L259"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/compare-connector/tests/test_browser_handoffpy
+  - graphify/INFERRED
+  - community/citilink-connector/tests/test_serverpy
 ---
 
 # capture()
 
 ## Connections
-- [[test_snapshot_rejects_other_session_and_unknown_handle_without_capture()]] - `contains` [EXTRACTED]
+- [[test_card_accepts_a_bare_product_id()]] - `indirect_call` [INFERRED]
+- [[test_card_navigates_a_rebuilt_site_base_url()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/compare-connector/tests/test_browser_handoffpy
+#graphify/code #graphify/INFERRED #community/citilink-connector/tests/test_serverpy

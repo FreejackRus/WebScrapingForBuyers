@@ -11,8 +11,8 @@ members: 7
 
 ## Members
 - [[Fake the CDP probe open_page lands on final_url.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py
-- [[__aenter__()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py
-- [[__aexit__()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py
+- [[__aenter__()_11]] - code - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py
+- [[__aexit__()_11]] - code - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py
 - [[_patch_page()]] - code - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py
 - [[test_about_blank_is_not_mistaken_for_a_destination()]] - code - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py
 - [[test_no_redirect_keeps_the_original_url()]] - code - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py

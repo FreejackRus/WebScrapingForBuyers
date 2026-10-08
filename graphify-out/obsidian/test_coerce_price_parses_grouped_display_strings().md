@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_contract.py"
 type: "code"
-community: "test_contract.py"
+community: "_parse_search_items"
 location: "L30"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_contractpy
+  - community/_parse_search_items
 ---
 
 # test_coerce_price_parses_grouped_display_strings()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_contract.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_contractpy
+#graphify/code #graphify/EXTRACTED #community/_parse_search_items

@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/server.py"
 type: "code"
 community: "TransportDownError"
-location: "L192"
+location: "L267"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,7 +12,7 @@ tags:
 # _guard_values_drift()
 
 ## Connections
-- [[Any_9]] - `references` [EXTRACTED]
+- [[Any_22]] - `references` [EXTRACTED]
 - [[Items that kept their keys but lost their values. The SSR parser emits every…]] - `rationale_for` [EXTRACTED]
 - [[ParserDriftError]] - `uses` [INFERRED]
 - [[raise_tool_error()]] - `calls` [EXTRACTED]

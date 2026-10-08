@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "pathlib"
+community: "domtest.py"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/domtestpy
 ---
 
 # tempfile
@@ -14,4 +14,4 @@ tags:
 - [[domtest.py]] - `imports` [EXTRACTED]
 - [[ozon_connectorserver.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/pathlib
+#graphify/concept #graphify/EXTRACTED #community/domtestpy

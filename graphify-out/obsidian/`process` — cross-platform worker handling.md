@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/docs/ARCHITECTURE.md"
 type: "document"
-community: "terminate_process_tree"
-location: "L124"
+community: "Architecture"
+location: "L120"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/terminate_process_tree
+  - community/Architecture
 ---
 
 # `process` — cross-platform worker handling
@@ -15,4 +15,4 @@ tags:
 - [[The shared runtime]] - `contains` [EXTRACTED]
 - [[kill_process_group()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/terminate_process_tree
+#graphify/document #graphify/EXTRACTED #community/Architecture

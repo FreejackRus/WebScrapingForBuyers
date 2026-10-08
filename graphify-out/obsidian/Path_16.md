@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "pathlib"
+community: "domtest.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/domtestpy
 ---
 
 # Path
 
 ## Connections
-- [[test_the_runner_exit_code_follows_the_verdict()]] - `references` [EXTRACTED]
+- [[run_extractor()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pathlib
+#graphify/code #graphify/EXTRACTED #community/domtestpy

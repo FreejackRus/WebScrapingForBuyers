@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/docs/ANTI_BOT.md"
 type: "document"
-community: "detmir_categories"
+community: "Anti-bot reality, source by source"
 location: "L472"
 tags:
   - graphify/document
   - graphify/INFERRED
-  - community/detmir_categories
+  - community/Anti-bot_reality_source_by_source
 ---
 
 # The Detsky Mir search trap
@@ -16,4 +16,4 @@ tags:
 - [[detmir_categories()]] - `references` [INFERRED]
 - [[detmir_category()]] - `references` [INFERRED]
 
-#graphify/document #graphify/INFERRED #community/detmir_categories
+#graphify/document #graphify/INFERRED #community/Anti-bot_reality_source_by_source

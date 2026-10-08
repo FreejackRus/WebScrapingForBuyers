@@ -12,8 +12,8 @@ tags:
 # _FakeBrowser
 
 ## Connections
-- [[dot-__init__()_8]] - `references` [EXTRACTED]
-- [[dot-__init__()_6]] - `method` [EXTRACTED]
+- [[dot-__init__()_11]] - `references` [EXTRACTED]
+- [[dot-__init__()_9]] - `method` [EXTRACTED]
 - [[dot-new_browser_cdp_session()]] - `method` [EXTRACTED]
 - [[test_chrome_cdp_stealth.py]] - `contains` [EXTRACTED]
 - [[test_new_tab_creates_the_target_in_the_background_when_stealth_is_on()]] - `calls` [EXTRACTED]

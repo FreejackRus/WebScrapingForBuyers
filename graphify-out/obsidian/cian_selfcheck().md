@@ -13,10 +13,10 @@ tags:
 
 ## Connections
 - [[CianSelfcheckResponse]] - `uses` [INFERRED]
-- [[Context_5]] - `references` [EXTRACTED]
+- [[Context_4]] - `references` [EXTRACTED]
 - [[Structural drift canary for Cian (tri-state success  drift_detected …]] - `rationale_for` [EXTRACTED]
-- [[Tools available_6]] - `references` [INFERRED]
-- [[Tools available_7]] - `references` [INFERRED]
+- [[Tools available_3]] - `references` [INFERRED]
+- [[Tools available_8]] - `references` [INFERRED]
 - [[TransportDownError]] - `uses` [INFERRED]
 - [[_cian_selfcheck_impl()]] - `calls` [EXTRACTED]
 - [[cian_connectorserver.py]] - `contains` [EXTRACTED]

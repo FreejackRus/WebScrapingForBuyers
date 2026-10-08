@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/citilink-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/avito-connector/SKILL.md"
 type: "document"
-community: "Citilink Connector"
-location: "L17"
+community: "avito_connector/server.py"
+location: "L19"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Citilink_Connector
+  - community/avito_connector/serverpy
 ---
 
 # Tools available
 
 ## Connections
-- [[Citilink Connector_1]] - `contains` [EXTRACTED]
-- [[citilink_selfcheck()]] - `references` [INFERRED]
+- [[Avito Connector]] - `contains` [EXTRACTED]
+- [[avito_selfcheck()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Citilink_Connector
+#graphify/document #graphify/EXTRACTED #community/avito_connector/serverpy

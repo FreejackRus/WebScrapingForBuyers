@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "test_dependency_parity.py"
+community: "test_distribution_contract.py"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/test_dependency_paritypy
+  - community/test_distribution_contractpy
 ---
 
 # shlex
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[test_distribution_contract.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/test_dependency_paritypy
+#graphify/concept #graphify/EXTRACTED #community/test_distribution_contractpy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/CONTRIBUTING.md"
 type: "document"
-community: "ru-marketplace-mcp/README.md"
+community: "Contributing"
 location: "L117"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/ru-marketplace-mcp/READMEmd
+  - community/Contributing
 ---
 
 # Contributing
@@ -21,4 +21,4 @@ tags:
 - [[Tests]] - `contains` [EXTRACTED]
 - [[What this codebase cares about]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/ru-marketplace-mcp/READMEmd
+#graphify/document #graphify/EXTRACTED #community/Contributing

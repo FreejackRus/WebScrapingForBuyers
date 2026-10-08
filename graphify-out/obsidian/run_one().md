@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/examples/health_check.py"
 type: "code"
-community: "yandex_selfcheck"
+community: "sys"
 location: "L21"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/yandex_selfcheck
+  - community/sys
 ---
 
 # run_one()
 
 ## Connections
 - [[health_check.py]] - `contains` [EXTRACTED]
-- [[main()_3]] - `calls` [EXTRACTED]
+- [[main()_9]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/yandex_selfcheck
+#graphify/code #graphify/EXTRACTED #community/sys

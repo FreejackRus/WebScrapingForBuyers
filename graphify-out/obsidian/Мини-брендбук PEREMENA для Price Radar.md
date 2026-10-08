@@ -1,12 +1,12 @@
 ---
 source_file: "docs/BRAND.md"
 type: "document"
-community: "Мини-брендбук PEREMENA для Price Radar"
+community: "Сервер локальной LLM"
 location: "L1"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Мини-брендбук_PEREMENA_для_Price_Radar
+  - community/Сервер_локальной_LLM
 ---
 
 # Мини-брендбук PEREMENA для Price Radar
@@ -18,4 +18,4 @@ tags:
 - [[Цвета]] - `contains` [EXTRACTED]
 - [[Шрифты]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Мини-брендбук_PEREMENA_для_Price_Radar
+#graphify/document #graphify/EXTRACTED #community/Сервер_локальной_LLM

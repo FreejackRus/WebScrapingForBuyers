@@ -1,17 +1,24 @@
 ---
-source_file: "apps/search/src/domain/source-adapter.ts"
+source_file: "apps/search/src/infrastructure/sources/http-marketplace-adapter.ts"
 type: "code"
-community: "packages_contracts_dist_index"
-location: "L5"
+community: "ref_vitest"
+location: "L44"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/packages_contracts_dist_index
+  - community/ref_vitest
 ---
 
 # .search()
 
 ## Connections
-- [[SourceAdapter]] - `method` [EXTRACTED]
+- [[WildberriesHttpAdapter]] - `method` [EXTRACTED]
+- [[assertWbCatalogAllowed()]] - `calls` [EXTRACTED]
+- [[marketplaceSearchQueries()]] - `calls` [EXTRACTED]
+- [[noteWbRateLimited()]] - `calls` [EXTRACTED]
+- [[preferRelevantOffers()]] - `indirect_call` [INFERRED]
+- [[presentWbRateLimited()]] - `calls` [EXTRACTED]
+- [[toWbOffer()]] - `calls` [EXTRACTED]
+- [[wbHttpSearchUrl()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index
+#graphify/code #graphify/EXTRACTED #community/ref_vitest

@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "test_safe_get_text_does_not_retry_after_wall_timeout"
-location: "L140"
+community: "test_cache_serves_a_repeated_successful_read"
+location: "L1236"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_safe_get_text_does_not_retry_after_wall_timeout
+  - community/test_cache_serves_a_repeated_successful_read
 ---
 
 # stream()
 
 ## Connections
-- [[test_safe_get_text_does_not_retry_after_wall_timeout()]] - `contains` [EXTRACTED]
+- [[test_cache_serves_a_repeated_successful_read()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_safe_get_text_does_not_retry_after_wall_timeout
+#graphify/code #graphify/EXTRACTED #community/test_cache_serves_a_repeated_successful_read

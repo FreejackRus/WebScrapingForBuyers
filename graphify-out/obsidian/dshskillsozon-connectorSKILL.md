@@ -12,6 +12,6 @@ tags:
 # dsh/skills/ozon-connector/SKILL.md
 
 ## Connections
-- [[Ozon Connector]] - `contains` [EXTRACTED]
+- [[Ozon Connector_1]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/Ozon_Connector

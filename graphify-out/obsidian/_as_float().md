@@ -12,7 +12,7 @@ tags:
 # _as_float()
 
 ## Connections
-- [[Any_13]] - `references` [EXTRACTED]
+- [[Any_7]] - `references` [EXTRACTED]
 - [[Areas and heights come as strings ('38.1'); a non-positive value is None.]] - `rationale_for` [EXTRACTED]
 - [[_offer_row()]] - `calls` [EXTRACTED]
 - [[_parse_card()]] - `calls` [EXTRACTED]

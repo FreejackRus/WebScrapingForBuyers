@@ -1,21 +1,32 @@
 ---
 source_file: ""
 type: "code"
-community: "compare_verify_offer"
+community: "wb_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/compare_verify_offer
+  - community/wb_connector/serverpy
 ---
 
 # Any
 
 ## Connections
-- [[_available_sources()]] - `references` [EXTRACTED]
-- [[_call_card_tool()]] - `references` [EXTRACTED]
-- [[_client_capabilities()]] - `references` [EXTRACTED]
-- [[_source_error()]] - `references` [EXTRACTED]
-- [[compare_sources()]] - `references` [EXTRACTED]
-- [[compare_verify_offer()]] - `references` [EXTRACTED]
+- [[_attach_image_urls()]] - `references` [EXTRACTED]
+- [[_capture_from_catalog_response()]] - `references` [EXTRACTED]
+- [[_card_item_dict()]] - `references` [EXTRACTED]
+- [[_card_products()]] - `references` [EXTRACTED]
+- [[_card_products_checked()]] - `references` [EXTRACTED]
+- [[_expect_json_object()]] - `references` [EXTRACTED]
+- [[_find_menu_subtree()]] - `references` [EXTRACTED]
+- [[_menu_node()]] - `references` [EXTRACTED]
+- [[_page_fingerprint()]] - `references` [EXTRACTED]
+- [[_products_from_search_payload()]] - `references` [EXTRACTED]
+- [[_recover_search_ids()]] - `references` [EXTRACTED]
+- [[_require_object()]] - `references` [EXTRACTED]
+- [[_search_via_http_v9()]] - `references` [EXTRACTED]
+- [[_search_via_search_goods()]] - `references` [EXTRACTED]
+- [[_search_via_storefront()]] - `references` [EXTRACTED]
+- [[_single_product_color()]] - `references` [EXTRACTED]
+- [[_verify_storefront_capture()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/compare_verify_offer
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

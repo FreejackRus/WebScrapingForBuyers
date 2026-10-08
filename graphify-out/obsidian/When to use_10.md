@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/mpstats-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md"
 type: "document"
-community: "MPStats Connector"
-location: "L17"
+community: "Wildberries Connector"
+location: "L11"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/MPStats_Connector
+  - community/Wildberries_Connector
 ---
 
 # When to use
 
 ## Connections
-- [[MPStats Connector]] - `contains` [EXTRACTED]
+- [[Wildberries Connector_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/MPStats_Connector
+#graphify/document #graphify/EXTRACTED #community/Wildberries_Connector

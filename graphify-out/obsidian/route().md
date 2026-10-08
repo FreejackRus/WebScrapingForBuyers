@@ -12,7 +12,7 @@ tags:
 # route()
 
 ## Connections
-- [[evaluate()_2]] - `calls` [EXTRACTED]
+- [[evaluate()]] - `calls` [EXTRACTED]
 - [[routing_eval.py]] - `contains` [EXTRACTED]
 - [[test_ops_gates.py]] - `imports` [EXTRACTED]
 - [[test_routing_fixture_covers_positive_and_negative_cases()]] - `calls` [EXTRACTED]

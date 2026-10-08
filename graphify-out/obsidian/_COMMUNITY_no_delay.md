@@ -12,7 +12,7 @@ members: 4
 ## Members
 - [[Remove the politeness gap so tests do not actually wait 1.5s per call.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py
 - [[clear_cache()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py
-- [[fixture_15]] - code
+- [[fixture_16]] - code
 - [[no_delay()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py
 
 ## Live Query (requires Dataview plugin)

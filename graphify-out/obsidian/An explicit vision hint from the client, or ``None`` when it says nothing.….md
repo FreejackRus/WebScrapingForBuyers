@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/vision_policy.py"
 type: "rationale"
-community: "resolve_image_delivery"
+community: "test_review_regressions.py"
 location: "L65"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/resolve_image_delivery
+  - community/test_review_regressionspy
 ---
 
 # An *explicit* vision hint from the client, or ``None`` when it says nothing.…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[client_vision_hint()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/resolve_image_delivery
+#graphify/rationale #graphify/EXTRACTED #community/test_review_regressionspy

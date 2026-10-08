@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "lamoda-connector/tests/test_shape_reference.py"
+community: "check_versions.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/lamoda-connector/tests/test_shape_referencepy
+  - community/check_versionspy
 ---
 
 # Path
 
 ## Connections
-- [[_extract()_6]] - `references` [EXTRACTED]
+- [[_scan()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/lamoda-connector/tests/test_shape_referencepy
+#graphify/code #graphify/EXTRACTED #community/check_versionspy

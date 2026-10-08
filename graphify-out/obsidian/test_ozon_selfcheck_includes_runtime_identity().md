@@ -14,8 +14,8 @@ tags:
 ## Connections
 - [[_reviews_body()]] - `calls` [EXTRACTED]
 - [[_run()_1]] - `calls` [EXTRACTED]
-- [[fake_fetch()_11]] - `contains` [EXTRACTED]
+- [[fake_fetch()_13]] - `contains` [EXTRACTED]
 - [[ozon-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[scenario()_56]] - `contains` [EXTRACTED]
+- [[scenario()_65]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_ozon_selfcheck_includes_runtime_identity

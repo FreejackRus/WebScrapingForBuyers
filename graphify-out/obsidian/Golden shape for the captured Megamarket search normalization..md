@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_shape_reference.py"
 type: "rationale"
-community: "shape_signature"
+community: "pathlib"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/shape_signature
+  - community/pathlib
 ---
 
 # Golden shape for the captured Megamarket search normalization.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[megamarket-connectorteststest_shape_reference.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/shape_signature
+#graphify/rationale #graphify/EXTRACTED #community/pathlib

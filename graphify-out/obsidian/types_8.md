@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "pytest"
+community: "test_card_verification_records.py"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/pytest
+  - community/test_card_verification_recordspy
 ---
 
 # types
@@ -30,4 +30,4 @@ tags:
 - [[test_source_warnings.py]] - `imports_from` [EXTRACTED]
 - [[test_test_count_gate.py]] - `imports_from` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/pytest
+#graphify/concept #graphify/EXTRACTED #community/test_card_verification_recordspy

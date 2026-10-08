@@ -1,19 +1,20 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_coverage_floor.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/src/marketplace_connector/__main__.py"
 type: "code"
-community: "pathlib"
-location: "L83"
+community: "test_dsh_bundle.py"
+location: "L13"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/test_dsh_bundlepy
 ---
 
 # main()
 
 ## Connections
-- [[_documented_floor()]] - `calls` [EXTRACTED]
-- [[_measured_coverage()]] - `calls` [EXTRACTED]
-- [[check_coverage_floor.py]] - `contains` [EXTRACTED]
+- [[Run the server, or the installdoctor CLI when a subcommand is given.…]] - `rationale_for` [EXTRACTED]
+- [[main()_30]] - `calls` [EXTRACTED]
+- [[marketplace_connector__main__.py]] - `contains` [EXTRACTED]
+- [[run_server()]] - `calls` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/pathlib
+#graphify/code #graphify/EXTRACTED #community/test_dsh_bundlepy

@@ -12,6 +12,6 @@ tags:
 
 ## Connections
 - [[ozon_reviews()]] - `references` [EXTRACTED]
-- [[ozon_search()_2]] - `references` [EXTRACTED]
+- [[ozon_search()]] - `references` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/ozon_card

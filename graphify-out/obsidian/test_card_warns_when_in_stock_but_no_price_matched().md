@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[An available card with no price block is suspicious the buy-block layout most…]] - `rationale_for` [EXTRACTED]
-- [[_patch_render()_2]] - `calls` [EXTRACTED]
+- [[_patch_render()_1]] - `calls` [EXTRACTED]
 - [[citilink-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/citilink-connector/tests/test_serverpy

@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/models_output.py"
 type: "rationale"
-community: "taobao_card"
+community: "taobao_connector/server.py"
 location: "L15"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/taobao_card
+  - community/taobao_connector/serverpy
 ---
 
 # Taobao carries the shared envelope unchanged.
 
 ## Connections
-- [[MetaOut_6]] - `rationale_for` [EXTRACTED]
+- [[MetaOut_1]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/taobao_card
+#graphify/rationale #graphify/EXTRACTED #community/taobao_connector/serverpy

@@ -1,23 +1,23 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_shape_reference.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_search_extractor_dom.py"
 type: "code"
-community: "taobao-connector/tests/test_shape_reference.py"
-location: "L69"
+community: "taobao-connector/tests/test_search_extractor_dom.py"
+location: "L45"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/taobao-connector/tests/test_shape_referencepy
+  - community/taobao-connector/tests/test_search_extractor_dompy
 ---
 
 # _extract()
 
 ## Connections
 - [[JsdomUnavailable]] - `uses` [INFERRED]
-- [[Path_1]] - `references` [EXTRACTED]
 - [[run_extractor()]] - `calls` [EXTRACTED]
-- [[taobao-connectorteststest_shape_reference.py]] - `contains` [EXTRACTED]
-- [[test_card_payload_shape_matches_the_capture()]] - `calls` [EXTRACTED]
-- [[test_live_search_shape_matches_the_selfcheck_registry()]] - `calls` [EXTRACTED]
-- [[test_search_payload_shape_matches_the_capture()]] - `calls` [EXTRACTED]
+- [[taobao-connectorteststest_search_extractor_dom.py]] - `contains` [EXTRACTED]
+- [[test_a_hidden_price_is_none_never_zero()]] - `calls` [EXTRACTED]
+- [[test_items_carry_the_wire_shape()]] - `calls` [EXTRACTED]
+- [[test_search_extractor_reads_the_real_grid()]] - `calls` [EXTRACTED]
+- [[test_yuan_glued_price_is_read_from_the_card()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/taobao-connector/tests/test_shape_referencepy
+#graphify/code #graphify/EXTRACTED #community/taobao-connector/tests/test_search_extractor_dompy

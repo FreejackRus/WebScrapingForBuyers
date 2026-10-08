@@ -1,20 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "detmir_connector/models_output.py"
+community: "ProductIdentity"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/detmir_connector/models_outputpy
+  - community/ProductIdentity
 ---
 
 # BaseModel
 
 ## Connections
-- [[DetmirCardResponse]] - `inherits` [EXTRACTED]
-- [[DetmirCategoriesResponse]] - `inherits` [EXTRACTED]
-- [[DetmirCategory]] - `inherits` [EXTRACTED]
-- [[DetmirListResponse]] - `inherits` [EXTRACTED]
-- [[DetmirProduct]] - `inherits` [EXTRACTED]
+- [[IdentityMatch]] - `inherits` [EXTRACTED]
+- [[OfferEvidence]] - `inherits` [EXTRACTED]
+- [[ProductIdentity]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/detmir_connector/models_outputpy
+#graphify/code #graphify/EXTRACTED #community/ProductIdentity

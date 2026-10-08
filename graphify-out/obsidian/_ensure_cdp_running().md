@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "code"
-community: "chrome_cdp.py"
+community: "get_browser"
 location: "L270"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/chrome_cdppy
+  - community/get_browser
 ---
 
 # _ensure_cdp_running()
@@ -19,4 +19,4 @@ tags:
 - [[chrome_cdp.py]] - `contains` [EXTRACTED]
 - [[get_browser()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/chrome_cdppy
+#graphify/code #graphify/EXTRACTED #community/get_browser

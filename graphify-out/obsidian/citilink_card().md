@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/src/citilink_connector/server.py"
 type: "code"
 community: "citilink_card"
-location: "L380"
+location: "L397"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -18,11 +18,11 @@ tags:
 - [[8а. Навыки по одному на коннектор]] - `references` [INFERRED]
 - [[BadRequestError]] - `uses` [INFERRED]
 - [[CitilinkCardResponse]] - `uses` [INFERRED]
-- [[Context_12]] - `references` [EXTRACTED]
+- [[Context_9]] - `references` [EXTRACTED]
 - [[Fetch one Citilink product card.  Return Format CitilinkCardResponse…]] - `rationale_for` [EXTRACTED]
 - [[Field_12]] - `references` [EXTRACTED]
-- [[Fixed_14]] - `references` [INFERRED]
-- [[MetaOut_11]] - `uses` [INFERRED]
+- [[Fixed_13]] - `references` [INFERRED]
+- [[MetaOut_10]] - `uses` [INFERRED]
 - [[NavBlocked]] - `uses` [INFERRED]
 - [[ParserDriftError]] - `uses` [INFERRED]
 - [[TransportDownError]] - `uses` [INFERRED]
@@ -31,8 +31,8 @@ tags:
 - [[citilink_connectorserver.py]] - `contains` [EXTRACTED]
 - [[description_14]] - `references` [EXTRACTED]
 - [[log_event()]] - `calls` [EXTRACTED]
-- [[max_length_10]] - `references` [EXTRACTED]
-- [[min_length_10]] - `references` [EXTRACTED]
+- [[max_length_11]] - `references` [EXTRACTED]
+- [[min_length_11]] - `references` [EXTRACTED]
 - [[prices_from_tile()]] - `calls` [EXTRACTED]
 - [[raise_tool_error()]] - `calls` [EXTRACTED]
 - [[title_from_tile()]] - `calls` [EXTRACTED]

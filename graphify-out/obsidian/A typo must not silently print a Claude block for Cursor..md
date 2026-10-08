@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py"
 type: "rationale"
 community: "test_cli.py"
-location: "L180"
+location: "L177"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED

@@ -12,11 +12,13 @@ tags:
 # b2b-distributor-adapter.test.ts
 
 ## Connections
+- [[NetlabPriceFeedAdapter]] - `imports` [EXTRACTED]
 - [[b2b-distributor-adapter.ts]] - `imports_from` [EXTRACTED]
 - [[createDistributorSourcesFromEnv()]] - `imports` [EXTRACTED]
 - [[listDistributorSpecs()]] - `imports` [EXTRACTED]
 - [[merlion-client.ts]] - `imports_from` [EXTRACTED]
 - [[netlab-client.ts]] - `imports_from` [EXTRACTED]
+- [[netlab-price-feed.ts]] - `imports_from` [EXTRACTED]
 - [[ocs-client.ts]] - `imports_from` [EXTRACTED]
 - [[ref_vitest]] - `imports_from` [EXTRACTED]
 - [[sampleProduct]] - `contains` [EXTRACTED]

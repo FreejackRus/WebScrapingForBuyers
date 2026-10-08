@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "ozon_connector/server.py"
+community: "StdioProbe"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ozon_connector/serverpy
+  - community/StdioProbe
 ---
 
 # RuntimeError
 
 ## Connections
-- [[_SyncCallError]] - `inherits` [EXTRACTED]
+- [[ProbeError]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ozon_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/StdioProbe

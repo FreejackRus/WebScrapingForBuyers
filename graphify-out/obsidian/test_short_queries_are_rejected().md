@@ -15,7 +15,7 @@ tags:
 - [[Rejected either by the tool's own check or by pydantic's min_length. Both are…]] - `rationale_for` [EXTRACTED]
 - [[compare-connectorteststest_server.py]] - `contains` [EXTRACTED]
 - [[fail()]] - `indirect_call` [INFERRED]
-- [[parametrize_4]] - `references` [EXTRACTED]
+- [[parametrize_2]] - `references` [EXTRACTED]
 - [[stub_sources()]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/parametrize

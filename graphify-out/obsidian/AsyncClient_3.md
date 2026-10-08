@@ -1,17 +1,20 @@
 ---
 source_file: ""
 type: "code"
-community: "_client"
+community: "wb_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_client
+  - community/wb_connector/serverpy
 ---
 
 # AsyncClient
 
 ## Connections
-- [[_client()_1]] - `references` [EXTRACTED]
-- [[_post_json_budgeted()]] - `references` [EXTRACTED]
+- [[_budgeted_get_text()]] - `references` [EXTRACTED]
+- [[_fresh_get_text()]] - `references` [EXTRACTED]
+- [[_probe_basket()]] - `references` [EXTRACTED]
+- [[_safe_get_text()]] - `references` [EXTRACTED]
+- [[_wb_client()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_client
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

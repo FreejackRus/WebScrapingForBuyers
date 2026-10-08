@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "rationale"
 community: "PageLike"
-location: "L698"
+location: "L760"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED

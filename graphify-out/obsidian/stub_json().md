@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[Route ``_fetch_json`` to canned payloads, matched by URL substring.]] - `rationale_for` [EXTRACTED]
 - [[detmir-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[fake_fetch()_14]] - `indirect_call` [INFERRED]
+- [[fake_fetch()_15]] - `indirect_call` [INFERRED]
 - [[test_card_falls_back_through_price_shapes()]] - `calls` [EXTRACTED]
 - [[test_card_never_reports_zero_as_a_price()]] - `calls` [EXTRACTED]
 - [[test_card_parses_price_rating_and_stock()]] - `calls` [EXTRACTED]

@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/package.json"
 type: "concept"
-community: "useSearchStore"
+community: "web/package.json"
 location: "L18"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/useSearchStore
+  - community/web/packagejson
 ---
 
 # zustand
@@ -17,4 +17,4 @@ tags:
 - [[userstoreindex.ts]] - `imports_from` [EXTRACTED]
 - [[webpackage.json]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/useSearchStore
+#graphify/concept #graphify/EXTRACTED #community/web/packagejson

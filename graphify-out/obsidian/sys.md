@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "pathlib"
+community: "sys"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/sys
 ---
 
 # sys
@@ -38,7 +38,6 @@ tags:
 - [[mcp_wire.py]] - `imports` [EXTRACTED]
 - [[megamarket_connector__main__.py]] - `imports` [EXTRACTED]
 - [[model_routing_eval.py]] - `imports` [EXTRACTED]
-- [[mpstats_connector__main__.py]] - `imports` [EXTRACTED]
 - [[ozon_connector__main__.py]] - `imports` [EXTRACTED]
 - [[ozon_connectorserver.py]] - `imports` [EXTRACTED]
 - [[price_check.py]] - `imports` [EXTRACTED]
@@ -58,4 +57,4 @@ tags:
 - [[wb_connector__main__.py]] - `imports` [EXTRACTED]
 - [[yandex_connector__main__.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/pathlib
+#graphify/concept #graphify/EXTRACTED #community/sys

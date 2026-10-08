@@ -2,7 +2,7 @@
 source_file: "docs/DISTRIBUTORS.md"
 type: "document"
 community: "b2b-distributor-adapter.ts"
-location: "L113"
+location: "L182"
 tags:
   - graphify/document
   - graphify/EXTRACTED

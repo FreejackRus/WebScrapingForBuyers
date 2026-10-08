@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_check_provenance_gate.py"
 type: "code"
-community: "pathlib"
+community: "subprocess"
 location: "L29"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/subprocess
 ---
 
 # test_a_stale_pin_is_reported()
@@ -15,4 +15,4 @@ tags:
 - [[A mismatched pin must fail, and name both hashes.]] - `rationale_for` [EXTRACTED]
 - [[test_check_provenance_gate.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pathlib
+#graphify/code #graphify/EXTRACTED #community/subprocess

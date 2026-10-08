@@ -12,9 +12,9 @@ tags:
 # test_wb_selfcheck_rich_text_feedback_body_is_drift()
 
 ## Connections
-- [[fake_safe_get_text()_17]] - `contains` [EXTRACTED]
-- [[no_wait()_16]] - `contains` [EXTRACTED]
-- [[scenario()_16]] - `contains` [EXTRACTED]
+- [[fake_safe_get_text()_18]] - `contains` [EXTRACTED]
+- [[no_wait()_17]] - `contains` [EXTRACTED]
+- [[scenario()_17]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/no_wait

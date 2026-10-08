@@ -12,11 +12,11 @@ tags:
 # Unified Marketplace Server
 
 ## Connections
-- [[DSH activation_21]] - `contains` [EXTRACTED]
-- [[Gotchas_9]] - `contains` [EXTRACTED]
+- [[DSH activation_20]] - `contains` [EXTRACTED]
+- [[Gotchas_6]] - `contains` [EXTRACTED]
 - [[Operator CLI_1]] - `contains` [EXTRACTED]
-- [[Tools_7]] - `contains` [EXTRACTED]
-- [[When to use_8]] - `contains` [EXTRACTED]
+- [[Tools_5]] - `contains` [EXTRACTED]
+- [[When to use_6]] - `contains` [EXTRACTED]
 - [[compare_prices()]] - `references` [INFERRED]
 - [[compare_sources()]] - `references` [INFERRED]
 - [[marketplace_sources()]] - `references` [INFERRED]

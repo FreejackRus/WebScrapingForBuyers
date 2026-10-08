@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
-community: "[2.3.0] - 2026-09-13"
-location: "L264"
+community: "compare_verify_offer"
+location: "L698"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/230_-_2026-09-13
+  - community/compare_verify_offer
 ---
 
 # Fixed
 
 ## Connections
-- [[2.3.0 - 2026-09-13]] - `contains` [EXTRACTED]
-- [[yandex_card()]] - `references` [INFERRED]
+- [[2.0.1 — 2026-09-09]] - `contains` [EXTRACTED]
+- [[compare_verify_offer()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/230_-_2026-09-13
+#graphify/document #graphify/EXTRACTED #community/compare_verify_offer

@@ -1,17 +1,17 @@
 ---
-source_file: "apps/web/tsconfig.json"
+source_file: "apps/search/src/infrastructure/sources/storefront-distributor-adapter.ts"
 type: "code"
-community: "compilerOptions"
-location: "L17"
+community: "storefront-distributor-adapter.ts"
+location: "L45"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/compilerOptions
+  - community/storefront-distributor-adapterts
 ---
 
-# entities/*
+# ENTITIES
 
 ## Connections
-- [[paths]] - `contains` [EXTRACTED]
+- [[storefront-distributor-adapter.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/compilerOptions
+#graphify/code #graphify/EXTRACTED #community/storefront-distributor-adapterts

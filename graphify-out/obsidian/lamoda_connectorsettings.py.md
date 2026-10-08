@@ -15,7 +15,7 @@ tags:
 - [[Lamoda connector runtime settings (env-driven via LAMODA_ prefix).]] - `rationale_for` [EXTRACTED]
 - [[LamodaSettings]] - `contains` [EXTRACTED]
 - [[functools]] - `imports_from` [EXTRACTED]
-- [[get_settings()_7]] - `contains` [EXTRACTED]
+- [[get_settings()_6]] - `contains` [EXTRACTED]
 - [[lamoda-connectorteststest_settings_secrets.py]] - `imports_from` [EXTRACTED]
 - [[lamoda_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[pydantic]] - `imports_from` [EXTRACTED]

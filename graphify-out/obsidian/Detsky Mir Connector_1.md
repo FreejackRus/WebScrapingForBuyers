@@ -12,13 +12,13 @@ tags:
 # Detsky Mir Connector
 
 ## Connections
-- [[DSH activation_18]] - `contains` [EXTRACTED]
-- [[Gotchas_3]] - `contains` [EXTRACTED]
+- [[DSH activation_17]] - `contains` [EXTRACTED]
+- [[Gotchas_1]] - `contains` [EXTRACTED]
 - [[There is no text search — this is important_1]] - `contains` [EXTRACTED]
 - [[Tools_1]] - `contains` [EXTRACTED]
 - [[Trust boundary_1]] - `contains` [EXTRACTED]
 - [[When NOT to use_1]] - `contains` [EXTRACTED]
-- [[When to use_3]] - `contains` [EXTRACTED]
+- [[When to use_1]] - `contains` [EXTRACTED]
 - [[Workflow patterns_1]] - `contains` [EXTRACTED]
 - [[ru-marketplace-mcpskillsdetmir-connectorSKILL]] - `contains` [EXTRACTED]
 

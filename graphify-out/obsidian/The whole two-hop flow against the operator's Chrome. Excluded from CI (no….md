@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_parser_live.py"
 type: "rationale"
 community: "aliexpress-connector/tests/test_parser_live.py"
-location: "L86"
+location: "L97"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED

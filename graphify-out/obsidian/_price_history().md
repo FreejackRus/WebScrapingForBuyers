@@ -12,7 +12,7 @@ tags:
 # _price_history()
 
 ## Connections
-- [[Any_13]] - `references` [EXTRACTED]
+- [[Any_7]] - `references` [EXTRACTED]
 - [[_d()]] - `calls` [EXTRACTED]
 - [[_parse_card()]] - `calls` [EXTRACTED]
 - [[_s()]] - `calls` [EXTRACTED]

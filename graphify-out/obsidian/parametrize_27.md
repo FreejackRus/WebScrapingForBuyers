@@ -1,19 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "test_chrome_cdp_snapshot.py"
+community: "test_dsh_bundle.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_chrome_cdp_snapshotpy
+  - community/test_dsh_bundlepy
 ---
 
 # parametrize
 
 ## Connections
-- [[test_bad_image_payload_is_rejected()]] - `references` [EXTRACTED]
-- [[test_encoded_and_decoded_byte_limits()]] - `references` [EXTRACTED]
-- [[test_invalid_geometry_never_captures()]] - `references` [EXTRACTED]
-- [[test_invalid_jpeg_frame_dimensions()]] - `references` [EXTRACTED]
+- [[test_dsh_profile_flags_activate_exactly_the_requested_mount()]] - `references` [EXTRACTED]
+- [[test_the_vendor_gate_detects_every_drift_class()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_snapshotpy
+#graphify/code #graphify/EXTRACTED #community/test_dsh_bundlepy

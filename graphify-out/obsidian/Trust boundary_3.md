@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/README.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/yandex-connector/SKILL.md"
 type: "document"
-community: "English version"
-location: "L1135"
+community: "Yandex Market Connector"
+location: "L102"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/English_version
+  - community/Yandex_Market_Connector
 ---
 
 # Trust boundary
 
 ## Connections
-- [[English version]] - `contains` [EXTRACTED]
+- [[Yandex Market Connector]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/English_version
+#graphify/document #graphify/EXTRACTED #community/Yandex_Market_Connector

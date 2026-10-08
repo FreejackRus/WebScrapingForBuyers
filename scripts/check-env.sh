@@ -14,7 +14,13 @@ node_major="$(node -p 'process.versions.node.split(".")[0]' 2>/dev/null || echo 
 # Graphify: обычный запуск, затем python -m (кириллица в пути профиля ломает обёртку).
 graphify_py="${GRAPHIFY_PYTHON:-${APPDATA:-}/uv/tools/graphifyy/Scripts/python.exe}"
 # query работает и через сломанную обёртку, а update нет, поэтому проверяем именно update.
-if graphify update --help >/dev/null 2>&1; then
+# Git Bash cannot reliably launch the uv Python under a Cyrillic Windows profile.
+# Delegate to native PowerShell without interpolating the interpreter into code.
+if [[ "${OSTYPE:-}" == msys* ]] && command -v pwsh.exe >/dev/null 2>&1 &&
+  GRAPHIFY_PYTHON="$graphify_py" pwsh.exe -NoProfile -Command \
+    '$env:PYTHONHASHSEED="0"; & $env:GRAPHIFY_PYTHON -m graphify update --help; exit $LASTEXITCODE' >/dev/null 2>&1; then
+  ok "graphify (native PowerShell / python -m graphify)"
+elif graphify update --help >/dev/null 2>&1; then
   ok "graphify (CLI)"
 elif [ -x "$graphify_py" ] && "$graphify_py" -m graphify update --help >/dev/null 2>&1; then
   ok "graphify (python -m graphify; GRAPHIFY_PYTHON=$graphify_py)"

@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/server.py"
 type: "code"
-community: "taobao_card"
-location: "L121"
+community: "avito_connector/server.py"
+location: "L393"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/taobao_card
+  - community/avito_connector/serverpy
 ---
 
 # _extract_item_id()
 
 ## Connections
-- [[Pull the item id out of an item.taobao.com URL or a bare numeric id. Host-…]] - `rationale_for` [EXTRACTED]
-- [[taobao_card()]] - `calls` [EXTRACTED]
-- [[taobao_connectorserver.py]] - `contains` [EXTRACTED]
+- [[Pull the numeric item id out of a slug, URL or bare digits. Item ids run 9-12…]] - `rationale_for` [EXTRACTED]
+- [[avito_card()]] - `calls` [EXTRACTED]
+- [[avito_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/taobao_card
+#graphify/code #graphify/EXTRACTED #community/avito_connector/serverpy

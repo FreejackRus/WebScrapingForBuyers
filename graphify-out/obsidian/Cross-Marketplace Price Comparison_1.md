@@ -1,5 +1,5 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/compare-prices/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/compare-prices/SKILL.md"
 type: "document"
 community: "Cross-Marketplace Price Comparison"
 location: "L6"
@@ -12,13 +12,13 @@ tags:
 # Cross-Marketplace Price Comparison
 
 ## Connections
-- [[Gotchas_23]] - `contains` [EXTRACTED]
+- [[Gotchas_22]] - `contains` [EXTRACTED]
 - [[Reading the result correctly_1]] - `contains` [EXTRACTED]
-- [[Tools_4]] - `contains` [EXTRACTED]
+- [[Tools_7]] - `contains` [EXTRACTED]
 - [[Trust boundary_8]] - `contains` [EXTRACTED]
-- [[When NOT to use_5]] - `contains` [EXTRACTED]
-- [[When to use_23]] - `contains` [EXTRACTED]
-- [[Workflow]] - `contains` [EXTRACTED]
-- [[dshskillscompare-pricesSKILL]] - `contains` [EXTRACTED]
+- [[When NOT to use_3]] - `contains` [EXTRACTED]
+- [[When to use_22]] - `contains` [EXTRACTED]
+- [[Workflow_3]] - `contains` [EXTRACTED]
+- [[ru-marketplace-mcpskillscompare-pricesSKILL]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/Cross-Marketplace_Price_Comparison

@@ -12,11 +12,11 @@ tags:
 # title_from_tile()
 
 ## Connections
-- [[Any_20]] - `references` [EXTRACTED]
+- [[Any_18]] - `references` [EXTRACTED]
 - [[Title of an extracted tile, or an honest None.]] - `rationale_for` [EXTRACTED]
 - [[_item_from_payload()]] - `calls` [EXTRACTED]
+- [[_search_item_from_tile()_1]] - `calls` [EXTRACTED]
 - [[_search_item_from_tile()_3]] - `calls` [EXTRACTED]
-- [[_search_item_from_tile()_2]] - `calls` [EXTRACTED]
 - [[citilink_card()]] - `calls` [EXTRACTED]
 - [[dom.py]] - `contains` [EXTRACTED]
 - [[flatten_text()]] - `calls` [EXTRACTED]

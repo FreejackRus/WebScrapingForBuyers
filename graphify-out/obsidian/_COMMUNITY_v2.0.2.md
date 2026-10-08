@@ -10,7 +10,7 @@ members: 3
 **Members:** 3 nodes
 
 ## Members
-- [[Fixed_17]] - document - mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v2.0.2.md
+- [[Fixed_20]] - document - mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v2.0.2.md
 - [[RELEASE_NOTES_v2.0.2]] - document - mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v2.0.2.md
 - [[v2.0.2]] - document - mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v2.0.2.md
 

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "rationale"
-community: "scenario"
+community: "_FakeCurlResponse"
 location: "L2005"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/scenario
+  - community/_FakeCurlResponse
 ---
 
 # A curl_cffi response as the streaming reader sees it.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_FakeCurlResponse]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/scenario
+#graphify/rationale #graphify/EXTRACTED #community/_FakeCurlResponse

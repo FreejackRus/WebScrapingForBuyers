@@ -12,7 +12,7 @@ tags:
 # gateway.test.ts
 
 ## Connections
-- [[apps_1]] - `contains` [EXTRACTED]
+- [[apps_2]] - `contains` [EXTRACTED]
 - [[buildGatewayApp()]] - `imports` [EXTRACTED]
 - [[gatewaysrcapp.ts]] - `imports_from` [EXTRACTED]
 - [[present.ts]] - `imports_from` [EXTRACTED]

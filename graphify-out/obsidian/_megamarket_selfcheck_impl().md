@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/server.py"
 type: "code"
-community: "_post"
+community: "log_event"
 location: "L800"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_post
+  - community/log_event
 ---
 
 # _megamarket_selfcheck_impl()
 
 ## Connections
-- [[Context_1]] - `references` [EXTRACTED]
+- [[Context_5]] - `references` [EXTRACTED]
 - [[MegamarketSelfcheckResponse]] - `calls` [EXTRACTED]
 - [[_parse_items()]] - `calls` [EXTRACTED]
 - [[_post()]] - `calls` [EXTRACTED]
@@ -22,4 +22,4 @@ tags:
 - [[megamarket_connectorserver.py]] - `contains` [EXTRACTED]
 - [[megamarket_selfcheck()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_post
+#graphify/code #graphify/EXTRACTED #community/log_event

@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/infrastructure/suggest/live-suggest.ts"
 type: "code"
-community: "live-suggest.ts"
+community: "product-from-query.ts"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/live-suggestts
+  - community/product-from-queryts
 ---
 
 # live-suggest.ts
@@ -19,8 +19,10 @@ tags:
 - [[extractMpn()]] - `imports` [EXTRACTED]
 - [[fetchEnginePhrases()]] - `contains` [EXTRACTED]
 - [[fetchJson()]] - `contains` [EXTRACTED]
+- [[filterItSuggestions()]] - `imports` [EXTRACTED]
 - [[googleSuggestUrl()]] - `contains` [EXTRACTED]
 - [[icecatProductUrl()]] - `contains` [EXTRACTED]
+- [[it-scope.ts]] - `imports_from` [EXTRACTED]
 - [[packages_contracts_dist_index]] - `imports_from` [EXTRACTED]
 - [[packages_contracts_dist_index_product]] - `imports` [EXTRACTED]
 - [[parseSuggestList()]] - `contains` [EXTRACTED]
@@ -33,4 +35,4 @@ tags:
 - [[suggestLiveProducts()]] - `contains` [EXTRACTED]
 - [[yandexSuggestUrl()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/live-suggestts
+#graphify/code #graphify/EXTRACTED #community/product-from-queryts

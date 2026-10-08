@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/examples/compare_with_china.py"
+source_file: "deploy/chrome/cdp-proxy.py"
 type: "code"
-community: "compare_prices"
-location: "L19"
+community: "cdp-proxy.py"
+location: "L132"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/compare_prices
+  - community/cdp-proxypy
 ---
 
 # main()
 
 ## Connections
-- [[compare_prices()]] - `calls` [EXTRACTED]
-- [[compare_with_china.py]] - `contains` [EXTRACTED]
+- [[cdp-proxy.py]] - `contains` [EXTRACTED]
+- [[handle_client()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/compare_prices
+#graphify/code #graphify/EXTRACTED #community/cdp-proxypy

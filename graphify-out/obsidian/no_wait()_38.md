@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py"
 type: "code"
-community: "_clear_wb_cache"
-location: "L1240"
+community: "test_fetch_debug_never_leaks_tier1_exception_secrets"
+location: "L412"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/_clear_wb_cache
+  - graphify/INFERRED
+  - community/test_fetch_debug_never_leaks_tier1_exception_secrets
 ---
 
 # no_wait()
 
 ## Connections
-- [[test_cache_serves_a_repeated_successful_read()]] - `contains` [EXTRACTED]
+- [[test_fetch_debug_never_leaks_tier1_exception_secrets()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/_clear_wb_cache
+#graphify/code #graphify/INFERRED #community/test_fetch_debug_never_leaks_tier1_exception_secrets

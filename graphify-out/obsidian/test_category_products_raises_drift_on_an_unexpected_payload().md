@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "_tool_error_payload"
+community: "_patch_questions"
 location: "L1839"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_tool_error_payload
+  - community/_patch_questions
 ---
 
 # test_category_products_raises_drift_on_an_unexpected_payload()
 
 ## Connections
-- [[responder()_1]] - `contains` [EXTRACTED]
-- [[scenario()_34]] - `contains` [EXTRACTED]
+- [[responder()_5]] - `contains` [EXTRACTED]
+- [[scenario()_49]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_tool_error_payload
+#graphify/code #graphify/EXTRACTED #community/_patch_questions

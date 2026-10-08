@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_card_verification_records.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
 type: "code"
-community: "test_card_verification_records.py"
-location: "L170"
+community: "detmir-connector/tests/test_server.py"
+location: "L111"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/test_card_verification_recordspy
+  - community/detmir-connector/tests/test_serverpy
 ---
 
 # fake_fetch()
 
 ## Connections
-- [[test_yandex_empty_shell_never_becomes_a_verified_card()]] - `indirect_call` [INFERRED]
+- [[stub_json()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/test_card_verification_recordspy
+#graphify/code #graphify/INFERRED #community/detmir-connector/tests/test_serverpy

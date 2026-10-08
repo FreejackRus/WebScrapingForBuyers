@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/megamarket-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/taobao-connector/SKILL.md"
 type: "document"
-community: "Megamarket Connector"
-location: "L19"
+community: "Taobao Connector"
+location: "L18"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Megamarket_Connector
+  - community/Taobao_Connector
 ---
 
 # Tools available
 
 ## Connections
-- [[Megamarket Connector]] - `contains` [EXTRACTED]
-- [[megamarket_selfcheck()]] - `references` [INFERRED]
+- [[Taobao Connector]] - `contains` [EXTRACTED]
+- [[taobao_selfcheck()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Megamarket_Connector
+#graphify/document #graphify/EXTRACTED #community/Taobao_Connector

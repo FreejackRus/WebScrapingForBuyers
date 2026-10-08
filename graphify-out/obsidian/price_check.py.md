@@ -13,9 +13,9 @@ tags:
 
 ## Connections
 - [[Compare a product's price across every available marketplace. uv run python…]] - `rationale_for` [EXTRACTED]
-- [[asyncio_2]] - `imports` [EXTRACTED]
+- [[asyncio]] - `imports` [EXTRACTED]
 - [[compare_connectorserver.py]] - `imports_from` [EXTRACTED]
-- [[main()_8]] - `contains` [EXTRACTED]
+- [[main()_25]] - `contains` [EXTRACTED]
 - [[sys]] - `imports` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/json

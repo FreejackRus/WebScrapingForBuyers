@@ -12,6 +12,6 @@ tags:
 # The doctrine pinned by the audit waves, checked against live bytes: a WB price…
 
 ## Connections
-- [[test_live_prices_are_finite_positive_rubles()_2]] - `rationale_for` [EXTRACTED]
+- [[test_live_prices_are_finite_positive_rubles()]] - `rationale_for` [EXTRACTED]
 
 #graphify/rationale #graphify/EXTRACTED #community/wb-connector/tests/test_parser_livepy

@@ -12,7 +12,7 @@ tags:
 # DSH activation
 
 ## Connections
-- [[DNS-Shop Connector_1]] - `contains` [EXTRACTED]
+- [[DNS-Shop Connector]] - `contains` [EXTRACTED]
 - [[compare_prices()]] - `references` [INFERRED]
 - [[compare_sources()]] - `references` [INFERRED]
 - [[marketplace_sources()]] - `references` [INFERRED]

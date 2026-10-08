@@ -12,10 +12,10 @@ tags:
 # _source_error()
 
 ## Connections
-- [[Any_27]] - `references` [EXTRACTED]
+- [[Any_14]] - `references` [EXTRACTED]
 - [[ConnectorError]] - `uses` [INFERRED]
 - [[ErrorCode]] - `uses` [INFERRED]
-- [[Exception_1]] - `references` [EXTRACTED]
+- [[Exception]] - `references` [EXTRACTED]
 - [[Preserve typed recovery signals before truncatingredacting error detail. Only…]] - `rationale_for` [EXTRACTED]
 - [[_run_source()]] - `calls` [EXTRACTED]
 - [[compare_connectorserver.py]] - `contains` [EXTRACTED]

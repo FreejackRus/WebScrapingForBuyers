@@ -15,7 +15,7 @@ tags:
 - [[Megamarket connector runtime settings (env-driven via MEGAMARKET_ prefix).]] - `rationale_for` [EXTRACTED]
 - [[MegamarketSettings]] - `contains` [EXTRACTED]
 - [[functools]] - `imports_from` [EXTRACTED]
-- [[get_settings()_8]] - `contains` [EXTRACTED]
+- [[get_settings()_7]] - `contains` [EXTRACTED]
 - [[megamarket_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[pydantic]] - `imports_from` [EXTRACTED]
 - [[pydantic_settings]] - `imports_from` [EXTRACTED]

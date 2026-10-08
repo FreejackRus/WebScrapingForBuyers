@@ -12,7 +12,7 @@ tags:
 # _build_json_query()
 
 ## Connections
-- [[Any_13]] - `references` [EXTRACTED]
+- [[Any_7]] - `references` [EXTRACTED]
 - [[_cian_selfcheck_impl()]] - `calls` [EXTRACTED]
 - [[_range()]] - `calls` [EXTRACTED]
 - [[cian_connectorserver.py]] - `contains` [EXTRACTED]

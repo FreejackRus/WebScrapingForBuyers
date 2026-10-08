@@ -15,6 +15,7 @@ tags:
 - [[NETLAB_BASE_DEFAULT]] - `contains` [EXTRACTED]
 - [[NetlabConfig]] - `contains` [EXTRACTED]
 - [[NetlabGoods]] - `contains` [EXTRACTED]
+- [[OFFERS_PER_SOURCE]] - `imports` [EXTRACTED]
 - [[asArray()_1]] - `contains` [EXTRACTED]
 - [[b2b-distributor-adapter.test.ts]] - `imports_from` [EXTRACTED]
 - [[b2b-distributor-adapter.ts]] - `imports_from` [EXTRACTED]
@@ -22,6 +23,7 @@ tags:
 - [[fetchJson()_1]] - `contains` [EXTRACTED]
 - [[matchKind()_3]] - `contains` [EXTRACTED]
 - [[nested()_1]] - `contains` [EXTRACTED]
+- [[netlab-client.test.ts]] - `imports_from` [EXTRACTED]
 - [[netlabAuthenticate()]] - `contains` [EXTRACTED]
 - [[netlabConfigFromEnv()]] - `contains` [EXTRACTED]
 - [[netlabGoodsByUid()]] - `contains` [EXTRACTED]
@@ -36,5 +38,6 @@ tags:
 - [[ref_node_crypto]] - `imports_from` [EXTRACTED]
 - [[searchKeywords()]] - `contains` [EXTRACTED]
 - [[searchNetlab()]] - `contains` [EXTRACTED]
+- [[source-adapter.ts]] - `imports_from` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/netlab-clientts

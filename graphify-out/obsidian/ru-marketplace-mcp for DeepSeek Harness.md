@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/dsh/README.md"
 type: "document"
-community: "decision_inspect"
+community: "compare_verify_offer"
 location: "L1"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/decision_inspect
+  - community/compare_verify_offer
 ---
 
 # ru-marketplace-mcp for DeepSeek Harness
@@ -22,4 +22,4 @@ tags:
 - [[Why off by default]] - `contains` [EXTRACTED]
 - [[dshREADME]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/decision_inspect
+#graphify/document #graphify/EXTRACTED #community/compare_verify_offer

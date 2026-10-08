@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_contract.py"
 type: "code"
-community: "test_contract.py"
+community: "_parse_search_items"
 location: "L82"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_contractpy
+  - community/_parse_search_items
 ---
 
 # test_avito_firewall_body_is_not_parsed_as_items()
@@ -16,4 +16,4 @@ tags:
 - [[_parse_search_items()]] - `calls` [INFERRED]
 - [[test_contract.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_contractpy
+#graphify/code #graphify/EXTRACTED #community/_parse_search_items

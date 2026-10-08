@@ -14,6 +14,6 @@ tags:
 ## Connections
 - [[BaseSettings_1]] - `inherits` [EXTRACTED]
 - [[aliexpress_connectorsettings.py]] - `contains` [EXTRACTED]
-- [[get_settings()_2]] - `calls` [EXTRACTED]
+- [[get_settings()_1]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/pydantic

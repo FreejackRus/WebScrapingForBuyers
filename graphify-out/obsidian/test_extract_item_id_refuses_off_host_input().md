@@ -12,7 +12,7 @@ tags:
 # test_extract_item_id_refuses_off_host_input()
 
 ## Connections
-- [[parametrize_10]] - `references` [EXTRACTED]
+- [[parametrize_18]] - `references` [EXTRACTED]
 - [[taobao-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_challenge_recovery_reads_browser_again_and_caches_only_success

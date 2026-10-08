@@ -1,18 +1,20 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/server.py"
 type: "code"
-community: "mcp-core/tests/test_browser_handoff.py"
-location: "L562"
+community: "TransportDownError"
+location: "L415"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/mcp-core/tests/test_browser_handoffpy
+  - community/TransportDownError
 ---
 
 # read()
 
 ## Connections
-- [[blocked()_1]] - `calls` [EXTRACTED]
-- [[test_snapshot_and_resume_cannot_overlap()]] - `indirect_call` [INFERRED]
+- [[ParserDriftError]] - `calls` [EXTRACTED]
+- [[TransportDownError]] - `calls` [EXTRACTED]
+- [[_cdp_render()]] - `contains` [EXTRACTED]
+- [[raise_tool_error()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/mcp-core/tests/test_browser_handoffpy
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

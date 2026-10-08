@@ -39,7 +39,6 @@ tags:
 - [[log_event()]] - `imports` [EXTRACTED]
 - [[logging.py]] - `re_exports` [EXTRACTED]
 - [[megamarket_connectorserver.py]] - `imports_from` [EXTRACTED]
-- [[mpstats_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[ozon_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[parse_retry_after()]] - `imports` [EXTRACTED]
 - [[raise_tool_error()]] - `imports` [EXTRACTED]

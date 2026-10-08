@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py"
 type: "code"
-community: "citilink-connector/tests/test_server.py"
-location: "L275"
+community: "dns-connector/tests/test_server.py"
+location: "L227"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/citilink-connector/tests/test_serverpy
+  - community/dns-connector/tests/test_serverpy
 ---
 
 # capture()
 
 ## Connections
-- [[test_card_accepts_a_bare_product_id()]] - `contains` [EXTRACTED]
+- [[test_card_accepts_a_bare_product_id()_1]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/citilink-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/dns-connector/tests/test_serverpy

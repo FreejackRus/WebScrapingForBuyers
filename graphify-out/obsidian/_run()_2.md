@@ -18,5 +18,6 @@ tags:
 - [[test_card_extractor_reads_the_captured_modules()]] - `calls` [EXTRACTED]
 - [[test_search_extractor_pairing_agrees_with_python()]] - `calls` [EXTRACTED]
 - [[test_search_extractor_reads_the_captured_grid()]] - `calls` [EXTRACTED]
+- [[test_search_tiles_carry_the_gallery_photo()]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/aliexpress-connector/tests/test_parser_livepy

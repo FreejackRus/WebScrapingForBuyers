@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[forbidden_wait()]] - `contains` [EXTRACTED]
-- [[scenario()_39]] - `contains` [EXTRACTED]
+- [[scenario()_40]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_tool_error_payload

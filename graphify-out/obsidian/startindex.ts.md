@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/features/search/start/index.ts"
 type: "code"
-community: "packages_contracts_dist_index"
+community: "analysis/store/index.ts"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/packages_contracts_dist_index
+  - community/analysis/store/indexts
 ---
 
 # start/index.ts
@@ -21,4 +21,4 @@ tags:
 - [[useAnalysisStore]] - `imports` [EXTRACTED]
 - [[useSearchStore]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index
+#graphify/code #graphify/EXTRACTED #community/analysis/store/indexts

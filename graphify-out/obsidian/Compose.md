@@ -1,12 +1,12 @@
 ---
 source_file: "docs/DISTRIBUTORS.md"
 type: "document"
-community: "Источники: дистрибьюторы и маркетплейсы"
-location: "L154"
+community: "SourceAdapter"
+location: "L238"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Источники_дистрибьюторы_и_маркетплейсы
+  - community/SourceAdapter
 ---
 
 # Compose
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[Источники дистрибьюторы и маркетплейсы]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Источники_дистрибьюторы_и_маркетплейсы
+#graphify/document #graphify/EXTRACTED #community/SourceAdapter

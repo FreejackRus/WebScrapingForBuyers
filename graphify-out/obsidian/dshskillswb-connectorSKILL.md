@@ -12,6 +12,6 @@ tags:
 # dsh/skills/wb-connector/SKILL.md
 
 ## Connections
-- [[Wildberries Connector_1]] - `contains` [EXTRACTED]
+- [[Wildberries Connector]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/Wildberries_Connector

@@ -1,12 +1,12 @@
 ---
 source_file: "README.md"
 type: "document"
-community: "ПЕРЕМЕНА Price Radar — MVP"
+community: "SourceAdapter"
 location: "L1"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/ПЕРЕМЕНА_Price_Radar__MVP
+  - community/SourceAdapter
 ---
 
 # ПЕРЕМЕНА Price Radar — MVP
@@ -16,8 +16,8 @@ tags:
 - [[README]] - `contains` [EXTRACTED]
 - [[Архитектура]] - `contains` [EXTRACTED]
 - [[Вход]] - `contains` [EXTRACTED]
-- [[Запуск_1]] - `contains` [EXTRACTED]
+- [[Запуск]] - `contains` [EXTRACTED]
 - [[Подключение реального источника]] - `contains` [EXTRACTED]
 - [[Текущий серверный MVP]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/ПЕРЕМЕНА_Price_Radar__MVP
+#graphify/document #graphify/EXTRACTED #community/SourceAdapter

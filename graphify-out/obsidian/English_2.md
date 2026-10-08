@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v1.6.1.md"
+source_file: "mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v2.4.2.md"
 type: "document"
-community: "v1.6.1"
-location: "L14"
+community: "v2.4.2 — 2026-09-19"
+location: "L34"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/v161
+  - community/v242__2026-09-19
 ---
 
 # English
 
 ## Connections
-- [[v1.6.1]] - `contains` [EXTRACTED]
+- [[Release-candidate evidence]] - `contains` [EXTRACTED]
+- [[v2.4.2 — 2026-09-19]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/v161
+#graphify/document #graphify/EXTRACTED #community/v242__2026-09-19

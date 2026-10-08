@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/detmir-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/megamarket-connector/SKILL.md"
 type: "document"
-community: "Detsky Mir Connector"
-location: "L16"
+community: "Megamarket Connector"
+location: "L15"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Detsky_Mir_Connector
+  - community/Megamarket_Connector
 ---
 
 # When to use
 
 ## Connections
-- [[Detsky Mir Connector_1]] - `contains` [EXTRACTED]
+- [[Megamarket Connector]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Detsky_Mir_Connector
+#graphify/document #graphify/EXTRACTED #community/Megamarket_Connector

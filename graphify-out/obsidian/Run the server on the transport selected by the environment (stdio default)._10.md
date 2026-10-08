@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/__main__.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/__main__.py"
 type: "rationale"
-community: "ozon_connector/__main__.py"
-location: "L22"
+community: "sys"
+location: "L14"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/ozon_connector/__main__py
+  - community/sys
 ---
 
 # Run the server on the transport selected by the environment (stdio default).
 
 ## Connections
-- [[main()_21]] - `rationale_for` [EXTRACTED]
+- [[main()_20]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/ozon_connector/__main__py
+#graphify/rationale #graphify/EXTRACTED #community/sys

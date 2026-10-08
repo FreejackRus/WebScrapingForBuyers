@@ -12,7 +12,7 @@ tags:
 # test_the_fixture_pair_freezes_the_search_vs_card_gap()
 
 ## Connections
-- [[_load()_3]] - `calls` [EXTRACTED]
+- [[_load()_1]] - `calls` [EXTRACTED]
 - [[nm 1280469586 priced differently on the two endpoints the same minute. If a…]] - `rationale_for` [EXTRACTED]
 - [[wb-connectorteststest_parser_live.py]] - `contains` [EXTRACTED]
 

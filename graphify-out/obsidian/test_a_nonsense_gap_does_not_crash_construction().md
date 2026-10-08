@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[Pacer]] - `uses` [INFERRED]
 - [[max() with NaN is undefined-ish; just make sure it constructs.]] - `rationale_for` [EXTRACTED]
-- [[parametrize_35]] - `references` [EXTRACTED]
+- [[parametrize_34]] - `references` [EXTRACTED]
 - [[test_pacing.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/Pacer

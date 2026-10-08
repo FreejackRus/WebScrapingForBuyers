@@ -16,7 +16,7 @@ tags:
 - [[DnsSettings]] - `contains` [EXTRACTED]
 - [[dns_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[functools]] - `imports_from` [EXTRACTED]
-- [[get_settings()_6]] - `contains` [EXTRACTED]
+- [[get_settings()_5]] - `contains` [EXTRACTED]
 - [[pydantic]] - `imports_from` [EXTRACTED]
 - [[pydantic_settings]] - `imports_from` [EXTRACTED]
 

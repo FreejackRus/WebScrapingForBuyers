@@ -1,8 +1,8 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/ozon-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/taobao-connector/SKILL.md"
 type: "document"
 community: "compare_prices"
-location: "L60"
+location: "L40"
 tags:
   - graphify/document
   - graphify/INFERRED
@@ -12,7 +12,7 @@ tags:
 # DSH activation
 
 ## Connections
-- [[Ozon Connector]] - `contains` [EXTRACTED]
+- [[Taobao Connector]] - `contains` [EXTRACTED]
 - [[compare_prices()]] - `references` [INFERRED]
 - [[compare_sources()]] - `references` [INFERRED]
 - [[marketplace_sources()]] - `references` [INFERRED]

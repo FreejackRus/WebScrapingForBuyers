@@ -12,8 +12,8 @@ tags:
 # test_category_products_reports_no_more_on_a_short_page()
 
 ## Connections
-- [[responder()_17]] - `contains` [EXTRACTED]
-- [[scenario()_73]] - `contains` [EXTRACTED]
+- [[responder()_7]] - `contains` [EXTRACTED]
+- [[scenario()_51]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_patch_questions

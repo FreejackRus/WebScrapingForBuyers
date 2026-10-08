@@ -1,5 +1,5 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_settings_secrets.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_settings_secrets.py"
 type: "rationale"
 community: "pydantic"
 location: "L1"
@@ -12,6 +12,6 @@ tags:
 # Secret hygiene for the proxy setting. The proxy URL may carry user:pass…
 
 ## Connections
-- [[mpstats-connectorteststest_settings_secrets.py]] - `rationale_for` [EXTRACTED]
+- [[wb-connectorteststest_settings_secrets.py]] - `rationale_for` [EXTRACTED]
 
 #graphify/rationale #graphify/EXTRACTED #community/pydantic

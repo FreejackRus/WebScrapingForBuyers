@@ -12,7 +12,7 @@ members: 4
 ## Members
 - [[capturing_get()]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 - [[safe_child_env strips proxy vars, so the value must travel as an argument.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
-- [[scenario()_61]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
+- [[scenario()_89]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 - [[test_tier1_proxy_is_passed_as_an_argument_not_an_env_var()]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 
 ## Live Query (requires Dataview plugin)
@@ -29,4 +29,4 @@ SORT file.name ASC
 
 ## Top bridge nodes
 - [[test_tier1_proxy_is_passed_as_an_argument_not_an_env_var()]] - degree 5, connects to 2 communities
-- [[scenario()_61]] - degree 3, connects to 1 community
+- [[scenario()_89]] - degree 3, connects to 1 community

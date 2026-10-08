@@ -1,19 +1,22 @@
 ---
 source_file: "AGENTS.md"
 type: "document"
-community: "Project-specific supplement"
+community: "AGENTS.md"
 location: "L1"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Project-specific_supplement
+  - community/AGENTSmd
 ---
 
 # AGENTS.md
 
 ## Connections
-- [[Graphify_1]] - `contains` [EXTRACTED]
-- [[Project-specific supplement]] - `contains` [EXTRACTED]
-- [[Tool routing]] - `contains` [EXTRACTED]
+- [[debugging]] - `references` [EXTRACTED]
+- [[models]] - `references` [EXTRACTED]
+- [[orchestration]] - `references` [EXTRACTED]
+- [[review]] - `references` [EXTRACTED]
+- [[tools_8]] - `references` [EXTRACTED]
+- [[Правила работы с WebScrapingForBuyers]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Project-specific_supplement
+#graphify/document #graphify/EXTRACTED #community/AGENTSmd

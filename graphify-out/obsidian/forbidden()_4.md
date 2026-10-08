@@ -1,17 +1,22 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "_patch_questions"
-location: "L1713"
+community: "_tool_error_payload"
+location: "L1615"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/_patch_questions
+  - graphify/INFERRED
+  - community/_tool_error_payload
 ---
 
 # forbidden()
 
 ## Connections
-- [[test_category_products_refuses_the_blackhole_shard_without_a_request()]] - `contains` [EXTRACTED]
+- [[scenario()_34]] - `indirect_call` [INFERRED]
+- [[scenario()_35]] - `indirect_call` [INFERRED]
+- [[scenario()_36]] - `indirect_call` [INFERRED]
+- [[scenario()_97]] - `indirect_call` [INFERRED]
+- [[scenario()_37]] - `indirect_call` [INFERRED]
+- [[test_questions_rejects_an_out_of_range_limit()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_patch_questions
+#graphify/code #graphify/INFERRED #community/_tool_error_payload

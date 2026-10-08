@@ -1,8 +1,8 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py"
 type: "code"
 community: "_FakeResponse"
-location: "L537"
+location: "L444"
 tags:
   - graphify/code
   - graphify/EXTRACTED

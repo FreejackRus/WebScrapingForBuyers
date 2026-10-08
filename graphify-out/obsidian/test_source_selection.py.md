@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[MARKETPLACE_SOURCES mounts the operator's subset and nothing else.]] - `rationale_for` [EXTRACTED]
 - [[_reload_unified()]] - `contains` [EXTRACTED]
-- [[asyncio_2]] - `imports` [EXTRACTED]
+- [[asyncio]] - `imports` [EXTRACTED]
 - [[importlib]] - `imports` [EXTRACTED]
 - [[pytest]] - `imports` [EXTRACTED]
 - [[source_selection.py]] - `imports_from` [EXTRACTED]

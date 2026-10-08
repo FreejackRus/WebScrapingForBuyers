@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_search_login_wall_live_dom.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py"
 type: "code"
-community: "compare-connector/tests/test_browser_handoff.py"
-location: "L35"
+community: "citilink-connector/tests/test_server.py"
+location: "L48"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/compare-connector/tests/test_browser_handoffpy
+  - community/citilink-connector/tests/test_serverpy
 ---
 
 # _no_cache()
 
 ## Connections
-- [[fixture_2]] - `references` [EXTRACTED]
-- [[test_search_login_wall_live_dom.py]] - `contains` [EXTRACTED]
+- [[citilink-connectorteststest_server.py]] - `contains` [EXTRACTED]
+- [[fixture_1]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/compare-connector/tests/test_browser_handoffpy
+#graphify/code #graphify/EXTRACTED #community/citilink-connector/tests/test_serverpy

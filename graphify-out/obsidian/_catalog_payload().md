@@ -12,11 +12,11 @@ tags:
 # _catalog_payload()
 
 ## Connections
-- [[responder()_12]] - `calls` [EXTRACTED]
-- [[responder()_13]] - `calls` [EXTRACTED]
-- [[responder()_14]] - `calls` [EXTRACTED]
-- [[responder()_16]] - `calls` [EXTRACTED]
-- [[responder()_17]] - `calls` [EXTRACTED]
+- [[responder()_1]] - `calls` [EXTRACTED]
+- [[responder()_2]] - `calls` [EXTRACTED]
+- [[responder()_3]] - `calls` [EXTRACTED]
+- [[responder()_6]] - `calls` [EXTRACTED]
+- [[responder()_7]] - `calls` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_patch_questions

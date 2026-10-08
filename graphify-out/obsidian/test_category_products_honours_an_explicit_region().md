@@ -12,8 +12,8 @@ tags:
 # test_category_products_honours_an_explicit_region()
 
 ## Connections
-- [[responder()_13]] - `contains` [EXTRACTED]
-- [[scenario()_65]] - `contains` [EXTRACTED]
+- [[responder()_2]] - `contains` [EXTRACTED]
+- [[scenario()_46]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_patch_questions

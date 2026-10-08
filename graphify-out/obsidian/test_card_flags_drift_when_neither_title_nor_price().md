@@ -12,7 +12,7 @@ tags:
 # test_card_flags_drift_when_neither_title_nor_price()
 
 ## Connections
-- [[_patch_render()_1]] - `calls` [EXTRACTED]
+- [[_patch_render()]] - `calls` [EXTRACTED]
 - [[taobao-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/taobao-connector/tests/test_serverpy

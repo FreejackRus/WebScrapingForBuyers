@@ -1,18 +1,21 @@
 ---
 source_file: ""
 type: "code"
-community: "dns_connector/models_output.py"
+community: "compare_verify_offer"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/dns_connector/models_outputpy
+  - community/compare_verify_offer
 ---
 
 # Any
 
 ## Connections
-- [[_cdp_render()]] - `references` [EXTRACTED]
-- [[_is_qrator_wall()]] - `references` [EXTRACTED]
-- [[_search_item_from_tile()]] - `references` [EXTRACTED]
+- [[_available_sources()]] - `references` [EXTRACTED]
+- [[_call_card_tool()]] - `references` [EXTRACTED]
+- [[_client_capabilities()]] - `references` [EXTRACTED]
+- [[_source_error()]] - `references` [EXTRACTED]
+- [[compare_sources()]] - `references` [EXTRACTED]
+- [[compare_verify_offer()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/dns_connector/models_outputpy
+#graphify/code #graphify/EXTRACTED #community/compare_verify_offer

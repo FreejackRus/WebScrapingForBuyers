@@ -12,7 +12,7 @@ members: 16
 ## Members
 - [[$schema]] - code - mcp-servers/ru-marketplace-mcp/server.json
 - [[_meta]] - code - mcp-servers/ru-marketplace-mcp/server.json
-- [[description_1]] - code - mcp-servers/ru-marketplace-mcp/server.json
+- [[description_2]] - code - mcp-servers/ru-marketplace-mcp/server.json
 - [[install]] - code - mcp-servers/ru-marketplace-mcp/server.json
 - [[io.modelcontextprotocol.registrypublisher-provided]] - code - mcp-servers/ru-marketplace-mcp/server.json
 - [[name_2]] - code - mcp-servers/ru-marketplace-mcp/server.json

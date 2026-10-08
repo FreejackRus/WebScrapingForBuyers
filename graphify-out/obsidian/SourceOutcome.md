@@ -12,7 +12,7 @@ tags:
 # SourceOutcome
 
 ## Connections
-- [[BaseModel_13]] - `inherits` [EXTRACTED]
+- [[BaseModel_3]] - `inherits` [EXTRACTED]
 - [[What happened when one marketplace was queried. Reported for every source,…]] - `rationale_for` [EXTRACTED]
 - [[_run_source()]] - `calls` [EXTRACTED]
 - [[compare_connectormodels_output.py]] - `contains` [EXTRACTED]

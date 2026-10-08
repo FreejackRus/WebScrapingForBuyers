@@ -1,17 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "test_safe_get_text_has_wall_clock_timeout"
-location: "L111"
+community: "_patch_questions"
+location: "L1561"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_safe_get_text_has_wall_clock_timeout
+  - community/_patch_questions
 ---
 
 # scenario()
 
 ## Connections
-- [[test_safe_get_text_has_wall_clock_timeout()]] - `contains` [EXTRACTED]
+- [[_patch_questions()]] - `calls` [EXTRACTED]
+- [[responder()_14]] - `indirect_call` [INFERRED]
+- [[test_questions_collapses_newlines_in_answers()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_safe_get_text_has_wall_clock_timeout
+#graphify/code #graphify/EXTRACTED #community/_patch_questions

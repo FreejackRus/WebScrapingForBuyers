@@ -12,9 +12,9 @@ tags:
 # _WsLike
 
 ## Connections
-- [[dot-__init__()_5]] - `references` [EXTRACTED]
+- [[dot-__init__()_40]] - `references` [EXTRACTED]
 - [[dot-recv()_1]] - `method` [EXTRACTED]
-- [[dot-send()_1]] - `method` [EXTRACTED]
+- [[dot-send()_4]] - `method` [EXTRACTED]
 - [[Protocol_1]] - `inherits` [EXTRACTED]
 - [[The slice of a websockets client connection the raw page drives.]] - `rationale_for` [EXTRACTED]
 - [[chrome_cdp.py]] - `contains` [EXTRACTED]

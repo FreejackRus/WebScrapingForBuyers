@@ -1,18 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "_run"
-location: "L457"
+community: "no_wait"
+location: "L1092"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/_run
+  - graphify/INFERRED
+  - community/no_wait
 ---
 
 # scenario()
 
 ## Connections
-- [[fake_fetch()]] - `indirect_call` [INFERRED]
-- [[test_ozon_search_skips_unhashable_sku_values()]] - `contains` [EXTRACTED]
+- [[fake_safe_get_text()_2]] - `indirect_call` [INFERRED]
+- [[no_wait()_2]] - `indirect_call` [INFERRED]
+- [[test_wb_selfcheck_search_goods_nonpositive_ids_are_drift()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_run
+#graphify/code #graphify/INFERRED #community/no_wait

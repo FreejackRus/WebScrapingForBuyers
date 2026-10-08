@@ -12,7 +12,7 @@ tags:
 # _metro_rows()
 
 ## Connections
-- [[Any_13]] - `references` [EXTRACTED]
+- [[Any_7]] - `references` [EXTRACTED]
 - [[Stations as Cian ranks them the one it marks ``isDefault`` (the station shown…]] - `rationale_for` [EXTRACTED]
 - [[_d()]] - `calls` [EXTRACTED]
 - [[_offer_row()]] - `calls` [EXTRACTED]

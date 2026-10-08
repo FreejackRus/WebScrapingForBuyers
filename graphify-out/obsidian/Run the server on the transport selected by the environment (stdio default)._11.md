@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/__main__.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/__main__.py"
 type: "rationale"
-community: "taobao_connector/__main__.py"
-location: "L14"
+community: "sys"
+location: "L22"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/taobao_connector/__main__py
+  - community/sys
 ---
 
 # Run the server on the transport selected by the environment (stdio default).
 
 ## Connections
-- [[main()_22]] - `rationale_for` [EXTRACTED]
+- [[main()_21]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/taobao_connector/__main__py
+#graphify/rationale #graphify/EXTRACTED #community/sys

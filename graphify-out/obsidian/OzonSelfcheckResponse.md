@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/models_output.py"
 type: "code"
-community: "ozon_card"
-location: "L130"
+community: "ozon_selfcheck"
+location: "L131"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ozon_card
+  - community/ozon_selfcheck
 ---
 
 # OzonSelfcheckResponse
@@ -18,4 +18,4 @@ tags:
 - [[ozon_connectorserver.py]] - `imports` [EXTRACTED]
 - [[ozon_selfcheck()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/ozon_card
+#graphify/code #graphify/EXTRACTED #community/ozon_selfcheck

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py"
 type: "code"
-community: "avito-connector/tests/test_server.py"
-location: "L118"
+community: "_patch_fetch"
+location: "L127"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/avito-connector/tests/test_serverpy
+  - community/_patch_fetch
 ---
 
 # test_search_a_pricelss_listing_is_none_never_zero()
@@ -17,4 +17,4 @@ tags:
 - [[_patch_fetch()]] - `calls` [EXTRACTED]
 - [[avito-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/avito-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/_patch_fetch

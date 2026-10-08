@@ -16,6 +16,6 @@ tags:
 - [[fake_fetch()_2]] - `contains` [EXTRACTED]
 - [[own_reviews=0 is the honest answer, not an error and not an empty result.]] - `rationale_for` [EXTRACTED]
 - [[ozon-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[scenario()_21]] - `contains` [EXTRACTED]
+- [[scenario()_23]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_run

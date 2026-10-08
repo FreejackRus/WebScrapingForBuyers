@@ -1,12 +1,12 @@
 ---
 source_file: "apps/analysis/src/server.ts"
 type: "code"
-community: "analysis/src/app.ts"
+community: "identity/src/app.ts"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/analysis/src/appts
+  - community/identity/src/appts
 ---
 
 # analysis/src/server.ts
@@ -17,4 +17,4 @@ tags:
 - [[packages_service_kit_dist_index]] - `imports_from` [EXTRACTED]
 - [[packages_service_kit_dist_index_listenservice]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/analysis/src/appts
+#graphify/code #graphify/EXTRACTED #community/identity/src/appts

@@ -1,84 +1,68 @@
 ---
 type: community
-cohesion: 0.06
-members: 69
+cohesion: 0.07
+members: 53
 ---
 
 # packages_contracts_dist_index
 
-**Cohesion:** 0.06 - loosely connected
-**Members:** 69 nodes
+**Cohesion:** 0.07 - loosely connected
+**Members:** 53 nodes
 
 ## Members
-- [[dot-constructor()_7]] - code - apps/search/src/infrastructure/sources/apify-marketplace-adapter.ts
-- [[dot-constructor()_8]] - code - apps/search/src/infrastructure/sources/demo-source-adapter.ts
-- [[dot-constructor()_9]] - code - apps/search/src/infrastructure/sources/fallback-source-adapter.ts
-- [[dot-search()_6]] - code - apps/search/src/app.test.ts
-- [[dot-search()_7]] - code - apps/search/src/domain/source-adapter.ts
-- [[dot-search()_8]] - code - apps/search/src/infrastructure/sources/apify-marketplace-adapter.ts
-- [[dot-search()_9]] - code - apps/search/src/infrastructure/sources/demo-source-adapter.ts
-- [[dot-search()_10]] - code - apps/search/src/infrastructure/sources/fallback-source-adapter.ts
-- [[dot-toOffer()_1]] - code - apps/search/src/infrastructure/sources/apify-marketplace-adapter.ts
-- [[ApifyMarketplaceAdapter]] - code - apps/search/src/infrastructure/sources/apify-marketplace-adapter.ts
-- [[ApifySourceConfig]] - code - apps/search/src/infrastructure/sources/apify-marketplace-adapter.ts
-- [[DemoSourceAdapter]] - code - apps/search/src/infrastructure/sources/demo-source-adapter.ts
-- [[DemoSourceOptions]] - code - apps/search/src/infrastructure/sources/demo-source-adapter.ts
-- [[FallbackSourceAdapter]] - code - apps/search/src/infrastructure/sources/fallback-source-adapter.ts
-- [[JsonObject_1]] - code - apps/search/src/infrastructure/sources/apify-marketplace-adapter.ts
+- [[Assessment]] - code - apps/search/src/domain/offer-assessment.ts
+- [[DEFAULT_RETENTION]] - code - apps/search/src/application/search-service.ts
+- [[DEFAULT_SOURCE_TIMEOUT_MS]] - code - apps/search/src/application/search-service.ts
 - [[Listener]] - code - apps/search/src/application/search-service.ts
-- [[Offer]] - code - packages/contracts/src/index.ts
-- [[SourceAdapter]] - code - apps/search/src/domain/source-adapter.ts
-- [[TestSource]] - code - apps/search/src/app.test.ts
-- [[allowDemoSources()]] - code - apps/search/src/app.ts
-- [[apify-client_1]] - concept - apps/search/package.json
-- [[apify-marketplace-adapter.ts]] - code - apps/search/src/infrastructure/sources/apify-marketplace-adapter.ts
-- [[app.test.ts]] - code - apps/search/src/app.test.ts
-- [[apps_2]] - code - apps/search/src/app.test.ts
-- [[booleanAvailability()]] - code - apps/search/src/infrastructure/sources/apify-marketplace-adapter.ts
-- [[boundedNumber()]] - code - apps/search/src/infrastructure/sources/apify-marketplace-adapter.ts
-- [[buildSearchApp()]] - code - apps/search/src/app.ts
-- [[createApifySourcesFromEnv()]] - code - apps/search/src/infrastructure/sources/apify-marketplace-adapter.ts
-- [[createDemoSources()]] - code - apps/search/src/infrastructure/sources/demo-source-adapter.ts
-- [[createHttpMarketplaceSources()]] - code - apps/search/src/infrastructure/sources/http-marketplace-adapter.ts
-- [[createMarketplaceSourcesFromEnv()]] - code - apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts
-- [[demo-source-adapter.ts]] - code - apps/search/src/infrastructure/sources/demo-source-adapter.ts
-- [[fallback-source-adapter.test.ts]] - code - apps/search/src/infrastructure/sources/fallback-source-adapter.test.ts
-- [[fallback-source-adapter.ts]] - code - apps/search/src/infrastructure/sources/fallback-source-adapter.ts
-- [[firstPrice()_1]] - code - apps/search/src/infrastructure/sources/apify-marketplace-adapter.ts
-- [[firstString()_1]] - code - apps/search/src/infrastructure/sources/apify-marketplace-adapter.ts
-- [[isMcpUnavailableError()]] - code - apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts
-- [[isObject()_1]] - code - apps/search/src/infrastructure/sources/apify-marketplace-adapter.ts
-- [[isWbStaleCatalogMiss()]] - code - apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts
-- [[mergeSnapshotOffers()]] - code - apps/search/src/app.test.ts
-- [[mergeSourceFallbacks()]] - code - apps/search/src/infrastructure/sources/fallback-source-adapter.ts
-- [[offer_1]] - code - apps/search/src/infrastructure/sources/fallback-source-adapter.test.ts
-- [[offer()_2]] - code - apps/web/src/widgets/search/workspace/ui/index.test.tsx
+- [[PART_WORDS]] - code - apps/search/src/domain/consumable-parts.ts
+- [[THIRD_PARTY_BRANDS]] - code - apps/search/src/domain/origin-intent.ts
+- [[TOO_LOW_SHARE]] - code - apps/search/src/domain/price-anomaly.ts
+- [[articles()]] - code - apps/search/src/domain/offer-assessment.ts
+- [[assessConditions()]] - code - apps/search/src/domain/offer-assessment.ts
+- [[assessOffer()]] - code - apps/search/src/domain/offer-assessment.ts
+- [[capacities()]] - code - apps/search/src/domain/offer-assessment.ts
+- [[compact()]] - code - apps/search/src/domain/offer-assessment.ts
+- [[consumable-parts.ts]] - code - apps/search/src/domain/consumable-parts.ts
+- [[emptyOffers]] - code - apps/web/src/features/search/filter-offers/index.ts
+- [[emptyOffers_1]] - code - apps/web/src/features/search/open-offer/index.ts
+- [[exceljs_1]] - concept - apps/search/package.json
+- [[export-service.test.ts]] - code - apps/search/src/application/export-service.test.ts
+- [[export-service.ts]] - code - apps/search/src/application/export-service.ts
+- [[exportSearch()]] - code - apps/search/src/application/export-service.ts
+- [[filter-offersindex.ts]] - code - apps/web/src/features/search/filter-offers/index.ts
+- [[flagPriceAnomalies()]] - code - apps/search/src/domain/price-anomaly.ts
+- [[hasWord()]] - code - apps/search/src/domain/origin-intent.ts
+- [[identityIn()]] - code - apps/search/src/domain/offer-assessment.ts
+- [[isUnrequestedConsumablePart()]] - code - apps/search/src/domain/consumable-parts.ts
+- [[kitQuantity()]] - code - apps/search/src/domain/offer-assessment.ts
+- [[leadingTitle()]] - code - apps/search/src/domain/consumable-parts.ts
+- [[matchedIdentity()]] - code - apps/search/src/domain/offer-assessment.ts
+- [[matchesOriginIntent()]] - code - apps/search/src/domain/origin-intent.ts
+- [[median()]] - code - apps/search/src/domain/price-anomaly.ts
+- [[offer()_4]] - code - apps/search/src/domain/offer-assessment.test.ts
+- [[offer()_5]] - code - apps/search/src/domain/origin-intent.test.ts
+- [[offer()_6]] - code - apps/search/src/domain/price-anomaly.test.ts
+- [[offer()_7]] - code - apps/web/src/entities/offer/lib/table-filter.test.ts
+- [[offer-assessment.test.ts]] - code - apps/search/src/domain/offer-assessment.test.ts
+- [[offer-assessment.ts]] - code - apps/search/src/domain/offer-assessment.ts
+- [[offerOrigin]] - code - apps/search/src/domain/origin-intent.ts
+- [[open-offerindex.ts]] - code - apps/web/src/features/search/open-offer/index.ts
+- [[origin-intent.test.ts]] - code - apps/search/src/domain/origin-intent.test.ts
+- [[origin-intent.ts]] - code - apps/search/src/domain/origin-intent.ts
+- [[originInTitle()]] - code - apps/search/src/domain/offer-assessment.ts
+- [[originIntent]] - code - apps/search/src/domain/origin-intent.ts
 - [[packages_contracts_dist_index]] - concept
-- [[packages_contracts_dist_index_matchkind]] - concept
 - [[packages_contracts_dist_index_offer]] - concept
-- [[packages_contracts_dist_index_product]] - concept
-- [[packages_contracts_dist_index_productcondition]] - concept
-- [[packages_contracts_dist_index_searchsnapshot]] - concept
-- [[packages_contracts_dist_index_sourcestate]] - concept
-- [[presentChainedSourceErrors()]] - code - apps/search/src/infrastructure/sources/fallback-source-adapter.ts
-- [[product_3]] - code - apps/search/src/infrastructure/sources/fallback-source-adapter.test.ts
-- [[ref_node_timers]] - concept
-- [[ref_vitest]] - concept
-- [[search()_10]] - code - apps/search/src/app.test.ts
+- [[pageYield()]] - code - apps/search/src/domain/offer-assessment.ts
+- [[pantum]] - code - apps/search/src/domain/origin-intent.test.ts
+- [[price-anomaly.test.ts]] - code - apps/search/src/domain/price-anomaly.test.ts
+- [[price-anomaly.ts]] - code - apps/search/src/domain/price-anomaly.ts
+- [[product()_1]] - code - apps/search/src/domain/offer-assessment.test.ts
+- [[requestedOrigin()]] - code - apps/search/src/domain/offer-assessment.ts
+- [[requestedPack()]] - code - apps/search/src/domain/offer-assessment.ts
 - [[search-service.ts]] - code - apps/search/src/application/search-service.ts
-- [[searchsrcapp.ts]] - code - apps/search/src/app.ts
-- [[sellerName()]] - code - apps/search/src/infrastructure/sources/apify-marketplace-adapter.ts
-- [[source-adapter.ts]] - code - apps/search/src/domain/source-adapter.ts
-- [[sourceLabels]] - code - apps/web/src/widgets/search/sources/ui/index.tsx
-- [[sources]] - code - apps/web/src/widgets/search/sources/ui/index.test.tsx
-- [[sourcesuiindex.test.tsx]] - code - apps/web/src/widgets/search/sources/ui/index.test.tsx
-- [[sourcesuiindex.tsx]] - code - apps/web/src/widgets/search/sources/ui/index.tsx
-- [[startindex.ts]] - code - apps/web/src/features/search/start/index.ts
-- [[state]] - code - apps/web/src/widgets/search/workspace/ui/index.test.tsx
-- [[workspaceuiindex.test.tsx]] - code - apps/web/src/widgets/search/workspace/ui/index.test.tsx
-- [[Если API так и не выдадут — как собирать]] - document - docs/DISTRIBUTORS.md
-- [[Матрица]] - document - docs/DISTRIBUTORS.md
-- [[Подключение реального источника]] - document - README.md
+- [[selectedFacts()]] - code - apps/search/src/domain/offer-assessment.ts
+- [[table-filter.test.ts]] - code - apps/web/src/entities/offer/lib/table-filter.test.ts
 
 ## Live Query (requires Dataview plugin)
 
@@ -88,42 +72,37 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 23 edges to [[_COMMUNITY_mcp-marketplace-adapter.ts]]
-- 16 edges to [[_COMMUNITY_b2b-distributor-adapter.ts]]
-- 14 edges to [[_COMMUNITY_http-marketplace-adapter.ts]]
-- 13 edges to [[_COMMUNITY_live-suggest.ts]]
-- 11 edges to [[_COMMUNITY_useSearchStore]]
-- 8 edges to [[_COMMUNITY_workspaceuiindex.tsx]]
-- 7 edges to [[_COMMUNITY_useAnalysisStore]]
-- 6 edges to [[_COMMUNITY_gatewaysrcapp.ts]]
-- 6 edges to [[_COMMUNITY_analyze.ts]]
-- 5 edges to [[_COMMUNITY_SearchService]]
-- 5 edges to [[_COMMUNITY_analyze.test.ts]]
-- 5 edges to [[_COMMUNITY_ollama-analysis-narrator.ts]]
-- 5 edges to [[_COMMUNITY_offersuiindex.tsx]]
-- 4 edges to [[_COMMUNITY_identitysrcapp.ts]]
-- 4 edges to [[_COMMUNITY_merlion-client.ts]]
-- 4 edges to [[_COMMUNITY_entitiesuserindex.ts]]
-- 4 edges to [[_COMMUNITY_netlab-client.ts]]
-- 4 edges to [[_COMMUNITY_memory-auth-store.ts]]
-- 3 edges to [[_COMMUNITY_Источники дистрибьюторы и маркетплейсы]]
-- 3 edges to [[_COMMUNITY_Итерации]]
-- 3 edges to [[_COMMUNITY_analysissrcapp.ts]]
-- 3 edges to [[_COMMUNITY_infra-leak.ts]]
-- 3 edges to [[_COMMUNITY_App.tsx]]
-- 2 edges to [[_COMMUNITY_ПЕРЕМЕНА Price Radar — MVP]]
+- 22 edges to [[_COMMUNITY_SourceAdapter]]
+- 17 edges to [[_COMMUNITY_product-from-query.ts]]
+- 17 edges to [[_COMMUNITY_offersuiindex.tsx]]
+- 10 edges to [[_COMMUNITY_SearchService]]
+- 9 edges to [[_COMMUNITY_analyze.test.ts]]
+- 9 edges to [[_COMMUNITY_useSearchStore]]
+- 8 edges to [[_COMMUNITY_ref_vitest]]
+- 5 edges to [[_COMMUNITY_workspaceuiindex.tsx]]
+- 5 edges to [[_COMMUNITY_analyze.ts]]
+- 4 edges to [[_COMMUNITY_analysisstoreindex.ts]]
+- 3 edges to [[_COMMUNITY_mcp-marketplace-adapter.ts]]
+- 3 edges to [[_COMMUNITY_commanduiindex.tsx]]
+- 3 edges to [[_COMMUNITY_b2b-distributor-adapter.ts]]
+- 3 edges to [[_COMMUNITY_gatewaysrcapp.ts]]
+- 2 edges to [[_COMMUNITY_storefront-distributor-adapter.ts]]
+- 2 edges to [[_COMMUNITY_marketplace-relevance.ts]]
+- 2 edges to [[_COMMUNITY_SearchHistory]]
 - 2 edges to [[_COMMUNITY_useUserStore]]
-- 1 edge to [[_COMMUNITY_Project-specific supplement]]
-- 1 edge to [[_COMMUNITY_contractssrcindex.ts]]
-- 1 edge to [[_COMMUNITY_dns_card]]
-- 1 edge to [[_COMMUNITY_aliexpress_connectorserver.py]]
-- 1 edge to [[_COMMUNITY_citilink_card]]
+- 2 edges to [[_COMMUNITY_netlab-price-feed.ts]]
+- 2 edges to [[_COMMUNITY_memory-auth-store.ts]]
+- 2 edges to [[_COMMUNITY_ollama-analysis-narrator.ts]]
+- 2 edges to [[_COMMUNITY_compare-models.ts]]
+- 2 edges to [[_COMMUNITY_merlion-client.ts]]
+- 2 edges to [[_COMMUNITY_netlab-client.ts]]
+- 1 edge to [[_COMMUNITY_chatuiindex.tsx]]
 - 1 edge to [[_COMMUNITY_searchpackage.json]]
-- 1 edge to [[_COMMUNITY_narrationNeedsRussianRetry]]
+- 1 edge to [[_COMMUNITY_infra-leak.ts]]
 
 ## Top bridge nodes
-- [[packages_contracts_dist_index]] - degree 47, connects to 18 communities
-- [[ref_vitest]] - degree 19, connects to 12 communities
-- [[packages_contracts_dist_index_product]] - degree 22, connects to 9 communities
-- [[packages_contracts_dist_index_offer]] - degree 20, connects to 9 communities
-- [[SourceAdapter]] - degree 31, connects to 8 communities
+- [[packages_contracts_dist_index]] - degree 75, connects to 26 communities
+- [[packages_contracts_dist_index_offer]] - degree 40, connects to 16 communities
+- [[search-service.ts]] - degree 27, connects to 6 communities
+- [[offer-assessment.ts]] - degree 22, connects to 2 communities
+- [[assessOffer()]] - degree 11, connects to 2 communities

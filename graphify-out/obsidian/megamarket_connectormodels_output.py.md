@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/models_output.py"
 type: "code"
-community: "megamarket_connector/models_output.py"
+community: "log_event"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/megamarket_connector/models_outputpy
+  - community/log_event
 ---
 
 # megamarket_connector/models_output.py
@@ -23,4 +23,4 @@ tags:
 - [[models.py]] - `imports_from` [EXTRACTED]
 - [[pydantic]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/megamarket_connector/models_outputpy
+#graphify/code #graphify/EXTRACTED #community/log_event

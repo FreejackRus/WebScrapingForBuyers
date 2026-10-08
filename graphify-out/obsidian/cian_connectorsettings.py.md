@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/settings.py"
 type: "code"
-community: "cian_connector/server.py"
+community: "pydantic"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/cian_connector/serverpy
+  - community/pydantic
 ---
 
 # cian_connector/settings.py
@@ -16,8 +16,8 @@ tags:
 - [[CianSettings]] - `contains` [EXTRACTED]
 - [[cian_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[functools]] - `imports_from` [EXTRACTED]
-- [[get_settings()]] - `contains` [EXTRACTED]
+- [[get_settings()_3]] - `contains` [EXTRACTED]
 - [[pydantic]] - `imports_from` [EXTRACTED]
 - [[pydantic_settings]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/cian_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/pydantic

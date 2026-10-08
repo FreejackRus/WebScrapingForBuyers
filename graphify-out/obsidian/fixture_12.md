@@ -11,6 +11,6 @@ tags:
 # fixture
 
 ## Connections
-- [[Clock]] - `references` [EXTRACTED]
+- [[clock()]] - `references` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/Clock

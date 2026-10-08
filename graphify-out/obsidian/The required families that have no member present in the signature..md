@@ -1,12 +1,12 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/shape_reference.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/shape_reference.py"
 type: "rationale"
-community: "avito_seller"
-location: "L110"
+community: "taobao_connector/server.py"
+location: "L81"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/avito_seller
+  - community/taobao_connector/serverpy
 ---
 
 # The required families that have no member present in the signature.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[missing_required_families()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/avito_seller
+#graphify/rationale #graphify/EXTRACTED #community/taobao_connector/serverpy

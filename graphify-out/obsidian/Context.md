@@ -1,22 +1,21 @@
 ---
 source_file: ""
 type: "code"
-community: "avito_seller"
+community: "aliexpress_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/avito_seller
+  - community/aliexpress_card
 ---
 
 # Context
 
 ## Connections
-- [[_avito_selfcheck_impl()]] - `references` [EXTRACTED]
-- [[_cdp_fetch()]] - `references` [EXTRACTED]
-- [[_fetch()]] - `references` [EXTRACTED]
-- [[avito_card()]] - `references` [EXTRACTED]
-- [[avito_search()]] - `references` [EXTRACTED]
-- [[avito_selfcheck()]] - `references` [EXTRACTED]
-- [[avito_seller()]] - `references` [EXTRACTED]
+- [[_aliexpress_selfcheck_impl()]] - `references` [EXTRACTED]
+- [[_cdp_card()]] - `references` [EXTRACTED]
+- [[_cdp_render_search()]] - `references` [EXTRACTED]
+- [[aliexpress_card()]] - `references` [EXTRACTED]
+- [[aliexpress_search()]] - `references` [EXTRACTED]
+- [[aliexpress_selfcheck()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/avito_seller
+#graphify/code #graphify/EXTRACTED #community/aliexpress_card

@@ -2,7 +2,7 @@
 source_file: "apps/identity/src/infrastructure/memory-auth-store.ts"
 type: "code"
 community: "memory-auth-store.ts"
-location: "L105"
+location: "L111"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,7 +12,6 @@ tags:
 # hashPassword()
 
 ## Connections
-- [[dot-changePassword()_1]] - `calls` [EXTRACTED]
 - [[makeUser()]] - `calls` [EXTRACTED]
 - [[memory-auth-store.ts]] - `contains` [EXTRACTED]
 

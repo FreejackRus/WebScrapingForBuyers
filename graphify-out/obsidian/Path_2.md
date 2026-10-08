@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "dns-connector/tests/test_card_extractor_dom.py"
+community: "citilink-connector/tests/test_card_extractor_dom.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/dns-connector/tests/test_card_extractor_dompy
+  - community/citilink-connector/tests/test_card_extractor_dompy
 ---
 
 # Path
 
 ## Connections
-- [[_extract()_2]] - `references` [EXTRACTED]
+- [[_extract()_3]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/dns-connector/tests/test_card_extractor_dompy
+#graphify/code #graphify/EXTRACTED #community/citilink-connector/tests/test_card_extractor_dompy

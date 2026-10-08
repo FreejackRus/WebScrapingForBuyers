@@ -12,7 +12,7 @@ tags:
 # _price_from()
 
 ## Connections
-- [[Any_10]] - `references` [EXTRACTED]
+- [[Any_17]] - `references` [EXTRACTED]
 - [[Pull a rouble amount out of the several shapes prices arrive in. Upstream uses…]] - `rationale_for` [EXTRACTED]
 - [[_parse_product()]] - `calls` [EXTRACTED]
 - [[detmir_connectorserver.py]] - `contains` [EXTRACTED]

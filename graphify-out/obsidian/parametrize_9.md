@@ -1,17 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "test_card_rejects_non_numeric_ids"
+community: "test_http_tier.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_card_rejects_non_numeric_ids
+  - community/test_http_tierpy
 ---
 
 # parametrize
 
 ## Connections
-- [[test_card_rejects_non_numeric_ids()]] - `references` [EXTRACTED]
-- [[test_search_rejects_too_short_queries()]] - `references` [EXTRACTED]
+- [[test_gateway_statuses_are_retried()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_card_rejects_non_numeric_ids
+#graphify/code #graphify/EXTRACTED #community/test_http_tierpy

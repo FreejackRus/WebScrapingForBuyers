@@ -12,8 +12,8 @@ tags:
 # test_docker_probe_rejects_wrong_or_missing_versions()
 
 ## Connections
-- [[main()_27]] - `calls` [EXTRACTED]
-- [[parametrize_28]] - `references` [EXTRACTED]
+- [[main()_26]] - `calls` [EXTRACTED]
+- [[parametrize_21]] - `references` [EXTRACTED]
 - [[replace_command()]] - `calls` [EXTRACTED]
 - [[test_stdio_probe.py]] - `contains` [EXTRACTED]
 

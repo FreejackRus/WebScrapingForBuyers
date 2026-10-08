@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py"
 type: "code"
-community: "_no_cache"
-location: "L54"
+community: "aliexpress-connector/tests/test_server.py"
+location: "L63"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_no_cache
+  - community/aliexpress-connector/tests/test_serverpy
 ---
 
 # _no_cache()
 
 ## Connections
-- [[fixture_16]] - `references` [EXTRACTED]
-- [[lamoda-connectorteststest_server.py]] - `contains` [EXTRACTED]
+- [[aliexpress-connectorteststest_server.py]] - `contains` [EXTRACTED]
+- [[fixture_22]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_no_cache
+#graphify/code #graphify/EXTRACTED #community/aliexpress-connector/tests/test_serverpy

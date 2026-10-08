@@ -13,8 +13,8 @@ tags:
 
 ## Connections
 - [[_drifted_values_search_html()]] - `calls` [EXTRACTED]
-- [[capture()_17]] - `calls` [EXTRACTED]
-- [[capture()_18]] - `calls` [EXTRACTED]
+- [[capture()_14]] - `calls` [EXTRACTED]
+- [[capture()_15]] - `calls` [EXTRACTED]
 - [[fake_get()]] - `calls` [EXTRACTED]
 - [[test_card_can_skip_reviews()]] - `calls` [EXTRACTED]
 - [[test_card_empty_shell_is_not_reported_as_parser_drift()]] - `calls` [EXTRACTED]

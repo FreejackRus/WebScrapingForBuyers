@@ -2,7 +2,7 @@
 source_file: "apps/search/src/infrastructure/sources/ocs-client.ts"
 type: "code"
 community: "b2b-distributor-adapter.ts"
-location: "L145"
+location: "L146"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,7 +12,7 @@ tags:
 # searchOcs()
 
 ## Connections
-- [[dot-search()_4]] - `calls` [EXTRACTED]
+- [[dot-search()_12]] - `calls` [EXTRACTED]
 - [[b2b-distributor-adapter.ts]] - `imports` [EXTRACTED]
 - [[buildSearchUrl()]] - `calls` [EXTRACTED]
 - [[deepFindArray()]] - `calls` [EXTRACTED]

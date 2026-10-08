@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "ozon_connector/server.py"
+community: "process.py"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/ozon_connector/serverpy
+  - community/processpy
 ---
 
 # signal
@@ -14,4 +14,4 @@ tags:
 - [[process.py]] - `imports` [EXTRACTED]
 - [[stdio_probe.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/ozon_connector/serverpy
+#graphify/concept #graphify/EXTRACTED #community/processpy

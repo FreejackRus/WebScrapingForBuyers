@@ -1,16 +1,19 @@
 ---
 source_file: ""
 type: "code"
-community: "taobao_card"
+community: "compare_verify_offer"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/taobao_card
+  - community/compare_verify_offer
 ---
 
 # Context
 
 ## Connections
-- [[current_mcp_session_id()]] - `references` [EXTRACTED]
+- [[_client_capabilities()]] - `references` [EXTRACTED]
+- [[compare_browser_snapshot()]] - `references` [EXTRACTED]
+- [[compare_prices()]] - `references` [EXTRACTED]
+- [[compare_sources()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/taobao_card
+#graphify/code #graphify/EXTRACTED #community/compare_verify_offer

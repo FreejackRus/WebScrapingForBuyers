@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "entities/user/index.ts"
+community: "useUserStore"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/entities/user/indexts
+  - community/useUserStore
 ---
 
 # apps_web_src_entities_user_types_index_sessionuser
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[entitiesuserindex.ts]] - `re_exports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/entities/user/indexts
+#graphify/concept #graphify/EXTRACTED #community/useUserStore

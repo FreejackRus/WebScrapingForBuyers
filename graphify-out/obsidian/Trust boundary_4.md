@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/wb-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/yandex-connector/SKILL.md"
 type: "document"
-community: "Wildberries Connector"
-location: "L140"
+community: "Yandex Market Connector"
+location: "L102"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Wildberries_Connector
+  - community/Yandex_Market_Connector
 ---
 
 # Trust boundary
 
 ## Connections
-- [[Wildberries Connector_1]] - `contains` [EXTRACTED]
+- [[Yandex Market Connector_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Wildberries_Connector
+#graphify/document #graphify/EXTRACTED #community/Yandex_Market_Connector

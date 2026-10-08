@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_shape_reference.py"
 type: "rationale"
-community: "avito-connector/tests/test_shape_reference.py"
+community: "shape_signature"
 location: "L85"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/avito-connector/tests/test_shape_referencepy
+  - community/shape_signature
 ---
 
 # Avito moved listings into catalog.items[], but the parser binds both shapes and…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_the_pre_2026_08_top_level_envelope_still_passes_the_families()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/avito-connector/tests/test_shape_referencepy
+#graphify/rationale #graphify/EXTRACTED #community/shape_signature

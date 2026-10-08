@@ -12,6 +12,6 @@ tags:
 # POST ``jsonQuery`` to the search API from inside a cian.ru tab. Serialised via…
 
 ## Connections
-- [[_cdp_post_json()_1]] - `rationale_for` [EXTRACTED]
+- [[_cdp_post_json()]] - `rationale_for` [EXTRACTED]
 
 #graphify/rationale #graphify/EXTRACTED #community/cian_connector/serverpy

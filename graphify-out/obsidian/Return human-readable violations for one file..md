@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_no_print.py"
 type: "rationale"
-community: "test_dependency_parity.py"
+community: "check_no_print.py"
 location: "L63"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/test_dependency_paritypy
+  - community/check_no_printpy
 ---
 
 # Return human-readable violations for one file.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[check_file()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/test_dependency_paritypy
+#graphify/rationale #graphify/EXTRACTED #community/check_no_printpy

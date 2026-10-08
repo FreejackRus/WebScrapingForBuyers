@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/cian-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/ozon-connector/SKILL.md"
 type: "document"
-community: "Cian Connector"
-location: "L122"
+community: "Ozon Connector"
+location: "L43"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Cian_Connector
+  - community/Ozon_Connector
 ---
 
 # Gotchas
 
 ## Connections
-- [[Cian Connector_1]] - `contains` [EXTRACTED]
+- [[Ozon Connector_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Cian_Connector
+#graphify/document #graphify/EXTRACTED #community/Ozon_Connector

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_search_extractor_dom.py"
 type: "rationale"
-community: "_items"
+community: "citilink-connector/tests/test_search_extractor_dom.py"
 location: "L109"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/_items
+  - community/citilink-connector/tests/test_search_extractor_dompy
 ---
 
 # The first product anchor per tile is an empty overlay link.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_title_comes_from_a_text_bearing_anchor_not_the_empty_overlay()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/_items
+#graphify/rationale #graphify/EXTRACTED #community/citilink-connector/tests/test_search_extractor_dompy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/src/aliexpress_connector/models_output.py"
 type: "code"
-community: "models.py"
-location: "L52"
+community: "dns_card"
+location: "L53"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/modelspy
+  - community/dns_card
 ---
 
 # AliSelfcheckCheckOut
@@ -15,4 +15,4 @@ tags:
 - [[SelfCheckEntryBase]] - `inherits` [EXTRACTED]
 - [[aliexpress_connectormodels_output.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/modelspy
+#graphify/code #graphify/EXTRACTED #community/dns_card

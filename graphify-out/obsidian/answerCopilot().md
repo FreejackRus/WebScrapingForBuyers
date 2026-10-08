@@ -1,12 +1,12 @@
 ---
 source_file: "apps/analysis/src/application/analyze.ts"
 type: "code"
-community: "analysis/src/app.ts"
-location: "L537"
+community: "compare-models.ts"
+location: "L654"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/analysis/src/appts
+  - community/compare-modelsts
 ---
 
 # answerCopilot()
@@ -17,6 +17,9 @@ tags:
 - [[analyze.ts]] - `contains` [EXTRACTED]
 - [[answerCopilotRaw()]] - `calls` [EXTRACTED]
 - [[buildAnalysisApp()]] - `calls` [EXTRACTED]
+- [[compare-models.ts]] - `imports` [EXTRACTED]
+- [[evaluate()_4]] - `calls` [EXTRACTED]
 - [[sanitizeAnalysisResult()]] - `calls` [EXTRACTED]
+- [[Прежняя модель (2026-09-29 — 2026-10-05)]] - `references` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/analysis/src/appts
+#graphify/code #graphify/EXTRACTED #community/compare-modelsts

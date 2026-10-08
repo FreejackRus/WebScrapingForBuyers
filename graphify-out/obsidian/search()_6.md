@@ -1,20 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_source_warnings.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_search_offer_integrity.py"
 type: "code"
-community: "wb_connector/server.py"
-location: "L44"
+community: "test_native_ozon_explicit_absence_survives_both_label_channels"
+location: "L74"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/wb_connector/serverpy
+  - community/test_native_ozon_explicit_absence_survives_both_label_channels
 ---
 
 # search()
 
 ## Connections
-- [[MetaOut_5]] - `calls` [EXTRACTED]
-- [[WbCardItem]] - `calls` [EXTRACTED]
-- [[WbSearchResponse]] - `calls` [EXTRACTED]
-- [[test_warning_does_not_drop_valid_offer_and_is_isolated_per_request()]] - `contains` [EXTRACTED]
+- [[test_native_ozon_stock_labels_cannot_fabricate_available_winner()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/test_native_ozon_explicit_absence_survives_both_label_channels

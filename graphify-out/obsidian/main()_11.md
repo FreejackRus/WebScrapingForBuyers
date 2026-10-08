@@ -1,18 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/_win_job_runner.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/__main__.py"
 type: "code"
-community: "_win_job_runner.py"
-location: "L55"
+community: "sys"
+location: "L20"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_win_job_runnerpy
+  - community/sys
 ---
 
 # main()
 
 ## Connections
-- [[_ExtendedLimits]] - `calls` [EXTRACTED]
-- [[_win_job_runner.py]] - `contains` [EXTRACTED]
+- [[Run the server on the transport selected by the environment (stdio default)._1]] - `rationale_for` [EXTRACTED]
+- [[avito_connector__main__.py]] - `contains` [EXTRACTED]
+- [[run_server()]] - `calls` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/_win_job_runnerpy
+#graphify/code #graphify/EXTRACTED #community/sys

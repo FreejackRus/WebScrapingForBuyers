@@ -12,7 +12,7 @@ tags:
 # _first_brand()
 
 ## Connections
-- [[Any_10]] - `references` [EXTRACTED]
+- [[Any_17]] - `references` [EXTRACTED]
 - [[_parse_product()]] - `calls` [EXTRACTED]
 - [[detmir_connectorserver.py]] - `contains` [EXTRACTED]
 

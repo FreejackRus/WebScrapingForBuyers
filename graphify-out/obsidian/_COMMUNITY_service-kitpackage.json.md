@@ -40,7 +40,7 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 1 edge to [[_COMMUNITY_service-kitsrcindex.ts]]
+- 1 edge to [[_COMMUNITY_identitysrchttproutes.ts]]
 
 ## Top bridge nodes
 - [[service-kitpackage.json]] - degree 14, connects to 1 community

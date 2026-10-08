@@ -1,18 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "test_challenge_recovery_reads_browser_again_and_caches_only_success"
+community: "test_chrome_cdp_raw_lifecycle.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_challenge_recovery_reads_browser_again_and_caches_only_success
+  - community/test_chrome_cdp_raw_lifecyclepy
 ---
 
 # parametrize
 
 ## Connections
-- [[test_card_rejects_input_without_an_item_id()_1]] - `references` [EXTRACTED]
-- [[test_challenge_recovery_reads_browser_again_and_caches_only_success()]] - `references` [EXTRACTED]
-- [[test_extract_item_id_refuses_off_host_input()]] - `references` [EXTRACTED]
+- [[test_raw_cleanup_is_bounded_and_preserves_original_failure()]] - `references` [EXTRACTED]
+- [[test_raw_target_closed_after_every_postcreation_failure()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_challenge_recovery_reads_browser_again_and_caches_only_success
+#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_raw_lifecyclepy

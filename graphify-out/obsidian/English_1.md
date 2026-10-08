@@ -1,18 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v2.4.2.md"
+source_file: "mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v2.0.0.md"
 type: "document"
-community: "v2.4.2 — 2026-09-19"
-location: "L34"
+community: "compare_verify_offer"
+location: "L16"
 tags:
   - graphify/document
-  - graphify/EXTRACTED
-  - community/v242__2026-09-19
+  - graphify/INFERRED
+  - community/compare_verify_offer
 ---
 
 # English
 
 ## Connections
-- [[Release-candidate evidence]] - `contains` [EXTRACTED]
-- [[v2.4.2 — 2026-09-19]] - `contains` [EXTRACTED]
+- [[compare_prices()]] - `references` [INFERRED]
+- [[compare_verify_offer()]] - `references` [INFERRED]
+- [[v2.0.0]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/v242__2026-09-19
+#graphify/document #graphify/INFERRED #community/compare_verify_offer

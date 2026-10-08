@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/http/routes.ts"
 type: "code"
-community: "live-suggest.ts"
-location: "L93"
+community: "product-from-query.ts"
+location: "L107"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/live-suggestts
+  - community/product-from-queryts
 ---
 
 # ProductLike
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[searchsrchttproutes.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/live-suggestts
+#graphify/code #graphify/EXTRACTED #community/product-from-queryts

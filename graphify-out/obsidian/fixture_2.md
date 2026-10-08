@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "compare-connector/tests/test_browser_handoff.py"
+community: "dns-connector/tests/test_server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/compare-connector/tests/test_browser_handoffpy
+  - community/dns-connector/tests/test_serverpy
 ---
 
 # fixture
 
 ## Connections
-- [[_no_cache()]] - `references` [EXTRACTED]
+- [[_no_cache()_1]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/compare-connector/tests/test_browser_handoffpy
+#graphify/code #graphify/EXTRACTED #community/dns-connector/tests/test_serverpy

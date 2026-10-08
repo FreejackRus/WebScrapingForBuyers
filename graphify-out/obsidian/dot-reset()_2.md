@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/pacing.py"
+source_file: "apps/identity/src/http/login-limiter.ts"
 type: "code"
-community: "Pacer"
-location: "L142"
+community: "identity/src/app.ts"
+location: "L50"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Pacer
+  - community/identity/src/appts
 ---
 
 # .reset()
 
 ## Connections
-- [[Forget everything. For tests and for a deliberate session change.]] - `rationale_for` [EXTRACTED]
-- [[Pacer]] - `method` [EXTRACTED]
+- [[LoginLimiter]] - `method` [EXTRACTED]
+- [[normalize()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Pacer
+#graphify/code #graphify/EXTRACTED #community/identity/src/appts

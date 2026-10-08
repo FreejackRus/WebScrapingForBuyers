@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
 type: "code"
-community: "BadRequestError"
+community: "json"
 location: "L98"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/BadRequestError
+  - community/json
 ---
 
 # BadRequestError
 
 ## Connections
-- [[dot-__init__()_26]] - `method` [EXTRACTED]
+- [[dot-__init__()_32]] - `method` [EXTRACTED]
 - [[ConnectorError]] - `inherits` [EXTRACTED]
 - [[_call_card_tool()]] - `uses` [INFERRED]
 - [[_numeric_card_id()]] - `uses` [INFERRED]
@@ -20,10 +20,9 @@ tags:
 - [[_ozon_search_impl()]] - `uses` [INFERRED]
 - [[_resolve_region()]] - `uses` [INFERRED]
 - [[_validate_region()]] - `uses` [INFERRED]
-- [[_validate_skus()]] - `uses` [INFERRED]
 - [[aliexpress_card()]] - `uses` [INFERRED]
 - [[avito_card()]] - `uses` [INFERRED]
-- [[avito_search()]] - `uses` [INFERRED]
+- [[avito_search()_1]] - `uses` [INFERRED]
 - [[avito_seller()]] - `uses` [INFERRED]
 - [[cian_card()]] - `uses` [INFERRED]
 - [[cian_search()]] - `uses` [INFERRED]
@@ -39,16 +38,14 @@ tags:
 - [[lamoda_card()]] - `uses` [INFERRED]
 - [[mcp_core__init__.py]] - `imports` [EXTRACTED]
 - [[megamarket_card()]] - `uses` [INFERRED]
-- [[mpstats_item()]] - `uses` [INFERRED]
-- [[mpstats_warehouses()]] - `uses` [INFERRED]
 - [[ozon_card()]] - `uses` [INFERRED]
 - [[taobao_card()]] - `uses` [INFERRED]
 - [[wb_card()]] - `uses` [INFERRED]
 - [[wb_category_products()]] - `uses` [INFERRED]
 - [[wb_questions()]] - `uses` [INFERRED]
 - [[wb_reviews()]] - `uses` [INFERRED]
-- [[wb_search()]] - `uses` [INFERRED]
+- [[wb_search()_2]] - `uses` [INFERRED]
 - [[yandex_card()]] - `uses` [INFERRED]
 - [[yandex_search()_1]] - `uses` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/BadRequestError
+#graphify/code #graphify/INFERRED #community/json

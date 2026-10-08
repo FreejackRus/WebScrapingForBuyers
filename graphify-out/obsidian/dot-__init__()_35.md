@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/test_ci_concurrency.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
 type: "code"
-community: "test_ci_concurrency.py"
-location: "L100"
+community: "ChallengeRequiredError"
+location: "L94"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_ci_concurrencypy
+  - community/ChallengeRequiredError
 ---
 
 # .__init__()
 
 ## Connections
-- [[_Reader]] - `method` [EXTRACTED]
-- [[_tokenize()]] - `calls` [EXTRACTED]
+- [[dot-__init__()_33]] - `calls` [EXTRACTED]
+- [[ParserDriftError]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_ci_concurrencypy
+#graphify/code #graphify/EXTRACTED #community/ChallengeRequiredError

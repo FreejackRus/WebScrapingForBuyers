@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "code"
-community: "log_event"
-location: "L629"
+community: "wb_connector/server.py"
+location: "L712"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/log_event
+  - community/wb_connector/serverpy
 ---
 
 # _decode_mojibake()
@@ -24,4 +24,4 @@ tags:
 - [[wb_root_info()]] - `calls` [EXTRACTED]
 - [[wb_seller()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/log_event
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

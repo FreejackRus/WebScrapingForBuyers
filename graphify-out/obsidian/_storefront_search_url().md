@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "code"
-community: "citilink_card"
-location: "L1544"
+community: "wb_connector/server.py"
+location: "L1627"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/citilink_card
+  - community/wb_connector/serverpy
 ---
 
 # _storefront_search_url()
@@ -16,4 +16,4 @@ tags:
 - [[_search_via_storefront()]] - `calls` [EXTRACTED]
 - [[wb_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/citilink_card
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

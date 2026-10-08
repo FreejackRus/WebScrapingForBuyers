@@ -1,19 +1,18 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/b2b-distributor-adapter.ts"
+source_file: "apps/search/src/infrastructure/sources/blocked-source-cooldown-adapter.ts"
 type: "code"
-community: "b2b-distributor-adapter.ts"
-location: "L152"
+community: "SourceAdapter"
+location: "L22"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/b2b-distributor-adapterts
+  - community/SourceAdapter
 ---
 
 # .search()
 
 ## Connections
-- [[NetlabSourceAdapter]] - `method` [EXTRACTED]
-- [[netlabConfigFromEnv()]] - `calls` [EXTRACTED]
-- [[searchNetlab()]] - `calls` [EXTRACTED]
+- [[dot-search()_2]] - `calls` [INFERRED]
+- [[BlockedSourceCooldownAdapter]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/b2b-distributor-adapterts
+#graphify/code #graphify/EXTRACTED #community/SourceAdapter

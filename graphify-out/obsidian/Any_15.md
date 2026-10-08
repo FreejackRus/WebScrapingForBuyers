@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "log_event"
+community: "CacheStats"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/log_event
+  - community/CacheStats
 ---
 
 # Any
 
 ## Connections
-- [[log_event()]] - `references` [EXTRACTED]
+- [[dot-as_dict()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/log_event
+#graphify/code #graphify/EXTRACTED #community/CacheStats

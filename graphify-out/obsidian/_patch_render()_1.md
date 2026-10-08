@@ -1,41 +1,29 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py"
 type: "code"
-community: "taobao-connector/tests/test_server.py"
-location: "L87"
+community: "citilink-connector/tests/test_server.py"
+location: "L52"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/taobao-connector/tests/test_serverpy
+  - community/citilink-connector/tests/test_serverpy
 ---
 
 # _patch_render()
 
 ## Connections
-- [[fake_render()_3]] - `indirect_call` [INFERRED]
-- [[taobao-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[test_card_accepts_a_full_url()]] - `calls` [EXTRACTED]
-- [[test_card_flags_drift_when_neither_title_nor_price()]] - `calls` [EXTRACTED]
-- [[test_card_maps_a_gone_item_to_not_found()]] - `calls` [EXTRACTED]
-- [[test_card_maps_the_title_less_wall_to_transport_down()]] - `calls` [EXTRACTED]
-- [[test_card_parses_the_item()]] - `calls` [EXTRACTED]
-- [[test_card_survives_a_drifted_description_images_with_a_warning()]] - `calls` [EXTRACTED]
-- [[test_card_with_a_login_worded_product_name_parses_and_is_not_a_wall()]] - `calls` [EXTRACTED]
-- [[test_product_card_mentioning_captcha_remains_product_data()]] - `calls` [EXTRACTED]
-- [[test_search_a_hidden_price_is_none_never_zero()]] - `calls` [EXTRACTED]
-- [[test_search_maps_a_login_wall_to_transport_down()]] - `calls` [EXTRACTED]
-- [[test_search_maps_the_title_less_wall_to_transport_down()]] - `calls` [EXTRACTED]
-- [[test_search_maps_zero_items_to_parser_drift()]] - `calls` [EXTRACTED]
-- [[test_search_parses_items()]] - `calls` [EXTRACTED]
-- [[test_search_warns_when_no_item_has_a_price()]] - `calls` [EXTRACTED]
-- [[test_selfcheck_anti_bot_page_is_inconclusive()]] - `calls` [EXTRACTED]
-- [[test_selfcheck_cries_shape_drift_when_the_price_family_vanishes()]] - `calls` [EXTRACTED]
-- [[test_selfcheck_genuine_challenge_is_inconclusive_blocked()]] - `calls` [EXTRACTED]
-- [[test_selfcheck_healthy_when_items_extract()]] - `calls` [EXTRACTED]
-- [[test_selfcheck_login_wall_is_inconclusive_never_drift()]] - `calls` [EXTRACTED]
-- [[test_selfcheck_runs_the_shape_canary_past_hidden_challenge_text()]] - `calls` [EXTRACTED]
-- [[test_selfcheck_title_less_wall_is_inconclusive_never_drift()]] - `calls` [EXTRACTED]
-- [[test_selfcheck_zero_items_is_drift()]] - `calls` [EXTRACTED]
-- [[test_titled_and_title_less_walls_classify_identically()]] - `calls` [EXTRACTED]
+- [[citilink-connectorteststest_server.py]] - `contains` [EXTRACTED]
+- [[fake_render()_1]] - `indirect_call` [INFERRED]
+- [[test_card_flags_drift_when_neither_title_nor_price()_1]] - `calls` [EXTRACTED]
+- [[test_card_parses_the_product()]] - `calls` [EXTRACTED]
+- [[test_card_stays_silent_when_unavailable_and_unpriced()]] - `calls` [EXTRACTED]
+- [[test_card_warns_when_in_stock_but_no_price_matched()]] - `calls` [EXTRACTED]
+- [[test_search_a_pricelss_tile_is_none_never_zero()]] - `calls` [EXTRACTED]
+- [[test_search_maps_zero_tiles_to_parser_drift()]] - `calls` [EXTRACTED]
+- [[test_search_parses_tiles()]] - `calls` [EXTRACTED]
+- [[test_selfcheck_healthy_tiles_carry_the_shape_reference()]] - `calls` [EXTRACTED]
+- [[test_selfcheck_healthy_when_tiles_extract()]] - `calls` [EXTRACTED]
+- [[test_selfcheck_reports_shape_drift_when_a_required_path_vanishes()]] - `calls` [EXTRACTED]
+- [[test_selfcheck_zero_tiles_is_drift()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/taobao-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/citilink-connector/tests/test_serverpy

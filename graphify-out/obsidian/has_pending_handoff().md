@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/browser_handoff.py"
 type: "code"
-community: "taobao_card"
+community: "browser_handoff.py"
 location: "L199"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/taobao_card
+  - community/browser_handoffpy
 ---
 
 # has_pending_handoff()
@@ -19,4 +19,4 @@ tags:
 - [[taobao_card()]] - `calls` [EXTRACTED]
 - [[taobao_search()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/taobao_card
+#graphify/code #graphify/EXTRACTED #community/browser_handoffpy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "code"
-community: "log_event"
-location: "L3017"
+community: "wb_connector/server.py"
+location: "L3156"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/log_event
+  - community/wb_connector/serverpy
 ---
 
 # _has_review_text()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[wb_selfcheck()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/log_event
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

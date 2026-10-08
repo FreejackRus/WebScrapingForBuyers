@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py"
 type: "code"
-community: "test_port_probe_targets_loopback_only"
-location: "L320"
+community: "UpstreamTimeoutError"
+location: "L639"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/test_port_probe_targets_loopback_only
+  - graphify/EXTRACTED
+  - community/UpstreamTimeoutError
 ---
 
 # record()
 
 ## Connections
-- [[test_port_probe_targets_loopback_only()]] - `indirect_call` [INFERRED]
+- [[test_termination_settles_queued_snapshot_before_getter_resumes()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/test_port_probe_targets_loopback_only
+#graphify/code #graphify/EXTRACTED #community/UpstreamTimeoutError

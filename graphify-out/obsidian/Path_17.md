@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "pathlib"
+community: "test_model_routing_eval_verdict.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/test_model_routing_eval_verdictpy
 ---
 
 # Path
 
 ## Connections
-- [[pins()]] - `references` [EXTRACTED]
+- [[test_the_runner_exit_code_follows_the_verdict()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pathlib
+#graphify/code #graphify/EXTRACTED #community/test_model_routing_eval_verdictpy

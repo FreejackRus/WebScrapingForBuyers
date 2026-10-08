@@ -12,8 +12,8 @@ tags:
 # test_category_listing_passes_the_region_through()
 
 ## Connections
-- [[capture()_9]] - `contains` [EXTRACTED]
-- [[capture()_10]] - `indirect_call` [INFERRED]
+- [[capture()_7]] - `contains` [EXTRACTED]
+- [[capture()_8]] - `indirect_call` [INFERRED]
 - [[detmir-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/capture

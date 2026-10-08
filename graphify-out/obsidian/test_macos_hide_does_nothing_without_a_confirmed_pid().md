@@ -12,8 +12,8 @@ tags:
 # test_macos_hide_does_nothing_without_a_confirmed_pid()
 
 ## Connections
-- [[forbidden()_3]] - `contains` [EXTRACTED]
-- [[forbidden()_2]] - `indirect_call` [INFERRED]
+- [[forbidden()_7]] - `contains` [EXTRACTED]
+- [[forbidden()_6]] - `indirect_call` [INFERRED]
 - [[test_chrome_cdp_stealth.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_stealthpy

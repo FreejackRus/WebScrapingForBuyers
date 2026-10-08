@@ -20,10 +20,15 @@ tags:
 - [[packages_contracts_dist_index_offertablefilter]] - `imports` [EXTRACTED]
 - [[packages_contracts_dist_index_product]] - `imports` [EXTRACTED]
 - [[packages_contracts_dist_index_searchevent]] - `imports` [EXTRACTED]
+- [[packages_contracts_dist_index_searchhistoryentry]] - `imports` [EXTRACTED]
 - [[packages_contracts_dist_index_searchsnapshot]] - `imports` [EXTRACTED]
+- [[readSelectedSources()]] - `contains` [EXTRACTED]
 - [[searchapiindex.ts]] - `imports_from` [EXTRACTED]
+- [[searchstorehistory.test.ts]] - `imports_from` [EXTRACTED]
 - [[searchApi]] - `imports` [EXTRACTED]
+- [[storeindex.test.ts]] - `imports_from` [EXTRACTED]
 - [[useSearchStore]] - `contains` [EXTRACTED]
+- [[writeSelectedSources()]] - `contains` [EXTRACTED]
 - [[zustand_1]] - `imports_from` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/useSearchStore

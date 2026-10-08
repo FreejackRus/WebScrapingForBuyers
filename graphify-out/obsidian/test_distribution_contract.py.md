@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/test_distribution_contract.py"
 type: "code"
-community: "test_dependency_parity.py"
+community: "test_distribution_contract.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_dependency_paritypy
+  - community/test_distribution_contractpy
 ---
 
 # test_distribution_contract.py
@@ -24,4 +24,4 @@ tags:
 - [[test_entrypoint_examples_launch_their_declared_console_script()]] - `contains` [EXTRACTED]
 - [[tomllib]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_dependency_paritypy
+#graphify/code #graphify/EXTRACTED #community/test_distribution_contractpy

@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "code"
 community: "wb_connector/server.py"
-location: "L511"
+location: "L518"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[A canary read that cannot be answered from the cache. Every probe uses a fixed…]] - `rationale_for` [EXTRACTED]
-- [[AsyncClient_4]] - `references` [EXTRACTED]
+- [[AsyncClient_3]] - `references` [EXTRACTED]
 - [[_safe_get_text()]] - `calls` [EXTRACTED]
 - [[wb_connectorserver.py]] - `contains` [EXTRACTED]
 - [[wb_selfcheck()]] - `calls` [EXTRACTED]

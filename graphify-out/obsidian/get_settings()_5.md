@@ -1,8 +1,8 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/settings.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/src/dns_connector/settings.py"
 type: "code"
 community: "pydantic"
-location: "L88"
+location: "L29"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,8 +12,8 @@ tags:
 # get_settings()
 
 ## Connections
-- [[DetmirSettings]] - `calls` [EXTRACTED]
-- [[detmir_connectorserver.py]] - `imports` [EXTRACTED]
-- [[detmir_connectorsettings.py]] - `contains` [EXTRACTED]
+- [[DnsSettings]] - `calls` [EXTRACTED]
+- [[dns_connectorserver.py]] - `imports` [EXTRACTED]
+- [[dns_connectorsettings.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/pydantic

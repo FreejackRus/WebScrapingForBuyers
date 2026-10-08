@@ -14,6 +14,6 @@ tags:
 ## Connections
 - [[Remove the politeness gap so tests do not actually wait.]] - `rationale_for` [EXTRACTED]
 - [[detmir-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[fixture_14]] - `references` [EXTRACTED]
+- [[fixture_15]] - `references` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/clear_cache

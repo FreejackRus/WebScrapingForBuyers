@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/src/aliexpress_connector/server.py"
 type: "code"
-community: "aliexpress_connector/server.py"
+community: "aliexpress_card"
 location: "L153"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/aliexpress_connector/serverpy
+  - community/aliexpress_card
 ---
 
 # _challenge_error()
@@ -18,4 +18,4 @@ tags:
 - [[aliexpress_connectorserver.py]] - `contains` [EXTRACTED]
 - [[aliexpress_search()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/aliexpress_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/aliexpress_card

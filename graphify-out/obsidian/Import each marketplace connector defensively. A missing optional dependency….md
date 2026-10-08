@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py"
 type: "rationale"
-community: "compare_verify_offer"
+community: "log_event"
 location: "L88"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/compare_verify_offer
+  - community/log_event
 ---
 
 # Import each marketplace connector defensively. A missing optional dependency…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_available_sources()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/compare_verify_offer
+#graphify/rationale #graphify/EXTRACTED #community/log_event

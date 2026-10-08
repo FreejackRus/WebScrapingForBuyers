@@ -12,7 +12,7 @@ tags:
 # test_new_policy_checked_on_resume_and_navigation_during_read_rejected()
 
 ## Connections
-- [[call()_1]] - `calls` [EXTRACTED]
+- [[call()]] - `calls` [EXTRACTED]
 - [[mcp-coreteststest_browser_handoff.py]] - `contains` [EXTRACTED]
 - [[navigate()]] - `indirect_call` [INFERRED]
 

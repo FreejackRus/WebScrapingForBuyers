@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/domain/product-from-query.ts"
 type: "code"
-community: "live-suggest.ts"
+community: "product-from-query.ts"
 location: "L5"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/live-suggestts
+  - community/product-from-queryts
 ---
 
 # KNOWN_BRANDS
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[product-from-query.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/live-suggestts
+#graphify/code #graphify/EXTRACTED #community/product-from-queryts

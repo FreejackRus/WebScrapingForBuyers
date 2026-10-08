@@ -12,7 +12,7 @@ tags:
 # wb()
 
 ## Connections
-- [[offer()_1]] - `calls` [EXTRACTED]
+- [[offer()_2]] - `calls` [EXTRACTED]
 - [[test_a_generic_failure_is_reported_as_error_not_blocked()]] - `indirect_call` [INFERRED]
 - [[test_a_missing_connector_is_distinguished_from_a_block()]] - `indirect_call` [INFERRED]
 - [[test_a_timeout_is_reported_as_a_timeout()]] - `indirect_call` [INFERRED]

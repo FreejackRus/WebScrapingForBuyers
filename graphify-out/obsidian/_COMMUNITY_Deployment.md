@@ -36,15 +36,15 @@ SORT file.name ASC
 
 ## Connections to other communities
 - 4 edges to [[_COMMUNITY_compare_prices]]
-- 1 edge to [[_COMMUNITY_aliexpress-connectorteststest_parser_live.py]]
+- 1 edge to [[_COMMUNITY_e2e_stdio_check.py]]
 - 1 edge to [[_COMMUNITY_taobao]]
+- 1 edge to [[_COMMUNITY_English version]]
 - 1 edge to [[_COMMUNITY_ru-marketplace-mcp]]
 - 1 edge to [[_COMMUNITY_ru-marketplace-mcpREADME]]
-- 1 edge to [[_COMMUNITY_English version]]
 
 ## Top bridge nodes
 - [[Configuration_1]] - degree 5, connects to 3 communities
 - [[Deployment]] - degree 6, connects to 1 community
-- [[stdio()]] - degree 4, connects to 1 community
 - [[Unified source selection]] - degree 4, connects to 1 community
+- [[stdio()]] - degree 4, connects to 1 community
 - [[Any Russian marketplace needs a Russian-friendly IP]] - degree 2, connects to 1 community

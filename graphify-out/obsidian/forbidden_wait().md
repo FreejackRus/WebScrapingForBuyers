@@ -12,7 +12,7 @@ tags:
 # forbidden_wait()
 
 ## Connections
-- [[scenario()_39]] - `indirect_call` [INFERRED]
+- [[scenario()_40]] - `indirect_call` [INFERRED]
 - [[test_wb_card_rejects_non_positive_nm_ids_before_network()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_tool_error_payload

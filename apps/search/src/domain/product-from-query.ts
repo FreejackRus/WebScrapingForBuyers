@@ -45,7 +45,42 @@ const KNOWN_BRANDS = [
   "кингстон",
   "интел",
   "логитеч",
+  "pantum",
+  "пантум",
 ];
+
+const BRAND_ALIASES: ReadonlyArray<{ aliases: string[]; canonical: string }> = [
+  { aliases: ["hewlett packard"], canonical: "Hewlett Packard" },
+  { aliases: ["pantum", "пантум"], canonical: "Pantum" },
+  { aliases: ["nv print", "nvprint", "nv-print"], canonical: "NV Print" },
+  { aliases: ["hi-black", "hiblack", "хай-блэк"], canonical: "Hi-Black" },
+  { aliases: ["kingston", "кингстон"], canonical: "Kingston" },
+  { aliases: ["samsung", "самсунг"], canonical: "Samsung" },
+  { aliases: ["logitech", "логитек", "логитеч"], canonical: "Logitech" },
+  { aliases: ["dell", "делл"], canonical: "Dell" },
+  { aliases: ["lenovo", "леново"], canonical: "Lenovo" },
+];
+
+const MODEL_NOISE = new Set([
+  "картридж", "принтер", "мфу", "ssd", "накопитель", "оригинальный", "оригинал",
+  "совместимый", "совместимая", "совместимое", "упаковка", "комплект", "шт", "штук",
+  "страниц", "страницы", "страницa", "ресурс", "original", "oem", "compatible",
+]);
+const COUNT_NOISE = new Set(["упаковка", "комплект", "ресурс", "страниц", "страницы", "страницa", "шт", "штук"]);
+
+function cleanModelTokens(tokens: string[]): string[] {
+  return tokens.filter((token, index) => {
+    const value = token.toLocaleLowerCase("ru").replace(/[.,]/g, "");
+    const next = (tokens[index + 1] ?? "").toLocaleLowerCase("ru").replace(/[.,]/g, "");
+    const previous = (tokens[index - 1] ?? "").toLocaleLowerCase("ru").replace(/[.,]/g, "");
+    if (MODEL_NOISE.has(value)) return false;
+    if (/^оригинальн(?:ый|ая|ое|ые|ого|ой|ому|ым|ую|ых|ыми)$/iu.test(value)) return false;
+    if (/^\d+[xх×]\d+(?:гб|gb|тб|tb)?$/iu.test(value)) return false;
+    if (/^\d+(?:гб|gb|тб|tb)$/iu.test(value) || /^(?:гб|gb|тб|tb)$/iu.test(value)) return false;
+    if (/^\d+$/.test(value) && (COUNT_NOISE.has(previous) || COUNT_NOISE.has(next) || /^(?:гб|gb|тб|tb)$/iu.test(next))) return false;
+    return true;
+  });
+}
 
 /**
  * Category rules. The product type is the head noun (text before the first preposition) and,
@@ -196,7 +231,8 @@ export function withoutKnownBrands(text: string): string[] {
 export function extractMpn(text: string): string {
   const match =
     text.match(/\b(\d{3}-\d{6,})\b/) ??
-    text.match(/\b([A-Z]{0,3}\d{2,}[A-Z0-9-]{2,})\b/i) ??
+    text.match(/\b([A-Z]{1,8}-\d{2,}[A-Z0-9-]*)\b/i) ??
+    text.match(/\b([A-Z]{1,8}\d{2,}[A-Z0-9-]{1,})\b/i) ??
     text.match(/\b(\d{8,14})\b/);
   return match?.[1]?.trim() ?? "";
 }
@@ -205,17 +241,27 @@ export function splitBrandModel(text: string): { brand: string; model: string } 
   const tokens = collapseWs(text).split(" ").filter(Boolean);
   if (tokens.length === 0) return { brand: "", model: "" };
   const lower = tokens.map((token) => token.toLocaleLowerCase("ru"));
+  for (const entry of BRAND_ALIASES) {
+    let aliasTokens: string[] = [];
+    let start = -1;
+    for (const alias of entry.aliases) {
+      aliasTokens = alias.split(" ");
+      start = lower.findIndex((_, index) => lower.slice(index, index + aliasTokens.length).join(" ") === alias);
+      if (start >= 0) break;
+    }
+    if (start < 0) continue;
+    const remainder = tokens.filter((_, index) => index < start || index >= start + aliasTokens.length);
+    const model = cleanModelTokens(remainder);
+    return { brand: entry.canonical, model: collapseWs(model.join(" ")) || entry.canonical };
+  }
   const brandIndex = lower.findIndex((token) => KNOWN_BRANDS.includes(token));
   if (brandIndex >= 0) {
     const brand = titleCaseWords(tokens[brandIndex]!);
-    const model = collapseWs([...tokens.slice(0, brandIndex), ...tokens.slice(brandIndex + 1)].join(" "));
+    const model = collapseWs(cleanModelTokens([...tokens.slice(0, brandIndex), ...tokens.slice(brandIndex + 1)]).join(" "));
     return { brand, model: model || brand };
   }
-  if (tokens.length === 1) return { brand: titleCaseWords(tokens[0]!), model: titleCaseWords(tokens[0]!) };
-  return {
-    brand: titleCaseWords(tokens[0]!),
-    model: titleCaseWords(tokens.slice(1).join(" ")),
-  };
+  const model = cleanModelTokens(tokens);
+  return { brand: "", model: collapseWs(model.join(" ")) };
 }
 
 /** Build a Product from free-text suggestion or typed query (no static catalog). */

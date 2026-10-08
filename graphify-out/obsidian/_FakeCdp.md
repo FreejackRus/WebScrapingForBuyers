@@ -12,8 +12,8 @@ tags:
 # _FakeCdp
 
 ## Connections
-- [[dot-__init__()_6]] - `references` [EXTRACTED]
-- [[dot-__init__()_7]] - `method` [EXTRACTED]
+- [[dot-__init__()_9]] - `references` [EXTRACTED]
+- [[dot-__init__()_10]] - `method` [EXTRACTED]
 - [[dot-detach()]] - `method` [EXTRACTED]
 - [[dot-new_browser_cdp_session()]] - `references` [EXTRACTED]
 - [[dot-send()_2]] - `method` [EXTRACTED]

@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[fake_polite_wait()_2]] - `contains` [EXTRACTED]
 - [[fake_sleep()_2]] - `contains` [EXTRACTED]
-- [[scenario()_27]] - `contains` [EXTRACTED]
+- [[scenario()_30]] - `contains` [EXTRACTED]
 - [[stream()_3]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 

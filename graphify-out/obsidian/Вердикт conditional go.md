@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/docs/archive/AUDIT_REPORT_2026-08_v1.2.0-snapshot.md"
 type: "document"
-community: "dns_card"
+community: "lamoda_search"
 location: "L587"
 tags:
   - graphify/document
   - graphify/INFERRED
-  - community/dns_card
+  - community/lamoda_search
 ---
 
 # Вердикт: conditional go
@@ -21,4 +21,4 @@ tags:
 - [[Аудит ru-marketplace-mcp v1.2.0 — независимая перепроверка]] - `contains` [EXTRACTED]
 - [[Локальная проверка, точная последовательность]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/INFERRED #community/dns_card
+#graphify/document #graphify/INFERRED #community/lamoda_search

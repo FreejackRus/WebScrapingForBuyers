@@ -12,7 +12,7 @@ tags:
 # Deep Research: ru-marketplace-mcp 2.0.0
 
 ## Connections
-- [[Bibliography]] - `contains` [EXTRACTED]
+- [[Bibliography_1]] - `contains` [EXTRACTED]
 - [[DEEP_RESEARCH_V2.0.0]] - `contains` [EXTRACTED]
 - [[Decision summary]] - `contains` [EXTRACTED]
 - [[Finding 1 — Comparability is the product boundary High]] - `contains` [EXTRACTED]

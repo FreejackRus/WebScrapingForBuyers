@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "rationale"
-community: "test_wb_search_falls_back_to_legacy_path_when_v9_fails"
+community: "no_wait"
 location: "L511"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/test_wb_search_falls_back_to_legacy_path_when_v9_fails
+  - community/no_wait
 ---
 
 # A stale result beats no result — but the caller must be told.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_wb_search_falls_back_to_legacy_path_when_v9_fails()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/test_wb_search_falls_back_to_legacy_path_when_v9_fails
+#graphify/rationale #graphify/EXTRACTED #community/no_wait

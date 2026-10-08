@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[The rendered body text carries no newlines; an uncapped line scan glued the…]] - `rationale_for` [EXTRACTED]
-- [[_extract()_8]] - `calls` [EXTRACTED]
+- [[_extract()_5]] - `calls` [EXTRACTED]
 - [[test_card_extractor_live_dom.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_card_extractor_live_dompy

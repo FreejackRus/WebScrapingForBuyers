@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/resilience.py"
 type: "code"
-community: "shape_signature"
+community: "resilience.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/shape_signature
+  - community/resiliencepy
 ---
 
 # resilience.py
@@ -36,7 +36,6 @@ tags:
 - [[lamoda-connectorteststest_shape_reference.py]] - `imports_from` [EXTRACTED]
 - [[math]] - `imports` [EXTRACTED]
 - [[megamarket-connectorteststest_shape_reference.py]] - `imports_from` [EXTRACTED]
-- [[mpstats-connectorteststest_shape_reference.py]] - `imports_from` [EXTRACTED]
 - [[ozon-connectorteststest_shape_reference.py]] - `imports_from` [EXTRACTED]
 - [[price_from_texts()]] - `contains` [EXTRACTED]
 - [[re]] - `imports` [EXTRACTED]
@@ -55,4 +54,4 @@ tags:
 - [[widget_prefixes()]] - `contains` [EXTRACTED]
 - [[yandex-connectorteststest_shape_reference.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/shape_signature
+#graphify/code #graphify/EXTRACTED #community/resiliencepy

@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/taobao-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/cian-connector/SKILL.md"
 type: "document"
-community: "Taobao Connector"
-location: "L18"
+community: "Cian Connector"
+location: "L22"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Taobao_Connector
+  - community/Cian_Connector
 ---
 
 # Tools available
 
 ## Connections
-- [[Taobao Connector]] - `contains` [EXTRACTED]
-- [[taobao_selfcheck()]] - `references` [INFERRED]
+- [[Cian Connector]] - `contains` [EXTRACTED]
+- [[cian_selfcheck()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Taobao_Connector
+#graphify/document #graphify/EXTRACTED #community/Cian_Connector

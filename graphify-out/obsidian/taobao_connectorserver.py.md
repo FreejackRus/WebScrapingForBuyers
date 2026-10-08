@@ -1,33 +1,33 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/server.py"
 type: "code"
-community: "json"
+community: "taobao_connector/server.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/json
+  - community/taobao_connector/serverpy
 ---
 
 # taobao_connector/server.py
 
 ## Connections
-- [[MetaOut_6]] - `imports` [EXTRACTED]
+- [[MetaOut_1]] - `imports` [EXTRACTED]
 - [[Taobao MCP connector. Taobao's search is a client-side React app whose data…]] - `rationale_for` [EXTRACTED]
 - [[TaobaoCardResponse]] - `imports` [EXTRACTED]
 - [[TaobaoSearchItemOut]] - `imports` [EXTRACTED]
 - [[TaobaoSearchResponse]] - `imports` [EXTRACTED]
 - [[TaobaoSelfcheckResponse]] - `imports` [EXTRACTED]
 - [[_anti_bot_challenge()]] - `contains` [EXTRACTED]
-- [[_cdp_render()_1]] - `contains` [EXTRACTED]
-- [[_extract_item_id()_3]] - `contains` [EXTRACTED]
+- [[_cdp_render()]] - `contains` [EXTRACTED]
+- [[_extract_item_id()_1]] - `contains` [EXTRACTED]
 - [[_login_wall()]] - `contains` [EXTRACTED]
 - [[_login_wall_markers()]] - `contains` [EXTRACTED]
 - [[_page_challenge_kind()]] - `contains` [EXTRACTED]
-- [[_polite_wait()_8]] - `contains` [EXTRACTED]
-- [[_search_item_from_tile()_1]] - `contains` [EXTRACTED]
+- [[_polite_wait()_1]] - `contains` [EXTRACTED]
+- [[_search_item_from_tile()]] - `contains` [EXTRACTED]
 - [[_taobao_selfcheck_impl()]] - `contains` [EXTRACTED]
-- [[asyncio_2]] - `imports` [EXTRACTED]
+- [[asyncio]] - `imports` [EXTRACTED]
 - [[browser_handoff.py]] - `imports_from` [EXTRACTED]
 - [[cache.py]] - `imports_from` [EXTRACTED]
 - [[chrome_cdp.py]] - `imports_from` [EXTRACTED]
@@ -36,12 +36,12 @@ tags:
 - [[errors.py]] - `imports_from` [EXTRACTED]
 - [[fastmcp_3]] - `imports_from` [EXTRACTED]
 - [[fastmcp_server_middleware_error_handling]] - `imports_from` [EXTRACTED]
-- [[get_settings()_10]] - `imports` [EXTRACTED]
+- [[get_settings()_8]] - `imports` [EXTRACTED]
 - [[json]] - `imports` [EXTRACTED]
 - [[logging.py]] - `imports_from` [EXTRACTED]
 - [[mcp_core__init__.py]] - `imports_from` [EXTRACTED]
 - [[mcp_types]] - `imports_from` [EXTRACTED]
-- [[missing_required_families()_2]] - `imports` [EXTRACTED]
+- [[missing_required_families()]] - `imports` [EXTRACTED]
 - [[output_schema.py]] - `imports_from` [EXTRACTED]
 - [[pacing.py]] - `imports_from` [EXTRACTED]
 - [[pydantic]] - `imports_from` [EXTRACTED]
@@ -57,4 +57,4 @@ tags:
 - [[typing]] - `imports_from` [EXTRACTED]
 - [[urllib_parse]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/json
+#graphify/code #graphify/EXTRACTED #community/taobao_connector/serverpy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "test_wb_search_warns_when_no_result_has_a_price"
-location: "L563"
+community: "test_helpers.py"
+location: "L739"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/test_wb_search_warns_when_no_result_has_a_price
+  - community/test_helperspy
 ---
 
 # scenario()
@@ -14,6 +14,6 @@ tags:
 ## Connections
 - [[fake_safe_get_text()_2]] - `indirect_call` [INFERRED]
 - [[no_wait()_2]] - `indirect_call` [INFERRED]
-- [[test_wb_search_warns_when_no_result_has_a_price()]] - `contains` [EXTRACTED]
+- [[test_wb_search_handles_v9_shape_drift_by_falling_back()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/test_wb_search_warns_when_no_result_has_a_price
+#graphify/code #graphify/INFERRED #community/test_helperspy

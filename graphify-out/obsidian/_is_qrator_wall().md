@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/src/dns_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/src/citilink_connector/server.py"
 type: "code"
-community: "dns_connector/models_output.py"
-location: "L365"
+community: "citilink_connector/models_output.py"
+location: "L325"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/dns_connector/models_outputpy
+  - community/citilink_connector/models_outputpy
 ---
 
 # _is_qrator_wall()
 
 ## Connections
-- [[Any_14]] - `references` [EXTRACTED]
-- [[dns_connectorserver.py]] - `contains` [EXTRACTED]
+- [[Any_4]] - `references` [EXTRACTED]
+- [[citilink_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/dns_connector/models_outputpy
+#graphify/code #graphify/EXTRACTED #community/citilink_connector/models_outputpy

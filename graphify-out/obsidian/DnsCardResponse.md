@@ -1,20 +1,20 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/src/dns_connector/models_output.py"
 type: "code"
-community: "dns_connector/models_output.py"
+community: "dns_card"
 location: "L32"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/dns_connector/models_outputpy
+  - community/dns_card
 ---
 
 # DnsCardResponse
 
 ## Connections
-- [[BaseModel_5]] - `inherits` [EXTRACTED]
+- [[BaseModel_4]] - `inherits` [EXTRACTED]
 - [[dns_card()]] - `uses` [INFERRED]
 - [[dns_connectormodels_output.py]] - `contains` [EXTRACTED]
 - [[dns_connectorserver.py]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/dns_connector/models_outputpy
+#graphify/code #graphify/EXTRACTED #community/dns_card

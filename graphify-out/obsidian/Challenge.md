@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "read_with_handoff"
+community: "browser_handoff.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/read_with_handoff
+  - community/browser_handoffpy
 ---
 
 # Challenge
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[read_with_handoff()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/read_with_handoff
+#graphify/code #graphify/EXTRACTED #community/browser_handoffpy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/docs/CDP_SETUP.md"
 type: "document"
-community: "test_storefront_live_xhr_capture_via_get_context"
+community: "Authenticated transport: driving your own Chrome"
 location: "L40"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/test_storefront_live_xhr_capture_via_get_context
+  - community/Authenticated_transport_driving_your_own_Chrome
 ---
 
 # Setup
@@ -19,4 +19,4 @@ tags:
 - [[Authenticated transport driving your own Chrome]] - `contains` [EXTRACTED]
 - [[Optional challenge handoff]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/test_storefront_live_xhr_capture_via_get_context
+#graphify/document #graphify/EXTRACTED #community/Authenticated_transport_driving_your_own_Chrome

@@ -60,7 +60,7 @@ tags:
 - [[test_selfcheck_is_inconclusive_when_transport_fails()]] - `contains` [EXTRACTED]
 - [[test_selfcheck_reports_success_when_every_family_is_healthy()]] - `contains` [EXTRACTED]
 - [[test_selfcheck_says_blocked_when_the_edge_refuses()]] - `contains` [EXTRACTED]
-- [[test_server_version_matches_pyproject()_4]] - `contains` [EXTRACTED]
+- [[test_server_version_matches_pyproject()_3]] - `contains` [EXTRACTED]
 - [[tomllib]] - `imports` [EXTRACTED]
 - [[urllib_parse]] - `imports` [EXTRACTED]
 

@@ -1,24 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/SECURITY.md"
+source_file: "mcp-servers/ru-marketplace-mcp/work/v2-research/security.md"
 type: "document"
-community: "Contributor Covenant Code of Conduct"
-location: "L143"
+community: "v2.0.0 Security / privacy research"
+location: "L1"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Contributor_Covenant_Code_of_Conduct
+  - community/v200_Security_/_privacy_research
 ---
 
-# Security
+# security.md
 
 ## Connections
-- [[Legal note]] - `contains` [EXTRACTED]
-- [[Other hardening in place]] - `contains` [EXTRACTED]
-- [[Prompt injection the boundary users must respect]] - `contains` [EXTRACTED]
-- [[Reporting a vulnerability]] - `contains` [EXTRACTED]
-- [[SECURITY_1]] - `contains` [EXTRACTED]
-- [[Supported versions]] - `contains` [EXTRACTED]
-- [[The one part that carries real risk the CDP tier]] - `contains` [EXTRACTED]
-- [[What this project does and does not touch]] - `contains` [EXTRACTED]
+- [[v2.0.0 Security  privacy research]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Contributor_Covenant_Code_of_Conduct
+#graphify/document #graphify/EXTRACTED #community/v200_Security_/_privacy_research

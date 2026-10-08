@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_skills_parity.py"
 type: "code"
-community: "test_skills_parity.py"
+community: "_skill_dir"
 location: "L303"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_skills_paritypy
+  - community/_skill_dir
 ---
 
 # test_every_mounted_source_maps_to_a_skill()
@@ -16,4 +16,4 @@ tags:
 - [[_skill_dir()]] - `calls` [EXTRACTED]
 - [[test_skills_parity.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_skills_paritypy
+#graphify/code #graphify/EXTRACTED #community/_skill_dir

@@ -12,11 +12,11 @@ tags:
 # test_output_schema.py
 
 ## Connections
-- [[FastMCP_1]] - `imports_from` [EXTRACTED]
+- [[FastMCP_2]] - `imports_from` [EXTRACTED]
 - [[The wire-frugal output-schema reducer is the largest context-cost lever. Full…]] - `rationale_for` [EXTRACTED]
 - [[_Named]] - `contains` [EXTRACTED]
 - [[_heavy_tool()]] - `contains` [EXTRACTED]
-- [[asyncio_2]] - `imports` [EXTRACTED]
+- [[asyncio]] - `imports` [EXTRACTED]
 - [[output_schema.py]] - `imports_from` [EXTRACTED]
 - [[pydantic]] - `imports_from` [EXTRACTED]
 - [[test_apply_is_idempotent()]] - `contains` [EXTRACTED]

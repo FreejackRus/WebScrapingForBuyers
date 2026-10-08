@@ -1,22 +1,19 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/fallback-source-adapter.ts"
+source_file: "apps/search/src/infrastructure/sources/b2b-distributor-adapter.ts"
 type: "code"
-community: "packages_contracts_dist_index"
-location: "L29"
+community: "b2b-distributor-adapter.ts"
+location: "L134"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/packages_contracts_dist_index
+  - community/b2b-distributor-adapterts
 ---
 
 # .search()
 
 ## Connections
-- [[dot-search()_10]] - `calls` [EXTRACTED]
-- [[FallbackSourceAdapter]] - `method` [EXTRACTED]
-- [[isAntibotTransportError()]] - `calls` [EXTRACTED]
-- [[isMcpUnavailableError()]] - `calls` [EXTRACTED]
-- [[isWbStaleCatalogMiss()]] - `calls` [EXTRACTED]
-- [[presentChainedSourceErrors()]] - `calls` [EXTRACTED]
+- [[MerlionSourceAdapter]] - `method` [EXTRACTED]
+- [[merlionConfigFromEnv()]] - `calls` [EXTRACTED]
+- [[searchMerlion()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index
+#graphify/code #graphify/EXTRACTED #community/b2b-distributor-adapterts

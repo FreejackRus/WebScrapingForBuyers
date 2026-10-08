@@ -1,22 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/examples/health_check.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/_win_job_runner.py"
 type: "code"
-community: "yandex_selfcheck"
-location: "L35"
+community: "subprocess"
+location: "L55"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/yandex_selfcheck
+  - graphify/EXTRACTED
+  - community/subprocess
 ---
 
 # main()
 
 ## Connections
-- [[detmir_selfcheck()]] - `calls` [INFERRED]
-- [[health_check.py]] - `contains` [EXTRACTED]
-- [[ozon_selfcheck()]] - `calls` [INFERRED]
-- [[run_one()]] - `calls` [EXTRACTED]
-- [[wb_selfcheck()]] - `calls` [INFERRED]
-- [[yandex_selfcheck()]] - `calls` [INFERRED]
+- [[_ExtendedLimits]] - `calls` [EXTRACTED]
+- [[_win_job_runner.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/yandex_selfcheck
+#graphify/code #graphify/EXTRACTED #community/subprocess

@@ -1,19 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_card_verification_records.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_source_warnings.py"
 type: "code"
-community: "YandexProduct"
-location: "L149"
+community: "aliexpress_card"
+location: "L97"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/YandexProduct
+  - community/aliexpress_card
 ---
 
 # search()
 
 ## Connections
-- [[YandexProduct]] - `calls` [EXTRACTED]
-- [[YandexSearchResponse]] - `calls` [EXTRACTED]
-- [[test_yandex_live_fixture_variant_survives_comparison()]] - `indirect_call` [INFERRED]
+- [[test_coupon_warning_keeps_regular_price_and_does_not_claim_failure()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/YandexProduct
+#graphify/code #graphify/EXTRACTED #community/aliexpress_card

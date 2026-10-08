@@ -1,23 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/models_output.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/src/aliexpress_connector/models_output.py"
 type: "code"
-community: "avito_seller"
-location: "L14"
+community: "aliexpress_card"
+location: "L9"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/avito_seller
+  - community/aliexpress_card
 ---
 
 # MetaOut
 
 ## Connections
-- [[Avito carries the shared envelope unchanged.]] - `rationale_for` [EXTRACTED]
+- [[AliExpress carries the shared envelope unchanged.]] - `rationale_for` [EXTRACTED]
 - [[MetaOutBase]] - `inherits` [EXTRACTED]
-- [[avito_card()]] - `uses` [INFERRED]
-- [[avito_connectormodels_output.py]] - `contains` [EXTRACTED]
-- [[avito_connectorserver.py]] - `imports` [EXTRACTED]
-- [[avito_search()]] - `uses` [INFERRED]
-- [[avito_seller()]] - `uses` [INFERRED]
+- [[aliexpress_card()]] - `uses` [INFERRED]
+- [[aliexpress_connectormodels_output.py]] - `contains` [EXTRACTED]
+- [[aliexpress_connectorserver.py]] - `imports` [EXTRACTED]
+- [[aliexpress_search()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/avito_seller
+#graphify/code #graphify/EXTRACTED #community/aliexpress_card

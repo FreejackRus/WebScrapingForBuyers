@@ -15,7 +15,7 @@ tags:
 - [[Offline tests for the Cian connector. Every upstream call is monkeypatched at…]] - `rationale_for` [EXTRACTED]
 - [[_card_body()]] - `contains` [EXTRACTED]
 - [[_load()]] - `contains` [EXTRACTED]
-- [[_no_cache()_3]] - `contains` [EXTRACTED]
+- [[_no_cache()_2]] - `contains` [EXTRACTED]
 - [[_ok()]] - `contains` [EXTRACTED]
 - [[_patch_card()]] - `contains` [EXTRACTED]
 - [[_patch_search()]] - `contains` [EXTRACTED]

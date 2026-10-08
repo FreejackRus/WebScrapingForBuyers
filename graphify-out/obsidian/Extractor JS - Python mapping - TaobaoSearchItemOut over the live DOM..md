@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_search_extractor_live_dom.py"
 type: "rationale"
-community: "run_extractor"
+community: "test_card_extractor_live_dom.py"
 location: "L94"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/run_extractor
+  - community/test_card_extractor_live_dompy
 ---
 
 # Extractor JS -> Python mapping -> TaobaoSearchItemOut over the live DOM.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_live_items_carry_shop_sales_location()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/run_extractor
+#graphify/rationale #graphify/EXTRACTED #community/test_card_extractor_live_dompy

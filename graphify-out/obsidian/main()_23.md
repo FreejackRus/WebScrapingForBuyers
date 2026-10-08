@@ -1,19 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/__main__.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/mcp_wire.py"
 type: "code"
-community: "wb_connector/__main__.py"
-location: "L21"
+community: "mcp_wire.py"
+location: "L100"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/wb_connector/__main__py
+  - community/mcp_wirepy
 ---
 
 # main()
 
 ## Connections
-- [[Run the server on the transport selected by the environment (stdio default)._12]] - `rationale_for` [EXTRACTED]
-- [[run_server()]] - `calls` [INFERRED]
-- [[wb_connector__main__.py]] - `contains` [EXTRACTED]
+- [[_check_gate()]] - `calls` [EXTRACTED]
+- [[_load_baseline()]] - `calls` [EXTRACTED]
+- [[_snapshot()]] - `calls` [EXTRACTED]
+- [[estimate_tokens()]] - `calls` [EXTRACTED]
+- [[fetch_tools()]] - `calls` [EXTRACTED]
+- [[mcp_wire.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/wb_connector/__main__py
+#graphify/code #graphify/EXTRACTED #community/mcp_wirepy

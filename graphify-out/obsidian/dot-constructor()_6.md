@@ -1,17 +1,17 @@
 ---
-source_file: "apps/analysis/src/infrastructure/ollama-analysis-narrator.ts"
+source_file: "apps/identity/src/http/login-limiter.ts"
 type: "code"
-community: "ollama-analysis-narrator.ts"
-location: "L223"
+community: "identity/src/app.ts"
+location: "L15"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ollama-analysis-narratorts
+  - community/identity/src/appts
 ---
 
 # .constructor()
 
 ## Connections
-- [[OllamaAnalysisNarrator]] - `method` [EXTRACTED]
+- [[LoginLimiter]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ollama-analysis-narratorts
+#graphify/code #graphify/EXTRACTED #community/identity/src/appts

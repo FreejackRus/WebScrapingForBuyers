@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/browser_handoff.py"
 type: "code"
-community: "json"
+community: "browser_handoff.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/json
+  - community/browser_handoffpy
 ---
 
 # browser_handoff.py
@@ -31,7 +31,7 @@ tags:
 - [[_resume_summary()]] - `contains` [EXTRACTED]
 - [[_run()]] - `contains` [EXTRACTED]
 - [[_stop()]] - `contains` [EXTRACTED]
-- [[asyncio_2]] - `imports` [EXTRACTED]
+- [[asyncio]] - `imports` [EXTRACTED]
 - [[chrome_cdp.py]] - `imports_from` [EXTRACTED]
 - [[close_handoffs()]] - `contains` [EXTRACTED]
 - [[collections_abc]] - `imports_from` [EXTRACTED]
@@ -50,9 +50,10 @@ tags:
 - [[secrets]] - `imports` [EXTRACTED]
 - [[snapshot_handoff()]] - `contains` [EXTRACTED]
 - [[taobao_connectorserver.py]] - `imports_from` [EXTRACTED]
-- [[time]] - `imports` [EXTRACTED]
+- [[time_1]] - `imports` [EXTRACTED]
 - [[transport__init__.py]] - `imports_from` [EXTRACTED]
 - [[typing]] - `imports_from` [EXTRACTED]
 - [[urllib_parse]] - `imports_from` [EXTRACTED]
+- [[yandex_connectorserver.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/json
+#graphify/code #graphify/EXTRACTED #community/browser_handoffpy

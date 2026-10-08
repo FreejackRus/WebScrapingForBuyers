@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_model_routing_eval_verdict.py"
 type: "rationale"
-community: "pathlib"
+community: "test_model_routing_eval_verdict.py"
 location: "L64"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/test_model_routing_eval_verdictpy
 ---
 
 # main() returns 0 only for a clean run — that is the whole point of ok.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_the_runner_exit_code_follows_the_verdict()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/pathlib
+#graphify/rationale #graphify/EXTRACTED #community/test_model_routing_eval_verdictpy

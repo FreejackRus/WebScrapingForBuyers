@@ -12,7 +12,7 @@ tags:
 # test_credit_and_bonus_amounts_are_not_price_candidates()
 
 ## Connections
-- [[_extract()_3]] - `calls` [EXTRACTED]
+- [[_extract()_2]] - `calls` [EXTRACTED]
 - [[citilink-connectorteststest_card_extractor_dom.py]] - `contains` [EXTRACTED]
 - [[«от 3 531 ₽ в месяц» and «1800 бонусов» must not be candidates.]] - `rationale_for` [EXTRACTED]
 

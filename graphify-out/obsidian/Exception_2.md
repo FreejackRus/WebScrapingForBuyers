@@ -11,6 +11,6 @@ tags:
 # Exception
 
 ## Connections
-- [[ConnectorError]] - `inherits` [EXTRACTED]
+- [[classify_http_error()]] - `references` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/json

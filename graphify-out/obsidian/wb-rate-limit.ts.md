@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/wb-rate-limit.ts"
 type: "code"
-community: "http-marketplace-adapter.ts"
+community: "ref_vitest"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/http-marketplace-adapterts
+  - community/ref_vitest
 ---
 
 # wb-rate-limit.ts
@@ -24,4 +24,4 @@ tags:
 - [[wb-rate-limit.test.ts]] - `imports_from` [EXTRACTED]
 - [[wbCooldownMs()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/http-marketplace-adapterts
+#graphify/code #graphify/EXTRACTED #community/ref_vitest

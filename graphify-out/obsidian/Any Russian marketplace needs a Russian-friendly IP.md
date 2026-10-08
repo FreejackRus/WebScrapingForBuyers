@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/docs/DEPLOYMENT.md"
 type: "document"
 community: "Deployment"
-location: "L280"
+location: "L272"
 tags:
   - graphify/document
   - graphify/EXTRACTED

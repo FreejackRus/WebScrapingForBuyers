@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[BearerAuthMiddleware]] - `contains` [EXTRACTED]
-- [[FastMCP_2]] - `imports_from` [EXTRACTED]
+- [[FastMCP]] - `imports_from` [EXTRACTED]
 - [[Transport selection shared by all connector entry points. Every connector is…]] - `rationale_for` [EXTRACTED]
 - [[TransportConfig]] - `contains` [EXTRACTED]
 - [[_parse_host()]] - `contains` [EXTRACTED]
@@ -39,5 +39,6 @@ tags:
 - [[sys]] - `imports` [EXTRACTED]
 - [[taobao_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[typing]] - `imports_from` [EXTRACTED]
+- [[yandex_connectorserver.py]] - `imports_from` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/json

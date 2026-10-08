@@ -1,17 +1,17 @@
 ---
-source_file: "apps/gateway/src/gateway.test.ts"
+source_file: "apps/identity/src/auth.test.ts"
 type: "code"
-community: "gateway/src/app.ts"
+community: "identity/src/app.ts"
 location: "L6"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/gateway/src/appts
+  - community/identity/src/appts
 ---
 
 # apps
 
 ## Connections
-- [[gateway.test.ts]] - `contains` [EXTRACTED]
+- [[auth.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/gateway/src/appts
+#graphify/code #graphify/EXTRACTED #community/identity/src/appts

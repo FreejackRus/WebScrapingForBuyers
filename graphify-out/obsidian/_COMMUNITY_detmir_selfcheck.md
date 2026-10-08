@@ -15,7 +15,7 @@ members: 7
 - [[Probe every Detsky Mir endpoint family and report a tri-state verdict.…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/server.py
 - [[detmir-connectorteststest_live.py]] - code - mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_live.py
 - [[detmir_selfcheck()]] - code - mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/server.py
-- [[probe()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/server.py
+- [[probe()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/server.py
 - [[test_detmir_selfcheck_reaches_a_verdict()]] - code - mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_live.py
 
 ## Live Query (requires Dataview plugin)
@@ -27,16 +27,14 @@ SORT file.name ASC
 
 ## Connections to other communities
 - 5 edges to [[_COMMUNITY_detmir_categories]]
-- 2 edges to [[_COMMUNITY_json]]
+- 4 edges to [[_COMMUNITY_detmir_connectorserver.py]]
 - 2 edges to [[_COMMUNITY_Detsky Mir Connector]]
-- 1 edge to [[_COMMUNITY_ozon_card]]
-- 1 edge to [[_COMMUNITY_models.py]]
-- 1 edge to [[_COMMUNITY_detmir_connectormodels_output.py]]
-- 1 edge to [[_COMMUNITY_yandex_selfcheck]]
+- 1 edge to [[_COMMUNITY_dns_card]]
 - 1 edge to [[_COMMUNITY_log_event]]
+- 1 edge to [[_COMMUNITY_sys]]
 - 1 edge to [[_COMMUNITY_pytest]]
 
 ## Top bridge nodes
-- [[detmir_selfcheck()]] - degree 15, connects to 6 communities
-- [[DetmirSelfcheckEntry]] - degree 5, connects to 3 communities
+- [[detmir_selfcheck()]] - degree 15, connects to 5 communities
+- [[DetmirSelfcheckEntry]] - degree 5, connects to 2 communities
 - [[detmir-connectorteststest_live.py]] - degree 3, connects to 1 community

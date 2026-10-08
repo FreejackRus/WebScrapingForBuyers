@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "dns-connector/tests/test_server.py"
+community: "cian-connector/tests/test_server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/dns-connector/tests/test_serverpy
+  - community/cian-connector/tests/test_serverpy
 ---
 
 # fixture
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[_no_cache()_2]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/dns-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/cian-connector/tests/test_serverpy

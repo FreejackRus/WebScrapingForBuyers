@@ -12,7 +12,7 @@ tags:
 # wb()
 
 ## Connections
-- [[offer()_1]] - `calls` [EXTRACTED]
+- [[offer()_2]] - `calls` [EXTRACTED]
 - [[test_one_source_failing_does_not_sink_the_comparison()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/offer

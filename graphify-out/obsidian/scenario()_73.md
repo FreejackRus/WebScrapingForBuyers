@@ -1,19 +1,20 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "_patch_questions"
-location: "L1815"
+community: "_patch_tier1"
+location: "L858"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_patch_questions
+  - community/_patch_tier1
 ---
 
 # scenario()
 
 ## Connections
-- [[_patch_questions()]] - `calls` [EXTRACTED]
-- [[responder()_8]] - `indirect_call` [INFERRED]
-- [[test_category_products_reports_no_more_on_a_short_page()]] - `contains` [EXTRACTED]
+- [[_patch_tier1()]] - `calls` [EXTRACTED]
+- [[always_blocked()]] - `indirect_call` [INFERRED]
+- [[ok_cdp()]] - `indirect_call` [INFERRED]
+- [[test_fetch_composer_caches_a_successful_cdp_body()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_patch_questions
+#graphify/code #graphify/EXTRACTED #community/_patch_tier1

@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "useAnalysisStore"
+community: "infra-leak.ts"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/useAnalysisStore
+  - community/infra-leakts
 ---
 
 # packages_contracts_dist_index_offercitation
@@ -15,4 +15,4 @@ tags:
 - [[analyze.ts]] - `imports` [EXTRACTED]
 - [[infra-leak.ts]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/useAnalysisStore
+#graphify/concept #graphify/EXTRACTED #community/infra-leakts

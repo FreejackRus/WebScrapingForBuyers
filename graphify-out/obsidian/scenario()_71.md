@@ -1,20 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "_patch_questions"
-location: "L1759"
+community: "test_safe_get_text_does_not_retry_after_wall_timeout"
+location: "L144"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_patch_questions
+  - community/test_safe_get_text_does_not_retry_after_wall_timeout
 ---
 
 # scenario()
 
 ## Connections
-- [[_patch_questions()]] - `calls` [EXTRACTED]
-- [[_tool_error_payload()_1]] - `calls` [EXTRACTED]
-- [[forbidden()_8]] - `indirect_call` [INFERRED]
-- [[test_category_products_rejects_an_unsafe_shard()]] - `contains` [EXTRACTED]
+- [[test_safe_get_text_does_not_retry_after_wall_timeout()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_patch_questions
+#graphify/code #graphify/EXTRACTED #community/test_safe_get_text_does_not_retry_after_wall_timeout

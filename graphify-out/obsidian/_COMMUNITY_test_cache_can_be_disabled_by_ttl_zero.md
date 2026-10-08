@@ -13,10 +13,10 @@ members: 8
 - [[WB_CACHE_TTL=0 means every read goes upstream.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[__aenter__()_12]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[__aexit__()_12]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
-- [[aiter_bytes()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
-- [[no_wait()_32]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
-- [[scenario()_82]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
-- [[stream()_7]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[aiter_bytes()_4]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[no_wait()_35]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[scenario()_81]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[stream()_8]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[test_cache_can_be_disabled_by_ttl_zero()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 
 ## Live Query (requires Dataview plugin)
@@ -33,4 +33,4 @@ SORT file.name ASC
 
 ## Top bridge nodes
 - [[test_cache_can_be_disabled_by_ttl_zero()]] - degree 9, connects to 2 communities
-- [[scenario()_82]] - degree 3, connects to 2 communities
+- [[scenario()_81]] - degree 3, connects to 2 communities

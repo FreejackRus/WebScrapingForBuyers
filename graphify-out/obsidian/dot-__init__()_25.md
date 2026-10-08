@@ -1,18 +1,20 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "code"
-community: "BadRequestError"
-location: "L59"
+community: "open_page"
+location: "L1088"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/BadRequestError
+  - community/open_page
 ---
 
 # .__init__()
 
 ## Connections
-- [[dot-__init__()_27]] - `calls` [EXTRACTED]
-- [[AuthMissingError]] - `method` [EXTRACTED]
+- [[dot-__init__()_24]] - `calls` [EXTRACTED]
+- [[dot-__init__()_25]] - `calls` [EXTRACTED]
+- [[Collection_1]] - `references` [EXTRACTED]
+- [[NavigationPolicyError]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/BadRequestError
+#graphify/code #graphify/EXTRACTED #community/open_page

@@ -13,8 +13,8 @@ tags:
 
 ## Connections
 - [[Show what a Yandex Market star rating is actually made of. uv run python…]] - `rationale_for` [EXTRACTED]
-- [[asyncio_2]] - `imports` [EXTRACTED]
-- [[main()_28]] - `contains` [EXTRACTED]
+- [[asyncio]] - `imports` [EXTRACTED]
+- [[main()_32]] - `contains` [EXTRACTED]
 - [[sys]] - `imports` [EXTRACTED]
 - [[yandex_connectorserver.py]] - `imports_from` [EXTRACTED]
 

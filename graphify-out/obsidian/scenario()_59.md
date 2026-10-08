@@ -1,21 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "_RecordingPacer"
-location: "L2178"
+community: "_patch_questions"
+location: "L1506"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_RecordingPacer
+  - community/_patch_questions
 ---
 
 # scenario()
 
 ## Connections
-- [[_clear_wb_cache()]] - `calls` [EXTRACTED]
-- [[_tool_error_payload()_1]] - `calls` [EXTRACTED]
-- [[fake_safe_get_text()_2]] - `indirect_call` [INFERRED]
-- [[no_wait()_2]] - `indirect_call` [INFERRED]
-- [[test_a_refusal_streak_reaches_the_operator()]] - `contains` [EXTRACTED]
+- [[_patch_questions()]] - `calls` [EXTRACTED]
+- [[responder()_14]] - `indirect_call` [INFERRED]
+- [[test_questions_stops_at_a_short_page()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_RecordingPacer
+#graphify/code #graphify/EXTRACTED #community/_patch_questions

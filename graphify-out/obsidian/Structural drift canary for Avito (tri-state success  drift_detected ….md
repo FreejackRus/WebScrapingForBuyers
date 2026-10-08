@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/server.py"
 type: "rationale"
-community: "avito_seller"
-location: "L668"
+community: "avito_connector/server.py"
+location: "L800"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/avito_seller
+  - community/avito_connector/serverpy
 ---
 
 # Structural drift canary for Avito (tri-state: success / drift_detected /…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[avito_selfcheck()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/avito_seller
+#graphify/rationale #graphify/EXTRACTED #community/avito_connector/serverpy

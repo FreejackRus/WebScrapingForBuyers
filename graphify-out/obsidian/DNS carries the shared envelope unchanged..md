@@ -12,6 +12,6 @@ tags:
 # DNS carries the shared envelope unchanged.
 
 ## Connections
-- [[MetaOut_1]] - `rationale_for` [EXTRACTED]
+- [[MetaOut_2]] - `rationale_for` [EXTRACTED]
 
 #graphify/rationale #graphify/EXTRACTED #community/dns_card

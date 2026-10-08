@@ -12,15 +12,21 @@ tags:
 # features/search/index.ts
 
 ## Connections
+- [[OFFER_COLUMNS]] - `re_exports` [EXTRACTED]
 - [[OFFER_PAGE_SIZE]] - `re_exports` [EXTRACTED]
 - [[commanduiindex.tsx]] - `imports_from` [EXTRACTED]
 - [[filter-offersindex.ts]] - `re_exports` [EXTRACTED]
+- [[offer-carduiindex.tsx]] - `imports_from` [EXTRACTED]
+- [[offer-columnsindex.ts]] - `re_exports` [EXTRACTED]
 - [[offer-tableindex.ts]] - `re_exports` [EXTRACTED]
 - [[offersuiindex.tsx]] - `imports_from` [EXTRACTED]
+- [[open-offerindex.ts]] - `re_exports` [EXTRACTED]
 - [[startindex.ts]] - `re_exports` [EXTRACTED]
 - [[startSearch()]] - `re_exports` [EXTRACTED]
 - [[suggestindex.ts]] - `re_exports` [EXTRACTED]
 - [[useFilteredOffers()]] - `re_exports` [EXTRACTED]
+- [[useOfferCard()]] - `re_exports` [EXTRACTED]
+- [[useOfferColumns()]] - `re_exports` [EXTRACTED]
 - [[useOfferTable()]] - `re_exports` [EXTRACTED]
 - [[useSuggest()]] - `re_exports` [EXTRACTED]
 

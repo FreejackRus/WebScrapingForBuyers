@@ -15,6 +15,8 @@ tags:
 - [[OfferSort]] - `contains` [EXTRACTED]
 - [[OfferSortColumn]] - `contains` [EXTRACTED]
 - [[OfferSortDirection]] - `contains` [EXTRACTED]
+- [[PRICE_ANOMALY_HINT]] - `contains` [EXTRACTED]
+- [[PRICE_ANOMALY_LABEL]] - `contains` [EXTRACTED]
 - [[applyTableFilter()]] - `contains` [EXTRACTED]
 - [[compareText()]] - `contains` [EXTRACTED]
 - [[conditionLabels]] - `contains` [EXTRACTED]
@@ -28,5 +30,6 @@ tags:
 - [[packages_contracts_dist_index_offer]] - `imports` [EXTRACTED]
 - [[packages_contracts_dist_index_offertablefilter]] - `imports` [EXTRACTED]
 - [[sortOffers()]] - `contains` [EXTRACTED]
+- [[table-filter.test.ts]] - `imports_from` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/offers/ui/indextsx

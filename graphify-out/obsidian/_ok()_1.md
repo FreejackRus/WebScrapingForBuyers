@@ -1,22 +1,22 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py"
 type: "code"
-community: "avito-connector/tests/test_server.py"
+community: "_patch_fetch"
 location: "L81"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/avito-connector/tests/test_serverpy
+  - community/_patch_fetch
 ---
 
 # _ok()
 
 ## Connections
 - [[avito-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[fake_fetch()_6]] - `calls` [EXTRACTED]
-- [[fake_fetch()_7]] - `calls` [EXTRACTED]
 - [[fake_fetch()_8]] - `calls` [EXTRACTED]
 - [[fake_fetch()_9]] - `calls` [EXTRACTED]
+- [[fake_fetch()_10]] - `calls` [EXTRACTED]
+- [[fake_fetch()_11]] - `calls` [EXTRACTED]
 - [[test_card_accepts_a_slug_url()]] - `calls` [EXTRACTED]
 - [[test_card_parses_the_item_envelope()]] - `calls` [EXTRACTED]
 - [[test_search_a_pricelss_listing_is_none_never_zero()]] - `calls` [EXTRACTED]
@@ -26,4 +26,4 @@ tags:
 - [[test_seller_parses_reputation_and_active_count()]] - `calls` [EXTRACTED]
 - [[test_seller_warns_when_identity_is_missing()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/avito-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/_patch_fetch

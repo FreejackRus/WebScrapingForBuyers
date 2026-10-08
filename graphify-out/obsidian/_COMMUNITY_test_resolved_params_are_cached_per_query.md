@@ -27,7 +27,7 @@ SORT file.name ASC
 
 ## Connections to other communities
 - 3 edges to [[_COMMUNITY_megamarket-connectorteststest_server.py]]
-- 1 edge to [[_COMMUNITY_fake_post]]
+- 1 edge to [[_COMMUNITY_test_the_category_url_is_what_yields_a_collection]]
 
 ## Top bridge nodes
 - [[test_resolved_params_are_cached_per_query()]] - degree 5, connects to 2 communities

@@ -12,7 +12,7 @@ tags:
 # test_docker_probe_requires_expected_version_before_starting()
 
 ## Connections
-- [[main()_27]] - `calls` [EXTRACTED]
+- [[main()_26]] - `calls` [EXTRACTED]
 - [[replace_command()]] - `calls` [EXTRACTED]
 - [[test_stdio_probe.py]] - `contains` [EXTRACTED]
 

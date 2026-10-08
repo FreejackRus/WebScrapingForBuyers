@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "pathlib"
+community: "e2e_stdio_check.py"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/e2e_stdio_checkpy
 ---
 
 # mcp_client_stdio
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[e2e_stdio_check.py]] - `imports_from` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/pathlib
+#graphify/concept #graphify/EXTRACTED #community/e2e_stdio_checkpy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/models_output.py"
 type: "code"
-community: "models.py"
+community: "dns_card"
 location: "L201"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/modelspy
+  - community/dns_card
 ---
 
 # CianSelfcheckCheckOut
@@ -16,4 +16,4 @@ tags:
 - [[SelfCheckEntryBase]] - `inherits` [EXTRACTED]
 - [[cian_connectormodels_output.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/modelspy
+#graphify/code #graphify/EXTRACTED #community/dns_card

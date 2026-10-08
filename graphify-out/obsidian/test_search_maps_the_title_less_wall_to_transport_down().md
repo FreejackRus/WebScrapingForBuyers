@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[The 2026-09-10 regression the empty-title wall payload must answer…]] - `rationale_for` [EXTRACTED]
 - [[_error_payload()]] - `calls` [EXTRACTED]
-- [[_patch_render()_1]] - `calls` [EXTRACTED]
+- [[_patch_render()]] - `calls` [EXTRACTED]
 - [[taobao-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_error_payload

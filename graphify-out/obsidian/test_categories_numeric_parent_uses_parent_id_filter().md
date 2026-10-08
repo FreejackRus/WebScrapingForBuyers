@@ -12,8 +12,8 @@ tags:
 # test_categories_numeric_parent_uses_parent_id_filter()
 
 ## Connections
-- [[capture()_7]] - `contains` [EXTRACTED]
-- [[capture()_10]] - `indirect_call` [INFERRED]
+- [[capture()_5]] - `contains` [EXTRACTED]
+- [[capture()_8]] - `indirect_call` [INFERRED]
 - [[detmir-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/capture

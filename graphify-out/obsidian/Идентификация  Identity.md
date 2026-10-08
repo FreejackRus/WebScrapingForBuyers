@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
 community: "[2.3.0] - 2026-09-13"
-location: "L213"
+location: "L219"
 tags:
   - graphify/document
   - graphify/EXTRACTED

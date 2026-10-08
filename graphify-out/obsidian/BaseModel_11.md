@@ -1,18 +1,20 @@
 ---
 source_file: ""
 type: "code"
-community: "models.py"
+community: "avito_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/modelspy
+  - community/avito_connector/serverpy
 ---
 
 # BaseModel
 
 ## Connections
-- [[TaobaoCardResponse]] - `inherits` [EXTRACTED]
-- [[TaobaoSearchItemOut]] - `inherits` [EXTRACTED]
-- [[TaobaoSearchResponse]] - `inherits` [EXTRACTED]
+- [[AvitoCardResponse]] - `inherits` [EXTRACTED]
+- [[AvitoSearchItemOut]] - `inherits` [EXTRACTED]
+- [[AvitoSearchResponse]] - `inherits` [EXTRACTED]
+- [[AvitoSellerOut]] - `inherits` [EXTRACTED]
+- [[AvitoSellerResponse]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/modelspy
+#graphify/code #graphify/EXTRACTED #community/avito_connector/serverpy

@@ -1,17 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "clear_cache"
+community: "test_storefront_search.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/clear_cache
+  - community/test_storefront_searchpy
 ---
 
 # fixture
 
 ## Connections
-- [[clear_cache()_1]] - `references` [EXTRACTED]
-- [[no_delay()]] - `references` [EXTRACTED]
+- [[storefront_transport()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/clear_cache
+#graphify/code #graphify/EXTRACTED #community/test_storefront_searchpy

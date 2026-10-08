@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/e2e_stdio_check.py"
 type: "rationale"
-community: "pathlib"
-location: "L72"
+community: "e2e_stdio_check.py"
+location: "L70"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/e2e_stdio_checkpy
 ---
 
 # Reject incomplete introspection even when tools/call itself succeeded.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[validate_sources()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/pathlib
+#graphify/rationale #graphify/EXTRACTED #community/e2e_stdio_checkpy

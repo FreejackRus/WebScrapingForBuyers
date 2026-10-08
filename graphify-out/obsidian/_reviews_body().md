@@ -12,8 +12,8 @@ tags:
 # _reviews_body()
 
 ## Connections
-- [[fake_fetch()_10]] - `calls` [EXTRACTED]
 - [[fake_fetch()_12]] - `calls` [EXTRACTED]
+- [[fake_fetch()_14]] - `calls` [EXTRACTED]
 - [[ozon-connectorteststest_server.py]] - `contains` [EXTRACTED]
 - [[test_ozon_selfcheck_includes_runtime_identity()]] - `calls` [EXTRACTED]
 

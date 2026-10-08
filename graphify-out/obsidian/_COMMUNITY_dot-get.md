@@ -10,7 +10,7 @@ members: 8
 **Members:** 8 nodes
 
 ## Members
-- [[dot-get()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
+- [[dot-get()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
 - [[dot-get_or_fetch()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
 - [[dot-invalidate()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
 - [[dot-set()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
@@ -30,7 +30,7 @@ SORT file.name ASC
 - 4 edges to [[_COMMUNITY_TTLCache]]
 
 ## Top bridge nodes
-- [[dot-get()]] - degree 5, connects to 1 community
+- [[dot-get()_1]] - degree 5, connects to 1 community
 - [[dot-get_or_fetch()]] - degree 5, connects to 1 community
 - [[dot-set()]] - degree 3, connects to 1 community
 - [[dot-invalidate()]] - degree 2, connects to 1 community

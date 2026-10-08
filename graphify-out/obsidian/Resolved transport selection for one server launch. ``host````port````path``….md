@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/runtime.py"
 type: "rationale"
-community: "TransportConfig"
+community: "resolve_transport"
 location: "L91"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/TransportConfig
+  - community/resolve_transport
 ---
 
 # Resolved transport selection for one server launch. ``host``/``port``/``path``…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[TransportConfig]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/TransportConfig
+#graphify/rationale #graphify/EXTRACTED #community/resolve_transport

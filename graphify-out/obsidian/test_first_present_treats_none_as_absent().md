@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_resilience.py"
 type: "code"
-community: "test_resilience_properties.py"
+community: "resilience.py"
 location: "L219"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_resilience_propertiespy
+  - community/resiliencepy
 ---
 
 # test_first_present_treats_none_as_absent()
@@ -16,4 +16,4 @@ tags:
 - [[first_present()]] - `calls` [EXTRACTED]
 - [[test_resilience.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_resilience_propertiespy
+#graphify/code #graphify/EXTRACTED #community/resiliencepy

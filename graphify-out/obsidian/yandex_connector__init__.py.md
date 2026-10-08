@@ -14,6 +14,7 @@ tags:
 ## Connections
 - [[Yandex Market MCP connector.]] - `rationale_for` [EXTRACTED]
 - [[test_card_verification_records.py]] - `imports_from` [EXTRACTED]
+- [[test_cdp_transport.py]] - `imports_from` [EXTRACTED]
 - [[test_search_offer_integrity.py]] - `imports_from` [EXTRACTED]
 - [[test_search_variants.py]] - `imports_from` [EXTRACTED]
 - [[test_ssr.py]] - `imports_from` [EXTRACTED]

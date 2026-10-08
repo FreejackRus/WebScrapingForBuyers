@@ -1,22 +1,28 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_search_extractor_live_dom.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_live_payload_contract.py"
 type: "code"
-community: "run_extractor"
-location: "L63"
+community: "test_live_payload_contract.py"
+location: "L40"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/run_extractor
+  - community/test_live_payload_contractpy
 ---
 
 # _items()
 
 ## Connections
-- [[JsdomUnavailable]] - `uses` [INFERRED]
-- [[run_extractor()]] - `calls` [EXTRACTED]
-- [[taobao-connectorteststest_search_extractor_live_dom.py]] - `contains` [EXTRACTED]
-- [[test_live_items_carry_shop_sales_location()]] - `calls` [EXTRACTED]
-- [[test_live_prices_survive_the_split_price_layout()]] - `calls` [EXTRACTED]
-- [[test_live_titles_are_the_product_name_not_the_whole_tile()]] - `calls` [EXTRACTED]
+- [[AvitoSearchItemOut]] - `uses` [INFERRED]
+- [[_parse_search_items()]] - `calls` [EXTRACTED]
+- [[_payload()_1]] - `calls` [EXTRACTED]
+- [[test_a_place_name_is_never_a_python_repr()]] - `calls` [EXTRACTED]
+- [[test_absent_seller_stays_none()]] - `calls` [EXTRACTED]
+- [[test_every_item_has_a_url()]] - `calls` [EXTRACTED]
+- [[test_live_payload_contract.py]] - `contains` [EXTRACTED]
+- [[test_live_payload_validates_at_all()]] - `calls` [EXTRACTED]
+- [[test_location_object_becomes_a_place_name()]] - `calls` [EXTRACTED]
+- [[test_missing_place_name_is_none_not_invented()]] - `calls` [EXTRACTED]
+- [[test_posted_at_is_iso_not_a_bare_epoch()]] - `calls` [EXTRACTED]
+- [[test_price_comes_from_price_detailed_value()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/run_extractor
+#graphify/code #graphify/EXTRACTED #community/test_live_payload_contractpy

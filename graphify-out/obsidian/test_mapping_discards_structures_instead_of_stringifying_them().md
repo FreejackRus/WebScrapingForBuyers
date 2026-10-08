@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_identity.py"
 type: "code"
-community: "identity.py"
+community: "ProductIdentity"
 location: "L94"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/identitypy
+  - community/ProductIdentity
 ---
 
 # test_mapping_discards_structures_instead_of_stringifying_them()
@@ -15,4 +15,4 @@ tags:
 - [[identity_from_mapping()]] - `calls` [EXTRACTED]
 - [[test_identity.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/identitypy
+#graphify/code #graphify/EXTRACTED #community/ProductIdentity

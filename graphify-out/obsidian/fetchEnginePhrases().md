@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/infrastructure/suggest/live-suggest.ts"
 type: "code"
-community: "live-suggest.ts"
-location: "L78"
+community: "product-from-query.ts"
+location: "L79"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/live-suggestts
+  - community/product-from-queryts
 ---
 
 # fetchEnginePhrases()
@@ -21,4 +21,4 @@ tags:
 - [[suggestLiveProducts()]] - `calls` [EXTRACTED]
 - [[yandexSuggestUrl()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/live-suggestts
+#graphify/code #graphify/EXTRACTED #community/product-from-queryts

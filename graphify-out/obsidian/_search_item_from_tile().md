@@ -1,21 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/src/dns_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/server.py"
 type: "code"
-community: "dns_connector/models_output.py"
-location: "L323"
+community: "taobao_connector/server.py"
+location: "L384"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/dns_connector/models_outputpy
+  - community/taobao_connector/serverpy
 ---
 
 # _search_item_from_tile()
 
 ## Connections
-- [[Any_14]] - `references` [EXTRACTED]
-- [[DnsSearchItemOut]] - `calls` [EXTRACTED]
+- [[Any_1]] - `references` [EXTRACTED]
 - [[Map one extracted tile onto the wire shape, parsing prices in Python. Accepts…]] - `rationale_for` [EXTRACTED]
-- [[dns_connectorserver.py]] - `contains` [EXTRACTED]
-- [[dns_search()]] - `calls` [EXTRACTED]
+- [[TaobaoSearchItemOut]] - `calls` [EXTRACTED]
+- [[prices_from_tile()]] - `calls` [EXTRACTED]
+- [[taobao_connectorserver.py]] - `contains` [EXTRACTED]
+- [[taobao_search()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/dns_connector/models_outputpy
+#graphify/code #graphify/EXTRACTED #community/taobao_connector/serverpy

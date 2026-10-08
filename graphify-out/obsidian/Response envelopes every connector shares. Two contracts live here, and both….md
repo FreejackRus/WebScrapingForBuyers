@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/models.py"
 type: "rationale"
-community: "models.py"
+community: "dns_card"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/modelspy
+  - community/dns_card
 ---
 
 # Response envelopes every connector shares. Two contracts live here, and both…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[models.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/modelspy
+#graphify/rationale #graphify/EXTRACTED #community/dns_card

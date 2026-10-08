@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
 type: "code"
-community: "test_cache_can_be_disabled_by_ttl_zero"
-location: "L1369"
+community: "test_wb_search_storefront_does_not_fall_back_to_search_goods"
+location: "L114"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/test_cache_can_be_disabled_by_ttl_zero
+  - graphify/INFERRED
+  - community/test_wb_search_storefront_does_not_fall_back_to_search_goods
 ---
 
 # scenario()
 
 ## Connections
-- [[TTLCache]] - `calls` [EXTRACTED]
-- [[no_wait()_2]] - `indirect_call` [INFERRED]
-- [[test_cache_can_be_disabled_by_ttl_zero()]] - `contains` [EXTRACTED]
+- [[failing_storefront()]] - `indirect_call` [INFERRED]
+- [[legacy()]] - `indirect_call` [INFERRED]
+- [[test_wb_search_storefront_does_not_fall_back_to_search_goods()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_cache_can_be_disabled_by_ttl_zero
+#graphify/code #graphify/INFERRED #community/test_wb_search_storefront_does_not_fall_back_to_search_goods

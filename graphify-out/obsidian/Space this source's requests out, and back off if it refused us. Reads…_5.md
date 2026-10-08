@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/server.py"
 type: "rationale"
-community: "log_event"
-location: "L582"
+community: "avito_connector/server.py"
+location: "L149"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/log_event
+  - community/avito_connector/serverpy
 ---
 
 # Space this source's requests out, and back off if it refused us. Reads…
 
 ## Connections
-- [[_polite_wait()_7]] - `rationale_for` [EXTRACTED]
+- [[_polite_wait()_6]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/log_event
+#graphify/rationale #graphify/EXTRACTED #community/avito_connector/serverpy

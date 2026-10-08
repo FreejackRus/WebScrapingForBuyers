@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "rationale"
-community: "log_event"
-location: "L2779"
+community: "wb_connector/server.py"
+location: "L2918"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/log_event
+  - community/wb_connector/serverpy
 ---
 
 # Structural drift canary for WB (tri-state: success / drift_detected /…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[wb_selfcheck()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/log_event
+#graphify/rationale #graphify/EXTRACTED #community/wb_connector/serverpy

@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "useSearchStore"
+community: "offers/ui/index.tsx"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/useSearchStore
+  - community/offers/ui/indextsx
 ---
 
 # packages_contracts_dist_index_offertablefilter
@@ -15,4 +15,4 @@ tags:
 - [[prompt-intent.ts]] - `imports` [EXTRACTED]
 - [[searchstoreindex.ts]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/useSearchStore
+#graphify/concept #graphify/EXTRACTED #community/offers/ui/indextsx

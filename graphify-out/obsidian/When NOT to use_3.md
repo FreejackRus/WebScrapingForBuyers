@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/mpstats-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/compare-prices/SKILL.md"
 type: "document"
-community: "ozon_card"
-location: "L25"
+community: "Cross-Marketplace Price Comparison"
+location: "L23"
 tags:
   - graphify/document
-  - graphify/INFERRED
-  - community/ozon_card
+  - graphify/EXTRACTED
+  - community/Cross-Marketplace_Price_Comparison
 ---
 
 # When NOT to use
 
 ## Connections
-- [[MPStats Connector]] - `contains` [EXTRACTED]
-- [[ozon_card()]] - `references` [INFERRED]
-- [[wb_card()]] - `references` [INFERRED]
+- [[Cross-Marketplace Price Comparison_1]] - `contains` [EXTRACTED]
+- [[detmir_category()]] - `references` [INFERRED]
 
-#graphify/document #graphify/INFERRED #community/ozon_card
+#graphify/document #graphify/EXTRACTED #community/Cross-Marketplace_Price_Comparison

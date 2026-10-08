@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "BearerAuthMiddleware"
+community: "sys"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/BearerAuthMiddleware
+  - community/sys
 ---
 
 # Middleware
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[BearerAuthMiddleware]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/BearerAuthMiddleware
+#graphify/code #graphify/EXTRACTED #community/sys

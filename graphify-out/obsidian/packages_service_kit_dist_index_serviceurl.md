@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "analysis/src/app.ts"
+community: "gateway/src/app.ts"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/analysis/src/appts
+  - community/gateway/src/appts
 ---
 
 # packages_service_kit_dist_index_serviceurl
@@ -14,4 +14,4 @@ tags:
 - [[analysissrcapp.ts]] - `imports` [EXTRACTED]
 - [[gatewaysrcapp.ts]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/analysis/src/appts
+#graphify/concept #graphify/EXTRACTED #community/gateway/src/appts

@@ -10,12 +10,12 @@ members: 7
 **Members:** 7 nodes
 
 ## Members
-- [[A green selfcheck does NOT mean the data is right_1]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/dns-connector/SKILL.md
-- [[DNS-Shop Connector_1]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/dns-connector/SKILL.md
-- [[Gotchas_16]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/dns-connector/SKILL.md
-- [[The price on a DNS tile is not the smallest number on it_1]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/dns-connector/SKILL.md
-- [[Tools available_14]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/dns-connector/SKILL.md
-- [[When to use_17]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/dns-connector/SKILL.md
+- [[A green selfcheck does NOT mean the data is right]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/dns-connector/SKILL.md
+- [[DNS-Shop Connector]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/dns-connector/SKILL.md
+- [[Gotchas_7]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/dns-connector/SKILL.md
+- [[The price on a DNS tile is not the smallest number on it]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/dns-connector/SKILL.md
+- [[Tools available_1]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/dns-connector/SKILL.md
+- [[When to use_8]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/dns-connector/SKILL.md
 - [[dshskillsdns-connectorSKILL]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/dns-connector/SKILL.md
 
 ## Live Query (requires Dataview plugin)
@@ -30,6 +30,6 @@ SORT file.name ASC
 - 1 edge to [[_COMMUNITY_compare_prices]]
 
 ## Top bridge nodes
-- [[DNS-Shop Connector_1]] - degree 7, connects to 1 community
-- [[A green selfcheck does NOT mean the data is right_1]] - degree 2, connects to 1 community
-- [[Tools available_14]] - degree 2, connects to 1 community
+- [[DNS-Shop Connector]] - degree 7, connects to 1 community
+- [[A green selfcheck does NOT mean the data is right]] - degree 2, connects to 1 community
+- [[Tools available_1]] - degree 2, connects to 1 community

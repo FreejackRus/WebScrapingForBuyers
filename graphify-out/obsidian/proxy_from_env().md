@@ -13,11 +13,10 @@ tags:
 
 ## Connections
 - [[First non-empty proxy URL among ``env_names``, then the standard vars. Lets a…]] - `rationale_for` [EXTRACTED]
-- [[_proxy()_1]] - `calls` [INFERRED]
-- [[_proxy()_5]] - `calls` [INFERRED]
-- [[_proxy()_2]] - `calls` [INFERRED]
-- [[_proxy()_6]] - `calls` [INFERRED]
+- [[_proxy()]] - `calls` [INFERRED]
 - [[_proxy()_3]] - `calls` [INFERRED]
+- [[_proxy()_5]] - `calls` [INFERRED]
+- [[_proxy()_4]] - `calls` [INFERRED]
 - [[http_tier.py]] - `contains` [EXTRACTED]
 - [[test_proxy_from_env_falls_back_to_standard_vars()]] - `calls` [INFERRED]
 - [[test_proxy_from_env_ignores_blank_values()]] - `calls` [INFERRED]

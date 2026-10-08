@@ -2,7 +2,7 @@
 source_file: "apps/search/src/application/search-service.ts"
 type: "code"
 community: "SearchService"
-location: "L9"
+location: "L13"
 tags:
   - graphify/code
   - graphify/EXTRACTED

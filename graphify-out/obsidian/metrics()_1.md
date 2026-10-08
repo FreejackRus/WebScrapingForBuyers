@@ -1,26 +1,20 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_snapshot.py"
+source_file: "apps/web/src/widgets/search/metrics/ui/index.tsx"
 type: "code"
-community: "test_chrome_cdp_snapshot.py"
-location: "L36"
+community: "workspace/ui/index.tsx"
+location: "L3"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_chrome_cdp_snapshotpy
+  - community/workspace/ui/indextsx
 ---
 
-# metrics()
+# Metrics()
 
 ## Connections
-- [[delayed()]] - `calls` [EXTRACTED]
-- [[test_actual_pixels_remaining_oversize_are_rejected_after_one_retry()]] - `calls` [EXTRACTED]
-- [[test_bad_image_payload_is_rejected()]] - `calls` [EXTRACTED]
-- [[test_chrome_cdp_snapshot.py]] - `contains` [EXTRACTED]
-- [[test_encoded_and_decoded_byte_limits()]] - `calls` [EXTRACTED]
-- [[test_invalid_geometry_never_captures()]] - `calls` [EXTRACTED]
-- [[test_jpeg_dimensions_are_authoritative_and_dpr_is_corrected_once()]] - `calls` [EXTRACTED]
-- [[test_playwright_detach_has_its_own_bounded_cleanup()]] - `calls` [EXTRACTED]
-- [[test_raw_snapshot_uses_matching_cdp_responses_without_navigation()]] - `calls` [EXTRACTED]
-- [[test_scrolled_viewport_scale_and_transport_cleanup()]] - `calls` [EXTRACTED]
+- [[metricsindex.ts]] - `re_exports` [EXTRACTED]
+- [[metricsuiindex.tsx]] - `contains` [EXTRACTED]
+- [[widgetssearchindex.ts]] - `re_exports` [EXTRACTED]
+- [[workspaceuiindex.tsx]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_snapshotpy
+#graphify/code #graphify/EXTRACTED #community/workspace/ui/indextsx

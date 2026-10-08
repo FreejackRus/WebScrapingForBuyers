@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/http_tier.py"
 type: "code"
-community: "transport/__init__.py"
+community: "test_http_tier.py"
 location: "L71"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/transport/__init__py
+  - community/test_http_tierpy
 ---
 
 # RateLimiter
 
 ## Connections
-- [[dot-wait()_2]] - `method` [EXTRACTED]
+- [[dot-wait()_1]] - `method` [EXTRACTED]
 - [[Serialises requests so consecutive calls stay ``min_gap_s`` apart.]] - `rationale_for` [EXTRACTED]
 - [[get_text_with_retries()]] - `references` [EXTRACTED]
 - [[http_tier.py]] - `contains` [EXTRACTED]
@@ -20,4 +20,4 @@ tags:
 - [[test_rate_limiter_spaces_requests()]] - `calls` [INFERRED]
 - [[transport__init__.py]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/transport/__init__py
+#graphify/code #graphify/EXTRACTED #community/test_http_tierpy

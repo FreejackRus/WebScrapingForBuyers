@@ -15,7 +15,7 @@ tags:
 - [[ProbeError]] - `uses` [INFERRED]
 - [[StdioProbe]] - `uses` [INFERRED]
 - [[command()]] - `calls` [EXTRACTED]
-- [[parametrize_28]] - `references` [EXTRACTED]
+- [[parametrize_21]] - `references` [EXTRACTED]
 - [[test_stdio_probe.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_stdio_probepy

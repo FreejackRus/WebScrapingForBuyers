@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/SECURITY.md"
 type: "document"
-community: "Contributor Covenant Code of Conduct"
-location: "L251"
+community: "Security"
+location: "L226"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Contributor_Covenant_Code_of_Conduct
+  - community/Security
 ---
 
 # Legal note
 
 ## Connections
-- [[Security_2]] - `contains` [EXTRACTED]
+- [[Security_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Contributor_Covenant_Code_of_Conduct
+#graphify/document #graphify/EXTRACTED #community/Security

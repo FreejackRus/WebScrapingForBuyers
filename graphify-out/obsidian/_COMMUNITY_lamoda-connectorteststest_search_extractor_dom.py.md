@@ -41,13 +41,11 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 2 edges to [[_COMMUNITY_run_extractor]]
-- 2 edges to [[_COMMUNITY_pathlib]]
-- 1 edge to [[_COMMUNITY_payload]]
+- 3 edges to [[_COMMUNITY_domtest.py]]
 - 1 edge to [[_COMMUNITY_lamoda-connectorteststest_shape_reference.py]]
 - 1 edge to [[_COMMUNITY_pytest]]
+- 1 edge to [[_COMMUNITY_pathlib]]
 
 ## Top bridge nodes
-- [[lamoda-connectorteststest_search_extractor_dom.py]] - degree 17, connects to 3 communities
+- [[lamoda-connectorteststest_search_extractor_dom.py]] - degree 17, connects to 4 communities
 - [[_extract()_15]] - degree 10, connects to 1 community
-- [[fake_render()_6]] - degree 2, connects to 1 community

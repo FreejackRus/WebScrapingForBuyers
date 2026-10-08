@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[The registry is bounded, and a full registry refuses rather than evicts. The…]] - `rationale_for` [EXTRACTED]
-- [[call()_1]] - `calls` [EXTRACTED]
+- [[call()]] - `calls` [EXTRACTED]
 - [[mcp-coreteststest_browser_handoff.py]] - `contains` [EXTRACTED]
 - [[success()]] - `indirect_call` [INFERRED]
 

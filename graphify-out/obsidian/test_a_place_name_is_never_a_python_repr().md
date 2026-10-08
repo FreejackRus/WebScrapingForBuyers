@@ -12,7 +12,7 @@ tags:
 # test_a_place_name_is_never_a_python_repr()
 
 ## Connections
-- [[_items()_2]] - `calls` [EXTRACTED]
+- [[_items()_3]] - `calls` [EXTRACTED]
 - [[``str(dict)`` would pass validation and show the user Python syntax. Worse than…]] - `rationale_for` [EXTRACTED]
 - [[test_live_payload_contract.py]] - `contains` [EXTRACTED]
 

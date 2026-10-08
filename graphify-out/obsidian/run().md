@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_raw_lifecycle.py"
 type: "code"
-community: "test_runtime.py"
-location: "L204"
+community: "test_chrome_cdp_raw_lifecycle.py"
+location: "L123"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_runtimepy
+  - community/test_chrome_cdp_raw_lifecyclepy
 ---
 
 # run()
 
 ## Connections
-- [[test_run_server_translates_keyboard_interrupt()]] - `contains` [EXTRACTED]
+- [[test_raw_cleanup_is_bounded_and_preserves_original_failure()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_runtimepy
+#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_raw_lifecyclepy

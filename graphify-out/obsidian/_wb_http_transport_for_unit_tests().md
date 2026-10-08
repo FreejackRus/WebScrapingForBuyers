@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/conftest.py"
 type: "code"
-community: "get_settings"
+community: "pytest"
 location: "L16"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/get_settings
+  - community/pytest
 ---
 
 # _wb_http_transport_for_unit_tests()
 
 ## Connections
-- [[fixture_30]] - `references` [EXTRACTED]
-- [[get_settings()_12]] - `calls` [INFERRED]
+- [[fixture_11]] - `references` [EXTRACTED]
+- [[get_settings()_11]] - `calls` [INFERRED]
 - [[wb-connectortestsconftest.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/get_settings
+#graphify/code #graphify/EXTRACTED #community/pytest

@@ -1,22 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/models_output.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/models_output.py"
 type: "code"
-community: "taobao_card"
-location: "L14"
+community: "lamoda_search"
+location: "L9"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/taobao_card
+  - community/lamoda_search
 ---
 
 # MetaOut
 
 ## Connections
+- [[Lamoda carries the shared envelope unchanged.]] - `rationale_for` [EXTRACTED]
 - [[MetaOutBase]] - `inherits` [EXTRACTED]
-- [[Taobao carries the shared envelope unchanged.]] - `rationale_for` [EXTRACTED]
-- [[taobao_card()]] - `uses` [INFERRED]
-- [[taobao_connectormodels_output.py]] - `contains` [EXTRACTED]
-- [[taobao_connectorserver.py]] - `imports` [EXTRACTED]
-- [[taobao_search()]] - `uses` [INFERRED]
+- [[lamoda_card()]] - `uses` [INFERRED]
+- [[lamoda_connectormodels_output.py]] - `contains` [EXTRACTED]
+- [[lamoda_connectorserver.py]] - `imports` [EXTRACTED]
+- [[lamoda_search()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/taobao_card
+#graphify/code #graphify/EXTRACTED #community/lamoda_search

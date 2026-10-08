@@ -1,22 +1,22 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py"
 type: "code"
-community: "test_termination_settles_queued_snapshot_before_getter_resumes"
+community: "mcp-core/tests/test_browser_handoff.py"
 location: "L539"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_termination_settles_queued_snapshot_before_getter_resumes
+  - community/mcp-core/tests/test_browser_handoffpy
 ---
 
 # test_snapshot_and_resume_cannot_overlap()
 
 ## Connections
-- [[call()_1]] - `calls` [EXTRACTED]
-- [[capture()_13]] - `indirect_call` [INFERRED]
+- [[call()]] - `calls` [EXTRACTED]
+- [[capture()_17]] - `indirect_call` [INFERRED]
 - [[mcp-coreteststest_browser_handoff.py]] - `contains` [EXTRACTED]
-- [[read()_2]] - `indirect_call` [INFERRED]
+- [[read()]] - `indirect_call` [INFERRED]
 - [[snapshot_id()]] - `calls` [EXTRACTED]
 - [[success()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/test_termination_settles_queued_snapshot_before_getter_resumes
+#graphify/code #graphify/EXTRACTED #community/mcp-core/tests/test_browser_handoffpy

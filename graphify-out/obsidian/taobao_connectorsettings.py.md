@@ -15,7 +15,7 @@ tags:
 - [[Taobao connector runtime settings (env-driven via TAOBAO_ prefix). Env vars…]] - `rationale_for` [EXTRACTED]
 - [[TaobaoSettings]] - `contains` [EXTRACTED]
 - [[functools]] - `imports_from` [EXTRACTED]
-- [[get_settings()_10]] - `contains` [EXTRACTED]
+- [[get_settings()_8]] - `contains` [EXTRACTED]
 - [[pydantic]] - `imports_from` [EXTRACTED]
 - [[pydantic_settings]] - `imports_from` [EXTRACTED]
 - [[taobao_connectorserver.py]] - `imports_from` [EXTRACTED]

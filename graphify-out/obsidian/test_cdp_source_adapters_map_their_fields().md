@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
-community: "megamarket_connector/models_output.py"
+community: "_FakeResponse"
 location: "L943"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/megamarket_connector/models_outputpy
+  - community/_FakeResponse
 ---
 
 # test_cdp_source_adapters_map_their_fields()
@@ -17,4 +17,4 @@ tags:
 - [[compare-connectorteststest_server.py]] - `contains` [EXTRACTED]
 - [[megamarket_search()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/megamarket_connector/models_outputpy
+#graphify/code #graphify/EXTRACTED #community/_FakeResponse

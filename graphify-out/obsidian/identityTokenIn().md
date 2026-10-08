@@ -1,12 +1,12 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
+source_file: "apps/search/src/domain/marketplace-relevance.ts"
 type: "code"
-community: "mcp-marketplace-adapter.ts"
-location: "L636"
+community: "marketplace-relevance.ts"
+location: "L76"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/mcp-marketplace-adapterts
+  - community/marketplace-relevancets
 ---
 
 # identityTokenIn()
@@ -15,8 +15,9 @@ tags:
 - [[2026-09-23 — K380 скорер семьи Logitech + клавиатура]] - `references` [INFERRED]
 - [[compactIdentity()]] - `calls` [EXTRACTED]
 - [[isProductFamilyCard()]] - `calls` [EXTRACTED]
-- [[mcp-marketplace-adapter.ts]] - `contains` [EXTRACTED]
+- [[marketplace-relevance.ts]] - `contains` [EXTRACTED]
+- [[missesShortModelQualifier()]] - `calls` [EXTRACTED]
 - [[tokenIn()]] - `calls` [EXTRACTED]
 - [[tokensIn()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts
+#graphify/code #graphify/EXTRACTED #community/marketplace-relevancets

@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
 community: "Changelog"
-location: "L772"
+location: "L1073"
 tags:
   - graphify/document
   - graphify/EXTRACTED
@@ -12,7 +12,6 @@ tags:
 # Added
 
 ## Connections
-- [[1.6.1 — 2026-09-09]] - `contains` [EXTRACTED]
-- [[ozon_reviews()]] - `references` [INFERRED]
+- [[1.4.0 — 2026-08-08]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/Changelog

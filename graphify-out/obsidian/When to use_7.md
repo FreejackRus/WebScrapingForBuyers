@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/marketplace/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/wb-connector/SKILL.md"
 type: "document"
-community: "compare_prices"
-location: "L18"
+community: "Wildberries Connector"
+location: "L11"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/compare_prices
+  - community/Wildberries_Connector
 ---
 
 # When to use
 
 ## Connections
-- [[Unified Marketplace Server]] - `contains` [EXTRACTED]
-- [[marketplace_sources()]] - `references` [INFERRED]
+- [[Wildberries Connector]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/compare_prices
+#graphify/document #graphify/EXTRACTED #community/Wildberries_Connector

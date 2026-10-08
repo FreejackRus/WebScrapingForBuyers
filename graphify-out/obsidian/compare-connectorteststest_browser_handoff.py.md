@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_browser_handoff.py"
 type: "code"
-community: "compare-connector/tests/test_browser_handoff.py"
+community: "json"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/compare-connector/tests/test_browser_handoffpy
+  - community/json
 ---
 
 # compare-connector/tests/test_browser_handoff.py
@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[A real MCP client can recover a source on the same owned browser page.]] - `rationale_for` [EXTRACTED]
 - [[base64]] - `imports` [EXTRACTED]
-- [[browser()]] - `contains` [EXTRACTED]
+- [[browser()_1]] - `contains` [EXTRACTED]
 - [[cache.py]] - `imports_from` [EXTRACTED]
 - [[compare_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[contextlib]] - `imports_from` [EXTRACTED]
@@ -35,4 +35,4 @@ tags:
 - [[test_taobao_tools_resume_the_retained_page()]] - `contains` [EXTRACTED]
 - [[transport__init__.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/compare-connector/tests/test_browser_handoffpy
+#graphify/code #graphify/EXTRACTED #community/json

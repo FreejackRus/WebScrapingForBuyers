@@ -27,7 +27,7 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 1 edge to [[_COMMUNITY_log_event]]
+- 1 edge to [[_COMMUNITY_wb_connectorserver.py]]
 
 ## Top bridge nodes
 - [[Что не изменилось]] - degree 2, connects to 1 community

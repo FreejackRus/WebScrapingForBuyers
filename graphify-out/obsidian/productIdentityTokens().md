@@ -1,12 +1,12 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
+source_file: "apps/search/src/domain/marketplace-relevance.ts"
 type: "code"
-community: "mcp-marketplace-adapter.ts"
-location: "L806"
+community: "marketplace-relevance.ts"
+location: "L295"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/mcp-marketplace-adapterts
+  - community/marketplace-relevancets
 ---
 
 # productIdentityTokens()
@@ -17,8 +17,10 @@ tags:
 - [[citilinkIdentityUrls()]] - `calls` [EXTRACTED]
 - [[compactAlnum()]] - `calls` [EXTRACTED]
 - [[isIdentityToken()]] - `calls` [EXTRACTED]
+- [[marketplace-relevance.test.ts]] - `imports` [EXTRACTED]
+- [[marketplace-relevance.ts]] - `contains` [EXTRACTED]
 - [[mcp-marketplace-adapter.test.ts]] - `imports` [EXTRACTED]
-- [[mcp-marketplace-adapter.ts]] - `contains` [EXTRACTED]
+- [[mcp-marketplace-adapter.ts]] - `imports` [EXTRACTED]
 - [[tokenizeProduct()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts
+#graphify/code #graphify/EXTRACTED #community/marketplace-relevancets

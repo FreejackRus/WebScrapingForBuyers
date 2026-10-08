@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/README.md"
 type: "document"
-community: "English version"
-location: "L858"
+community: "ru-marketplace-mcp"
+location: "L382"
 tags:
   - graphify/document
   - graphify/INFERRED
-  - community/English_version
+  - community/ru-marketplace-mcp
 ---
 
 # AliExpress — `aliexpress_*`
 
 ## Connections
-- [[The tools]] - `contains` [EXTRACTED]
 - [[aliexpress_selfcheck()]] - `references` [INFERRED]
 - [[compare_prices()]] - `references` [INFERRED]
+- [[Инструменты]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/INFERRED #community/English_version
+#graphify/document #graphify/INFERRED #community/ru-marketplace-mcp

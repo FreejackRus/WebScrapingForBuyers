@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "rationale"
-community: "TransportDownError"
+community: "avito_connector/server.py"
 location: "L496"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/TransportDownError
+  - community/avito_connector/serverpy
 ---
 
 # Health-check the CDP session itself, for operator-facing diagnostics. Answers…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[probe_session()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/TransportDownError
+#graphify/rationale #graphify/EXTRACTED #community/avito_connector/serverpy

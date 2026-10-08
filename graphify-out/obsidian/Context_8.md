@@ -1,20 +1,22 @@
 ---
 source_file: ""
 type: "code"
-community: "taobao_card"
+community: "avito_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/taobao_card
+  - community/avito_connector/serverpy
 ---
 
 # Context
 
 ## Connections
-- [[_cdp_render()_1]] - `references` [EXTRACTED]
-- [[_taobao_selfcheck_impl()]] - `references` [EXTRACTED]
-- [[taobao_card()]] - `references` [EXTRACTED]
-- [[taobao_search()]] - `references` [EXTRACTED]
-- [[taobao_selfcheck()]] - `references` [EXTRACTED]
+- [[_avito_selfcheck_impl()]] - `references` [EXTRACTED]
+- [[_cdp_fetch()]] - `references` [EXTRACTED]
+- [[_fetch()]] - `references` [EXTRACTED]
+- [[avito_card()]] - `references` [EXTRACTED]
+- [[avito_search()_1]] - `references` [EXTRACTED]
+- [[avito_selfcheck()]] - `references` [EXTRACTED]
+- [[avito_seller()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/taobao_card
+#graphify/code #graphify/EXTRACTED #community/avito_connector/serverpy

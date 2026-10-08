@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/app.ts"
 type: "code"
-community: "packages_contracts_dist_index"
-location: "L19"
+community: "SourceAdapter"
+location: "L18"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/packages_contracts_dist_index
+  - community/SourceAdapter
 ---
 
 # buildSearchApp()
@@ -15,7 +15,6 @@ tags:
 - [[SearchService]] - `calls` [EXTRACTED]
 - [[allowDemoSources()]] - `calls` [EXTRACTED]
 - [[app.test.ts]] - `imports` [EXTRACTED]
-- [[createApifySourcesFromEnv()]] - `calls` [EXTRACTED]
 - [[createDemoSources()]] - `calls` [EXTRACTED]
 - [[createDistributorSourcesFromEnv()]] - `calls` [EXTRACTED]
 - [[createHttpMarketplaceSources()]] - `calls` [EXTRACTED]
@@ -26,4 +25,4 @@ tags:
 - [[searchRoutes()]] - `indirect_call` [INFERRED]
 - [[Подключение реального источника]] - `references` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index
+#graphify/code #graphify/EXTRACTED #community/SourceAdapter

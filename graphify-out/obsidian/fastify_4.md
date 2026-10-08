@@ -2,7 +2,7 @@
 source_file: "apps/search/package.json"
 type: "code"
 community: "search/package.json"
-location: "L19"
+location: "L18"
 tags:
   - graphify/code
   - graphify/EXTRACTED

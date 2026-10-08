@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/domain/catalog.ts"
 type: "code"
-community: "live-suggest.ts"
+community: "product-from-query.ts"
 location: "L3"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/live-suggestts
+  - community/product-from-queryts
 ---
 
 # products
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[catalog.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/live-suggestts
+#graphify/code #graphify/EXTRACTED #community/product-from-queryts

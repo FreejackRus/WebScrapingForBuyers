@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/domtest.py"
 type: "code"
-community: "pathlib"
+community: "domtest.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/domtestpy
 ---
 
 # domtest.py
@@ -47,4 +47,4 @@ tags:
 - [[textwrap]] - `imports` [EXTRACTED]
 - [[typing]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pathlib
+#graphify/code #graphify/EXTRACTED #community/domtestpy

@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/__main__.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/__main__.py"
 type: "code"
-community: "taobao_connector/__main__.py"
-location: "L13"
+community: "sys"
+location: "L21"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/taobao_connector/__main__py
+  - community/sys
 ---
 
 # main()
 
 ## Connections
-- [[Run the server on the transport selected by the environment (stdio default)._11]] - `rationale_for` [EXTRACTED]
+- [[Run the server on the transport selected by the environment (stdio default)._12]] - `rationale_for` [EXTRACTED]
 - [[run_server()]] - `calls` [INFERRED]
-- [[taobao_connector__main__.py]] - `contains` [EXTRACTED]
+- [[yandex_connector__main__.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/taobao_connector/__main__py
+#graphify/code #graphify/EXTRACTED #community/sys

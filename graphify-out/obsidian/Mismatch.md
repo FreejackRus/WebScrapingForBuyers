@@ -15,6 +15,6 @@ tags:
 - [[(display path, line number, what was found, what it should be).]] - `rationale_for` [EXTRACTED]
 - [[_scan()]] - `calls` [EXTRACTED]
 - [[check_versions.py]] - `contains` [EXTRACTED]
-- [[main()_2]] - `calls` [EXTRACTED]
+- [[main()_6]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/check_versionspy

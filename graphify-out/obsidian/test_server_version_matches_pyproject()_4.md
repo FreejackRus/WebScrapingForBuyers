@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py"
 type: "code"
-community: "detmir-connector/tests/test_server.py"
-location: "L129"
+community: "yandex-connector/tests/test_server.py"
+location: "L56"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/detmir-connector/tests/test_serverpy
+  - community/yandex-connector/tests/test_serverpy
 ---
 
 # test_server_version_matches_pyproject()
 
 ## Connections
-- [[detmir-connectorteststest_server.py]] - `contains` [EXTRACTED]
+- [[yandex-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/detmir-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/yandex-connector/tests/test_serverpy

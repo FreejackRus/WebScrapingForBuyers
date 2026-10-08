@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
-community: "taobao"
-location: "L254"
+community: "offer"
+location: "L365"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/taobao
+  - community/offer
 ---
 
 # wb()
 
 ## Connections
-- [[offer()_1]] - `calls` [EXTRACTED]
-- [[test_challenge_keeps_partial_results_and_recovers_only_failed_source()]] - `contains` [EXTRACTED]
+- [[offer()_2]] - `calls` [EXTRACTED]
+- [[test_a_missing_connector_is_distinguished_from_a_block()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/taobao
+#graphify/code #graphify/EXTRACTED #community/offer

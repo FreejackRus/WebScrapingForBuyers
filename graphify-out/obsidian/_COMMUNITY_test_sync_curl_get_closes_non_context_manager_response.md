@@ -10,7 +10,7 @@ members: 4
 **Members:** 4 nodes
 
 ## Members
-- [[close()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
+- [[close()]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 - [[fake_get()_5]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 - [[iter_content()]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 - [[test_sync_curl_get_closes_non_context_manager_response()]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py

@@ -1,17 +1,18 @@
 ---
 type: community
-cohesion: 0.18
-members: 19
+cohesion: 0.17
+members: 20
 ---
 
 # taobao-connector/tests/test_server.py
 
-**Cohesion:** 0.18 - loosely connected
-**Members:** 19 nodes
+**Cohesion:** 0.17 - loosely connected
+**Members:** 20 nodes
 
 ## Members
 - [[Offline tests for the Taobao connector. CDP rendering is monkeypatched out the…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py
-- [[_patch_render()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py
+- [[_patch_render()]] - code - mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py
+- [[fake_render()]] - code - mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py
 - [[taobao-connectorteststest_server.py]] - code - mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py
 - [[test_a_bare_numeric_id_is_accepted()]] - code - mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py
 - [[test_a_real_taobao_url_still_yields_its_id()]] - code - mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py
@@ -39,7 +40,6 @@ SORT file.name ASC
 
 ## Connections to other communities
 - 7 edges to [[_COMMUNITY__error_payload]]
-- 4 edges to [[_COMMUNITY__no_cache_1]]
 - 3 edges to [[_COMMUNITY_test_challenge_recovery_reads_browser_again_and_caches_only_success]]
 - 2 edges to [[_COMMUNITY_test_card_survives_a_drifted_description_images_with_a_warning]]
 - 2 edges to [[_COMMUNITY_test_card_with_a_login_worded_product_name_parses_and_is_not_a_wall]]
@@ -48,18 +48,20 @@ SORT file.name ASC
 - 2 edges to [[_COMMUNITY_test_selfcheck_genuine_challenge_is_inconclusive_blocked]]
 - 2 edges to [[_COMMUNITY_test_selfcheck_runs_the_shape_canary_past_hidden_challenge_text]]
 - 2 edges to [[_COMMUNITY_test_selfcheck_title_less_wall_is_inconclusive_never_drift]]
-- 1 edge to [[_COMMUNITY_payload]]
+- 2 edges to [[_COMMUNITY_json]]
+- 1 edge to [[_COMMUNITY_test_login_wall_markers_body_text_branch]]
+- 1 edge to [[_COMMUNITY_test_login_wall_markers_are_gated_on_anchor_count]]
+- 1 edge to [[_COMMUNITY_test_the_card_navigates_a_rebuilt_item_base_url]]
+- 1 edge to [[_COMMUNITY__no_cache]]
 - 1 edge to [[_COMMUNITY_test_login_wall_markers_title_branch]]
 - 1 edge to [[_COMMUNITY_test_login_wall_markers_read_the_document_title_per_payload_kind]]
 - 1 edge to [[_COMMUNITY_test_login_wall_markers_login_routes_branch]]
 - 1 edge to [[_COMMUNITY_test_login_wall_markers_ignore_missing_and_garbage_fields]]
 - 1 edge to [[_COMMUNITY_test_anti_bot_challenge_is_gated_on_zero_items]]
 - 1 edge to [[_COMMUNITY_test_anti_bot_challenge_honors_the_legacy_marker_and_ignores_garbage]]
-- 1 edge to [[_COMMUNITY_compare-connectorteststest_browser_handoff.py]]
-- 1 edge to [[_COMMUNITY_json]]
 - 1 edge to [[_COMMUNITY_pytest]]
-- 1 edge to [[_COMMUNITY_test_card_verification_records.py]]
+- 1 edge to [[_COMMUNITY_test_card_extractor_live_dom.py]]
 
 ## Top bridge nodes
-- [[taobao-connectorteststest_server.py]] - degree 46, connects to 20 communities
-- [[_patch_render()_1]] - degree 25, connects to 9 communities
+- [[taobao-connectorteststest_server.py]] - degree 46, connects to 22 communities
+- [[_patch_render()]] - degree 25, connects to 8 communities

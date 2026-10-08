@@ -1,12 +1,12 @@
 ---
 source_file: "apps/identity/src/http/session.ts"
 type: "code"
-community: "session.ts"
+community: "identity/src/http/routes.ts"
 location: "L59"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/sessionts
+  - community/identity/src/http/routests
 ---
 
 # sign()
@@ -21,4 +21,4 @@ tags:
 - [[signSession()]] - `calls` [EXTRACTED]
 - [[verifySession()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/sessionts
+#graphify/code #graphify/INFERRED #community/identity/src/http/routests

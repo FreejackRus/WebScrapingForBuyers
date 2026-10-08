@@ -1,12 +1,12 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
+source_file: "apps/search/src/domain/marketplace-relevance.ts"
 type: "code"
-community: "mcp-marketplace-adapter.ts"
-location: "L695"
+community: "marketplace-relevance.ts"
+location: "L141"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/mcp-marketplace-adapterts
+  - community/marketplace-relevancets
 ---
 
 # categorySelfTokens()
@@ -14,8 +14,9 @@ tags:
 ## Connections
 - [[hasForeignCategoryClash()]] - `calls` [EXTRACTED]
 - [[hasSelfCategory()]] - `calls` [EXTRACTED]
-- [[mcp-marketplace-adapter.ts]] - `contains` [EXTRACTED]
+- [[marketplace-relevance.ts]] - `contains` [EXTRACTED]
+- [[mcp-marketplace-adapter.ts]] - `imports` [EXTRACTED]
 - [[tokenizeProduct()]] - `calls` [EXTRACTED]
 - [[wbItemsClashSelectedCategory()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts
+#graphify/code #graphify/EXTRACTED #community/marketplace-relevancets

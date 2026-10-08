@@ -1,16 +1,17 @@
 ---
 type: community
 cohesion: 0.03
-members: 81
+members: 86
 ---
 
 # no_wait
 
 **Cohesion:** 0.03 - loosely connected
-**Members:** 81 nodes
+**Members:** 86 nodes
 
 ## Members
-- [[If v9's response shape moves, the legacy path still answers.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[A page of delisted items is worse than an error if it looks like an answer.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[A stale result beats no result — but the caller must be told.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[Unrecoverable ids used to be parser_drift; with v9 primary they mean 'nothing'.…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[fake_safe_get_text()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[fake_safe_get_text()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
@@ -32,6 +33,7 @@ members: 81
 - [[fake_safe_get_text()_17]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[fake_safe_get_text()_18]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[fake_safe_get_text()_19]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[fake_safe_get_text()_20]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[no_wait()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[no_wait()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[no_wait()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
@@ -51,6 +53,7 @@ members: 81
 - [[no_wait()_16]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[no_wait()_17]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[no_wait()_18]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[no_wait()_19]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[run_case()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[scenario()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[scenario()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
@@ -71,14 +74,16 @@ members: 81
 - [[scenario()_16]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[scenario()_17]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[scenario()_18]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[scenario()_19]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[test_wb_card_string_zero_quantity_is_not_in_stock()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[test_wb_root_info_coerces_string_imt_id()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[test_wb_root_info_rejects_unusable_imt_id()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[test_wb_search_empty_ids_returns_no_results_not_error()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
-- [[test_wb_search_handles_v9_shape_drift_by_falling_back()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[test_wb_search_falls_back_to_legacy_path_when_v9_fails()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[test_wb_search_reads_products_straight_from_v9()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[test_wb_search_returns_no_results_when_both_paths_are_empty()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[test_wb_search_string_zero_quantity_is_not_in_stock()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[test_wb_search_warns_when_no_result_has_a_price()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[test_wb_selfcheck_card_missing_products_container_is_drift()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[test_wb_selfcheck_card_missing_total_quantity_is_drift()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[test_wb_selfcheck_card_product_non_object_is_drift()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
@@ -100,21 +105,19 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 20 edges to [[_COMMUNITY_test_helpers.py]]
+- 23 edges to [[_COMMUNITY_test_helpers.py]]
 - 11 edges to [[_COMMUNITY__tool_error_payload]]
 - 3 edges to [[_COMMUNITY__clear_wb_cache]]
 - 2 edges to [[_COMMUNITY__RecordingPacer]]
-- 2 edges to [[_COMMUNITY_test_wb_search_falls_back_to_legacy_path_when_v9_fails]]
-- 2 edges to [[_COMMUNITY_test_wb_search_warns_when_no_result_has_a_price]]
 - 1 edge to [[_COMMUNITY__patch_questions]]
 - 1 edge to [[_COMMUNITY_test_cache_can_be_disabled_by_ttl_zero]]
 - 1 edge to [[_COMMUNITY_test_cache_does_not_remember_a_rate_limit]]
-- 1 edge to [[_COMMUNITY_scenario]]
+- 1 edge to [[_COMMUNITY_test_cache_serves_a_repeated_successful_read]]
 - 1 edge to [[_COMMUNITY__healthy_selfcheck_responder]]
 
 ## Top bridge nodes
-- [[no_wait()_2]] - degree 36, connects to 10 communities
-- [[fake_safe_get_text()_2]] - degree 30, connects to 5 communities
-- [[test_wb_search_handles_v9_shape_drift_by_falling_back()]] - degree 5, connects to 1 community
+- [[no_wait()_2]] - degree 36, connects to 9 communities
+- [[fake_safe_get_text()_2]] - degree 30, connects to 4 communities
+- [[test_wb_search_falls_back_to_legacy_path_when_v9_fails()]] - degree 5, connects to 1 community
 - [[test_wb_search_reads_products_straight_from_v9()]] - degree 5, connects to 1 community
 - [[test_wb_search_returns_no_results_when_both_paths_are_empty()]] - degree 5, connects to 1 community

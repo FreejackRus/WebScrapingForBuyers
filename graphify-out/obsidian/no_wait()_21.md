@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py"
 type: "code"
-community: "test_storefront_live_xhr_capture_via_get_context"
-location: "L224"
+community: "cian-connector/tests/test_server.py"
+location: "L483"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/test_storefront_live_xhr_capture_via_get_context
+  - graphify/INFERRED
+  - community/cian-connector/tests/test_serverpy
 ---
 
 # no_wait()
 
 ## Connections
-- [[test_storefront_live_xhr_capture_via_get_context()]] - `contains` [EXTRACTED]
+- [[test_a_block_page_is_never_cached()]] - `indirect_call` [INFERRED]
+- [[test_search_serves_a_repeat_query_from_cache()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/test_storefront_live_xhr_capture_via_get_context
+#graphify/code #graphify/INFERRED #community/cian-connector/tests/test_serverpy

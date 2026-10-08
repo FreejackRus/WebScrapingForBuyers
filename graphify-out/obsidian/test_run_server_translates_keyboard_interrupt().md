@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Ctrl-C is a normal shutdown and must map to the conventional 130.]] - `rationale_for` [EXTRACTED]
-- [[run()]] - `contains` [EXTRACTED]
+- [[run()_1]] - `contains` [EXTRACTED]
 - [[test_runtime.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_runtimepy

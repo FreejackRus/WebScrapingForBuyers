@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
 community: "Changelog"
-location: "L795"
+location: "L1717"
 tags:
   - graphify/document
   - graphify/EXTRACTED
@@ -12,6 +12,6 @@ tags:
 # Fixed
 
 ## Connections
-- [[1.6.1 — 2026-09-09]] - `contains` [EXTRACTED]
+- [[1.2.1 — 2026-07-28 (English)]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/Changelog

@@ -1,5 +1,5 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/megamarket-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/ozon-connector/SKILL.md"
 type: "document"
 community: "compare_prices"
 location: "L60"
@@ -12,7 +12,7 @@ tags:
 # DSH activation
 
 ## Connections
-- [[Megamarket Connector_1]] - `contains` [EXTRACTED]
+- [[Ozon Connector]] - `contains` [EXTRACTED]
 - [[compare_prices()]] - `references` [INFERRED]
 - [[compare_sources()]] - `references` [INFERRED]
 - [[marketplace_sources()]] - `references` [INFERRED]

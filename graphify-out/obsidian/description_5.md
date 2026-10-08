@@ -1,17 +1,16 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/package.json"
+source_file: ""
 type: "code"
-community: "ru-marketplace-mcp/package.json"
-location: "L4"
+community: "decision_inspect"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ru-marketplace-mcp/packagejson
+  - community/decision_inspect
 ---
 
 # description
 
 ## Connections
-- [[ru-marketplace-mcppackage.json]] - `contains` [EXTRACTED]
+- [[decision_inspect()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ru-marketplace-mcp/packagejson
+#graphify/code #graphify/EXTRACTED #community/decision_inspect

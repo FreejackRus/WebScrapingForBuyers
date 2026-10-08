@@ -1,18 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "avito_seller"
+community: "aliexpress_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/avito_seller
+  - community/aliexpress_card
 ---
 
 # Field
 
 ## Connections
-- [[avito_card()]] - `references` [EXTRACTED]
-- [[avito_search()]] - `references` [EXTRACTED]
-- [[avito_seller()]] - `references` [EXTRACTED]
+- [[aliexpress_card()]] - `references` [EXTRACTED]
+- [[aliexpress_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/avito_seller
+#graphify/code #graphify/EXTRACTED #community/aliexpress_card

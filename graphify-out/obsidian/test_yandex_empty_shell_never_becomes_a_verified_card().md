@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[The 2026-09-13 hollow frame, end to end through the real yandex server.…]] - `rationale_for` [EXTRACTED]
-- [[fake_fetch()_15]] - `indirect_call` [INFERRED]
+- [[fake_fetch()_6]] - `indirect_call` [INFERRED]
 - [[test_card_verification_records.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_card_verification_recordspy

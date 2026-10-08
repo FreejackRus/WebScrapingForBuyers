@@ -1,18 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "compare_connector/models_output.py"
+community: "test_output_schema.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/compare_connector/models_outputpy
+  - community/test_output_schemapy
 ---
 
 # BaseModel
 
 ## Connections
-- [[CompareResponse]] - `inherits` [EXTRACTED]
-- [[MarketOffer]] - `inherits` [EXTRACTED]
-- [[SourceOutcome]] - `inherits` [EXTRACTED]
+- [[_Named]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/compare_connector/models_outputpy
+#graphify/code #graphify/EXTRACTED #community/test_output_schemapy

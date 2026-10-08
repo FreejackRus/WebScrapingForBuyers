@@ -1,21 +1,21 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "code"
-community: "log_event"
-location: "L2301"
+community: "wb_connector/server.py"
+location: "L2440"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/log_event
+  - community/wb_connector/serverpy
 ---
 
 # wb_seller()
 
 ## Connections
-- [[Context_6]] - `references` [EXTRACTED]
-- [[Field_7]] - `references` [EXTRACTED]
+- [[Context_13]] - `references` [EXTRACTED]
+- [[Field_13]] - `references` [EXTRACTED]
 - [[Look up the registered legal entity behind a WB seller. Answers who actually…]] - `rationale_for` [EXTRACTED]
-- [[MetaOut_5]] - `uses` [INFERRED]
+- [[MetaOut_11]] - `uses` [INFERRED]
 - [[NotFoundError]] - `uses` [INFERRED]
 - [[ParserDriftError]] - `uses` [INFERRED]
 - [[The Ozon seller-details refusal (v1.1.0)]] - `references` [INFERRED]
@@ -26,13 +26,13 @@ tags:
 - [[_expect_json_object()]] - `calls` [EXTRACTED]
 - [[_fetch_first_json()]] - `calls` [EXTRACTED]
 - [[_static_seller_urls()]] - `calls` [EXTRACTED]
-- [[description_9]] - `references` [EXTRACTED]
-- [[gt_1]] - `references` [EXTRACTED]
+- [[description_15]] - `references` [EXTRACTED]
+- [[gt_2]] - `references` [EXTRACTED]
 - [[log_event()]] - `calls` [EXTRACTED]
-- [[main()_5]] - `calls` [EXTRACTED]
+- [[main()_34]] - `calls` [EXTRACTED]
 - [[raise_tool_error()]] - `calls` [EXTRACTED]
-- [[tool_7]] - `references` [EXTRACTED]
+- [[tool_14]] - `references` [EXTRACTED]
 - [[wb_connectorserver.py]] - `contains` [EXTRACTED]
 - [[Не сделано намеренно]] - `references` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/log_event
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

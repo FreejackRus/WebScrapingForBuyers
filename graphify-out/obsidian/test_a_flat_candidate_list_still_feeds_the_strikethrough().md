@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py"
 type: "code"
-community: "prices_from_tile"
+community: "test_a_flat_candidate_list_still_feeds_the_strikethrough"
 location: "L208"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/prices_from_tile
+  - community/test_a_flat_candidate_list_still_feeds_the_strikethrough
 ---
 
 # test_a_flat_candidate_list_still_feeds_the_strikethrough()
@@ -16,4 +16,4 @@ tags:
 - [[prices_from_tile()]] - `calls` [EXTRACTED]
 - [[test_dom.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/prices_from_tile
+#graphify/code #graphify/EXTRACTED #community/test_a_flat_candidate_list_still_feeds_the_strikethrough

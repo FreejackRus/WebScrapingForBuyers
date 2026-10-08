@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "test_reviews_tag_each_item_with_the_variant_it_describes"
-location: "L652"
+community: "test_ozon_selfcheck_includes_runtime_identity"
+location: "L513"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_reviews_tag_each_item_with_the_variant_it_describes
+  - community/test_ozon_selfcheck_includes_runtime_identity
 ---
 
 # fake_fetch()
 
 ## Connections
-- [[test_reviews_tag_each_item_with_the_variant_it_describes()]] - `contains` [EXTRACTED]
+- [[test_ozon_selfcheck_includes_runtime_identity()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_reviews_tag_each_item_with_the_variant_it_describes
+#graphify/code #graphify/EXTRACTED #community/test_ozon_selfcheck_includes_runtime_identity

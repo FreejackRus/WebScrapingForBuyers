@@ -2,7 +2,7 @@
 source_file: "apps/identity/src/infrastructure/memory-auth-store.ts"
 type: "code"
 community: "memory-auth-store.ts"
-location: "L13"
+location: "L19"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[dot-authenticate()_1]] - `method` [EXTRACTED]
 - [[dot-changePassword()_1]] - `method` [EXTRACTED]
-- [[dot-constructor()_4]] - `method` [EXTRACTED]
+- [[dot-constructor()_9]] - `method` [EXTRACTED]
 - [[dot-fromEnv()]] - `calls` [EXTRACTED]
 - [[dot-getById()_1]] - `method` [EXTRACTED]
 - [[dot-updateSettings()_1]] - `method` [EXTRACTED]

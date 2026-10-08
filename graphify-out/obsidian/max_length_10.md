@@ -1,17 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "citilink_card"
+community: "TransportDownError"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/citilink_card
+  - community/TransportDownError
 ---
 
 # max_length
 
 ## Connections
-- [[citilink_card()]] - `references` [EXTRACTED]
-- [[citilink_search()]] - `references` [EXTRACTED]
+- [[yandex_card()]] - `references` [EXTRACTED]
+- [[yandex_search()_1]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/citilink_card
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

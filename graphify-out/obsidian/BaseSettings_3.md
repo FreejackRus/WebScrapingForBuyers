@@ -11,6 +11,6 @@ tags:
 # BaseSettings
 
 ## Connections
-- [[CitilinkSettings]] - `inherits` [EXTRACTED]
+- [[CianSettings]] - `inherits` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/pydantic

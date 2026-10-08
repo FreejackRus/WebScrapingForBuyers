@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/megamarket-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/compare-prices/SKILL.md"
 type: "document"
-community: "Megamarket Connector"
-location: "L15"
+community: "Cross-Marketplace Price Comparison"
+location: "L16"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Megamarket_Connector
+  - community/Cross-Marketplace_Price_Comparison
 ---
 
 # When to use
 
 ## Connections
-- [[Megamarket Connector]] - `contains` [EXTRACTED]
+- [[Cross-Marketplace Price Comparison_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Megamarket_Connector
+#graphify/document #graphify/EXTRACTED #community/Cross-Marketplace_Price_Comparison

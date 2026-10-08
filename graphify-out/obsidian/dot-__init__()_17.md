@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "CacheStats"
-location: "L60"
+community: "_RecordingPacer"
+location: "L2101"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/CacheStats
+  - community/_RecordingPacer
 ---
 
 # .__init__()
 
 ## Connections
-- [[CacheStats]] - `calls` [EXTRACTED]
-- [[TTLCache]] - `method` [EXTRACTED]
+- [[_RecordingPacer]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/CacheStats
+#graphify/code #graphify/EXTRACTED #community/_RecordingPacer

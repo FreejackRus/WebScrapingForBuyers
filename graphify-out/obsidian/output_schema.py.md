@@ -12,7 +12,7 @@ tags:
 # output_schema.py
 
 ## Connections
-- [[FastMCP]] - `imports_from` [EXTRACTED]
+- [[FastMCP_1]] - `imports_from` [EXTRACTED]
 - [[Wire-frugal output schemas for stdio MCP servers. FastMCP publishes the full…]] - `rationale_for` [EXTRACTED]
 - [[aliexpress_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[apply_compact_output_schemas()]] - `contains` [EXTRACTED]
@@ -28,7 +28,6 @@ tags:
 - [[lamoda_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[marketplace_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[megamarket_connectorserver.py]] - `imports_from` [EXTRACTED]
-- [[mpstats_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[ozon_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[taobao_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[test_output_schema.py]] - `imports_from` [EXTRACTED]

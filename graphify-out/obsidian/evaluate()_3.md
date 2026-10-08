@@ -1,21 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/model_routing_eval.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
 type: "code"
-community: "model_routing_eval.py"
-location: "L52"
+community: "test_storefront_falls_back_to_raw_cdp_when_playwright_attach_times_out"
+location: "L255"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/model_routing_evalpy
+  - community/test_storefront_falls_back_to_raw_cdp_when_playwright_attach_times_out
 ---
 
 # evaluate()
 
 ## Connections
-- [[Path_18]] - `references` [EXTRACTED]
-- [[main()_35]] - `calls` [EXTRACTED]
-- [[model_routing_eval.py]] - `contains` [EXTRACTED]
-- [[test_model_routing_matrix_is_complete()]] - `calls` [EXTRACTED]
-- [[test_ops_gates.py]] - `imports` [EXTRACTED]
+- [[test_storefront_falls_back_to_raw_cdp_when_playwright_attach_times_out()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/model_routing_evalpy
+#graphify/code #graphify/EXTRACTED #community/test_storefront_falls_back_to_raw_cdp_when_playwright_attach_times_out

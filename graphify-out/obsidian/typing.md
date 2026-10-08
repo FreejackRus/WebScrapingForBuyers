@@ -27,6 +27,7 @@ tags:
 - [[dom.py]] - `imports_from` [EXTRACTED]
 - [[domtest.py]] - `imports_from` [EXTRACTED]
 - [[errors.py]] - `imports_from` [EXTRACTED]
+- [[firewall_pow.py]] - `imports_from` [EXTRACTED]
 - [[http_tier.py]] - `imports_from` [EXTRACTED]
 - [[identity.py]] - `imports_from` [EXTRACTED]
 - [[lamoda_connectorserver.py]] - `imports_from` [EXTRACTED]
@@ -34,8 +35,6 @@ tags:
 - [[megamarket_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[model_routing_eval.py]] - `imports_from` [EXTRACTED]
 - [[models.py]] - `imports_from` [EXTRACTED]
-- [[mpstats_connectormodels_output.py]] - `imports_from` [EXTRACTED]
-- [[mpstats_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[output_schema.py]] - `imports_from` [EXTRACTED]
 - [[ozon_connectormodels_output.py]] - `imports_from` [EXTRACTED]
 - [[ozon_connectorserver.py]] - `imports_from` [EXTRACTED]
@@ -53,5 +52,6 @@ tags:
 - [[wb_connectorsettings.py]] - `imports_from` [EXTRACTED]
 - [[yandex_connectormodels_output.py]] - `imports_from` [EXTRACTED]
 - [[yandex_connectorserver.py]] - `imports_from` [EXTRACTED]
+- [[yandex_connectorsettings.py]] - `imports_from` [EXTRACTED]
 
 #graphify/concept #graphify/EXTRACTED #community/json

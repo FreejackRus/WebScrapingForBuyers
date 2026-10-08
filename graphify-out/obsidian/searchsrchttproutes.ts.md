@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/http/routes.ts"
 type: "code"
-community: "live-suggest.ts"
+community: "product-from-query.ts"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/live-suggestts
+  - community/product-from-queryts
 ---
 
 # search/src/http/routes.ts
@@ -15,10 +15,13 @@ tags:
 - [[ProductLike]] - `contains` [EXTRACTED]
 - [[SearchService]] - `imports` [EXTRACTED]
 - [[catalog.ts]] - `imports_from` [EXTRACTED]
+- [[classifyQuery()]] - `imports` [EXTRACTED]
 - [[export-service.ts]] - `imports_from` [EXTRACTED]
 - [[exportSearch()]] - `imports` [EXTRACTED]
 - [[findProduct()]] - `imports` [EXTRACTED]
+- [[isExplicitlyNonIt()]] - `imports` [EXTRACTED]
 - [[isProductPayload()]] - `imports` [EXTRACTED]
+- [[it-scope.ts]] - `imports_from` [EXTRACTED]
 - [[live-suggest.ts]] - `imports_from` [EXTRACTED]
 - [[product-from-query.ts]] - `imports_from` [EXTRACTED]
 - [[productFromQuery()]] - `imports` [EXTRACTED]
@@ -29,4 +32,4 @@ tags:
 - [[searchRoutes()]] - `contains` [EXTRACTED]
 - [[suggestLiveProducts()]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/live-suggestts
+#graphify/code #graphify/EXTRACTED #community/product-from-queryts

@@ -1,19 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
-community: "WbCardItem"
-location: "L777"
+community: "test_wildberries_adapter_tolerates_a_no_results_response"
+location: "L813"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/WbCardItem
+  - community/test_wildberries_adapter_tolerates_a_no_results_response
 ---
 
 # wb_search()
 
 ## Connections
-- [[WbCardItem]] - `calls` [INFERRED]
-- [[_FakeResponse]] - `calls` [EXTRACTED]
-- [[test_wildberries_adapter_reads_typed_attributes()]] - `contains` [EXTRACTED]
+- [[WbNoResultsResponse]] - `calls` [INFERRED]
+- [[test_wildberries_adapter_tolerates_a_no_results_response()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/WbCardItem
+#graphify/code #graphify/EXTRACTED #community/test_wildberries_adapter_tolerates_a_no_results_response

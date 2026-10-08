@@ -17,7 +17,7 @@ tags:
 - [[avito-connectorteststest_settings_secrets.py]] - `imports_from` [EXTRACTED]
 - [[avito_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[functools]] - `imports_from` [EXTRACTED]
-- [[get_settings()_3]] - `contains` [EXTRACTED]
+- [[get_settings()_2]] - `contains` [EXTRACTED]
 - [[pydantic]] - `imports_from` [EXTRACTED]
 - [[pydantic_settings]] - `imports_from` [EXTRACTED]
 

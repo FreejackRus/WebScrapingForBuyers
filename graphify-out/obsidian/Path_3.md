@@ -1,17 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "test_anti_bot_challenge_dom.py"
+community: "_skill_dir"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_anti_bot_challenge_dompy
+  - community/_skill_dir
 ---
 
 # Path
 
 ## Connections
-- [[_extract()_4]] - `references` [EXTRACTED]
-- [[_grid_with_hidden_widget()]] - `references` [EXTRACTED]
+- [[_frontmatter()]] - `references` [EXTRACTED]
+- [[_skill_dir()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_anti_bot_challenge_dompy
+#graphify/code #graphify/EXTRACTED #community/_skill_dir

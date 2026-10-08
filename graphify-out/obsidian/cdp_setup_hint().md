@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "code"
-community: "TransportDownError"
+community: "ozon_card"
 location: "L416"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/TransportDownError
+  - community/ozon_card
 ---
 
 # cdp_setup_hint()
@@ -14,7 +14,6 @@ tags:
 ## Connections
 - [[Platform-appropriate one-liner for getting CDP running.]] - `rationale_for` [EXTRACTED]
 - [[_ozon_reviews_impl()]] - `calls` [EXTRACTED]
-- [[_ozon_search_impl()]] - `calls` [EXTRACTED]
 - [[_search_via_storefront()]] - `calls` [EXTRACTED]
 - [[_verify_storefront_capture()]] - `calls` [EXTRACTED]
 - [[chrome_cdp.py]] - `contains` [EXTRACTED]
@@ -22,4 +21,4 @@ tags:
 - [[ozon_card()]] - `calls` [EXTRACTED]
 - [[probe_session()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/TransportDownError
+#graphify/code #graphify/EXTRACTED #community/ozon_card

@@ -1,18 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "compare_connector/models_output.py"
+community: "MarketplaceSourcesResponse"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/compare_connector/models_outputpy
+  - community/MarketplaceSourcesResponse
 ---
 
 # BaseModel
 
 ## Connections
-- [[IdentityMatch]] - `inherits` [EXTRACTED]
-- [[OfferEvidence]] - `inherits` [EXTRACTED]
-- [[ProductIdentity]] - `inherits` [EXTRACTED]
+- [[MarketplaceSourcesResponse]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/compare_connector/models_outputpy
+#graphify/code #graphify/EXTRACTED #community/MarketplaceSourcesResponse

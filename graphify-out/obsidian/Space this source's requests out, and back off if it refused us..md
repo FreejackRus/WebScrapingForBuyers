@@ -12,6 +12,6 @@ tags:
 # Space this source's requests out, and back off if it refused us.
 
 ## Connections
-- [[_polite_wait()_5]] - `rationale_for` [EXTRACTED]
+- [[_polite_wait()_3]] - `rationale_for` [EXTRACTED]
 
 #graphify/rationale #graphify/EXTRACTED #community/cian_connector/serverpy

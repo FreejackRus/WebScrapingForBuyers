@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[flatten_text()]] - `calls` [EXTRACTED]
-- [[parametrize_31]] - `references` [EXTRACTED]
+- [[parametrize_32]] - `references` [EXTRACTED]
 - [[test_resilience.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_resiliencepy

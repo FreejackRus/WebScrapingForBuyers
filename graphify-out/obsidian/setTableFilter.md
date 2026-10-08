@@ -1,17 +1,17 @@
 ---
 source_file: "apps/web/src/features/analysis/apply-chat/index.test.ts"
 type: "code"
-community: "useSearchStore"
+community: "chat/ui/index.tsx"
 location: "L5"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/useSearchStore
+  - community/chat/ui/indextsx
 ---
 
 # setTableFilter
 
 ## Connections
-- [[index.test.ts]] - `contains` [EXTRACTED]
+- [[apply-chatindex.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/useSearchStore
+#graphify/code #graphify/EXTRACTED #community/chat/ui/indextsx

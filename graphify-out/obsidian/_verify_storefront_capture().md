@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "code"
-community: "TransportDownError"
-location: "L1553"
+community: "wb_connector/server.py"
+location: "L1636"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/TransportDownError
+  - community/wb_connector/serverpy
 ---
 
 # _verify_storefront_capture()
 
 ## Connections
-- [[Any_16]] - `references` [EXTRACTED]
+- [[Any_27]] - `references` [EXTRACTED]
 - [[ParserDriftError]] - `uses` [INFERRED]
 - [[Raise ToolError when the CDP capture is unusable (empty  403  no route).]] - `rationale_for` [EXTRACTED]
 - [[RateLimitedError]] - `uses` [INFERRED]
@@ -23,4 +23,4 @@ tags:
 - [[raise_tool_error()]] - `calls` [EXTRACTED]
 - [[wb_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/TransportDownError
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

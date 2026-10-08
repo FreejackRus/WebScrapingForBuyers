@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/resilience.py"
 type: "rationale"
-community: "Any"
+community: "resilience.py"
 location: "L306"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Any
+  - community/resiliencepy
 ---
 
 # Invariant checks on a reviews response (ozon_reviews / wb_reviews shape).
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[validate_review_block()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Any
+#graphify/rationale #graphify/EXTRACTED #community/resiliencepy

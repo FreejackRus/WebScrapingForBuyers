@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/browser_handoff.py"
 type: "code"
-community: "read_with_handoff"
+community: "browser_handoff.py"
 location: "L333"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/read_with_handoff
+  - community/browser_handoffpy
 ---
 
 # handoff_diagnostics()
 
 ## Connections
-- [[Any_1]] - `references` [EXTRACTED]
+- [[Any_16]] - `references` [EXTRACTED]
 - [[Read-only view of the lease registry — never opens, resumes or closes a tab.…]] - `rationale_for` [EXTRACTED]
 - [[_duration_s()]] - `calls` [EXTRACTED]
 - [[_expired()]] - `calls` [EXTRACTED]
@@ -20,4 +20,4 @@ tags:
 - [[_max_leases()]] - `calls` [EXTRACTED]
 - [[browser_handoff.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/read_with_handoff
+#graphify/code #graphify/EXTRACTED #community/browser_handoffpy

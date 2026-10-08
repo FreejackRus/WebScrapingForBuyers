@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py"
 type: "rationale"
-community: "fake_post"
+community: "test_the_category_url_is_what_yields_a_collection"
 location: "L54"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/fake_post
+  - community/test_the_category_url_is_what_yields_a_collection
 ---
 
 # Stand in for the CDP redirect probe: the URL is already final.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_no_redirect()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/fake_post
+#graphify/rationale #graphify/EXTRACTED #community/test_the_category_url_is_what_yields_a_collection

@@ -12,7 +12,7 @@ tags:
 # test_card_extractor_reads_the_product_card()
 
 ## Connections
-- [[_extract()_3]] - `calls` [EXTRACTED]
+- [[_extract()_2]] - `calls` [EXTRACTED]
 - [[citilink-connectorteststest_card_extractor_dom.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/citilink-connector/tests/test_card_extractor_dompy

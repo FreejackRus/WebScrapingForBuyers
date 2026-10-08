@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/http_tier.py"
 type: "code"
-community: "transport/__init__.py"
+community: "json"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/transport/__init__py
+  - community/json
 ---
 
 # http_tier.py
@@ -16,7 +16,7 @@ tags:
 - [[BodyTooLargeError]] - `contains` [EXTRACTED]
 - [[PoliteGate]] - `contains` [EXTRACTED]
 - [[RateLimiter]] - `contains` [EXTRACTED]
-- [[asyncio_2]] - `imports` [EXTRACTED]
+- [[asyncio]] - `imports` [EXTRACTED]
 - [[build_client()]] - `contains` [EXTRACTED]
 - [[dataclasses]] - `imports_from` [EXTRACTED]
 - [[get_text_budgeted()]] - `contains` [EXTRACTED]
@@ -25,8 +25,8 @@ tags:
 - [[os]] - `imports` [EXTRACTED]
 - [[proxy_from_env()]] - `contains` [EXTRACTED]
 - [[read_capped_text()]] - `contains` [EXTRACTED]
-- [[time]] - `imports` [EXTRACTED]
+- [[time_1]] - `imports` [EXTRACTED]
 - [[transport__init__.py]] - `re_exports` [EXTRACTED]
 - [[typing]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/transport/__init__py
+#graphify/code #graphify/EXTRACTED #community/json

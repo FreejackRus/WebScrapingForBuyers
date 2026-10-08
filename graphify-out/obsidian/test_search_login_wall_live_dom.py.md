@@ -1,21 +1,21 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_search_login_wall_live_dom.py"
 type: "code"
-community: "compare-connector/tests/test_browser_handoff.py"
+community: "test_search_login_wall_live_dom.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/compare-connector/tests/test_browser_handoffpy
+  - community/test_search_login_wall_live_dompy
 ---
 
 # test_search_login_wall_live_dom.py
 
 ## Connections
 - [[The real extractor against the LIVE login wall captured 2026-09-10. Taobao…]] - `rationale_for` [EXTRACTED]
-- [[_no_cache()]] - `contains` [EXTRACTED]
-- [[_patch_render()]] - `contains` [EXTRACTED]
-- [[_tool_error_payload()]] - `contains` [EXTRACTED]
+- [[_no_cache()_4]] - `contains` [EXTRACTED]
+- [[_patch_render()_3]] - `contains` [EXTRACTED]
+- [[_tool_error_payload()_1]] - `contains` [EXTRACTED]
 - [[_wall_payload()]] - `contains` [EXTRACTED]
 - [[domtest.py]] - `imports_from` [EXTRACTED]
 - [[fastmcp_exceptions]] - `imports_from` [EXTRACTED]
@@ -29,4 +29,4 @@ tags:
 - [[test_the_fixture_carries_no_session_data()]] - `contains` [EXTRACTED]
 - [[test_the_title_less_wall_is_classified_as_a_login_wall()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/compare-connector/tests/test_browser_handoffpy
+#graphify/code #graphify/EXTRACTED #community/test_search_login_wall_live_dompy

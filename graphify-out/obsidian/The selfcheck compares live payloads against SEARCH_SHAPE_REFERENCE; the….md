@@ -1,12 +1,12 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_shape_reference.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_shape_reference.py"
 type: "rationale"
-community: "taobao-connector/tests/test_shape_reference.py"
-location: "L95"
+community: "lamoda-connector/tests/test_shape_reference.py"
+location: "L55"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/taobao-connector/tests/test_shape_referencepy
+  - community/lamoda-connector/tests/test_shape_referencepy
 ---
 
 # The selfcheck compares live payloads against SEARCH_SHAPE_REFERENCE; the…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_live_search_shape_matches_the_selfcheck_registry()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/taobao-connector/tests/test_shape_referencepy
+#graphify/rationale #graphify/EXTRACTED #community/lamoda-connector/tests/test_shape_referencepy

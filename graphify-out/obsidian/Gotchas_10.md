@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/citilink-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/ozon-connector/SKILL.md"
 type: "document"
-community: "Citilink Connector"
-location: "L65"
+community: "ozon_selfcheck"
+location: "L43"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Citilink_Connector
+  - community/ozon_selfcheck
 ---
 
 # Gotchas
 
 ## Connections
-- [[Citilink Connector]] - `contains` [EXTRACTED]
-- [[citilink_selfcheck()]] - `references` [INFERRED]
+- [[Ozon Connector]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Citilink_Connector
+#graphify/document #graphify/EXTRACTED #community/ozon_selfcheck

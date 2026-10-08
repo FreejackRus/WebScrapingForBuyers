@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Regression tests for the Taobao search extractor on a modeled fixture. Taobao's…]] - `rationale_for` [EXTRACTED]
-- [[_extract()_5]] - `contains` [EXTRACTED]
+- [[_extract()]] - `contains` [EXTRACTED]
 - [[domtest.py]] - `imports_from` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]
 - [[pytest]] - `imports` [EXTRACTED]

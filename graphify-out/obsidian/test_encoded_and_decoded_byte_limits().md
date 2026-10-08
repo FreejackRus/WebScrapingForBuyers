@@ -13,8 +13,8 @@ tags:
 
 ## Connections
 - [[jpeg()]] - `calls` [EXTRACTED]
-- [[metrics()_1]] - `calls` [EXTRACTED]
-- [[parametrize_27]] - `references` [EXTRACTED]
+- [[metrics()]] - `calls` [EXTRACTED]
+- [[parametrize_31]] - `references` [EXTRACTED]
 - [[test_chrome_cdp_snapshot.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_snapshotpy

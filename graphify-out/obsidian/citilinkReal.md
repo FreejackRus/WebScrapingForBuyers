@@ -2,7 +2,7 @@
 source_file: "apps/analysis/src/analyze.test.ts"
 type: "code"
 community: "analyze.test.ts"
-location: "L58"
+location: "L66"
 tags:
   - graphify/code
   - graphify/EXTRACTED

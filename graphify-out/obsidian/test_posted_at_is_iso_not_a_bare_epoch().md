@@ -12,7 +12,7 @@ tags:
 # test_posted_at_is_iso_not_a_bare_epoch()
 
 ## Connections
-- [[_items()_2]] - `calls` [EXTRACTED]
+- [[_items()_3]] - `calls` [EXTRACTED]
 - [[``sortTimeStamp`` is epoch ms; a 13-digit number is indistinguishable from an…]] - `rationale_for` [EXTRACTED]
 - [[test_live_payload_contract.py]] - `contains` [EXTRACTED]
 

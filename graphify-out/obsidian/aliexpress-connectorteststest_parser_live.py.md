@@ -22,5 +22,6 @@ tags:
 - [[test_live_cdp_reads_a_real_grid_and_card()]] - `contains` [EXTRACTED]
 - [[test_search_extractor_pairing_agrees_with_python()]] - `contains` [EXTRACTED]
 - [[test_search_extractor_reads_the_captured_grid()]] - `contains` [EXTRACTED]
+- [[test_search_tiles_carry_the_gallery_photo()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/aliexpress-connector/tests/test_parser_livepy

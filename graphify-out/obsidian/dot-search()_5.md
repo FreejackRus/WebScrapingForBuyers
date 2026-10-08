@@ -1,24 +1,22 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/http-marketplace-adapter.ts"
+source_file: "apps/search/src/infrastructure/sources/fallback-source-adapter.ts"
 type: "code"
-community: "http-marketplace-adapter.ts"
-location: "L44"
+community: "SourceAdapter"
+location: "L29"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/http-marketplace-adapterts
+  - community/SourceAdapter
 ---
 
 # .search()
 
 ## Connections
-- [[WildberriesHttpAdapter]] - `method` [EXTRACTED]
-- [[assertWbCatalogAllowed()]] - `calls` [EXTRACTED]
-- [[marketplaceSearchQueries()]] - `calls` [EXTRACTED]
-- [[noteWbRateLimited()]] - `calls` [EXTRACTED]
-- [[preferRelevantOffers()]] - `indirect_call` [INFERRED]
-- [[presentWbRateLimited()]] - `calls` [EXTRACTED]
-- [[toWbOffer()]] - `calls` [EXTRACTED]
-- [[wbHttpSearchUrl()]] - `calls` [EXTRACTED]
+- [[dot-search()_5]] - `calls` [EXTRACTED]
+- [[FallbackSourceAdapter]] - `method` [EXTRACTED]
+- [[isAntibotTransportError()]] - `calls` [EXTRACTED]
+- [[isMcpUnavailableError()]] - `calls` [EXTRACTED]
+- [[isWbStaleCatalogMiss()]] - `calls` [EXTRACTED]
+- [[presentChainedSourceErrors()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/http-marketplace-adapterts
+#graphify/code #graphify/EXTRACTED #community/SourceAdapter

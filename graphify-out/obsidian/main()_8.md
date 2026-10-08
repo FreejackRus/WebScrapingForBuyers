@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/examples/price_check.py"
+source_file: "mcp-servers/ru-marketplace-mcp/examples/compare_with_china.py"
 type: "code"
-community: "compare_prices"
+community: "sys"
 location: "L19"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/compare_prices
+  - community/sys
 ---
 
 # main()
 
 ## Connections
 - [[compare_prices()]] - `calls` [EXTRACTED]
-- [[compare_sources()]] - `calls` [EXTRACTED]
-- [[price_check.py]] - `contains` [EXTRACTED]
+- [[compare_with_china.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/compare_prices
+#graphify/code #graphify/EXTRACTED #community/sys

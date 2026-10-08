@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/mpstats-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/yandex-connector/SKILL.md"
 type: "document"
-community: "MPStats Connector"
-location: "L67"
+community: "Yandex Market Connector"
+location: "L48"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/MPStats_Connector
+  - community/Yandex_Market_Connector
 ---
 
 # Workflow patterns
 
 ## Connections
-- [[MPStats Connector]] - `contains` [EXTRACTED]
+- [[Yandex Market Connector_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/MPStats_Connector
+#graphify/document #graphify/EXTRACTED #community/Yandex_Market_Connector

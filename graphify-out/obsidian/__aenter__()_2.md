@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "test_the_graphql_request_carries_a_referer_for_the_sku"
-location: "L383"
+community: "test_cdp_fetch_json_times_out_open_page_and_releases_lock"
+location: "L345"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_the_graphql_request_carries_a_referer_for_the_sku
+  - community/test_cdp_fetch_json_times_out_open_page_and_releases_lock
 ---
 
 # __aenter__()
 
 ## Connections
-- [[test_the_graphql_request_carries_a_referer_for_the_sku()]] - `contains` [EXTRACTED]
+- [[test_cdp_fetch_json_times_out_open_page_and_releases_lock()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_the_graphql_request_carries_a_referer_for_the_sku
+#graphify/code #graphify/EXTRACTED #community/test_cdp_fetch_json_times_out_open_page_and_releases_lock

@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Offline tests for the Lamoda connector. GraphQL and CDP rendering are…]] - `rationale_for` [EXTRACTED]
-- [[_no_cache()_6]] - `contains` [EXTRACTED]
+- [[_no_cache()_8]] - `contains` [EXTRACTED]
 - [[_patch_graphql()]] - `contains` [EXTRACTED]
 - [[_patch_graphql_response()]] - `contains` [EXTRACTED]
 - [[_patch_render()_4]] - `contains` [EXTRACTED]

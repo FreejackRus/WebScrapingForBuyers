@@ -1,22 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "test_stdio_probe.py"
+community: "test_ci_concurrency.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_stdio_probepy
+  - community/test_ci_concurrencypy
 ---
 
 # parametrize
 
 ## Connections
-- [[test_all_probe_entrypoints_check_protocol()]] - `references` [EXTRACTED]
-- [[test_all_probe_entrypoints_fail_on_silence()]] - `references` [EXTRACTED]
-- [[test_cleanup_stops_wrapper_and_its_child()]] - `references` [EXTRACTED]
-- [[test_docker_probe_rejects_call_errors()]] - `references` [EXTRACTED]
-- [[test_docker_probe_rejects_wrong_or_missing_versions()]] - `references` [EXTRACTED]
-- [[test_invalid_results_fail()]] - `references` [EXTRACTED]
-- [[test_noisy_and_interleaved_child_completes()]] - `references` [EXTRACTED]
+- [[test_the_expression_reader_understands_the_shapes_it_claims_to()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_stdio_probepy
+#graphify/code #graphify/EXTRACTED #community/test_ci_concurrencypy

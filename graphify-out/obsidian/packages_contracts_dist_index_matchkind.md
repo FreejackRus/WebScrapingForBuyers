@@ -1,22 +1,23 @@
 ---
 source_file: ""
 type: "concept"
-community: "packages_contracts_dist_index"
+community: "SourceAdapter"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/packages_contracts_dist_index
+  - community/SourceAdapter
 ---
 
 # packages_contracts_dist_index_matchkind
 
 ## Connections
-- [[apify-marketplace-adapter.ts]] - `imports` [EXTRACTED]
 - [[demo-source-adapter.ts]] - `imports` [EXTRACTED]
 - [[http-marketplace-adapter.ts]] - `imports` [EXTRACTED]
 - [[mcp-marketplace-adapter.ts]] - `imports` [EXTRACTED]
 - [[merlion-client.ts]] - `imports` [EXTRACTED]
 - [[netlab-client.ts]] - `imports` [EXTRACTED]
+- [[netlab-price-feed.ts]] - `imports` [EXTRACTED]
 - [[ocs-client.ts]] - `imports` [EXTRACTED]
+- [[storefront-distributor-adapter.ts]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/packages_contracts_dist_index
+#graphify/concept #graphify/EXTRACTED #community/SourceAdapter

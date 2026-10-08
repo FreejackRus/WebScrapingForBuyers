@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_process.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
 type: "code"
-community: "test_process.py"
-location: "L24"
+community: "ChallengeRequiredError"
+location: "L109"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_processpy
+  - community/ChallengeRequiredError
 ---
 
 # .__init__()
 
 ## Connections
-- [[_FakeProc]] - `method` [EXTRACTED]
+- [[dot-__init__()_33]] - `calls` [EXTRACTED]
+- [[PermissionDeniedError]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_processpy
+#graphify/code #graphify/EXTRACTED #community/ChallengeRequiredError

@@ -13,7 +13,7 @@ members: 4
 - [[For git commit hook]] - document - .codex/skills/graphify/references/hooks.md
 - [[For native CLAUDE.md integration]] - document - .codex/skills/graphify/references/hooks.md
 - [[graphify reference commit hook and native CLAUDE.md integration]] - document - .codex/skills/graphify/references/hooks.md
-- [[hooks]] - document - .codex/skills/graphify/references/hooks.md
+- [[hooks_1]] - document - .codex/skills/graphify/references/hooks.md
 
 ## Live Query (requires Dataview plugin)
 

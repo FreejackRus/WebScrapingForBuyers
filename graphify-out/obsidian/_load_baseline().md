@@ -12,8 +12,8 @@ tags:
 # _load_baseline()
 
 ## Connections
-- [[Path_15]] - `references` [EXTRACTED]
-- [[main()_29]] - `calls` [EXTRACTED]
+- [[Path_6]] - `references` [EXTRACTED]
+- [[main()_23]] - `calls` [EXTRACTED]
 - [[mcp_wire.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/mcp_wirepy

@@ -1,12 +1,12 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/compare-prices/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/compare-prices/SKILL.md"
 type: "document"
-community: "compare_prices"
+community: "compare_verify_offer"
 location: "L29"
 tags:
   - graphify/document
   - graphify/INFERRED
-  - community/compare_prices
+  - community/compare_verify_offer
 ---
 
 # Tools
@@ -16,5 +16,6 @@ tags:
 - [[compare_prices()]] - `references` [INFERRED]
 - [[compare_sources()]] - `references` [INFERRED]
 - [[compare_verify_offer()]] - `references` [INFERRED]
+- [[source()]] - `references` [INFERRED]
 
-#graphify/document #graphify/INFERRED #community/compare_prices
+#graphify/document #graphify/INFERRED #community/compare_verify_offer

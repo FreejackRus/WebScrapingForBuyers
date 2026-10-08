@@ -13,9 +13,9 @@ tags:
 
 ## Connections
 - [[dependencies_4]] - `contains` [EXTRACTED]
-- [[description_5]] - `contains` [EXTRACTED]
+- [[description_4]] - `contains` [EXTRACTED]
 - [[jsdom_1]] - `imports` [EXTRACTED]
-- [[license]] - `contains` [EXTRACTED]
+- [[license_1]] - `contains` [EXTRACTED]
 - [[name_7]] - `contains` [EXTRACTED]
 - [[private_6]] - `contains` [EXTRACTED]
 - [[version_7]] - `contains` [EXTRACTED]

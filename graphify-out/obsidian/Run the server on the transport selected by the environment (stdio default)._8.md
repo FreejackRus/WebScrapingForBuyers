@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/__main__.py"
 type: "rationale"
-community: "megamarket_connector/__main__.py"
+community: "sys"
 location: "L14"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/megamarket_connector/__main__py
+  - community/sys
 ---
 
 # Run the server on the transport selected by the environment (stdio default).
 
 ## Connections
-- [[main()_19]] - `rationale_for` [EXTRACTED]
+- [[main()_18]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/megamarket_connector/__main__py
+#graphify/rationale #graphify/EXTRACTED #community/sys

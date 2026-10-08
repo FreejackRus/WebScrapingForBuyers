@@ -1,27 +1,32 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/src/dns_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/server.py"
 type: "code"
-community: "dns_card"
-location: "L347"
+community: "taobao_connector/server.py"
+location: "L407"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/dns_card
+  - community/taobao_connector/serverpy
 ---
 
 # _cdp_render()
 
 ## Connections
-- [[Any_14]] - `references` [EXTRACTED]
+- [[Any_1]] - `references` [EXTRACTED]
 - [[Context_2]] - `references` [EXTRACTED]
-- [[Open ``url`` in the operator's Chrome, let Qrator pass, extract. The first…]] - `rationale_for` [EXTRACTED]
+- [[Open ``url`` in the operator's Chrome, wait for client-side render, extract.…]] - `rationale_for` [EXTRACTED]
 - [[ParserDriftError]] - `uses` [INFERRED]
 - [[TransportDownError]] - `uses` [INFERRED]
-- [[_dns_selfcheck_impl()]] - `calls` [EXTRACTED]
-- [[_polite_wait()_2]] - `calls` [EXTRACTED]
-- [[dns_card()]] - `calls` [EXTRACTED]
-- [[dns_connectorserver.py]] - `contains` [EXTRACTED]
-- [[dns_search()]] - `calls` [EXTRACTED]
-- [[open_page()]] - `calls` [EXTRACTED]
+- [[_page_challenge_kind()]] - `indirect_call` [INFERRED]
+- [[_polite_wait()_1]] - `calls` [EXTRACTED]
+- [[_taobao_selfcheck_impl()]] - `calls` [EXTRACTED]
+- [[current_mcp_session_id()]] - `calls` [EXTRACTED]
+- [[get_handoff_id()]] - `calls` [EXTRACTED]
+- [[open_page()_3]] - `calls` [EXTRACTED]
+- [[read()_2]] - `contains` [EXTRACTED]
+- [[read_with_handoff()]] - `calls` [EXTRACTED]
+- [[taobao_card()]] - `calls` [EXTRACTED]
+- [[taobao_connectorserver.py]] - `contains` [EXTRACTED]
+- [[taobao_search()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/dns_card
+#graphify/code #graphify/EXTRACTED #community/taobao_connector/serverpy

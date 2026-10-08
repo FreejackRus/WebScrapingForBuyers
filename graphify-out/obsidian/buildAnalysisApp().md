@@ -1,12 +1,12 @@
 ---
 source_file: "apps/analysis/src/app.ts"
 type: "code"
-community: "analysis/src/app.ts"
-location: "L8"
+community: "compare-models.ts"
+location: "L27"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/analysis/src/appts
+  - community/compare-modelsts
 ---
 
 # buildAnalysisApp()
@@ -17,5 +17,7 @@ tags:
 - [[analysissrcserver.ts]] - `imports` [EXTRACTED]
 - [[analyzeSnapshot()]] - `calls` [EXTRACTED]
 - [[answerCopilot()]] - `calls` [EXTRACTED]
+- [[keepAliveFromEnv()]] - `calls` [EXTRACTED]
+- [[samplingFromEnv()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/analysis/src/appts
+#graphify/code #graphify/EXTRACTED #community/compare-modelsts

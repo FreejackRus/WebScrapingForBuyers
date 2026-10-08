@@ -2,7 +2,7 @@
 source_file: "apps/search/src/application/search-service.ts"
 type: "code"
 community: "SearchService"
-location: "L39"
+location: "L81"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -13,5 +13,6 @@ tags:
 
 ## Connections
 - [[SearchService]] - `method` [EXTRACTED]
+- [[finish()]] - `calls` [INFERRED]
 
 #graphify/code #graphify/EXTRACTED #community/SearchService

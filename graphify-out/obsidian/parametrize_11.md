@@ -1,20 +1,21 @@
 ---
 source_file: ""
 type: "code"
-community: "test_runtime.py"
+community: "_skill_dir"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_runtimepy
+  - community/_skill_dir
 ---
 
 # parametrize
 
 ## Connections
-- [[test_blank_transport_is_stdio()]] - `references` [EXTRACTED]
-- [[test_http_family_transports_are_accepted()]] - `references` [EXTRACTED]
-- [[test_loopback_hosts_are_recognised()_1]] - `references` [EXTRACTED]
-- [[test_non_integer_port_is_rejected()]] - `references` [EXTRACTED]
-- [[test_out_of_range_port_is_rejected()]] - `references` [EXTRACTED]
+- [[test_every_connector_has_a_skill()]] - `references` [EXTRACTED]
+- [[test_skill_documents_every_tool_the_server_exposes()]] - `references` [EXTRACTED]
+- [[test_skill_frontmatter_matches_the_published_spec()]] - `references` [EXTRACTED]
+- [[test_skill_invents_no_tools()]] - `references` [EXTRACTED]
+- [[test_skill_states_the_price_null_boundary()]] - `references` [EXTRACTED]
+- [[test_tool_sections_offer_only_mcp_callable_names()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_runtimepy
+#graphify/code #graphify/EXTRACTED #community/_skill_dir

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/server.py"
 type: "rationale"
-community: "test_contract.py"
+community: "log_event"
 location: "L520"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/test_contractpy
+  - community/log_event
 ---
 
 # One nested object out of a search item, or an empty dict.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_scoped()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/test_contractpy
+#graphify/rationale #graphify/EXTRACTED #community/log_event

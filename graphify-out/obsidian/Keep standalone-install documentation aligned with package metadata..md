@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/test_distribution_contract.py"
 type: "rationale"
-community: "test_dependency_parity.py"
+community: "test_distribution_contract.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/test_dependency_paritypy
+  - community/test_distribution_contractpy
 ---
 
 # Keep standalone-install documentation aligned with package metadata.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_distribution_contract.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/test_dependency_paritypy
+#graphify/rationale #graphify/EXTRACTED #community/test_distribution_contractpy

@@ -12,7 +12,8 @@ tags:
 # widgets/search/index.ts
 
 ## Connections
-- [[Metrics()]] - `re_exports` [EXTRACTED]
+- [[Metrics()_1]] - `re_exports` [EXTRACTED]
+- [[OfferCard()]] - `re_exports` [EXTRACTED]
 - [[OfferTable()]] - `re_exports` [EXTRACTED]
 - [[SearchCommand()]] - `re_exports` [EXTRACTED]
 - [[SearchWorkspace()]] - `re_exports` [EXTRACTED]
@@ -22,6 +23,7 @@ tags:
 - [[commandindex.ts]] - `re_exports` [EXTRACTED]
 - [[metricsindex.ts]] - `re_exports` [EXTRACTED]
 - [[monitoruiindex.tsx]] - `imports_from` [EXTRACTED]
+- [[offer-cardindex.ts]] - `re_exports` [EXTRACTED]
 - [[offersindex.ts]] - `re_exports` [EXTRACTED]
 - [[sourcesindex.ts]] - `re_exports` [EXTRACTED]
 - [[workspaceindex.ts]] - `re_exports` [EXTRACTED]

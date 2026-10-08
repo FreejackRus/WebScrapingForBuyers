@@ -1,19 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_card_verification_records.py"
 type: "code"
-community: "avito-connector/tests/test_server.py"
-location: "L290"
+community: "test_card_verification_records.py"
+location: "L170"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/avito-connector/tests/test_serverpy
+  - graphify/INFERRED
+  - community/test_card_verification_recordspy
 ---
 
 # fake_fetch()
 
 ## Connections
-- [[_ok()_1]] - `calls` [EXTRACTED]
-- [[payload()]] - `indirect_call` [INFERRED]
-- [[test_selfcheck_accepts_the_captured_live_payload()]] - `contains` [EXTRACTED]
+- [[test_yandex_empty_shell_never_becomes_a_verified_card()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/avito-connector/tests/test_serverpy
+#graphify/code #graphify/INFERRED #community/test_card_verification_recordspy

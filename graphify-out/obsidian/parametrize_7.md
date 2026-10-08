@@ -1,17 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "avito-connector/tests/test_server.py"
+community: "test_card_verification_records.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/avito-connector/tests/test_serverpy
+  - community/test_card_verification_recordspy
 ---
 
 # parametrize
 
 ## Connections
-- [[test_card_rejects_input_without_an_item_id()]] - `references` [EXTRACTED]
-- [[test_search_rejects_a_malformed_location_id()]] - `references` [EXTRACTED]
+- [[test_every_native_adapter_preserves_warnings()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/avito-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/test_card_verification_recordspy

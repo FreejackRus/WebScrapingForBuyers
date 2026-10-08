@@ -12,7 +12,7 @@ tags:
 # test_search_a_pricelss_tile_is_none_never_zero()
 
 ## Connections
-- [[_patch_render()_2]] - `calls` [EXTRACTED]
+- [[_patch_render()_1]] - `calls` [EXTRACTED]
 - [[citilink-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/citilink-connector/tests/test_serverpy

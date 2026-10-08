@@ -1,18 +1,20 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "test_reviews_tag_each_item_with_the_variant_it_describes"
-location: "L655"
+community: "_patch_questions"
+location: "L1605"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_reviews_tag_each_item_with_the_variant_it_describes
+  - community/_patch_questions
 ---
 
 # scenario()
 
 ## Connections
-- [[fake_fetch()]] - `indirect_call` [INFERRED]
-- [[test_reviews_tag_each_item_with_the_variant_it_describes()]] - `contains` [EXTRACTED]
+- [[_patch_questions()]] - `calls` [EXTRACTED]
+- [[_tool_error_payload()]] - `calls` [EXTRACTED]
+- [[responder()_14]] - `indirect_call` [INFERRED]
+- [[test_questions_surfaces_rate_limiting()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_reviews_tag_each_item_with_the_variant_it_describes
+#graphify/code #graphify/EXTRACTED #community/_patch_questions

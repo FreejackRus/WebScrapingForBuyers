@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/test_e2e_stdio_check.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_stealth.py"
 type: "code"
-community: "aliexpress-connector/tests/test_parser_live.py"
-location: "L57"
+community: "test_chrome_cdp_stealth.py"
+location: "L238"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/aliexpress-connector/tests/test_parser_livepy
+  - community/test_chrome_cdp_stealthpy
 ---
 
 # __init__()
 
 ## Connections
-- [[test_probe_checks_running_version()]] - `contains` [EXTRACTED]
+- [[dot-__init__()_11]] - `calls` [EXTRACTED]
+- [[test_new_tab_detaches_the_session_even_when_no_page_arrives()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/aliexpress-connector/tests/test_parser_livepy
+#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_stealthpy

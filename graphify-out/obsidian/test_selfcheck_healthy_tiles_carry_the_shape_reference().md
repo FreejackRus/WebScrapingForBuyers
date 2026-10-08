@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Tiles extracting is not enough the shape must still match the captured…]] - `rationale_for` [EXTRACTED]
-- [[_patch_render()_2]] - `calls` [EXTRACTED]
+- [[_patch_render()_1]] - `calls` [EXTRACTED]
 - [[citilink-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/citilink-connector/tests/test_serverpy

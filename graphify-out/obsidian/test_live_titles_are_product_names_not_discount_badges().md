@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[The badge lives inside the image anchor; the title must not.]] - `rationale_for` [EXTRACTED]
-- [[_items()]] - `calls` [EXTRACTED]
+- [[_items()_2]] - `calls` [EXTRACTED]
 - [[lamoda-connectorteststest_search_extractor_live_dom.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/lamoda-connector/tests/test_shape_referencepy

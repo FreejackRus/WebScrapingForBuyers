@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/src/mpstats_connector/__main__.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/__main__.py"
 type: "rationale"
-community: "mpstats_connector/__main__.py"
-location: "L20"
+community: "sys"
+location: "L22"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/mpstats_connector/__main__py
+  - community/sys
 ---
 
 # Run the server on the transport selected by the environment (stdio default).
 
 ## Connections
-- [[main()_20]] - `rationale_for` [EXTRACTED]
+- [[main()_19]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/mpstats_connector/__main__py
+#graphify/rationale #graphify/EXTRACTED #community/sys

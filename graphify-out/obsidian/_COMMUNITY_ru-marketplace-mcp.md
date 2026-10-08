@@ -1,18 +1,17 @@
 ---
 type: community
 cohesion: 0.10
-members: 21
+members: 20
 ---
 
 # ru-marketplace-mcp
 
 **Cohesion:** 0.10 - loosely connected
-**Members:** 21 nodes
+**Members:** 20 nodes
 
 ## Members
-- [[AliExpress — `aliexpress_`]] - document - mcp-servers/ru-marketplace-mcp/README.md
-- [[MPStats — `mpstats_`]] - document - mcp-servers/ru-marketplace-mcp/README.md
-- [[Ozon — `ozon_`]] - document - mcp-servers/ru-marketplace-mcp/README.md
+- [[AliExpress — `aliexpress_`_1]] - document - mcp-servers/ru-marketplace-mcp/README.md
+- [[Ozon — `ozon_`_1]] - document - mcp-servers/ru-marketplace-mcp/README.md
 - [[ru-marketplace-mcp_1]] - document - mcp-servers/ru-marketplace-mcp/README.md
 - [[Авито — `avito_`]] - document - mcp-servers/ru-marketplace-mcp/README.md
 - [[Быстрый старт]] - document - mcp-servers/ru-marketplace-mcp/README.md
@@ -41,17 +40,17 @@ SORT file.name ASC
 
 ## Connections to other communities
 - 5 edges to [[_COMMUNITY_compare_prices]]
-- 1 edge to [[_COMMUNITY_avito_seller]]
-- 1 edge to [[_COMMUNITY_aliexpress_connectorserver.py]]
-- 1 edge to [[_COMMUNITY_success]]
-- 1 edge to [[_COMMUNITY_session.ts]]
+- 1 edge to [[_COMMUNITY_aliexpress_card]]
+- 1 edge to [[_COMMUNITY_avito_connectorserver.py]]
+- 1 edge to [[_COMMUNITY_mcp-coreteststest_browser_handoff.py]]
 - 1 edge to [[_COMMUNITY_ru-marketplace-mcpREADME]]
 - 1 edge to [[_COMMUNITY_Deployment]]
-- 1 edge to [[_COMMUNITY_log_event]]
+- 1 edge to [[_COMMUNITY_wb_connectorserver.py]]
+- 1 edge to [[_COMMUNITY_identitysrchttproutes.ts]]
 
 ## Top bridge nodes
 - [[ru-marketplace-mcp_1]] - degree 13, connects to 2 communities
-- [[Инструменты]] - degree 12, connects to 2 communities
-- [[AliExpress — `aliexpress_`]] - degree 3, connects to 2 communities
+- [[Инструменты]] - degree 11, connects to 2 communities
+- [[AliExpress — `aliexpress_`_1]] - degree 3, connects to 2 communities
 - [[Подключение к MCP-клиенту]] - degree 3, connects to 2 communities
 - [[Надёжность]] - degree 2, connects to 1 community

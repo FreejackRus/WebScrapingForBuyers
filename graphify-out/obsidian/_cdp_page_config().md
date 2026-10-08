@@ -12,7 +12,7 @@ tags:
 # _cdp_page_config()
 
 ## Connections
-- [[Context_5]] - `references` [EXTRACTED]
+- [[Context_4]] - `references` [EXTRACTED]
 - [[Open an offer page and serialise its ``_cianConfig`` card state.]] - `rationale_for` [EXTRACTED]
 - [[_attempt()_3]] - `contains` [EXTRACTED]
 - [[_fetch_card()]] - `calls` [EXTRACTED]

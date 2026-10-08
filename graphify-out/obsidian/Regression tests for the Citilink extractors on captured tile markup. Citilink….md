@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_search_extractor_dom.py"
 type: "rationale"
-community: "pathlib"
+community: "citilink-connector/tests/test_search_extractor_dom.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/citilink-connector/tests/test_search_extractor_dompy
 ---
 
 # Regression tests for the Citilink extractors on captured tile markup. Citilink…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[citilink-connectorteststest_search_extractor_dom.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/pathlib
+#graphify/rationale #graphify/EXTRACTED #community/citilink-connector/tests/test_search_extractor_dompy

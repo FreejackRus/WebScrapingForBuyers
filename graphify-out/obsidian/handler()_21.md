@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_call_envelope.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_http_tier.py"
 type: "code"
-community: "payload"
-location: "L244"
+community: "test_http_tier.py"
+location: "L62"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/payload
+  - community/test_http_tierpy
 ---
 
 # handler()
 
 ## Connections
-- [[test_a_transport_exception_does_not_carry_the_token()]] - `contains` [EXTRACTED]
+- [[test_transport_error_propagates_when_budget_exhausted()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/payload
+#graphify/code #graphify/EXTRACTED #community/test_http_tierpy

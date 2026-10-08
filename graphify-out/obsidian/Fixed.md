@@ -1,17 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
-community: "Changelog"
-location: "L1711"
+community: "taobao_connector/server.py"
+location: "L473"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Changelog
+  - community/taobao_connector/serverpy
 ---
 
 # Fixed
 
 ## Connections
-- [[1.2.1 — 2026-07-28 (English)]] - `contains` [EXTRACTED]
+- [[2.2.0 — 2026-09-11]] - `contains` [EXTRACTED]
+- [[taobao_selfcheck()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Changelog
+#graphify/document #graphify/EXTRACTED #community/taobao_connector/serverpy

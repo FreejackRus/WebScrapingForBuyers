@@ -2,7 +2,7 @@
 source_file: "apps/web/src/entities/search/store/index.ts"
 type: "code"
 community: "useSearchStore"
-location: "L9"
+location: "L29"
 tags:
   - graphify/code
   - graphify/EXTRACTED

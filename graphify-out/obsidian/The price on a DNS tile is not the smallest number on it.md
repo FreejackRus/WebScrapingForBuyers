@@ -1,12 +1,12 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/dns-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/dns-connector/SKILL.md"
 type: "document"
-community: "dns_card"
+community: "DNS-Shop Connector"
 location: "L37"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/dns_card
+  - community/DNS-Shop_Connector
 ---
 
 # The price on a DNS tile is not the smallest number on it
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[DNS-Shop Connector]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/dns_card
+#graphify/document #graphify/EXTRACTED #community/DNS-Shop_Connector

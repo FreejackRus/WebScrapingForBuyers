@@ -12,7 +12,8 @@ tags:
 # workspace/ui/index.tsx
 
 ## Connections
-- [[Metrics()]] - `imports` [EXTRACTED]
+- [[Metrics()_1]] - `imports` [EXTRACTED]
+- [[OfferCard()]] - `imports` [EXTRACTED]
 - [[OfferTable()]] - `imports` [EXTRACTED]
 - [[SearchWorkspace()]] - `contains` [EXTRACTED]
 - [[SearchWorkspaceLead()]] - `contains` [EXTRACTED]
@@ -23,6 +24,7 @@ tags:
 - [[entitiesuserindex.ts]] - `imports_from` [EXTRACTED]
 - [[exportindex.ts]] - `imports_from` [EXTRACTED]
 - [[metricsindex.ts]] - `imports_from` [EXTRACTED]
+- [[offer-cardindex.ts]] - `imports_from` [EXTRACTED]
 - [[offersindex.ts]] - `imports_from` [EXTRACTED]
 - [[searchApi]] - `imports` [EXTRACTED]
 - [[sourcesindex.ts]] - `imports_from` [EXTRACTED]

@@ -1,33 +1,31 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
 type: "code"
-community: "BadRequestError"
+community: "wb_connector/server.py"
 location: "L103"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/BadRequestError
+  - community/wb_connector/serverpy
 ---
 
 # NotFoundError
 
 ## Connections
-- [[dot-__init__()_28]] - `method` [EXTRACTED]
+- [[dot-__init__()_34]] - `method` [EXTRACTED]
 - [[ConnectorError]] - `inherits` [EXTRACTED]
 - [[_fetch_html()]] - `uses` [INFERRED]
 - [[_graphql_card()]] - `uses` [INFERRED]
-- [[_raise_for_fetch_failure()]] - `uses` [INFERRED]
 - [[_raise_for_fetch_failure()_1]] - `uses` [INFERRED]
+- [[_raise_for_fetch_failure()]] - `uses` [INFERRED]
 - [[browser_handoff.py]] - `imports` [EXTRACTED]
 - [[cian_card()]] - `uses` [INFERRED]
 - [[compare_browser_snapshot()]] - `uses` [INFERRED]
 - [[detmir_card()]] - `uses` [INFERRED]
 - [[errors.py]] - `contains` [EXTRACTED]
-- [[fetch()_1]] - `calls` [EXTRACTED]
+- [[fetch()_4]] - `calls` [EXTRACTED]
 - [[mcp_core__init__.py]] - `imports` [EXTRACTED]
 - [[megamarket_card()]] - `uses` [INFERRED]
-- [[mpstats_item()]] - `uses` [INFERRED]
-- [[mpstats_warehouses()]] - `uses` [INFERRED]
 - [[snapshot_handoff()]] - `calls` [EXTRACTED]
 - [[taobao_card()]] - `uses` [INFERRED]
 - [[test_an_unknown_handle_stays_opaque_but_an_expired_one_explains()]] - `uses` [INFERRED]
@@ -38,4 +36,4 @@ tags:
 - [[wb_root_info()]] - `uses` [INFERRED]
 - [[wb_seller()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/BadRequestError
+#graphify/code #graphify/INFERRED #community/wb_connector/serverpy

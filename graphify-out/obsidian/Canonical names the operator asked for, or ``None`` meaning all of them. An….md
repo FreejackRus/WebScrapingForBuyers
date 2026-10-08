@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/source_selection.py"
 type: "rationale"
 community: "test_source_selection.py"
-location: "L64"
+location: "L63"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED

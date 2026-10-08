@@ -14,8 +14,8 @@ tags:
 ## Connections
 - [[A drifted itemIdproducts must degrade to None{}, never crash the tool.]] - `rationale_for` [EXTRACTED]
 - [[_run()_1]] - `calls` [EXTRACTED]
-- [[fake_fetch()_3]] - `contains` [EXTRACTED]
+- [[fake_fetch()_4]] - `contains` [EXTRACTED]
 - [[ozon-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[scenario()_22]] - `contains` [EXTRACTED]
+- [[scenario()_25]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_run

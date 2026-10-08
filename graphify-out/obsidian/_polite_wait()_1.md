@@ -1,20 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/server.py"
 type: "code"
-community: "_post"
-location: "L126"
+community: "taobao_connector/server.py"
+location: "L112"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_post
+  - community/taobao_connector/serverpy
 ---
 
 # _polite_wait()
 
 ## Connections
 - [[Space this source's requests out, and back off if it refused us. Reads…_1]] - `rationale_for` [EXTRACTED]
-- [[_attempt()_1]] - `calls` [EXTRACTED]
-- [[_final_catalog_url()]] - `calls` [EXTRACTED]
-- [[megamarket_connectorserver.py]] - `contains` [EXTRACTED]
+- [[_cdp_render()]] - `calls` [EXTRACTED]
+- [[taobao_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_post
+#graphify/code #graphify/EXTRACTED #community/taobao_connector/serverpy

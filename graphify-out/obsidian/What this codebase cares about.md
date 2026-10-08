@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/CONTRIBUTING.md"
 type: "document"
-community: "ru-marketplace-mcp/README.md"
+community: "coerce_price"
 location: "L164"
 tags:
   - graphify/document
   - graphify/INFERRED
-  - community/ru-marketplace-mcp/READMEmd
+  - community/coerce_price
 ---
 
 # What this codebase cares about
@@ -17,4 +17,4 @@ tags:
 - [[coerce_price()]] - `references` [INFERRED]
 - [[log_event()]] - `references` [INFERRED]
 
-#graphify/document #graphify/INFERRED #community/ru-marketplace-mcp/READMEmd
+#graphify/document #graphify/INFERRED #community/coerce_price

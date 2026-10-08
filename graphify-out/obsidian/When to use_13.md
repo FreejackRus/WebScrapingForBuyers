@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/mpstats-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/lamoda-connector/SKILL.md"
 type: "document"
-community: "MPStats Connector"
-location: "L17"
+community: "Lamoda Connector"
+location: "L14"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/MPStats_Connector
+  - community/Lamoda_Connector
 ---
 
 # When to use
 
 ## Connections
-- [[MPStats Connector_1]] - `contains` [EXTRACTED]
+- [[Lamoda Connector]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/MPStats_Connector
+#graphify/document #graphify/EXTRACTED #community/Lamoda_Connector

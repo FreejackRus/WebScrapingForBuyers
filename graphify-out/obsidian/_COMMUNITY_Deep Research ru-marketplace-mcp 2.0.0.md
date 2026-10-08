@@ -10,7 +10,7 @@ members: 14
 **Members:** 14 nodes
 
 ## Members
-- [[Bibliography]] - document - mcp-servers/ru-marketplace-mcp/docs/research/DEEP_RESEARCH_V2.0.0.md
+- [[Bibliography_1]] - document - mcp-servers/ru-marketplace-mcp/docs/research/DEEP_RESEARCH_V2.0.0.md
 - [[DEEP_RESEARCH_V2.0.0]] - document - mcp-servers/ru-marketplace-mcp/docs/research/DEEP_RESEARCH_V2.0.0.md
 - [[Decision summary]] - document - mcp-servers/ru-marketplace-mcp/docs/research/DEEP_RESEARCH_V2.0.0.md
 - [[Deep Research ru-marketplace-mcp 2.0.0]] - document - mcp-servers/ru-marketplace-mcp/docs/research/DEEP_RESEARCH_V2.0.0.md
@@ -35,7 +35,7 @@ SORT file.name ASC
 ## Connections to other communities
 - 2 edges to [[_COMMUNITY_compare_prices]]
 - 1 edge to [[_COMMUNITY_compare_verify_offer]]
-- 1 edge to [[_COMMUNITY_compare_connectormodels_output.py]]
+- 1 edge to [[_COMMUNITY_ProductIdentity]]
 
 ## Top bridge nodes
 - [[Decision summary]] - degree 3, connects to 2 communities

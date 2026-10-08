@@ -12,7 +12,7 @@ tags:
 # test_questions_is_registered_as_a_tool()
 
 ## Connections
-- [[scenario()_84]] - `contains` [EXTRACTED]
+- [[scenario()_85]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_helperspy

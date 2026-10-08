@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/README.md"
 type: "document"
 community: "ru-marketplace-mcp"
-location: "L374"
+location: "L365"
 tags:
   - graphify/document
   - graphify/EXTRACTED

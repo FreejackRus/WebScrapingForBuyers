@@ -12,7 +12,7 @@ tags:
 # test_expired_retry_cleanup_cannot_create_two_replacements()
 
 ## Connections
-- [[call()_1]] - `calls` [EXTRACTED]
+- [[call()]] - `calls` [EXTRACTED]
 - [[delayed_stop()]] - `indirect_call` [INFERRED]
 - [[mcp-coreteststest_browser_handoff.py]] - `contains` [EXTRACTED]
 

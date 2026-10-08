@@ -12,7 +12,7 @@ tags:
 # test_live_tiles_carry_a_canonical_card_input()
 
 ## Connections
-- [[_items()_1]] - `calls` [EXTRACTED]
+- [[_items()]] - `calls` [EXTRACTED]
 - [[compareozon_card chain depends on card_input surviving the parse.]] - `rationale_for` [EXTRACTED]
 - [[test_search_parser_live.py]] - `contains` [EXTRACTED]
 

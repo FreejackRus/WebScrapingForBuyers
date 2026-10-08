@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "chrome_cdp.py"
+community: "get_browser"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/chrome_cdppy
+  - community/get_browser
 ---
 
 # Browser
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[get_browser()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/chrome_cdppy
+#graphify/code #graphify/EXTRACTED #community/get_browser

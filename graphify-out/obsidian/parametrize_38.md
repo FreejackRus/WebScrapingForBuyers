@@ -1,16 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "pathlib"
+community: "test_public_contract_snapshot.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/test_public_contract_snapshotpy
 ---
 
 # parametrize
 
 ## Connections
-- [[test_successful_collection_returns_selected_count()]] - `references` [EXTRACTED]
+- [[test_help_does_not_start_the_server()]] - `references` [EXTRACTED]
+- [[test_operator_subcommands_forward_their_arguments()]] - `references` [EXTRACTED]
+- [[test_unknown_argument_exits_with_error()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pathlib
+#graphify/code #graphify/EXTRACTED #community/test_public_contract_snapshotpy

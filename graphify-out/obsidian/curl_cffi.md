@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "ozon_connector/server.py"
+community: "avito_connector/server.py"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/ozon_connector/serverpy
+  - community/avito_connector/serverpy
 ---
 
 # curl_cffi
@@ -15,4 +15,4 @@ tags:
 - [[ozon_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[wb_connectorserver.py]] - `imports_from` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/ozon_connector/serverpy
+#graphify/concept #graphify/EXTRACTED #community/avito_connector/serverpy

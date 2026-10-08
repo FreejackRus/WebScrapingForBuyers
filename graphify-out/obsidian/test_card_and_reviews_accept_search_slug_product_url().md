@@ -13,8 +13,8 @@ tags:
 
 ## Connections
 - [[_run()_1]] - `calls` [EXTRACTED]
-- [[fake_fetch()_10]] - `contains` [EXTRACTED]
+- [[fake_fetch()_12]] - `contains` [EXTRACTED]
 - [[ozon-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[scenario()_55]] - `contains` [EXTRACTED]
+- [[scenario()_64]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_ozon_selfcheck_includes_runtime_identity

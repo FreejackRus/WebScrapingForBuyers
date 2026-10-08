@@ -12,7 +12,7 @@ members: 8
 ## Members
 - [[A host with a scheme, port, credentials or path must never reach the dialer.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py
 - [[A typo'd port must not become a connection attempt to port 0 or 99999.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py
-- [[parametrize_8]] - code
+- [[parametrize_15]] - code
 - [[test_a_malformed_host_falls_back_to_loopback()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py
 - [[test_a_nonsense_port_falls_back_to_the_default()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py
 - [[test_loopback_hosts_are_recognised()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py

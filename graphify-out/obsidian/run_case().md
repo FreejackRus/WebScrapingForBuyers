@@ -12,7 +12,7 @@ tags:
 # run_case()
 
 ## Connections
-- [[fake_safe_get_text()_12]] - `contains` [EXTRACTED]
+- [[fake_safe_get_text()_13]] - `contains` [EXTRACTED]
 - [[fake_safe_get_text()_2]] - `indirect_call` [INFERRED]
 - [[no_wait()_2]] - `indirect_call` [INFERRED]
 - [[test_wb_selfcheck_null_roots_are_drift()]] - `contains` [EXTRACTED]

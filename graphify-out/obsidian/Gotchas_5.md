@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/taobao-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/marketplace/SKILL.md"
 type: "document"
-community: "Taobao Connector"
-location: "L28"
+community: "compare_prices"
+location: "L47"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Taobao_Connector
+  - community/compare_prices
 ---
 
 # Gotchas
 
 ## Connections
-- [[Taobao Connector]] - `contains` [EXTRACTED]
+- [[Unified Marketplace Server]] - `contains` [EXTRACTED]
+- [[marketplace_sources()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Taobao_Connector
+#graphify/document #graphify/EXTRACTED #community/compare_prices

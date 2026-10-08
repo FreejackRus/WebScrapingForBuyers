@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/avito-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/dns-connector/SKILL.md"
 type: "document"
-community: "avito_seller"
-location: "L19"
+community: "DNS-Shop Connector"
+location: "L17"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/avito_seller
+  - community/DNS-Shop_Connector
 ---
 
 # Tools available
 
 ## Connections
-- [[Avito Connector_1]] - `contains` [EXTRACTED]
-- [[avito_selfcheck()]] - `references` [INFERRED]
+- [[DNS-Shop Connector]] - `contains` [EXTRACTED]
+- [[dns_selfcheck()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/avito_seller
+#graphify/document #graphify/EXTRACTED #community/DNS-Shop_Connector

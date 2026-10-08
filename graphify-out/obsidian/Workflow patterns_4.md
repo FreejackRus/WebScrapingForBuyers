@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/mpstats-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/wb-connector/SKILL.md"
 type: "document"
-community: "MPStats Connector"
-location: "L67"
+community: "Wildberries Connector"
+location: "L46"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/MPStats_Connector
+  - community/Wildberries_Connector
 ---
 
 # Workflow patterns
 
 ## Connections
-- [[MPStats Connector_1]] - `contains` [EXTRACTED]
+- [[Wildberries Connector]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/MPStats_Connector
+#graphify/document #graphify/EXTRACTED #community/Wildberries_Connector

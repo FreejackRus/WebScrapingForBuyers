@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py"
 type: "rationale"
-community: "compare_verify_offer"
+community: "json"
 location: "L1124"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/compare_verify_offer
+  - community/json
 ---
 
 # Dispatch both comparison profiles through the same native card contract.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_call_card_tool()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/compare_verify_offer
+#graphify/rationale #graphify/EXTRACTED #community/json

@@ -1,8 +1,8 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/settings.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/settings.py"
 type: "code"
 community: "pydantic"
-location: "L48"
+location: "L45"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,8 +12,8 @@ tags:
 # get_settings()
 
 ## Connections
-- [[MegamarketSettings]] - `calls` [EXTRACTED]
-- [[megamarket_connectorserver.py]] - `imports` [EXTRACTED]
-- [[megamarket_connectorsettings.py]] - `contains` [EXTRACTED]
+- [[TaobaoSettings]] - `calls` [EXTRACTED]
+- [[taobao_connectorserver.py]] - `imports` [EXTRACTED]
+- [[taobao_connectorsettings.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/pydantic

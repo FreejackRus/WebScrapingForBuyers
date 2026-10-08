@@ -1,17 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "compare_verify_offer"
+community: "TransportDownError"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/compare_verify_offer
+  - community/TransportDownError
 ---
 
 # ge
 
 ## Connections
-- [[compare_prices()]] - `references` [EXTRACTED]
-- [[compare_verify_offer()]] - `references` [EXTRACTED]
+- [[yandex_search()_1]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/compare_verify_offer
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

@@ -29,11 +29,12 @@ SORT file.name ASC
 
 ## Connections to other communities
 - 10 edges to [[_COMMUNITY_analyze.ts]]
-- 5 edges to [[_COMMUNITY_ollama-analysis-narrator.ts]]
-- 1 edge to [[_COMMUNITY_analysissrcapp.ts]]
+- 4 edges to [[_COMMUNITY_ollama-analysis-narrator.ts]]
+- 2 edges to [[_COMMUNITY_compare-models.ts]]
+- 2 edges to [[_COMMUNITY_analyze.test.ts]]
 
 ## Top bridge nodes
-- [[AnalysisNarrator]] - degree 8, connects to 3 communities
+- [[AnalysisNarrator]] - degree 10, connects to 4 communities
 - [[narration-error.ts]] - degree 6, connects to 2 communities
 - [[narrationFailureMessage()]] - degree 5, connects to 1 community
 - [[applyLlmRelevanceFilter()]] - degree 4, connects to 1 community

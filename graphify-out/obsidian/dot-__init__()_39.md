@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/pacing.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
 type: "code"
-community: "Pacer"
-location: "L44"
+community: "ChallengeRequiredError"
+location: "L75"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Pacer
+  - community/ChallengeRequiredError
 ---
 
 # .__init__()
 
 ## Connections
-- [[Configure the pace for one source. ``error_delay`` defaults to twice…]] - `rationale_for` [EXTRACTED]
-- [[Pacer]] - `method` [EXTRACTED]
+- [[dot-__init__()_33]] - `calls` [EXTRACTED]
+- [[UpstreamTimeoutError]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Pacer
+#graphify/code #graphify/EXTRACTED #community/ChallengeRequiredError

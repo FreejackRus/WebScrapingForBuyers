@@ -10,7 +10,7 @@ members: 2
 **Members:** 2 nodes
 
 ## Members
-- [[parametrize_15]] - code
+- [[parametrize_24]] - code
 - [[test_number_coercion()]] - code - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_ssr.py
 
 ## Live Query (requires Dataview plugin)

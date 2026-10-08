@@ -1,17 +1,18 @@
 ---
 source_file: "apps/web/src/widgets/analysis/chat/ui/index.tsx"
 type: "code"
-community: "useSearchStore"
+community: "chat/ui/index.tsx"
 location: "L13"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/useSearchStore
+  - community/chat/ui/indextsx
 ---
 
 # AnalysisChat()
 
 ## Connections
+- [[2026-09-24 — скрыты пояснения под чатом]] - `references` [INFERRED]
 - [[applyChatResult()]] - `calls` [EXTRACTED]
 - [[chatindex.ts]] - `re_exports` [EXTRACTED]
 - [[chatuiindex.test.tsx]] - `imports` [EXTRACTED]
@@ -23,4 +24,4 @@ tags:
 - [[useUserStore]] - `calls` [EXTRACTED]
 - [[widgetsanalysisindex.ts]] - `re_exports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/useSearchStore
+#graphify/code #graphify/EXTRACTED #community/chat/ui/indextsx

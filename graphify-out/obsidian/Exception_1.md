@@ -11,6 +11,6 @@ tags:
 # Exception
 
 ## Connections
-- [[_source_error()]] - `references` [EXTRACTED]
+- [[ConnectorError]] - `inherits` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/json

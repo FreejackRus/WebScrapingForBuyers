@@ -61,7 +61,7 @@ tags:
 - [[test_selfcheck_reports_drift_when_pages_stop_parsing()]] - `contains` [EXTRACTED]
 - [[test_selfcheck_reports_value_drift()]] - `contains` [EXTRACTED]
 - [[test_selfcheck_skips_card_when_search_yields_no_id()]] - `contains` [EXTRACTED]
-- [[test_server_version_matches_pyproject()_5]] - `contains` [EXTRACTED]
+- [[test_server_version_matches_pyproject()_4]] - `contains` [EXTRACTED]
 - [[tomllib]] - `imports` [EXTRACTED]
 - [[yandex_connector__init__.py]] - `imports_from` [EXTRACTED]
 

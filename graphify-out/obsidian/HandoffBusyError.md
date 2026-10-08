@@ -12,7 +12,7 @@ tags:
 # HandoffBusyError
 
 ## Connections
-- [[dot-__init__()_22]] - `method` [EXTRACTED]
+- [[dot-__init__()_1]] - `method` [EXTRACTED]
 - [[0. Что проект уже делает (baseline, не изобретаем заново)]] - `references` [INFERRED]
 - [[An owned tab is already being read, or the bounded registry is full. R3 the…]] - `rationale_for` [EXTRACTED]
 - [[TransportDownError]] - `inherits` [EXTRACTED]

@@ -11,8 +11,8 @@ tags:
 # Collection
 
 ## Connections
-- [[dot-__init__()_12]] - `references` [EXTRACTED]
+- [[dot-__init__()_25]] - `references` [EXTRACTED]
 - [[_check_final_host()]] - `references` [EXTRACTED]
-- [[open_page()]] - `references` [EXTRACTED]
+- [[open_page()_3]] - `references` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/open_page

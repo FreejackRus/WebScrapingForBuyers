@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py"
 type: "rationale"
-community: "_no_cache"
+community: "test_login_wall_markers_are_gated_on_anchor_count"
 location: "L255"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/_no_cache
+  - community/test_login_wall_markers_are_gated_on_anchor_count
 ---
 
 # A healthy LOGGED-OUT page carries header login links and 登录 wording — but also…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_login_wall_markers_are_gated_on_anchor_count()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/_no_cache
+#graphify/rationale #graphify/EXTRACTED #community/test_login_wall_markers_are_gated_on_anchor_count

@@ -18,6 +18,6 @@ tags:
 - [[4. Ask for a comparison, then verify]] - `contains` [EXTRACTED]
 - [[5. Add browser-backed sources when needed]] - `contains` [EXTRACTED]
 - [[If the client cannot connect]] - `contains` [EXTRACTED]
-- [[QUICKSTART]] - `contains` [EXTRACTED]
+- [[QUICKSTART_1]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/decision_inspect

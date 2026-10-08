@@ -1,18 +1,20 @@
 ---
 source_file: ""
 type: "code"
-community: "models.py"
+community: "detmir_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/modelspy
+  - community/detmir_connector/serverpy
 ---
 
 # BaseModel
 
 ## Connections
-- [[MetaOutBase]] - `inherits` [EXTRACTED]
-- [[SelfCheckEntryBase]] - `inherits` [EXTRACTED]
-- [[SelfCheckResponseBase]] - `inherits` [EXTRACTED]
+- [[DetmirCardResponse]] - `inherits` [EXTRACTED]
+- [[DetmirCategoriesResponse]] - `inherits` [EXTRACTED]
+- [[DetmirCategory]] - `inherits` [EXTRACTED]
+- [[DetmirListResponse]] - `inherits` [EXTRACTED]
+- [[DetmirProduct]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/modelspy
+#graphify/code #graphify/EXTRACTED #community/detmir_connector/serverpy

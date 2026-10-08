@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py"
 type: "rationale"
 community: "avito-connector/tests/test_server.py"
-location: "L365"
+location: "L374"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED

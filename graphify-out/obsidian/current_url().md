@@ -12,6 +12,6 @@ tags:
 # current_url()
 
 ## Connections
-- [[browser()]] - `indirect_call` [INFERRED]
+- [[browser()_1]] - `indirect_call` [INFERRED]
 
 #graphify/code #graphify/INFERRED #community/taobao

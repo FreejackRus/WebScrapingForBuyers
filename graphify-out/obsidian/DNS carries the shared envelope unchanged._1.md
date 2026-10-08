@@ -12,6 +12,6 @@ tags:
 # DNS carries the shared envelope unchanged.
 
 ## Connections
-- [[MetaOut_11]] - `rationale_for` [EXTRACTED]
+- [[MetaOut_10]] - `rationale_for` [EXTRACTED]
 
 #graphify/rationale #graphify/EXTRACTED #community/citilink_card

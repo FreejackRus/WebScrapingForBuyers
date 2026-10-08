@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/redact.py"
 type: "code"
 community: "test_redact.py"
-location: "L59"
+location: "L57"
 tags:
   - graphify/code
   - graphify/EXTRACTED

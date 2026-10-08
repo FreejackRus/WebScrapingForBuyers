@@ -1,17 +1,20 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/work/v2-research/security.md"
+source_file: "mcp-servers/ru-marketplace-mcp/SECURITY.md"
 type: "document"
-community: "v2.0.0 Security / privacy research"
+community: "Security"
 location: "L1"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/v200_Security_/_privacy_research
+  - community/Security
 ---
 
-# security.md
+# SECURITY.md
 
 ## Connections
-- [[v2.0.0 Security  privacy research]] - `contains` [EXTRACTED]
+- [[CDP_SETUP]] - `references` [EXTRACTED]
+- [[CODE_OF_CONDUCT]] - `references` [EXTRACTED]
+- [[Security_1]] - `contains` [EXTRACTED]
+- [[Безопасность]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/v200_Security_/_privacy_research
+#graphify/document #graphify/EXTRACTED #community/Security

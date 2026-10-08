@@ -15,6 +15,7 @@ tags:
 - [[INFRA_LEAK_SOURCE]] - `contains` [EXTRACTED]
 - [[SOURCE_UNAVAILABLE]] - `contains` [EXTRACTED]
 - [[analyze.ts]] - `imports_from` [EXTRACTED]
+- [[compare-models.ts]] - `imports_from` [EXTRACTED]
 - [[hasInfraLeak()]] - `contains` [EXTRACTED]
 - [[infra-leak.test.ts]] - `imports_from` [EXTRACTED]
 - [[leakRe()]] - `contains` [EXTRACTED]

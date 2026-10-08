@@ -12,9 +12,9 @@ tags:
 # test_wb_selfcheck_search_goods_nonpositive_ids_are_drift()
 
 ## Connections
-- [[fake_safe_get_text()_19]] - `contains` [EXTRACTED]
-- [[no_wait()_18]] - `contains` [EXTRACTED]
-- [[scenario()_18]] - `contains` [EXTRACTED]
+- [[fake_safe_get_text()_20]] - `contains` [EXTRACTED]
+- [[no_wait()_19]] - `contains` [EXTRACTED]
+- [[scenario()_19]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/no_wait

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "code"
-community: "chrome_cdp.py"
+community: "json"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/chrome_cdppy
+  - community/json
 ---
 
 # chrome_cdp.py
@@ -39,7 +39,7 @@ tags:
 - [[_scraping_profile_pids()]] - `contains` [EXTRACTED]
 - [[_start_chrome_with_cdp()]] - `contains` [EXTRACTED]
 - [[aliexpress_connectorserver.py]] - `imports_from` [EXTRACTED]
-- [[asyncio_2]] - `imports` [EXTRACTED]
+- [[asyncio]] - `imports` [EXTRACTED]
 - [[avito_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[base64]] - `imports` [EXTRACTED]
 - [[binascii]] - `imports` [EXTRACTED]
@@ -61,7 +61,7 @@ tags:
 - [[math]] - `imports` [EXTRACTED]
 - [[megamarket_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[navigation_budget()]] - `imports` [EXTRACTED]
-- [[open_page()]] - `contains` [EXTRACTED]
+- [[open_page()_3]] - `contains` [EXTRACTED]
 - [[os]] - `imports` [EXTRACTED]
 - [[ozon_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]
@@ -74,10 +74,11 @@ tags:
 - [[subprocess]] - `imports` [EXTRACTED]
 - [[sys]] - `imports` [EXTRACTED]
 - [[taobao_connectorserver.py]] - `imports_from` [EXTRACTED]
-- [[time]] - `imports` [EXTRACTED]
+- [[time_1]] - `imports` [EXTRACTED]
 - [[typing]] - `imports_from` [EXTRACTED]
 - [[urllib_parse]] - `imports_from` [EXTRACTED]
 - [[wb_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[websockets]] - `imports` [EXTRACTED]
+- [[yandex_connectorserver.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/chrome_cdppy
+#graphify/code #graphify/EXTRACTED #community/json

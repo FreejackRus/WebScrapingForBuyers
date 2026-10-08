@@ -1,13 +1,13 @@
 ---
 type: community
-cohesion: 0.35
-members: 17
+cohesion: 0.38
+members: 16
 ---
 
 # marketplace-connector
 
-**Cohesion:** 0.35 - loosely connected
-**Members:** 17 nodes
+**Cohesion:** 0.38 - loosely connected
+**Members:** 16 nodes
 
 ## Members
 - [[aliexpress-connector]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/pyproject.toml
@@ -21,7 +21,6 @@ members: 17
 - [[marketplace-connector]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/pyproject.toml
 - [[mcp-core]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/pyproject.toml
 - [[megamarket-connector]] - code - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/pyproject.toml
-- [[mpstats-connector]] - code - mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/pyproject.toml
 - [[ozon-connector]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/pyproject.toml
 - [[ru-marketplace-mcp]] - code - mcp-servers/ru-marketplace-mcp/pyproject.toml
 - [[taobao-connector]] - code - mcp-servers/ru-marketplace-mcp/packages/taobao-connector/pyproject.toml

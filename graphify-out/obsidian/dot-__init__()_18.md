@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_pacing.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py"
 type: "code"
-community: "FakeClock"
-location: "L18"
+community: "test_runtime.py"
+location: "L25"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/FakeClock
+  - community/test_runtimepy
 ---
 
 # .__init__()
 
 ## Connections
-- [[FakeClock]] - `method` [EXTRACTED]
+- [[_FakeMCP]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/FakeClock
+#graphify/code #graphify/EXTRACTED #community/test_runtimepy

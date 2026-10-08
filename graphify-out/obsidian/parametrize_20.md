@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "test_gateway_statuses_are_retried"
+community: "json"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_gateway_statuses_are_retried
+  - community/json
 ---
 
 # parametrize
 
 ## Connections
-- [[test_gateway_statuses_are_retried()]] - `references` [EXTRACTED]
+- [[test_taobao_tools_resume_the_retained_page()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_gateway_statuses_are_retried
+#graphify/code #graphify/EXTRACTED #community/json

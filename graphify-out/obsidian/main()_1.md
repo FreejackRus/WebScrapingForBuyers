@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_no_print.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_coverage_floor.py"
 type: "code"
-community: "test_dependency_parity.py"
+community: "subprocess"
 location: "L83"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_dependency_paritypy
+  - community/subprocess
 ---
 
 # main()
 
 ## Connections
-- [[check_file()]] - `calls` [EXTRACTED]
-- [[check_no_print.py]] - `contains` [EXTRACTED]
-- [[collect_default_paths()]] - `calls` [EXTRACTED]
+- [[_documented_floor()]] - `calls` [EXTRACTED]
+- [[_measured_coverage()]] - `calls` [EXTRACTED]
+- [[check_coverage_floor.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_dependency_paritypy
+#graphify/code #graphify/EXTRACTED #community/subprocess

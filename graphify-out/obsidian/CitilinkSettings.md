@@ -12,7 +12,7 @@ tags:
 # CitilinkSettings
 
 ## Connections
-- [[BaseSettings_3]] - `inherits` [EXTRACTED]
+- [[BaseSettings_4]] - `inherits` [EXTRACTED]
 - [[citilink_connectorsettings.py]] - `contains` [EXTRACTED]
 - [[get_settings()_4]] - `calls` [EXTRACTED]
 

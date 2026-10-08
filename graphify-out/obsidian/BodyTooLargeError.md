@@ -12,9 +12,9 @@ tags:
 # BodyTooLargeError
 
 ## Connections
-- [[dot-__init__()_24]] - `method` [EXTRACTED]
+- [[dot-__init__()_26]] - `method` [EXTRACTED]
 - [[A response body exceeded the configured byte cap and was abandoned.]] - `rationale_for` [EXTRACTED]
-- [[Exception]] - `inherits` [EXTRACTED]
+- [[Exception_3]] - `inherits` [EXTRACTED]
 - [[http_tier.py]] - `contains` [EXTRACTED]
 - [[read_capped_text()]] - `calls` [EXTRACTED]
 - [[transport__init__.py]] - `imports` [EXTRACTED]

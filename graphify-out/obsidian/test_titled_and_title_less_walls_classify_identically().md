@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[Both wall variants — the classic titled one and the 2026-09-10 empty-title one…]] - `rationale_for` [EXTRACTED]
 - [[_error_payload()]] - `calls` [EXTRACTED]
-- [[_patch_render()_1]] - `calls` [EXTRACTED]
+- [[_patch_render()]] - `calls` [EXTRACTED]
 - [[taobao-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_error_payload

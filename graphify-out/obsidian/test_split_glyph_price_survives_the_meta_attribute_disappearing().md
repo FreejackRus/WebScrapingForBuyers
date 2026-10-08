@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[The day data-meta-price disappears, the glyph-attached display string inside…]] - `rationale_for` [EXTRACTED]
-- [[_extract()_3]] - `calls` [EXTRACTED]
+- [[_extract()_2]] - `calls` [EXTRACTED]
 - [[citilink-connectorteststest_card_extractor_dom.py]] - `contains` [EXTRACTED]
 - [[prices_from_tile()]] - `calls` [EXTRACTED]
 

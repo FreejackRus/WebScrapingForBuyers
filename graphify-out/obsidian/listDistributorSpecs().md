@@ -2,7 +2,7 @@
 source_file: "apps/search/src/infrastructure/sources/b2b-distributor-adapter.ts"
 type: "code"
 community: "b2b-distributor-adapter.ts"
-location: "L187"
+location: "L200"
 tags:
   - graphify/code
   - graphify/EXTRACTED

@@ -1,18 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/megamarket-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md"
 type: "document"
-community: "Megamarket Connector"
+community: "wb_connector/server.py"
 location: "L19"
 tags:
   - graphify/document
-  - graphify/EXTRACTED
-  - community/Megamarket_Connector
+  - graphify/INFERRED
+  - community/wb_connector/serverpy
 ---
 
 # Tools available
 
 ## Connections
-- [[Megamarket Connector_1]] - `contains` [EXTRACTED]
-- [[megamarket_selfcheck()]] - `references` [INFERRED]
+- [[Wildberries Connector_1]] - `contains` [EXTRACTED]
+- [[wb_card()]] - `references` [INFERRED]
+- [[wb_categories()]] - `references` [INFERRED]
+- [[wb_reviews()]] - `references` [INFERRED]
+- [[wb_root_info()]] - `references` [INFERRED]
+- [[wb_selfcheck()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Megamarket_Connector
+#graphify/document #graphify/INFERRED #community/wb_connector/serverpy

@@ -12,7 +12,7 @@ tags:
 # card_no_rating()
 
 ## Connections
-- [[fixture_10]] - `references` [EXTRACTED]
+- [[fixture_7]] - `references` [EXTRACTED]
 - [[load()]] - `calls` [EXTRACTED]
 - [[test_ssr.py]] - `contains` [EXTRACTED]
 

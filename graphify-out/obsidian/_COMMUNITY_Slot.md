@@ -36,7 +36,7 @@ SORT file.name ASC
 
 ## Connections to other communities
 - 4 edges to [[_COMMUNITY_NavigationBudget]]
-- 1 edge to [[_COMMUNITY_transport__init__.py]]
+- 1 edge to [[_COMMUNITY_json]]
 - 1 edge to [[_COMMUNITY_HostRefusingError]]
 
 ## Top bridge nodes

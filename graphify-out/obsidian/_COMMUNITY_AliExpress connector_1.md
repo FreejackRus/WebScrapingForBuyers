@@ -10,12 +10,12 @@ members: 6
 **Members:** 6 nodes
 
 ## Members
-- [[AliExpress connector_1]] - document - mcp-servers/ru-marketplace-mcp/skills/aliexpress-connector/SKILL.md
-- [[Gotchas_22]] - document - mcp-servers/ru-marketplace-mcp/skills/aliexpress-connector/SKILL.md
-- [[How failures come back_1]] - document - mcp-servers/ru-marketplace-mcp/skills/aliexpress-connector/SKILL.md
-- [[Tools available_17]] - document - mcp-servers/ru-marketplace-mcp/skills/aliexpress-connector/SKILL.md
-- [[Workflow patterns_9]] - document - mcp-servers/ru-marketplace-mcp/skills/aliexpress-connector/SKILL.md
-- [[ru-marketplace-mcpskillsaliexpress-connectorSKILL]] - document - mcp-servers/ru-marketplace-mcp/skills/aliexpress-connector/SKILL.md
+- [[AliExpress connector_1]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/aliexpress-connector/SKILL.md
+- [[Gotchas_16]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/aliexpress-connector/SKILL.md
+- [[How failures come back_1]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/aliexpress-connector/SKILL.md
+- [[Tools available_10]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/aliexpress-connector/SKILL.md
+- [[Workflow patterns_7]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/aliexpress-connector/SKILL.md
+- [[dshskillsaliexpress-connectorSKILL]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/aliexpress-connector/SKILL.md
 
 ## Live Query (requires Dataview plugin)
 
@@ -26,9 +26,9 @@ SORT file.name ASC
 
 ## Connections to other communities
 - 2 edges to [[_COMMUNITY_compare_prices]]
-- 1 edge to [[_COMMUNITY_aliexpress_connectorserver.py]]
+- 1 edge to [[_COMMUNITY_aliexpress_card]]
 
 ## Top bridge nodes
 - [[AliExpress connector_1]] - degree 6, connects to 1 community
-- [[Gotchas_22]] - degree 2, connects to 1 community
-- [[Workflow patterns_9]] - degree 2, connects to 1 community
+- [[Gotchas_16]] - degree 2, connects to 1 community
+- [[Workflow patterns_7]] - degree 2, connects to 1 community

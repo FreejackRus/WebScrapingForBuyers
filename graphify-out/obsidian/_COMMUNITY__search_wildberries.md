@@ -29,9 +29,9 @@ SORT file.name ASC
 - 2 edges to [[_COMMUNITY_json]]
 - 1 edge to [[_COMMUNITY_compare-connectorteststest_server.py]]
 - 1 edge to [[_COMMUNITY_OfferBatch]]
-- 1 edge to [[_COMMUNITY_log_event]]
 - 1 edge to [[_COMMUNITY_compare_prices]]
-- 1 edge to [[_COMMUNITY_dns_card]]
+- 1 edge to [[_COMMUNITY_wb_connectorserver.py]]
+- 1 edge to [[_COMMUNITY_Аудит ru-marketplace-mcp v1.2.0 — независимая перепроверка]]
 
 ## Top bridge nodes
 - [[_search_wildberries()]] - degree 6, connects to 3 communities

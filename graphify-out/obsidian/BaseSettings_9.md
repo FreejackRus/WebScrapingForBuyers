@@ -11,6 +11,6 @@ tags:
 # BaseSettings
 
 ## Connections
-- [[OzonSettings]] - `inherits` [EXTRACTED]
+- [[WBSettings]] - `inherits` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/pydantic

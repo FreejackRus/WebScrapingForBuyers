@@ -29,6 +29,11 @@ const reviewOffer = {
 };
 
 const rows = [offer, reviewOffer];
+const tablePage = {
+  rows: [offer],
+  reviewRows: [reviewOffer],
+  total: 1,
+};
 
 const snapshot: SearchSnapshot = {
   id: "search",
@@ -52,8 +57,7 @@ const openOffer = vi.fn();
 vi.mock("features/search", () => ({
   useFilteredOffers: () => rows,
   useOfferTable: () => ({
-    rows,
-    total: rows.length,
+    ...tablePage,
     page: 1,
     pageCount: 1,
     pageSize: 8,
@@ -138,5 +142,23 @@ describe("OfferTable", () => {
     expect(html.indexOf("Требует уточнения — 1")).toBeLessThan(html.indexOf(reviewOffer.title));
     expect(html).not.toContain("Лучший выбор");
     expect(html).not.toContain("offer-cta primary");
+  });
+
+  it("explains when every filtered offer needs review", () => {
+    tablePage.rows = [];
+    tablePage.reviewRows = [reviewOffer];
+    tablePage.total = 0;
+
+    try {
+      const html = renderToStaticMarkup(<OfferTable />);
+      expect(html).toContain("Нет предложений без уточнений");
+      expect(html).toContain("Все найденные предложения требуют проверки");
+      expect(html).not.toContain("Предложения не найдены");
+      expect(html).toContain("Требует уточнения — 1");
+    } finally {
+      tablePage.rows = [offer];
+      tablePage.reviewRows = [reviewOffer];
+      tablePage.total = 1;
+    }
   });
 });

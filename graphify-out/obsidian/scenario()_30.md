@@ -1,20 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "_patch_tier1"
-location: "L831"
+community: "test_safe_get_text_does_not_retry_http_status_errors"
+location: "L196"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/_patch_tier1
+  - graphify/INFERRED
+  - community/test_safe_get_text_does_not_retry_http_status_errors
 ---
 
 # scenario()
 
 ## Connections
-- [[_patch_tier1()]] - `calls` [EXTRACTED]
-- [[blocked_then_ok()]] - `indirect_call` [INFERRED]
-- [[failing_cdp()]] - `indirect_call` [INFERRED]
-- [[test_fetch_composer_does_not_cache_a_block()]] - `contains` [EXTRACTED]
+- [[fake_polite_wait()_2]] - `indirect_call` [INFERRED]
+- [[fake_sleep()_1]] - `indirect_call` [INFERRED]
+- [[test_safe_get_text_retry_passes_through_polite_gate()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_patch_tier1
+#graphify/code #graphify/INFERRED #community/test_safe_get_text_does_not_retry_http_status_errors

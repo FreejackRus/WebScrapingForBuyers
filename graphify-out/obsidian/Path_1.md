@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "taobao-connector/tests/test_shape_reference.py"
+community: "subprocess"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/taobao-connector/tests/test_shape_referencepy
+  - community/subprocess
 ---
 
 # Path
 
 ## Connections
-- [[_extract()]] - `references` [EXTRACTED]
+- [[pins()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/taobao-connector/tests/test_shape_referencepy
+#graphify/code #graphify/EXTRACTED #community/subprocess

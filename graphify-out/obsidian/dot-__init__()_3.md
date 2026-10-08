@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py"
 type: "code"
-community: "_FakeResponse"
-location: "L523"
+community: "_FakeWs"
+location: "L497"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_FakeResponse
+  - community/_FakeWs
 ---
 
 # .__init__()
 
 ## Connections
-- [[_FakeOzonItem]] - `method` [EXTRACTED]
+- [[_FakeWs]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_FakeResponse
+#graphify/code #graphify/EXTRACTED #community/_FakeWs

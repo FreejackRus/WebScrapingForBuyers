@@ -1,12 +1,12 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/shape_reference.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/shape_reference.py"
 type: "rationale"
-community: "missing_required_families"
-location: "L50"
+community: "taobao_connector/server.py"
+location: "L67"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/missing_required_families
+  - community/taobao_connector/serverpy
 ---
 
 # A family is present when some signature entry extends one of its paths. Entries…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_family_present()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/missing_required_families
+#graphify/rationale #graphify/EXTRACTED #community/taobao_connector/serverpy

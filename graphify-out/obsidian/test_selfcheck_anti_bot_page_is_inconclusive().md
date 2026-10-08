@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[The legacy payload shape an older build's extractor JS baked '__BLOCKED__'…]] - `rationale_for` [EXTRACTED]
-- [[_patch_render()_1]] - `calls` [EXTRACTED]
+- [[_patch_render()]] - `calls` [EXTRACTED]
 - [[taobao-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_selfcheck_anti_bot_page_is_inconclusive

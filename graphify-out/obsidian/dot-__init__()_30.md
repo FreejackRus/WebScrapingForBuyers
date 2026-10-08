@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/vision_policy.py"
 type: "code"
-community: "BadRequestError"
-location: "L109"
+community: "test_review_regressions.py"
+location: "L43"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/BadRequestError
+  - community/test_review_regressionspy
 ---
 
 # .__init__()
 
 ## Connections
-- [[dot-__init__()_27]] - `calls` [EXTRACTED]
-- [[PermissionDeniedError]] - `method` [EXTRACTED]
+- [[ImageDelivery]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/BadRequestError
+#graphify/code #graphify/EXTRACTED #community/test_review_regressionspy

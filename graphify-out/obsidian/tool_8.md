@@ -1,16 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "compare_prices"
+community: "lamoda_search"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/compare_prices
+  - community/lamoda_search
 ---
 
 # tool
 
 ## Connections
-- [[marketplace_sources()]] - `references` [EXTRACTED]
+- [[lamoda_card()]] - `references` [EXTRACTED]
+- [[lamoda_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/compare_prices
+#graphify/code #graphify/EXTRACTED #community/lamoda_search

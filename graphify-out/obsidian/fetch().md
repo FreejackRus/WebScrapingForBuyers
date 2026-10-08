@@ -1,24 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_search_variants.py"
 type: "code"
-community: "TransportDownError"
-location: "L136"
+community: "test_card_verification_records.py"
+location: "L39"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/TransportDownError
+  - graphify/INFERRED
+  - community/test_card_verification_recordspy
 ---
 
 # fetch()
 
 ## Connections
-- [[ParserDriftError]] - `calls` [EXTRACTED]
-- [[RateLimitedError]] - `calls` [EXTRACTED]
-- [[TransportDownError]] - `calls` [EXTRACTED]
-- [[_fetch_json()]] - `indirect_call` [INFERRED]
-- [[_proxy()_1]] - `calls` [EXTRACTED]
-- [[build_client()]] - `calls` [INFERRED]
-- [[get_text_with_retries()]] - `calls` [INFERRED]
-- [[raise_tool_error()]] - `calls` [EXTRACTED]
+- [[test_zone_search_keeps_distinct_skus_and_dedupes_repeated_variant_before_limit()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/TransportDownError
+#graphify/code #graphify/INFERRED #community/test_card_verification_recordspy

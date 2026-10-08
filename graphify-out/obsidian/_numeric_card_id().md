@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py"
 type: "code"
-community: "BadRequestError"
+community: "json"
 location: "L1093"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/BadRequestError
+  - community/json
 ---
 
 # _numeric_card_id()
@@ -18,4 +18,4 @@ tags:
 - [[compare_connectorserver.py]] - `contains` [EXTRACTED]
 - [[raise_tool_error()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/BadRequestError
+#graphify/code #graphify/EXTRACTED #community/json

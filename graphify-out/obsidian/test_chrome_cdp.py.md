@@ -32,6 +32,7 @@ tags:
 - [[test_evaluate_wrapper_passes_plain_expressions_through()]] - `contains` [EXTRACTED]
 - [[test_find_chrome_returns_none_when_nothing_is_installed()]] - `contains` [EXTRACTED]
 - [[test_find_chrome_returns_the_first_existing_candidate()]] - `contains` [EXTRACTED]
+- [[test_goto_and_status_ignores_document_responses_from_child_frames()]] - `contains` [EXTRACTED]
 - [[test_goto_and_status_reports_a_block_page()]] - `contains` [EXTRACTED]
 - [[test_goto_and_status_returns_the_last_document_status_and_stops_on_load()]] - `contains` [EXTRACTED]
 - [[test_host_defaults_to_loopback_when_unset()]] - `contains` [EXTRACTED]

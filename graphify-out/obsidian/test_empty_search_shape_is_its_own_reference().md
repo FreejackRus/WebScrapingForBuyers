@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Empty results are a shape of their own; an empty page must not be fingerprinted…]] - `rationale_for` [EXTRACTED]
-- [[_load()_2]] - `calls` [EXTRACTED]
+- [[_load()_3]] - `calls` [EXTRACTED]
 - [[shape_signature()]] - `calls` [EXTRACTED]
 - [[yandex-connectorteststest_shape_reference.py]] - `contains` [EXTRACTED]
 

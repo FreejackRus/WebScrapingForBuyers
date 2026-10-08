@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/process.py"
 type: "code"
-community: "ozon_connector/server.py"
+community: "process.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ozon_connector/serverpy
+  - community/processpy
 ---
 
 # process.py
@@ -29,4 +29,4 @@ tags:
 - [[windows_system_dir()]] - `contains` [EXTRACTED]
 - [[worker_process_kwargs()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ozon_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/processpy

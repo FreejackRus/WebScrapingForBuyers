@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py"
 type: "code"
-community: "dns_card"
-location: "L245"
+community: "Аудит ru-marketplace-mcp v1.2.0 — независимая перепроверка"
+location: "L242"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/dns_card
+  - community/Аудит_ru-marketplace-mcp_v120__независимая_перепроверка
 ---
 
 # selfcheck()
@@ -20,4 +20,4 @@ tags:
 - [[Документация]] - `references` [INFERRED]
 - [[Навыки]] - `references` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/dns_card
+#graphify/code #graphify/INFERRED #community/Аудит_ru-marketplace-mcp_v120__независимая_перепроверка

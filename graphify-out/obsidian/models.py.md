@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/models.py"
 type: "code"
-community: "models.py"
+community: "dns_card"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/modelspy
+  - community/dns_card
 ---
 
 # models.py
@@ -24,7 +24,6 @@ tags:
 - [[dns_connectormodels_output.py]] - `imports_from` [EXTRACTED]
 - [[lamoda_connectormodels_output.py]] - `imports_from` [EXTRACTED]
 - [[megamarket_connectormodels_output.py]] - `imports_from` [EXTRACTED]
-- [[mpstats_connectormodels_output.py]] - `imports_from` [EXTRACTED]
 - [[ozon_connectormodels_output.py]] - `imports_from` [EXTRACTED]
 - [[pydantic]] - `imports_from` [EXTRACTED]
 - [[taobao_connectormodels_output.py]] - `imports_from` [EXTRACTED]
@@ -32,4 +31,4 @@ tags:
 - [[wb_connectormodels_output.py]] - `imports_from` [EXTRACTED]
 - [[yandex_connectormodels_output.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/modelspy
+#graphify/code #graphify/EXTRACTED #community/dns_card

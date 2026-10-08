@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "_patch_questions"
-location: "L1871"
+community: "test_ozon_selfcheck_includes_runtime_identity"
+location: "L544"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_patch_questions
+  - community/test_ozon_selfcheck_includes_runtime_identity
 ---
 
 # scenario()
 
 ## Connections
-- [[_patch_questions()]] - `calls` [EXTRACTED]
-- [[responder()_8]] - `indirect_call` [INFERRED]
-- [[test_category_item_shape_matches_wb_card()]] - `contains` [EXTRACTED]
+- [[fake_fetch()]] - `indirect_call` [INFERRED]
+- [[test_card_and_reviews_accept_search_slug_product_url()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_patch_questions
+#graphify/code #graphify/EXTRACTED #community/test_ozon_selfcheck_includes_runtime_identity

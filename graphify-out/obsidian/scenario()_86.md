@@ -1,19 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "test_wb_search_falls_back_to_legacy_path_when_v9_fails"
-location: "L529"
+community: "test_helpers.py"
+location: "L243"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/test_wb_search_falls_back_to_legacy_path_when_v9_fails
+  - graphify/EXTRACTED
+  - community/test_helperspy
 ---
 
 # scenario()
 
 ## Connections
-- [[fake_safe_get_text()_2]] - `indirect_call` [INFERRED]
-- [[no_wait()_2]] - `indirect_call` [INFERRED]
-- [[test_wb_search_falls_back_to_legacy_path_when_v9_fails()]] - `contains` [EXTRACTED]
+- [[test_safe_get_text_classifies_httpx_timeout_as_timeout()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/test_wb_search_falls_back_to_legacy_path_when_v9_fails
+#graphify/code #graphify/EXTRACTED #community/test_helperspy

@@ -1,12 +1,12 @@
 ---
 source_file: "apps/analysis/src/infrastructure/looks-strongly-english.ts"
 type: "code"
-community: "narrationNeedsRussianRetry"
+community: "ollama-analysis-narrator.ts"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/narrationNeedsRussianRetry
+  - community/ollama-analysis-narratorts
 ---
 
 # looks-strongly-english.ts
@@ -17,4 +17,4 @@ tags:
 - [[narrationNeedsRussianRetry()]] - `contains` [EXTRACTED]
 - [[ollama-analysis-narrator.ts]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/narrationNeedsRussianRetry
+#graphify/code #graphify/EXTRACTED #community/ollama-analysis-narratorts

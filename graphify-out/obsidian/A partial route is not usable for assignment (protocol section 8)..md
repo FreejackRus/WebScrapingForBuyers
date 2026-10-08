@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_model_routing_eval_verdict.py"
 type: "rationale"
-community: "pathlib"
+community: "test_model_routing_eval_verdict.py"
 location: "L37"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/test_model_routing_eval_verdictpy
 ---
 
 # A partial route is not usable for assignment (protocol section 8).
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_a_partial_run_is_not_ok_and_missing_counts_as_failed()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/pathlib
+#graphify/rationale #graphify/EXTRACTED #community/test_model_routing_eval_verdictpy

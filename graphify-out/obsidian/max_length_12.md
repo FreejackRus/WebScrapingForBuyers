@@ -1,17 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "yandex_card"
+community: "wb_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/yandex_card
+  - community/wb_connector/serverpy
 ---
 
 # max_length
 
 ## Connections
-- [[yandex_card()]] - `references` [EXTRACTED]
-- [[yandex_search()_1]] - `references` [EXTRACTED]
+- [[wb_categories()]] - `references` [EXTRACTED]
+- [[wb_category_products()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/yandex_card
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

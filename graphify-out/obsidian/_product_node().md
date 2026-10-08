@@ -12,7 +12,7 @@ tags:
 # _product_node()
 
 ## Connections
-- [[Any_10]] - `references` [EXTRACTED]
+- [[Any_17]] - `references` [EXTRACTED]
 - [[Unwrap the card payload, which nests the product under ``item``.]] - `rationale_for` [EXTRACTED]
 - [[detmir_card()]] - `calls` [EXTRACTED]
 - [[detmir_connectorserver.py]] - `contains` [EXTRACTED]

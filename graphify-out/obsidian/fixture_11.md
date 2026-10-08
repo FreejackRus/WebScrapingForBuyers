@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "Clock"
+community: "pytest"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Clock
+  - community/pytest
 ---
 
 # fixture
 
 ## Connections
-- [[clock()]] - `references` [EXTRACTED]
+- [[_wb_http_transport_for_unit_tests()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Clock
+#graphify/code #graphify/EXTRACTED #community/pytest

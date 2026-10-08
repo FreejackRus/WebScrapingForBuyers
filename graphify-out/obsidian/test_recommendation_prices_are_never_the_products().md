@@ -12,7 +12,7 @@ tags:
 # test_recommendation_prices_are_never_the_products()
 
 ## Connections
-- [[_extract()_3]] - `calls` [EXTRACTED]
+- [[_extract()_2]] - `calls` [EXTRACTED]
 - [[citilink-connectorteststest_card_extractor_dom.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/citilink-connector/tests/test_card_extractor_dompy

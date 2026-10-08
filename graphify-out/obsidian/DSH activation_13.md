@@ -1,8 +1,8 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/yandex-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/aliexpress-connector/SKILL.md"
 type: "document"
 community: "compare_prices"
-location: "L111"
+location: "L84"
 tags:
   - graphify/document
   - graphify/INFERRED
@@ -12,7 +12,7 @@ tags:
 # DSH activation
 
 ## Connections
-- [[Yandex Market Connector]] - `contains` [EXTRACTED]
+- [[AliExpress connector]] - `contains` [EXTRACTED]
 - [[compare_prices()]] - `references` [INFERRED]
 - [[compare_sources()]] - `references` [INFERRED]
 - [[marketplace_sources()]] - `references` [INFERRED]

@@ -12,7 +12,7 @@ tags:
 # _b()
 
 ## Connections
-- [[Any_13]] - `references` [EXTRACTED]
+- [[Any_7]] - `references` [EXTRACTED]
 - [[_agent()]] - `calls` [EXTRACTED]
 - [[_offer_row()]] - `calls` [EXTRACTED]
 - [[cian_connectorserver.py]] - `contains` [EXTRACTED]

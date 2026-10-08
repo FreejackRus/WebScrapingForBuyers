@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/test_e2e_stdio_check.py"
 type: "code"
-community: "pathlib"
+community: "e2e_stdio_check.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/e2e_stdio_checkpy
 ---
 
 # test_e2e_stdio_check.py
@@ -25,4 +25,4 @@ tags:
 - [[test_sources_reject_missing_or_malformed_payload()]] - `contains` [EXTRACTED]
 - [[types_8]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pathlib
+#graphify/code #graphify/EXTRACTED #community/e2e_stdio_checkpy

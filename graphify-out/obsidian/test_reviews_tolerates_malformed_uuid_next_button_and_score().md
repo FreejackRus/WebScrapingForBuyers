@@ -13,8 +13,8 @@ tags:
 
 ## Connections
 - [[_run()_1]] - `calls` [EXTRACTED]
-- [[fake_fetch()_4]] - `contains` [EXTRACTED]
+- [[fake_fetch()_5]] - `contains` [EXTRACTED]
 - [[ozon-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[scenario()_23]] - `contains` [EXTRACTED]
+- [[scenario()_26]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_run

@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
 type: "code"
-community: "test_a_non_200_carries_a_body_preview"
-location: "L415"
+community: "test_storefront_live_xhr_capture_via_get_context"
+location: "L173"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_a_non_200_carries_a_body_preview
+  - community/test_storefront_live_xhr_capture_via_get_context
 ---
 
 # json()
 
 ## Connections
-- [[test_a_non_200_carries_a_body_preview()]] - `contains` [EXTRACTED]
+- [[test_storefront_live_xhr_capture_via_get_context()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_a_non_200_carries_a_body_preview
+#graphify/code #graphify/EXTRACTED #community/test_storefront_live_xhr_capture_via_get_context

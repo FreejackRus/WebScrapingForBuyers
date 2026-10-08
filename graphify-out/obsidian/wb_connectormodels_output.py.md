@@ -12,7 +12,7 @@ tags:
 # wb_connector/models_output.py
 
 ## Connections
-- [[MetaOut_5]] - `contains` [EXTRACTED]
+- [[MetaOut_11]] - `contains` [EXTRACTED]
 - [[Pydantic output models for the WB connector (Stage 2). Every tool returns a…]] - `rationale_for` [EXTRACTED]
 - [[WbCardItem]] - `contains` [EXTRACTED]
 - [[WbCardResponse]] - `contains` [EXTRACTED]

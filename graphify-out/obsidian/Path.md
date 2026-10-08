@@ -1,17 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "test_dependency_parity.py"
+community: "StdioProbe"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_dependency_paritypy
+  - community/StdioProbe
 ---
 
 # Path
 
 ## Connections
-- [[check_file()]] - `references` [EXTRACTED]
-- [[collect_default_paths()]] - `references` [EXTRACTED]
+- [[measure()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_dependency_paritypy
+#graphify/code #graphify/EXTRACTED #community/StdioProbe

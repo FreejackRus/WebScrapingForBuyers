@@ -10,8 +10,8 @@ members: 6
 **Members:** 6 nodes
 
 ## Members
-- [[dot-__call__()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_pacing.py
-- [[dot-__init__()_18]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_pacing.py
+- [[dot-__call__()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_pacing.py
+- [[dot-__init__()_16]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_pacing.py
 - [[dot-advance()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_pacing.py
 - [[dot-sleep()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_pacing.py
 - [[A clock that only moves when a sleep says it should.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_pacing.py

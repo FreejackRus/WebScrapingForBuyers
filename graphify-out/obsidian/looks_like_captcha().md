@@ -13,6 +13,7 @@ tags:
 
 ## Connections
 - [[True when the page is an actual captcha challenge, not a normal page.]] - `rationale_for` [EXTRACTED]
+- [[_cdp_challenge()]] - `calls` [EXTRACTED]
 - [[parse_card()]] - `calls` [EXTRACTED]
 - [[parse_search()]] - `calls` [EXTRACTED]
 - [[ssr.py]] - `contains` [EXTRACTED]

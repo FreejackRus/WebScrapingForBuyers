@@ -1,17 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "TransportDownError"
+community: "avito_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/TransportDownError
+  - community/avito_connector/serverpy
 ---
 
 # min_length
 
 ## Connections
-- [[lamoda_card()]] - `references` [EXTRACTED]
-- [[lamoda_search()]] - `references` [EXTRACTED]
+- [[avito_card()]] - `references` [EXTRACTED]
+- [[avito_search()_1]] - `references` [EXTRACTED]
+- [[avito_seller()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/TransportDownError
+#graphify/code #graphify/EXTRACTED #community/avito_connector/serverpy

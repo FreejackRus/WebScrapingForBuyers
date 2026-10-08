@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "rationale"
-community: "log_event"
-location: "L700"
+community: "wb_connector/server.py"
+location: "L783"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/log_event
+  - community/wb_connector/serverpy
 ---
 
 # Return (current_rub, original_rub), or (None, None) if no live offer. WB v4…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_extract_price_rub()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/log_event
+#graphify/rationale #graphify/EXTRACTED #community/wb_connector/serverpy

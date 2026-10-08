@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_identity.py"
 type: "code"
-community: "identity.py"
+community: "ProductIdentity"
 location: "L88"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/identitypy
+  - community/ProductIdentity
 ---
 
 # test_mapping_does_not_promote_seller_article_to_manufacturer_id()
@@ -15,4 +15,4 @@ tags:
 - [[identity_from_mapping()]] - `calls` [EXTRACTED]
 - [[test_identity.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/identitypy
+#graphify/code #graphify/EXTRACTED #community/ProductIdentity

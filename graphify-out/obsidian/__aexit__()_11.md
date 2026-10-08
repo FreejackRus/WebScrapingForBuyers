@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py"
 type: "code"
-community: "test_cache_does_not_remember_a_rate_limit"
-location: "L1318"
+community: "_patch_page"
+location: "L900"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_cache_does_not_remember_a_rate_limit
+  - community/_patch_page
 ---
 
 # __aexit__()
 
 ## Connections
-- [[test_cache_does_not_remember_a_rate_limit()]] - `contains` [EXTRACTED]
+- [[_patch_page()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_cache_does_not_remember_a_rate_limit
+#graphify/code #graphify/EXTRACTED #community/_patch_page

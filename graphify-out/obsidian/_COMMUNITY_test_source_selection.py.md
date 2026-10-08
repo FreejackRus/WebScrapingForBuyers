@@ -1,13 +1,13 @@
 ---
 type: community
 cohesion: 0.11
-members: 27
+members: 28
 ---
 
 # test_source_selection.py
 
 **Cohesion:** 0.11 - loosely connected
-**Members:** 27 nodes
+**Members:** 28 nodes
 
 ## Members
 - [[Canonical names the operator asked for, or ``None`` meaning all of them. An…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/source_selection.py
@@ -22,7 +22,8 @@ members: 27
 - [[_reload_unified()]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_source_selection.py
 - [[_set()]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_source_selection.py
 - [[canonical()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/source_selection.py
-- [[fixture]] - code
+- [[fixture_3]] - code
+- [[importlib]] - concept
 - [[selected()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/source_selection.py
 - [[test_aliases_and_spacing_are_accepted()]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_source_selection.py
 - [[test_blank_env_is_treated_as_unset()]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_source_selection.py
@@ -50,13 +51,13 @@ SORT file.name ASC
 - 3 edges to [[_COMMUNITY_compare_prices]]
 - 2 edges to [[_COMMUNITY_2.2.0 — 2026-09-11]]
 - 1 edge to [[_COMMUNITY_test_dsh_bundle.py]]
-- 1 edge to [[_COMMUNITY_compare_verify_offer]]
-- 1 edge to [[_COMMUNITY_wb_connectorserver.py]]
+- 1 edge to [[_COMMUNITY_log_event]]
 - 1 edge to [[_COMMUNITY_pytest]]
+- 1 edge to [[_COMMUNITY_test_card_verification_records.py]]
 
 ## Top bridge nodes
 - [[selected()]] - degree 11, connects to 4 communities
-- [[test_source_selection.py]] - degree 17, connects to 3 communities
 - [[canonical()]] - degree 7, connects to 3 communities
+- [[test_source_selection.py]] - degree 17, connects to 2 communities
 - [[wanted()]] - degree 5, connects to 2 communities
 - [[SourceSelectionError]] - degree 6, connects to 1 community

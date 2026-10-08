@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "transport/__init__.py"
+community: "TransportDownError"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/transport/__init__py
+  - community/TransportDownError
 ---
 
 # AsyncClient
@@ -15,4 +15,4 @@ tags:
 - [[get_text_budgeted()]] - `references` [EXTRACTED]
 - [[get_text_with_retries()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/transport/__init__py
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

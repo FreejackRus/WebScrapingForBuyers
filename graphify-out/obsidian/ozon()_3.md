@@ -12,7 +12,7 @@ tags:
 # ozon()
 
 ## Connections
-- [[offer()_1]] - `calls` [EXTRACTED]
+- [[offer()_2]] - `calls` [EXTRACTED]
 - [[test_stock_filter_ranks_only_confirmed_available_offers()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/offer

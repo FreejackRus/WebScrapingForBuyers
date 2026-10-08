@@ -1,21 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "taobao_card"
+community: "firewall_pow.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/taobao_card
+  - community/firewall_powpy
 ---
 
 # Any
 
 ## Connections
-- [[_anti_bot_challenge()]] - `references` [EXTRACTED]
-- [[_cdp_render()_1]] - `references` [EXTRACTED]
-- [[_login_wall()]] - `references` [EXTRACTED]
-- [[_login_wall_markers()]] - `references` [EXTRACTED]
-- [[_page_challenge_kind()]] - `references` [EXTRACTED]
-- [[_search_item_from_tile()_1]] - `references` [EXTRACTED]
+- [[challenge_jwt_from_get_body()]] - `references` [EXTRACTED]
+- [[verified_from_verify_body()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/taobao_card
+#graphify/code #graphify/EXTRACTED #community/firewall_powpy

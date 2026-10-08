@@ -12,7 +12,7 @@ tags:
 # price_from_texts()
 
 ## Connections
-- [[Any_7]] - `references` [EXTRACTED]
+- [[Any_12]] - `references` [EXTRACTED]
 - [[First candidate that parses to a real positive price, else None. DOM extractors…]] - `rationale_for` [EXTRACTED]
 - [[coerce_price()]] - `calls` [EXTRACTED]
 - [[resilience.py]] - `contains` [EXTRACTED]

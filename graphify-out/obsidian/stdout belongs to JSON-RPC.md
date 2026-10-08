@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/docs/ARCHITECTURE.md"
 type: "document"
 community: "Architecture"
-location: "L167"
+location: "L163"
 tags:
   - graphify/document
   - graphify/EXTRACTED

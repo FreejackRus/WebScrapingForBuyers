@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/README.md"
-type: "document"
-community: "English version"
-location: "L1171"
+source_file: "mcp-servers/ru-marketplace-mcp/package.json"
+type: "code"
+community: "ru-marketplace-mcp/package.json"
+location: "L6"
 tags:
-  - graphify/document
+  - graphify/code
   - graphify/EXTRACTED
-  - community/English_version
+  - community/ru-marketplace-mcp/packagejson
 ---
 
-# License
+# license
 
 ## Connections
-- [[English version]] - `contains` [EXTRACTED]
+- [[ru-marketplace-mcppackage.json]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/English_version
+#graphify/code #graphify/EXTRACTED #community/ru-marketplace-mcp/packagejson

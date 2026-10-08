@@ -12,9 +12,9 @@ tags:
 # MarketOffer
 
 ## Connections
-- [[dot-__init__()_16]] - `references` [EXTRACTED]
+- [[dot-__init__()_27]] - `references` [EXTRACTED]
 - [[dot-_mirror_rouble_price_into_native()]] - `method` [EXTRACTED]
-- [[BaseModel_13]] - `inherits` [EXTRACTED]
+- [[BaseModel_3]] - `inherits` [EXTRACTED]
 - [[Changed_1]] - `references` [INFERRED]
 - [[OfferBatch]] - `uses` [INFERRED]
 - [[OfferEvidence]] - `uses` [INFERRED]
@@ -37,7 +37,7 @@ tags:
 - [[compare_connectormodels_output.py]] - `contains` [EXTRACTED]
 - [[compare_connectorserver.py]] - `imports` [EXTRACTED]
 - [[compare_prices()]] - `uses` [INFERRED]
-- [[offer()_1]] - `uses` [INFERRED]
+- [[offer()_2]] - `uses` [INFERRED]
 - [[test_a_display_unit_is_flagged()]] - `uses` [INFERRED]
 - [[test_a_foreign_currency_offer_cannot_be_smuggled_into_the_ranking()]] - `uses` [INFERRED]
 - [[test_a_genuine_cheapest_is_left_alone()]] - `uses` [INFERRED]
@@ -53,6 +53,6 @@ tags:
 - [[test_offers_without_an_id_are_never_merged()]] - `uses` [INFERRED]
 - [[test_searching_for_the_accessory_itself_is_not_flagged()]] - `uses` [INFERRED]
 - [[test_the_outlier_check_needs_three_offers_to_have_a_median()]] - `uses` [INFERRED]
-- [[Изменено_3]] - `references` [INFERRED]
+- [[Изменено_1]] - `references` [INFERRED]
 
 #graphify/code #graphify/INFERRED #community/compare-connector/tests/test_serverpy

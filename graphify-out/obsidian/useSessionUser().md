@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/entities/user/store/index.ts"
 type: "code"
-community: "entities/user/index.ts"
+community: "useUserStore"
 location: "L62"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/entities/user/indexts
+  - community/useUserStore
 ---
 
 # useSessionUser()
@@ -16,4 +16,4 @@ tags:
 - [[useUserStore]] - `calls` [EXTRACTED]
 - [[userstoreindex.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/entities/user/indexts
+#graphify/code #graphify/EXTRACTED #community/useUserStore

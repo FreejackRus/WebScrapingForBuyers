@@ -1,21 +1,20 @@
 ---
 source_file: ""
 type: "code"
-community: "aliexpress_connector/server.py"
+community: "dns_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/aliexpress_connector/serverpy
+  - community/dns_card
 ---
 
 # Context
 
 ## Connections
-- [[_aliexpress_selfcheck_impl()]] - `references` [EXTRACTED]
-- [[_cdp_card()]] - `references` [EXTRACTED]
-- [[_cdp_render_search()]] - `references` [EXTRACTED]
-- [[aliexpress_card()]] - `references` [EXTRACTED]
-- [[aliexpress_search()]] - `references` [EXTRACTED]
-- [[aliexpress_selfcheck()]] - `references` [EXTRACTED]
+- [[_cdp_render()_1]] - `references` [EXTRACTED]
+- [[_dns_selfcheck_impl()]] - `references` [EXTRACTED]
+- [[dns_card()]] - `references` [EXTRACTED]
+- [[dns_search()]] - `references` [EXTRACTED]
+- [[dns_selfcheck()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/aliexpress_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/dns_card

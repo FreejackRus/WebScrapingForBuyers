@@ -2,7 +2,7 @@
 source_file: "apps/analysis/src/domain/analysis-narrator.ts"
 type: "code"
 community: "AnalysisNarrator"
-location: "L72"
+location: "L76"
 tags:
   - graphify/code
   - graphify/INFERRED

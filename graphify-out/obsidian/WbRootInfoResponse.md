@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/models_output.py"
 type: "code"
 community: "wb_connector/server.py"
-location: "L53"
+location: "L54"
 tags:
   - graphify/code
   - graphify/EXTRACTED

@@ -12,9 +12,9 @@ tags:
 # test_wb_selfcheck_reviews_200_invalid_json_is_drift()
 
 ## Connections
-- [[fake_safe_get_text()_13]] - `contains` [EXTRACTED]
-- [[no_wait()_12]] - `contains` [EXTRACTED]
-- [[scenario()_12]] - `contains` [EXTRACTED]
+- [[fake_safe_get_text()_14]] - `contains` [EXTRACTED]
+- [[no_wait()_13]] - `contains` [EXTRACTED]
+- [[scenario()_13]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/no_wait

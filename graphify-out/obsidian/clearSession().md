@@ -1,12 +1,12 @@
 ---
 source_file: "apps/identity/src/http/session.ts"
 type: "code"
-community: "session.ts"
+community: "identity/src/http/routes.ts"
 location: "L28"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/sessionts
+  - community/identity/src/http/routests
 ---
 
 # clearSession()
@@ -16,4 +16,4 @@ tags:
 - [[identityRoutes()]] - `calls` [EXTRACTED]
 - [[session.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/sessionts
+#graphify/code #graphify/EXTRACTED #community/identity/src/http/routests

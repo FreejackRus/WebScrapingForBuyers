@@ -15,7 +15,7 @@ tags:
 - [[cian-connectorteststest_server.py]] - `contains` [EXTRACTED]
 - [[fake_post()]] - `contains` [EXTRACTED]
 - [[fake_post()_1]] - `indirect_call` [INFERRED]
-- [[no_wait()_19]] - `contains` [EXTRACTED]
-- [[no_wait()_20]] - `indirect_call` [INFERRED]
+- [[no_wait()_20]] - `contains` [EXTRACTED]
+- [[no_wait()_21]] - `indirect_call` [INFERRED]
 
 #graphify/code #graphify/EXTRACTED #community/cian-connector/tests/test_serverpy

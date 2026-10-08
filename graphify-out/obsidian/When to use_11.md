@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/citilink-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/cian-connector/SKILL.md"
 type: "document"
-community: "Citilink Connector"
-location: "L13"
+community: "Cian Connector"
+location: "L14"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Citilink_Connector
+  - community/Cian_Connector
 ---
 
 # When to use
 
 ## Connections
-- [[Citilink Connector_1]] - `contains` [EXTRACTED]
+- [[Cian Connector]] - `contains` [EXTRACTED]
+- [[compare_prices()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Citilink_Connector
+#graphify/document #graphify/EXTRACTED #community/Cian_Connector

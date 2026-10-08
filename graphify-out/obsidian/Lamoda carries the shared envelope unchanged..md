@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/models_output.py"
 type: "rationale"
-community: "BadRequestError"
+community: "lamoda_search"
 location: "L10"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/BadRequestError
+  - community/lamoda_search
 ---
 
 # Lamoda carries the shared envelope unchanged.
 
 ## Connections
-- [[MetaOut_7]] - `rationale_for` [EXTRACTED]
+- [[MetaOut_6]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/BadRequestError
+#graphify/rationale #graphify/EXTRACTED #community/lamoda_search

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py"
 type: "code"
-community: "Ключевые изменения выпуска"
+community: "ssr.py"
 location: "L415"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Ключевые_изменения_выпуска
+  - community/ssrpy
 ---
 
 # _stock_from_label()
@@ -16,4 +16,4 @@ tags:
 - [[_search_ozon()]] - `calls` [EXTRACTED]
 - [[compare_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Ключевые_изменения_выпуска
+#graphify/code #graphify/EXTRACTED #community/ssrpy

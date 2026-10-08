@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "code"
 community: "PageLike"
-location: "L816"
+location: "L878"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,7 +12,7 @@ tags:
 # reveal_owned_page()
 
 ## Connections
-- [[dot-send()_1]] - `calls` [EXTRACTED]
+- [[dot-send()_4]] - `calls` [EXTRACTED]
 - [[Best-effort reveal of the owned target's window, never all profile windows.]] - `rationale_for` [EXTRACTED]
 - [[PageLike]] - `references` [EXTRACTED]
 - [[_run()]] - `calls` [EXTRACTED]

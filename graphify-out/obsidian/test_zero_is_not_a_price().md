@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py"
 type: "code"
-community: "test_zero_is_not_a_price"
+community: "prices_from_tile"
 location: "L159"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_zero_is_not_a_price
+  - community/prices_from_tile
 ---
 
 # test_zero_is_not_a_price()
@@ -16,4 +16,4 @@ tags:
 - [[prices_from_tile()]] - `calls` [EXTRACTED]
 - [[test_dom.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_zero_is_not_a_price
+#graphify/code #graphify/EXTRACTED #community/prices_from_tile

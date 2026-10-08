@@ -1,22 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_search_extractor_live_dom.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_search_parser_live.py"
 type: "code"
-community: "lamoda-connector/tests/test_shape_reference.py"
-location: "L36"
+community: "test_search_parser_live.py"
+location: "L67"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/lamoda-connector/tests/test_shape_referencepy
+  - community/test_search_parser_livepy
 ---
 
 # _items()
 
 ## Connections
-- [[JsdomUnavailable]] - `uses` [INFERRED]
-- [[lamoda-connectorteststest_search_extractor_live_dom.py]] - `contains` [EXTRACTED]
-- [[run_extractor()]] - `calls` [EXTRACTED]
-- [[test_live_items_carry_the_wire_shape()]] - `calls` [EXTRACTED]
-- [[test_live_prices_survive_the_tile_noise()]] - `calls` [EXTRACTED]
-- [[test_live_titles_are_product_names_not_discount_badges()]] - `calls` [EXTRACTED]
+- [[test_live_composer_payload_parses_to_the_three_tiles()]] - `calls` [EXTRACTED]
+- [[test_live_price_strings_parse_to_the_displayed_numbers()]] - `calls` [EXTRACTED]
+- [[test_live_stock_labels_survive_the_parse_verbatim()]] - `calls` [EXTRACTED]
+- [[test_live_tiles_carry_a_canonical_card_input()]] - `calls` [EXTRACTED]
+- [[test_live_tiles_carry_the_first_gallery_photo()]] - `calls` [EXTRACTED]
+- [[test_search_parser_live.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/lamoda-connector/tests/test_shape_referencepy
+#graphify/code #graphify/EXTRACTED #community/test_search_parser_livepy

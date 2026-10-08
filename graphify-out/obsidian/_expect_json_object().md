@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "code"
-community: "log_event"
-location: "L767"
+community: "wb_connector/server.py"
+location: "L850"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/log_event
+  - community/wb_connector/serverpy
 ---
 
 # _expect_json_object()
 
 ## Connections
-- [[Any_16]] - `references` [EXTRACTED]
+- [[Any_27]] - `references` [EXTRACTED]
 - [[Return ``(obj, None)`` for a JSON object, else ``(None, error_dict)``. Exactly…]] - `rationale_for` [EXTRACTED]
 - [[_search_via_http_v9()]] - `calls` [EXTRACTED]
 - [[_search_via_search_goods()]] - `calls` [EXTRACTED]
@@ -24,4 +24,4 @@ tags:
 - [[wb_root_info()]] - `calls` [EXTRACTED]
 - [[wb_seller()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/log_event
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

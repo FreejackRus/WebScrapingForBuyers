@@ -12,7 +12,7 @@ tags:
 # MarketplaceSourcesResponse
 
 ## Connections
-- [[BaseModel_14]] - `inherits` [EXTRACTED]
+- [[BaseModel_12]] - `inherits` [EXTRACTED]
 - [[Which connectors mounted, and why the others did not.]] - `rationale_for` [EXTRACTED]
 - [[marketplace_connectorserver.py]] - `contains` [EXTRACTED]
 - [[marketplace_sources()]] - `calls` [EXTRACTED]

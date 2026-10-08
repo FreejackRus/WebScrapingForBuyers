@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "rationale"
-community: "megamarket_connector/models_output.py"
+community: "_FakeResponse"
 location: "L944"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/megamarket_connector/models_outputpy
+  - community/_FakeResponse
 ---
 
 # Every CDP adapter must map its connector's typed model onto MarketOffer.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_cdp_source_adapters_map_their_fields()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/megamarket_connector/models_outputpy
+#graphify/rationale #graphify/EXTRACTED #community/_FakeResponse

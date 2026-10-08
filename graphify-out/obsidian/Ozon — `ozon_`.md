@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/README.md"
 type: "document"
-community: "ru-marketplace-mcp"
-location: "L320"
+community: "English version"
+location: "L782"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/ru-marketplace-mcp
+  - community/English_version
 ---
 
 # Ozon — `ozon_*`
 
 ## Connections
-- [[Инструменты]] - `contains` [EXTRACTED]
+- [[The tools]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/ru-marketplace-mcp
+#graphify/document #graphify/EXTRACTED #community/English_version

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/identity.py"
 type: "rationale"
-community: "identity.py"
+community: "ProductIdentity"
 location: "L83"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/identitypy
+  - community/ProductIdentity
 ---
 
 # Build identity evidence from typed upstream fields only. Free-form titles are…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[identity_from_mapping()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/identitypy
+#graphify/rationale #graphify/EXTRACTED #community/ProductIdentity

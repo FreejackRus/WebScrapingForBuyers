@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "megamarket_search"
+community: "log_event"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/megamarket_search
+  - community/log_event
 ---
 
 # Field
@@ -14,4 +14,4 @@ tags:
 - [[megamarket_card()]] - `references` [EXTRACTED]
 - [[megamarket_search()_1]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/megamarket_search
+#graphify/code #graphify/EXTRACTED #community/log_event

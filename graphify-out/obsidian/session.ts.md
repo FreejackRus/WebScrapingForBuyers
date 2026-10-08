@@ -1,12 +1,12 @@
 ---
 source_file: "apps/identity/src/http/session.ts"
 type: "code"
-community: "session.ts"
+community: "identity/src/http/routes.ts"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/sessionts
+  - community/identity/src/http/routests
 ---
 
 # session.ts
@@ -25,4 +25,4 @@ tags:
 - [[verifySession()]] - `contains` [EXTRACTED]
 - [[writeSession()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/sessionts
+#graphify/code #graphify/EXTRACTED #community/identity/src/http/routests

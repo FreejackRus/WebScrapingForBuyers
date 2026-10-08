@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[Check every line of one file against one pattern. Returns the mismatches and…]] - `rationale_for` [EXTRACTED]
 - [[Mismatch]] - `calls` [EXTRACTED]
-- [[Path_4]] - `references` [EXTRACTED]
+- [[Path_5]] - `references` [EXTRACTED]
 - [[Pattern]] - `references` [EXTRACTED]
 - [[check_versions.py]] - `contains` [EXTRACTED]
 - [[sweep()]] - `calls` [EXTRACTED]

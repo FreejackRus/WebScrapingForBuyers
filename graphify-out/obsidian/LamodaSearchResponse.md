@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/models_output.py"
 type: "code"
-community: "models.py"
+community: "lamoda_search"
 location: "L22"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/modelspy
+  - community/lamoda_search
 ---
 
 # LamodaSearchResponse
@@ -17,4 +17,4 @@ tags:
 - [[lamoda_connectorserver.py]] - `imports` [EXTRACTED]
 - [[lamoda_search()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/modelspy
+#graphify/code #graphify/EXTRACTED #community/lamoda_search

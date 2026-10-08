@@ -17,7 +17,7 @@ tags:
 - [[3. Critical Assessment Confidence Medium]] - `contains` [EXTRACTED]
 - [[4. Implemented Action Plan]] - `contains` [EXTRACTED]
 - [[5. Open Questions & Caveats]] - `contains` [EXTRACTED]
-- [[Bibliography_1]] - `contains` [EXTRACTED]
+- [[Bibliography]] - `contains` [EXTRACTED]
 - [[DEEP_RESEARCH_MARKETPLACE_MCP]] - `contains` [EXTRACTED]
 - [[Executive Summary]] - `contains` [EXTRACTED]
 - [[Methodology]] - `contains` [EXTRACTED]

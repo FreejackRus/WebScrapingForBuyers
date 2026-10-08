@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/_win_job_runner.py"
 type: "code"
-community: "_win_job_runner.py"
+community: "subprocess"
 location: "L44"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_win_job_runnerpy
+  - community/subprocess
 ---
 
 # _ExtendedLimits
 
 ## Connections
 - [[_win_job_runner.py]] - `contains` [EXTRACTED]
-- [[main()_11]] - `calls` [EXTRACTED]
+- [[main()_3]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_win_job_runnerpy
+#graphify/code #graphify/EXTRACTED #community/subprocess

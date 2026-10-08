@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
+source_file: "mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v2.0.2.md"
 type: "document"
-community: "compare_verify_offer"
-location: "L692"
+community: "v2.0.2"
+location: "L5"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/compare_verify_offer
+  - community/v202
 ---
 
 # Fixed
 
 ## Connections
-- [[2.0.1 — 2026-09-09]] - `contains` [EXTRACTED]
-- [[compare_verify_offer()]] - `references` [INFERRED]
+- [[v2.0.2]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/compare_verify_offer
+#graphify/document #graphify/EXTRACTED #community/v202

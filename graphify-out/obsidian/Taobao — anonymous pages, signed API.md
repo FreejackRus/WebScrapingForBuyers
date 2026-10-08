@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/docs/ANTI_BOT.md"
 type: "document"
-community: "session.ts"
+community: "identity/src/http/routes.ts"
 location: "L262"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/sessionts
+  - community/identity/src/http/routests
 ---
 
 # Taobao — anonymous pages, signed API
@@ -15,4 +15,4 @@ tags:
 - [[Shipped sources]] - `contains` [EXTRACTED]
 - [[sign()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/sessionts
+#graphify/document #graphify/EXTRACTED #community/identity/src/http/routests

@@ -12,7 +12,7 @@ tags:
 # unrelated_process()
 
 ## Connections
-- [[fixture_27]] - `references` [EXTRACTED]
+- [[fixture_17]] - `references` [EXTRACTED]
 - [[test_stdio_probe.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_stdio_probepy

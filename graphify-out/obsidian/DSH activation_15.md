@@ -1,8 +1,8 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/avito-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/cian-connector/SKILL.md"
 type: "document"
 community: "compare_prices"
-location: "L62"
+location: "L138"
 tags:
   - graphify/document
   - graphify/INFERRED
@@ -12,7 +12,7 @@ tags:
 # DSH activation
 
 ## Connections
-- [[Avito Connector_1]] - `contains` [EXTRACTED]
+- [[Cian Connector_1]] - `contains` [EXTRACTED]
 - [[compare_prices()]] - `references` [INFERRED]
 - [[compare_sources()]] - `references` [INFERRED]
 - [[marketplace_sources()]] - `references` [INFERRED]

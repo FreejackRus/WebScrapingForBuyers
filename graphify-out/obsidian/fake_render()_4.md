@@ -13,6 +13,5 @@ tags:
 
 ## Connections
 - [[_patch_search()_1]] - `indirect_call` [INFERRED]
-- [[payload()]] - `indirect_call` [INFERRED]
 
 #graphify/code #graphify/INFERRED #community/aliexpress-connector/tests/test_serverpy

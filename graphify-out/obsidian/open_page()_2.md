@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_browser_handoff.py"
 type: "code"
-community: "test_challenge_recovery_bypasses_failed_payload_cache"
-location: "L187"
+community: "taobao"
+location: "L46"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/test_challenge_recovery_bypasses_failed_payload_cache
+  - community/taobao
 ---
 
 # open_page()
 
 ## Connections
-- [[test_challenge_recovery_bypasses_failed_payload_cache()]] - `indirect_call` [INFERRED]
+- [[browser()_1]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/test_challenge_recovery_bypasses_failed_payload_cache
+#graphify/code #graphify/INFERRED #community/taobao

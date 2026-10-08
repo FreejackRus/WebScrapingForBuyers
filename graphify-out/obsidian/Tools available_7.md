@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/cian-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/lamoda-connector/SKILL.md"
 type: "document"
-community: "cian_connector/server.py"
-location: "L22"
+community: "Lamoda Connector"
+location: "L18"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/cian_connector/serverpy
+  - community/Lamoda_Connector
 ---
 
 # Tools available
 
 ## Connections
-- [[Cian Connector_1]] - `contains` [EXTRACTED]
-- [[cian_selfcheck()]] - `references` [INFERRED]
+- [[Lamoda Connector_1]] - `contains` [EXTRACTED]
+- [[lamoda_selfcheck()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/cian_connector/serverpy
+#graphify/document #graphify/EXTRACTED #community/Lamoda_Connector

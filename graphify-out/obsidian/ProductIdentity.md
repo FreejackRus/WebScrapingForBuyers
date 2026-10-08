@@ -12,7 +12,7 @@ tags:
 # ProductIdentity
 
 ## Connections
-- [[BaseModel_12]] - `inherits` [EXTRACTED]
+- [[BaseModel_16]] - `inherits` [EXTRACTED]
 - [[MarketOffer]] - `uses` [INFERRED]
 - [[Product-familyvariant evidence, independent of a seller offer.]] - `rationale_for` [EXTRACTED]
 - [[WP1 — Evidence model]] - `references` [INFERRED]

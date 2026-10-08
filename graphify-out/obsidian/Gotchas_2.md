@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/detmir-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/yandex-connector/SKILL.md"
 type: "document"
-community: "Detsky Mir Connector"
-location: "L67"
+community: "Yandex Market Connector"
+location: "L66"
 tags:
   - graphify/document
-  - graphify/INFERRED
-  - community/Detsky_Mir_Connector
+  - graphify/EXTRACTED
+  - community/Yandex_Market_Connector
 ---
 
 # Gotchas
 
 ## Connections
-- [[Detsky Mir Connector]] - `contains` [EXTRACTED]
-- [[alias()]] - `references` [INFERRED]
-- [[detmir_categories()]] - `references` [INFERRED]
+- [[Yandex Market Connector]] - `contains` [EXTRACTED]
+- [[yandex_card()]] - `references` [INFERRED]
 
-#graphify/document #graphify/INFERRED #community/Detsky_Mir_Connector
+#graphify/document #graphify/EXTRACTED #community/Yandex_Market_Connector

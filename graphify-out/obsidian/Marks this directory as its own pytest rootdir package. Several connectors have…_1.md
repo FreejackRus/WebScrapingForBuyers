@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/conftest.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/conftest.py"
 type: "rationale"
-community: "aliexpress-connector/tests/conftest.py"
+community: "pytest"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/aliexpress-connector/tests/conftestpy
+  - community/pytest
 ---
 
 # Marks this directory as its own pytest rootdir package. Several connectors have…
 
 ## Connections
-- [[aliexpress-connectortestsconftest.py]] - `rationale_for` [EXTRACTED]
+- [[wb-connectortestsconftest.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/aliexpress-connector/tests/conftestpy
+#graphify/rationale #graphify/EXTRACTED #community/pytest

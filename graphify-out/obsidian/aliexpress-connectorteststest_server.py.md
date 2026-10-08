@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Offline tests for the AliExpress connector. CDP rendering is monkeypatched out…]] - `rationale_for` [EXTRACTED]
-- [[_no_cache()_8]] - `contains` [EXTRACTED]
+- [[_no_cache()_6]] - `contains` [EXTRACTED]
 - [[_patch_card()_1]] - `contains` [EXTRACTED]
 - [[_patch_search()_1]] - `contains` [EXTRACTED]
 - [[aliexpress_connector__init__.py]] - `imports_from` [EXTRACTED]

@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_source_warnings.py"
 type: "code"
-community: "search"
-location: "L104"
+community: "test_card_verification_records.py"
+location: "L64"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/search
+  - community/test_card_verification_recordspy
 ---
 
 # search()
 
 ## Connections
-- [[offer()_1]] - `calls` [EXTRACTED]
-- [[test_selected_missing_connector_still_makes_default_comparison_partial()]] - `contains` [EXTRACTED]
+- [[WbNoResultsResponse]] - `calls` [EXTRACTED]
+- [[test_no_results_without_meta_is_not_invented_degradation()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/search
+#graphify/code #graphify/EXTRACTED #community/test_card_verification_recordspy

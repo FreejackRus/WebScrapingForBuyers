@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "json"
+community: "browser_handoff.py"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/json
+  - community/browser_handoffpy
 ---
 
 # secrets
@@ -14,4 +14,4 @@ tags:
 - [[browser_handoff.py]] - `imports` [EXTRACTED]
 - [[runtime.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/json
+#graphify/concept #graphify/EXTRACTED #community/browser_handoffpy

@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/README.md"
 type: "document"
 community: "Deployment"
-location: "L1032"
+location: "L959"
 tags:
   - graphify/document
   - graphify/INFERRED

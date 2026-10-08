@@ -12,6 +12,6 @@ tags:
 # compare-connector/tests/conftest.py
 
 ## Connections
-- [[Marks this directory as its own pytest rootdir package. Several connectors have…_5]] - `rationale_for` [EXTRACTED]
+- [[Marks this directory as its own pytest rootdir package. Several connectors have…_6]] - `rationale_for` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/compare-connector/tests/conftestpy

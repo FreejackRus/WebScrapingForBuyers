@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/__init__.py"
 type: "code"
-community: "pytest"
+community: "test_card_verification_records.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pytest
+  - community/test_card_verification_recordspy
 ---
 
 # wb_connector/__init__.py
@@ -22,4 +22,4 @@ tags:
 - [[wb-connectorteststest_parser_live.py]] - `imports_from` [EXTRACTED]
 - [[wb-connectorteststest_shape_reference.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pytest
+#graphify/code #graphify/EXTRACTED #community/test_card_verification_recordspy

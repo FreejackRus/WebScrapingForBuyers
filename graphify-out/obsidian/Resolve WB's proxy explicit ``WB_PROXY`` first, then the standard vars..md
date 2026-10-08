@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "rationale"
 community: "wb_connector/server.py"
-location: "L328"
+location: "L335"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
@@ -12,6 +12,6 @@ tags:
 # Resolve WB's proxy: explicit ``WB_PROXY`` first, then the standard vars.
 
 ## Connections
-- [[_proxy()_6]] - `rationale_for` [EXTRACTED]
+- [[_proxy()_5]] - `rationale_for` [EXTRACTED]
 
 #graphify/rationale #graphify/EXTRACTED #community/wb_connector/serverpy

@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/src/marketplace_connector/cli.py"
 type: "rationale"
 community: "test_dsh_bundle.py"
-location: "L310"
+location: "L308"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED

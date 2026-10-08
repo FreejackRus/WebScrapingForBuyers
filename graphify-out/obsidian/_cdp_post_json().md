@@ -1,22 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/server.py"
 type: "code"
-community: "_post"
-location: "L144"
+community: "cian_connector/server.py"
+location: "L212"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_post
+  - community/cian_connector/serverpy
 ---
 
 # _cdp_post_json()
 
 ## Connections
-- [[Any_3]] - `references` [EXTRACTED]
-- [[Context_1]] - `references` [EXTRACTED]
-- [[POST JSON to the mobile API from inside the operator's Chrome. The fetch…]] - `rationale_for` [EXTRACTED]
-- [[_attempt()_1]] - `contains` [EXTRACTED]
-- [[_post()]] - `calls` [EXTRACTED]
-- [[megamarket_connectorserver.py]] - `contains` [EXTRACTED]
+- [[Any_7]] - `references` [EXTRACTED]
+- [[Context_4]] - `references` [EXTRACTED]
+- [[POST ``jsonQuery`` to the search API from inside a cian.ru tab. Serialised via…]] - `rationale_for` [EXTRACTED]
+- [[_attempt()_4]] - `contains` [EXTRACTED]
+- [[_fetch_search()]] - `calls` [EXTRACTED]
+- [[cian_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_post
+#graphify/code #graphify/EXTRACTED #community/cian_connector/serverpy

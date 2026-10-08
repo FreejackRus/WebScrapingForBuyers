@@ -14,6 +14,6 @@ tags:
 ## Connections
 - [[dns-connectorteststest_server.py]] - `contains` [EXTRACTED]
 - [[explode()_1]] - `indirect_call` [INFERRED]
-- [[parametrize_2]] - `references` [EXTRACTED]
+- [[parametrize_1]] - `references` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/dns-connector/tests/test_serverpy

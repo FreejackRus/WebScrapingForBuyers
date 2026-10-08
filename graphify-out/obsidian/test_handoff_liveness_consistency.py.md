@@ -14,9 +14,9 @@ tags:
 ## Connections
 - [[The handle issuer and the handle consumer must agree on what 'live' means.…]] - `rationale_for` [EXTRACTED]
 - [[_call()]] - `contains` [EXTRACTED]
-- [[asyncio_2]] - `imports` [EXTRACTED]
+- [[asyncio]] - `imports` [EXTRACTED]
 - [[blocked()]] - `contains` [EXTRACTED]
-- [[browser()_1]] - `contains` [EXTRACTED]
+- [[browser()]] - `contains` [EXTRACTED]
 - [[contextlib]] - `imports_from` [EXTRACTED]
 - [[pytest]] - `imports` [EXTRACTED]
 - [[test_a_live_lease_is_still_handed_out()]] - `contains` [EXTRACTED]

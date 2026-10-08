@@ -1,12 +1,12 @@
 ---
 source_file: "apps/identity/src/domain/auth-store.ts"
 type: "code"
-community: "session.ts"
+community: "memory-auth-store.ts"
 location: "L8"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/sessionts
+  - community/memory-auth-storets
 ---
 
 # AuthStore
@@ -23,4 +23,4 @@ tags:
 - [[memory-auth-store.ts]] - `imports` [EXTRACTED]
 - [[session.ts]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/sessionts
+#graphify/code #graphify/EXTRACTED #community/memory-auth-storets

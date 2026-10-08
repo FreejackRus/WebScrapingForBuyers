@@ -1,19 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "log_event"
+community: "detmir_categories"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/log_event
+  - community/detmir_categories
 ---
 
 # gt
 
 ## Connections
-- [[wb_questions()]] - `references` [EXTRACTED]
-- [[wb_reviews()]] - `references` [EXTRACTED]
-- [[wb_root_info()]] - `references` [EXTRACTED]
-- [[wb_seller()]] - `references` [EXTRACTED]
+- [[detmir_card()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/log_event
+#graphify/code #graphify/EXTRACTED #community/detmir_categories

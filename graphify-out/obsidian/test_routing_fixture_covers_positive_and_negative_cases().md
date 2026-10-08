@@ -12,7 +12,7 @@ tags:
 # test_routing_fixture_covers_positive_and_negative_cases()
 
 ## Connections
-- [[evaluate()_2]] - `calls` [EXTRACTED]
+- [[evaluate()]] - `calls` [EXTRACTED]
 - [[route()]] - `calls` [EXTRACTED]
 - [[test_ops_gates.py]] - `contains` [EXTRACTED]
 

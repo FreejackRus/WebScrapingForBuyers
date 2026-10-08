@@ -1,12 +1,12 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/server.py"
 type: "code"
-community: "TransportDownError"
-location: "L313"
+community: "avito_connector/server.py"
+location: "L360"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/TransportDownError
+  - community/avito_connector/serverpy
 ---
 
 # _blocked_error()
@@ -14,6 +14,6 @@ tags:
 ## Connections
 - [[TransportDownError]] - `uses` [INFERRED]
 - [[_raise_for_fetch_failure()_1]] - `calls` [EXTRACTED]
-- [[cian_connectorserver.py]] - `contains` [EXTRACTED]
+- [[avito_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/TransportDownError
+#graphify/code #graphify/EXTRACTED #community/avito_connector/serverpy

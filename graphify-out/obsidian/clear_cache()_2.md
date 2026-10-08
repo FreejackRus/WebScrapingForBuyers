@@ -12,7 +12,7 @@ tags:
 # clear_cache()
 
 ## Connections
-- [[fixture_15]] - `references` [EXTRACTED]
+- [[fixture_16]] - `references` [EXTRACTED]
 - [[yandex-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/no_delay

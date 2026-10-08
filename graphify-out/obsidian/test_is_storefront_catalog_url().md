@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
 type: "code"
-community: "pytest"
-location: "L150"
+community: "test_storefront_search.py"
+location: "L149"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pytest
+  - community/test_storefront_searchpy
 ---
 
 # test_is_storefront_catalog_url()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_storefront_search.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pytest
+#graphify/code #graphify/EXTRACTED #community/test_storefront_searchpy

@@ -1,18 +1,20 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/e2e_stdio_check_docker.py"
 type: "code"
-community: "detmir_selfcheck"
-location: "L689"
+community: "test_stdio_probe.py"
+location: "L27"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/detmir_selfcheck
+  - community/test_stdio_probepy
 ---
 
 # probe()
 
 ## Connections
-- [[DetmirSelfcheckEntry]] - `calls` [EXTRACTED]
-- [[detmir_selfcheck()]] - `contains` [EXTRACTED]
+- [[StdioProbe]] - `calls` [EXTRACTED]
+- [[_probe()_1]] - `calls` [EXTRACTED]
+- [[e2e_stdio_check_docker.py]] - `contains` [EXTRACTED]
+- [[main()_26]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/detmir_selfcheck
+#graphify/code #graphify/EXTRACTED #community/test_stdio_probepy

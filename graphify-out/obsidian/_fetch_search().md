@@ -12,14 +12,14 @@ tags:
 # _fetch_search()
 
 ## Connections
-- [[Any_13]] - `references` [EXTRACTED]
-- [[Context_5]] - `references` [EXTRACTED]
+- [[Any_7]] - `references` [EXTRACTED]
+- [[Context_4]] - `references` [EXTRACTED]
 - [[NavBlocked]] - `uses` [INFERRED]
 - [[Run one search query over CDP. Returns (status, body, tier). Only JSON-shaped…]] - `rationale_for` [EXTRACTED]
-- [[_cdp_post_json()_1]] - `calls` [EXTRACTED]
+- [[_cdp_post_json()]] - `calls` [EXTRACTED]
 - [[_cian_selfcheck_impl()]] - `calls` [EXTRACTED]
-- [[_looks_like_json()_1]] - `calls` [EXTRACTED]
-- [[_polite_wait()_5]] - `calls` [EXTRACTED]
+- [[_looks_like_json()]] - `calls` [EXTRACTED]
+- [[_polite_wait()_3]] - `calls` [EXTRACTED]
 - [[cian_connectorserver.py]] - `contains` [EXTRACTED]
 - [[cian_search()]] - `calls` [EXTRACTED]
 

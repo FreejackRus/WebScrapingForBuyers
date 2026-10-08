@@ -1,17 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "test_dsh_bundle.py"
+community: "lamoda-connector/tests/test_shape_reference.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_dsh_bundlepy
+  - community/lamoda-connector/tests/test_shape_referencepy
 ---
 
 # Path
 
 ## Connections
-- [[_dsh_command()]] - `references` [EXTRACTED]
-- [[_workspace_root()]] - `references` [EXTRACTED]
+- [[_extract()_9]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_dsh_bundlepy
+#graphify/code #graphify/EXTRACTED #community/lamoda-connector/tests/test_shape_referencepy

@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_source_warnings.py"
+source_file: "apps/search/src/app.test.ts"
 type: "code"
-community: "aliexpress_connector/models_output.py"
-location: "L97"
+community: "SourceAdapter"
+location: "L88"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/aliexpress_connector/models_outputpy
+  - community/SourceAdapter
 ---
 
 # search()
 
 ## Connections
-- [[test_coupon_warning_keeps_regular_price_and_does_not_claim_failure()]] - `contains` [EXTRACTED]
+- [[app.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/aliexpress_connector/models_outputpy
+#graphify/code #graphify/EXTRACTED #community/SourceAdapter

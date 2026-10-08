@@ -12,6 +12,6 @@ tags:
 # Release-candidate evidence
 
 ## Connections
-- [[English_1]] - `contains` [EXTRACTED]
+- [[English_2]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/v242__2026-09-19

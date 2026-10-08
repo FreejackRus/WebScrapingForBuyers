@@ -17,8 +17,8 @@ members: 26
 - [[detach()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_snapshot.py
 - [[fixture_26]] - code
 - [[jpeg()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_snapshot.py
-- [[metrics()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_snapshot.py
-- [[parametrize_27]] - code
+- [[metrics()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_snapshot.py
+- [[parametrize_31]] - code
 - [[pending()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_snapshot.py
 - [[record_timeout()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_snapshot.py
 - [[test_actual_pixels_remaining_oversize_are_rejected_after_one_retry()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_snapshot.py
@@ -45,10 +45,11 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 3 edges to [[_COMMUNITY_pytest]]
 - 2 edges to [[_COMMUNITY_json]]
+- 2 edges to [[_COMMUNITY_pytest]]
 - 1 edge to [[_COMMUNITY_transport__init__.py]]
-- 1 edge to [[_COMMUNITY_compare-connectorteststest_browser_handoff.py]]
+- 1 edge to [[_COMMUNITY_firewall_pow.py]]
+- 1 edge to [[_COMMUNITY_test_card_verification_records.py]]
 
 ## Top bridge nodes
-- [[test_chrome_cdp_snapshot.py]] - degree 25, connects to 4 communities
+- [[test_chrome_cdp_snapshot.py]] - degree 25, connects to 5 communities

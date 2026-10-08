@@ -11,6 +11,6 @@ tags:
 # BaseSettings
 
 ## Connections
-- [[TaobaoSettings]] - `inherits` [EXTRACTED]
+- [[YandexSettings]] - `inherits` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/pydantic

@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/examples/avito_search.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/mcp_startup.py"
 type: "code"
-community: "avito_seller"
-location: "L18"
+community: "StdioProbe"
+location: "L39"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/avito_seller
+  - community/StdioProbe
 ---
 
 # main()
 
 ## Connections
-- [[avito_search()]] - `calls` [EXTRACTED]
-- [[avito_search.py]] - `contains` [EXTRACTED]
-- [[avito_seller()]] - `calls` [EXTRACTED]
+- [[mcp_startup.py]] - `contains` [EXTRACTED]
+- [[measure()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/avito_seller
+#graphify/code #graphify/EXTRACTED #community/StdioProbe

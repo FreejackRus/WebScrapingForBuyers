@@ -12,6 +12,6 @@ tags:
 # ru-marketplace-mcp/skills/aliexpress-connector/SKILL.md
 
 ## Connections
-- [[AliExpress connector_1]] - `contains` [EXTRACTED]
+- [[AliExpress connector]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/AliExpress_connector

@@ -1,16 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "chrome_cdp.py"
+community: "mcp_wire.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/chrome_cdppy
+  - community/mcp_wirepy
 ---
 
 # Path
 
 ## Connections
-- [[_default_profile_dir()]] - `references` [EXTRACTED]
+- [[_load_baseline()]] - `references` [EXTRACTED]
+- [[fetch_tools()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/chrome_cdppy
+#graphify/code #graphify/EXTRACTED #community/mcp_wirepy

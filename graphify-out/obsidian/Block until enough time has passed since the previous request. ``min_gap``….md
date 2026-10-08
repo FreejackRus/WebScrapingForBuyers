@@ -12,6 +12,6 @@ tags:
 # Block until enough time has passed since the previous request. ``min_gap``…
 
 ## Connections
-- [[dot-wait()_5]] - `rationale_for` [EXTRACTED]
+- [[dot-wait()_4]] - `rationale_for` [EXTRACTED]
 
 #graphify/rationale #graphify/EXTRACTED #community/Pacer

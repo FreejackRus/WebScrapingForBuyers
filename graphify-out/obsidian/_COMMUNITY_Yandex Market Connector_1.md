@@ -1,20 +1,21 @@
 ---
 type: community
-cohesion: 0.29
-members: 7
+cohesion: 0.25
+members: 8
 ---
 
 # Yandex Market Connector
 
-**Cohesion:** 0.29 - loosely connected
-**Members:** 7 nodes
+**Cohesion:** 0.25 - loosely connected
+**Members:** 8 nodes
 
 ## Members
-- [[Gotchas_19]] - document - mcp-servers/ru-marketplace-mcp/skills/yandex-connector/SKILL.md
+- [[Gotchas_4]] - document - mcp-servers/ru-marketplace-mcp/skills/yandex-connector/SKILL.md
 - [[The price field that matters most_1]] - document - mcp-servers/ru-marketplace-mcp/skills/yandex-connector/SKILL.md
-- [[Trust boundary_7]] - document - mcp-servers/ru-marketplace-mcp/skills/yandex-connector/SKILL.md
-- [[When to use_21]] - document - mcp-servers/ru-marketplace-mcp/skills/yandex-connector/SKILL.md
-- [[Workflow patterns_7]] - document - mcp-servers/ru-marketplace-mcp/skills/yandex-connector/SKILL.md
+- [[Tools_3]] - document - mcp-servers/ru-marketplace-mcp/skills/yandex-connector/SKILL.md
+- [[Trust boundary_4]] - document - mcp-servers/ru-marketplace-mcp/skills/yandex-connector/SKILL.md
+- [[When to use_4]] - document - mcp-servers/ru-marketplace-mcp/skills/yandex-connector/SKILL.md
+- [[Workflow patterns_3]] - document - mcp-servers/ru-marketplace-mcp/skills/yandex-connector/SKILL.md
 - [[Yandex Market Connector_1]] - document - mcp-servers/ru-marketplace-mcp/skills/yandex-connector/SKILL.md
 - [[ru-marketplace-mcpskillsyandex-connectorSKILL]] - document - mcp-servers/ru-marketplace-mcp/skills/yandex-connector/SKILL.md
 
@@ -26,10 +27,10 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 1 edge to [[_COMMUNITY_yandex_card]]
-- 1 edge to [[_COMMUNITY_yandex_selfcheck]]
+- 2 edges to [[_COMMUNITY_TransportDownError]]
 - 1 edge to [[_COMMUNITY_compare_prices]]
 
 ## Top bridge nodes
-- [[Yandex Market Connector_1]] - degree 8, connects to 2 communities
-- [[Gotchas_19]] - degree 2, connects to 1 community
+- [[Yandex Market Connector_1]] - degree 8, connects to 1 community
+- [[Gotchas_4]] - degree 2, connects to 1 community
+- [[Tools_3]] - degree 2, connects to 1 community

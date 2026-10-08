@@ -405,6 +405,32 @@ tr.recommended { box-shadow: inset 4px 0 0 var(--brand); }
   font-size: 12px;
   font-family: "JetBrains Mono", ui-monospace, monospace;
 }
+.offer-assessment-reason {
+  display: block;
+  margin-top: 6px;
+  color: var(--warn);
+  font-size: 12px;
+  line-height: 1.4;
+}
+.offer-review-group {
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--canvas);
+}
+.offer-review-group > summary {
+  min-height: 44px;
+  padding: 12px 14px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.offer-review-group[open] > summary { border-bottom: 1px solid var(--line); }
+.offer-review-group .table-wrap { margin-top: 0; background: #fff; }
 .offer-match, .offer-conditions {
   display: flex;
   flex-direction: column;

@@ -10,7 +10,7 @@ members: 19
 **Members:** 19 nodes
 
 ## Members
-- [[dot-__init__()_16]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py
+- [[dot-__init__()_27]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py
 - [[Adapt ``aliexpress_search`` results (CDP tier; prices in rubles). The connector…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py
 - [[Adapt ``avito_search`` results. Avito is classifieds no brand, no star rating…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py
 - [[Adapt ``citilink_search`` results (CDP tier; electronics).]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py
@@ -40,7 +40,7 @@ SORT file.name ASC
 ## Connections to other communities
 - 10 edges to [[_COMMUNITY_compare-connectorteststest_server.py]]
 - 9 edges to [[_COMMUNITY_json]]
-- 1 edge to [[_COMMUNITY_Ключевые изменения выпуска]]
+- 1 edge to [[_COMMUNITY_ssr.py]]
 - 1 edge to [[_COMMUNITY__search_wildberries]]
 - 1 edge to [[_COMMUNITY_2.2.0 — 2026-09-11]]
 

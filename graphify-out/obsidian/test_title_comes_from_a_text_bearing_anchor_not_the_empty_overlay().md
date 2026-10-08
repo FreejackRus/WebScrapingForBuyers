@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_search_extractor_dom.py"
 type: "code"
-community: "_items"
+community: "citilink-connector/tests/test_search_extractor_dom.py"
 location: "L108"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_items
+  - community/citilink-connector/tests/test_search_extractor_dompy
 ---
 
 # test_title_comes_from_a_text_bearing_anchor_not_the_empty_overlay()
@@ -16,4 +16,4 @@ tags:
 - [[_items()_4]] - `calls` [EXTRACTED]
 - [[citilink-connectorteststest_search_extractor_dom.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_items
+#graphify/code #graphify/EXTRACTED #community/citilink-connector/tests/test_search_extractor_dompy

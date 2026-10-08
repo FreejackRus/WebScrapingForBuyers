@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "rationale"
-community: "responder"
+community: "_patch_questions"
 location: "L1556"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/responder
+  - community/_patch_questions
 ---
 
 # Seller answers contain literal newlines, which break single-line rendering.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_questions_collapses_newlines_in_answers()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/responder
+#graphify/rationale #graphify/EXTRACTED #community/_patch_questions

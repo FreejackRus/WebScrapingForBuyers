@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_raw_lifecycle.py"
 type: "code"
-community: "pytest"
+community: "test_chrome_cdp_raw_lifecycle.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pytest
+  - community/test_chrome_cdp_raw_lifecyclepy
 ---
 
 # test_chrome_cdp_raw_lifecycle.py
@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[Raw CDP owns its target even when discovery or attachment fails.]] - `rationale_for` [EXTRACTED]
 - [[assert_owned_target_closed()]] - `contains` [EXTRACTED]
-- [[asyncio_2]] - `imports` [EXTRACTED]
+- [[asyncio]] - `imports` [EXTRACTED]
 - [[contextlib]] - `imports_from` [EXTRACTED]
 - [[io]] - `imports_from` [EXTRACTED]
 - [[json]] - `imports` [EXTRACTED]
@@ -27,4 +27,4 @@ tags:
 - [[types_8]] - `imports_from` [EXTRACTED]
 - [[urllib_request]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pytest
+#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_raw_lifecyclepy

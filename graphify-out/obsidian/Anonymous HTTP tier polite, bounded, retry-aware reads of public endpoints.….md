@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/http_tier.py"
 type: "rationale"
-community: "transport/__init__.py"
+community: "json"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/transport/__init__py
+  - community/json
 ---
 
 # Anonymous HTTP tier: polite, bounded, retry-aware reads of public endpoints.…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[http_tier.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/transport/__init__py
+#graphify/rationale #graphify/EXTRACTED #community/json

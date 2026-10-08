@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/entities/user/api/index.ts"
 type: "code"
-community: "entities/user/index.ts"
+community: "useUserStore"
 location: "L5"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/entities/user/indexts
+  - community/useUserStore
 ---
 
 # userApi
@@ -16,4 +16,4 @@ tags:
 - [[userapiindex.ts]] - `contains` [EXTRACTED]
 - [[userstoreindex.ts]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/entities/user/indexts
+#graphify/code #graphify/EXTRACTED #community/useUserStore

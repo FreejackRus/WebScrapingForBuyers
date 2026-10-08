@@ -12,8 +12,8 @@ members: 19
 ## Members
 - [[Detsky Mir Connector]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/detmir-connector/SKILL.md
 - [[Detsky Mir Connector_1]] - document - mcp-servers/ru-marketplace-mcp/skills/detmir-connector/SKILL.md
-- [[Gotchas_2]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/detmir-connector/SKILL.md
-- [[Gotchas_3]] - document - mcp-servers/ru-marketplace-mcp/skills/detmir-connector/SKILL.md
+- [[Gotchas]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/detmir-connector/SKILL.md
+- [[Gotchas_1]] - document - mcp-servers/ru-marketplace-mcp/skills/detmir-connector/SKILL.md
 - [[There is no text search — this is important]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/detmir-connector/SKILL.md
 - [[There is no text search — this is important_1]] - document - mcp-servers/ru-marketplace-mcp/skills/detmir-connector/SKILL.md
 - [[Tools]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/detmir-connector/SKILL.md
@@ -22,8 +22,8 @@ members: 19
 - [[Trust boundary_1]] - document - mcp-servers/ru-marketplace-mcp/skills/detmir-connector/SKILL.md
 - [[When NOT to use]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/detmir-connector/SKILL.md
 - [[When NOT to use_1]] - document - mcp-servers/ru-marketplace-mcp/skills/detmir-connector/SKILL.md
-- [[When to use_2]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/detmir-connector/SKILL.md
-- [[When to use_3]] - document - mcp-servers/ru-marketplace-mcp/skills/detmir-connector/SKILL.md
+- [[When to use]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/detmir-connector/SKILL.md
+- [[When to use_1]] - document - mcp-servers/ru-marketplace-mcp/skills/detmir-connector/SKILL.md
 - [[Workflow patterns]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/detmir-connector/SKILL.md
 - [[Workflow patterns_1]] - document - mcp-servers/ru-marketplace-mcp/skills/detmir-connector/SKILL.md
 - [[alias()]] - code - apps/web/vite.config.ts
@@ -47,5 +47,5 @@ SORT file.name ASC
 - [[Detsky Mir Connector]] - degree 9, connects to 1 community
 - [[Detsky Mir Connector_1]] - degree 9, connects to 1 community
 - [[alias()]] - degree 5, connects to 1 community
-- [[Gotchas_2]] - degree 3, connects to 1 community
+- [[Gotchas]] - degree 3, connects to 1 community
 - [[Tools]] - degree 3, connects to 1 community

@@ -2,7 +2,7 @@
 source_file: "apps/web/src/entities/offer/lib/index.ts"
 type: "code"
 community: "offers/ui/index.tsx"
-location: "L37"
+location: "L42"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -15,5 +15,6 @@ tags:
 - [[filterOffers()]] - `calls` [EXTRACTED]
 - [[offerindex.ts]] - `re_exports` [EXTRACTED]
 - [[offerlibindex.ts]] - `contains` [EXTRACTED]
+- [[table-filter.test.ts]] - `imports` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/offers/ui/indextsx

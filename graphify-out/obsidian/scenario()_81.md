@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "test_cache_does_not_remember_a_rate_limit"
-location: "L1332"
+community: "test_cache_can_be_disabled_by_ttl_zero"
+location: "L1369"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_cache_does_not_remember_a_rate_limit
+  - community/test_cache_can_be_disabled_by_ttl_zero
 ---
 
 # scenario()
 
 ## Connections
-- [[_clear_wb_cache()]] - `calls` [EXTRACTED]
+- [[TTLCache]] - `calls` [EXTRACTED]
 - [[no_wait()_2]] - `indirect_call` [INFERRED]
-- [[test_cache_does_not_remember_a_rate_limit()]] - `contains` [EXTRACTED]
+- [[test_cache_can_be_disabled_by_ttl_zero()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_cache_does_not_remember_a_rate_limit
+#graphify/code #graphify/EXTRACTED #community/test_cache_can_be_disabled_by_ttl_zero

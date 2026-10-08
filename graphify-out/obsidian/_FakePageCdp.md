@@ -12,7 +12,7 @@ tags:
 # _FakePageCdp
 
 ## Connections
-- [[dot-__init__()_10]] - `method` [EXTRACTED]
+- [[dot-__init__()_13]] - `method` [EXTRACTED]
 - [[dot-detach()_1]] - `method` [EXTRACTED]
 - [[dot-new_cdp_session()]] - `calls` [EXTRACTED]
 - [[dot-send()_3]] - `method` [EXTRACTED]

@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Regression tests for the Citilink card extractor on a captured card page.…]] - `rationale_for` [EXTRACTED]
-- [[_extract()_3]] - `contains` [EXTRACTED]
+- [[_extract()_2]] - `contains` [EXTRACTED]
 - [[citilink_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[dom.py]] - `imports_from` [EXTRACTED]
 - [[domtest.py]] - `imports_from` [EXTRACTED]

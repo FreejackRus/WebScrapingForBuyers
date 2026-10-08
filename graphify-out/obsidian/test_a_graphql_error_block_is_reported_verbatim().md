@@ -13,10 +13,10 @@ tags:
 
 ## Connections
 - [[The server's own message beats a generic drift verdict.]] - `rationale_for` [EXTRACTED]
-- [[__aenter__()_5]] - `contains` [EXTRACTED]
-- [[__aexit__()_5]] - `contains` [EXTRACTED]
-- [[json()_3]] - `contains` [EXTRACTED]
+- [[__aenter__()_4]] - `contains` [EXTRACTED]
+- [[__aexit__()_4]] - `contains` [EXTRACTED]
+- [[json()_2]] - `contains` [EXTRACTED]
 - [[lamoda-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[post()_2]] - `contains` [EXTRACTED]
+- [[post()_3]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_a_graphql_error_block_is_reported_verbatim

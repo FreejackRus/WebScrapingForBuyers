@@ -1,22 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/e2e_stdio_check_docker.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/diagnose_drift.py"
 type: "code"
-community: "test_stdio_probe.py"
-location: "L79"
+community: "diagnose_drift.py"
+location: "L291"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_stdio_probepy
+  - community/diagnose_driftpy
 ---
 
 # main()
 
 ## Connections
-- [[e2e_stdio_check_docker.py]] - `contains` [EXTRACTED]
-- [[probe()_2]] - `calls` [EXTRACTED]
-- [[test_docker_probe_rejects_call_errors()]] - `calls` [EXTRACTED]
-- [[test_docker_probe_rejects_wrong_or_missing_versions()]] - `calls` [EXTRACTED]
-- [[test_docker_probe_requires_expected_version_before_starting()]] - `calls` [EXTRACTED]
-- [[test_docker_timeout_attempts_container_removal()]] - `calls` [EXTRACTED]
+- [[diagnose()]] - `calls` [EXTRACTED]
+- [[diagnose_drift.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_stdio_probepy
+#graphify/code #graphify/EXTRACTED #community/diagnose_driftpy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/runtime.py"
 type: "rationale"
-community: "run_server"
+community: "sys"
 location: "L219"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/run_server
+  - community/sys
 ---
 
 # Run ``mcp`` on the transport selected by the environment. Returns a process…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[run_server()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/run_server
+#graphify/rationale #graphify/EXTRACTED #community/sys

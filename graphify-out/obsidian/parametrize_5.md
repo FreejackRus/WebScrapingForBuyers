@@ -1,19 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "error_payload"
+community: "get_text_budgeted"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/error_payload
+  - community/get_text_budgeted
 ---
 
 # parametrize
 
 ## Connections
-- [[test_an_invalid_region_is_rejected_before_any_request()]] - `references` [EXTRACTED]
-- [[test_categories_rejects_non_numeric_parent()]] - `references` [EXTRACTED]
-- [[test_category_normalises_case_and_whitespace()]] - `references` [EXTRACTED]
-- [[test_category_rejects_non_slug_aliases()]] - `references` [EXTRACTED]
+- [[test_http_statuses_are_never_retried()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/error_payload
+#graphify/code #graphify/EXTRACTED #community/get_text_budgeted

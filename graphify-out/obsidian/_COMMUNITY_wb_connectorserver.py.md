@@ -1,40 +1,93 @@
 ---
 type: community
-cohesion: 0.04
-members: 74
+cohesion: 0.03
+members: 175
 ---
 
 # wb_connector/server.py
 
-**Cohesion:** 0.04 - loosely connected
-**Members:** 74 nodes
+**Cohesion:** 0.03 - loosely connected
+**Members:** 175 nodes
 
 ## Members
-- [[dot-wait()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[dot-wait()_5]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[8а. Навыки по одному на коннектор]] - document - mcp-servers/ru-marketplace-mcp/docs/archive/AUDIT_REPORT_2026-08_v1.2.0-snapshot.md
+- [[A blockautherror status came back for the main document. Carries status and…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py
 - [[A canary read that cannot be answered from the cache. Every probe uses a fixed…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[A page of products from one catalog category. ``items`` uses the same shape as…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/models_output.py
 - [[A slice of the WB catalog tree. The full menu is ~800 KB, which is far too…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/models_output.py
 - [[Adapter exposing WB's module-level polite gate as a ``RateLimiter``. Core's…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
-- [[AsyncClient_4]] - code
+- [[Any_27]] - code
+- [[Assert the non-error branch of ``_expect_json_object``. Reached only when the…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[AsyncClient_3]] - code
 - [[BaseModel_15]] - code
+- [[Basket host for ``vol`` from the known table, or None past its end.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Breadth-first search for a category by name, url or id. Breadth-first on…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Browse the Wildberries catalog tree. Use this to discover what exists before…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Build WB's HTTP client. Kept as a helper so proxy resolution happens in exactly…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[Build the storefront capture dict from a live Network response.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[Candidate URLs for a seller record, one per static CDN mirror.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[Candidate URLs for the catalog menu, one per static CDN mirror.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[Collapse runs of whitespace into single spaces. Seller answers to buyer…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Compute basket CDN host. Probe range up to 28 for new SKUs.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Context_13]] - code
 - [[Convert one raw menu entry into a bounded WbCategoryNode. ``budget`` is a…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Current WB_SEARCH_TRANSPORT (storefronthttp). Re-reads settings for tests.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[Decode a streamed body the way curl_cffi's ``resp.text`` would have. Streaming…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Fetch buyer questions and seller answers by imt_id (root_id from wb_root_info).…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Fetch full card metadata from basket CDN. Returns imt_id (root_id) for review…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Fetch product card data from WB v4 API. Returns prices in rubles, brand,…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Fetch reviews by imt_id (root_id from wb_root_info). All product variants share…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[Fetch via curl_cffi, honouring ``_safe_get_text``'s (status, text, err)…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Field_13]] - code
+- [[Find out who actually sells a Wildberries product. uv run python…]] - rationale - mcp-servers/ru-marketplace-mcp/examples/seller_lookup.py
+- [[Find the host serving ``nm_id``'s photo and cache it for its vol.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Fix WB double-encoded UTF-8. Best-effort keeps correct strings alone. Accepts…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Fixed_22]] - document - mcp-servers/ru-marketplace-mcp/CHANGELOG.md
+- [[Flatten one WB product object into the shared card-item shape. Used by wb_card,…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[GET each URL in turn, returning the first parsed JSON body and its host. Mirror…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[GET with body cap, wall-clock budget, and bounded transient-network retry. Thin…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Gotchas_26]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/wb-connector/SKILL.md
+- [[Gotchas_27]] - document - mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md
+- [[Identity of a result page the leading ids, in order. Order matters — WB re-…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Keep only unambiguous typed color evidence, never infer it from a title.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Legacy bare HTTP to search.wb.ru v9. Used when WB_SEARCH_TRANSPORT=http.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Legacy fallback search-goods ids, then enrich through cardv4. Kept only as a…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[Legal identity behind a WB supplier id. WB publishes the registered entity for…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/models_output.py
+- [[List the products in a catalog category, using the shard and query from…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Look up the registered legal entity behind a WB seller. Answers who actually…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[MetaOut_11]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/models_output.py
+- [[NavBlocked]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py
+- [[NotFoundError]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py
 - [[One buyer question, with the seller's answer when there is one.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/models_output.py
 - [[One node of the WB catalog tree. ``shard`` and ``query`` together form the…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/models_output.py
+- [[Open search.aspx in Chrome and capture the page's catalog XHR body. Matches…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[PURE recover numeric product ids from a search-goods response (no network).…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[Parse WB ISO createdDate to a unix ts for tiebreak sorting (0 if absent or non-…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[ParserDriftError]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py
+- [[Public search.aspx URL that triggers the __internalu-search XHR.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[Pull products + total from a search.wb.ru  storefront catalog JSON body.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[Pydantic output models for the WB connector (Stage 2). Every tool returns a…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/models_output.py
+- [[Raise ToolError when the CDP capture is unusable (empty  403  no route).]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[Resolve WB's proxy explicit ``WB_PROXY`` first, then the standard vars.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Return (current_rub, original_rub), or (None, None) if no live offer. WB v4…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Return ``(obj, None)`` for a JSON object, else ``(None, error_dict)``. Exactly…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Roll per-item validation into connector-level warnings (systemic drift only).]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Search WB catalog by text query. Default transport ``storefront``…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Semaphore_1]] - code
+- [[Set ``image_url`` on WB items whose basket host is known or resolvable. Unknown…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Space this source's requests out, and back off if it refused us. Reads…_8]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Structural drift canary for WB (tri-state success  drift_detected …]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[The Ozon seller-details refusal (v1.1.0)]] - document - mcp-servers/ru-marketplace-mcp/docs/ANTI_BOT.md
+- [[The pacer's this is a standing block sentence, once it has earned one.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[The shared path body cap, wall-clock budget, polite gate, bounded retries.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Tools available_18]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/wb-connector/SKILL.md
+- [[Tools available_19]] - document - mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md
 - [[True for a real read HTTP 200, a body, and not the edge's wall page.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[True for hosts that refuse the default client's TLS fingerprint.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[True for the storefront catalog XHR (``__internalu-search...vNsearch``).]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[True when a JSON endpoint answered with an HTML page instead. WB's edge serves…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[WB carries the shared envelope unchanged.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/models_output.py
 - [[WB integer kopecks - float rubles, tolerant of a number-string drift. Returns…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[WbCategoriesResponse]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/models_output.py
 - [[WbCategoryNode]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/models_output.py
@@ -49,41 +102,89 @@ members: 74
 - [[WbSelfCheckResponse]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/models_output.py
 - [[WbSellerResponse]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/models_output.py
 - [[Wildberries MCP connector. Public WB catalog APIs (not Seller API). No…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Wildberries — `wb_`]] - document - mcp-servers/ru-marketplace-mcp/README.md
+- [[Wildberries — `wb_`_1]] - document - mcp-servers/ru-marketplace-mcp/README.md
 - [[_PoliteGate]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_aggregate_offer_warnings()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_as_int()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_attach_image_urls()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_attempt_live_capture()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_attempt_raw_live_capture()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_attempt_refetch_fallback()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_basket_for_sku()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_basket_from_table()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[_budgeted_get_text()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[_capture_from_catalog_response()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_card_item_dict()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_card_products()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_card_products_checked()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[_decode_body()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_decode_mojibake()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_expect_json_object()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_extract_price_rub()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[_fetch()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_fetch_first_json()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_find_menu_subtree()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[_fresh_get_text()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_has_review_text()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[_impersonated_get_text()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[_is_edge_wall()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_is_storefront_catalog_url()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[_is_usable()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[_kopeck_to_rub()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[_menu_node()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[_needs_impersonation()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[_normalise_ws()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_observe()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_on_response()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_page_fingerprint()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_polite_wait()_9]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_probe_basket()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[_products_from_search_payload()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
-- [[_proxy()_6]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_proxy()_5]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_recover_search_ids()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_refusal_hint()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_require_object()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_safe_get_text()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_search_transport()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_search_via_http_v9()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_search_via_search_goods()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_search_via_storefront()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_single_product_color()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[_static_menu_urls()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[_static_seller_urls()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_storefront_search_url()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_val()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_verify_storefront_capture()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_wb_client()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[_wb_image_path()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[_wb_review_date_ts()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
-- [[importlib]] - concept
-- [[parametrize_22]] - code
-- [[search()_4]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_source_warnings.py
-- [[search()_5]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_source_warnings.py
-- [[search()_6]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_source_warnings.py
+- [[default_5]] - code
+- [[description_15]] - code
+- [[ge_6]] - code
+- [[get_settings()_11]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/settings.py
+- [[gt_2]] - code
+- [[hit()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[le_6]] - code
+- [[main()_34]] - code - mcp-servers/ru-marketplace-mcp/examples/seller_lookup.py
+- [[max_length_12]] - code
+- [[min_length_12]] - code
+- [[seller_lookup.py]] - code - mcp-servers/ru-marketplace-mcp/examples/seller_lookup.py
 - [[string]] - concept
-- [[test_every_native_adapter_preserves_warnings()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_source_warnings.py
-- [[test_no_results_without_meta_is_not_invented_degradation()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_source_warnings.py
-- [[test_source_warnings.py]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_source_warnings.py
-- [[test_unhealthy_without_reason_gets_explicit_diagnostic()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_source_warnings.py
-- [[test_warning_does_not_drop_valid_offer_and_is_isolated_per_request()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_source_warnings.py
-- [[test_warnings_are_bounded_normalized_deduplicated_and_redacted()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_source_warnings.py
-- [[test_wildberries_adapter_tolerates_a_no_results_response()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
+- [[tool_14]] - code
+- [[wb_card()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[wb_categories()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[wb_category_products()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
 - [[wb_connectormodels_output.py]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/models_output.py
 - [[wb_connectorserver.py]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
-- [[wb_search can return a distinct no-results model with no items at all.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
-- [[wb_search()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
+- [[wb_questions()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[wb_reviews()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[wb_root_info()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[wb_search()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[wb_selfcheck()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[wb_seller()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- [[Навыки]] - document - mcp-servers/ru-marketplace-mcp/CHANGELOG.md
+- [[Навыки никуда не ехали]] - document - mcp-servers/ru-marketplace-mcp/docs/archive/AUDIT_REPORT_2026-08_v1.2.0-snapshot.md
 
 ## Live Query (requires Dataview plugin)
 
@@ -93,34 +194,63 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 69 edges to [[_COMMUNITY_log_event]]
-- 21 edges to [[_COMMUNITY_json]]
-- 8 edges to [[_COMMUNITY_WbCardItem]]
-- 5 edges to [[_COMMUNITY_test_card_verification_records.py]]
-- 4 edges to [[_COMMUNITY_citilink_card]]
-- 3 edges to [[_COMMUNITY_pytest]]
-- 3 edges to [[_COMMUNITY_pydantic]]
-- 2 edges to [[_COMMUNITY_models.py]]
-- 2 edges to [[_COMMUNITY_dns_card]]
-- 2 edges to [[_COMMUNITY_aliexpress_connectormodels_output.py]]
-- 2 edges to [[_COMMUNITY_get_settings]]
-- 2 edges to [[_COMMUNITY_transport__init__.py]]
-- 1 edge to [[_COMMUNITY_ozon_card]]
+- 42 edges to [[_COMMUNITY_json]]
+- 32 edges to [[_COMMUNITY_TransportDownError]]
+- 21 edges to [[_COMMUNITY_test_card_verification_records.py]]
+- 19 edges to [[_COMMUNITY_log_event]]
+- 13 edges to [[_COMMUNITY_dns_card]]
+- 7 edges to [[_COMMUNITY_taobao_connectorserver.py]]
+- 6 edges to [[_COMMUNITY_avito_connectorserver.py]]
+- 6 edges to [[_COMMUNITY_cian_connectorserver.py]]
+- 6 edges to [[_COMMUNITY_lamoda_search]]
+- 6 edges to [[_COMMUNITY_citilink_card]]
+- 5 edges to [[_COMMUNITY_pydantic]]
+- 5 edges to [[_COMMUNITY_detmir_categories]]
+- 5 edges to [[_COMMUNITY_aliexpress_card]]
+- 5 edges to [[_COMMUNITY_ozon_connectormodels_output.py]]
+- 4 edges to [[_COMMUNITY_ozon_card]]
+- 4 edges to [[_COMMUNITY_get_browser]]
+- 3 edges to [[_COMMUNITY__fetch_composer]]
+- 3 edges to [[_COMMUNITY_open_page]]
+- 3 edges to [[_COMMUNITY_Аудит ru-marketplace-mcp v1.2.0 — независимая перепроверка]]
+- 3 edges to [[_COMMUNITY_transport__init__.py]]
+- 2 edges to [[_COMMUNITY_browser_handoff.py]]
+- 2 edges to [[_COMMUNITY_ChallengeRequiredError]]
+- 2 edges to [[_COMMUNITY_test_wildberries_adapter_tolerates_a_no_results_response]]
+- 2 edges to [[_COMMUNITY_pytest]]
+- 2 edges to [[_COMMUNITY_sys]]
+- 2 edges to [[_COMMUNITY_compare_prices]]
+- 2 edges to [[_COMMUNITY_ssr.py]]
+- 2 edges to [[_COMMUNITY_Anti-bot reality, source by source]]
+- 2 edges to [[_COMMUNITY_Wildberries Connector]]
+- 2 edges to [[_COMMUNITY_Wildberries Connector_1]]
+- 1 edge to [[_COMMUNITY_compare_verify_offer]]
+- 1 edge to [[_COMMUNITY_mcp-coreteststest_browser_handoff.py]]
+- 1 edge to [[_COMMUNITY_test_handoff_reporting.py]]
+- 1 edge to [[_COMMUNITY_citilink_selfcheck]]
+- 1 edge to [[_COMMUNITY_Authenticated transport driving your own Chrome]]
+- 1 edge to [[_COMMUNITY_diagnose_drift.py]]
+- 1 edge to [[_COMMUNITY_8в. Сверка с внешними источниками]]
 - 1 edge to [[_COMMUNITY_get_text_budgeted]]
 - 1 edge to [[_COMMUNITY_test_http_tier.py]]
-- 1 edge to [[_COMMUNITY_TransportDownError]]
-- 1 edge to [[_COMMUNITY_compare-connectorteststest_server.py]]
-- 1 edge to [[_COMMUNITY_ssr.py]]
-- 1 edge to [[_COMMUNITY_Ключевые изменения выпуска]]
-- 1 edge to [[_COMMUNITY_test_source_selection.py]]
-- 1 edge to [[_COMMUNITY_chrome_cdp.py]]
+- 1 edge to [[_COMMUNITY_test_storefront_search.py]]
+- 1 edge to [[_COMMUNITY_Итерации]]
+- 1 edge to [[_COMMUNITY_parse_retry_after]]
+- 1 edge to [[_COMMUNITY_resilience.py]]
+- 1 edge to [[_COMMUNITY__search_wildberries]]
+- 1 edge to [[_COMMUNITY_v1.2.0 — six new marketplaces and one unified server (English)]]
+- 1 edge to [[_COMMUNITY_v1.2.0 — шесть новых маркетплейсов и один общий сервер]]
+- 1 edge to [[_COMMUNITY_v1.2.1 — правки по итогам стороннего ревью]]
+- 1 edge to [[_COMMUNITY_v1.3.0 — MPStats и разбор аудита]]
+- 1 edge to [[_COMMUNITY_Живая проверка источников]]
+- 1 edge to [[_COMMUNITY_English version]]
+- 1 edge to [[_COMMUNITY_ru-marketplace-mcp]]
+- 1 edge to [[_COMMUNITY_Changelog]]
 - 1 edge to [[_COMMUNITY_wb-connectorteststest_parser_live.py]]
-- 1 edge to [[_COMMUNITY_pathlib]]
-- 1 edge to [[_COMMUNITY_ozon_connectorserver.py]]
 
 ## Top bridge nodes
-- [[wb_connectorserver.py]] - degree 97, connects to 12 communities
-- [[wb_connectormodels_output.py]] - degree 26, connects to 8 communities
-- [[test_source_warnings.py]] - degree 12, connects to 4 communities
-- [[_kopeck_to_rub()]] - degree 5, connects to 3 communities
-- [[WbNoResultsResponse]] - degree 12, connects to 2 communities
+- [[ParserDriftError]] - degree 49, connects to 15 communities
+- [[NavBlocked]] - degree 26, connects to 15 communities
+- [[wb_card()]] - degree 40, connects to 13 communities
+- [[NotFoundError]] - degree 23, connects to 13 communities
+- [[wb_connectorserver.py]] - degree 101, connects to 5 communities

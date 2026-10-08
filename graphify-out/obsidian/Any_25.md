@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "run_extractor"
+community: "domtest.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/run_extractor
+  - community/domtestpy
 ---
 
 # Any
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[run_extractor()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/run_extractor
+#graphify/code #graphify/EXTRACTED #community/domtestpy

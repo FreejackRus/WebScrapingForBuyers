@@ -1,20 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/src/mpstats_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/server.py"
 type: "code"
-community: "_post_json_budgeted"
-location: "L155"
+community: "avito_connector/server.py"
+location: "L148"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_post_json_budgeted
+  - community/avito_connector/serverpy
 ---
 
 # _polite_wait()
 
 ## Connections
-- [[Space this source's requests out, and back off if it refused us. The shared…]] - `rationale_for` [EXTRACTED]
-- [[_call()_1]] - `calls` [EXTRACTED]
-- [[_post_json_budgeted()]] - `calls` [EXTRACTED]
-- [[mpstats_connectorserver.py]] - `contains` [EXTRACTED]
+- [[Space this source's requests out, and back off if it refused us. Reads…_5]] - `rationale_for` [EXTRACTED]
+- [[_fetch()]] - `calls` [EXTRACTED]
+- [[avito_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_post_json_budgeted
+#graphify/code #graphify/EXTRACTED #community/avito_connector/serverpy

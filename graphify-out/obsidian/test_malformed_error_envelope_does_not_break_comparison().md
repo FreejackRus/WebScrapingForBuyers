@@ -13,6 +13,6 @@ tags:
 
 ## Connections
 - [[compare-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[parametrize_4]] - `references` [EXTRACTED]
+- [[parametrize_2]] - `references` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/parametrize

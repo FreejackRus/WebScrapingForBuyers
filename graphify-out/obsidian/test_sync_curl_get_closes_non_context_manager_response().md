@@ -12,7 +12,7 @@ tags:
 # test_sync_curl_get_closes_non_context_manager_response()
 
 ## Connections
-- [[close()_1]] - `contains` [EXTRACTED]
+- [[close()]] - `contains` [EXTRACTED]
 - [[fake_get()_5]] - `indirect_call` [INFERRED]
 - [[iter_content()]] - `contains` [EXTRACTED]
 - [[ozon-connectorteststest_server.py]] - `contains` [EXTRACTED]

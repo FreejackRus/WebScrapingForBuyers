@@ -1,13 +1,13 @@
 ---
 type: community
-cohesion: 0.07
-members: 29
+cohesion: 0.08
+members: 24
 ---
 
 # test_cli.py
 
-**Cohesion:** 0.07 - loosely connected
-**Members:** 29 nodes
+**Cohesion:** 0.08 - loosely connected
+**Members:** 24 nodes
 
 ## Members
 - [[inconclusive alone cannot be acted on. Rate-limited, IP-banned and no-CDP all…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py
@@ -16,7 +16,6 @@ members: 29
 - [[Installed as a wheel there is no checkout, so uv run --directory is wrong.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py
 - [[Offline tests for the operator CLI. Selfchecks are monkeypatched out — doctor's…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py
 - [[dsh does not read claude_desktop_config.json; print its patch format.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py
-- [[parametrize_24]] - code
 - [[test_a_healthy_check_stays_terse()]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py
 - [[test_cli.py]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py
 - [[test_config_block_covers_all_servers()]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py
@@ -34,11 +33,7 @@ members: 29
 - [[test_install_accepts_every_documented_client()]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py
 - [[test_install_prints_a_config_block_for_every_source()]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py
 - [[test_install_rejects_an_unknown_client()]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py
-- [[test_install_rejects_extra_arguments_and_unknown_flags()]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py
-- [[test_invalid_doctor_arguments_fail_before_any_checks()]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py
 - [[test_main_routes_subcommands_and_rejects_unknown()]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py
-- [[test_run_one_selfcheck_reads_dict_and_model_responses()]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py
-- [[unexpected_call()]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py
 
 ## Live Query (requires Dataview plugin)
 
@@ -49,15 +44,16 @@ SORT file.name ASC
 
 ## Connections to other communities
 - 7 edges to [[_COMMUNITY_fake_selfcheck]]
-- 2 edges to [[_COMMUNITY_pathlib]]
+- 3 edges to [[_COMMUNITY_parametrize_2]]
 - 2 edges to [[_COMMUNITY_json]]
-- 2 edges to [[_COMMUNITY_pytest]]
-- 1 edge to [[_COMMUNITY_models.py]]
-- 1 edge to [[_COMMUNITY_dns_card]]
+- 1 edge to [[_COMMUNITY_TransportDownError]]
 - 1 edge to [[_COMMUNITY_offline_cdp_probe]]
-- 1 edge to [[_COMMUNITY_marketplace_connector__init__.py]]
+- 1 edge to [[_COMMUNITY_pathlib]]
+- 1 edge to [[_COMMUNITY_sys]]
+- 1 edge to [[_COMMUNITY_pytest]]
+- 1 edge to [[_COMMUNITY_test_card_verification_records.py]]
+- 1 edge to [[_COMMUNITY_test_public_contract_snapshot.py]]
 
 ## Top bridge nodes
-- [[test_cli.py]] - degree 36, connects to 6 communities
-- [[test_run_one_selfcheck_reads_dict_and_model_responses()]] - degree 3, connects to 1 community
+- [[test_cli.py]] - degree 36, connects to 9 communities
 - [[test_doctor_preserves_yandex_empty_shell_diagnosis()]] - degree 2, connects to 1 community

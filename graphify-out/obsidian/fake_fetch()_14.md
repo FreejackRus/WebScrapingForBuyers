@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "detmir-connector/tests/test_server.py"
-location: "L111"
+community: "test_ozon_selfcheck_includes_runtime_identity"
+location: "L593"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/detmir-connector/tests/test_serverpy
+  - graphify/EXTRACTED
+  - community/test_ozon_selfcheck_includes_runtime_identity
 ---
 
 # fake_fetch()
 
 ## Connections
-- [[stub_json()]] - `indirect_call` [INFERRED]
+- [[_reviews_body()]] - `calls` [EXTRACTED]
+- [[test_reviews_marks_partial_when_later_page_fails()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/detmir-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/test_ozon_selfcheck_includes_runtime_identity

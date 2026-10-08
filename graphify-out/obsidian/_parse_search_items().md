@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/server.py"
 type: "code"
 community: "_parse_search_items"
-location: "L336"
+location: "L441"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -14,11 +14,12 @@ tags:
 ## Connections
 - [[Any_2]] - `references` [EXTRACTED]
 - [[Best-effort extraction of items + total from a jsitems payload. The endpoint…]] - `rationale_for` [EXTRACTED]
-- [[_items()_2]] - `calls` [EXTRACTED]
+- [[_first_image_url()]] - `calls` [EXTRACTED]
+- [[_items()_3]] - `calls` [EXTRACTED]
 - [[_posted_at()]] - `calls` [EXTRACTED]
-- [[_search_smoke()]] - `calls` [EXTRACTED]
+- [[_search_smoke()_1]] - `calls` [EXTRACTED]
 - [[avito_connectorserver.py]] - `contains` [EXTRACTED]
-- [[avito_search()]] - `calls` [EXTRACTED]
+- [[avito_search()_1]] - `calls` [EXTRACTED]
 - [[avito_seller()]] - `calls` [EXTRACTED]
 - [[test_avito_firewall_body_is_not_parsed_as_items()]] - `calls` [INFERRED]
 - [[test_avito_pricelss_item_is_none_not_zero()]] - `calls` [INFERRED]

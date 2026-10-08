@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/README.md"
 type: "document"
-community: "log_event"
-location: "L766"
+community: "wb_connector/server.py"
+location: "L717"
 tags:
   - graphify/document
   - graphify/INFERRED
-  - community/log_event
+  - community/wb_connector/serverpy
 ---
 
 # Wildberries — `wb_*`
@@ -18,4 +18,4 @@ tags:
 - [[wb_questions()]] - `references` [INFERRED]
 - [[wb_seller()]] - `references` [INFERRED]
 
-#graphify/document #graphify/INFERRED #community/log_event
+#graphify/document #graphify/INFERRED #community/wb_connector/serverpy

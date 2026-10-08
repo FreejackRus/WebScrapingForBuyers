@@ -12,10 +12,10 @@ tags:
 # measure()
 
 ## Connections
-- [[Path_7]] - `references` [EXTRACTED]
+- [[Path]] - `references` [EXTRACTED]
 - [[ProbeError]] - `uses` [INFERRED]
 - [[StdioProbe]] - `calls` [EXTRACTED]
-- [[main()_10]] - `calls` [EXTRACTED]
+- [[main()]] - `calls` [EXTRACTED]
 - [[mcp_startup.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/StdioProbe

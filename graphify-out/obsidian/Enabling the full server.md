@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/dsh/README.md"
 type: "document"
-community: "decision_inspect"
+community: "compare_verify_offer"
 location: "L82"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/decision_inspect
+  - community/compare_verify_offer
 ---
 
 # Enabling the full server
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[ru-marketplace-mcp for DeepSeek Harness]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/decision_inspect
+#graphify/document #graphify/EXTRACTED #community/compare_verify_offer

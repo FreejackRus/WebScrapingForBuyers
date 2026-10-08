@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cache.py"
 type: "code"
-community: "test_get_or_fetch_collapses_concurrent_misses"
+community: "TTLCache"
 location: "L114"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/test_get_or_fetch_collapses_concurrent_misses
+  - community/TTLCache
 ---
 
 # slow_factory()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_get_or_fetch_collapses_concurrent_misses()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/test_get_or_fetch_collapses_concurrent_misses
+#graphify/code #graphify/INFERRED #community/TTLCache

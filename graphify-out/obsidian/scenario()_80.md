@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
 type: "code"
-community: "TransportDownError"
-location: "L115"
+community: "test_wb_search_storefront_uses_captured_v18_products"
+location: "L86"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/TransportDownError
+  - community/test_wb_search_storefront_uses_captured_v18_products
 ---
 
 # scenario()
 
 ## Connections
-- [[failing_storefront()]] - `indirect_call` [INFERRED]
-- [[legacy()]] - `indirect_call` [INFERRED]
-- [[test_wb_search_storefront_does_not_fall_back_to_search_goods()]] - `contains` [EXTRACTED]
+- [[fake_storefront()]] - `indirect_call` [INFERRED]
+- [[no_wait()_34]] - `indirect_call` [INFERRED]
+- [[test_wb_search_storefront_uses_captured_v18_products()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/TransportDownError
+#graphify/code #graphify/INFERRED #community/test_wb_search_storefront_uses_captured_v18_products

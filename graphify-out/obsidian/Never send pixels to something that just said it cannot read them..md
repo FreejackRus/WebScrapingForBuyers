@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_vision_policy.py"
 type: "rationale"
-community: "resolve_image_delivery"
+community: "test_review_regressions.py"
 location: "L57"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/resolve_image_delivery
+  - community/test_review_regressionspy
 ---
 
 # Never send pixels to something that just said it cannot read them.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_an_explicit_client_refusal_beats_everything()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/resolve_image_delivery
+#graphify/rationale #graphify/EXTRACTED #community/test_review_regressionspy

@@ -1,17 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/avito-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/detmir-connector/SKILL.md"
 type: "document"
-community: "avito_seller"
-location: "L47"
+community: "Detsky Mir Connector"
+location: "L67"
 tags:
   - graphify/document
-  - graphify/EXTRACTED
-  - community/avito_seller
+  - graphify/INFERRED
+  - community/Detsky_Mir_Connector
 ---
 
 # Gotchas
 
 ## Connections
-- [[Avito Connector_1]] - `contains` [EXTRACTED]
+- [[Detsky Mir Connector_1]] - `contains` [EXTRACTED]
+- [[alias()]] - `references` [INFERRED]
+- [[detmir_categories()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/avito_seller
+#graphify/document #graphify/INFERRED #community/Detsky_Mir_Connector

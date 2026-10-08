@@ -1,23 +1,21 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
 type: "code"
-community: "scenario"
-location: "L2022"
+community: "test_storefront_falls_back_to_raw_cdp_when_playwright_attach_times_out"
+location: "L287"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/scenario
+  - graphify/INFERRED
+  - community/test_storefront_falls_back_to_raw_cdp_when_playwright_attach_times_out
 ---
 
 # scenario()
 
 ## Connections
-- [[_FakeCurlResponse]] - `calls` [EXTRACTED]
-- [[_clear_wb_cache()]] - `calls` [EXTRACTED]
-- [[_tool_error_payload()_1]] - `calls` [EXTRACTED]
-- [[fake_budgeted()]] - `contains` [EXTRACTED]
-- [[fake_budgeted()_5]] - `indirect_call` [INFERRED]
-- [[no_wait()_2]] - `indirect_call` [INFERRED]
-- [[test_impersonated_refusal_stays_a_transport_error()]] - `contains` [EXTRACTED]
+- [[fake_open_page()]] - `indirect_call` [INFERRED]
+- [[incompatible_playwright()_1]] - `indirect_call` [INFERRED]
+- [[no_wait()_34]] - `indirect_call` [INFERRED]
+- [[raw_live_unavailable()]] - `indirect_call` [INFERRED]
+- [[test_storefront_falls_back_to_raw_cdp_when_playwright_attach_times_out()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/scenario
+#graphify/code #graphify/INFERRED #community/test_storefront_falls_back_to_raw_cdp_when_playwright_attach_times_out

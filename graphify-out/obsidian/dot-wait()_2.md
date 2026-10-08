@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/http_tier.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "transport/__init__.py"
-location: "L78"
+community: "_RecordingPacer"
+location: "L2114"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/transport/__init__py
+  - community/_RecordingPacer
 ---
 
 # .wait()
 
 ## Connections
-- [[RateLimiter]] - `method` [EXTRACTED]
+- [[_RecordingPacer]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/transport/__init__py
+#graphify/code #graphify/EXTRACTED #community/_RecordingPacer

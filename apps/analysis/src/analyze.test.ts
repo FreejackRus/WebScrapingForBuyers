@@ -137,6 +137,28 @@ describe("analyzeSnapshot", () => {
     expect(seen?.tableFacts?.join("\n")).not.toContain("100 ₽");
   });
 
+  it("keeps explicit review rows out when the same snapshot also has legacy rows", async () => {
+    const review = assessed(
+      offer({ id: "mixed-review", source: "Ozon", price: 100, demo: false }),
+      "needs_review",
+      ["Требуется проверка"],
+    );
+    let filterCalled = false;
+
+    const result = await analyzeSnapshot(snapshot([review, wbReal]), "Выбери лучшее предложение", {
+      name: "Ollama · mock",
+      filterRelevance: async () => {
+        filterCalled = true;
+        return { rejectedOfferIds: [], warnings: [] };
+      },
+      summarize: async (input) => ({ summary: input.deterministicSummary, warnings: [] }),
+    });
+
+    expect(filterCalled).toBe(false);
+    expect(result.selectedOfferIds).toEqual([wbReal.id]);
+    expect(result.summary).not.toContain("100 ₽");
+  });
+
   it("selects exact guaranteed offers", async () => {
     const result = await analyzeSnapshot(
       snapshot([offer({ id: "test-offer", source: "TEST", price: 1_000, demo: false })]),

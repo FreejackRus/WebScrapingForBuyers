@@ -12,6 +12,6 @@ tags:
 # Configure the pace for one source. ``error_delay`` defaults to twice…
 
 ## Connections
-- [[dot-__init__()_39]] - `rationale_for` [EXTRACTED]
+- [[dot-__init__()_41]] - `rationale_for` [EXTRACTED]
 
 #graphify/rationale #graphify/EXTRACTED #community/Pacer

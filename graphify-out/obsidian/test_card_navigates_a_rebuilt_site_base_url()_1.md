@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Even for a legitimate URL, we navigate our own construction, not theirs._1]] - `rationale_for` [EXTRACTED]
-- [[capture()_5]] - `indirect_call` [INFERRED]
+- [[capture()_3]] - `indirect_call` [INFERRED]
 - [[dns-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/dns-connector/tests/test_serverpy

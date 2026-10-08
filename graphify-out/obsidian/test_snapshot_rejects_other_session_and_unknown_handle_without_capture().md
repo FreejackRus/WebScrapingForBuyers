@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_browser_handoff.py"
 type: "code"
-community: "compare-connector/tests/test_browser_handoff.py"
+community: "json"
 location: "L198"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/compare-connector/tests/test_browser_handoffpy
+  - community/json
 ---
 
 # test_snapshot_rejects_other_session_and_unknown_handle_without_capture()
 
 ## Connections
-- [[capture()_1]] - `contains` [EXTRACTED]
-- [[capture()]] - `indirect_call` [INFERRED]
+- [[capture()_13]] - `contains` [EXTRACTED]
+- [[capture()_12]] - `indirect_call` [INFERRED]
 - [[compare-connectorteststest_browser_handoff.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/compare-connector/tests/test_browser_handoffpy
+#graphify/code #graphify/EXTRACTED #community/json

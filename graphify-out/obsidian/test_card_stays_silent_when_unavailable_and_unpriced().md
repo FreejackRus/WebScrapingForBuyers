@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[No stock and no price is a normal, expected combination (the buy block is…]] - `rationale_for` [EXTRACTED]
-- [[_patch_render()_2]] - `calls` [EXTRACTED]
+- [[_patch_render()_1]] - `calls` [EXTRACTED]
 - [[citilink-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/citilink-connector/tests/test_serverpy

@@ -12,11 +12,11 @@ tags:
 # _RecordingPacer
 
 ## Connections
-- [[dot-__init__()_19]] - `method` [EXTRACTED]
+- [[dot-__init__()_17]] - `method` [EXTRACTED]
 - [[dot-record_refusal()]] - `method` [EXTRACTED]
 - [[dot-record_success()]] - `method` [EXTRACTED]
 - [[dot-rotation_hint()]] - `method` [EXTRACTED]
-- [[dot-wait()_1]] - `method` [EXTRACTED]
+- [[dot-wait()_2]] - `method` [EXTRACTED]
 - [[Stands in for the real Pacer so a test can see what it was told.]] - `rationale_for` [EXTRACTED]
 - [[test_a_refusal_streak_reaches_the_operator()]] - `calls` [EXTRACTED]
 - [[test_a_transient_fault_is_not_counted_as_a_refusal()]] - `calls` [EXTRACTED]

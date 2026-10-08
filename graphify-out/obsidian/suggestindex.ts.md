@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/features/search/suggest/index.ts"
 type: "code"
-community: "useSearchStore"
+community: "offers/ui/index.tsx"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/useSearchStore
+  - community/offers/ui/indextsx
 ---
 
 # suggest/index.ts
@@ -17,4 +17,4 @@ tags:
 - [[useSearchStore]] - `imports` [EXTRACTED]
 - [[useSuggest()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/useSearchStore
+#graphify/code #graphify/EXTRACTED #community/offers/ui/indextsx

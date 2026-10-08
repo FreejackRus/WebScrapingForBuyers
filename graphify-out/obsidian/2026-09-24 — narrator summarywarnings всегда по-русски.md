@@ -1,12 +1,12 @@
 ---
 source_file: "docs/PROJECT_CONTEXT.md"
 type: "document"
-community: "narrationNeedsRussianRetry"
+community: "ollama-analysis-narrator.ts"
 location: "L714"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/narrationNeedsRussianRetry
+  - community/ollama-analysis-narratorts
 ---
 
 # 2026-09-24 — narrator: summary/warnings всегда по-русски
@@ -15,4 +15,4 @@ tags:
 - [[looksStronglyEnglish()]] - `references` [INFERRED]
 - [[Итерации]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/narrationNeedsRussianRetry
+#graphify/document #graphify/EXTRACTED #community/ollama-analysis-narratorts

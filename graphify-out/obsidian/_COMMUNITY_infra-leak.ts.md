@@ -1,21 +1,23 @@
 ---
 type: community
-cohesion: 0.42
-members: 11
+cohesion: 0.32
+members: 13
 ---
 
 # infra-leak.ts
 
-**Cohesion:** 0.42 - moderately connected
-**Members:** 11 nodes
+**Cohesion:** 0.32 - loosely connected
+**Members:** 13 nodes
 
 ## Members
+- [[2026-10-06 — копайлот видит историю диалога]] - document - docs/PROJECT_CONTEXT.md
 - [[INFRA_LEAK_SOURCE]] - code - apps/analysis/src/application/infra-leak.ts
 - [[SOURCE_UNAVAILABLE]] - code - apps/analysis/src/application/infra-leak.ts
 - [[hasInfraLeak()]] - code - apps/analysis/src/application/infra-leak.ts
 - [[infra-leak.test.ts]] - code - apps/analysis/src/application/infra-leak.test.ts
 - [[infra-leak.ts]] - code - apps/analysis/src/application/infra-leak.ts
 - [[leakRe()]] - code - apps/analysis/src/application/infra-leak.ts
+- [[packages_contracts_dist_index_offercitation]] - concept
 - [[publicSourceLine()]] - code - apps/analysis/src/application/infra-leak.ts
 - [[publicSourceLines()]] - code - apps/analysis/src/application/infra-leak.ts
 - [[sanitizeAnalysisResult()]] - code - apps/analysis/src/application/infra-leak.ts
@@ -31,13 +33,18 @@ SORT file.name ASC
 
 ## Connections to other communities
 - 8 edges to [[_COMMUNITY_analyze.ts]]
-- 3 edges to [[_COMMUNITY_packages_contracts_dist_index]]
-- 2 edges to [[_COMMUNITY_analysissrcapp.ts]]
-- 2 edges to [[_COMMUNITY_useAnalysisStore]]
+- 5 edges to [[_COMMUNITY_compare-models.ts]]
+- 1 edge to [[_COMMUNITY_chatuiindex.tsx]]
+- 1 edge to [[_COMMUNITY_workspaceuiindex.tsx]]
+- 1 edge to [[_COMMUNITY_analyze.test.ts]]
+- 1 edge to [[_COMMUNITY_packages_contracts_dist_index]]
+- 1 edge to [[_COMMUNITY_ref_vitest]]
+- 1 edge to [[_COMMUNITY_Итерации]]
+- 1 edge to [[_COMMUNITY_analysisstoreindex.ts]]
 
 ## Top bridge nodes
-- [[infra-leak.ts]] - degree 17, connects to 3 communities
-- [[sanitizeAnalysisResult()]] - degree 8, connects to 2 communities
-- [[hasInfraLeak()]] - degree 8, connects to 1 community
+- [[infra-leak.ts]] - degree 18, connects to 6 communities
+- [[hasInfraLeak()]] - degree 10, connects to 2 communities
+- [[sanitizeAnalysisResult()]] - degree 9, connects to 2 communities
+- [[packages_contracts_dist_index_offercitation]] - degree 3, connects to 2 communities
 - [[infra-leak.test.ts]] - degree 7, connects to 1 community
-- [[publicSourceLines()]] - degree 4, connects to 1 community

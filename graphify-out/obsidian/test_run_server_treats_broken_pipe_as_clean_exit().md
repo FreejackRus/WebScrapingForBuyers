@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[A client vanishing mid-write on stdio is expected, not a failure.]] - `rationale_for` [EXTRACTED]
-- [[run()_1]] - `contains` [EXTRACTED]
+- [[run()_2]] - `contains` [EXTRACTED]
 - [[test_runtime.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_runtimepy

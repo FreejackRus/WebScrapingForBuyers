@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_coverage_floor.py"
 type: "code"
-community: "pathlib"
+community: "subprocess"
 location: "L48"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/subprocess
 ---
 
 # _documented_floor()
@@ -14,6 +14,6 @@ tags:
 ## Connections
 - [[Read the floor out of the CI workflow so this check enforces the same number CI…]] - `rationale_for` [EXTRACTED]
 - [[check_coverage_floor.py]] - `contains` [EXTRACTED]
-- [[main()_31]] - `calls` [EXTRACTED]
+- [[main()_1]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pathlib
+#graphify/code #graphify/EXTRACTED #community/subprocess
