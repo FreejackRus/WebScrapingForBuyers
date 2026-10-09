@@ -103,3 +103,9 @@ describe("applyChatResult", () => {
     expect(setTableFilter).toHaveBeenCalledWith({ selectedOfferIds: ["x", "y"] });
   });
 });
+
+it("starts a clean product search with the server's initial filters", () => {
+  start.mockClear();
+  applyChatResult({summary:"Запускаю поиск",intent:"search",searchQuery:"12400F",tableFilter:{realOnly:true,packaging:"BOX",maxPrice:15000,inStockOnly:true},selectedOfferIds:[],appliedFilters:[],warnings:[]});
+  expect(start).toHaveBeenCalledWith(expect.objectContaining({name:"12400F"}),{realOnly:true,packaging:"BOX",maxPrice:15000,inStockOnly:true});
+});
