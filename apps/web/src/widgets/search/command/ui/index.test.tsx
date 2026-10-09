@@ -7,6 +7,7 @@ const state = vi.hoisted(() => ({
   activity: "idle",
   suggesting: false,
   availableSources: ["Wildberries", "Ozon"],
+  disabledSources: [{name:"DNS",reason:"Временно недоступен"}],
   selectedSources: ["Wildberries", "Ozon"],
   setQuery: vi.fn(),
   setSelectedSources: vi.fn(),
@@ -160,4 +161,9 @@ describe("SearchCommand", () => {
 
 it("offers a labelled product category selector", () => {
   expect(renderToStaticMarkup(<SearchCommand />)).toContain('aria-label="Категория товара"');
+});
+
+it("shows disabled DNS as unavailable and unchecked",()=>{
+ const html=renderToStaticMarkup(<SearchCommand/>);
+ expect(html).toMatch(/source-chip is-disabled/);expect(html).toMatch(/type="checkbox"[^>]*disabled=""[^>]*\/>/);expect(html).toContain("DNS — Временно недоступен");
 });
