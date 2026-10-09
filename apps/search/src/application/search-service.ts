@@ -1,6 +1,6 @@
 import { randomUUID } from "node:crypto";
 
-import type { Offer, Product, SearchEvent, SearchSnapshot, SourceState } from "@peremena/contracts";
+import { offerAvailabilityStatus, type Offer, type Product, type SearchEvent, type SearchSnapshot, type SourceState } from "@peremena/contracts";
 
 import { isUnrequestedConsumablePart } from "../domain/consumable-parts.js";
 import { isOfferInItScope } from "../domain/it-scope.js";
@@ -161,7 +161,8 @@ export class SearchService {
    * «совместимый», and no cartridge chips/toner unless asked for.
    */
   private matchingQuery(snapshot: SearchSnapshot, offers: Offer[]): Offer[] {
-    return offers.flatMap((offer) => {
+    return offers.flatMap((rawOffer) => {
+      const offer = { ...rawOffer, availabilityStatus: offerAvailabilityStatus(rawOffer) };
       if (offer.demo) return [offer];
       if (isUnrequestedConsumablePart(offer, snapshot.query)) return [];
       const assessed = assessOffer(snapshot.product, offer, snapshot.query);

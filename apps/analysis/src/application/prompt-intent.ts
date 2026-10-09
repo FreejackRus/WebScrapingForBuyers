@@ -2,7 +2,10 @@ import type { ChatIntent, Offer, OfferTableFilter, UserRole } from "@peremena/co
 import { hasInfraLeak } from "./infra-leak.js";
 
 const SOURCE_ALIASES = [
-  { pattern: /(?<![a-zа-яё0-9])(wb|вб|вайлдберр\w*|wildberries)(?![a-zа-яё0-9])/i, name: "Wildberries" },
+  { pattern: /(?<![a-zа-яё0-9])(?:netlab|нетлаб)(?![a-zа-яё0-9])/i, name: "NETLAB" },
+  { pattern: /(?<![a-zа-яё0-9])(?:servermall|сервермолл)(?![a-zа-яё0-9])/i, name: "Servermall" },
+  { pattern: /(?<![a-zа-яё0-9])(?:срвтрейд|srvtrade)(?![a-zа-яё0-9])/i, name: "СРВТрейд" },
+  { pattern: /(?<![a-zа-яё0-9])(wb|вб|вайлдберр[а-яёa-z]*|wildberries)(?![a-zа-яё0-9])/i, name: "Wildberries" },
   { pattern: /(?<![a-zа-яё0-9])(ситилинк|citilink)(?![a-zа-яё0-9])/i, name: "Ситилинк" },
   { pattern: /(?<![a-zа-яё0-9])(ozon|озон)(?![a-zа-яё0-9])/i, name: "Ozon" },
   { pattern: /(?<![a-zа-яё0-9])(яндекс|yandex)(?![a-zа-яё0-9])/i, name: "Яндекс Маркет" },
@@ -19,7 +22,9 @@ export function parseMaxPrice(normalized: string): number | undefined {
   const match = normalized.match(/(?:дешевл[еаеейю]|ниже|до|под|меньше|<)\s*(\d+(?:[\s\u00a0]?\d+)*)/);
   const raw = match?.[1];
   if (!raw) return undefined;
-  const value = Number(raw.replace(/[\s\u00a0]/g, ""));
+  const suffix = normalized.slice((match?.index ?? 0) + (match?.[0].length ?? 0));
+  const multiplier = /^\s*(?:тыс|тысяч|k\b|к\b)/iu.test(suffix) ? 1000 : 1;
+  const value = Number(raw.replace(/[\s\u00a0]/g, "")) * multiplier;
   return Number.isFinite(value) ? value : undefined;
 }
 
@@ -85,6 +90,7 @@ export function applyTitleFilterRules(offers: Offer[], rules: TitleFilterRules):
 
 export function extractSearchQuery(prompt: string): string {
   return prompt.trim()
+    .replace(/^(?:привет|здравствуй(?:те)?|добрый\s+(?:день|вечер|утро))[,! .]+/iu, "")
     .replace(/^пожалуйста[,\s]+/iu, "")
     .replace(/^(?:покажи\s+(?:реальн[а-яё]*\s+)?предложени[а-яё]*\s+по|уточни(?:те)?\s+модель|запусти(?:те)?\s+поиск|найди(?:те)?|найти|поищи(?:те)?|ищи|собери\s+предложени[а-яё]*|новый\s+поиск)\s*/iu, "")
     .replace(/^(?:мне|для\s+меня)\s+/iu, "")

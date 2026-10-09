@@ -1,6 +1,15 @@
-import type { ChatIntent, ChatTurn, Offer, SearchSnapshot, UserRole } from "@peremena/contracts";
+import type { ChatIntent, ChatTurn, Offer, OfferTableFilter, Product, SearchSnapshot, UserRole } from "@peremena/contracts";
+
+export interface TrustedNarrationContext {
+  product: Product;
+  status: SearchSnapshot["status"];
+  tableFilter?: OfferTableFilter;
+  selectedOfferIds: string[];
+  offers: Offer[];
+}
 
 export interface AnalysisNarration {
+  trustedContext?: TrustedNarrationContext;
   prompt: string;
   history?: ChatTurn[];
   rankedOffers: Offer[];
@@ -18,6 +27,7 @@ export interface AnalysisNarration {
 
 /** Free-form copilot Q&A (help, greetings, Excel, sources FAQ) — still Price Radar scoped. */
 export interface CopilotChatInput {
+  trustedContext?: TrustedNarrationContext;
   prompt: string;
   history?: ChatTurn[];
   userName?: string;
@@ -33,6 +43,8 @@ export interface CopilotChatInput {
 }
 
 export interface CopilotChatAnswer {
+  offerIds?: string[];
+  clarificationQuestion?: string;
   summary: string;
   warnings: string[];
   /** Optional structured intent from the model (prefer for search). */
@@ -71,7 +83,7 @@ export interface RelevanceFilterResult {
 
 export interface AnalysisNarrator {
   readonly name: string;
-  summarize(input: AnalysisNarration): Promise<{ summary: string; warnings: string[] }>;
+  summarize(input: AnalysisNarration): Promise<{ summary: string; warnings: string[]; offerIds?: string[] }>;
   /** Optional: answer without ranking. Falls back to canned templates if missing. */
   answer?(input: CopilotChatInput): Promise<CopilotChatAnswer>;
   /**

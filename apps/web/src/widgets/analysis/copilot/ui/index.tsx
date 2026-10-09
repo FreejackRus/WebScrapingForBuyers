@@ -30,7 +30,12 @@ export function AnalystPanel() {
     if (!snapshot || busy || disabled) return;
     const text = prompt.trim();
     if (text.length < 2) return;
-    await run(snapshot.id, text);
+    const search = useSearchStore.getState();
+    const selection = useAnalysisStore.getState().analysis?.selectedOfferIds;
+    await run(snapshot.id, text, {
+      ...(search.tableFilter ? { tableFilter: search.tableFilter } : {}),
+      ...(selection ? { selectedOfferIds: selection } : {}),
+    }, () => useSearchStore.getState().snapshot?.id === snapshot.id);
   };
 
   if (!user) return null;

@@ -1,4 +1,4 @@
-import type { Offer, OfferTableFilter } from "@peremena/contracts";
+import { offerAvailabilityStatus, type Offer, type OfferTableFilter } from "@peremena/contracts";
 
 export const matchLabels = {
   exact: "Точное",
@@ -42,6 +42,7 @@ export interface OfferSort {
 export function applyTableFilter(offers: Offer[], filter?: OfferTableFilter) {
   if (!filter) return offers;
   return offers.filter((offer) => {
+    if (filter.packaging && !new RegExp(`(?:^|[^a-z0-9])${filter.packaging}(?=$|[^a-z0-9])`,"iu").test(offer.title)) return false;
     if (filter.realOnly && offer.demo) return false;
     if (filter.sources?.length) {
       const hay = offer.source.toLocaleLowerCase("ru");
@@ -49,7 +50,7 @@ export function applyTableFilter(offers: Offer[], filter?: OfferTableFilter) {
       if (!matched) return false;
     }
     if (filter.maxPrice != null && offer.price > filter.maxPrice) return false;
-    if (filter.inStockOnly && !/^в наличии/i.test(offer.availability.trim())) return false;
+    if (filter.inStockOnly && offerAvailabilityStatus(offer) !== "in_stock") return false;
     if (filter.titleExcludeAny?.length) {
       const hay = offer.title.toLocaleLowerCase("ru");
       if (filter.titleExcludeAny.some((token) => hay.includes(token.toLocaleLowerCase("ru")))) {

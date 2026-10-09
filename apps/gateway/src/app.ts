@@ -171,12 +171,12 @@ export function buildGatewayApp(options: { logger?: boolean; history?: SearchHis
     void pump();
     return reply;
   });
-  app.post<{ Params: { id: string }; Body: { prompt?: string; history?: unknown } }>(
+  app.post<{ Params: { id: string }; Body: { prompt?: string; history?: unknown; context?: unknown } }>(
     "/api/v1/searches/:id/analyze",
     async (request, reply) =>
       proxyJson(analysis, `/searches/${request.params.id}/analyze`, request, reply, userPrompt(request), ANALYSIS_TIMEOUT_MS),
   );
-  app.post<{ Body: { prompt?: string; history?: unknown } }>("/api/v1/copilot/chat", async (request, reply) =>
+  app.post<{ Body: { prompt?: string; history?: unknown; context?: unknown } }>("/api/v1/copilot/chat", async (request, reply) =>
     proxyJson(analysis, "/chat", request, reply, userPrompt(request), ANALYSIS_TIMEOUT_MS),
   );
   app.get<{ Params: { id: string } }>("/api/v1/searches/:id/export.xlsx", async (request, reply) => {
@@ -233,13 +233,15 @@ export function chatHistory(raw: unknown): ChatTurn[] {
     .map((turn) => ({ role: turn.role, text: turn.text.slice(0, 1_000) }));
 }
 
-function userPrompt(request: FastifyRequest<{ Body: { prompt?: string; history?: unknown } }>) {
+function userPrompt(request: FastifyRequest<{ Body: { prompt?: string; history?: unknown; context?: unknown } }>) {
   const prompt = typeof request.body?.prompt === "string" ? request.body.prompt : "";
   const user = request.currentUser;
   const history = chatHistory(request.body?.history);
+  const context = request.body?.context;
   return {
     prompt,
     ...(history.length ? { history } : {}),
+    ...(context && typeof context === "object" && !Array.isArray(context) ? { context } : {}),
     ...(user?.displayName ? { userName: user.displayName } : {}),
     ...(user?.role ? { userRole: user.role } : {}),
     ...(user?.login ? { userLogin: user.login } : {}),

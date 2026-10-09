@@ -1,4 +1,4 @@
-import type { AnalysisResult, ChatSafetyInfo, ChatTurn, OfferCitation } from "@peremena/contracts";
+import type { AnalyzeRequest, AnalysisResult, ChatSafetyInfo, ChatTurn, OfferCitation } from "@peremena/contracts";
 import { create } from "zustand";
 
 import { analysisApi } from "../api";
@@ -20,8 +20,8 @@ interface AnalysisState {
   setPrompt: (prompt: string) => void;
   reset: () => void;
   appendLocal: (userText: string, assistantText: string) => void;
-  run: (searchId: string, promptText?: string) => Promise<AnalysisResult>;
-  chat: (promptText: string) => Promise<AnalysisResult>;
+  run: (searchId: string, promptText?: string, context?: AnalyzeRequest["context"], isCurrent?: () => boolean) => Promise<AnalysisResult | undefined>;
+  chat: (promptText: string, isCurrent?: () => boolean) => Promise<AnalysisResult | undefined>;
 }
 
 const emptyMessages: ChatMessage[] = [];
@@ -45,6 +45,8 @@ function nextId() {
   return `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
 }
 
+let requestGeneration = 0;
+
 export const useAnalysisStore = create<AnalysisState>((set, get) => ({
   prompt: "",
   analysis: undefined,
@@ -52,8 +54,10 @@ export const useAnalysisStore = create<AnalysisState>((set, get) => ({
   busy: false,
   safetyNotice: undefined,
   setPrompt: (prompt) => set({ prompt }),
-  reset: () =>
-    set({ analysis: undefined, messages: emptyMessages, prompt: "", safetyNotice: undefined }),
+  reset: () => {
+    requestGeneration += 1;
+    set({ analysis: undefined, messages: emptyMessages, prompt: "", safetyNotice: undefined, busy: false });
+  },
   appendLocal: (userText, assistantText) =>
     set((current) => ({
       messages: [
@@ -62,9 +66,11 @@ export const useAnalysisStore = create<AnalysisState>((set, get) => ({
         { id: nextId(), role: "assistant", text: assistantText, citations: [] },
       ],
     })),
-  run: async (searchId, promptText) => {
+  run: async (searchId, promptText, context, isCurrent = () => true) => {
     const prompt = (promptText ?? get().prompt).trim();
     if (prompt.length < 2) throw new Error("Пустой запрос");
+    const generation = ++requestGeneration;
+    const current = () => generation === requestGeneration && isCurrent();
     const history = chatHistory(get().messages);
     set((current) => ({
       busy: true,
@@ -72,7 +78,11 @@ export const useAnalysisStore = create<AnalysisState>((set, get) => ({
       messages: [...current.messages, { id: nextId(), role: "user", text: prompt, citations: [] }],
     }));
     try {
-      const analysis = await analysisApi.analyze(searchId, prompt, history);
+      const analysis = await analysisApi.analyze(searchId, prompt, history, context);
+      if (!current()) {
+        if (generation === requestGeneration) set({ busy: false });
+        return undefined;
+      }
       set((current) => ({
         analysis,
         busy: false,
@@ -83,7 +93,7 @@ export const useAnalysisStore = create<AnalysisState>((set, get) => ({
           {
             id: nextId(),
             role: "assistant",
-            text: analysis.summary,
+            text: analysis.clarificationQuestion ?? analysis.summary,
             citations: analysis.citations ?? [],
             ...(analysis.safety ? { safety: analysis.safety } : {}),
           },
@@ -91,6 +101,10 @@ export const useAnalysisStore = create<AnalysisState>((set, get) => ({
       }));
       return analysis;
     } catch {
+      if (!current()) {
+        if (generation === requestGeneration) set({ busy: false });
+        return undefined;
+      }
       set((current) => ({
         busy: false,
         messages: [
@@ -106,9 +120,11 @@ export const useAnalysisStore = create<AnalysisState>((set, get) => ({
       throw new Error("Ошибка анализа");
     }
   },
-  chat: async (promptText) => {
+  chat: async (promptText, isCurrent = () => true) => {
     const prompt = promptText.trim();
     if (prompt.length < 2) throw new Error("Пустой запрос");
+    const generation = ++requestGeneration;
+    const current = () => generation === requestGeneration && isCurrent();
     const history = chatHistory(get().messages);
     set((current) => ({
       busy: true,
@@ -117,6 +133,10 @@ export const useAnalysisStore = create<AnalysisState>((set, get) => ({
     }));
     try {
       const analysis = await analysisApi.chat(prompt, history);
+      if (!current()) {
+        if (generation === requestGeneration) set({ busy: false });
+        return undefined;
+      }
       set((current) => ({
         analysis,
         busy: false,
@@ -127,7 +147,7 @@ export const useAnalysisStore = create<AnalysisState>((set, get) => ({
           {
             id: nextId(),
             role: "assistant",
-            text: analysis.summary,
+            text: analysis.clarificationQuestion ?? analysis.summary,
             citations: analysis.citations ?? [],
             ...(analysis.safety ? { safety: analysis.safety } : {}),
           },
@@ -135,6 +155,10 @@ export const useAnalysisStore = create<AnalysisState>((set, get) => ({
       }));
       return analysis;
     } catch {
+      if (!current()) {
+        if (generation === requestGeneration) set({ busy: false });
+        return undefined;
+      }
       set((current) => ({
         busy: false,
         messages: [

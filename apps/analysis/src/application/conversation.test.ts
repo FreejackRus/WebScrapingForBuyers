@@ -59,7 +59,7 @@ describe("chat next to an open table", () => {
     const result = await analyzeSnapshot(onlyAvito, "понятно а где есть наличие");
     expect(result.tableFilter).toBeUndefined();
     expect(result.intent).toBe("help");
-    expect(result.summary).toMatch(/Подтверждённого наличия нет ни у одного из 1 предложения \(Авито — 1\)/);
+    expect(result.summary).toMatch(/нет подтверждённого наличия/);
     expect(result.summary).not.toMatch(/таблица пустая/);
   });
 
@@ -105,11 +105,11 @@ describe("chat next to an open table", () => {
       },
       answer: async (input) => {
         seen = input;
-        return { summary: "Да, слышу.", warnings: [] };
+        return { summary: "Сравните предложения в таблице.", warnings: [] };
       },
     };
     const result = await analyzeSnapshot(snap, "ты меня обманул", narrator);
-    expect(result.summary).toBe("Да, слышу.");
+    expect(result.summary).toBe("Сравните предложения в таблице.");
     expect(seen?.prompt).toBe("ты меня обманул");
     const facts = seen?.tableFacts?.join("\n") ?? "";
     expect(facts).toMatch(/с подтверждённым наличием — 2/);

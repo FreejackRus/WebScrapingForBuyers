@@ -1,3 +1,6 @@
+import type { OfferAvailabilityStatus } from "./availability.js";
+export { offerAvailabilityStatus, type OfferAvailabilityStatus } from "./availability.js";
+
 export type MatchKind = "exact" | "probable" | "analog" | "doubtful";
 export type ProductCondition = "new" | "refurbished" | "used";
 export type SourceStatus = "pending" | "loading" | "done" | "error";
@@ -23,6 +26,8 @@ export interface Offer {
   priceCondition: string;
   currency: "RUB";
   availability: string;
+  /** Source-reported availability; optional for older snapshots. */
+  availabilityStatus?: OfferAvailabilityStatus;
   delivery?: string;
   warranty?: string;
   condition: ProductCondition;
@@ -83,10 +88,11 @@ export interface OfferCitation {
 }
 
 export interface OfferTableFilter {
+  packaging?: "BOX" | "OEM";
   realOnly?: boolean;
   sources?: string[];
   maxPrice?: number;
-  /** Keep only rows whose availability is a confirmed «В наличии». */
+  /** Keep only rows with source-reported in_stock status (legacy text supported). */
   inStockOnly?: boolean;
   selectedOfferIds?: string[];
   /** Keep rows whose title contains at least one of these tokens (lowercase match). */
@@ -117,7 +123,14 @@ export interface ChatTurn {
   text: string;
 }
 
+export interface AnalysisContext {
+  tableFilter?: OfferTableFilter;
+  selectedOfferIds?: string[];
+}
+
 export interface AnalyzeRequest {
+  /** Untrusted selection hints; facts are resolved from the server snapshot. */
+  context?: AnalysisContext;
   prompt: string;
   /** Last turns before `prompt` so «было же наличие» has something to refer to. Untrusted. */
   history?: ChatTurn[];
@@ -136,6 +149,9 @@ export interface ChatSafetyInfo {
 }
 
 export interface AnalysisResult {
+  clarificationQuestion?: string;
+  /** Snapshot this answer belongs to; prevents applying stale responses. */
+  searchId?: string;
   summary: string;
   selectedOfferIds: string[];
   appliedFilters: string[];

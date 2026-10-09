@@ -1,3 +1,8 @@
+import { offerAvailabilityStatus, type AnalysisContext } from "@peremena/contracts";
+import { routeProcurementDialogue, filterOffers } from "./procurement-dialogue.js";
+import { groundedNarrator } from "./grounded-narrator.js";
+import { NarrationError } from "../domain/narration-error.js";
+import { validateGroundedNarration } from "./grounded-narration.js";
 import type {
   AnalysisResult,
   ChatIntent,
@@ -35,6 +40,7 @@ import {
 import { publicSourceLines, sanitizeAnalysisResult } from "./infra-leak.js";
 
 export interface AnalyzeOptions {
+  context?: AnalysisContext;
   /** Earlier turns of this chat, oldest first; context for the model only, never facts. */
   history?: ChatTurn[];
   userName?: string;
@@ -101,7 +107,7 @@ function tableFacts(offers: Offer[]): string[] {
   const review = offers.filter((offer) => offer.assessment?.group === "needs_review");
   const primary = offers.filter((offer) => offer.assessment?.group !== "needs_review");
   const real = primary.filter((offer) => !offer.demo && offer.priceAnomaly !== "too_low");
-  const inStock = real.filter((offer) => isInStock(offer.availability));
+  const inStock = real.filter((offer) => offerAvailabilityStatus(offer) === "in_stock");
   const unknown = real.filter((offer) => /неизвестн|уточн/i.test(offer.availability));
   const cheapest = [...real].sort((a, b) => a.price - b.price)[0];
   const cheapestInStock = [...inStock].sort((a, b) => a.price - b.price)[0];
@@ -119,7 +125,7 @@ function tableFacts(offers: Offer[]): string[] {
   for (const offer of real) {
     const row = bySource.get(offer.source) ?? { total: 0, stock: 0 };
     row.total += 1;
-    if (isInStock(offer.availability)) row.stock += 1;
+    if (offerAvailabilityStatus(offer) === "in_stock") row.stock += 1;
     bySource.set(offer.source, row);
   }
   facts.push(
@@ -262,7 +268,13 @@ export async function analyzeSnapshot(
   narrator?: AnalysisNarrator,
   options: AnalyzeOptions = {},
 ): Promise<AnalysisResult> {
-  return sanitizeAnalysisResult(await analyzeSnapshotRaw(snapshot, prompt, narrator, options), options.userRole);
+  if (detectSafetyCategory(prompt.toLocaleLowerCase("ru"))) return sanitizeAnalysisResult(await analyzeSnapshotRaw(snapshot, prompt, undefined, options), options.userRole);
+  const command = routeProcurementDialogue(snapshot, prompt, options.context);
+  if (command) return sanitizeAnalysisResult({...command, searchId: snapshot.id}, options.userRole);
+  const visible = options.context?.tableFilter ? filterOffers(snapshot.offers, options.context.tableFilter) : snapshot.offers;
+  const safe = groundedNarrator(narrator, {product: snapshot.product, status:snapshot.status, offers:visible, selectedOfferIds:options.context?.selectedOfferIds ?? [], ...(options.context?.tableFilter ? {tableFilter:options.context.tableFilter} : {})});
+  const result = await analyzeSnapshotRaw({...snapshot, offers:visible}, prompt, safe, options);
+  return sanitizeAnalysisResult({...result, searchId:snapshot.id}, options.userRole);
 }
 
 async function analyzeSnapshotRaw(
@@ -361,7 +373,9 @@ async function analyzeSnapshotRaw(
       });
       return {
         ...base,
-        summary: narrated.summary,
+        summary: narrated.clarificationQuestion ?? narrated.summary,
+        ...(narrated.clarificationQuestion ? {clarificationQuestion:narrated.clarificationQuestion} : {}),
+        citations: incoming.filter(o=>narrated.offerIds?.includes(o.id)).map(citationOf),
         warnings:
           metaIntent === "help" && !isHelpRequest(normalized)
             ? narrated.warnings
@@ -371,58 +385,28 @@ async function analyzeSnapshotRaw(
     } catch (error) {
       return {
         ...base,
+        ...(metaIntent === "help" && !isHelpRequest(normalized) ? {
+          summary: "Я вижу текущие предложения и могу объяснить выбор или уточнить условия. " + tableFacts(incoming).slice(0, 2).join(" "),
+        } : {}),
         warnings: [
-          ...meta.warnings,
-          `AI-ответ недоступен: ${narrationFailureMessage(error)}.`,
+          ...(metaIntent === "help" && !isHelpRequest(normalized) ? [] : meta.warnings),
+          `Объяснение модели не удалось проверить: ${narrationFailureMessage(error)}. Показаны сведения из таблицы.`,
         ],
         provider: "Справочный fallback Price Radar",
       };
     }
   }
 
-  // Search intent: prefer model searchQuery when Ollama answers.
+  // Clear search commands already returned from the deterministic router.
+  // Remaining search-like language is ambiguous and must preserve the table.
   if (intent === "search") {
-    let query = searchQuery;
-    let summary = withGreeting(
-      `Запускаю уточнение модели «${query}». Выберите карточку слева, чтобы собрать предложения.`,
-      userName,
-    );
-    let warnings: string[] = [];
-    let provider = "Поиск Price Radar";
+    const question = "Уточнить текущий товар или найти другую модель? Напишите модель либо нужное отличие.";
     if (narrator?.answer) {
       try {
-        const narrated = await narrator.answer({
-        ...historyOf(options),
-          prompt,
-          intentHint: "search",
-          snapshotQuery: snapshot.query,
-          productName: snapshot.product.name,
-          ...(userName ? { userName } : {}),
-          ...(addressAs ? { addressAs } : {}),
-          ...(userRole ? { userRole } : {}),
-        });
-        const resolved = resolveChatIntent("search", narrated, searchQuery);
-        if (resolved.searchQuery) query = resolved.searchQuery;
-        summary = narrated.summary;
-        warnings = narrated.warnings;
-        provider = narrator.name;
-      } catch (error) {
-        warnings = [
-          `AI-ответ недоступен: ${narrationFailureMessage(error)}.`,
-        ];
-        provider = "Справочный fallback Price Radar";
-      }
+        await narrator.answer({...historyOf(options),prompt,intentHint:"search",snapshotQuery:snapshot.query,productName:snapshot.product.name});
+      } catch { /* Clarification remains available when the model is unavailable. */ }
     }
-    return {
-      summary: withGreeting(`Запускаю поиск «${query}». Предложения появятся по мере ответа поставщиков.`, userName),
-      selectedOfferIds: [],
-      appliedFilters: [`Новый поиск по запросу «${query}».`],
-      warnings,
-      citations: [],
-      intent: "search",
-      searchQuery: query,
-      provider,
-    };
+    return {summary:question,clarificationQuestion:question,intent:"help",selectedOfferIds:[],appliedFilters:[],warnings:[],citations:[]};
   }
 
   const filters: string[] = [
@@ -466,7 +450,7 @@ async function analyzeSnapshotRaw(
     filters.push(`Только источники ${sources.join(", ")} (${offers.length} из ${before}).`);
   }
   const inStockOnly = wantsInStock(normalized);
-  if (inStockOnly && !offers.some((offer) => isInStock(offer.availability))) {
+  if (inStockOnly && !offers.some((offer) => offerAvailabilityStatus(offer) === "in_stock")) {
     // Filtering to zero would blank the table and read like «nothing exists».
     // Say why instead and leave the table as it is.
     const bySource = new Map<string, number>();
@@ -489,7 +473,7 @@ async function analyzeSnapshotRaw(
   if (inStockOnly) {
     const before = offers.length;
     const unknown = offers.filter((offer) => /неизвестн|уточн/i.test(offer.availability)).length;
-    offers = offers.filter((offer) => isInStock(offer.availability));
+    offers = offers.filter((offer) => offerAvailabilityStatus(offer) === "in_stock");
     filters.push(`Только с подтверждённым наличием (${offers.length} из ${before}).`);
     if (unknown > 0) {
       warnings.push(
@@ -656,7 +640,9 @@ export async function answerCopilot(
   narrator?: AnalysisNarrator,
   options: AnalyzeOptions = {},
 ): Promise<AnalysisResult> {
-  return sanitizeAnalysisResult(await answerCopilotRaw(prompt, narrator, options), options.userRole);
+  const blocked = detectSafetyCategory(prompt.toLocaleLowerCase("ru"));
+  const command = blocked ? undefined : routeProcurementDialogue(undefined, prompt);
+  return sanitizeAnalysisResult(command ?? await answerCopilotRaw(prompt, narrator, options), options.userRole);
 }
 
 async function answerCopilotRaw(
@@ -753,6 +739,12 @@ async function answerCopilotRaw(
         ...(addressAs ? { addressAs } : {}),
         ...(userRole ? { userRole } : {}),
       });
+      if (narrated.clarificationQuestion || narrated.intent === "search") {
+        const question = "Какую модель нужно найти? Укажите её название или артикул.";
+        return {summary:question,clarificationQuestion:question,intent:"help",selectedOfferIds:[],citations:[],appliedFilters:[],warnings:[]};
+      }
+      // Standalone replies cannot assert offer facts: no server snapshot exists.
+      if (!isHelpRequest(normalized) && !validateGroundedNarration(narrated.summary, narrated.offerIds, [])) throw new NarrationError("invalid_response");
       const resolved = resolveChatIntent(heuristicIntent, narrated, searchQuery);
       return {
         summary: resolved.intent === "search" && resolved.searchQuery
@@ -773,20 +765,9 @@ async function answerCopilotRaw(
         provider: narrator.name,
       };
     } catch (error) {
-      if (heuristicIntent === "search" && searchQuery.length >= 2) {
-        return {
-          summary: withGreeting(
-            `Запускаю поиск «${searchQuery}». Предложения появятся по мере ответа поставщиков.`,
-            userName,
-          ),
-          selectedOfferIds: [],
-          appliedFilters: [`Новый поиск по запросу «${searchQuery}».`],
-          warnings: [`AI-ответ недоступен: ${narrationFailureMessage(error)}. Запрос извлечён из текста.`],
-          citations: [],
-          intent: "search",
-          searchQuery,
-          provider: "Справочный fallback Price Radar",
-        };
+      if (heuristicIntent === "search") {
+        const question="Какую модель нужно найти? Укажите её название или артикул.";
+        return {summary:question,clarificationQuestion:question,intent:"help",selectedOfferIds:[],citations:[],appliedFilters:[],warnings:[]};
       }
       if (standaloneMeta) {
         const meta = cannedMetaAnswer({
@@ -822,20 +803,9 @@ async function answerCopilotRaw(
     }
   }
 
-  if (heuristicIntent === "search" && searchQuery.length >= 2) {
-    return {
-      summary: withGreeting(
-        `Запускаю поиск «${searchQuery}». Предложения появятся по мере ответа поставщиков.`,
-        userName,
-      ),
-      selectedOfferIds: [],
-      appliedFilters: [`Новый поиск по запросу «${searchQuery}».`],
-      warnings: ["Модель не подключена — запрос определён по вашему сообщению."],
-      citations: [],
-      intent: "search",
-      searchQuery,
-      provider: "Справочный ответ Price Radar",
-    };
+  if (heuristicIntent === "search") {
+    const question="Какую модель нужно найти? Укажите её название или артикул.";
+    return {summary:question,clarificationQuestion:question,intent:"help",selectedOfferIds:[],citations:[],appliedFilters:[],warnings:[]};
   }
 
   const chatMetaIntent = asMetaIntent(heuristicIntent);

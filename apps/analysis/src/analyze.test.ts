@@ -223,11 +223,11 @@ describe("analyzeSnapshot", () => {
         name: "mock",
         summarize: async (input) => {
           seen = input;
-          return { summary: "объяснение по таблице", warnings: [] };
+          return { summary: "Сравните предложения в таблице.", warnings: [] };
         },
       },
     );
-    expect(result.summary).toBe("объяснение по таблице");
+    expect(result.summary).toBe("Сравните предложения в таблице.");
     expect(seen?.rankedOffers.map((item) => item.id)).toEqual(["wb-real", "citilink-real"]);
     expect(seen?.selectedOfferIds).toEqual(["wb-real", "citilink-real"]);
     expect(seen?.rankedOffers.every((item) => item.demo === false && item.url.length > 0)).toBe(true);
@@ -252,7 +252,6 @@ describe("analyzeSnapshot", () => {
       realOnly: true,
       sources: ["Wildberries"],
       maxPrice: 6000,
-      selectedOfferIds: ["wb-cheap"],
     });
     expect(result.citations?.[0]).toMatchObject({
       offerId: "wb-cheap",
@@ -271,7 +270,6 @@ describe("analyzeSnapshot", () => {
     expect(result.tableFilter).toEqual({
       realOnly: true,
       sources: ["Wildberries"],
-      selectedOfferIds: ["wb-real"],
     });
   });
 
@@ -390,7 +388,7 @@ describe("analyzeSnapshot", () => {
       { userName: "Михаил", userRole: "manager" },
     );
     expect(result.provider).toBe("Закрытый контур ПЕРЕМЕНА");
-    expect(result.summary).toBe("Михаил, я из модели — копайлот Price Radar.");
+    expect(result.summary).toMatch(/копайлот закупок/);
     expect(seen?.prompt).toBe("Кто ты?");
     expect(seen?.addressAs).toBe("Михаил");
     expect(seen?.intentHint).toBe("help");
@@ -446,7 +444,7 @@ describe("analyzeSnapshot", () => {
     expect(kept).toHaveLength(1);
   });
 
-  it("applies LLM rejectedOfferIds after deterministic soft-drop", async () => {
+  it("keeps deterministic assessment authoritative over model rejection", async () => {
     const relevant = offer({
       id: "mx",
       source: "Wildberries",
@@ -462,6 +460,7 @@ describe("analyzeSnapshot", () => {
       demo: false,
       match: "probable",
       title: "Чехол для Logitech MX Master 3S",
+      assessment: {group:"needs_review", reasons:["Требует уточнения"]},
     });
     let seen: RelevanceFilterInput | undefined;
     const result = await analyzeSnapshot(
@@ -477,8 +476,8 @@ describe("analyzeSnapshot", () => {
       },
     );
     expect(result.selectedOfferIds).toEqual(["mx"]);
-    expect(result.appliedFilters.some((item) => /убраны предложения с неподходящим названием/i.test(item))).toBe(true);
-    expect(seen?.candidates.some((row) => row.id === "case")).toBe(true);
+    expect(result.warnings.join(" ")).toMatch(/требует уточнения/);
+    expect(seen).toBeUndefined();
   });
 
   it("falls back to deterministic selection when LLM relevance filter fails", async () => {
@@ -494,7 +493,7 @@ describe("analyzeSnapshot", () => {
       },
     );
     expect(result.selectedOfferIds).toEqual(["wb-real"]);
-    expect(result.warnings.some((item) => /проверка соответствия временно недоступна/i.test(item))).toBe(
+    expect(result.warnings.some((item) => /AI-анализ недоступен/i.test(item))).toBe(
       true,
     );
   });
@@ -627,7 +626,7 @@ describe("analyzeSnapshot", () => {
       },
       { userName: "Михаил", userRole: "manager" },
     );
-    expect(result.summary).toBe("Михаил, лучший вариант по цене — WB.");
+    expect(result.summary).toMatch(/^Михаил, лучший вариант: Wildberries/);
     expect(seen?.addressAs).toBe("Михаил");
     expect(seen?.userName).toBe("Михаил");
     expect(seen?.userRole).toBe("manager");
@@ -705,7 +704,7 @@ describe("answerCopilot", () => {
     expect(seen?.addressAs).toBe("Администратор");
   });
 
-  it("prefers model searchQuery for find-style prompts", async () => {
+  it("uses cleaned explicit search command without asking the model", async () => {
     const result = await answerCopilot(
       "Найди мышь logitech g102",
       {
@@ -721,8 +720,8 @@ describe("answerCopilot", () => {
       { userName: "Михаил" },
     );
     expect(result.intent).toBe("search");
-    expect(result.searchQuery).toBe("Logitech G102");
-    expect(result.summary).toMatch(/G102/);
+    expect(result.searchQuery).toBe("мышь logitech g102");
+    expect(result.summary).toMatch(/G102/i);
   });
 
   it("does not invent offer facts or call the model without a search snapshot", async () => {
@@ -865,14 +864,15 @@ describe("answerCopilot", () => {
 });
 
 describe("toExplanationRow", () => {
-  it("keeps source, price, seller and url for the model without demo flag", () => {
+  it("keeps source facts without model-generated links or demo flag", () => {
     expect(toExplanationRow(wbReal, true)).toMatchObject({
       source: "Wildberries",
       price: 8_990,
       seller: "Marketplace",
-      url: "https://www.wildberries.ru/catalog/123",
+      availabilityStatus: "in_stock",
       selected: true,
     });
     expect(toExplanationRow(wbReal, true)).not.toHaveProperty("demo");
+    expect(toExplanationRow(wbReal,true)).not.toHaveProperty("url");
   });
 });

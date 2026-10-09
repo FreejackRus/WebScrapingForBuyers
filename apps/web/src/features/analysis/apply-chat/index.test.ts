@@ -62,6 +62,21 @@ describe("applyChatResult", () => {
     expect(setTableFilter).not.toHaveBeenCalled();
   });
 
+  for (const intent of ["explain", "blocked", "search"] as const) {
+    it(`preserves active filters for ${intent} without an actual new search`, () => {
+      applyChatResult({ summary: "Нужен ответ", selectedOfferIds: [], appliedFilters: [], warnings: [], intent });
+      expect(setTableFilter).not.toHaveBeenCalled();
+      expect(start).not.toHaveBeenCalled();
+    });
+  }
+
+  it("preserves results when the server asks for clarification", () => {
+    applyChatResult({ summary: "Уточните", clarificationQuestion: "Новый товар?", selectedOfferIds: [], appliedFilters: [], warnings: [], intent: "search", searchQuery: "13400F" });
+    expect(setTableFilter).not.toHaveBeenCalled();
+    expect(start).not.toHaveBeenCalled();
+    expect(setQuery).not.toHaveBeenCalled();
+  });
+
   it("applies tableFilter on filter intent", () => {
     applyChatResult({
       summary: "Оставлены выбранные строки",
@@ -72,7 +87,7 @@ describe("applyChatResult", () => {
       intent: "filter",
       tableFilter: { realOnly: true },
     });
-    expect(setTableFilter).toHaveBeenCalledWith({ realOnly: true, selectedOfferIds: ["a"] });
+    expect(setTableFilter).toHaveBeenCalledWith({ realOnly: true });
     expect(setQuery).not.toHaveBeenCalled();
   });
 

@@ -203,3 +203,33 @@ describe("SearchService offer assessment", () => {
     expect(service.get(cached.id)!.offers[0]?.assessment).toEqual(freshAssessment);
   });
 });
+
+
+describe("SearchService availability contract", () => {
+  it.each([
+    ["склад: более 50 шт.", "in_stock"],
+    ["удалённый склад: 1–20 шт.; в пути: более 50 шт.", "in_stock"],
+    ["в пути: более 50 шт.", "on_order"],
+    ["Под заказ", "on_order"],
+    ["Нет в наличии", "out_of_stock"],
+    ["Уточнить наличие", "unknown"],
+  ])("normalizes %s in snapshots, SSE and fallback results", async (availability, expected) => {
+    let fail = false;
+    const service = new SearchService([source("A", async () => {
+      if (fail) throw new Error("unavailable");
+      return [{ ...offer("A"), availability }];
+    })]);
+    for (const fallback of [false, true]) {
+      fail = fallback;
+      const snapshot = service.start("Logitech K380", product);
+      const events: Offer[] = [];
+      const off = service.subscribe(snapshot.id, event => {
+        if (event.type === "offers") events.push(...event.data);
+      });
+      await finish(service, snapshot.id);
+      off();
+      expect(service.get(snapshot.id)!.offers[0]).toHaveProperty("availabilityStatus", expected);
+      expect(events[0]).toHaveProperty("availabilityStatus", expected);
+    }
+  });
+});

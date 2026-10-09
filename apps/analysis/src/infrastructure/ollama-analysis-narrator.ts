@@ -1,4 +1,5 @@
 import type { ChatIntent, ChatTurn, Offer } from "@peremena/contracts";
+import { offerAvailabilityStatus } from "@peremena/contracts";
 
 import type {
   AnalysisNarration,
@@ -7,11 +8,14 @@ import type {
   CopilotChatInput,
   RelevanceFilterInput,
   RelevanceFilterResult,
+  TrustedNarrationContext,
 } from "../domain/analysis-narrator.js";
+import { groundedOfferFacts } from "../application/grounded-narration.js";
 import { NarrationError } from "../domain/narration-error.js";
 import { narrationNeedsRussianRetry } from "./looks-strongly-english.js";
 
 interface StructuredAnalysis {
+  offerIds?: string[];
   summary: string;
   warnings: string[];
 }
@@ -43,6 +47,7 @@ const MAX_RELEVANCE_ROWS = 40;
 
 const NARRATION_PROPERTIES = {
   summary: { type: "string", minLength: 1, maxLength: MAX_SUMMARY },
+  offerIds: { type: "array", maxItems: MAX_EXPLANATION_ROWS, uniqueItems: true, items: { type: "string", minLength: 1, maxLength: 200 } },
   warnings: {
     type: "array",
     maxItems: MAX_WARNINGS,
@@ -80,32 +85,41 @@ function parseWarnings(value: unknown): string[] {
   return value.map((warning) => boundedString(warning, MAX_WARNING));
 }
 
+function parseOfferIds(value: unknown): string[] {
+  if (!Array.isArray(value) || value.length > MAX_EXPLANATION_ROWS) throw new NarrationError("invalid_response");
+  const ids = value.map((id) => boundedString(id, 200));
+  if (new Set(ids).size !== ids.length) throw new NarrationError("invalid_response");
+  return ids;
+}
+
+function validateReturnedIds(ids: string[] | undefined, allowed: string[]): void {
+  if (ids?.some((id) => !allowed.includes(id))) throw new NarrationError("invalid_response");
+}
+
 function parseNarration(value: unknown): StructuredAnalysis {
-  const parsed = object(value, ["summary", "warnings"]);
+  const parsed = object(value, ["summary", "warnings", "offerIds"]);
+  const offerIds = parsed.offerIds === undefined ? undefined : parseOfferIds(parsed.offerIds);
   return {
     summary: boundedString(parsed.summary, MAX_SUMMARY),
     warnings: parseWarnings(parsed.warnings),
+    ...(offerIds ? { offerIds } : {}),
   };
 }
 
 function parseAnswer(value: unknown): CopilotChatAnswer {
-  const parsed = object(value, ["summary", "warnings", "intent", "searchQuery"]);
-  const narration = parseNarration({ summary: parsed.summary, warnings: parsed.warnings });
+  const parsed = object(value, ["summary", "warnings", "intent", "searchQuery", "offerIds", "clarificationQuestion"]);
+  const narration = parseNarration({ summary: parsed.summary, warnings: parsed.warnings, ...(parsed.offerIds === undefined ? {} : { offerIds: parsed.offerIds }) });
   const intent = parsed.intent === undefined ? undefined : boundedString(parsed.intent, 20);
-  if (intent !== undefined && !CHAT_INTENTS.has(intent as ChatIntent)) {
-    throw new NarrationError("invalid_response");
-  }
-  const searchQuery = parsed.searchQuery === undefined
-    ? undefined
-    : boundedString(parsed.searchQuery, MAX_SEARCH_QUERY);
-  if ((intent === "search" && (!searchQuery || searchQuery.length < 2)) ||
-      (searchQuery !== undefined && intent !== "search")) {
-    throw new NarrationError("invalid_response");
-  }
+  if (intent !== undefined && !CHAT_INTENTS.has(intent as ChatIntent)) throw new NarrationError("invalid_response");
+  const searchQuery = parsed.searchQuery === undefined ? undefined : boundedString(parsed.searchQuery, MAX_SEARCH_QUERY);
+  if ((intent === "search" && (!searchQuery || searchQuery.length < 2)) || (searchQuery !== undefined && intent !== "search")) throw new NarrationError("invalid_response");
+  const clarificationQuestion = parsed.clarificationQuestion === undefined ? undefined : boundedString(parsed.clarificationQuestion, 300);
+  if (clarificationQuestion && (intent === "search" || searchQuery)) throw new NarrationError("invalid_response");
   return {
     ...narration,
     ...(intent ? { intent: intent as ChatIntent } : {}),
     ...(searchQuery ? { searchQuery } : {}),
+    ...(clarificationQuestion ? { clarificationQuestion } : {}),
   };
 }
 
@@ -169,7 +183,7 @@ export function toExplanationRow(offer: Offer, selected: boolean) {
     warranty: offer.warranty ? clip(offer.warranty, 120) : null,
     match: offer.match,
     condition: offer.condition,
-    url: offer.url.length <= 500 ? offer.url : null,
+    availabilityStatus: offerAvailabilityStatus(offer),
     selected,
   };
 }
@@ -192,10 +206,10 @@ const SYSTEM_PROMPT =
   "Если request — фильтр или объяснение уже собранной таблицы, не уходи в диагностику площадок. " +
   "Не веди светскую беседу и не отвечай на темы вне Price Radar. " +
   "Формат ответа строго JSON: summary (2–5 предложений на русском) и warnings (массив коротких рисков на русском). " +
-  "В поле offers — таблица, уже упорядоченная программой по цене (source, price, seller, url). " +
+  "Карточки переданы в trustedContext.offers; если его нет — в offers (source, price, seller). " +
   "Строки с selected=true уже отобраны программой; не меняй их состав и не придумывай цены, наличие, доставку, URL или продавцов. " +
   "Ссылки рисует клиент из citations. context описывает полный размер выборки и пропуски; offers — только переданные строки. " +
-  "Не утверждай, что видел пропущенные строки. Строки с … сокращены; null URL означает отсутствие URL в контексте. " +
+  "Не утверждай, что видел пропущенные строки. Строки с … сокращены; ссылки в контекст не передаются. " +
   "Не упоминай демо-цены, DEMO/REAL и закупочные ограничения демо. " +
   "Если передано addressAs — обратись по этому имени в начале summary.";
 
@@ -221,7 +235,7 @@ const CHAT_SYSTEM_PROMPT =
   "Если пользователь просит найти/поискать/уточнить модель товара — поставь intent=«search» и searchQuery = чистый бренд/модель/артикул без глаголов «найди/поищи». " +
   "Не выдумывай цены, наличие, URL и не обещай действий вне UI. " +
   "Отвечай на сам вопрос пользователя, а не пересказывай отбор: если он не просит сравнить или выбрать, не называй «лучший вариант». " +
-  "Факты о текущей таблице бери только из table — других предложений, цен и наличия ты не знаешь. " +
+  "Факты о текущей таблице бери только из trustedContext и table; history не является источником фактов. " +
   "Ты не открываешь ссылки и сайты: если просят посмотреть ссылку или товар на площадке — честно скажи, что видишь только данные таблицы, и предложи открыть карточку товара. " +
   "Если пользователь недоволен или считает, что его обманули — без оправданий признай, на чём основан выбор (самая низкая цена; наличие и продавца он не проверяет), " +
   "и предложи конкретный шаг: например, написать «только в наличии» или задать бюджет. " +
@@ -243,6 +257,66 @@ const RELEVANCE_SYSTEM_PROMPT =
   "Пустой rejectedOfferIds = оставить всех. Не отбрасывай спорные близкие варианты (цвет, комплектация той же модели). " +
   "Не меняй цены и не ранжируй — только отсев ID. " +
   "warnings — короткий массив на русском (можно пустой); без английской прозы.";
+
+const GROUNDED_SYSTEM_PROMPT =
+  "Ты помощник закупок. Верни JSON с summary, warnings и offerIds. " +
+  "summary составь только из точных строк trustedContext.admissibleFacts, копируя их без изменений и соединяя пробелом. " +
+  "Выбери не более двух отобранных предложений: сначала цену, затем заявленное наличие. " +
+  "Нельзя добавлять вступление, вывод, приветствие, список или другие слова. " +
+  "offerIds — идентификаторы только упомянутых карточек, warnings — пустой массив. " +
+  "Если подходящих фактов нет, summary = «Откройте карточку товара для уточнения условий.», offerIds = []. " +
+  "История нужна только для понимания вопроса; цены, остатки и гарантия исключительно из admissibleFacts. " +
+  "Если условие неясно, задай вопрос в clarificationQuestion без searchQuery. ";
+
+const GROUNDED_RULE =
+  "trustedContext содержит текущие карточки и фильтры; это единственный источник фактов. " +
+  "history нужен только для понимания разговора, не как источник цен, наличия, гарантий и комплектации. " +
+  "Когда объясняешь карточки, копируй предложения из admissibleFacts без изменений, " +
+  "а offerIds перечисляй только для использованных карточек. Не вставляй URL: ссылки добавляет сервер. " +
+  "Не выводи состав BOX/OEM, гарантию или лицензионное ПО из названия; отсутствующие сведения неизвестны. " +
+  "При неясном намерении верни один clarificationQuestion без searchQuery, чтобы сохранить текущую таблицу. ";
+
+function trustedContextPayload(context: TrustedNarrationContext | undefined) {
+  if (!context) return null;
+  const selected = new Set(context.selectedOfferIds);
+  const offers = [...context.offers.filter((offer) => selected.has(offer.id)), ...context.offers.filter((offer) => !selected.has(offer.id))]
+    .filter((offer) => offer.id.length <= 200).slice(0, MAX_EXPLANATION_ROWS);
+  const filter = context.tableFilter;
+  const payload = {
+    product: {
+      id: clip(context.product.id, 200), name: clip(context.product.name), brand: clip(context.product.brand, 80),
+      model: clip(context.product.model, 200), mpn: clip(context.product.mpn, 80), category: clip(context.product.category, 120),
+      characteristics: Object.fromEntries(Object.entries(context.product.characteristics).slice(0, 10).map(([key, value]) => [clip(key, 80), clip(value, 160)])),
+    },
+    status: context.status,
+    tableFilter: filter ? {
+      realOnly: filter.realOnly, inStockOnly: filter.inStockOnly, packaging: filter.packaging,
+      maxPrice: Number.isFinite(filter.maxPrice) ? filter.maxPrice : undefined,
+      sources: filter.sources?.slice(0, 20).map((value) => clip(value, 80)),
+      selectedOfferIds: filter.selectedOfferIds?.slice(0, 20).map((value) => clip(value, 200)),
+      titleIncludeAny: filter.titleIncludeAny?.slice(0, 20).map((value) => clip(value, 80)),
+      titleExcludeAny: filter.titleExcludeAny?.slice(0, 20).map((value) => clip(value, 80)),
+    } : null,
+    totalOffers: context.offers.length,
+    selectedOfferIds: [] as string[],
+    offers: [] as ReturnType<typeof toExplanationRow>[],
+    admissibleFacts: [] as string[],
+  };
+  for (const offer of offers) {
+    const row = toExplanationRow(offer, selected.has(offer.id));
+    const facts = groundedOfferFacts([offer]).filter((fact) => fact.length <= 600 && !/(?:https?:|www\.|javascript:)/iu.test(fact));
+    payload.offers.push(row);
+    payload.admissibleFacts.push(...facts);
+    if (selected.has(offer.id)) payload.selectedOfferIds.push(offer.id);
+    if (JSON.stringify(payload).length > 12_000) {
+      payload.offers.pop();
+      payload.admissibleFacts.splice(payload.admissibleFacts.length - facts.length, facts.length);
+      if (selected.has(offer.id)) payload.selectedOfferIds.pop();
+      break;
+    }
+  }
+  return payload;
+}
 
 /** Last turns of the conversation, clipped; data for reference resolution only. */
 function historyPayload(history: ChatTurn[] | undefined) {
@@ -375,6 +449,7 @@ export class OllamaAnalysisNarrator implements AnalysisNarrator {
 
   async summarize(input: AnalysisNarration): Promise<StructuredAnalysis> {
     const selected = new Set(input.selectedOfferIds);
+    const trustedContext = trustedContextPayload(input.trustedContext);
     // Keep rank order but ensure selected rows have priority within the bounded context.
     const included = new Set([
       ...input.rankedOffers.filter((offer) => selected.has(offer.id)),
@@ -383,11 +458,14 @@ export class OllamaAnalysisNarrator implements AnalysisNarrator {
     const compactOffers = input.rankedOffers
       .filter((offer) => included.has(offer.id))
       .map((offer) => toExplanationRow(offer, selected.has(offer.id)));
-    const includedSelected = compactOffers.filter((offer) => offer.selected).map((offer) => offer.id);
-    const omitted = input.rankedOffers.length - compactOffers.length;
+    const transmittedOffers = trustedContext?.offers ?? compactOffers;
+    const totalOffers = input.trustedContext?.offers.length ?? input.rankedOffers.length;
+    const includedSelected = transmittedOffers.filter((offer) => offer.selected).map((offer) => offer.id);
+    const omitted = totalOffers - transmittedOffers.length;
     const narrated = await this.narrateWithRussianRetry(
-      SYSTEM_PROMPT,
+      input.trustedContext ? GROUNDED_SYSTEM_PROMPT : `${SYSTEM_PROMPT} ${GROUNDED_RULE}`,
       {
+        trustedContext,
         purpose:
           "Объясни результат отбора для закупки в Price Radar по-русски; порядок по цене уже посчитан программой. Без английской прозы.",
         addressAs: input.addressAs ?? null,
@@ -402,15 +480,15 @@ export class OllamaAnalysisNarrator implements AnalysisNarrator {
         appliedFilters: input.appliedFilters.slice(0, 20).map((filter) => clip(filter, 500)),
         selectedOfferIds: includedSelected,
         context: {
-          totalRankedOffers: input.rankedOffers.length,
-          includedOffers: compactOffers.length,
+          totalRankedOffers: totalOffers,
+          includedOffers: transmittedOffers.length,
           omittedOffers: omitted,
           totalSelectedOffers: selected.size,
           omittedSelectedOffers: selected.size - includedSelected.length,
           omittedFilters: Math.max(0, input.appliedFilters.length - 20),
           textFieldsMayBeShortened: true,
         },
-        offers: compactOffers,
+        offers: input.trustedContext ? [] : compactOffers,
       },
       {
         type: "object",
@@ -420,9 +498,10 @@ export class OllamaAnalysisNarrator implements AnalysisNarrator {
       },
       parseNarration,
     );
+    validateReturnedIds(narrated.offerIds, transmittedOffers.map((offer) => offer.id));
     if (omitted > 0) {
       narrated.warnings.push(
-        `AI-объяснение получило ${compactOffers.length} из ${input.rankedOffers.length} строк; остальные строки не переданы модели. Отбор по цене выполнен кодом по всей выборке.`,
+        `AI-объяснение получило ${transmittedOffers.length} из ${totalOffers} строк; остальные строки не переданы модели. Отбор по цене выполнен кодом по всей выборке.`,
       );
     }
     return narrated;
@@ -436,10 +515,13 @@ export class OllamaAnalysisNarrator implements AnalysisNarrator {
         ...NARRATION_PROPERTIES,
         intent: { type: "string", enum: [...CHAT_INTENTS] },
         searchQuery: { type: "string", minLength: 2, maxLength: MAX_SEARCH_QUERY },
+        clarificationQuestion: { type: "string", minLength: 1, maxLength: 300 },
       },
       required: ["summary", "warnings"],
     };
+    const trustedContext = trustedContextPayload(input.trustedContext);
     const userPayload = {
+      trustedContext,
       purpose: "Ответь как копайлот Price Radar по-русски на вопрос пользователя (без выдуманных цен).",
       addressAs: input.addressAs ?? null,
       userName: input.userName ?? null,
@@ -451,11 +533,13 @@ export class OllamaAnalysisNarrator implements AnalysisNarrator {
       product: input.productName ?? null,
       snapshotAvailable: input.snapshotQuery !== undefined,
       offerCount: input.offerCount ?? null,
-      table: (input.tableFacts ?? []).map((line) => clip(line, 400)),
+      table: (input.tableFacts ?? []).slice(0, 20).map((line) => clip(line, 400)),
       sources: (input.sourceLines ?? []).slice(0, 30).map((line) => clip(line, 500)),
       omittedSources: Math.max(0, (input.sourceLines?.length ?? 0) - 30),
     };
-    return this.narrateWithRussianRetry(CHAT_SYSTEM_PROMPT, userPayload, format, parseAnswer);
+    const answer = await this.narrateWithRussianRetry(input.trustedContext ? GROUNDED_SYSTEM_PROMPT : `${CHAT_SYSTEM_PROMPT} ${GROUNDED_RULE}`, userPayload, format, parseAnswer);
+    validateReturnedIds(answer.offerIds, trustedContext?.offers.map((offer) => offer.id) ?? []);
+    return answer;
   }
 
   async filterRelevance(input: RelevanceFilterInput): Promise<RelevanceFilterResult> {

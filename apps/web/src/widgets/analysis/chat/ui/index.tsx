@@ -22,38 +22,38 @@ export function AnalysisChat() {
   const chat = useAnalysisStore((state) => state.chat);
   const snapshot = useSearchStore((state) => state.snapshot);
   const promptRef = useRef<HTMLTextAreaElement>(null);
-  const sendingRef = useRef(false);
-  const [sending, setSending] = useState(false);
   const [sendFailed, setSendFailed] = useState(false);
 
   if (!user) return null;
 
   const name = firstName(user.displayName);
-  const locked = busy || sending;
+  const locked = busy;
 
   const send = async (text: string) => {
     const trimmed = text.trim();
-    if (trimmed.length < 2 || busy || sendingRef.current) return;
-    sendingRef.current = true;
-    setSending(true);
+    if (trimmed.length < 2 || useAnalysisStore.getState().busy) return;
     setSendFailed(false);
     setPrompt("");
     try {
-      // Always send to analysis — model returns searchQuery / filters; client applies via applyChatResult.
+      const expectedSearchId = snapshot?.id;
+      const isCurrent = () => useSearchStore.getState().snapshot?.id === expectedSearchId;
       if (!snapshot) {
-        const result = await chat(trimmed);
-        applyChatResult(result);
+        const result = await chat(trimmed, isCurrent);
+        if (result && isCurrent()) applyChatResult(result);
         return;
       }
-      const result = await run(snapshot.id, trimmed);
-      applyChatResult(result);
+      const search = useSearchStore.getState();
+      const selection = useAnalysisStore.getState().analysis?.selectedOfferIds;
+      const context = {
+        ...(search.tableFilter ? { tableFilter: search.tableFilter } : {}),
+        ...(selection ? { selectedOfferIds: selection } : {}),
+      };
+      const result = await run(snapshot.id, trimmed, context, isCurrent);
+      if (result && isCurrent()) applyChatResult(result);
     } catch {
       // The store adds the error to the conversation; retain the request for retry.
       setPrompt(trimmed);
       setSendFailed(true);
-    } finally {
-      sendingRef.current = false;
-      setSending(false);
     }
   };
 

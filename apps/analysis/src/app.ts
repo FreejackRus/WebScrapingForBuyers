@@ -24,6 +24,21 @@ const HISTORY_SCHEMA = {
   },
 } as const;
 
+const CONTEXT_SCHEMA = {
+  type: "object", additionalProperties: false,
+  properties: {
+    selectedOfferIds: {type: "array", maxItems: 500, items: {type:"string",minLength:1,maxLength:150}},
+    tableFilter: {type:"object",additionalProperties:false,properties:{
+      packaging:{type:"string",enum:["BOX","OEM"]},
+      realOnly:{type:"boolean"},inStockOnly:{type:"boolean"},maxPrice:{type:"number",minimum:0},
+      sources:{type:"array",maxItems:32,items:{type:"string",minLength:1,maxLength:80}},
+      selectedOfferIds:{type:"array",maxItems:500,items:{type:"string",minLength:1,maxLength:150}},
+      titleIncludeAny:{type:"array",maxItems:32,items:{type:"string",minLength:1,maxLength:100}},
+      titleExcludeAny:{type:"array",maxItems:32,items:{type:"string",minLength:1,maxLength:100}},
+    }},
+  },
+} as const;
+
 export function buildAnalysisApp(options: { narrator?: AnalysisNarrator; logger?: boolean } = {}) {
   const app = createService({ logger: options.logger ?? false });
   const narrator =
@@ -85,6 +100,7 @@ export function buildAnalysisApp(options: { narrator?: AnalysisNarrator; logger?
             userRole: { type: "string", enum: ["admin", "manager"] },
             userLogin: { type: "string", minLength: 1, maxLength: 80 },
             history: HISTORY_SCHEMA,
+            context: CONTEXT_SCHEMA,
           },
         },
       },
@@ -104,6 +120,7 @@ export function buildAnalysisApp(options: { narrator?: AnalysisNarrator; logger?
         ...(request.body.userRole ? { userRole: request.body.userRole } : {}),
         ...(request.body.userLogin ? { userLogin: request.body.userLogin } : {}),
         ...(request.body.history?.length ? { history: request.body.history } : {}),
+        ...(request.body.context ? { context: request.body.context } : {}),
         searchId: request.params.id,
       });
     },
