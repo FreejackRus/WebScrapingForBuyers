@@ -20,6 +20,6 @@ export function applyChatResult(result: AnalysisResult) {
       id: `typed-${result.searchQuery.trim().slice(0, 48)}`,
       name: result.searchQuery.trim(), model: result.searchQuery.trim(), brand: "—",
       mpn: "", category: "Каталог", characteristics: { источник: "typed" },
-    });
+    }, result.tableFilter);
   }
 }

@@ -32,7 +32,7 @@ describe("applyChatResult", () => {
       searchQuery: "Logitech G102",
     });
     expect(setQuery).toHaveBeenCalledWith("Logitech G102");
-    expect(start).toHaveBeenCalledWith(expect.objectContaining({ name: "Logitech G102", characteristics: { источник: "typed" } }));
+    expect(start).toHaveBeenCalledWith(expect.objectContaining({ name: "Logitech G102", characteristics: { источник: "typed" } }), undefined);
     expect(suggest).not.toHaveBeenCalled();
     expect(setTableFilter).toHaveBeenCalledWith(undefined);
   });

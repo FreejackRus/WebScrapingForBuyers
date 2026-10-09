@@ -52,7 +52,7 @@ interface SearchState {
   closeOffer: () => void;
   reset: () => void;
   suggest: (options?: { quiet?: boolean }) => Promise<void>;
-  start: (product: Product) => Promise<void>;
+  start: (product: Product, initialFilter?: OfferTableFilter) => Promise<void>;
   applyEvent: (event: SearchEvent) => void;
 }
 
@@ -158,7 +158,7 @@ export const useSearchStore = create<SearchState>((set, get) => ({
       });
     }
   },
-  start: async (product) => {
+  start: async (product, initialFilter) => {
     const { source } = get();
     source?.close();
     const query = product.name.trim();
@@ -169,7 +169,7 @@ export const useSearchStore = create<SearchState>((set, get) => ({
       error: "",
       suggestions: [],
       offerFilter: "",
-      tableFilter: undefined,
+      tableFilter: initialFilter,
       selectedOfferId: undefined,
       snapshot: undefined,
     });

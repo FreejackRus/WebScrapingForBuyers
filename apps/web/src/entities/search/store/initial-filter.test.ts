@@ -1,6 +1,6 @@
 import { beforeEach, expect, it, vi } from "vitest";
 import type { OfferTableFilter, Product } from "@peremena/contracts";
-const api=vi.hoisted(()=>({start:vi.fn(),subscribe:vi.fn(()=>({close:vi.fn()})),history:vi.fn(async()=>({entries:[]}))}));
+const api=vi.hoisted(()=>({start:vi.fn(),subscribe:vi.fn(()=>({close:vi.fn()})),history:vi.fn(async()=>({history:[]}))}));
 vi.mock("../api",()=>({searchApi:api}));
 import { useSearchStore } from "./index";
 const product:Product={id:"typed",name:"12400F",model:"12400F",brand:"Intel",mpn:"",category:"Процессоры",characteristics:{источник:"typed"}};

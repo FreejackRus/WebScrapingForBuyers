@@ -124,7 +124,7 @@ describe("analyzeSnapshot", () => {
     const match = assessed(wbReal, "match");
     let seen: CopilotChatInput | undefined;
 
-    await analyzeSnapshot(snapshot([review, match]), "Привет", {
+    await analyzeSnapshot(snapshot([review, match]), "помоги разобраться", {
       name: "Ollama · mock",
       summarize: async () => ({ summary: "unused", warnings: [] }),
       answer: async (input) => {
@@ -346,7 +346,7 @@ describe("analyzeSnapshot", () => {
     const result = await analyzeSnapshot(snapshot([wbReal]), "Уточни модель G102");
     expect(result.intent).toBe("search");
     expect(result.searchQuery).toBe("G102");
-    expect(result.tableFilter).toBeUndefined();
+    expect(result.tableFilter).toEqual({realOnly:true});
   });
 
   it("warns when analysis runs before the search snapshot is complete", async () => {
@@ -683,7 +683,7 @@ describe("analyzeSnapshot", () => {
 });
 
 describe("answerCopilot", () => {
-  it("sends greetings to narrator.answer without a snapshot", async () => {
+  it("answers greetings without waiting for the model", async () => {
     let seen: CopilotChatInput | undefined;
     const result = await answerCopilot(
       "привет",
@@ -697,11 +697,10 @@ describe("answerCopilot", () => {
       },
       { userName: "Администратор", userRole: "admin" },
     );
-    expect(result.provider).toBe("Ollama · mock");
+    expect(result.provider).not.toBe("Ollama · mock");
     expect(result.intent).toBe("help");
-    expect(result.summary).toMatch(/привет/i);
-    expect(seen?.prompt).toBe("привет");
-    expect(seen?.addressAs).toBe("Администратор");
+    expect(result.summary).toMatch(/Здравствуйте/i);
+    expect(seen).toBeUndefined();
   });
 
   it("uses cleaned explicit search command without asking the model", async () => {

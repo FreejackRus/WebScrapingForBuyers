@@ -4,7 +4,7 @@ import { extractSearchQuery, parseMaxPrice, parseSources, wantsInStock } from ".
 type Context = AnalyzeRequest["context"];
 const explicitSearch = /^(?:найди(?:те)?|найти|поищи(?:те)?|ищи|запусти(?:те)?\s+поиск|новый\s+поиск|собери\s+предложени[а-яё]*|уточни(?:те)?\s+модель|покажи\s+(?:реальн[а-яё]*\s+)?предложени[а-яё]*\s+по)(?=\s|$)/iu;
 export function commandText(prompt: string): string {
-  return prompt.trim().replace(/^(?:привет|здравствуй(?:те)?|добрый\s+(?:день|вечер|утро))[,! .]+/iu, "").replace(/^пожалуйста[,\s]+/iu, "");
+  return prompt.trim().replace(/^(?:привет|здравствуй(?:те)?|добрый\s+(?:день|вечер|утро))[,! .]+/iu, "").replace(/^пожалуйста[,\s]+/iu, "").replace(/^теперь\s+/iu, "").replace(/^ищем(?=\s|$)/iu, "найди");
 }
 export function explicitSearchQuery(prompt: string): string | undefined {
   const text = commandText(prompt);
@@ -39,16 +39,43 @@ function price(o: Offer): string {return `${o.price.toLocaleString("ru-RU")} ₽
 export function routeProcurementDialogue(snapshot: SearchSnapshot | undefined, prompt: string, context?: Context): AnalysisResult | undefined {
   const text = commandText(prompt);
   const query = explicitSearchQuery(prompt);
+  const detailQuestion = /гарант|комплектац|что.*(?:коробк|входит)|содержим|чем.*отлич|разниц/iu.test(text);
+  const packagingValues = [...text.matchAll(/(?:^|[^a-z0-9])(box|oem)(?=$|[^a-z0-9])/giu)].map(m => m[1]!.toUpperCase());
+  const budgetValues = [...text.matchAll(/(?:до|дешевле|ниже|меньше|<)\s*\d+(?:[\s\u00a0]?\d+)*(?:\s*(?:тыс[а-яё.]*|k|к))?/giu)].map(m => parseMaxPrice(m[0].toLocaleLowerCase("ru")));
+  if (!detailQuestion && (new Set(packagingValues).size > 1 || new Set(budgetValues).size > 1 || (wantsInStock(text.toLocaleLowerCase("ru")) && /под\s+заказ/iu.test(text))))
+    return clarification("Какое одно условие оставить: упаковку, предел цены или наличие? Уточните противоречащие условия.");
+  if (/до\s*\d+\s*(?:года|год|г\.)/iu.test(text))
+    return clarification("Вы имеете в виду год выпуска или ограничение по цене? Уточните это условие.");
+  const clearPrice = /^(?:убери|сними)\s+ограничение\s+по\s+цене[.!]?$/iu.test(text);
+  const clearAll = /^(?:покажи\s+все\s+варианты|сбрось\s+фильтры)[.!]?$/iu.test(text);
+  const allowOrder = /^(?:и\s+)?под\s+заказ\s+тоже[.!]?$/iu.test(text);
+  const statusQuestion = /^(?:что\s+мы\s+сейчас\s+ищем|какие\s+фильтры\s+сейчас)[?!.]*$/iu.test(text);
+  if (clearPrice || clearAll || allowOrder || statusQuestion) {
+    if (!snapshot) return clarification("Какой товар нужно уточнить? Укажите модель или сначала запустите поиск.");
+    if (statusQuestion) return {...base(currentDialogueSummary(snapshot, context?.tableFilter)), warnings:collectionWarnings(snapshot)};
+    const updated: OfferTableFilter = clearAll ? {realOnly:true} : {...context?.tableFilter,realOnly:true};
+    delete updated.selectedOfferIds;
+    if (clearPrice) delete updated.maxPrice;
+    if (allowOrder) delete updated.inStockOnly;
+    return {...base(clearAll ? "Фильтры сброшены. Показываю все реальные варианты текущего товара." : clearPrice ? "Ограничение по цене снято. Остальные условия сохранены." : "Разрешил варианты под заказ и с неизвестным наличием. Остальные условия сохранены.", "filter"), tableFilter:updated, warnings:collectionWarnings(snapshot)};
+  }
+  if (/^(?:привет|здравствуй(?:те)?|добрый\s+(?:день|вечер|утро)|спасибо|благодарю)[! .]*$/iu.test(prompt.trim()))
+    return base(/спасибо|благодарю/iu.test(prompt) ? "Пожалуйста! Можете уточнить условия или попросить объяснить выбор." : snapshot ? `Здравствуйте! Сейчас ищем «${snapshot.product.name}». Чем помочь?` : "Здравствуйте! Напишите модель товара — помогу найти предложения.");
   if (query && /^(?:(?:такой|такой же|другой|этот|подешевле|получше|дешевле|замену)(?:\s+(?:товар|процессор|вариант))?)[?!.]*$/iu.test(query))
     return clarification("Уточнить текущий товар или найти другую модель? Напишите модель либо нужное отличие.");
   if (/\b(?:не|без)\b/iu.test(text) || /(?:^|\s)(?:не|без)\s+(?:box|oem|в наличии|наличи)/iu.test(text)) {
     if (/box|oem|наличи/iu.test(text)) return clarification("Какое условие оставить: BOX, OEM или наличие? Напишите один нужный вариант без отрицания.");
   }
-  if (query) return {...base(`Запускаю поиск «${query}». Предложения появятся по мере ответа поставщиков.`,"search"),searchQuery:query,appliedFilters:[`Новый поиск по запросу «${query}».`]};
+  if (query) {
+    const parsed = cpuSearchConditions(query);
+    if (!parsed && /(?:^|\s)(?:box|oem|до\s+\d+|только\s+в\s+наличии)(?=$|\s|[?!.])/iu.test(query))
+      return clarification("Напишите модель отдельно от условий поиска. Какой товар нужно найти?");
+    const cleanQuery = parsed?.query ?? query;
+    return {...base(`Запускаю поиск «${cleanQuery}». Предложения появятся по мере ответа поставщиков.`,"search"), searchQuery:cleanQuery,tableFilter:parsed?.filter ?? {realOnly:true}, appliedFilters:[`Новый поиск по запросу «${cleanQuery}».`]};
+  }
   const packaging = text.match(/(?:^|[^a-z0-9])(box|oem)(?=$|[^a-z0-9])/iu)?.[1]?.toUpperCase();
   const maxPrice = parseMaxPrice(text.toLocaleLowerCase("ru"));
   const stock = wantsInStock(text.toLocaleLowerCase("ru"));
-  const detailQuestion = /гарант|комплектац|что.*(?:коробк|входит)|содержим|чем.*отлич|разниц/iu.test(text);
   const why = /почему\s+(?:этот|он|именно)|объясни\s+(?:этот|выбор)/iu.test(text);
   const requestedSources = parseSources(text.toLocaleLowerCase("ru"));
   const refinement = Boolean(packaging && !detailQuestion) || maxPrice !== undefined || stock || (requestedSources.length > 0 && /только|оставь/iu.test(text));
@@ -89,3 +116,32 @@ export function routeProcurementDialogue(snapshot: SearchSnapshot | undefined, p
   return undefined;
 }
 function collectionWarnings(snapshot: SearchSnapshot): string[] {return snapshot.status === "running" ? ["Сбор ещё идёт — ответ основан только на уже полученных предложениях."] : [];}
+
+/** Only well-known CPU model tokens can be separated safely from spoken conditions. */
+function cpuSearchConditions(query: string): {query:string;filter:OfferTableFilter} | undefined {
+  const match = query.match(/^((?:процессор\s+)?(?:intel\s+)?(?:core\s+)?(?:i[3579][- ])?1\d{4}(?:kf|ks|k|f|t)?)[`»"”]?\s*(.*)$/iu);
+  if (!match) return undefined;
+  const suffix = match[2]!;
+  const remaining = suffix.replace(/(?:^|\s)(?:box|oem)(?=$|\s)/giu," ")
+    .replace(/(?:до|дешевле|ниже|меньше|<)\s*\d+(?:[\s\u00a0]?\d+)*(?:\s*(?:тыс[а-яё.]*|k|к))?(?:\s*(?:руб(?:лей)?|₽))?/giu," ")
+    .replace(/(?:только\s+)?в\s+наличии/giu," ").replace(/(?:^|\s)и(?=$|\s)/giu," ").replace(/[,;.!?]/gu," ").trim();
+  if (remaining) return undefined;
+  const filter: OfferTableFilter = {realOnly:true};
+  const packaging = suffix.match(/(?:^|\s)(box|oem)(?=$|\s)/iu)?.[1];
+  if (packaging) filter.packaging=packaging.toUpperCase() as "BOX"|"OEM";
+  const maxPrice = parseMaxPrice(suffix.toLocaleLowerCase("ru"));
+  if (maxPrice !== undefined) filter.maxPrice=maxPrice;
+  if (wantsInStock(suffix.toLocaleLowerCase("ru"))) filter.inStockOnly=true;
+  return {query:match[1]!,filter};
+}
+function currentDialogueSummary(snapshot: SearchSnapshot, filter: OfferTableFilter = {}): string {
+  const conditions: string[] = [];
+  if (filter.packaging) conditions.push(filter.packaging);
+  if (filter.maxPrice !== undefined) conditions.push(`до ${filter.maxPrice.toLocaleString("ru-RU")} ₽`);
+  if (filter.inStockOnly) conditions.push("только подтверждённое наличие");
+  if (filter.sources?.length) conditions.push(`поставщики: ${filter.sources.join(", ")}`);
+  if (filter.titleIncludeAny?.length) conditions.push(`в названии: ${filter.titleIncludeAny.join(", ")}`);
+  if (filter.titleExcludeAny?.length) conditions.push(`исключены: ${filter.titleExcludeAny.join(", ")}`);
+  if (filter.selectedOfferIds?.length) conditions.push(`выбрано предложений: ${filter.selectedOfferIds.length}`);
+  return `Ищем «${snapshot.product.name}». Условия: ${conditions.length ? conditions.join("; ") : "без дополнительных ограничений"}. ${snapshot.status === "running" ? "Сбор ещё идёт." : snapshot.status === "complete" ? "Сбор завершён." : "Сбор завершился с ошибкой."}`;
+}
