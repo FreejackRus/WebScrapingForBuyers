@@ -41,7 +41,7 @@ export function routeProcurementDialogue(snapshot: SearchSnapshot | undefined, p
   const query = explicitSearchQuery(prompt);
   const detailQuestion = /гарант|комплектац|что.*(?:коробк|входит)|содержим|чем.*отлич|разниц/iu.test(text);
   const packagingValues = [...text.matchAll(/(?:^|[^a-z0-9])(box|oem)(?=$|[^a-z0-9])/giu)].map(m => m[1]!.toUpperCase());
-  const budgetValues = [...text.matchAll(/(?:до|дешевле|ниже|меньше|<)\s*\d+(?:[\s\u00a0]?\d+)*(?:\s*(?:тыс[а-яё.]*|k|к))?/giu)].map(m => parseMaxPrice(m[0].toLocaleLowerCase("ru")));
+  const budgetValues = [...text.matchAll(/(?:до|дешевле|ниже|меньше|<)\s*\d+(?:[\s\u00a0]?\d+)*(?:[.,]\d{1,2})?(?:\s*(?:тыс[а-яё.]*|k|к))?/giu)].map(m => parseMaxPrice(m[0].toLocaleLowerCase("ru")));
   if (!detailQuestion && (new Set(packagingValues).size > 1 || new Set(budgetValues).size > 1 || (wantsInStock(text.toLocaleLowerCase("ru")) && /под\s+заказ/iu.test(text))))
     return clarification("Какое одно условие оставить: упаковку, предел цены или наличие? Уточните противоречащие условия.");
   if (/до\s*\d+\s*(?:года|год|г\.)/iu.test(text))
@@ -68,7 +68,7 @@ export function routeProcurementDialogue(snapshot: SearchSnapshot | undefined, p
   }
   if (query) {
     const parsed = cpuSearchConditions(query);
-    if (!parsed && /(?:^|\s)(?:box|oem|до\s+\d+|только\s+в\s+наличии)(?=$|\s|[?!.])/iu.test(query))
+    if (!parsed && /(?:^|\s)(?:box|oem|до\s+\d+(?:[.,]\d+)?(?:\s*[kк])?|только\s+в\s+наличии|под\s+заказ)(?=$|\s|[,?!.])/iu.test(query))
       return clarification("Напишите модель отдельно от условий поиска. Какой товар нужно найти?");
     const cleanQuery = parsed?.query ?? query;
     return {...base(`Запускаю поиск «${cleanQuery}». Предложения появятся по мере ответа поставщиков.`,"search"), searchQuery:cleanQuery,tableFilter:parsed?.filter ?? {realOnly:true}, appliedFilters:[`Новый поиск по запросу «${cleanQuery}».`]};
@@ -121,9 +121,9 @@ function collectionWarnings(snapshot: SearchSnapshot): string[] {return snapshot
 function cpuSearchConditions(query: string): {query:string;filter:OfferTableFilter} | undefined {
   const match = query.match(/^((?:процессор\s+)?(?:intel\s+)?(?:core\s+)?(?:i[3579][- ])?1\d{4}(?:kf|ks|k|f|t)?)[`»"”]?\s*(.*)$/iu);
   if (!match) return undefined;
-  const suffix = match[2]!;
+  const suffix = match[2]!.replace(/[,;](?!\d)/gu," ");
   const remaining = suffix.replace(/(?:^|\s)(?:box|oem)(?=$|\s)/giu," ")
-    .replace(/(?:до|дешевле|ниже|меньше|<)\s*\d+(?:[\s\u00a0]?\d+)*(?:\s*(?:тыс[а-яё.]*|k|к))?(?:\s*(?:руб(?:лей)?|₽))?/giu," ")
+    .replace(/(?:до|дешевле|ниже|меньше|<)\s*\d+(?:[\s\u00a0]?\d+)*(?:[.,]\d{1,2})?(?:\s*(?:тыс[а-яё.]*|k|к))?(?:\s*(?:руб(?:лей)?|₽))?/giu," ")
     .replace(/(?:только\s+)?в\s+наличии/giu," ").replace(/(?:^|\s)и(?=$|\s)/giu," ").replace(/[,;.!?]/gu," ").trim();
   if (remaining) return undefined;
   const filter: OfferTableFilter = {realOnly:true};

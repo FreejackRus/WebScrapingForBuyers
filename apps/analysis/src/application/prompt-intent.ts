@@ -19,12 +19,12 @@ export function parseSources(normalized: string): string[] {
 }
 
 export function parseMaxPrice(normalized: string): number | undefined {
-  const match = normalized.match(/(?:дешевл[еаеейю]|ниже|до|под|меньше|<)\s*(\d+(?:[\s\u00a0]?\d+)*)/);
+  const match = normalized.match(/(?:дешевл[еаеейю]|ниже|до|под|меньше|<)\s*(\d+(?:[\s\u00a0]?\d+)*(?:[.,]\d{1,2})?)/u);
   const raw = match?.[1];
   if (!raw) return undefined;
   const suffix = normalized.slice((match?.index ?? 0) + (match?.[0].length ?? 0));
-  const multiplier = /^\s*(?:тыс|тысяч|k\b|к\b)/iu.test(suffix) ? 1000 : 1;
-  const value = Number(raw.replace(/[\s\u00a0]/g, "")) * multiplier;
+  const multiplier = /^\s*(?:тыс[а-яё.]*|[kк](?=$|[^a-zа-яё]))/iu.test(suffix) ? 1000 : 1;
+  const value = Number(raw.replace(/[\s\u00a0]/gu, "").replace(",", ".")) * multiplier;
   return Number.isFinite(value) ? value : undefined;
 }
 
