@@ -23,3 +23,5 @@ it("handles punctuation in compound conditions",()=>{const r=route("найди 1
 it("separates decimal compound budget",()=>{const r=route("найди 12400F до 15,5 тысяч");expect(r?.searchQuery).toBe("12400F");expect(r?.tableFilter?.maxPrice).toBe(15500)});
 it("asks about unsupported order conditions instead of polluting model",()=>{const r=route("найди 12400F под заказ");expect(r?.clarificationQuestion).toBeTruthy();expect(r?.searchQuery).toBeUndefined()});
 it.each(["до 15к","до 15 к","найди 12400F до 15к"])("uses Cyrillic thousand in %s",prompt=>{expect(route(prompt)?.tableFilter?.maxPrice).toBe(15000)});
+it("explains the packaging abbreviation in current conditions",()=>{const r=route("какие фильтры сейчас?");expect(r?.summary).toContain("коробочная версия (BOX)");expect(r?.summary).toMatch(/комплект.*карточк/i)});
+it("labels packaging when applying it rather than silently filtering",()=>{const r=route("а BOX?");expect(r?.summary).toContain("коробочная версия (BOX)");expect(r?.summary).toMatch(/кулер.*гаранти/i)});
