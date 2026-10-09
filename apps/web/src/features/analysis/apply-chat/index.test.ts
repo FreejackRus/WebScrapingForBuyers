@@ -2,11 +2,12 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const setQuery = vi.fn();
 const suggest = vi.fn();
+const start = vi.fn().mockResolvedValue(undefined);
 const setTableFilter = vi.fn();
 
 vi.mock("entities/search", () => ({
   useSearchStore: {
-    getState: () => ({ setQuery, suggest, setTableFilter }),
+    getState: () => ({ setQuery, suggest, setTableFilter, start }),
   },
 }));
 
@@ -16,6 +17,7 @@ describe("applyChatResult", () => {
   beforeEach(() => {
     setQuery.mockReset();
     suggest.mockReset();
+    start.mockClear();
     setTableFilter.mockReset();
   });
 
@@ -30,7 +32,8 @@ describe("applyChatResult", () => {
       searchQuery: "Logitech G102",
     });
     expect(setQuery).toHaveBeenCalledWith("Logitech G102");
-    expect(suggest).toHaveBeenCalled();
+    expect(start).toHaveBeenCalledWith(expect.objectContaining({ name: "Logitech G102", characteristics: { источник: "typed" } }));
+    expect(suggest).not.toHaveBeenCalled();
     expect(setTableFilter).toHaveBeenCalledWith(undefined);
   });
 

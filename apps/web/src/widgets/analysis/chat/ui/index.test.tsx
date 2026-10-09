@@ -32,6 +32,8 @@ describe("AnalysisChat composer", () => {
   it("renders a normal input, gray placeholder and send button", () => {
     const html = renderToStaticMarkup(<AnalysisChat />);
     expect(html).toContain("chat-composer");
+    expect(html).toContain("<textarea");
+    expect(html).toContain('maxLength="1000"');
     expect(html).toContain('id="analysis-prompt"');
     expect(html).toContain("Спросите о товаре или модели");
     expect(html).toContain("Отправить");
