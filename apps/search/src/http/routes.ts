@@ -1,3 +1,4 @@
+import type { SearchSourcesResponse } from "@peremena/contracts";
 import type { FastifyPluginAsync } from "fastify";
 
 import { exportSearch } from "../application/export-service.js";
@@ -5,6 +6,7 @@ import type { SearchService } from "../application/search-service.js";
 import { findProduct } from "../domain/catalog.js";
 import { classifyQuery, isExplicitlyNonIt } from "../domain/it-scope.js";
 import { isProductPayload, productFromQuery } from "../domain/product-from-query.js";
+import { isSourceDisabled, listDisabledSources } from "../domain/source-policy.js";
 import { suggestLiveProducts } from "../infrastructure/suggest/live-suggest.js";
 
 const queryBodySchema = {
@@ -24,7 +26,10 @@ export const searchRoutes: FastifyPluginAsync<{
 
   app.get("/health", async () => ({ status: "ok", service: "search", mode: options.mode }));
 
-  app.get("/sources", async () => ({ sources: searchService.listSources() }));
+  app.get("/sources", async (): Promise<SearchSourcesResponse> => ({
+    sources: searchService.listSources(),
+    disabledSources: listDisabledSources(),
+  }));
 
   app.post<{ Body: { query: string } }>(
     "/suggestions",
@@ -66,8 +71,13 @@ export const searchRoutes: FastifyPluginAsync<{
         });
       }
       const selected = searchService.resolveSources(request.body.sources);
-      if (request.body.sources?.length && selected.length === 0) {
-        return reply.code(400).send({ error: "Нет выбранных источников" });
+      if (selected.length === 0) {
+        const error = request.body.sources?.some(isSourceDisabled)
+          ? "DNS временно недоступен. Выберите другой источник."
+          : request.body.sources?.length
+            ? "Нет выбранных источников"
+            : "Нет доступных источников для поиска";
+        return reply.code(400).send({ error });
       }
       return reply.code(201).send(searchService.start(request.body.query, product, request.body.sources));
     },

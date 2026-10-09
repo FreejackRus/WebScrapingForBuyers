@@ -7,6 +7,7 @@ import { isOfferInItScope } from "../domain/it-scope.js";
 import { assessOffer } from "../domain/offer-assessment.js";
 import { flagPriceAnomalies } from "../domain/price-anomaly.js";
 import type { SourceAdapter } from "../domain/source-adapter.js";
+import { isSourceDisabled } from "../domain/source-policy.js";
 
 type Listener = (event: SearchEvent) => void;
 
@@ -54,7 +55,7 @@ export class SearchService {
   ) {}
 
   listSources(): string[] {
-    return this.sources.map((source) => source.name);
+    return this.resolveSources().map((source) => source.name);
   }
 
   start(query: string, product: Product, sourceNames?: string[]): SearchSnapshot {
@@ -89,9 +90,10 @@ export class SearchService {
   }
 
   resolveSources(sourceNames?: string[]): SourceAdapter[] {
-    if (!sourceNames?.length) return this.sources;
+    const active = this.sources.filter((source) => !isSourceDisabled(source.name));
+    if (!sourceNames?.length) return active;
     const wanted = new Set(sourceNames.map((name) => name.trim().toLocaleLowerCase("ru")).filter(Boolean));
-    return this.sources.filter((source) => wanted.has(source.name.toLocaleLowerCase("ru")));
+    return active.filter((source) => wanted.has(source.name.toLocaleLowerCase("ru")));
   }
 
   private async collect(id: string, sources = this.sources): Promise<void> {

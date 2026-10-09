@@ -358,6 +358,7 @@ th { position: relative; }
 }
 .source-chip.is-on { border-color: var(--brand-200); background: var(--brand-soft); color: var(--brand-dark); }
 .source-chip input { margin: 0; }
+.source-chip.is-disabled { color: #64748b; background: #f1f5f9; border-color: #cbd5e1; cursor: not-allowed; }
 .source-picker fieldset:disabled .source-chip { opacity: 0.6; pointer-events: none; }
 .offer-search input { width: min(320px, 100%); }
 .mobile-sort { display: none; }

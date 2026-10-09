@@ -178,3 +178,13 @@ export interface UserSettings {
   city: string;
   analysisPrompt: string;
 }
+
+/** Source remains visible while collection is temporarily unavailable. */
+export interface DisabledSearchSource {
+  name: string;
+  reason: string;
+}
+export interface SearchSourcesResponse {
+  sources: string[];
+  disabledSources?: DisabledSearchSource[];
+}

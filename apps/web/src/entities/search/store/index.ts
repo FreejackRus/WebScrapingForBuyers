@@ -1,4 +1,4 @@
-import type { OfferTableFilter, Product, SearchEvent, SearchHistoryEntry, SearchSnapshot } from "@peremena/contracts";
+import type { DisabledSearchSource, OfferTableFilter, Product, SearchEvent, SearchHistoryEntry, SearchSnapshot } from "@peremena/contracts";
 import { create } from "zustand";
 
 import { searchApi } from "../api";
@@ -34,6 +34,7 @@ interface SearchState {
   tableFilter: OfferTableFilter | undefined;
   selectedOfferId: string | undefined;
   availableSources: string[];
+  disabledSources: DisabledSearchSource[];
   selectedSources: string[];
   history: SearchHistoryEntry[];
   activity: "suggest" | "search" | null;
@@ -64,6 +65,7 @@ export const useSearchStore = create<SearchState>((set, get) => ({
   tableFilter: undefined,
   selectedOfferId: undefined,
   availableSources: [],
+  disabledSources: [],
   selectedSources: typeof localStorage === "undefined" ? [] : readSelectedSources(),
   history: [],
   activity: null,
@@ -74,17 +76,19 @@ export const useSearchStore = create<SearchState>((set, get) => ({
   setOfferFilter: (offerFilter) => set({ offerFilter }),
   setTableFilter: (tableFilter) => set({ tableFilter }),
   setSelectedSources: (selectedSources) => {
-    writeSelectedSources(selectedSources);
-    set({ selectedSources });
+    const allowed = selectedSources.filter(name => !get().disabledSources.some(source => source.name === name));
+    writeSelectedSources(allowed);
+    set({ selectedSources: allowed });
   },
   loadSources: async () => {
     try {
       const result = await searchApi.sources();
-      const availableSources = result.sources.filter(Boolean);
+      const disabledSources = result.disabledSources ?? [];
+      const availableSources = result.sources.filter(name => Boolean(name) && !disabledSources.some(source => source.name === name));
       const remembered = get().selectedSources.filter((name) => availableSources.includes(name));
       const selectedSources = remembered.length > 0 ? remembered : availableSources;
       writeSelectedSources(selectedSources);
-      set({ availableSources, selectedSources });
+      set({ availableSources, disabledSources, selectedSources });
     } catch {
       set({ availableSources: get().availableSources });
     }

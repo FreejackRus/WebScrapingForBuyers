@@ -107,6 +107,7 @@ export function SearchCommand() {
   const shortcutLabel = typeof navigator !== "undefined" && /Mac|iPhone|iPad/.test(navigator.platform) ? "⌘K" : "Ctrl+K";
 
   const availableSources = useSearchStore((state) => state.availableSources);
+  const disabledSources = useSearchStore((state) => state.disabledSources);
   const selectedSources = useSearchStore((state) => state.selectedSources);
   const setSelectedSources = useSearchStore((state) => state.setSelectedSources);
   const loadSources = useSearchStore((state) => state.loadSources);
@@ -354,7 +355,7 @@ export function SearchCommand() {
           ))}
         </div>
       )}
-      {availableSources.length > 0 && (
+      {(availableSources.length > 0 || disabledSources.length > 0) && (
         <details className="source-picker" open={noSources || undefined}>
           <summary>
             <span>Поставщики: {selectedSources.length} из {availableSources.length}</span>
@@ -398,6 +399,12 @@ export function SearchCommand() {
                   </label>
                 );
               })}
+              {disabledSources.map(({name, reason}) => (
+                <label key={name} className="source-chip is-disabled">
+                  <input type="checkbox" checked={false} disabled readOnly />
+                  {name} — {reason}
+                </label>
+              ))}
             </div>
           </fieldset>
           {noSources && (

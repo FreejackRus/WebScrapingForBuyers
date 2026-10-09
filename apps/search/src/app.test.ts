@@ -92,7 +92,7 @@ describe("search", () => {
     const app = buildSearchApp({ sources: [new TestSource(), other] });
     apps.push(app);
     const listed = await app.inject({ method: "GET", url: "/sources" });
-    expect(listed.json()).toEqual({ sources: ["TEST", "Ozon"] });
+    expect(listed.json()).toEqual({ sources: ["TEST", "Ozon"], disabledSources: [{ name: "DNS", reason: "Временно недоступен" }] });
     const created = await app.inject({
       method: "POST",
       url: "/searches",
