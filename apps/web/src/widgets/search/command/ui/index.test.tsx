@@ -167,3 +167,7 @@ it("shows disabled DNS as unavailable and unchecked",()=>{
  const html=renderToStaticMarkup(<SearchCommand/>);
  expect(html).toMatch(/source-chip is-disabled/);expect(html).toMatch(/type="checkbox"[^>]*disabled=""[^>]*\/>/);expect(html).toContain("DNS — Временно недоступен");
 });
+it("explains when there are no active suppliers",()=>{
+ const before=state.availableSources;state.availableSources=[];state.selectedSources=[];
+ try {expect(renderToStaticMarkup(<SearchCommand/>)).toContain("Сейчас нет доступных поставщиков для поиска")}finally{state.availableSources=before}
+});

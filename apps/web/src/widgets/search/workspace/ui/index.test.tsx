@@ -111,3 +111,7 @@ it("keeps collection progress visible after the first offer and removes it on co
   state.snapshot!.status = "complete";
   expect(renderToStaticMarkup(<SearchWorkspace />)).not.toContain("Ожидаем остальных поставщиков");
 });
+it("keeps assembled PCs and unconfirmed model variants out of the best price",()=>{
+ state.snapshot!.offers=[{...offer(false,100),assessment:{group:"needs_review",reasons:["Готовый ПК"]}},offer(false,500)];
+ expect(renderToStaticMarkup(<SearchWorkspace/>)).toMatch(/Лучшая публичная<\/span><b class="mono">500/);
+});
