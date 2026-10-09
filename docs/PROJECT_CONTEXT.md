@@ -1932,3 +1932,8 @@ narrator кладёт в payload ≤ 6 реплик по 400 символов. �
 - Graphify, Serena, Context7 (Ollama/React/Zustand), ECC TDD/UI skills и браузер
   использованы. Security review/Semgrep исключены пользователем. Точность
   регионального DNS и физический остаток не проверены; платных сервисов нет.
+- Выпуск: committed ref c68dacdb штатным scripts/deploy.sh (search, analysis,
+  gateway, web). Public health ok, Qwen сохранена. Production NETLAB вернул три
+  live предложения для 12400F; BOX → наличие сохранили товар/условия и один
+  результат; «почему этот?» вернул факты и одну проверенную ссылку. Chrome не
+  пересоздавался. Временные проверочные цены не являются гарантией наличия.
