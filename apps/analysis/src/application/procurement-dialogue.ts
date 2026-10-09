@@ -64,14 +64,14 @@ export function routeProcurementDialogue(snapshot: SearchSnapshot | undefined, p
   if (query && /^(?:(?:такой|такой же|другой|этот|подешевле|получше|дешевле|замену)(?:\s+(?:товар|процессор|вариант))?)[?!.]*$/iu.test(query))
     return clarification("Уточнить текущий товар или найти другую модель? Напишите модель либо нужное отличие.");
   if (/\b(?:не|без)\b/iu.test(text) || /(?:^|\s)(?:не|без)\s+(?:box|oem|в наличии|наличи)/iu.test(text)) {
-    if (/box|oem|наличи/iu.test(text)) return clarification("Какое условие оставить: BOX, OEM или наличие? Напишите один нужный вариант без отрицания.");
+    if (/box|oem|наличи/iu.test(text)) return clarification("Какое условие оставить: коробочную версию (BOX), версию для сборщиков (OEM) или наличие? Напишите один нужный вариант без отрицания.");
   }
   if (query) {
     const parsed = cpuSearchConditions(query);
     if (!parsed && /(?:^|\s)(?:box|oem|до\s+\d+(?:[.,]\d+)?(?:\s*[kк])?|только\s+в\s+наличии|под\s+заказ)(?=$|\s|[,?!.])/iu.test(query))
       return clarification("Напишите модель отдельно от условий поиска. Какой товар нужно найти?");
     const cleanQuery = parsed?.query ?? query;
-    return {...base(`Запускаю поиск «${cleanQuery}». Предложения появятся по мере ответа поставщиков.`,"search"), searchQuery:cleanQuery,tableFilter:parsed?.filter ?? {realOnly:true}, appliedFilters:[`Новый поиск по запросу «${cleanQuery}».`]};
+    return {...base(`Запускаю поиск «${cleanQuery}».${parsed?.filter.packaging ? ` Упаковка: ${packagingLabel(parsed.filter.packaging)}. ${PACKAGING_NOTE}` : ""} Предложения появятся по мере ответа поставщиков.`,"search"), searchQuery:cleanQuery,tableFilter:parsed?.filter ?? {realOnly:true}, appliedFilters:[`Новый поиск по запросу «${cleanQuery}».`]};
   }
   const packaging = text.match(/(?:^|[^a-z0-9])(box|oem)(?=$|[^a-z0-9])/iu)?.[1]?.toUpperCase();
   const maxPrice = parseMaxPrice(text.toLocaleLowerCase("ru"));
@@ -100,7 +100,7 @@ export function routeProcurementDialogue(snapshot: SearchSnapshot | undefined, p
     const rows = filterOffers(snapshot.offers,merged).sort((a,b)=>a.price-b.price);
     // Absence of reported stock must not be mistaken for absence of the product.
     if(stock && rows.length === 0) return {...base("В текущих предложениях нет подтверждённого наличия по этим условиям. Неизвестный остаток и товары под заказ не считаются доступными; результаты сохранены."),warnings:collectionWarnings(snapshot)};
-    return {...base(rows.length ? `Фильтр применён. Подходящих предложений: ${rows.length}. Минимальная цена среди них: ${price(rows[0]!)}.` : "По заданным условиям предложений не найдено.","filter"),tableFilter:merged,selectedOfferIds:rows.map(o=>o.id),citations:references(rows),appliedFilters:["Условия применены к текущему товару; прежние ограничения сохранены."],warnings:[...collectionWarnings(snapshot), ...(stock && snapshot.offers.some(o=>offerAvailabilityStatus(o)==="unknown") ? ["Часть источников не сообщает наличие; такие предложения скрыты."] : [])]};
+    return {...base(rows.length ? `${merged.packaging ? `Упаковка: ${packagingLabel(merged.packaging)}. ` : ""}Фильтр применён. Подходящих предложений: ${rows.length}. Минимальная цена среди них: ${price(rows[0]!)}.${merged.packaging ? ` ${PACKAGING_NOTE}` : ""}` : `По заданным условиям предложений не найдено.${merged.packaging ? ` Упаковка: ${packagingLabel(merged.packaging)}. ${PACKAGING_NOTE}` : ""}`,"filter"),tableFilter:merged,selectedOfferIds:rows.map(o=>o.id),citations:references(rows),appliedFilters:["Условия применены к текущему товару; прежние ограничения сохранены."],warnings:[...collectionWarnings(snapshot), ...(stock && snapshot.offers.some(o=>offerAvailabilityStatus(o)==="unknown") ? ["Часть источников не сообщает наличие; такие предложения скрыты."] : [])]};
   }
   if (detailQuestion || why) {
     let rows=filterOffers(snapshot.offers,current).filter(o=>!o.demo);
@@ -136,12 +136,17 @@ function cpuSearchConditions(query: string): {query:string;filter:OfferTableFilt
 }
 function currentDialogueSummary(snapshot: SearchSnapshot, filter: OfferTableFilter = {}): string {
   const conditions: string[] = [];
-  if (filter.packaging) conditions.push(filter.packaging);
+  if (filter.packaging) conditions.push(packagingLabel(filter.packaging));
   if (filter.maxPrice !== undefined) conditions.push(`до ${filter.maxPrice.toLocaleString("ru-RU")} ₽`);
   if (filter.inStockOnly) conditions.push("только подтверждённое наличие");
   if (filter.sources?.length) conditions.push(`поставщики: ${filter.sources.join(", ")}`);
   if (filter.titleIncludeAny?.length) conditions.push(`в названии: ${filter.titleIncludeAny.join(", ")}`);
   if (filter.titleExcludeAny?.length) conditions.push(`исключены: ${filter.titleExcludeAny.join(", ")}`);
   if (filter.selectedOfferIds?.length) conditions.push(`выбрано предложений: ${filter.selectedOfferIds.length}`);
-  return `Ищем «${snapshot.product.name}». Условия: ${conditions.length ? conditions.join("; ") : "без дополнительных ограничений"}. ${snapshot.status === "running" ? "Сбор ещё идёт." : snapshot.status === "complete" ? "Сбор завершён." : "Сбор завершился с ошибкой."}`;
+  return `Ищем «${snapshot.product.name}». Условия: ${conditions.length ? conditions.join("; ") : "без дополнительных ограничений"}. ${snapshot.status === "running" ? "Сбор ещё идёт." : snapshot.status === "complete" ? "Сбор завершён." : "Сбор завершился с ошибкой."}${filter.packaging ? ` ${PACKAGING_NOTE}` : ""}`;
+}
+
+const PACKAGING_NOTE = "BOX/OEM — обозначение в названии товара. Комплект, кулер и гарантию уточняйте по карточке продавца.";
+function packagingLabel(value: "BOX" | "OEM"): string {
+  return value === "BOX" ? "коробочная версия (BOX)" : "версия для сборщиков (OEM)";
 }
