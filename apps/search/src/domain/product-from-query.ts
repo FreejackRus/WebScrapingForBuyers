@@ -186,6 +186,7 @@ const CATEGORY_CACHE_LIMIT = 2000;
  */
 function categorize(hay: string): string {
   const head = hay.split(PREPOSITION_SPLIT)[0] ?? hay;
+  if (/^(?:игров[а-яё]*\s+)?(?:пк(?=\s|$)|компьютер(?:\s|$)|системн[а-яё]*\s+блок)/u.test(head)) return "Компьютеры";
   return (
     matchCategory(head, STRONG_HINTS) ??
     matchCategory(hay, FULL_TEXT_HINTS) ??
@@ -270,7 +271,9 @@ export function productFromQuery(text: string, source = "suggest"): Product {
   let name = collapseWs(text);
   const cpu = name.match(/(?:^|\s)(?:i[3579][- ])?(1\d{4}(?:kf|ks|k|f|t)?)(?=\s|$)/i);
   if (cpu && inferCategory(name) === "Процессоры") {
-    name = `Процессор Intel ${name.replace(/^процессор\s+/i, "").replace(/^intel\s+(?:core\s+)?/i, "")}`;
+    const withoutType = name.replace(/(?:^|\s)процессор(?=\s|$)/gi, " ").trim();
+    const normalized = withoutType.replace(/(?:^|\s)(?:i[3579][- ])?(1\d{4}(?:kf|ks|k|f|t)?)(?=\s|$)/gi, (value) => value.toUpperCase().replace(/^I/, "i"));
+    name = `Процессор Intel ${normalized.replace(/^intel\s+(?:core\s+)?/i, "")}`;
   }
   if (!name) throw new Error("Пустой запрос");
   const { brand, model } = splitBrandModel(name);
