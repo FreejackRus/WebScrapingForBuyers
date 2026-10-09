@@ -1954,3 +1954,8 @@ narrator кладёт в payload ≤ 6 реплик по 400 символов. �
 - Использованы ECC TDD/UI/testing, verification-gate, Graphify, Serena,
   Context7 Zustand, встроенный браузер. Security review/Semgrep исключены
   пользователем; модель не менялась, платные сервисы не подключались.
+- Прод: d8191cab штатным scripts/deploy.sh analysis web; public health ok.
+  Авторизованный gateway: compound 12400F BOX до 16,5 тысяч в наличии,
+  снятие цены, разрешение заказа, server-context summary и объяснение с одной
+  ссылкой прошли на трёх live NETLAB карточках. Chrome start time сохранено
+  2026-10-09T10:34:50Z. Документационный коммит после деплоя не меняет runtime.
