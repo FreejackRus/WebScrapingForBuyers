@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[There is no top-level ``price`` key in the live response.]] - `rationale_for` [EXTRACTED]
-- [[_items()_2]] - `calls` [EXTRACTED]
+- [[_items()_3]] - `calls` [EXTRACTED]
 - [[_payload()_1]] - `calls` [EXTRACTED]
 - [[test_live_payload_contract.py]] - `contains` [EXTRACTED]
 

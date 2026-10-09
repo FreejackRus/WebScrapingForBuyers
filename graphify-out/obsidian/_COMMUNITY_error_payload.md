@@ -19,7 +19,7 @@ members: 16
 - [[fail_fetch()]] - code - mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py
 - [[fail_fetch()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py
 - [[forbidden()]] - code - mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py
-- [[parametrize_5]] - code
+- [[parametrize_4]] - code
 - [[test_an_invalid_region_is_rejected_before_any_request()]] - code - mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py
 - [[test_card_raises_drift_when_no_product_node()]] - code - mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py
 - [[test_card_treats_404_in_a_200_body_as_not_found()]] - code - mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py

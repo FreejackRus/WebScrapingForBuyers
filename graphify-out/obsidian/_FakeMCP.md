@@ -12,7 +12,7 @@ tags:
 # _FakeMCP
 
 ## Connections
-- [[dot-__init__()_20]] - `method` [EXTRACTED]
+- [[dot-__init__()_18]] - `method` [EXTRACTED]
 - [[dot-add_middleware()]] - `method` [EXTRACTED]
 - [[dot-run()]] - `method` [EXTRACTED]
 - [[Minimal FastMCP stand-in that records the run() call instead of serving.]] - `rationale_for` [EXTRACTED]

@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "packages_contracts_dist_index"
+community: "workspace/ui/index.tsx"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/packages_contracts_dist_index
+  - community/workspace/ui/indextsx
 ---
 
 # packages_contracts_dist_index_sourcestate
@@ -17,4 +17,4 @@ tags:
 - [[sourcesuiindex.test.tsx]] - `imports` [EXTRACTED]
 - [[sourcesuiindex.tsx]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/packages_contracts_dist_index
+#graphify/concept #graphify/EXTRACTED #community/workspace/ui/indextsx

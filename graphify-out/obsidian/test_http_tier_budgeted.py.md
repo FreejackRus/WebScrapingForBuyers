@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_http_tier_budgeted.py"
 type: "code"
-community: "pytest"
+community: "get_text_budgeted"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pytest
+  - community/get_text_budgeted
 ---
 
 # test_http_tier_budgeted.py
 
 ## Connections
 - [[Tests for ``get_text_budgeted`` — the wall-clock-bounded HTTP read. These…]] - `rationale_for` [EXTRACTED]
-- [[asyncio_2]] - `imports` [EXTRACTED]
+- [[asyncio]] - `imports` [EXTRACTED]
 - [[httpx]] - `imports` [EXTRACTED]
 - [[make_client()]] - `contains` [EXTRACTED]
 - [[pytest]] - `imports` [EXTRACTED]
@@ -31,4 +31,4 @@ tags:
 - [[test_wall_clock_budget_bounds_a_single_slow_attempt()]] - `contains` [EXTRACTED]
 - [[transport__init__.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pytest
+#graphify/code #graphify/EXTRACTED #community/get_text_budgeted

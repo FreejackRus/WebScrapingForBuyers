@@ -12,7 +12,7 @@ tags:
 # OfferBatch
 
 ## Connections
-- [[dot-__init__()_16]] - `method` [EXTRACTED]
+- [[dot-__init__()_27]] - `method` [EXTRACTED]
 - [[MarketOffer]] - `uses` [INFERRED]
 - [[Offers with native diagnostics; no shared state across concurrent sources.]] - `rationale_for` [EXTRACTED]
 - [[_search_aliexpress()]] - `calls` [EXTRACTED]

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/__main__.py"
 type: "code"
-community: "compare_connector/__main__.py"
+community: "sys"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/compare_connector/__main__py
+  - community/sys
 ---
 
 # compare_connector/__main__.py
@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[Entry point for the cross-marketplace comparison MCP server. Exposed as the…]] - `rationale_for` [EXTRACTED]
 - [[decision_main()]] - `contains` [EXTRACTED]
-- [[main()_12]] - `contains` [EXTRACTED]
+- [[main()_14]] - `contains` [EXTRACTED]
 - [[sys]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/compare_connector/__main__py
+#graphify/code #graphify/EXTRACTED #community/sys

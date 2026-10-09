@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_shape_reference.py"
 type: "rationale"
-community: "avito-connector/tests/test_shape_reference.py"
+community: "shape_signature"
 location: "L41"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/avito-connector/tests/test_shape_referencepy
+  - community/shape_signature
 ---
 
 # The fields the parser actually binds to must stay in the reference. A fixture…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_the_parser_bindings_survive_in_the_reference_shape()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/avito-connector/tests/test_shape_referencepy
+#graphify/rationale #graphify/EXTRACTED #community/shape_signature

@@ -2,7 +2,7 @@
 source_file: "apps/analysis/src/application/analyze.ts"
 type: "code"
 community: "analyze.ts"
-location: "L545"
+location: "L662"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -23,6 +23,7 @@ tags:
 - [[classifyIntent()]] - `calls` [EXTRACTED]
 - [[detectSafetyCategory()]] - `calls` [EXTRACTED]
 - [[extractSearchQuery()]] - `calls` [EXTRACTED]
+- [[historyOf()]] - `calls` [EXTRACTED]
 - [[logSafetyIncident()]] - `calls` [EXTRACTED]
 - [[narrationFailureMessage()]] - `calls` [EXTRACTED]
 - [[resolveChatIntent()]] - `calls` [EXTRACTED]

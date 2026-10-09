@@ -13,7 +13,7 @@ members: 6
 - [[The id goes into a URL path, so it is validated as digits, never escaped.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py
 - [[fail_fetch()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py
 - [[fail_fetch()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py
-- [[parametrize_9]] - code
+- [[parametrize_17]] - code
 - [[test_card_rejects_non_numeric_ids()]] - code - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py
 - [[test_search_rejects_too_short_queries()]] - code - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py
 

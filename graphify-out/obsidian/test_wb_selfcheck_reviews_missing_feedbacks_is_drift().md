@@ -12,9 +12,9 @@ tags:
 # test_wb_selfcheck_reviews_missing_feedbacks_is_drift()
 
 ## Connections
-- [[fake_safe_get_text()_14]] - `contains` [EXTRACTED]
-- [[no_wait()_13]] - `contains` [EXTRACTED]
-- [[scenario()_13]] - `contains` [EXTRACTED]
+- [[fake_safe_get_text()_15]] - `contains` [EXTRACTED]
+- [[no_wait()_14]] - `contains` [EXTRACTED]
+- [[scenario()_14]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/no_wait

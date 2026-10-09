@@ -12,7 +12,7 @@ tags:
 # test_yuan_price_and_strikethrough_are_read()
 
 ## Connections
-- [[_extract()_7]] - `calls` [EXTRACTED]
+- [[_extract()_4]] - `calls` [EXTRACTED]
 - [[prices_from_tile()]] - `calls` [EXTRACTED]
 - [[taobao-connectorteststest_card_extractor_dom.py]] - `contains` [EXTRACTED]
 

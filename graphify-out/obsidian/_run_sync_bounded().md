@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/server.py"
 type: "code"
 community: "ozon_connector/server.py"
-location: "L250"
+location: "L253"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,7 +12,7 @@ tags:
 # _run_sync_bounded()
 
 ## Connections
-- [[Any_5]] - `references` [EXTRACTED]
+- [[Any_8]] - `references` [EXTRACTED]
 - [[_SyncCallError]] - `calls` [EXTRACTED]
 - [[_can_process_call()]] - `calls` [EXTRACTED]
 - [[_fetch_composer()]] - `calls` [EXTRACTED]

@@ -12,7 +12,7 @@ tags:
 # CacheStats
 
 ## Connections
-- [[dot-__init__()_17]] - `calls` [EXTRACTED]
+- [[dot-__init__()_21]] - `calls` [EXTRACTED]
 - [[dot-as_dict()]] - `method` [EXTRACTED]
 - [[dot-hit_rate()]] - `method` [EXTRACTED]
 - [[dot-lookups()]] - `method` [EXTRACTED]

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cdp_budget.py"
 type: "code"
-community: "test_cdp_budget.py"
+community: "HostRefusingError"
 location: "L139"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/test_cdp_budgetpy
+  - community/HostRefusingError
 ---
 
 # test_cooldown_gives_the_host_another_chance()
@@ -16,4 +16,4 @@ tags:
 - [[NavigationBudget]] - `uses` [INFERRED]
 - [[test_cdp_budget.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/test_cdp_budgetpy
+#graphify/code #graphify/INFERRED #community/HostRefusingError

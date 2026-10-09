@@ -1,5 +1,5 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/aliexpress-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/aliexpress-connector/SKILL.md"
 type: "document"
 community: "AliExpress connector"
 location: "L40"

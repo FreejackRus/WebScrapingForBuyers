@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_search_extractor_dom.py"
 type: "rationale"
-community: "_items"
+community: "citilink-connector/tests/test_search_extractor_dom.py"
 location: "L80"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/_items
+  - community/citilink-connector/tests/test_search_extractor_dompy
 ---
 
 # The exact reason Citilink prices were null. This is the core regression.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_price_is_found_when_the_currency_glyph_is_a_separate_element()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/_items
+#graphify/rationale #graphify/EXTRACTED #community/citilink-connector/tests/test_search_extractor_dompy

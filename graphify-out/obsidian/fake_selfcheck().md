@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py"
 type: "code"
 community: "fake_selfcheck"
-location: "L227"
+location: "L224"
 tags:
   - graphify/code
   - graphify/EXTRACTED

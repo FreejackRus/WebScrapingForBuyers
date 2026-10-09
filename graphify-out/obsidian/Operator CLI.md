@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/marketplace/SKILL.md"
 type: "document"
 community: "compare_prices"
-location: "L35"
+location: "L33"
 tags:
   - graphify/document
   - graphify/EXTRACTED

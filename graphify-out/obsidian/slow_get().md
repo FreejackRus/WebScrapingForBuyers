@@ -12,7 +12,7 @@ tags:
 # slow_get()
 
 ## Connections
-- [[scenario()_96]] - `indirect_call` [INFERRED]
+- [[scenario()_101]] - `indirect_call` [INFERRED]
 - [[test_impersonated_timeout_uses_the_shared_error_vocabulary()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_clear_wb_cache

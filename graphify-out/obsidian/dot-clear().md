@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py"
+source_file: "apps/gateway/src/search-history.ts"
 type: "code"
-community: "TTLCache"
-location: "L109"
+community: "SearchHistory"
+location: "L82"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/TTLCache
+  - community/SearchHistory
 ---
 
 # .clear()
 
 ## Connections
-- [[TTLCache]] - `method` [EXTRACTED]
+- [[dot-schedule()]] - `calls` [EXTRACTED]
+- [[SearchHistory]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/TTLCache
+#graphify/code #graphify/EXTRACTED #community/SearchHistory

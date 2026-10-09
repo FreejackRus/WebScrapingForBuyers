@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/compare-prices/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md"
 type: "document"
-community: "Cross-Marketplace Price Comparison"
-location: "L165"
+community: "Wildberries Connector"
+location: "L140"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Cross-Marketplace_Price_Comparison
+  - community/Wildberries_Connector
 ---
 
 # Trust boundary
 
 ## Connections
-- [[Cross-Marketplace Price Comparison]] - `contains` [EXTRACTED]
+- [[Wildberries Connector_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Cross-Marketplace_Price_Comparison
+#graphify/document #graphify/EXTRACTED #community/Wildberries_Connector

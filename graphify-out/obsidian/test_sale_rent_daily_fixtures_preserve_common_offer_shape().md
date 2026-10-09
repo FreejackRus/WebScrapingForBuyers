@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_shape_reference.py"
 type: "code"
-community: "cian-connector/tests/test_shape_reference.py"
+community: "cian-connector/tests/test_server.py"
 location: "L28"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/cian-connector/tests/test_shape_referencepy
+  - community/cian-connector/tests/test_serverpy
 ---
 
 # test_sale_rent_daily_fixtures_preserve_common_offer_shape()
@@ -15,4 +15,4 @@ tags:
 - [[_signature()]] - `calls` [EXTRACTED]
 - [[cian-connectorteststest_shape_reference.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/cian-connector/tests/test_shape_referencepy
+#graphify/code #graphify/EXTRACTED #community/cian-connector/tests/test_serverpy

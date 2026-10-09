@@ -1,20 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "parametrize"
+community: "test_card_verification_records.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/parametrize
+  - community/test_card_verification_recordspy
 ---
 
 # parametrize
 
 ## Connections
-- [[test_a_malformed_host_falls_back_to_loopback()]] - `references` [EXTRACTED]
-- [[test_a_nonsense_port_falls_back_to_the_default()]] - `references` [EXTRACTED]
-- [[test_loopback_hosts_are_recognised()]] - `references` [EXTRACTED]
-- [[test_setup_hint_names_the_shell_script_elsewhere()]] - `references` [EXTRACTED]
-- [[test_the_valid_port_range_is_inclusive()]] - `references` [EXTRACTED]
+- [[test_zone_search_keeps_distinct_skus_and_dedupes_repeated_variant_before_limit()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/parametrize
+#graphify/code #graphify/EXTRACTED #community/test_card_verification_recordspy

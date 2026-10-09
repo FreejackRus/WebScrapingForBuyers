@@ -1,13 +1,13 @@
 ---
 type: community
-cohesion: 0.16
-members: 29
+cohesion: 0.17
+members: 28
 ---
 
 # App.tsx
 
-**Cohesion:** 0.16 - loosely connected
-**Members:** 29 nodes
+**Cohesion:** 0.17 - loosely connected
+**Members:** 28 nodes
 
 ## Members
 - [[App()]] - code - apps/web/src/app/App.tsx
@@ -34,7 +34,6 @@ members: 29
 - [[layerindex.ts]] - code - apps/web/src/composition/layer/index.ts
 - [[main.tsx]] - code - apps/web/src/app/main.tsx
 - [[react]] - concept - apps/web/package.json
-- [[react-dom]] - concept - apps/web/package.json
 - [[useBootSession()]] - code - apps/web/src/composition/hooks/useBootSession.ts
 - [[useBootSession.ts]] - code - apps/web/src/composition/hooks/useBootSession.ts
 - [[useSearchHotkey()]] - code - apps/web/src/composition/hooks/useSearchHotkey.ts
@@ -48,18 +47,19 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 16 edges to [[_COMMUNITY_useUserStore]]
-- 5 edges to [[_COMMUNITY_workspaceuiindex.tsx]]
-- 4 edges to [[_COMMUNITY_useSearchStore]]
-- 3 edges to [[_COMMUNITY_entitiesuserindex.ts]]
-- 3 edges to [[_COMMUNITY_packages_contracts_dist_index]]
-- 2 edges to [[_COMMUNITY_webpackage.json]]
-- 1 edge to [[_COMMUNITY_copilotuiindex.tsx]]
-- 1 edge to [[_COMMUNITY_offersuiindex.tsx]]
+- 14 edges to [[_COMMUNITY_useUserStore]]
+- 4 edges to [[_COMMUNITY_workspaceuiindex.tsx]]
+- 4 edges to [[_COMMUNITY_offersuiindex.tsx]]
+- 3 edges to [[_COMMUNITY_pagesuserindex.ts]]
+- 3 edges to [[_COMMUNITY_commanduiindex.tsx]]
+- 2 edges to [[_COMMUNITY_chatuiindex.tsx]]
+- 2 edges to [[_COMMUNITY_useSearchStore]]
+- 1 edge to [[_COMMUNITY_ref_vitest]]
+- 1 edge to [[_COMMUNITY_webpackage.json]]
 
 ## Top bridge nodes
-- [[react]] - degree 14, connects to 6 communities
-- [[react-dom]] - degree 8, connects to 4 communities
+- [[react]] - degree 17, connects to 5 communities
 - [[App.tsx]] - degree 20, connects to 3 communities
-- [[useBootSession.ts]] - degree 7, connects to 3 communities
-- [[AppShell.tsx]] - degree 12, connects to 2 communities
+- [[useBootSession.ts]] - degree 7, connects to 2 communities
+- [[AppShell.test.tsx]] - degree 4, connects to 2 communities
+- [[AppShell.tsx]] - degree 12, connects to 1 community

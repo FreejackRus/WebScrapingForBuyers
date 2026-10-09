@@ -1,28 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
-community: "TransportDownError"
-location: "L1761"
+community: "ozon_connector/models_output.py"
+location: "L2108"
 tags:
   - graphify/document
-  - graphify/INFERRED
-  - community/TransportDownError
+  - graphify/EXTRACTED
+  - community/ozon_connector/models_outputpy
 ---
 
 # Added
 
 ## Connections
-- [[1.2.0 — 2026-07-28 (English)]] - `contains` [EXTRACTED]
-- [[avito_card()]] - `references` [INFERRED]
-- [[avito_selfcheck()]] - `references` [INFERRED]
-- [[avito_seller()]] - `references` [INFERRED]
-- [[lamoda_card()]] - `references` [INFERRED]
-- [[lamoda_search()]] - `references` [INFERRED]
-- [[lamoda_selfcheck()]] - `references` [INFERRED]
-- [[megamarket_card()]] - `references` [INFERRED]
-- [[megamarket_selfcheck()]] - `references` [INFERRED]
-- [[probe_session()]] - `references` [INFERRED]
-- [[taobao_card()]] - `references` [INFERRED]
-- [[taobao_selfcheck()]] - `references` [INFERRED]
+- [[1.1.0 — 2026-07-26 (English)]] - `contains` [EXTRACTED]
+- [[wb_categories()]] - `references` [INFERRED]
 
-#graphify/document #graphify/INFERRED #community/TransportDownError
+#graphify/document #graphify/EXTRACTED #community/ozon_connector/models_outputpy

@@ -1,20 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/src/mpstats_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "code"
-community: "_client"
-location: "L140"
+community: "wb_connector/server.py"
+location: "L334"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_client
+  - community/wb_connector/serverpy
 ---
 
 # _proxy()
 
 ## Connections
-- [[Resolve MPStats' proxy explicit ``MPSTATS_PROXY`` first, then standard vars.]] - `rationale_for` [EXTRACTED]
-- [[_client()_1]] - `calls` [EXTRACTED]
-- [[mpstats_connectorserver.py]] - `contains` [EXTRACTED]
+- [[Resolve WB's proxy explicit ``WB_PROXY`` first, then the standard vars.]] - `rationale_for` [EXTRACTED]
+- [[_attach_image_urls()]] - `calls` [EXTRACTED]
+- [[_fetch()_1]] - `calls` [EXTRACTED]
+- [[_wb_client()]] - `calls` [EXTRACTED]
 - [[proxy_from_env()]] - `calls` [INFERRED]
+- [[wb_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_client
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

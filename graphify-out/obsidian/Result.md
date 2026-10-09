@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "read_with_handoff"
+community: "_resume_note"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/read_with_handoff
+  - community/_resume_note
 ---
 
 # Result
@@ -14,4 +14,4 @@ tags:
 - [[_resume_note()]] - `references` [EXTRACTED]
 - [[read_with_handoff()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/read_with_handoff
+#graphify/code #graphify/EXTRACTED #community/_resume_note

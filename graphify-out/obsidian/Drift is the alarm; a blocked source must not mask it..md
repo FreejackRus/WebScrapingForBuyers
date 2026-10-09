@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py"
 type: "rationale"
 community: "fake_selfcheck"
-location: "L274"
+location: "L271"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED

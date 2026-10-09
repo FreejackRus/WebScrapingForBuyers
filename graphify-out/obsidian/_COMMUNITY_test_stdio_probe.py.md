@@ -1,25 +1,28 @@
 ---
 type: community
-cohesion: 0.15
-members: 26
+cohesion: 0.13
+members: 30
 ---
 
 # test_stdio_probe.py
 
-**Cohesion:** 0.15 - loosely connected
-**Members:** 26 nodes
+**Cohesion:** 0.13 - loosely connected
+**Members:** 30 nodes
 
 ## Members
+- [[End-to-end stdio MCP check through the published OCI package. The local e2e…]] - rationale - mcp-servers/ru-marketplace-mcp/scripts/e2e_stdio_check_docker.py
 - [[MonkeyPatch]] - code
-- [[Path_13]] - code
-- [[Popen]] - code
+- [[Path_10]] - code
+- [[Popen_1]] - code
+- [[Step 7d - MCP server (only if --mcp flag)]] - document - .codex/skills/graphify/references/exports.md
 - [[Subprocess regressions for the operational probes (no Dockernetwork needed).]] - rationale - mcp-servers/ru-marketplace-mcp/scripts/test_stdio_probe.py
 - [[_probe()_1]] - code - mcp-servers/ru-marketplace-mcp/scripts/e2e_stdio_check_docker.py
 - [[command()]] - code - mcp-servers/ru-marketplace-mcp/scripts/test_stdio_probe.py
-- [[fixture_27]] - code
-- [[main()_27]] - code - mcp-servers/ru-marketplace-mcp/scripts/e2e_stdio_check_docker.py
-- [[parametrize_28]] - code
-- [[probe()_2]] - code - mcp-servers/ru-marketplace-mcp/scripts/e2e_stdio_check_docker.py
+- [[e2e_stdio_check_docker.py]] - code - mcp-servers/ru-marketplace-mcp/scripts/e2e_stdio_check_docker.py
+- [[fixture_17]] - code
+- [[main()_26]] - code - mcp-servers/ru-marketplace-mcp/scripts/e2e_stdio_check_docker.py
+- [[parametrize_21]] - code
+- [[probe()_1]] - code - mcp-servers/ru-marketplace-mcp/scripts/e2e_stdio_check_docker.py
 - [[replace_command()]] - code - mcp-servers/ru-marketplace-mcp/scripts/test_stdio_probe.py
 - [[run()_3]] - code - mcp-servers/ru-marketplace-mcp/scripts/test_stdio_probe.py
 - [[run()_4]] - code - mcp-servers/ru-marketplace-mcp/scripts/test_stdio_probe.py
@@ -36,6 +39,7 @@ members: 26
 - [[test_silent_child_obeys_deadline_and_is_reaped()]] - code - mcp-servers/ru-marketplace-mcp/scripts/test_stdio_probe.py
 - [[test_stdio_probe.py]] - code - mcp-servers/ru-marketplace-mcp/scripts/test_stdio_probe.py
 - [[unrelated_process()]] - code - mcp-servers/ru-marketplace-mcp/scripts/test_stdio_probe.py
+- [[uuid]] - concept
 
 ## Live Query (requires Dataview plugin)
 
@@ -45,16 +49,18 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 12 edges to [[_COMMUNITY_StdioProbe]]
-- 9 edges to [[_COMMUNITY_pathlib]]
+- 16 edges to [[_COMMUNITY_StdioProbe]]
+- 3 edges to [[_COMMUNITY_json]]
+- 2 edges to [[_COMMUNITY_subprocess]]
+- 2 edges to [[_COMMUNITY_sys]]
 - 1 edge to [[_COMMUNITY_graphify reference extra exports and benchmark]]
-- 1 edge to [[_COMMUNITY_pytest]]
 - 1 edge to [[_COMMUNITY_mcp_wire.py]]
-- 1 edge to [[_COMMUNITY_json]]
+- 1 edge to [[_COMMUNITY_pytest]]
+- 1 edge to [[_COMMUNITY_pathlib]]
 
 ## Top bridge nodes
-- [[test_stdio_probe.py]] - degree 26, connects to 5 communities
-- [[probe()_2]] - degree 4, connects to 2 communities
-- [[_probe()_1]] - degree 3, connects to 2 communities
+- [[test_stdio_probe.py]] - degree 26, connects to 7 communities
+- [[e2e_stdio_check_docker.py]] - degree 12, connects to 4 communities
 - [[replace_command()]] - degree 11, connects to 1 community
-- [[main()_27]] - degree 6, connects to 1 community
+- [[test_cleanup_stops_wrapper_and_its_child()]] - degree 5, connects to 1 community
+- [[test_invalid_results_fail()]] - degree 5, connects to 1 community

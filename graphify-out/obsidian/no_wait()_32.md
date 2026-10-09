@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "test_cache_can_be_disabled_by_ttl_zero"
-location: "L1366"
+community: "_RecordingPacer"
+location: "L2172"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_cache_can_be_disabled_by_ttl_zero
+  - community/_RecordingPacer
 ---
 
 # no_wait()
 
 ## Connections
-- [[test_cache_can_be_disabled_by_ttl_zero()]] - `contains` [EXTRACTED]
+- [[test_a_refusal_streak_reaches_the_operator()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_cache_can_be_disabled_by_ttl_zero
+#graphify/code #graphify/EXTRACTED #community/_RecordingPacer

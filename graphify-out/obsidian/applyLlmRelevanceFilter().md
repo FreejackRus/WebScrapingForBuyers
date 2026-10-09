@@ -2,7 +2,7 @@
 source_file: "apps/analysis/src/application/analyze.ts"
 type: "code"
 community: "AnalysisNarrator"
-location: "L108"
+location: "L157"
 tags:
   - graphify/code
   - graphify/EXTRACTED

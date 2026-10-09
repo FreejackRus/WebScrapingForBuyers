@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[$schema]] - `contains` [EXTRACTED]
 - [[_meta]] - `contains` [EXTRACTED]
-- [[description_1]] - `contains` [EXTRACTED]
+- [[description_2]] - `contains` [EXTRACTED]
 - [[name_2]] - `contains` [EXTRACTED]
 - [[packages]] - `contains` [EXTRACTED]
 - [[repository]] - `contains` [EXTRACTED]

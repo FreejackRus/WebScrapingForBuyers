@@ -16,6 +16,6 @@ tags:
 - [[detmir_connectormodels_output.py]] - `contains` [EXTRACTED]
 - [[detmir_connectorserver.py]] - `imports` [EXTRACTED]
 - [[detmir_selfcheck()]] - `calls` [EXTRACTED]
-- [[probe()_1]] - `calls` [EXTRACTED]
+- [[probe()_2]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/detmir_selfcheck

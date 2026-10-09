@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/docs/research/DEEP_RESEARCH_V2.0.0.md"
 type: "document"
-community: "compare_connector/models_output.py"
+community: "ProductIdentity"
 location: "L221"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/compare_connector/models_outputpy
+  - community/ProductIdentity
 ---
 
 # WP6 — Delivery and migration
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[v2.0 work packages]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/compare_connector/models_outputpy
+#graphify/document #graphify/EXTRACTED #community/ProductIdentity

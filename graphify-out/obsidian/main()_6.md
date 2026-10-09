@@ -1,18 +1,20 @@
 ---
-source_file: "deploy/chrome/cdp-proxy.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_versions.py"
 type: "code"
-community: "cdp-proxy.py"
-location: "L132"
+community: "check_versions.py"
+location: "L85"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/cdp-proxypy
+  - community/check_versionspy
 ---
 
 # main()
 
 ## Connections
-- [[cdp-proxy.py]] - `contains` [EXTRACTED]
-- [[handle_client()]] - `indirect_call` [INFERRED]
+- [[Mismatch]] - `calls` [EXTRACTED]
+- [[_root_version()]] - `calls` [EXTRACTED]
+- [[check_versions.py]] - `contains` [EXTRACTED]
+- [[sweep()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/cdp-proxypy
+#graphify/code #graphify/EXTRACTED #community/check_versionspy

@@ -12,7 +12,7 @@ tags:
 # ErrorCode
 
 ## Connections
-- [[dot-__init__()_37]] - `references` [EXTRACTED]
+- [[dot-__init__()_19]] - `references` [EXTRACTED]
 - [[dot-retryable()]] - `method` [EXTRACTED]
 - [[StrEnum]] - `inherits` [EXTRACTED]
 - [[_run_source()]] - `uses` [INFERRED]

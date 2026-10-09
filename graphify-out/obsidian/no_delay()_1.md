@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Remove the politeness gap so tests do not actually wait 1.5s per call.]] - `rationale_for` [EXTRACTED]
-- [[fixture_15]] - `references` [EXTRACTED]
+- [[fixture_16]] - `references` [EXTRACTED]
 - [[yandex-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/no_delay

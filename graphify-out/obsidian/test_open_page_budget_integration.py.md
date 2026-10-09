@@ -12,7 +12,7 @@ tags:
 # test_open_page_budget_integration.py
 
 ## Connections
-- [[asyncio_2]] - `imports` [EXTRACTED]
+- [[asyncio]] - `imports` [EXTRACTED]
 - [[cdp_budget.py]] - `imports_from` [EXTRACTED]
 - [[contextlib]] - `imports_from` [EXTRACTED]
 - [[fake_browser()]] - `contains` [EXTRACTED]

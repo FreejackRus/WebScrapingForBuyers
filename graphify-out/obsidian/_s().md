@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[A non-empty string, else None — never a stringified None or number.]] - `rationale_for` [EXTRACTED]
-- [[Any_13]] - `references` [EXTRACTED]
+- [[Any_7]] - `references` [EXTRACTED]
 - [[_address()]] - `calls` [EXTRACTED]
 - [[_agent()]] - `calls` [EXTRACTED]
 - [[_clean_url()]] - `calls` [EXTRACTED]

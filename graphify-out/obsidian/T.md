@@ -11,7 +11,7 @@ tags:
 # T
 
 ## Connections
-- [[dot-get()]] - `references` [EXTRACTED]
+- [[dot-get()_1]] - `references` [EXTRACTED]
 - [[dot-get_or_fetch()]] - `references` [EXTRACTED]
 - [[dot-set()]] - `references` [EXTRACTED]
 

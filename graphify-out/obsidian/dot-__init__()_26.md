@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/http_tier.py"
 type: "code"
-community: "BadRequestError"
-location: "L99"
+community: "transport/__init__.py"
+location: "L92"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/BadRequestError
+  - community/transport/__init__py
 ---
 
 # .__init__()
 
 ## Connections
-- [[dot-__init__()_27]] - `calls` [EXTRACTED]
-- [[BadRequestError]] - `method` [EXTRACTED]
+- [[dot-__init__()_26]] - `calls` [EXTRACTED]
+- [[BodyTooLargeError]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/BadRequestError
+#graphify/code #graphify/EXTRACTED #community/transport/__init__py

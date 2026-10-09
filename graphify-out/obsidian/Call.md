@@ -1,16 +1,17 @@
 ---
-source_file: ""
+source_file: "apps/analysis/scripts/compare-models.ts"
 type: "code"
-community: "test_dependency_parity.py"
+community: "compare-models.ts"
+location: "L75"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_dependency_paritypy
+  - community/compare-modelsts
 ---
 
 # Call
 
 ## Connections
-- [[dot-visit_Call()]] - `references` [EXTRACTED]
+- [[compare-models.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_dependency_paritypy
+#graphify/code #graphify/EXTRACTED #community/compare-modelsts

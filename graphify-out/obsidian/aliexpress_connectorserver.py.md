@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/src/aliexpress_connector/server.py"
 type: "code"
-community: "aliexpress_connector/server.py"
+community: "json"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/aliexpress_connector/serverpy
+  - community/json
 ---
 
 # aliexpress_connector/server.py
@@ -17,16 +17,17 @@ tags:
 - [[AliSearchItemOut]] - `imports` [EXTRACTED]
 - [[AliSearchResponse]] - `imports` [EXTRACTED]
 - [[AliSelfcheckResponse]] - `imports` [EXTRACTED]
-- [[MetaOut_2]] - `imports` [EXTRACTED]
+- [[MetaOut]] - `imports` [EXTRACTED]
 - [[_aliexpress_selfcheck_impl()]] - `contains` [EXTRACTED]
 - [[_card_prices()]] - `contains` [EXTRACTED]
 - [[_cdp_card()]] - `contains` [EXTRACTED]
 - [[_cdp_render_search()]] - `contains` [EXTRACTED]
 - [[_challenge_error()]] - `contains` [EXTRACTED]
-- [[_extract_item_id()_1]] - `contains` [EXTRACTED]
+- [[_extract_item_id()]] - `contains` [EXTRACTED]
+- [[_https_image_url()]] - `contains` [EXTRACTED]
 - [[_is_punish()]] - `contains` [EXTRACTED]
 - [[_item_from_payload()]] - `contains` [EXTRACTED]
-- [[_polite_wait()_3]] - `contains` [EXTRACTED]
+- [[_polite_wait()]] - `contains` [EXTRACTED]
 - [[_scored_prices()]] - `contains` [EXTRACTED]
 - [[_tile_prices()]] - `contains` [EXTRACTED]
 - [[_unwrap_extract()]] - `contains` [EXTRACTED]
@@ -35,7 +36,7 @@ tags:
 - [[aliexpress_connectorsettings.py]] - `imports_from` [EXTRACTED]
 - [[aliexpress_search()]] - `contains` [EXTRACTED]
 - [[aliexpress_selfcheck()]] - `contains` [EXTRACTED]
-- [[asyncio_2]] - `imports` [EXTRACTED]
+- [[asyncio]] - `imports` [EXTRACTED]
 - [[cache.py]] - `imports_from` [EXTRACTED]
 - [[chrome_cdp.py]] - `imports_from` [EXTRACTED]
 - [[datetime]] - `imports` [EXTRACTED]
@@ -43,7 +44,7 @@ tags:
 - [[errors.py]] - `imports_from` [EXTRACTED]
 - [[fastmcp_3]] - `imports_from` [EXTRACTED]
 - [[fastmcp_server_middleware_error_handling]] - `imports_from` [EXTRACTED]
-- [[get_settings()_2]] - `imports` [EXTRACTED]
+- [[get_settings()_1]] - `imports` [EXTRACTED]
 - [[json]] - `imports` [EXTRACTED]
 - [[logging.py]] - `imports_from` [EXTRACTED]
 - [[mcp_core__init__.py]] - `imports_from` [EXTRACTED]
@@ -56,4 +57,4 @@ tags:
 - [[typing]] - `imports_from` [EXTRACTED]
 - [[urllib_parse]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/aliexpress_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/json

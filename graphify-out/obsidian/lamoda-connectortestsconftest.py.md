@@ -12,6 +12,6 @@ tags:
 # lamoda-connector/tests/conftest.py
 
 ## Connections
-- [[Marks this directory as its own pytest rootdir package. Several connectors have…_8]] - `rationale_for` [EXTRACTED]
+- [[Marks this directory as its own pytest rootdir package. Several connectors have…_9]] - `rationale_for` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/lamoda-connector/tests/conftestpy

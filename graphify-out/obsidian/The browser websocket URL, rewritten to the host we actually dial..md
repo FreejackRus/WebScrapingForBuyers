@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "rationale"
-community: "_RawCdpPage"
+community: "get_browser"
 location: "L563"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/_RawCdpPage
+  - community/get_browser
 ---
 
 # The browser websocket URL, rewritten to the host we actually dial.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_browser_ws_url()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/_RawCdpPage
+#graphify/rationale #graphify/EXTRACTED #community/get_browser

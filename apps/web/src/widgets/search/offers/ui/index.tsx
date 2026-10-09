@@ -14,7 +14,7 @@ function sortMark(active: boolean, direction?: "asc" | "desc") {
 }
 
 export function OfferTable() {
-  const { rows, total, page, pageCount, pageSize, sort, setPage, cycleSort, selectSort } = useOfferTable();
+  const { rows, reviewRows, total, page, pageCount, pageSize, sort, setPage, cycleSort, selectSort } = useOfferTable();
   const { openOffer } = useOfferCard();
   const { columns, visible, hidden, widthOf, toggle, setWidth, reset } = useOfferColumns();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -52,6 +52,72 @@ export function OfferTable() {
     if (hidden.includes(key)) return null;
     const label = columns.find((column) => column.key === key)?.label;
     return extra ? <td className={extra} data-label={label}>{node}</td> : <td data-label={label}>{node}</td>;
+  };
+
+  const renderOfferRow = (offer: (typeof rows)[number], allowRecommendation: boolean) => {
+    const isBest = allowRecommendation && offer.id === recommended;
+    return (
+      <tr
+        key={offer.id}
+        className={`offer-row ${selected.includes(offer.id) && allowRecommendation ? "selected" : ""} ${isBest ? "recommended" : ""}`.trim()}
+        onClick={() => openOffer(offer.id)}
+      >
+        {cell("source", (
+          <>
+            {isBest && <span className="offer-best-badge">Лучший выбор</span>}
+            <div className="source-name">
+              <b>{offer.source}</b>
+              {offer.seller ? <span className="offer-seller"> · {offer.seller}</span> : null}
+            </div>
+            <small className="offer-seller-desktop">{offer.seller}</small>
+          </>
+        ))}
+        {cell("title", (
+          <>
+            <div className="offer-title">{offer.title}</div>
+            {offer.mpn && <small className="offer-mpn">{offer.mpn}</small>}
+            {offer.assessment?.reasons.length ? (
+              <small className="offer-assessment-reason">{offer.assessment.reasons.join(" · ")}</small>
+            ) : null}
+          </>
+        ))}
+        {cell("match", (
+          <div className="offer-match">
+            <span className={`match ${offer.match}`}>{matchLabels[offer.match]}</span>
+            <small>{conditionLabels[offer.condition]}</small>
+          </div>
+        ))}
+        {cell("price", (
+          <>
+            <b className="mono">{money.format(offer.price)}</b>
+            {offer.oldPrice && <del className="mono">{money.format(offer.oldPrice)}</del>}
+            {offer.priceAnomaly ? (
+              <span className="price-anomaly" title={PRICE_ANOMALY_HINT}>{PRICE_ANOMALY_LABEL}</span>
+            ) : null}
+          </>
+        ), "price")}
+        {cell("availability", <>{offer.availability}</>)}
+        {cell("conditions", (
+          <div className="offer-conditions">
+            <span>{offer.delivery ?? "Доставка неизвестна"}</span>
+            <small>{offer.warranty ?? "Гарантия не указана"}</small>
+          </div>
+        ))}
+        {cell("fetched", <>{fetchedTime.format(new Date(offer.fetchedAt))}</>, "mono")}
+        <td className="offer-action">
+          <button
+            type="button"
+            className={`offer-cta${isBest ? " primary" : ""}`}
+            onClick={(event) => {
+              event.stopPropagation();
+              openOffer(offer.id);
+            }}
+          >
+            Карточка
+          </button>
+        </td>
+      </tr>
+    );
   };
 
   return (
@@ -171,78 +237,17 @@ export function OfferTable() {
             </tr>
           </thead>
           <tbody>
-            {rows.map((offer) => {
-              const isBest = offer.id === recommended;
-              return (
-              <tr
-                key={offer.id}
-                className={`offer-row ${selected.includes(offer.id) ? "selected" : ""} ${isBest ? "recommended" : ""}`.trim()}
-                onClick={() => openOffer(offer.id)}
-              >
-                {cell("source", (
-                  <>
-                    {isBest && <span className="offer-best-badge">Лучший выбор</span>}
-                    <div className="source-name">
-                      <b>{offer.source}</b>
-                      {offer.seller ? <span className="offer-seller"> · {offer.seller}</span> : null}
-                    </div>
-                    <small className="offer-seller-desktop">{offer.seller}</small>
-                  </>
-                ))}
-                {cell("title", (
-                  <>
-                    <div className="offer-title">{offer.title}</div>
-                    {offer.mpn && <small className="offer-mpn">{offer.mpn}</small>}
-                  </>
-                ))}
-                {cell("match", (
-                  <div className="offer-match">
-                    <span className={`match ${offer.match}`}>{matchLabels[offer.match]}</span>
-                    <small>{conditionLabels[offer.condition]}</small>
-                  </div>
-                ))}
-                {cell("price", (
-                  <>
-                    <b className="mono">{money.format(offer.price)}</b>
-                    {offer.oldPrice && <del className="mono">{money.format(offer.oldPrice)}</del>}
-                    {offer.priceAnomaly ? (
-                      <span className="price-anomaly" title={PRICE_ANOMALY_HINT}>
-                        {PRICE_ANOMALY_LABEL}
-                      </span>
-                    ) : null}
-                  </>
-                ), "price")}
-                {cell("availability", <>{offer.availability}</>)}
-                {cell("conditions", (
-                  <div className="offer-conditions">
-                    <span>{offer.delivery ?? "Доставка неизвестна"}</span>
-                    <small>{offer.warranty ?? "Гарантия не указана"}</small>
-                  </div>
-                ))}
-                {cell("fetched", <>{fetchedTime.format(new Date(offer.fetchedAt))}</>, "mono")}
-                <td className="offer-action">
-                  <button
-                    type="button"
-                    className={`offer-cta${isBest ? " primary" : ""}`}
-                    onClick={(event) => {
-                      event.stopPropagation();
-                      openOffer(offer.id);
-                    }}
-                  >
-                    Карточка
-                  </button>
-                </td>
-              </tr>
-            );
-            })}
+            {rows.map((offer) => renderOfferRow(offer, true))}
           </tbody>
         </table>
         {total === 0 && (
           <div className="empty offers-empty" role="status">
             <span className="empty-mark" aria-hidden="true">{snapshotTotal > 0 ? "⌕" : running ? "…" : "—"}</span>
-            <h3>{snapshotTotal > 0 ? "Нет предложений по этому фильтру" : running ? "Собираем предложения" : failedSources > 0 ? "Не удалось получить предложения" : "Предложения не найдены"}</h3>
+            <h3>{reviewRows.length > 0 ? "Нет предложений без уточнений" : snapshotTotal > 0 ? "Нет предложений по этому фильтру" : running ? "Собираем предложения" : failedSources > 0 ? "Не удалось получить предложения" : "Предложения не найдены"}</h3>
             <p>
-              {snapshotTotal > 0
+              {reviewRows.length > 0
+                ? "Все найденные предложения требуют проверки. Разверните группу ниже, чтобы увидеть причины."
+                : snapshotTotal > 0
                 ? "Измените запрос в таблице или сбросьте фильтры — загруженные строки сохранены."
                 : running
                   ? "Источники отвечают постепенно. Полученные цены появятся здесь автоматически."
@@ -258,6 +263,31 @@ export function OfferTable() {
           </div>
         )}
       </div>
+      {reviewRows.length > 0 && (
+        <details className="offer-review-group">
+          <summary>Требует уточнения — {reviewRows.length}</summary>
+          <div className="table-wrap">
+            <table
+              aria-label="Предложения, требующие уточнения"
+              style={{ minWidth: visible.reduce((sum, column) => sum + widthOf(column.key), 116) }}
+            >
+              <colgroup>
+                {visible.map((column) => (
+                  <col key={column.key} style={{ width: widthOf(column.key) }} />
+                ))}
+                <col style={{ width: 116 }} />
+              </colgroup>
+              <thead>
+                <tr>
+                  {visible.map((column) => <th key={column.key} scope="col">{column.label}</th>)}
+                  <th scope="col"><span className="sr-only">Карточка</span></th>
+                </tr>
+              </thead>
+              <tbody>{reviewRows.map((offer) => renderOfferRow(offer, false))}</tbody>
+            </table>
+          </div>
+        </details>
+      )}
       {total > 0 && (
         <div className="offers-pager">
           <span>

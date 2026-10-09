@@ -1,20 +1,20 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/server.py"
 type: "code"
-community: "megamarket_search"
+community: "log_event"
 location: "L709"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/megamarket_search
+  - community/log_event
 ---
 
 # megamarket_card()
 
 ## Connections
-- [[Added_11]] - `references` [INFERRED]
+- [[Added_15]] - `references` [INFERRED]
 - [[BadRequestError]] - `uses` [INFERRED]
-- [[Context_1]] - `references` [EXTRACTED]
+- [[Context_5]] - `references` [EXTRACTED]
 - [[Fetch one Megamarket product card.  Return Format MegamarketCardResponse…]] - `rationale_for` [EXTRACTED]
 - [[Field_6]] - `references` [EXTRACTED]
 - [[MegamarketCardResponse]] - `uses` [INFERRED]
@@ -30,6 +30,6 @@ tags:
 - [[min_length_5]] - `references` [EXTRACTED]
 - [[raise_tool_error()]] - `calls` [EXTRACTED]
 - [[tool_6]] - `references` [EXTRACTED]
-- [[Добавлено_11]] - `references` [INFERRED]
+- [[Добавлено_17]] - `references` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/megamarket_search
+#graphify/code #graphify/EXTRACTED #community/log_event

@@ -1,17 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
 type: "code"
-community: "_RecordingPacer"
-location: "L2101"
+community: "json"
+location: "L32"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_RecordingPacer
+  - community/json
 ---
 
 # .__init__()
 
 ## Connections
-- [[_RecordingPacer]] - `method` [EXTRACTED]
+- [[dot-__init__()_33]] - `calls` [EXTRACTED]
+- [[ConnectorError]] - `method` [EXTRACTED]
+- [[ErrorCode]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_RecordingPacer
+#graphify/code #graphify/EXTRACTED #community/json

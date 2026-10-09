@@ -1,16 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "decision_inspect"
+community: "dns_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/decision_inspect
+  - community/dns_card
 ---
 
 # tool
 
 ## Connections
-- [[decision_inspect()]] - `references` [EXTRACTED]
+- [[dns_card()]] - `references` [EXTRACTED]
+- [[dns_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/decision_inspect
+#graphify/code #graphify/EXTRACTED #community/dns_card

@@ -12,7 +12,7 @@ tags:
 # _bundle()
 
 ## Connections
-- [[Any_6]] - `references` [EXTRACTED]
+- [[Any_3]] - `references` [EXTRACTED]
 - [[test_bundle_expected_answers_are_unique_and_catalogued()]] - `calls` [EXTRACTED]
 - [[test_committed_bundle_passes_structural_validation()]] - `calls` [EXTRACTED]
 - [[test_model_routing_eval.py]] - `contains` [EXTRACTED]

@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Space this source's requests out, and back off if it refused us. Reads…_2]] - `rationale_for` [EXTRACTED]
-- [[_cdp_render()]] - `calls` [EXTRACTED]
+- [[_cdp_render()_1]] - `calls` [EXTRACTED]
 - [[dns_connectorserver.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/dns_card

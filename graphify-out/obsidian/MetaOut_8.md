@@ -1,22 +1,23 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/src/mpstats_connector/models_output.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/models_output.py"
 type: "code"
-community: "BadRequestError"
-location: "L31"
+community: "avito_connector/server.py"
+location: "L14"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/BadRequestError
+  - community/avito_connector/serverpy
 ---
 
 # MetaOut
 
 ## Connections
-- [[MPStats carries the shared envelope unchanged.]] - `rationale_for` [EXTRACTED]
+- [[Avito carries the shared envelope unchanged.]] - `rationale_for` [EXTRACTED]
 - [[MetaOutBase]] - `inherits` [EXTRACTED]
-- [[mpstats_connectormodels_output.py]] - `contains` [EXTRACTED]
-- [[mpstats_connectorserver.py]] - `imports` [EXTRACTED]
-- [[mpstats_item()]] - `uses` [INFERRED]
-- [[mpstats_warehouses()]] - `uses` [INFERRED]
+- [[avito_card()]] - `uses` [INFERRED]
+- [[avito_connectormodels_output.py]] - `contains` [EXTRACTED]
+- [[avito_connectorserver.py]] - `imports` [EXTRACTED]
+- [[avito_search()_1]] - `uses` [INFERRED]
+- [[avito_seller()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/BadRequestError
+#graphify/code #graphify/EXTRACTED #community/avito_connector/serverpy

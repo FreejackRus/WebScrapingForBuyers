@@ -1,17 +1,17 @@
 ---
-source_file: "docs/DISTRIBUTORS.md"
-type: "document"
-community: "Источники: дистрибьюторы и маркетплейсы"
-location: "L1"
+source_file: "apps/search/src/infrastructure/sources/b2b-distributor-adapter.ts"
+type: "code"
+community: "b2b-distributor-adapter.ts"
+location: "L36"
 tags:
-  - graphify/document
+  - graphify/code
   - graphify/EXTRACTED
-  - community/Источники_дистрибьюторы_и_маркетплейсы
+  - community/b2b-distributor-adapterts
 ---
 
-# DISTRIBUTORS.md
+# DISTRIBUTORS
 
 ## Connections
-- [[Источники дистрибьюторы и маркетплейсы]] - `contains` [EXTRACTED]
+- [[b2b-distributor-adapter.ts]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Источники_дистрибьюторы_и_маркетплейсы
+#graphify/code #graphify/EXTRACTED #community/b2b-distributor-adapterts

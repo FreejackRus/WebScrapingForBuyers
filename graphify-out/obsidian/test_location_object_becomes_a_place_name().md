@@ -12,7 +12,7 @@ tags:
 # test_location_object_becomes_a_place_name()
 
 ## Connections
-- [[_items()_2]] - `calls` [EXTRACTED]
+- [[_items()_3]] - `calls` [EXTRACTED]
 - [[``location`` is an object upstream; the wire field is a string.]] - `rationale_for` [EXTRACTED]
 - [[test_live_payload_contract.py]] - `contains` [EXTRACTED]
 

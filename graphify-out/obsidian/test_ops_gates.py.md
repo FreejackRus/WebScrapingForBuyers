@@ -14,8 +14,8 @@ tags:
 ## Connections
 - [[_check_gate()]] - `imports` [EXTRACTED]
 - [[_snapshot()]] - `imports` [EXTRACTED]
-- [[evaluate()_2]] - `imports` [EXTRACTED]
-- [[evaluate()_3]] - `imports` [EXTRACTED]
+- [[evaluate()]] - `imports` [EXTRACTED]
+- [[evaluate()_5]] - `imports` [EXTRACTED]
 - [[json]] - `imports` [EXTRACTED]
 - [[mcp_wire.py]] - `imports_from` [EXTRACTED]
 - [[model_routing_eval.py]] - `imports_from` [EXTRACTED]

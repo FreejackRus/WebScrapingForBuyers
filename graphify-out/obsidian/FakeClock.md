@@ -12,8 +12,8 @@ tags:
 # FakeClock
 
 ## Connections
-- [[dot-__call__()_1]] - `method` [EXTRACTED]
-- [[dot-__init__()_18]] - `method` [EXTRACTED]
+- [[dot-__call__()_2]] - `method` [EXTRACTED]
+- [[dot-__init__()_16]] - `method` [EXTRACTED]
 - [[dot-advance()_1]] - `method` [EXTRACTED]
 - [[dot-sleep()]] - `method` [EXTRACTED]
 - [[A clock that only moves when a sleep says it should.]] - `rationale_for` [EXTRACTED]

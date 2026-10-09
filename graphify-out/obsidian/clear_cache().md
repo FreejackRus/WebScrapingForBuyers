@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Composer reads are cached, so scenarios must not inherit each other's bodies.]] - `rationale_for` [EXTRACTED]
-- [[fixture_1]] - `references` [EXTRACTED]
+- [[fixture]] - `references` [EXTRACTED]
 - [[ozon-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/ozon-connector/tests/test_serverpy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
-community: "ozon_card"
-location: "L2137"
+community: "ozon_connector/models_output.py"
+location: "L2143"
 tags:
   - graphify/document
   - graphify/INFERRED
-  - community/ozon_card
+  - community/ozon_connector/models_outputpy
 ---
 
 # Changed
@@ -16,4 +16,4 @@ tags:
 - [[_card_item_dict()]] - `references` [INFERRED]
 - [[get_text_budgeted()]] - `references` [INFERRED]
 
-#graphify/document #graphify/INFERRED #community/ozon_card
+#graphify/document #graphify/INFERRED #community/ozon_connector/models_outputpy

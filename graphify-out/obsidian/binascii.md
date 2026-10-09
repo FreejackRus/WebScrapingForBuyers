@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "chrome_cdp.py"
+community: "json"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/chrome_cdppy
+  - community/json
 ---
 
 # binascii
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[chrome_cdp.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/chrome_cdppy
+#graphify/concept #graphify/EXTRACTED #community/json

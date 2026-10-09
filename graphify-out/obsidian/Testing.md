@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/docs/ARCHITECTURE.md"
 type: "document"
 community: "Architecture"
-location: "L201"
+location: "L197"
 tags:
   - graphify/document
   - graphify/EXTRACTED
@@ -12,6 +12,6 @@ tags:
 # Testing
 
 ## Connections
-- [[Architecture]] - `contains` [EXTRACTED]
+- [[Architecture_1]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/Architecture

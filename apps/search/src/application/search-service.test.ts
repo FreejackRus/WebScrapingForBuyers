@@ -180,3 +180,26 @@ describe("SearchService query intent", () => {
     expect(await titles("картридж 5120")).toHaveLength(3);
   });
 });
+
+describe("SearchService offer assessment", () => {
+  it("applies the same deterministic assessment to fresh and cached rows", async () => {
+    let fail = false;
+    const raw = { ...offer("A"), title: "Logitech K380" };
+    const adapter = source("A", async () => {
+      if (fail) throw new Error("offline");
+      return [structuredClone(raw)];
+    });
+    const service = new SearchService([adapter]);
+
+    const fresh = service.start("Logitech K380", product);
+    await finish(service, fresh.id);
+    const freshAssessment = service.get(fresh.id)!.offers[0]?.assessment;
+    expect(freshAssessment?.group).toBe("match");
+    expect(freshAssessment?.reasons.length).toBeGreaterThan(0);
+
+    fail = true;
+    const cached = service.start("Logitech K380", product);
+    await finish(service, cached.id);
+    expect(service.get(cached.id)!.offers[0]?.assessment).toEqual(freshAssessment);
+  });
+});

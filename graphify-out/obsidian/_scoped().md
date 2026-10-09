@@ -1,20 +1,20 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/server.py"
 type: "code"
-community: "test_contract.py"
+community: "log_event"
 location: "L519"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_contractpy
+  - community/log_event
 ---
 
 # _scoped()
 
 ## Connections
-- [[Any_3]] - `references` [EXTRACTED]
+- [[Any_11]] - `references` [EXTRACTED]
 - [[One nested object out of a search item, or an empty dict.]] - `rationale_for` [EXTRACTED]
 - [[_parse_items()]] - `calls` [EXTRACTED]
 - [[megamarket_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_contractpy
+#graphify/code #graphify/EXTRACTED #community/log_event

@@ -12,8 +12,8 @@ tags:
 # test_session_cookies_and_jwts_are_scrubbed()
 
 ## Connections
-- [[The MPStats connector holds the only secret this project ever sees — a live…]] - `rationale_for` [EXTRACTED]
-- [[parametrize_16]] - `references` [EXTRACTED]
+- [[A connected browser or reverse proxy may expose a session JWT in a diagnostic.…]] - `rationale_for` [EXTRACTED]
+- [[parametrize_22]] - `references` [EXTRACTED]
 - [[redact_error_text()]] - `calls` [EXTRACTED]
 - [[test_redact.py]] - `contains` [EXTRACTED]
 

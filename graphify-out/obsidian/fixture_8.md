@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "avito-connector/tests/test_server.py"
+community: "test_chrome_cdp_raw_lifecycle.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/avito-connector/tests/test_serverpy
+  - community/test_chrome_cdp_raw_lifecyclepy
 ---
 
 # fixture
 
 ## Connections
-- [[_no_cache()_4]] - `references` [EXTRACTED]
+- [[raw_browser()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/avito-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_raw_lifecyclepy

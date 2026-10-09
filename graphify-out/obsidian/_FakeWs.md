@@ -12,11 +12,12 @@ tags:
 # _FakeWs
 
 ## Connections
-- [[dot-__init__()_2]] - `method` [EXTRACTED]
+- [[dot-__init__()_3]] - `method` [EXTRACTED]
 - [[dot-recv()]] - `method` [EXTRACTED]
-- [[dot-send()]] - `method` [EXTRACTED]
+- [[dot-send()_1]] - `method` [EXTRACTED]
 - [[Replays canned CDP messages; records everything sent.]] - `rationale_for` [EXTRACTED]
 - [[test_chrome_cdp.py]] - `contains` [EXTRACTED]
+- [[test_goto_and_status_ignores_document_responses_from_child_frames()]] - `calls` [EXTRACTED]
 - [[test_goto_and_status_reports_a_block_page()]] - `calls` [EXTRACTED]
 - [[test_goto_and_status_returns_the_last_document_status_and_stops_on_load()]] - `calls` [EXTRACTED]
 - [[test_raw_page_evaluate_raises_on_exception_details()]] - `calls` [EXTRACTED]

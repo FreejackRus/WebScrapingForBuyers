@@ -13,10 +13,10 @@ tags:
 
 ## Connections
 - [[Ownership, bounded recovery and cancellation checks without real browser data.]] - `rationale_for` [EXTRACTED]
-- [[asyncio_2]] - `imports` [EXTRACTED]
+- [[asyncio]] - `imports` [EXTRACTED]
 - [[blocked()_1]] - `contains` [EXTRACTED]
-- [[browser()_3]] - `contains` [EXTRACTED]
-- [[call()_1]] - `contains` [EXTRACTED]
+- [[browser()_2]] - `contains` [EXTRACTED]
+- [[call()]] - `contains` [EXTRACTED]
 - [[contextlib]] - `imports_from` [EXTRACTED]
 - [[errors.py]] - `imports_from` [EXTRACTED]
 - [[gc]] - `imports` [EXTRACTED]

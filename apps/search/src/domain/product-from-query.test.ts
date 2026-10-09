@@ -1,6 +1,8 @@
+import type { Offer } from "@peremena/contracts";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-import { extractMpn, inferCategory, productFromQuery } from "./product-from-query.js";
+import { assessOffer } from "./offer-assessment.js";
+import { extractMpn, inferCategory, productFromQuery, splitBrandModel } from "./product-from-query.js";
 import {
   duckDuckGoSuggestUrl,
   googleSuggestUrl,
@@ -30,6 +32,75 @@ describe("productFromQuery", () => {
   it("distinguishes the Lenovo Legion Go handheld from Legion laptops", () => {
     expect(inferCategory("Lenovo Legion Go")).toBe("Игровые консоли");
     expect(inferCategory("Lenovo Legion Pro 5")).toBe("Ноутбуки");
+  });
+
+  it("normalizes Pantum aliases without putting query conditions into the model", () => {
+    const product = productFromQuery("картридж пантум TL-5120 оригинальный 3000 страниц");
+    expect(product.brand).toBe("Pantum");
+    expect(product.model).toBe("TL-5120");
+    expect(product.mpn).toBe("TL-5120");
+  });
+
+  it("keeps RAM layout and toner yield conditions out of the generated model", () => {
+    expect(productFromQuery("Kingston Fury Beast 2x16 GB").model).toBe("Fury Beast");
+    expect(productFromQuery("картридж Pantum TL-5120 ресурс 3000 страниц").model).toBe("TL-5120");
+  });
+
+  it("keeps bounded origin and compatibility phrases out of the generated model", () => {
+    expect(splitBrandModel("Pantum TL-5120 оригинальная").model).toBe("TL-5120");
+    expect(splitBrandModel("Pantum TL-5120 original").model).toBe("TL-5120");
+    expect(splitBrandModel("Pantum TL-5120 OEM").model).toBe("TL-5120");
+    expect(splitBrandModel("Pantum TL-5120 compatible").model).toBe("TL-5120");
+  });
+
+  it("lets offer assessment check RAM conditions after matching the generated model", () => {
+    const query = "Kingston Fury Beast 2x16 GB";
+    const assessed = assessOffer(
+      productFromQuery(query),
+      {
+        id: "ram",
+        source: "WB",
+        seller: "Магазин",
+        title: "Kingston Fury Beast 32 GB",
+        price: 1000,
+        priceCondition: "Обычная цена",
+        currency: "RUB",
+        availability: "В наличии",
+        condition: "new",
+        match: "exact",
+        url: "https://example.test/ram",
+        fetchedAt: new Date(0).toISOString(),
+        demo: false,
+      } as Offer,
+      query,
+    );
+
+    expect(assessed?.assessment).toEqual({
+      group: "needs_review",
+      reasons: expect.arrayContaining(["Количество в комплекте не указано"]),
+    });
+  });
+
+  it("recognizes multiword brands and does not invent an unknown brand", () => {
+    expect(splitBrandModel("принтер Hewlett Packard LaserJet M404dn")).toEqual({
+      brand: "Hewlett Packard",
+      model: "LaserJet M404dn",
+    });
+    expect(splitBrandModel("картридж Super Cartridge TL-5120")).toEqual({
+      brand: "",
+      model: "Super Cartridge TL-5120",
+    });
+    expect(splitBrandModel("SSD кингстон NV3 1 ТБ оригинальный")).toEqual({ brand: "Kingston", model: "NV3" });
+    expect(splitBrandModel("картридж NV Print TL-5120 совместимый")).toEqual({
+      brand: "NV Print",
+      model: "TL-5120",
+    });
+    expect(splitBrandModel("SSD Samsung 990 PRO 2 ТБ")).toEqual({ brand: "Samsung", model: "990 PRO" });
+    expect(splitBrandModel("картридж Pantum 5120")).toEqual({ brand: "Pantum", model: "5120" });
+  });
+
+  it("keeps the complete alphanumeric MPN instead of its numeric fragment", () => {
+    expect(extractMpn("Картридж Pantum TL-5120")).toBe("TL-5120");
   });
 });
 

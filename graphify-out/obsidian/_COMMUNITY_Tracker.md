@@ -10,7 +10,7 @@ members: 13
 **Members:** 13 nodes
 
 ## Members
-- [[dot-__init__()_13]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cdp_budget.py
+- [[dot-__init__()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cdp_budget.py
 - [[dot-hold()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cdp_budget.py
 - [[Counts overlapping holders and remembers the peak.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cdp_budget.py
 - [[Six sources at once is exactly the shape that used to crash Chrome.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cdp_budget.py

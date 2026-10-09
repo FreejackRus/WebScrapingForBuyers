@@ -1,18 +1,23 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/server.py"
 type: "code"
-community: "avito_seller"
-location: "L170"
+community: "browser_handoff.py"
+location: "L344"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/avito_seller
+  - community/browser_handoffpy
 ---
 
 # _attempt()
 
 ## Connections
-- [[_cdp_fetch()]] - `contains` [EXTRACTED]
-- [[open_page()]] - `calls` [EXTRACTED]
+- [[_anti_bot_challenge()_1]] - `calls` [EXTRACTED]
+- [[_cdp_render_search()_1]] - `contains` [EXTRACTED]
+- [[_polite_wait()_5]] - `calls` [EXTRACTED]
+- [[get_handoff_id()]] - `calls` [EXTRACTED]
+- [[open_page()_3]] - `calls` [EXTRACTED]
+- [[read()_1]] - `contains` [EXTRACTED]
+- [[read_with_handoff()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/avito_seller
+#graphify/code #graphify/EXTRACTED #community/browser_handoffpy

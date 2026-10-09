@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_parser_live.py"
 type: "code"
 community: "aliexpress-connector/tests/test_parser_live.py"
-location: "L85"
+location: "L96"
 tags:
   - graphify/code
   - graphify/EXTRACTED

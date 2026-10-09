@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Reference shape signatures for the Yandex Market SSR parsers, pinned to…]] - `rationale_for` [EXTRACTED]
-- [[_load()_2]] - `contains` [EXTRACTED]
+- [[_load()_3]] - `contains` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]
 - [[resilience.py]] - `imports_from` [EXTRACTED]
 - [[test_card_shape_matches_the_no_rating_capture()]] - `contains` [EXTRACTED]

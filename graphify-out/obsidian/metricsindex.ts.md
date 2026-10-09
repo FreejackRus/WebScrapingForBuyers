@@ -12,7 +12,7 @@ tags:
 # metrics/index.ts
 
 ## Connections
-- [[Metrics()]] - `re_exports` [EXTRACTED]
+- [[Metrics()_1]] - `re_exports` [EXTRACTED]
 - [[metricsuiindex.tsx]] - `re_exports` [EXTRACTED]
 - [[widgetssearchindex.ts]] - `re_exports` [EXTRACTED]
 - [[workspaceuiindex.tsx]] - `imports_from` [EXTRACTED]

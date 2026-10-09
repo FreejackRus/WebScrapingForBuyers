@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "pathlib"
+community: "domtest.py"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/domtestpy
 ---
 
 # textwrap
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[domtest.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/pathlib
+#graphify/concept #graphify/EXTRACTED #community/domtestpy

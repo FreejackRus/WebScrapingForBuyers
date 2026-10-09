@@ -23,7 +23,7 @@ members: 23
 - [[_load_answers()]] - code - mcp-servers/ru-marketplace-mcp/scripts/model_routing_eval.py
 - [[_norm()]] - code - mcp-servers/ru-marketplace-mcp/scripts/model_routing_eval.py
 - [[_slice_stats()]] - code - mcp-servers/ru-marketplace-mcp/scripts/model_routing_eval.py
-- [[evaluate()_3]] - code - mcp-servers/ru-marketplace-mcp/scripts/model_routing_eval.py
+- [[evaluate()_5]] - code - mcp-servers/ru-marketplace-mcp/scripts/model_routing_eval.py
 - [[evaluate_answers()]] - code - mcp-servers/ru-marketplace-mcp/scripts/model_routing_eval.py
 - [[load_bundle()]] - code - mcp-servers/ru-marketplace-mcp/scripts/model_routing_eval.py
 - [[main()_35]] - code - mcp-servers/ru-marketplace-mcp/scripts/model_routing_eval.py
@@ -42,11 +42,14 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 4 edges to [[_COMMUNITY_pathlib]]
 - 3 edges to [[_COMMUNITY_mcp_wire.py]]
 - 2 edges to [[_COMMUNITY_json]]
+- 1 edge to [[_COMMUNITY_test_model_routing_eval_verdict.py]]
+- 1 edge to [[_COMMUNITY_StdioProbe]]
+- 1 edge to [[_COMMUNITY_sys]]
+- 1 edge to [[_COMMUNITY_pathlib]]
 
 ## Top bridge nodes
-- [[model_routing_eval.py]] - degree 19, connects to 3 communities
-- [[evaluate()_3]] - degree 5, connects to 1 community
+- [[model_routing_eval.py]] - degree 19, connects to 6 communities
+- [[evaluate()_5]] - degree 5, connects to 1 community
 - [[test_model_routing_matrix_is_complete()]] - degree 2, connects to 1 community

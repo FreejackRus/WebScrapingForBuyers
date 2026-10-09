@@ -12,11 +12,11 @@ tags:
 # _patch_graphql_response()
 
 ## Connections
-- [[__aenter__()_1]] - `contains` [EXTRACTED]
-- [[__aexit__()_1]] - `contains` [EXTRACTED]
-- [[json()_1]] - `contains` [EXTRACTED]
+- [[__aenter__()]] - `contains` [EXTRACTED]
+- [[__aexit__()]] - `contains` [EXTRACTED]
+- [[json()]] - `contains` [EXTRACTED]
 - [[lamoda-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[post()]] - `contains` [EXTRACTED]
+- [[post()_1]] - `contains` [EXTRACTED]
 - [[test_a_null_result_is_not_found_not_drift()]] - `calls` [EXTRACTED]
 - [[test_the_card_maps_the_real_envelope_end_to_end()]] - `calls` [EXTRACTED]
 - [[test_the_real_found_envelope_parses()]] - `calls` [EXTRACTED]

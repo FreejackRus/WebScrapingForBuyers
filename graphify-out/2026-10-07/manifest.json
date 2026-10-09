@@ -3360,9 +3360,9 @@
     "semantic_hash": ""
   },
   "docker-compose.production.yml": {
-    "mtime": 1791380598.1476212,
-    "seen": 1791380612.9619503,
-    "ast_hash": "0eecd2d96c739549b77c6124fae34eb5",
+    "mtime": 1791388751.824949,
+    "seen": 1791388760.5196764,
+    "ast_hash": "b903d10e68c570b0c342d8a42b11fdcf",
     "semantic_hash": ""
   },
   "docs/AGENT_PREAMBLE.md": {
@@ -3390,9 +3390,9 @@
     "semantic_hash": ""
   },
   "docs/DISTRIBUTORS.md": {
-    "mtime": 1791387614.3598676,
-    "seen": 1791387629.9330328,
-    "ast_hash": "0bb529a033070b1a6fc2d7eb3ee63334",
+    "mtime": 1791388751.8286266,
+    "seen": 1791388760.5196803,
+    "ast_hash": "4a0d890ab1e98146f8bc4e594145c03b",
     "semantic_hash": ""
   },
   "docs/IT_SCOPE.md": {
@@ -3408,9 +3408,9 @@
     "semantic_hash": ""
   },
   "docs/PROJECT_CONTEXT.md": {
-    "mtime": 1791387614.3566866,
-    "seen": 1791387629.933035,
-    "ast_hash": "46b54ac2ab1aee82179aa34268c7585f",
+    "mtime": 1791388751.8260264,
+    "seen": 1791388760.5196824,
+    "ast_hash": "bc3157f7129fa56e284a790dc2316f04",
     "semantic_hash": ""
   },
   "docs/STITCH.md": {
@@ -4311,6 +4311,12 @@
     "mtime": 1791387611.5453792,
     "seen": 1791387629.9326854,
     "ast_hash": "8e725999e474737d104245a92f533a5c",
+    "semantic_hash": ""
+  },
+  ".tmp-deploy.sh": {
+    "mtime": 1791387823.8252366,
+    "seen": 1791388760.5192719,
+    "ast_hash": "827e0a8db403b96b4257c54bf41d2b46",
     "semantic_hash": ""
   }
 }

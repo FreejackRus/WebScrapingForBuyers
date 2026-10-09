@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "test_card_verification_records.py"
+community: "json"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/test_card_verification_recordspy
+  - community/json
 ---
 
 # fastmcp_exceptions
@@ -24,15 +24,14 @@ tags:
 - [[errors.py]] - `imports_from` [EXTRACTED]
 - [[lamoda-connectorteststest_server.py]] - `imports_from` [EXTRACTED]
 - [[megamarket-connectorteststest_server.py]] - `imports_from` [EXTRACTED]
-- [[mpstats-connectorteststest_server.py]] - `imports_from` [EXTRACTED]
-- [[mpstats_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[ozon-connectorteststest_server.py]] - `imports_from` [EXTRACTED]
 - [[ozon_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[taobao-connectorteststest_server.py]] - `imports_from` [EXTRACTED]
 - [[test_card_verification_records.py]] - `imports_from` [EXTRACTED]
+- [[test_cdp_transport.py]] - `imports_from` [EXTRACTED]
 - [[test_helpers.py]] - `imports_from` [EXTRACTED]
 - [[test_search_login_wall_live_dom.py]] - `imports_from` [EXTRACTED]
 - [[wb_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[yandex-connectorteststest_server.py]] - `imports_from` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/test_card_verification_recordspy
+#graphify/concept #graphify/EXTRACTED #community/json

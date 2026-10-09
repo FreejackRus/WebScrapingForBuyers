@@ -12,7 +12,7 @@ tags:
 # compact_output_schema()
 
 ## Connections
-- [[Any]] - `references` [EXTRACTED]
+- [[Any_21]] - `references` [EXTRACTED]
 - [[Reduce a FastMCP-generated output schema to top-level field names. ``{}`` as a…]] - `rationale_for` [EXTRACTED]
 - [[apply_compact_output_schemas()]] - `calls` [EXTRACTED]
 - [[output_schema.py]] - `contains` [EXTRACTED]

@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_review_regressions.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py"
 type: "code"
-community: "pytest"
-location: "L18"
+community: "mcp-core/tests/test_browser_handoff.py"
+location: "L19"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pytest
+  - community/mcp-core/tests/test_browser_handoffpy
 ---
 
 # browser()
 
 ## Connections
-- [[fixture_19]] - `references` [EXTRACTED]
+- [[fixture_24]] - `references` [EXTRACTED]
+- [[mcp-coreteststest_browser_handoff.py]] - `contains` [EXTRACTED]
 - [[open_page()_4]] - `indirect_call` [INFERRED]
-- [[test_review_regressions.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pytest
+#graphify/code #graphify/EXTRACTED #community/mcp-core/tests/test_browser_handoffpy

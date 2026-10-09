@@ -2,7 +2,7 @@
 source_file: "apps/analysis/src/domain/analysis-narrator.ts"
 type: "code"
 community: "AnalysisNarrator"
-location: "L68"
+location: "L72"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -19,6 +19,8 @@ tags:
 - [[analysis-narrator.ts]] - `contains` [EXTRACTED]
 - [[analysissrcapp.ts]] - `imports` [EXTRACTED]
 - [[analyze.ts]] - `imports` [EXTRACTED]
+- [[compare-models.ts]] - `imports` [EXTRACTED]
+- [[conversation.test.ts]] - `imports` [EXTRACTED]
 - [[ollama-analysis-narrator.ts]] - `imports` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/AnalysisNarrator

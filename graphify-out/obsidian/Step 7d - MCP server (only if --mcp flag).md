@@ -1,12 +1,12 @@
 ---
 source_file: ".codex/skills/graphify/references/exports.md"
 type: "document"
-community: "graphify reference: extra exports and benchmark"
+community: "test_stdio_probe.py"
 location: "L59"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/graphify_reference_extra_exports_and_benchmark
+  - community/test_stdio_probepy
 ---
 
 # Step 7d - MCP server (only if --mcp flag)
@@ -15,4 +15,4 @@ tags:
 - [[command()]] - `references` [INFERRED]
 - [[graphify reference extra exports and benchmark]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/graphify_reference_extra_exports_and_benchmark
+#graphify/document #graphify/EXTRACTED #community/test_stdio_probepy

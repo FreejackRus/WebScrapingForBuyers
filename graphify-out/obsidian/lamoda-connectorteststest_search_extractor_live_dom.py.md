@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[The Lamoda search extractor against a LIVE captured grid. Companion to…]] - `rationale_for` [EXTRACTED]
-- [[_items()]] - `contains` [EXTRACTED]
+- [[_items()_2]] - `contains` [EXTRACTED]
 - [[domtest.py]] - `imports_from` [EXTRACTED]
 - [[lamoda_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]

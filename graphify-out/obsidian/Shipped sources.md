@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/docs/ANTI_BOT.md"
 type: "document"
-community: "Shipped sources"
+community: "Anti-bot reality, source by source"
 location: "L125"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Shipped_sources
+  - community/Anti-bot_reality_source_by_source
 ---
 
 # Shipped sources
@@ -20,4 +20,4 @@ tags:
 - [[Wildberries — no resistance]] - `contains` [EXTRACTED]
 - [[Yandex Market — captcha present but dormant]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Shipped_sources
+#graphify/document #graphify/EXTRACTED #community/Anti-bot_reality_source_by_source

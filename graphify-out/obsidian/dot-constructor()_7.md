@@ -1,17 +1,18 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/apify-marketplace-adapter.ts"
+source_file: "apps/gateway/src/search-history.ts"
 type: "code"
-community: "packages_contracts_dist_index"
-location: "L20"
+community: "SearchHistory"
+location: "L46"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/packages_contracts_dist_index
+  - community/SearchHistory
 ---
 
 # .constructor()
 
 ## Connections
-- [[ApifyMarketplaceAdapter]] - `method` [EXTRACTED]
+- [[dot-load()]] - `calls` [EXTRACTED]
+- [[SearchHistory]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index
+#graphify/code #graphify/EXTRACTED #community/SearchHistory

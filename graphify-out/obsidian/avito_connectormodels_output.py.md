@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/models_output.py"
 type: "code"
-community: "models.py"
+community: "avito_connector/server.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/modelspy
+  - community/avito_connector/serverpy
 ---
 
 # avito_connector/models_output.py
@@ -19,11 +19,11 @@ tags:
 - [[AvitoSelfcheckResponse]] - `contains` [EXTRACTED]
 - [[AvitoSellerOut]] - `contains` [EXTRACTED]
 - [[AvitoSellerResponse]] - `contains` [EXTRACTED]
-- [[MetaOut]] - `contains` [EXTRACTED]
+- [[MetaOut_8]] - `contains` [EXTRACTED]
 - [[Pydantic output models for the Avito MCP connector. Every tool returns a typed…]] - `rationale_for` [EXTRACTED]
 - [[avito_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[models.py]] - `imports_from` [EXTRACTED]
 - [[pydantic]] - `imports_from` [EXTRACTED]
 - [[test_live_payload_contract.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/modelspy
+#graphify/code #graphify/EXTRACTED #community/avito_connector/serverpy

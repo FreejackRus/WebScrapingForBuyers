@@ -2,7 +2,7 @@
 source_file: "apps/web/src/entities/offer/lib/index.ts"
 type: "code"
 community: "offers/ui/index.tsx"
-location: "L23"
+location: "L28"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,6 +12,7 @@ tags:
 # OfferSortColumn
 
 ## Connections
+- [[offer-columnsindex.ts]] - `imports` [EXTRACTED]
 - [[offer-tableindex.ts]] - `imports` [EXTRACTED]
 - [[offerindex.ts]] - `re_exports` [EXTRACTED]
 - [[offerlibindex.ts]] - `contains` [EXTRACTED]

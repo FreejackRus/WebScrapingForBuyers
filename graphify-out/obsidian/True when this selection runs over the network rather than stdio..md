@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/runtime.py"
 type: "rationale"
-community: "TransportConfig"
+community: "resolve_transport"
 location: "L104"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/TransportConfig
+  - community/resolve_transport
 ---
 
 # True when this selection runs over the network rather than stdio.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[dot-is_http()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/TransportConfig
+#graphify/rationale #graphify/EXTRACTED #community/resolve_transport

@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_stealth.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "test_chrome_cdp_stealth.py"
-location: "L119"
+community: "_tool_error_payload"
+location: "L1713"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_chrome_cdp_stealthpy
+  - community/_tool_error_payload
 ---
 
 # forbidden()
 
 ## Connections
-- [[test_linux_hide_is_a_noop()]] - `contains` [EXTRACTED]
+- [[test_category_products_refuses_the_blackhole_shard_without_a_request()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_stealthpy
+#graphify/code #graphify/EXTRACTED #community/_tool_error_payload

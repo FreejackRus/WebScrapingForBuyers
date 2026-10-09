@@ -12,7 +12,7 @@ tags:
 # _rooms()
 
 ## Connections
-- [[Any_13]] - `references` [EXTRACTED]
+- [[Any_7]] - `references` [EXTRACTED]
 - [[_offer_row()]] - `calls` [EXTRACTED]
 - [[cian_connectorserver.py]] - `contains` [EXTRACTED]
 

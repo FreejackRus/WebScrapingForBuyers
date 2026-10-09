@@ -10,10 +10,10 @@ members: 4
 **Members:** 4 nodes
 
 ## Members
-- [[English_2]] - document - mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v1.6.1.md
+- [[English_4]] - document - mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v1.6.1.md
 - [[RELEASE_NOTES_v1.6.1]] - document - mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v1.6.1.md
 - [[v1.6.1]] - document - mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v1.6.1.md
-- [[Русский_1]] - document - mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v1.6.1.md
+- [[Русский_3]] - document - mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v1.6.1.md
 
 ## Live Query (requires Dataview plugin)
 

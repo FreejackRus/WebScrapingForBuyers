@@ -12,6 +12,6 @@ tags:
 # Open ``url`` in the operator's Chrome, let Qrator pass, extract. The first…
 
 ## Connections
-- [[_cdp_render()]] - `rationale_for` [EXTRACTED]
+- [[_cdp_render()_1]] - `rationale_for` [EXTRACTED]
 
 #graphify/rationale #graphify/EXTRACTED #community/dns_card

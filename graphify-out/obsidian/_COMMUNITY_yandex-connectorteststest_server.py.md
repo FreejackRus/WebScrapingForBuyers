@@ -28,7 +28,7 @@ members: 20
 - [[test_retry_statuses_include_302_but_not_429()]] - code - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py
 - [[test_search_drops_repeated_product_ids()]] - code - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py
 - [[test_search_flags_a_degraded_ldjson_fallback()]] - code - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py
-- [[test_server_version_matches_pyproject()_5]] - code - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py
+- [[test_server_version_matches_pyproject()_4]] - code - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py
 - [[yandex-connectorteststest_server.py]] - code - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py
 
 ## Live Query (requires Dataview plugin)
@@ -46,13 +46,14 @@ SORT file.name ASC
 - 2 edges to [[_COMMUNITY_test_card_rejects_non_numeric_ids]]
 - 2 edges to [[_COMMUNITY_no_delay]]
 - 2 edges to [[_COMMUNITY_capture_1]]
-- 2 edges to [[_COMMUNITY_test_card_verification_records.py]]
-- 2 edges to [[_COMMUNITY_pathlib]]
+- 2 edges to [[_COMMUNITY_json]]
 - 1 edge to [[_COMMUNITY_TransportDownError]]
+- 1 edge to [[_COMMUNITY_test_card_verification_records.py]]
+- 1 edge to [[_COMMUNITY_test_distribution_contract.py]]
 - 1 edge to [[_COMMUNITY_pytest]]
-- 1 edge to [[_COMMUNITY_json]]
+- 1 edge to [[_COMMUNITY_pathlib]]
 
 ## Top bridge nodes
-- [[yandex-connectorteststest_server.py]] - degree 52, connects to 12 communities
+- [[yandex-connectorteststest_server.py]] - degree 52, connects to 13 communities
 - [[_stub_parsed_items()]] - degree 9, connects to 1 community
 - [[test_search_flags_a_degraded_ldjson_fallback()]] - degree 3, connects to 1 community

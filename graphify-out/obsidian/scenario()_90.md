@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "_clear_wb_cache"
-location: "L2152"
+community: "test_ozon_search_reports_actionable_cdp_block"
+location: "L420"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_clear_wb_cache
+  - community/test_ozon_search_reports_actionable_cdp_block
 ---
 
 # scenario()
 
 ## Connections
-- [[_clear_wb_cache()]] - `calls` [EXTRACTED]
-- [[fake_budgeted()_5]] - `indirect_call` [INFERRED]
-- [[test_a_transient_fault_is_not_counted_as_a_refusal()]] - `contains` [EXTRACTED]
+- [[blocked_fetch()]] - `indirect_call` [INFERRED]
+- [[test_ozon_search_reports_actionable_cdp_block()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_clear_wb_cache
+#graphify/code #graphify/EXTRACTED #community/test_ozon_search_reports_actionable_cdp_block

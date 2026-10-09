@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
 type: "code"
 community: "capture"
-location: "L530"
+location: "L310"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,6 +12,6 @@ tags:
 # capture()
 
 ## Connections
-- [[test_category_listing_passes_the_region_through()]] - `contains` [EXTRACTED]
+- [[test_category_passes_region_from_settings()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/capture

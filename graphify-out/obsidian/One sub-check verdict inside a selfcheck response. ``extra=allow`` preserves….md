@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/models.py"
 type: "rationale"
-community: "models.py"
+community: "dns_card"
 location: "L67"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/modelspy
+  - community/dns_card
 ---
 
 # One sub-check verdict inside a selfcheck response. ``extra="allow"`` preserves…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[SelfCheckEntryBase]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/modelspy
+#graphify/rationale #graphify/EXTRACTED #community/dns_card

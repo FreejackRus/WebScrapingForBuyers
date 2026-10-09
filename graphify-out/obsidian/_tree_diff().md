@@ -12,7 +12,7 @@ tags:
 # _tree_diff()
 
 ## Connections
-- [[Path_12]] - `references` [EXTRACTED]
+- [[Path_14]] - `references` [EXTRACTED]
 - [[Return (missing in vendor, extra in vendor, byte-different) paths.]] - `rationale_for` [EXTRACTED]
 - [[_assert_tree_matches()]] - `calls` [EXTRACTED]
 - [[_file_state()]] - `calls` [EXTRACTED]

@@ -21,7 +21,6 @@ tags:
 - [[lamoda_connectorsettings.py]] - `imports_from` [EXTRACTED]
 - [[logging.py]] - `imports_from` [EXTRACTED]
 - [[megamarket_connectorsettings.py]] - `imports_from` [EXTRACTED]
-- [[mpstats_connectorsettings.py]] - `imports_from` [EXTRACTED]
 - [[ozon_connectorsettings.py]] - `imports_from` [EXTRACTED]
 - [[taobao_connectorsettings.py]] - `imports_from` [EXTRACTED]
 - [[wb_connectorsettings.py]] - `imports_from` [EXTRACTED]

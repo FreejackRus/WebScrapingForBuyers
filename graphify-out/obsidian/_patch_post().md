@@ -12,7 +12,7 @@ tags:
 # _patch_post()
 
 ## Connections
-- [[fake_post()_3]] - `indirect_call` [INFERRED]
+- [[fake_post()_2]] - `indirect_call` [INFERRED]
 - [[megamarket-connectorteststest_server.py]] - `contains` [EXTRACTED]
 - [[test_a_flat_payload_still_parses()]] - `calls` [EXTRACTED]
 - [[test_a_nested_missing_price_is_none_never_zero()]] - `calls` [EXTRACTED]

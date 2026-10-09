@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/runtime.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
 type: "code"
-community: "BearerAuthMiddleware"
-location: "L120"
+community: "ChallengeRequiredError"
+location: "L104"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/BearerAuthMiddleware
+  - community/ChallengeRequiredError
 ---
 
 # .__init__()
 
 ## Connections
-- [[BearerAuthMiddleware]] - `method` [EXTRACTED]
+- [[dot-__init__()_33]] - `calls` [EXTRACTED]
+- [[NotFoundError]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/BearerAuthMiddleware
+#graphify/code #graphify/EXTRACTED #community/ChallengeRequiredError

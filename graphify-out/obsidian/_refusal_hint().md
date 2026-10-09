@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "code"
-community: "log_event"
-location: "L382"
+community: "wb_connector/server.py"
+location: "L389"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/log_event
+  - community/wb_connector/serverpy
 ---
 
 # _refusal_hint()
@@ -18,4 +18,4 @@ tags:
 - [[wb_connectorserver.py]] - `contains` [EXTRACTED]
 - [[wb_questions()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/log_event
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

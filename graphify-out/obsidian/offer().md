@@ -1,17 +1,17 @@
 ---
-source_file: "apps/analysis/src/analyze.test.ts"
+source_file: "apps/search/src/domain/it-scope.test.ts"
 type: "code"
-community: "analyze.test.ts"
-location: "L12"
+community: "product-from-query.ts"
+location: "L15"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/analyzetestts
+  - community/product-from-queryts
 ---
 
 # offer()
 
 ## Connections
-- [[analyze.test.ts]] - `contains` [EXTRACTED]
+- [[it-scope.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/analyzetestts
+#graphify/code #graphify/EXTRACTED #community/product-from-queryts

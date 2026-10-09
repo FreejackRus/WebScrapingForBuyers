@@ -14,6 +14,6 @@ tags:
 ## Connections
 - [[fake_runner()]] - `calls` [INFERRED]
 - [[make()]] - `indirect_call` [INFERRED]
-- [[offer()_1]] - `calls` [EXTRACTED]
+- [[offer()_2]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/INFERRED #community/test_sources_run_concurrently

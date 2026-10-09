@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
 community: "_run"
-location: "L763"
+location: "L725"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,6 +12,6 @@ tags:
 # fake_fetch()
 
 ## Connections
-- [[test_reviews_tolerates_malformed_uuid_next_button_and_score()]] - `contains` [EXTRACTED]
+- [[test_reviews_tolerate_drifted_item_id_and_products_shapes()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_run

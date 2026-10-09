@@ -13,8 +13,8 @@ tags:
 
 ## Connections
 - [[A real shard answering 404 means a stale selector, not a dead connector.]] - `rationale_for` [EXTRACTED]
-- [[responder()_15]] - `contains` [EXTRACTED]
-- [[scenario()_67]] - `contains` [EXTRACTED]
+- [[responder()_4]] - `contains` [EXTRACTED]
+- [[scenario()_48]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_patch_questions

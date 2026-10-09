@@ -12,7 +12,7 @@ tags:
 # _parse_product()
 
 ## Connections
-- [[Any_10]] - `references` [EXTRACTED]
+- [[Any_17]] - `references` [EXTRACTED]
 - [[DetmirProduct]] - `calls` [EXTRACTED]
 - [[Flatten one raw API product into the connector's output shape.]] - `rationale_for` [EXTRACTED]
 - [[_as_dict()]] - `calls` [EXTRACTED]

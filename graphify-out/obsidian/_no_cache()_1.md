@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py"
 type: "code"
-community: "citilink-connector/tests/test_server.py"
-location: "L48"
+community: "dns-connector/tests/test_server.py"
+location: "L46"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/citilink-connector/tests/test_serverpy
+  - community/dns-connector/tests/test_serverpy
 ---
 
 # _no_cache()
 
 ## Connections
-- [[citilink-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[fixture_3]] - `references` [EXTRACTED]
+- [[dns-connectorteststest_server.py]] - `contains` [EXTRACTED]
+- [[fixture_2]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/citilink-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/dns-connector/tests/test_serverpy

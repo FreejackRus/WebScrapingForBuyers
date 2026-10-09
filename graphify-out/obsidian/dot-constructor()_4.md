@@ -1,17 +1,18 @@
 ---
-source_file: "apps/identity/src/infrastructure/memory-auth-store.ts"
+source_file: "apps/search/src/infrastructure/sources/fallback-source-adapter.ts"
 type: "code"
-community: "memory-auth-store.ts"
-location: "L16"
+community: "SourceAdapter"
+location: "L24"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/memory-auth-storets
+  - community/SourceAdapter
 ---
 
 # .constructor()
 
 ## Connections
-- [[MemoryAuthStore]] - `method` [EXTRACTED]
+- [[FallbackSourceAdapter]] - `method` [EXTRACTED]
+- [[SourceAdapter]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/memory-auth-storets
+#graphify/code #graphify/EXTRACTED #community/SourceAdapter

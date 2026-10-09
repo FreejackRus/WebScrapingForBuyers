@@ -12,7 +12,7 @@ tags:
 # PermissionDeniedError
 
 ## Connections
-- [[dot-__init__()_30]] - `method` [EXTRACTED]
+- [[dot-__init__()_36]] - `method` [EXTRACTED]
 - [[ConnectorError]] - `inherits` [EXTRACTED]
 - [[errors.py]] - `contains` [EXTRACTED]
 - [[mcp_core__init__.py]] - `imports` [EXTRACTED]

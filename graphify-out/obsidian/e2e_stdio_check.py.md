@@ -1,21 +1,21 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/e2e_stdio_check.py"
 type: "code"
-community: "pathlib"
+community: "e2e_stdio_check.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/e2e_stdio_checkpy
 ---
 
 # e2e_stdio_check.py
 
 ## Connections
+- [[dot-mcp.json]] - `imports_from` [EXTRACTED]
 - [[End-to-end stdio MCP check spawn a server, speak the real protocol.…]] - `rationale_for` [EXTRACTED]
-- [[asyncio_2]] - `imports` [EXTRACTED]
-- [[main()_34]] - `contains` [EXTRACTED]
-- [[mcp]] - `imports_from` [EXTRACTED]
+- [[asyncio]] - `imports` [EXTRACTED]
+- [[main()_29]] - `contains` [EXTRACTED]
 - [[mcp_client_stdio]] - `imports_from` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]
 - [[probe()_3]] - `contains` [EXTRACTED]
@@ -25,4 +25,4 @@ tags:
 - [[tomllib]] - `imports` [EXTRACTED]
 - [[validate_sources()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pathlib
+#graphify/code #graphify/EXTRACTED #community/e2e_stdio_checkpy

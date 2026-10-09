@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[WbSearchResponse]] - `uses` [INFERRED]
-- [[search()_9]] - `indirect_call` [INFERRED]
+- [[search()_7]] - `indirect_call` [INFERRED]
 - [[test_search_offer_integrity.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/INFERRED #community/test_card_verification_recordspy

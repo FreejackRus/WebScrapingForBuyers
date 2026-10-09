@@ -12,7 +12,7 @@ tags:
 # test_the_coupon_price_is_never_the_price_or_the_strikethrough()
 
 ## Connections
-- [[_extract()_7]] - `calls` [EXTRACTED]
+- [[_extract()_4]] - `calls` [EXTRACTED]
 - [[prices_from_tile()]] - `calls` [EXTRACTED]
 - [[taobao-connectorteststest_card_extractor_dom.py]] - `contains` [EXTRACTED]
 - [[«券后价¥7899» is glyph-attached but sits below the real price.]] - `rationale_for` [EXTRACTED]

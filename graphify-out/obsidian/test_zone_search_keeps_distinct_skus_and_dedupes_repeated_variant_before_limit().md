@@ -12,8 +12,8 @@ tags:
 # test_zone_search_keeps_distinct_skus_and_dedupes_repeated_variant_before_limit()
 
 ## Connections
-- [[fetch()_3]] - `indirect_call` [INFERRED]
-- [[parametrize_34]] - `references` [EXTRACTED]
+- [[fetch()]] - `indirect_call` [INFERRED]
+- [[parametrize_8]] - `references` [EXTRACTED]
 - [[test_search_variants.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_card_verification_recordspy

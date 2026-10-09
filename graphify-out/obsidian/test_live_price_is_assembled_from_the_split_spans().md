@@ -12,7 +12,7 @@ tags:
 # test_live_price_is_assembled_from_the_split_spans()
 
 ## Connections
-- [[_extract()_8]] - `calls` [EXTRACTED]
+- [[_extract()_5]] - `calls` [EXTRACTED]
 - [[prices_from_tile()]] - `calls` [EXTRACTED]
 - [[test_card_extractor_live_dom.py]] - `contains` [EXTRACTED]
 - [[￥83.6 is what the buyer pays (店铺优惠后); ￥95 is the before-discount figure (优惠前)…]] - `rationale_for` [EXTRACTED]

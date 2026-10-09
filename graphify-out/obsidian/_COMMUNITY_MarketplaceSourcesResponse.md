@@ -10,7 +10,7 @@ members: 3
 **Members:** 3 nodes
 
 ## Members
-- [[BaseModel_14]] - code
+- [[BaseModel_12]] - code
 - [[MarketplaceSourcesResponse]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/src/marketplace_connector/server.py
 - [[Which connectors mounted, and why the others did not.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/src/marketplace_connector/server.py
 

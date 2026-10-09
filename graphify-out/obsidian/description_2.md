@@ -1,17 +1,17 @@
 ---
-source_file: ""
+source_file: "mcp-servers/ru-marketplace-mcp/server.json"
 type: "code"
-community: "dns_card"
+community: "server.json"
+location: "L4"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/dns_card
+  - community/serverjson
 ---
 
 # description
 
 ## Connections
-- [[dns_card()]] - `references` [EXTRACTED]
-- [[dns_search()]] - `references` [EXTRACTED]
+- [[server.json]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/dns_card
+#graphify/code #graphify/EXTRACTED #community/serverjson

@@ -10,7 +10,7 @@ members: 12
 **Members:** 12 nodes
 
 ## Members
-- [[Any_10]] - code
+- [[Any_17]] - code
 - [[Flatten one raw API product into the connector's output shape.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/server.py
 - [[Pull a rouble amount out of the several shapes prices arrive in. Upstream uses…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/server.py
 - [[Return ``value`` when it is a dict, else an empty dict. Upstream fields drift…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/server.py
@@ -32,12 +32,11 @@ SORT file.name ASC
 
 ## Connections to other communities
 - 9 edges to [[_COMMUNITY_detmir_categories]]
-- 6 edges to [[_COMMUNITY_json]]
-- 1 edge to [[_COMMUNITY_detmir_connectormodels_output.py]]
+- 7 edges to [[_COMMUNITY_detmir_connectorserver.py]]
 
 ## Top bridge nodes
-- [[_parse_product()]] - degree 10, connects to 3 communities
+- [[_parse_product()]] - degree 10, connects to 2 communities
 - [[_as_dict()]] - degree 6, connects to 2 communities
 - [[_as_list()]] - degree 6, connects to 2 communities
 - [[_product_node()]] - degree 4, connects to 2 communities
-- [[Any_10]] - degree 8, connects to 1 community
+- [[Any_17]] - degree 8, connects to 1 community

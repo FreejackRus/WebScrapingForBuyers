@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/models_output.py"
 type: "rationale"
-community: "avito_seller"
+community: "avito_connector/server.py"
 location: "L15"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/avito_seller
+  - community/avito_connector/serverpy
 ---
 
 # Avito carries the shared envelope unchanged.
 
 ## Connections
-- [[MetaOut]] - `rationale_for` [EXTRACTED]
+- [[MetaOut_8]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/avito_seller
+#graphify/rationale #graphify/EXTRACTED #community/avito_connector/serverpy

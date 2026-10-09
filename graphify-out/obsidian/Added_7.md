@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v2.1.0.md"
+source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
-community: "open_page"
-location: "L5"
+community: "ozon_card"
+location: "L778"
 tags:
   - graphify/document
-  - graphify/INFERRED
-  - community/open_page
+  - graphify/EXTRACTED
+  - community/ozon_card
 ---
 
 # Added
 
 ## Connections
-- [[_check_final_host()]] - `references` [INFERRED]
-- [[compare_prices()]] - `references` [INFERRED]
-- [[v2.1.0]] - `contains` [EXTRACTED]
+- [[1.6.1 — 2026-09-09]] - `contains` [EXTRACTED]
+- [[ozon_reviews()]] - `references` [INFERRED]
 
-#graphify/document #graphify/INFERRED #community/open_page
+#graphify/document #graphify/EXTRACTED #community/ozon_card

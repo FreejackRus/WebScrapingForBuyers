@@ -10,7 +10,7 @@ members: 2
 **Members:** 2 nodes
 
 ## Members
-- [[Marks this directory as its own pytest rootdir package. Several connectors have…_8]] - rationale - mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/conftest.py
+- [[Marks this directory as its own pytest rootdir package. Several connectors have…_9]] - rationale - mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/conftest.py
 - [[lamoda-connectortestsconftest.py]] - code - mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/conftest.py
 
 ## Live Query (requires Dataview plugin)

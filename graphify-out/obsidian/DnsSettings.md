@@ -14,6 +14,6 @@ tags:
 ## Connections
 - [[BaseSettings_5]] - `inherits` [EXTRACTED]
 - [[dns_connectorsettings.py]] - `contains` [EXTRACTED]
-- [[get_settings()_6]] - `calls` [EXTRACTED]
+- [[get_settings()_5]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/pydantic

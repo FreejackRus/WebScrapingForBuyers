@@ -1,17 +1,17 @@
 ---
-source_file: "apps/analysis/src/domain/narration-error.ts"
+source_file: "apps/search/src/infrastructure/sources/storefront-distributor-adapter.ts"
 type: "code"
-community: "ollama-analysis-narrator.ts"
-location: "L20"
+community: "storefront-distributor-adapter.ts"
+location: "L256"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ollama-analysis-narratorts
+  - community/storefront-distributor-adapterts
 ---
 
 # .constructor()
 
 ## Connections
-- [[NarrationError]] - `method` [EXTRACTED]
+- [[StorefrontDistributorAdapter]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ollama-analysis-narratorts
+#graphify/code #graphify/EXTRACTED #community/storefront-distributor-adapterts

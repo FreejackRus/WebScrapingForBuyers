@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_review_regressions.py"
 type: "code"
-community: "pytest"
+community: "test_review_regressions.py"
 location: "L93"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pytest
+  - community/test_review_regressionspy
 ---
 
 # test_our_own_policy_error_does_not_reset_the_hosts_refusal_record()
@@ -15,4 +15,4 @@ tags:
 - [[NavigationBudget]] - `uses` [INFERRED]
 - [[test_review_regressions.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pytest
+#graphify/code #graphify/EXTRACTED #community/test_review_regressionspy

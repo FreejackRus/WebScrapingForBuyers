@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/server.json"
+source_file: ""
 type: "code"
-community: "server.json"
-location: "L4"
+community: "taobao_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/serverjson
+  - community/taobao_connector/serverpy
 ---
 
 # description
 
 ## Connections
-- [[server.json]] - `contains` [EXTRACTED]
+- [[taobao_card()]] - `references` [EXTRACTED]
+- [[taobao_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/serverjson
+#graphify/code #graphify/EXTRACTED #community/taobao_connector/serverpy

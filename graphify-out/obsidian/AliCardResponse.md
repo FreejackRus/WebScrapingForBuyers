@@ -1,20 +1,20 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/src/aliexpress_connector/models_output.py"
 type: "code"
-community: "aliexpress_connector/models_output.py"
-location: "L35"
+community: "aliexpress_card"
+location: "L36"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/aliexpress_connector/models_outputpy
+  - community/aliexpress_card
 ---
 
 # AliCardResponse
 
 ## Connections
-- [[BaseModel_2]] - `inherits` [EXTRACTED]
+- [[BaseModel]] - `inherits` [EXTRACTED]
 - [[aliexpress_card()]] - `uses` [INFERRED]
 - [[aliexpress_connectormodels_output.py]] - `contains` [EXTRACTED]
 - [[aliexpress_connectorserver.py]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/aliexpress_connector/models_outputpy
+#graphify/code #graphify/EXTRACTED #community/aliexpress_card

@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[MonkeyPatch]] - `references` [EXTRACTED]
-- [[main()_27]] - `calls` [EXTRACTED]
+- [[main()_26]] - `calls` [EXTRACTED]
 - [[replace_command()]] - `calls` [EXTRACTED]
 - [[run()_4]] - `contains` [EXTRACTED]
 - [[run()_3]] - `indirect_call` [INFERRED]

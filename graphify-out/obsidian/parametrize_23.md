@@ -1,17 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "test_dsh_bundle.py"
+community: "parametrize"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_dsh_bundlepy
+  - community/parametrize
 ---
 
 # parametrize
 
 ## Connections
-- [[test_dsh_profile_flags_activate_exactly_the_requested_mount()]] - `references` [EXTRACTED]
-- [[test_the_vendor_gate_detects_every_drift_class()]] - `references` [EXTRACTED]
+- [[test_install_rejects_extra_arguments_and_unknown_flags()]] - `references` [EXTRACTED]
+- [[test_invalid_doctor_arguments_fail_before_any_checks()]] - `references` [EXTRACTED]
+- [[test_run_one_selfcheck_reads_dict_and_model_responses()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_dsh_bundlepy
+#graphify/code #graphify/EXTRACTED #community/parametrize

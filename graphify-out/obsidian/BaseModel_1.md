@@ -1,18 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "megamarket_connector/models_output.py"
+community: "taobao_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/megamarket_connector/models_outputpy
+  - community/taobao_connector/serverpy
 ---
 
 # BaseModel
 
 ## Connections
-- [[MegamarketCardResponse]] - `inherits` [EXTRACTED]
-- [[MegamarketSearchItemOut]] - `inherits` [EXTRACTED]
-- [[MegamarketSearchResponse]] - `inherits` [EXTRACTED]
+- [[TaobaoCardResponse]] - `inherits` [EXTRACTED]
+- [[TaobaoSearchItemOut]] - `inherits` [EXTRACTED]
+- [[TaobaoSearchResponse]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/megamarket_connector/models_outputpy
+#graphify/code #graphify/EXTRACTED #community/taobao_connector/serverpy

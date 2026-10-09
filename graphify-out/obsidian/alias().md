@@ -12,8 +12,8 @@ tags:
 # alias()
 
 ## Connections
-- [[Gotchas_2]] - `references` [INFERRED]
-- [[Gotchas_3]] - `references` [INFERRED]
+- [[Gotchas]] - `references` [INFERRED]
+- [[Gotchas_1]] - `references` [INFERRED]
 - [[Tools]] - `references` [INFERRED]
 - [[Tools_1]] - `references` [INFERRED]
 - [[vite.config.ts]] - `contains` [EXTRACTED]

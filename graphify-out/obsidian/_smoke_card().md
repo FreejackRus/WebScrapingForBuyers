@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/server.py"
 type: "code"
 community: "ozon_connector/server.py"
-location: "L1564"
+location: "L1646"
 tags:
   - graphify/code
   - graphify/EXTRACTED

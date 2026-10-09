@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/citilink-connector/SKILL.md"
 type: "document"
-community: "Citilink Connector"
+community: "citilink_selfcheck"
 location: "L1"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Citilink_Connector
+  - community/citilink_selfcheck
 ---
 
 # dsh/skills/citilink-connector/SKILL.md
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[Citilink Connector]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Citilink_Connector
+#graphify/document #graphify/EXTRACTED #community/citilink_selfcheck

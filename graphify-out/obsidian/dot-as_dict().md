@@ -12,7 +12,7 @@ tags:
 # .as_dict()
 
 ## Connections
-- [[Any_18]] - `references` [EXTRACTED]
+- [[Any_15]] - `references` [EXTRACTED]
 - [[CacheStats]] - `method` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/CacheStats

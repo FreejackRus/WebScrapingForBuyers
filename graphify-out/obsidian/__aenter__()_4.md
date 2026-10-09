@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py"
 type: "code"
-community: "test_cdp_fetch_json_times_out_open_page_and_releases_lock"
-location: "L345"
+community: "test_a_graphql_error_block_is_reported_verbatim"
+location: "L343"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_cdp_fetch_json_times_out_open_page_and_releases_lock
+  - community/test_a_graphql_error_block_is_reported_verbatim
 ---
 
 # __aenter__()
 
 ## Connections
-- [[test_cdp_fetch_json_times_out_open_page_and_releases_lock()]] - `contains` [EXTRACTED]
+- [[test_a_graphql_error_block_is_reported_verbatim()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_cdp_fetch_json_times_out_open_page_and_releases_lock
+#graphify/code #graphify/EXTRACTED #community/test_a_graphql_error_block_is_reported_verbatim

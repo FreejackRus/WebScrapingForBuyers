@@ -1,22 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/src/aliexpress_connector/models_output.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/src/dns_connector/models_output.py"
 type: "code"
-community: "aliexpress_connector/server.py"
+community: "dns_card"
 location: "L9"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/aliexpress_connector/serverpy
+  - community/dns_card
 ---
 
 # MetaOut
 
 ## Connections
-- [[AliExpress carries the shared envelope unchanged.]] - `rationale_for` [EXTRACTED]
+- [[DNS carries the shared envelope unchanged.]] - `rationale_for` [EXTRACTED]
 - [[MetaOutBase]] - `inherits` [EXTRACTED]
-- [[aliexpress_card()]] - `uses` [INFERRED]
-- [[aliexpress_connectormodels_output.py]] - `contains` [EXTRACTED]
-- [[aliexpress_connectorserver.py]] - `imports` [EXTRACTED]
-- [[aliexpress_search()]] - `uses` [INFERRED]
+- [[dns_card()]] - `uses` [INFERRED]
+- [[dns_connectormodels_output.py]] - `contains` [EXTRACTED]
+- [[dns_connectorserver.py]] - `imports` [EXTRACTED]
+- [[dns_search()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/aliexpress_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/dns_card

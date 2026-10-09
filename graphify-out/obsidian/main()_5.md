@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/examples/seller_lookup.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_test_count.py"
 type: "code"
-community: "log_event"
-location: "L19"
+community: "check_test_count.py"
+location: "L70"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/log_event
+  - community/check_test_countpy
 ---
 
 # main()
 
 ## Connections
-- [[seller_lookup.py]] - `contains` [EXTRACTED]
-- [[wb_card()]] - `calls` [EXTRACTED]
-- [[wb_seller()]] - `calls` [EXTRACTED]
+- [[_collected()]] - `calls` [EXTRACTED]
+- [[check_test_count.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/log_event
+#graphify/code #graphify/EXTRACTED #community/check_test_countpy

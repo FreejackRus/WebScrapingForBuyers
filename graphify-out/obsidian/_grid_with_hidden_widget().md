@@ -12,7 +12,7 @@ tags:
 # _grid_with_hidden_widget()
 
 ## Connections
-- [[Path_3]] - `references` [EXTRACTED]
+- [[Path_7]] - `references` [EXTRACTED]
 - [[The committed modeled grid with a hidden baxia widget injected.]] - `rationale_for` [EXTRACTED]
 - [[test_a_healthy_grid_with_a_hidden_challenge_widget_is_not_blocked()]] - `calls` [EXTRACTED]
 - [[test_anti_bot_challenge_dom.py]] - `contains` [EXTRACTED]

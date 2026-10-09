@@ -1,21 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py"
 type: "code"
-community: ".get"
-location: "L78"
+community: "_FakeResponse"
+location: "L469"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/get
+  - community/_FakeResponse
 ---
 
 # .get()
 
 ## Connections
-- [[dot-get_or_fetch()]] - `calls` [EXTRACTED]
-- [[Hashable]] - `references` [EXTRACTED]
-- [[Return a live value, or ``None`` on missexpiry.]] - `rationale_for` [EXTRACTED]
-- [[T]] - `references` [EXTRACTED]
-- [[TTLCache]] - `method` [EXTRACTED]
+- [[_FakeResponse]] - `calls` [EXTRACTED]
+- [[_FakeSession]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/get
+#graphify/code #graphify/EXTRACTED #community/_FakeResponse

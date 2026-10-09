@@ -1,17 +1,17 @@
 ---
-source_file: ""
-type: "concept"
-community: "pathlib"
+source_file: ".agents/skills/break-ui/CATALOG.md"
+type: "document"
+community: "Worst-Case Catalog"
+location: "L77"
 tags:
-  - graphify/concept
+  - graphify/document
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/Worst-Case_Catalog
 ---
 
-# collections
+# Collections
 
 ## Connections
-- [[cache.py]] - `imports_from` [EXTRACTED]
-- [[stdio_probe.py]] - `imports_from` [EXTRACTED]
+- [[Worst-Case Catalog]] - `contains` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/pathlib
+#graphify/document #graphify/EXTRACTED #community/Worst-Case_Catalog

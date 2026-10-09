@@ -1,5 +1,5 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/ozon-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/ozon-connector/SKILL.md"
 type: "document"
 community: "Ozon Connector"
 location: "L20"

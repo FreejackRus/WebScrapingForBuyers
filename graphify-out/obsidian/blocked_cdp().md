@@ -12,7 +12,7 @@ tags:
 # blocked_cdp()
 
 ## Connections
-- [[scenario()_62]] - `indirect_call` [INFERRED]
+- [[scenario()_77]] - `indirect_call` [INFERRED]
 - [[test_fetch_composer_reports_cdp_navigation_block_as_blocked()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_fetch_composer_reports_cdp_navigation_block_as_blocked

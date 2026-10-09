@@ -1,20 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "_patch_questions"
-location: "L1716"
+community: "test_cdp_fetch_json_times_out_open_page_and_releases_lock"
+location: "L996"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_patch_questions
+  - community/test_cdp_fetch_json_times_out_open_page_and_releases_lock
 ---
 
 # scenario()
 
 ## Connections
-- [[_patch_questions()]] - `calls` [EXTRACTED]
-- [[_tool_error_payload()_1]] - `calls` [EXTRACTED]
-- [[forbidden()_8]] - `indirect_call` [INFERRED]
-- [[test_category_products_refuses_the_blackhole_shard_without_a_request()]] - `contains` [EXTRACTED]
+- [[dead_fetch()]] - `indirect_call` [INFERRED]
+- [[test_ozon_search_zero_status_does_not_mention_cdp_setup()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_patch_questions
+#graphify/code #graphify/EXTRACTED #community/test_cdp_fetch_json_times_out_open_page_and_releases_lock

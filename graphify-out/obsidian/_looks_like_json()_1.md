@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/server.py"
 type: "code"
-community: "cian_connector/server.py"
-location: "L255"
+community: "avito_connector/server.py"
+location: "L315"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/cian_connector/serverpy
+  - community/avito_connector/serverpy
 ---
 
 # _looks_like_json()
 
 ## Connections
-- [[_fetch_card()]] - `calls` [EXTRACTED]
-- [[_fetch_search()]] - `calls` [EXTRACTED]
-- [[cian_connectorserver.py]] - `contains` [EXTRACTED]
+- [[_fetch()]] - `calls` [EXTRACTED]
+- [[avito_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/cian_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/avito_connector/serverpy

@@ -20,7 +20,7 @@ tags:
 - [[capture_owned_viewport()]] - `references` [EXTRACTED]
 - [[chrome_cdp.py]] - `contains` [EXTRACTED]
 - [[current_page_url()]] - `references` [EXTRACTED]
-- [[open_page()]] - `references` [EXTRACTED]
+- [[open_page()_3]] - `references` [EXTRACTED]
 - [[reveal_owned_page()]] - `references` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/PageLike

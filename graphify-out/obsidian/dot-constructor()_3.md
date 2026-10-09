@@ -1,18 +1,17 @@
 ---
-source_file: "apps/search/src/application/search-service.ts"
+source_file: "apps/search/src/infrastructure/sources/demo-source-adapter.ts"
 type: "code"
-community: "SearchService"
-location: "L18"
+community: "SourceAdapter"
+location: "L20"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/SearchService
+  - community/SourceAdapter
 ---
 
 # .constructor()
 
 ## Connections
-- [[SearchService]] - `method` [EXTRACTED]
-- [[SourceAdapter]] - `references` [EXTRACTED]
+- [[DemoSourceAdapter]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/SearchService
+#graphify/code #graphify/EXTRACTED #community/SourceAdapter

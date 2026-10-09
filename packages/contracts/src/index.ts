@@ -27,6 +27,12 @@ export interface Offer {
   warranty?: string;
   condition: ProductCondition;
   match: MatchKind;
+  /** Deterministic query assessment. Seller claims are not authenticity verification. */
+  assessment?: {
+    group: "match" | "needs_review";
+    /** Manager-readable explanations; no connector or model internals. */
+    reasons: string[];
+  };
   url: string;
   /** Public https product photo from the source listing, when it provides one. */
   imageUrl?: string;

@@ -1,16 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "_no_cache"
+community: "no_delay"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_no_cache
+  - community/no_delay
 ---
 
 # fixture
 
 ## Connections
-- [[_no_cache()_6]] - `references` [EXTRACTED]
+- [[clear_cache()_2]] - `references` [EXTRACTED]
+- [[no_delay()_1]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_no_cache
+#graphify/code #graphify/EXTRACTED #community/no_delay

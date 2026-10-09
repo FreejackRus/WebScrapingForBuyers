@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "code"
 community: "wb_connector/server.py"
-location: "L2378"
+location: "L2517"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,7 +12,7 @@ tags:
 # _menu_node()
 
 ## Connections
-- [[Any_16]] - `references` [EXTRACTED]
+- [[Any_27]] - `references` [EXTRACTED]
 - [[Convert one raw menu entry into a bounded WbCategoryNode. ``budget`` is a…]] - `rationale_for` [EXTRACTED]
 - [[WbCategoryNode]] - `calls` [EXTRACTED]
 - [[_decode_mojibake()]] - `calls` [EXTRACTED]

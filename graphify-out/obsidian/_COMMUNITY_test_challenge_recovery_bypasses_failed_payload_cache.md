@@ -11,7 +11,7 @@ members: 3
 
 ## Members
 - [[evaluate()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py
-- [[open_page()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py
+- [[open_page()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py
 - [[test_challenge_recovery_bypasses_failed_payload_cache()]] - code - mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py
 
 ## Live Query (requires Dataview plugin)

@@ -12,8 +12,8 @@ tags:
 # test_card_accepts_a_bare_product_id()
 
 ## Connections
-- [[capture()_4]] - `contains` [EXTRACTED]
-- [[capture()_5]] - `indirect_call` [INFERRED]
+- [[capture()_2]] - `contains` [EXTRACTED]
+- [[capture()_3]] - `indirect_call` [INFERRED]
 - [[dns-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/dns-connector/tests/test_serverpy

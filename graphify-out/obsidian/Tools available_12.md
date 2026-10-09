@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/ozon-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/avito-connector/SKILL.md"
 type: "document"
-community: "Ozon Connector"
-location: "L25"
+community: "avito_connector/server.py"
+location: "L19"
 tags:
   - graphify/document
-  - graphify/INFERRED
-  - community/Ozon_Connector
+  - graphify/EXTRACTED
+  - community/avito_connector/serverpy
 ---
 
 # Tools available
 
 ## Connections
-- [[Ozon Connector]] - `contains` [EXTRACTED]
-- [[ozon_selfcheck()]] - `references` [INFERRED]
-- [[success()]] - `references` [INFERRED]
+- [[Avito Connector_1]] - `contains` [EXTRACTED]
+- [[avito_selfcheck()]] - `references` [INFERRED]
 
-#graphify/document #graphify/INFERRED #community/Ozon_Connector
+#graphify/document #graphify/EXTRACTED #community/avito_connector/serverpy

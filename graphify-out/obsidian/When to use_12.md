@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/cian-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/ozon-connector/SKILL.md"
 type: "document"
-community: "Cian Connector"
-location: "L14"
+community: "ozon_selfcheck"
+location: "L20"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Cian_Connector
+  - community/ozon_selfcheck
 ---
 
 # When to use
 
 ## Connections
-- [[Cian Connector]] - `contains` [EXTRACTED]
-- [[compare_prices()]] - `references` [INFERRED]
+- [[Ozon Connector]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Cian_Connector
+#graphify/document #graphify/EXTRACTED #community/ozon_selfcheck

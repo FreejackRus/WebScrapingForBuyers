@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_model_routing_eval_verdict.py"
 type: "code"
-community: "pathlib"
+community: "test_model_routing_eval_verdict.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/test_model_routing_eval_verdictpy
 ---
 
 # test_model_routing_eval_verdict.py
@@ -25,4 +25,4 @@ tags:
 - [[test_the_report_exposes_the_new_fields()]] - `contains` [EXTRACTED]
 - [[test_the_runner_exit_code_follows_the_verdict()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pathlib
+#graphify/code #graphify/EXTRACTED #community/test_model_routing_eval_verdictpy

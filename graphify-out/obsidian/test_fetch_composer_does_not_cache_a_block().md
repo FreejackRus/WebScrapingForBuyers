@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "_patch_tier1"
+community: "test_fetch_composer_does_not_cache_a_block"
 location: "L818"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_patch_tier1
+  - community/test_fetch_composer_does_not_cache_a_block
 ---
 
 # test_fetch_composer_does_not_cache_a_block()
@@ -17,6 +17,6 @@ tags:
 - [[blocked_then_ok()]] - `contains` [EXTRACTED]
 - [[failing_cdp()]] - `contains` [EXTRACTED]
 - [[ozon-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[scenario()_30]] - `contains` [EXTRACTED]
+- [[scenario()_83]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_patch_tier1
+#graphify/code #graphify/EXTRACTED #community/test_fetch_composer_does_not_cache_a_block

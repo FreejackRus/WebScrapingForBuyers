@@ -1,17 +1,17 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/http-marketplace-adapter.ts"
+source_file: "apps/search/src/infrastructure/sources/storefront-distributor-adapter.ts"
 type: "code"
-community: "http-marketplace-adapter.ts"
-location: "L15"
+community: "storefront-distributor-adapter.ts"
+location: "L38"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/http-marketplace-adapterts
+  - community/storefront-distributor-adapterts
 ---
 
 # browserHeaders
 
 ## Connections
-- [[http-marketplace-adapter.ts]] - `contains` [EXTRACTED]
+- [[storefront-distributor-adapter.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/http-marketplace-adapterts
+#graphify/code #graphify/EXTRACTED #community/storefront-distributor-adapterts

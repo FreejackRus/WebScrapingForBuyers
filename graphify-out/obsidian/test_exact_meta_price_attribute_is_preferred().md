@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_search_extractor_dom.py"
 type: "code"
-community: "_items"
-location: "L158"
+community: "citilink-connector/tests/test_search_extractor_dom.py"
+location: "L172"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_items
+  - community/citilink-connector/tests/test_search_extractor_dompy
 ---
 
 # test_exact_meta_price_attribute_is_preferred()
@@ -16,4 +16,4 @@ tags:
 - [[``data-meta-price`` is the site's own numeric amount — no parsing, no ambiguity.]] - `rationale_for` [EXTRACTED]
 - [[citilink-connectorteststest_search_extractor_dom.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_items
+#graphify/code #graphify/EXTRACTED #community/citilink-connector/tests/test_search_extractor_dompy

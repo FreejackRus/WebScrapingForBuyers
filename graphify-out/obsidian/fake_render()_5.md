@@ -13,6 +13,5 @@ tags:
 
 ## Connections
 - [[_patch_render()_4]] - `indirect_call` [INFERRED]
-- [[payload()]] - `indirect_call` [INFERRED]
 
 #graphify/code #graphify/INFERRED #community/lamoda-connector/tests/test_serverpy

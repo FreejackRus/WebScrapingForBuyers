@@ -10,7 +10,7 @@ members: 7
 **Members:** 7 nodes
 
 ## Members
-- [[English_1]] - document - mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v2.4.2.md
+- [[English_2]] - document - mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v2.4.2.md
 - [[RELEASE_NOTES_v2.4.2]] - document - mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v2.4.2.md
 - [[Release-candidate evidence]] - document - mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v2.4.2.md
 - [[v2.4.2 — 2026-09-19]] - document - mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v2.4.2.md

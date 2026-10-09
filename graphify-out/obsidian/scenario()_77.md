@@ -1,18 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "test_run_sync_bounded_rejects_local_callables"
-location: "L122"
+community: "test_fetch_composer_reports_cdp_navigation_block_as_blocked"
+location: "L402"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/test_run_sync_bounded_rejects_local_callables
+  - graphify/INFERRED
+  - community/test_fetch_composer_reports_cdp_navigation_block_as_blocked
 ---
 
 # scenario()
 
 ## Connections
-- [[local()]] - `indirect_call` [INFERRED]
-- [[test_run_sync_bounded_rejects_local_callables()]] - `contains` [EXTRACTED]
+- [[blocked_cdp()]] - `indirect_call` [INFERRED]
+- [[blocked_get()]] - `indirect_call` [INFERRED]
+- [[test_fetch_composer_reports_cdp_navigation_block_as_blocked()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_run_sync_bounded_rejects_local_callables
+#graphify/code #graphify/INFERRED #community/test_fetch_composer_reports_cdp_navigation_block_as_blocked

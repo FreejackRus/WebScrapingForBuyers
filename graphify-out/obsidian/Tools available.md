@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/avito-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/megamarket-connector/SKILL.md"
 type: "document"
-community: "avito_seller"
+community: "Megamarket Connector"
 location: "L19"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/avito_seller
+  - community/Megamarket_Connector
 ---
 
 # Tools available
 
 ## Connections
-- [[Avito Connector]] - `contains` [EXTRACTED]
-- [[avito_selfcheck()]] - `references` [INFERRED]
+- [[Megamarket Connector]] - `contains` [EXTRACTED]
+- [[megamarket_selfcheck()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/avito_seller
+#graphify/document #graphify/EXTRACTED #community/Megamarket_Connector

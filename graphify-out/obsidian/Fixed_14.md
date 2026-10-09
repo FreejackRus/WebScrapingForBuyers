@@ -1,8 +1,8 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
+source_file: "mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v2.2.0.md"
 type: "document"
 community: "compare_prices"
-location: "L1825"
+location: "L51"
 tags:
   - graphify/document
   - graphify/INFERRED
@@ -12,12 +12,9 @@ tags:
 # Fixed
 
 ## Connections
-- [[Pacer]] - `references` [INFERRED]
-- [[1.2.0 — 2026-07-28 (English)]] - `contains` [EXTRACTED]
-- [[citilink_card()]] - `references` [INFERRED]
 - [[compare_prices()]] - `references` [INFERRED]
-- [[dns_card()]] - `references` [INFERRED]
 - [[marketplace_sources()]] - `references` [INFERRED]
-- [[shape_signature()]] - `references` [INFERRED]
+- [[taobao_selfcheck()]] - `references` [INFERRED]
+- [[v2.2.0]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/INFERRED #community/compare_prices

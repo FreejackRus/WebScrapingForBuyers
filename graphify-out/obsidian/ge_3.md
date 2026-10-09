@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "taobao_card"
+community: "avito_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/taobao_card
+  - community/avito_connector/serverpy
 ---
 
 # ge
 
 ## Connections
-- [[taobao_search()]] - `references` [EXTRACTED]
+- [[avito_search()_1]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/taobao_card
+#graphify/code #graphify/EXTRACTED #community/avito_connector/serverpy

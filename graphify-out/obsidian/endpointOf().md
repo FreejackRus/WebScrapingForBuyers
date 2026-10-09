@@ -2,7 +2,7 @@
 source_file: "apps/search/src/infrastructure/sources/merlion-client.ts"
 type: "code"
 community: "merlion-client.ts"
-location: "L40"
+location: "L41"
 tags:
   - graphify/code
   - graphify/EXTRACTED

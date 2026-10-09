@@ -1,22 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/src/dns_connector/models_output.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/models_output.py"
 type: "code"
-community: "dns_card"
-location: "L9"
+community: "taobao_connector/server.py"
+location: "L14"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/dns_card
+  - community/taobao_connector/serverpy
 ---
 
 # MetaOut
 
 ## Connections
-- [[DNS carries the shared envelope unchanged.]] - `rationale_for` [EXTRACTED]
 - [[MetaOutBase]] - `inherits` [EXTRACTED]
-- [[dns_card()]] - `uses` [INFERRED]
-- [[dns_connectormodels_output.py]] - `contains` [EXTRACTED]
-- [[dns_connectorserver.py]] - `imports` [EXTRACTED]
-- [[dns_search()]] - `uses` [INFERRED]
+- [[Taobao carries the shared envelope unchanged.]] - `rationale_for` [EXTRACTED]
+- [[taobao_card()]] - `uses` [INFERRED]
+- [[taobao_connectormodels_output.py]] - `contains` [EXTRACTED]
+- [[taobao_connectorserver.py]] - `imports` [EXTRACTED]
+- [[taobao_search()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/dns_card
+#graphify/code #graphify/EXTRACTED #community/taobao_connector/serverpy

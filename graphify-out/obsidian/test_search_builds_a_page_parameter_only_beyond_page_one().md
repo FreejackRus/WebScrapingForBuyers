@@ -12,7 +12,7 @@ tags:
 # test_search_builds_a_page_parameter_only_beyond_page_one()
 
 ## Connections
-- [[capture()_17]] - `indirect_call` [INFERRED]
+- [[capture()_14]] - `indirect_call` [INFERRED]
 - [[yandex-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/capture

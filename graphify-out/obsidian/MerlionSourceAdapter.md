@@ -2,7 +2,7 @@
 source_file: "apps/search/src/infrastructure/sources/b2b-distributor-adapter.ts"
 type: "code"
 community: "b2b-distributor-adapter.ts"
-location: "L129"
+location: "L131"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,7 +12,7 @@ tags:
 # MerlionSourceAdapter
 
 ## Connections
-- [[dot-search()_2]] - `method` [EXTRACTED]
+- [[dot-search()_10]] - `method` [EXTRACTED]
 - [[SourceAdapter]] - `implements` [EXTRACTED]
 - [[b2b-distributor-adapter.ts]] - `contains` [EXTRACTED]
 - [[createDistributorSourcesFromEnv()]] - `calls` [EXTRACTED]

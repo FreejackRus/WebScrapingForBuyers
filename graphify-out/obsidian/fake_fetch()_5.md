@@ -1,21 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "avito-connector/tests/test_server.py"
-location: "L93"
+community: "_run"
+location: "L763"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/avito-connector/tests/test_serverpy
+  - graphify/EXTRACTED
+  - community/_run
 ---
 
 # fake_fetch()
 
 ## Connections
-- [[_patch_fetch()]] - `indirect_call` [INFERRED]
-- [[fake_fetch_factory()]] - `indirect_call` [INFERRED]
-- [[test_selfcheck_accepts_the_captured_live_payload()]] - `indirect_call` [INFERRED]
-- [[test_selfcheck_flags_drift_when_a_key_family_vanishes()]] - `indirect_call` [INFERRED]
-- [[test_selfcheck_reports_healthy_when_probes_parse()]] - `indirect_call` [INFERRED]
+- [[test_reviews_tolerates_malformed_uuid_next_button_and_score()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/avito-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/_run

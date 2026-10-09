@@ -12,7 +12,7 @@ tags:
 # _body_error_status()
 
 ## Connections
-- [[Any_10]] - `references` [EXTRACTED]
+- [[Any_17]] - `references` [EXTRACTED]
 - [[Extract an error status embedded in a 200 body. Detsky Mir signals a missing…]] - `rationale_for` [EXTRACTED]
 - [[detmir_card()]] - `calls` [EXTRACTED]
 - [[detmir_categories()]] - `calls` [EXTRACTED]

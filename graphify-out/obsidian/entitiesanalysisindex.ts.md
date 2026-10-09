@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/entities/analysis/index.ts"
 type: "code"
-community: "useAnalysisStore"
+community: "analysis/store/index.ts"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/useAnalysisStore
+  - community/analysis/store/indexts
 ---
 
 # entities/analysis/index.ts
@@ -25,4 +25,4 @@ tags:
 - [[useAnalysisStore]] - `re_exports` [EXTRACTED]
 - [[widgetsusersettingsuiindex.tsx]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/useAnalysisStore
+#graphify/code #graphify/EXTRACTED #community/analysis/store/indexts

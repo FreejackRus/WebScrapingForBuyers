@@ -1,8 +1,8 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/mpstats-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/ozon-connector/SKILL.md"
 type: "document"
 community: "compare_prices"
-location: "L108"
+location: "L60"
 tags:
   - graphify/document
   - graphify/INFERRED
@@ -12,7 +12,7 @@ tags:
 # DSH activation
 
 ## Connections
-- [[MPStats Connector_1]] - `contains` [EXTRACTED]
+- [[Ozon Connector_1]] - `contains` [EXTRACTED]
 - [[compare_prices()]] - `references` [INFERRED]
 - [[compare_sources()]] - `references` [INFERRED]
 - [[marketplace_sources()]] - `references` [INFERRED]

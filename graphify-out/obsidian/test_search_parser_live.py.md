@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[The Ozon search parse path against a LIVE captured composer payload.…]] - `rationale_for` [EXTRACTED]
-- [[_items()_1]] - `contains` [EXTRACTED]
+- [[_items()]] - `contains` [EXTRACTED]
 - [[json]] - `imports` [EXTRACTED]
 - [[ozon_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]
@@ -22,5 +22,7 @@ tags:
 - [[test_live_price_strings_parse_to_the_displayed_numbers()]] - `contains` [EXTRACTED]
 - [[test_live_stock_labels_survive_the_parse_verbatim()]] - `contains` [EXTRACTED]
 - [[test_live_tiles_carry_a_canonical_card_input()]] - `contains` [EXTRACTED]
+- [[test_live_tiles_carry_the_first_gallery_photo()]] - `contains` [EXTRACTED]
+- [[test_tile_image_skips_non_https_and_junk()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_search_parser_livepy

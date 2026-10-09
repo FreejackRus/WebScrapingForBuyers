@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_review_regressions.py"
 type: "rationale"
-community: "pytest"
+community: "test_review_regressions.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/pytest
+  - community/test_review_regressionspy
 ---
 
 # Regressions for defects an independent multi-model review found in R3/R4…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_review_regressions.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/pytest
+#graphify/rationale #graphify/EXTRACTED #community/test_review_regressionspy

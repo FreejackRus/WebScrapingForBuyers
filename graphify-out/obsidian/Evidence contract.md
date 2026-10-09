@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/work/evals/visual-evidence-contract.md"
 type: "document"
-community: "test_storefront_live_xhr_capture_via_get_context"
+community: "Authenticated transport: driving your own Chrome"
 location: "L8"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/test_storefront_live_xhr_capture_via_get_context
+  - community/Authenticated_transport_driving_your_own_Chrome
 ---
 
 # Evidence contract
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[Optional native-vision evidence]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/test_storefront_live_xhr_capture_via_get_context
+#graphify/document #graphify/EXTRACTED #community/Authenticated_transport_driving_your_own_Chrome

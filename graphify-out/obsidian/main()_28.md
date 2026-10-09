@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/examples/rating_breakdown.py"
+source_file: "mcp-servers/ru-marketplace-mcp/examples/avito_search.py"
 type: "code"
-community: "yandex_card"
-location: "L19"
+community: "avito_connector/server.py"
+location: "L18"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/yandex_card
+  - community/avito_connector/serverpy
 ---
 
 # main()
 
 ## Connections
-- [[rating_breakdown.py]] - `contains` [EXTRACTED]
-- [[yandex_card()]] - `calls` [EXTRACTED]
-- [[yandex_search()_1]] - `calls` [EXTRACTED]
+- [[avito_search()_1]] - `calls` [EXTRACTED]
+- [[avito_search.py]] - `contains` [EXTRACTED]
+- [[avito_seller()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/yandex_card
+#graphify/code #graphify/EXTRACTED #community/avito_connector/serverpy

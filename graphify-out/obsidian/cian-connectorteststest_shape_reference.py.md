@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_shape_reference.py"
 type: "code"
-community: "cian-connector/tests/test_shape_reference.py"
+community: "cian-connector/tests/test_server.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/cian-connector/tests/test_shape_referencepy
+  - community/cian-connector/tests/test_serverpy
 ---
 
 # cian-connector/tests/test_shape_reference.py
@@ -22,4 +22,4 @@ tags:
 - [[test_rent_golden_keeps_period_and_deposit_variants()]] - `contains` [EXTRACTED]
 - [[test_sale_rent_daily_fixtures_preserve_common_offer_shape()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/cian-connector/tests/test_shape_referencepy
+#graphify/code #graphify/EXTRACTED #community/cian-connector/tests/test_serverpy

@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "pathlib"
+community: "subprocess"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/subprocess
 ---
 
 # subprocess
@@ -26,4 +26,4 @@ tags:
 - [[test_model_routing_eval_verdict.py]] - `imports` [EXTRACTED]
 - [[test_stdio_probe.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/pathlib
+#graphify/concept #graphify/EXTRACTED #community/subprocess

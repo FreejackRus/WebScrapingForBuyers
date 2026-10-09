@@ -12,7 +12,7 @@ tags:
 # detmir_selfcheck()
 
 ## Connections
-- [[Added_14]] - `references` [INFERRED]
+- [[Added_17]] - `references` [INFERRED]
 - [[Context_11]] - `references` [EXTRACTED]
 - [[DetmirSelfcheckEntry]] - `calls` [EXTRACTED]
 - [[DetmirSelfcheckResponse]] - `calls` [EXTRACTED]
@@ -24,8 +24,8 @@ tags:
 - [[detmir_category()]] - `calls` [EXTRACTED]
 - [[detmir_connectorserver.py]] - `contains` [EXTRACTED]
 - [[log_event()]] - `calls` [EXTRACTED]
-- [[main()_3]] - `calls` [INFERRED]
-- [[probe()_1]] - `contains` [EXTRACTED]
+- [[main()_9]] - `calls` [INFERRED]
+- [[probe()_2]] - `contains` [EXTRACTED]
 - [[test_detmir_selfcheck_reaches_a_verdict()]] - `calls` [INFERRED]
 
 #graphify/code #graphify/EXTRACTED #community/detmir_selfcheck

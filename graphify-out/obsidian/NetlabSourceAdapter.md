@@ -2,7 +2,7 @@
 source_file: "apps/search/src/infrastructure/sources/b2b-distributor-adapter.ts"
 type: "code"
 community: "b2b-distributor-adapter.ts"
-location: "L149"
+location: "L151"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,7 +12,7 @@ tags:
 # NetlabSourceAdapter
 
 ## Connections
-- [[dot-search()_3]] - `method` [EXTRACTED]
+- [[dot-search()_11]] - `method` [EXTRACTED]
 - [[SourceAdapter]] - `implements` [EXTRACTED]
 - [[b2b-distributor-adapter.ts]] - `contains` [EXTRACTED]
 - [[createDistributorSourcesFromEnv()]] - `calls` [EXTRACTED]

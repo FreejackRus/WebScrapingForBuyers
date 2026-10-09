@@ -15,8 +15,8 @@ tags:
 - [[_clear_wb_cache()]] - `calls` [EXTRACTED]
 - [[fake_budgeted()_5]] - `contains` [EXTRACTED]
 - [[forbidden_impersonation()]] - `contains` [EXTRACTED]
-- [[parametrize_32]] - `references` [EXTRACTED]
-- [[scenario()_98]] - `contains` [EXTRACTED]
+- [[parametrize_33]] - `references` [EXTRACTED]
+- [[scenario()_103]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_clear_wb_cache

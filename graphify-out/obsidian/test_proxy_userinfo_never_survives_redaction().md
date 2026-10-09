@@ -12,7 +12,7 @@ tags:
 # test_proxy_userinfo_never_survives_redaction()
 
 ## Connections
-- [[parametrize_16]] - `references` [EXTRACTED]
+- [[parametrize_22]] - `references` [EXTRACTED]
 - [[redact_error_text()]] - `calls` [EXTRACTED]
 - [[test_redact.py]] - `contains` [EXTRACTED]
 

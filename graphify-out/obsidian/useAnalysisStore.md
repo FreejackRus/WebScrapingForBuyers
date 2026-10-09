@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/entities/analysis/store/index.ts"
 type: "code"
-community: "useAnalysisStore"
-location: "L33"
+community: "analysis/store/index.ts"
+location: "L48"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/useAnalysisStore
+  - community/analysis/store/indexts
 ---
 
 # useAnalysisStore
@@ -18,6 +18,7 @@ tags:
 - [[UserSettings()]] - `calls` [EXTRACTED]
 - [[analysisstoreindex.ts]] - `contains` [EXTRACTED]
 - [[chatuiindex.tsx]] - `imports` [EXTRACTED]
+- [[chatHistory()_1]] - `calls` [EXTRACTED]
 - [[copilotuiindex.tsx]] - `imports` [EXTRACTED]
 - [[entitiesanalysisindex.ts]] - `re_exports` [EXTRACTED]
 - [[logoutindex.ts]] - `imports` [EXTRACTED]
@@ -28,4 +29,4 @@ tags:
 - [[useRequestAnalysis()]] - `calls` [EXTRACTED]
 - [[widgetsusersettingsuiindex.tsx]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/useAnalysisStore
+#graphify/code #graphify/EXTRACTED #community/analysis/store/indexts

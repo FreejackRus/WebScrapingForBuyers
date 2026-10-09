@@ -46,6 +46,14 @@ function snapshot(offers: Offer[], status: SearchSnapshot["status"] = "complete"
   };
 }
 
+function assessed(
+  row: Offer,
+  group: "match" | "needs_review",
+  reasons: string[] = [],
+): Offer {
+  return { ...row, assessment: { group, reasons } } as Offer;
+}
+
 const demoCheap = offer({ id: "demo-merlion", source: "MERLION", price: 100, demo: true });
 const wbReal = offer({
   id: "wb-real",
@@ -65,6 +73,92 @@ const citilinkReal = offer({
 });
 
 describe("analyzeSnapshot", () => {
+  it("does not recommend review-only offers", async () => {
+    const review = assessed(
+      offer({ id: "seller-claim", source: "Ozon", price: 100, demo: false, title: "Оригинальная мышь от продавца" }),
+      "needs_review",
+      ["Заявление продавца об оригинальности не подтверждает подлинность"],
+    );
+
+    const result = await analyzeSnapshot(snapshot([review]), "Выбери лучшее предложение");
+
+    expect(result.selectedOfferIds).toEqual([]);
+    expect(result.summary).not.toMatch(/лучший вариант.*100/iu);
+    expect(result.citations).toEqual([]);
+  });
+
+  it("keeps review rows out of deterministic selection and uses the narrator only for explanation", async () => {
+    const review = assessed(
+      offer({ id: "cheap-review", source: "Ozon", price: 100, demo: false, title: "Чехол MX Master 3S" }),
+      "needs_review",
+      ["Возможно, это аксессуар"],
+    );
+    const match = assessed(wbReal, "match");
+    let filterCalled = false;
+    let seen: AnalysisNarration | undefined;
+
+    const result = await analyzeSnapshot(snapshot([review, match]), "Выбери лучшее предложение", {
+      name: "Ollama · mock",
+      filterRelevance: async () => {
+        filterCalled = true;
+        return { rejectedOfferIds: [match.id], warnings: [] };
+      },
+      summarize: async (input) => {
+        seen = input;
+        return { summary: input.deterministicSummary, warnings: [] };
+      },
+    });
+
+    expect(filterCalled).toBe(false);
+    expect(result.selectedOfferIds).toEqual([match.id]);
+    expect(seen?.rankedOffers.map((row) => row.id)).toEqual([match.id]);
+    expect(seen?.selectedOfferIds).toEqual([match.id]);
+  });
+
+  it("does not expose review prices as the cheapest table fact", async () => {
+    const review = assessed(
+      offer({ id: "cheap-review", source: "Ozon", price: 100, demo: false }),
+      "needs_review",
+      ["Требуется проверка"],
+    );
+    const match = assessed(wbReal, "match");
+    let seen: CopilotChatInput | undefined;
+
+    await analyzeSnapshot(snapshot([review, match]), "Привет", {
+      name: "Ollama · mock",
+      summarize: async () => ({ summary: "unused", warnings: [] }),
+      answer: async (input) => {
+        seen = input;
+        return { summary: "Здравствуйте", warnings: [] };
+      },
+    });
+
+    expect(seen?.tableFacts?.join("\n")).toContain("8 990 ₽");
+    expect(seen?.tableFacts?.join("\n")).not.toContain("100 ₽");
+  });
+
+  it("keeps explicit review rows out when the same snapshot also has legacy rows", async () => {
+    const review = assessed(
+      offer({ id: "mixed-review", source: "Ozon", price: 100, demo: false }),
+      "needs_review",
+      ["Требуется проверка"],
+    );
+    let filterCalled = false;
+
+    const result = await analyzeSnapshot(snapshot([review, wbReal]), "Выбери лучшее предложение", {
+      name: "Ollama · mock",
+      filterRelevance: async () => {
+        filterCalled = true;
+        return { rejectedOfferIds: [], warnings: [] };
+      },
+      summarize: async (input) => ({ summary: input.deterministicSummary, warnings: [] }),
+    });
+
+    expect(filterCalled).toBe(false);
+    expect(result.selectedOfferIds).toEqual([wbReal.id]);
+    expect(result.summary).not.toContain("100 ₽");
+  });
+
   it("selects exact guaranteed offers", async () => {
     const result = await analyzeSnapshot(
       snapshot([offer({ id: "test-offer", source: "TEST", price: 1_000, demo: false })]),

@@ -1,21 +1,21 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/server.py"
 type: "code"
-community: "test_contract.py"
+community: "log_event"
 location: "L197"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_contractpy
+  - community/log_event
 ---
 
 # _is_ip_block()
 
 ## Connections
-- [[Any_3]] - `references` [EXTRACTED]
+- [[Any_11]] - `references` [EXTRACTED]
 - [[The code-7 VPNIP refusal is a transport verdict, not data.]] - `rationale_for` [EXTRACTED]
 - [[_post()]] - `calls` [EXTRACTED]
 - [[megamarket_connectorserver.py]] - `contains` [EXTRACTED]
 - [[test_megamarket_code7_is_detected_as_a_block_not_data()]] - `calls` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/test_contractpy
+#graphify/code #graphify/EXTRACTED #community/log_event

@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "raw_browser"
+community: "test_cdp_transport.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/raw_browser
+  - community/test_cdp_transportpy
 ---
 
 # fixture
 
 ## Connections
-- [[raw_browser()]] - `references` [EXTRACTED]
+- [[cdp_mode()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/raw_browser
+#graphify/code #graphify/EXTRACTED #community/test_cdp_transportpy

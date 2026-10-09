@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/server.py"
 type: "code"
-community: "ozon_card"
-location: "L265"
+community: "_fetch_composer"
+location: "L268"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ozon_card
+  - community/_fetch_composer
 ---
 
 # _sync_curl_get()
@@ -16,4 +16,4 @@ tags:
 - [[_fetch_composer()]] - `indirect_call` [INFERRED]
 - [[ozon_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ozon_card
+#graphify/code #graphify/EXTRACTED #community/_fetch_composer

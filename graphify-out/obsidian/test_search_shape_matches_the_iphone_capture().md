@@ -12,7 +12,7 @@ tags:
 # test_search_shape_matches_the_iphone_capture()
 
 ## Connections
-- [[_load()_2]] - `calls` [EXTRACTED]
+- [[_load()_3]] - `calls` [EXTRACTED]
 - [[shape_signature()]] - `calls` [EXTRACTED]
 - [[yandex-connectorteststest_shape_reference.py]] - `contains` [EXTRACTED]
 

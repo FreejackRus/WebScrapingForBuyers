@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "test_card_out_of_stock_dom.py"
+community: "aliexpress-connector/tests/test_parser_live.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_card_out_of_stock_dompy
+  - community/aliexpress-connector/tests/test_parser_livepy
 ---
 
 # Path
 
 ## Connections
-- [[_extract()_13]] - `references` [EXTRACTED]
+- [[_extract()_8]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_card_out_of_stock_dompy
+#graphify/code #graphify/EXTRACTED #community/aliexpress-connector/tests/test_parser_livepy

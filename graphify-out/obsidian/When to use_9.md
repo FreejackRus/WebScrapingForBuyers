@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/citilink-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/dns-connector/SKILL.md"
 type: "document"
-community: "Citilink Connector"
+community: "DNS-Shop Connector"
 location: "L13"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Citilink_Connector
+  - community/DNS-Shop_Connector
 ---
 
 # When to use
 
 ## Connections
-- [[Citilink Connector]] - `contains` [EXTRACTED]
+- [[DNS-Shop Connector_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Citilink_Connector
+#graphify/document #graphify/EXTRACTED #community/DNS-Shop_Connector

@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/cdp_budget.py"
 type: "code"
-community: "scenario"
-location: "L2007"
+community: "HostRefusingError"
+location: "L150"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/scenario
+  - community/HostRefusingError
 ---
 
 # .__init__()
 
 ## Connections
-- [[_FakeCurlResponse]] - `method` [EXTRACTED]
+- [[dot-__init__()_22]] - `calls` [EXTRACTED]
+- [[NavigationBudget]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/scenario
+#graphify/code #graphify/EXTRACTED #community/HostRefusingError

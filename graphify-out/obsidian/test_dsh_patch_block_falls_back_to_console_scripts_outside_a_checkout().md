@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py"
 type: "code"
 community: "test_cli.py"
-location: "L82"
+location: "L79"
 tags:
   - graphify/code
   - graphify/EXTRACTED

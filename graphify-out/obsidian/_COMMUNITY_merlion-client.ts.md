@@ -45,8 +45,8 @@ SORT file.name ASC
 
 ## Connections to other communities
 - 5 edges to [[_COMMUNITY_b2b-distributor-adapter.ts]]
-- 4 edges to [[_COMMUNITY_packages_contracts_dist_index]]
-- 1 edge to [[_COMMUNITY_memory-auth-store.ts]]
+- 3 edges to [[_COMMUNITY_SourceAdapter]]
+- 2 edges to [[_COMMUNITY_packages_contracts_dist_index]]
 
 ## Top bridge nodes
 - [[merlion-client.ts]] - degree 32, connects to 3 communities

@@ -1,19 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/browser_handoff.py"
 type: "code"
-community: "read_with_handoff"
+community: "browser_handoff.py"
 location: "L419"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/read_with_handoff
+  - community/browser_handoffpy
 ---
 
 # read_with_handoff()
 
 ## Connections
-- [[5. Рекомендации для v2.4.0+ (ранжировано ценностьстоимостьриск)]] - `references` [INFERRED]
-- [[Any_1]] - `references` [EXTRACTED]
+- [[Any_16]] - `references` [EXTRACTED]
 - [[Challenge]] - `references` [EXTRACTED]
 - [[Collection]] - `references` [EXTRACTED]
 - [[HandoffBusyError]] - `calls` [EXTRACTED]
@@ -22,8 +21,8 @@ tags:
 - [[Result]] - `references` [EXTRACTED]
 - [[_Lease]] - `calls` [EXTRACTED]
 - [[_Request]] - `calls` [EXTRACTED]
-- [[_attempt()_5]] - `calls` [EXTRACTED]
-- [[_cdp_render()_1]] - `calls` [EXTRACTED]
+- [[_attempt()]] - `calls` [EXTRACTED]
+- [[_cdp_render()]] - `calls` [EXTRACTED]
 - [[_duration_s()]] - `calls` [EXTRACTED]
 - [[_expired()]] - `calls` [EXTRACTED]
 - [[_key()]] - `calls` [EXTRACTED]
@@ -32,6 +31,7 @@ tags:
 - [[_run()]] - `calls` [EXTRACTED]
 - [[_stop()]] - `calls` [EXTRACTED]
 - [[browser_handoff.py]] - `contains` [EXTRACTED]
-- [[open_page()]] - `calls` [EXTRACTED]
+- [[fetch()_3]] - `calls` [EXTRACTED]
+- [[open_page()_3]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/read_with_handoff
+#graphify/code #graphify/EXTRACTED #community/browser_handoffpy

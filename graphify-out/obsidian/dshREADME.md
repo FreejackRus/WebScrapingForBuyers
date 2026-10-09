@@ -12,7 +12,7 @@ tags:
 # dsh/README.md
 
 ## Connections
-- [[QUICKSTART]] - `references` [EXTRACTED]
+- [[QUICKSTART_1]] - `references` [EXTRACTED]
 - [[ru-marketplace-mcp for DeepSeek Harness]] - `contains` [EXTRACTED]
 - [[ru-marketplace-mcpREADME]] - `references` [EXTRACTED]
 

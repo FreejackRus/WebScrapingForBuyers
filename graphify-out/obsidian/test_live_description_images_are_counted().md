@@ -12,7 +12,7 @@ tags:
 # test_live_description_images_are_counted()
 
 ## Connections
-- [[_extract()_8]] - `calls` [EXTRACTED]
+- [[_extract()_5]] - `calls` [EXTRACTED]
 - [[test_card_extractor_live_dom.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_card_extractor_live_dompy

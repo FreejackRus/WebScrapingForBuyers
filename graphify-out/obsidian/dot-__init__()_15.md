@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/cdp_budget.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/runtime.py"
 type: "code"
-community: "HostRefusingError"
-location: "L150"
+community: "sys"
+location: "L120"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/HostRefusingError
+  - community/sys
 ---
 
 # .__init__()
 
 ## Connections
-- [[dot-__init__()_14]] - `calls` [EXTRACTED]
-- [[NavigationBudget]] - `method` [EXTRACTED]
+- [[BearerAuthMiddleware]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/HostRefusingError
+#graphify/code #graphify/EXTRACTED #community/sys

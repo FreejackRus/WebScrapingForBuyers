@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/pages/user/index.ts"
 type: "code"
-community: "useUserStore"
+community: "pages/user/index.ts"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/useUserStore
+  - community/pages/user/indexts
 ---
 
 # pages/user/index.ts
@@ -18,4 +18,4 @@ tags:
 - [[pagesuserloginindex.ts]] - `re_exports` [EXTRACTED]
 - [[pagesusersettingsindex.ts]] - `re_exports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/useUserStore
+#graphify/code #graphify/EXTRACTED #community/pages/user/indexts

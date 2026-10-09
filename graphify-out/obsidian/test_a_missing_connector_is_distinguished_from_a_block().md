@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[Not installed' needs a different fix than 'refused us', so they differ.]] - `rationale_for` [EXTRACTED]
 - [[compare-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[wb()_3]] - `contains` [EXTRACTED]
+- [[wb()_2]] - `contains` [EXTRACTED]
 - [[wb()_7]] - `indirect_call` [INFERRED]
 
 #graphify/code #graphify/EXTRACTED #community/offer

@@ -13,7 +13,6 @@ tags:
 
 ## Connections
 - [[dot-response()]] - `calls` [EXTRACTED]
-- [[Headed Chrome + VNC (прогрев антибота)]] - `references` [INFERRED]
 - [[Return the next valid JSON object, or ``None`` on EOFtimeout.]] - `rationale_for` [EXTRACTED]
 - [[StdioProbe]] - `method` [EXTRACTED]
 

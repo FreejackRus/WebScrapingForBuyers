@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/models_output.py"
 type: "code"
-community: "models.py"
+community: "TransportDownError"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/modelspy
+  - community/TransportDownError
 ---
 
 # yandex_connector/models_output.py
 
 ## Connections
-- [[MetaOut_12]] - `contains` [EXTRACTED]
+- [[MetaOut_9]] - `contains` [EXTRACTED]
 - [[Typed responses for the Yandex Market connector. Prices carry two fields on…]] - `rationale_for` [EXTRACTED]
 - [[YandexCardResponse]] - `contains` [EXTRACTED]
 - [[YandexProduct]] - `contains` [EXTRACTED]
@@ -26,4 +26,4 @@ tags:
 - [[typing]] - `imports_from` [EXTRACTED]
 - [[yandex_connectorserver.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/modelspy
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

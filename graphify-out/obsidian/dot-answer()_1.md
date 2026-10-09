@@ -2,7 +2,7 @@
 source_file: "apps/analysis/src/infrastructure/ollama-analysis-narrator.ts"
 type: "code"
 community: "ollama-analysis-narrator.ts"
-location: "L355"
+location: "L431"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -17,6 +17,8 @@ tags:
 - [[CopilotChatInput]] - `references` [EXTRACTED]
 - [[OllamaAnalysisNarrator]] - `method` [EXTRACTED]
 - [[clip()]] - `calls` [EXTRACTED]
+- [[historyPayload()]] - `calls` [EXTRACTED]
 - [[parseAnswer()]] - `indirect_call` [INFERRED]
+- [[recording()]] - `calls` [INFERRED]
 
 #graphify/code #graphify/EXTRACTED #community/ollama-analysis-narratorts

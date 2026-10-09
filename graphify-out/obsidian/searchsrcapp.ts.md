@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/app.ts"
 type: "code"
-community: "packages_contracts_dist_index"
+community: "SourceAdapter"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/packages_contracts_dist_index
+  - community/SourceAdapter
 ---
 
 # search/src/app.ts
@@ -15,11 +15,9 @@ tags:
 - [[SearchService]] - `imports` [EXTRACTED]
 - [[SourceAdapter]] - `imports` [EXTRACTED]
 - [[allowDemoSources()]] - `contains` [EXTRACTED]
-- [[apify-marketplace-adapter.ts]] - `imports_from` [EXTRACTED]
 - [[app.test.ts]] - `imports_from` [EXTRACTED]
 - [[b2b-distributor-adapter.ts]] - `imports_from` [EXTRACTED]
 - [[buildSearchApp()]] - `contains` [EXTRACTED]
-- [[createApifySourcesFromEnv()]] - `imports` [EXTRACTED]
 - [[createDemoSources()]] - `imports` [EXTRACTED]
 - [[createDistributorSourcesFromEnv()]] - `imports` [EXTRACTED]
 - [[createHttpMarketplaceSources()]] - `imports` [EXTRACTED]
@@ -37,4 +35,4 @@ tags:
 - [[searchRoutes()]] - `imports` [EXTRACTED]
 - [[source-adapter.ts]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index
+#graphify/code #graphify/EXTRACTED #community/SourceAdapter

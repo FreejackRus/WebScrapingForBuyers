@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "terminate_process_tree"
+community: "process.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/terminate_process_tree
+  - community/processpy
 ---
 
 # PureWindowsPath
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[windows_system_dir()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/terminate_process_tree
+#graphify/code #graphify/EXTRACTED #community/processpy

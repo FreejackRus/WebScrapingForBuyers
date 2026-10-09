@@ -13,7 +13,7 @@ members: 5
 - [[Keep cached payloads from leaking between tests.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py
 - [[Remove the politeness gap so tests do not actually wait.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py
 - [[clear_cache()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py
-- [[fixture_14]] - code
+- [[fixture_15]] - code
 - [[no_delay()]] - code - mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py
 
 ## Live Query (requires Dataview plugin)

@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/wb-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/avito-connector/SKILL.md"
 type: "document"
-community: "Wildberries Connector"
-location: "L11"
+community: "avito_connector/server.py"
+location: "L13"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Wildberries_Connector
+  - community/avito_connector/serverpy
 ---
 
 # When to use
 
 ## Connections
-- [[Wildberries Connector_1]] - `contains` [EXTRACTED]
+- [[Avito Connector_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Wildberries_Connector
+#graphify/document #graphify/EXTRACTED #community/avito_connector/serverpy

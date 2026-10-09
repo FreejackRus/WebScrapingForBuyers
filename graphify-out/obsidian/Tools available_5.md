@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/mpstats-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/ozon-connector/SKILL.md"
 type: "document"
-community: "success"
-location: "L45"
+community: "ozon_selfcheck"
+location: "L25"
 tags:
   - graphify/document
   - graphify/INFERRED
-  - community/success
+  - community/ozon_selfcheck
 ---
 
 # Tools available
 
 ## Connections
-- [[MPStats Connector]] - `contains` [EXTRACTED]
-- [[mpstats_selfcheck()]] - `references` [INFERRED]
+- [[Ozon Connector]] - `contains` [EXTRACTED]
+- [[ozon_selfcheck()]] - `references` [INFERRED]
 - [[success()]] - `references` [INFERRED]
 
-#graphify/document #graphify/INFERRED #community/success
+#graphify/document #graphify/INFERRED #community/ozon_selfcheck

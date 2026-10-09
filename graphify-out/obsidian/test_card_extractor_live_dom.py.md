@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[The Taobao card extractor against a LIVE captured item page.…]] - `rationale_for` [EXTRACTED]
-- [[_extract()_8]] - `contains` [EXTRACTED]
+- [[_extract()_5]] - `contains` [EXTRACTED]
 - [[dom.py]] - `imports_from` [EXTRACTED]
 - [[domtest.py]] - `imports_from` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]

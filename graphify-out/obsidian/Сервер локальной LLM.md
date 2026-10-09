@@ -13,8 +13,10 @@ tags:
 
 ## Connections
 - [[AI_SERVER]] - `contains` [EXTRACTED]
+- [[Исходная рекомендация для MVP (vLLM, не внедрена)]] - `contains` [EXTRACTED]
+- [[Модель в проде (с 2026-10-06)]] - `contains` [EXTRACTED]
 - [[Ограничения и проверка качества]] - `contains` [EXTRACTED]
-- [[Рекомендация для MVP]] - `contains` [EXTRACTED]
+- [[Прежняя модель (2026-09-29 — 2026-10-05)]] - `contains` [EXTRACTED]
 - [[Уже установленные модели]] - `contains` [EXTRACTED]
 - [[Характеристики]] - `contains` [EXTRACTED]
 

@@ -11,10 +11,10 @@ members: 5
 
 ## Members
 - [[Browser recovery]] - document - mcp-servers/ru-marketplace-mcp/CHANGELOG.md
-- [[Fixed_18]] - document - mcp-servers/ru-marketplace-mcp/CHANGELOG.md
+- [[Fixed_19]] - document - mcp-servers/ru-marketplace-mcp/CHANGELOG.md
 - [[2.3.0 - 2026-09-13]] - document - mcp-servers/ru-marketplace-mcp/CHANGELOG.md
 - [[Идентификация  Identity]] - document - mcp-servers/ru-marketplace-mcp/CHANGELOG.md
-- [[Исправлено_15]] - document - mcp-servers/ru-marketplace-mcp/CHANGELOG.md
+- [[Исправлено_17]] - document - mcp-servers/ru-marketplace-mcp/CHANGELOG.md
 
 ## Live Query (requires Dataview plugin)
 
@@ -24,7 +24,7 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 2 edges to [[_COMMUNITY_yandex_card]]
+- 2 edges to [[_COMMUNITY_TransportDownError]]
 - 1 edge to [[_COMMUNITY_compare_prices]]
 - 1 edge to [[_COMMUNITY_compare_verify_offer]]
 - 1 edge to [[_COMMUNITY_Changelog]]
@@ -32,6 +32,6 @@ SORT file.name ASC
 ## Top bridge nodes
 - [[2.3.0 - 2026-09-13]] - degree 5, connects to 1 community
 - [[Browser recovery]] - degree 2, connects to 1 community
-- [[Fixed_18]] - degree 2, connects to 1 community
+- [[Fixed_19]] - degree 2, connects to 1 community
 - [[Идентификация  Identity]] - degree 2, connects to 1 community
-- [[Исправлено_15]] - degree 2, connects to 1 community
+- [[Исправлено_17]] - degree 2, connects to 1 community

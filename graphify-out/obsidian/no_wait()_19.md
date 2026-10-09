@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "cian-connector/tests/test_server.py"
-location: "L506"
+community: "no_wait"
+location: "L1089"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/cian-connector/tests/test_serverpy
+  - community/no_wait
 ---
 
 # no_wait()
 
 ## Connections
-- [[test_a_block_page_is_never_cached()]] - `contains` [EXTRACTED]
+- [[test_wb_selfcheck_search_goods_nonpositive_ids_are_drift()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/cian-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/no_wait

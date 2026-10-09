@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/yandex-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/citilink-connector/SKILL.md"
 type: "document"
-community: "Yandex Market Connector"
-location: "L66"
+community: "citilink_selfcheck"
+location: "L65"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Yandex_Market_Connector
+  - community/citilink_selfcheck
 ---
 
 # Gotchas
 
 ## Connections
-- [[Yandex Market Connector_1]] - `contains` [EXTRACTED]
-- [[yandex_card()]] - `references` [INFERRED]
+- [[Citilink Connector]] - `contains` [EXTRACTED]
+- [[citilink_selfcheck()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Yandex_Market_Connector
+#graphify/document #graphify/EXTRACTED #community/citilink_selfcheck

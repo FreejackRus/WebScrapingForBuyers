@@ -12,7 +12,7 @@ tags:
 # capturing_get()
 
 ## Connections
-- [[scenario()_61]] - `indirect_call` [INFERRED]
+- [[scenario()_89]] - `indirect_call` [INFERRED]
 - [[test_tier1_proxy_is_passed_as_an_argument_not_an_env_var()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_tier1_proxy_is_passed_as_an_argument_not_an_env_var

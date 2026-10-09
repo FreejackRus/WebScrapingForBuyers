@@ -12,6 +12,6 @@ tags:
 # dsh/skills/dns-connector/SKILL.md
 
 ## Connections
-- [[DNS-Shop Connector_1]] - `contains` [EXTRACTED]
+- [[DNS-Shop Connector]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/DNS-Shop_Connector

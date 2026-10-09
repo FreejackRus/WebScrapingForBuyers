@@ -1,12 +1,12 @@
 ---
 source_file: "docs/DISTRIBUTORS.md"
 type: "document"
-community: "packages_contracts_dist_index"
-location: "L130"
+community: "SourceAdapter"
+location: "L214"
 tags:
   - graphify/document
   - graphify/INFERRED
-  - community/packages_contracts_dist_index
+  - community/SourceAdapter
 ---
 
 # Если API так и не выдадут — как собирать
@@ -16,4 +16,4 @@ tags:
 - [[SourceAdapter]] - `references` [INFERRED]
 - [[Источники дистрибьюторы и маркетплейсы]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/INFERRED #community/packages_contracts_dist_index
+#graphify/document #graphify/INFERRED #community/SourceAdapter

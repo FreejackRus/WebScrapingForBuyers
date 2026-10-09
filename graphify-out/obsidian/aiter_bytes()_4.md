@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "_clear_wb_cache"
-location: "L1280"
+community: "test_cache_can_be_disabled_by_ttl_zero"
+location: "L1358"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_clear_wb_cache
+  - community/test_cache_can_be_disabled_by_ttl_zero
 ---
 
 # aiter_bytes()
 
 ## Connections
-- [[test_cache_does_not_remember_a_transient_failure()]] - `contains` [EXTRACTED]
+- [[test_cache_can_be_disabled_by_ttl_zero()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_clear_wb_cache
+#graphify/code #graphify/EXTRACTED #community/test_cache_can_be_disabled_by_ttl_zero

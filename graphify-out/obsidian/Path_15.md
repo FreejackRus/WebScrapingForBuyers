@@ -1,17 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "mcp_wire.py"
+community: "domtest.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/mcp_wirepy
+  - community/domtestpy
 ---
 
 # Path
 
 ## Connections
-- [[_load_baseline()]] - `references` [EXTRACTED]
-- [[fetch_tools()]] - `references` [EXTRACTED]
+- [[_extract()_13]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/mcp_wirepy
+#graphify/code #graphify/EXTRACTED #community/domtestpy

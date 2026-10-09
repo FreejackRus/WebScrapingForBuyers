@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "transport/__init__.py"
+community: "json"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/transport/__init__py
+  - community/json
 ---
 
 # dataclasses
@@ -18,4 +18,4 @@ tags:
 - [[routing_eval.py]] - `imports_from` [EXTRACTED]
 - [[runtime.py]] - `imports_from` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/transport/__init__py
+#graphify/concept #graphify/EXTRACTED #community/json

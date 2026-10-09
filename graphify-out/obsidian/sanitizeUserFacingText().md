@@ -2,7 +2,7 @@
 source_file: "apps/analysis/src/application/infra-leak.ts"
 type: "code"
 community: "infra-leak.ts"
-location: "L21"
+location: "L22"
 tags:
   - graphify/code
   - graphify/EXTRACTED

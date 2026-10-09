@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/shape_reference.py"
 type: "rationale"
-community: "missing_required_families"
+community: "json"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/missing_required_families
+  - community/json
 ---
 
 # Reference shape signature for the Lamoda search extractor. Generated from the…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[lamoda_connectorshape_reference.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/missing_required_families
+#graphify/rationale #graphify/EXTRACTED #community/json

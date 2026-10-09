@@ -13,7 +13,6 @@ tags:
 
 ## Connections
 - [[_patch_card()_1]] - `indirect_call` [INFERRED]
-- [[payload()]] - `indirect_call` [INFERRED]
 - [[test_selfcheck_healthy_when_both_gates_pass()]] - `indirect_call` [INFERRED]
 
 #graphify/code #graphify/INFERRED #community/aliexpress-connector/tests/test_serverpy

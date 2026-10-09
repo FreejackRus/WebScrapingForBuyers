@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[Conservative token estimate matching the dsh budget checker.]] - `rationale_for` [EXTRACTED]
 - [[_snapshot()]] - `calls` [EXTRACTED]
-- [[main()_29]] - `calls` [EXTRACTED]
+- [[main()_23]] - `calls` [EXTRACTED]
 - [[mcp_wire.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/mcp_wirepy

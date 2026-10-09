@@ -12,8 +12,8 @@ tags:
 # test_busy_initial_and_resume_never_open_duplicate()
 
 ## Connections
-- [[call()_1]] - `calls` [EXTRACTED]
+- [[call()]] - `calls` [EXTRACTED]
 - [[mcp-coreteststest_browser_handoff.py]] - `contains` [EXTRACTED]
-- [[pending()]] - `indirect_call` [INFERRED]
+- [[pending()_1]] - `indirect_call` [INFERRED]
 
 #graphify/code #graphify/EXTRACTED #community/mcp-core/tests/test_browser_handoffpy

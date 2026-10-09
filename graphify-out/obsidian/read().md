@@ -1,20 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py"
 type: "code"
-community: "TransportDownError"
-location: "L345"
+community: "mcp-core/tests/test_browser_handoff.py"
+location: "L562"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/TransportDownError
+  - community/mcp-core/tests/test_browser_handoffpy
 ---
 
 # read()
 
 ## Connections
-- [[ParserDriftError]] - `calls` [EXTRACTED]
-- [[TransportDownError]] - `calls` [EXTRACTED]
-- [[_attempt()_5]] - `contains` [EXTRACTED]
-- [[raise_tool_error()]] - `calls` [EXTRACTED]
+- [[blocked()_1]] - `calls` [EXTRACTED]
+- [[test_snapshot_and_resume_cannot_overlap()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/TransportDownError
+#graphify/code #graphify/EXTRACTED #community/mcp-core/tests/test_browser_handoffpy

@@ -1,18 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/diagnose_drift.py"
+source_file: "mcp-servers/ru-marketplace-mcp/examples/health_check.py"
 type: "code"
-community: "chrome_cdp.py"
-location: "L291"
+community: "sys"
+location: "L35"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/chrome_cdppy
+  - graphify/INFERRED
+  - community/sys
 ---
 
 # main()
 
 ## Connections
-- [[diagnose()]] - `calls` [EXTRACTED]
-- [[diagnose_drift.py]] - `contains` [EXTRACTED]
+- [[detmir_selfcheck()]] - `calls` [INFERRED]
+- [[health_check.py]] - `contains` [EXTRACTED]
+- [[ozon_selfcheck()]] - `calls` [INFERRED]
+- [[run_one()]] - `calls` [EXTRACTED]
+- [[wb_selfcheck()]] - `calls` [INFERRED]
+- [[yandex_selfcheck()]] - `calls` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/chrome_cdppy
+#graphify/code #graphify/INFERRED #community/sys

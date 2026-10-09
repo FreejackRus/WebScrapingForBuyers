@@ -16,7 +16,7 @@ members: 21
 - [[The original bug one nested field took down the entire page of listings.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_live_payload_contract.py
 - [[There is no top-level ``price`` key in the live response.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_live_payload_contract.py
 - [[These rows carry no seller object — only ``userLogo``. Reporting None is…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_live_payload_contract.py
-- [[_items()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_live_payload_contract.py
+- [[_items()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_live_payload_contract.py
 - [[_payload()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_live_payload_contract.py
 - [[``location`` is an object upstream; the wire field is a string.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_live_payload_contract.py
 - [[``sortTimeStamp`` is epoch ms; a 13-digit number is indistinguishable from an…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_live_payload_contract.py
@@ -40,12 +40,13 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 6 edges to [[_COMMUNITY__parse_search_items]]
-- 2 edges to [[_COMMUNITY_models.py]]
-- 2 edges to [[_COMMUNITY_json]]
+- 4 edges to [[_COMMUNITY__posted_at]]
+- 3 edges to [[_COMMUNITY_avito_connectorserver.py]]
+- 2 edges to [[_COMMUNITY__parse_search_items]]
+- 1 edge to [[_COMMUNITY_json]]
 - 1 edge to [[_COMMUNITY_pathlib]]
 
 ## Top bridge nodes
 - [[test_live_payload_contract.py]] - degree 20, connects to 4 communities
-- [[_items()_2]] - degree 12, connects to 2 communities
+- [[_items()_3]] - degree 12, connects to 2 communities
 - [[test_total_count_is_read_from_the_envelope()]] - degree 3, connects to 1 community

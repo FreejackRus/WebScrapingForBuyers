@@ -1,27 +1,20 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_search_login_wall_live_dom.py"
 type: "code"
-community: "dns-connector/tests/test_server.py"
-location: "L50"
+community: "test_search_login_wall_live_dom.py"
+location: "L47"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/dns-connector/tests/test_serverpy
+  - community/test_search_login_wall_live_dompy
 ---
 
 # _patch_render()
 
 ## Connections
-- [[dns-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[fake_render()_1]] - `indirect_call` [INFERRED]
-- [[test_card_flags_drift_when_neither_title_nor_price()_2]] - `calls` [EXTRACTED]
-- [[test_card_parses_the_product()_1]] - `calls` [EXTRACTED]
-- [[test_search_a_pricelss_tile_is_none_never_zero()_1]] - `calls` [EXTRACTED]
-- [[test_search_maps_zero_tiles_to_parser_drift()_1]] - `calls` [EXTRACTED]
-- [[test_search_parses_tiles()_1]] - `calls` [EXTRACTED]
-- [[test_selfcheck_healthy_tiles_carry_the_shape_reference()_1]] - `calls` [EXTRACTED]
-- [[test_selfcheck_healthy_when_tiles_extract()_1]] - `calls` [EXTRACTED]
-- [[test_selfcheck_reports_shape_drift_when_a_required_path_vanishes()_1]] - `calls` [EXTRACTED]
-- [[test_selfcheck_zero_tiles_is_drift()_1]] - `calls` [EXTRACTED]
+- [[fake_render()_3]] - `indirect_call` [INFERRED]
+- [[test_search_login_wall_live_dom.py]] - `contains` [EXTRACTED]
+- [[test_search_over_the_live_wall_is_transport_down_never_drift()]] - `calls` [EXTRACTED]
+- [[test_selfcheck_over_the_live_wall_is_inconclusive_never_drift()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/dns-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/test_search_login_wall_live_dompy

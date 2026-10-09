@@ -12,8 +12,8 @@ tags:
 # _client_capabilities()
 
 ## Connections
-- [[Any_27]] - `references` [EXTRACTED]
-- [[Context_13]] - `references` [EXTRACTED]
+- [[Any_14]] - `references` [EXTRACTED]
+- [[Context_7]] - `references` [EXTRACTED]
 - [[The client's advertised capabilities, or an empty mapping. MCP has no standard…]] - `rationale_for` [EXTRACTED]
 - [[compare_browser_snapshot()]] - `calls` [EXTRACTED]
 - [[compare_connectorserver.py]] - `contains` [EXTRACTED]

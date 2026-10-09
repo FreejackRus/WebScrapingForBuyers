@@ -13,8 +13,8 @@ tags:
 
 ## Connections
 - [[ANTI_BOT]] - `references` [EXTRACTED]
-- [[ARCHITECTURE_1]] - `references` [EXTRACTED]
-- [[Adding a marketplace_2]] - `contains` [EXTRACTED]
+- [[ARCHITECTURE]] - `references` [EXTRACTED]
+- [[Adding a marketplace]] - `contains` [EXTRACTED]
 - [[CDP_SETUP]] - `references` [EXTRACTED]
 - [[CONTRIBUTING]] - `references` [EXTRACTED]
 - [[ru-marketplace-mcpREADME]] - `references` [EXTRACTED]

@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "pathlib"
+community: "json"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/json
 ---
 
 # shutil
@@ -16,4 +16,4 @@ tags:
 - [[domtest.py]] - `imports` [EXTRACTED]
 - [[e2e_stdio_check.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/pathlib
+#graphify/concept #graphify/EXTRACTED #community/json

@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "compare-connector/tests/test_browser_handoff.py"
+community: "firewall_pow.py"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/compare-connector/tests/test_browser_handoffpy
+  - community/firewall_powpy
 ---
 
 # base64
@@ -13,6 +13,8 @@ tags:
 ## Connections
 - [[chrome_cdp.py]] - `imports` [EXTRACTED]
 - [[compare-connectorteststest_browser_handoff.py]] - `imports` [EXTRACTED]
+- [[firewall_pow.py]] - `imports` [EXTRACTED]
 - [[test_chrome_cdp_snapshot.py]] - `imports` [EXTRACTED]
+- [[test_firewall_pow.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/compare-connector/tests/test_browser_handoffpy
+#graphify/concept #graphify/EXTRACTED #community/firewall_powpy

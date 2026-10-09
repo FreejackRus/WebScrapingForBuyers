@@ -12,9 +12,9 @@ tags:
 # _dns_selfcheck_impl()
 
 ## Connections
-- [[Context_2]] - `references` [EXTRACTED]
+- [[Context_3]] - `references` [EXTRACTED]
 - [[DnsSelfcheckResponse]] - `calls` [EXTRACTED]
-- [[_cdp_render()]] - `calls` [EXTRACTED]
+- [[_cdp_render()_1]] - `calls` [EXTRACTED]
 - [[dns_connectorserver.py]] - `contains` [EXTRACTED]
 - [[dns_selfcheck()]] - `calls` [EXTRACTED]
 

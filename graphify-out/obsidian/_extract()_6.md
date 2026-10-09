@@ -1,22 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_shape_reference.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_card_out_of_stock_dom.py"
 type: "code"
-community: "lamoda-connector/tests/test_shape_reference.py"
-location: "L38"
+community: "pytest"
+location: "L31"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/lamoda-connector/tests/test_shape_referencepy
+  - community/pytest
 ---
 
 # _extract()
 
 ## Connections
 - [[JsdomUnavailable]] - `uses` [INFERRED]
-- [[Path_5]] - `references` [EXTRACTED]
-- [[lamoda-connectorteststest_shape_reference.py]] - `contains` [EXTRACTED]
 - [[run_extractor()]] - `calls` [EXTRACTED]
-- [[test_live_search_shape_matches_the_selfcheck_registry()_1]] - `calls` [EXTRACTED]
-- [[test_search_payload_shape_matches_the_capture()_2]] - `calls` [EXTRACTED]
+- [[test_a_recommendation_price_is_never_the_products()]] - `calls` [EXTRACTED]
+- [[test_card_out_of_stock_dom.py]] - `contains` [EXTRACTED]
+- [[test_out_of_stock_card_reports_no_price()]] - `calls` [EXTRACTED]
+- [[test_out_of_stock_is_read_from_the_page_text()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/lamoda-connector/tests/test_shape_referencepy
+#graphify/code #graphify/EXTRACTED #community/pytest

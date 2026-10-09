@@ -12,6 +12,6 @@ tags:
 # A cache entry written by the previous build must not start answering nulls.
 
 ## Connections
-- [[test_legacy_numeric_payload_still_maps()_1]] - `rationale_for` [EXTRACTED]
+- [[test_legacy_numeric_payload_still_maps()]] - `rationale_for` [EXTRACTED]
 
 #graphify/rationale #graphify/EXTRACTED #community/dns-connector/tests/test_search_extractor_dompy

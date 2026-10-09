@@ -14,6 +14,6 @@ tags:
 ## Connections
 - [[For git commit hook]] - `contains` [EXTRACTED]
 - [[For native CLAUDE.md integration]] - `contains` [EXTRACTED]
-- [[hooks]] - `contains` [EXTRACTED]
+- [[hooks_1]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/graphify_reference_commit_hook_and_native_CLAUDEmd_integration

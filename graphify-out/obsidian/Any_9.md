@@ -1,17 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "YandexProduct"
+community: "process.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/YandexProduct
+  - community/processpy
 ---
 
 # Any
 
 ## Connections
-- [[_guard_values_drift()]] - `references` [EXTRACTED]
-- [[_to_product()]] - `references` [EXTRACTED]
+- [[worker_process_kwargs()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/YandexProduct
+#graphify/code #graphify/EXTRACTED #community/processpy

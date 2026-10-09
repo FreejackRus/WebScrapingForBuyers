@@ -33,13 +33,14 @@ SORT file.name ASC
 
 ## Connections to other communities
 - 6 edges to [[_COMMUNITY_test_cdp_budget.py]]
-- 4 edges to [[_COMMUNITY_transport__init__.py]]
 - 4 edges to [[_COMMUNITY_HostRefusingError]]
 - 4 edges to [[_COMMUNITY_Slot]]
 - 3 edges to [[_COMMUNITY_Tracker]]
-- 1 edge to [[_COMMUNITY_pytest]]
+- 2 edges to [[_COMMUNITY_json]]
+- 2 edges to [[_COMMUNITY_transport__init__.py]]
+- 1 edge to [[_COMMUNITY_test_review_regressions.py]]
 
 ## Top bridge nodes
-- [[NavigationBudget]] - degree 28, connects to 6 communities
+- [[NavigationBudget]] - degree 28, connects to 7 communities
 - [[dot-_host_semaphore()]] - degree 4, connects to 1 community
 - [[_HostState]] - degree 2, connects to 1 community

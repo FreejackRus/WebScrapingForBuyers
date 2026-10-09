@@ -1,20 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "_patch_questions"
-location: "L1772"
+community: "test_cache_serves_a_repeated_successful_read"
+location: "L1243"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_patch_questions
+  - community/test_cache_serves_a_repeated_successful_read
 ---
 
 # scenario()
 
 ## Connections
-- [[_patch_questions()]] - `calls` [EXTRACTED]
-- [[_tool_error_payload()_1]] - `calls` [EXTRACTED]
-- [[forbidden()_8]] - `indirect_call` [INFERRED]
-- [[test_category_products_rejects_an_unknown_sort()]] - `contains` [EXTRACTED]
+- [[_clear_wb_cache()]] - `calls` [EXTRACTED]
+- [[no_wait()_2]] - `indirect_call` [INFERRED]
+- [[test_cache_serves_a_repeated_successful_read()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_patch_questions
+#graphify/code #graphify/EXTRACTED #community/test_cache_serves_a_repeated_successful_read

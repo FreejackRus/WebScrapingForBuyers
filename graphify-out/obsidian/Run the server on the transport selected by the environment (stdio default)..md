@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/__main__.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/src/aliexpress_connector/__main__.py"
 type: "rationale"
-community: "run_server"
-location: "L21"
+community: "sys"
+location: "L14"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/run_server
+  - community/sys
 ---
 
 # Run the server on the transport selected by the environment (stdio default).
 
 ## Connections
-- [[main()_4]] - `rationale_for` [EXTRACTED]
+- [[main()_10]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/run_server
+#graphify/rationale #graphify/EXTRACTED #community/sys

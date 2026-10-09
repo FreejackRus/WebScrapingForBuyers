@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/app.ts"
 type: "code"
-community: "packages_contracts_dist_index"
-location: "L14"
+community: "SourceAdapter"
+location: "L13"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/packages_contracts_dist_index
+  - community/SourceAdapter
 ---
 
 # allowDemoSources()
@@ -15,4 +15,4 @@ tags:
 - [[buildSearchApp()]] - `calls` [EXTRACTED]
 - [[searchsrcapp.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index
+#graphify/code #graphify/EXTRACTED #community/SourceAdapter

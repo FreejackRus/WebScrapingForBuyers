@@ -42,11 +42,12 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 4 edges to [[_COMMUNITY_pytest]]
-- 2 edges to [[_COMMUNITY_json]]
-- 1 edge to [[_COMMUNITY_BadRequestError]]
+- 3 edges to [[_COMMUNITY_json]]
+- 2 edges to [[_COMMUNITY_pytest]]
+- 1 edge to [[_COMMUNITY_wb_connectorserver.py]]
 - 1 edge to [[_COMMUNITY_transport__init__.py]]
+- 1 edge to [[_COMMUNITY_test_card_verification_records.py]]
 
 ## Top bridge nodes
-- [[test_handoff_reporting.py]] - degree 20, connects to 3 communities
+- [[test_handoff_reporting.py]] - degree 20, connects to 4 communities
 - [[test_an_unknown_handle_stays_opaque_but_an_expired_one_explains()]] - degree 5, connects to 1 community

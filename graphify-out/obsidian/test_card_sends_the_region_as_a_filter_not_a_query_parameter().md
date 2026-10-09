@@ -13,8 +13,8 @@ tags:
 
 ## Connections
 - [[withregion= is silently ignored upstream; only filter=withregion works.…]] - `rationale_for` [EXTRACTED]
-- [[capture()_6]] - `contains` [EXTRACTED]
-- [[capture()_10]] - `indirect_call` [INFERRED]
+- [[capture()_4]] - `contains` [EXTRACTED]
+- [[capture()_8]] - `indirect_call` [INFERRED]
 - [[detmir-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/capture

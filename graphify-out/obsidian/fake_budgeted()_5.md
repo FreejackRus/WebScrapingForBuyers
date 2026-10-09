@@ -12,12 +12,12 @@ tags:
 # fake_budgeted()
 
 ## Connections
-- [[scenario()_89]] - `indirect_call` [INFERRED]
-- [[scenario()_90]] - `indirect_call` [INFERRED]
-- [[scenario()_91]] - `indirect_call` [INFERRED]
-- [[scenario()_79]] - `indirect_call` [INFERRED]
-- [[scenario()_97]] - `indirect_call` [INFERRED]
-- [[scenario()_98]] - `indirect_call` [INFERRED]
+- [[scenario()_93]] - `indirect_call` [INFERRED]
+- [[scenario()_94]] - `indirect_call` [INFERRED]
+- [[scenario()_95]] - `indirect_call` [INFERRED]
+- [[scenario()_100]] - `indirect_call` [INFERRED]
+- [[scenario()_102]] - `indirect_call` [INFERRED]
+- [[scenario()_103]] - `indirect_call` [INFERRED]
 - [[test_ungated_hosts_keep_the_budgeted_transport()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/INFERRED #community/_clear_wb_cache

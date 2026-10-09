@@ -15,7 +15,7 @@ members: 34
 - [[The live grid lists the base price first; the current price is the smaller.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py
 - [[The pairing must not trust DOM order a base-first sticky ships current=min.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py
 - [[The sticky module lists the current price FIRST — opposite order to tiles.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py
-- [[_no_cache()_8]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py
+- [[_no_cache()_6]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py
 - [[_patch_card()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py
 - [[_patch_search()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py
 - [[aliexpress-connectorteststest_server.py]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py
@@ -53,12 +53,9 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 2 edges to [[_COMMUNITY_payload]]
-- 1 edge to [[_COMMUNITY_aliexpress-connectorteststest_shape_reference.py]]
+- 1 edge to [[_COMMUNITY_aliexpress-connectorteststest_parser_live.py]]
 - 1 edge to [[_COMMUNITY_pytest]]
-- 1 edge to [[_COMMUNITY_test_card_verification_records.py]]
+- 1 edge to [[_COMMUNITY_json]]
 
 ## Top bridge nodes
 - [[aliexpress-connectorteststest_server.py]] - degree 24, connects to 3 communities
-- [[fake_card()]] - degree 3, connects to 1 community
-- [[fake_render()_4]] - degree 2, connects to 1 community

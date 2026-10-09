@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/models_output.py"
 type: "rationale"
-community: "models.py"
+community: "dns_card"
 location: "L202"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/modelspy
+  - community/dns_card
 ---
 
 # Cian sub-check entry: adds the baseline-comparison fields.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[CianSelfcheckCheckOut]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/modelspy
+#graphify/rationale #graphify/EXTRACTED #community/dns_card

@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/models_output.py"
 type: "rationale"
 community: "wb_connector/server.py"
-location: "L123"
+location: "L124"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED

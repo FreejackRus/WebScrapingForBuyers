@@ -2,7 +2,7 @@
 source_file: "apps/search/src/infrastructure/sources/netlab-client.ts"
 type: "code"
 community: "netlab-client.ts"
-location: "L40"
+location: "L47"
 tags:
   - graphify/code
   - graphify/EXTRACTED

@@ -14,10 +14,10 @@ tags:
 ## Connections
 - [[Preferring impersonation must not mean depending on it. Measured on 2026-09-21…]] - `rationale_for` [EXTRACTED]
 - [[_clear_wb_cache()]] - `calls` [EXTRACTED]
-- [[fake_budgeted()_1]] - `contains` [EXTRACTED]
+- [[fake_budgeted()]] - `contains` [EXTRACTED]
 - [[fake_impersonated()]] - `contains` [EXTRACTED]
-- [[parametrize_32]] - `references` [EXTRACTED]
-- [[scenario()_89]] - `contains` [EXTRACTED]
+- [[parametrize_33]] - `references` [EXTRACTED]
+- [[scenario()_93]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_clear_wb_cache

@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/marketplace/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/cian-connector/SKILL.md"
 type: "document"
-community: "compare_prices"
-location: "L49"
+community: "Cian Connector"
+location: "L122"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/compare_prices
+  - community/Cian_Connector
 ---
 
 # Gotchas
 
 ## Connections
-- [[Unified Marketplace Server_1]] - `contains` [EXTRACTED]
-- [[marketplace_sources()]] - `references` [INFERRED]
+- [[Cian Connector]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/compare_prices
+#graphify/document #graphify/EXTRACTED #community/Cian_Connector

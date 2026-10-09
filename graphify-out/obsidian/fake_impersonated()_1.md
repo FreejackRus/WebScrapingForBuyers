@@ -12,8 +12,8 @@ tags:
 # fake_impersonated()
 
 ## Connections
-- [[scenario()_89]] - `indirect_call` [INFERRED]
-- [[scenario()_94]] - `indirect_call` [INFERRED]
+- [[scenario()_93]] - `indirect_call` [INFERRED]
+- [[scenario()_98]] - `indirect_call` [INFERRED]
 - [[test_gated_hosts_read_through_the_impersonated_transport()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/INFERRED #community/_clear_wb_cache

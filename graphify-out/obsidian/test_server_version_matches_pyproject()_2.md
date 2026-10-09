@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "mpstats-connector/tests/test_server.py"
-location: "L77"
+community: "test_helpers.py"
+location: "L22"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/mpstats-connector/tests/test_serverpy
+  - community/test_helperspy
 ---
 
 # test_server_version_matches_pyproject()
 
 ## Connections
-- [[mpstats-connectorteststest_server.py]] - `contains` [EXTRACTED]
+- [[test_helpers.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/mpstats-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/test_helperspy

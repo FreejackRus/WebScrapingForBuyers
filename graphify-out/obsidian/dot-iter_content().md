@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py"
 type: "code"
-community: "scenario"
-location: "L2012"
+community: "_FakeResponse"
+location: "L451"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/scenario
+  - community/_FakeResponse
 ---
 
 # .iter_content()
 
 ## Connections
-- [[_FakeCurlResponse]] - `method` [EXTRACTED]
+- [[_FakeResponse]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/scenario
+#graphify/code #graphify/EXTRACTED #community/_FakeResponse

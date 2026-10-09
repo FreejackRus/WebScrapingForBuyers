@@ -1,20 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_versions.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_provenance.py"
 type: "code"
-community: "check_versions.py"
-location: "L85"
+community: "subprocess"
+location: "L73"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/check_versionspy
+  - community/subprocess
 ---
 
 # main()
 
 ## Connections
-- [[Mismatch]] - `calls` [EXTRACTED]
-- [[_root_version()]] - `calls` [EXTRACTED]
-- [[check_versions.py]] - `contains` [EXTRACTED]
-- [[sweep()]] - `contains` [EXTRACTED]
+- [[check()]] - `calls` [EXTRACTED]
+- [[check_provenance.py]] - `contains` [EXTRACTED]
+- [[pins()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/check_versionspy
+#graphify/code #graphify/EXTRACTED #community/subprocess

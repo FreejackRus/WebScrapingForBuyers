@@ -1,22 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/wb-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/marketplace/SKILL.md"
 type: "document"
-community: "log_event"
-location: "L75"
+community: "compare_prices"
+location: "L47"
 tags:
   - graphify/document
-  - graphify/INFERRED
-  - community/log_event
+  - graphify/EXTRACTED
+  - community/compare_prices
 ---
 
 # Gotchas
 
 ## Connections
-- [[WbNoResultsResponse]] - `references` [INFERRED]
-- [[Wildberries Connector_1]] - `contains` [EXTRACTED]
-- [[compare_prices()]] - `references` [INFERRED]
-- [[wb_card()]] - `references` [INFERRED]
-- [[wb_reviews()]] - `references` [INFERRED]
-- [[wb_root_info()]] - `references` [INFERRED]
+- [[Unified Marketplace Server_1]] - `contains` [EXTRACTED]
+- [[marketplace_sources()]] - `references` [INFERRED]
 
-#graphify/document #graphify/INFERRED #community/log_event
+#graphify/document #graphify/EXTRACTED #community/compare_prices

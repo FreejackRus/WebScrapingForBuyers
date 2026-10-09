@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py"
 type: "code"
-community: "PageLike"
-location: "L605"
+community: "_FakeResponse"
+location: "L464"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/PageLike
+  - community/_FakeResponse
 ---
 
 # .__init__()
 
 ## Connections
-- [[_RawCdpPage]] - `method` [EXTRACTED]
-- [[_WsLike]] - `references` [EXTRACTED]
+- [[_FakeSession]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/PageLike
+#graphify/code #graphify/EXTRACTED #community/_FakeResponse

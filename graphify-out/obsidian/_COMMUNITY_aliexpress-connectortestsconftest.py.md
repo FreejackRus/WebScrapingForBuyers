@@ -10,7 +10,7 @@ members: 2
 **Members:** 2 nodes
 
 ## Members
-- [[Marks this directory as its own pytest rootdir package. Several connectors have…_1]] - rationale - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/conftest.py
+- [[Marks this directory as its own pytest rootdir package. Several connectors have…_2]] - rationale - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/conftest.py
 - [[aliexpress-connectortestsconftest.py]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/conftest.py
 
 ## Live Query (requires Dataview plugin)

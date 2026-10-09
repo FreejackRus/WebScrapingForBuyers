@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/README.md"
 type: "document"
 community: "compare_prices"
-location: "L152"
+location: "L144"
 tags:
   - graphify/document
   - graphify/INFERRED

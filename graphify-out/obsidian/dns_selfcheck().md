@@ -12,13 +12,13 @@ tags:
 # dns_selfcheck()
 
 ## Connections
-- [[A green selfcheck does NOT mean the data is right_1]] - `references` [INFERRED]
 - [[A green selfcheck does NOT mean the data is right]] - `references` [INFERRED]
-- [[Context_2]] - `references` [EXTRACTED]
+- [[A green selfcheck does NOT mean the data is right_1]] - `references` [INFERRED]
+- [[Context_3]] - `references` [EXTRACTED]
 - [[DNS — proof-of-work challenge]] - `references` [INFERRED]
 - [[DnsSelfcheckResponse]] - `uses` [INFERRED]
 - [[Structural drift canary for DNS-Shop (tri-state). Renders one live search page…]] - `rationale_for` [EXTRACTED]
-- [[Tools available_14]] - `references` [INFERRED]
+- [[Tools available_1]] - `references` [INFERRED]
 - [[Tools available_2]] - `references` [INFERRED]
 - [[TransportDownError]] - `uses` [INFERRED]
 - [[_dns_selfcheck_impl()]] - `calls` [EXTRACTED]

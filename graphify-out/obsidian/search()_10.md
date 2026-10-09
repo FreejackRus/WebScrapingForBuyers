@@ -1,17 +1,19 @@
 ---
-source_file: "apps/search/src/app.test.ts"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_card_verification_records.py"
 type: "code"
-community: "packages_contracts_dist_index"
-location: "L166"
+community: "TransportDownError"
+location: "L149"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/packages_contracts_dist_index
+  - community/TransportDownError
 ---
 
 # search()
 
 ## Connections
-- [[app.test.ts]] - `contains` [EXTRACTED]
+- [[YandexProduct]] - `calls` [EXTRACTED]
+- [[YandexSearchResponse]] - `calls` [EXTRACTED]
+- [[test_yandex_live_fixture_variant_survives_comparison()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "pytest"
+community: "test_stdio_probe.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pytest
+  - community/test_stdio_probepy
 ---
 
 # fixture
 
 ## Connections
-- [[no_server_start()]] - `references` [EXTRACTED]
+- [[unrelated_process()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pytest
+#graphify/code #graphify/EXTRACTED #community/test_stdio_probepy

@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "get_settings"
+community: "test_public_contract_snapshot.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/get_settings
+  - community/test_public_contract_snapshotpy
 ---
 
 # fixture
 
 ## Connections
-- [[_wb_http_transport_for_unit_tests()]] - `references` [EXTRACTED]
+- [[no_server_start()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/get_settings
+#graphify/code #graphify/EXTRACTED #community/test_public_contract_snapshotpy

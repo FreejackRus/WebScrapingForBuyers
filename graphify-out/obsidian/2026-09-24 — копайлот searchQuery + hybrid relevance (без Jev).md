@@ -1,12 +1,12 @@
 ---
 source_file: "docs/PROJECT_CONTEXT.md"
 type: "document"
-community: "useSearchStore"
+community: "chat/ui/index.tsx"
 location: "L684"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/useSearchStore
+  - community/chat/ui/indextsx
 ---
 
 # 2026-09-24 — копайлот: searchQuery + hybrid relevance (без Jev)
@@ -15,4 +15,4 @@ tags:
 - [[applyChatResult()]] - `references` [INFERRED]
 - [[Итерации]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/useSearchStore
+#graphify/document #graphify/EXTRACTED #community/chat/ui/indextsx

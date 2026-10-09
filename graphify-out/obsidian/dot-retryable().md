@@ -14,8 +14,8 @@ tags:
 ## Connections
 - [[Browser recovery]] - `references` [INFERRED]
 - [[ErrorCode]] - `method` [EXTRACTED]
-- [[Workflow]] - `references` [INFERRED]
-- [[Workflow_1]] - `references` [INFERRED]
+- [[Workflow_2]] - `references` [INFERRED]
+- [[Workflow_3]] - `references` [INFERRED]
 - [[`errors` — one taxonomy, nine codes]] - `references` [INFERRED]
 
 #graphify/code #graphify/INFERRED #community/compare_prices

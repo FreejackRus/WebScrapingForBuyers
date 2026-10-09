@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/README.md"
+source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
-community: "English version"
-location: "L1122"
+community: "Changelog"
+location: "L121"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/English_version
+  - community/Changelog
 ---
 
 # Reliability
 
 ## Connections
-- [[English version]] - `contains` [EXTRACTED]
-- [[success()]] - `references` [INFERRED]
+- [[2.4.0 - 2026-09-18 — WITHDRAWN (see 2.4.1)]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/English_version
+#graphify/document #graphify/EXTRACTED #community/Changelog

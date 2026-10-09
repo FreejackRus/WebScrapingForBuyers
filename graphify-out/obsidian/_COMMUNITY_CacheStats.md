@@ -10,11 +10,11 @@ members: 6
 **Members:** 6 nodes
 
 ## Members
-- [[dot-__init__()_17]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
+- [[dot-__init__()_21]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
 - [[dot-as_dict()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
 - [[dot-hit_rate()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
 - [[dot-lookups()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
-- [[Any_18]] - code
+- [[Any_15]] - code
 - [[CacheStats]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
 
 ## Live Query (requires Dataview plugin)
@@ -30,4 +30,4 @@ SORT file.name ASC
 
 ## Top bridge nodes
 - [[CacheStats]] - degree 5, connects to 1 community
-- [[dot-__init__()_17]] - degree 2, connects to 1 community
+- [[dot-__init__()_21]] - degree 2, connects to 1 community

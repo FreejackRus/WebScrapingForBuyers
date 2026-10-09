@@ -12,10 +12,10 @@ tags:
 # Megamarket Connector
 
 ## Connections
-- [[DSH activation_22]] - `contains` [EXTRACTED]
+- [[DSH activation_21]] - `contains` [EXTRACTED]
 - [[Gotchas_25]] - `contains` [EXTRACTED]
 - [[Privacy the profile address is opt-in_1]] - `contains` [EXTRACTED]
-- [[Tools available_19]] - `contains` [EXTRACTED]
+- [[Tools available_17]] - `contains` [EXTRACTED]
 - [[When to use_25]] - `contains` [EXTRACTED]
 - [[ru-marketplace-mcpskillsmegamarket-connectorSKILL]] - `contains` [EXTRACTED]
 

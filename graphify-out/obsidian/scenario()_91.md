@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
 type: "code"
-community: "_clear_wb_cache"
-location: "L2275"
+community: "test_storefront_live_xhr_capture_via_get_context"
+location: "L226"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/_clear_wb_cache
+  - graphify/INFERRED
+  - community/test_storefront_live_xhr_capture_via_get_context
 ---
 
 # scenario()
 
 ## Connections
-- [[_clear_wb_cache()]] - `calls` [EXTRACTED]
-- [[fake_budgeted()_5]] - `indirect_call` [INFERRED]
-- [[test_an_edge_wall_is_not_a_success_and_is_not_cached()]] - `contains` [EXTRACTED]
+- [[fake_get_context()]] - `indirect_call` [INFERRED]
+- [[no_wait()_34]] - `indirect_call` [INFERRED]
+- [[test_storefront_live_xhr_capture_via_get_context()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_clear_wb_cache
+#graphify/code #graphify/INFERRED #community/test_storefront_live_xhr_capture_via_get_context

@@ -1,12 +1,12 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_review_regressions.py"
 type: "code"
-community: "browser"
-location: "L25"
+community: "test_review_regressions.py"
+location: "L24"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/browser
+  - community/test_review_regressionspy
 ---
 
 # open_page()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[browser()_3]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/browser
+#graphify/code #graphify/INFERRED #community/test_review_regressionspy

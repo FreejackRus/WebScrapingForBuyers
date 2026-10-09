@@ -2,7 +2,7 @@
 source_file: "apps/search/src/infrastructure/sources/ocs-client.ts"
 type: "code"
 community: "b2b-distributor-adapter.ts"
-location: "L36"
+location: "L37"
 tags:
   - graphify/code
   - graphify/EXTRACTED

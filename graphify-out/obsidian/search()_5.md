@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_source_warnings.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_search_offer_integrity.py"
 type: "code"
-community: "wb_connector/server.py"
-location: "L64"
+community: "test_native_ozon_explicit_absence_survives_both_label_channels"
+location: "L117"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/wb_connector/serverpy
+  - community/test_native_ozon_explicit_absence_survives_both_label_channels
 ---
 
 # search()
 
 ## Connections
-- [[WbNoResultsResponse]] - `calls` [EXTRACTED]
-- [[test_no_results_without_meta_is_not_invented_degradation()]] - `contains` [EXTRACTED]
+- [[test_native_ozon_explicit_absence_survives_both_label_channels()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/test_native_ozon_explicit_absence_survives_both_label_channels

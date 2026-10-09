@@ -10,7 +10,7 @@ members: 2
 **Members:** 2 nodes
 
 ## Members
-- [[Marks this directory as its own pytest rootdir package. Several connectors have…_6]] - rationale - mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/conftest.py
+- [[Marks this directory as its own pytest rootdir package. Several connectors have…_7]] - rationale - mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/conftest.py
 - [[detmir-connectortestsconftest.py]] - code - mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/conftest.py
 
 ## Live Query (requires Dataview plugin)

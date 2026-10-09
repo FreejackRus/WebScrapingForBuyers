@@ -11,10 +11,10 @@ members: 18
 
 ## Members
 - [[A deliberately heavy return model.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_output_schema.py
-- [[Any]] - code
-- [[BaseModel]] - code
-- [[FastMCP]] - code
+- [[Any_21]] - code
+- [[BaseModel_13]] - code
 - [[FastMCP_1]] - code
+- [[FastMCP_2]] - code
 - [[Re-write every registered tool's ``output_schema`` to the compact form. FastMCP…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/output_schema.py
 - [[Reduce a FastMCP-generated output schema to top-level field names. ``{}`` as a…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/output_schema.py
 - [[The wire-frugal output-schema reducer is the largest context-cost lever. Full…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_output_schema.py
@@ -44,4 +44,4 @@ SORT file.name ASC
 - [[test_output_schema.py]] - degree 11, connects to 2 communities
 - [[apply_compact_output_schemas()]] - degree 6, connects to 1 community
 - [[compact_output_schema()]] - degree 6, connects to 1 community
-- [[FastMCP]] - degree 2, connects to 1 community
+- [[FastMCP_1]] - degree 2, connects to 1 community

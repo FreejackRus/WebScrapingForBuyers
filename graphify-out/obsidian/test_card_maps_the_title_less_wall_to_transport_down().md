@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[Item pages redirect to the same wall; the card path must classify it…]] - `rationale_for` [EXTRACTED]
 - [[_error_payload()]] - `calls` [EXTRACTED]
-- [[_patch_render()_1]] - `calls` [EXTRACTED]
+- [[_patch_render()]] - `calls` [EXTRACTED]
 - [[taobao-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_error_payload

@@ -1,18 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/mcp_startup.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/src/aliexpress_connector/__main__.py"
 type: "code"
-community: "StdioProbe"
-location: "L39"
+community: "sys"
+location: "L13"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/StdioProbe
+  - community/sys
 ---
 
 # main()
 
 ## Connections
-- [[mcp_startup.py]] - `contains` [EXTRACTED]
-- [[measure()]] - `calls` [EXTRACTED]
+- [[Run the server on the transport selected by the environment (stdio default).]] - `rationale_for` [EXTRACTED]
+- [[aliexpress_connector__main__.py]] - `contains` [EXTRACTED]
+- [[run_server()]] - `calls` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/StdioProbe
+#graphify/code #graphify/EXTRACTED #community/sys

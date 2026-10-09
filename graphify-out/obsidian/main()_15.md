@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/src/citilink_connector/__main__.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/__main__.py"
 type: "code"
-community: "citilink_connector/__main__.py"
-location: "L13"
+community: "sys"
+location: "L21"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/citilink_connector/__main__py
+  - community/sys
 ---
 
 # main()
 
 ## Connections
-- [[Run the server on the transport selected by the environment (stdio default)._4]] - `rationale_for` [EXTRACTED]
-- [[citilink_connector__main__.py]] - `contains` [EXTRACTED]
+- [[Run the server on the transport selected by the environment (stdio default)._5]] - `rationale_for` [EXTRACTED]
+- [[detmir_connector__main__.py]] - `contains` [EXTRACTED]
 - [[run_server()]] - `calls` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/citilink_connector/__main__py
+#graphify/code #graphify/EXTRACTED #community/sys

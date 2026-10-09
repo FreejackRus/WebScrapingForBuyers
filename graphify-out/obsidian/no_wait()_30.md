@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "scenario"
-location: "L2019"
+community: "test_cache_serves_a_repeated_successful_read"
+location: "L1240"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/scenario
+  - community/test_cache_serves_a_repeated_successful_read
 ---
 
 # no_wait()
 
 ## Connections
-- [[test_impersonated_refusal_stays_a_transport_error()]] - `contains` [EXTRACTED]
+- [[test_cache_serves_a_repeated_successful_read()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/scenario
+#graphify/code #graphify/EXTRACTED #community/test_cache_serves_a_repeated_successful_read

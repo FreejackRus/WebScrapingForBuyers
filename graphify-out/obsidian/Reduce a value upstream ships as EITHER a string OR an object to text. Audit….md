@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/resilience.py"
 type: "rationale"
-community: "test_resilience.py"
+community: "flatten_text"
 location: "L556"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/test_resiliencepy
+  - community/flatten_text
 ---
 
 # Reduce a value upstream ships as EITHER a string OR an object to text. Audit…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[flatten_text()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/test_resiliencepy
+#graphify/rationale #graphify/EXTRACTED #community/flatten_text

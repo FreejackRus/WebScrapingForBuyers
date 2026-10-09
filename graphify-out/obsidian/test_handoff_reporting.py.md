@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[R3 (2026-09-18) a resumed read must say what changed, and a refusal must say…]] - `rationale_for` [EXTRACTED]
-- [[asyncio_2]] - `imports` [EXTRACTED]
+- [[asyncio]] - `imports` [EXTRACTED]
 - [[blocked()_2]] - `contains` [EXTRACTED]
 - [[blocked_stable()]] - `contains` [EXTRACTED]
 - [[blocked_then_clear()]] - `contains` [EXTRACTED]

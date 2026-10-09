@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "code"
 community: "wb_connector/server.py"
-location: "L1645"
+location: "L1728"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,8 +12,9 @@ tags:
 # _capture_from_catalog_response()
 
 ## Connections
-- [[Any_16]] - `references` [EXTRACTED]
+- [[Any_27]] - `references` [EXTRACTED]
 - [[Build the storefront capture dict from a live Network response.]] - `rationale_for` [EXTRACTED]
+- [[_attempt_raw_live_capture()]] - `calls` [EXTRACTED]
 - [[_observe()]] - `calls` [EXTRACTED]
 - [[_products_from_search_payload()]] - `calls` [EXTRACTED]
 - [[wb_connectorserver.py]] - `contains` [EXTRACTED]

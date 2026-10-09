@@ -1,12 +1,12 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
+source_file: "apps/search/src/domain/marketplace-relevance.ts"
 type: "code"
-community: "mcp-marketplace-adapter.ts"
-location: "L748"
+community: "marketplace-relevance.ts"
+location: "L199"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/mcp-marketplace-adapterts
+  - community/marketplace-relevancets
 ---
 
 # brandIdentityTokens()
@@ -14,8 +14,8 @@ tags:
 ## Connections
 - [[isIdentityToken()]] - `calls` [EXTRACTED]
 - [[isProductFamilyCard()]] - `calls` [EXTRACTED]
-- [[mcp-marketplace-adapter.ts]] - `contains` [EXTRACTED]
+- [[marketplace-relevance.ts]] - `contains` [EXTRACTED]
 - [[productIdentityTokens()]] - `calls` [EXTRACTED]
 - [[tokenizeProduct()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts
+#graphify/code #graphify/EXTRACTED #community/marketplace-relevancets

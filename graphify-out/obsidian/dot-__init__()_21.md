@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/stdio_probe.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py"
 type: "code"
-community: "StdioProbe"
-location: "L29"
+community: "CacheStats"
+location: "L60"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/StdioProbe
+  - community/CacheStats
 ---
 
 # .__init__()
 
 ## Connections
-- [[dot-_start_readers()]] - `calls` [EXTRACTED]
-- [[StdioProbe]] - `method` [EXTRACTED]
+- [[CacheStats]] - `calls` [EXTRACTED]
+- [[TTLCache]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/StdioProbe
+#graphify/code #graphify/EXTRACTED #community/CacheStats

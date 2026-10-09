@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py"
 type: "code"
-community: "fake_post"
-location: "L59"
+community: "_no_cache"
+location: "L83"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/fake_post
+  - community/_no_cache
 ---
 
 # _no_cache()
 
 ## Connections
-- [[_no_redirect()]] - `indirect_call` [INFERRED]
-- [[fixture_9]] - `references` [EXTRACTED]
-- [[megamarket-connectorteststest_server.py]] - `contains` [EXTRACTED]
+- [[fixture_19]] - `references` [EXTRACTED]
+- [[taobao-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/fake_post
+#graphify/code #graphify/EXTRACTED #community/_no_cache

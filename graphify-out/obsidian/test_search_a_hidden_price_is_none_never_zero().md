@@ -12,7 +12,7 @@ tags:
 # test_search_a_hidden_price_is_none_never_zero()
 
 ## Connections
-- [[_patch_render()_1]] - `calls` [EXTRACTED]
+- [[_patch_render()]] - `calls` [EXTRACTED]
 - [[taobao-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/taobao-connector/tests/test_serverpy

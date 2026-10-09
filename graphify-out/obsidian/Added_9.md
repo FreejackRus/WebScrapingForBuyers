@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
 community: "compare_prices"
-location: "L339"
+location: "L345"
 tags:
   - graphify/document
   - graphify/INFERRED

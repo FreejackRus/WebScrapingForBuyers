@@ -1,17 +1,24 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_search_offer_integrity.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/server.py"
 type: "code"
-community: "test_card_verification_records.py"
-location: "L152"
+community: "TransportDownError"
+location: "L136"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/test_card_verification_recordspy
+  - graphify/EXTRACTED
+  - community/TransportDownError
 ---
 
 # fetch()
 
 ## Connections
-- [[test_native_yandex_distinct_sku_reaches_cheapest_comparable()]] - `indirect_call` [INFERRED]
+- [[ParserDriftError]] - `calls` [EXTRACTED]
+- [[RateLimitedError]] - `calls` [EXTRACTED]
+- [[TransportDownError]] - `calls` [EXTRACTED]
+- [[_fetch_json()]] - `indirect_call` [INFERRED]
+- [[_proxy()]] - `calls` [EXTRACTED]
+- [[build_client()]] - `calls` [INFERRED]
+- [[get_text_with_retries()]] - `calls` [INFERRED]
+- [[raise_tool_error()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/test_card_verification_recordspy
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

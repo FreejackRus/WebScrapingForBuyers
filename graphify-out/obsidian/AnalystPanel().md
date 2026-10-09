@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/widgets/analysis/copilot/ui/index.tsx"
 type: "code"
-community: "copilot/ui/index.tsx"
+community: "chat/ui/index.tsx"
 location: "L13"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/copilot/ui/indextsx
+  - community/chat/ui/indextsx
 ---
 
 # AnalystPanel()
@@ -19,4 +19,4 @@ tags:
 - [[useUserStore]] - `calls` [EXTRACTED]
 - [[widgetsanalysisindex.ts]] - `re_exports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/copilot/ui/indextsx
+#graphify/code #graphify/EXTRACTED #community/chat/ui/indextsx

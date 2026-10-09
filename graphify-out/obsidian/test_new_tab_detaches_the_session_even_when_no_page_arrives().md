@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[_FakeBrowser]] - `calls` [EXTRACTED]
 - [[_FakeCdp]] - `calls` [EXTRACTED]
-- [[__init__()_4]] - `contains` [EXTRACTED]
+- [[__init__()_1]] - `contains` [EXTRACTED]
 - [[test_chrome_cdp_stealth.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_stealthpy

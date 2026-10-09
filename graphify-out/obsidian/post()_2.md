@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py"
 type: "code"
-community: "test_a_graphql_error_block_is_reported_verbatim"
-location: "L349"
+community: "test_the_graphql_request_carries_a_referer_for_the_sku"
+location: "L389"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_a_graphql_error_block_is_reported_verbatim
+  - community/test_the_graphql_request_carries_a_referer_for_the_sku
 ---
 
 # post()
 
 ## Connections
-- [[test_a_graphql_error_block_is_reported_verbatim()]] - `contains` [EXTRACTED]
+- [[test_the_graphql_request_carries_a_referer_for_the_sku()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_a_graphql_error_block_is_reported_verbatim
+#graphify/code #graphify/EXTRACTED #community/test_the_graphql_request_carries_a_referer_for_the_sku

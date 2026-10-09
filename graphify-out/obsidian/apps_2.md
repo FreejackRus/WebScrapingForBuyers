@@ -1,17 +1,17 @@
 ---
-source_file: "apps/search/src/app.test.ts"
+source_file: "apps/gateway/src/gateway.test.ts"
 type: "code"
-community: "packages_contracts_dist_index"
-location: "L43"
+community: "gateway/src/app.ts"
+location: "L6"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/packages_contracts_dist_index
+  - community/gateway/src/appts
 ---
 
 # apps
 
 ## Connections
-- [[app.test.ts]] - `contains` [EXTRACTED]
+- [[gateway.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index
+#graphify/code #graphify/EXTRACTED #community/gateway/src/appts

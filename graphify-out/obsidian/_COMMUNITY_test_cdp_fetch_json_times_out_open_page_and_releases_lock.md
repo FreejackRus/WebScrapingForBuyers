@@ -10,13 +10,13 @@ members: 7
 **Members:** 7 nodes
 
 ## Members
-- [[__aenter__()_4]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
-- [[__aexit__()_4]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
-- [[blocked_fetch()]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
-- [[scenario()_51]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
-- [[scenario()_52]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
+- [[__aenter__()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
+- [[__aexit__()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
+- [[dead_fetch()]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
+- [[scenario()_67]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
+- [[scenario()_68]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 - [[test_cdp_fetch_json_times_out_open_page_and_releases_lock()]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
-- [[test_ozon_search_reports_actionable_cdp_block()]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
+- [[test_ozon_search_zero_status_does_not_mention_cdp_setup()]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 
 ## Live Query (requires Dataview plugin)
 
@@ -31,4 +31,4 @@ SORT file.name ASC
 
 ## Top bridge nodes
 - [[test_cdp_fetch_json_times_out_open_page_and_releases_lock()]] - degree 5, connects to 2 communities
-- [[test_ozon_search_reports_actionable_cdp_block()]] - degree 4, connects to 2 communities
+- [[test_ozon_search_zero_status_does_not_mention_cdp_setup()]] - degree 4, connects to 2 communities

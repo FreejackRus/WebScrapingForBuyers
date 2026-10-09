@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/skills/avito-connector/SKILL.md"
 type: "document"
-community: "avito_seller"
+community: "avito_connector/server.py"
 location: "L1"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/avito_seller
+  - community/avito_connector/serverpy
 ---
 
 # ru-marketplace-mcp/skills/avito-connector/SKILL.md
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[Avito Connector_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/avito_seller
+#graphify/document #graphify/EXTRACTED #community/avito_connector/serverpy

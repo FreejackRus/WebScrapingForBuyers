@@ -12,7 +12,7 @@ tags:
 # test_invalid_jpeg_frame_dimensions()
 
 ## Connections
-- [[parametrize_27]] - `references` [EXTRACTED]
+- [[parametrize_31]] - `references` [EXTRACTED]
 - [[test_chrome_cdp_snapshot.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_snapshotpy

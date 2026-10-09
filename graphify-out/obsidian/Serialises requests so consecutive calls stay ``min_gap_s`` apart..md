@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/http_tier.py"
 type: "rationale"
-community: "transport/__init__.py"
+community: "test_http_tier.py"
 location: "L72"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/transport/__init__py
+  - community/test_http_tierpy
 ---
 
 # Serialises requests so consecutive calls stay ``min_gap_s`` apart.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[RateLimiter]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/transport/__init__py
+#graphify/rationale #graphify/EXTRACTED #community/test_http_tierpy

@@ -16,6 +16,6 @@ tags:
 - [[blocked_cdp()]] - `contains` [EXTRACTED]
 - [[blocked_get()]] - `contains` [EXTRACTED]
 - [[ozon-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[scenario()_62]] - `contains` [EXTRACTED]
+- [[scenario()_77]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_fetch_composer_reports_cdp_navigation_block_as_blocked

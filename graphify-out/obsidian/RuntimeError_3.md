@@ -1,16 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "StdioProbe"
+community: "open_page"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/StdioProbe
+  - community/open_page
 ---
 
 # RuntimeError
 
 ## Connections
-- [[ProbeError]] - `inherits` [EXTRACTED]
+- [[NavBlocked]] - `inherits` [EXTRACTED]
+- [[NavigationPolicyError]] - `inherits` [EXTRACTED]
+- [[_CdpConnectTimeout]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/StdioProbe
+#graphify/code #graphify/EXTRACTED #community/open_page

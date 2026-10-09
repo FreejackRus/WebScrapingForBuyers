@@ -1,25 +1,27 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/http-marketplace-adapter.ts"
 type: "code"
-community: "http-marketplace-adapter.ts"
+community: "ref_vitest"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/http-marketplace-adapterts
+  - community/ref_vitest
 ---
 
 # http-marketplace-adapter.ts
 
 ## Connections
+- [[OFFERS_PER_SOURCE]] - `imports` [EXTRACTED]
 - [[SourceAdapter]] - `imports` [EXTRACTED]
 - [[WB_CATALOG_UNAVAILABLE_403]] - `imports` [EXTRACTED]
 - [[WB_DEFAULT_DEST]] - `imports` [EXTRACTED]
 - [[WB_HTTP_SEARCH_VERSIONS]] - `contains` [EXTRACTED]
 - [[WildberriesHttpAdapter]] - `contains` [EXTRACTED]
+- [[apps_search_src_infrastructure_sources_mcp_marketplace_adapter_assessmarketplaceofferrelevance]] - `imports` [EXTRACTED]
 - [[assertWbCatalogAllowed()]] - `imports` [EXTRACTED]
 - [[assessMarketplaceOfferRelevance()]] - `imports` [EXTRACTED]
-- [[browserHeaders]] - `contains` [EXTRACTED]
+- [[browserHeaders_1]] - `contains` [EXTRACTED]
 - [[createHttpMarketplaceSources()]] - `contains` [EXTRACTED]
 - [[http-marketplace-adapter.test.ts]] - `imports_from` [EXTRACTED]
 - [[marketplaceSearchQueries()]] - `imports` [EXTRACTED]
@@ -39,4 +41,4 @@ tags:
 - [[wbCatalogPrice()]] - `contains` [EXTRACTED]
 - [[wbHttpSearchUrl()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/http-marketplace-adapterts
+#graphify/code #graphify/EXTRACTED #community/ref_vitest

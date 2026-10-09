@@ -1,23 +1,23 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_search_extractor_dom.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_shape_reference.py"
 type: "code"
-community: "_extract"
-location: "L54"
+community: "taobao-connector/tests/test_shape_reference.py"
+location: "L69"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_extract
+  - community/taobao-connector/tests/test_shape_referencepy
 ---
 
 # _extract()
 
 ## Connections
 - [[JsdomUnavailable]] - `uses` [INFERRED]
-- [[Run the connector's real extractor over the captured markup. Skips rather than…]] - `rationale_for` [EXTRACTED]
-- [[dns-connectorteststest_search_extractor_dom.py]] - `contains` [EXTRACTED]
+- [[Path_12]] - `references` [EXTRACTED]
 - [[run_extractor()]] - `calls` [EXTRACTED]
-- [[test_search_extractor_ignores_the_instalment_line()]] - `calls` [EXTRACTED]
-- [[test_search_extractor_reads_the_real_grid()_1]] - `calls` [EXTRACTED]
-- [[test_search_items_match_the_prices_on_the_page()]] - `calls` [EXTRACTED]
+- [[taobao-connectorteststest_shape_reference.py]] - `contains` [EXTRACTED]
+- [[test_card_payload_shape_matches_the_capture()_1]] - `calls` [EXTRACTED]
+- [[test_live_search_shape_matches_the_selfcheck_registry()_1]] - `calls` [EXTRACTED]
+- [[test_search_payload_shape_matches_the_capture()_2]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_extract
+#graphify/code #graphify/EXTRACTED #community/taobao-connector/tests/test_shape_referencepy

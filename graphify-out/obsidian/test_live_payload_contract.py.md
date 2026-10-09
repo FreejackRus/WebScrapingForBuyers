@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Contract tests against a REAL ``jsitems`` response.…]] - `rationale_for` [EXTRACTED]
-- [[_items()_2]] - `contains` [EXTRACTED]
+- [[_items()_3]] - `contains` [EXTRACTED]
 - [[_payload()_1]] - `contains` [EXTRACTED]
 - [[avito_connectormodels_output.py]] - `imports_from` [EXTRACTED]
 - [[avito_connectorserver.py]] - `imports_from` [EXTRACTED]

@@ -12,7 +12,7 @@ tags:
 # _Reader
 
 ## Connections
-- [[dot-__init__()_35]] - `method` [EXTRACTED]
+- [[dot-__init__()_28]] - `method` [EXTRACTED]
 - [[dot-_operand()]] - `method` [EXTRACTED]
 - [[dot-_peek()]] - `method` [EXTRACTED]
 - [[dot-parse_and()]] - `method` [EXTRACTED]

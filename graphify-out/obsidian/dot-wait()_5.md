@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/pacing.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "code"
-community: "Pacer"
-location: "L86"
+community: "wb_connector/server.py"
+location: "L500"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Pacer
+  - community/wb_connector/serverpy
 ---
 
 # .wait()
 
 ## Connections
-- [[Block until enough time has passed since the previous request. ``min_gap``…]] - `rationale_for` [EXTRACTED]
-- [[Pacer]] - `method` [EXTRACTED]
+- [[_PoliteGate]] - `method` [EXTRACTED]
+- [[_polite_wait()_9]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Pacer
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

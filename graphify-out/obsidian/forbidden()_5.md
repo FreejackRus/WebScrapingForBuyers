@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_stealth.py"
 type: "code"
-community: "_patch_questions"
-location: "L1769"
+community: "test_chrome_cdp_stealth.py"
+location: "L119"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_patch_questions
+  - community/test_chrome_cdp_stealthpy
 ---
 
 # forbidden()
 
 ## Connections
-- [[test_category_products_rejects_an_unknown_sort()]] - `contains` [EXTRACTED]
+- [[test_linux_hide_is_a_noop()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_patch_questions
+#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_stealthpy

@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/aliexpress-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/taobao-connector/SKILL.md"
 type: "document"
-community: "AliExpress connector"
-location: "L16"
+community: "Taobao Connector"
+location: "L18"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/AliExpress_connector
+  - community/Taobao_Connector
 ---
 
 # Tools available
 
 ## Connections
-- [[AliExpress connector]] - `contains` [EXTRACTED]
+- [[Taobao Connector_1]] - `contains` [EXTRACTED]
+- [[taobao_selfcheck()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/AliExpress_connector
+#graphify/document #graphify/EXTRACTED #community/Taobao_Connector

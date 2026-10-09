@@ -1,20 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_stealth.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_no_print.py"
 type: "code"
-community: "test_chrome_cdp_stealth.py"
-location: "L180"
+community: "check_no_print.py"
+location: "L31"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_chrome_cdp_stealthpy
+  - community/check_no_printpy
 ---
 
 # .__init__()
 
 ## Connections
-- [[_FakeBrowser]] - `references` [EXTRACTED]
-- [[_FakeContext]] - `method` [EXTRACTED]
-- [[__init__()_4]] - `calls` [EXTRACTED]
-- [[__init__()_5]] - `calls` [EXTRACTED]
+- [[StdoutWriteVisitor]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_stealthpy
+#graphify/code #graphify/EXTRACTED #community/check_no_printpy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/src/aliexpress_connector/server.py"
 type: "rationale"
-community: "aliexpress_connector/server.py"
+community: "aliexpress_card"
 location: "L149"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/aliexpress_connector/serverpy
+  - community/aliexpress_card
 ---
 
 # The x5sec challenge page is a transport verdict, not data.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_is_punish()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/aliexpress_connector/serverpy
+#graphify/rationale #graphify/EXTRACTED #community/aliexpress_card

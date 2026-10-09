@@ -14,8 +14,8 @@ tags:
 ## Connections
 - [[Every canary probe healthy except v9, which answers with ``v9_response``.]] - `rationale_for` [EXTRACTED]
 - [[responder()]] - `contains` [EXTRACTED]
-- [[responder()_8]] - `indirect_call` [INFERRED]
-- [[scenario()_28]] - `calls` [EXTRACTED]
+- [[responder()_14]] - `indirect_call` [INFERRED]
+- [[scenario()_31]] - `calls` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_healthy_selfcheck_responder

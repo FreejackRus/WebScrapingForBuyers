@@ -1,8 +1,8 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/taobao-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/wb-connector/SKILL.md"
 type: "document"
 community: "compare_prices"
-location: "L40"
+location: "L152"
 tags:
   - graphify/document
   - graphify/INFERRED
@@ -12,7 +12,7 @@ tags:
 # DSH activation
 
 ## Connections
-- [[Taobao Connector]] - `contains` [EXTRACTED]
+- [[Wildberries Connector]] - `contains` [EXTRACTED]
 - [[compare_prices()]] - `references` [INFERRED]
 - [[compare_sources()]] - `references` [INFERRED]
 - [[marketplace_sources()]] - `references` [INFERRED]

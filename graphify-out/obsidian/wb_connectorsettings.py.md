@@ -15,7 +15,7 @@ tags:
 - [[WB connector settings (pydantic-settings BaseSettings, env_prefix='WB_'). All…]] - `rationale_for` [EXTRACTED]
 - [[WBSettings]] - `contains` [EXTRACTED]
 - [[functools]] - `imports_from` [EXTRACTED]
-- [[get_settings()_12]] - `contains` [EXTRACTED]
+- [[get_settings()_11]] - `contains` [EXTRACTED]
 - [[pydantic]] - `imports_from` [EXTRACTED]
 - [[pydantic_settings]] - `imports_from` [EXTRACTED]
 - [[test_storefront_search.py]] - `imports_from` [EXTRACTED]

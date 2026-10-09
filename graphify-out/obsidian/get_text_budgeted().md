@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[dot-response()]] - `indirect_call` [INFERRED]
-- [[Added_16]] - `references` [INFERRED]
+- [[Added]] - `references` [INFERRED]
 - [[AsyncClient_2]] - `references` [EXTRACTED]
 - [[Changed_8]] - `references` [INFERRED]
 - [[GET ``url`` under a hard wall-clock budget, returning ``(status, text, err)``.…]] - `rationale_for` [EXTRACTED]
@@ -35,7 +35,7 @@ tags:
 - [[test_transport_error_is_retried_then_succeeds()]] - `calls` [INFERRED]
 - [[test_wall_clock_budget_bounds_a_single_slow_attempt()]] - `calls` [INFERRED]
 - [[transport__init__.py]] - `imports` [EXTRACTED]
-- [[Добавлено_18]] - `references` [INFERRED]
-- [[Изменено_7]] - `references` [INFERRED]
+- [[Добавлено_1]] - `references` [INFERRED]
+- [[Изменено_8]] - `references` [INFERRED]
 
 #graphify/code #graphify/INFERRED #community/get_text_budgeted

@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "_tool_error_payload"
-location: "L360"
+community: "no_wait"
+location: "L1061"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_tool_error_payload
+  - community/no_wait
 ---
 
 # fake_safe_get_text()
 
 ## Connections
-- [[test_wb_card_rejects_missing_products_container()]] - `contains` [EXTRACTED]
+- [[test_wb_selfcheck_search_goods_nonpositive_ids_are_drift()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_tool_error_payload
+#graphify/code #graphify/EXTRACTED #community/no_wait

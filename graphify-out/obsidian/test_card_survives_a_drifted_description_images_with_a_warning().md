@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[A decorative count drifting to a non-number must not kill an otherwise readable…]] - `rationale_for` [EXTRACTED]
-- [[_patch_render()_1]] - `calls` [EXTRACTED]
+- [[_patch_render()]] - `calls` [EXTRACTED]
 - [[taobao-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_card_survives_a_drifted_description_images_with_a_warning

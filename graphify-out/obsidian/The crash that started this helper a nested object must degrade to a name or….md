@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_resilience_properties.py"
 type: "rationale"
-community: "test_resilience.py"
+community: "flatten_text"
 location: "L198"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/test_resiliencepy
+  - community/flatten_text
 ---
 
 # The crash that started this helper: a nested object must degrade to a name or…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_flatten_text_never_returns_a_container_repr()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/test_resiliencepy
+#graphify/rationale #graphify/EXTRACTED #community/flatten_text

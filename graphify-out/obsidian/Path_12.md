@@ -1,20 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "test_dsh_bundle.py"
+community: "taobao-connector/tests/test_shape_reference.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_dsh_bundlepy
+  - community/taobao-connector/tests/test_shape_referencepy
 ---
 
 # Path
 
 ## Connections
-- [[_assert_tree_matches()]] - `references` [EXTRACTED]
-- [[_file_state()]] - `references` [EXTRACTED]
-- [[_files()]] - `references` [EXTRACTED]
-- [[_tree_diff()]] - `references` [EXTRACTED]
-- [[test_the_vendor_gate_detects_every_drift_class()]] - `references` [EXTRACTED]
+- [[_extract()_10]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_dsh_bundlepy
+#graphify/code #graphify/EXTRACTED #community/taobao-connector/tests/test_shape_referencepy

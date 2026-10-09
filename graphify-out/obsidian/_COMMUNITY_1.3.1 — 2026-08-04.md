@@ -10,12 +10,12 @@ members: 7
 **Members:** 7 nodes
 
 ## Members
-- [[Added_12]] - document - mcp-servers/ru-marketplace-mcp/CHANGELOG.md
-- [[Fixed_16]] - document - mcp-servers/ru-marketplace-mcp/CHANGELOG.md
+- [[Added_13]] - document - mcp-servers/ru-marketplace-mcp/CHANGELOG.md
+- [[Fixed_17]] - document - mcp-servers/ru-marketplace-mcp/CHANGELOG.md
 - [[Other_1]] - document - mcp-servers/ru-marketplace-mcp/CHANGELOG.md
 - [[1.3.1 — 2026-08-04]] - document - mcp-servers/ru-marketplace-mcp/CHANGELOG.md
 - [[Добавлено_15]] - document - mcp-servers/ru-marketplace-mcp/CHANGELOG.md
-- [[Исправлено_14]] - document - mcp-servers/ru-marketplace-mcp/CHANGELOG.md
+- [[Исправлено_15]] - document - mcp-servers/ru-marketplace-mcp/CHANGELOG.md
 - [[Прочее_1]] - document - mcp-servers/ru-marketplace-mcp/CHANGELOG.md
 
 ## Live Query (requires Dataview plugin)

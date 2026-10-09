@@ -1,28 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
-community: "ozon_card"
-location: "L1288"
+community: "_FakeResponse"
+location: "L762"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ozon_card
+  - community/_FakeResponse
 ---
 
 # ozon_search()
 
 ## Connections
-- [[Context_4]] - `references` [EXTRACTED]
-- [[Field_3]] - `references` [EXTRACTED]
-- [[OzonSearchResponse]] - `uses` [INFERRED]
-- [[Search Ozon catalog. Tier-1 curl_cffi → Tier-2 CDP fallback. Returns…]] - `rationale_for` [EXTRACTED]
-- [[TransportDownError]] - `uses` [INFERRED]
-- [[_ozon_search_impl()]] - `calls` [EXTRACTED]
-- [[default]] - `references` [EXTRACTED]
-- [[description_4]] - `references` [EXTRACTED]
-- [[log_event()]] - `calls` [EXTRACTED]
-- [[ozon_connectorserver.py]] - `contains` [EXTRACTED]
-- [[raise_tool_error()]] - `calls` [EXTRACTED]
-- [[tool_3]] - `references` [EXTRACTED]
+- [[_FakeOzonItem]] - `calls` [EXTRACTED]
+- [[_FakeResponse_1]] - `calls` [EXTRACTED]
+- [[test_ozon_adapter_survives_a_priceless_row()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ozon_card
+#graphify/code #graphify/EXTRACTED #community/_FakeResponse

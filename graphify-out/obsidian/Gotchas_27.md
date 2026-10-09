@@ -1,17 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/taobao-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md"
 type: "document"
-community: "Taobao Connector"
-location: "L28"
+community: "wb_connector/server.py"
+location: "L75"
 tags:
   - graphify/document
-  - graphify/EXTRACTED
-  - community/Taobao_Connector
+  - graphify/INFERRED
+  - community/wb_connector/serverpy
 ---
 
 # Gotchas
 
 ## Connections
-- [[Taobao Connector_1]] - `contains` [EXTRACTED]
+- [[WbNoResultsResponse]] - `references` [INFERRED]
+- [[Wildberries Connector_1]] - `contains` [EXTRACTED]
+- [[compare_prices()]] - `references` [INFERRED]
+- [[wb_card()]] - `references` [INFERRED]
+- [[wb_reviews()]] - `references` [INFERRED]
+- [[wb_root_info()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Taobao_Connector
+#graphify/document #graphify/INFERRED #community/wb_connector/serverpy

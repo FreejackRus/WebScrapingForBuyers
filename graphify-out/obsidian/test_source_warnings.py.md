@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_source_warnings.py"
 type: "code"
-community: "wb_connector/server.py"
+community: "test_card_verification_records.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/wb_connector/serverpy
+  - community/test_card_verification_recordspy
 ---
 
 # test_source_warnings.py
 
 ## Connections
-- [[asyncio_2]] - `imports` [EXTRACTED]
+- [[asyncio]] - `imports` [EXTRACTED]
 - [[compare_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[importlib]] - `imports` [EXTRACTED]
 - [[pytest]] - `imports` [EXTRACTED]
@@ -25,4 +25,4 @@ tags:
 - [[types_8]] - `imports_from` [EXTRACTED]
 - [[wb_connectormodels_output.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/test_card_verification_recordspy

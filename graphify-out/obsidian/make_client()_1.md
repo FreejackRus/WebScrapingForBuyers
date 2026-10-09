@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_http_tier.py"
 type: "code"
-community: "make_client"
+community: "test_http_tier.py"
 location: "L21"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/make_client
+  - community/test_http_tierpy
 ---
 
 # make_client()
@@ -25,4 +25,4 @@ tags:
 - [[test_transport_error_is_retried_then_succeeds()_1]] - `calls` [EXTRACTED]
 - [[test_transport_error_propagates_when_budget_exhausted()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/make_client
+#graphify/code #graphify/EXTRACTED #community/test_http_tierpy

@@ -1,12 +1,12 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/src/aliexpress_connector/server.py"
 type: "rationale"
-community: "avito_seller"
-location: "L126"
+community: "aliexpress_card"
+location: "L114"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/avito_seller
+  - community/aliexpress_card
 ---
 
 # Space this source's requests out, and back off if it refused us. Reads…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_polite_wait()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/avito_seller
+#graphify/rationale #graphify/EXTRACTED #community/aliexpress_card

@@ -12,9 +12,9 @@ members: 6
 ## Members
 - [[__aenter__()_8]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[__aexit__()_8]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
-- [[aiter_bytes()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
-- [[scenario()_54]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
-- [[stream()_5]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[aiter_bytes()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[scenario()_72]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[stream()_7]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[test_safe_get_text_has_wall_clock_timeout()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 
 ## Live Query (requires Dataview plugin)

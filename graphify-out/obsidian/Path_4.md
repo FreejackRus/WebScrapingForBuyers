@@ -1,16 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "check_versions.py"
+community: "check_no_print.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/check_versionspy
+  - community/check_no_printpy
 ---
 
 # Path
 
 ## Connections
-- [[_scan()]] - `references` [EXTRACTED]
+- [[check_file()]] - `references` [EXTRACTED]
+- [[collect_default_paths()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/check_versionspy
+#graphify/code #graphify/EXTRACTED #community/check_no_printpy

@@ -1,12 +1,12 @@
 ---
 source_file: "apps/analysis/src/domain/analysis-narrator.ts"
 type: "code"
-community: "ollama-analysis-narrator.ts"
-location: "L31"
+community: "analyze.test.ts"
+location: "L35"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ollama-analysis-narratorts
+  - community/analyzetestts
 ---
 
 # CopilotChatAnswer
@@ -17,4 +17,4 @@ tags:
 - [[analyze.ts]] - `imports` [EXTRACTED]
 - [[ollama-analysis-narrator.ts]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ollama-analysis-narratorts
+#graphify/code #graphify/EXTRACTED #community/analyzetestts

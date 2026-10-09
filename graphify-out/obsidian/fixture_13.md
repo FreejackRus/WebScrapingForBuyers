@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "taobao"
+community: "Clock"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/taobao
+  - community/Clock
 ---
 
 # fixture
 
 ## Connections
-- [[browser()]] - `references` [EXTRACTED]
+- [[Clock]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/taobao
+#graphify/code #graphify/EXTRACTED #community/Clock

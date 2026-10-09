@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "_run"
-location: "L568"
+community: "ozon-connector/tests/test_server.py"
+location: "L122"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_run
+  - community/ozon-connector/tests/test_serverpy
 ---
 
 # scenario()
 
 ## Connections
-- [[fake_fetch()]] - `indirect_call` [INFERRED]
-- [[test_ozon_tools_reject_non_object_payloads()]] - `contains` [EXTRACTED]
+- [[local()]] - `indirect_call` [INFERRED]
+- [[test_run_sync_bounded_rejects_local_callables()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_run
+#graphify/code #graphify/EXTRACTED #community/ozon-connector/tests/test_serverpy

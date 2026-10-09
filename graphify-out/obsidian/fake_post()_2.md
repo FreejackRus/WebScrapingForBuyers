@@ -1,17 +1,21 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/tests/test_call_envelope.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py"
 type: "code"
-community: "test_call_envelope.py"
-location: "L261"
+community: "test_the_category_url_is_what_yields_a_collection"
+location: "L81"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/test_call_envelopepy
+  - community/test_the_category_url_is_what_yields_a_collection
 ---
 
 # fake_post()
 
 ## Connections
-- [[test_a_transport_error_string_does_not_carry_the_token()]] - `indirect_call` [INFERRED]
+- [[_patch_post()]] - `indirect_call` [INFERRED]
+- [[_patch_routes()]] - `indirect_call` [INFERRED]
+- [[test_search_maps_code7_to_transport_down()]] - `indirect_call` [INFERRED]
+- [[test_selfcheck_block_is_inconclusive()]] - `indirect_call` [INFERRED]
+- [[test_the_category_url_is_what_yields_a_collection()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/test_call_envelopepy
+#graphify/code #graphify/INFERRED #community/test_the_category_url_is_what_yields_a_collection

@@ -1,25 +1,32 @@
 ---
 type: community
-cohesion: 0.16
-members: 17
+cohesion: 0.12
+members: 24
 ---
 
 # TTLCache
 
-**Cohesion:** 0.16 - loosely connected
-**Members:** 17 nodes
+**Cohesion:** 0.12 - loosely connected
+**Members:** 24 nodes
 
 ## Members
 - [[dot-__len__()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
-- [[dot-clear()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
+- [[dot-clear()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
 - [[dot-enabled()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
 - [[dot-purge_expired()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
 - [[dot-ttl_s()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
 - [[Bounded LRU cache whose entries expire after ``ttl_s`` seconds. ``ttl_s = 0``…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
+- [[Concurrent misses on one key must produce a single upstream call. This is what…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cache.py
 - [[TTLCache]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
 - [[Tests for the in-process TTL cache. Time is driven through a fake ``monotonic``…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cache.py
+- [[factory()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cache.py
+- [[factory()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cache.py
+- [[slow_factory()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cache.py
 - [[test_cache.py]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cache.py
 - [[test_entry_expires_after_ttl()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cache.py
+- [[test_get_or_fetch_bypasses_a_disabled_cache()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cache.py
+- [[test_get_or_fetch_calls_factory_once_per_key()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cache.py
+- [[test_get_or_fetch_collapses_concurrent_misses()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cache.py
 - [[test_invalidate_and_clear()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cache.py
 - [[test_lru_eviction_keeps_recently_used()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cache.py
 - [[test_miss_then_hit()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cache.py
@@ -37,10 +44,8 @@ SORT file.name ASC
 
 ## Connections to other communities
 - 4 edges to [[_COMMUNITY_dot-get]]
-- 4 edges to [[_COMMUNITY_test_get_or_fetch_bypasses_a_disabled_cache]]
 - 3 edges to [[_COMMUNITY_json]]
 - 2 edges to [[_COMMUNITY_test_cache_can_be_disabled_by_ttl_zero]]
-- 2 edges to [[_COMMUNITY_test_get_or_fetch_collapses_concurrent_misses]]
 - 1 edge to [[_COMMUNITY_CacheStats]]
 - 1 edge to [[_COMMUNITY_taobao]]
 - 1 edge to [[_COMMUNITY_test_challenge_recovery_bypasses_failed_payload_cache]]
@@ -49,5 +54,5 @@ SORT file.name ASC
 - 1 edge to [[_COMMUNITY_pytest]]
 
 ## Top bridge nodes
-- [[TTLCache]] - degree 27, connects to 9 communities
-- [[test_cache.py]] - degree 15, connects to 5 communities
+- [[TTLCache]] - degree 27, connects to 7 communities
+- [[test_cache.py]] - degree 15, connects to 3 communities

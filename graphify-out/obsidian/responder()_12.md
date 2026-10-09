@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
 community: "_patch_questions"
-location: "L1868"
+location: "L1575"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,7 +12,6 @@ tags:
 # responder()
 
 ## Connections
-- [[_catalog_payload()]] - `calls` [EXTRACTED]
-- [[test_category_item_shape_matches_wb_card()]] - `contains` [EXTRACTED]
+- [[test_questions_raises_drift_when_count_is_missing()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_patch_questions

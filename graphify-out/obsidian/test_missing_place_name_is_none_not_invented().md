@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Items 1 and 3 have ``location null`` and ``addressDetailed.locationName ``.…]] - `rationale_for` [EXTRACTED]
-- [[_items()_2]] - `calls` [EXTRACTED]
+- [[_items()_3]] - `calls` [EXTRACTED]
 - [[test_live_payload_contract.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_live_payload_contractpy

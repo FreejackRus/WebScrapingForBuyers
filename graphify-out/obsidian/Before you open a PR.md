@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/CONTRIBUTING.md"
 type: "document"
-community: "ru-marketplace-mcp/README.md"
+community: "Contributing"
 location: "L138"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/ru-marketplace-mcp/READMEmd
+  - community/Contributing
 ---
 
 # Before you open a PR
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[Contributing_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/ru-marketplace-mcp/READMEmd
+#graphify/document #graphify/EXTRACTED #community/Contributing

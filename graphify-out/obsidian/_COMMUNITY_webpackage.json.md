@@ -1,13 +1,13 @@
 ---
 type: community
 cohesion: 0.07
-members: 29
+members: 30
 ---
 
 # web/package.json
 
 **Cohesion:** 0.07 - loosely connected
-**Members:** 29 nodes
+**Members:** 30 nodes
 
 ## Members
 - [[@peremenacontracts_8]] - code - apps/web/package.json
@@ -39,6 +39,7 @@ members: 29
 - [[vite.config.ts]] - code - apps/web/vite.config.ts
 - [[webpackage.json]] - code - apps/web/package.json
 - [[zustand]] - code - apps/web/package.json
+- [[zustand_1]] - concept - apps/web/package.json
 
 ## Live Query (requires Dataview plugin)
 
@@ -48,10 +49,14 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 2 edges to [[_COMMUNITY_App.tsx]]
 - 1 edge to [[_COMMUNITY_Detsky Mir Connector]]
+- 1 edge to [[_COMMUNITY_commanduiindex.tsx]]
+- 1 edge to [[_COMMUNITY_App.tsx]]
+- 1 edge to [[_COMMUNITY_useUserStore]]
+- 1 edge to [[_COMMUNITY_analysisstoreindex.ts]]
 - 1 edge to [[_COMMUNITY_useSearchStore]]
 
 ## Top bridge nodes
+- [[zustand_1]] - degree 4, connects to 3 communities
 - [[webpackage.json]] - degree 16, connects to 2 communities
 - [[vite.config.ts]] - degree 4, connects to 1 community

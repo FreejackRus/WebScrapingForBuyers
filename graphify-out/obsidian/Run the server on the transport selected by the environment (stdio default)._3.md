@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/__main__.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/src/citilink_connector/__main__.py"
 type: "rationale"
-community: "cian_connector/__main__.py"
-location: "L21"
+community: "sys"
+location: "L14"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/cian_connector/__main__py
+  - community/sys
 ---
 
 # Run the server on the transport selected by the environment (stdio default).
 
 ## Connections
-- [[main()_14]] - `rationale_for` [EXTRACTED]
+- [[main()_13]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/cian_connector/__main__py
+#graphify/rationale #graphify/EXTRACTED #community/sys

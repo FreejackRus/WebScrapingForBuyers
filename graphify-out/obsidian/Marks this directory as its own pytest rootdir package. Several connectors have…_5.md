@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/conftest.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/conftest.py"
 type: "rationale"
-community: "compare-connector/tests/conftest.py"
+community: "citilink-connector/tests/conftest.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/compare-connector/tests/conftestpy
+  - community/citilink-connector/tests/conftestpy
 ---
 
 # Marks this directory as its own pytest rootdir package. Several connectors have…
 
 ## Connections
-- [[compare-connectortestsconftest.py]] - `rationale_for` [EXTRACTED]
+- [[citilink-connectortestsconftest.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/compare-connector/tests/conftestpy
+#graphify/rationale #graphify/EXTRACTED #community/citilink-connector/tests/conftestpy

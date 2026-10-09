@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[TTLCache]] - `uses` [INFERRED]
-- [[parametrize_10]] - `references` [EXTRACTED]
+- [[parametrize_18]] - `references` [EXTRACTED]
 - [[render()]] - `indirect_call` [INFERRED]
 - [[taobao-connectorteststest_server.py]] - `contains` [EXTRACTED]
 

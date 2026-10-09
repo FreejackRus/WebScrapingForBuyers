@@ -16,6 +16,6 @@ tags:
 - [[blocking_get()]] - `contains` [EXTRACTED]
 - [[fake_cdp()]] - `contains` [EXTRACTED]
 - [[ozon-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[scenario()_63]] - `contains` [EXTRACTED]
+- [[scenario()_78]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_fetch_composer_times_out_blocking_curl_and_falls_back_to_cdp

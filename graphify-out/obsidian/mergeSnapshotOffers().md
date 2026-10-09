@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/app.test.ts"
 type: "code"
-community: "packages_contracts_dist_index"
+community: "SourceAdapter"
 location: "L8"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/packages_contracts_dist_index
+  - community/SourceAdapter
 ---
 
 # mergeSnapshotOffers()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[app.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index
+#graphify/code #graphify/EXTRACTED #community/SourceAdapter

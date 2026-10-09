@@ -11,10 +11,10 @@ members: 9
 
 ## Members
 - [[dependencies_4]] - code - mcp-servers/ru-marketplace-mcp/package.json
-- [[description_5]] - code - mcp-servers/ru-marketplace-mcp/package.json
+- [[description_4]] - code - mcp-servers/ru-marketplace-mcp/package.json
 - [[jsdom]] - code - mcp-servers/ru-marketplace-mcp/package.json
 - [[jsdom_1]] - concept - mcp-servers/ru-marketplace-mcp/package.json
-- [[license]] - code - mcp-servers/ru-marketplace-mcp/package.json
+- [[license_1]] - code - mcp-servers/ru-marketplace-mcp/package.json
 - [[name_7]] - code - mcp-servers/ru-marketplace-mcp/package.json
 - [[private_6]] - code - mcp-servers/ru-marketplace-mcp/package.json
 - [[ru-marketplace-mcppackage.json]] - code - mcp-servers/ru-marketplace-mcp/package.json

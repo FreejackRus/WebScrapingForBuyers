@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "json"
+community: "transport/__init__.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/json
+  - community/transport/__init__py
 ---
 
 # Exception
 
 ## Connections
-- [[classify_http_error()]] - `references` [EXTRACTED]
+- [[BodyTooLargeError]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/json
+#graphify/code #graphify/EXTRACTED #community/transport/__init__py

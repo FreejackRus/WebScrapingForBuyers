@@ -12,6 +12,6 @@ tags:
 # Forget everything. For tests and for a deliberate session change.
 
 ## Connections
-- [[dot-reset()_2]] - `rationale_for` [EXTRACTED]
+- [[dot-reset()_3]] - `rationale_for` [EXTRACTED]
 
 #graphify/rationale #graphify/EXTRACTED #community/Pacer

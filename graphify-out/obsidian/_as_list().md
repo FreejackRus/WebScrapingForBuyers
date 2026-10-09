@@ -12,7 +12,7 @@ tags:
 # _as_list()
 
 ## Connections
-- [[Any_10]] - `references` [EXTRACTED]
+- [[Any_17]] - `references` [EXTRACTED]
 - [[Return ``value`` when it is a list, else an empty list.]] - `rationale_for` [EXTRACTED]
 - [[_parse_product()]] - `calls` [EXTRACTED]
 - [[detmir_categories()]] - `calls` [EXTRACTED]

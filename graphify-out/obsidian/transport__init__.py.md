@@ -29,7 +29,6 @@ tags:
 - [[http_tier.py]] - `re_exports` [EXTRACTED]
 - [[lamoda_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[mcp-coreteststest_browser_handoff.py]] - `imports_from` [EXTRACTED]
-- [[mpstats_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[navigation_budget()]] - `imports` [EXTRACTED]
 - [[ozon_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[proxy_from_env()]] - `imports` [EXTRACTED]

@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py"
 type: "code"
-community: "avito-connector/tests/test_server.py"
+community: "_patch_fetch"
 location: "L92"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/avito-connector/tests/test_serverpy
+  - community/_patch_fetch
 ---
 
 # _patch_fetch()
 
 ## Connections
 - [[avito-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[fake_fetch()_5]] - `indirect_call` [INFERRED]
+- [[fake_fetch()_7]] - `indirect_call` [INFERRED]
 - [[test_card_accepts_a_slug_url()]] - `calls` [EXTRACTED]
 - [[test_card_maps_404_to_not_found()]] - `calls` [EXTRACTED]
 - [[test_card_parses_the_item_envelope()]] - `calls` [EXTRACTED]
@@ -27,4 +27,4 @@ tags:
 - [[test_seller_parses_reputation_and_active_count()]] - `calls` [EXTRACTED]
 - [[test_seller_warns_when_identity_is_missing()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/avito-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/_patch_fetch

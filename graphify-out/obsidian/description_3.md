@@ -1,17 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "aliexpress_connector/server.py"
+community: "ozon_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/aliexpress_connector/serverpy
+  - community/ozon_card
 ---
 
 # description
 
 ## Connections
-- [[aliexpress_card()]] - `references` [EXTRACTED]
-- [[aliexpress_search()]] - `references` [EXTRACTED]
+- [[ozon_card()]] - `references` [EXTRACTED]
+- [[ozon_reviews()]] - `references` [EXTRACTED]
+- [[ozon_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/aliexpress_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/ozon_card

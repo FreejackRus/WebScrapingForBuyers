@@ -13,12 +13,12 @@ tags:
 
 ## Connections
 - [[Viewport capture validation and bounded CDP lifetime, without a browser.]] - `rationale_for` [EXTRACTED]
-- [[asyncio_2]] - `imports` [EXTRACTED]
+- [[asyncio]] - `imports` [EXTRACTED]
 - [[base64]] - `imports` [EXTRACTED]
 - [[capture()_19]] - `contains` [EXTRACTED]
 - [[jpeg()]] - `contains` [EXTRACTED]
 - [[json]] - `imports` [EXTRACTED]
-- [[metrics()_1]] - `contains` [EXTRACTED]
+- [[metrics()]] - `contains` [EXTRACTED]
 - [[pytest]] - `imports` [EXTRACTED]
 - [[test_actual_pixels_remaining_oversize_are_rejected_after_one_retry()]] - `contains` [EXTRACTED]
 - [[test_bad_image_payload_is_rejected()]] - `contains` [EXTRACTED]

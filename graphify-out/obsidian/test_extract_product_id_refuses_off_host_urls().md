@@ -13,6 +13,6 @@ tags:
 
 ## Connections
 - [[citilink-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[parametrize_1]] - `references` [EXTRACTED]
+- [[parametrize]] - `references` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/citilink-connector/tests/test_serverpy

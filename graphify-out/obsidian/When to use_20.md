@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/compare-prices/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/citilink-connector/SKILL.md"
 type: "document"
-community: "Cross-Marketplace Price Comparison"
-location: "L16"
+community: "citilink_selfcheck"
+location: "L13"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Cross-Marketplace_Price_Comparison
+  - community/citilink_selfcheck
 ---
 
 # When to use
 
 ## Connections
-- [[Cross-Marketplace Price Comparison]] - `contains` [EXTRACTED]
+- [[Citilink Connector_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Cross-Marketplace_Price_Comparison
+#graphify/document #graphify/EXTRACTED #community/citilink_selfcheck

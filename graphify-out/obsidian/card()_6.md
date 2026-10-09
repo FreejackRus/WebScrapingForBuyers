@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_card_verification_records.py"
 type: "code"
-community: "WbCardItem"
-location: "L110"
+community: "test_card_verification_records.py"
+location: "L134"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/WbCardItem
+  - community/test_card_verification_recordspy
 ---
 
 # card()
 
 ## Connections
-- [[test_mcp_rejects_nonfinite_expected_price_before_querying_source()]] - `contains` [EXTRACTED]
+- [[test_yandex_matching_variant_can_verify_price()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/WbCardItem
+#graphify/code #graphify/EXTRACTED #community/test_card_verification_recordspy

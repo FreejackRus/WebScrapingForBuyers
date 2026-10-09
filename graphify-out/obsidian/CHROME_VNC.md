@@ -1,12 +1,12 @@
 ---
 source_file: "docs/CHROME_VNC.md"
 type: "document"
-community: "Headed Chrome + VNC (прогрев антибота)"
+community: "Сервер локальной LLM"
 location: "L1"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Headed_Chrome__VNC_прогрев_антибота
+  - community/Сервер_локальной_LLM
 ---
 
 # CHROME_VNC.md
@@ -15,4 +15,4 @@ tags:
 - [[Headed Chrome + VNC (прогрев антибота)]] - `contains` [EXTRACTED]
 - [[README]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Headed_Chrome__VNC_прогрев_антибота
+#graphify/document #graphify/EXTRACTED #community/Сервер_локальной_LLM

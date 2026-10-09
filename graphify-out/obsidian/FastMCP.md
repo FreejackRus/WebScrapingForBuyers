@@ -1,17 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "test_output_schema.py"
+community: "sys"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_output_schemapy
+  - community/sys
 ---
 
 # FastMCP
 
 ## Connections
-- [[apply_compact_output_schemas()]] - `references` [EXTRACTED]
-- [[output_schema.py]] - `imports_from` [EXTRACTED]
+- [[browser_handoff_lifespan()]] - `references` [EXTRACTED]
+- [[run_server()]] - `references` [EXTRACTED]
+- [[runtime.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_output_schemapy
+#graphify/code #graphify/EXTRACTED #community/sys

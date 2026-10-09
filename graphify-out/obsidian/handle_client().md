@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[cdp-proxy.py]] - `contains` [EXTRACTED]
-- [[main()_6]] - `indirect_call` [INFERRED]
+- [[main()_7]] - `indirect_call` [INFERRED]
 - [[pipe()]] - `indirect_call` [INFERRED]
 - [[read_headers()]] - `calls` [EXTRACTED]
 - [[rewrite_payload()]] - `calls` [EXTRACTED]

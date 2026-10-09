@@ -12,7 +12,7 @@ tags:
 # forbidden_budgeted()
 
 ## Connections
-- [[scenario()_94]] - `indirect_call` [INFERRED]
+- [[scenario()_98]] - `indirect_call` [INFERRED]
 - [[test_gated_hosts_read_through_the_impersonated_transport()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_clear_wb_cache

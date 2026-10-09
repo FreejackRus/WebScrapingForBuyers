@@ -15,7 +15,7 @@ members: 15
 - [[3. Critical Assessment Confidence Medium]] - document - mcp-servers/ru-marketplace-mcp/docs/research/DEEP_RESEARCH_MARKETPLACE_MCP.md
 - [[4. Implemented Action Plan]] - document - mcp-servers/ru-marketplace-mcp/docs/research/DEEP_RESEARCH_MARKETPLACE_MCP.md
 - [[5. Open Questions & Caveats]] - document - mcp-servers/ru-marketplace-mcp/docs/research/DEEP_RESEARCH_MARKETPLACE_MCP.md
-- [[Bibliography_1]] - document - mcp-servers/ru-marketplace-mcp/docs/research/DEEP_RESEARCH_MARKETPLACE_MCP.md
+- [[Bibliography]] - document - mcp-servers/ru-marketplace-mcp/docs/research/DEEP_RESEARCH_MARKETPLACE_MCP.md
 - [[DEEP_RESEARCH_MARKETPLACE_MCP]] - document - mcp-servers/ru-marketplace-mcp/docs/research/DEEP_RESEARCH_MARKETPLACE_MCP.md
 - [[Deep Research Product and DSH Evolution of ru-marketplace-mcp]] - document - mcp-servers/ru-marketplace-mcp/docs/research/DEEP_RESEARCH_MARKETPLACE_MCP.md
 - [[Executive Summary]] - document - mcp-servers/ru-marketplace-mcp/docs/research/DEEP_RESEARCH_MARKETPLACE_MCP.md

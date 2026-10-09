@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[The live-reproduced false positive (review 2026-09-10) a fully rendered card…]] - `rationale_for` [EXTRACTED]
-- [[_patch_render()_1]] - `calls` [EXTRACTED]
+- [[_patch_render()]] - `calls` [EXTRACTED]
 - [[taobao-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_card_with_a_login_worded_product_name_parses_and_is_not_a_wall

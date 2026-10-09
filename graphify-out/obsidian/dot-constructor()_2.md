@@ -1,17 +1,18 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/b2b-distributor-adapter.ts"
+source_file: "apps/search/src/infrastructure/sources/blocked-source-cooldown-adapter.ts"
 type: "code"
-community: "b2b-distributor-adapter.ts"
-location: "L120"
+community: "SourceAdapter"
+location: "L13"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/b2b-distributor-adapterts
+  - community/SourceAdapter
 ---
 
 # .constructor()
 
 ## Connections
-- [[B2bDistributorStubAdapter]] - `method` [EXTRACTED]
+- [[BlockedSourceCooldownAdapter]] - `method` [EXTRACTED]
+- [[SourceAdapter]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/b2b-distributor-adapterts
+#graphify/code #graphify/EXTRACTED #community/SourceAdapter

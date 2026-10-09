@@ -1,22 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "_patch_questions"
-location: "L1615"
+community: "_clear_wb_cache"
+location: "L1756"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/_patch_questions
+  - graphify/EXTRACTED
+  - community/_clear_wb_cache
 ---
 
 # forbidden()
 
 ## Connections
-- [[scenario()_68]] - `indirect_call` [INFERRED]
-- [[scenario()_69]] - `indirect_call` [INFERRED]
-- [[scenario()_70]] - `indirect_call` [INFERRED]
-- [[scenario()_71]] - `indirect_call` [INFERRED]
-- [[scenario()_75]] - `indirect_call` [INFERRED]
-- [[test_questions_rejects_an_out_of_range_limit()]] - `contains` [EXTRACTED]
+- [[test_category_products_rejects_an_unsafe_shard()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/_patch_questions
+#graphify/code #graphify/EXTRACTED #community/_clear_wb_cache

@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/server.py"
 type: "code"
-community: "megamarket_search"
+community: "log_event"
 location: "L596"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/megamarket_search
+  - community/log_event
 ---
 
 # megamarket_search()
 
 ## Connections
-- [[Context_1]] - `references` [EXTRACTED]
+- [[Context_5]] - `references` [EXTRACTED]
 - [[Field_6]] - `references` [EXTRACTED]
 - [[MegamarketSearchItemOut]] - `uses` [INFERRED]
 - [[MegamarketSearchResponse]] - `uses` [INFERRED]
@@ -34,4 +34,4 @@ tags:
 - [[raise_tool_error()]] - `calls` [EXTRACTED]
 - [[tool_6]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/megamarket_search
+#graphify/code #graphify/EXTRACTED #community/log_event

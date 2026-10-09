@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "test_card_verification_records.py"
+community: "Pacer"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_card_verification_recordspy
+  - community/Pacer
 ---
 
 # parametrize
 
 ## Connections
-- [[test_zone_search_keeps_distinct_skus_and_dedupes_repeated_variant_before_limit()]] - `references` [EXTRACTED]
+- [[test_a_nonsense_gap_does_not_crash_construction()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_card_verification_recordspy
+#graphify/code #graphify/EXTRACTED #community/Pacer

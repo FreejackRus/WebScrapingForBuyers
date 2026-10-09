@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/resilience.py"
 type: "code"
-community: "test_resilience.py"
+community: "flatten_text"
 location: "L555"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_resiliencepy
+  - community/flatten_text
 ---
 
 # flatten_text()
 
 ## Connections
 - [[2.1 avito `location` объектом — подтверждён, исправлен, проверен на живом ответе]] - `references` [INFERRED]
-- [[Any_7]] - `references` [EXTRACTED]
+- [[Any_12]] - `references` [EXTRACTED]
 - [[Reduce a value upstream ships as EITHER a string OR an object to text. Audit…]] - `rationale_for` [EXTRACTED]
 - [[dom.py]] - `imports` [EXTRACTED]
 - [[flatten_text()]] - `calls` [EXTRACTED]
@@ -28,4 +28,4 @@ tags:
 - [[test_flatten_text_tries_keys_in_order()]] - `calls` [EXTRACTED]
 - [[title_from_tile()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_resiliencepy
+#graphify/code #graphify/EXTRACTED #community/flatten_text

@@ -1,17 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
+source_file: "mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v2.2.0.md"
 type: "document"
-community: "parse_retry_after"
-location: "L1067"
+community: "[2.2.0] — 2026-09-11"
+location: "L7"
 tags:
   - graphify/document
-  - graphify/EXTRACTED
-  - community/parse_retry_after
+  - graphify/INFERRED
+  - community/220__2026-09-11
 ---
 
 # Added
 
 ## Connections
-- [[1.4.0 — 2026-08-08]] - `contains` [EXTRACTED]
+- [[_mount_all()]] - `references` [INFERRED]
+- [[cian_card()]] - `references` [INFERRED]
+- [[cian_search()]] - `references` [INFERRED]
+- [[compare_prices()]] - `references` [INFERRED]
+- [[marketplace_sources()]] - `references` [INFERRED]
+- [[v2.2.0]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/parse_retry_after
+#graphify/document #graphify/INFERRED #community/220__2026-09-11

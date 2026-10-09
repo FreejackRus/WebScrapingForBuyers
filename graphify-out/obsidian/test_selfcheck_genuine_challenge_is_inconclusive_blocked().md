@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[The current payload shape a genuine challenge — zero items, the catalog…]] - `rationale_for` [EXTRACTED]
-- [[_patch_render()_1]] - `calls` [EXTRACTED]
+- [[_patch_render()]] - `calls` [EXTRACTED]
 - [[taobao-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_selfcheck_genuine_challenge_is_inconclusive_blocked

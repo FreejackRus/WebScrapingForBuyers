@@ -12,7 +12,7 @@ tags:
 # delayed()
 
 ## Connections
-- [[metrics()_1]] - `calls` [EXTRACTED]
+- [[metrics()]] - `calls` [EXTRACTED]
 - [[test_metrics_and_capture_share_one_deadline()]] - `indirect_call` [INFERRED]
 
 #graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_snapshotpy

@@ -1,20 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "models.py"
+community: "log_event"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/modelspy
+  - community/log_event
 ---
 
 # BaseModel
 
 ## Connections
-- [[AvitoCardResponse]] - `inherits` [EXTRACTED]
-- [[AvitoSearchItemOut]] - `inherits` [EXTRACTED]
-- [[AvitoSearchResponse]] - `inherits` [EXTRACTED]
-- [[AvitoSellerOut]] - `inherits` [EXTRACTED]
-- [[AvitoSellerResponse]] - `inherits` [EXTRACTED]
+- [[MegamarketCardResponse]] - `inherits` [EXTRACTED]
+- [[MegamarketSearchItemOut]] - `inherits` [EXTRACTED]
+- [[MegamarketSearchResponse]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/modelspy
+#graphify/code #graphify/EXTRACTED #community/log_event

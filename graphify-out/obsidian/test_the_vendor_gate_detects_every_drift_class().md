@@ -13,9 +13,9 @@ tags:
 
 ## Connections
 - [[A gate that cannot fail is worse than no gate at all.]] - `rationale_for` [EXTRACTED]
-- [[Path_12]] - `references` [EXTRACTED]
+- [[Path_14]] - `references` [EXTRACTED]
 - [[_tree_diff()]] - `calls` [EXTRACTED]
-- [[parametrize_23]] - `references` [EXTRACTED]
+- [[parametrize_27]] - `references` [EXTRACTED]
 - [[test_dsh_bundle.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_dsh_bundlepy

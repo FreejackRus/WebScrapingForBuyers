@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/server.py"
 type: "rationale"
-community: "TransportDownError"
-location: "L126"
+community: "_fetch_composer"
+location: "L260"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/TransportDownError
+  - community/_fetch_composer
 ---
 
 # Space this source's requests out, and back off if it refused us. Reads…
 
 ## Connections
-- [[_polite_wait()_9]] - `rationale_for` [EXTRACTED]
+- [[_polite_wait()_8]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/TransportDownError
+#graphify/rationale #graphify/EXTRACTED #community/_fetch_composer

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/dsh/README.md"
 type: "document"
-community: "decision_inspect"
+community: "compare_verify_offer"
 location: "L69"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/decision_inspect
+  - community/compare_verify_offer
 ---
 
 # Middle profile and native vision
@@ -15,4 +15,4 @@ tags:
 - [[decision_inspect()]] - `references` [INFERRED]
 - [[ru-marketplace-mcp for DeepSeek Harness]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/decision_inspect
+#graphify/document #graphify/EXTRACTED #community/compare_verify_offer

@@ -1,19 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_browser_handoff.py"
 type: "code"
-community: "test_termination_settles_queued_snapshot_before_getter_resumes"
-location: "L545"
+community: "json"
+location: "L199"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/test_termination_settles_queued_snapshot_before_getter_resumes
+  - graphify/EXTRACTED
+  - community/json
 ---
 
 # capture()
 
 ## Connections
-- [[test_snapshot_and_resume_cannot_overlap()]] - `indirect_call` [INFERRED]
-- [[test_snapshot_cancellation_or_deadline_cleans_exact_page()]] - `indirect_call` [INFERRED]
-- [[test_snapshot_rechecks_original_host_policy_before_and_after_capture()]] - `indirect_call` [INFERRED]
+- [[test_snapshot_rejects_other_session_and_unknown_handle_without_capture()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/test_termination_settles_queued_snapshot_before_getter_resumes
+#graphify/code #graphify/EXTRACTED #community/json

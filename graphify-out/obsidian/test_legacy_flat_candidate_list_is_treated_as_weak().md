@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_search_extractor_dom.py"
 type: "code"
 community: "prices_from_tile"
-location: "L146"
+location: "L160"
 tags:
   - graphify/code
   - graphify/EXTRACTED

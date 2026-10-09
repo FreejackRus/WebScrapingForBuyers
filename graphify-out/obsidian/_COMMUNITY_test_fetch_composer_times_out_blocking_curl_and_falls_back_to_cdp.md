@@ -12,7 +12,7 @@ members: 4
 ## Members
 - [[blocking_get()]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 - [[fake_cdp()]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
-- [[scenario()_63]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
+- [[scenario()_78]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 - [[test_fetch_composer_times_out_blocking_curl_and_falls_back_to_cdp()]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 
 ## Live Query (requires Dataview plugin)

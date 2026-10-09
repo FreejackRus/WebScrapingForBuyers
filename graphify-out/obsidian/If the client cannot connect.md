@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/docs/QUICKSTART.md"
 type: "document"
 community: "decision_inspect"
-location: "L125"
+location: "L124"
 tags:
   - graphify/document
   - graphify/EXTRACTED

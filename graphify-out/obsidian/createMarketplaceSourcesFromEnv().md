@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
 type: "code"
-community: "packages_contracts_dist_index"
-location: "L543"
+community: "SourceAdapter"
+location: "L567"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/packages_contracts_dist_index
+  - community/SourceAdapter
 ---
 
 # createMarketplaceSourcesFromEnv()
@@ -19,4 +19,4 @@ tags:
 - [[mcp-marketplace-adapter.ts]] - `contains` [EXTRACTED]
 - [[searchsrcapp.ts]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index
+#graphify/code #graphify/EXTRACTED #community/SourceAdapter

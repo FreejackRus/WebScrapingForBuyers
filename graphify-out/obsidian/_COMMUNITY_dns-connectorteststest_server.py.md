@@ -16,15 +16,15 @@ members: 34
 - [[Search and card must read the same id shape. If the JS running in the page…_1]] - rationale - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py
 - [[The tool docstring promises a product id or a URL; honour both._1]] - rationale - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py
 - [[Tiles extracting is not enough the shape must still match the captured…_1]] - rationale - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py
-- [[_no_cache()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py
-- [[_patch_render()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py
-- [[capture()_4]] - code - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py
-- [[capture()_5]] - code - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py
+- [[_no_cache()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py
+- [[_patch_render()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py
+- [[capture()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py
+- [[capture()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py
 - [[dns-connectorteststest_server.py]] - code - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py
 - [[explode()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py
-- [[fake_render()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py
-- [[fixture_4]] - code
-- [[parametrize_2]] - code
+- [[fake_render()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py
+- [[fixture_2]] - code
+- [[parametrize_1]] - code
 - [[test_a_real_bare_id_is_accepted()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py
 - [[test_an_id_never_carries_query_fragment_or_traversal()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py
 - [[test_card_accepts_a_bare_product_id()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py
@@ -53,11 +53,9 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 1 edge to [[_COMMUNITY_payload]]
 - 1 edge to [[_COMMUNITY_pytest]]
 - 1 edge to [[_COMMUNITY_dns-connectorteststest_card_extractor_dom.py]]
-- 1 edge to [[_COMMUNITY_test_card_verification_records.py]]
+- 1 edge to [[_COMMUNITY_json]]
 
 ## Top bridge nodes
 - [[dns-connectorteststest_server.py]] - degree 25, connects to 3 communities
-- [[fake_render()_1]] - degree 2, connects to 1 community

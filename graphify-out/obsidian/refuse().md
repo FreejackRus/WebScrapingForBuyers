@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py"
 type: "code"
-community: "test_chrome_cdp.py"
+community: "test_port_probe_reports_false_when_nothing_listens"
 location: "L267"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/test_chrome_cdppy
+  - community/test_port_probe_reports_false_when_nothing_listens
 ---
 
 # refuse()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_port_probe_reports_false_when_nothing_listens()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/test_chrome_cdppy
+#graphify/code #graphify/INFERRED #community/test_port_probe_reports_false_when_nothing_listens

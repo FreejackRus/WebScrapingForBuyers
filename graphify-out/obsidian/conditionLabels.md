@@ -2,7 +2,7 @@
 source_file: "apps/web/src/entities/offer/lib/index.ts"
 type: "code"
 community: "offers/ui/index.tsx"
-location: "L10"
+location: "L15"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,6 +12,7 @@ tags:
 # conditionLabels
 
 ## Connections
+- [[offer-carduiindex.tsx]] - `imports` [EXTRACTED]
 - [[offerindex.ts]] - `re_exports` [EXTRACTED]
 - [[offerlibindex.ts]] - `contains` [EXTRACTED]
 - [[offersuiindex.tsx]] - `imports` [EXTRACTED]

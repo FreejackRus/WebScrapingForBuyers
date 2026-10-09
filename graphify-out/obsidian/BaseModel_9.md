@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "models.py"
+community: "lamoda_search"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/modelspy
+  - community/lamoda_search
 ---
 
 # BaseModel
@@ -16,4 +16,4 @@ tags:
 - [[LamodaSearchResponse]] - `inherits` [EXTRACTED]
 - [[LamodaSizeOut]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/modelspy
+#graphify/code #graphify/EXTRACTED #community/lamoda_search

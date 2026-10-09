@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/src/aliexpress_connector/__main__.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/__main__.py"
 type: "rationale"
-community: "aliexpress_connector/__main__.py"
-location: "L14"
+community: "sys"
+location: "L21"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/aliexpress_connector/__main__py
+  - community/sys
 ---
 
 # Run the server on the transport selected by the environment (stdio default).
 
 ## Connections
-- [[main()_13]] - `rationale_for` [EXTRACTED]
+- [[main()_12]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/aliexpress_connector/__main__py
+#graphify/rationale #graphify/EXTRACTED #community/sys

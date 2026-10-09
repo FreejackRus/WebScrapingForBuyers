@@ -15,6 +15,6 @@ tags:
 - [[The old adapter guessed keys OzonSearchItemOut does not declare. It read…]] - `rationale_for` [EXTRACTED]
 - [[_FakeOzonItem]] - `calls` [EXTRACTED]
 - [[compare-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[ozon_search()]] - `contains` [EXTRACTED]
+- [[ozon_search()_1]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_FakeResponse

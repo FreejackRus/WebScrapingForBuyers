@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "code"
-community: "log_event"
-location: "L524"
+community: "wb_connector/server.py"
+location: "L531"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/log_event
+  - community/wb_connector/serverpy
 ---
 
 # _safe_get_text()
 
 ## Connections
-- [[AsyncClient_4]] - `references` [EXTRACTED]
+- [[AsyncClient_3]] - `references` [EXTRACTED]
 - [[GET with body cap, wall-clock budget, and bounded transient-network retry. Thin…]] - `rationale_for` [EXTRACTED]
 - [[_budgeted_get_text()]] - `calls` [EXTRACTED]
 - [[_fetch_first_json()]] - `calls` [EXTRACTED]
@@ -30,4 +30,4 @@ tags:
 - [[wb_reviews()]] - `calls` [EXTRACTED]
 - [[wb_root_info()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/log_event
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

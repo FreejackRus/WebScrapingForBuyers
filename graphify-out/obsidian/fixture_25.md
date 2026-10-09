@@ -1,17 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "test_transport.py"
+community: "lamoda-connector/tests/test_server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_transportpy
+  - community/lamoda-connector/tests/test_serverpy
 ---
 
 # fixture
 
 ## Connections
-- [[no_polite_gap()_1]] - `references` [EXTRACTED]
-- [[token_present()_1]] - `references` [EXTRACTED]
+- [[_no_cache()_8]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_transportpy
+#graphify/code #graphify/EXTRACTED #community/lamoda-connector/tests/test_serverpy

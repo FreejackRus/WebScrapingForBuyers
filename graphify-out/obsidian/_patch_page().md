@@ -13,8 +13,8 @@ tags:
 
 ## Connections
 - [[Fake the CDP probe open_page lands on final_url.]] - `rationale_for` [EXTRACTED]
-- [[__aenter__()_3]] - `contains` [EXTRACTED]
-- [[__aexit__()_3]] - `contains` [EXTRACTED]
+- [[__aenter__()_11]] - `contains` [EXTRACTED]
+- [[__aexit__()_11]] - `contains` [EXTRACTED]
 - [[megamarket-connectorteststest_server.py]] - `contains` [EXTRACTED]
 - [[test_about_blank_is_not_mistaken_for_a_destination()]] - `calls` [EXTRACTED]
 - [[test_no_redirect_keeps_the_original_url()]] - `calls` [EXTRACTED]

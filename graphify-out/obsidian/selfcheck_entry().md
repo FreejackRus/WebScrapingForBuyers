@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/resilience.py"
 type: "code"
-community: "test_resilience.py"
+community: "selfcheck_entry"
 location: "L472"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_resiliencepy
+  - community/selfcheck_entry
 ---
 
 # selfcheck_entry()
 
 ## Connections
-- [[Any_7]] - `references` [EXTRACTED]
+- [[Any_12]] - `references` [EXTRACTED]
 - [[Build one normalized selfcheck sub-check entry. state must be 'healthy' …]] - `rationale_for` [EXTRACTED]
 - [[resilience.py]] - `contains` [EXTRACTED]
 - [[selfcheck_result()]] - `calls` [EXTRACTED]
@@ -23,4 +23,4 @@ tags:
 - [[test_selfcheck_result_inconclusive_beats_all_healthy()]] - `calls` [EXTRACTED]
 - [[test_selfcheck_result_missing_required_check_is_injected_inconclusive()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_resiliencepy
+#graphify/code #graphify/EXTRACTED #community/selfcheck_entry

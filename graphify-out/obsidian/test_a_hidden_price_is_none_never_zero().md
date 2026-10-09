@@ -12,7 +12,7 @@ tags:
 # test_a_hidden_price_is_none_never_zero()
 
 ## Connections
-- [[_extract()_5]] - `calls` [EXTRACTED]
+- [[_extract()]] - `calls` [EXTRACTED]
 - [[taobao-connectorteststest_search_extractor_dom.py]] - `contains` [EXTRACTED]
 - [[«面议» carries no digits and must not read as a price or as 0.]] - `rationale_for` [EXTRACTED]
 

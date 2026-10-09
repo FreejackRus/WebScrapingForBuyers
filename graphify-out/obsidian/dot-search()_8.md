@@ -1,19 +1,21 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/apify-marketplace-adapter.ts"
+source_file: "apps/search/src/infrastructure/sources/netlab-price-feed.ts"
 type: "code"
-community: "packages_contracts_dist_index"
-location: "L29"
+community: "netlab-price-feed.ts"
+location: "L327"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/packages_contracts_dist_index
+  - community/netlab-price-feedts
 ---
 
 # .search()
 
 ## Connections
-- [[dot-toOffer()_1]] - `calls` [EXTRACTED]
-- [[ApifyMarketplaceAdapter]] - `method` [EXTRACTED]
-- [[isObject()_1]] - `indirect_call` [INFERRED]
+- [[dot-load()_1]] - `calls` [EXTRACTED]
+- [[NetlabPriceFeedAdapter]] - `method` [EXTRACTED]
+- [[isNetlabCandidate()]] - `calls` [EXTRACTED]
+- [[preferRelevantOffers()]] - `indirect_call` [INFERRED]
+- [[toNetlabOffer()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index
+#graphify/code #graphify/EXTRACTED #community/netlab-price-feedts

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/test_e2e_stdio_check.py"
 type: "code"
-community: "pathlib"
+community: "e2e_stdio_check.py"
 location: "L16"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/e2e_stdio_checkpy
 ---
 
 # source_payload()
@@ -16,4 +16,4 @@ tags:
 - [[test_sources_accept_complete_current_state()]] - `calls` [EXTRACTED]
 - [[test_sources_reject_incomplete_or_stale_state()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pathlib
+#graphify/code #graphify/EXTRACTED #community/e2e_stdio_checkpy

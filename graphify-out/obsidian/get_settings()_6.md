@@ -1,8 +1,8 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/src/dns_connector/settings.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/settings.py"
 type: "code"
 community: "pydantic"
-location: "L29"
+location: "L37"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,8 +12,8 @@ tags:
 # get_settings()
 
 ## Connections
-- [[DnsSettings]] - `calls` [EXTRACTED]
-- [[dns_connectorserver.py]] - `imports` [EXTRACTED]
-- [[dns_connectorsettings.py]] - `contains` [EXTRACTED]
+- [[LamodaSettings]] - `calls` [EXTRACTED]
+- [[lamoda_connectorserver.py]] - `imports` [EXTRACTED]
+- [[lamoda_connectorsettings.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/pydantic

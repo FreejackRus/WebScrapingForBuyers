@@ -1,20 +1,22 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
 type: "code"
-community: "test_storefront_live_xhr_capture_via_get_context"
-location: "L18"
+community: "test_storefront_search.py"
+location: "L17"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_storefront_live_xhr_capture_via_get_context
+  - community/test_storefront_searchpy
 ---
 
 # _v18_payload()
 
 ## Connections
 - [[test_products_from_search_payload_reads_v18_fixture()]] - `calls` [EXTRACTED]
+- [[test_storefront_falls_back_to_raw_cdp_when_playwright_attach_times_out()]] - `calls` [EXTRACTED]
 - [[test_storefront_live_xhr_capture_via_get_context()]] - `calls` [EXTRACTED]
+- [[test_storefront_reads_live_xhr_body_over_raw_cdp_when_playwright_cannot_attach()]] - `calls` [EXTRACTED]
 - [[test_storefront_search.py]] - `contains` [EXTRACTED]
 - [[test_wb_search_storefront_uses_captured_v18_products()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_storefront_live_xhr_capture_via_get_context
+#graphify/code #graphify/EXTRACTED #community/test_storefront_searchpy

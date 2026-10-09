@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py"
 type: "code"
-community: "capture"
-location: "L310"
+community: "test_the_graphql_request_carries_a_referer_for_the_sku"
+location: "L392"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/capture
+  - graphify/INFERRED
+  - community/test_the_graphql_request_carries_a_referer_for_the_sku
 ---
 
 # capture()
 
 ## Connections
-- [[test_category_passes_region_from_settings()]] - `contains` [EXTRACTED]
+- [[test_the_graphql_request_carries_a_referer_for_the_sku()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/capture
+#graphify/code #graphify/INFERRED #community/test_the_graphql_request_carries_a_referer_for_the_sku

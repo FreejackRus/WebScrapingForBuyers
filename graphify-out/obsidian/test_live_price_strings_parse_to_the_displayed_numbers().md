@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[The display strings the live tiles carry must coerce to the numbers the page…]] - `rationale_for` [EXTRACTED]
-- [[_items()_1]] - `calls` [EXTRACTED]
+- [[_items()]] - `calls` [EXTRACTED]
 - [[coerce_price()]] - `calls` [EXTRACTED]
 - [[test_search_parser_live.py]] - `contains` [EXTRACTED]
 

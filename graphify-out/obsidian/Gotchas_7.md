@@ -1,22 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/dns-connector/SKILL.md"
 type: "document"
-community: "log_event"
-location: "L75"
+community: "DNS-Shop Connector"
+location: "L55"
 tags:
   - graphify/document
-  - graphify/INFERRED
-  - community/log_event
+  - graphify/EXTRACTED
+  - community/DNS-Shop_Connector
 ---
 
 # Gotchas
 
 ## Connections
-- [[WbNoResultsResponse]] - `references` [INFERRED]
-- [[Wildberries Connector]] - `contains` [EXTRACTED]
-- [[compare_prices()]] - `references` [INFERRED]
-- [[wb_card()]] - `references` [INFERRED]
-- [[wb_reviews()]] - `references` [INFERRED]
-- [[wb_root_info()]] - `references` [INFERRED]
+- [[DNS-Shop Connector]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/INFERRED #community/log_event
+#graphify/document #graphify/EXTRACTED #community/DNS-Shop_Connector

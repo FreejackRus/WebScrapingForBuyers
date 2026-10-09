@@ -1,16 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "log_event"
+community: "lamoda_search"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/log_event
+  - community/lamoda_search
 ---
 
 # min_length
 
 ## Connections
-- [[wb_search()]] - `references` [EXTRACTED]
+- [[lamoda_card()]] - `references` [EXTRACTED]
+- [[lamoda_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/log_event
+#graphify/code #graphify/EXTRACTED #community/lamoda_search

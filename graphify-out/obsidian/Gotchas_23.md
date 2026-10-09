@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/compare-prices/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/taobao-connector/SKILL.md"
 type: "document"
-community: "Cross-Marketplace Price Comparison"
-location: "L125"
+community: "Taobao Connector"
+location: "L28"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Cross-Marketplace_Price_Comparison
+  - community/Taobao_Connector
 ---
 
 # Gotchas
 
 ## Connections
-- [[Cross-Marketplace Price Comparison_1]] - `contains` [EXTRACTED]
-- [[detmir_category()]] - `references` [INFERRED]
+- [[Taobao Connector]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Cross-Marketplace_Price_Comparison
+#graphify/document #graphify/EXTRACTED #community/Taobao_Connector

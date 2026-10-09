@@ -13,10 +13,10 @@ tags:
 
 ## Connections
 - [[4. Write the tools]] - `references` [INFERRED]
-- [[Added_16]] - `references` [INFERRED]
-- [[Any_7]] - `references` [EXTRACTED]
+- [[Added]] - `references` [INFERRED]
+- [[Any_12]] - `references` [EXTRACTED]
 - [[Coerce int  float  grouped-string ('24 088', '1u2009057', '(15 374)') to…]] - `rationale_for` [EXTRACTED]
-- [[Fixed_21]] - `references` [INFERRED]
+- [[Fixed_1]] - `references` [INFERRED]
 - [[What this codebase cares about]] - `references` [INFERRED]
 - [[`resilience` — tolerant readers]] - `references` [INFERRED]
 - [[resilience.py]] - `contains` [EXTRACTED]
@@ -30,10 +30,10 @@ tags:
 - [[test_coerce_int_without_digits_is_none_never_zero()]] - `calls` [EXTRACTED]
 - [[test_counts_parse()]] - `calls` [EXTRACTED]
 - [[test_counts_with_signs_or_ranges_are_ambiguous_and_none()]] - `calls` [EXTRACTED]
-- [[Добавлено_18]] - `references` [INFERRED]
-- [[Исправлено_17]] - `references` [INFERRED]
-- [[Исправлено_18]] - `references` [INFERRED]
-- [[Исправлено_12]] - `references` [INFERRED]
+- [[Добавлено_1]] - `references` [INFERRED]
+- [[Исправлено_1]] - `references` [INFERRED]
+- [[Исправлено_2]] - `references` [INFERRED]
+- [[Исправлено_3]] - `references` [INFERRED]
 - [[Что важно в этой кодовой базе]] - `references` [INFERRED]
 
 #graphify/code #graphify/EXTRACTED #community/coerce_price

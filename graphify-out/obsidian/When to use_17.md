@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/dns-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/avito-connector/SKILL.md"
 type: "document"
-community: "DNS-Shop Connector"
+community: "avito_connector/server.py"
 location: "L13"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/DNS-Shop_Connector
+  - community/avito_connector/serverpy
 ---
 
 # When to use
 
 ## Connections
-- [[DNS-Shop Connector_1]] - `contains` [EXTRACTED]
+- [[Avito Connector]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/DNS-Shop_Connector
+#graphify/document #graphify/EXTRACTED #community/avito_connector/serverpy

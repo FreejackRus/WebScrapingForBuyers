@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[The verdict reads the visibility-filtered snippet a page whose only challenge…]] - `rationale_for` [EXTRACTED]
-- [[_extract()_4]] - `calls` [EXTRACTED]
+- [[_extract()_7]] - `calls` [EXTRACTED]
 - [[test_anti_bot_challenge_dom.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_anti_bot_challenge_dompy

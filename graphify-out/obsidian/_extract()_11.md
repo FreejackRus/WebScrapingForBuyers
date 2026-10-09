@@ -1,22 +1,23 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_shape_reference.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_search_extractor_dom.py"
 type: "code"
-community: "aliexpress-connector/tests/test_shape_reference.py"
-location: "L15"
+community: "dns-connector/tests/test_search_extractor_dom.py"
+location: "L54"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/aliexpress-connector/tests/test_shape_referencepy
+  - community/dns-connector/tests/test_search_extractor_dompy
 ---
 
 # _extract()
 
 ## Connections
 - [[JsdomUnavailable]] - `uses` [INFERRED]
-- [[Path_8]] - `references` [EXTRACTED]
-- [[aliexpress-connectorteststest_shape_reference.py]] - `contains` [EXTRACTED]
+- [[Run the connector's real extractor over the captured markup. Skips rather than…]] - `rationale_for` [EXTRACTED]
+- [[dns-connectorteststest_search_extractor_dom.py]] - `contains` [EXTRACTED]
 - [[run_extractor()]] - `calls` [EXTRACTED]
-- [[test_card_extractor_shape_matches_golden()]] - `calls` [EXTRACTED]
-- [[test_search_extractor_shape_matches_golden()]] - `calls` [EXTRACTED]
+- [[test_search_extractor_ignores_the_instalment_line()]] - `calls` [EXTRACTED]
+- [[test_search_extractor_reads_the_real_grid()_1]] - `calls` [EXTRACTED]
+- [[test_search_items_match_the_prices_on_the_page()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/aliexpress-connector/tests/test_shape_referencepy
+#graphify/code #graphify/EXTRACTED #community/dns-connector/tests/test_search_extractor_dompy

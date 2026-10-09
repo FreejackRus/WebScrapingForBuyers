@@ -20,7 +20,7 @@ members: 29
 - [[The source is remembered with the address, not re-derived per search.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py
 - [[Without the hints the search is weaker, not broken.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py
 - [[_patch_routes()]] - code - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py
-- [[fake_post()_7]] - code - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py
+- [[fake_post()_6]] - code - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py
 - [[listingSize 0 means the catalog really matched nothing.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py
 - [[test_a_failing_url_parse_does_not_block_the_search()]] - code - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py
 - [[test_a_genuine_zero_result_stays_a_success()]] - code - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py
@@ -49,7 +49,7 @@ SORT file.name ASC
 
 ## Connections to other communities
 - 17 edges to [[_COMMUNITY_megamarket-connectorteststest_server.py]]
-- 1 edge to [[_COMMUNITY_fake_post]]
+- 1 edge to [[_COMMUNITY_test_the_category_url_is_what_yields_a_collection]]
 
 ## Top bridge nodes
 - [[_patch_routes()]] - degree 20, connects to 2 communities

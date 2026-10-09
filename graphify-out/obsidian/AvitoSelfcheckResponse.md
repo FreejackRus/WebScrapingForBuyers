@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/models_output.py"
 type: "code"
-community: "avito_seller"
-location: "L90"
+community: "avito_connector/server.py"
+location: "L91"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/avito_seller
+  - community/avito_connector/serverpy
 ---
 
 # AvitoSelfcheckResponse
@@ -18,4 +18,4 @@ tags:
 - [[avito_connectorserver.py]] - `imports` [EXTRACTED]
 - [[avito_selfcheck()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/avito_seller
+#graphify/code #graphify/EXTRACTED #community/avito_connector/serverpy

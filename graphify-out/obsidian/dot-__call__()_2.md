@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/runtime.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_pacing.py"
 type: "code"
-community: "BearerAuthMiddleware"
-location: "L124"
+community: "FakeClock"
+location: "L22"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/BearerAuthMiddleware
+  - community/FakeClock
 ---
 
 # .__call__()
 
 ## Connections
-- [[BearerAuthMiddleware]] - `method` [EXTRACTED]
+- [[FakeClock]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/BearerAuthMiddleware
+#graphify/code #graphify/EXTRACTED #community/FakeClock

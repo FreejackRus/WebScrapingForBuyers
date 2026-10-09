@@ -1,38 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_search_login_wall_live_dom.py"
 type: "code"
-community: "_tool_error_payload"
-location: "L17"
+community: "test_search_login_wall_live_dom.py"
+location: "L54"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_tool_error_payload
+  - community/test_search_login_wall_live_dompy
 ---
 
 # _tool_error_payload()
 
 ## Connections
 - [[raise_tool_error serializes a ConnectorError as JSON inside ToolError._1]] - `rationale_for` [EXTRACTED]
-- [[scenario()_59]] - `calls` [EXTRACTED]
-- [[scenario()_67]] - `calls` [EXTRACTED]
-- [[scenario()_34]] - `calls` [EXTRACTED]
-- [[scenario()_68]] - `calls` [EXTRACTED]
-- [[scenario()_69]] - `calls` [EXTRACTED]
-- [[scenario()_70]] - `calls` [EXTRACTED]
-- [[scenario()_71]] - `calls` [EXTRACTED]
-- [[scenario()_35]] - `calls` [EXTRACTED]
-- [[scenario()_79]] - `calls` [EXTRACTED]
-- [[scenario()_74]] - `calls` [EXTRACTED]
-- [[scenario()_46]] - `calls` [EXTRACTED]
-- [[scenario()_75]] - `calls` [EXTRACTED]
-- [[scenario()_36]] - `calls` [EXTRACTED]
-- [[scenario()_37]] - `calls` [EXTRACTED]
-- [[scenario()_38]] - `calls` [EXTRACTED]
-- [[scenario()_39]] - `calls` [EXTRACTED]
-- [[scenario()_40]] - `calls` [EXTRACTED]
-- [[scenario()_41]] - `calls` [EXTRACTED]
-- [[scenario()_2]] - `calls` [EXTRACTED]
-- [[scenario()_42]] - `calls` [EXTRACTED]
-- [[test_helpers.py]] - `contains` [EXTRACTED]
+- [[test_search_login_wall_live_dom.py]] - `contains` [EXTRACTED]
+- [[test_search_over_the_live_wall_is_transport_down_never_drift()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_tool_error_payload
+#graphify/code #graphify/EXTRACTED #community/test_search_login_wall_live_dompy

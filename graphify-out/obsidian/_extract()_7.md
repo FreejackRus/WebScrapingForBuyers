@@ -1,22 +1,23 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_card_extractor_dom.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_anti_bot_challenge_dom.py"
 type: "code"
-community: "taobao-connector/tests/test_card_extractor_dom.py"
-location: "L34"
+community: "test_anti_bot_challenge_dom.py"
+location: "L57"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/taobao-connector/tests/test_card_extractor_dompy
+  - community/test_anti_bot_challenge_dompy
 ---
 
 # _extract()
 
 ## Connections
 - [[JsdomUnavailable]] - `uses` [INFERRED]
+- [[Path_7]] - `references` [EXTRACTED]
 - [[run_extractor()]] - `calls` [EXTRACTED]
-- [[taobao-connectorteststest_card_extractor_dom.py]] - `contains` [EXTRACTED]
-- [[test_card_extractor_reads_the_item_page()]] - `calls` [EXTRACTED]
-- [[test_the_coupon_price_is_never_the_price_or_the_strikethrough()]] - `calls` [EXTRACTED]
-- [[test_yuan_price_and_strikethrough_are_read()]] - `calls` [EXTRACTED]
+- [[test_a_genuine_challenge_page_reads_as_blocked()]] - `calls` [EXTRACTED]
+- [[test_a_healthy_grid_with_a_hidden_challenge_widget_is_not_blocked()]] - `calls` [EXTRACTED]
+- [[test_anti_bot_challenge_dom.py]] - `contains` [EXTRACTED]
+- [[test_script_text_cannot_fake_a_challenge()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/taobao-connector/tests/test_card_extractor_dompy
+#graphify/code #graphify/EXTRACTED #community/test_anti_bot_challenge_dompy

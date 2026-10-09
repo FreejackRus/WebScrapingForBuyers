@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/docs/research/DEEP_RESEARCH_V2.0.0.md"
+source_file: "mcp-servers/ru-marketplace-mcp/docs/research/DEEP_RESEARCH_MARKETPLACE_MCP.md"
 type: "document"
-community: "Deep Research: ru-marketplace-mcp 2.0.0"
-location: "L239"
+community: "Deep Research: Product and DSH Evolution of ru-marketplace-mcp"
+location: "L154"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Deep_Research_ru-marketplace-mcp_200
+  - community/Deep_Research_Product_and_DSH_Evolution_of_ru-marketplace-mcp
 ---
 
 # Bibliography
 
 ## Connections
-- [[Deep Research ru-marketplace-mcp 2.0.0]] - `contains` [EXTRACTED]
+- [[Deep Research Product and DSH Evolution of ru-marketplace-mcp]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Deep_Research_ru-marketplace-mcp_200
+#graphify/document #graphify/EXTRACTED #community/Deep_Research_Product_and_DSH_Evolution_of_ru-marketplace-mcp

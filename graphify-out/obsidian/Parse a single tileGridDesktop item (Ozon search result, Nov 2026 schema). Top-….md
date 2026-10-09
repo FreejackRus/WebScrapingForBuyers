@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/server.py"
 type: "rationale"
 community: "ozon_connector/server.py"
-location: "L1129"
+location: "L1208"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED

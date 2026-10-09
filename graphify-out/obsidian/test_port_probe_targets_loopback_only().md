@@ -15,7 +15,7 @@ tags:
 - [[Probing a remote host would be a scan; CDP is always local here.]] - `rationale_for` [EXTRACTED]
 - [[__enter__()]] - `contains` [EXTRACTED]
 - [[__exit__()]] - `contains` [EXTRACTED]
-- [[record()_3]] - `indirect_call` [INFERRED]
+- [[record()_1]] - `indirect_call` [INFERRED]
 - [[test_chrome_cdp.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_port_probe_targets_loopback_only

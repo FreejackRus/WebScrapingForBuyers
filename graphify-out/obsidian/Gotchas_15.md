@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/ozon-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/aliexpress-connector/SKILL.md"
 type: "document"
-community: "Ozon Connector"
-location: "L43"
+community: "AliExpress connector"
+location: "L53"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Ozon_Connector
+  - community/AliExpress_connector
 ---
 
 # Gotchas
 
 ## Connections
-- [[Ozon Connector_1]] - `contains` [EXTRACTED]
+- [[AliExpress connector]] - `contains` [EXTRACTED]
+- [[aliexpress_selfcheck()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Ozon_Connector
+#graphify/document #graphify/EXTRACTED #community/AliExpress_connector

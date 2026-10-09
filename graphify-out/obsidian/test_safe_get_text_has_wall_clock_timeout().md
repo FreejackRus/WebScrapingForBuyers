@@ -14,9 +14,9 @@ tags:
 ## Connections
 - [[__aenter__()_8]] - `contains` [EXTRACTED]
 - [[__aexit__()_8]] - `contains` [EXTRACTED]
-- [[aiter_bytes()_1]] - `contains` [EXTRACTED]
-- [[scenario()_54]] - `contains` [EXTRACTED]
-- [[stream()_5]] - `contains` [EXTRACTED]
+- [[aiter_bytes()_3]] - `contains` [EXTRACTED]
+- [[scenario()_72]] - `contains` [EXTRACTED]
+- [[stream()_7]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_safe_get_text_has_wall_clock_timeout

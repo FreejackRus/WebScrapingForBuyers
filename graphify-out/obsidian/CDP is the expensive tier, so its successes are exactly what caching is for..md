@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "rationale"
-community: "test_fetch_composer_caches_a_successful_cdp_body"
+community: "_patch_tier1"
 location: "L848"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/test_fetch_composer_caches_a_successful_cdp_body
+  - community/_patch_tier1
 ---
 
 # CDP is the expensive tier, so its successes are exactly what caching is for.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_fetch_composer_caches_a_successful_cdp_body()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/test_fetch_composer_caches_a_successful_cdp_body
+#graphify/rationale #graphify/EXTRACTED #community/_patch_tier1

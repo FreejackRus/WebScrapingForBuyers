@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/cdp_budget.py"
 type: "code"
-community: "transport/__init__.py"
+community: "json"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/transport/__init__py
+  - community/json
 ---
 
 # cdp_budget.py
@@ -19,7 +19,7 @@ tags:
 - [[_HostState]] - `contains` [EXTRACTED]
 - [[_env_float()]] - `contains` [EXTRACTED]
 - [[_env_int()]] - `contains` [EXTRACTED]
-- [[asyncio_2]] - `imports` [EXTRACTED]
+- [[asyncio]] - `imports` [EXTRACTED]
 - [[budget_snapshot()]] - `contains` [EXTRACTED]
 - [[chrome_cdp.py]] - `imports_from` [EXTRACTED]
 - [[collections_abc]] - `imports_from` [EXTRACTED]
@@ -30,8 +30,8 @@ tags:
 - [[test_cdp_budget.py]] - `imports_from` [EXTRACTED]
 - [[test_open_page_budget_integration.py]] - `imports_from` [EXTRACTED]
 - [[test_review_regressions.py]] - `imports_from` [EXTRACTED]
-- [[time]] - `imports` [EXTRACTED]
+- [[time_1]] - `imports` [EXTRACTED]
 - [[transport__init__.py]] - `re_exports` [EXTRACTED]
 - [[wb_connectorserver.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/transport/__init__py
+#graphify/code #graphify/EXTRACTED #community/json

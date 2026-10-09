@@ -1,17 +1,17 @@
 ---
-source_file: "apps/analysis/src/analyze.test.ts"
+source_file: "apps/search/src/infrastructure/sources/blocked-source-cooldown-adapter.test.ts"
 type: "code"
-community: "analyze.test.ts"
-location: "L28"
+community: "SourceAdapter"
+location: "L7"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/analyzetestts
+  - community/SourceAdapter
 ---
 
 # product
 
 ## Connections
-- [[analyze.test.ts]] - `contains` [EXTRACTED]
+- [[blocked-source-cooldown-adapter.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/analyzetestts
+#graphify/code #graphify/EXTRACTED #community/SourceAdapter

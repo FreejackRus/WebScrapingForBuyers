@@ -14,9 +14,9 @@ tags:
 ## Connections
 - [[__aenter__()_7]] - `contains` [EXTRACTED]
 - [[__aexit__()_7]] - `contains` [EXTRACTED]
-- [[aiter_bytes()]] - `contains` [EXTRACTED]
-- [[scenario()_53]] - `contains` [EXTRACTED]
-- [[stream()_4]] - `contains` [EXTRACTED]
+- [[aiter_bytes()_2]] - `contains` [EXTRACTED]
+- [[scenario()_71]] - `contains` [EXTRACTED]
+- [[stream()_6]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_safe_get_text_does_not_retry_after_wall_timeout

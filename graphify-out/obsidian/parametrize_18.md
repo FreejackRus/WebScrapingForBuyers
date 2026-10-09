@@ -1,18 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "test_ambiguous_or_wrong_record_never_verifies_price"
+community: "test_challenge_recovery_reads_browser_again_and_caches_only_success"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_ambiguous_or_wrong_record_never_verifies_price
+  - community/test_challenge_recovery_reads_browser_again_and_caches_only_success
 ---
 
 # parametrize
 
 ## Connections
-- [[test_ambiguous_or_wrong_record_never_verifies_price()]] - `references` [EXTRACTED]
-- [[test_invalid_observed_price_stays_unknown()]] - `references` [EXTRACTED]
-- [[test_numeric_card_identifier_does_not_pick_unrelated_digits()]] - `references` [EXTRACTED]
+- [[test_card_rejects_input_without_an_item_id()]] - `references` [EXTRACTED]
+- [[test_challenge_recovery_reads_browser_again_and_caches_only_success()]] - `references` [EXTRACTED]
+- [[test_extract_item_id_refuses_off_host_input()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_ambiguous_or_wrong_record_never_verifies_price
+#graphify/code #graphify/EXTRACTED #community/test_challenge_recovery_reads_browser_again_and_caches_only_success

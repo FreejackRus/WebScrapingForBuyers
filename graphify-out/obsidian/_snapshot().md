@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[estimate_tokens()]] - `calls` [EXTRACTED]
-- [[main()_29]] - `calls` [EXTRACTED]
+- [[main()_23]] - `calls` [EXTRACTED]
 - [[mcp_wire.py]] - `contains` [EXTRACTED]
 - [[test_ops_gates.py]] - `imports` [EXTRACTED]
 - [[test_wire_gate_fails_on_token_regression()]] - `calls` [EXTRACTED]

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "rationale"
-community: "get_settings"
-location: "L1524"
+community: "wb_connector/server.py"
+location: "L1607"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/get_settings
+  - community/wb_connector/serverpy
 ---
 
 # Current WB_SEARCH_TRANSPORT (storefront|http). Re-reads settings for tests.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_search_transport()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/get_settings
+#graphify/rationale #graphify/EXTRACTED #community/wb_connector/serverpy

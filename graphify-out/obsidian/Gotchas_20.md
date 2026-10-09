@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/megamarket-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/citilink-connector/SKILL.md"
 type: "document"
-community: "Megamarket Connector"
-location: "L27"
+community: "citilink_selfcheck"
+location: "L65"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Megamarket_Connector
+  - community/citilink_selfcheck
 ---
 
 # Gotchas
 
 ## Connections
-- [[Megamarket Connector]] - `contains` [EXTRACTED]
+- [[Citilink Connector_1]] - `contains` [EXTRACTED]
+- [[citilink_selfcheck()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Megamarket_Connector
+#graphify/document #graphify/EXTRACTED #community/citilink_selfcheck

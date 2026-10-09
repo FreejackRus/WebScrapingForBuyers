@@ -1,22 +1,27 @@
 ---
 source_file: ""
 type: "code"
-community: "_clear_wb_cache"
+community: "test_resilience.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_clear_wb_cache
+  - community/test_resiliencepy
 ---
 
 # parametrize
 
 ## Connections
-- [[test_a_gated_host_falls_back_when_impersonation_fails()]] - `references` [EXTRACTED]
-- [[test_category_products_rejects_an_unsafe_selector()]] - `references` [EXTRACTED]
-- [[test_category_products_rejects_an_unsafe_shard()]] - `references` [EXTRACTED]
-- [[test_gated_hosts_read_through_the_impersonated_transport()]] - `references` [EXTRACTED]
-- [[test_refusals_reach_the_pacer_and_other_statuses_do_not()]] - `references` [EXTRACTED]
-- [[test_the_canary_sees_the_primary_search_path()]] - `references` [EXTRACTED]
-- [[test_ungated_hosts_keep_the_budgeted_transport()]] - `references` [EXTRACTED]
+- [[test_a_leading_minus_means_a_discount_not_a_price()]] - `references` [EXTRACTED]
+- [[test_absent_counts_are_none_not_zero()]] - `references` [EXTRACTED]
+- [[test_bools_are_not_counts()]] - `references` [EXTRACTED]
+- [[test_coerce_int_survives_non_finite_floats()]] - `references` [EXTRACTED]
+- [[test_coerce_price_survives_non_finite_floats()]] - `references` [EXTRACTED]
+- [[test_coerce_rating_survives_non_finite_floats()]] - `references` [EXTRACTED]
+- [[test_counts_parse()]] - `references` [EXTRACTED]
+- [[test_counts_with_signs_or_ranges_are_ambiguous_and_none()]] - `references` [EXTRACTED]
+- [[test_flatten_text_gives_none_rather_than_a_guess()]] - `references` [EXTRACTED]
+- [[test_non_prices_are_none()]] - `references` [EXTRACTED]
+- [[test_real_prices_parse()]] - `references` [EXTRACTED]
+- [[test_zero_and_negative_are_not_prices()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_clear_wb_cache
+#graphify/code #graphify/EXTRACTED #community/test_resiliencepy

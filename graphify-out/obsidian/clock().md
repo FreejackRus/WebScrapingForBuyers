@@ -14,9 +14,9 @@ tags:
 ## Connections
 - [[Clock]] - `calls` [INFERRED]
 - [[Controllable monotonic clock for the cache module.]] - `rationale_for` [EXTRACTED]
-- [[__init__()_3]] - `contains` [EXTRACTED]
+- [[__init__()_4]] - `contains` [EXTRACTED]
 - [[advance()]] - `contains` [EXTRACTED]
-- [[fixture_11]] - `references` [EXTRACTED]
+- [[fixture_12]] - `references` [EXTRACTED]
 - [[test_cache.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/Clock

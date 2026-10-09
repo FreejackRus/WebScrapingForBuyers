@@ -1,23 +1,18 @@
 ---
 type: community
-cohesion: 0.14
-members: 8
+cohesion: 0.67
+members: 3
 ---
 
 # _no_cache
 
-**Cohesion:** 0.14 - loosely connected
-**Members:** 8 nodes
+**Cohesion:** 0.67 - moderately connected
+**Members:** 3 nodes
 
 ## Members
-- [[A healthy LOGGED-OUT page carries header login links and 登录 wording — but also…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py
-- [[Login wording on a link-poor page with no login route in the DOM.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py
-- [[Whatever came in, the URL we open is ours.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py
-- [[_no_cache()_7]] - code - mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py
-- [[fixture_20]] - code
-- [[test_login_wall_markers_are_gated_on_anchor_count()]] - code - mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py
-- [[test_login_wall_markers_body_text_branch()]] - code - mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py
-- [[test_the_card_navigates_a_rebuilt_item_base_url()]] - code - mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py
+- [[Every test starts with an empty cache a cached body from a previous case would…_1]] - rationale - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py
+- [[_no_cache()_7]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py
+- [[fixture_23]] - code
 
 ## Live Query (requires Dataview plugin)
 
@@ -27,10 +22,7 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 4 edges to [[_COMMUNITY_taobao-connectorteststest_server.py]]
+- 1 edge to [[_COMMUNITY_avito-connectorteststest_server.py]]
 
 ## Top bridge nodes
-- [[_no_cache()_7]] - degree 2, connects to 1 community
-- [[test_login_wall_markers_are_gated_on_anchor_count()]] - degree 2, connects to 1 community
-- [[test_login_wall_markers_body_text_branch()]] - degree 2, connects to 1 community
-- [[test_the_card_navigates_a_rebuilt_item_base_url()]] - degree 2, connects to 1 community
+- [[_no_cache()_7]] - degree 3, connects to 1 community

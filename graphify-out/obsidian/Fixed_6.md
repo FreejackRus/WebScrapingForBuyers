@@ -1,18 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
-community: "[2.2.0] — 2026-09-11"
-location: "L370"
+community: "ozon_card"
+location: "L801"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/220__2026-09-11
+  - community/ozon_card
 ---
 
 # Fixed
 
 ## Connections
-- [[2.2.0 — 2026-09-11]] - `contains` [EXTRACTED]
-- [[marketplace_sources()]] - `references` [INFERRED]
+- [[1.6.1 — 2026-09-09]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/220__2026-09-11
+#graphify/document #graphify/EXTRACTED #community/ozon_card

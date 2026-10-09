@@ -14,7 +14,7 @@ members: 11
 - [[Real 2026-09-13 capture the product is alive, the frame is hollow. Yandex…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_ssr.py
 - [[card_no_rating()]] - code - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_ssr.py
 - [[card_washer()]] - code - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_ssr.py
-- [[fixture_10]] - code
+- [[fixture_7]] - code
 - [[load()]] - code - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_ssr.py
 - [[search_iphone()]] - code - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_ssr.py
 - [[search_telefon_zone()]] - code - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_ssr.py
@@ -35,7 +35,7 @@ SORT file.name ASC
 
 ## Top bridge nodes
 - [[load()]] - degree 9, connects to 2 communities
-- [[fixture_10]] - degree 6, connects to 1 community
+- [[fixture_7]] - degree 6, connects to 1 community
 - [[card_no_rating()]] - degree 3, connects to 1 community
 - [[card_washer()]] - degree 3, connects to 1 community
 - [[search_iphone()]] - degree 3, connects to 1 community

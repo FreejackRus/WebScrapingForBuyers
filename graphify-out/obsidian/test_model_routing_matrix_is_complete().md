@@ -12,7 +12,7 @@ tags:
 # test_model_routing_matrix_is_complete()
 
 ## Connections
-- [[evaluate()_3]] - `calls` [EXTRACTED]
+- [[evaluate()_5]] - `calls` [EXTRACTED]
 - [[test_ops_gates.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/model_routing_evalpy

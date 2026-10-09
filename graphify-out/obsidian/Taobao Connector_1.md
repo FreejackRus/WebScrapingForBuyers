@@ -12,10 +12,10 @@ tags:
 # Taobao Connector
 
 ## Connections
-- [[DSH activation_25]] - `contains` [EXTRACTED]
-- [[Gotchas_27]] - `contains` [EXTRACTED]
-- [[Tools available_21]] - `contains` [EXTRACTED]
-- [[When to use_27]] - `contains` [EXTRACTED]
+- [[DSH activation_23]] - `contains` [EXTRACTED]
+- [[Gotchas_24]] - `contains` [EXTRACTED]
+- [[Tools available_16]] - `contains` [EXTRACTED]
+- [[When to use_24]] - `contains` [EXTRACTED]
 - [[ru-marketplace-mcpskillstaobao-connectorSKILL]] - `contains` [EXTRACTED]
 - [[sign()]] - `references` [INFERRED]
 

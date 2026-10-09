@@ -1,18 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
 type: "code"
-community: "taobao_card"
-location: "L130"
+community: "json"
+location: "L47"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/taobao_card
+  - community/json
 ---
 
 # .to_dict()
 
 ## Connections
-- [[dot-to_dict()]] - `calls` [EXTRACTED]
-- [[ChallengeRequiredError]] - `method` [EXTRACTED]
+- [[ConnectorError]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/taobao_card
+#graphify/code #graphify/EXTRACTED #community/json

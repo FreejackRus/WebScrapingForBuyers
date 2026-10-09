@@ -1,18 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
-community: "terminate_process_tree"
-location: "L2253"
+community: "Changelog"
+location: "L12"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/terminate_process_tree
+  - community/Changelog
 ---
 
 # Removed
 
 ## Connections
-- [[1.0.0 — 2026-07-26]] - `contains` [EXTRACTED]
-- [[detmir_categories()]] - `references` [INFERRED]
+- [[Unreleased]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/terminate_process_tree
+#graphify/document #graphify/EXTRACTED #community/Changelog

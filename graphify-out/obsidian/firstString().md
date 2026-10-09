@@ -2,7 +2,7 @@
 source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
 type: "code"
 community: "mcp-marketplace-adapter.ts"
-location: "L1003"
+location: "L723"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -16,6 +16,7 @@ tags:
 - [[dot-logMap()]] - `calls` [EXTRACTED]
 - [[dot-toOffer()]] - `calls` [EXTRACTED]
 - [[citilinkIdentityUrls()]] - `calls` [EXTRACTED]
+- [[imageCandidateUrl()]] - `calls` [EXTRACTED]
 - [[mcp-marketplace-adapter.ts]] - `contains` [EXTRACTED]
 - [[offerUrl()]] - `calls` [EXTRACTED]
 - [[wbItemsClashSelectedCategory()]] - `calls` [EXTRACTED]

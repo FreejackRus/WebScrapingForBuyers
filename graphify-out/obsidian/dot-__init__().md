@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_no_print.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/stdio_probe.py"
 type: "code"
-community: "test_dependency_parity.py"
-location: "L31"
+community: "StdioProbe"
+location: "L29"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_dependency_paritypy
+  - community/StdioProbe
 ---
 
 # .__init__()
 
 ## Connections
-- [[StdoutWriteVisitor]] - `method` [EXTRACTED]
+- [[dot-_start_readers()]] - `calls` [EXTRACTED]
+- [[StdioProbe]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_dependency_paritypy
+#graphify/code #graphify/EXTRACTED #community/StdioProbe

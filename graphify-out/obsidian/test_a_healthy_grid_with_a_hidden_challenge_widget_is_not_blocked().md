@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[The 2026-09-10 regression the grid renders its two items AND the hidden…]] - `rationale_for` [EXTRACTED]
-- [[_extract()_4]] - `calls` [EXTRACTED]
+- [[_extract()_7]] - `calls` [EXTRACTED]
 - [[_grid_with_hidden_widget()]] - `calls` [EXTRACTED]
 - [[test_anti_bot_challenge_dom.py]] - `contains` [EXTRACTED]
 

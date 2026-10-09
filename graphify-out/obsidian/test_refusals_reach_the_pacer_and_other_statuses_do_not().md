@@ -16,8 +16,8 @@ tags:
 - [[_RecordingPacer]] - `calls` [EXTRACTED]
 - [[_clear_wb_cache()]] - `calls` [EXTRACTED]
 - [[fake_budgeted()_4]] - `contains` [EXTRACTED]
-- [[parametrize_32]] - `references` [EXTRACTED]
-- [[scenario()_97]] - `contains` [EXTRACTED]
+- [[parametrize_33]] - `references` [EXTRACTED]
+- [[scenario()_102]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_clear_wb_cache

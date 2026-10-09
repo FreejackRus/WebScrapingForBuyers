@@ -12,8 +12,8 @@ tags:
 # test_search_percent_encodes_cyrillic_queries()
 
 ## Connections
-- [[capture()_18]] - `contains` [EXTRACTED]
-- [[capture()_17]] - `indirect_call` [INFERRED]
+- [[capture()_15]] - `contains` [EXTRACTED]
+- [[capture()_14]] - `indirect_call` [INFERRED]
 - [[yandex-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/capture

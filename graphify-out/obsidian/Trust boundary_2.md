@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/README.md"
 type: "document"
-community: "Wildberries Connector"
-location: "L140"
+community: "English version"
+location: "L1058"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Wildberries_Connector
+  - community/English_version
 ---
 
 # Trust boundary
 
 ## Connections
-- [[Wildberries Connector]] - `contains` [EXTRACTED]
+- [[English version]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Wildberries_Connector
+#graphify/document #graphify/EXTRACTED #community/English_version

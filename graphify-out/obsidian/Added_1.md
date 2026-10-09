@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
-community: "Changelog"
-location: "L735"
+community: "coerce_price"
+location: "L977"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Changelog
+  - community/coerce_price
 ---
 
 # Added
 
 ## Connections
-- [[1.8.0 — 2026-09-09]] - `contains` [EXTRACTED]
+- [[1.4.1 — 2026-08-08]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Changelog
+#graphify/document #graphify/EXTRACTED #community/coerce_price

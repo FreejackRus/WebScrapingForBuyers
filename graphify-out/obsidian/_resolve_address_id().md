@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/server.py"
 type: "code"
-community: "_post"
+community: "log_event"
 location: "L249"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_post
+  - community/log_event
 ---
 
 # _resolve_address_id()
 
 ## Connections
-- [[Context_1]] - `references` [EXTRACTED]
+- [[Context_5]] - `references` [EXTRACTED]
 - [[Find a delivery addressId, because search results depend on one. This is the…]] - `rationale_for` [EXTRACTED]
 - [[_address_cache_key()]] - `calls` [EXTRACTED]
 - [[_megamarket_selfcheck_impl()]] - `calls` [EXTRACTED]
@@ -21,4 +21,4 @@ tags:
 - [[megamarket_connectorserver.py]] - `contains` [EXTRACTED]
 - [[megamarket_search()_1]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_post
+#graphify/code #graphify/EXTRACTED #community/log_event

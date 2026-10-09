@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[These rows carry no seller object — only ``userLogo``. Reporting None is…]] - `rationale_for` [EXTRACTED]
-- [[_items()_2]] - `calls` [EXTRACTED]
+- [[_items()_3]] - `calls` [EXTRACTED]
 - [[test_live_payload_contract.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_live_payload_contractpy

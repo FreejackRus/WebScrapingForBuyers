@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "test_storefront_live_xhr_capture_via_get_context"
-location: "L227"
+community: "test_cache_is_keyed_by_canonical_path_not_raw_input"
+location: "L881"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/test_storefront_live_xhr_capture_via_get_context
+  - graphify/EXTRACTED
+  - community/test_cache_is_keyed_by_canonical_path_not_raw_input
 ---
 
 # scenario()
 
 ## Connections
-- [[fake_get_context()]] - `indirect_call` [INFERRED]
-- [[no_wait()_22]] - `indirect_call` [INFERRED]
-- [[test_storefront_live_xhr_capture_via_get_context()]] - `contains` [EXTRACTED]
+- [[_patch_tier1()]] - `calls` [EXTRACTED]
+- [[counting_get()_1]] - `indirect_call` [INFERRED]
+- [[test_cache_is_keyed_by_canonical_path_not_raw_input()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/test_storefront_live_xhr_capture_via_get_context
+#graphify/code #graphify/EXTRACTED #community/test_cache_is_keyed_by_canonical_path_not_raw_input

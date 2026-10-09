@@ -12,12 +12,12 @@ tags:
 # ConnectorError
 
 ## Connections
-- [[dot-__init__()_37]] - `method` [EXTRACTED]
-- [[dot-to_dict()_1]] - `method` [EXTRACTED]
+- [[dot-__init__()_19]] - `method` [EXTRACTED]
+- [[dot-to_dict()]] - `method` [EXTRACTED]
 - [[AuthMissingError]] - `inherits` [EXTRACTED]
 - [[BadRequestError]] - `inherits` [EXTRACTED]
 - [[ChallengeRequiredError]] - `inherits` [EXTRACTED]
-- [[Exception_2]] - `inherits` [EXTRACTED]
+- [[Exception_1]] - `inherits` [EXTRACTED]
 - [[NotFoundError]] - `inherits` [EXTRACTED]
 - [[ParserDriftError]] - `inherits` [EXTRACTED]
 - [[PermissionDeniedError]] - `inherits` [EXTRACTED]

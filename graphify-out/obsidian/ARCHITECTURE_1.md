@@ -1,20 +1,23 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/docs/ARCHITECTURE.md"
 type: "document"
-community: "ru-marketplace-mcp/README.md"
+community: "Architecture"
 location: "L1"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/ru-marketplace-mcp/READMEmd
+  - community/Architecture
 ---
 
-# ARCHITECTURE.md
+# Architecture
 
 ## Connections
-- [[ADDING_A_SOURCE]] - `references` [EXTRACTED]
-- [[Architecture]] - `contains` [EXTRACTED]
-- [[CDP_SETUP]] - `references` [EXTRACTED]
-- [[ru-marketplace-mcpREADME]] - `references` [EXTRACTED]
+- [[ARCHITECTURE]] - `contains` [EXTRACTED]
+- [[Adding a marketplace_2]] - `contains` [EXTRACTED]
+- [[Connector anatomy]] - `contains` [EXTRACTED]
+- [[Cross-cutting rules]] - `contains` [EXTRACTED]
+- [[Layout]] - `contains` [EXTRACTED]
+- [[Testing]] - `contains` [EXTRACTED]
+- [[The shared runtime]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/ru-marketplace-mcp/READMEmd
+#graphify/document #graphify/EXTRACTED #community/Architecture

@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_stealth.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
-community: "test_chrome_cdp_stealth.py"
-location: "L158"
+community: "_FakeResponse"
+location: "L523"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_chrome_cdp_stealthpy
+  - community/_FakeResponse
 ---
 
 # .__init__()
 
 ## Connections
-- [[_FakeBrowser]] - `method` [EXTRACTED]
-- [[_FakeCdp]] - `references` [EXTRACTED]
+- [[_FakeOzonItem]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_stealthpy
+#graphify/code #graphify/EXTRACTED #community/_FakeResponse

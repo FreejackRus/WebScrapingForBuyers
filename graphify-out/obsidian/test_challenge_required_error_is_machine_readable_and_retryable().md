@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_errors.py"
 type: "code"
-community: "taobao_card"
+community: "ChallengeRequiredError"
 location: "L4"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/taobao_card
+  - community/ChallengeRequiredError
 ---
 
 # test_challenge_required_error_is_machine_readable_and_retryable()
@@ -15,4 +15,4 @@ tags:
 - [[ChallengeRequiredError]] - `uses` [INFERRED]
 - [[test_errors.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/taobao_card
+#graphify/code #graphify/EXTRACTED #community/ChallengeRequiredError

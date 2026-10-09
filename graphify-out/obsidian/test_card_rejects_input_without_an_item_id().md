@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_server.py"
 type: "code"
-community: "avito-connector/tests/test_server.py"
-location: "L204"
+community: "test_challenge_recovery_reads_browser_again_and_caches_only_success"
+location: "L417"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/avito-connector/tests/test_serverpy
+  - community/test_challenge_recovery_reads_browser_again_and_caches_only_success
 ---
 
 # test_card_rejects_input_without_an_item_id()
 
 ## Connections
-- [[avito-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[parametrize_7]] - `references` [EXTRACTED]
+- [[parametrize_18]] - `references` [EXTRACTED]
+- [[taobao-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/avito-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/test_challenge_recovery_reads_browser_again_and_caches_only_success

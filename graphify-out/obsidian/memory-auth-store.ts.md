@@ -13,12 +13,14 @@ tags:
 
 ## Connections
 - [[AuthStore]] - `imports` [EXTRACTED]
+- [[DUMMY_HASH]] - `contains` [EXTRACTED]
 - [[MemoryAuthStore]] - `contains` [EXTRACTED]
 - [[PasswordChange]] - `imports` [EXTRACTED]
 - [[StoredUser]] - `contains` [EXTRACTED]
 - [[auth-store.ts]] - `imports_from` [EXTRACTED]
 - [[defaultUsers()]] - `contains` [EXTRACTED]
 - [[hashPassword()]] - `contains` [EXTRACTED]
+- [[hashPasswordAsync()]] - `contains` [EXTRACTED]
 - [[identitysrcapp.ts]] - `imports_from` [EXTRACTED]
 - [[makeUser()]] - `contains` [EXTRACTED]
 - [[packages_contracts_dist_index]] - `imports_from` [EXTRACTED]
@@ -27,6 +29,8 @@ tags:
 - [[packages_contracts_dist_index_usersettings]] - `imports` [EXTRACTED]
 - [[parseUserLines()]] - `contains` [EXTRACTED]
 - [[ref_node_crypto]] - `imports_from` [EXTRACTED]
+- [[ref_node_util]] - `imports_from` [EXTRACTED]
+- [[scryptAsync]] - `contains` [EXTRACTED]
 - [[toSession()]] - `contains` [EXTRACTED]
 - [[verifyPassword()]] - `contains` [EXTRACTED]
 

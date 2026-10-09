@@ -12,7 +12,7 @@ tags:
 # _heavy_tool()
 
 ## Connections
-- [[FastMCP_1]] - `references` [EXTRACTED]
+- [[FastMCP_2]] - `references` [EXTRACTED]
 - [[named()]] - `contains` [EXTRACTED]
 - [[test_apply_is_idempotent()]] - `calls` [EXTRACTED]
 - [[test_output_schema.py]] - `contains` [EXTRACTED]

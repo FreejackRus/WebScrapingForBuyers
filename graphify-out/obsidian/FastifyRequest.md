@@ -2,7 +2,7 @@
 source_file: "apps/gateway/src/app.ts"
 type: "code"
 community: "gateway/src/app.ts"
-location: "L155"
+location: "L214"
 tags:
   - graphify/code
   - graphify/EXTRACTED

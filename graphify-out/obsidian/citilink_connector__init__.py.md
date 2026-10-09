@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/src/citilink_connector/__init__.py"
 type: "code"
-community: "test_card_out_of_stock_dom.py"
+community: "citilink-connector/tests/test_card_extractor_dom.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_card_out_of_stock_dompy
+  - community/citilink-connector/tests/test_card_extractor_dompy
 ---
 
 # citilink_connector/__init__.py
@@ -19,4 +19,4 @@ tags:
 - [[citilink-connectorteststest_shape_reference.py]] - `imports_from` [EXTRACTED]
 - [[test_card_out_of_stock_dom.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_card_out_of_stock_dompy
+#graphify/code #graphify/EXTRACTED #community/citilink-connector/tests/test_card_extractor_dompy

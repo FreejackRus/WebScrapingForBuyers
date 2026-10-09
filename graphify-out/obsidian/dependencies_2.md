@@ -15,7 +15,6 @@ tags:
 - [[@modelcontextprotocolsdk]] - `contains` [EXTRACTED]
 - [[@peremenacontracts_4]] - `contains` [EXTRACTED]
 - [[@peremenaservice-kit_4]] - `contains` [EXTRACTED]
-- [[apify-client]] - `contains` [EXTRACTED]
 - [[exceljs]] - `contains` [EXTRACTED]
 - [[fastify_4]] - `contains` [EXTRACTED]
 - [[searchpackage.json]] - `contains` [EXTRACTED]

@@ -1,17 +1,17 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
+source_file: "apps/search/src/domain/marketplace-relevance.ts"
 type: "code"
-community: "mcp-marketplace-adapter.ts"
-location: "L605"
+community: "marketplace-relevance.ts"
+location: "L46"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/mcp-marketplace-adapterts
+  - community/marketplace-relevancets
 ---
 
 # OfferRelevance
 
 ## Connections
-- [[mcp-marketplace-adapter.ts]] - `contains` [EXTRACTED]
+- [[marketplace-relevance.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts
+#graphify/code #graphify/EXTRACTED #community/marketplace-relevancets

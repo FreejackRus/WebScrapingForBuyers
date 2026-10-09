@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "cian_connector/server.py"
+community: "detmir_connector/settings.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/cian_connector/serverpy
+  - community/detmir_connector/settingspy
 ---
 
 # BaseSettings
 
 ## Connections
-- [[CianSettings]] - `inherits` [EXTRACTED]
+- [[DetmirSettings]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/cian_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/detmir_connector/settingspy

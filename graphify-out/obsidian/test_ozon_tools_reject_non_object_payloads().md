@@ -15,6 +15,6 @@ tags:
 - [[_run()_1]] - `calls` [EXTRACTED]
 - [[fake_fetch()_1]] - `contains` [EXTRACTED]
 - [[ozon-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[scenario()_20]] - `contains` [EXTRACTED]
+- [[scenario()_22]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_run

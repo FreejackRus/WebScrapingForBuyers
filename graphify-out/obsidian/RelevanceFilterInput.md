@@ -2,7 +2,7 @@
 source_file: "apps/analysis/src/domain/analysis-narrator.ts"
 type: "code"
 community: "ollama-analysis-narrator.ts"
-location: "L44"
+location: "L48"
 tags:
   - graphify/code
   - graphify/EXTRACTED

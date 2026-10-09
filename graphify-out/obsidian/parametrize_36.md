@@ -1,16 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "pathlib"
+community: "ProductIdentity"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/ProductIdentity
 ---
 
 # parametrize
 
 ## Connections
-- [[test_the_report_exposes_the_new_fields()]] - `references` [EXTRACTED]
+- [[test_gtin_rejects_malformed_values()]] - `references` [EXTRACTED]
+- [[test_non_latin_variant_conflicts_are_not_erased()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pathlib
+#graphify/code #graphify/EXTRACTED #community/ProductIdentity

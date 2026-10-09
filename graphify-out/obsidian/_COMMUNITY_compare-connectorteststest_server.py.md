@@ -1,20 +1,23 @@
 ---
 type: community
-cohesion: 0.05
-members: 52
+cohesion: 0.04
+members: 58
 ---
 
 # compare-connector/tests/test_server.py
 
-**Cohesion:** 0.05 - loosely connected
-**Members:** 52 nodes
+**Cohesion:** 0.04 - loosely connected
+**Members:** 58 nodes
 
 ## Members
 - [[A 0.0 would rank a dead listing as the cheapest option.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[A blank id is unknown, not shared — merging those would lose real offers.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[A negative is not a price. Ranking one would crown it the cheapest offer, so it…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
+- [[A ranked cross-marketplace price comparison with per-source provenance.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/models_output.py
 - [[A signed count is ambiguous dropping the sign and concatenating digits…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[Asking for a case and getting cases is the correct answer.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
+- [[BaseModel_3]] - code
+- [[CompareResponse]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/models_output.py
 - [[Detsky Mir has no working text search, so it must not join a text comparison.…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[End-to-end a cheap yuan number must not outrank a dearer rouble one. 9999 ¥ is…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[Live-captured Ozon filter strings (rendered search page, 2026-08-07, the…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
@@ -26,9 +29,11 @@ members: 52
 - [[SEARCHABLE must never name a source that lacks a _SEARCH_IMPLS entry — that is…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[Searching for refurbished and getting refurbished is the right answer.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[The sign guard must cover the unicode minusen-dashem-dash, not only ASCII…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
+- [[Typed responses for cross-marketplace comparison. The schema is built around…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/models_output.py
 - [[__call__()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
-- [[card()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
+- [[card()_10]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[compare-connectorteststest_server.py]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
+- [[compare_connectormodels_output.py]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/models_output.py
 - [[currency is checked independently of price_rub, on purpose. If an adapter…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[inf is not a price either ``10400`` blows up ``float()`` with OverflowError,…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[json.loads admits NaNInfinity by default, and int() raises on both. coerce_int…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
@@ -47,6 +52,7 @@ members: 52
 - [[test_count_coercion_never_drops_a_sign()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[test_count_coercion_never_raises_on_non_finite_floats()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[test_count_coercion_rejects_unicode_signs_and_ranges()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
+- [[test_dedupe_keeps_distinct_known_variants_of_same_product()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_card_verification_records.py
 - [[test_dedupe_keeps_source_order()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[test_detsky_mir_is_not_a_comparison_source()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[test_duplicate_listings_are_collapsed()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
@@ -71,35 +77,32 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 16 edges to [[_COMMUNITY_offer]]
+- 18 edges to [[_COMMUNITY_offer]]
+- 11 edges to [[_COMMUNITY_json]]
 - 10 edges to [[_COMMUNITY_OfferBatch]]
+- 9 edges to [[_COMMUNITY__FakeResponse_1]]
 - 9 edges to [[_COMMUNITY_parametrize]]
-- 6 edges to [[_COMMUNITY_json]]
-- 4 edges to [[_COMMUNITY_compare_connectormodels_output.py]]
-- 4 edges to [[_COMMUNITY__FakeResponse]]
-- 3 edges to [[_COMMUNITY_compare_prices]]
+- 5 edges to [[_COMMUNITY_ProductIdentity]]
+- 4 edges to [[_COMMUNITY_compare_prices]]
 - 3 edges to [[_COMMUNITY_test_card_verification_records.py]]
 - 3 edges to [[_COMMUNITY_test_all_requested_sources_missing_is_an_error]]
+- 2 edges to [[_COMMUNITY_Changelog]]
 - 2 edges to [[_COMMUNITY_search]]
-- 2 edges to [[_COMMUNITY_models.py]]
-- 2 edges to [[_COMMUNITY_test_a_generic_failure_is_reported_as_error_not_blocked]]
-- 2 edges to [[_COMMUNITY_pathlib]]
-- 2 edges to [[_COMMUNITY_pytest]]
-- 1 edge to [[_COMMUNITY_Ключевые изменения выпуска]]
+- 2 edges to [[_COMMUNITY_pydantic]]
+- 1 edge to [[_COMMUNITY_ssr.py]]
 - 1 edge to [[_COMMUNITY__search_wildberries]]
 - 1 edge to [[_COMMUNITY_dot-_mirror_rouble_price_into_native]]
-- 1 edge to [[_COMMUNITY_Changelog]]
-- 1 edge to [[_COMMUNITY_dns_card]]
 - 1 edge to [[_COMMUNITY__relevance_warnings]]
-- 1 edge to [[_COMMUNITY_ProductIdentity]]
-- 1 edge to [[_COMMUNITY_megamarket_connectormodels_output.py]]
-- 1 edge to [[_COMMUNITY_YandexProduct]]
-- 1 edge to [[_COMMUNITY_taobao]]
 - 1 edge to [[_COMMUNITY_test_sources_run_concurrently]]
-- 1 edge to [[_COMMUNITY_WbCardItem]]
-- 1 edge to [[_COMMUNITY_wb_connectorserver.py]]
-- 1 edge to [[_COMMUNITY_pydantic]]
+- 1 edge to [[_COMMUNITY_test_wildberries_adapter_tolerates_a_no_results_response]]
+- 1 edge to [[_COMMUNITY_test_a_generic_failure_is_reported_as_error_not_blocked]]
+- 1 edge to [[_COMMUNITY_test_distribution_contract.py]]
+- 1 edge to [[_COMMUNITY_pytest]]
+- 1 edge to [[_COMMUNITY_pathlib]]
 
 ## Top bridge nodes
-- [[compare-connectorteststest_server.py]] - degree 86, connects to 19 communities
-- [[MarketOffer]] - degree 42, connects to 13 communities
+- [[compare-connectorteststest_server.py]] - degree 86, connects to 14 communities
+- [[MarketOffer]] - degree 42, connects to 10 communities
+- [[compare_connectormodels_output.py]] - degree 10, connects to 3 communities
+- [[CompareResponse]] - degree 5, connects to 2 communities
+- [[BaseModel_3]] - degree 3, connects to 1 community

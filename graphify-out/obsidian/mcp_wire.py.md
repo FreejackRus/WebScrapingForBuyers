@@ -23,12 +23,12 @@ tags:
 - [[fetch_tools()]] - `contains` [EXTRACTED]
 - [[hashlib]] - `imports` [EXTRACTED]
 - [[json]] - `imports` [EXTRACTED]
-- [[main()_29]] - `contains` [EXTRACTED]
+- [[main()_23]] - `contains` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]
 - [[stdio_probe.py]] - `imports_from` [EXTRACTED]
 - [[sys]] - `imports` [EXTRACTED]
 - [[test_ops_gates.py]] - `imports_from` [EXTRACTED]
 - [[test_stdio_probe.py]] - `imports` [EXTRACTED]
-- [[time]] - `imports` [EXTRACTED]
+- [[time_1]] - `imports` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/mcp_wirepy

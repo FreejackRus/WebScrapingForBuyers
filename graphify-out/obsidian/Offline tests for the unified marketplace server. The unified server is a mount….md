@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_server.py"
 type: "rationale"
-community: "marketplace-connector/tests/test_server.py"
+community: "test_public_contract_snapshot.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/marketplace-connector/tests/test_serverpy
+  - community/test_public_contract_snapshotpy
 ---
 
 # Offline tests for the unified marketplace server. The unified server is a mount…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[marketplace-connectorteststest_server.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/marketplace-connector/tests/test_serverpy
+#graphify/rationale #graphify/EXTRACTED #community/test_public_contract_snapshotpy

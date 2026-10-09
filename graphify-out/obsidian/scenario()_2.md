@@ -12,7 +12,7 @@ tags:
 # scenario()
 
 ## Connections
-- [[_tool_error_payload()_1]] - `calls` [EXTRACTED]
+- [[_tool_error_payload()]] - `calls` [EXTRACTED]
 - [[fake_safe_get_text()_2]] - `indirect_call` [INFERRED]
 - [[no_wait()_2]] - `indirect_call` [INFERRED]
 - [[test_wb_root_info_rejects_unusable_imt_id()]] - `contains` [EXTRACTED]

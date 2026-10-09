@@ -1,20 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mpstats-connector/src/mpstats_connector/settings.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/src/aliexpress_connector/settings.py"
 type: "code"
-community: "mpstats_connector/server.py"
-location: "L98"
+community: "pydantic"
+location: "L29"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/mpstats_connector/serverpy
+  - community/pydantic
 ---
 
 # get_settings()
 
 ## Connections
-- [[MPStatsSettings]] - `calls` [EXTRACTED]
-- [[_finalize_selfcheck()]] - `calls` [EXTRACTED]
-- [[mpstats_connectorserver.py]] - `imports` [EXTRACTED]
-- [[mpstats_connectorsettings.py]] - `contains` [EXTRACTED]
+- [[AliSettings]] - `calls` [EXTRACTED]
+- [[aliexpress_connectorserver.py]] - `imports` [EXTRACTED]
+- [[aliexpress_connectorsettings.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/mpstats_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/pydantic

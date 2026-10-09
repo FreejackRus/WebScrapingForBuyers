@@ -1,16 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "wb_connector/server.py"
+community: "test_redact.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/wb_connector/serverpy
+  - community/test_redactpy
 ---
 
 # parametrize
 
 ## Connections
-- [[test_every_native_adapter_preserves_warnings()]] - `references` [EXTRACTED]
+- [[test_known_secret_shapes_are_scrubbed()]] - `references` [EXTRACTED]
+- [[test_proxy_userinfo_never_survives_redaction()]] - `references` [EXTRACTED]
+- [[test_session_cookies_and_jwts_are_scrubbed()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/test_redactpy

@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/source_selection.py"
 type: "code"
 community: "test_source_selection.py"
-location: "L63"
+location: "L62"
 tags:
   - graphify/code
   - graphify/EXTRACTED

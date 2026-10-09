@@ -1,17 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
 type: "code"
-community: "json"
-location: "L47"
+community: "ChallengeRequiredError"
+location: "L130"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/json
+  - community/ChallengeRequiredError
 ---
 
 # .to_dict()
 
 ## Connections
-- [[ConnectorError]] - `method` [EXTRACTED]
+- [[dot-to_dict()_1]] - `calls` [EXTRACTED]
+- [[ChallengeRequiredError]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/json
+#graphify/code #graphify/EXTRACTED #community/ChallengeRequiredError

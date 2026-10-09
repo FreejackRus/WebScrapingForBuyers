@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "test_wb_search_warns_when_no_result_has_a_price"
-location: "L560"
+community: "test_helpers.py"
+location: "L736"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_wb_search_warns_when_no_result_has_a_price
+  - community/test_helperspy
 ---
 
 # no_wait()
 
 ## Connections
-- [[test_wb_search_warns_when_no_result_has_a_price()]] - `contains` [EXTRACTED]
+- [[test_wb_search_handles_v9_shape_drift_by_falling_back()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_wb_search_warns_when_no_result_has_a_price
+#graphify/code #graphify/EXTRACTED #community/test_helperspy

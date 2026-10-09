@@ -10,14 +10,14 @@ members: 23
 **Members:** 23 nodes
 
 ## Members
-- [[dot-__init__()_39]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/pacing.py
+- [[dot-__init__()_41]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/pacing.py
 - [[dot-consecutive_refusals()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/pacing.py
 - [[dot-record_refusal()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/pacing.py
 - [[dot-record_success()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/pacing.py
-- [[dot-reset()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/pacing.py
+- [[dot-reset()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/pacing.py
 - [[dot-rotation_hint()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/pacing.py
 - [[dot-should_rotate()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/pacing.py
-- [[dot-wait()_5]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/pacing.py
+- [[dot-wait()_4]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/pacing.py
 - [[A backoff shorter than the normal pace would be a speed-up.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_pacing.py
 - [[A request came back with data. Forget the refusals before it.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/pacing.py
 - [[A request was refused — a 401, 403, 429, or an anti-bot wall. Only count what…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/pacing.py
@@ -29,7 +29,7 @@ members: 23
 - [[Pacer]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/pacing.py
 - [[Whether refusals have stopped looking like bad luck.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/pacing.py
 - [[max() with NaN is undefined-ish; just make sure it constructs.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_pacing.py
-- [[parametrize_35]] - code
+- [[parametrize_34]] - code
 - [[test_a_negative_gap_is_clamped_rather_than_inverting_time()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_pacing.py
 - [[test_a_nonsense_gap_does_not_crash_construction()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_pacing.py
 - [[test_an_error_delay_below_the_normal_gap_is_raised_to_it()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_pacing.py

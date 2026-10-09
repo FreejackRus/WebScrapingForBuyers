@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "cian-connector/tests/test_server.py"
+community: "test_the_category_url_is_what_yields_a_collection"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/cian-connector/tests/test_serverpy
+  - community/test_the_category_url_is_what_yields_a_collection
 ---
 
 # fixture
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[_no_cache()_3]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/cian-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/test_the_category_url_is_what_yields_a_collection

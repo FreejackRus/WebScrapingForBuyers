@@ -28,7 +28,6 @@ tags:
 - [[marketplace_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[mcp_core__init__.py]] - `re_exports` [EXTRACTED]
 - [[megamarket_connectorserver.py]] - `imports_from` [EXTRACTED]
-- [[mpstats_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[ozon_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[runtime.py]] - `imports_from` [EXTRACTED]
 - [[sys]] - `imports` [EXTRACTED]

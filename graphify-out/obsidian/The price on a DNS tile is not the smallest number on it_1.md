@@ -1,5 +1,5 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/dns-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/dns-connector/SKILL.md"
 type: "document"
 community: "DNS-Shop Connector"
 location: "L37"

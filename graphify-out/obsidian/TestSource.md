@@ -1,19 +1,19 @@
 ---
 source_file: "apps/search/src/app.test.ts"
 type: "code"
-community: "packages_contracts_dist_index"
-location: "L17"
+community: "SourceAdapter"
+location: "L21"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/packages_contracts_dist_index
+  - community/SourceAdapter
 ---
 
 # TestSource
 
 ## Connections
-- [[dot-search()_6]] - `method` [EXTRACTED]
+- [[dot-search()_1]] - `method` [EXTRACTED]
 - [[SourceAdapter]] - `implements` [EXTRACTED]
 - [[app.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index
+#graphify/code #graphify/EXTRACTED #community/SourceAdapter

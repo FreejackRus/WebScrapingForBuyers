@@ -12,10 +12,10 @@ tags:
 # _parse_offers()
 
 ## Connections
-- [[Any_13]] - `references` [EXTRACTED]
+- [[Any_7]] - `references` [EXTRACTED]
 - [[Offers and the total from a search payload. ValueError on the wrong shape.]] - `rationale_for` [EXTRACTED]
 - [[_offer_row()]] - `calls` [EXTRACTED]
-- [[_search_smoke()_1]] - `calls` [EXTRACTED]
+- [[_search_smoke()]] - `calls` [EXTRACTED]
 - [[cian_connectorserver.py]] - `contains` [EXTRACTED]
 - [[cian_search()]] - `calls` [EXTRACTED]
 

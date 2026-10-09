@@ -1,18 +1,28 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
-community: "compare_verify_offer"
-location: "L723"
+community: "avito_connector/server.py"
+location: "L1767"
 tags:
   - graphify/document
-  - graphify/EXTRACTED
-  - community/compare_verify_offer
+  - graphify/INFERRED
+  - community/avito_connector/serverpy
 ---
 
 # Added
 
 ## Connections
-- [[1.9.0 — 2026-09-09]] - `contains` [EXTRACTED]
-- [[compare_verify_offer()]] - `references` [INFERRED]
+- [[1.2.0 — 2026-07-28 (English)]] - `contains` [EXTRACTED]
+- [[avito_card()]] - `references` [INFERRED]
+- [[avito_selfcheck()]] - `references` [INFERRED]
+- [[avito_seller()]] - `references` [INFERRED]
+- [[lamoda_card()]] - `references` [INFERRED]
+- [[lamoda_search()]] - `references` [INFERRED]
+- [[lamoda_selfcheck()]] - `references` [INFERRED]
+- [[megamarket_card()]] - `references` [INFERRED]
+- [[megamarket_selfcheck()]] - `references` [INFERRED]
+- [[probe_session()]] - `references` [INFERRED]
+- [[taobao_card()]] - `references` [INFERRED]
+- [[taobao_selfcheck()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/compare_verify_offer
+#graphify/document #graphify/INFERRED #community/avito_connector/serverpy

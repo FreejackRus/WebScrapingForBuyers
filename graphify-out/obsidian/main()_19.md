@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/__main__.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/__main__.py"
 type: "code"
-community: "megamarket_connector/__main__.py"
-location: "L13"
+community: "sys"
+location: "L21"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/megamarket_connector/__main__py
+  - community/sys
 ---
 
 # main()
 
 ## Connections
-- [[Run the server on the transport selected by the environment (stdio default)._8]] - `rationale_for` [EXTRACTED]
-- [[megamarket_connector__main__.py]] - `contains` [EXTRACTED]
+- [[Run the server on the transport selected by the environment (stdio default)._9]] - `rationale_for` [EXTRACTED]
+- [[ozon_connector__main__.py]] - `contains` [EXTRACTED]
 - [[run_server()]] - `calls` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/megamarket_connector/__main__py
+#graphify/code #graphify/EXTRACTED #community/sys

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_live.py"
 type: "code"
-community: "wb-connector/tests/test_live.py"
+community: "pytest"
 location: "L24"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/wb-connector/tests/test_livepy
+  - community/pytest
 ---
 
 # test_wb_search_returns_priced_items()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[wb-connectorteststest_live.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/wb-connector/tests/test_livepy
+#graphify/code #graphify/EXTRACTED #community/pytest

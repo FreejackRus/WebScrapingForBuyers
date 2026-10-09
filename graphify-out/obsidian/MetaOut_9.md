@@ -1,19 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/models_output.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/models_output.py"
 type: "code"
-community: "BadRequestError"
-location: "L19"
+community: "TransportDownError"
+location: "L17"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/BadRequestError
+  - community/TransportDownError
 ---
 
 # MetaOut
 
 ## Connections
 - [[MetaOutBase]] - `inherits` [EXTRACTED]
-- [[Ozon carries the shared envelope unchanged.]] - `rationale_for` [EXTRACTED]
-- [[ozon_connectormodels_output.py]] - `contains` [EXTRACTED]
+- [[Yandex reports which extraction path produced the payload. The SSR widget state…]] - `rationale_for` [EXTRACTED]
+- [[yandex_card()]] - `uses` [INFERRED]
+- [[yandex_connectormodels_output.py]] - `contains` [EXTRACTED]
+- [[yandex_connectorserver.py]] - `imports` [EXTRACTED]
+- [[yandex_search()_1]] - `uses` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/BadRequestError
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

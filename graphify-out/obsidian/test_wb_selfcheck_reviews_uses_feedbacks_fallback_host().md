@@ -12,9 +12,9 @@ tags:
 # test_wb_selfcheck_reviews_uses_feedbacks_fallback_host()
 
 ## Connections
-- [[fake_safe_get_text()_16]] - `contains` [EXTRACTED]
-- [[no_wait()_15]] - `contains` [EXTRACTED]
-- [[scenario()_15]] - `contains` [EXTRACTED]
+- [[fake_safe_get_text()_17]] - `contains` [EXTRACTED]
+- [[no_wait()_16]] - `contains` [EXTRACTED]
+- [[scenario()_16]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/no_wait

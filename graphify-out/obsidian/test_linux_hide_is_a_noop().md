@@ -12,8 +12,8 @@ tags:
 # test_linux_hide_is_a_noop()
 
 ## Connections
-- [[forbidden()_1]] - `contains` [EXTRACTED]
-- [[forbidden()_2]] - `indirect_call` [INFERRED]
+- [[forbidden()_5]] - `contains` [EXTRACTED]
+- [[forbidden()_6]] - `indirect_call` [INFERRED]
 - [[test_chrome_cdp_stealth.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_stealthpy

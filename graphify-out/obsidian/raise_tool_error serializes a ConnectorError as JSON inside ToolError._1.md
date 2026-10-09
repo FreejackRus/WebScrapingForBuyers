@@ -1,12 +1,12 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_search_login_wall_live_dom.py"
 type: "rationale"
-community: "_tool_error_payload"
-location: "L18"
+community: "test_search_login_wall_live_dom.py"
+location: "L55"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/_tool_error_payload
+  - community/test_search_login_wall_live_dompy
 ---
 
 # raise_tool_error serializes a ConnectorError as JSON inside ToolError.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_tool_error_payload()_1]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/_tool_error_payload
+#graphify/rationale #graphify/EXTRACTED #community/test_search_login_wall_live_dompy

@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
 type: "code"
-community: "json"
+community: "UpstreamTimeoutError"
 location: "L74"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/json
+  - community/UpstreamTimeoutError
 ---
 
 # UpstreamTimeoutError
 
 ## Connections
-- [[dot-__init__()_33]] - `method` [EXTRACTED]
+- [[dot-__init__()_39]] - `method` [EXTRACTED]
 - [[ConnectorError]] - `inherits` [EXTRACTED]
 - [[_run()]] - `calls` [EXTRACTED]
 - [[browser_handoff.py]] - `imports` [EXTRACTED]
@@ -23,4 +23,4 @@ tags:
 - [[test_snapshot_cancellation_or_deadline_cleans_exact_page()]] - `uses` [INFERRED]
 - [[test_termination_settles_queued_snapshot_before_getter_resumes()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/json
+#graphify/code #graphify/EXTRACTED #community/UpstreamTimeoutError

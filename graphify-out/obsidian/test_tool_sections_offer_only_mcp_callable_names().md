@@ -15,7 +15,7 @@ tags:
 - [[_mcp_registered_tools()]] - `calls` [EXTRACTED]
 - [[_names_offered_by_tool_sections()]] - `calls` [EXTRACTED]
 - [[_skill_dir()]] - `calls` [EXTRACTED]
-- [[parametrize_30]] - `references` [EXTRACTED]
+- [[parametrize_11]] - `references` [EXTRACTED]
 - [[test_skills_parity.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_skills_paritypy

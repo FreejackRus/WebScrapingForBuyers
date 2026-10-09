@@ -11,10 +11,10 @@ members: 6
 
 ## Members
 - [[A bare status code is a dead end; the body is the clue.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py
-- [[__aenter__()_6]] - code - mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py
-- [[__aexit__()_6]] - code - mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py
-- [[json()_4]] - code - mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py
-- [[post()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py
+- [[__aenter__()_5]] - code - mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py
+- [[__aexit__()_5]] - code - mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py
+- [[json()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py
+- [[post()_4]] - code - mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py
 - [[test_a_non_200_carries_a_body_preview()]] - code - mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py
 
 ## Live Query (requires Dataview plugin)

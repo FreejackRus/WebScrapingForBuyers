@@ -13,9 +13,9 @@ tags:
 
 ## Connections
 - [[Fixed_10]] - `references` [INFERRED]
-- [[fixture_10]] - `references` [EXTRACTED]
+- [[fixture_7]] - `references` [EXTRACTED]
 - [[load()]] - `calls` [EXTRACTED]
 - [[test_ssr.py]] - `contains` [EXTRACTED]
-- [[Исправлено_8]] - `references` [INFERRED]
+- [[Исправлено_9]] - `references` [INFERRED]
 
 #graphify/code #graphify/EXTRACTED #community/220__2026-09-11

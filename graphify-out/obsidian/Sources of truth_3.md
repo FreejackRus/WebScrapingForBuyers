@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/wb-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/ozon-connector/SKILL.md"
 type: "document"
-community: "Wildberries Connector"
-location: "L133"
+community: "Ozon Connector"
+location: "L51"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Wildberries_Connector
+  - community/Ozon_Connector
 ---
 
 # Sources of truth
 
 ## Connections
-- [[Wildberries Connector_1]] - `contains` [EXTRACTED]
+- [[Ozon Connector_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Wildberries_Connector
+#graphify/document #graphify/EXTRACTED #community/Ozon_Connector

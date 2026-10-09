@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Tests for the in-process TTL cache. Time is driven through a fake ``monotonic``…]] - `rationale_for` [EXTRACTED]
-- [[asyncio_2]] - `imports` [EXTRACTED]
+- [[asyncio]] - `imports` [EXTRACTED]
 - [[cache.py]] - `imports_from` [EXTRACTED]
 - [[clock()]] - `contains` [EXTRACTED]
 - [[pytest]] - `imports` [EXTRACTED]

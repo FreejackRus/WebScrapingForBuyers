@@ -13,9 +13,9 @@ tags:
 
 ## Connections
 - [[A 429 from v9 must raise, not silently degrade to the stale-id path.]] - `rationale_for` [EXTRACTED]
-- [[fake_safe_get_text()_24]] - `contains` [EXTRACTED]
+- [[fake_safe_get_text()_25]] - `contains` [EXTRACTED]
 - [[no_wait()_27]] - `contains` [EXTRACTED]
-- [[scenario()_42]] - `contains` [EXTRACTED]
+- [[scenario()_43]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_tool_error_payload

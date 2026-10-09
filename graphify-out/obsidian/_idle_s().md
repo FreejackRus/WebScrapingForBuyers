@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/browser_handoff.py"
 type: "code"
-community: "read_with_handoff"
+community: "browser_handoff.py"
 location: "L85"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/read_with_handoff
+  - community/browser_handoffpy
 ---
 
 # _idle_s()
@@ -19,4 +19,4 @@ tags:
 - [[browser_handoff.py]] - `contains` [EXTRACTED]
 - [[handoff_diagnostics()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/read_with_handoff
+#graphify/code #graphify/EXTRACTED #community/browser_handoffpy

@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[normalize_gtin()]] - `calls` [EXTRACTED]
-- [[parametrize_17]] - `references` [EXTRACTED]
+- [[parametrize_36]] - `references` [EXTRACTED]
 - [[test_identity.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/ProductIdentity

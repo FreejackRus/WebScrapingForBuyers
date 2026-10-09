@@ -1,5 +1,5 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/aliexpress-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/aliexpress-connector/SKILL.md"
 type: "document"
 community: "AliExpress connector"
 location: "L6"
@@ -12,11 +12,11 @@ tags:
 # AliExpress connector
 
 ## Connections
-- [[DSH activation_14]] - `contains` [EXTRACTED]
-- [[Gotchas_22]] - `contains` [EXTRACTED]
+- [[DSH activation]] - `contains` [EXTRACTED]
+- [[Gotchas_16]] - `contains` [EXTRACTED]
 - [[How failures come back_1]] - `contains` [EXTRACTED]
-- [[Tools available_17]] - `contains` [EXTRACTED]
-- [[Workflow patterns_9]] - `contains` [EXTRACTED]
-- [[ru-marketplace-mcpskillsaliexpress-connectorSKILL]] - `contains` [EXTRACTED]
+- [[Tools available_10]] - `contains` [EXTRACTED]
+- [[Workflow patterns_7]] - `contains` [EXTRACTED]
+- [[dshskillsaliexpress-connectorSKILL]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/AliExpress_connector

@@ -1,8 +1,8 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/src/aliexpress_connector/settings.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/settings.py"
 type: "code"
 community: "pydantic"
-location: "L29"
+location: "L64"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,8 +12,8 @@ tags:
 # get_settings()
 
 ## Connections
-- [[AliSettings]] - `calls` [EXTRACTED]
-- [[aliexpress_connectorserver.py]] - `imports` [EXTRACTED]
-- [[aliexpress_connectorsettings.py]] - `contains` [EXTRACTED]
+- [[AvitoSettings]] - `calls` [EXTRACTED]
+- [[avito_connectorserver.py]] - `imports` [EXTRACTED]
+- [[avito_connectorsettings.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/pydantic

@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/src/citilink_connector/server.py"
 type: "rationale"
 community: "citilink_card"
-location: "L323"
+location: "L340"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED

@@ -2,7 +2,7 @@
 source_file: "apps/search/src/infrastructure/sources/netlab-client.ts"
 type: "code"
 community: "netlab-client.ts"
-location: "L201"
+location: "L208"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,9 +12,10 @@ tags:
 # searchNetlab()
 
 ## Connections
-- [[dot-search()_3]] - `calls` [EXTRACTED]
+- [[dot-search()_11]] - `calls` [EXTRACTED]
 - [[b2b-distributor-adapter.ts]] - `imports` [EXTRACTED]
 - [[matchKind()_3]] - `calls` [EXTRACTED]
+- [[netlab-client.test.ts]] - `imports` [EXTRACTED]
 - [[netlab-client.ts]] - `contains` [EXTRACTED]
 - [[netlabAuthenticate()]] - `calls` [EXTRACTED]
 - [[netlabGoodsByUid()]] - `calls` [EXTRACTED]

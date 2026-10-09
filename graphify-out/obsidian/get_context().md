@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "code"
-community: "_hide_chrome_windows"
+community: "get_browser"
 location: "L466"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_hide_chrome_windows
+  - community/get_browser
 ---
 
 # get_context()
@@ -20,4 +20,4 @@ tags:
 - [[current_mcp_session_id()]] - `calls` [INFERRED]
 - [[get_browser()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_hide_chrome_windows
+#graphify/code #graphify/EXTRACTED #community/get_browser

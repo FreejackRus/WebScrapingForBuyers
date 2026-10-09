@@ -1,17 +1,41 @@
 ---
-source_file: "apps/web/src/widgets/search/workspace/ui/index.test.tsx"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
-community: "packages_contracts_dist_index"
-location: "L27"
+community: "offer"
+location: "L24"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/packages_contracts_dist_index
+  - community/offer
 ---
 
 # offer()
 
 ## Connections
-- [[workspaceuiindex.test.tsx]] - `contains` [EXTRACTED]
+- [[MarketOffer]] - `uses` [INFERRED]
+- [[compare-connectorteststest_server.py]] - `contains` [EXTRACTED]
+- [[degraded_yandex()]] - `calls` [EXTRACTED]
+- [[impl()]] - `calls` [EXTRACTED]
+- [[ozon()]] - `calls` [EXTRACTED]
+- [[ozon()_2]] - `calls` [EXTRACTED]
+- [[ozon()_3]] - `calls` [EXTRACTED]
+- [[search()_8]] - `calls` [EXTRACTED]
+- [[search()_9]] - `calls` [EXTRACTED]
+- [[taobao()]] - `calls` [EXTRACTED]
+- [[wb()_2]] - `calls` [EXTRACTED]
+- [[wb()_3]] - `calls` [EXTRACTED]
+- [[wb()_4]] - `calls` [EXTRACTED]
+- [[wb()_5]] - `calls` [EXTRACTED]
+- [[wb()_6]] - `calls` [EXTRACTED]
+- [[wb()_7]] - `calls` [EXTRACTED]
+- [[wb()_8]] - `calls` [EXTRACTED]
+- [[wb()_10]] - `calls` [EXTRACTED]
+- [[wb()_11]] - `calls` [EXTRACTED]
+- [[wb()_12]] - `calls` [EXTRACTED]
+- [[wb()_13]] - `calls` [EXTRACTED]
+- [[wb()_14]] - `calls` [EXTRACTED]
+- [[wb()_15]] - `calls` [EXTRACTED]
+- [[ya()]] - `calls` [EXTRACTED]
+- [[ya()_1]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index
+#graphify/code #graphify/EXTRACTED #community/offer

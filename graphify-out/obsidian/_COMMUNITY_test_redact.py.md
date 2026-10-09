@@ -12,18 +12,18 @@ members: 38
 ## Members
 - [[A '' in the password terminates the RFC authority, so a regex that stops at…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_redact.py
 - [[A connect error can quote the URL cut off at the host the credential must not…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_redact.py
+- [[A connected browser or reverse proxy may expose a session JWT in a diagnostic.…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_redact.py
 - [[A connection failure can truncate the URL at the host, leaving the whole…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_redact.py
 - [[A cookie-shaped regex that also eats normal words would hide real errors.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_redact.py
 - [[No '' in the userinfo — a bare username is not a credential.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_redact.py
 - [[No '' means no credential; stripping it would mangle a valid URL.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_redact.py
 - [[Scrubbing must not eat the part that says what went wrong.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_redact.py
 - [[Tests for the secret-scrubbing helpers. Redaction is the last thing standing…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_redact.py
-- [[The MPStats connector holds the only secret this project ever sees — a live…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_redact.py
 - [[The userinfo rule is anchored to  so ordinary text stays readable.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_redact.py
 - [[The userinfo shape is userpass — it contains ''. A path-embedded '@' without…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_redact.py
 - [[_strip_userinfo()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/redact.py
 - [[hostportpath@ — the part between the first '' and the '' is a numeric port,…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_redact.py
-- [[parametrize_16]] - code
+- [[parametrize_22]] - code
 - [[redact_error_text()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/redact.py
 - [[redact_url()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/redact.py
 - [[test_a_bare_username_before_at_is_left_alone()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_redact.py

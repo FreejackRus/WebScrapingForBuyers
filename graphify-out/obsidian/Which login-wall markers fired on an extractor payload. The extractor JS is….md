@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/server.py"
 type: "rationale"
-community: "taobao_card"
+community: "taobao_connector/server.py"
 location: "L481"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/taobao_card
+  - community/taobao_connector/serverpy
 ---
 
 # Which login-wall markers fired on an extractor payload. The extractor JS is…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_login_wall_markers()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/taobao_card
+#graphify/rationale #graphify/EXTRACTED #community/taobao_connector/serverpy

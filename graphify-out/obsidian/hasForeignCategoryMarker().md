@@ -1,12 +1,12 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
+source_file: "apps/search/src/domain/marketplace-relevance.ts"
 type: "code"
-community: "mcp-marketplace-adapter.ts"
-location: "L718"
+community: "marketplace-relevance.ts"
+location: "L169"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/mcp-marketplace-adapterts
+  - community/marketplace-relevancets
 ---
 
 # hasForeignCategoryMarker()
@@ -15,7 +15,7 @@ tags:
 - [[assessMarketplaceOfferRelevance()]] - `calls` [EXTRACTED]
 - [[hasForeignCategoryClash()]] - `calls` [EXTRACTED]
 - [[isProductFamilyCard()]] - `calls` [EXTRACTED]
-- [[mcp-marketplace-adapter.ts]] - `contains` [EXTRACTED]
+- [[marketplace-relevance.ts]] - `contains` [EXTRACTED]
 - [[tokenIn()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts
+#graphify/code #graphify/EXTRACTED #community/marketplace-relevancets

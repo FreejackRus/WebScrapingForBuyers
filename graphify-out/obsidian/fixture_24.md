@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "offline_cdp_probe"
+community: "mcp-core/tests/test_browser_handoff.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/offline_cdp_probe
+  - community/mcp-core/tests/test_browser_handoffpy
 ---
 
 # fixture
 
 ## Connections
-- [[offline_cdp_probe()]] - `references` [EXTRACTED]
+- [[browser()_2]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/offline_cdp_probe
+#graphify/code #graphify/EXTRACTED #community/mcp-core/tests/test_browser_handoffpy

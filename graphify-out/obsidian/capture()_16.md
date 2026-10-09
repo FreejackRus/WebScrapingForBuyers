@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py"
 type: "code"
-community: "test_the_graphql_request_carries_a_referer_for_the_sku"
-location: "L392"
+community: "UpstreamTimeoutError"
+location: "L611"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/test_the_graphql_request_carries_a_referer_for_the_sku
+  - graphify/EXTRACTED
+  - community/UpstreamTimeoutError
 ---
 
 # capture()
 
 ## Connections
-- [[test_the_graphql_request_carries_a_referer_for_the_sku()]] - `indirect_call` [INFERRED]
+- [[test_snapshot_cancellation_or_deadline_cleans_exact_page()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/test_the_graphql_request_carries_a_referer_for_the_sku
+#graphify/code #graphify/EXTRACTED #community/UpstreamTimeoutError

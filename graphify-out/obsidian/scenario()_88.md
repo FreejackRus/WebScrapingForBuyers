@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
 type: "code"
-community: "_clear_wb_cache"
-location: "L2340"
+community: "test_wb_search_storefront_empty_products_is_no_results"
+location: "L140"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_clear_wb_cache
+  - community/test_wb_search_storefront_empty_products_is_no_results
 ---
 
 # scenario()
 
 ## Connections
-- [[_clear_wb_cache()]] - `calls` [EXTRACTED]
-- [[fake_safe_get_text()_2]] - `indirect_call` [INFERRED]
-- [[test_a_canary_probe_cannot_be_answered_from_its_own_cache()]] - `contains` [EXTRACTED]
+- [[empty_storefront()]] - `indirect_call` [INFERRED]
+- [[test_wb_search_storefront_empty_products_is_no_results()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_clear_wb_cache
+#graphify/code #graphify/EXTRACTED #community/test_wb_search_storefront_empty_products_is_no_results

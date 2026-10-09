@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_decision_server.py"
 type: "code"
-community: "test_decision_server.py"
+community: "test_card_verification_records.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_decision_serverpy
+  - community/test_card_verification_recordspy
 ---
 
 # test_decision_server.py
@@ -21,4 +21,4 @@ tags:
 - [[test_decision_profile_mounts_comparison_and_inspector()]] - `contains` [EXTRACTED]
 - [[types_8]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_decision_serverpy
+#graphify/code #graphify/EXTRACTED #community/test_card_verification_recordspy

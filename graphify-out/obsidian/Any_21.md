@@ -1,22 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "identity.py"
+community: "test_output_schema.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/identitypy
+  - community/test_output_schemapy
 ---
 
 # Any
 
 ## Connections
-- [[_field()]] - `references` [EXTRACTED]
-- [[_text()_1]] - `references` [EXTRACTED]
-- [[identity_from_mapping()]] - `references` [EXTRACTED]
-- [[normalize_gtin()]] - `references` [EXTRACTED]
-- [[normalize_identifier()]] - `references` [EXTRACTED]
-- [[normalize_model()]] - `references` [EXTRACTED]
-- [[normalize_mpn()]] - `references` [EXTRACTED]
+- [[compact_output_schema()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/identitypy
+#graphify/code #graphify/EXTRACTED #community/test_output_schemapy

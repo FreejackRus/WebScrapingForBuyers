@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[fake_sleep()_1]] - `contains` [EXTRACTED]
-- [[scenario()_25]] - `contains` [EXTRACTED]
+- [[scenario()_28]] - `contains` [EXTRACTED]
 - [[stream()_1]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 

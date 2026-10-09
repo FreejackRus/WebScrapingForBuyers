@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_card_verification_records.py"
 type: "code"
-community: "YandexProduct"
+community: "TransportDownError"
 location: "L144"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/YandexProduct
+  - community/TransportDownError
 ---
 
 # test_yandex_live_fixture_variant_survives_comparison()
@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[YandexProduct]] - `uses` [INFERRED]
 - [[YandexSearchResponse]] - `uses` [INFERRED]
-- [[search()_1]] - `indirect_call` [INFERRED]
+- [[search()_10]] - `indirect_call` [INFERRED]
 - [[test_card_verification_records.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/YandexProduct
+#graphify/code #graphify/INFERRED #community/TransportDownError

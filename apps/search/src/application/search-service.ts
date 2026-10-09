@@ -4,7 +4,7 @@ import type { Offer, Product, SearchEvent, SearchSnapshot, SourceState } from "@
 
 import { isUnrequestedConsumablePart } from "../domain/consumable-parts.js";
 import { isOfferInItScope } from "../domain/it-scope.js";
-import { matchesOriginIntent, originIntent } from "../domain/origin-intent.js";
+import { assessOffer } from "../domain/offer-assessment.js";
 import { flagPriceAnomalies } from "../domain/price-anomaly.js";
 import type { SourceAdapter } from "../domain/source-adapter.js";
 
@@ -161,12 +161,12 @@ export class SearchService {
    * «совместимый», and no cartridge chips/toner unless asked for.
    */
   private matchingQuery(snapshot: SearchSnapshot, offers: Offer[]): Offer[] {
-    const intent = originIntent(snapshot.query);
-    return offers.filter(
-      (offer) =>
-        offer.demo ||
-        (matchesOriginIntent(offer, snapshot.product, intent) && !isUnrequestedConsumablePart(offer, snapshot.query)),
-    );
+    return offers.flatMap((offer) => {
+      if (offer.demo) return [offer];
+      if (isUnrequestedConsumablePart(offer, snapshot.query)) return [];
+      const assessed = assessOffer(snapshot.product, offer, snapshot.query);
+      return assessed ? [assessed] : [];
+    });
   }
 
   private rememberLastGood(key: string, real: Offer[]): void {

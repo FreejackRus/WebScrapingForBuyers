@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/yandex-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/avito-connector/SKILL.md"
 type: "document"
-community: "Yandex Market Connector"
-location: "L66"
+community: "avito_connector/server.py"
+location: "L47"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Yandex_Market_Connector
+  - community/avito_connector/serverpy
 ---
 
 # Gotchas
 
 ## Connections
-- [[Yandex Market Connector]] - `contains` [EXTRACTED]
-- [[yandex_card()]] - `references` [INFERRED]
+- [[Avito Connector]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Yandex_Market_Connector
+#graphify/document #graphify/EXTRACTED #community/avito_connector/serverpy

@@ -1,18 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "pytest"
-location: "L141"
+community: "test_fetch_composer_times_out_blocking_curl_and_falls_back_to_cdp"
+location: "L377"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/pytest
+  - graphify/INFERRED
+  - community/test_fetch_composer_times_out_blocking_curl_and_falls_back_to_cdp
 ---
 
 # scenario()
 
 ## Connections
-- [[empty_storefront()]] - `indirect_call` [INFERRED]
-- [[test_wb_search_storefront_empty_products_is_no_results()]] - `contains` [EXTRACTED]
+- [[blocking_get()]] - `indirect_call` [INFERRED]
+- [[fake_cdp()]] - `indirect_call` [INFERRED]
+- [[test_fetch_composer_times_out_blocking_curl_and_falls_back_to_cdp()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pytest
+#graphify/code #graphify/INFERRED #community/test_fetch_composer_times_out_blocking_curl_and_falls_back_to_cdp

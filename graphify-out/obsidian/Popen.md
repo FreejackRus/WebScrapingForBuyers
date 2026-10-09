@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "test_stdio_probe.py"
+community: "process.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_stdio_probepy
+  - community/processpy
 ---
 
 # Popen
 
 ## Connections
-- [[test_cleanup_stops_wrapper_and_its_child()]] - `references` [EXTRACTED]
+- [[terminate_process_tree()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_stdio_probepy
+#graphify/code #graphify/EXTRACTED #community/processpy

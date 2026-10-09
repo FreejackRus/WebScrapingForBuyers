@@ -12,7 +12,7 @@ tags:
 # test_category_products_is_registered_and_v1_tools_are_intact()
 
 ## Connections
-- [[scenario()_83]] - `contains` [EXTRACTED]
+- [[scenario()_84]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_helperspy

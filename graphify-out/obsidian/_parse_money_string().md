@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/resilience.py"
 type: "code"
-community: "coerce_price"
+community: "resilience.py"
 location: "L157"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/coerce_price
+  - community/resiliencepy
 ---
 
 # _parse_money_string()
@@ -16,4 +16,4 @@ tags:
 - [[coerce_price()]] - `calls` [EXTRACTED]
 - [[resilience.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/coerce_price
+#graphify/code #graphify/EXTRACTED #community/resiliencepy

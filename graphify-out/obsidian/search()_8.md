@@ -1,17 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_search_offer_integrity.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
-community: "test_card_verification_records.py"
-location: "L74"
+community: "search"
+location: "L89"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/test_card_verification_recordspy
+  - graphify/INFERRED
+  - community/search
 ---
 
 # search()
 
 ## Connections
-- [[test_native_ozon_stock_labels_cannot_fabricate_available_winner()]] - `contains` [EXTRACTED]
+- [[offer()_2]] - `calls` [EXTRACTED]
+- [[test_default_comparison_omits_deselected_sources_but_explicit_request_is_rejected()]] - `indirect_call` [INFERRED]
+- [[test_selected_missing_connector_still_makes_default_comparison_partial()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/test_card_verification_recordspy
+#graphify/code #graphify/INFERRED #community/search

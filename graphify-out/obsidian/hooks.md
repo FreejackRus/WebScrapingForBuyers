@@ -1,17 +1,18 @@
 ---
-source_file: ".codex/skills/graphify/references/hooks.md"
-type: "document"
-community: "graphify reference: commit hook and native CLAUDE.md integration"
-location: "L1"
+source_file: ".claude/settings.json"
+type: "code"
+community: "settings.json"
+location: "L4"
 tags:
-  - graphify/document
+  - graphify/code
   - graphify/EXTRACTED
-  - community/graphify_reference_commit_hook_and_native_CLAUDEmd_integration
+  - community/settingsjson
 ---
 
-# hooks.md
+# hooks
 
 ## Connections
-- [[graphify reference commit hook and native CLAUDE.md integration]] - `contains` [EXTRACTED]
+- [[PreToolUse]] - `contains` [EXTRACTED]
+- [[settings.json]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/graphify_reference_commit_hook_and_native_CLAUDEmd_integration
+#graphify/code #graphify/EXTRACTED #community/settingsjson

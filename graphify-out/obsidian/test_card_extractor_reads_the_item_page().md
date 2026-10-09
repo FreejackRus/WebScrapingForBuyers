@@ -12,7 +12,7 @@ tags:
 # test_card_extractor_reads_the_item_page()
 
 ## Connections
-- [[_extract()_7]] - `calls` [EXTRACTED]
+- [[_extract()_4]] - `calls` [EXTRACTED]
 - [[taobao-connectorteststest_card_extractor_dom.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/taobao-connector/tests/test_card_extractor_dompy

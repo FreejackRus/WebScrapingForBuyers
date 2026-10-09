@@ -2,7 +2,7 @@
 source_file: "apps/analysis/src/application/analyze.ts"
 type: "code"
 community: "analyze.ts"
-location: "L219"
+location: "L268"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -29,6 +29,9 @@ tags:
 - [[detectSafetyCategory()]] - `calls` [EXTRACTED]
 - [[dropWeakMatchesWhenStrongerExist()]] - `calls` [EXTRACTED]
 - [[extractSearchQuery()]] - `calls` [EXTRACTED]
+- [[historyOf()]] - `calls` [EXTRACTED]
+- [[isHelpRequest()]] - `calls` [EXTRACTED]
+- [[isInStock()]] - `calls` [EXTRACTED]
 - [[logSafetyIncident()]] - `calls` [EXTRACTED]
 - [[matchesSource()]] - `calls` [EXTRACTED]
 - [[money()]] - `calls` [EXTRACTED]
@@ -41,6 +44,8 @@ tags:
 - [[ruCount()]] - `calls` [EXTRACTED]
 - [[selectionLimit()]] - `calls` [EXTRACTED]
 - [[sourceLines()]] - `calls` [EXTRACTED]
+- [[tableFacts()]] - `calls` [EXTRACTED]
+- [[wantsInStock()]] - `calls` [EXTRACTED]
 - [[withGreeting()]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/analyzets

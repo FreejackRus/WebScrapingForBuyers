@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[ANTI_BOT]] - `references` [EXTRACTED]
-- [[Examples]] - `contains` [EXTRACTED]
+- [[Examples_1]] - `contains` [EXTRACTED]
 - [[Примеры]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/ru-marketplace-mcp/READMEmd

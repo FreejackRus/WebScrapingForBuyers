@@ -1,17 +1,17 @@
 ---
-source_file: "apps/web/src/widgets/search/workspace/ui/index.test.tsx"
+source_file: "apps/web/src/widgets/search/command/ui/index.test.tsx"
 type: "code"
-community: "packages_contracts_dist_index"
-location: "L5"
+community: "command/ui/index.tsx"
+location: "L4"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/packages_contracts_dist_index
+  - community/command/ui/indextsx
 ---
 
 # state
 
 ## Connections
-- [[workspaceuiindex.test.tsx]] - `contains` [EXTRACTED]
+- [[commanduiindex.test.tsx]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index
+#graphify/code #graphify/EXTRACTED #community/command/ui/indextsx

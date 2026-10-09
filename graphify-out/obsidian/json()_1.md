@@ -1,18 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py"
 type: "code"
-community: "_patch_graphql_response"
-location: "L483"
+community: "test_the_graphql_request_carries_a_referer_for_the_sku"
+location: "L379"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_patch_graphql_response
+  - community/test_the_graphql_request_carries_a_referer_for_the_sku
 ---
 
 # json()
 
 ## Connections
-- [[_patch_graphql_response()]] - `contains` [EXTRACTED]
-- [[payload()]] - `indirect_call` [INFERRED]
+- [[test_the_graphql_request_carries_a_referer_for_the_sku()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_patch_graphql_response
+#graphify/code #graphify/EXTRACTED #community/test_the_graphql_request_carries_a_referer_for_the_sku

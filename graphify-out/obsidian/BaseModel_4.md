@@ -1,21 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "cian_connector/server.py"
+community: "dns_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/cian_connector/serverpy
+  - community/dns_card
 ---
 
 # BaseModel
 
 ## Connections
-- [[CianAgentOut]] - `inherits` [EXTRACTED]
-- [[CianCardResponse]] - `inherits` [EXTRACTED]
-- [[CianMetroOut]] - `inherits` [EXTRACTED]
-- [[CianPriceChangeOut]] - `inherits` [EXTRACTED]
-- [[CianSearchItemOut]] - `inherits` [EXTRACTED]
-- [[CianSearchResponse]] - `inherits` [EXTRACTED]
+- [[DnsCardResponse]] - `inherits` [EXTRACTED]
+- [[DnsSearchItemOut]] - `inherits` [EXTRACTED]
+- [[DnsSearchResponse]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/cian_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/dns_card

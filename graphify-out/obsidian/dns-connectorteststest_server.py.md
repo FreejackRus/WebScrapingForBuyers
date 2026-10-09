@@ -13,8 +13,8 @@ tags:
 
 ## Connections
 - [[Offline tests for the DNS-Shop connector. CDP rendering is monkeypatched out…]] - `rationale_for` [EXTRACTED]
-- [[_no_cache()_2]] - `contains` [EXTRACTED]
-- [[_patch_render()_3]] - `contains` [EXTRACTED]
+- [[_no_cache()_1]] - `contains` [EXTRACTED]
+- [[_patch_render()_2]] - `contains` [EXTRACTED]
 - [[dns_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[fastmcp_exceptions]] - `imports_from` [EXTRACTED]
 - [[pytest]] - `imports` [EXTRACTED]

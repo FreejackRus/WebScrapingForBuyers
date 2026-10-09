@@ -1,8 +1,8 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/server.py"
 type: "code"
 community: "TransportDownError"
-location: "L121"
+location: "L129"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,7 +12,8 @@ tags:
 # _proxy()
 
 ## Connections
-- [[_graphql_card()]] - `calls` [EXTRACTED]
-- [[lamoda_connectorserver.py]] - `contains` [EXTRACTED]
+- [[fetch()_4]] - `calls` [EXTRACTED]
+- [[proxy_from_env()]] - `calls` [INFERRED]
+- [[yandex_connectorserver.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/TransportDownError

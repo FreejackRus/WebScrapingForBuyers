@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/src/aliexpress_connector/server.py"
 type: "rationale"
-community: "aliexpress_connector/server.py"
-location: "L521"
+community: "aliexpress_card"
+location: "L538"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/aliexpress_connector/serverpy
+  - community/aliexpress_card
 ---
 
 # Search AliExpress, rendered in the operator's Chrome. ## Return Format…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[aliexpress_search()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/aliexpress_connector/serverpy
+#graphify/rationale #graphify/EXTRACTED #community/aliexpress_card

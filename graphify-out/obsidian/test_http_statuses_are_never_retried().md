@@ -17,7 +17,7 @@ tags:
 - [[handler()_5]] - `contains` [EXTRACTED]
 - [[handler()_8]] - `indirect_call` [INFERRED]
 - [[make_client()]] - `calls` [EXTRACTED]
-- [[parametrize_6]] - `references` [EXTRACTED]
+- [[parametrize_5]] - `references` [EXTRACTED]
 - [[test_http_tier_budgeted.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/get_text_budgeted

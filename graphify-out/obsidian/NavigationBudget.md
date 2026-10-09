@@ -12,7 +12,7 @@ tags:
 # NavigationBudget
 
 ## Connections
-- [[dot-__init__()_15]] - `method` [EXTRACTED]
+- [[dot-__init__()_23]] - `method` [EXTRACTED]
 - [[dot-_host_semaphore()]] - `method` [EXTRACTED]
 - [[dot-_note_refusal()]] - `method` [EXTRACTED]
 - [[dot-_note_success()]] - `method` [EXTRACTED]

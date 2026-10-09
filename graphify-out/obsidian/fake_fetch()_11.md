@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py"
 type: "code"
-community: "test_ozon_selfcheck_includes_runtime_identity"
-location: "L513"
+community: "fake_fetch"
+location: "L252"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_ozon_selfcheck_includes_runtime_identity
+  - community/fake_fetch
 ---
 
 # fake_fetch()
 
 ## Connections
-- [[test_ozon_selfcheck_includes_runtime_identity()]] - `contains` [EXTRACTED]
+- [[_ok()_1]] - `calls` [EXTRACTED]
+- [[fake_fetch_factory()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_ozon_selfcheck_includes_runtime_identity
+#graphify/code #graphify/EXTRACTED #community/fake_fetch

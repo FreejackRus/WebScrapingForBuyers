@@ -1,12 +1,12 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/ozon-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/ozon-connector/SKILL.md"
 type: "document"
-community: "Ozon Connector"
+community: "ozon_selfcheck"
 location: "L55"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Ozon_Connector
+  - community/ozon_selfcheck
 ---
 
 # Source-of-truth caveat
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[Ozon Connector]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Ozon_Connector
+#graphify/document #graphify/EXTRACTED #community/ozon_selfcheck

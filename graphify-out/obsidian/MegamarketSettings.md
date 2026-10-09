@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[BaseSettings_7]] - `inherits` [EXTRACTED]
-- [[get_settings()_8]] - `calls` [EXTRACTED]
+- [[get_settings()_7]] - `calls` [EXTRACTED]
 - [[megamarket_connectorsettings.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/pydantic

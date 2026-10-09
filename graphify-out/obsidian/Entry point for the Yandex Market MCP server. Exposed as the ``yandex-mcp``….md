@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/__main__.py"
 type: "rationale"
-community: "yandex_connector/__main__.py"
+community: "sys"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/yandex_connector/__main__py
+  - community/sys
 ---
 
 # Entry point for the Yandex Market MCP server. Exposed as the ``yandex-mcp``…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[yandex_connector__main__.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/yandex_connector/__main__py
+#graphify/rationale #graphify/EXTRACTED #community/sys

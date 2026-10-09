@@ -12,7 +12,7 @@ tags:
 # _FakeContext
 
 ## Connections
-- [[dot-__init__()_8]] - `method` [EXTRACTED]
+- [[dot-__init__()_11]] - `method` [EXTRACTED]
 - [[dot-new_cdp_session()]] - `method` [EXTRACTED]
 - [[dot-new_page()]] - `method` [EXTRACTED]
 - [[test_chrome_cdp_stealth.py]] - `contains` [EXTRACTED]

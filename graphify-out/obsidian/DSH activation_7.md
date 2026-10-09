@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/marketplace/SKILL.md"
 type: "document"
 community: "compare_prices"
-location: "L67"
+location: "L65"
 tags:
   - graphify/document
   - graphify/INFERRED

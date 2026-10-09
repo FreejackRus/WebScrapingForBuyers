@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[The tile carries the raw label («N шт осталось» or nothing); mapping it to…]] - `rationale_for` [EXTRACTED]
-- [[_items()_1]] - `calls` [EXTRACTED]
+- [[_items()]] - `calls` [EXTRACTED]
 - [[test_search_parser_live.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_search_parser_livepy

@@ -1,18 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "dns_connector/models_output.py"
+community: "dns_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/dns_connector/models_outputpy
+  - community/dns_card
 ---
 
 # BaseModel
 
 ## Connections
-- [[DnsCardResponse]] - `inherits` [EXTRACTED]
-- [[DnsSearchItemOut]] - `inherits` [EXTRACTED]
-- [[DnsSearchResponse]] - `inherits` [EXTRACTED]
+- [[MetaOutBase]] - `inherits` [EXTRACTED]
+- [[SelfCheckEntryBase]] - `inherits` [EXTRACTED]
+- [[SelfCheckResponseBase]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/dns_connector/models_outputpy
+#graphify/code #graphify/EXTRACTED #community/dns_card

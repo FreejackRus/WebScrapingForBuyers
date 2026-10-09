@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/yandex-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/aliexpress-connector/SKILL.md"
 type: "document"
-community: "Yandex Market Connector"
-location: "L48"
+community: "AliExpress connector"
+location: "L31"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Yandex_Market_Connector
+  - community/AliExpress_connector
 ---
 
 # Workflow patterns
 
 ## Connections
-- [[Yandex Market Connector_1]] - `contains` [EXTRACTED]
+- [[AliExpress connector_1]] - `contains` [EXTRACTED]
+- [[compare_prices()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Yandex_Market_Connector
+#graphify/document #graphify/EXTRACTED #community/AliExpress_connector

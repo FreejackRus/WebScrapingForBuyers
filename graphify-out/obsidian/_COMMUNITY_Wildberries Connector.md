@@ -10,13 +10,13 @@ members: 7
 **Members:** 7 nodes
 
 ## Members
-- [[Sources of truth]] - document - mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md
-- [[ToS note]] - document - mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md
-- [[Trust boundary_2]] - document - mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md
-- [[When to use_4]] - document - mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md
-- [[Wildberries Connector]] - document - mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md
-- [[Workflow patterns_2]] - document - mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md
-- [[ru-marketplace-mcpskillswb-connectorSKILL]] - document - mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md
+- [[Sources of truth]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/wb-connector/SKILL.md
+- [[ToS note]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/wb-connector/SKILL.md
+- [[Trust boundary_5]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/wb-connector/SKILL.md
+- [[When to use_7]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/wb-connector/SKILL.md
+- [[Wildberries Connector]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/wb-connector/SKILL.md
+- [[Workflow patterns_4]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/wb-connector/SKILL.md
+- [[dshskillswb-connectorSKILL]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/wb-connector/SKILL.md
 
 ## Live Query (requires Dataview plugin)
 
@@ -26,7 +26,7 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 2 edges to [[_COMMUNITY_log_event]]
+- 2 edges to [[_COMMUNITY_wb_connectorserver.py]]
 - 1 edge to [[_COMMUNITY_compare_prices]]
 
 ## Top bridge nodes

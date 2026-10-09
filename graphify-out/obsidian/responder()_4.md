@@ -1,19 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "responder"
-location: "L1520"
+community: "_patch_questions"
+location: "L1784"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/responder
+  - community/_patch_questions
 ---
 
 # responder()
 
 ## Connections
-- [[_question()]] - `calls` [EXTRACTED]
-- [[_questions_payload()]] - `calls` [EXTRACTED]
-- [[test_questions_answered_only_keeps_filling_across_pages()]] - `contains` [EXTRACTED]
+- [[test_category_products_maps_a_404_to_not_found()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/responder
+#graphify/code #graphify/EXTRACTED #community/_patch_questions

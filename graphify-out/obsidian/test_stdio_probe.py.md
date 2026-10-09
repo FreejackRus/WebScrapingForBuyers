@@ -36,7 +36,7 @@ tags:
 - [[test_invalid_results_fail()]] - `contains` [EXTRACTED]
 - [[test_noisy_and_interleaved_child_completes()]] - `contains` [EXTRACTED]
 - [[test_silent_child_obeys_deadline_and_is_reaped()]] - `contains` [EXTRACTED]
-- [[time]] - `imports` [EXTRACTED]
+- [[time_1]] - `imports` [EXTRACTED]
 - [[unrelated_process()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_stdio_probepy

@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "code"
 community: "_RawCdpPage"
-location: "L635"
+location: "L687"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[dot-_send()]] - `calls` [EXTRACTED]
-- [[Any_11]] - `references` [EXTRACTED]
+- [[Any_26]] - `references` [EXTRACTED]
 - [[_RawCdpPage]] - `method` [EXTRACTED]
 - [[_evaluate_expression()]] - `calls` [EXTRACTED]
 

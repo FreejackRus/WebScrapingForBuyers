@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/yandex-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/citilink-connector/SKILL.md"
 type: "document"
-community: "Yandex Market Connector"
-location: "L15"
+community: "citilink_selfcheck"
+location: "L13"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Yandex_Market_Connector
+  - community/citilink_selfcheck
 ---
 
 # When to use
 
 ## Connections
-- [[Yandex Market Connector]] - `contains` [EXTRACTED]
+- [[Citilink Connector]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Yandex_Market_Connector
+#graphify/document #graphify/EXTRACTED #community/citilink_selfcheck

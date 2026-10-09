@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_source_warnings.py"
 type: "code"
-community: "aliexpress_connector/models_output.py"
+community: "aliexpress_card"
 location: "L90"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/aliexpress_connector/models_outputpy
+  - community/aliexpress_card
 ---
 
 # test_coupon_warning_keeps_regular_price_and_does_not_claim_failure()
@@ -14,8 +14,8 @@ tags:
 ## Connections
 - [[AliSearchItemOut]] - `uses` [INFERRED]
 - [[AliSearchResponse]] - `uses` [INFERRED]
-- [[search()]] - `contains` [EXTRACTED]
-- [[search()_4]] - `indirect_call` [INFERRED]
+- [[search()_1]] - `contains` [EXTRACTED]
+- [[search()_2]] - `indirect_call` [INFERRED]
 - [[test_source_warnings.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/aliexpress_connector/models_outputpy
+#graphify/code #graphify/INFERRED #community/aliexpress_card

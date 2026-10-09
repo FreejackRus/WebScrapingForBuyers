@@ -1,17 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "aliexpress_connector/server.py"
+community: "decision_inspect"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/aliexpress_connector/serverpy
+  - community/decision_inspect
 ---
 
 # max_length
 
 ## Connections
-- [[aliexpress_card()]] - `references` [EXTRACTED]
-- [[aliexpress_search()]] - `references` [EXTRACTED]
+- [[decision_inspect()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/aliexpress_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/decision_inspect

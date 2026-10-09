@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py"
 type: "code"
 community: "avito-connector/tests/test_server.py"
-location: "L355"
+location: "L364"
 tags:
   - graphify/code
   - graphify/EXTRACTED

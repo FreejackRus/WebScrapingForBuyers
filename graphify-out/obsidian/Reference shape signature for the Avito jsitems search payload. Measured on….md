@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/shape_reference.py"
 type: "rationale"
-community: "json"
+community: "avito_connector/server.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/json
+  - community/avito_connector/serverpy
 ---
 
 # Reference shape signature for the Avito js/items search payload. Measured on…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[avito_connectorshape_reference.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/json
+#graphify/rationale #graphify/EXTRACTED #community/avito_connector/serverpy

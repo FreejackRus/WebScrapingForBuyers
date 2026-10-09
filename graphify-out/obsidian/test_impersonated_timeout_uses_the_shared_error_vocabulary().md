@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[_clear_wb_cache()]] - `calls` [EXTRACTED]
-- [[scenario()_96]] - `contains` [EXTRACTED]
+- [[scenario()_101]] - `contains` [EXTRACTED]
 - [[slow_get()]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 

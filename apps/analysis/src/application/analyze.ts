@@ -98,7 +98,9 @@ function historyOf(options: AnalyzeOptions): { history?: ChatTurn[] } {
 
 /** What the copilot may say about the open table; computed here, never by the model. */
 function tableFacts(offers: Offer[]): string[] {
-  const real = offers.filter((offer) => !offer.demo && offer.priceAnomaly !== "too_low");
+  const review = offers.filter((offer) => offer.assessment?.group === "needs_review");
+  const primary = offers.filter((offer) => offer.assessment?.group !== "needs_review");
+  const real = primary.filter((offer) => !offer.demo && offer.priceAnomaly !== "too_low");
   const inStock = real.filter((offer) => isInStock(offer.availability));
   const unknown = real.filter((offer) => /неизвестн|уточн/i.test(offer.availability));
   const cheapest = [...real].sort((a, b) => a.price - b.price)[0];
@@ -106,6 +108,13 @@ function tableFacts(offers: Offer[]): string[] {
   const facts = [
     `В таблице ${real.length} предложений; с подтверждённым наличием — ${inStock.length}, наличие не сообщается — ${unknown.length}.`,
   ];
+  if (review.length > 0) {
+    const reasons = [...new Set(review.flatMap((offer) => offer.assessment?.reasons ?? []))];
+    facts.push(
+      `Отдельно требуют уточнения: ${review.length}.` +
+        (reasons.length > 0 ? ` Причины: ${reasons.slice(0, 5).join("; ")}.` : ""),
+    );
+  }
   const bySource = new Map<string, { total: number; stock: number }>();
   for (const offer of real) {
     const row = bySource.get(offer.source) ?? { total: 0, stock: 0 };
@@ -263,7 +272,10 @@ async function analyzeSnapshotRaw(
   options: AnalyzeOptions = {},
 ): Promise<AnalysisResult> {
   const incoming = [...snapshot.offers];
-  const realCount = incoming.filter((offer) => !offer.demo).length;
+  const hasAssessedOffers = incoming.some((offer) => offer.assessment != null);
+  const decisionIncoming = incoming.filter((offer) => offer.assessment?.group !== "needs_review");
+  const reviewOffers = incoming.filter((offer) => offer.assessment?.group === "needs_review");
+  const realCount = decisionIncoming.filter((offer) => !offer.demo).length;
   const normalized = prompt.toLocaleLowerCase("ru");
   const searchQuery = extractSearchQuery(prompt);
   const userName = options.userName?.trim() || undefined;
@@ -421,8 +433,17 @@ async function analyzeSnapshotRaw(
       ? "Анализ смотрит только уже загруженные предложения."
       : "Сбор ещё идёт — анализ смотрит только уже загруженные строки таблицы.",
   ];
+  if (reviewOffers.length > 0) {
+    const participation =
+      reviewOffers.length % 10 === 1 && reviewOffers.length % 100 !== 11
+        ? "не участвует"
+        : "не участвуют";
+    warnings.push(
+      `${ruCount(reviewOffers.length, "предложение требует", "предложения требуют", "предложений требуют")} уточнения и ${participation} в выборе лучшего.`,
+    );
+  }
 
-  let offers = incoming;
+  let offers = decisionIncoming;
 
   if (/точн|артикул/.test(normalized)) {
     offers = offers.filter((offer) => offer.match === "exact");
@@ -525,7 +546,7 @@ async function analyzeSnapshotRaw(
   }
 
   // Hybrid relevance step 2: optional LLM reject list on ambiguous residual (or all if only weak).
-  if (narrator && (intent === "explain" || intent === "filter")) {
+  if (!hasAssessedOffers && narrator && (intent === "explain" || intent === "filter")) {
     const llm = await applyLlmRelevanceFilter(offers, snapshot, prompt, narrator, {
       ...(userName ? { userName } : {}),
       ...(addressAs ? { addressAs } : {}),

@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[_reload_unified()]] - `calls` [EXTRACTED]
 - [[_set()]] - `contains` [EXTRACTED]
-- [[fixture]] - `references` [EXTRACTED]
+- [[fixture_3]] - `references` [EXTRACTED]
 - [[test_capabilities_flag_survives_the_naming_mismatch()]] - `calls` [EXTRACTED]
 - [[test_deselected_sources_are_reported_not_hidden()]] - `calls` [EXTRACTED]
 - [[test_source_selection.py]] - `contains` [EXTRACTED]

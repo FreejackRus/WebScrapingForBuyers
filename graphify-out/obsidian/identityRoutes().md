@@ -1,17 +1,18 @@
 ---
 source_file: "apps/identity/src/http/routes.ts"
 type: "code"
-community: "session.ts"
-location: "L6"
+community: "identity/src/http/routes.ts"
+location: "L7"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/sessionts
+  - community/identity/src/http/routests
 ---
 
 # identityRoutes()
 
 ## Connections
+- [[LoginLimiter]] - `calls` [EXTRACTED]
 - [[buildIdentityApp()]] - `indirect_call` [INFERRED]
 - [[clearSession()]] - `calls` [EXTRACTED]
 - [[identitysrcapp.ts]] - `imports` [EXTRACTED]
@@ -20,4 +21,4 @@ tags:
 - [[requireUser()]] - `calls` [EXTRACTED]
 - [[writeSession()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/sessionts
+#graphify/code #graphify/EXTRACTED #community/identity/src/http/routests

@@ -19,7 +19,6 @@ tags:
 - [[dns_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[lamoda_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[megamarket_connectorserver.py]] - `imports_from` [EXTRACTED]
-- [[mpstats_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[ozon_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[taobao_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[wb_connectorserver.py]] - `imports_from` [EXTRACTED]

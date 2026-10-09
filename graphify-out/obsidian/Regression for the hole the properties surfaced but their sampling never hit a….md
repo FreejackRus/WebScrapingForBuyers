@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_resilience_properties.py"
 type: "rationale"
-community: "test_resilience_properties.py"
+community: "coerce_price"
 location: "L94"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/test_resilience_propertiespy
+  - community/coerce_price
 ---
 
 # Regression for the hole the properties surfaced but their sampling never hit: a…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_coerce_price_is_total_beyond_the_float_ceiling()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/test_resilience_propertiespy
+#graphify/rationale #graphify/EXTRACTED #community/coerce_price

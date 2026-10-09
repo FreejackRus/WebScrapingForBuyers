@@ -1,22 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/docs/QUICKSTART.md"
+source_file: "mcp-servers/ru-marketplace-mcp/README.md"
 type: "document"
-community: "ru-marketplace-mcp/README.md"
-location: "L1"
+community: "English version"
+location: "L676"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/ru-marketplace-mcp/READMEmd
+  - community/English_version
 ---
 
-# QUICKSTART.md
+# Quickstart
 
 ## Connections
-- [[CDP_SETUP]] - `references` [EXTRACTED]
-- [[CHANGELOG_1]] - `references` [EXTRACTED]
-- [[CONTRIBUTING]] - `references` [EXTRACTED]
-- [[First successful marketplace query]] - `contains` [EXTRACTED]
-- [[dshREADME]] - `references` [EXTRACTED]
-- [[ru-marketplace-mcpREADME]] - `references` [EXTRACTED]
+- [[English version]] - `contains` [EXTRACTED]
+- [[success()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/ru-marketplace-mcp/READMEmd
+#graphify/document #graphify/EXTRACTED #community/English_version

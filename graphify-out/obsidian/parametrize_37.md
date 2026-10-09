@@ -1,18 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "pathlib"
+community: "ProductIdentity"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/ProductIdentity
 ---
 
 # parametrize
 
 ## Connections
-- [[test_probe_checks_running_version()]] - `references` [EXTRACTED]
-- [[test_sources_reject_incomplete_or_stale_state()]] - `references` [EXTRACTED]
-- [[test_sources_reject_missing_or_malformed_payload()]] - `references` [EXTRACTED]
+- [[test_identity_is_verified_through_mcp_tool()]] - `references` [EXTRACTED]
+- [[test_wb_fixture_color_survives_card_model_and_mcp_verification()]] - `references` [EXTRACTED]
+- [[test_wb_verification_uses_requested_row_not_first()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pathlib
+#graphify/code #graphify/EXTRACTED #community/ProductIdentity

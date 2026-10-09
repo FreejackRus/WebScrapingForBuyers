@@ -14,11 +14,11 @@ members: 11
 - [[Implementation status addendum — 2026-09-12]] - document - mcp-servers/ru-marketplace-mcp/work/v2-research/security.md
 - [[Official sources consulted]] - document - mcp-servers/ru-marketplace-mcp/work/v2-research/security.md
 - [[Prompt injection and external content]] - document - mcp-servers/ru-marketplace-mcp/work/v2-research/security.md
+- [[S1 — MPStats error redaction bypass (confirmed)]] - document - mcp-servers/ru-marketplace-mcp/work/v2-research/security.md
 - [[S2 — unauthenticated HTTP and no tenant boundary]] - document - mcp-servers/ru-marketplace-mcp/work/v2-research/security.md
-- [[S3 — final-host redirect  browser SSRF boundary]] - document - mcp-servers/ru-marketplace-mcp/work/v2-research/security.md
 - [[S4 — Megamarket private profile data is outside the documented model]] - document - mcp-servers/ru-marketplace-mcp/work/v2-research/security.md
 - [[S5 — raw CDP websocket unbounded frame size]] - document - mcp-servers/ru-marketplace-mcp/work/v2-research/security.md
-- [[security]] - document - mcp-servers/ru-marketplace-mcp/work/v2-research/security.md
+- [[security_2]] - document - mcp-servers/ru-marketplace-mcp/work/v2-research/security.md
 - [[v2 security acceptanceevaluation plan]] - document - mcp-servers/ru-marketplace-mcp/work/v2-research/security.md
 - [[v2.0.0 Security  privacy research]] - document - mcp-servers/ru-marketplace-mcp/work/v2-research/security.md
 
@@ -30,11 +30,11 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 1 edge to [[_COMMUNITY__hide_chrome_windows]]
-- 1 edge to [[_COMMUNITY_run_server]]
-- 1 edge to [[_COMMUNITY__post_json_budgeted]]
+- 1 edge to [[_COMMUNITY_TransportDownError]]
+- 1 edge to [[_COMMUNITY_sys]]
+- 1 edge to [[_COMMUNITY_get_browser]]
 
 ## Top bridge nodes
 - [[v2.0.0 Security  privacy research]] - degree 11, connects to 1 community
+- [[S1 — MPStats error redaction bypass (confirmed)]] - degree 2, connects to 1 community
 - [[S2 — unauthenticated HTTP and no tenant boundary]] - degree 2, connects to 1 community
-- [[S3 — final-host redirect  browser SSRF boundary]] - degree 2, connects to 1 community

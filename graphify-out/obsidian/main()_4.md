@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/__main__.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_no_print.py"
 type: "code"
-community: "run_server"
-location: "L20"
+community: "check_no_print.py"
+location: "L83"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/run_server
+  - community/check_no_printpy
 ---
 
 # main()
 
 ## Connections
-- [[Run the server on the transport selected by the environment (stdio default).]] - `rationale_for` [EXTRACTED]
-- [[avito_connector__main__.py]] - `contains` [EXTRACTED]
-- [[run_server()]] - `calls` [INFERRED]
+- [[check_file()]] - `calls` [EXTRACTED]
+- [[check_no_print.py]] - `contains` [EXTRACTED]
+- [[collect_default_paths()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/run_server
+#graphify/code #graphify/EXTRACTED #community/check_no_printpy

@@ -1,18 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/stdio_probe.py"
 type: "code"
-community: "_RawCdpPage"
-location: "L687"
+community: "StdioProbe"
+location: "L166"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_RawCdpPage
+  - community/StdioProbe
 ---
 
 # .close()
 
 ## Connections
-- [[dot-_send()]] - `calls` [EXTRACTED]
-- [[_RawCdpPage]] - `method` [EXTRACTED]
+- [[dot-__exit__()]] - `calls` [EXTRACTED]
+- [[dot-_close_pipe()]] - `calls` [EXTRACTED]
+- [[StdioProbe]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_RawCdpPage
+#graphify/code #graphify/EXTRACTED #community/StdioProbe

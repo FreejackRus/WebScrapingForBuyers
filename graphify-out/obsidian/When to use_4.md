@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/yandex-connector/SKILL.md"
 type: "document"
-community: "Wildberries Connector"
-location: "L11"
+community: "Yandex Market Connector"
+location: "L15"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Wildberries_Connector
+  - community/Yandex_Market_Connector
 ---
 
 # When to use
 
 ## Connections
-- [[Wildberries Connector]] - `contains` [EXTRACTED]
+- [[Yandex Market Connector_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Wildberries_Connector
+#graphify/document #graphify/EXTRACTED #community/Yandex_Market_Connector

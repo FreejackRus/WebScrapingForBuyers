@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/server.py"
 type: "rationale"
-community: "_post"
+community: "log_event"
 location: "L219"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/_post
+  - community/log_event
 ---
 
 # POST through CDP and unwrap the envelope, mapping failures to the taxonomy.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_post()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/_post
+#graphify/rationale #graphify/EXTRACTED #community/log_event

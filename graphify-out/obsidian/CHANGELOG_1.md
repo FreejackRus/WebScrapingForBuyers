@@ -15,6 +15,6 @@ tags:
 - [[ANTI_BOT]] - `references` [EXTRACTED]
 - [[Changelog]] - `contains` [EXTRACTED]
 - [[LIVE_STATUS]] - `references` [EXTRACTED]
-- [[QUICKSTART]] - `references` [EXTRACTED]
+- [[QUICKSTART_1]] - `references` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/ru-marketplace-mcp/READMEmd

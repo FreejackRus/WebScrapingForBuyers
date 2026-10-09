@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "_hide_chrome_windows"
+community: "get_browser"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_hide_chrome_windows
+  - community/get_browser
 ---
 
 # BrowserContext
@@ -14,4 +14,4 @@ tags:
 - [[_new_tab()]] - `references` [EXTRACTED]
 - [[get_context()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_hide_chrome_windows
+#graphify/code #graphify/EXTRACTED #community/get_browser

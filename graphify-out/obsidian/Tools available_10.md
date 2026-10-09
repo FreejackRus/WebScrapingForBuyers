@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/citilink-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/aliexpress-connector/SKILL.md"
 type: "document"
-community: "Citilink Connector"
-location: "L17"
+community: "AliExpress connector"
+location: "L16"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Citilink_Connector
+  - community/AliExpress_connector
 ---
 
 # Tools available
 
 ## Connections
-- [[Citilink Connector]] - `contains` [EXTRACTED]
-- [[citilink_selfcheck()]] - `references` [INFERRED]
+- [[AliExpress connector_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Citilink_Connector
+#graphify/document #graphify/EXTRACTED #community/AliExpress_connector

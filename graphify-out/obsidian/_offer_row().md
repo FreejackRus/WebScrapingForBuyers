@@ -12,7 +12,7 @@ tags:
 # _offer_row()
 
 ## Connections
-- [[Any_13]] - `references` [EXTRACTED]
+- [[Any_7]] - `references` [EXTRACTED]
 - [[The fields shared by a search hit and a card, read from one offer object.]] - `rationale_for` [EXTRACTED]
 - [[_address()]] - `calls` [EXTRACTED]
 - [[_as_float()]] - `calls` [EXTRACTED]

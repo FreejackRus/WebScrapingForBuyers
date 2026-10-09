@@ -11,6 +11,6 @@ tags:
 # BaseSettings
 
 ## Connections
-- [[MPStatsSettings]] - `inherits` [EXTRACTED]
+- [[TaobaoSettings]] - `inherits` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/pydantic

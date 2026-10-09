@@ -11,12 +11,12 @@ members: 8
 
 ## Members
 - [[A cached 429 would keep reporting rate-limited after the limit lifted.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
-- [[__aenter__()_11]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
-- [[__aexit__()_11]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
-- [[aiter_bytes()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[__aenter__()_6]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[__aexit__()_6]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[aiter_bytes()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[no_wait()_31]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
-- [[scenario()_81]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
-- [[stream()_6]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[scenario()_70]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[stream()_5]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[test_cache_does_not_remember_a_rate_limit()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 
 ## Live Query (requires Dataview plugin)
@@ -33,4 +33,4 @@ SORT file.name ASC
 
 ## Top bridge nodes
 - [[test_cache_does_not_remember_a_rate_limit()]] - degree 9, connects to 2 communities
-- [[scenario()_81]] - degree 3, connects to 2 communities
+- [[scenario()_70]] - degree 3, connects to 2 communities

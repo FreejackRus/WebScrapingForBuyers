@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "code"
 community: "PageLike"
-location: "L804"
+location: "L866"
 tags:
   - graphify/code
   - graphify/EXTRACTED

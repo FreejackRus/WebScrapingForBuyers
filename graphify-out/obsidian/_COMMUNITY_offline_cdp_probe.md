@@ -12,7 +12,7 @@ members: 4
 ## Members
 - [[Even successful doctor runs must not depend on a local Chrome session.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py
 - [[fake_probe()]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py
-- [[fixture_24]] - code
+- [[fixture_20]] - code
 - [[offline_cdp_probe()]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_cli.py
 
 ## Live Query (requires Dataview plugin)

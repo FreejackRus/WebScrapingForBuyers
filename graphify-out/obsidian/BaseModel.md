@@ -1,16 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "test_output_schema.py"
+community: "aliexpress_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_output_schemapy
+  - community/aliexpress_card
 ---
 
 # BaseModel
 
 ## Connections
-- [[_Named]] - `inherits` [EXTRACTED]
+- [[AliCardResponse]] - `inherits` [EXTRACTED]
+- [[AliSearchItemOut]] - `inherits` [EXTRACTED]
+- [[AliSearchResponse]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_output_schemapy
+#graphify/code #graphify/EXTRACTED #community/aliexpress_card

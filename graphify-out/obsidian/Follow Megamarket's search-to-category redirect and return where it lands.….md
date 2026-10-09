@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/server.py"
 type: "rationale"
-community: "_post"
+community: "log_event"
 location: "L375"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/_post
+  - community/log_event
 ---
 
 # Follow Megamarket's search-to-category redirect and return where it lands.…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_final_catalog_url()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/_post
+#graphify/rationale #graphify/EXTRACTED #community/log_event

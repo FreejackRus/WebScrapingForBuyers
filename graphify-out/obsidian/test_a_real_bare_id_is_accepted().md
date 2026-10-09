@@ -14,6 +14,6 @@ tags:
 ## Connections
 - [[The tool docstring promises a product id or a URL; honour both.]] - `rationale_for` [EXTRACTED]
 - [[citilink-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[parametrize_1]] - `references` [EXTRACTED]
+- [[parametrize]] - `references` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/citilink-connector/tests/test_serverpy

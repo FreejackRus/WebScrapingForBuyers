@@ -12,11 +12,11 @@ tags:
 # fetch_tools()
 
 ## Connections
-- [[Path_15]] - `references` [EXTRACTED]
+- [[Path_6]] - `references` [EXTRACTED]
 - [[ProbeError]] - `uses` [INFERRED]
 - [[Start ``uv run --directory root script`` and collect toolslist.]] - `rationale_for` [EXTRACTED]
 - [[StdioProbe]] - `calls` [EXTRACTED]
-- [[main()_29]] - `calls` [EXTRACTED]
+- [[main()_23]] - `calls` [EXTRACTED]
 - [[mcp_wire.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/mcp_wirepy

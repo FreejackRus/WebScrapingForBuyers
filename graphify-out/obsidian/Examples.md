@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/examples/README.md"
+source_file: ".agents/skills/animation-vocabulary/SKILL.md"
 type: "document"
-community: "ru-marketplace-mcp/README.md"
-location: "L21"
+community: "Glossary"
+location: "L37"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/ru-marketplace-mcp/READMEmd
+  - community/Glossary
 ---
 
 # Examples
 
 ## Connections
-- [[examplesREADME]] - `contains` [EXTRACTED]
+- [[Animation Vocabulary]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/ru-marketplace-mcp/READMEmd
+#graphify/document #graphify/EXTRACTED #community/Glossary

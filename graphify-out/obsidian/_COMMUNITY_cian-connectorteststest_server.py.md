@@ -1,13 +1,13 @@
 ---
 type: community
-cohesion: 0.06
-members: 62
+cohesion: 0.05
+members: 68
 ---
 
 # cian-connector/tests/test_server.py
 
-**Cohesion:** 0.06 - loosely connected
-**Members:** 62 nodes
+**Cohesion:** 0.05 - loosely connected
+**Members:** 68 nodes
 
 ## Members
 - [[Cian (cian.ru) MCP connector — Russian real-estate listings.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/__init__.py
@@ -18,21 +18,24 @@ members: 62
 - [[Offline tests for the Cian connector. Every upstream call is monkeypatched at…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
 - [[Refusal must come from argument parsing, never from a failed fetch.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
 - [[The WAF page can arrive as a 200 through the in-page fetch; the marker in the…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
+- [[Variant-aware shape goldens for Cian sale, rent and daily offers.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_shape_reference.py
 - [[_card_body()]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
 - [[_load()]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
-- [[_no_cache()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
+- [[_no_cache()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
 - [[_ok()]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
 - [[_patch_card()]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
 - [[_patch_search()]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
+- [[_signature()]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_shape_reference.py
 - [[cian-connectorteststest_server.py]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
+- [[cian-connectorteststest_shape_reference.py]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_shape_reference.py
 - [[cian_connector__init__.py]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/__init__.py
 - [[fake()]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
 - [[fake()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
 - [[fake_post()]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
 - [[fake_post()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
-- [[fixture_6]] - code
-- [[no_wait()_19]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
+- [[fixture_4]] - code
 - [[no_wait()_20]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
+- [[no_wait()_21]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
 - [[parametrize_3]] - code
 - [[test_a_block_page_is_never_cached()]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
 - [[test_card_maps_a_removed_offer_to_not_found()]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
@@ -45,6 +48,7 @@ members: 62
 - [[test_card_without_embedded_state_is_parser_drift()]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
 - [[test_daily_card_reads_the_nightly_price()]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
 - [[test_daily_commercial_is_refused_by_name_not_by_an_empty_page()]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
+- [[test_daily_golden_keeps_explicit_day_unit()]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_shape_reference.py
 - [[test_daily_queries_flip_the_for_day_flag_and_keep_the_rent_family()]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
 - [[test_daily_rooms_and_houses_keep_their_own_families()]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
 - [[test_daily_search_prices_are_per_night_and_say_so()]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
@@ -53,6 +57,8 @@ members: 62
 - [[test_query_for_a_flat_sale_carries_rooms_and_price_range()]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
 - [[test_query_for_rent_adds_the_long_term_flag_and_open_ranges()]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
 - [[test_query_for_rooms_houses_and_commercial_use_their_own_families()]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
+- [[test_rent_golden_keeps_period_and_deposit_variants()]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_shape_reference.py
+- [[test_sale_rent_daily_fixtures_preserve_common_offer_shape()]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_shape_reference.py
 - [[test_search_a_priceless_offer_is_none_never_zero()]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
 - [[test_search_an_empty_result_with_zero_total_is_healthy()]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
 - [[test_search_maps_a_changed_envelope_to_parser_drift()]] - code - mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py
@@ -81,13 +87,14 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 1 edge to [[_COMMUNITY_cian-connectorteststest_shape_reference.py]]
+- 3 edges to [[_COMMUNITY_json]]
+- 2 edges to [[_COMMUNITY_pathlib]]
+- 1 edge to [[_COMMUNITY_shape_signature]]
 - 1 edge to [[_COMMUNITY_test_public_contract_snapshot.py]]
-- 1 edge to [[_COMMUNITY_json]]
 - 1 edge to [[_COMMUNITY_pytest]]
-- 1 edge to [[_COMMUNITY_pathlib]]
-- 1 edge to [[_COMMUNITY_test_card_verification_records.py]]
+- 1 edge to [[_COMMUNITY_resilience.py]]
 
 ## Top bridge nodes
-- [[cian-connectorteststest_server.py]] - degree 51, connects to 5 communities
-- [[cian_connector__init__.py]] - degree 3, connects to 1 community
+- [[cian-connectorteststest_server.py]] - degree 51, connects to 4 communities
+- [[cian-connectorteststest_shape_reference.py]] - degree 9, connects to 3 communities
+- [[_signature()]] - degree 5, connects to 1 community

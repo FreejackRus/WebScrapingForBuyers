@@ -1,12 +1,12 @@
 ---
 source_file: "docs/PROJECT_CONTEXT.md"
 type: "document"
-community: "Итерации"
+community: "Контекст проекта ПЕРЕМЕНА Price Radar"
 location: "L1"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Итерации
+  - community/Контекст_проекта_ПЕРЕМЕНА_Price_Radar
 ---
 
 # Контекст проекта ПЕРЕМЕНА Price Radar
@@ -19,4 +19,4 @@ tags:
 - [[Сервер]] - `contains` [EXTRACTED]
 - [[Стек]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Итерации
+#graphify/document #graphify/EXTRACTED #community/Контекст_проекта_ПЕРЕМЕНА_Price_Radar

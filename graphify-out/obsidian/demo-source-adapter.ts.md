@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/demo-source-adapter.ts"
 type: "code"
-community: "packages_contracts_dist_index"
+community: "SourceAdapter"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/packages_contracts_dist_index
+  - community/SourceAdapter
 ---
 
 # demo-source-adapter.ts
@@ -26,4 +26,4 @@ tags:
 - [[searchsrcapp.ts]] - `imports_from` [EXTRACTED]
 - [[source-adapter.ts]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index
+#graphify/code #graphify/EXTRACTED #community/SourceAdapter

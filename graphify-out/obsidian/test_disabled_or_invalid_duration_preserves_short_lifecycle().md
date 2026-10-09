@@ -12,8 +12,8 @@ tags:
 # test_disabled_or_invalid_duration_preserves_short_lifecycle()
 
 ## Connections
-- [[call()_1]] - `calls` [EXTRACTED]
+- [[call()]] - `calls` [EXTRACTED]
 - [[mcp-coreteststest_browser_handoff.py]] - `contains` [EXTRACTED]
-- [[parametrize_26]] - `references` [EXTRACTED]
+- [[parametrize_29]] - `references` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/mcp-core/tests/test_browser_handoffpy

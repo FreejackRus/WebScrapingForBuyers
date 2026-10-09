@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[dot-chatJson()]] - `calls` [EXTRACTED]
-- [[dot-constructor()_5]] - `method` [EXTRACTED]
+- [[dot-constructor()_10]] - `method` [EXTRACTED]
 - [[dot-filterRelevance()_1]] - `calls` [EXTRACTED]
 - [[dot-narrateWithRussianRetry()]] - `calls` [EXTRACTED]
 - [[boundedString()]] - `calls` [EXTRACTED]

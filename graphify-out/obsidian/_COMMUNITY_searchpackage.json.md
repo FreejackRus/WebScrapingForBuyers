@@ -1,13 +1,13 @@
 ---
 type: community
-cohesion: 0.06
-members: 32
+cohesion: 0.07
+members: 30
 ---
 
 # search/package.json
 
-**Cohesion:** 0.06 - loosely connected
-**Members:** 32 nodes
+**Cohesion:** 0.07 - loosely connected
+**Members:** 30 nodes
 
 ## Members
 - [[@modelcontextprotocolsdk]] - code - apps/search/package.json
@@ -18,13 +18,11 @@ members: 32
 - [[@peremenaservice-kit_5]] - concept - apps/search/package.json
 - [[@typesnode_4]] - code - apps/search/package.json
 - [[@typesnode_5]] - concept - apps/search/package.json
-- [[apify-client]] - code - apps/search/package.json
 - [[build_2]] - code - apps/search/package.json
 - [[dependencies_2]] - code - apps/search/package.json
 - [[dev_2]] - code - apps/search/package.json
 - [[devDependencies_2]] - code - apps/search/package.json
 - [[exceljs]] - code - apps/search/package.json
-- [[exceljs_1]] - concept - apps/search/package.json
 - [[fastify_4]] - code - apps/search/package.json
 - [[fastify_5]] - concept - apps/search/package.json
 - [[name_3]] - code - apps/search/package.json
@@ -53,9 +51,7 @@ SORT file.name ASC
 ## Connections to other communities
 - 1 edge to [[_COMMUNITY_mcp-marketplace-adapter.ts]]
 - 1 edge to [[_COMMUNITY_packages_contracts_dist_index]]
-- 1 edge to [[_COMMUNITY_live-suggest.ts]]
 
 ## Top bridge nodes
-- [[searchpackage.json]] - degree 17, connects to 1 community
-- [[exceljs_1]] - degree 2, connects to 1 community
+- [[searchpackage.json]] - degree 16, connects to 1 community
 - [[@modelcontextprotocolsdk_1]] - degree 2, connects to 1 community

@@ -13,12 +13,12 @@ tags:
 
 ## Connections
 - [[Added_9]] - `references` [INFERRED]
-- [[Added_5]] - `references` [INFERRED]
+- [[Added_8]] - `references` [INFERRED]
 - [[BadRequestError]] - `uses` [INFERRED]
 - [[CianMetroOut]] - `uses` [INFERRED]
 - [[CianSearchItemOut]] - `uses` [INFERRED]
 - [[CianSearchResponse]] - `uses` [INFERRED]
-- [[Context_5]] - `references` [EXTRACTED]
+- [[Context_4]] - `references` [EXTRACTED]
 - [[DealType]] - `references` [EXTRACTED]
 - [[Field_5]] - `references` [EXTRACTED]
 - [[MetaOut_3]] - `uses` [INFERRED]
@@ -29,7 +29,7 @@ tags:
 - [[_build_json_query()]] - `calls` [EXTRACTED]
 - [[_fetch_search()]] - `calls` [EXTRACTED]
 - [[_parse_offers()]] - `calls` [EXTRACTED]
-- [[_raise_for_fetch_failure()_1]] - `calls` [EXTRACTED]
+- [[_raise_for_fetch_failure()]] - `calls` [EXTRACTED]
 - [[_validate_region()]] - `calls` [EXTRACTED]
 - [[cian_connectorserver.py]] - `contains` [EXTRACTED]
 - [[description_7]] - `references` [EXTRACTED]
@@ -39,6 +39,6 @@ tags:
 - [[log_event()]] - `calls` [EXTRACTED]
 - [[raise_tool_error()]] - `calls` [EXTRACTED]
 - [[tool_5]] - `references` [EXTRACTED]
-- [[Добавлено_9]] - `references` [INFERRED]
+- [[Добавлено_10]] - `references` [INFERRED]
 
 #graphify/code #graphify/EXTRACTED #community/cian_connector/serverpy

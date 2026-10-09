@@ -1,19 +1,20 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
-community: "terminate_process_tree"
-location: "L2216"
+community: "wb_connector/server.py"
+location: "L18"
 tags:
   - graphify/document
   - graphify/INFERRED
-  - community/terminate_process_tree
+  - community/wb_connector/serverpy
 ---
 
 # Fixed
 
 ## Connections
-- [[1.0.0 — 2026-07-26]] - `contains` [EXTRACTED]
-- [[kill_process_group()]] - `references` [INFERRED]
-- [[terminate_process_tree()]] - `references` [INFERRED]
+- [[Unreleased]] - `contains` [EXTRACTED]
+- [[wb_card()]] - `references` [INFERRED]
+- [[wb_category_products()]] - `references` [INFERRED]
+- [[wb_selfcheck()]] - `references` [INFERRED]
 
-#graphify/document #graphify/INFERRED #community/terminate_process_tree
+#graphify/document #graphify/INFERRED #community/wb_connector/serverpy

@@ -1,18 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py"
 type: "code"
-community: "dns-connector/tests/test_server.py"
+community: "cian-connector/tests/test_server.py"
 location: "L46"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/dns-connector/tests/test_serverpy
+  - community/cian-connector/tests/test_serverpy
 ---
 
 # _no_cache()
 
 ## Connections
-- [[dns-connectorteststest_server.py]] - `contains` [EXTRACTED]
+- [[Every test starts with an empty cache a cached body from a previous case would…]] - `rationale_for` [EXTRACTED]
+- [[cian-connectorteststest_server.py]] - `contains` [EXTRACTED]
 - [[fixture_4]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/dns-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/cian-connector/tests/test_serverpy

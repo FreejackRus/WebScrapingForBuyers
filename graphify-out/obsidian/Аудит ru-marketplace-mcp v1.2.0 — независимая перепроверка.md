@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/docs/archive/AUDIT_REPORT_2026-08_v1.2.0-snapshot.md"
 type: "document"
-community: "dns_card"
+community: "Аудит ru-marketplace-mcp v1.2.0 — независимая перепроверка"
 location: "L1"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/dns_card
+  - community/Аудит_ru-marketplace-mcp_v120__независимая_перепроверка
 ---
 
 # Аудит ru-marketplace-mcp v1.2.0 — независимая перепроверка
@@ -28,4 +28,4 @@ tags:
 - [[AUDIT_REPORT_2026-08_v1.2.0-snapshot]] - `contains` [EXTRACTED]
 - [[Вердикт conditional go]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/dns_card
+#graphify/document #graphify/EXTRACTED #community/Аудит_ru-marketplace-mcp_v120__независимая_перепроверка

@@ -1,19 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "test_storefront_live_xhr_capture_via_get_context"
-location: "L84"
+community: "_healthy_selfcheck_responder"
+location: "L2248"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/test_storefront_live_xhr_capture_via_get_context
+  - graphify/EXTRACTED
+  - community/_healthy_selfcheck_responder
 ---
 
 # no_wait()
 
 ## Connections
-- [[scenario()_32]] - `indirect_call` [INFERRED]
-- [[scenario()_33]] - `indirect_call` [INFERRED]
-- [[test_wb_search_storefront_uses_captured_v18_products()]] - `contains` [EXTRACTED]
+- [[test_the_canary_sees_the_primary_search_path()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/test_storefront_live_xhr_capture_via_get_context
+#graphify/code #graphify/EXTRACTED #community/_healthy_selfcheck_responder

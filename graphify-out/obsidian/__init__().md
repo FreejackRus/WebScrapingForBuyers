@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_raw_lifecycle.py"
 type: "code"
-community: "raw_browser"
+community: "test_chrome_cdp_raw_lifecycle.py"
 location: "L21"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/raw_browser
+  - community/test_chrome_cdp_raw_lifecyclepy
 ---
 
 # __init__()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[raw_browser()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/raw_browser
+#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_raw_lifecyclepy

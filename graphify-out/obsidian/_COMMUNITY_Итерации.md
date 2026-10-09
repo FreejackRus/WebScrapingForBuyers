@@ -1,13 +1,13 @@
 ---
 type: community
-cohesion: 0.03
-members: 67
+cohesion: 0.02
+members: 92
 ---
 
 # Итерации
 
-**Cohesion:** 0.03 - loosely connected
-**Members:** 67 nodes
+**Cohesion:** 0.02 - loosely connected
+**Members:** 92 nodes
 
 ## Members
 - [[2026-09-23 — API Merlion  OCS  NetLab (исследование + клиенты)]] - document - docs/PROJECT_CONTEXT.md
@@ -19,8 +19,8 @@ members: 67
 - [[2026-09-23 — UX туннеля VNC пустой терминал это норма]] - document - docs/PROJECT_CONTEXT.md
 - [[2026-09-23 — VNC с консоли Ubuntu 24.04]] - document - docs/PROJECT_CONTEXT.md
 - [[2026-09-23 — VNC с рабочего компьютера]] - document - docs/PROJECT_CONTEXT.md
-- [[2026-09-23 — WB rate-limited MCP + HTTP double-hit]] - document - docs/PROJECT_CONTEXT.md
 - [[2026-09-23 — WB Готово без строк в таблице]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-09-23 — WB пустая таблица и Citilink SSD]] - document - docs/PROJECT_CONTEXT.md
 - [[2026-09-23 — WB search-goods fallback ≠ search.aspx]] - document - docs/PROJECT_CONTEXT.md
 - [[2026-09-23 — headed Chrome вместо Alpine Headless]] - document - docs/PROJECT_CONTEXT.md
 - [[2026-09-23 — puppeteer-real-browser и CDP]] - document - docs/PROJECT_CONTEXT.md
@@ -70,13 +70,38 @@ members: 67
 - [[2026-09-24 — мобильная шапка и настройки]] - document - docs/PROJECT_CONTEXT.md
 - [[2026-09-24 — мобильный UI по Stitch]] - document - docs/PROJECT_CONTEXT.md
 - [[2026-09-24 — убраны пользовательские упоминания демо-цен]] - document - docs/PROJECT_CONTEXT.md
-- [[PROJECT_CONTEXT]] - document - docs/PROJECT_CONTEXT.md
-- [[Дизайн]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-09-25 — Avito JSON-439 PoW на DC-IP, DNS нет]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-09-25 — DNS Qrator и Яндекс 302 публичные репо не дают карточки]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-09-25 — Ozon Scrapling throwaway → MCP stealth-tier]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-09-25 — merge localmain + sanitization + Treolan]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-09-25 — отсев AliExpress «Pro» на запросе Legion Pro 5]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-09-25 — стартовый UI и мобильный чат]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-09-25 — столбцы таблицы, поставщики, без баннера частичного сбора]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-09-25 — убраны платные источники]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-09-25 — фоновые подсказки без ложной ошибки]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-09-29 — Gemma 4 в проде и битые цены Ozon]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-09-29 — деплой из git и фото WB  Ozon  AliExpress]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-09-29 — защита от битых цен]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-09-30 — адаптив таблица предложений на мобильном и десктопе]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-01 — Яндекс 302 причина и транспорт через Chrome]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-02 — Serena MCP для работы с кодом]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-02 — единая политика AGENTS]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-02 — разделение политики агентов]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-04 — дизайн-проход поиск как главный элемент]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-04 — премиальный визуальный проход (skills Эмиля Ковальски и apple-design)]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-05 — разговор не стирает таблицу, наличие без пустой таблицы]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-06 — Qwen 3.8 27B в проде]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-06 — инструкции Codex разделены на шесть файлов]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-06 — настройка Qwen 3.8 параметры, память, простой язык]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-06 — повторная проверка Яндекс Маркета и Мегамаркета без VNC]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-07 — NETLAB по публичному прайс-листу; дистрибьюторы без лимита строк]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-07 — Яндекс Маркет и Мегамаркет выключены]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-07 — автоматическое восстановление Wildberries и AliExpress после обновления Chrome]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-07 — автономный выход для Яндекса и Мегамаркета без WireGuard]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-07 — витрины дистрибьюторов без API СРВТрейд и Servermall]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-07 — релевантность Lenovo Legion Go]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-08 — Детерминированная точность подбора и отдельная группа уточнения]] - document - docs/PROJECT_CONTEXT.md
 - [[Итерации]] - document - docs/PROJECT_CONTEXT.md
-- [[Контекст проекта ПЕРЕМЕНА Price Radar]] - document - docs/PROJECT_CONTEXT.md
-- [[Продукт]] - document - docs/PROJECT_CONTEXT.md
-- [[Сервер]] - document - docs/PROJECT_CONTEXT.md
-- [[Стек]] - document - docs/PROJECT_CONTEXT.md
 
 ## Live Query (requires Dataview plugin)
 
@@ -86,17 +111,30 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 5 edges to [[_COMMUNITY_mcp-marketplace-adapter.ts]]
-- 3 edges to [[_COMMUNITY_packages_contracts_dist_index]]
-- 2 edges to [[_COMMUNITY_citilink_card]]
+- 4 edges to [[_COMMUNITY_SourceAdapter]]
+- 3 edges to [[_COMMUNITY_mcp-marketplace-adapter.ts]]
+- 3 edges to [[_COMMUNITY_citilink_card]]
+- 2 edges to [[_COMMUNITY_analyze.ts]]
+- 2 edges to [[_COMMUNITY_chatuiindex.tsx]]
+- 2 edges to [[_COMMUNITY_contractssrcindex.ts]]
+- 2 edges to [[_COMMUNITY_marketplace-relevance.ts]]
 - 2 edges to [[_COMMUNITY_taobao]]
-- 1 edge to [[_COMMUNITY_contractssrcindex.ts]]
-- 1 edge to [[_COMMUNITY_narrationNeedsRussianRetry]]
+- 2 edges to [[_COMMUNITY_SearchService]]
+- 1 edge to [[_COMMUNITY_compare_prices]]
+- 1 edge to [[_COMMUNITY_TransportDownError]]
+- 1 edge to [[_COMMUNITY_wb_connectorserver.py]]
+- 1 edge to [[_COMMUNITY_infra-leak.ts]]
+- 1 edge to [[_COMMUNITY_product-from-query.ts]]
+- 1 edge to [[_COMMUNITY__RawCdpPage]]
+- 1 edge to [[_COMMUNITY_SearchHistory]]
+- 1 edge to [[_COMMUNITY_identitysrchttproutes.ts]]
+- 1 edge to [[_COMMUNITY_ollama-analysis-narrator.ts]]
+- 1 edge to [[_COMMUNITY_Контекст проекта ПЕРЕМЕНА Price Radar]]
 - 1 edge to [[_COMMUNITY_gatewaysrcapp.ts]]
-- 1 edge to [[_COMMUNITY_useSearchStore]]
 
 ## Top bridge nodes
-- [[Итерации]] - degree 73, connects to 7 communities
-- [[2026-09-23 — WB rate-limited MCP + HTTP double-hit]] - degree 3, connects to 2 communities
+- [[Итерации]] - degree 116, connects to 17 communities
+- [[2026-09-23 — WB пустая таблица и Citilink SSD]] - degree 2, connects to 1 community
 - [[2026-09-24 — дистрибьюторы без API (повторная проверка)]] - degree 2, connects to 1 community
-- [[Стек]] - degree 2, connects to 1 community
+- [[2026-09-25 — убраны платные источники]] - degree 2, connects to 1 community
+- [[2026-09-29 — Gemma 4 в проде и битые цены Ozon]] - degree 2, connects to 1 community

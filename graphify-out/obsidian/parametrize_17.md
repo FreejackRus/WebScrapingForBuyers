@@ -1,17 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "ProductIdentity"
+community: "test_card_rejects_non_numeric_ids"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ProductIdentity
+  - community/test_card_rejects_non_numeric_ids
 ---
 
 # parametrize
 
 ## Connections
-- [[test_gtin_rejects_malformed_values()]] - `references` [EXTRACTED]
-- [[test_non_latin_variant_conflicts_are_not_erased()]] - `references` [EXTRACTED]
+- [[test_card_rejects_non_numeric_ids()]] - `references` [EXTRACTED]
+- [[test_search_rejects_too_short_queries()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ProductIdentity
+#graphify/code #graphify/EXTRACTED #community/test_card_rejects_non_numeric_ids

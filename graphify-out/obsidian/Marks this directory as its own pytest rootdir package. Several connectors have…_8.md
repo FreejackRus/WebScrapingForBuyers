@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/conftest.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/conftest.py"
 type: "rationale"
-community: "lamoda-connector/tests/conftest.py"
+community: "dns-connector/tests/conftest.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/lamoda-connector/tests/conftestpy
+  - community/dns-connector/tests/conftestpy
 ---
 
 # Marks this directory as its own pytest rootdir package. Several connectors have…
 
 ## Connections
-- [[lamoda-connectortestsconftest.py]] - `rationale_for` [EXTRACTED]
+- [[dns-connectortestsconftest.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/lamoda-connector/tests/conftestpy
+#graphify/rationale #graphify/EXTRACTED #community/dns-connector/tests/conftestpy

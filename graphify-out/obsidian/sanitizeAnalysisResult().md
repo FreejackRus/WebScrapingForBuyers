@@ -2,7 +2,7 @@
 source_file: "apps/analysis/src/application/infra-leak.ts"
 type: "code"
 community: "infra-leak.ts"
-location: "L58"
+location: "L59"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,6 +12,7 @@ tags:
 # sanitizeAnalysisResult()
 
 ## Connections
+- [[2026-10-06 — копайлот видит историю диалога]] - `references` [INFERRED]
 - [[analyze.ts]] - `imports` [EXTRACTED]
 - [[analyzeSnapshot()]] - `calls` [EXTRACTED]
 - [[answerCopilot()]] - `calls` [EXTRACTED]

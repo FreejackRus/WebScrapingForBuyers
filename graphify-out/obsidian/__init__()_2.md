@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_stealth.py"
 type: "code"
-community: "test_storefront_live_xhr_capture_via_get_context"
-location: "L167"
+community: "test_chrome_cdp_stealth.py"
+location: "L260"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_storefront_live_xhr_capture_via_get_context
+  - community/test_chrome_cdp_stealthpy
 ---
 
 # __init__()
 
 ## Connections
-- [[test_storefront_live_xhr_capture_via_get_context()]] - `contains` [EXTRACTED]
+- [[dot-__init__()_11]] - `calls` [EXTRACTED]
+- [[test_new_tab_matches_distinct_targets_under_interleaved_creation()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_storefront_live_xhr_capture_via_get_context
+#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_stealthpy

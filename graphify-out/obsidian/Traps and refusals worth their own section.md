@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/docs/ANTI_BOT.md"
 type: "document"
-community: "Traps and refusals worth their own section"
+community: "Anti-bot reality, source by source"
 location: "L446"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Traps_and_refusals_worth_their_own_section
+  - community/Anti-bot_reality_source_by_source
 ---
 
 # Traps and refusals worth their own section
@@ -17,4 +17,4 @@ tags:
 - [[The Ozon seller-details refusal (v1.1.0)]] - `contains` [EXTRACTED]
 - [[The Wildberries search trap]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Traps_and_refusals_worth_their_own_section
+#graphify/document #graphify/EXTRACTED #community/Anti-bot_reality_source_by_source

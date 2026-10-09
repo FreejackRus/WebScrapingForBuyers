@@ -12,8 +12,8 @@ tags:
 # TaobaoSettings
 
 ## Connections
-- [[BaseSettings_10]] - `inherits` [EXTRACTED]
-- [[get_settings()_10]] - `calls` [EXTRACTED]
+- [[BaseSettings_8]] - `inherits` [EXTRACTED]
+- [[get_settings()_8]] - `calls` [EXTRACTED]
 - [[taobao_connectorsettings.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/pydantic

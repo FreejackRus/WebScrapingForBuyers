@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/src/marketplace_connector/server.py"
 type: "rationale"
 community: "compare_prices"
-location: "L205"
+location: "L197"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED

@@ -1,18 +1,17 @@
 ---
-source_file: ""
+source_file: "mcp-servers/ru-marketplace-mcp/package.json"
 type: "code"
-community: "ozon_card"
+community: "ru-marketplace-mcp/package.json"
+location: "L4"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ozon_card
+  - community/ru-marketplace-mcp/packagejson
 ---
 
 # description
 
 ## Connections
-- [[ozon_card()]] - `references` [EXTRACTED]
-- [[ozon_reviews()]] - `references` [EXTRACTED]
-- [[ozon_search()_2]] - `references` [EXTRACTED]
+- [[ru-marketplace-mcppackage.json]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ozon_card
+#graphify/code #graphify/EXTRACTED #community/ru-marketplace-mcp/packagejson

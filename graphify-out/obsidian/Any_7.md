@@ -1,26 +1,34 @@
 ---
 source_file: ""
 type: "code"
-community: "Any"
+community: "cian_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Any
+  - community/cian_connector/serverpy
 ---
 
 # Any
 
 ## Connections
-- [[_type_tag()]] - `references` [EXTRACTED]
-- [[_walk_shape()]] - `references` [EXTRACTED]
-- [[coerce_int()]] - `references` [EXTRACTED]
-- [[coerce_price()]] - `references` [EXTRACTED]
-- [[coerce_rating()]] - `references` [EXTRACTED]
-- [[deep_first()]] - `references` [EXTRACTED]
-- [[first_present()]] - `references` [EXTRACTED]
-- [[flatten_text()]] - `references` [EXTRACTED]
-- [[price_from_texts()]] - `references` [EXTRACTED]
-- [[selfcheck_entry()]] - `references` [EXTRACTED]
-- [[shape_signature()]] - `references` [EXTRACTED]
+- [[_address()]] - `references` [EXTRACTED]
+- [[_agent()]] - `references` [EXTRACTED]
+- [[_as_float()]] - `references` [EXTRACTED]
+- [[_b()]] - `references` [EXTRACTED]
+- [[_build_json_query()]] - `references` [EXTRACTED]
+- [[_cdp_post_json()]] - `references` [EXTRACTED]
+- [[_clean_url()]] - `references` [EXTRACTED]
+- [[_compose_title()]] - `references` [EXTRACTED]
+- [[_d()]] - `references` [EXTRACTED]
+- [[_fetch_search()]] - `references` [EXTRACTED]
+- [[_metro_rows()]] - `references` [EXTRACTED]
+- [[_offer_row()]] - `references` [EXTRACTED]
+- [[_parse_card()]] - `references` [EXTRACTED]
+- [[_parse_offers()]] - `references` [EXTRACTED]
+- [[_price_history()]] - `references` [EXTRACTED]
+- [[_price_of()]] - `references` [EXTRACTED]
+- [[_rooms()]] - `references` [EXTRACTED]
+- [[_s()]] - `references` [EXTRACTED]
+- [[_views()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Any
+#graphify/code #graphify/EXTRACTED #community/cian_connector/serverpy

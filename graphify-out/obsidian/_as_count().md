@@ -1,21 +1,21 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py"
 type: "code"
-community: "Ключевые изменения выпуска"
+community: "ssr.py"
 location: "L389"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Ключевые_изменения_выпуска
+  - community/ssrpy
 ---
 
 # _as_count()
 
 ## Connections
 - [[Coerce a ratingreview count, tolerating 24 086 отзывов-style text. Parity…]] - `rationale_for` [EXTRACTED]
-- [[Fixed_19]] - `references` [INFERRED]
+- [[Fixed_21]] - `references` [INFERRED]
 - [[_search_ozon()]] - `calls` [EXTRACTED]
 - [[compare_connectorserver.py]] - `contains` [EXTRACTED]
 - [[Ключевые изменения выпуска]] - `references` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/Ключевые_изменения_выпуска
+#graphify/code #graphify/EXTRACTED #community/ssrpy

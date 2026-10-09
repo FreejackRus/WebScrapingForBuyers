@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_resilience_properties.py"
 type: "code"
-community: "test_resilience.py"
+community: "flatten_text"
 location: "L197"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_resiliencepy
+  - community/flatten_text
 ---
 
 # test_flatten_text_never_returns_a_container_repr()
@@ -16,4 +16,4 @@ tags:
 - [[flatten_text()]] - `calls` [EXTRACTED]
 - [[test_resilience_properties.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_resiliencepy
+#graphify/code #graphify/EXTRACTED #community/flatten_text

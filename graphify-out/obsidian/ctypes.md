@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "_win_job_runner.py"
+community: "subprocess"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/_win_job_runnerpy
+  - community/subprocess
 ---
 
 # ctypes
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[_win_job_runner.py]] - `imports_from` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/_win_job_runnerpy
+#graphify/concept #graphify/EXTRACTED #community/subprocess

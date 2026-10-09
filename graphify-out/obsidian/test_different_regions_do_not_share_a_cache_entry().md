@@ -13,8 +13,8 @@ tags:
 
 ## Connections
 - [[Region lives in the URL, and the cache keys on URL — so cities stay separate.]] - `rationale_for` [EXTRACTED]
-- [[capture()_12]] - `contains` [EXTRACTED]
-- [[capture()_10]] - `indirect_call` [INFERRED]
+- [[capture()_10]] - `contains` [EXTRACTED]
+- [[capture()_8]] - `indirect_call` [INFERRED]
 - [[detmir-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/capture

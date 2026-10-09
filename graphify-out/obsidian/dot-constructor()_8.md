@@ -1,17 +1,17 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/demo-source-adapter.ts"
+source_file: "apps/search/src/infrastructure/sources/netlab-price-feed.ts"
 type: "code"
-community: "packages_contracts_dist_index"
-location: "L20"
+community: "netlab-price-feed.ts"
+location: "L298"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/packages_contracts_dist_index
+  - community/netlab-price-feedts
 ---
 
 # .constructor()
 
 ## Connections
-- [[DemoSourceAdapter]] - `method` [EXTRACTED]
+- [[NetlabPriceFeedAdapter]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index
+#graphify/code #graphify/EXTRACTED #community/netlab-price-feedts

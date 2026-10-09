@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[The real search extractor against challenge-widget pages — DOM level. The live…]] - `rationale_for` [EXTRACTED]
-- [[_extract()_4]] - `contains` [EXTRACTED]
+- [[_extract()_7]] - `contains` [EXTRACTED]
 - [[_grid_with_hidden_widget()]] - `contains` [EXTRACTED]
 - [[domtest.py]] - `imports_from` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]

@@ -10,8 +10,8 @@ members: 4
 **Members:** 4 nodes
 
 ## Members
-- [[search()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
-- [[search()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
+- [[search()_8]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
+- [[search()_9]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[test_default_comparison_omits_deselected_sources_but_explicit_request_is_rejected()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[test_selected_missing_connector_still_makes_default_comparison_partial()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 
@@ -27,7 +27,7 @@ SORT file.name ASC
 - 2 edges to [[_COMMUNITY_compare-connectorteststest_server.py]]
 
 ## Top bridge nodes
-- [[search()_2]] - degree 3, connects to 1 community
+- [[search()_8]] - degree 3, connects to 1 community
 - [[test_selected_missing_connector_still_makes_default_comparison_partial()]] - degree 3, connects to 1 community
 - [[test_default_comparison_omits_deselected_sources_but_explicit_request_is_rejected()]] - degree 2, connects to 1 community
-- [[search()_3]] - degree 2, connects to 1 community
+- [[search()_9]] - degree 2, connects to 1 community

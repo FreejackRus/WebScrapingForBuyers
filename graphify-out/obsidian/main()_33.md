@@ -1,18 +1,21 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_test_count.py"
+source_file: "apps/analysis/scripts/compare-models.ts"
 type: "code"
-community: "pathlib"
-location: "L70"
+community: "compare-models.ts"
+location: "L181"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/compare-modelsts
 ---
 
 # main()
 
 ## Connections
-- [[_collected()]] - `calls` [EXTRACTED]
-- [[check_test_count.py]] - `contains` [EXTRACTED]
+- [[compare-models.ts]] - `contains` [EXTRACTED]
+- [[cyrillicShare()]] - `calls` [EXTRACTED]
+- [[evaluate()_4]] - `calls` [EXTRACTED]
+- [[hasInfraLeak()]] - `calls` [EXTRACTED]
+- [[percentile()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pathlib
+#graphify/code #graphify/EXTRACTED #community/compare-modelsts

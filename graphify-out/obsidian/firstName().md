@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/widgets/analysis/chat/ui/index.tsx"
 type: "code"
-community: "useSearchStore"
+community: "chat/ui/index.tsx"
 location: "L9"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/useSearchStore
+  - community/chat/ui/indextsx
 ---
 
 # firstName()
@@ -15,4 +15,4 @@ tags:
 - [[AnalysisChat()]] - `calls` [EXTRACTED]
 - [[chatuiindex.tsx]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/useSearchStore
+#graphify/code #graphify/EXTRACTED #community/chat/ui/indextsx

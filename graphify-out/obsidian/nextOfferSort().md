@@ -2,7 +2,7 @@
 source_file: "apps/web/src/entities/offer/lib/index.ts"
 type: "code"
 community: "offers/ui/index.tsx"
-location: "L103"
+location: "L109"
 tags:
   - graphify/code
   - graphify/EXTRACTED

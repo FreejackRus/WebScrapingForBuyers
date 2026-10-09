@@ -12,7 +12,7 @@ tags:
 # wb()
 
 ## Connections
-- [[offer()_1]] - `calls` [EXTRACTED]
+- [[offer()_2]] - `calls` [EXTRACTED]
 - [[test_comparable_candidate_is_none_when_everything_is_suspicious()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/offer

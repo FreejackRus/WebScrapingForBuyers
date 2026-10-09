@@ -12,7 +12,7 @@ tags:
 # _FakeEventInfo
 
 ## Connections
-- [[dot-__init__()_9]] - `method` [EXTRACTED]
+- [[dot-__init__()_12]] - `method` [EXTRACTED]
 - [[dot-value()]] - `method` [EXTRACTED]
 - [[test_chrome_cdp_stealth.py]] - `contains` [EXTRACTED]
 

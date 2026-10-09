@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_decision_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_card_verification_records.py"
 type: "code"
-community: "test_decision_server.py"
-location: "L34"
+community: "test_card_verification_records.py"
+location: "L100"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_decision_serverpy
+  - community/test_card_verification_recordspy
 ---
 
 # card()
 
 ## Connections
-- [[test_decision_inspect_rejects_stray_digits_in_wildberries_input()]] - `contains` [EXTRACTED]
+- [[test_invalid_observed_price_stays_unknown()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_decision_serverpy
+#graphify/code #graphify/EXTRACTED #community/test_card_verification_recordspy

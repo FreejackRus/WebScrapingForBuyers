@@ -12,7 +12,7 @@ tags:
 # _assert_tree_matches()
 
 ## Connections
-- [[Path_12]] - `references` [EXTRACTED]
+- [[Path_14]] - `references` [EXTRACTED]
 - [[_tree_diff()]] - `calls` [EXTRACTED]
 - [[test_dsh_bundle.py]] - `contains` [EXTRACTED]
 - [[test_vendored_dsh_skills_match_the_source_skills()]] - `calls` [EXTRACTED]

@@ -21,7 +21,6 @@ tags:
 - [[e2e_stdio_check_docker.py]] - `imports` [EXTRACTED]
 - [[http_tier.py]] - `imports` [EXTRACTED]
 - [[megamarket_connectorserver.py]] - `imports` [EXTRACTED]
-- [[mpstats_connectorserver.py]] - `imports` [EXTRACTED]
 - [[ozon-connectorteststest_server.py]] - `imports` [EXTRACTED]
 - [[ozon_connectorserver.py]] - `imports` [EXTRACTED]
 - [[process.py]] - `imports` [EXTRACTED]

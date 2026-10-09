@@ -1,17 +1,25 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_search_variants.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/server.py"
 type: "code"
-community: "test_card_verification_records.py"
-location: "L39"
+community: "TransportDownError"
+location: "L205"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/test_card_verification_recordspy
+  - graphify/EXTRACTED
+  - community/TransportDownError
 ---
 
 # fetch()
 
 ## Connections
-- [[test_zone_search_keeps_distinct_skus_and_dedupes_repeated_variant_before_limit()]] - `indirect_call` [INFERRED]
+- [[ChallengeRequiredError]] - `calls` [EXTRACTED]
+- [[TransportDownError]] - `calls` [EXTRACTED]
+- [[_cdp_challenge()]] - `indirect_call` [INFERRED]
+- [[_fetch_html_cdp()]] - `contains` [EXTRACTED]
+- [[get_handoff_id()]] - `calls` [EXTRACTED]
+- [[log_event()]] - `calls` [EXTRACTED]
+- [[raise_tool_error()]] - `calls` [EXTRACTED]
+- [[read()_3]] - `indirect_call` [INFERRED]
+- [[read_with_handoff()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/test_card_verification_recordspy
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

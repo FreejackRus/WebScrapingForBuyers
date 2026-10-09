@@ -1,19 +1,24 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_handoff_liveness_consistency.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_browser_handoff.py"
 type: "code"
-community: "pytest"
-location: "L24"
+community: "taobao"
+location: "L20"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/pytest
+  - graphify/INFERRED
+  - community/taobao
 ---
 
 # browser()
 
 ## Connections
+- [[TTLCache]] - `uses` [INFERRED]
+- [[compare-connectorteststest_browser_handoff.py]] - `contains` [EXTRACTED]
+- [[current_url()]] - `indirect_call` [INFERRED]
+- [[evaluate()_2]] - `contains` [EXTRACTED]
 - [[fixture_18]] - `references` [EXTRACTED]
-- [[open_page()_3]] - `indirect_call` [INFERRED]
-- [[test_handoff_liveness_consistency.py]] - `contains` [EXTRACTED]
+- [[open_page()_2]] - `indirect_call` [INFERRED]
+- [[reveal()]] - `indirect_call` [INFERRED]
+- [[taobao()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/pytest
+#graphify/code #graphify/INFERRED #community/taobao

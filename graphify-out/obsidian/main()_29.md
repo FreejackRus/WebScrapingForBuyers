@@ -1,22 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/mcp_wire.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/e2e_stdio_check.py"
 type: "code"
-community: "mcp_wire.py"
-location: "L100"
+community: "e2e_stdio_check.py"
+location: "L132"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/mcp_wirepy
+  - community/e2e_stdio_checkpy
 ---
 
 # main()
 
 ## Connections
-- [[_check_gate()]] - `calls` [EXTRACTED]
-- [[_load_baseline()]] - `calls` [EXTRACTED]
-- [[_snapshot()]] - `calls` [EXTRACTED]
-- [[estimate_tokens()]] - `calls` [EXTRACTED]
-- [[fetch_tools()]] - `calls` [EXTRACTED]
-- [[mcp_wire.py]] - `contains` [EXTRACTED]
+- [[e2e_stdio_check.py]] - `contains` [EXTRACTED]
+- [[probe()_3]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/mcp_wirepy
+#graphify/code #graphify/EXTRACTED #community/e2e_stdio_checkpy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "code"
-community: "_hide_chrome_windows"
-location: "L986"
+community: "get_browser"
+location: "L1048"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_hide_chrome_windows
+  - community/get_browser
 ---
 
 # _playwright_page()
@@ -19,6 +19,6 @@ tags:
 - [[_new_tab()]] - `calls` [EXTRACTED]
 - [[chrome_cdp.py]] - `contains` [EXTRACTED]
 - [[get_context()]] - `calls` [EXTRACTED]
-- [[open_page()]] - `calls` [EXTRACTED]
+- [[open_page()_3]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_hide_chrome_windows
+#graphify/code #graphify/EXTRACTED #community/get_browser

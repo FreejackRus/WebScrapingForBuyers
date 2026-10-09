@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/http_tier.py"
 type: "code"
-community: "transport/__init__.py"
+community: "TransportDownError"
 location: "L114"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/transport/__init__py
+  - community/TransportDownError
 ---
 
 # get_text_with_retries()
@@ -15,8 +15,8 @@ tags:
 - [[AsyncClient_2]] - `references` [EXTRACTED]
 - [[GET ``url`` and return ``(status_code, body_text)``. Retries genuine transport…]] - `rationale_for` [EXTRACTED]
 - [[RateLimiter]] - `references` [EXTRACTED]
-- [[fetch()]] - `calls` [INFERRED]
-- [[fetch()_1]] - `calls` [INFERRED]
+- [[fetch()_2]] - `calls` [INFERRED]
+- [[fetch()_4]] - `calls` [INFERRED]
 - [[http_tier.py]] - `contains` [EXTRACTED]
 - [[read_capped_text()]] - `calls` [EXTRACTED]
 - [[test_body_cap_is_enforced()]] - `calls` [INFERRED]
@@ -31,4 +31,4 @@ tags:
 - [[test_transport_error_propagates_when_budget_exhausted()]] - `calls` [INFERRED]
 - [[transport__init__.py]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/transport/__init__py
+#graphify/code #graphify/INFERRED #community/TransportDownError

@@ -12,8 +12,8 @@ tags:
 # test_card_accepts_a_bare_product_id()
 
 ## Connections
-- [[capture()_2]] - `contains` [EXTRACTED]
-- [[capture()_3]] - `indirect_call` [INFERRED]
+- [[capture()]] - `contains` [EXTRACTED]
+- [[capture()_1]] - `indirect_call` [INFERRED]
 - [[citilink-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/citilink-connector/tests/test_serverpy

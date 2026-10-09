@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_no_print.py"
 type: "code"
-community: "test_dependency_parity.py"
+community: "check_no_print.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_dependency_paritypy
+  - community/check_no_printpy
 ---
 
 # check_no_print.py
@@ -20,8 +20,8 @@ tags:
 - [[ast]] - `imports` [EXTRACTED]
 - [[check_file()]] - `contains` [EXTRACTED]
 - [[collect_default_paths()]] - `contains` [EXTRACTED]
-- [[main()_1]] - `contains` [EXTRACTED]
+- [[main()_4]] - `contains` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]
 - [[sys]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_dependency_paritypy
+#graphify/code #graphify/EXTRACTED #community/check_no_printpy

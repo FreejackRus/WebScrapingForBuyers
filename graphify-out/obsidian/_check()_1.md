@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/server.py"
 type: "code"
-community: "ozon_card"
-location: "L1485"
+community: "avito_connector/server.py"
+location: "L833"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ozon_card
+  - community/avito_connector/serverpy
 ---
 
 # _check()
 
 ## Connections
-- [[_fetch_composer()]] - `calls` [EXTRACTED]
-- [[_ozon_selfcheck_impl()]] - `contains` [EXTRACTED]
+- [[_avito_selfcheck_impl()]] - `contains` [EXTRACTED]
+- [[_fetch()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ozon_card
+#graphify/code #graphify/EXTRACTED #community/avito_connector/serverpy

@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "analysis/src/app.ts"
+community: "compare-models.ts"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/analysis/src/appts
+  - community/compare-modelsts
 ---
 
 # packages_contracts_dist_index_analyzerequest
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[analysissrcapp.ts]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/analysis/src/appts
+#graphify/concept #graphify/EXTRACTED #community/compare-modelsts

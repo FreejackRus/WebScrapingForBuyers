@@ -2,7 +2,7 @@
 source_file: "apps/analysis/src/application/prompt-intent.ts"
 type: "code"
 community: "analyze.ts"
-location: "L202"
+location: "L239"
 tags:
   - graphify/code
   - graphify/EXTRACTED

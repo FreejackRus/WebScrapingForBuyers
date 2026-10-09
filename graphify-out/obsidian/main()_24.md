@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/__main__.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/routing_eval.py"
 type: "code"
-community: "yandex_connector/__main__.py"
-location: "L21"
+community: "mcp_wire.py"
+location: "L77"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/yandex_connector/__main__py
+  - community/mcp_wirepy
 ---
 
 # main()
 
 ## Connections
-- [[Run the server on the transport selected by the environment (stdio default)._13]] - `rationale_for` [EXTRACTED]
-- [[run_server()]] - `calls` [INFERRED]
-- [[yandex_connector__main__.py]] - `contains` [EXTRACTED]
+- [[evaluate()]] - `calls` [EXTRACTED]
+- [[routing_eval.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/yandex_connector/__main__py
+#graphify/code #graphify/EXTRACTED #community/mcp_wirepy

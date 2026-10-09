@@ -12,7 +12,7 @@ tags:
 # test_card_parses_the_product()
 
 ## Connections
-- [[_patch_render()_3]] - `calls` [EXTRACTED]
+- [[_patch_render()_2]] - `calls` [EXTRACTED]
 - [[dns-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/dns-connector/tests/test_serverpy

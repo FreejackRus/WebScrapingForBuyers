@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/process.py"
 type: "code"
-community: "ozon_connector/server.py"
+community: "process.py"
 location: "L74"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ozon_connector/serverpy
+  - community/processpy
 ---
 
 # safe_child_env()
@@ -17,4 +17,4 @@ tags:
 - [[is_windows()]] - `calls` [EXTRACTED]
 - [[process.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ozon_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/processpy

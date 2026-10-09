@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[Evaluate the shipped guards full wins, then decision, then compare.]] - `rationale_for` [EXTRACTED]
 - [[_dsh_patch_block()]] - `calls` [INFERRED]
-- [[parametrize_23]] - `references` [EXTRACTED]
+- [[parametrize_27]] - `references` [EXTRACTED]
 - [[test_dsh_bundle.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_dsh_bundlepy

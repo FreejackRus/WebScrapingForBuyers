@@ -1,17 +1,17 @@
 # Graph Report - WebScrapingForBuyers  (2026-10-07)
 
 ## Corpus Check
-- 659 files · ~621,045 words
+- 660 files · ~621,281 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 36 file(s) not represented in the graph (top: .typed 15, (none) 14, .example 2)
 
 ## Summary
-- 7798 nodes · 14301 edges · 536 communities (373 shown, 163 thin omitted)
+- 7799 nodes · 14302 edges · 547 communities (380 shown, 167 thin omitted)
 - Extraction: 89% EXTRACTED · 11% INFERRED · 0% AMBIGUOUS · INFERRED: 1606 edges (avg confidence: 0.91)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `39c3350f`
+- Built from commit: `37323059`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -27,7 +27,7 @@
 - _clear_wb_cache
 - ProductIdentity
 - StdioProbe
-- read_with_handoff
+- browser_handoff.py
 - cian-connector/tests/test_server.py
 - get_text_budgeted
 - Changelog
@@ -37,36 +37,36 @@
 - netlab-client.ts
 - test_chrome_cdp_stealth.py
 - _patch_questions
-- App.tsx
+- wb_connector/server.py
 - ozon_connector/server.py
 - marketplace-relevance.ts
 - mcp_wire.py
 - offer
 - test_runtime.py
-- models.py
+- SelfCheckEntryBase
 - test_stdio_probe.py
 - useUserStore
-- lamoda_search
+- ParserDriftError
 - raw_browser
 - memory-auth-store.ts
-- history-routes.test.ts
+- Аудит ru-marketplace-mcp v1.2.0 — независимая перепроверка
 - ollama-analysis-narrator.ts
 - test_redact.py
 - wb_connector/models_output.py
-- firewall_pow.py
+- json
 - e2e_stdio_check.py
 - test_helpers.py
 - offers/ui/index.tsx
 - Animation Recipes
 - megamarket-connector/tests/test_server.py
-- UpstreamTimeoutError
+- test_termination_settles_queued_snapshot_before_getter_resumes
 - aliexpress-connector/tests/test_server.py
 - detmir_categories
-- pytest
+- asyncio
 - test_live_payload_contract.py
 - test_resilience_properties.py
 - b2b-distributor-adapter.ts
-- test_card_extractor_live_dom.py
+- ozon_card
 - detmir-connector/tests/test_server.py
 - TTLCache
 - test_output_schema.py
@@ -99,16 +99,16 @@
 - SearchService
 - analyze.ts
 - merlion-client.ts
-- Как получить доступ
+- CLAUDE.md
 - dns-connector/tests/test_search_extractor_dom.py
 - Pacer
-- wb_connector/server.py
+- wb_category_products
 - test_handoff_reporting.py
-- useAnalysisStore
+- analysis/store/index.ts
 - pathlib
 - test_pagination_wrap.py
 - model_routing_eval.py
-- CLAUDE.md
+- prices_from_tile
 - test_pacing.py
 - stub_html
 - test_public_contract_snapshot.py
@@ -118,59 +118,59 @@
 - service-kit/package.json
 - test_dependency_parity.py
 - test_search_parser_live.py
-- search/src/app.ts
+- SourceAdapter
 - test_contract.py
 - ozon-connector/tests/test_server.py
-- yandex_connector/models_output.py
+- Any
 - taobao-connector/tests/test_server.py
 - citilink-connector/tests/test_server.py
 - dns-connector/tests/test_server.py
-- capture_owned_viewport
+- Внешние подходы: native vision, challenge UX, browser-резильентность
 - test_source_selection.py
 - _run
 - test_safe_get_text_does_not_retry_http_status_errors
 - analysis/package.json
 - gateway/package.json
-- analyze.test.ts
+- it-scope.ts
 - mcp-core/tests/conftest.py
 - taobao-connector/tests/test_search_extractor_dom.py
-- prices_from_tile
-- test_card_out_of_stock_dom.py
+- test_dom.py
+- detmir_selfcheck
 - aliexpress_card
-- ParserDriftError
+- taobao_connector/server.py
 - _healthy_selfcheck_responder
 - marketplace-connector
 - _parse_search_items
-- _dsh_patch_block
+- _search_via_storefront
 - English version
 - test_model_routing_eval.py
 - error_payload
 - test_cdp_budget.py
 - Apple Design
-- detmir-connector/tests/test_parser_live.py
+- math
 - server.json
 - contracts/src/index.ts
 - search/package.json
-- compare-connector/tests/test_browser_handoff.py
+- pytest
 - ru-marketplace-mcp
 - avito-connector/tests/test_server.py
 - capture
-- analysis/store/index.ts
+- Any
 - test_cache_is_keyed_by_canonical_path_not_raw_input
 - test_ssr.py
 - identity/package.json
-- citilink_connector/models_output.py
+- title_from_tile
 - NavigationBudget
 - dns-connector/tests/test_card_extractor_dom.py
 - storefront-distributor-adapter.ts
 - Slot
-- identity/src/http/routes.ts
+- identity/src/app.ts
 - _patch_graphql_response
 - WbCardItem
 - test_main.py
-- identity/src/app.ts
+- LoginLimiter
 - [2.2.0] — 2026-09-11
-- aliexpress-connector/tests/test_parser_live.py
+- _fetch_composer
 - test_the_category_url_is_what_yields_a_collection
 - _tool_error_payload
 - fake_get
@@ -178,40 +178,40 @@
 - compilerOptions
 - citilink-connector/tests/test_card_extractor_dom.py
 - Authenticated transport: driving your own Chrome
-- product-from-query.ts
+- live-suggest.ts
 - Tracker
 - load
 - package.json
 - The Fixes
 - http-marketplace-adapter.ts
 - Практики (54)
-- MarketOffer
-- taobao-connector/tests/test_card_extractor_dom.py
-- test_source_warnings.py
+- OfferBatch
+- domtest.py
+- test_warning_does_not_drop_valid_offer_and_is_isolated_per_request
 - _FakeWs
 - Contributor Covenant Code of Conduct
 - Сервер локальной LLM
 - error_payload
-- test_distribution_contract.py
+- product-from-query.ts
 - compilerOptions
 - _FakeResponse
 - graphify reference: extra exports and benchmark
 - _FakeResponse
 - fake_fetch
-- test_snapshot_and_resume_cannot_overlap
-- _hide_chrome_windows
+- _safe_get_text
+- _playwright_page
 - Adding a marketplace
-- resolve_transport
+- runtime.py
 - check_no_print.py
 - _RawCdpPage
-- fastmcp_exceptions
+- test_search_login_wall_live_dom.py
 - contracts/package.json
 - Prototyping Variants
-- get_browser
+- chrome_cdp.py
 - ru-marketplace-mcp/package.json
 - settings.json
-- infra-leak.ts
-- avito_connector/models_output.py
+- Deployment
+- wb_selfcheck
 - decision_inspect
 - dns_card
 - test_storefront_reads_live_xhr_body_over_raw_cdp_when_playwright_cannot_attach
@@ -223,11 +223,11 @@
 - dsh/package.json
 - Glossary
 - ru-marketplace-mcp for DeepSeek Harness
-- handoff_diagnostics
+- test_handoff_liveness_consistency.py
 - parametrize
 - PageLike
 - test_ozon_selfcheck_includes_runtime_identity
-- pages/user/index.ts
+- zone_snippets
 - Участие в проекте
 - Clock
 - Finding Animation Opportunities
@@ -239,15 +239,15 @@
 - search/tsconfig.json
 - test_all_requested_sources_missing_is_an_error
 - test_the_graphql_request_carries_a_referer_for_the_sku
-- Citilink Connector
-- terminate_process_tree
+- _attach_image_urls
+- os
 - test_resolved_params_are_cached_per_query
 - test_cdp_fetch_json_times_out_open_page_and_releases_lock
 - _error_payload
 - Deep Research: Product and DSH Evolution of ru-marketplace-mcp
-- _win_job_runner.py
+- ozon_connector/models_output.py
 - contracts/tsconfig.json
-- megamarket_search
+- log_event
 - cdp-proxy.py
 - pydantic
 - run_server
@@ -270,28 +270,27 @@
 - Wildberries Connector
 - test_sources_run_concurrently
 - clear_cache
-- [1.1.0] — 2026-07-26 (English)
+- wb_search
 - test_port_probe_targets_loopback_only
-- command/ui/index.tsx
+- _parse_product
 - _patch_tier1
 - _RecordingPacer
 - test_challenge_recovery_reads_browser_again_and_caches_only_success
 - mcp_startup.py
-- ru-marketplace-mcp/README.md
 - _drifted_values_search_html
-- flatten_text
+- resilience.py
 - Anti-bot reality, source by source
 - test_probe_session_never_raises
 - test_probe_session_reports_reachable_when_only_the_playwright_attach_fails
 - Deep Research: ru-marketplace-mcp 2.0.0
-- json
+- lamoda_connector/server.py
 - test_fetch_composer_reports_cdp_navigation_block_as_blocked
 - test_fetch_composer_times_out_blocking_curl_and_falls_back_to_cdp
 - test_sync_curl_get_closes_non_context_manager_response
 - no_delay
 - capture
 - entrypoint.sh
-- v1.2.0 — шесть новых маркетплейсов и один общий сервер
+- wb_card
 - v2.0.0 operations and evaluation sources
 - success
 - SearchHistory
@@ -311,14 +310,14 @@
 - test_parse_product_survives_a_non_dict_input
 - test_ambiguous_or_wrong_record_never_verifies_price
 - TransportConfig
-- diagnose
+- diagnose_drift.py
 - WbNoResultsResponse
 - test_root_check_is_true_for_uid_zero
-- Citilink Connector
+- taobao-connector/tests/test_shape_reference.py
 - cmd_doctor
 - test_socket_module_is_the_real_one
 - test_cdp_url_uses_the_configured_host
-- _start_chrome_with_cdp
+- test_storefront_search.py
 - test_port_probe_treats_a_timeout_as_closed
 - Model routing protocol (v1, 2026-09-13)
 - test_an_overridden_gap_cannot_undercut_the_penalty
@@ -332,12 +331,12 @@
 - test_login_wall_markers_title_branch
 - test_login_wall_markers_read_the_document_title_per_payload_kind
 - test_login_wall_markers_login_routes_branch
-- coerce_int
+- Contributing
 - _FakeCurlResponse
 - test_login_wall_markers_ignore_missing_and_garbage_fields
 - test_anti_bot_challenge_is_gated_on_zero_items
 - test_anti_bot_challenge_honors_the_legacy_marker_and_ignores_garbage
-- [2.1.0] — 2026-09-09
+- Security
 - The list
 - Lamoda Connector
 - CacheStats
@@ -348,17 +347,17 @@
 - yandex_connector/shape_reference.py
 - Component Building Principles
 - test_search_price_rub_ignores_intermediate_seller_prices
-- test_search_offer_integrity.py
-- Ozon Connector
-- Wildberries Connector
+- test_native_ozon_explicit_absence_survives_both_label_channels
+- ozon_selfcheck
+- session.ts
 - marketplace-connector/tests/test_server.py
-- 2. Captcha/challenge UX в агентских инструментах
+- v2.0 work packages
 - megamarket-connector/tests/test_parser_live.py
 - _posted_at
 - AliExpress connector
-- test_card_verification_records.py
+- detmir_connector/server.py
 - The Animation Decision Framework
-- DNS-Shop Connector
+- ozon_connector/settings.py
 - Контекст проекта ПЕРЕМЕНА Price Radar
 - clip-path for Animation
 - Performance Rules
@@ -371,34 +370,43 @@
 - CSS Transform Mastery
 - The Sonner Principles (Building Loved Components)
 - marketplace_connector/__init__.py
-- log_event
+- MarketplaceMcpClient
+- citilink_card
 - chrome-vnc-tunnel.sh
-- _check_final_host
+- v2.1.0
 - Multi-model routing run — 2026-09-17
 - v1.2.1 — правки по итогам стороннего ревью
 - RELEASE NOTES — v1.4.1 (2026-08-08)
 - RELEASE NOTES — v1.5.0 (2026-08-16)
+- Безопасность
 - Spring Animations
-- test_domtest_utf8.py
+- Detsky Mir Connector
 - test_number_coercion
+- The shared runtime
+- RELEASE NOTES — v1.4.0 (2026-08-08)
 - AGENTS.md
+- v2.4.2 — 2026-09-19
 - test_cache_can_be_disabled_by_ttl_zero
 - RELEASE NOTES — v1.5.1 (2026-08-16)
 - Q: Как не показывать менеджеру технические термины в ответах Qwen?
-- Yandex Market Connector
+- Cross-Marketplace Price Comparison
+- cian-connector/tests/test_shape_reference.py
 - graphify reference: query, path, explain
 - test_selfcheck_graphql_down_is_inconclusive
-- Yandex Market Connector
+- merge_card_collections
+- PULL_REQUEST_TEMPLATE.md
 - test_search_falls_back_to_ldjson_when_state_is_unreadable
 - test_shell_verdict_requires_the_product_page_id
 - test_fetch_composer_does_not_cache_a_block
+- catalog.ts
 - test_number_coercion_never_returns_or_raises_on_non_finite_values
 - v1.3.1 — надёжность экстракторов
 - ru-marketplace-mcp v2.3.0
 - Core Philosophy
 - Debugging Animations
-- _relevance_warnings
-- test_a_generic_failure_is_reported_as_error_not_blocked
+- Contributors / Участники
+- main
+- aliexpress_connector/__main__.py
 - AliExpress connector
 - graphify reference: add a URL and watch a folder
 - graphify reference: commit hook and native CLAUDE.md integration
@@ -406,19 +414,22 @@
 - Taobao Connector
 - check-env.sh
 - v1.6.1
+- detmir_connector/__main__.py
 - v2.4.0 — 2026-09-18
 - v2.4.1 — 2026-09-18
-- _cdp_post_json
+- examples/README.md
 - Cross-Marketplace Price Comparison
 - v2.0.0 evaluation matrix
 - v2 identity and offer evidence
 - graphify reference: GitHub clone and cross-repo merge
 - graphify reference: transcribe video and audio
 - v2.0.2
+- ._mirror_rouble_price_into_native
 - fake_browser
 - AGENT_PREAMBLE.md
 - test_fetch_debug_never_leaks_tier1_exception_secrets
 - Taobao Connector
+- test_idle_expiry_settles_retry_queued_before_getter_resumes
 - _no_cache
 - v2.0.0 MCP protocol research
 - test_search_rejects_a_malformed_location_id
@@ -464,7 +475,7 @@
 - avito_connector
 - citilink_connector
 - paramiko
-- _search_wildberries
+- compare_connector/server.py
 - test_jitter_leaves_the_normal_gap_alone
 - ozon_connector
 - v1.8.0
@@ -532,7 +543,6 @@
 - test_candidates_never_contain_empty_entries
 - yandex_connector/__main__.py
 - MarketplaceSourcesResponse
-- _default_profile_dir
 - browser
 - test_search_row_describes_the_serp_offer_not_the_card_default
 - test_search_rounds_float32_ratings
@@ -553,7 +563,7 @@
 - test_search_price_rub_is_the_cart_price_never_the_strike_through
 
 ## God Nodes (most connected - your core abstractions)
-1. `Итерации` - 114 edges
+1. `Итерации` - 115 edges
 2. `compare_prices()` - 106 edges
 3. `TransportDownError` - 86 edges
 4. `raise_tool_error()` - 77 edges
@@ -565,97 +575,97 @@
 10. `MarketOffer` - 42 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Servermall / Онлайнтрейд / Регард / Хардпрайс / СРВТрейд / ТоргPC` --references--> `B2bDistributorStubAdapter`  [INFERRED]
-  docs/DISTRIBUTORS.md → apps/search/src/infrastructure/sources/b2b-distributor-adapter.ts
 - `Стек` --references--> `SourceAdapter`  [INFERRED]
   docs/PROJECT_CONTEXT.md → apps/search/src/domain/source-adapter.ts
 - `2026-09-23 — WB пустая таблица и Citilink SSD` --references--> `marketplaceToolArguments()`  [INFERRED]
   docs/PROJECT_CONTEXT.md → apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts
-- `2026-09-24 — дистрибьюторы без API (повторная проверка)` --references--> `SourceAdapter`  [INFERRED]
-  docs/PROJECT_CONTEXT.md → apps/search/src/domain/source-adapter.ts
 - `2026-09-25 — убраны платные источники` --references--> `marketplace_sources()`  [INFERRED]
   docs/PROJECT_CONTEXT.md → mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/src/marketplace_connector/server.py
+- `2026-09-29 — деплой из git и фото WB / Ozon / AliExpress` --references--> `_basket_for_sku()`  [INFERRED]
+  docs/PROJECT_CONTEXT.md → mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py
+- `2026-09-29 — Gemma 4 в проде и битые цены Ozon` --references--> `firstPrice()`  [INFERRED]
+  docs/PROJECT_CONTEXT.md → apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (536 total, 163 thin omitted)
+## Communities (547 total, 167 thin omitted)
 
 ### Community 0 - "mcp-marketplace-adapter.ts"
-Cohesion: 0.06
-Nodes (58): AVITO_CATEGORY_COMPUTER, AVITO_LOCATION_ALL, avitoCategoryId(), avitoPowRetryDelayMs(), cdpWarmupHost, citilinkIdentityUrls(), collapseWs(), createMarketplaceSourcesFromEnv() (+50 more)
+Cohesion: 0.07
+Nodes (54): AVITO_CATEGORY_COMPUTER, AVITO_LOCATION_ALL, avitoCategoryId(), avitoPowRetryDelayMs(), cdpWarmupHost, citilinkIdentityUrls(), collapseWs(), createMarketplaceSourcesFromEnv() (+46 more)
 
 ### Community 1 - "no_wait"
 Cohesion: 0.03
 Nodes (47): v9 returns fully-populated products, so one request is enough. The old two-step…, A stale result beats no result — but the caller must be told., A page of delisted items is worse than an error if it looks like an answer., Unrecoverable ids used to be parser_drift; with v9 primary they mean 'nothing'.…, test_wb_card_string_zero_quantity_is_not_in_stock(), scenario(), test_wb_root_info_coerces_string_imt_id(), scenario() (+39 more)
 
 ### Community 2 - "cian_connector/server.py"
-Cohesion: 0.06
-Nodes (78): DealType, Tools available, CianAgentOut, CianCardResponse, CianMetroOut, CianPriceChangeOut, CianSearchItemOut, CianSearchResponse (+70 more)
+Cohesion: 0.05
+Nodes (80): DealType, Tools available, CianAgentOut, CianCardResponse, CianMetroOut, CianPriceChangeOut, CianSearchItemOut, CianSearchResponse (+72 more)
 
 ### Community 3 - "netlab-price-feed.ts"
 Cohesion: 0.11
 Nodes (24): decodeXml(), detached(), downloadNetlabFeed(), ENTITIES, identityTokens(), inflateFirstZipEntry(), isNetlabCandidate(), NETLAB_PRICE_COLUMNS (+16 more)
 
 ### Community 4 - "TransportDownError"
-Cohesion: 0.04
-Nodes (85): email_utils, _blocked_error(), _raise_for_fetch_failure(), Map a failed fetch to the shared error taxonomy., _validate_region(), _call_card_tool(), _numeric_card_id(), Accept the source's numeric ID or canonical product path, never a stray digit. (+77 more)
+Cohesion: 0.05
+Nodes (62): email_utils, enum, _blocked_error(), _raise_for_fetch_failure(), Map a failed fetch to the shared error taxonomy., _validate_region(), _call_card_tool(), _numeric_card_id() (+54 more)
 
 ### Community 5 - "test_dsh_bundle.py"
-Cohesion: 0.18
-Nodes (15): _assert_tree_matches(), _file_state(), _files(), _normalise(), parametrize, Path, Gate for the vendored dsh skills and the dsh bundle layout. The bundle copies…, Evaluate the shipped guards: full wins, then decision, then compare. (+7 more)
+Cohesion: 0.08
+Nodes (31): cmd_install(), _config_block(), _dsh_command(), _dsh_patch_block(), _dsh_row(), Any, Path, Quote a scalar for double-quoted YAML (backslashes and quotes escaped). (+23 more)
 
 ### Community 6 - "mcp-core/tests/test_browser_handoff.py"
 Cohesion: 0.10
-Nodes (24): gc, call(), parametrize, Ownership, bounded recovery and cancellation checks without real browser data., The lifetime cap moved 300 s -> 900 s with R2 (2026-09-18). R2 aligns the…, snapshot_id(), test_caller_cancellation_cleans_worker_and_owned_page(), test_challenge_worker_does_not_hold_caller_closure_or_payload() (+16 more)
+Nodes (23): gc, blocked(), call(), Ownership, bounded recovery and cancellation checks without real browser data., The lifetime cap moved 300 s -> 900 s with R2 (2026-09-18). R2 aligns the…, test_busy_initial_and_resume_never_open_duplicate(), pending(), test_caller_cancellation_cleans_worker_and_owned_page() (+15 more)
 
 ### Community 7 - "workspace/ui/index.tsx"
-Cohesion: 0.15
-Nodes (13): apps_web_src_features_export_index_exportapi, Monitor(), Metrics(), OfferCard(), prefersReducedMotion(), SourceGrid(), sourceLabels, sources (+5 more)
+Cohesion: 0.18
+Nodes (12): apps_web_src_features_export_index_exportapi, Metrics(), OfferCard(), prefersReducedMotion(), SourceGrid(), sourceLabels, sources, SearchWorkspace() (+4 more)
 
 ### Community 8 - "_clear_wb_cache"
 Cohesion: 0.05
 Nodes (39): _clear_wb_cache(), parametrize, Caching a blip would turn one bad moment into a TTL-long outage., A refusal through the impersonated path is still a block, never drift., A body past the cap must be refused, and the reader must stop there. ``pulled``…, The pacer is told about refusals — and only about refusals. Nothing in this…, A timeout is our problem or the network's, not a signal to slow down., A wall served with HTTP 200 is a refusal, and must never reach the cache. A… (+31 more)
 
 ### Community 9 - "ProductIdentity"
-Cohesion: 0.09
-Nodes (45): v2.0 work packages, WP1 — Evidence model, WP2 — Identity and decision engine, WP3 — Profiled DSH surface, WP4 — Runtime reliability, WP5 — Security hardening, WP6 — Delivery and migration, _field() (+37 more)
+Cohesion: 0.12
+Nodes (38): _field(), identity_from_mapping(), IdentityMatch, match_product_identity(), normalize_gtin(), normalize_identifier(), normalize_model(), normalize_mpn() (+30 more)
 
 ### Community 10 - "StdioProbe"
 Cohesion: 0.12
 Nodes (10): BinaryIO, probe(), _probe(), ProbeError, RuntimeError, Return the next valid JSON object, or ``None`` on EOF/timeout., The child exited, timed out, or returned an invalid/error response., Drain both pipes concurrently; only the queue read waits for a deadline. Each… (+2 more)
 
-### Community 11 - "read_with_handoff"
-Cohesion: 0.11
-Nodes (27): Challenge, close_handoffs(), _expired(), get_handoff_id(), _key(), _Lease, _payload_digest(), Any (+19 more)
+### Community 11 - "browser_handoff.py"
+Cohesion: 0.06
+Nodes (52): Challenge, Collection, _attempt(), _attempt(), close_handoffs(), _duration_s(), _env_seconds(), _expired() (+44 more)
 
 ### Community 12 - "cian-connector/tests/test_server.py"
-Cohesion: 0.05
-Nodes (54): Cian (cian.ru) MCP connector — Russian real-estate listings., _card_body(), _no_cache(), _ok(), _patch_card(), _patch_search(), fake(), fixture (+46 more)
+Cohesion: 0.06
+Nodes (49): Cian (cian.ru) MCP connector — Russian real-estate listings., _card_body(), _no_cache(), _ok(), _patch_card(), _patch_search(), fake(), fixture (+41 more)
 
 ### Community 13 - "get_text_budgeted"
-Cohesion: 0.07
-Nodes (29): get_text_budgeted(), _drain(), _once(), PoliteGate, Protocol, GET ``url`` under a hard wall-clock budget, returning ``(status, text, err)``.…, Anything that can space out requests. Structural, not nominal, so a connector…, make_client() (+21 more)
+Cohesion: 0.09
+Nodes (27): get_text_budgeted(), _drain(), _once(), GET ``url`` under a hard wall-clock budget, returning ``(status, text, err)``.…, make_client(), AsyncClient, parametrize, Tests for ``get_text_budgeted`` — the wall-clock-bounded HTTP read. These… (+19 more)
 
 ### Community 14 - "Changelog"
-Cohesion: 0.04
-Nodes (46): [1.2.0] — 2026-07-28 (English), [1.2.1] — 2026-07-28 (English), [1.3.1] — 2026-08-04, [1.5.1] — 2026-08-16, [1.6.1] — 2026-09-09, [1.8.0] — 2026-09-09, [2.0.0] — 2026-09-09, [2.0.2] — 2026-09-09 (+38 more)
+Cohesion: 0.03
+Nodes (58): [1.2.0] — 2026-07-28 (English), [1.2.1] — 2026-07-28, [1.2.1] — 2026-07-28 (English), [1.3.0] — 2026-07-30, [1.3.0] — 2026-07-30 (English), [1.3.1] — 2026-08-04, [1.5.1] — 2026-08-16, [1.6.0] — 2026-08-20 (+50 more)
 
 ### Community 15 - "_patch_fetch"
 Cohesion: 0.24
 Nodes (13): _ok(), _patch_fetch(), The free keyboard carries no price field at all; it must surface as None,…, test_card_accepts_a_slug_url(), test_card_maps_404_to_not_found(), test_card_parses_the_item_envelope(), test_search_a_pricelss_listing_is_none_never_zero(), test_search_maps_a_firewall_block_to_transport_down() (+5 more)
 
 ### Community 16 - "compare-connector/tests/test_server.py"
-Cohesion: 0.05
-Nodes (42): parametrize, Offline tests for cross-marketplace comparison. Each marketplace's search is…, Detsky Mir has no working text search, so it must not join a text comparison.…, Rejected either by the tool's own check or by pydantic's min_length. Both are…, Ozon reports prices as text; MarketOffer.price_rub is a float. Passing the raw…, A 0.0 would rank a dead listing as the cheapest option., A negative is not a price. Ranking one would crown it the cheapest offer, so it…, inf is not a price either: ``10**400`` blows up ``float()`` with OverflowError,… (+34 more)
+Cohesion: 0.04
+Nodes (58): MarketOffer, Typed responses for cross-marketplace comparison. The schema is built around…, One offer, normalised across marketplaces so prices are comparable., parametrize, Offline tests for cross-marketplace comparison. Each marketplace's search is…, A blank id is unknown, not shared — merging those would lose real offers., Asking for a case and getting cases is the correct answer., Searching for refurbished and getting refurbished is the right answer. (+50 more)
 
 ### Community 17 - "test_http_tier.py"
-Cohesion: 0.06
-Nodes (34): _proxy(), proxy_from_env(), RateLimiter, First non-empty proxy URL among ``env_names``, then the standard vars. Lets a…, Serialises requests so consecutive calls stay ``min_gap_s`` apart., make_client(), AsyncClient, parametrize (+26 more)
+Cohesion: 0.07
+Nodes (32): _proxy(), proxy_from_env(), RateLimiter, First non-empty proxy URL among ``env_names``, then the standard vars. Lets a…, Serialises requests so consecutive calls stay ``min_gap_s`` apart., make_client(), AsyncClient, parametrize (+24 more)
 
 ### Community 18 - "netlab-client.ts"
-Cohesion: 0.22
-Nodes (18): OFFERS_PER_SOURCE, asArray(), baseOf(), fetchJson(), matchKind(), nested(), NETLAB_BASE_DEFAULT, netlabAuthenticate() (+10 more)
+Cohesion: 0.21
+Nodes (18): asArray(), baseOf(), fetchJson(), matchKind(), nested(), NETLAB_BASE_DEFAULT, netlabAuthenticate(), NetlabConfig (+10 more)
 
 ### Community 19 - "test_chrome_cdp_stealth.py"
 Cohesion: 0.06
@@ -665,13 +675,13 @@ Nodes (29): CompletedProcess, _completed(), _FakeBrowser, _FakeCdp, _FakeContext
 Cohesion: 0.04
 Nodes (63): _catalog_payload(), _patch_questions(), _question(), _questions_payload(), A product nobody has asked about returns questions: null, not []., take is capped at 30 upstream, so limit=45 must walk two pages., A page smaller than the cap means the pool is exhausted., Filtering after fetching must not silently shrink the caller's result. (+55 more)
 
-### Community 21 - "App.tsx"
-Cohesion: 0.16
-Nodes (16): App(), useBootSession(), useSearchHotkey(), AppShell(), LoginShell(), isAppView(), items, MobileNav() (+8 more)
+### Community 21 - "wb_connector/server.py"
+Cohesion: 0.08
+Nodes (35): mcp_core, mcp_core_transport, mcp_core_transport_cdp_budget, _capture_from_catalog_response(), _card_products(), _card_products_checked(), _find_menu_subtree(), _menu_node() (+27 more)
 
 ### Community 22 - "ozon_connector/server.py"
-Cohesion: 0.06
-Nodes (50): curl_cffi, test_ozon_verifies_regular_price_not_card_discount(), card(), current_platform(), is_windows(), Any, Cross-platform helpers for spawning and reaping short-lived worker processes.…, Return ``"nt"`` or ``"posix"``, honouring the test override. (+42 more)
+Cohesion: 0.11
+Nodes (22): curl_cffi, _aggregate_offer_warnings(), _atom_text(), _canonical_product_path_from_input(), _is_search_stock_label(), _smoke_search(), _parse_search_tile(), Ozon MCP connector. Three-tier strategy: Tier 1: curl_cffi impersonate — cheap,… (+14 more)
 
 ### Community 23 - "marketplace-relevance.ts"
 Cohesion: 0.16
@@ -682,56 +692,56 @@ Cohesion: 0.19
 Nodes (18): _check_gate(), estimate_tokens(), fetch_tools(), _load_baseline(), main(), Path, Measure the real MCP wire cost of the hosted servers. Talks MCP over stdio…, Conservative token estimate matching the dsh budget checker. (+10 more)
 
 ### Community 25 - "offer"
-Cohesion: 0.08
-Nodes (41): offer(), The warning is useless if it does not travel with the comparison., A Plus-only price must not be presented as the cheapest available. Yandex's…, Found but no price' is information; dropping it would hide stock reality., The core resilience promise: three sources answering still beats nothing., Replace the per-marketplace search implementations. ``SOURCES`` is patched…, Not installed' needs a different fix than 'refused us', so they differ., stub_sources() (+33 more)
+Cohesion: 0.07
+Nodes (46): offer(), The warning is useless if it does not travel with the comparison., A Plus-only price must not be presented as the cheapest available. Yandex's…, Found but no price' is information; dropping it would hide stock reality., The core resilience promise: three sources answering still beats nothing., Replace the per-marketplace search implementations. ``SOURCES`` is patched…, Anti-bot blocks and ordinary bugs need different responses, so they differ., Not installed' needs a different fix than 'refused us', so they differ. (+38 more)
 
 ### Community 26 - "test_runtime.py"
 Cohesion: 0.06
 Nodes (36): _FakeMCP, parametrize, Tests for ``mcp_core.runtime`` — transport selection for the connectors. These…, A path without a leading slash is normalised rather than rejected., A typo'd transport must fail loudly, not silently fall back to stdio. Silent…, A blank port falls back to the default; a non-numeric one is an error., A stray MCP_HTTP_PORT must not fail a stdio launch that never uses it.…, The stdio path must pass transport='stdio' and no host/port kwargs. Passing… (+28 more)
 
-### Community 27 - "models.py"
-Cohesion: 0.04
-Nodes (69): AliCardResponse, AliSearchItemOut, AliSearchResponse, AliSelfcheckCheckOut, MetaOut, BaseModel, Pydantic output models for the AliExpress MCP connector., AliExpress carries the shared envelope unchanged. (+61 more)
+### Community 27 - "SelfCheckEntryBase"
+Cohesion: 0.09
+Nodes (23): AliCardResponse, AliSearchItemOut, AliSearchResponse, AliSelfcheckCheckOut, BaseModel, Pydantic output models for the AliExpress MCP connector., AvitoSelfcheckCheckOut, Avito sub-check entry: adds the baseline-comparison fields. (+15 more)
 
 ### Community 28 - "test_stdio_probe.py"
 Cohesion: 0.16
 Nodes (23): Step 7d - MCP server (only if --mcp flag), main(), command(), fixture, MonkeyPatch, parametrize, Path, Popen (+15 more)
 
 ### Community 29 - "useUserStore"
-Cohesion: 0.13
-Nodes (18): userApi, UserState, useSessionUser(), useUserStore, apps_web_src_entities_user_types_index_sessionuser, apps_web_src_entities_user_types_index_usersettings, useLogin(), logout() (+10 more)
+Cohesion: 0.06
+Nodes (39): App(), useBootSession(), useSearchHotkey(), AppShell(), LoginShell(), isAppView(), items, MobileNav() (+31 more)
 
-### Community 30 - "lamoda_search"
-Cohesion: 0.09
-Nodes (34): Вердикт: conditional go, Локальная проверка, точная последовательность, MetaOut, Lamoda carries the shared envelope unchanged., _anti_bot_challenge(), _cdp_render_search(), _attempt(), _extract_sku() (+26 more)
+### Community 30 - "ParserDriftError"
+Cohesion: 0.08
+Nodes (38): LamodaSelfcheckResponse, MetaOut, Lamoda carries the shared envelope unchanged., _anti_bot_challenge(), _cdp_render_search(), _attempt(), read(), _extract_sku() (+30 more)
 
 ### Community 32 - "memory-auth-store.ts"
-Cohesion: 0.15
-Nodes (15): PasswordChange, defaultUsers(), DUMMY_HASH, hashPassword(), hashPasswordAsync(), makeUser(), MemoryAuthStore, parseUserLines() (+7 more)
+Cohesion: 0.18
+Nodes (13): PasswordChange, defaultUsers(), DUMMY_HASH, hashPassword(), hashPasswordAsync(), makeUser(), MemoryAuthStore, parseUserLines() (+5 more)
 
-### Community 33 - "history-routes.test.ts"
-Cohesion: 0.13
-Nodes (16): apps, as(), asJson(), listen(), product, servers, start(), users (+8 more)
+### Community 33 - "Аудит ru-marketplace-mcp v1.2.0 — независимая перепроверка"
+Cohesion: 0.08
+Nodes (26): [1.2.0] — 2026-07-28, Добавлено, Документация, Изменено, Исправлено, Навыки, Что нашла независимая перепроверка перед выпуском, 10. Обратная совместимость (+18 more)
 
 ### Community 34 - "ollama-analysis-narrator.ts"
-Cohesion: 0.13
-Nodes (23): recording(), CopilotChatAnswer, RelevanceFilterInput, RelevanceFilterResult, FAILURE_MESSAGES, NarrationError, NarrationFailure, looksStronglyEnglish() (+15 more)
+Cohesion: 0.10
+Nodes (32): recording(), buildAnalysisApp(), HISTORY_SCHEMA, AnalysisNarration, CopilotChatAnswer, CopilotChatInput, RelevanceFilterResult, FAILURE_MESSAGES (+24 more)
 
 ### Community 35 - "test_redact.py"
 Cohesion: 0.09
 Nodes (37): redact_error_text(), redact_url(), _strip_userinfo(), parametrize, Tests for the secret-scrubbing helpers. Redaction is the last thing standing…, No ':' in the userinfo — a bare username is not a credential., The userinfo shape is user:pass — it contains ':'. A path-embedded '@' without…, No ':' means no credential; stripping it would mangle a valid URL. (+29 more)
 
 ### Community 36 - "wb_connector/models_output.py"
-Cohesion: 0.14
-Nodes (19): BaseModel, Pydantic output models for the WB connector (Stage 2). Every tool returns a…, A page of products from one catalog category. ``items`` uses the same shape as…, WB sub-check entry: adds the baseline-comparison fields WB reports., Legal identity behind a WB supplier id. WB publishes the registered entity for…, One node of the WB catalog tree. ``shard`` and ``query`` together form the…, A slice of the WB catalog tree. The full menu is ~800 KB, which is far too…, One buyer question, with the seller's answer when there is one. (+11 more)
+Cohesion: 0.16
+Nodes (17): BaseModel, Pydantic output models for the WB connector (Stage 2). Every tool returns a…, A page of products from one catalog category. ``items`` uses the same shape as…, Legal identity behind a WB supplier id. WB publishes the registered entity for…, One node of the WB catalog tree. ``shard`` and ``query`` together form the…, A slice of the WB catalog tree. The full menu is ~800 KB, which is far too…, One buyer question, with the seller's answer when there is one., WbCategoriesResponse (+9 more)
 
-### Community 37 - "firewall_pow.py"
-Cohesion: 0.14
-Nodes (22): base64, build_get_payload(), build_verify_payload(), challenge_jwt_from_get_body(), decode_pow_params(), find_pow_nonce(), pow_challenge_from_body(), Any (+14 more)
+### Community 37 - "json"
+Cohesion: 0.11
+Nodes (33): base64, json, build_get_payload(), build_verify_payload(), challenge_jwt_from_get_body(), decode_pow_params(), find_pow_nonce(), pow_challenge_from_body() (+25 more)
 
 ### Community 38 - "e2e_stdio_check.py"
 Cohesion: 0.13
-Nodes (14): mcp_client_stdio, stitch, main(), probe(), End-to-end stdio MCP check: spawn a server, speak the real protocol.…, Reject incomplete introspection even when tools/call itself succeeded., validate_sources(), parametrize (+6 more)
+Nodes (15): mcp_client_stdio, stitch, main(), probe(), End-to-end stdio MCP check: spawn a server, speak the real protocol.…, Reject incomplete introspection even when tools/call itself succeeded., validate_sources(), parametrize (+7 more)
 
 ### Community 39 - "test_helpers.py"
 Cohesion: 0.06
@@ -749,21 +759,21 @@ Nodes (31): Accordion / collapse, Animation Recipes, Button press, Drag to dismi
 Cohesion: 0.09
 Nodes (25): _patch_post(), Offline tests for the Megamarket connector. CDP posting is monkeypatched out:…, total=10 with nothing parseable is a contradiction, not a soft warning. This…, Megamarket renaming the array must fail loudly, not return zero results., An empty array under a known key means the query matched nothing. That must…, Empty on a canary is a session problem, and must not read as drift. Reporting…, A renamed array is a real parser problem and must stay loud., The tolerant reader keeps working if the shape ever flattens. (+17 more)
 
-### Community 43 - "UpstreamTimeoutError"
-Cohesion: 0.20
-Nodes (7): UpstreamTimeoutError, test_deadline_cancels_extractor_and_closes(), test_idle_expiry_settles_retry_queued_before_getter_resumes(), put_at_deadline(), test_snapshot_cancellation_or_deadline_cleans_exact_page(), record(), test_termination_settles_queued_snapshot_before_getter_resumes()
+### Community 43 - "test_termination_settles_queued_snapshot_before_getter_resumes"
+Cohesion: 0.17
+Nodes (12): parametrize, snapshot_id(), test_disabled_or_invalid_duration_preserves_short_lifecycle(), test_other_endpoint_or_profile_never_adopts_retained_page(), test_other_session_operation_or_query_never_adopts_retained_page(), capture(), test_snapshot_cancellation_or_deadline_cleans_exact_page(), record() (+4 more)
 
 ### Community 44 - "aliexpress-connector/tests/test_server.py"
-Cohesion: 0.09
-Nodes (28): _no_cache(), _patch_card(), fake_card(), _patch_search(), fixture, Offline tests for the AliExpress connector. CDP rendering is monkeypatched out:…, The pairing must not trust DOM order: a base-first sticky ships current=min., The sticky module lists the current price FIRST — opposite order to tiles. (+20 more)
+Cohesion: 0.06
+Nodes (40): cdp, AliExpress MCP connector., The REAL extractors run against the captured fixtures — not mocks. The offline…, Parser-to-wire: the DOM order (base, current) must yield current=min., The captured Realme tile shows an ae-pic CDN photo; it reaches the wire., The whole two-hop flow against the operator's Chrome. Excluded from CI (no…, _run(), test_card_extractor_reads_the_captured_modules() (+32 more)
 
 ### Community 45 - "detmir_categories"
-Cohesion: 0.05
-Nodes (61): alias(), The Detsky Mir search trap, The Ozon seller-details refusal (v1.1.0), The Wildberries search trap, Traps and refusals worth their own section, Detsky Mir Connector, Gotchas, There is no text search — this is important (+53 more)
+Cohesion: 0.14
+Nodes (27): [1.0.0] — 2026-07-26, Added, Fixed, Not included, and why, Removed, _body_error_status(), detmir_card(), detmir_categories() (+19 more)
 
-### Community 46 - "pytest"
-Cohesion: 0.03
-Nodes (69): contextlib, fixture, io, When a retained page's JPEG may go on the wire. A snapshot of a marketplace…, Contract tests for the middle DSH profile., test_decision_inspect_accepts_canonical_detmir_url(), card(), test_decision_inspect_rejects_stray_digits_in_wildberries_input() (+61 more)
+### Community 46 - "asyncio"
+Cohesion: 0.04
+Nodes (53): asyncio, contextlib, httpx, io, Search Avito classifieds and show one seller's reputation. uv run python…, Show what a Yandex Market star rating is actually made of. uv run python…, Contract tests for the middle DSH profile., test_decision_inspect_accepts_canonical_detmir_url() (+45 more)
 
 ### Community 47 - "test_live_payload_contract.py"
 Cohesion: 0.15
@@ -774,12 +784,12 @@ Cohesion: 0.07
 Nodes (38): given, hypothesis, first_present(), Return the first alias key whose value is present (not None/missing). Multi-…, Property tests for the coercion helpers: contracts about EVERY input. Example…, One poisoned cell degrades a field, never aborts the tool., No digits anywhere means no value — and 'no value' is None, never 0., A letter means a unit/magnitude suffix ('1.2K', '15 тыс.') — digit… (+30 more)
 
 ### Community 49 - "b2b-distributor-adapter.ts"
-Cohesion: 0.09
-Nodes (29): ALIASES, B2bDistributorStubAdapter, createDistributorSourcesFromEnv(), DistributorKind, DISTRIBUTORS, DistributorSpec, envFilled(), listDistributorSpecs() (+21 more)
+Cohesion: 0.08
+Nodes (30): ALIASES, B2bDistributorStubAdapter, createDistributorSourcesFromEnv(), DistributorKind, DISTRIBUTORS, DistributorSpec, envFilled(), listDistributorSpecs() (+22 more)
 
-### Community 50 - "test_card_extractor_live_dom.py"
-Cohesion: 0.29
-Nodes (9): _extract(), The Taobao card extractor against a LIVE captured item page.…, The modern page has no h1; before the fix the generic title fallback read the…, ￥83.6 is what the buyer pays (店铺优惠后); ￥95 is the before-discount figure (优惠前)…, The rendered body text carries no newlines; an uncapped line scan glued the…, test_live_description_images_are_counted(), test_live_price_is_assembled_from_the_split_spans(), test_live_shop_and_sales_are_the_short_nodes_not_body_blobs() (+1 more)
+### Community 50 - "ozon_card"
+Cohesion: 0.13
+Nodes (22): [1.6.1] — 2026-09-09, Added, Fixed, Добавлено, Исправлено, _ozon_blocked_error(), ozon_card(), ozon_reviews() (+14 more)
 
 ### Community 51 - "detmir-connector/tests/test_server.py"
 Cohesion: 0.10
@@ -798,16 +808,16 @@ Cohesion: 0.06
 Nodes (29): Collections, Emails, URLs, identifiers, Environment, Images and media, Labels, titles, and copy from data, Numbers and money, People and names, States (+21 more)
 
 ### Community 55 - "packages_contracts_dist_index"
-Cohesion: 0.06
-Nodes (38): apps, TestSource, DEFAULT_RETENTION, DEFAULT_SOURCE_TIMEOUT_MS, Listener, isUnrequestedConsumablePart(), leadingTitle(), PART_WORDS (+30 more)
+Cohesion: 0.07
+Nodes (31): exportSearch(), DEFAULT_RETENTION, DEFAULT_SOURCE_TIMEOUT_MS, Listener, product, retention, isUnrequestedConsumablePart(), leadingTitle() (+23 more)
 
 ### Community 56 - "test_cli.py"
 Cohesion: 0.07
 Nodes (16): parametrize, Offline tests for the operator CLI. Selfchecks are monkeypatched out — doctor's…, A typo must not silently print a Claude block for Cursor., Installed as a wheel there is no checkout, so uv run --directory is wrong., "inconclusive" alone cannot be acted on. Rate-limited, IP-banned and no-CDP all…, Connectors return sub-checks as models in some packages, dicts in others., dsh does not read claude_desktop_config.json; print its patch format., test_config_block_falls_back_to_console_scripts_outside_a_checkout() (+8 more)
 
 ### Community 57 - "shape_signature"
-Cohesion: 0.08
-Nodes (36): Reference shape signature of the REAL Avito ``js/items`` payload.…, A rename WITHIN an alias family is tolerated; the loss of a whole family is…, Avito moved listings into catalog.items[], but the parser binds both shapes and…, test_live_payload_shape_matches_the_capture(), test_missing_required_families_reports_only_absent_families(), test_the_pre_2026_08_top_level_envelope_still_passes_the_families(), test_card_normalization_matches_shape_golden(), diff_keys() (+28 more)
+Cohesion: 0.07
+Nodes (38): Reference shape signature of the REAL Avito ``js/items`` payload.…, The fields the parser actually binds to must stay in the reference. A fixture…, A rename WITHIN an alias family is tolerated; the loss of a whole family is…, Avito moved listings into catalog.items[], but the parser binds both shapes and…, test_live_payload_shape_matches_the_capture(), test_missing_required_families_reports_only_absent_families(), test_the_parser_bindings_survive_in_the_reference_shape(), test_the_pre_2026_08_top_level_envelope_still_passes_the_families() (+30 more)
 
 ### Community 58 - "_patch_routes"
 Cohesion: 0.07
@@ -831,23 +841,23 @@ Nodes (19): _FakeProc, Tests for ``mcp_core.process`` — worker isolation and p
 
 ### Community 63 - "web/package.json"
 Cohesion: 0.07
-Nodes (27): dependencies, @peremena/contracts, react, react-dom, vite, @vitejs/plugin-react, zustand, devDependencies (+19 more)
+Nodes (28): dependencies, @peremena/contracts, react, react-dom, vite, @vitejs/plugin-react, zustand, devDependencies (+20 more)
 
 ### Community 64 - "avito_seller"
-Cohesion: 0.04
-Nodes (65): [1.2.0] — 2026-07-28, Added, Добавлено, Изменено, Megamarket — clean API, hard block, 2.1 avito: `location` объектом — **подтверждён, исправлен, проверен на живом ответе**, 2.2 dns: 24 ссылки, `title=None`, `price=None` — **подтверждён, исправлен, и он был хуже, чем в отчёте**, 2.3 detmir: «цена, которой нет на странице, и не находит h1» — **не воспроизводится** (+57 more)
+Cohesion: 0.05
+Nodes (52): 2.1 avito: `location` объектом — **подтверждён, исправлен, проверен на живом ответе**, Avito Connector, Gotchas, Tools available, What a search row does and does not carry, When to use, main(), AvitoSelfcheckResponse (+44 more)
 
 ### Community 65 - "test_storefront_live_xhr_capture_via_get_context"
 Cohesion: 0.13
 Nodes (4): Live Network.response body is primary (wb-diagnose), not Performance re-fetch., test_storefront_live_xhr_capture_via_get_context(), fake_get_context(), scenario()
 
 ### Community 66 - "useSearchStore"
-Cohesion: 0.13
-Nodes (15): searchApi, api, readSelectedSources(), SearchState, api, useSearchStore, writeSelectedSources(), mergeSnapshotOffers() (+7 more)
+Cohesion: 0.10
+Nodes (22): searchApi, api, readSelectedSources(), SearchState, api, useSearchStore, writeSelectedSources(), mergeSnapshotOffers() (+14 more)
 
 ### Community 67 - "Итерации"
 Cohesion: 0.02
-Nodes (90): 2026-09-23 — API Merlion / OCS / NetLab (исследование + клиенты), 2026-09-23 — Chrome 154 биндит CDP только на 127.0.0.1, 2026-09-23 — headed Chrome вместо Alpine Headless, 2026-09-23 — K380: WB «28 отсеяны» и Avito 2 строки, 2026-09-23 — MCP search kwargs, 2026-09-23 — MSD и микросервисы, 2026-09-23 — MSD по статье СберТеха, 2026-09-23 — puppeteer-real-browser и CDP (+82 more)
+Nodes (88): 2026-09-23 — API Merlion / OCS / NetLab (исследование + клиенты), 2026-09-23 — Chrome 154 биндит CDP только на 127.0.0.1, 2026-09-23 — headed Chrome вместо Alpine Headless, 2026-09-23 — K380: WB «28 отсеяны» и Avito 2 строки, 2026-09-23 — MCP search kwargs, 2026-09-23 — MSD и микросервисы, 2026-09-23 — MSD по статье СберТеха, 2026-09-23 — puppeteer-real-browser и CDP (+80 more)
 
 ### Community 68 - "test_chrome_cdp.py"
 Cohesion: 0.07
@@ -858,60 +868,60 @@ Cohesion: 0.13
 Nodes (21): capture(), jpeg(), metrics(), fixture, parametrize, Viewport capture validation and bounded CDP lifetime, without a browser., test_actual_pixels_remaining_oversize_are_rejected_after_one_retry(), test_bad_image_payload_is_rejected() (+13 more)
 
 ### Community 70 - "gateway/src/app.ts"
-Cohesion: 0.13
-Nodes (20): buildGatewayApp(), chatHistory(), cookieHeader(), fastify, FastifyRequest, gatewayStatus(), getJson(), proxyJson() (+12 more)
+Cohesion: 0.07
+Nodes (36): buildGatewayApp(), chatHistory(), cookieHeader(), fastify, FastifyRequest, gatewayStatus(), getJson(), proxyJson() (+28 more)
 
 ### Community 71 - "compare-models.ts"
 Cohesion: 0.13
-Nodes (21): Call, CHAT_PROMPTS, CONVERSATION, cyrillicShare(), evaluate(), main(), narratorFor(), percentile() (+13 more)
+Nodes (24): Call, CHAT_PROMPTS, CONVERSATION, cyrillicShare(), evaluate(), main(), narratorFor(), percentile() (+16 more)
 
 ### Community 72 - "citilink-connector/tests/test_search_extractor_dom.py"
-Cohesion: 0.09
-Nodes (26): _extract(), _items(), Regression tests for the Citilink extractors on captured tile markup. Citilink…, "- 10%", "+ 1 655 бонусов", "в 1356 пунктов", "(от 8 дней)" are not prices., The first product anchor per tile is an empty overlay link., The captured tiles carry real cdn.citilink.ru product photos., Mirrors Citilink's shape: bare old price, glyph-attached current price., Fail honest: a bare number alone is not evidence of a price. Promoting it would… (+18 more)
+Cohesion: 0.10
+Nodes (24): _extract(), _items(), Regression tests for the Citilink extractors on captured tile markup. Citilink…, "- 10%", "+ 1 655 бонусов", "в 1356 пунктов", "(от 8 дней)" are not prices., The first product anchor per tile is an empty overlay link., The captured tiles carry real cdn.citilink.ru product photos., Fail honest: a bare number alone is not evidence of a price. Promoting it would…, A payload cached before the split carries no glyph information. (+16 more)
 
 ### Community 73 - "resolve_image_delivery"
 Cohesion: 0.08
-Nodes (27): client_vision_hint(), ImageDelivery, normalize_policy(), Any, The decision, and why — so the caller can be told instead of guessing., Accept an operator's policy text, falling back to the default. A typo must not…, An *explicit* vision hint from the client, or ``None`` when it says nothing.…, Decide whether the JPEG goes on the wire, and name the reason when it does not.… (+19 more)
+Nodes (28): client_vision_hint(), ImageDelivery, normalize_policy(), Any, When a retained page's JPEG may go on the wire. A snapshot of a marketplace…, The decision, and why — so the caller can be told instead of guessing., Accept an operator's policy text, falling back to the default. A typo must not…, An *explicit* vision hint from the client, or ``None`` when it says nothing.… (+20 more)
 
 ### Community 74 - "yandex_card"
 Cohesion: 0.06
-Nodes (44): Added, Avito — hard IP firewall, workable API behind it, Detsky Mir — open JSON API, refused by address, Ozon — needs your browser, Shipped sources, Wildberries — no resistance, Yandex Market — captcha present but dormant, main() (+36 more)
+Nodes (43): 2026-10-01 — Яндекс 302: причина и транспорт через Chrome, Gotchas, The price field that matters most, Tools, Trust boundary, When to use, Workflow patterns, Yandex Market Connector (+35 more)
 
 ### Community 75 - "test_skills_parity.py"
 Cohesion: 0.09
-Nodes (24): _connector_packages(), _has_nullable_price_field(), _mcp_registered_tools(), _names_offered_by_tool_sections(), Every connector ships its own skill, and that skill describes the real tools. A…, Every package is either a server with a skill, or a listed runtime. This is…, True when the package's output models carry a float|None price field — i.e. the…, Only ``@mcp.tool`` registrations — no selfcheck fallback. (+16 more)
+Nodes (22): _connector_packages(), _mcp_registered_tools(), _names_offered_by_tool_sections(), Every connector ships its own skill, and that skill describes the real tools. A…, Every package is either a server with a skill, or a listed runtime. This is…, Only ``@mcp.tool`` registrations — no selfcheck fallback., Bullet-list names that sit under a heading titled "Tools…"., A gate that cannot fail is worse than no gate at all. (+14 more)
 
 ### Community 76 - "coerce_price"
-Cohesion: 0.08
-Nodes (43): coerce_price(), _parse_money_string(), price_from_texts(), Coerce a price (int rubles, float, or display string like '3\u2009983\u2009₽')…, Parse ONE money number from a display string, or None if absent/ambiguous.…, Build one normalized selfcheck sub-check entry. state must be 'healthy' |…, Aggregate per-check tri-state entries into the unified top-level verdict.…, First candidate that parses to a real positive price, else None. DOM extractors… (+35 more)
+Cohesion: 0.06
+Nodes (53): [1.4.1] — 2026-08-08, Added, Added, Fixed, Добавлено, Добавлено, Исправлено, Исправлено (+45 more)
 
 ### Community 77 - "ssr.py"
-Cohesion: 0.07
-Nodes (65): _absolute_url(), _additional_price(), _amount_int(), _as_dict(), _as_list(), _cart_price(), _empty_product_shell(), find_search_collections() (+57 more)
+Cohesion: 0.16
+Nodes (24): _as_dict(), _empty_product_shell(), _first_dict(), _iter_ldjson(), ldjson_product(), looks_like_captcha(), parse_card(), parse_reviews() (+16 more)
 
 ### Community 78 - "Animation Audit Playbook"
 Cohesion: 0.08
 Nodes (22): 1. Purpose & frequency, 2. Easing & duration, 3. Physicality & origin, 4. Interruptibility, 5. Performance, 6. Accessibility, 7. Cohesion & tokens, 8. Missed opportunities (+14 more)
 
 ### Community 79 - "run_extractor"
-Cohesion: 0.11
-Nodes (23): 8б. Ревизия собственной работы, Что это меняет для одиннадцатого источника, _decoy_regex_literal(), The DECOY_MARKERS as a JavaScript regex literal. Escaped so a marker containing…, jsdom_available(), JsdomUnavailable, _node(), Any (+15 more)
+Cohesion: 0.07
+Nodes (34): 8б. Ревизия собственной работы, Что это меняет для одиннадцатого источника, _extract(), Path, Golden shapes for AliExpress's captured DOM extractors., test_card_extractor_shape_matches_golden(), test_search_extractor_shape_matches_golden(), _extract() (+26 more)
 
 ### Community 80 - "SearchService"
-Cohesion: 0.13
-Nodes (10): lastGoodKey(), SearchRetention, SearchService, finish(), product, retention, titles(), withDeadline() (+2 more)
+Cohesion: 0.14
+Nodes (10): lastGoodKey(), SearchRetention, SearchService, finish(), titles(), withDeadline(), 2026-09-30 — ограничение памяти в search, 2026-09-30 — устойчивость сервисов, CI и вынос релевантности (+2 more)
 
 ### Community 81 - "analyze.ts"
-Cohesion: 0.11
-Nodes (45): AnalyzeOptions, analyzeSnapshotRaw(), answerCopilotRaw(), applyLlmRelevanceFilter(), asMetaIntent(), citationOf(), dropWeakMatchesWhenStrongerExist(), historyOf() (+37 more)
+Cohesion: 0.07
+Nodes (57): citilinkReal, demoCheap, product, wbReal, AnalyzeOptions, analyzeSnapshot(), analyzeSnapshotRaw(), answerCopilotRaw() (+49 more)
 
 ### Community 82 - "merlion-client.ts"
 Cohesion: 0.19
 Nodes (24): arrayOfString(), candidateItemIds(), endpointOf(), escapeXml(), floatOf(), intOf(), matchKind(), MERLION_ENDPOINT_PROD (+16 more)
 
-### Community 83 - "Как получить доступ"
-Cohesion: 0.13
-Nodes (14): Compose, DNS / Ситилинк / остальные витрины, MERLION (готово к включению), NETLAB API (запасной вариант), NETLAB — прайс-лист по ссылке (live с 2026-10-07), OCS (ключ + path из OpenAPI), Servermall / Онлайнтрейд / Регард / Хардпрайс / СРВТрейд / ТоргPC, TREOLAN (SOAP есть, клиент не wired) (+6 more)
+### Community 83 - "CLAUDE.md"
+Cohesion: 0.07
+Nodes (24): MCP / skills / инструменты, Stack, Архитектурные правила, Команды (из корня), Коммиты и PR, Проект, Секреты и env, Структура (+16 more)
 
 ### Community 84 - "dns-connector/tests/test_search_extractor_dom.py"
 Cohesion: 0.09
@@ -921,21 +931,21 @@ Nodes (23): _extract(), Regression tests for the DNS search/card extractors, on 
 Cohesion: 0.09
 Nodes (15): Pacer, A request came back with data. Forget the refusals before it., A request was refused — a 401, 403, 429, or an anti-bot wall. Only count what…, Whether refusals have stopped looking like bad luck., A sentence for the operator, empty until rotation is warranted. Connectors…, Forget everything. For tests and for a deliberate session change., Keeps one source's requests spaced out, and backs off when refused. One…, Configure the pace for one source. ``error_delay`` defaults to twice… (+7 more)
 
-### Community 86 - "wb_connector/server.py"
-Cohesion: 0.03
-Nodes (162): AsyncClient, Context, default, description, Field, ge, gt, le (+154 more)
+### Community 86 - "wb_category_products"
+Cohesion: 0.10
+Nodes (44): Context, default, description, Field, ge, gt, le, max_length (+36 more)
 
 ### Community 87 - "test_handoff_reporting.py"
 Cohesion: 0.13
 Nodes (20): blocked(), blocked_stable(), blocked_then_clear(), browser(), call(), fixture, R3 (2026-09-18): a resumed read must say what changed, and a refusal must say…, The interesting case: same owned page, challenge gone, data moved on. (+12 more)
 
-### Community 88 - "useAnalysisStore"
-Cohesion: 0.13
-Nodes (14): useAnalysisStore, applyChatResult(), setQuery, setTableFilter, suggest, useRequestAnalysis(), AnalysisChat(), firstName() (+6 more)
+### Community 88 - "analysis/store/index.ts"
+Cohesion: 0.10
+Nodes (21): analysisApi, AnalysisState, chatHistory(), ChatMessage, emptyMessages, nextId(), TRANSPORT_FAILURES, useAnalysisStore (+13 more)
 
 ### Community 89 - "pathlib"
 Cohesion: 0.04
-Nodes (51): collections, hashlib, Compare a product across Russian marketplaces and Taobao side by side. uv run…, Compare a product's price across every available marketplace. uv run python…, Find out who actually sells a Wildberries product. uv run python…, The provenance gate must catch a pin that no longer describes its file., A mismatched pin must fail, and name both hashes., The allowlist must not outlive the problem it tolerates. (+43 more)
+Nodes (46): ctypes, hashlib, The provenance gate must catch a pin that no longer describes its file., A mismatched pin must fail, and name both hashes., The allowlist must not outlive the problem it tolerates., test_a_quarantined_pin_that_starts_matching_is_reported(), test_a_stale_pin_is_reported(), parametrize (+38 more)
 
 ### Community 90 - "test_pagination_wrap.py"
 Cohesion: 0.13
@@ -945,9 +955,9 @@ Nodes (20): _clear_fingerprints(), _products(), fixture, Past the end of a resul
 Cohesion: 0.17
 Nodes (22): evaluate(), evaluate_answers(), _load_answers(), load_bundle(), main(), _norm(), Any, Path (+14 more)
 
-### Community 92 - "CLAUDE.md"
-Cohesion: 0.15
-Nodes (11): MCP / skills / инструменты, Stack, Архитектурные правила, Команды (из корня), Коммиты и PR, Проект, Секреты и env, Структура (+3 more)
+### Community 92 - "prices_from_tile"
+Cohesion: 0.09
+Nodes (22): Mirrors Citilink's shape: bare old price, glyph-attached current price., test_glyph_attached_candidate_wins_over_a_bare_number(), prices_from_tile(), _parsed(), Return ``(price, old_price)`` for one extracted tile. Reads the shapes the…, `data-meta-price` is the site's own number: no parsing, no ambiguity., "58 999 ₽54 999" must not become 5899954999., Numeric payloads predate the text shape; they must not start reading null. (+14 more)
 
 ### Community 93 - "test_pacing.py"
 Cohesion: 0.16
@@ -962,8 +972,8 @@ Cohesion: 0.19
 Nodes (19): copy, _contract_diff(), _live_contract(), _project(), Any, Pin the public contract of every mounted tool against a committed snapshot. The…, Rewording a field must not read as drift — only structure is pinned., Regression: a response field called ``title`` or ``description`` is a domain… (+11 more)
 
 ### Community 96 - "_skill_dir"
-Cohesion: 0.16
-Nodes (17): _frontmatter(), parametrize, Path, Conformance to the Agent Skills frontmatter contract, not to a house rule., Prices come back as float|None everywhere in this repo. A skill silent about…, A tool the skill never mentions is a tool the agent will not reach for., The reverse drift: a skill naming a tool that no longer exists. The agent calls…, The unified server's mount list and the skills directory must agree. (+9 more)
+Cohesion: 0.14
+Nodes (19): _frontmatter(), _has_nullable_price_field(), parametrize, Path, Conformance to the Agent Skills frontmatter contract, not to a house rule., True when the package's output models carry a float|None price field — i.e. the…, Prices come back as float|None everywhere in this repo. A skill silent about…, A tool the skill never mentions is a tool the agent will not reach for. (+11 more)
 
 ### Community 97 - "lamoda-connector/tests/test_search_extractor_dom.py"
 Cohesion: 0.15
@@ -978,28 +988,28 @@ Cohesion: 0.10
 Nodes (20): dependencies, fastify, @fastify/cookie, @fastify/cors, devDependencies, @types/node, typescript, fastify (+12 more)
 
 ### Community 100 - "test_dependency_parity.py"
-Cohesion: 0.19
-Nodes (16): _declared_dependencies(), _mounted_distributions(), _pyproject(), Every source _mount_all mounts must be a dependency this package declares. The…, Guard the guard: a broken extraction would make every check below vacuous. If…, The bug this file exists for: registered in _mount_all, forgotten in pyproject.…, Declaring the dependency is half the row; [tool.uv.sources] is the other.…, The reverse drift: a connector dependency that nothing mounts. Not the disaster… (+8 more)
+Cohesion: 0.11
+Nodes (21): ast, _declared_dependencies(), _mounted_distributions(), _pyproject(), Every source _mount_all mounts must be a dependency this package declares. The…, Guard the guard: a broken extraction would make every check below vacuous. If…, The bug this file exists for: registered in _mount_all, forgotten in pyproject.…, Declaring the dependency is half the row; [tool.uv.sources] is the other.… (+13 more)
 
 ### Community 101 - "test_search_parser_live.py"
 Cohesion: 0.22
 Nodes (11): _items(), The Ozon search parse path against a LIVE captured composer payload.…, tileImage.items[0].image.link is the photo Ozon shows on the tile., The display strings the live tiles carry must coerce to the numbers the page…, The tile carries the raw label («N шт осталось» or nothing); mapping it to…, compare/ozon_card chain depends on card_input surviving the parse., test_live_composer_payload_parses_to_the_three_tiles(), test_live_price_strings_parse_to_the_displayed_numbers() (+3 more)
 
-### Community 102 - "search/src/app.ts"
-Cohesion: 0.11
-Nodes (19): allowDemoSources(), buildSearchApp(), createDemoSources(), DemoSourceAdapter, DemoSourceOptions, mergeSourceFallbacks(), createHttpMarketplaceSources(), Матрица (+11 more)
+### Community 102 - "SourceAdapter"
+Cohesion: 0.07
+Nodes (35): allowDemoSources(), buildSearchApp(), apps, TestSource, OFFERS_PER_SOURCE, SourceAdapter, BlockedSourceCooldownAdapter, makeAdapter() (+27 more)
 
 ### Community 103 - "test_contract.py"
-Cohesion: 0.12
-Nodes (16): Cross-connector contract tests: the invariants every parser must hold. These…, The coercion contract: a range, an empty string, an absent value, a zero and a…, Multi-alias binding must survive a renamed field without inventing one., A missing container and an empty one mean different things. Empty under a known…, test_coerce_price_refuses_to_guess_on_ambiguous_input(), test_first_present_distinguishes_absent_from_null(), test_megamarket_code7_is_detected_as_a_block_not_data(), test_megamarket_pricelss_item_is_none_not_zero() (+8 more)
+Cohesion: 0.18
+Nodes (9): Cross-connector contract tests: the invariants every parser must hold. These…, The coercion contract: a range, an empty string, an absent value, a zero and a…, Multi-alias binding must survive a renamed field without inventing one., A missing container and an empty one mean different things. Empty under a known…, test_coerce_price_refuses_to_guess_on_ambiguous_input(), test_first_present_distinguishes_absent_from_null(), test_megamarket_code7_is_detected_as_a_block_not_data(), test_megamarket_pricelss_item_is_none_not_zero() (+1 more)
 
 ### Community 104 - "ozon-connector/tests/test_server.py"
 Cohesion: 0.08
 Nodes (5): clear_cache(), fixture, Composer reads are cached, so scenarios must not inherit each other's bodies., test_run_sync_bounded_rejects_local_callables(), scenario()
 
-### Community 105 - "yandex_connector/models_output.py"
-Cohesion: 0.18
-Nodes (15): test_yandex_live_fixture_variant_survives_comparison(), search(), test_yandex_adapter_keeps_the_subscriber_price_out_of_ranking(), yandex_search(), BaseModel, Typed responses for the Yandex Market connector. Prices carry two fields on…, Full detail for one product, including its rating breakdown and reviews., One Yandex Market product as it appears in search results. A row describes the… (+7 more)
+### Community 105 - "Any"
+Cohesion: 0.19
+Nodes (21): _absolute_url(), _additional_price(), _amount_int(), _as_list(), _cart_price(), ldjson_item_list(), parse_search(), parse_zone_items() (+13 more)
 
 ### Community 106 - "taobao-connector/tests/test_server.py"
 Cohesion: 0.17
@@ -1013,13 +1023,13 @@ Nodes (32): _no_cache(), _patch_render(), fixture, parametrize, Offline tests fo
 Cohesion: 0.08
 Nodes (28): _no_cache(), _patch_render(), fixture, parametrize, Offline tests for the DNS-Shop connector. CDP rendering is monkeypatched out:…, Tiles extracting is not enough: the shape must still match the captured…, A page that still yields tiles but lost a parser-critical field is structural…, Even for a legitimate URL, we navigate our own construction, not theirs. (+20 more)
 
-### Community 109 - "capture_owned_viewport"
-Cohesion: 0.14
-Nodes (13): HandoffBusyError, An owned tab is already being read, or the bounded registry is full. R3: the…, capture_owned_viewport(), _handoff_jpeg(), Any, Read the encoded image dimensions, not CSS dimensions (which ignore DPR)., Capture only the current owned viewport through CDP. This deliberately avoids…, 0. Что проект уже делает (baseline, не изобретаем заново) (+5 more)
+### Community 109 - "Внешние подходы: native vision, challenge UX, browser-резильентность"
+Cohesion: 0.22
+Nodes (8): 1. Native-vision чтение маркетплейсов (скриншот вместо парсинга), 2.1 User-mediated handoff (прямые аналоги нашего f67e743+809b0fd), 2.2 Session persistence, 2.3 Stealth / антидетект (класс: НЕ берём, но фиксируем состояние), 2. Captcha/challenge UX в агентских инструментах, 4. GitHub-необычности 2025–2026 («кто-то что-то сделал необычно»), Внешние подходы: native vision, challenge UX, browser-резильентность, Покрытие и метод
 
 ### Community 110 - "test_source_selection.py"
 Cohesion: 0.11
-Nodes (25): fixture, MARKETPLACE_SOURCES mounts the operator's subset and nothing else., Re-import the unified server so _mount_all runs under the current env., _MOUNTED says "yandex"/"detmir"; _CAPABILITIES is keyed canonically., _reload_unified(), test_aliases_and_spacing_are_accepted(), test_blank_env_is_treated_as_unset(), test_capabilities_flag_survives_the_naming_mismatch() (+17 more)
+Nodes (27): importlib, fixture, MARKETPLACE_SOURCES mounts the operator's subset and nothing else., Re-import the unified server so _mount_all runs under the current env., _MOUNTED says "yandex"/"detmir"; _CAPABILITIES is keyed canonically., _reload_unified(), test_aliases_and_spacing_are_accepted(), test_blank_env_is_treated_as_unset() (+19 more)
 
 ### Community 111 - "_run"
 Cohesion: 0.12
@@ -1037,29 +1047,29 @@ Nodes (26): dependencies, fastify, @peremena/contracts, @peremena/service-kit, d
 Cohesion: 0.07
 Nodes (26): dependencies, fastify, @peremena/contracts, @peremena/service-kit, devDependencies, tsx, @types/node, typescript (+18 more)
 
-### Community 115 - "analyze.test.ts"
-Cohesion: 0.14
-Nodes (11): citilinkReal, demoCheap, product, wbReal, resetSafetyCounters(), AnalysisNarration, AnalysisNarrator, CopilotChatInput (+3 more)
+### Community 115 - "it-scope.ts"
+Cohesion: 0.24
+Nodes (17): classifyQuery(), filterItSuggestions(), hasProductIdentity(), identifierTokens(), isExplicitlyNonIt(), isIdentifierToken(), isItCategoryText(), isItIdentifier() (+9 more)
 
 ### Community 117 - "taobao-connector/tests/test_search_extractor_dom.py"
 Cohesion: 0.21
 Nodes (12): _extract(), Regression tests for the Taobao search extractor on a modeled fixture. Taobao's…, Both cards are found, deduplicated by item id, with their data intact., 999¥ is glyph-attached, so priceTextsIn keeps it as the price candidate., «面议» carries no digits and must not read as a price or as 0., Extractor JS -> Python mapping -> TaobaoSearchItemOut wire shape., Guard against a regression back to closest()/innerText/parseFloat/Math.min., test_a_hidden_price_is_none_never_zero() (+4 more)
 
-### Community 118 - "prices_from_tile"
-Cohesion: 0.05
-Nodes (53): Map one extracted tile onto the wire shape, parsing prices in Python. Accepts…, _search_item_from_tile(), prices_from_tile(), _parsed(), Any, Return ``(price, old_price)`` for one extracted tile. Reads the shapes the…, Title of an extracted tile, or an honest None., title_from_tile() (+45 more)
+### Community 118 - "test_dom.py"
+Cohesion: 0.07
+Nodes (26): Tests for the shared DOM-extraction layer. ``mcp_core.dom`` carries four…, The same split-glyph shape as Citilink: digits and ¥ rendered apart., Citilink's strikethrough and DNS's `.product-buy__prev` are both bare.…, An "old" price under the current one is a drifted read, not a discount., A dead listing at 0 would rank cheapest in every comparison., price_meta is the site's own machine-readable number; price_rub is a…, One list, two consumers. Hand-writing the regex is how they drift apart., `%` and `-` are markers; unescaped they would alter the regex's meaning. (+18 more)
 
-### Community 119 - "test_card_out_of_stock_dom.py"
-Cohesion: 0.17
-Nodes (13): Citilink-Shop MCP connector., _extract(), Regression tests for the Citilink card extractor on a captured OUT-OF-STOCK…, The product has no price of its own: None, never a recommendation's., 60 630 belongs to a recommendation snippet; it must not surface anywhere in the…, test_a_recommendation_price_is_never_the_products(), test_out_of_stock_card_reports_no_price(), test_out_of_stock_is_read_from_the_page_text() (+5 more)
+### Community 119 - "detmir_selfcheck"
+Cohesion: 0.13
+Nodes (16): alias(), Detsky Mir Connector, Gotchas, There is no text search — this is important, Tools, Trust boundary, When NOT to use, When to use (+8 more)
 
 ### Community 120 - "aliexpress_card"
 Cohesion: 0.09
-Nodes (39): [1.6.0] — 2026-08-20, Добавлено, Изменено, AliSelfcheckResponse, aliexpress_card(), aliexpress_search(), aliexpress_selfcheck(), _aliexpress_selfcheck_impl() (+31 more)
+Nodes (40): Добавлено, AliSelfcheckResponse, MetaOut, AliExpress carries the shared envelope unchanged., aliexpress_card(), aliexpress_search(), aliexpress_selfcheck(), _aliexpress_selfcheck_impl() (+32 more)
 
-### Community 121 - "ParserDriftError"
-Cohesion: 0.09
-Nodes (37): _unwrap_extract(), ParserDriftError, current_mcp_session_id(), Context, Resolve direct and mounted tool calls; CLI probes have no MCP session., has_pending_handoff(), Whether this exact operation owns a lease, including busy/expiring cleanup., _anti_bot_challenge() (+29 more)
+### Community 121 - "taobao_connector/server.py"
+Cohesion: 0.06
+Nodes (58): Added, Добавлено, test_taobao_adapter_never_ranks_yuan_as_rubles(), taobao_search(), current_mcp_session_id(), Context, Resolve direct and mounted tool calls; CLI probes have no MCP session., NavBlocked (+50 more)
 
 ### Community 122 - "_healthy_selfcheck_responder"
 Cohesion: 0.29
@@ -1070,16 +1080,16 @@ Cohesion: 0.38
 Nodes (16): aliexpress-connector, avito-connector, cian-connector, citilink-connector, compare-connector, detmir-connector, dns-connector, lamoda-connector (+8 more)
 
 ### Community 124 - "_parse_search_items"
-Cohesion: 0.14
-Nodes (18): _first_image_url(), _open_curl_session(), _parse_search_items(), Any, Read a curl_cffi response with the same body cap as the old one-shot GET., Document GET so the jar gets Avito cookies before the items XHR., Tier-1: warmed session + X-Source XHR; one JSON-439 firewallPow retry., Best-effort extraction of items + total from a js/items payload. The endpoint… (+10 more)
+Cohesion: 0.17
+Nodes (16): _first_image_url(), _open_curl_session(), _parse_search_items(), Any, Read a curl_cffi response with the same body cap as the old one-shot GET., Document GET so the jar gets Avito cookies before the items XHR., Tier-1: warmed session + X-Source XHR; one JSON-439 firewallPow retry., Best-effort extraction of items + total from a js/items payload. The endpoint… (+8 more)
 
-### Community 125 - "_dsh_patch_block"
-Cohesion: 0.14
-Nodes (16): cmd_install(), _config_block(), _dsh_command(), _dsh_patch_block(), _dsh_row(), Any, Path, Quote a scalar for double-quoted YAML (backslashes and quotes escaped). (+8 more)
+### Community 125 - "_search_via_storefront"
+Cohesion: 0.15
+Nodes (17): cdp_setup_hint(), Platform-appropriate one-liner for getting CDP running., _is_storefront_catalog_url(), _polite_wait(), Public search.aspx URL that triggers the __internal/u-search XHR., Raise ToolError when the CDP capture is unusable (empty / 403 / no route)., True for the storefront catalog XHR (``__internal/u-search/.../vN/search``)., Open search.aspx in Chrome and capture the page's catalog XHR body. Matches… (+9 more)
 
 ### Community 126 - "English version"
-Cohesion: 0.06
-Nodes (35): Any Russian marketplace needs a Russian-friendly IP, Build, Compose, Deployment, Docker, Honest limitations, HTTP (opt-in), Run one server (+27 more)
+Cohesion: 0.11
+Nodes (19): Agent skills, AliExpress — `aliexpress_*`, Avito — `avito_*`, Cian — `cian_*`, Cross-marketplace — `compare_*`, Detsky Mir — `detmir_*`, Development, English version (+11 more)
 
 ### Community 127 - "test_model_routing_eval.py"
 Cohesion: 0.10
@@ -1091,15 +1101,15 @@ Nodes (14): error_payload(), parametrize, ToolError, The signature Detsky Mir qu
 
 ### Community 129 - "test_cdp_budget.py"
 Cohesion: 0.12
-Nodes (14): Offline tests for the CDP navigation budget. The live failure this guards…, Bad luck must not accumulate into a wall across a healthy minute., A settled slot cannot be re-labelled by later code paths., Read-only view: R2 asks for lease diagnostics without opening tabs., The permit covers the navigation, not the page's lifetime. Found by a hang:…, A typo in an operator's env must not disable the guard., test_a_long_lived_page_does_not_hold_the_host_slot(), test_bad_environment_values_fall_back_to_defaults() (+6 more)
+Nodes (14): Offline tests for the CDP navigation budget. The live failure this guards…, Bad luck must not accumulate into a wall across a healthy minute., A settled slot cannot be re-labelled by later code paths., Read-only view: R2 asks for lease diagnostics without opening tabs., The permit covers the navigation, not the page's lifetime. Found by a hang:…, A typo in an operator's env must not disable the guard., test_a_host_that_keeps_refusing_is_dropped_and_says_for_how_long(), test_a_long_lived_page_does_not_hold_the_host_slot() (+6 more)
 
 ### Community 130 - "Apple Design"
 Cohesion: 0.09
 Nodes (21): 10. Gesture design details (the "feel" checklist), 11. Frame-level smoothness, 12. Materials & depth — translucency conveys hierarchy, 13. Multimodal feedback — motion + sound + haptics, 14. Reduced motion & accessibility, 15. Typography — optical sizing, tracking, leading, 16. Design foundations — the eight principles, 17. Process (+13 more)
 
-### Community 131 - "detmir-connector/tests/test_parser_live.py"
-Cohesion: 0.24
-Nodes (8): Detsky Mir MCP connector., _load(), The Detsky Mir parser against LIVE captured API bodies.…, The doctrine pinned by the audit waves, checked against live bytes: a Detsky…, test_live_card_parses_to_the_displayed_values(), test_live_category_parses_its_products_and_meta(), test_live_prices_are_finite_positive_rubles(), Golden shape checks for normalized Detsky Mir fixture payloads.
+### Community 131 - "math"
+Cohesion: 0.19
+Nodes (10): math, Detsky Mir MCP connector., _load(), The Detsky Mir parser against LIVE captured API bodies.…, The doctrine pinned by the audit waves, checked against live bytes: a Detsky…, test_live_card_parses_to_the_displayed_values(), test_live_category_parses_its_products_and_meta(), test_live_prices_are_finite_positive_rubles() (+2 more)
 
 ### Community 132 - "server.json"
 Cohesion: 0.12
@@ -1113,9 +1123,9 @@ Nodes (22): product(), 2026-09-23 — live autocomplete из поисковик�
 Cohesion: 0.07
 Nodes (29): dependencies, exceljs, fastify, @modelcontextprotocol/sdk, @peremena/contracts, @peremena/service-kit, devDependencies, tsx (+21 more)
 
-### Community 135 - "compare-connector/tests/test_browser_handoff.py"
-Cohesion: 0.08
-Nodes (23): parametrize, A real MCP client can recover a source on the same owned browser page., test_snapshot_mcp_transmits_image_without_ending_or_extending_handoff(), capture(), test_snapshot_rejects_other_session_and_unknown_handle_without_capture(), test_taobao_tools_resume_the_retained_page(), Taobao MCP connector., _family_present() (+15 more)
+### Community 135 - "pytest"
+Cohesion: 0.05
+Nodes (30): fastmcp_exceptions, html, Cross-marketplace price comparison MCP connector., parametrize, A real MCP client can recover a source on the same owned browser page., test_snapshot_mcp_transmits_image_without_ending_or_extending_handoff(), capture(), test_snapshot_rejects_other_session_and_unknown_handle_without_capture() (+22 more)
 
 ### Community 136 - "ru-marketplace-mcp"
 Cohesion: 0.10
@@ -1129,9 +1139,9 @@ Nodes (4): Offline tests for the Avito connector. Every upstream call is monkeyp
 Cohesion: 0.13
 Nodes (9): ?withregion= is silently ignored upstream; only filter=withregion: works.…, Region lives in the URL, and the cache keys on URL — so cities stay separate., test_card_sends_the_region_as_a_filter_not_a_query_parameter(), test_categories_numeric_parent_uses_parent_id_filter(), test_categories_tree_passes_the_region_through(), test_category_listing_passes_the_region_through(), capture(), test_category_passes_region_from_settings() (+1 more)
 
-### Community 139 - "analysis/store/index.ts"
-Cohesion: 0.18
-Nodes (11): analysisApi, AnalysisState, chatHistory(), ChatMessage, emptyMessages, nextId(), TRANSPORT_FAILURES, packages_contracts_dist_index_analysisresult (+3 more)
+### Community 139 - "Any"
+Cohesion: 0.16
+Nodes (16): _can_process_call(), _smoke_card(), _parse_review_item(), _parse_widgets(), _price_str_to_float(), Any, RuntimeError, Parse an Ozon price string like '3\u2009983\u2009₽' (thin-space grouped) to… (+8 more)
 
 ### Community 140 - "test_cache_is_keyed_by_canonical_path_not_raw_input"
 Cohesion: 0.29
@@ -1145,9 +1155,9 @@ Nodes (3): Tests for Yandex Market SSR extraction. Fixtures are real pages captu
 Cohesion: 0.07
 Nodes (28): dependencies, fastify, @fastify/cookie, @peremena/contracts, @peremena/service-kit, devDependencies, tsx, @types/node (+20 more)
 
-### Community 143 - "citilink_connector/models_output.py"
-Cohesion: 0.18
-Nodes (13): CitilinkCardResponse, CitilinkSearchItemOut, CitilinkSearchResponse, CitilinkSelfcheckCheckOut, CitilinkSelfcheckResponse, BaseModel, Pydantic output models for the Citilink MCP connector., _https_image_url() (+5 more)
+### Community 143 - "title_from_tile"
+Cohesion: 0.20
+Nodes (11): _https_image_url(), _is_qrator_wall(), Any, Map one extracted tile onto the wire shape, parsing prices in Python. Tolerates…, Keep only a real https photo URL; placeholders are data: URIs., _search_item_from_tile(), Any, Title of an extracted tile, or an honest None. (+3 more)
 
 ### Community 144 - "NavigationBudget"
 Cohesion: 0.19
@@ -1165,9 +1175,9 @@ Nodes (20): absoluteUrl(), browserHeaders, decodeEntities(), ENTITIES, firstMatc
 Cohesion: 0.13
 Nodes (9): The navigation produced a usable page: forget this host's refusals., The navigation was refused (4xx/5xx/block/auth) as reported by the caller. A…, The navigation ended for a reason that is neither success nor refusal. Our own…, Give the slot back. Idempotent, and separate from the outcome. The permit…, Raise when this host's breaker is open and still cooling down., Take one navigation permit for ``host``. Order matters: the breaker is checked…, Permit held for the whole ``async with`` block. Convenience for callers whose…, One navigation permit. Report the outcome so the breaker can learn. (+1 more)
 
-### Community 148 - "identity/src/http/routes.ts"
-Cohesion: 0.19
-Nodes (13): AuthStore, identityRoutes(), requireUser(), clearSession(), readSessionUser(), sign(), signSession(), verifySession() (+5 more)
+### Community 148 - "identity/src/app.ts"
+Cohesion: 0.28
+Nodes (6): buildIdentityApp(), AuthStore, identityRoutes(), requireUser(), clearSession(), readSessionUser()
 
 ### Community 149 - "_patch_graphql_response"
 Cohesion: 0.15
@@ -1181,17 +1191,17 @@ Nodes (14): test_detmir_canonical_url_dispatches_requested_id(), test_mcp_reject
 Cohesion: 0.20
 Nodes (8): no_server_start(), fixture, parametrize, Console entrypoint dispatch must never turn a typo into a waiting MCP server., test_help_does_not_start_the_server(), test_no_arguments_starts_the_default_server(), test_operator_subcommands_forward_their_arguments(), test_unknown_argument_exits_with_error()
 
-### Community 152 - "identity/src/app.ts"
-Cohesion: 0.16
-Nodes (8): buildIdentityApp(), apps, Attempts, LoginLimiter, normalize(), packages_service_kit_dist_index, packages_service_kit_dist_index_createservice, packages_service_kit_dist_index_listenservice
+### Community 152 - "LoginLimiter"
+Cohesion: 0.25
+Nodes (4): apps, Attempts, LoginLimiter, normalize()
 
 ### Community 153 - "[2.2.0] — 2026-09-11"
-Cohesion: 0.08
-Nodes (27): [2.2.0] — 2026-09-11, Changed, Changed, Changed, Fixed, Fixed, Fixed, Fixed (+19 more)
+Cohesion: 0.07
+Nodes (29): [2.2.0] — 2026-09-11, Changed, Changed, Changed, Fixed, Fixed, Fixed, Fixed (+21 more)
 
-### Community 154 - "aliexpress-connector/tests/test_parser_live.py"
+### Community 154 - "_fetch_composer"
 Cohesion: 0.12
-Nodes (17): cdp, AliExpress MCP connector., The REAL extractors run against the captured fixtures — not mocks. The offline…, Parser-to-wire: the DOM order (base, current) must yield current=min., The captured Realme tile shows an ae-pic CDN photo; it reaches the wire., The whole two-hop flow against the operator's Chrome. Excluded from CI (no…, _run(), test_card_extractor_reads_the_captured_modules() (+9 more)
+Nodes (17): _canonical_composer_path(), _cdp_fetch_json(), _attempt(), _fetch_composer(), _check(), _polite_wait(), _proxy(), Resolve Ozon's tier-1 proxy: explicit ``OZON_PROXY`` first, then the standard… (+9 more)
 
 ### Community 155 - "test_the_category_url_is_what_yields_a_collection"
 Cohesion: 0.15
@@ -1214,16 +1224,16 @@ Cohesion: 0.10
 Nodes (20): compilerOptions, allowImportingTsExtensions, baseUrl, jsx, lib, module, moduleResolution, noEmit (+12 more)
 
 ### Community 160 - "citilink-connector/tests/test_card_extractor_dom.py"
-Cohesion: 0.24
-Nodes (10): _extract(), Regression tests for the Citilink card extractor on a captured card page.…, The crossed-out price must be the product's own 105 990, not the 97 990…, «от 3 531 ₽ в месяц» and «1800 бонусов» must not be candidates., The day data-meta-price disappears, the glyph-attached display string inside…, test_card_extractor_reads_the_product_card(), test_card_prices_are_the_products_own(), test_credit_and_bonus_amounts_are_not_price_candidates() (+2 more)
+Cohesion: 0.20
+Nodes (11): Citilink-Shop MCP connector., _extract(), Regression tests for the Citilink card extractor on a captured card page.…, The crossed-out price must be the product's own 105 990, not the 97 990…, «от 3 531 ₽ в месяц» and «1800 бонусов» must not be candidates., The day data-meta-price disappears, the glyph-attached display string inside…, test_card_extractor_reads_the_product_card(), test_card_prices_are_the_products_own() (+3 more)
 
 ### Community 161 - "Authenticated transport: driving your own Chrome"
 Cohesion: 0.18
 Nodes (11): 1. Start Chrome with remote debugging, 2. Log into the marketplaces you need — and nothing else, 3. Verify, 4. Confirm the connector sees it, Authenticated transport: driving your own Chrome, Configuration, Optional challenge handoff, Read this before you enable it (+3 more)
 
-### Community 162 - "product-from-query.ts"
-Cohesion: 0.07
-Nodes (58): exportSearch(), findProduct(), normalize(), products, suggestProducts(), classifyQuery(), filterItSuggestions(), hasProductIdentity() (+50 more)
+### Community 162 - "live-suggest.ts"
+Cohesion: 0.18
+Nodes (21): findProduct(), collapseWs(), extractMpn(), isProductPayload(), productFromQuery(), splitBrandModel(), ProductLike, queryBodySchema (+13 more)
 
 ### Community 163 - "Tracker"
 Cohesion: 0.15
@@ -1242,32 +1252,32 @@ Cohesion: 0.09
 Nodes (21): 10. Status bar color doesn't match, 11. Right in Chrome, wrong on phone, 1. Hover state stuck after tap, 2. Gray/blue flash on tap, 3. Layout has the wrong height, 4. Page zooms into the input, 5. Tap feels laggy, 6. Pull-to-refresh hijacks scroll (+13 more)
 
 ### Community 167 - "http-marketplace-adapter.ts"
-Cohesion: 0.23
-Nodes (15): browserHeaders, g102, toWbOffer(), WB_HTTP_SEARCH_VERSIONS, wbCatalogPrice(), wbHttpSearchUrl(), WildberriesHttpAdapter, apps_search_src_infrastructure_sources_mcp_marketplace_adapter_assessmarketplaceofferrelevance (+7 more)
+Cohesion: 0.20
+Nodes (17): browserHeaders, g102, toWbOffer(), WB_HTTP_SEARCH_VERSIONS, wbCatalogPrice(), wbHttpSearchUrl(), WildberriesHttpAdapter, apps_search_src_infrastructure_sources_mcp_marketplace_adapter_assessmarketplaceofferrelevance (+9 more)
 
 ### Community 168 - "Практики (54)"
 Cohesion: 0.14
 Nodes (13): Выбор модели и инференс, Диалог и память, Источники (дополнительно к ссылкам выше), Итог, Кандидаты под 48 GB, Локальная LLM для копайлота Price Radar: модель и практики, Маршрутизация намерений, Ответы по данным (grounding) (+5 more)
 
-### Community 169 - "MarketOffer"
+### Community 169 - "OfferBatch"
+Cohesion: 0.12
+Nodes (16): OfferBatch, Offers with native diagnostics; no shared state across concurrent sources., Adapt ``yandex_search`` results. ``price_rub`` is the everyday price and the…, Adapt ``avito_search`` results. Avito is classifieds: no brand, no star rating…, Adapt ``megamarket_search`` results (CDP tier; rating present)., Adapt ``lamoda_search`` results (CDP tier; Lamoda exposes no ratings)., Adapt ``dns_search`` results (CDP tier; electronics, no ratings on tiles)., Adapt ``citilink_search`` results (CDP tier; electronics). (+8 more)
+
+### Community 170 - "domtest.py"
 Cohesion: 0.07
-Nodes (35): MarketOffer, One offer, normalised across marketplaces so prices are comparable., For rouble sources the native price is the rouble price. Filling this here…, OfferBatch, Offers with native diagnostics; no shared state across concurrent sources., Adapt ``yandex_search`` results. ``price_rub`` is the everyday price and the…, Adapt ``avito_search`` results. Avito is classifieds: no brand, no star rating…, Adapt ``taobao_search`` results, keeping the price in yuan. price_rub stays… (+27 more)
+Nodes (36): _extract(), Regression tests for the Citilink card extractor on a captured OUT-OF-STOCK…, The product has no price of its own: None, never a recommendation's., 60 630 belongs to a recommendation snippet; it must not surface anywhere in the…, test_a_recommendation_price_is_never_the_products(), test_out_of_stock_card_reports_no_price(), test_out_of_stock_is_read_from_the_page_text(), Run a connector's real DOM extractor against captured markup. Four connectors… (+28 more)
 
-### Community 170 - "taobao-connector/tests/test_card_extractor_dom.py"
-Cohesion: 0.24
-Nodes (10): _extract(), Regression tests for the Taobao card extractor on a modeled fixture. The search…, «券后价¥7899» is glyph-attached but sits below the real price., The wall check is pure Python and must fire on both title fields., Guard against a regression back to closest()/innerText/parseFloat/Math.min., test_a_login_wall_title_is_detected_without_a_render(), test_card_extractor_reads_the_item_page(), test_the_card_extractor_uses_shared_helpers_not_legacy_heuristics() (+2 more)
-
-### Community 171 - "test_source_warnings.py"
-Cohesion: 0.21
-Nodes (9): importlib, parametrize, test_every_native_adapter_preserves_warnings(), search(), test_warning_does_not_drop_valid_offer_and_is_isolated_per_request(), search(), MetaOut, WB carries the shared envelope unchanged. (+1 more)
+### Community 171 - "test_warning_does_not_drop_valid_offer_and_is_isolated_per_request"
+Cohesion: 0.60
+Nodes (5): test_warning_does_not_drop_valid_offer_and_is_isolated_per_request(), search(), MetaOut, WB carries the shared envelope unchanged., WbSearchResponse
 
 ### Community 172 - "_FakeWs"
 Cohesion: 0.15
 Nodes (10): _FakeWs, Replays canned CDP messages; records everything sent., An advertising iframe must not replace the marketplace's final URL/status., A 403 main document is a verdict open_page turns into NavBlocked., test_goto_and_status_ignores_document_responses_from_child_frames(), test_goto_and_status_reports_a_block_page(), test_goto_and_status_returns_the_last_document_status_and_stops_on_load(), test_raw_page_evaluate_raises_on_exception_details() (+2 more)
 
 ### Community 173 - "Contributor Covenant Code of Conduct"
-Cohesion: 0.07
-Nodes (28): 1. Correction, 2. Warning, 3. Temporary Ban, 4. Permanent Ban, Attribution, Contributor Covenant Code of Conduct, Enforcement, Enforcement Guidelines (+20 more)
+Cohesion: 0.17
+Nodes (12): 1. Correction, 2. Warning, 3. Temporary Ban, 4. Permanent Ban, Attribution, Contributor Covenant Code of Conduct, Enforcement, Enforcement Guidelines (+4 more)
 
 ### Community 174 - "Сервер локальной LLM"
 Cohesion: 0.05
@@ -1277,9 +1287,9 @@ Nodes (31): Запуск, Исходная рекомендация для MVP (
 Cohesion: 0.18
 Nodes (11): error_payload(), ToolError, Neither products nor an empty-result banner means the SSR shape moved., A captcha means slow down, and the error must say so retryably., The live 2026-09-13 hollow frame: a retryable upstream condition. Reporting it…, Drift stays reserved for pages that reshaped known field families. Same missing…, test_card_empty_shell_is_not_reported_as_parser_drift(), test_card_raises_drift_when_no_title_is_found() (+3 more)
 
-### Community 176 - "test_distribution_contract.py"
-Cohesion: 0.20
-Nodes (5): ast, Keep standalone-install documentation aligned with package metadata., packaging_requirements, shlex, tomllib
+### Community 176 - "product-from-query.ts"
+Cohesion: 0.15
+Nodes (15): categorize(), CATEGORY_HINTS, categoryCache, CategoryHint, COMPILED_HINTS, CompiledHint, FULL_TEXT_HINTS, hasKnownBrand() (+7 more)
 
 ### Community 177 - "compilerOptions"
 Cohesion: 0.18
@@ -1294,28 +1304,28 @@ Cohesion: 0.25
 Nodes (7): graphify reference: extra exports and benchmark, Step 6b - Wiki (only if --wiki flag), Step 7 - Neo4j export (only if --neo4j or --neo4j-push flag), Step 7a - FalkorDB export (only if --falkordb or --falkordb-push flag), Step 7b - SVG export (only if --svg flag), Step 7c - GraphML export (only if --graphml flag), Step 8 - Token reduction benchmark (only if total_words > 5000)
 
 ### Community 180 - "_FakeResponse"
-Cohesion: 0.17
-Nodes (11): _FakeOzonItem, _FakeResponse, Mirrors OzonSearchItemOut: every value arrives as display text., The old adapter guessed keys OzonSearchItemOut does not declare. It read…, Every CDP adapter must map its connector's typed model onto MarketOffer., test_cdp_source_adapters_map_their_fields(), megamarket_search(), test_ozon_adapter_reads_the_real_model_fields() (+3 more)
+Cohesion: 0.22
+Nodes (8): _FakeOzonItem, _FakeResponse, Mirrors OzonSearchItemOut: every value arrives as display text., The old adapter guessed keys OzonSearchItemOut does not declare. It read…, test_ozon_adapter_reads_the_real_model_fields(), ozon_search(), test_ozon_adapter_survives_a_priceless_row(), ozon_search()
 
 ### Community 181 - "fake_fetch"
 Cohesion: 0.20
 Nodes (11): fake_fetch(), The real captured js/items payload must read as healthy through the whole…, id' renamed past every alias while the titles survive: the parse smoke would…, test_selfcheck_accepts_the_captured_live_payload(), fake_fetch(), test_selfcheck_flags_drift_when_a_key_family_vanishes(), fake_fetch(), test_selfcheck_reports_healthy_when_probes_parse() (+3 more)
 
-### Community 182 - "test_snapshot_and_resume_cannot_overlap"
-Cohesion: 0.29
-Nodes (7): blocked(), test_busy_initial_and_resume_never_open_duplicate(), pending(), test_prestart_cancellation_releases_registry_and_pending_caller(), test_snapshot_and_resume_cannot_overlap(), capture(), read()
+### Community 182 - "_safe_get_text"
+Cohesion: 0.15
+Nodes (15): AsyncClient, _budgeted_get_text(), _fresh_get_text(), _is_edge_wall(), _is_usable(), _needs_impersonation(), _PoliteGate, True for a real read: HTTP 200, a body, and not the edge's wall page. (+7 more)
 
-### Community 183 - "_hide_chrome_windows"
-Cohesion: 0.16
-Nodes (13): BrowserContext, get_context(), _hide_chrome_windows(), _new_tab(), _playwright_page(), PIDs of Chrome processes bound to *our* scraping profile (Windows, macOS). Any…, Hide scraping-profile Chrome windows (Windows and macOS, best-effort). Only…, Yield the profile's default context, cookies and all. (+5 more)
+### Community 183 - "_playwright_page"
+Cohesion: 0.32
+Nodes (8): BrowserContext, get_context(), _new_tab(), _playwright_page(), Yield the profile's default context, cookies and all., Open a tab in ``ctx`` — in the background when stealth is on.…, S3 — final-host redirect / browser SSRF boundary, Page
 
 ### Community 184 - "Adding a marketplace"
-Cohesion: 0.18
-Nodes (11): 1. Probe before you build, 2. Decide the transport tier, 3. Scaffold the package, 4. Write the tools, 5. Add a tri-state selfcheck, 5a. If you read a rendered page, reuse the shared extractor, 6. Test offline, 7. Wire it up (+3 more)
-
-### Community 185 - "resolve_transport"
 Cohesion: 0.20
-Nodes (10): _parse_host(), _parse_path(), _parse_port(), _parse_transport(), Map the ``MCP_TRANSPORT`` value to a supported transport. Empty or unset means…, Parse ``MCP_HTTP_PORT`` into a valid TCP port. A non-numeric or out-of-range…, Normalise ``MCP_HTTP_PATH`` to a leading-slash endpoint path., Resolve the transport selection from the environment. Pure and side-effect-free… (+2 more)
+Nodes (10): 1. Probe before you build, 2. Decide the transport tier, 3. Scaffold the package, 5. Add a tri-state selfcheck, 5a. If you read a rendered page, reuse the shared extractor, 6. Test offline, 7. Wire it up, 8. Verify (+2 more)
+
+### Community 185 - "runtime.py"
+Cohesion: 0.14
+Nodes (17): fastmcp_server_dependencies, fastmcp_server_middleware, browser_handoff_lifespan(), _parse_host(), _parse_path(), _parse_port(), _parse_transport(), FastMCP (+9 more)
 
 ### Community 186 - "check_no_print.py"
 Cohesion: 0.23
@@ -1325,9 +1335,9 @@ Nodes (12): expr, check_file(), collect_default_paths(), _is_sys(), _is_sys_stde
 Cohesion: 0.19
 Nodes (7): _evaluate_expression(), Wrap an expression the way Playwright's evaluate would run it. A string that…, A Playwright-Page-alike over one raw CDP websocket., Read and record pending CDP events for up to ``seconds``., Body of a response this tab already received (Network.getResponseBody)., Navigate and return the last main-document HTTP status seen., _RawCdpPage
 
-### Community 188 - "fastmcp_exceptions"
-Cohesion: 0.09
-Nodes (26): fastmcp_exceptions, _no_cache(), _patch_render(), fixture, The real extractor against the LIVE login wall captured 2026-09-10. Taobao…, Tri-state doctrine: a session wall is inconclusive(login_wall) — the canary…, The capture came from a logged-out profile, trimmed of every script/style block…, The real extractor's payload over the captured wall. (+18 more)
+### Community 188 - "test_search_login_wall_live_dom.py"
+Cohesion: 0.14
+Nodes (18): _no_cache(), _patch_render(), fixture, The real extractor against the LIVE login wall captured 2026-09-10. Taobao…, Tri-state doctrine: a session wall is inconclusive(login_wall) — the canary…, The capture came from a logged-out profile, trimmed of every script/style block…, The real extractor's payload over the captured wall., raise_tool_error serializes a ConnectorError as JSON inside ToolError. (+10 more)
 
 ### Community 189 - "contracts/package.json"
 Cohesion: 0.20
@@ -1337,9 +1347,9 @@ Nodes (9): main, name, private, scripts, build, typecheck, type, types (+1 more)
 Cohesion: 0.10
 Nodes (19): Behavior contract, Markup, Reference wiring, Rules, Styles, The Picker, Hard Rules, Initial Response (+11 more)
 
-### Community 191 - "get_browser"
-Cohesion: 0.22
-Nodes (10): Browser, 2026-10-07 — Wildberries: живой XHR каталога через raw CDP, _cdp_port_open(), _CdpConnectTimeout, _ensure_cdp_running(), get_browser(), Quick TCP probe: is something already listening on the CDP endpoint?, Make sure Chrome is listening on the CDP endpoint, auto-starting if needed.… (+2 more)
+### Community 191 - "chrome_cdp.py"
+Cohesion: 0.08
+Nodes (30): binascii, Browser, 2026-10-07 — Wildberries: живой XHR каталога через raw CDP, _cdp_port_open(), _CdpConnectTimeout, _chrome_candidates(), _default_profile_dir(), _ensure_cdp_running() (+22 more)
 
 ### Community 192 - "ru-marketplace-mcp/package.json"
 Cohesion: 0.22
@@ -1349,29 +1359,29 @@ Nodes (8): dependencies, jsdom, description, license, name, private, version, js
 Cohesion: 0.40
 Nodes (4): enabledMcpjsonServers, hooks, PreToolUse, $schema
 
-### Community 194 - "infra-leak.ts"
-Cohesion: 0.36
-Nodes (10): hasInfraLeak(), INFRA_LEAK_SOURCE, leakRe(), publicSourceLine(), publicSourceLines(), sanitizeAnalysisResult(), sanitizeCitation(), sanitizeUserFacingText() (+2 more)
+### Community 194 - "Deployment"
+Cohesion: 0.12
+Nodes (16): Any Russian marketplace needs a Russian-friendly IP, Build, Compose, Deployment, Docker, Honest limitations, HTTP (opt-in), Run one server (+8 more)
 
-### Community 195 - "avito_connector/models_output.py"
-Cohesion: 0.31
-Nodes (9): AvitoCardResponse, AvitoSearchItemOut, AvitoSearchResponse, AvitoSellerOut, AvitoSellerResponse, BaseModel, Pydantic output models for the Avito MCP connector. Every tool returns a typed…, test_avito_adapter_maps_classified_fields() (+1 more)
+### Community 195 - "wb_selfcheck"
+Cohesion: 0.13
+Nodes (12): Fixed, _basket_for_sku(), _basket_from_table(), Current WB_SEARCH_TRANSPORT (storefront|http). Re-reads settings for tests., Structural drift canary for WB (tri-state: success / drift_detected /…, Basket host for ``vol`` from the known table, or None past its end., Compute basket CDN host. Probe range up to 28 for new SKUs., _search_transport() (+4 more)
 
 ### Community 196 - "decision_inspect"
 Cohesion: 0.13
 Nodes (15): 1. Install the server, 2. Choose one server for your task, 3. Check two sources before adding a browser, 5. Add browser-backed sources when needed, First successful marketplace query, If the client cannot connect, decision_inspect(), Any (+7 more)
 
 ### Community 197 - "dns_card"
-Cohesion: 0.05
-Nodes (50): Добавлено, Документация, Исправлено, Навыки, Что нашла независимая перепроверка перед выпуском, Citilink — Qrator plus gRPC-web, DNS — proof-of-work challenge, Lamoda — prices without discovery (+42 more)
+Cohesion: 0.06
+Nodes (41): Citilink — Qrator plus gRPC-web, DNS — proof-of-work challenge, Lamoda — prices without discovery, Megamarket — clean API, hard block, Sources that needed the CDP tier, Вердикт: conditional go, Локальная проверка, точная последовательность, A green selfcheck does NOT mean the data is right (+33 more)
 
 ### Community 198 - "test_storefront_reads_live_xhr_body_over_raw_cdp_when_playwright_cannot_attach"
 Cohesion: 0.15
 Nodes (5): Chrome 151+: take the page's own catalog response body, never the 403-prone…, test_storefront_reads_live_xhr_body_over_raw_cdp_when_playwright_cannot_attach(), fake_raw_page(), refetch_must_not_run(), scenario()
 
 ### Community 199 - "HostRefusingError"
-Cohesion: 0.20
-Nodes (8): HostRefusingError, RuntimeError, A host answered 4xx often enough that the breaker is open. Carries the host and…, An open breaker must not make the rest of the fan-out wait on it., One marketplace is one key, however the URL spells the host., test_a_host_that_keeps_refusing_is_dropped_and_says_for_how_long(), test_a_refusing_host_fails_fast_instead_of_queueing(), test_host_keys_are_case_and_dot_insensitive()
+Cohesion: 0.22
+Nodes (7): HostRefusingError, RuntimeError, A host answered 4xx often enough that the breaker is open. Carries the host and…, An open breaker must not make the rest of the fan-out wait on it., One marketplace is one key, however the URL spells the host., test_a_refusing_host_fails_fast_instead_of_queueing(), test_host_keys_are_case_and_dot_insensitive()
 
 ### Community 200 - "_run_js_expression"
 Cohesion: 0.22
@@ -1401,25 +1411,29 @@ Nodes (18): Animation Vocabulary, Easing — how speed changes over an animation
 Cohesion: 0.25
 Nodes (8): Docker alternative (published and CI-verified), Enabling the full server, Middle profile and native vision, Requirements, ru-marketplace-mcp for DeepSeek Harness, Source, Uninstall, Why off by default
 
-### Community 207 - "handoff_diagnostics"
-Cohesion: 0.29
-Nodes (8): _duration_s(), _env_seconds(), handoff_diagnostics(), _idle_s(), _max_leases(), Read-only view of the lease registry — never opens, resumes or closes a tab.…, Lifetime of a retained page, in seconds (0 = retention off)., Drop a retained page that nobody touched for this long. Clamped to the…
+### Community 207 - "test_handoff_liveness_consistency.py"
+Cohesion: 0.16
+Nodes (12): parametrize, Exercise every Compose service's merged HTTP settings against the runtime. YAML…, test_compose_service_passes_http_startup_auth_gate(), blocked(), browser(), _call(), fixture, The handle issuer and the handle consumer must agree on what 'live' means.… (+4 more)
 
 ### Community 208 - "parametrize"
 Cohesion: 0.25
 Nodes (8): parametrize, A typo'd port must not become a connection attempt to port 0 or 99999., A host with a scheme, port, credentials or path must never reach the dialer., test_a_malformed_host_falls_back_to_loopback(), test_a_nonsense_port_falls_back_to_the_default(), test_loopback_hosts_are_recognised(), test_setup_hint_names_the_shell_script_elsewhere(), test_the_valid_port_range_is_inclusive()
 
 ### Community 209 - "PageLike"
-Cohesion: 0.20
-Nodes (7): PageLike, The slice of a websockets client connection the raw page drives., What the connectors actually use from an opened tab. Both a Playwright ``Page``…, Best-effort reveal of the owned target's window, never all profile windows., reveal_owned_page(), _WsLike, Protocol
+Cohesion: 0.11
+Nodes (16): capture_owned_viewport(), current_page_url(), _handoff_jpeg(), PageLike, Any, The slice of a websockets client connection the raw page drives., What the connectors actually use from an opened tab. Both a Playwright ``Page``…, Read the encoded image dimensions, not CSS dimensions (which ignore DPR). (+8 more)
 
 ### Community 210 - "test_ozon_selfcheck_includes_runtime_identity"
 Cohesion: 0.20
 Nodes (9): _reviews_body(), test_card_and_reviews_accept_search_slug_product_url(), fake_fetch(), scenario(), test_ozon_selfcheck_includes_runtime_identity(), scenario(), test_reviews_marks_partial_when_later_page_fails(), fake_fetch() (+1 more)
 
+### Community 211 - "zone_snippets"
+Cohesion: 0.22
+Nodes (14): _iter_tags(), Raw ``data-zone-data`` payloads of the SERP's productSnippet zones. Document…, Yield each start tag, honouring quoted attribute values. A regex like…, zone_snippets(), A zone snippet whose attribute holds a raw '>' must still be parsed (review…, The regression: an earlier attribute containing '>' used to swallow the tag., Guards the tag scanner itself: quotes must be tracked, not just '>'., _tag() (+6 more)
+
 ### Community 212 - "Участие в проекте"
-Cohesion: 0.25
-Nodes (8): Добавление маркетплейса, Перед открытием pull request, Подготовка, Сообщения о сломанном эндпоинте, Тесты, Участие в проекте, Что в область проекта входит, а что нет, Что важно в этой кодовой базе
+Cohesion: 0.29
+Nodes (7): Добавление маркетплейса, Перед открытием pull request, Подготовка, Сообщения о сломанном эндпоинте, Тесты, Участие в проекте, Что в область проекта входит, а что нет
 
 ### Community 213 - "Clock"
 Cohesion: 0.18
@@ -1457,13 +1471,13 @@ Nodes (7): compilerOptions, outDir, rootDir, types, extends, include, ../../tsco
 Cohesion: 0.29
 Nodes (5): error_payload(), ToolError, No installed source means the answer would be empty and misleading., test_all_requested_sources_missing_is_an_error(), test_unknown_source_names_are_rejected()
 
-### Community 223 - "Citilink Connector"
-Cohesion: 0.25
-Nodes (7): Citilink Connector, Gotchas, Numbers in a tile that are not the price, Read the data-meta attributes, not the class names, Tools available, When to use, Why the price used to come back null
+### Community 223 - "_attach_image_urls"
+Cohesion: 0.15
+Nodes (13): _attach_image_urls(), _decode_body(), _impersonated_get_text(), _fetch(), _probe_basket(), _proxy(), Resolve WB's proxy: explicit ``WB_PROXY`` first, then the standard vars., Decode a streamed body the way curl_cffi's ``resp.text`` would have. Streaming… (+5 more)
 
-### Community 224 - "terminate_process_tree"
-Cohesion: 0.10
-Nodes (21): [1.0.0] — 2026-07-26, Fixed, Not included, and why, Removed, `cache` — in-process TTL, `process` — cross-platform worker handling, `resilience` — tolerant readers, The shared runtime (+13 more)
+### Community 224 - "os"
+Cohesion: 0.07
+Nodes (31): collections, collections_abc, Reference shape signature for the Avito js/items search payload. Measured on…, Request pacing and refusal backoff, shared by every connector. Each connector…, current_platform(), is_windows(), Any, Popen (+23 more)
 
 ### Community 225 - "test_resolved_params_are_cached_per_query"
 Cohesion: 0.29
@@ -1481,17 +1495,17 @@ Nodes (8): _error_payload(), raise_tool_error serializes a ConnectorError as JSO
 Cohesion: 0.13
 Nodes (14): [1] Model Context Protocol Tools, 1. Status Quo [Confidence: High], 2. Emerging Product Direction [Confidence: Medium], [2] Repository release and runtime surface, [3] Architecture and tests, 3. Critical Assessment [Confidence: Medium], [4] DSH wire measurements, 4. Implemented Action Plan (+6 more)
 
-### Community 229 - "_win_job_runner.py"
-Cohesion: 0.33
-Nodes (6): ctypes, _BasicLimits, _ExtendedLimits, _IoCounters, main(), Run one command in a Windows job whose lifetime is this supervisor. The job is…
+### Community 229 - "ozon_connector/models_output.py"
+Cohesion: 0.23
+Nodes (12): test_ozon_verifies_regular_price_not_card_discount(), card(), MetaOut, OzonCardResponse, OzonReviewItemOut, OzonReviewsResponse, OzonSearchItemOut, OzonSearchResponse (+4 more)
 
 ### Community 230 - "contracts/tsconfig.json"
 Cohesion: 0.25
 Nodes (7): compilerOptions, declaration, outDir, rootDir, extends, include, ../../tsconfig.base.json
 
-### Community 231 - "megamarket_search"
-Cohesion: 0.11
-Nodes (30): MetaOut, Megamarket carries the shared envelope unchanged., _address_cache_key(), _address_warnings(), _blocked_error(), _extract_item_id(), _final_catalog_url(), megamarket_card() (+22 more)
+### Community 231 - "log_event"
+Cohesion: 0.07
+Nodes (58): Logger, Every CDP adapter must map its connector's typed model onto MarketOffer., test_cdp_source_adapters_map_their_fields(), megamarket_search(), log_event(), make_stderr_logger(), Any, MegamarketCardResponse (+50 more)
 
 ### Community 232 - "cdp-proxy.py"
 Cohesion: 0.38
@@ -1499,11 +1513,11 @@ Nodes (9): handle_client(), main(), pipe(), Expose Chrome DevTools on 0.0.0.0 an
 
 ### Community 233 - "pydantic"
 Cohesion: 0.04
-Nodes (70): field_validator, functools, AliSettings, get_settings(), BaseSettings, AliExpress connector runtime settings (env-driven via ALI_ prefix)., AvitoSettings, get_settings() (+62 more)
+Nodes (61): field_validator, functools, AliSettings, get_settings(), BaseSettings, AliExpress connector runtime settings (env-driven via ALI_ prefix)., AvitoSettings, get_settings() (+53 more)
 
 ### Community 234 - "run_server"
-Cohesion: 0.13
-Nodes (13): main(), Entry point for the AliExpress MCP server. Exposed as the ``aliexpress-mcp``…, Run the server on the transport selected by the environment (stdio default)., decision_main(), main(), Entry point for the cross-marketplace comparison MCP server. Exposed as the…, Run the server on the transport selected by the environment (stdio default)., Run the middle comparison-plus-card DSH profile. (+5 more)
+Cohesion: 0.29
+Nodes (7): decision_main(), main(), Entry point for the cross-marketplace comparison MCP server. Exposed as the…, Run the server on the transport selected by the environment (stdio default)., Run the middle comparison-plus-card DSH profile., Run ``mcp`` on the transport selected by the environment. Returns a process…, run_server()
 
 ### Community 235 - "Чек-лист выпуска релиза"
 Cohesion: 0.15
@@ -1523,7 +1537,7 @@ Nodes (10): Executive findings, Implementation status addendum — 2026-09-12, O
 
 ### Community 242 - "compare_prices"
 Cohesion: 0.06
-Nodes (65): [1.7.0] — 2026-09-09, Added, Added, Fixed, Добавлено, Добавлено, Исправлено, English (+57 more)
+Nodes (65): source(), [1.7.0] — 2026-09-09, Added, Added, Fixed, Добавлено, Добавлено, Исправлено (+57 more)
 
 ### Community 243 - "test_anti_bot_challenge_dom.py"
 Cohesion: 0.24
@@ -1542,8 +1556,8 @@ Cohesion: 0.40
 Nodes (5): parametrize, The id goes into a URL path, so it is validated as digits, never escaped., test_card_rejects_non_numeric_ids(), test_search_rejects_too_short_queries(), fail_fetch()
 
 ### Community 251 - "Wildberries Connector"
-Cohesion: 0.29
-Nodes (6): Sources of truth, ToS note, Trust boundary, When to use, Wildberries Connector, Workflow patterns
+Cohesion: 0.25
+Nodes (7): Gotchas, Sources of truth, ToS note, Trust boundary, When to use, Wildberries Connector, Workflow patterns
 
 ### Community 252 - "test_sources_run_concurrently"
 Cohesion: 0.40
@@ -1553,13 +1567,13 @@ Nodes (5): Serial queries would make a four-source comparison unusably slow., te
 Cohesion: 0.40
 Nodes (5): clear_cache(), no_delay(), fixture, Remove the politeness gap so tests do not actually wait., Keep cached payloads from leaking between tests.
 
-### Community 254 - "[1.1.0] — 2026-07-26 (English)"
-Cohesion: 0.29
-Nodes (7): [1.1.0] — 2026-07-26 (English), Added, Changed, Deliberately not shipped, Fixed, Исправлено, OzonSearchItemOut
+### Community 254 - "wb_search"
+Cohesion: 0.09
+Nodes (24): [1.1.0] — 2026-07-26, [1.1.0] — 2026-07-26 (English), Added, Changed, Deliberately not shipped, Fixed, Добавлено, Изменено (+16 more)
 
-### Community 256 - "command/ui/index.tsx"
-Cohesion: 0.33
-Nodes (8): startSearch(), EXAMPLE_QUERIES, productFromTypedQuery(), SearchCommand(), SuggestionList(), suggestOptionId(), suggestSecondary(), state
+### Community 256 - "_parse_product"
+Cohesion: 0.23
+Nodes (12): _as_dict(), _as_list(), _first_brand(), _parse_product(), _price_from(), _product_node(), Any, Pull a rouble amount out of the several shapes prices arrive in. Upstream uses… (+4 more)
 
 ### Community 257 - "_patch_tier1"
 Cohesion: 0.18
@@ -1577,29 +1591,25 @@ Nodes (4): parametrize, test_card_rejects_input_without_an_item_id(), test_chall
 Cohesion: 0.40
 Nodes (5): argparse, main(), measure(), Path, Measure stdio startup: initialize + tools/list latency for MCP servers. This is…
 
-### Community 261 - "ru-marketplace-mcp/README.md"
-Cohesion: 0.12
-Nodes (11): Automation / Автоматизация, Contributors / Участники, People / Люди, English, Release-candidate evidence, v2.4.2 — 2026-09-19, Изменения, Проверка поставки (+3 more)
-
 ### Community 262 - "_drifted_values_search_html"
 Cohesion: 0.40
 Nodes (5): _drifted_values_search_html(), The washer capture with its title/price nodes renamed in the SSR state. This is…, Items with ids but no title/price anywhere is a moved SSR state, not a result…, test_search_flags_drift_when_items_lose_their_values(), test_selfcheck_reports_value_drift()
 
-### Community 263 - "flatten_text"
-Cohesion: 0.14
-Nodes (15): deep_first(), flatten_text(), Any, JSONPath-shield: find the first occurrence of any key in key_names at any…, Reduce a value upstream ships as EITHER a string OR an object to text. Audit…, _type_tag(), _walk_shape(), The crash that started this helper: a nested object must degrade to a name or… (+7 more)
+### Community 263 - "resilience.py"
+Cohesion: 0.08
+Nodes (33): attach_meta(), coerce_rating(), deep_first(), _parse_money_string(), Any, Tolerant-reader resilience helpers shared across marketplace connectors.…, Parse ONE money number from a display string, or None if absent/ambiguous.…, Coerce a rating like '4,9' / '4.9' / 4.9 to float in 0..5. None if unparseable,… (+25 more)
 
 ### Community 264 - "Anti-bot reality, source by source"
-Cohesion: 0.33
-Nodes (6): AliExpress (added 2026-08-20), Anti-bot reality, source by source, Cian (added 2026-09-09), Practical guidance, Summary, Независимая проверка с резидентного IP, июль 2026
+Cohesion: 0.13
+Nodes (15): AliExpress (added 2026-08-20), Anti-bot reality, source by source, Avito — hard IP firewall, workable API behind it, Cian (added 2026-09-09), Detsky Mir — open JSON API, refused by address, Ozon — needs your browser, Practical guidance, Shipped sources (+7 more)
 
 ### Community 267 - "Deep Research: ru-marketplace-mcp 2.0.0"
 Cohesion: 0.14
 Nodes (13): Bibliography, Decision summary, Deep Research: ru-marketplace-mcp 2.0.0, Finding 1 — Comparability is the product boundary [High], Finding 2 — Availability and price conditions must be first-class [High], Finding 3 — DSH needs progressive disclosure [High], Finding 4 — Source readiness needs preflight and provenance [High], Finding 5 — Drift and operations need binary gates [High] (+5 more)
 
-### Community 268 - "json"
-Cohesion: 0.06
-Nodes (70): asyncio, binascii, collections_abc, dataclasses, datetime, enum, fastmcp, fastmcp_server_dependencies (+62 more)
+### Community 268 - "lamoda_connector/server.py"
+Cohesion: 0.05
+Nodes (61): dataclasses, datetime, fastmcp, fastmcp_server_middleware_error_handling, AliExpress MCP connector. AliExpress gates its site behind x5sec, Alibaba's JS…, CitilinkCardResponse, CitilinkSearchItemOut, CitilinkSearchResponse (+53 more)
 
 ### Community 269 - "test_fetch_composer_reports_cdp_navigation_block_as_blocked"
 Cohesion: 0.83
@@ -1617,9 +1627,9 @@ Nodes (4): clear_cache(), no_delay(), fixture, Remove the politeness gap so test
 Cohesion: 0.50
 Nodes (4): test_search_builds_a_page_parameter_only_beyond_page_one(), capture(), test_search_percent_encodes_cyrillic_queries(), capture()
 
-### Community 275 - "v1.2.0 — шесть новых маркетплейсов и один общий сервер"
-Cohesion: 0.14
-Nodes (12): Before you rely on it, Compatibility, New, Notable fixes, v1.2.0 — six new marketplaces and one unified server (English), v1.2.0 — шесть новых маркетплейсов и один общий сервер, Заметные исправления, Насколько это проверено (+4 more)
+### Community 275 - "wb_card"
+Cohesion: 0.07
+Nodes (26): Before you rely on it, Compatibility, New, Notable fixes, v1.2.0 — six new marketplaces and one unified server (English), v1.2.0 — шесть новых маркетплейсов и один общий сервер, Заметные исправления, Насколько это проверено (+18 more)
 
 ### Community 276 - "v2.0.0 operations and evaluation sources"
 Cohesion: 0.18
@@ -1661,33 +1671,33 @@ Nodes (4): parametrize, test_ambiguous_or_wrong_record_never_verifies_price(), t
 Cohesion: 0.25
 Nodes (6): True when this selection runs over the network rather than stdio., True when the HTTP bind host is reachable only from this machine., Log a loud warning when an HTTP server binds beyond loopback. ``run_server``…, Resolved transport selection for one server launch. ``host``/``port``/``path``…, TransportConfig, _warn_if_exposed()
 
-### Community 295 - "diagnose"
-Cohesion: 0.33
-Nodes (6): diagnose(), diagnose_megamarket(), main(), Turn the raw structure into the one sentence the operator needs., Megamarket answers JSON, not HTML, so the DOM probe cannot see it. Its drift…, _verdict()
+### Community 295 - "diagnose_drift.py"
+Cohesion: 0.36
+Nodes (7): diagnose(), diagnose_megamarket(), main(), Diagnose why a CDP source's search extractor found nothing. ``drift_detected``…, Turn the raw structure into the one sentence the operator needs., Megamarket answers JSON, not HTML, so the DOM probe cannot see it. Its drift…, _verdict()
 
 ### Community 296 - "WbNoResultsResponse"
-Cohesion: 0.47
-Nodes (6): wb_search can return a distinct no-results model with no items at all., test_wildberries_adapter_tolerates_a_no_results_response(), wb_search(), test_no_results_without_meta_is_not_invented_degradation(), search(), WbNoResultsResponse
+Cohesion: 0.28
+Nodes (9): wb_search can return a distinct no-results model with no items at all., test_wildberries_adapter_tolerates_a_no_results_response(), wb_search(), parametrize, test_every_native_adapter_preserves_warnings(), search(), test_no_results_without_meta_is_not_invented_degradation(), search() (+1 more)
 
-### Community 298 - "Citilink Connector"
-Cohesion: 0.25
-Nodes (7): Citilink Connector, Gotchas, Numbers in a tile that are not the price, Read the data-meta attributes, not the class names, Tools available, When to use, Why the price used to come back null
+### Community 298 - "taobao-connector/tests/test_shape_reference.py"
+Cohesion: 0.21
+Nodes (11): _extract(), Path, Reference shape signatures for the Taobao extractors, pinned to the capture.…, The drift the wiring exists to catch: every price shape gone at once. Red…, The 2026-09-10 regression inverted: if a future extractor stops emitting the…, The selfcheck compares live payloads against SEARCH_SHAPE_REFERENCE; the…, test_card_payload_shape_matches_the_capture(), test_live_search_shape_matches_the_selfcheck_registry() (+3 more)
 
 ### Community 299 - "cmd_doctor"
 Cohesion: 0.18
 Nodes (12): _attr(), _check_detail(), cmd_doctor(), main(), Render one sub-check as state plus the reason it reached that state.…, Sub-checks arrive as dicts from some connectors and models from others., Run one connector's selfcheck, returning (name, status, detail)., Run every selfcheck and print a per-source health table. ``--status-file PATH``… (+4 more)
 
-### Community 302 - "_start_chrome_with_cdp"
-Cohesion: 0.33
-Nodes (6): _chrome_candidates(), _find_chrome(), Chrome/Chromium executables to try, most preferred first., Spawn Chrome with remote debugging enabled. Returns ``(ok, detail)``.…, _running_as_root(), _start_chrome_with_cdp()
+### Community 302 - "test_storefront_search.py"
+Cohesion: 0.20
+Nodes (7): fixture, Unit tests for WB storefront (CDP) search transport — no live network., storefront_transport(), test_wb_search_storefront_empty_products_is_no_results(), empty_storefront(), scenario(), wb_connector
 
 ### Community 304 - "Model routing protocol (v1, 2026-09-13)"
 Cohesion: 0.20
 Nodes (9): 1. Что оценивается, 2026-09-17 — сокращённый мульти-прогон (`runs/eval-2026-09-17.md`), 2. Изоляция (одинаковый контекст для всех моделей), 3. Повторности, 4. Формат обмена с оркестратором, 5. Метрики — не схлопывать в одну оценку, 7. Ограничения раннера, 8. Датированные прогоны (+1 more)
 
 ### Community 307 - "service-kit/src/index.ts"
-Cohesion: 0.20
-Nodes (4): 2026-09-30 — устойчивость сервисов, CI и вынос релевантности, fetchWithTimeout(), ref_fastify_cookie, @fastify/cors
+Cohesion: 0.22
+Nodes (3): ref_fastify, ref_fastify_cookie, @fastify/cors
 
 ### Community 308 - "Cian Connector"
 Cohesion: 0.22
@@ -1698,20 +1708,20 @@ Cohesion: 0.08
 Nodes (31): allow_inf_nan, [1.9.0] — 2026-09-09, [2.0.1] — 2026-09-09, Added, Fixed, Добавлено, Исправлено, 4. Ask for a comparison, then verify (+23 more)
 
 ### Community 310 - "Ozon Connector"
-Cohesion: 0.22
-Nodes (8): Gotchas, Ozon Connector, Prerequisite, Source-of-truth caveat, Sources of truth, Tools available, When to use, Workflow
+Cohesion: 0.25
+Nodes (7): Gotchas, Ozon Connector, Prerequisite, Source-of-truth caveat, Sources of truth, When to use, Workflow
 
 ### Community 311 - "Lamoda Connector"
 Cohesion: 0.40
 Nodes (4): Gotchas, Lamoda Connector, Tools available, When to use
 
-### Community 316 - "coerce_int"
-Cohesion: 0.09
-Nodes (23): [1.2.1] — 2026-07-28, [1.3.0] — 2026-07-30, [1.3.0] — 2026-07-30 (English), [1.4.1] — 2026-08-08, Added, Added, Fixed, Добавлено (+15 more)
+### Community 316 - "Contributing"
+Cohesion: 0.29
+Nodes (7): Adding a marketplace, Before you open a PR, Contributing, Reporting a broken endpoint, Scope, Setup, Tests
 
-### Community 321 - "[2.1.0] — 2026-09-09"
-Cohesion: 0.40
-Nodes (5): [2.1.0] — 2026-09-09, Added, Changed, Добавлено, Изменено
+### Community 321 - "Security"
+Cohesion: 0.20
+Nodes (8): Legal note, Other hardening in place, Prompt injection: the boundary users must respect, Reporting a vulnerability, Security, Supported versions, The one part that carries real risk: the CDP tier, What this project does and does not touch
 
 ### Community 322 - "The list"
 Cohesion: 0.18
@@ -1741,25 +1751,25 @@ Nodes (8): Cian Connector, Filters: what the search does and does not do, Gotcha
 Cohesion: 0.25
 Nodes (8): Animate enter states with @starting-style, Buttons must feel responsive, Component Building Principles, Make popovers origin-aware, Never animate from scale(0), Tooltips: skip delay on subsequent hovers, Use blur to mask imperfect transitions, Use CSS transitions over keyframes for interruptible UI
 
-### Community 332 - "test_search_offer_integrity.py"
-Cohesion: 0.10
-Nodes (14): html, parametrize, Native parser/model regressions for stock filtering and variant ranking., test_native_ozon_explicit_absence_survives_both_label_channels(), test_native_ozon_stock_labels_cannot_fabricate_available_winner(), test_native_wb_unknown_quantity_stays_unknown_in_comparison(), search(), test_native_yandex_distinct_sku_reaches_cheapest_comparable() (+6 more)
+### Community 332 - "test_native_ozon_explicit_absence_survives_both_label_channels"
+Cohesion: 0.20
+Nodes (6): parametrize, test_native_ozon_explicit_absence_survives_both_label_channels(), test_native_ozon_stock_labels_cannot_fabricate_available_winner(), test_native_wb_unknown_quantity_stays_unknown_in_comparison(), search(), test_native_yandex_distinct_sku_reaches_cheapest_comparable()
 
-### Community 333 - "Ozon Connector"
-Cohesion: 0.22
-Nodes (8): Gotchas, Ozon Connector, Prerequisite, Source-of-truth caveat, Sources of truth, Tools available, When to use, Workflow
+### Community 333 - "ozon_selfcheck"
+Cohesion: 0.13
+Nodes (14): Gotchas, Ozon Connector, Prerequisite, Source-of-truth caveat, Sources of truth, Tools available, When to use, Workflow (+6 more)
 
-### Community 334 - "Wildberries Connector"
-Cohesion: 0.29
-Nodes (6): Sources of truth, ToS note, Trust boundary, When to use, Wildberries Connector, Workflow patterns
+### Community 334 - "session.ts"
+Cohesion: 0.31
+Nodes (8): sign(), signSession(), verifySession(), writeSession(), Taobao — anonymous pages, signed API, Taobao — `taobao_*`, Taobao — `taobao_*`, ref_node_crypto
 
 ### Community 335 - "marketplace-connector/tests/test_server.py"
 Cohesion: 0.20
 Nodes (5): Offline tests for the unified marketplace server. The unified server is a mount…, A skipped source must be visible to the client, not just to stderr., Simulate the broken-install case the defensive import exists for., test_marketplace_sources_reports_what_mounted(), test_marketplace_sources_surfaces_a_skipped_source()
 
-### Community 336 - "2. Captcha/challenge UX в агентских инструментах"
-Cohesion: 0.50
-Nodes (4): 2.1 User-mediated handoff (прямые аналоги нашего f67e743+809b0fd), 2.2 Session persistence, 2.3 Stealth / антидетект (класс: НЕ берём, но фиксируем состояние), 2. Captcha/challenge UX в агентских инструментах
+### Community 336 - "v2.0 work packages"
+Cohesion: 0.22
+Nodes (9): v2.0 work packages, WP1 — Evidence model, WP2 — Identity and decision engine, WP3 — Profiled DSH surface, WP4 — Runtime reliability, WP5 — Security hardening, WP6 — Delivery and migration, OfferEvidence (+1 more)
 
 ### Community 337 - "megamarket-connector/tests/test_parser_live.py"
 Cohesion: 0.27
@@ -1773,17 +1783,17 @@ Nodes (9): _posted_at(), Publication time as an ISO-8601 string, or an honest No
 Cohesion: 0.33
 Nodes (5): AliExpress connector, Gotchas, How failures come back, Tools available, Workflow patterns
 
-### Community 340 - "test_card_verification_records.py"
-Cohesion: 0.05
-Nodes (37): Conservative product and offer identity helpers., Cross-marketplace price comparison MCP connector., CompareResponse, BaseModel, Typed responses for cross-marketplace comparison. The schema is built around…, A ranked cross-marketplace price comparison with per-source provenance., What happened when one marketplace was queried. Reported for every source,…, SourceOutcome (+29 more)
+### Community 340 - "detmir_connector/server.py"
+Cohesion: 0.18
+Nodes (17): test_detmir_fixture_product_is_unwrapped_for_price_and_identity(), card(), DetmirCardResponse, DetmirCategoriesResponse, DetmirCategory, DetmirListResponse, DetmirProduct, DetmirSelfcheckResponse (+9 more)
 
 ### Community 341 - "The Animation Decision Framework"
 Cohesion: 0.33
 Nodes (6): 1. Should this animate at all?, 2. What is the purpose?, 3. What easing should it use?, 4. How fast should it be?, Perceived performance, The Animation Decision Framework
 
-### Community 342 - "DNS-Shop Connector"
-Cohesion: 0.29
-Nodes (6): A green selfcheck does NOT mean the data is right, DNS-Shop Connector, Gotchas, The price on a DNS tile is not the smallest number on it, Tools available, When to use
+### Community 342 - "ozon_connector/settings.py"
+Cohesion: 0.31
+Nodes (7): get_settings(), OzonSettings, BaseSettings, Ozon connector runtime settings (env-driven via OZON_ prefix). Env vars (all…, Secret hygiene for the proxy setting. The proxy URL may carry user:pass…, test_the_proxy_secret_is_still_available_to_the_fetch(), test_the_proxy_secret_never_appears_in_settings_dumps()
 
 ### Community 343 - "Контекст проекта ПЕРЕМЕНА Price Radar"
 Cohesion: 0.33
@@ -1810,8 +1820,8 @@ Cohesion: 0.50
 Nodes (3): offline_cdp_probe(), fixture, Even successful doctor runs must not depend on a local Chrome session.
 
 ### Community 350 - "Fixed"
-Cohesion: 0.06
-Nodes (39): [1.4.0] — 2026-08-08, Added, Fixed, Other, Добавлено, Исправлено, Прочее, RELEASE NOTES — v1.4.0 (2026-08-08) (+31 more)
+Cohesion: 0.11
+Nodes (23): [1.4.0] — 2026-08-08, Added, Fixed, Other, Добавлено, Исправлено, Прочее, Ключевые изменения выпуска (+15 more)
 
 ### Community 351 - "_v18_payload"
 Cohesion: 0.47
@@ -1829,13 +1839,13 @@ Nodes (5): Asymmetric enter/exit timing, Cohesion matters, Review your work the 
 Cohesion: 0.22
 Nodes (3): Unified marketplace MCP connector., Every mounted tool must document its return shape and its error contract. The…, The mounted MCP surface stays cheap by construction. Two measured levers are…
 
-### Community 356 - "log_event"
+### Community 356 - "citilink_card"
 Cohesion: 0.06
-Nodes (45): 2026-09-23 — Citilink Готово без строки и WB «Сомнительное», 2026-09-23 — Citilink: отсев чужого SKU, 2026-09-23 — WB rate-limited: MCP + HTTP double-hit, Logger, Checks, If this reads a new field or endpoint, Project gates, What and why (+37 more)
+Nodes (44): 2026-09-23 — Citilink Готово без строки и WB «Сомнительное», 2026-09-23 — Citilink: отсев чужого SKU, 2026-09-23 — WB rate-limited: MCP + HTTP double-hit, Citilink Connector, Gotchas, Numbers in a tile that are not the price, Read the data-meta attributes, not the class names, Tools available (+36 more)
 
-### Community 359 - "_check_final_host"
-Cohesion: 0.17
-Nodes (10): Collection, Added, Changed, v2.1.0, Verification, _check_final_host(), NavigationPolicyError, Reject a navigation that escaped the caller's host policy. (+2 more)
+### Community 359 - "v2.1.0"
+Cohesion: 0.40
+Nodes (4): Added, Changed, v2.1.0, Verification
 
 ### Community 360 - "Multi-model routing run — 2026-09-17"
 Cohesion: 0.22
@@ -1846,24 +1856,40 @@ Cohesion: 0.25
 Nodes (7): v1.2.1 — fixes from an outside review (English), v1.2.1 — правки по итогам стороннего ревью, Обновление, Что изменилось в текстах, Что нашлось уже в самом патче, Что не изменилось, Что чинилось
 
 ### Community 362 - "RELEASE NOTES — v1.4.1 (2026-08-08)"
-Cohesion: 0.22
-Nodes (8): RELEASE NOTES — v1.4.1 (2026-08-08), Гейт выпуска, Добавлено, Известные ограничения выпуска, Исправлено, Не проверено живо (честно), Проверено живо (унаследовано от v1.4.0), Что вошло в патч
+Cohesion: 0.25
+Nodes (7): RELEASE NOTES — v1.4.1 (2026-08-08), Гейт выпуска, Добавлено, Известные ограничения выпуска, Не проверено живо (честно), Проверено живо (унаследовано от v1.4.0), Что вошло в патч
 
 ### Community 363 - "RELEASE NOTES — v1.5.0 (2026-08-16)"
 Cohesion: 0.29
 Nodes (6): RELEASE NOTES — v1.5.0 (2026-08-16), Гейт выпуска, Изменено, Исправлено, Осталось непроверенным после v1.5.0, Что вошло в релиз
 
+### Community 364 - "Безопасность"
+Cohesion: 0.25
+Nodes (8): Безопасность, Внедрение инструкций: граница, которую нужно соблюдать, Единственная часть с реальным риском: уровень CDP, Как сообщить об уязвимости, Поддерживаемые версии, Прочие меры, Чего проект касается, а чего нет, Юридическая заметка
+
 ### Community 365 - "Spring Animations"
 Cohesion: 0.40
 Nodes (5): Interruptibility advantage, Spring Animations, Spring-based mouse interactions, Spring configuration, When to use springs
 
-### Community 366 - "test_domtest_utf8.py"
-Cohesion: 0.31
-Nodes (8): _extract(), Guard the UTF-8 decoding between Python and Node in the DOM harness. On a…, The regression: cp1251 decoding used to kill jsdom tests on Windows., A throwing extractor must surface its Cyrillic message, not a decode error., Non-JSON stdout must raise, never pass a silently-decoded blob., test_broken_json_is_refused_loudly(), test_cyrillic_stderr_reaches_the_assertion_intact(), test_cyrillic_stdout_survives_the_run()
+### Community 366 - "Detsky Mir Connector"
+Cohesion: 0.25
+Nodes (7): Detsky Mir Connector, Gotchas, There is no text search — this is important, Trust boundary, When NOT to use, When to use, Workflow patterns
+
+### Community 368 - "The shared runtime"
+Cohesion: 0.29
+Nodes (7): `cache` — in-process TTL, `errors` — one taxonomy, nine codes, `process` — cross-platform worker handling, The shared runtime, `transport` — two tiers, kill_process_group(), SIGKILL the process group led by ``pid``. POSIX only. ``os.killpg``,…
+
+### Community 369 - "RELEASE NOTES — v1.4.0 (2026-08-08)"
+Cohesion: 0.29
+Nodes (6): RELEASE NOTES — v1.4.0 (2026-08-08), Бюджет живых запросов, Гейт выпуска, Известные ограничения выпуска, Не проверено живо (честно), Проверено живо (doctor + снятия 2026-08-06…08)
 
 ### Community 370 - "AGENTS.md"
 Cohesion: 0.06
 Nodes (29): Архитектурные границы, Завершение, Перед работой, Правила работы с WebScrapingForBuyers, Роли, LLM, сервер и секреты, Диагностика, Источники и Chrome (+21 more)
+
+### Community 371 - "v2.4.2 — 2026-09-19"
+Cohesion: 0.29
+Nodes (6): English, Release-candidate evidence, v2.4.2 — 2026-09-19, Изменения, Проверка поставки, Статус живой проверки
 
 ### Community 372 - "test_cache_can_be_disabled_by_ttl_zero"
 Cohesion: 0.25
@@ -1877,9 +1903,13 @@ Nodes (6): RELEASE NOTES — v1.5.1 (2026-08-16), Гейт выпуска, До�
 Cohesion: 0.40
 Nodes (4): Answer, Outcome, Q: Как не показывать менеджеру технические термины в ответах Qwen?, Source Nodes
 
-### Community 375 - "Yandex Market Connector"
-Cohesion: 0.25
-Nodes (7): Gotchas, The price field that matters most, Tools, Trust boundary, When to use, Workflow patterns, Yandex Market Connector
+### Community 375 - "Cross-Marketplace Price Comparison"
+Cohesion: 0.29
+Nodes (6): Cross-Marketplace Price Comparison, Gotchas, Reading the result correctly, Trust boundary, When NOT to use, When to use
+
+### Community 376 - "cian-connector/tests/test_shape_reference.py"
+Cohesion: 0.53
+Nodes (5): Variant-aware shape goldens for Cian sale, rent and daily offers., _signature(), test_daily_golden_keeps_explicit_day_unit(), test_rent_golden_keeps_period_and_deposit_variants(), test_sale_rent_daily_fixtures_preserve_common_offer_shape()
 
 ### Community 377 - "graphify reference: query, path, explain"
 Cohesion: 0.33
@@ -1889,13 +1919,21 @@ Nodes (5): For /graphify explain, For /graphify path, graphify reference: query,
 Cohesion: 0.40
 Nodes (3): fake_graphql(), test_card_maps_an_empty_product_list_to_not_found(), test_selfcheck_graphql_down_is_inconclusive()
 
-### Community 380 - "Yandex Market Connector"
-Cohesion: 0.25
-Nodes (7): Gotchas, The price field that matters most, Tools, Trust boundary, When to use, Workflow patterns, Yandex Market Connector
+### Community 379 - "merge_card_collections"
+Cohesion: 0.33
+Nodes (6): find_search_collections(), _is_empty(), _iter_patches(), merge_card_collections(), Locate the collection bundle on a search page. Found by scoring candidates on…, Merge every top-level collection patch on a product page. A populated entry is…
+
+### Community 380 - "PULL_REQUEST_TEMPLATE.md"
+Cohesion: 0.40
+Nodes (4): Checks, If this reads a new field or endpoint, Project gates, What and why
 
 ### Community 383 - "test_fetch_composer_does_not_cache_a_block"
 Cohesion: 0.60
 Nodes (5): A cached 403 would keep reporting a block after the challenge cleared., test_fetch_composer_does_not_cache_a_block(), blocked_then_ok(), failing_cdp(), scenario()
+
+### Community 384 - "catalog.ts"
+Cohesion: 0.67
+Nodes (3): normalize(), products, suggestProducts()
 
 ### Community 386 - "v1.3.1 — надёжность экстракторов"
 Cohesion: 0.40
@@ -1913,13 +1951,17 @@ Nodes (4): Beauty is leverage, Core Philosophy, Taste is trained, not innate, Un
 Cohesion: 0.50
 Nodes (4): Debugging Animations, Frame-by-frame inspection, Slow motion testing, Test on real devices
 
-### Community 391 - "_relevance_warnings"
-Cohesion: 0.33
-Nodes (6): _looks_like_an_accessory(), _looks_like_another_condition(), Whether a title advertises a used, refurbished or display unit. A query that…, Whether a title reads as an accessory the query did not ask for. Asking for a…, Flag a cheapest offer that probably answers a different question. Deliberately…, _relevance_warnings()
+### Community 390 - "Contributors / Участники"
+Cohesion: 0.50
+Nodes (3): Automation / Автоматизация, Contributors / Участники, People / Люди
 
-### Community 392 - "test_a_generic_failure_is_reported_as_error_not_blocked"
-Cohesion: 0.27
-Nodes (5): Anti-bot blocks and ordinary bugs need different responses, so they differ., A Plus price must not masquerade as the everyday price in the ranking. Live…, test_a_generic_failure_is_reported_as_error_not_blocked(), test_degraded_yandex_rows_never_rank_with_a_subscription_price(), degraded_yandex()
+### Community 391 - "main"
+Cohesion: 0.67
+Nodes (3): main(), Run every connector's selfcheck and summarise what works from here. uv run…, run_one()
+
+### Community 392 - "aliexpress_connector/__main__.py"
+Cohesion: 0.50
+Nodes (3): main(), Entry point for the AliExpress MCP server. Exposed as the ``aliexpress-mcp``…, Run the server on the transport selected by the environment (stdio default).
 
 ### Community 393 - "AliExpress connector"
 Cohesion: 0.33
@@ -1949,6 +1991,10 @@ Nodes (3): bad(), ok(), check-env.sh script
 Cohesion: 0.50
 Nodes (3): English, v1.6.1, Русский
 
+### Community 400 - "detmir_connector/__main__.py"
+Cohesion: 0.50
+Nodes (3): main(), Entry point for the Detsky Mir MCP server. Exposed as the ``detmir-mcp``…, Run the server on the transport selected by the environment (stdio default).
+
 ### Community 401 - "v2.4.0 — 2026-09-18"
 Cohesion: 0.50
 Nodes (3): v2.4.0 — 2026-09-18, Verification status — read this before trusting the numbers, What is in it
@@ -1957,13 +2003,9 @@ Nodes (3): v2.4.0 — 2026-09-18, Verification status — read this before trust
 Cohesion: 0.50
 Nodes (3): v2.4.1 — 2026-09-18, Verification status — read this before trusting the numbers, What changed since 2.4.0
 
-### Community 403 - "_cdp_post_json"
-Cohesion: 0.40
-Nodes (5): _cdp_post_json(), _attempt(), _polite_wait(), Space this source's requests out, and back off if it refused us. Reads…, POST JSON to the mobile API from inside the operator's Chrome. The fetch…
-
 ### Community 404 - "Cross-Marketplace Price Comparison"
-Cohesion: 0.08
-Nodes (23): source(), [2.3.0] - 2026-09-13, Browser recovery, Fixed, Идентификация / Identity, Исправлено, `errors` — one taxonomy, nine codes, Cross-Marketplace Price Comparison (+15 more)
+Cohesion: 0.29
+Nodes (6): Cross-Marketplace Price Comparison, Gotchas, Reading the result correctly, Trust boundary, When NOT to use, When to use
 
 ### Community 405 - "v2.0.0 evaluation matrix"
 Cohesion: 0.50
@@ -2005,9 +2047,9 @@ Nodes (3): test_ozon_search_reports_actionable_cdp_block(), blocked_fetch(), sce
 Cohesion: 0.40
 Nodes (3): BearerAuthMiddleware, Require one configured bearer token for HTTP requests. The process remains…, Middleware
 
-### Community 470 - "_search_wildberries"
-Cohesion: 0.29
-Nodes (7): 6.1 Wildberries: поиск и карточка отдают разную цену, 6.2 Яндекс: цена на странице — это цена с Плюсом, 6.3 Яндекс: товарный id — это карточка модели, 6. Расхождения контракта, найденные сверкой, Adapt ``wb_search`` results. Fields are read as typed attributes on…, _search_wildberries(), _wb_product_url()
+### Community 470 - "compare_connector/server.py"
+Cohesion: 0.07
+Nodes (32): fastmcp_tools, 6.1 Wildberries: поиск и карточка отдают разную цену, 6.2 Яндекс: цена на странице — это цена с Плюсом, 6.3 Яндекс: товарный id — это карточка модели, 6. Расхождения контракта, найденные сверкой, main(), Compare a product across Russian marketplaces and Taobao side by side. uv run…, Compare a product's price across every available marketplace. uv run python… (+24 more)
 
 ### Community 473 - "v1.8.0"
 Cohesion: 0.50
@@ -2069,29 +2111,25 @@ Nodes (3): main(), Entry point for the Yandex Market MCP server. Exposed as the 
 Cohesion: 0.67
 Nodes (3): MarketplaceSourcesResponse, BaseModel, Which connectors mounted, and why the others did not.
 
-### Community 544 - "_default_profile_dir"
-Cohesion: 0.67
-Nodes (3): _default_profile_dir(), Platform-appropriate location for the dedicated scraping profile., Path
-
 ## Knowledge Gaps
-- **1297 isolated node(s):** `cartridge`, `NETLAB_PRICE_URL_DEFAULT`, `NETLAB_PRICE_COLUMNS`, `NetlabPriceColumn`, `NETLAB_PRICE_LABEL` (+1292 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 3589 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **163 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **1298 isolated node(s):** `MERLION (готово к включению)`, `OCS (ключ + path из OpenAPI)`, `NETLAB — прайс-лист по ссылке (live с 2026-10-07)`, `NETLAB API (запасной вариант)`, `TREOLAN (SOAP есть, клиент не wired)` (+1293 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 3590 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **167 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Итерации` connect `Итерации` to `mcp-marketplace-adapter.ts`, `ollama-analysis-narrator.ts`, `product-from-query.ts`, `log_event`, `contracts/src/index.ts`, `gateway/src/app.ts`, `infra-leak.ts`, `SearchService`, `analyze.ts`, `service-kit/src/index.ts`, `SearchHistory`, `marketplace-relevance.ts`, `useAnalysisStore`, `CLAUDE.md`, `taobao`, `Контекст проекта ПЕРЕМЕНА Price Radar`, `get_browser`?**
-  _High betweenness centrality (0.081) - this node is a cross-community bridge._
-- **Why does `citilink_search()` connect `log_event` to `mcp-marketplace-adapter.ts`, `TransportDownError`, `search/src/app.ts`, `json`, `citilink_connector/models_output.py`, `ParserDriftError`, `CLAUDE.md`?**
-  _High betweenness centrality (0.069) - this node is a cross-community bridge._
-- **Why does `compare_prices()` connect `compare_prices` to `TransportDownError`, `_relevance_warnings`, `Anti-bot reality, source by source`, `ru-marketplace-mcp`, `AliExpress connector`, `Deep Research: ru-marketplace-mcp 2.0.0`, `json`, `Cross-Marketplace Price Comparison`, `[2.2.0] — 2026-09-11`, `lamoda_search`, `Authenticated transport: driving your own Chrome`, `MarketOffer`, `Cian Connector`, `compare_verify_offer`, `avito_seller`, `[2.1.0] — 2026-09-09`, `dns_card`, `Cian Connector`, `yandex_card`, `AliExpress connector`, `test_card_verification_records.py`, `_search_wildberries`, `wb_connector/server.py`, `v1.8.0`, `log_event`, `_check_final_host`, `test_source_selection.py`, `aliexpress_card`, `English version`?**
-  _High betweenness centrality (0.055) - this node is a cross-community bridge._
+- **Why does `Итерации` connect `Итерации` to `ollama-analysis-narrator.ts`, `MarketplaceMcpClient`, `citilink_card`, `contracts/src/index.ts`, `gateway/src/app.ts`, `SourceAdapter`, `compare-models.ts`, `yandex_card`, `SearchService`, `analyze.ts`, `CLAUDE.md`, `it-scope.ts`, `SearchHistory`, `marketplace-relevance.ts`, `analysis/store/index.ts`, `taobao`, `Контекст проекта ПЕРЕМЕНА Price Radar`, `chrome_cdp.py`?**
+  _High betweenness centrality (0.098) - this node is a cross-community bridge._
+- **Why does `citilink_search()` connect `citilink_card` to `MarketplaceMcpClient`, `TransportDownError`, `SourceAdapter`, `log_event`, `lamoda_connector/server.py`, `title_from_tile`, `CLAUDE.md`, `taobao_connector/server.py`, `ParserDriftError`?**
+  _High betweenness centrality (0.077) - this node is a cross-community bridge._
+- **Why does `compare_prices()` connect `compare_prices` to `TransportDownError`, `Anti-bot reality, source by source`, `ru-marketplace-mcp`, `AliExpress connector`, `Deep Research: ru-marketplace-mcp 2.0.0`, `Changelog`, `compare-connector/tests/test_server.py`, `wb_card`, `[2.2.0] — 2026-09-11`, `Authenticated transport: driving your own Chrome`, `Аудит ru-marketplace-mcp v1.2.0 — независимая перепроверка`, `detmir_categories`, `Cian Connector`, `compare_verify_offer`, `avito_seller`, `Deployment`, `dns_card`, `Cian Connector`, `AliExpress connector`, `compare_connector/server.py`, `v1.8.0`, `v2.1.0`, `log_event`, `test_source_selection.py`, `aliexpress_card`, `Wildberries Connector`, `English version`?**
+  _High betweenness centrality (0.049) - this node is a cross-community bridge._
 - **Are the 84 inferred relationships involving `compare_prices()` (e.g. with `Added` and `Added`) actually correct?**
   _`compare_prices()` has 84 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 72 inferred relationships involving `TransportDownError` (e.g. with `Исправлено` and `aliexpress_card()`) actually correct?**
   _`TransportDownError` has 72 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 17 inferred relationships involving `raise_tool_error()` (e.g. with `always_down()` and `edge_418()`) actually correct?**
   _`raise_tool_error()` has 17 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `cartridge`, `NETLAB_PRICE_URL_DEFAULT`, `NETLAB_PRICE_COLUMNS` to the rest of the system?**
-  _1297 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `MERLION (готово к включению)`, `OCS (ключ + path из OpenAPI)`, `NETLAB — прайс-лист по ссылке (live с 2026-10-07)` to the rest of the system?**
+  _1298 weakly-connected nodes found - possible documentation gaps or missing edges._

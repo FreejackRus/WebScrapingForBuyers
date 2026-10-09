@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py"
 type: "code"
-community: "compare_verify_offer"
+community: "json"
 location: "L1123"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/compare_verify_offer
+  - community/json
 ---
 
 # _call_card_tool()
 
 ## Connections
-- [[Any_27]] - `references` [EXTRACTED]
+- [[Any_14]] - `references` [EXTRACTED]
 - [[BadRequestError]] - `uses` [INFERRED]
 - [[Dispatch both comparison profiles through the same native card contract.]] - `rationale_for` [EXTRACTED]
 - [[_numeric_card_id()]] - `calls` [EXTRACTED]
@@ -21,4 +21,4 @@ tags:
 - [[decision_inspect()]] - `calls` [EXTRACTED]
 - [[raise_tool_error()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/compare_verify_offer
+#graphify/code #graphify/EXTRACTED #community/json

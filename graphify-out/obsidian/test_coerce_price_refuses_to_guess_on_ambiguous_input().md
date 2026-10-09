@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_contract.py"
 type: "code"
-community: "test_contract.py"
+community: "_parse_search_items"
 location: "L19"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_contractpy
+  - community/_parse_search_items
 ---
 
 # test_coerce_price_refuses_to_guess_on_ambiguous_input()
@@ -15,4 +15,4 @@ tags:
 - [[The coercion contract a range, an empty string, an absent value, a zero and a…]] - `rationale_for` [EXTRACTED]
 - [[test_contract.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_contractpy
+#graphify/code #graphify/EXTRACTED #community/_parse_search_items

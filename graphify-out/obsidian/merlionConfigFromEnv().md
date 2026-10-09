@@ -2,7 +2,7 @@
 source_file: "apps/search/src/infrastructure/sources/merlion-client.ts"
 type: "code"
 community: "b2b-distributor-adapter.ts"
-location: "L315"
+location: "L317"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,7 +12,7 @@ tags:
 # merlionConfigFromEnv()
 
 ## Connections
-- [[dot-search()_2]] - `calls` [EXTRACTED]
+- [[dot-search()_10]] - `calls` [EXTRACTED]
 - [[b2b-distributor-adapter.ts]] - `imports` [EXTRACTED]
 - [[merlion-client.ts]] - `contains` [EXTRACTED]
 

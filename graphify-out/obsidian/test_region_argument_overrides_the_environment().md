@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
 type: "code"
-community: "detmir-connector/tests/test_server.py"
+community: "test_region_argument_overrides_the_environment"
 location: "L494"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/detmir-connector/tests/test_serverpy
+  - community/test_region_argument_overrides_the_environment
 ---
 
 # test_region_argument_overrides_the_environment()
@@ -16,4 +16,4 @@ tags:
 - [[detmir-connectorteststest_server.py]] - `contains` [EXTRACTED]
 - [[stub_json()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/detmir-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/test_region_argument_overrides_the_environment

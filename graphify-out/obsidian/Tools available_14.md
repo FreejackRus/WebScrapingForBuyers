@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/dns-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/citilink-connector/SKILL.md"
 type: "document"
-community: "DNS-Shop Connector"
+community: "citilink_selfcheck"
 location: "L17"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/DNS-Shop_Connector
+  - community/citilink_selfcheck
 ---
 
 # Tools available
 
 ## Connections
-- [[DNS-Shop Connector_1]] - `contains` [EXTRACTED]
-- [[dns_selfcheck()]] - `references` [INFERRED]
+- [[Citilink Connector_1]] - `contains` [EXTRACTED]
+- [[citilink_selfcheck()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/DNS-Shop_Connector
+#graphify/document #graphify/EXTRACTED #community/citilink_selfcheck

@@ -1,16 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "test_ci_concurrency.py"
+community: "e2e_stdio_check.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_ci_concurrencypy
+  - community/e2e_stdio_checkpy
 ---
 
 # parametrize
 
 ## Connections
-- [[test_the_expression_reader_understands_the_shapes_it_claims_to()]] - `references` [EXTRACTED]
+- [[test_probe_checks_running_version()]] - `references` [EXTRACTED]
+- [[test_sources_reject_incomplete_or_stale_state()]] - `references` [EXTRACTED]
+- [[test_sources_reject_missing_or_malformed_payload()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_ci_concurrencypy
+#graphify/code #graphify/EXTRACTED #community/e2e_stdio_checkpy

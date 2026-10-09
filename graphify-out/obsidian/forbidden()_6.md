@@ -1,17 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_stealth.py"
 type: "code"
-community: "_patch_questions"
-location: "L1742"
+community: "test_chrome_cdp_stealth.py"
+location: "L64"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/_patch_questions
+  - graphify/INFERRED
+  - community/test_chrome_cdp_stealthpy
 ---
 
 # forbidden()
 
 ## Connections
-- [[test_category_products_rejects_an_unsafe_selector()]] - `contains` [EXTRACTED]
+- [[test_linux_hide_is_a_noop()]] - `indirect_call` [INFERRED]
+- [[test_linux_profile_pids_never_shell_out()]] - `indirect_call` [INFERRED]
+- [[test_macos_hide_does_nothing_without_a_confirmed_pid()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/_patch_questions
+#graphify/code #graphify/INFERRED #community/test_chrome_cdp_stealthpy

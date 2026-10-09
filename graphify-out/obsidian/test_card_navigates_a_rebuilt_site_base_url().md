@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Even for a legitimate URL, we navigate our own construction, not theirs.]] - `rationale_for` [EXTRACTED]
-- [[capture()_3]] - `indirect_call` [INFERRED]
+- [[capture()_1]] - `indirect_call` [INFERRED]
 - [[citilink-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/citilink-connector/tests/test_serverpy

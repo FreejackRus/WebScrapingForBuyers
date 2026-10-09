@@ -23,7 +23,6 @@ tags:
 - [[marketplace-connector]] - `depends_on` [EXTRACTED]
 - [[mcp-core]] - `depends_on` [EXTRACTED]
 - [[megamarket-connector]] - `depends_on` [EXTRACTED]
-- [[mpstats-connector]] - `depends_on` [EXTRACTED]
 - [[ozon-connector]] - `depends_on` [EXTRACTED]
 - [[taobao-connector]] - `depends_on` [EXTRACTED]
 - [[wb-connector]] - `depends_on` [EXTRACTED]
