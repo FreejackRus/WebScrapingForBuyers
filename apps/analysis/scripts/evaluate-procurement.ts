@@ -23,6 +23,14 @@ await check("budget keeps stock and BOX",()=>analyzeSnapshot(snapshot,"до 15 �
 await check("supplier stock",()=>analyzeSnapshot(snapshot,"только в наличии",narrator),r=>assert.deepEqual(r.selectedOfferIds,["oem","box"]));
 await check("ambiguous replacement",()=>analyzeSnapshot(snapshot,"хочу найти замену",narrator),r=>{assert.ok(r.clarificationQuestion);assert.equal(r.searchQuery,undefined)});
 await check("warranty unknown",()=>analyzeSnapshot(snapshot,"какая гарантия BOX?",narrator),r=>{assert.match(r.summary,/не указана/);assert.doesNotMatch(r.summary,/официальная|лицензи/)});
+await check("compound CPU command",()=>answerCopilot("Привет, найди мне `12400F` BOX до 15 тысяч только в наличии",narrator),r=>{assert.equal(r.searchQuery,"12400F");assert.deepEqual(r.tableFilter,{realOnly:true,packaging:"BOX",maxPrice:15000,inStockOnly:true})});
+await check("remove only budget",()=>analyzeSnapshot(snapshot,"убери ограничение по цене",narrator,{context:{tableFilter:{packaging:"BOX",maxPrice:15000,inStockOnly:true}}}),r=>assert.deepEqual(r.tableFilter,{realOnly:true,packaging:"BOX",inStockOnly:true}));
+await check("recall actual conditions",()=>analyzeSnapshot(snapshot,"что мы сейчас ищем?",narrator,{context:{tableFilter:{packaging:"BOX",maxPrice:15000}}}),r=>{assert.match(r.summary,/12400F/);assert.match(r.summary,/BOX/);assert.equal(r.searchQuery,undefined)});
+await check("allow ordered offers",()=>analyzeSnapshot(snapshot,"и под заказ тоже",narrator,{context:{tableFilter:{packaging:"BOX",inStockOnly:true}}}),r=>assert.deepEqual(r.tableFilter,{realOnly:true,packaging:"BOX"}));
+await check("new product resets old conditions",()=>analyzeSnapshot(snapshot,"теперь ищем 13400F",narrator,{context:{tableFilter:{packaging:"BOX",maxPrice:15000}}}),r=>{assert.equal(r.searchQuery,"13400F");assert.deepEqual(r.tableFilter,{realOnly:true})});
+await check("decimal compound budget",()=>answerCopilot("найди 12400F BOX, до 15,5 тысяч",narrator),r=>{assert.equal(r.searchQuery,"12400F");assert.deepEqual(r.tableFilter,{realOnly:true,packaging:"BOX",maxPrice:15500})});
+await check("Cyrillic thousand",()=>analyzeSnapshot(snapshot,"до 15к",narrator),r=>assert.equal(r.tableFilter?.maxPrice,15000));
+await check("reset all conditions",()=>analyzeSnapshot(snapshot,"сбрось фильтры",narrator,{context:{tableFilter:{packaging:"BOX",maxPrice:15000,inStockOnly:true}}}),r=>assert.deepEqual(r.tableFilter,{realOnly:true}));
 await check("real model explanation",()=>analyzeSnapshot(snapshot,"Сравни лучшие предложения",narrator,{userRole:"admin"}),r=>{assert.deepEqual(r.selectedOfferIds,["oem","unknown","box"]);assert.ok(r.citations?.every(c=>snapshot.offers.some(o=>o.id===c.offerId&&o.url===c.url)));});
 console.log(JSON.stringify({fixture:true,model,passed:results.length,modelCalls:calls,rawModelAnswers,groundedExplanationsAccepted:results.filter(result=>String(result.provider).startsWith("Ollama")).length,results},null,2));
 

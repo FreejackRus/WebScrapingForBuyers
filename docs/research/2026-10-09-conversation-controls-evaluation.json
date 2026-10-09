@@ -1,0 +1,175 @@
+{
+  "fixture": true,
+  "model": "qwen3.8:27b-q8_0",
+  "passed": 17,
+  "modelCalls": 2,
+  "rawModelAnswers": [
+    {
+      "summary": "NETLAB: Intel Core i5-12400F OEM — 12 000 ₽. Intel Core i5-12400F OEM: заявленное наличие — склад: более 50 шт..",
+      "warnings": [],
+      "offerIds": [
+        "oem"
+      ]
+    }
+  ],
+  "groundedExplanationsAccepted": 1,
+  "results": [
+    {
+      "name": "search 12400F",
+      "passed": true,
+      "modelCalls": 0,
+      "elapsedMs": 5,
+      "provider": "Закрытый контур ПЕРЕМЕНА",
+      "warnings": [],
+      "summary": "Запускаю поиск «12400F». Предложения появятся по мере ответа поставщиков."
+    },
+    {
+      "name": "search i5-12400F",
+      "passed": true,
+      "modelCalls": 0,
+      "elapsedMs": 2,
+      "provider": "Закрытый контур ПЕРЕМЕНА",
+      "warnings": [],
+      "summary": "Запускаю поиск «i5-12400F». Предложения появятся по мере ответа поставщиков."
+    },
+    {
+      "name": "search процессор 12400F",
+      "passed": true,
+      "modelCalls": 0,
+      "elapsedMs": 0,
+      "provider": "Закрытый контур ПЕРЕМЕНА",
+      "warnings": [],
+      "summary": "Запускаю поиск «процессор 12400F». Предложения появятся по мере ответа поставщиков."
+    },
+    {
+      "name": "BOX refinement",
+      "passed": true,
+      "modelCalls": 0,
+      "elapsedMs": 14,
+      "provider": "Закрытый контур ПЕРЕМЕНА",
+      "warnings": [],
+      "summary": "Фильтр применён. Подходящих предложений: 2. Минимальная цена среди них: 13 500 ₽."
+    },
+    {
+      "name": "budget keeps stock and BOX",
+      "passed": true,
+      "modelCalls": 0,
+      "elapsedMs": 1,
+      "provider": "Закрытый контур ПЕРЕМЕНА",
+      "warnings": [],
+      "summary": "Фильтр применён. Подходящих предложений: 1. Минимальная цена среди них: 14 500 ₽."
+    },
+    {
+      "name": "supplier stock",
+      "passed": true,
+      "modelCalls": 0,
+      "elapsedMs": 0,
+      "provider": "Закрытый контур ПЕРЕМЕНА",
+      "warnings": [
+        "Часть источников не сообщает наличие; такие предложения скрыты."
+      ],
+      "summary": "Фильтр применён. Подходящих предложений: 2. Минимальная цена среди них: 12 000 ₽."
+    },
+    {
+      "name": "ambiguous replacement",
+      "passed": true,
+      "modelCalls": 1,
+      "elapsedMs": 6797,
+      "provider": "deterministic",
+      "warnings": [],
+      "summary": "Уточнить текущий товар или найти другую модель? Напишите модель либо нужное отличие."
+    },
+    {
+      "name": "warranty unknown",
+      "passed": true,
+      "modelCalls": 0,
+      "elapsedMs": 0,
+      "provider": "Закрытый контур ПЕРЕМЕНА",
+      "warnings": [],
+      "summary": "Intel Core i5-12400F BOX: гарантия — не указана. Комплектация в данных предложения не указана; обозначение BOX/OEM не подтверждает содержимое коробки.\nIntel Core i5-12400F BOX: гарантия — не указана. Комплектация в данных предложения не указана; обозначение BOX/OEM не подтверждает содержимое коробки."
+    },
+    {
+      "name": "compound CPU command",
+      "passed": true,
+      "modelCalls": 0,
+      "elapsedMs": 1,
+      "provider": "Закрытый контур ПЕРЕМЕНА",
+      "warnings": [],
+      "summary": "Запускаю поиск «12400F». Предложения появятся по мере ответа поставщиков."
+    },
+    {
+      "name": "remove only budget",
+      "passed": true,
+      "modelCalls": 0,
+      "elapsedMs": 0,
+      "provider": "Закрытый контур ПЕРЕМЕНА",
+      "warnings": [],
+      "summary": "Ограничение по цене снято. Остальные условия сохранены."
+    },
+    {
+      "name": "recall actual conditions",
+      "passed": true,
+      "modelCalls": 0,
+      "elapsedMs": 0,
+      "provider": "Закрытый контур ПЕРЕМЕНА",
+      "warnings": [],
+      "summary": "Ищем «Процессор Intel 12400F». Условия: BOX; до 15 000 ₽. Сбор завершён."
+    },
+    {
+      "name": "allow ordered offers",
+      "passed": true,
+      "modelCalls": 0,
+      "elapsedMs": 0,
+      "provider": "Закрытый контур ПЕРЕМЕНА",
+      "warnings": [],
+      "summary": "Разрешил варианты под заказ и с неизвестным наличием. Остальные условия сохранены."
+    },
+    {
+      "name": "new product resets old conditions",
+      "passed": true,
+      "modelCalls": 0,
+      "elapsedMs": 0,
+      "provider": "Закрытый контур ПЕРЕМЕНА",
+      "warnings": [],
+      "summary": "Запускаю поиск «13400F». Предложения появятся по мере ответа поставщиков."
+    },
+    {
+      "name": "decimal compound budget",
+      "passed": true,
+      "modelCalls": 0,
+      "elapsedMs": 0,
+      "provider": "Закрытый контур ПЕРЕМЕНА",
+      "warnings": [],
+      "summary": "Запускаю поиск «12400F». Предложения появятся по мере ответа поставщиков."
+    },
+    {
+      "name": "Cyrillic thousand",
+      "passed": true,
+      "modelCalls": 0,
+      "elapsedMs": 0,
+      "provider": "Закрытый контур ПЕРЕМЕНА",
+      "warnings": [],
+      "summary": "Фильтр применён. Подходящих предложений: 3. Минимальная цена среди них: 12 000 ₽."
+    },
+    {
+      "name": "reset all conditions",
+      "passed": true,
+      "modelCalls": 0,
+      "elapsedMs": 0,
+      "provider": "Закрытый контур ПЕРЕМЕНА",
+      "warnings": [],
+      "summary": "Фильтры сброшены. Показываю все реальные варианты текущего товара."
+    },
+    {
+      "name": "real model explanation",
+      "passed": true,
+      "modelCalls": 1,
+      "elapsedMs": 3238,
+      "provider": "Ollama · qwen3.8:27b-q8_0",
+      "warnings": [
+        "Анализ смотрит только уже загруженные предложения."
+      ],
+      "summary": "NETLAB: Intel Core i5-12400F OEM — 12 000 ₽. Intel Core i5-12400F OEM: заявленное наличие — склад: более 50 шт.."
+    }
+  ]
+}
