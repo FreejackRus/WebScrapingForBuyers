@@ -18,3 +18,7 @@ describe("conversational controls",()=>{
  it.each(["привет","спасибо"])("responds tersely to %s without changing filters",prompt=>{const r=route(prompt);expect(r?.intent).toBe("help");expect(r?.summary.length).toBeLessThan(250);expect(r?.searchQuery).toBeUndefined();expect(r?.tableFilter).toBeUndefined();});
  it.each(["найди 12400F BOX OEM","а BOX и OEM","до 15 тысяч и до 20 тысяч","только в наличии и под заказ"])("asks for incompatible conditions %s",prompt=>{const r=route(prompt);expect(r?.clarificationQuestion).toBeTruthy();expect(r?.searchQuery).toBeUndefined();expect(r?.tableFilter).toBeUndefined();});
 });
+it.each(["до 15,5 тысяч","до 15.5 тысяч"])("uses decimal budget in %s",prompt=>{const r=route(prompt);expect(r?.tableFilter?.maxPrice).toBe(15500)});
+it("handles punctuation in compound conditions",()=>{const r=route("найди 12400F BOX, до 15 тысяч");expect(r?.searchQuery).toBe("12400F");expect(r?.tableFilter).toEqual({realOnly:true,packaging:"BOX",maxPrice:15000})});
+it("separates decimal compound budget",()=>{const r=route("найди 12400F до 15,5 тысяч");expect(r?.searchQuery).toBe("12400F");expect(r?.tableFilter?.maxPrice).toBe(15500)});
+it("asks about unsupported order conditions instead of polluting model",()=>{const r=route("найди 12400F под заказ");expect(r?.clarificationQuestion).toBeTruthy();expect(r?.searchQuery).toBeUndefined()});
