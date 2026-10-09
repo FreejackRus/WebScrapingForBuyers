@@ -22,3 +22,4 @@ it.each(["до 15,5 тысяч","до 15.5 тысяч"])("uses decimal budget in
 it("handles punctuation in compound conditions",()=>{const r=route("найди 12400F BOX, до 15 тысяч");expect(r?.searchQuery).toBe("12400F");expect(r?.tableFilter).toEqual({realOnly:true,packaging:"BOX",maxPrice:15000})});
 it("separates decimal compound budget",()=>{const r=route("найди 12400F до 15,5 тысяч");expect(r?.searchQuery).toBe("12400F");expect(r?.tableFilter?.maxPrice).toBe(15500)});
 it("asks about unsupported order conditions instead of polluting model",()=>{const r=route("найди 12400F под заказ");expect(r?.clarificationQuestion).toBeTruthy();expect(r?.searchQuery).toBeUndefined()});
+it.each(["до 15к","до 15 к","найди 12400F до 15к"])("uses Cyrillic thousand in %s",prompt=>{expect(route(prompt)?.tableFilter?.maxPrice).toBe(15000)});
