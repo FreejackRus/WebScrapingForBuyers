@@ -1,3 +1,4 @@
+import { assessOffer } from "../../domain/offer-assessment.js";
 import { productFromQuery } from "../../domain/product-from-query.js";
 import { deflateRawSync } from "node:zlib";
 
@@ -157,6 +158,7 @@ it.each(["12400F", "i5-12400F", "процессор 12400F"])("finds the CPU in 
   const adapter = new NetlabPriceFeedAdapter({ fetchImpl: vi.fn(async () => new Response(new Uint8Array(zipOf("Price.xml", cp1251(xml))))) });
   const offers = await adapter.search(productFromQuery(query));
   expect(offers.map((row) => row.title)).toEqual(["Intel Core i5-12400F OEM Процессор LGA1700"]);
+  expect(offers.filter((row) => assessOffer(productFromQuery(query), row, query))).toHaveLength(1);
 });
 
 it("uses NETLAB's product type to exclude complete systems with the requested CPU", () => {
