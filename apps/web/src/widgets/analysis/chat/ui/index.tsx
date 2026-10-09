@@ -21,7 +21,7 @@ export function AnalysisChat() {
   const run = useAnalysisStore((state) => state.run);
   const chat = useAnalysisStore((state) => state.chat);
   const snapshot = useSearchStore((state) => state.snapshot);
-  const promptRef = useRef<HTMLInputElement>(null);
+  const promptRef = useRef<HTMLTextAreaElement>(null);
   const sendingRef = useRef(false);
   const [sending, setSending] = useState(false);
   const [sendFailed, setSendFailed] = useState(false);
@@ -156,7 +156,7 @@ export function AnalysisChat() {
         <label className="sr-only" htmlFor="analysis-prompt">
           Сообщение копайлоту
         </label>
-        <input
+        <textarea
           ref={promptRef}
           id="analysis-prompt"
           className="chat-composer-input"
@@ -169,6 +169,15 @@ export function AnalysisChat() {
                 ? "Спросите про цены, наличие или фильтр…"
                 : "Спросите о товаре или модели…"
           }
+          rows={2}
+          maxLength={1000}
+          aria-description="Enter — отправить, Shift+Enter — новая строка"
+          onKeyDown={(event) => {
+            if (event.key === "Enter" && !event.shiftKey && !event.nativeEvent.isComposing) {
+              event.preventDefault();
+              void send(prompt);
+            }
+          }}
           autoComplete="off"
           disabled={locked}
           readOnly={locked}

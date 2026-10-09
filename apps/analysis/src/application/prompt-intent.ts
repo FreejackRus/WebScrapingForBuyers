@@ -84,14 +84,13 @@ export function applyTitleFilterRules(offers: Offer[], rules: TitleFilterRules):
 }
 
 export function extractSearchQuery(prompt: string): string {
-  return prompt
-    .replace(/покажи\s+(?:реальн[а-яё]*\s+)?предложени[а-яё]*\s+по\s+/gi, "")
-    .replace(/уточни(?:те)? модель/gi, "")
-    .replace(/запусти(?:те)? поиск/gi, "")
-    .replace(/найд[иу]|найти|поищи|\bищи\b/gi, "")
-    .replace(/собери предложени\w*/gi, "")
-    .replace(/новый поиск/gi, "")
-    .trim();
+  return prompt.trim()
+    .replace(/^пожалуйста[,\s]+/iu, "")
+    .replace(/^(?:покажи\s+(?:реальн[а-яё]*\s+)?предложени[а-яё]*\s+по|уточни(?:те)?\s+модель|запусти(?:те)?\s+поиск|найди(?:те)?|найти|поищи(?:те)?|ищи|собери\s+предложени[а-яё]*|новый\s+поиск)\s*/iu, "")
+    .replace(/^(?:мне|для\s+меня)\s+/iu, "")
+    .replace(/^пожалуйста[,\s]+/iu, "")
+    .replace(/^[`«"“]+|[`»"”]+[.!?]*$/gu, "")
+    .replace(/\s+/gu, " ").trim();
 }
 
 /** Short form of displayName for greetings («Михаил Иванов» → «Михаил»). */

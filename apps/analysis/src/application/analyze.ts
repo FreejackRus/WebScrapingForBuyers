@@ -229,7 +229,7 @@ function resolveChatIntent(
   narrated: CopilotChatAnswer | undefined,
   heuristicSearchQuery: string,
 ): { intent: ChatIntent; searchQuery?: string } {
-  const modelQuery = narrated?.searchQuery?.trim();
+  const modelQuery = narrated?.searchQuery ? extractSearchQuery(narrated.searchQuery) : undefined;
   const modelIntent = narrated?.intent;
 
   // An explicit help/source/admin/filter request must not become a catalog
@@ -414,7 +414,7 @@ async function analyzeSnapshotRaw(
       }
     }
     return {
-      summary,
+      summary: withGreeting(`Запускаю поиск «${query}». Предложения появятся по мере ответа поставщиков.`, userName),
       selectedOfferIds: [],
       appliedFilters: [`Новый поиск по запросу «${query}».`],
       warnings,
@@ -757,7 +757,7 @@ async function answerCopilotRaw(
       return {
         summary: resolved.intent === "search" && resolved.searchQuery
           ? withGreeting(
-              `Уточняю модель «${resolved.searchQuery}». Выберите найденную карточку, чтобы собрать предложения.`,
+              `Запускаю поиск «${resolved.searchQuery}». Предложения появятся по мере ответа поставщиков.`,
               userName,
             )
           : narrated.summary,
@@ -776,7 +776,7 @@ async function answerCopilotRaw(
       if (heuristicIntent === "search" && searchQuery.length >= 2) {
         return {
           summary: withGreeting(
-            `Уточняю модель «${searchQuery}». Выберите найденную карточку, чтобы собрать предложения.`,
+            `Запускаю поиск «${searchQuery}». Предложения появятся по мере ответа поставщиков.`,
             userName,
           ),
           selectedOfferIds: [],
@@ -825,7 +825,7 @@ async function answerCopilotRaw(
   if (heuristicIntent === "search" && searchQuery.length >= 2) {
     return {
       summary: withGreeting(
-        `Запускаю уточнение модели «${searchQuery}». Выберите карточку слева, чтобы собрать предложения.`,
+        `Запускаю поиск «${searchQuery}». Предложения появятся по мере ответа поставщиков.`,
         userName,
       ),
       selectedOfferIds: [],

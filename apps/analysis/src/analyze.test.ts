@@ -813,7 +813,7 @@ describe("answerCopilot", () => {
     );
     expect(result.intent).toBe("search");
     expect(result.searchQuery).toBe("Logitech K380");
-    expect(result.summary).toMatch(/уточняю модель/i);
+    expect(result.summary).toMatch(/запускаю поиск/i);
   });
 
   it("uses the model only to extract a no-snapshot search query, not invent status", async () => {
@@ -831,7 +831,7 @@ describe("answerCopilot", () => {
       },
     );
     expect(result.intent).toBe("search");
-    expect(result.summary).toMatch(/уточняю модель/i);
+    expect(result.summary).toMatch(/запускаю поиск/i);
     expect(result.summary).not.toMatch(/недоступен|100 ₽/i);
     expect(result.warnings).toEqual([]);
   });

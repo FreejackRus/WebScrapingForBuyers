@@ -1584,3 +1584,5 @@ tr.recommended td:first-child { box-shadow: inset 3px 0 0 var(--coral); }
 .collection-spinner { flex: 0 0 auto; width: 22px; height: 22px; border: 2px solid #bed2ff; border-top-color: #2465db; border-radius: 50%; animation: collection-spin 1s linear infinite; }
 @keyframes collection-spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .collection-spinner { animation: none; } }
+
+textarea.chat-composer-input { resize: vertical; min-height: 60px; max-height: 180px; font: inherit; line-height: 1.4; }

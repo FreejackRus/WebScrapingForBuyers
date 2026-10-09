@@ -25,6 +25,10 @@ export function applyChatResult(result: AnalysisResult) {
   // Never mirror arbitrary chat text into the search box — only explicit search intent.
   if (result.intent === "search" && result.searchQuery && result.searchQuery.trim().length >= 2) {
     search.setQuery(result.searchQuery.trim());
-    void search.suggest();
+    void search.start({
+      id: `typed-${result.searchQuery.trim().slice(0, 48)}`,
+      name: result.searchQuery.trim(), model: result.searchQuery.trim(), brand: "—",
+      mpn: "", category: "Каталог", characteristics: { источник: "typed" },
+    });
   }
 }
