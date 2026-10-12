@@ -29,6 +29,16 @@ describe("marketplace relevance (domain)", () => {
     expect(verdict.kind).toBe("strong");
   });
 
+  it.each([
+    ["Samsung 990 PRO 2TB", "SSD Samsung 990 Pro 2 ТБ NVMe", "strong"],
+    ["Samsung 990 PRO 2TB", "SSD Samsung 990 Pro 1 ТБ NVMe", "drop"],
+    ["GeForce RTX 4060 8GB", "Видеокарта MSI GeForce RTX4060 VENTUS 8 ГБ", "strong"],
+    ["GeForce RTX 4060 8GB", "Игровой ПК Ryzen 5 с GeForce RTX 4060 8GB", "drop"],
+  ])("matches normalized variants for %s", (model, title, expected) => {
+    const candidate = { id: model, brand: model.split(" ")[0]!, model, name: model, mpn: "", category: model.includes("RTX") ? "Видеокарты" : "SSD", characteristics: {} } as Product;
+    expect(assessMarketplaceOfferRelevance(title, undefined, undefined, candidate).kind).toBe(expected);
+  });
+
   it("drops a rival SKU of the same brand", () => {
     const verdict = assessMarketplaceOfferRelevance("Клавиатура Logitech K120 проводная", undefined, undefined, k380);
     expect(verdict.kind).toBe("drop");

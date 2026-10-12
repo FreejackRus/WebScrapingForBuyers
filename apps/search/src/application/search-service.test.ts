@@ -233,3 +233,37 @@ describe("SearchService availability contract", () => {
     }
   });
 });
+
+describe("SearchService procurement quality", () => {
+  it("keeps unknown NETLAB condition honest and lets explicit title evidence win", async () => {
+    const service = new SearchService([source("NETLAB", async () => [
+      { ...offer("NETLAB", 1000), id: "unknown", title: "Intel Core i5-12400F BOX" },
+      { ...offer("NETLAB", 900), id: "display", title: "Intel Core i5-12400F с витрины" },
+      { ...offer("NETLAB", 800), id: "used", title: "Intel Core i5-12400F Б/У" },
+    ])]);
+    const snapshot = service.start("12400F", { ...product, model: "12400F", name: "Intel Core i5-12400F", mpn: "BX8071512400F" });
+    await finish(service, snapshot.id);
+    expect(service.get(snapshot.id)!.offers.map(row => [row.id, row.condition])).toEqual([
+      ["unknown", "unknown"], ["display", "display"], ["used", "used"],
+    ]);
+  });
+
+  it("ranks eligible real offers by availability, condition, packaging and price", async () => {
+    const rows = [
+      { ...offer("A", 700), id: "order", availability: "Под заказ", condition: "new" as const },
+      { ...offer("A", 800), id: "used", condition: "used" as const },
+      { ...offer("A", 1000), id: "box-expensive", title: "Logitech K380 BOX" },
+      { ...offer("A", 900), id: "box-cheap", title: "Logitech K380 BOX" },
+      { ...offer("A", 850), id: "oem", title: "Logitech K380 OEM" },
+      { ...offer("A", 100), id: "anomaly", priceAnomaly: "too_low" as const },
+      { ...offer("A", 50), id: "demo", demo: true },
+    ];
+    const service = new SearchService([source("A", async () => rows)]);
+    const snapshot = service.start("Logitech K380", product);
+    await finish(service, snapshot.id);
+    const ranked = [...service.get(snapshot.id)!.offers].sort((a, b) => a.procurementRank! - b.procurementRank!);
+    expect(ranked.map(row => row.id)).toEqual([
+      "oem", "box-cheap", "box-expensive", "used", "order", "anomaly", "demo",
+    ]);
+  });
+});
