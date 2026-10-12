@@ -8,6 +8,8 @@ import { assessOffer } from "../domain/offer-assessment.js";
 import { withCatalogArticles } from "../domain/catalog-article.js";
 import { applyCardFacts, type CardVerifier } from "../domain/offer-verification.js";
 import { flagPriceAnomalies } from "../domain/price-anomaly.js";
+import { priceHistoryKey, priceHistoryPoint } from "../domain/price-history.js";
+import type { PriceHistoryStore } from "../infrastructure/history/price-history-store.js";
 import { assignProcurementRanks } from "../domain/procurement-rank.js";
 import type { SourceAdapter } from "../domain/source-adapter.js";
 import { isSourceDisabled } from "../domain/source-policy.js";
@@ -94,6 +96,7 @@ export class SearchService {
     private readonly sourceTimeoutMs: number = Number(process.env.SOURCE_TIMEOUT_MS) || DEFAULT_SOURCE_TIMEOUT_MS,
     private readonly verifiers: CardVerifier[] = [],
     private readonly cacheMs: number = searchCacheMs(),
+    private readonly priceHistory?: PriceHistoryStore,
   ) {}
 
   listSources(): string[] {
@@ -125,6 +128,7 @@ export class SearchService {
       offers: [],
       sources: selected.map((source) => ({ source: source.name, status: "pending" })),
     };
+    this.attachHistoryKey(snapshot);
     this.searches.set(snapshot.id, snapshot);
     this.cacheKeys.set(snapshot.id, key);
     queueMicrotask(() => void this.collect(snapshot.id, selected));
@@ -238,6 +242,7 @@ export class SearchService {
 
     assignProcurementRanks(snapshot.offers);
     await this.verifyTop(snapshot).catch(() => undefined);
+    this.recordPriceHistory(snapshot);
     snapshot.status = "complete";
     this.finishedAt.set(id, this.now());
     this.emit(id, { type: "complete", data: structuredClone(snapshot) });
@@ -320,6 +325,25 @@ export class SearchService {
       const assessed = assessOffer(snapshot.product, offer, snapshot.query);
       return assessed ? [assessed] : [];
     });
+  }
+
+  private attachHistoryKey(snapshot: SearchSnapshot): void {
+    if (!this.priceHistory) return;
+    const key = priceHistoryKey(snapshot.product);
+    if (key) snapshot.historyKey = key;
+    else delete snapshot.historyKey;
+  }
+
+  /**
+   * One point per completed real search. The key is taken again: a catalogue article found
+   * during the search names the product better than the typed text did.
+   */
+  private recordPriceHistory(snapshot: SearchSnapshot): void {
+    if (!this.priceHistory) return;
+    this.attachHistoryKey(snapshot);
+    if (!snapshot.historyKey) return;
+    const point = priceHistoryPoint(snapshot.query, snapshot.offers, new Date(this.now()).toISOString());
+    if (point) this.priceHistory.append(snapshot.historyKey, point);
   }
 
   private rememberLastGood(key: string, real: Offer[]): void {

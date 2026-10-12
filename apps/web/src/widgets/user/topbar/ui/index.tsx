@@ -1,10 +1,12 @@
+import type { ReactNode } from "react";
+
 import type { AppView } from "composition/settings";
 import { logout } from "features/user";
 import { useUserStore } from "entities/user";
 import { initials } from "shared/lib";
 import { logoUrl } from "shared/config";
 
-export function Topbar({ view, onView }: { view: AppView; onView: (view: AppView) => void }) {
+export function Topbar({ view, onView, actions }: { view: AppView; onView: (view: AppView) => void; actions?: ReactNode }) {
   const user = useUserStore((state) => state.user);
   const health = useUserStore((state) => state.health);
   if (!user) return null;
@@ -36,6 +38,7 @@ export function Topbar({ view, onView }: { view: AppView; onView: (view: AppView
               {health.mode === "hybrid" ? "Гибридный контур" : "Локальный контур"}
             </span>
           )}
+          {actions}
           <button
             className="ghost topbar-settings"
             type="button"

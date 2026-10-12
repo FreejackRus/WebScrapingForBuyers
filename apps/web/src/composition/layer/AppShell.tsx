@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 
 import { useUserStore } from "entities/user";
 import { Topbar } from "widgets/user";
+import { WatchlistButton } from "widgets/watchlist";
 
 import type { AppView } from "../settings";
 import { MobileNav } from "./MobileNav";
@@ -23,7 +24,7 @@ export function AppShell({
       <a className="skip-link" href="#main-content">
         К содержимому
       </a>
-      <Topbar view={view} onView={onView} />
+      <Topbar view={view} onView={onView} actions={<WatchlistButton onOpenSearch={() => onView("search")} />} />
       {children}
       {view !== "settings" && (
         <footer className="app-footer">

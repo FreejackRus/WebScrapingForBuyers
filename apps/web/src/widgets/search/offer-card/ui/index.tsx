@@ -7,6 +7,9 @@ function prefersReducedMotion(): boolean {
   return typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches === true;
 }
 
+import { offerAvailabilityStatus, offerChannel, type Offer } from "@peremena/contracts";
+
+import { findWatch, useWatchlistStore } from "entities/watchlist";
 import { conditionLabels, matchLabels, PRICE_ANOMALY_HINT, PRICE_ANOMALY_LABEL, verificationLabels } from "entities/offer";
 import { analysisApi } from "entities/analysis";
 import { useSearchStore } from "entities/search";
@@ -183,12 +186,41 @@ export function OfferCard() {
           <a className="offer-card-shop" href={offer.url} target="_blank" rel="noreferrer">
             Открыть на площадке
           </a>
+          <WatchButton offer={offer} />
           <button type="button" className="ghost" onClick={closeOffer}>
             Закрыть
           </button>
         </footer>
       </aside>
     </div>
+  );
+}
+
+/** Starts watching this product in the row's channel, with the row's price as the baseline. */
+function WatchButton({ offer }: { offer: Offer }) {
+  const product = useSearchStore((state) => state.snapshot?.product);
+  const query = useSearchStore((state) => state.snapshot?.query ?? "");
+  const items = useWatchlistStore((state) => state.items);
+  const add = useWatchlistStore((state) => state.add);
+  const [state, setState] = useState<"idle" | "saving" | "error">("idle");
+  if (!product || offer.demo) return null;
+  const channel = offerChannel(offer);
+  const watched = findWatch(items, product.id, product.name, channel);
+  const start = async () => {
+    setState("saving");
+    const item = await add({ query, product, channel, price: offer.price, inStock: offerAvailabilityStatus(offer) === "in_stock" });
+    setState(item ? "idle" : "error");
+  };
+  return (
+    <button
+      type="button"
+      className="ghost offer-card-watch"
+      disabled={state === "saving"}
+      title={watched ? `Отслеживается с ценой ${money.format(watched.baseline.price)}; нажмите, чтобы начать заново с этой цены` : "Проверять цену этого товара по расписанию"}
+      onClick={() => void start()}
+    >
+      {state === "saving" ? "Сохраняем…" : state === "error" ? "Не удалось, повторить" : watched ? "Цена отслеживается ✓" : "Следить за ценой"}
+    </button>
   );
 }
 

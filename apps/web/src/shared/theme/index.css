@@ -1653,3 +1653,21 @@ textarea.chat-composer-input { resize: vertical; min-height: 60px; max-height: 1
 .search-variant-chooser > span { font-weight: 600; }
 .search-cached-notice, .search-pending-notice { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
 .search-pending-notice small { opacity: 0.8; }
+/* Price over time: sparkline in the summary and the watchlist drawer. */
+.price-trend { display: flex; align-items: center; gap: 10px; margin-top: 10px; font-size: 13px; color: var(--muted); }
+.price-trend svg { flex: none; color: var(--muted); }
+.price-trend--down svg, .price-trend--down .price-trend-arrow { color: var(--success); }
+.price-trend--up svg, .price-trend--up .price-trend-arrow { color: var(--danger); }
+.price-trend b { color: var(--ink); }
+.watchlist-toggle { position: relative; }
+.watchlist-badge { display: inline-grid; place-items: center; min-width: 18px; height: 18px; margin-left: 6px; padding: 0 5px; border-radius: 9px; background: var(--success); color: #fff; font-size: 11px; font-weight: 700; }
+.watchlist-empty { color: var(--muted); }
+.watchlist-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.watchlist-item { display: grid; gap: 6px; padding: 12px; border: 1px solid var(--line); border-radius: var(--radius); }
+.watchlist-item-head { display: flex; justify-content: space-between; gap: 8px; }
+.watchlist-item-head small { color: var(--muted); }
+.watchlist-prices { display: grid; gap: 2px; margin: 0; font-size: 13px; }
+.watchlist-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.watch-change { justify-self: start; padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; background: var(--canvas); color: var(--muted); }
+.watch-change--cheaper, .watch-change--back_in_stock { background: var(--success-soft); color: var(--success); }
+.watch-change--pricier, .watch-change--out_of_stock { background: #fdecea; color: var(--danger); }

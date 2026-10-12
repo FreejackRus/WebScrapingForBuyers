@@ -282,3 +282,42 @@ describe("search", () => {
     expect(wb?.message).toMatch(/последние удачные/);
   });
 });
+
+class RealTestSource extends TestSource {
+  override async search(product: Product): Promise<Offer[]> {
+    return (await super.search(product)).map((offer) => ({ ...offer, demo: false }));
+  }
+}
+
+describe("price history", () => {
+  it("skips demo-only searches", async () => {
+    const app = buildSearchApp({ sources: [new TestSource()] });
+    const product = { ...productPayload("Kingston KC3000 1TB"), brand: "Kingston", mpn: "SKC3000S/1024G", characteristics: { источник: "icecat" } };
+    const snapshot = (await app.inject({ method: "POST", url: "/searches", payload: { query: product.name, product } })).json<SearchSnapshot>();
+    for (let i = 0; i < 50; i += 1) {
+      if ((await app.inject({ method: "GET", url: `/searches/${snapshot.id}` })).json<SearchSnapshot>().status === "complete") break;
+      await new Promise((resolve) => setTimeout(resolve, 10));
+    }
+    expect((await app.inject({ method: "GET", url: `/price-history?key=${snapshot.historyKey}` })).json<{ points: unknown[] }>().points).toEqual([]);
+    await app.close();
+  });
+
+  it("records a point per completed real search and serves it by historyKey", async () => {
+    const app = buildSearchApp({ sources: [new RealTestSource()] });
+    const product = { ...productPayload("Kingston KC3000 1TB"), brand: "Kingston", mpn: "SKC3000S/1024G", characteristics: { источник: "icecat" } };
+    for (let run = 0; run < 2; run += 1) {
+      const created = await app.inject({ method: "POST", url: "/searches", payload: { query: product.name, product, fresh: true } });
+      const snapshot = created.json<SearchSnapshot>();
+      expect(snapshot.historyKey).toBe("mpn:skc3000s1024g");
+      for (let i = 0; i < 50; i += 1) {
+        const current = (await app.inject({ method: "GET", url: `/searches/${snapshot.id}` })).json<SearchSnapshot>();
+        if (current.status === "complete") break;
+        await new Promise((resolve) => setTimeout(resolve, 10));
+      }
+    }
+    const history = await app.inject({ method: "GET", url: "/price-history?key=mpn:skc3000s1024g" });
+    expect(history.json<{ points: unknown[] }>().points).toHaveLength(2);
+    expect((await app.inject({ method: "GET", url: "/price-history" })).statusCode).toBe(400);
+    await app.close();
+  });
+});

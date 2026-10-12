@@ -9,6 +9,7 @@ import { isProductPayload, productFromQuery } from "../domain/product-from-query
 import { mergeUnderstanding, needsUnderstanding } from "../domain/query-understanding.js";
 import { isSourceDisabled, listDisabledSources } from "../domain/source-policy.js";
 import { suggestLiveProducts } from "../infrastructure/suggest/live-suggest.js";
+import type { PriceHistoryStore } from "../infrastructure/history/price-history-store.js";
 import { fetchUnderstanding } from "../infrastructure/understanding-client.js";
 
 const queryBodySchema = {
@@ -22,6 +23,7 @@ const queryBodySchema = {
 
 export const searchRoutes: FastifyPluginAsync<{
   searchService: SearchService;
+  priceHistory?: PriceHistoryStore;
   mode: "demo" | "hybrid";
 }> = async (app, options) => {
   const { searchService } = options;
@@ -115,6 +117,12 @@ export const searchRoutes: FastifyPluginAsync<{
     const unsubscribe = searchService.subscribe(request.params.id, send);
     request.raw.on("close", unsubscribe);
     return reply;
+  });
+
+  app.get<{ Querystring: { key?: string } }>("/price-history", async (request, reply) => {
+    const key = typeof request.query.key === "string" ? request.query.key.trim() : "";
+    if (!key || key.length > 200) return reply.code(400).send({ error: "Не указан ключ товара" });
+    return options.priceHistory?.get(key) ?? { key, points: [] };
   });
 
   app.get<{ Params: { id: string } }>("/searches/:id/export.xlsx", async (request, reply) => {
