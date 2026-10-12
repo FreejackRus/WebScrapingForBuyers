@@ -8,6 +8,7 @@ import {
   OllamaAnalysisNarrator,
   samplingFromEnv,
 } from "./infrastructure/ollama-analysis-narrator.js";
+import { VllmAnalysisNarrator } from "./infrastructure/vllm-analysis-narrator.js";
 
 /** Earlier chat turns from the client; untrusted, bounded, context only. */
 const HISTORY_SCHEMA = {
@@ -39,18 +40,30 @@ const CONTEXT_SCHEMA = {
   },
 } as const;
 
+function narratorFromEnv(): AnalysisNarrator | undefined {
+  const provider = process.env.AI_PROVIDER?.trim().toLowerCase();
+  if (provider === "vllm") {
+    if (!process.env.VLLM_BASE_URL) throw new Error("VLLM_BASE_URL is required when AI_PROVIDER=vllm");
+    if (!process.env.VLLM_MODEL) throw new Error("VLLM_MODEL is required when AI_PROVIDER=vllm");
+    return new VllmAnalysisNarrator(process.env.VLLM_BASE_URL, process.env.VLLM_MODEL, process.env.VLLM_API_KEY);
+  }
+  if (provider && provider !== "ollama") throw new Error(`Unsupported AI_PROVIDER: ${provider}`);
+  if (provider === "ollama" && (!process.env.OLLAMA_BASE_URL || !process.env.OLLAMA_MODEL)) {
+    throw new Error("OLLAMA_BASE_URL and OLLAMA_MODEL are required when AI_PROVIDER=ollama");
+  }
+  return process.env.OLLAMA_BASE_URL && process.env.OLLAMA_MODEL
+    ? new OllamaAnalysisNarrator(
+        process.env.OLLAMA_BASE_URL,
+        process.env.OLLAMA_MODEL,
+        samplingFromEnv(process.env.OLLAMA_SAMPLING),
+        keepAliveFromEnv(process.env.OLLAMA_KEEP_ALIVE),
+      )
+    : undefined;
+}
+
 export function buildAnalysisApp(options: { narrator?: AnalysisNarrator; logger?: boolean } = {}) {
   const app = createService({ logger: options.logger ?? false });
-  const narrator =
-    options.narrator ??
-    (process.env.OLLAMA_BASE_URL && process.env.OLLAMA_MODEL
-      ? new OllamaAnalysisNarrator(
-          process.env.OLLAMA_BASE_URL,
-          process.env.OLLAMA_MODEL,
-          samplingFromEnv(process.env.OLLAMA_SAMPLING),
-          keepAliveFromEnv(process.env.OLLAMA_KEEP_ALIVE),
-        )
-      : undefined);
+  const narrator = options.narrator ?? narratorFromEnv();
   const searchBase = serviceUrl("SEARCH_URL", "http://127.0.0.1:3003");
 
   app.get("/health", async () => ({

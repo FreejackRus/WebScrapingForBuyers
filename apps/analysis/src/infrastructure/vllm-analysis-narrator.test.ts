@@ -57,8 +57,8 @@ describe("VllmAnalysisNarrator", () => {
     expect(requestBody).toMatchObject({
       model: "Qwen/Qwen3",
       stream: false,
-      temperature: 0.1,
-      top_p: 0.9,
+      temperature: 0.3,
+      top_p: 0.8,
       max_tokens: 1024,
       chat_template_kwargs: { enable_thinking: false },
       response_format: { type: "json_schema", json_schema: { strict: true } },
@@ -76,13 +76,19 @@ describe("VllmAnalysisNarrator", () => {
     await expect(new VllmAnalysisNarrator("http://vllm/v1", "qwen").answer({ prompt: "объясни" })).rejects.toThrow();
   });
 
-  it("keeps oversized responses and upstream secrets out of errors", async () => {
+  it("keeps upstream secrets out of errors", async () => {
     vi.stubGlobal("fetch", vi.fn(async () => new Response("upstream leaked secret-key", { status: 500 })));
     const error = await new VllmAnalysisNarrator("http://vllm/v1", "qwen", "secret-key")
       .answer({ prompt: "объясни" })
       .catch((caught: unknown) => caught);
     expect(String(error)).not.toContain("secret-key");
     expect(String(error)).not.toContain("upstream leaked");
+  });
+
+  it("rejects a response body above the existing byte limit", async () => {
+    vi.stubGlobal("fetch", vi.fn(async () => completion({ summary: "я".repeat(70_000), warnings: [] })));
+    await expect(new VllmAnalysisNarrator("http://vllm/v1", "qwen").answer({ prompt: "объясни" }))
+      .rejects.toThrow("ответ локальной модели не прошёл проверку формата");
   });
 
   it("reuses grounding validation for unknown offer IDs", async () => {
