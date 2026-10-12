@@ -6,6 +6,7 @@ import { isUnrequestedConsumablePart } from "../domain/consumable-parts.js";
 import { isOfferInItScope } from "../domain/it-scope.js";
 import { assessOffer } from "../domain/offer-assessment.js";
 import { flagPriceAnomalies } from "../domain/price-anomaly.js";
+import { assignProcurementRanks } from "../domain/procurement-rank.js";
 import type { SourceAdapter } from "../domain/source-adapter.js";
 import { isSourceDisabled } from "../domain/source-policy.js";
 
@@ -114,6 +115,7 @@ export class SearchService {
           const offers = this.matchingQuery(snapshot, inScope);
           snapshot.offers.push(...offers);
           flagPriceAnomalies(snapshot.offers);
+          assignProcurementRanks(snapshot.offers);
           // Cache before the query-intent filter: the next query for the same item may ask the opposite.
           const real = inScope.filter((offer) => !offer.demo);
           if (real.length > 0) {
@@ -139,6 +141,7 @@ export class SearchService {
             const reused = this.matchingQuery(snapshot, structuredClone(cached));
             snapshot.offers.push(...reused);
             flagPriceAnomalies(snapshot.offers);
+            assignProcurementRanks(snapshot.offers);
             this.emit(id, { type: "offers", data: reused });
           }
           this.updateSource(snapshot, source.name, {
@@ -153,6 +156,7 @@ export class SearchService {
       }),
     );
 
+    assignProcurementRanks(snapshot.offers);
     snapshot.status = "complete";
     this.finishedAt.set(id, this.now());
     this.emit(id, { type: "complete", data: structuredClone(snapshot) });

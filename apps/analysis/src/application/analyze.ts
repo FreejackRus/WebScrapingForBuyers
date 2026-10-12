@@ -9,9 +9,19 @@ import type {
   ChatTurn,
   Offer,
   OfferCitation,
+  ProductCondition,
   SearchSnapshot,
   UserRole,
 } from "@peremena/contracts";
+
+function requestedConditions(normalized: string): ProductCondition[] {
+  if (/витрин|демо[- ]?образ/.test(normalized)) return ["display"];
+  if (/(?:^|\s)б\s*[\/.\\-]?\s*у(?:\s|$)|бывш\w*\s+в\s+употреб/.test(normalized)) return ["used"];
+  if (/восстанов|refurb/.test(normalized)) return ["refurbished"];
+  if (/неизвестн[а-яё]*\s+состояни/.test(normalized)) return ["unknown"];
+  if (/нов(ый|ые|ых)|без б\/у|исключ.*б\/у/.test(normalized)) return ["new"];
+  return [];
+}
 
 import type { AnalysisNarrator, CopilotChatAnswer } from "../domain/analysis-narrator.js";
 import { narrationFailureMessage } from "../domain/narration-error.js";
@@ -335,6 +345,7 @@ async function analyzeSnapshotRaw(
   const sources = parseSources(normalized);
   const maxPrice = parseMaxPrice(normalized);
   const titleRules = parseTitleFilterRules(normalized);
+  const conditions = requestedConditions(normalized);
 
   if (metaIntent) {
     const meta = cannedMetaAnswer({
@@ -438,10 +449,10 @@ async function analyzeSnapshotRaw(
     offers = offers.filter((offer) => Boolean(offer.warranty));
     filters.push(`Только предложения с указанной гарантией (${offers.length} из ${before}).`);
   }
-  if (/нов(ый|ые|ых)|без б\/у|исключ.*б\/у/.test(normalized)) {
+  if (conditions.length > 0) {
     const before = offers.length;
-    offers = offers.filter((offer) => offer.condition === "new");
-    filters.push(`Только новые товары (${offers.length} из ${before}).`);
+    offers = offers.filter((offer) => conditions.includes(offer.condition));
+    filters.push(`Только выбранное состояние товара (${offers.length} из ${before}).`);
   }
   // Source restriction only when the user named a marketplace — never invent WB-only.
   if (sources.length > 0) {
@@ -584,6 +595,7 @@ async function analyzeSnapshotRaw(
     ...(maxPrice != null ? { maxPrice } : {}),
     ...(titleRules ? { titleRules } : {}),
     ...(inStockOnly ? { inStockOnly } : {}),
+    ...(conditions.length ? { conditions } : {}),
     selectedOfferIds: selected.map((offer) => offer.id),
   });
   const citations = selected.filter((offer) => offer.url).map(citationOf);

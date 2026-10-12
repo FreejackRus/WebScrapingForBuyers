@@ -255,7 +255,7 @@ describe("SearchService procurement quality", () => {
       { ...offer("A", 1000), id: "box-expensive", title: "Logitech K380 BOX" },
       { ...offer("A", 900), id: "box-cheap", title: "Logitech K380 BOX" },
       { ...offer("A", 850), id: "oem", title: "Logitech K380 OEM" },
-      { ...offer("A", 100), id: "anomaly", priceAnomaly: "too_low" as const },
+      { ...offer("A", 1), id: "anomaly", priceAnomaly: "too_low" as const },
       { ...offer("A", 50), id: "demo", demo: true },
     ];
     const service = new SearchService([source("A", async () => rows)]);

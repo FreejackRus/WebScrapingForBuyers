@@ -217,6 +217,7 @@ export function buildTableFilter(input: {
   titleRules?: TitleFilterRules;
   selectedOfferIds?: string[];
   inStockOnly?: boolean;
+  conditions?: OfferTableFilter["conditions"];
 }): OfferTableFilter | undefined {
   if (input.intent !== "filter") return undefined;
   const filter: OfferTableFilter = {};
@@ -224,6 +225,7 @@ export function buildTableFilter(input: {
   if (input.sources.length > 0) filter.sources = input.sources;
   if (input.maxPrice != null) filter.maxPrice = input.maxPrice;
   if (input.inStockOnly) filter.inStockOnly = true;
+  if (input.conditions?.length) filter.conditions = input.conditions;
   if (input.titleRules?.includeAny?.length) filter.titleIncludeAny = input.titleRules.includeAny;
   if (input.titleRules?.excludeAny?.length) filter.titleExcludeAny = input.titleRules.excludeAny;
   if (input.selectedOfferIds) filter.selectedOfferIds = input.selectedOfferIds;

@@ -73,6 +73,19 @@ const citilinkReal = offer({
 });
 
 describe("analyzeSnapshot", () => {
+  it.each([
+    ["Оставь только товары с витрины", "display"],
+    ["Оставь только б/у товары", "used"],
+    ["Оставь только восстановленные товары", "refurbished"],
+    ["Оставь только товары с неизвестным состоянием", "unknown"],
+  ] as const)("filters extended product condition: %s", async (prompt, condition) => {
+    const rows = (["new", "display", "used", "refurbished", "unknown"] as const).map((value, index) =>
+      offer({ id: value, source: "TEST", price: 1_000 + index, demo: false, condition: value }),
+    );
+    const result = await analyzeSnapshot(snapshot(rows), prompt);
+    expect(result.selectedOfferIds).toEqual([condition]);
+    expect(result.tableFilter?.conditions).toEqual([condition]);
+  });
   it("does not recommend review-only offers", async () => {
     const review = assessed(
       offer({ id: "seller-claim", source: "Ozon", price: 100, demo: false, title: "Оригинальная мышь от продавца" }),

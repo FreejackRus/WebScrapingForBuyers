@@ -348,6 +348,16 @@ export function assessMarketplaceOfferRelevance(
   const strongHits = tokensIn(identityHay, strong);
   const weakHits = tokensIn(identityHay, weak);
   const familyCard = isProductFamilyCard(product, titleHay);
+  const requestedCapacity = product.model.match(/(?:^|\s)(\d+)\s*(tb|тб|gb|гб)(?:\s|$)/i);
+  const offeredCapacity = title.match(/(?:^|\s)(\d+)\s*(tb|тб|gb|гб)(?:\s|$)/i);
+  if (requestedCapacity && offeredCapacity) {
+    const requestedUnit = requestedCapacity[2]!.toLocaleLowerCase("ru").replace("тб", "tb").replace("гб", "gb");
+    const offeredUnit = offeredCapacity[2]!.toLocaleLowerCase("ru").replace("тб", "tb").replace("гб", "gb");
+    if (requestedCapacity[1] !== offeredCapacity[1] || requestedUnit !== offeredUnit) return { kind: "drop" };
+  }
+  if (/видеокарт/i.test(product.category) && /(?:игровой\s+)?(?:пк|компьютер|системн(?:ый|ого)\s+блок)/i.test(titleHay)) {
+    return { kind: "drop" };
+  }
   if (missesShortModelQualifier(product, identityHay)) return { kind: "drop" };
   if (hasAccessoryPrefixClash(product, titleHay)) return { kind: "drop" };
   if (hasOppositeCategory(product, identityHay) && strongHits.length === 0) return { kind: "drop" };

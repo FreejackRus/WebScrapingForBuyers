@@ -2,7 +2,7 @@ import type { OfferAvailabilityStatus } from "./availability.js";
 export { offerAvailabilityStatus, type OfferAvailabilityStatus } from "./availability.js";
 
 export type MatchKind = "exact" | "probable" | "analog" | "doubtful";
-export type ProductCondition = "new" | "refurbished" | "used";
+export type ProductCondition = "new" | "refurbished" | "used" | "display" | "unknown";
 export type SourceStatus = "pending" | "loading" | "done" | "error";
 
 export interface Product {
@@ -31,6 +31,8 @@ export interface Offer {
   delivery?: string;
   warranty?: string;
   condition: ProductCondition;
+  /** Server-calculated procurement order; lower values are considered first. */
+  procurementRank?: number;
   match: MatchKind;
   /** Deterministic query assessment. Seller claims are not authenticity verification. */
   assessment?: {
@@ -89,6 +91,7 @@ export interface OfferCitation {
 
 export interface OfferTableFilter {
   packaging?: "BOX" | "OEM";
+  conditions?: ProductCondition[];
   realOnly?: boolean;
   sources?: string[];
   maxPrice?: number;
