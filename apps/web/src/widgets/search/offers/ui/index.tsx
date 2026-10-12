@@ -145,7 +145,7 @@ export function OfferTable() {
                 onClick={(event) => { event.stopPropagation(); setExpanded((state) => ({ ...state, [offer.id]: !state[offer.id] })); }}
               >
                 {expanded[offer.id] ? "Скрыть" : "Ещё"} {others.length} {others.length === 1 ? "предложение" : others.length < 5 ? "предложения" : "предложений"} этого товара
-                {expanded[offer.id] ? "" : ` · ${money.format(Math.min(...prices))}–${money.format(Math.max(...prices))}`}
+                {expanded[offer.id] ? "" : Math.min(...prices) === Math.max(...prices) ? ` · ${money.format(prices[0]!)}` : ` · ${money.format(Math.min(...prices))}–${money.format(Math.max(...prices))}`}
               </button>
             ) : null}
             {reviewFor(offer.id) ? (
