@@ -20,7 +20,7 @@ function isAccessoryFor(title: string, query: string): boolean {
   return (ACCESSORY.test(head) && !ACCESSORY.test(query)) || (FOR_DEVICE.test(title) && !FOR_DEVICE.test(query) && !/(?:^|\s)для(?=\s|$)/iu.test(query));
 }
 
-const THIRD_PARTY_BRANDS = /(?:^|[^\p{L}\p{N}])(?:nv[\s-]?print|hi[\s-]?black|cactus|sakura|easyprint|netproduct|colortek|katun|bion)(?=$|[^\p{L}\p{N}])/iu;
+const THIRD_PARTY_BRANDS = /(?:^|[^\p{L}\p{N}])(?:nv[\s-]?print|hi[\s-]?black|cactus|sakura|easyprint|netproduct|colortek|katun|bion|parus|uniton|profiline|t2|static\s+control|qualicom|xiongcai|colouring|ink-?power)(?=$|[^\p{L}\p{N}])/iu;
 
 function compact(value: string): string {
   return value.toLocaleLowerCase("ru").replace(/[^a-zа-яё0-9]+/giu, "");
@@ -69,10 +69,25 @@ function matchedIdentity(product: Product, title: string): "article" | "model" |
   return expected === mpn ? "article" : "model";
 }
 
+const PRINTER_BRANDS = "pantum|hp|canon|kyocera|xerox|brother|ricoh|samsung|epson|lexmark|konica|minolta|sharp|oki|katusha|катюша";
+
+/**
+ * «Тонер-картридж TL-5120 для Pantum BP5100» — the maker named only as the target printer is how
+ * compatible consumables are worded; an original names its maker before «для» («Картридж Pantum TL-5120 для BP5100»).
+ */
+function brandOnlyAsTarget(title: string): boolean {
+  const lower = title.toLocaleLowerCase("ru");
+  const target = new RegExp(`(?:^|\\s)для\\s+(?:принтер\\p{L}*\\s+|мфу\\s+)?(${PRINTER_BRANDS})(?=$|[^\\p{L}])`, "iu").exec(lower);
+  if (!target || target.index === undefined) return false;
+  const before = lower.slice(0, target.index);
+  return !new RegExp(`(?:^|[^\\p{L}])(?:${PRINTER_BRANDS})(?=$|[^\\p{L}])`, "iu").test(before);
+}
+
 function originInTitle(title: string): "original" | "compatible" | "unknown" {
   if (COMPATIBLE.test(title)) return "compatible";
   if (THIRD_PARTY_BRANDS.test(title)) return "compatible";
   if (ORIGINAL.test(title)) return "original";
+  if (brandOnlyAsTarget(title)) return "compatible";
   return "unknown";
 }
 

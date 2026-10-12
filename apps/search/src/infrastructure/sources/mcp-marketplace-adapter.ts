@@ -878,7 +878,10 @@ export function marketplaceItemPrice(item: JsonObject): number | undefined {
   );
 }
 
-export function marketplacePriceCondition(item: JsonObject, _kind: MarketplaceKind): string {
+export function marketplacePriceCondition(item: JsonObject, kind: MarketplaceKind): string {
+  // Ozon search shows the Ozon-card (bank card) price; a company pays the regular one,
+  // live 2026-10-12 3–5% higher. Top rows get the regular price from the card check.
+  if (kind === "ozon") return "Цена с Ozon Картой; обычная цена выше, уточняется на карточке";
   if (firstPrice(item.price_with_plus, item.card_price) !== undefined) {
     return "Есть цена по подписке/карте";
   }

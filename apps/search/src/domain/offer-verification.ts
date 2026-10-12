@@ -12,6 +12,8 @@ export interface CardFacts {
   specs?: string;
   /** Short manager-facing remark about the price basis, e.g. «без Ozon Карты». */
   priceBasis?: string;
+  /** Replaces the row's price condition once the card price is taken. */
+  priceCondition?: string;
 }
 
 export interface CardVerifier {
@@ -51,6 +53,7 @@ export function applyCardFacts(offer: Offer, facts: CardFacts, product: Product,
   if (facts.price && facts.price > 0 && Math.abs(facts.price - offer.price) / offer.price > PRICE_TOLERANCE) {
     return {
       ...offer,
+      ...(facts.priceCondition ? { priceCondition: facts.priceCondition } : {}),
       price: Math.round(facts.price),
       verification: {
         status: "price_changed",
@@ -60,5 +63,5 @@ export function applyCardFacts(offer: Offer, facts: CardFacts, product: Product,
       },
     };
   }
-  return { ...offer, verification: { status: "confirmed", checkedAt, note: `Цена и наличие подтверждены на карточке${basis}` } };
+  return { ...offer, ...(facts.priceCondition && facts.price ? { priceCondition: facts.priceCondition } : {}), verification: { status: "confirmed", checkedAt, note: `Цена и наличие подтверждены на карточке${basis}` } };
 }

@@ -36,7 +36,9 @@ export function ozonCardFacts(payload: Json): CardFacts | undefined {
     ...(typeof payload.title === "string" && payload.title.trim() ? { title: payload.title.trim() } : {}),
     ...(price !== undefined ? { price } : {}),
     ...(typeof payload.is_available === "boolean" ? { available: payload.is_available } : {}),
-    ...(positive(payload.price) !== undefined ? { priceBasis: "без Ozon Карты" } : {}),
+    ...(positive(payload.price) !== undefined
+      ? { priceBasis: "без Ozon Карты", priceCondition: "Обычная цена без Ozon Карты (проверено на карточке)" }
+      : {}),
   };
   const specs = flattenOzonCharacteristics(payload.characteristics);
   if (specs) facts.specs = specs;

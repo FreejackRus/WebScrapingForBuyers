@@ -60,6 +60,10 @@ describe("typed query → offer precision", () => {
       expect(assessed("сервер lenovo thinksystem sr650 v2", "Сервер Lenovo ThinkSystem SR650 (7X06A0B3EA)")).toBeNull();
       expect(assessed("tl-5120 оригинальный", "Картридж N-TL-5120 для принтера Pantum BP5100 3K с чипом")).toBeNull();
       expect(assessed("tl-5120 оригинальный", "Картридж Pantum TL-5120 оригинальный")).not.toBeNull();
+      // Live 2026-10-12: the printer maker named only after «для», or a third-party brand.
+      expect(assessed("tl-5120 оригинальный", "Тонер-картридж TL-5120 для Pantum BP5100DN BP5100DW")).toBeNull();
+      expect(assessed("tl-5120 оригинальный", "Картридж Parus TL-5120 к принтеру Pantum 5100 (3000 стр.)")).toBeNull();
+      expect(assessed("tl-5120 оригинальный", "Картридж Pantum TL-5120 для BP5100DN")).not.toBeNull();
     });
 
     it("reads GPU names typed without a type word as graphics cards", () => {

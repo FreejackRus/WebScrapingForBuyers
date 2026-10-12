@@ -22,6 +22,7 @@ describe("Ozon card verifier", () => {
       price: 24268,
       available: true,
       priceBasis: "без Ozon Карты",
+      priceCondition: "Обычная цена без Ozon Карты (проверено на карточке)",
       specs: "Тип Монитор; Модель P2423D",
     });
   });
