@@ -64,6 +64,8 @@ describe("VllmAnalysisNarrator", () => {
       response_format: { type: "json_schema", json_schema: { strict: true } },
     });
     expect(requestBody.response_format.json_schema.schema).toMatchObject({ type: "object" });
+    expect(requestBody.response_format.json_schema.schema.required).toContain("offerIds");
+    expect(requestBody.response_format.json_schema.schema.properties.warnings.maxItems).toBe(0);
     expect(JSON.stringify(requestBody.response_format.json_schema.schema)).not.toContain("uniqueItems");
     expect(requestBody.messages.map((message: { role: string }) => message.role)).toEqual(["system", "user"]);
   });
