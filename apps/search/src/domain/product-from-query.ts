@@ -47,6 +47,22 @@ const KNOWN_BRANDS = [
   "логитеч",
   "pantum",
   "пантум",
+  "kyocera",
+  "куосера",
+  "xerox",
+  "ricoh",
+  "gigabyte",
+  "msi",
+  "sapphire",
+  "palit",
+  "zotac",
+  "powercolor",
+  "crucial",
+  "wd",
+  "seagate",
+  "adata",
+  "ippon",
+  "eaton",
 ];
 
 const BRAND_ALIASES: ReadonlyArray<{ aliases: string[]; canonical: string }> = [
@@ -65,6 +81,10 @@ const MODEL_NOISE = new Set([
   "картридж", "принтер", "мфу", "процессор", "ssd", "накопитель", "оригинальный", "оригинал",
   "совместимый", "совместимая", "совместимое", "упаковка", "комплект", "шт", "штук",
   "страниц", "страницы", "страницa", "ресурс", "original", "oem", "compatible",
+  // Product-type nouns: they name the category, not the model, and listing titles often omit them.
+  "ибп", "сервер", "монитор", "роутер", "маршрутизатор", "коммутатор", "свитч", "видеокарта", "оперативная",
+  "память", "озу", "мышь", "мышка", "клавиатура", "ноутбук", "планшет", "моноблок", "наушники", "гарнитура",
+  "веб-камера", "вебкамера", "сканер", "проектор", "тонер", "драм-картридж", "фотобарабан",
 ]);
 const COUNT_NOISE = new Set(["упаковка", "комплект", "ресурс", "страниц", "страницы", "страницa", "шт", "штук"]);
 
@@ -97,6 +117,7 @@ interface CategoryHint {
 
 const CATEGORY_HINTS: CategoryHint[] = [
   { pattern: /(?:i[3579][- ](?:\d{4,5})(?:kf|ks|k|f|t)?|1\d{4}(?:kf|ks|k|f|t)?)(?![a-z0-9])/u, category: "Процессоры", weak: true },
+  { pattern: /(?:^|\s)(?:rtx|gtx|rx|arc)\s*[a-z]?\d{3,4}(?![0-9])/u, category: "Видеокарты" },
   // Bare GPU numbers with video memory: «4060 8gb», «3060 ti 12 гб».
   { pattern: /(?:^|\s)(?:[1-5]0[5-9]0|[67][5-9]00)(?:\s*(?:ti|super|xt|xtx))?\s+\d{1,2}\s*(?:gb|гб)(?![a-zа-яё0-9])/u, category: "Видеокарты", weak: true },
   // SSD series that are sold without the word «SSD»: «990 pro 2тб», «870 evo».
@@ -239,8 +260,14 @@ export function extractMpn(text: string): string {
     text.match(/\b(\d{3}-\d{6,})\b/) ??
     text.match(/\b([A-Z]{1,8}-\d{2,}[A-Z0-9-]*)\b/i) ??
     text.match(/\b([A-Z]{1,8}\d{2,}[A-Z0-9-]{1,})\b/i) ??
+    // Digit-led manufacturer articles: Kyocera «302N494021», «1T02RV0NL0».
+    text.match(/\b(\d{1,4}[A-Z]{1,3}\d{4,}[A-Z0-9]*)\b/i) ??
     text.match(/\b(\d{8,14})\b/);
-  return match?.[1]?.trim() ?? "";
+  const mpn = match?.[1]?.trim() ?? "";
+  if (!mpn) return "";
+  // A generation suffix is part of the model: «SR650 V2» is not «SR650».
+  const generation = text.slice((match!.index ?? 0) + match![0].length).match(/^\s+(v\d{1,2})(?![a-z0-9])/i);
+  return generation ? `${mpn} ${generation[1]}` : mpn;
 }
 
 export function splitBrandModel(text: string): { brand: string; model: string } {

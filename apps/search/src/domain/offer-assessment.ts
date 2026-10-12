@@ -24,14 +24,35 @@ function identityIn(haystack: string, expected: string): boolean {
   return new RegExp(`(?:^|[^a-zа-яё0-9])${body}(?=$|[^a-zа-яё0-9])`, "iu").test(haystack);
 }
 
+/**
+ * Multi-word models are written in any order in listings: «DDR5 Fury» ↔ «FURY Beast DDR5»,
+ * «Back-UPS 650» ↔ «Back-UPS 650VA». Every word must be present; a bare number may carry a unit.
+ */
+function tokensIn(haystack: string, expected: string): boolean {
+  const words = expected.toLocaleLowerCase("ru").match(/[a-zа-яё0-9]+/giu) ?? [];
+  if (words.length < 2) return false;
+  const hay = haystack.toLocaleLowerCase("ru");
+  return words.every((word) => {
+    const unit = /^\d+$/.test(word) ? "(?:va|ва|w|вт)?" : "";
+    return new RegExp(`(?:^|[^a-zа-яё0-9])${word}${unit}(?=$|[^a-zа-яё0-9])`, "iu").test(hay);
+  });
+}
+
 function matchedIdentity(product: Product, title: string): "article" | "model" | undefined {
   const mpn = compact(product.mpn);
   const model = compact(product.model);
-  const expected = mpn && identityIn(title, product.mpn) ? mpn : model && identityIn(title, product.model) ? model : "";
+  const expected = mpn && identityIn(title, product.mpn)
+    ? mpn
+    : model && (identityIn(title, product.model) || tokensIn(title, product.model))
+      ? model
+      : "";
   if (!expected) return undefined;
   const expectedDigits = expected.replace(/\D/g, "");
   const rivals = articles(title).filter((article) => article !== expected && !expected.includes(article));
-  if (rivals.some((article) => expectedDigits && article.replace(/\D/g, "") === expectedDigits)) return undefined;
+  // A different article with the same digits is a sibling model («TL-5120X» vs «TL-5120»). Multi-word models
+  // («Back-UPS 650») are not articles themselves, so the listing's own article («BX650MI») is no rival.
+  const multiWordModel = expected !== mpn && (product.model.match(/[a-zа-яё0-9]+/giu)?.length ?? 0) > 1;
+  if (!multiWordModel && rivals.some((article) => expectedDigits && article.replace(/\D/g, "") === expectedDigits)) return undefined;
   return expected === mpn ? "article" : "model";
 }
 
@@ -40,6 +61,14 @@ function originInTitle(title: string): "original" | "compatible" | "unknown" {
   if (THIRD_PARTY_BRANDS.test(title)) return "compatible";
   if (ORIGINAL.test(title)) return "original";
   return "unknown";
+}
+
+/** «N-TL-5120», «CS-TL-5120»: a third-party maker prefixes the original article with its own code. */
+function prefixedArticle(product: Product, title: string): boolean {
+  const parts = product.mpn.toLocaleLowerCase("ru").match(/[a-zа-яё0-9]+/giu) ?? [];
+  if (parts.length === 0) return false;
+  const body = parts.map((part) => part.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("[^a-zа-яё0-9]*");
+  return new RegExp(`(?:^|[^a-zа-яё0-9-])[a-z]{1,4}-${body}(?=$|[^a-zа-яё0-9])`, "iu").test(title);
 }
 
 function requestedOrigin(query: string): "original" | "compatible" | undefined {
@@ -131,7 +160,10 @@ function selectedFacts(product: Product): string {
 export function assessOffer(product: Product, offer: Offer, query: string): Offer | null {
   const identity = matchedIdentity(product, `${offer.title} ${offer.mpn ?? ""}`);
   if (!identity) return null;
-  if ((DEVICE_PART.test(offer.title) && !DEVICE_PART.test(query)) || isUnrequestedConsumablePart(offer, query)) return null;
+  // An exact article is the buyer's own choice of part: «302N494021» is a developer unit by design.
+  const forIndex = offer.title.search(/(?:^|\s)для\s/iu);
+  const partForDevice = forIndex >= 0 && identityIn(offer.title.slice(forIndex), product.mpn);
+  if ((identity !== "article" || partForDevice) && ((DEVICE_PART.test(offer.title) && !DEVICE_PART.test(query)) || isUnrequestedConsumablePart(offer, query))) return null;
 
   const reasons = [identity === "article" ? "Артикул совпадает" : "Модель совпадает"];
   let group: Assessment["group"] = "match";
@@ -147,7 +179,7 @@ export function assessOffer(product: Product, offer: Offer, query: string): Offe
     }
   }
   const wantedOrigin = requestedOrigin(query);
-  const offeredOrigin = originInTitle(offer.title);
+  const offeredOrigin = prefixedArticle(product, offer.title) ? "compatible" : originInTitle(offer.title);
   if (wantedOrigin && offeredOrigin !== "unknown" && wantedOrigin !== offeredOrigin) return null;
   if (wantedOrigin === "original") {
     if (offeredOrigin === "original") {

@@ -13,7 +13,8 @@
     "pretest": "npm run build -w @peremena/contracts && npm run build -w @peremena/service-kit",
     "test": "npm run test --workspaces --if-present",
     "pretypecheck": "npm run build -w @peremena/contracts && npm run build -w @peremena/service-kit",
-    "typecheck": "npm run typecheck --workspaces --if-present"
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "eval:search": "node scripts/eval-search.mjs"
   },
   "devDependencies": {
     "concurrently": "^9.2.1",
