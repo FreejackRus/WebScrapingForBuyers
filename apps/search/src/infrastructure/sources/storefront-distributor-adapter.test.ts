@@ -160,6 +160,13 @@ describe("storefront offers", () => {
     expect(offers.every((offer) => offer.priceCondition.includes("не B2B"))).toBe(true);
   });
 
+  it("keeps one row when the page renders the same card twice", async () => {
+    const fetchImpl = vi.fn(async () => new Response(SM_FOUND + SM_FOUND, { status: 200 }));
+    const offers = await new StorefrontDistributorAdapter("servermall", fetchImpl as unknown as typeof fetch).search(server);
+    expect(offers.length).toBeGreaterThan(0);
+    expect(new Set(offers.map((offer) => offer.id)).size).toBe(offers.length);
+  });
+
   it("surfaces HTTP errors instead of an empty table", async () => {
     const fetchImpl = vi.fn(async () => new Response("blocked", { status: 403 }));
     const adapter = new StorefrontDistributorAdapter("srvtrade", fetchImpl as unknown as typeof fetch);

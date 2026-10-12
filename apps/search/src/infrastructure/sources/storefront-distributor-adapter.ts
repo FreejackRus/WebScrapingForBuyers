@@ -274,6 +274,8 @@ export class StorefrontDistributorAdapter implements SourceAdapter {
       .parse(html, STOREFRONTS[this.kind].origin)
       .map((card) => toStorefrontOffer(card, product, this.kind))
       .filter((offer): offer is Offer => offer !== undefined)
+      // The same card can be rendered twice on one page: one row per id (url + price).
+      .filter((offer, index, all) => all.findIndex((other) => other.id === offer.id) === index)
       // Distributor rows are not capped (marketplaces keep OFFERS_PER_SOURCE).
       .sort(preferRelevantOffers);
   }

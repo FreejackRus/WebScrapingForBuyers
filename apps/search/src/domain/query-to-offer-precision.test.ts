@@ -31,6 +31,10 @@ describe("typed query → offer precision", () => {
   it("keeps the product category for GPU numbers and SSD series typed without a type word", () => {
     expect(productFromQuery("4060 8gb", "query").category).toBe("Видеокарты");
     expect(productFromQuery("990 pro 2тб", "query").category).toBe("SSD");
+    // A brand before the series must not hide it (the hint needs a word boundary, not a space at the start).
+    expect(productFromQuery("samsung 990 pro 2тб", "query").category).toBe("SSD");
+    expect(productFromQuery("palit 4060 8gb", "query").category).toBe("Видеокарты");
+    expect(productFromQuery("amd rx 7800 xt", "query").category).toBe("Видеокарты");
     expect(productFromQuery("игровой пк 4060 8gb", "query").category).not.toBe("Видеокарты");
   });
 
