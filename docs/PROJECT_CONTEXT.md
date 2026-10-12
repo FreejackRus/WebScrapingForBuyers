@@ -2101,3 +2101,10 @@ narrator кладёт в payload ≤ 6 реплик по 400 символов. �
 - Проверка карточек: `StorefrontCardVerifier` (СРВТрейд microdata, Servermall JSON-LD; 404 → нет в наличии); `verifyTop` проверяет топ‑3 в каждой вкладке.
 - Web: `titleSpecs` — объём, 2×16 ГБ, DDR, NVMe/SATA, МГц, ресурс, BOX/OEM из названия бейджами под строкой (только то, что написано).
 - Не сделано без API/данных: проверка карточек WB (`wb_card` 403), приоритет дистрибуторов (нужен порог от закупок).
+
+### 2026-10-13 — v0.0.4: 12 улучшений (4 пакета, параллельно в worktree)
+
+- Поиск: кэш 15 мин (`SEARCH_CACHE_MINUTES`, `fresh`, `SearchSnapshot.cachedAt`, «Результаты от … · Обновить»); чипы «Уточните вариант» по `артикулы по прайсу NETLAB`; «Ещё ищут: …»; авторазбор ИИ при 1–8 строках «требует уточнения»; eval засчитывает обрезанные «…» названия и шлёт `fresh`.
+- Работа закупщика: сравнение 2–4 строк; корзина (gateway `BASKET_FILE`, `/api/v1/basket*`, CSV для Excel, `POST /justify-basket` с проверкой чисел); «Заявка списком» (`POST /split-request`, ИИ + разбор по строкам без ИИ).
+- Цены: история (search `PRICE_HISTORY_FILE`, volume `search-data`, `historyKey`, `/price-history`, спарклайн); «Слежу» (gateway `WATCHLIST_FILE`, проверка раз в `WATCHLIST_CHECK_HOURS`=24 ч, изменения цены/наличия).
+- Надёжность: канарейки источников каждый час (`SOURCE_MONITOR_*`, `/health/sources`), еженедельный замер качества (`QUALITY_*`, `/quality`, `SearchService.runUncached`), админ-раздел «Состояние системы» и баннер при алертах. Первая же проверка показала блокировку Ситилинка (Qrator, 429).

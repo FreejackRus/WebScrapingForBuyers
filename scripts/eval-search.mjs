@@ -14,7 +14,7 @@ const inStock = (o) => (o.availabilityStatus ? o.availabilityStatus === "in_stoc
 
 async function run(c) {
   const started = Date.now();
-  const res = await fetch(`${base}/searches`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ query: c.query }) });
+  const res = await fetch(`${base}/searches`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ query: c.query, fresh: true }) });
   if (!res.ok) return { ...c, error: `HTTP ${res.status}` };
   let snap = await res.json();
   while (snap.status !== "complete" && Date.now() - started < TIMEOUT_MS) {
