@@ -19,6 +19,10 @@ describe("withCatalogArticles", () => {
     expect(withCatalogArticles(productFromQuery("картридж 5120", "query"), ["TC-SH016"], "NETLAB").mpn).toBe("");
   });
 
+  it("does not take an OEM code without the model number", () => {
+    expect(withCatalogArticles(productFromQuery("12400 процессор", "query"), ["CM8071504555317SRL4V"], "NETLAB").mpn).toBe("");
+  });
+
   it("only notes several variants", () => {
     const base = productFromQuery("samsung 990 pro 2тб", "query");
     const product = withCatalogArticles(base, ["MZ-V9P2T0BW", "MZ-V9P2T0CW"], "NETLAB");

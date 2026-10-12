@@ -18,10 +18,10 @@ export function withCatalogArticles(product: Product, articles: string[], source
   if (articles.length === 1) {
     const article = articles[0]!;
     if (hasRealArticle(product)) return product;
-    // Without a named brand the article must carry the typed model: «картридж 5120» must not become a Sharp toner.
+    // The article must carry the typed model number. «картридж 5120» must not become a Sharp toner, and an OEM
+    // code without the number («CM8071504555317SRL4V» for 12400) would hide the 12400 / 12400F difference (eval 2026-10-12).
     const modelTokens = (product.model.toLocaleLowerCase("ru").match(/[a-z]*\d+[a-z0-9]*/giu) ?? []).map(compact);
-    const brandKnown = product.brand.trim() !== "" && product.brand !== "—";
-    if (!brandKnown && !modelTokens.some((token) => token.length >= 3 && compact(article).includes(token))) return product;
+    if (!modelTokens.some((token) => token.length >= 3 && compact(article).includes(token))) return product;
     return { ...product, mpn: article, characteristics: { ...product.characteristics, [`артикул по прайсу ${source}`]: article } };
   }
   return { ...product, characteristics: { ...product.characteristics, [`артикулы по прайсу ${source}`]: articles.join(", ") } };
