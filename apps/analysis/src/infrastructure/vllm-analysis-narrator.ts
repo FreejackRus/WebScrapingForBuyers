@@ -9,6 +9,15 @@ import {
   UNTRUSTED_DATA_RULE,
 } from "./ollama-analysis-narrator.js";
 
+// vLLM grammar backends do not support uniqueItems. The existing response
+// parsers still validate ID uniqueness; omit this keyword only on the wire.
+function schemaForVllm(value: unknown): unknown {
+  if (Array.isArray(value)) return value.map(schemaForVllm);
+  if (value === null || typeof value !== "object") return value;
+  return Object.fromEntries(Object.entries(value).filter(([key]) => key !== "uniqueItems")
+    .map(([key, nested]) => [key, schemaForVllm(nested)]));
+}
+
 /** vLLM transport over the existing bounded prompts, parsers, grounding, and history. */
 export class VllmAnalysisNarrator extends OllamaAnalysisNarrator {
   override readonly name: string;
@@ -42,7 +51,7 @@ export class VllmAnalysisNarrator extends OllamaAnalysisNarrator {
           chat_template_kwargs: { enable_thinking: false },
           response_format: {
             type: "json_schema",
-            json_schema: { name: "analysis_response", strict: true, schema: format },
+            json_schema: { name: "analysis_response", strict: true, schema: schemaForVllm(format) },
           },
           messages: [
             { role: "system", content: `${UNTRUSTED_DATA_RULE}${system}` },

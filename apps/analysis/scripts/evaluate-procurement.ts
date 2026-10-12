@@ -1,14 +1,17 @@
 /** Fixed synthetic procurement dialogues against the configured real local model.
  * OLLAMA_BASE_URL=http://127.0.0.1:11434 OLLAMA_MODEL=... npx tsx apps/analysis/scripts/evaluate-procurement.ts
+ * AI_PROVIDER=vllm VLLM_BASE_URL=http://127.0.0.1:8000/v1 VLLM_MODEL=... npx tsx apps/analysis/scripts/evaluate-procurement.ts
  * Fixture prices/stock are never presented as live marketplace data.
  */
 import { strict as assert } from "node:assert";
 import type { AnalysisResult, Offer, SearchSnapshot } from "@peremena/contracts";
 import { analyzeSnapshot, answerCopilot } from "../src/application/analyze.js";
+import { VllmAnalysisNarrator } from "../src/infrastructure/vllm-analysis-narrator.js";
 import { OllamaAnalysisNarrator } from "../src/infrastructure/ollama-analysis-narrator.js";
-const baseUrl=process.env.OLLAMA_BASE_URL;const model=process.env.OLLAMA_MODEL;
-if(!baseUrl||!model)throw new Error("Set OLLAMA_BASE_URL and OLLAMA_MODEL");
-const real=new OllamaAnalysisNarrator(baseUrl,model);
+const isVllm=process.env.AI_PROVIDER==="vllm";
+const baseUrl=isVllm?process.env.VLLM_BASE_URL:process.env.OLLAMA_BASE_URL;const model=isVllm?process.env.VLLM_MODEL:process.env.OLLAMA_MODEL;
+if(!baseUrl||!model)throw new Error("Set provider base URL and model");
+const real=isVllm?new VllmAnalysisNarrator(baseUrl,model,process.env.VLLM_API_KEY):new OllamaAnalysisNarrator(baseUrl,model);
 let calls=0;
 const rawModelAnswers: unknown[]=[];
 const narrator={name:real.name,summarize:async(...args:Parameters<typeof real.summarize>)=>{calls++;const result=await real.summarize(...args);rawModelAnswers.push(result);return result},answer:async(...args:Parameters<typeof real.answer>)=>{calls++;return real.answer(...args)}};
@@ -32,6 +35,6 @@ await check("decimal compound budget",()=>answerCopilot("найди 12400F BOX, 
 await check("Cyrillic thousand",()=>analyzeSnapshot(snapshot,"до 15к",narrator),r=>assert.equal(r.tableFilter?.maxPrice,15000));
 await check("reset all conditions",()=>analyzeSnapshot(snapshot,"сбрось фильтры",narrator,{context:{tableFilter:{packaging:"BOX",maxPrice:15000,inStockOnly:true}}}),r=>assert.deepEqual(r.tableFilter,{realOnly:true}));
 await check("real model explanation",()=>analyzeSnapshot(snapshot,"Сравни лучшие предложения",narrator,{userRole:"admin"}),r=>{assert.deepEqual(r.selectedOfferIds,["oem","unknown","box"]);assert.ok(r.citations?.every(c=>snapshot.offers.some(o=>o.id===c.offerId&&o.url===c.url)));});
-console.log(JSON.stringify({fixture:true,model,passed:results.length,modelCalls:calls,rawModelAnswers,groundedExplanationsAccepted:results.filter(result=>String(result.provider).startsWith("Ollama")).length,results},null,2));
+console.log(JSON.stringify({fixture:true,model,passed:results.length,modelCalls:calls,rawModelAnswers,groundedExplanationsAccepted:results.filter(result=>String(result.provider).startsWith(isVllm?"vLLM":"Ollama")).length,results},null,2));
 
-assert.ok(results.some(result=>String(result.provider).startsWith("Ollama")),"real model must produce at least one accepted grounded explanation");
+assert.ok(results.some(result=>String(result.provider).startsWith(isVllm?"vLLM":"Ollama")),"real model must produce at least one accepted grounded explanation");

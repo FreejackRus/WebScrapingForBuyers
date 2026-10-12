@@ -92,6 +92,10 @@ services:
       PORT: "3004"
       HOST: "0.0.0.0"
       SEARCH_URL: http://search:3003
+      AI_PROVIDER: ${AI_PROVIDER:-ollama}
+      VLLM_BASE_URL: http://vllm:8000/v1
+      VLLM_MODEL: ${VLLM_MODEL:-procurement-qwen3.8-27b}
+      VLLM_API_KEY: ${VLLM_API_KEY:-}
       OLLAMA_BASE_URL: http://host.docker.internal:11434
       OLLAMA_MODEL: ${OLLAMA_MODEL:-qwen3.8:27b-q8_0}
       # Dedicated GPU host: keep the model resident, no ~20 s reload after idle.
@@ -102,6 +106,44 @@ services:
       - host.docker.internal:host-gateway
     depends_on:
       - search
+    networks:
+      - radar
+    restart: unless-stopped
+
+  # Opt-in GPU service. Start explicitly after downloading weights and freeing GPUs.
+  # No host port: only analysis on the private radar network can reach this API.
+  vllm:
+    profiles: [vllm]
+    image: ${VLLM_IMAGE:-vllm/vllm-openai:v0.31.0@sha256:c1c9f6fd5c109ba7f0546a59f5b2f15fb87f64c77782e90a27b648b42a8e67c3}
+    gpus: all
+    shm_size: "16gb"
+    environment:
+      VLLM_API_KEY: ${VLLM_API_KEY:-}
+      HF_HUB_DISABLE_TELEMETRY: "1"
+    command:
+      - --model
+      - Qwen/Qwen3.8-27B-FP8
+      - --revision
+      - "017b9c7af6b5689d5dd426a76e0bc077eb5ca20a"
+      - --served-model-name
+      - ${VLLM_MODEL:-procurement-qwen3.8-27b}
+      - --tensor-parallel-size
+      - "2"
+      - --max-model-len
+      - "8192"
+      - --max-num-seqs
+      - "4"
+      - --gpu-memory-utilization
+      - "0.90"
+      - --language-model-only
+    volumes:
+      - vllm-models:/root/.cache/huggingface
+    healthcheck:
+      test: [CMD, python3, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=5)"]
+      interval: 15s
+      timeout: 10s
+      start_period: 10m
+      retries: 4
     networks:
       - radar
     restart: unless-stopped
@@ -176,6 +218,7 @@ services:
     restart: unless-stopped
 
 volumes:
+  vllm-models:
   chrome-headed:
   gateway-data:
 

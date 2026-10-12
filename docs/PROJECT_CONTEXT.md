@@ -2000,3 +2000,19 @@ narrator кладёт в payload ≤ 6 реплик по 400 символов. �
   NETLAB, завершён с 3 live карточками «Процессор Intel 12400F». Chrome StartedAt
   не изменилось: 2026-10-09T10:34:50Z. Доказательство UI получено в локальном
   живом браузере, production поведение проверено авторизованным API.
+
+### 2026-10-12 — Миграция локального inference на vLLM
+
+- Пользователь разрешил переход с Ollama на vLLM. Analysis получил новый
+  OpenAI-compatible transport с сохранёнными промптами, bounded response,
+  grounding/history, отказоустойчивостью и детерминированными командами.
+  Явная неверная конфигурация останавливает startup; legacy Ollama — откат.
+- Server audit: две RTX4090, CUDA13 driver580, исходно124GiB свободно.
+  Выбран официальный Qwen3.8-27B-FP8, та же модель в другой квантизации;
+  revision/digest закреплены. GPU profile opt-in, API только private network.
+- RED/GREEN transport/config; независимый review нашёл uniqueItems, который
+  отвергают grammar backends vLLM0.31.0. RED/GREEN удаляет ключ только из
+  wire schema, parser продолжает отклонять дубли ID. Реальный GPU smoke и
+  выпуск фиксируются ниже после выполнения.
+- Использованы Graphify, Serena, Context7 vLLM, ECC TDD/deployment, verification
+  gate. Security review/Semgrep исключены пользователем. Платных сервисов нет.
