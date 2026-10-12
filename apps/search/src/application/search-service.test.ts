@@ -284,3 +284,37 @@ describe("SearchService procurement quality", () => {
     ]);
   });
 });
+
+describe("SearchService top-card verification", () => {
+  it("re-checks the top rows, sinks a sold-out card and checks the next one", async () => {
+    const checked: string[] = [];
+    const verifier = {
+      supports: (row: Offer) => row.source === "A",
+      fetch: async (row: Offer) => {
+        checked.push(row.id);
+        return row.price === 900 ? { title: "Logitech K380", available: false } : { title: "Logitech K380", price: row.price * 1.2 };
+      },
+    };
+    const service = new SearchService(
+      [source("A", async () => [offer("A", 900), offer("A", 1000), offer("A", 1100), offer("A", 1200)])],
+      undefined,
+      Date.now,
+      5000,
+      [verifier],
+    );
+    const snap = service.start("Logitech K380", product);
+    await finish(service, snap.id);
+    const rows = [...service.get(snap.id)!.offers].sort((a, b) => a.procurementRank! - b.procurementRank!);
+    expect(checked).toEqual(["A-900", "A-1000", "A-1100", "A-1200"]);
+    expect(rows.at(-1)).toMatchObject({ id: "A-900", verification: { status: "unavailable" } });
+    expect(rows[0]).toMatchObject({ id: "A-1000", price: 1200, verification: { status: "price_changed", listedPrice: 1000 } });
+  });
+
+  it("keeps the search usable when a card check fails", async () => {
+    const verifier = { supports: () => true, fetch: async () => { throw new Error("403"); } };
+    const service = new SearchService([source("A", async () => [offer("A")])], undefined, Date.now, 5000, [verifier]);
+    const snap = service.start("Logitech K380", product);
+    await finish(service, snap.id);
+    expect(service.get(snap.id)!.offers[0]).not.toHaveProperty("verification");
+  });
+});

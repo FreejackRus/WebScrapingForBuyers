@@ -7,6 +7,7 @@ import { createDistributorSourcesFromEnv } from "./infrastructure/sources/b2b-di
 import { createDemoSources } from "./infrastructure/sources/demo-source-adapter.js";
 import { mergeSourceFallbacks } from "./infrastructure/sources/fallback-source-adapter.js";
 import { createHttpMarketplaceSources } from "./infrastructure/sources/http-marketplace-adapter.js";
+import { createCardVerifiersFromEnv } from "./infrastructure/sources/card-verifiers.js";
 import { createMarketplaceSourcesFromEnv } from "./infrastructure/sources/mcp-marketplace-adapter.js";
 
 /** Local-only fake prices. Never enable in production/hybrid compose. */
@@ -28,7 +29,7 @@ export function buildSearchApp(options: { sources?: SourceAdapter[]; logger?: bo
     : [];
   const sources = options.sources ?? [...realSources, ...demoSources];
   void app.register(searchRoutes, {
-    searchService: new SearchService(sources),
+    searchService: new SearchService(sources, undefined, undefined, undefined, options.sources ? [] : createCardVerifiersFromEnv()),
     mode: realSources.length > 0 ? "hybrid" : demoSources.length > 0 ? "demo" : "hybrid",
   });
   return app;

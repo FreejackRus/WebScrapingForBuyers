@@ -7,7 +7,7 @@ function prefersReducedMotion(): boolean {
   return typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches === true;
 }
 
-import { conditionLabels, matchLabels, PRICE_ANOMALY_HINT, PRICE_ANOMALY_LABEL } from "entities/offer";
+import { conditionLabels, matchLabels, PRICE_ANOMALY_HINT, PRICE_ANOMALY_LABEL, verificationLabels } from "entities/offer";
 import { useOfferCard } from "features/search";
 import { fetchedTime, money } from "shared/lib";
 
@@ -76,6 +76,11 @@ export function OfferCard() {
         {offer.priceAnomaly ? (
           <p className="data-notice warn" role="note">
             <b>{PRICE_ANOMALY_LABEL}.</b> {PRICE_ANOMALY_HINT}
+          </p>
+        ) : null}
+        {offer.verification ? (
+          <p className={`data-notice${offer.verification.status === "confirmed" ? "" : " warn"}`} role="note">
+            <b>{verificationLabels[offer.verification.status]}.</b> {offer.verification.note}.
           </p>
         ) : null}
 

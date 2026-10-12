@@ -49,6 +49,18 @@ export interface Offer {
    * visible but never count as the best price.
    */
   priceAnomaly?: "too_low";
+  /**
+   * Re-check of a top row on the product card itself, after collection.
+   * confirmed — price, stock and model hold; price_changed — the card asks another price
+   * (now in `price`, the listed one in `listedPrice`); unavailable — the card is out of stock;
+   * mismatch — the card does not show the requested model.
+   */
+  verification?: {
+    status: "confirmed" | "price_changed" | "unavailable" | "mismatch";
+    checkedAt: string;
+    note: string;
+    listedPrice?: number;
+  };
   fetchedAt: string;
   demo: boolean;
 }

@@ -5,6 +5,7 @@ import { offerAvailabilityStatus, type Offer, type Product, type SearchEvent, ty
 import { isUnrequestedConsumablePart } from "../domain/consumable-parts.js";
 import { isOfferInItScope } from "../domain/it-scope.js";
 import { assessOffer } from "../domain/offer-assessment.js";
+import { applyCardFacts, type CardVerifier } from "../domain/offer-verification.js";
 import { flagPriceAnomalies } from "../domain/price-anomaly.js";
 import { assignProcurementRanks } from "../domain/procurement-rank.js";
 import type { SourceAdapter } from "../domain/source-adapter.js";
@@ -42,6 +43,12 @@ export const DEFAULT_RETENTION: SearchRetention = {
   maxLastGood: 200,
 };
 
+/** How many top rows a buyer reads first; these are re-checked on the product card. */
+export const VERIFY_TOP = 3;
+/** Whole verification step; a slow card must not hold the search much longer. */
+export const VERIFY_BUDGET_MS = 25_000;
+const VERIFY_CARD_TIMEOUT_MS = 12_000;
+
 /** One slow or hung source must not keep a whole search in "running" forever. */
 export const DEFAULT_SOURCE_TIMEOUT_MS = 120_000;
 
@@ -64,6 +71,7 @@ export class SearchService {
     private readonly retention: SearchRetention = DEFAULT_RETENTION,
     private readonly now: () => number = Date.now,
     private readonly sourceTimeoutMs: number = Number(process.env.SOURCE_TIMEOUT_MS) || DEFAULT_SOURCE_TIMEOUT_MS,
+    private readonly verifiers: CardVerifier[] = [],
   ) {}
 
   listSources(): string[] {
@@ -176,9 +184,59 @@ export class SearchService {
     );
 
     assignProcurementRanks(snapshot.offers);
+    await this.verifyTop(snapshot).catch(() => undefined);
     snapshot.status = "complete";
     this.finishedAt.set(id, this.now());
     this.emit(id, { type: "complete", data: structuredClone(snapshot) });
+  }
+
+  /**
+   * Re-checks the rows a buyer reads first on their product cards. A row that fails
+   * (sold out, other model) sinks, so the next one is checked — a few rounds at most.
+   */
+  private async verifyTop(snapshot: SearchSnapshot): Promise<void> {
+    if (this.verifiers.length === 0) return;
+    const deadline = this.now() + VERIFY_BUDGET_MS;
+    const tried = new Set<string>();
+    for (let round = 0; round < 3 && this.now() < deadline; round += 1) {
+      const top = [...snapshot.offers]
+        .filter((offer) => !offer.demo && offer.priceAnomaly !== "too_low" && offer.assessment?.group !== "needs_review")
+        .sort((a, b) => (a.procurementRank ?? Infinity) - (b.procurementRank ?? Infinity))
+        .slice(0, VERIFY_TOP);
+      const pending = top.flatMap((offer) => {
+        const verifier = tried.has(offer.id) ? undefined : this.verifiers.find((candidate) => candidate.supports(offer));
+        return verifier ? [{ offer, verifier }] : [];
+      });
+      if (pending.length === 0) return;
+      const timeout = Math.max(1000, Math.min(VERIFY_CARD_TIMEOUT_MS, deadline - this.now()));
+      const results = await Promise.allSettled(
+        pending.map(({ offer, verifier }) => {
+          tried.add(offer.id);
+          return withDeadline(verifier.fetch(offer, AbortSignal.timeout(timeout)), timeout, offer.source);
+        }),
+      );
+      const checkedAt = new Date(this.now()).toISOString();
+      let changed = false;
+      results.forEach((result, index) => {
+        const { offer } = pending[index]!;
+        if (result.status !== "fulfilled" || !result.value) return;
+        const position = snapshot.offers.findIndex((row) => row.id === offer.id);
+        if (position < 0) return;
+        snapshot.offers[position] = applyCardFacts(offer, result.value, snapshot.product, snapshot.query, checkedAt);
+        changed = true;
+      });
+      console.info(JSON.stringify({
+        msg: "verify_top",
+        searchId: snapshot.id,
+        round,
+        checked: pending.length,
+        statuses: pending.map(({ offer }) => snapshot.offers.find((row) => row.id === offer.id)?.verification?.status ?? "failed"),
+      }));
+      if (!changed) return;
+      flagPriceAnomalies(snapshot.offers);
+      assignProcurementRanks(snapshot.offers);
+      this.emit(snapshot.id, { type: "snapshot", data: structuredClone(snapshot) });
+    }
   }
 
   /**

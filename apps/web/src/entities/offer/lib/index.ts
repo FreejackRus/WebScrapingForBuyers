@@ -12,6 +12,14 @@ export const PRICE_ANOMALY_LABEL = "Цена под сомнением";
 export const PRICE_ANOMALY_HINT =
   "Цена намного ниже остальных предложений — возможна ошибка площадки, деталь или аксессуар вместо товара. В лучшую цену не входит, проверьте на сайте.";
 
+/** Short badge for a top row re-checked on its product card. */
+export const verificationLabels: Record<NonNullable<Offer["verification"]>["status"], string> = {
+  confirmed: "✓ Проверено",
+  price_changed: "Цена обновлена",
+  unavailable: "Нет в наличии",
+  mismatch: "Не та модель?",
+};
+
 export const conditionLabels: Record<Offer["condition"], string> = {
   new: "Новый товар",
   refurbished: "Восстановленный",
