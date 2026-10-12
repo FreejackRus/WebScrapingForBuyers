@@ -440,7 +440,7 @@ export class McpMarketplaceAdapter implements SourceAdapter {
     }
     leftover.push(...items);
     noteItems(items.length);
-    const offers = this.mapItems(items, product);
+    const offers = mergeUniqueOffers([], this.mapItems(items, product));
     this.logMap(query, items, offers);
     return offers;
   }
@@ -662,9 +662,15 @@ export function preferRelevantOffers(left: Offer, right: Offer): number {
 }
 
 function mergeUniqueOffers(left: Offer[], right: Offer[]): Offer[] {
-  const seen = new Set(left.map((offer) => offer.url || offer.id));
-  const extra = right.filter((offer) => !seen.has(offer.url || offer.id));
-  return [...left, ...extra].sort(preferRelevantOffers);
+  const seen = new Set<string>();
+  return [...left, ...right].filter((offer) => {
+    // Search/category fallbacks are shared by unrelated cards and are not identities.
+    const cardUrl = /\/(?:search|catalog|category)(?:[/?]|$)/i.test(offer.url) ? offer.id : offer.url || offer.id;
+    const key = JSON.stringify([offer.source, cardUrl, offer.seller, offer.price, offer.priceCondition, offer.mpn, offer.title.trim().replace(/\s+/g, " ").toLocaleLowerCase("ru")]);
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  }).sort(preferRelevantOffers);
 }
 
 function marketplaceSearchUrl(source: MarketplaceSource, product: Product): string {

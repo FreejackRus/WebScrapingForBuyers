@@ -136,11 +136,11 @@ export function assessOffer(product: Product, offer: Offer, query: string): Offe
   const reasons = [identity === "article" ? "Артикул совпадает" : "Модель совпадает"];
   let group: Assessment["group"] = "match";
   if (product.category === "Процессоры") {
-    if (/(?:^|[\s,;])(?:пк|компьютер[а-яё]*|системн[а-яё]*\s+блок)(?=[\s,;]|$)/iu.test(offer.title)) {
+    if (/(?:^|[\s,;])(?:пк|компьютер[а-яё]*|системн[а-яё]*\s+блок)(?=[\s,;:.!–—-]|$)/iu.test(offer.title.replace(/(?:^|\s)для\s+(?:пк|компьютер[а-яё]*)/giu, ""))) {
       group = "needs_review";
       reasons.push("В карточке готовый компьютер, а не отдельный процессор");
     }
-    const cpuModels = new Set(Array.from(offer.title.matchAll(/(?<![a-z0-9])(?:i[3579][- ]*)?(1\d{4}(?:tef|te|kf|ks|k|f|t)?)(?![a-z0-9])/gi), (match) => match[1]!.toUpperCase()));
+    const cpuModels = new Set(Array.from(offer.title.matchAll(/(?<![a-z0-9])(?:i[3579][- ]*(1\d{4}(?:tef|te|kf|ks|k|f|t)?)|(1\d{4}(?:tef|te|kf|ks|k|f|t)))(?![a-z0-9])/gi), (match) => (match[1] ?? match[2])!.toUpperCase()));
     if (cpuModels.size > 1) {
       group = "needs_review";
       reasons.push("В карточке несколько моделей процессоров; цена выбранной модели не подтверждена");

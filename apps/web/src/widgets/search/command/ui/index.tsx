@@ -409,7 +409,7 @@ export function SearchCommand() {
           </fieldset>
           {noSources && (
             <p id={noSourcesId} className="source-picker-hint" role="status">
-              Выберите хотя бы одного поставщика
+              {availableSources.length === 0 ? "Сейчас нет доступных поставщиков для поиска" : "Выберите хотя бы одного поставщика"}
             </p>
           )}
         </details>
