@@ -6,6 +6,8 @@ import { readFileSync, writeFileSync } from "node:fs";
 const base = process.argv[2] ?? process.env.SEARCH_URL ?? "http://localhost:3003";
 const cases = JSON.parse(readFileSync(process.argv[3] ?? new URL("../eval/search-cases.json", import.meta.url), "utf8"));
 const TOP = 3;
+const DISTRIBUTORS = new Set(["netlab", "ocs", "merlion", "treolan", "марвел", "servermall", "срвтрейд", "онлайнтрейд", "регард", "хардпрайс", "торгpc"]);
+const isDistributor = (o) => DISTRIBUTORS.has(o.source.toLocaleLowerCase("ru"));
 const TIMEOUT_MS = Number(process.env.EVAL_TIMEOUT_MS ?? 150_000);
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const inStock = (o) => (o.availabilityStatus ? o.availabilityStatus === "in_stock" : !/нет в наличии|под заказ|ожида/i.test(o.availability));
@@ -20,20 +22,26 @@ async function run(c) {
     snap = await (await fetch(`${base}/searches/${snap.id}`)).json();
   }
   const offers = [...snap.offers].sort((a, b) => (a.procurementRank ?? 1e9) - (b.procurementRank ?? 1e9));
-  const top = offers.slice(0, TOP);
+  // The table shows marketplaces and distributors in separate tabs: score the top rows of each.
+  const top = offers.filter((o) => !isDistributor(o)).slice(0, TOP);
+  const topDistributors = offers.filter(isDistributor).slice(0, TOP);
   const re = (s) => (s ? new RegExp(s, "iu") : undefined);
   const want = re(c.top), avoid = re(c.notTop);
   const hay = (o) => `${o.title} ${o.mpn ?? ""}`.toLowerCase();
-  const hits = top.filter((o) => (!want || want.test(hay(o))) && !(avoid && avoid.test(hay(o))));
+  const good = (o) => (!want || want.test(hay(o))) && !(avoid && avoid.test(hay(o)));
+  const hits = top.filter(good);
+  const distributorHits = topDistributors.filter(good);
   return {
     query: c.query,
     total: offers.length,
     precision: top.length ? hits.length / top.length : 0,
+    distributorRows: topDistributors.length,
+    distributorPrecision: topDistributors.length ? distributorHits.length / topDistributors.length : undefined,
     topInStock: top.filter(inStock).length,
     errors: snap.sources.filter((s) => s.status === "error").map((s) => s.source),
     timedOut: snap.status !== "complete",
     seconds: Math.round((Date.now() - started) / 1000),
-    top: top.map((o) => `${hits.includes(o) ? "✓" : "✗"} [${o.source}] ${o.title} — ${o.price} ₽ — ${o.availability}`),
+    top: [...top, ...topDistributors].map((o) => `${good(o) ? "✓" : "✗"} [${o.source}] ${o.title} — ${o.price} ₽ — ${o.availability}`),
   };
 }
 
@@ -51,6 +59,11 @@ const summary = {
   failed: results.length - ok.length,
   empty: ok.filter((r) => r.total === 0).length,
   precisionTop3: +avg((r) => r.precision).toFixed(3),
+  distributorQueries: ok.filter((r) => r.distributorRows > 0).length,
+  distributorPrecisionTop3: (() => {
+    const withRows = ok.filter((r) => r.distributorRows > 0);
+    return withRows.length ? +(withRows.reduce((s, r) => s + r.distributorPrecision, 0) / withRows.length).toFixed(3) : null;
+  })(),
   perfectTop3: ok.filter((r) => r.precision === 1).length,
   inStockShareTop3: +avg((r) => r.topInStock / TOP).toFixed(3),
   medianSeconds: ok.map((r) => r.seconds).sort((a, b) => a - b)[Math.floor(ok.length / 2)],

@@ -1,6 +1,7 @@
 import type { Offer, Product } from "@peremena/contracts";
 
 import { isUnrequestedConsumablePart } from "./consumable-parts.js";
+import { brandsIn, canonicalBrand } from "./product-from-query.js";
 
 type Assessment = NonNullable<Offer["assessment"]>;
 
@@ -20,6 +21,16 @@ function isAccessoryFor(title: string, query: string): boolean {
   return (ACCESSORY.test(head) && !ACCESSORY.test(query)) || (FOR_DEVICE.test(title) && !FOR_DEVICE.test(query) && !/(?:^|\s)для(?=\s|$)/iu.test(query));
 }
 
+const INTERFACES: ReadonlyArray<[string, RegExp]> = [
+  ["hdmi", /hdmi/iu], ["dvi", /(?<![a-z])dvi/iu], ["vga", /(?<![a-z])(?:vga|d-sub)/iu],
+  ["displayport", /displayport|(?<![a-z])(?:mini[\s-]?)?dp(?![a-z])/iu], ["usb-c", /type[\s-]?c|usb[\s-]?c(?![a-z])/iu],
+];
+
+function interfaces(text: string): Set<string> {
+  return new Set(INTERFACES.filter(([, pattern]) => pattern.test(text)).map(([name]) => name));
+}
+
+const DRUM_UNIT = /(?:^|[^\p{L}])(?:фотовал\p{L}*|фотобарабан\p{L}*|драм[\s-]?картридж\p{L}*|drum|opc|блок\s+фотобарабан\p{L}*)(?=$|[^\p{L}])/iu;
 const THIRD_PARTY_BRANDS = /(?:^|[^\p{L}\p{N}])(?:nv[\s-]?print|hi[\s-]?black|cactus|sakura|easyprint|netproduct|colortek|katun|bion|parus|uniton|profiline|t2|static\s+control|qualicom|xiongcai|colouring|ink-?power)(?=$|[^\p{L}\p{N}])/iu;
 
 function compact(value: string): string {
@@ -51,17 +62,34 @@ function tokensIn(haystack: string, expected: string): boolean {
   });
 }
 
+/**
+ * The model inside a maker article: Kingston «SKC3000S/1024G» is a KC3000. Exactly one letter precedes it and only
+ * letters may follow, so «G102» never matches the switch «SG1024».
+ */
+function modelInArticle(haystack: string, model: string): boolean {
+  const compactModel = compact(model);
+  if (compactModel.length < 5 || !/\d/.test(compactModel) || !/[a-z]/.test(compactModel)) return false;
+  return (haystack.toLocaleLowerCase("ru").match(/[a-z0-9]+/g) ?? []).some((token) => {
+    const at = token.indexOf(compactModel);
+    // A maker prefix is required: a bare suffix is a sibling model («TL-5120X» is not «TL-5120»).
+    if (at !== 1) return false;
+    return /^[a-z]{0,3}$/.test(token.slice(at + compactModel.length));
+  });
+}
+
 function matchedIdentity(product: Product, title: string): "article" | "model" | undefined {
   const mpn = compact(product.mpn);
   const model = compact(product.model);
   const expected = mpn && identityIn(title, product.mpn)
     ? mpn
-    : model && (identityIn(title, product.model) || tokensIn(title, product.model))
+    : model && (identityIn(title, product.model) || tokensIn(title, product.model) || modelInArticle(title, product.model))
       ? model
       : "";
   if (!expected) return undefined;
   const expectedDigits = expected.replace(/\D/g, "");
-  const rivals = articles(title).filter((article) => article !== expected && !expected.includes(article));
+  // «SKC3000S» is the KC3000 itself (maker prefix/suffix), not a sibling model.
+  const ownArticle = (article: string) => new RegExp(`^[a-z]${expected.replace(/[^a-z0-9]/g, "")}[a-z]{0,3}$`).test(article);
+  const rivals = articles(title).filter((article) => article !== expected && !expected.includes(article) && !ownArticle(article));
   // A different article with the same digits is a sibling model («TL-5120X» vs «TL-5120»). Multi-word models
   // («Back-UPS 650») are not articles themselves, so the listing's own article («BX650MI») is no rival.
   const multiWordModel = expected !== mpn && (product.model.match(/[a-zа-яё0-9]+/giu)?.length ?? 0) > 1;
@@ -193,6 +221,22 @@ export function assessOffer(product: Product, offer: Offer, query: string): Offe
   const partForDevice = forIndex >= 0 && identityIn(offer.title.slice(forIndex), product.mpn);
   if (isAccessoryFor(offer.title, query) && identity !== "article") return null;
   if ((identity !== "article" || partForDevice) && ((DEVICE_PART.test(offer.title) && !DEVICE_PART.test(query)) || isUnrequestedConsumablePart(offer, query))) return null;
+
+  // Another maker's product that merely shares the number: «D-Link DEM-CB50/M240» for «Logitech M240».
+  const wantedBrand = canonicalBrand(product.brand);
+  if (wantedBrand) {
+    const named = brandsIn(offer.title);
+    if (named.size > 0 && !named.has(wantedBrand)) return null;
+  }
+  // A drum unit is not the cartridge the buyer asked for.
+  const head = offer.title.split(/\s+/).slice(0, 3).join(" ");
+  if (DRUM_UNIT.test(head) && !DRUM_UNIT.test(query)) return null;
+
+  // «Кабель HDMI» is not an HDMI–DVI adapter: every interface in the title must be one the buyer named.
+  if (product.category === "Кабели и адаптеры") {
+    const asked = interfaces(query);
+    if (asked.size > 0 && [...interfaces(offer.title)].some((name) => !asked.has(name))) return null;
+  }
 
   const reasons = [identity === "article" ? "Артикул совпадает" : "Модель совпадает"];
   let group: Assessment["group"] = "match";

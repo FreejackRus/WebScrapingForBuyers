@@ -96,4 +96,36 @@ describe("typed query → offer precision", () => {
       expect(assessed("кулер для процессора deepcool ak400", "Кулер для процессора DeepCool AK400")).not.toBeNull();
     });
   });
+
+  describe("distributor price-list rows (NETLAB, live 2026-10-12)", () => {
+    const offer = (title: string, mpn?: string) => ({
+      id: "x", source: "NETLAB", seller: "NETLAB", title, ...(mpn ? { mpn } : {}), price: 1000, priceCondition: "", currency: "RUB" as const,
+      availability: "В наличии", condition: "new" as const, match: "exact" as const, url: "https://t", fetchedAt: "", demo: false,
+    });
+    const assessed = (query: string, title: string, mpn?: string) =>
+      assessOffer(productFromQuery(query, "query"), offer(title, mpn), query);
+
+    it("drops another maker's item that shares the model number", () => {
+      expect(assessed("logitech m240", "D-Link DEM-CB50/M240 Пассивный кабель 10GBase-CX4 длиной 50 см", "DEM-CB50/M240")).toBeNull();
+      expect(assessed("logitech m240", "Картридж TKB140XX для Катюша серий P140/M140/M240 (12000 стр.)")).toBeNull();
+      expect(assessed("мфу hp m247", "Ролик подхвата автоподатчика КАТЮША M247-06-0013-00 для Катюша M2471")).toBeNull();
+      expect(assessed("logitech m240", "910-007185/910-007119 Logitech Wireless Mouse M240 SILENT - Graphite")).not.toBeNull();
+      expect(assessed("logitech m240", "Мышь беспроводная M240 Silent (910-007119)")).not.toBeNull();
+    });
+
+    it("finds the model inside a maker article", () => {
+      expect(assessed("ssd kingston kc3000 1tb", "Kingston SSD 1Tb M.2 SKC3000S/1024G M.2 2280 NVMe", "SKC3000S/1024G")).not.toBeNull();
+      expect(assessed("мышь logitech g102", "TP-Link TL-SG1024 Коммутатор 24 порта")).toBeNull();
+      expect(assessed("картридж pantum tl-5120", "Картридж Pantum TL-5120X повышенной ёмкости")).toBeNull();
+    });
+
+    it("keeps a cable query to the interfaces asked for", () => {
+      expect(assessed("кабель hdmi 2м", "KS-is KS-468L1-2 Кабель-адаптер HDMI 19M - DVI 25M 2м")).toBeNull();
+      expect(assessed("кабель hdmi 2м", "Кабель аудио-видео Buro HDMI (m)/HDMI (m) 2м. черный (BHP-HDMI-2.1-2)")).not.toBeNull();
+    });
+
+    it("does not offer a drum unit for a cartridge query", () => {
+      expect(assessed("картридж 5120", "Фотовал (OPC Drum) NVP для Pantum DL-420/5120 (P3010/P3020)")).toBeNull();
+    });
+  });
 });

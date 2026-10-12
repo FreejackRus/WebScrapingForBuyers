@@ -258,7 +258,7 @@ describe("SearchService procurement quality", () => {
       { ...offer("NETLAB", 900), id: "display", title: "Intel Core i5-12400F с витрины" },
       { ...offer("NETLAB", 800), id: "used", title: "Intel Core i5-12400F Б/У" },
     ])]);
-    const snapshot = service.start("12400F", { ...product, model: "12400F", name: "Intel Core i5-12400F", mpn: "BX8071512400F" });
+    const snapshot = service.start("12400F", { ...product, brand: "Intel", model: "12400F", name: "Intel Core i5-12400F", mpn: "BX8071512400F" });
     await finish(service, snapshot.id);
     expect(service.get(snapshot.id)!.offers.map(row => [row.id, row.condition])).toEqual([
       ["unknown", "unknown"], ["display", "display"], ["used", "used"],

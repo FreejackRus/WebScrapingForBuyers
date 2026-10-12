@@ -63,7 +63,34 @@ const KNOWN_BRANDS = [
   "adata",
   "ippon",
   "eaton",
+  "d-link",
+  "катюша",
+  "katusha",
+  "sharp",
+  "lexmark",
 ];
+
+/** Cyrillic spellings → the Latin brand, so «самсунг» and «Samsung» are one maker. */
+const BRAND_SPELLINGS: Record<string, string> = {
+  самсунг: "samsung", леново: "lenovo", асус: "asus", асер: "acer", эйсер: "acer", хуавей: "huawei",
+  ксиаоми: "xiaomi", сяоми: "xiaomi", эппл: "apple", делл: "dell", кингстон: "kingston", интел: "intel",
+  логитек: "logitech", логитеч: "logitech", пантум: "pantum", куосера: "kyocera", катюша: "katusha",
+};
+
+/** One canonical maker name for a brand string, or undefined when it is not a known maker. */
+export function canonicalBrand(value: string): string | undefined {
+  const token = value.trim().toLocaleLowerCase("ru");
+  const brand = BRAND_SPELLINGS[token] ?? token;
+  return KNOWN_BRANDS.includes(brand) ? brand : undefined;
+}
+
+/** Known makers named in a text, canonicalised. */
+export function brandsIn(text: string): Set<string> {
+  return new Set(textTokens(text).flatMap((token) => {
+    const brand = canonicalBrand(token);
+    return brand ? [brand] : [];
+  }));
+}
 
 const BRAND_ALIASES: ReadonlyArray<{ aliases: string[]; canonical: string }> = [
   { aliases: ["hewlett packard"], canonical: "Hewlett Packard" },
