@@ -4,6 +4,7 @@ import { createInflateRaw } from "node:zlib";
 import type { MatchKind, Offer, Product } from "@peremena/contracts";
 
 import { assessMarketplaceOfferRelevance } from "../../domain/marketplace-relevance.js";
+import { assessOffer } from "../../domain/offer-assessment.js";
 import { inferCategory } from "../../domain/product-from-query.js";
 import type { SourceAdapter } from "../../domain/source-adapter.js";
 import { preferRelevantOffers } from "./mcp-marketplace-adapter.js";
@@ -273,6 +274,32 @@ export function toNetlabOffer(
   };
 }
 
+/** «MZ-V9P2T0BW_DP», «BX8071512400FSRL5Z/BX8071512400FSRL4W» → the first plain article. */
+export function cleanNetlabArticle(pn: string): string {
+  const parts = pn.replace(/_DP$/i, "").split("/").map((part) => part.trim());
+  // «A/B» lists two articles of one item; «SKC3000S/1024G» is one article with a capacity suffix.
+  return parts.length > 1 && parts.every((part) => part.length >= 8) ? parts[0]! : parts.join("/");
+}
+
+/**
+ * Articles of price-list items that pass the same checks as a search row for this product.
+ * Showcase/damaged-box duplicates («_DP») collapse into the article they are copies of.
+ */
+export function netlabArticles(product: Product, query: string, feed: Pick<NetlabFeed, "items" | "usdRate" | "date">): string[] {
+  const articles = new Set<string>();
+  for (const item of feed.items) {
+    if (!item.pn || !isNetlabCandidate(item, product)) continue;
+    const offer = toNetlabOffer(item, product, feed, "R") ?? toNetlabOffer(item, product, feed, "F");
+    if (!offer || offer.match === "doubtful") continue;
+    const assessed = assessOffer(product, offer, query);
+    if (!assessed || assessed.assessment?.group !== "match") continue;
+    const article = cleanNetlabArticle(item.pn);
+    if (article.length >= 4) articles.add(article);
+    if (articles.size > 5) break;
+  }
+  return [...articles];
+}
+
 export interface NetlabFeedOptions {
   url?: string;
   column?: NetlabPriceColumn;
@@ -328,6 +355,12 @@ export class NetlabPriceFeedAdapter implements SourceAdapter {
       if (this.feed) return this.feed;
       throw error;
     }
+  }
+
+  async articlesFor(product: Product, query: string): Promise<string[]> {
+    // Only a feed already in memory: resolving must not wait for the hourly download.
+    if (!this.feed) return [];
+    return netlabArticles(product, query, this.feed);
   }
 
   async search(product: Product): Promise<Offer[]> {

@@ -1,10 +1,11 @@
 import { randomUUID } from "node:crypto";
 
-import { offerAvailabilityStatus, type Offer, type Product, type SearchEvent, type SearchSnapshot, type SourceState } from "@peremena/contracts";
+import { offerAvailabilityStatus, offerChannel, type Offer, type Product, type SearchEvent, type SearchSnapshot, type SourceState } from "@peremena/contracts";
 
 import { isUnrequestedConsumablePart } from "../domain/consumable-parts.js";
 import { isOfferInItScope } from "../domain/it-scope.js";
 import { assessOffer } from "../domain/offer-assessment.js";
+import { withCatalogArticles } from "../domain/catalog-article.js";
 import { applyCardFacts, type CardVerifier } from "../domain/offer-verification.js";
 import { flagPriceAnomalies } from "../domain/price-anomaly.js";
 import { assignProcurementRanks } from "../domain/procurement-rank.js";
@@ -119,6 +120,7 @@ export class SearchService {
   private async collect(id: string, sources = this.sources): Promise<void> {
     const snapshot = this.searches.get(id);
     if (!snapshot) return;
+    await this.resolveArticles(snapshot, sources).catch(() => undefined);
 
     await Promise.allSettled(
       sources.map(async (source) => {
@@ -190,6 +192,20 @@ export class SearchService {
     this.emit(id, { type: "complete", data: structuredClone(snapshot) });
   }
 
+  /** Exact maker article from a distributor catalogue before the sources are asked (3 s at most). */
+  private async resolveArticles(snapshot: SearchSnapshot, sources: SourceAdapter[]): Promise<void> {
+    for (const source of sources) {
+      if (!source.articlesFor) continue;
+      const articles = await withDeadline(source.articlesFor(snapshot.product, snapshot.query), 3_000, source.name).catch(() => []);
+      const product = withCatalogArticles(snapshot.product, articles, source.name);
+      if (product === snapshot.product) continue;
+      snapshot.product = product;
+      console.info(JSON.stringify({ msg: "catalog_articles", searchId: snapshot.id, source: source.name, articles }));
+      this.emit(snapshot.id, { type: "snapshot", data: structuredClone(snapshot) });
+      return;
+    }
+  }
+
   /**
    * Re-checks the rows a buyer reads first on their product cards. A row that fails
    * (sold out, other model) sinks, so the next one is checked — a few rounds at most.
@@ -199,10 +215,12 @@ export class SearchService {
     const deadline = this.now() + VERIFY_BUDGET_MS;
     const tried = new Set<string>();
     for (let round = 0; round < 3 && this.now() < deadline; round += 1) {
-      const top = [...snapshot.offers]
+      const ranked = [...snapshot.offers]
         .filter((offer) => !offer.demo && offer.priceAnomaly !== "too_low" && offer.assessment?.group !== "needs_review")
-        .sort((a, b) => (a.procurementRank ?? Infinity) - (b.procurementRank ?? Infinity))
-        .slice(0, VERIFY_TOP);
+        .sort((a, b) => (a.procurementRank ?? Infinity) - (b.procurementRank ?? Infinity));
+      // The table has a marketplace tab and a distributor tab: the buyer reads the top of each.
+      const top = (["marketplace", "distributor"] as const).flatMap((channel) =>
+        ranked.filter((offer) => offerChannel(offer) === channel).slice(0, VERIFY_TOP));
       const pending = top.flatMap((offer) => {
         const verifier = tried.has(offer.id) ? undefined : this.verifiers.find((candidate) => candidate.supports(offer));
         return verifier ? [{ offer, verifier }] : [];

@@ -601,6 +601,11 @@ body.offer-card-open { overflow: hidden; }
 .offer-memo textarea { width: 100%; min-height: 180px; padding: 10px; border: 1px solid var(--line, #d9dee8); border-radius: 8px; font: inherit; font-size: 13px; resize: vertical; }
 .offer-memo-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
 .offer-memo-actions small { color: var(--muted); font-size: 12px; }
+.offer-group-toggle { display: block; margin-top: 4px; padding: 0; font-size: 12px; text-align: left; }
+.offer-row.grouped > td { background: var(--surface-2, #f5f7fb); }
+.offer-row.grouped > td:first-child { box-shadow: inset 3px 0 0 var(--brand-200, #c7d2fe); }
+.offer-specs { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.offer-specs span { padding: 1px 6px; border-radius: 4px; background: var(--surface-2, #eef1f6); color: var(--muted); font-size: 11px; font-weight: 600; white-space: nowrap; }
 .offer-demo-badge {
   display: inline-flex;
   align-items: center;

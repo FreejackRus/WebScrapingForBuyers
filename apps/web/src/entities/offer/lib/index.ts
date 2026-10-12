@@ -130,3 +130,59 @@ export function nextOfferSort(current: OfferSort | undefined, column: OfferSortC
   if (current.direction === "asc") return { column, direction: "desc" };
   return undefined;
 }
+
+
+export interface OfferGroup {
+  lead: Offer;
+  /** Same item from other sellers or at other prices, in the table order. */
+  others: Offer[];
+}
+
+/** «Мышь беспроводная M240 Silent (910-007119)» from five sellers is one item: same words, same condition. */
+export function offerGroupKey(offer: Offer): string {
+  const words = offer.title
+    .toLocaleLowerCase("ru")
+    .replace(/ё/g, "е")
+    .replace(/[^a-zа-я0-9]+/giu, " ")
+    .trim();
+  return `${words}|${offer.condition}`;
+}
+
+/** Groups an already ordered list; the first row of each item leads its group, so order is kept. */
+export function groupSameOffers(offers: Offer[]): OfferGroup[] {
+  const groups = new Map<string, OfferGroup>();
+  for (const offer of offers) {
+    const key = offerGroupKey(offer);
+    const group = groups.get(key);
+    if (group) group.others.push(offer);
+    else groups.set(key, { lead: offer, others: [] });
+  }
+  return [...groups.values()];
+}
+
+
+/**
+ * Key facts read from a listing title, for comparing rows at a glance: «2 ТБ», «DDR5», «NVMe»,
+ * «2×16 ГБ», «BOX». Only what the title literally says; nothing is guessed.
+ */
+export function titleSpecs(title: string): string[] {
+  const text = title.replace(/\u00a0/g, " ");
+  const specs: string[] = [];
+  const kit = /(\d+)\s*[x×х*]\s*(\d+)\s*(gb|гб|g)(?![a-zа-яё])/iu.exec(text);
+  if (kit) specs.push(`${kit[1]}×${kit[2]} ГБ`);
+  else {
+    const capacity = /(?<![\d.,])(\d+(?:[.,]\d+)?)\s*(tb|тб|gb|гб)(?![a-zа-яё])/iu.exec(text);
+    if (capacity) specs.push(`${capacity[1]!.replace(".", ",")} ${/t|т/i.test(capacity[2]!) ? "ТБ" : "ГБ"}`);
+  }
+  const ddr = /(?<![a-zа-яё])(g?ddr\s?\d[xX]?)/iu.exec(text);
+  if (ddr) specs.push(ddr[1]!.replace(/\s/g, "").toUpperCase());
+  if (/nvme/i.test(text)) specs.push("NVMe");
+  else if (/(?<![a-z])sata/i.test(text)) specs.push("SATA");
+  const frequency = /(\d{3,4})\s*(?:mhz|мгц|mt\/s)/iu.exec(text);
+  if (frequency) specs.push(`${frequency[1]} МГц`);
+  const yieldPages = /(\d+(?:[\s.,]?\d{3})?|\d+[kк])\s*(?:стр|pages)/iu.exec(text);
+  if (yieldPages) specs.push(`ресурс ${yieldPages[1]!.replace(/[kк]$/iu, " 000")}`);
+  if (/(?<![a-z])box(?![a-z])/i.test(text)) specs.push("BOX");
+  else if (/(?<![a-z])oem(?![a-z])/i.test(text)) specs.push("OEM");
+  return specs;
+}

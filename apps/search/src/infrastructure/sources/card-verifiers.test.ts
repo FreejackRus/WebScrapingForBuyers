@@ -41,3 +41,25 @@ describe("Ozon card verifier", () => {
     expect(callTool).toHaveBeenCalledWith("ozon_card", { sku_or_path: "https://www.ozon.ru/product/dell-1955648092/" });
   });
 });
+
+describe("storefront card verifier", async () => {
+  const { StorefrontCardVerifier, schemaOrgCardFacts } = await import("./card-verifiers.js");
+
+  it("reads Servermall JSON-LD", () => {
+    const html = `<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage"},{"@type":"Product","name":"сервер LENOVO ThinkSystem SR650 V2 8SFF","offers":{"@type":"Offer","price":"245553","availability":"https://schema.org/InStock"}}]}</script>`;
+    expect(schemaOrgCardFacts(html)).toEqual({ title: "сервер LENOVO ThinkSystem SR650 V2 8SFF", price: 245553, available: true });
+  });
+
+  it("reads СРВТрейд microdata", () => {
+    const html = `<h1 itemprop="name">Процессор Xeon E5-2697 v4</h1><span class="price__base">242&nbsp;064 р.</span><meta itemprop="price" content="242064"><link itemprop="availability" href="http://schema.org/InStock">`;
+    expect(schemaOrgCardFacts(html)).toEqual({ title: "Процессор Xeon E5-2697 v4", price: 242064, available: true });
+  });
+
+  it("treats a removed card as sold out and checks only storefront product links", async () => {
+    const verifier = new StorefrontCardVerifier((async () => new Response("", { status: 404 })) as unknown as typeof fetch);
+    const row = { source: "Servermall", url: "https://servermall.ru/catalog/servers/x/" } as never;
+    expect(verifier.supports(row)).toBe(true);
+    expect(verifier.supports({ source: "Ozon", url: "https://servermall.ru/catalog/x" } as never)).toBe(false);
+    await expect(verifier.fetch(row)).resolves.toEqual({ available: false });
+  });
+});

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import type { Offer } from "@peremena/contracts";
 
-import { nextOfferSort, sortOffers } from "entities/offer";
+import { groupSameOffers, nextOfferSort, sortOffers } from "entities/offer";
 import type { OfferSort, OfferSortColumn } from "entities/offer";
 
 import { useFilteredOffers } from "../filter-offers";
@@ -13,11 +13,15 @@ export function buildOfferTablePage(offers: Offer[], sort: OfferSort | undefined
   const sorted = sortOffers(offers, sort);
   const reviewRows = sorted.filter((offer) => offer.assessment?.group === "needs_review");
   const primaryRows = sorted.filter((offer) => offer.assessment?.group !== "needs_review");
-  const pageCount = Math.max(1, Math.ceil(primaryRows.length / OFFER_PAGE_SIZE));
+  // One line per item: the same listing from several sellers folds under its best row.
+  const groups = groupSameOffers(primaryRows);
+  const pageCount = Math.max(1, Math.ceil(groups.length / OFFER_PAGE_SIZE));
   const safePage = Math.min(Math.max(page, 1), pageCount);
-  const rows = primaryRows.slice((safePage - 1) * OFFER_PAGE_SIZE, safePage * OFFER_PAGE_SIZE);
+  const pageGroups = groups.slice((safePage - 1) * OFFER_PAGE_SIZE, safePage * OFFER_PAGE_SIZE);
+  const rows = pageGroups.map((group) => group.lead);
+  const grouped = Object.fromEntries(pageGroups.filter((group) => group.others.length > 0).map((group) => [group.lead.id, group.others]));
 
-  return { rows, reviewRows, total: primaryRows.length, page: safePage, pageCount };
+  return { rows, grouped, reviewRows, total: groups.length, offerCount: primaryRows.length, page: safePage, pageCount };
 }
 
 export function useOfferTable() {

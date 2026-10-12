@@ -2,7 +2,7 @@ import { useEffect, useState, type PointerEvent, type ReactNode } from "react";
 import type { OfferReviewItem, OfferTableFilter, ProductCondition } from "@peremena/contracts";
 import { useChannelOffers, useFilteredOffers, useOfferCard, useOfferColumns, useOfferTable } from "features/search";
 import { analysisApi, useAnalysisStore } from "entities/analysis";
-import { conditionLabels, matchLabels, PRICE_ANOMALY_HINT, PRICE_ANOMALY_LABEL, verificationLabels } from "entities/offer";
+import { conditionLabels, matchLabels, PRICE_ANOMALY_HINT, PRICE_ANOMALY_LABEL, titleSpecs, verificationLabels } from "entities/offer";
 import type { OfferSortColumn } from "entities/offer";
 import { useSearchStore } from "entities/search";
 import { fetchedTime, money } from "shared/lib";
@@ -17,7 +17,8 @@ function sortMark(active: boolean, direction?: "asc" | "desc") {
 const AI_VERDICT = { fits: "подходит", not_fit: "не подходит", unclear: "неясно" } as const;
 
 export function OfferTable() {
-  const { rows, reviewRows, total, page, pageCount, pageSize, sort, setPage, cycleSort, selectSort } = useOfferTable();
+  const { rows, grouped = {}, reviewRows, total, offerCount = total, page, pageCount, pageSize, sort, setPage, cycleSort, selectSort } = useOfferTable();
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
   const { openOffer } = useOfferCard();
   const { columns, visible, hidden, widthOf, toggle, setWidth, reset } = useOfferColumns();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -105,12 +106,13 @@ export function OfferTable() {
     return extra ? <td className={extra} data-label={label}>{node}</td> : <td data-label={label}>{node}</td>;
   };
 
-  const renderOfferRow = (offer: (typeof rows)[number], allowRecommendation: boolean) => {
+  const renderOfferRow = (offer: (typeof rows)[number], allowRecommendation: boolean, others: (typeof rows) = [], nested = false) => {
     const isBest = allowRecommendation && offer.id === recommended;
+    const prices = others.map((other) => other.price);
     return (
       <tr
         key={offer.id}
-        className={`offer-row ${selected.includes(offer.id) && allowRecommendation ? "selected" : ""} ${isBest ? "recommended" : ""}`.trim()}
+        className={`offer-row ${selected.includes(offer.id) && allowRecommendation ? "selected" : ""} ${isBest ? "recommended" : ""} ${nested ? "grouped" : ""}`.trim()}
         onClick={() => openOffer(offer.id)}
       >
         {cell("source", (
@@ -126,9 +128,25 @@ export function OfferTable() {
         {cell("title", (
           <>
             <div className="offer-title">{offer.title}</div>
+            {titleSpecs(offer.title).length ? (
+              <div className="offer-specs" aria-label="Характеристики из названия">
+                {titleSpecs(offer.title).map((spec) => <span key={spec}>{spec}</span>)}
+              </div>
+            ) : null}
             {offer.mpn && <small className="offer-mpn">{offer.mpn}</small>}
             {offer.assessment?.reasons.length ? (
               <small className="offer-assessment-reason">{offer.assessment.reasons.join(" · ")}</small>
+            ) : null}
+            {others.length > 0 ? (
+              <button
+                type="button"
+                className="linkish offer-group-toggle"
+                aria-expanded={expanded[offer.id] === true}
+                onClick={(event) => { event.stopPropagation(); setExpanded((state) => ({ ...state, [offer.id]: !state[offer.id] })); }}
+              >
+                {expanded[offer.id] ? "Скрыть" : "Ещё"} {others.length} {others.length === 1 ? "предложение" : others.length < 5 ? "предложения" : "предложений"} этого товара
+                {expanded[offer.id] ? "" : ` · ${money.format(Math.min(...prices))}–${money.format(Math.max(...prices))}`}
+              </button>
             ) : null}
             {reviewFor(offer.id) ? (
               <small className={`offer-ai-verdict offer-ai-verdict--${reviewFor(offer.id)!.verdict}`}>
@@ -339,7 +357,10 @@ export function OfferTable() {
             </tr>
           </thead>
           <tbody>
-            {rows.map((offer) => renderOfferRow(offer, true))}
+            {rows.flatMap((offer) => [
+              renderOfferRow(offer, true, grouped[offer.id] ?? []),
+              ...(expanded[offer.id] ? (grouped[offer.id] ?? []).map((other) => renderOfferRow(other, true, [], true)) : []),
+            ])}
           </tbody>
         </table>
         {total === 0 && (
@@ -414,7 +435,7 @@ export function OfferTable() {
       {total > 0 && (
         <div className="offers-pager">
           <span>
-            Показано <strong>{from}–{to}</strong> из <strong>{total}</strong>
+            Показано <strong>{from}–{to}</strong> из <strong>{total}</strong>{offerCount > total ? ` товаров (${offerCount} предложений)` : ""}
           </span>
           <div className="pager-buttons">
             <button type="button" className="ghost" disabled={page <= 1} onClick={() => setPage(page - 1)}>
