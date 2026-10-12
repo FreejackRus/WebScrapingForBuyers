@@ -16,7 +16,7 @@ import type {
 
 function requestedConditions(normalized: string): ProductCondition[] {
   if (/витрин|демо[- ]?образ/.test(normalized)) return ["display"];
-  if (/(?:^|\s)б\s*[\/.\\-]?\s*у(?:\s|$)|бывш\w*\s+в\s+употреб/.test(normalized)) return ["used"];
+  if (/(?:^|\s)б\s*[\/.\\-]?\s*у(?:\s|$)|бывш[а-яё]*\s+в\s+употреб/.test(normalized)) return ["used"];
   if (/восстанов|refurb/.test(normalized)) return ["refurbished"];
   if (/неизвестн[а-яё]*\s+состояни/.test(normalized)) return ["unknown"];
   if (/нов(ый|ые|ых)|без б\/у|исключ.*б\/у/.test(normalized)) return ["new"];

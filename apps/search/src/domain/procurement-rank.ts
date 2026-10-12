@@ -17,7 +17,7 @@ function packaging(title: string): number {
 
 export function normalizeOfferCondition(offer: Offer): ProductCondition {
   const title = offer.title.toLocaleLowerCase("ru");
-  if (/(?:^|\s)б\s*[\/.\\-]?\s*у(?:\s|$)|бывш\w*\s+в\s+употреб/i.test(title)) return "used";
+  if (/(?:^|\s)б\s*[\/.\\-]?\s*у(?:\s|$)|бывш[а-яё]*\s+в\s+употреб/i.test(title)) return "used";
   if (/refurb|восстанов/i.test(title)) return "refurbished";
   if (/витрин|демо[- ]?образ/i.test(title)) return "display";
   if (offer.condition !== "new") return offer.condition;
