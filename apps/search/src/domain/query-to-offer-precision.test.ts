@@ -119,6 +119,11 @@ describe("typed query → offer precision", () => {
       expect(assessed("картридж pantum tl-5120", "Картридж Pantum TL-5120X повышенной ёмкости")).toBeNull();
     });
 
+    it("reads «5 штук» as an order quantity, not a pack size", () => {
+      expect(assessed("нужно 5 штук мышек logitech m240", "Мышь беспроводная Logitech M240 Silent")?.assessment?.group).toBe("match");
+      expect(assessed("картридж pantum tl-5120 упаковка 5 шт", "Картридж Pantum TL-5120")?.assessment?.group).toBe("needs_review");
+    });
+
     it("keeps a cable query to the interfaces asked for", () => {
       expect(assessed("кабель hdmi 2м", "KS-is KS-468L1-2 Кабель-адаптер HDMI 19M - DVI 25M 2м")).toBeNull();
       expect(assessed("кабель hdmi 2м", "Кабель аудио-видео Buro HDMI (m)/HDMI (m) 2м. черный (BHP-HDMI-2.1-2)")).not.toBeNull();

@@ -154,8 +154,20 @@ function kitQuantity(value: string): number | undefined {
   return match ? Number(match[1]) : undefined;
 }
 
+/**
+ * Pack size only when the text says it is one: «упаковка 5 шт», «комплект 2 шт», «5 шт в упаковке».
+ * «нужно 5 штук мышек» is how many to buy, not a pack.
+ */
 function requestedPack(value: string): number | undefined {
-  const match = value.match(/(?:упаковк\p{L}*|комплект\p{L}*)?\s*(\d+)\s*(?:шт\.?|штук)(?=$|[^\p{L}])/iu);
+  const match =
+    value.match(/(?:упаковк\p{L}*|комплект\p{L}*|набор\p{L}*)\s*(?:из\s*|по\s*)?(\d+)\s*(?:шт\.?|штук\p{L}*)(?=$|[^\p{L}])/iu) ??
+    value.match(/(\d+)\s*(?:шт\.?|штук\p{L}*)\s*(?:в\s+)?(?:упаковк\p{L}*|комплект\p{L}*|набор\p{L}*)/iu);
+  return match ? Number(match[1]) : undefined;
+}
+
+/** Offer-side pack size: listings write «10 шт» plainly. */
+function offeredPackSize(value: string): number | undefined {
+  const match = value.match(/(\d+)\s*(?:шт\.?|штук)(?=$|[^\p{L}])/iu);
   return match ? Number(match[1]) : undefined;
 }
 
@@ -180,7 +192,7 @@ function assessConditions(query: string, fallback: string, title: string, reason
   }
   const wantedPack = kitQuantity(query) ?? requestedPack(query) ?? kitQuantity(fallback) ?? requestedPack(fallback);
   if (wantedPack !== undefined) {
-    const offeredPack = kitQuantity(title) ?? requestedPack(title);
+    const offeredPack = kitQuantity(title) ?? offeredPackSize(title);
     if (offeredPack === undefined) {
       reasons.push("Количество в комплекте не указано");
       state = "review";

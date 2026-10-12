@@ -17,8 +17,10 @@ import type { AnalysisNarrator } from "../domain/analysis-narrator.js";
  */
 
 const CONDITIONS = ["new", "refurbished", "used", "display", "unknown"] as const;
-const MAX_REVIEW_ROWS = 20;
-const MAX_REASON = 220;
+const MAX_REVIEW_ROWS = 24;
+/** Rows per model call: a whole list overflows the answer budget (live 2026-10-12). */
+const REVIEW_CHUNK = 8;
+const MAX_REASON = 140;
 const MAX_MEMO = 1_800;
 
 const clip = (value: string, max: number) => (value.length > max ? `${value.slice(0, max - 1)}…` : value);
@@ -91,58 +93,66 @@ export async function reviewOffers(snapshot: SearchSnapshot, narrator: AnalysisN
   const rows = snapshot.offers.filter((offer) => !offer.demo && offer.assessment?.group === "needs_review").slice(0, MAX_REVIEW_ROWS);
   if (rows.length === 0) return { items: [], provider: narrator?.name ?? "без AI" };
   if (!narrator?.askJson) return { items: reviewFallback(rows), provider: "AI недоступен — показаны причины автоматической проверки" };
+  const ai = narrator as AnalysisNarrator & { askJson: NonNullable<AnalysisNarrator["askJson"]> };
+  const chunks: Offer[][] = [];
+  for (let index = 0; index < rows.length; index += REVIEW_CHUNK) chunks.push(rows.slice(index, index + REVIEW_CHUNK));
+  const answers = await Promise.allSettled(chunks.map((chunk) => reviewChunk(snapshot, chunk, ai)));
+  const items = answers.flatMap((answer) => (answer.status === "fulfilled" ? answer.value : []));
+  const seen = new Set(items.map((item) => item.offerId));
+  // Rows the model skipped or failed on keep the deterministic reasons.
+  const missing = reviewFallback(rows.filter((row) => !seen.has(row.id)));
+  return {
+    items: [...items, ...missing],
+    provider: items.length > 0 ? ai.name : "AI не ответил — показаны причины автоматической проверки",
+  };
+}
+
+async function reviewChunk(snapshot: SearchSnapshot, rows: Offer[], narrator: AnalysisNarrator & { askJson: NonNullable<AnalysisNarrator["askJson"]> }): Promise<OfferReviewItem[]> {
   const ids = rows.map((row) => row.id);
-  try {
-    const raw = await narrator.askJson(
-      REVIEW_SYSTEM,
-      {
-        query: snapshot.query,
-        product: { name: snapshot.product.name, brand: snapshot.product.brand, model: snapshot.product.model, mpn: snapshot.product.mpn },
-        rows: rows.map((row) => ({
-          id: row.id,
-          title: clip(row.title, 240),
-          mpn: row.mpn ?? null,
-          price: row.price,
-          checks: row.assessment?.reasons ?? [],
-        })),
-      },
-      {
-        type: "object",
-        additionalProperties: false,
-        properties: {
+  const raw = await narrator.askJson(
+    REVIEW_SYSTEM,
+    {
+      query: snapshot.query,
+      product: { name: snapshot.product.name, brand: snapshot.product.brand, model: snapshot.product.model, mpn: snapshot.product.mpn },
+      rows: rows.map((row) => ({
+        id: row.id,
+        title: clip(row.title, 200),
+        mpn: row.mpn ?? null,
+        price: row.price,
+        checks: row.assessment?.reasons ?? [],
+      })),
+    },
+    {
+      type: "object",
+      additionalProperties: false,
+      properties: {
+        items: {
+          type: "array",
+          maxItems: rows.length,
           items: {
-            type: "array",
-            maxItems: rows.length,
-            items: {
-              type: "object",
-              additionalProperties: false,
-              properties: {
-                offerId: { type: "string", enum: ids },
-                verdict: { type: "string", enum: ["fits", "not_fit", "unclear"] },
-                reason: { type: "string", maxLength: MAX_REASON },
-              },
-              required: ["offerId", "verdict", "reason"],
+            type: "object",
+            additionalProperties: false,
+            properties: {
+              offerId: { type: "string", enum: ids },
+              verdict: { type: "string", enum: ["fits", "not_fit", "unclear"] },
+              reason: { type: "string", maxLength: MAX_REASON },
             },
+            required: ["offerId", "verdict", "reason"],
           },
         },
-        required: ["items"],
       },
-    );
-    const seen = new Set<string>();
-    const items = (isObject(raw) && Array.isArray(raw.items) ? raw.items : []).flatMap((item): OfferReviewItem[] => {
-      if (!isObject(item) || typeof item.offerId !== "string" || !ids.includes(item.offerId) || seen.has(item.offerId)) return [];
-      if (item.verdict !== "fits" && item.verdict !== "not_fit" && item.verdict !== "unclear") return [];
-      const reason = text(item.reason, MAX_REASON);
-      if (!reason || !/[а-яё]/iu.test(reason)) return [];
-      seen.add(item.offerId);
-      return [{ offerId: item.offerId, verdict: item.verdict, reason }];
-    });
-    // Rows the model skipped keep the deterministic reasons.
-    const missing = reviewFallback(rows.filter((row) => !seen.has(row.id)));
-    return { items: [...items, ...missing], provider: narrator.name };
-  } catch {
-    return { items: reviewFallback(rows), provider: "AI не ответил — показаны причины автоматической проверки" };
-  }
+      required: ["items"],
+    },
+  );
+  const seen = new Set<string>();
+  return (isObject(raw) && Array.isArray(raw.items) ? raw.items : []).flatMap((item): OfferReviewItem[] => {
+    if (!isObject(item) || typeof item.offerId !== "string" || !ids.includes(item.offerId) || seen.has(item.offerId)) return [];
+    if (item.verdict !== "fits" && item.verdict !== "not_fit" && item.verdict !== "unclear") return [];
+    const reason = text(item.reason, MAX_REASON);
+    if (!reason || !/[а-яё]/iu.test(reason)) return [];
+    seen.add(item.offerId);
+    return [{ offerId: item.offerId, verdict: item.verdict, reason }];
+  });
 }
 
 // ---------------------------------------------------------------- justification
