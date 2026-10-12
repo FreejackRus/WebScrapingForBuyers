@@ -240,6 +240,13 @@ export function assessOffer(product: Product, offer: Offer, query: string): Offe
     const named = brandsIn(offer.title);
     if (named.size > 0 && !named.has(wantedBrand)) return null;
   }
+  // Memory generation is not interchangeable: DDR4 modules for a DDR5 request (live 2026-10-12, ranked first).
+  const memoryGeneration = (text: string) => new Set([...text.matchAll(/(?<![a-zа-яё])ddr\s?(\d)(?!\d)/giu)].map((match) => match[1]));
+  const wantedDdr = memoryGeneration(query);
+  if (wantedDdr.size > 0) {
+    const offeredDdr = memoryGeneration(`${offer.title} ${offer.mpn ?? ""}`);
+    if ([...offeredDdr].some((generation) => !wantedDdr.has(generation))) return null;
+  }
   // A drum unit is not the cartridge the buyer asked for.
   const head = offer.title.split(/\s+/).slice(0, 3).join(" ");
   if (DRUM_UNIT.test(head) && !DRUM_UNIT.test(query)) return null;

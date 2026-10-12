@@ -124,6 +124,12 @@ describe("typed query → offer precision", () => {
       expect(assessed("картридж pantum tl-5120 упаковка 5 шт", "Картридж Pantum TL-5120")?.assessment?.group).toBe("needs_review");
     });
 
+    it("does not offer another memory generation", () => {
+      const query = "оперативная память ddr5 32gb kingston fury";
+      expect(assessed(query, "Игровая память Kingston Fury Beast DIMM DDR4 32GB (2*16GB) 3200Mhz")).toBeNull();
+      expect(assessed(query, "Оперативная память Kingston FURY Beast DDR5 32GB 5600")).not.toBeNull();
+    });
+
     it("keeps a cable query to the interfaces asked for", () => {
       expect(assessed("кабель hdmi 2м", "KS-is KS-468L1-2 Кабель-адаптер HDMI 19M - DVI 25M 2м")).toBeNull();
       expect(assessed("кабель hdmi 2м", "Кабель аудио-видео Buro HDMI (m)/HDMI (m) 2м. черный (BHP-HDMI-2.1-2)")).not.toBeNull();
