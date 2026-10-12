@@ -4,6 +4,7 @@ import type { Product } from "@peremena/contracts";
 
 import { startSearch } from "features/search";
 import { useSearchStore } from "entities/search";
+import { BulkRequestButton } from "widgets/basket";
 
 function productFromTypedQuery(query: string): Product {
   const name = query.trim().replace(/\s+/g, " ");
@@ -304,6 +305,7 @@ export function SearchCommand() {
           {activity === "search" ? "Ищем…" : "Найти"}
         </button>
       </form>
+      <BulkRequestButton />
       {!query.trim() && activity !== "search" && history.length > 0 && (
         <section className="search-history" aria-labelledby={historyId}>
           <div className="search-history-head">

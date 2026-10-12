@@ -1,8 +1,9 @@
-import type { AnalyzeRequest, SearchSnapshot } from "@peremena/contracts";
+import type { AnalyzeRequest, BasketItem, SearchSnapshot } from "@peremena/contracts";
 import { createService, fetchWithTimeout, serviceUrl } from "@peremena/service-kit";
 
 import { justifyPurchase, reviewOffers, understandQuery } from "./application/ai-tools.js";
 import { analyzeSnapshot, answerCopilot } from "./application/analyze.js";
+import { justifyBasket, splitRequest } from "./application/basket-tools.js";
 import type { AnalysisNarrator } from "./domain/analysis-narrator.js";
 import {
   keepAliveFromEnv,
@@ -183,5 +184,58 @@ export function buildAnalysisApp(options: { narrator?: AnalysisNarrator; logger?
     },
   );
 
+  // Basket memo: the gateway forwards the user's stored basket; validated again here.
+  app.post<{ Body: { items: BasketItem[] } }>(
+    "/justify-basket",
+    { schema: { body: BASKET_BODY_SCHEMA } },
+    async (request) => justifyBasket(request.body.items, narrator),
+  );
+
+  app.post<{ Body: { text: string } }>(
+    "/split-request",
+    { schema: { body: { type: "object", required: ["text"], additionalProperties: false, properties: { text: { type: "string", minLength: 2, maxLength: 3_000 } } } } },
+    async (request) => splitRequest(request.body.text, narrator),
+  );
+
   return app;
 }
+
+const short = (max: number) => ({ type: "string", maxLength: max }) as const;
+const BASKET_BODY_SCHEMA = {
+  type: "object",
+  required: ["items"],
+  additionalProperties: false,
+  properties: {
+    items: {
+      type: "array",
+      minItems: 1,
+      maxItems: 50,
+      items: {
+        type: "object",
+        required: ["id", "addedAt", "query", "quantity", "offer"],
+        properties: {
+          id: short(120),
+          addedAt: short(40),
+          query: short(300),
+          quantity: { type: "integer", minimum: 1, maximum: 10_000 },
+          offer: {
+            type: "object",
+            required: ["source", "seller", "title", "price", "priceCondition", "availability", "condition", "url"],
+            properties: {
+              source: short(80),
+              seller: short(200),
+              title: short(400),
+              mpn: short(80),
+              price: { type: "number", minimum: 0 },
+              priceCondition: short(200),
+              availability: short(200),
+              condition: short(20),
+              url: short(2_000),
+              verificationNote: short(400),
+            },
+          },
+        },
+      },
+    },
+  },
+} as const;

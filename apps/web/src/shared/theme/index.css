@@ -1647,3 +1647,30 @@ tr.recommended td:first-child { box-shadow: inset 3px 0 0 var(--coral); }
 @media (prefers-reduced-motion: reduce) { .collection-spinner { animation: none; } }
 
 textarea.chat-composer-input { resize: vertical; min-height: 60px; max-height: 180px; font: inherit; line-height: 1.4; }
+
+/* ---------------------------------------------------------------- buyer tools: compare, basket, bulk request */
+td.offer-action .compare-check { display: inline-flex; align-items: center; margin-right: 6px; vertical-align: middle; cursor: pointer; }
+td.offer-action .basket-add--compact { display: block; margin-top: 4px; font-size: 12px; }
+.compare-bar {
+  position: sticky; bottom: 0; z-index: 5; display: flex; gap: 10px; align-items: center; justify-content: flex-end;
+  padding: 10px 12px; background: var(--surface); border-top: 1px solid var(--line); box-shadow: var(--shadow-lift);
+}
+.compare-bar span { margin-right: auto; color: var(--muted); font-size: 13px; }
+.compare-drawer { width: min(1100px, 100vw); }
+.compare-table th[scope="row"] { white-space: nowrap; vertical-align: top; }
+.compare-table td { vertical-align: top; min-width: 180px; }
+.compare-table td.compare-lowest { background: var(--success-soft); font-weight: 600; }
+.basket-drawer { width: min(760px, 100vw); }
+.basket-empty, .bulk-request-note { color: var(--muted); }
+.basket-list, .bulk-request-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.basket-line { display: grid; gap: 6px; padding: 10px 0; border-bottom: 1px solid var(--hairline); }
+.basket-line-main small { display: block; color: var(--muted); }
+.basket-line-numbers { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.basket-line-numbers input, .bulk-request-list input { width: 80px; }
+.basket-total { font-size: 16px; text-align: right; }
+.basket-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 10px 0; }
+.bulk-request-toggle { margin-top: 8px; }
+.bulk-request-text { display: grid; gap: 6px; }
+.bulk-request-text textarea { width: 100%; font: inherit; }
+.bulk-request-list li { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.bulk-request-list li > span { flex: 1 1 240px; }

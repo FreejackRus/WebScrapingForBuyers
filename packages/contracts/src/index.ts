@@ -251,3 +251,42 @@ export interface JustificationResponse {
   ai: boolean;
   provider: string;
 }
+
+// ---------------------------------------------------------------- basket (корзина закупки)
+
+/** Snapshot of the offer fields a basket line needs; the search snapshot may expire. */
+export interface BasketOffer {
+  source: string;
+  seller: string;
+  title: string;
+  mpn?: string;
+  price: number;
+  priceCondition: string;
+  availability: string;
+  condition: ProductCondition;
+  url: string;
+  verificationNote?: string;
+}
+
+export interface BasketItem {
+  id: string;
+  addedAt: string;
+  query: string;
+  quantity: number;
+  offer: BasketOffer;
+}
+
+export interface BasketResponse {
+  items: BasketItem[];
+}
+
+/** One position of a free-text bulk request («заявка списком»). */
+export interface RequestPosition {
+  query: string;
+  quantity: number;
+}
+
+export interface SplitRequestResponse {
+  items: RequestPosition[];
+  ai: boolean;
+}
