@@ -2020,3 +2020,24 @@ narrator кладёт в payload ≤ 6 реплик по 400 символов. �
   объяснение не принято (отсутствующие IDs и непроверяемое warning). Это не
   успешный выпуск. RED/GREEN усиливает только grounded wire schema: offerIds
   обязательны, warnings пусты; существующая проверка фактов не ослабляется.
+- Выпуск завершён: vLLM запущен из c2714b8d, analysis из 065d4671 штатным
+  scripts/deploy.sh. Public health ok, analysisProvider=vLLM. GPU API private,
+  системная Ollama остановлена; веса и конфигурация сохранены для отката.
+  Вся загрузка модели и inference выполнялись на сервере, не локально.
+- Проверки: 530 тестов, typecheck/build; после последних ограничений схемы
+  analysis 166 тестов/typecheck/build повторно прошли. Независимое review:
+  замечаний нет, три wire schema проходят реальный llguidance 1.7.6.
+  graphify update . выполнен; исходные dirty generated файлы не коммитились.
+- Реальная Qwen на сервере: 17/17 fixture сценариев, два model calls,
+  одно принятое grounded объяснение. Артефакт docs/research/2026-10-12-vllm-evaluation.json.
+  Пять коротких synthetic probes: warm 1.08с, четыре одновременных 1.28–1.39с;
+  это не percentile benchmark и не сравнение скорости с Ollama.
+- Авторизованный production API: команда очищена до 12400F, live NETLAB 3
+  карточки; OEM и наличие сохраняют текущий товар. «Почему этот?» даёт
+  детерминированное объяснение; «Сравни лучшие предложения» принято от vLLM,
+  цена/склад/гарантия из карточки, ссылка проверена против snapshot.
+  Доказательство: docs/research/2026-10-12-vllm-live-verification.json.
+- Chrome StartedAt прежний 2026-10-09T10:34:50.915918994Z. UI не менялся,
+  браузерный повтор не выполнялся; проверены реальные API и inference.
+  Использованы также ECC benchmark, deployment; Serena/Context7 и Graphify
+  реально вызваны. Security review/Semgrep исключены пользователем.

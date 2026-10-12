@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-12",
+  "runtimeRef": "065d4671",
+  "live": true,
+  "source": "NETLAB",
+  "checks": [
+    {
+      "prompt": "а OEM?",
+      "intent": "filter",
+      "filter": {
+        "realOnly": true,
+        "packaging": "OEM"
+      },
+      "selected": 2
+    },
+    {
+      "prompt": "только в наличии",
+      "intent": "filter",
+      "filter": {
+        "realOnly": true,
+        "packaging": "OEM",
+        "inStockOnly": true
+      },
+      "selected": 1
+    },
+    {
+      "modelProvider": "vLLM · procurement-qwen3.8-27b",
+      "modelSummary": "NETLAB: CPU Intel Core i5-12400F Alder Lake OEM {2.5 ГГц/ 4.4 ГГц в режиме Turbo, 18MB, LGA1700} — 12 141 ₽. CPU Intel Core i5-12400F Alder Lake OEM {2.5 ГГц/ 4.4 ГГц в режиме Turbo, 18MB, LGA1700}: заявленное наличие — склад: более 50 шт.; удалённый склад: более 50 шт.. CPU Intel Core i5-12400F Alder Lake OEM {2.5 ГГц/ 4.4 ГГц в режиме Turbo, 18MB, LGA1700}: гарантия по карточке — 1 год.",
+      "modelCitations": 1
+    },
+    {
+      "provider": "Помощник закупок Price Radar",
+      "searchQuery": "12400F",
+      "live": true,
+      "status": "complete",
+      "offers": 3,
+      "statuses": [
+        "out_of_stock",
+        "out_of_stock",
+        "in_stock"
+      ],
+      "explainIntent": "explain",
+      "citations": 1,
+      "summary": "CPU Intel Core i5-12400F Alder Lake OEM {2.5 ГГц/ 4.4 ГГц в режиме Turbo, 18MB, LGA1700}: 12 141 ₽; наличие по данным источника — склад: более 50 шт.; удалённый склад: более 50 шт.. Модель совпадает. Выбор основан на текущих условиях и цене; наличие требует подтверждения перед закупкой."
+    }
+  ]
+}
