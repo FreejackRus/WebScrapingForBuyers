@@ -355,6 +355,26 @@ export function hasCapacityMismatch(model: string, title: string): boolean {
   return !offered.some((size) => requested.some((wanted) => sameCapacity(size, wanted)));
 }
 
+/** Suffixes that turn a model into a different product: «4060 Ti», «Legion Go S», «Go 2». */
+const VARIANT_SUFFIX = /^[\s-]*(ti|super|xtx|xt|s|plus|max|ultra|mini|lite|[2-9](?![.,]\d))(?![\p{L}\p{N}])(?!\s*(?:tb|тб|gb|гб|шт|x|х)(?![\p{L}]))/iu;
+
+/**
+ * The title continues the requested model with a variant suffix the query does
+ * not have. Checked on the last identity word of the model («4060», «go»).
+ */
+export function hasExtraVariantSuffix(product: Product, titleHay: string): boolean {
+  const words = product.model.toLocaleLowerCase("ru").match(/[a-zа-яё0-9]+/giu) ?? [];
+  const last = words.at(-1);
+  if (!last || last.length < 2) return false;
+  const requested = new Set(`${product.model} ${product.name}`.toLocaleLowerCase("ru").match(/[a-zа-яё0-9]+/giu) ?? []);
+  const anchor = new RegExp(`(?:^|[^\\p{L}\\p{N}])${last.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?![\\p{L}\\p{N}])`, "giu");
+  for (const match of titleHay.matchAll(anchor)) {
+    const suffix = VARIANT_SUFFIX.exec(titleHay.slice((match.index ?? 0) + match[0].length))?.[1]?.toLocaleLowerCase("ru");
+    if (suffix && !requested.has(suffix)) return true;
+  }
+  return false;
+}
+
 /**
  * A complete PC whose spec lists the GPU («Игровой ПК … RTX 4060»), not a
  * card sold «для ПК / для компьютера». Decided by the product type, not by any
@@ -384,7 +404,9 @@ export function assessMarketplaceOfferRelevance(
   const strongHits = tokensIn(identityHay, strong);
   const weakHits = tokensIn(identityHay, weak);
   const familyCard = isProductFamilyCard(product, titleHay);
-  if (hasCapacityMismatch(product.model, title)) return { kind: "drop" };
+  // The typed query often keeps the capacity only in the name («990 pro 2тб»).
+  if (hasCapacityMismatch(`${product.model} ${product.name}`, title)) return { kind: "drop" };
+  if (hasExtraVariantSuffix(product, titleHay)) return { kind: "drop" };
   if (/видеокарт/i.test(product.category) && isReadyMadeComputer(titleHay)) {
     return { kind: "drop" };
   }

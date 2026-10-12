@@ -97,6 +97,10 @@ interface CategoryHint {
 
 const CATEGORY_HINTS: CategoryHint[] = [
   { pattern: /(?:i[3579][- ](?:\d{4,5})(?:kf|ks|k|f|t)?|1\d{4}(?:kf|ks|k|f|t)?)(?![a-z0-9])/u, category: "Процессоры", weak: true },
+  // Bare GPU numbers with video memory: «4060 8gb», «3060 ti 12 гб».
+  { pattern: /(?:^|\s)(?:[1-5]0[5-9]0|[67][5-9]00)(?:\s*(?:ti|super|xt|xtx))?\s+\d{1,2}\s*(?:gb|гб)(?![a-zа-яё0-9])/u, category: "Видеокарты", weak: true },
+  // SSD series that are sold without the word «SSD»: «990 pro 2тб», «870 evo».
+  { pattern: /(?:^|\s)(?:9[789]0|8[67]0)\s*(?:pro|evo|plus)(?![a-z0-9])/u, category: "SSD", weak: true },
   { pattern: /legion go(?:\s|$)|rog ally|steam deck|msi claw|портативн[а-яё]* (?:игров[а-яё]* )?(?:консол|приставк)|handheld gaming/u, category: "Игровые консоли" },
   { pattern: /чех(?:ол|л)|коврик|защитн[а-яё]* (?:стекло|плёнк|пленк)|подставк[а-яё]* для (?:ноутбук|телефон|планшет)|сумк[а-яё]* для ноутбук|рюкзак для ноутбук/u, category: "Аксессуары IT" },
   { pattern: /кабел|displayport|hdmi(?![a-z])|переходник|адаптер|type-c|usb-c|патч-корд|patch ?cord/u, category: "Кабели и адаптеры" },

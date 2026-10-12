@@ -1,6 +1,9 @@
 import { offerAvailabilityStatus, type Offer, type ProductCondition } from "@peremena/contracts";
 
 const AVAILABILITY = { in_stock: 0, unknown: 1, on_order: 2, out_of_stock: 3 } as const;
+/** The requested model first: exact/probable, then analogues, then doubtful cards. */
+const MATCH: Record<Offer["match"], number> = { exact: 0, probable: 0, analog: 1, doubtful: 2 };
+const USED_IN_TITLE = /(?:^|[^\p{L}])(?:б\s*[\/.\\-]?\s*у|бывш[а-яё]*\s+в\s+употреб[а-яё]*)(?=$|[^\p{L}])/iu;
 const CONDITION: Record<ProductCondition, number> = {
   new: 0,
   unknown: 1,
@@ -17,7 +20,7 @@ function packaging(title: string): number {
 
 export function normalizeOfferCondition(offer: Offer): ProductCondition {
   const title = offer.title.toLocaleLowerCase("ru");
-  if (/(?:^|\s)б\s*[\/.\\-]?\s*у(?:\s|$)|бывш[а-яё]*\s+в\s+употреб/i.test(title)) return "used";
+  if (USED_IN_TITLE.test(title)) return "used";
   if (/refurb|восстанов/i.test(title)) return "refurbished";
   if (/витрин|демо[- ]?образ/i.test(title)) return "display";
   if (offer.condition !== "new") return offer.condition;
@@ -29,6 +32,7 @@ function compare(left: Offer, right: Offer): number {
   const rightExcluded = Number(right.demo || right.priceAnomaly === "too_low" || right.assessment?.group === "needs_review");
   return leftExcluded - rightExcluded
     || Number(left.demo) - Number(right.demo)
+    || MATCH[left.match] - MATCH[right.match]
     || AVAILABILITY[offerAvailabilityStatus(left)] - AVAILABILITY[offerAvailabilityStatus(right)]
     || CONDITION[left.condition] - CONDITION[right.condition]
     || packaging(left.title) - packaging(right.title)
