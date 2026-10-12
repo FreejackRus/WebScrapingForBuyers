@@ -129,6 +129,27 @@ describe("OfferTable", () => {
     expect(html).not.toContain("К офферу");
     expect(html).not.toContain(`href="${offer.url}"`);
     expect(html).not.toMatch(/MCP|VNC|CDP|source\.message/i);
+    expect(html).toContain("Только в наличии");
+    expect(html).toContain("Максимальная цена");
+    expect(html).toContain("Состояние товара");
+    expect(html).toContain("Поставщик");
+    expect(html).toContain("Комплектация");
+    expect(html).toContain("BOX — розничная упаковка; OEM — поставка производителя без обещания состава");
+    expect(html).toContain("По соответствию и наличию");
+    expect(html).not.toContain("По порядку загрузки");
+    expect(html).not.toContain("Лучший выбор");
+  });
+
+  it("does not repeat a seller that matches the source", () => {
+    const previousSeller = offer.seller;
+    offer.seller = offer.source;
+    try {
+      const html = renderToStaticMarkup(<OfferTable />);
+      expect(html).not.toContain(`· ${offer.source}`);
+      expect(html).not.toContain(`offer-seller-desktop\">${offer.source}`);
+    } finally {
+      offer.seller = previousSeller;
+    }
   });
 
   it("keeps legacy offers in the main table and collapses offers that need review", () => {

@@ -1,7 +1,7 @@
 import type { Offer } from "@peremena/contracts";
 import { describe, expect, it } from "vitest";
 
-import { applyTableFilter } from "./index";
+import { applyTableFilter, sortOffers } from "./index";
 
 function offer(id: string, availability: string): Offer {
   return {
@@ -45,4 +45,29 @@ it("uses normalized availability when source wording is ambiguous", () => {
 it("keeps late matching offers visible with dynamic stock and packaging predicates", () => {
   const rows = [offer("one", "склад: более 50 шт."), offer("late", "склад: более 50 шт.")].map(row => ({...row,title:"Intel 12400F BOX",availability:"склад: более 50 шт."}));
   expect(applyTableFilter(rows,{inStockOnly:true,packaging:"BOX"}).map(row=>row.id)).toEqual(["one","late"]);
+});
+
+it("filters by the selected product conditions", () => {
+  const rows: Offer[] = [
+    { ...offer("new", "В наличии"), condition: "new" },
+    { ...offer("display", "В наличии"), condition: "display" },
+    { ...offer("unknown", "В наличии"), condition: "unknown" },
+  ];
+
+  expect(applyTableFilter(rows, { conditions: ["display", "unknown"] }).map((row) => row.id)).toEqual([
+    "display",
+    "unknown",
+  ]);
+});
+
+it("uses the server procurement rank by default and preserves old snapshot order", () => {
+  const ranked = [
+    { ...offer("later", "В наличии"), procurementRank: 20 },
+    { ...offer("first", "В наличии"), procurementRank: 10 },
+    offer("legacy-a", "В наличии"),
+    offer("legacy-b", "В наличии"),
+  ];
+
+  expect(sortOffers(ranked).map((row) => row.id)).toEqual(["first", "later", "legacy-a", "legacy-b"]);
+  expect(sortOffers(ranked.slice(2)).map((row) => row.id)).toEqual(["legacy-a", "legacy-b"]);
 });

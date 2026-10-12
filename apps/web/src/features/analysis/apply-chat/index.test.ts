@@ -4,10 +4,11 @@ const setQuery = vi.fn();
 const suggest = vi.fn();
 const start = vi.fn().mockResolvedValue(undefined);
 const setTableFilter = vi.fn();
+let activeTableFilter: { maxPrice?: number; conditions?: Array<"new"> } | undefined;
 
 vi.mock("entities/search", () => ({
   useSearchStore: {
-    getState: () => ({ setQuery, suggest, setTableFilter, start }),
+    getState: () => ({ setQuery, suggest, setTableFilter, start, tableFilter: activeTableFilter }),
   },
 }));
 
@@ -19,6 +20,7 @@ describe("applyChatResult", () => {
     suggest.mockReset();
     start.mockClear();
     setTableFilter.mockReset();
+    activeTableFilter = undefined;
   });
 
   it("applies model searchQuery on search intent", () => {
@@ -89,6 +91,21 @@ describe("applyChatResult", () => {
     });
     expect(setTableFilter).toHaveBeenCalledWith({ realOnly: true });
     expect(setQuery).not.toHaveBeenCalled();
+  });
+
+  it("merges a chat filter with independent active table filters", () => {
+    activeTableFilter = { maxPrice: 15000, conditions: ["new"] };
+
+    applyChatResult({
+      summary: "Только в наличии",
+      selectedOfferIds: [],
+      appliedFilters: [],
+      warnings: [],
+      intent: "filter",
+      tableFilter: { inStockOnly: true },
+    });
+
+    expect(setTableFilter).toHaveBeenCalledWith({ maxPrice: 15000, conditions: ["new"], inStockOnly: true });
   });
 
   it("falls back to selectedOfferIds when tableFilter is missing", () => {
