@@ -56,7 +56,8 @@ interface SearchState {
   closeOffer: () => void;
   reset: () => void;
   suggest: (options?: { quiet?: boolean }) => Promise<void>;
-  start: (product: Product, initialFilter?: OfferTableFilter) => Promise<void>;
+  /** `fresh` skips the server's recent-result cache («Обновить»). */
+  start: (product: Product, initialFilter?: OfferTableFilter, options?: { fresh?: boolean }) => Promise<void>;
   applyEvent: (event: SearchEvent) => void;
 }
 
@@ -168,7 +169,7 @@ export const useSearchStore = create<SearchState>((set, get) => ({
       });
     }
   },
-  start: async (product, initialFilter) => {
+  start: async (product, initialFilter, options) => {
     const { source } = get();
     source?.close();
     const query = product.name.trim();
@@ -185,7 +186,7 @@ export const useSearchStore = create<SearchState>((set, get) => ({
       snapshot: undefined,
     });
     try {
-      const created = await searchApi.start(query || product.name, product, get().selectedSources);
+      const created = await searchApi.start(query || product.name, product, get().selectedSources, options?.fresh);
       const next = searchApi.subscribe(
         created.id,
         (event) => get().applyEvent(event),

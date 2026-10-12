@@ -4,6 +4,9 @@ import { describe, expect, it, vi } from "vitest";
 import type { SourceAdapter } from "../domain/source-adapter.js";
 import { SearchService } from "./search-service.js";
 
+// Older tests repeat a search on purpose (last-good fallback); the cache has its own tests below.
+process.env.SEARCH_CACHE_MINUTES = "0";
+
 const product: Product = { id: "p", name: "Logitech K380", brand: "Logitech", model: "K380", mpn: "920-007584" } as Product;
 
 function offer(source: string, price = 1000): Offer {
@@ -88,7 +91,7 @@ describe("SearchService last-good fallback", () => {
     const ok = service.start("q", product);
     await finish(service, ok.id);
     fail = true;
-    const second = service.start("q", product);
+    const second = service.start("q", product, undefined, { fresh: true });
     await finish(service, second.id);
     const snap = service.get(second.id)!;
     expect(snap.offers).toHaveLength(1);
@@ -316,5 +319,68 @@ describe("SearchService top-card verification", () => {
     const snap = service.start("Logitech K380", product);
     await finish(service, snap.id);
     expect(service.get(snap.id)!.offers[0]).not.toHaveProperty("verification");
+  });
+});
+
+describe("SearchService recent-result cache", () => {
+  const minute = 60_000;
+  function setup(cacheMs = 15 * minute) {
+    let now = 1_000_000;
+    let calls = 0;
+    const service = new SearchService(
+      [source("A", async () => { calls += 1; return [offer("A")]; })],
+      { ttlMs: 6 * 60 * minute, maxSearches: 50, maxLastGood: 10 },
+      () => now,
+      undefined,
+      [],
+      cacheMs,
+    );
+    return { service, calls: () => calls, advance: (ms: number) => { now += ms; } };
+  }
+
+  it("reuses a recent completed search as a new complete snapshot", async () => {
+    const { service, calls, advance } = setup();
+    const first = service.start("Logitech K380", product);
+    await finish(service, first.id);
+    advance(5 * minute);
+    const again = service.start("  logitech   k380 ", product);
+    expect(again.id).not.toBe(first.id);
+    expect(again.status).toBe("complete");
+    expect(again.cachedAt).toBe(new Date(1_000_000).toISOString());
+    expect(again.offers).toHaveLength(1);
+    expect(service.get(again.id)?.cachedAt).toBeDefined();
+    expect(calls()).toBe(1);
+  });
+
+  it("misses for another product, another source set or a running search", async () => {
+    const { service, calls } = setup();
+    const running = service.start("q", product);
+    expect(service.start("q", product).cachedAt).toBeUndefined();
+    await finish(service, running.id);
+    expect(service.start("q", { ...product, mpn: "OTHER" }).cachedAt).toBeUndefined();
+    expect(service.start("q", product, ["missing"]).cachedAt).toBeUndefined();
+    expect(calls()).toBeGreaterThanOrEqual(2);
+  });
+
+  it("expires after the cache window", async () => {
+    const { service, advance } = setup();
+    const first = service.start("q", product);
+    await finish(service, first.id);
+    advance(15 * minute);
+    const again = service.start("q", product);
+    expect(again.cachedAt).toBeUndefined();
+    expect(again.status).toBe("running");
+  });
+
+  it("is bypassed by fresh and disabled by 0", async () => {
+    const fresh = setup();
+    const first = fresh.service.start("q", product);
+    await finish(fresh.service, first.id);
+    expect(fresh.service.start("q", product, undefined, { fresh: true }).cachedAt).toBeUndefined();
+
+    const off = setup(0);
+    const one = off.service.start("q", product);
+    await finish(off.service, one.id);
+    expect(off.service.start("q", product).cachedAt).toBeUndefined();
   });
 });

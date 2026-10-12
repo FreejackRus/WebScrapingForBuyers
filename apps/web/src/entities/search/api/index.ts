@@ -12,13 +12,14 @@ export const searchApi = {
   history: () => request<{ history: SearchHistoryEntry[] }>(apiUrl("/history")),
   removeHistory: (id: string) => request<{ ok: boolean }>(apiUrl(`/history/${encodeURIComponent(id)}`), { method: "DELETE" }),
   clearHistory: () => request<{ ok: boolean }>(apiUrl("/history"), { method: "DELETE" }),
-  start: (query: string, product: Product | string, sources?: string[]) =>
+  start: (query: string, product: Product | string, sources?: string[], fresh?: boolean) =>
     request<SearchSnapshot>(apiUrl("/searches"), {
       method: "POST",
       body: JSON.stringify({
         query,
         ...(typeof product === "string" ? { productId: product } : { product }),
         ...(sources?.length ? { sources } : {}),
+        ...(fresh ? { fresh: true } : {}),
       }),
     }),
   subscribe: (searchId: string, onEvent: (event: SearchEvent) => void, onError: () => void) => {

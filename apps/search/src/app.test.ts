@@ -265,7 +265,8 @@ describe("search", () => {
     const second = await app.inject({
       method: "POST",
       url: "/searches",
-      payload: { query: "G102", productId: "logitech-g102-black" },
+      // fresh: skip the 15-minute result cache, the source must really be asked again.
+      payload: { query: "G102", productId: "logitech-g102-black", fresh: true },
     });
     await new Promise((resolve) => setTimeout(resolve, 0));
     const secondSnap = (await app.inject({

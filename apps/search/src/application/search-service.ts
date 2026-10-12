@@ -61,11 +61,31 @@ function withDeadline<T>(work: Promise<T>, ms: number, label: string): Promise<T
   return Promise.race([work, deadline]).finally(() => clearTimeout(timer));
 }
 
+/** Minutes a finished search is reused for the same request; 0 disables the cache. */
+export function searchCacheMs(env: NodeJS.ProcessEnv = process.env): number {
+  const raw = env.SEARCH_CACHE_MINUTES;
+  const minutes = raw === undefined || raw.trim() === "" ? 15 : Number(raw);
+  return Number.isFinite(minutes) && minutes > 0 ? minutes * 60_000 : 0;
+}
+
+/** Same typed query, same product identity and same source set: the buyer repeats the search. */
+function searchCacheKey(query: string, product: Product, sourceNames: string[]): string {
+  const norm = (value: string | undefined) => (value ?? "").trim().replace(/\s+/g, " ").toLocaleLowerCase("ru");
+  return [norm(query), norm(product.mpn), norm(product.model), norm(product.name), [...sourceNames].map(norm).sort().join(",")].join("\0");
+}
+
+export interface StartOptions {
+  /** Skip the recent-result cache («Обновить»). */
+  fresh?: boolean;
+}
+
 export class SearchService {
   private readonly searches = new Map<string, SearchSnapshot>();
   private readonly finishedAt = new Map<string, number>();
   private readonly listeners = new Map<string, Set<Listener>>();
   private readonly lastGoodReal = new Map<string, Offer[]>();
+  /** Cache key of each search, taken at start: the product changes later (catalogue articles). */
+  private readonly cacheKeys = new Map<string, string>();
 
   constructor(
     private readonly sources: SourceAdapter[],
@@ -73,14 +93,30 @@ export class SearchService {
     private readonly now: () => number = Date.now,
     private readonly sourceTimeoutMs: number = Number(process.env.SOURCE_TIMEOUT_MS) || DEFAULT_SOURCE_TIMEOUT_MS,
     private readonly verifiers: CardVerifier[] = [],
+    private readonly cacheMs: number = searchCacheMs(),
   ) {}
 
   listSources(): string[] {
     return this.resolveSources().map((source) => source.name);
   }
 
-  start(query: string, product: Product, sourceNames?: string[]): SearchSnapshot {
+  start(query: string, product: Product, sourceNames?: string[], options: StartOptions = {}): SearchSnapshot {
     const selected = this.resolveSources(sourceNames);
+    const key = searchCacheKey(query, product, selected.map((source) => source.name));
+    this.prune();
+    const cached = options.fresh ? undefined : this.recentComplete(key);
+    if (cached) {
+      const copy: SearchSnapshot = {
+        ...structuredClone(cached.snapshot),
+        id: randomUUID(),
+        status: "complete",
+        cachedAt: new Date(cached.finishedAt).toISOString(),
+      };
+      this.searches.set(copy.id, copy);
+      // Its own finish time stays the original one, so a copy never extends the cache life.
+      this.finishedAt.set(copy.id, cached.finishedAt);
+      return structuredClone(copy);
+    }
     const snapshot: SearchSnapshot = {
       id: randomUUID(),
       query,
@@ -89,10 +125,25 @@ export class SearchService {
       offers: [],
       sources: selected.map((source) => ({ source: source.name, status: "pending" })),
     };
-    this.prune();
     this.searches.set(snapshot.id, snapshot);
+    this.cacheKeys.set(snapshot.id, key);
     queueMicrotask(() => void this.collect(snapshot.id, selected));
     return structuredClone(snapshot);
+  }
+
+  /** Newest completed (non-copy) search for this key that is still fresh enough to reuse. */
+  private recentComplete(key: string): { snapshot: SearchSnapshot; finishedAt: number } | undefined {
+    if (this.cacheMs <= 0) return undefined;
+    let best: { snapshot: SearchSnapshot; finishedAt: number } | undefined;
+    for (const [id, cacheKey] of this.cacheKeys) {
+      if (cacheKey !== key) continue;
+      const snapshot = this.searches.get(id);
+      const finishedAt = this.finishedAt.get(id);
+      if (!snapshot || snapshot.status !== "complete" || finishedAt === undefined) continue;
+      if (this.now() - finishedAt >= this.cacheMs) continue;
+      if (!best || finishedAt > best.finishedAt) best = { snapshot, finishedAt };
+    }
+    return best;
   }
 
   get(id: string): SearchSnapshot | undefined {
@@ -297,6 +348,7 @@ export class SearchService {
   private forget(id: string): void {
     this.searches.delete(id);
     this.finishedAt.delete(id);
+    this.cacheKeys.delete(id);
     this.listeners.delete(id);
   }
 

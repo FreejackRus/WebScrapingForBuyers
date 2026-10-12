@@ -79,6 +79,8 @@ export interface SearchSnapshot {
   status: "running" | "complete";
   offers: Offer[];
   sources: SourceState[];
+  /** Set when this is a reuse of a recent completed search: ISO time it originally finished. */
+  cachedAt?: string;
 }
 
 /** One remembered search of one user; `product` lets the buyer repeat it exactly. */

@@ -24,5 +24,7 @@ export function withCatalogArticles(product: Product, articles: string[], source
     if (!modelTokens.some((token) => token.length >= 3 && compact(article).includes(token))) return product;
     return { ...product, mpn: article, characteristics: { ...product.characteristics, [`артикул по прайсу ${source}`]: article } };
   }
+  // The buyer already picked one of these variants («Уточните вариант»): do not offer the choice again.
+  if (hasRealArticle(product) && articles.some((article) => compact(article) === compact(product.mpn))) return product;
   return { ...product, characteristics: { ...product.characteristics, [`артикулы по прайсу ${source}`]: articles.join(", ") } };
 }

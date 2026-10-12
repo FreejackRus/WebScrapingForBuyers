@@ -1,4 +1,4 @@
-import { useEffect, useState, type PointerEvent, type ReactNode } from "react";
+import { useEffect, useRef, useState, type PointerEvent, type ReactNode } from "react";
 import type { OfferReviewItem, OfferTableFilter, ProductCondition } from "@peremena/contracts";
 import { useChannelOffers, useFilteredOffers, useOfferCard, useOfferColumns, useOfferTable } from "features/search";
 import { analysisApi, useAnalysisStore } from "entities/analysis";
@@ -6,6 +6,8 @@ import { conditionLabels, matchLabels, PRICE_ANOMALY_HINT, PRICE_ANOMALY_LABEL, 
 import type { OfferSortColumn } from "entities/offer";
 import { useSearchStore } from "entities/search";
 import { fetchedTime, money } from "shared/lib";
+
+import { SearchNotices, shouldAutoReview } from "./search-notices";
 
 const emptySelected: string[] = [];
 
@@ -42,6 +44,14 @@ export function OfferTable() {
       setAiReviewState("error");
     }
   };
+  // A short «Требует уточнения» group is reviewed by the AI once the search finishes; the ref
+  // remembers searches already tried so a failure or re-render does not call it again.
+  const autoReviewed = useRef(new Set<string>());
+  useEffect(() => {
+    if (!shouldAutoReview(snapshot, reviewRows.length, aiReview?.searchId, autoReviewed.current)) return;
+    autoReviewed.current.add(snapshot!.id);
+    void runAiReview();
+  }, [snapshot?.id, snapshot?.status, reviewRows.length]);
   const [budgetDraft, setBudgetDraft] = useState(tableFilter?.maxPrice?.toString() ?? "");
   const { channel, counts, setChannel, offers: channelOffers } = useChannelOffers();
   const snapshotTotal = channelOffers.length;
@@ -246,6 +256,7 @@ export function OfferTable() {
           </div>
         </div>
       </div>
+      <SearchNotices />
       <div className="offer-channel-tabs" role="tablist" aria-label="Тип поставщика">
         {(["marketplace", "distributor"] as const).map((key) => (
           <button

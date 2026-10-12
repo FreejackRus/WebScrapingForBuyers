@@ -1647,3 +1647,9 @@ tr.recommended td:first-child { box-shadow: inset 3px 0 0 var(--coral); }
 @media (prefers-reduced-motion: reduce) { .collection-spinner { animation: none; } }
 
 textarea.chat-composer-input { resize: vertical; min-height: 60px; max-height: 180px; font: inherit; line-height: 1.4; }
+
+/* Search experience: variant chooser, cached / pending notices */
+.search-variant-chooser { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 8px 0; }
+.search-variant-chooser > span { font-weight: 600; }
+.search-cached-notice, .search-pending-notice { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.search-pending-notice small { opacity: 0.8; }

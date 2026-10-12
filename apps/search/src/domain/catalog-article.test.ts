@@ -39,3 +39,10 @@ describe("cleanNetlabArticle", async () => {
     expect(cleanNetlabArticle("MZ-V9P2T0BW_DP")).toBe("MZ-V9P2T0BW");
   });
 });
+
+describe("withCatalogArticles after a variant was chosen", () => {
+  it("does not offer the variants again when the product already carries one of them", () => {
+    const chosen = { id: "x", name: "Kingston KC3000", brand: "Kingston", model: "KC3000", mpn: "SKC3000D/2048G", category: "SSD", characteristics: {} };
+    expect(withCatalogArticles(chosen, ["SKC3000S/1024G", "SKC3000D/2048G"], "NETLAB")).toBe(chosen);
+  });
+});

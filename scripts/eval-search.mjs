@@ -28,7 +28,10 @@ async function run(c) {
   const re = (s) => (s ? new RegExp(s, "iu") : undefined);
   const want = re(c.top), avoid = re(c.notTop);
   const hay = (o) => `${o.title} ${o.mpn ?? ""}`.toLowerCase();
-  const good = (o) => (!want || want.test(hay(o))) && !(avoid && avoid.test(hay(o)));
+  // A title cut by the marketplace ("…") may lose the model part `top` looks for: it is not a wrong item
+  // unless `notTop` says so.
+  const truncated = (o) => /…\s*$/u.test(o.title ?? "");
+  const good = (o) => (!want || want.test(hay(o)) || truncated(o)) && !(avoid && avoid.test(hay(o)));
   const hits = top.filter(good);
   const distributorHits = topDistributors.filter(good);
   return {

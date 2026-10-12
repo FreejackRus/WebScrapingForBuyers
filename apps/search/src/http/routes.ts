@@ -39,7 +39,7 @@ export const searchRoutes: FastifyPluginAsync<{
     async (request) => ({ products: await suggestLiveProducts(request.body.query) }),
   );
 
-  app.post<{ Body: { query: string; productId?: string; product?: ProductLike; sources?: string[] } }>(
+  app.post<{ Body: { query: string; productId?: string; product?: ProductLike; sources?: string[]; fresh?: boolean } }>(
     "/searches",
     {
       schema: {
@@ -52,6 +52,7 @@ export const searchRoutes: FastifyPluginAsync<{
             productId: { type: "string" },
             product: { type: "object", additionalProperties: true },
             sources: { type: "array", items: { type: "string", minLength: 1, maxLength: 80 }, maxItems: 32 },
+            fresh: { type: "boolean" },
           },
         },
       },
@@ -86,7 +87,9 @@ export const searchRoutes: FastifyPluginAsync<{
             : "Нет доступных источников для поиска";
         return reply.code(400).send({ error });
       }
-      return reply.code(201).send(searchService.start(request.body.query, product, request.body.sources));
+      return reply.code(201).send(searchService.start(request.body.query, product, request.body.sources, {
+        ...(request.body.fresh ? { fresh: true } : {}),
+      }));
     },
   );
 
