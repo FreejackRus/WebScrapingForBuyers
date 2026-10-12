@@ -2016,3 +2016,7 @@ narrator кладёт в payload ≤ 6 реплик по 400 символов. �
   выпуск фиксируются ниже после выполнения.
 - Использованы Graphify, Serena, Context7 vLLM, ECC TDD/deployment, verification
   gate. Security review/Semgrep исключены пользователем. Платных сервисов нет.
+- Первый real-model probe на сервере: 17 deterministic/action сценариев прошли,
+  объяснение не принято (отсутствующие IDs и непроверяемое warning). Это не
+  успешный выпуск. RED/GREEN усиливает только grounded wire schema: offerIds
+  обязательны, warnings пусты; существующая проверка фактов не ослабляется.

@@ -34,6 +34,15 @@ export class VllmAnalysisNarrator extends OllamaAnalysisNarrator {
   ): Promise<unknown> {
     const userContent = JSON.stringify(userPayload);
     if (userContent.length > MAX_CONTEXT_CHARS) throw new NarrationError("context_limit");
+    const schema = object(schemaForVllm(format));
+    const properties = object(schema.properties);
+    if (userPayload && typeof userPayload === "object" && "trustedContext" in userPayload
+      && userPayload.trustedContext && "offerIds" in properties) {
+      // Grounded explanations must cite their facts. Free-form warnings cannot
+      // introduce facts that are absent from the server's selected cards.
+      schema.required = [...new Set([...(Array.isArray(schema.required) ? schema.required : []), "offerIds"])];
+      schema.properties = { ...properties, warnings: { ...object(properties.warnings), maxItems: 0 } };
+    }
     try {
       const response = await fetch(`${this.baseUrl.replace(/\/$/, "")}/chat/completions`, {
         method: "POST",
@@ -51,7 +60,7 @@ export class VllmAnalysisNarrator extends OllamaAnalysisNarrator {
           chat_template_kwargs: { enable_thinking: false },
           response_format: {
             type: "json_schema",
-            json_schema: { name: "analysis_response", strict: true, schema: schemaForVllm(format) },
+            json_schema: { name: "analysis_response", strict: true, schema },
           },
           messages: [
             { role: "system", content: `${UNTRUSTED_DATA_RULE}${system}` },
