@@ -73,6 +73,17 @@ const citilinkReal = offer({
 });
 
 describe("analyzeSnapshot", () => {
+  it.each(["Оставь товары без б/у", "Исключи б/у", "Оставь только новые товары без б/у"])(
+    "prioritizes used-condition negation: %s",
+    async (prompt) => {
+      const result = await analyzeSnapshot(snapshot([
+        offer({ id: "new", source: "TEST", price: 1_000, demo: false, condition: "new" }),
+        offer({ id: "used", source: "TEST", price: 900, demo: false, condition: "used" }),
+      ]), prompt);
+      expect(result.selectedOfferIds).toEqual(["new"]);
+      expect(result.tableFilter?.conditions).toEqual(["new"]);
+    },
+  );
   it("uses the server procurement rank when it is present", async () => {
     const result = await analyzeSnapshot(snapshot([
       offer({ id: "cheap", source: "TEST", price: 900, demo: false, procurementRank: 2 }),

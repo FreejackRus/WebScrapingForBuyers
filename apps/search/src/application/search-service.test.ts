@@ -235,6 +235,23 @@ describe("SearchService availability contract", () => {
 });
 
 describe("SearchService procurement quality", () => {
+  it("emits an updated snapshot when a later batch changes existing ranks", async () => {
+    let releaseSecond: (rows: Offer[]) => void = () => undefined;
+    const service = new SearchService([
+      source("FIRST", async () => [offer("FIRST", 1_000)]),
+      source("SECOND", () => new Promise(resolve => { releaseSecond = resolve; })),
+    ]);
+    const started = service.start("Logitech K380", product);
+    const snapshots: Offer[][] = [];
+    const off = service.subscribe(started.id, event => {
+      if (event.type === "snapshot") snapshots.push(event.data.offers);
+    });
+    await new Promise(resolve => setTimeout(resolve, 0));
+    releaseSecond([offer("SECOND", 900)]);
+    await finish(service, started.id);
+    off();
+    expect(snapshots.some(rows => rows.length === 2 && rows.find(row => row.source === "FIRST")?.procurementRank === 2)).toBe(true);
+  });
   it("keeps unknown NETLAB condition honest and lets explicit title evidence win", async () => {
     const service = new SearchService([source("NETLAB", async () => [
       { ...offer("NETLAB", 1000), id: "unknown", title: "Intel Core i5-12400F BOX" },

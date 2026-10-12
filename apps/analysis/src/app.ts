@@ -32,6 +32,7 @@ const CONTEXT_SCHEMA = {
     tableFilter: {type:"object",additionalProperties:false,properties:{
       packaging:{type:"string",enum:["BOX","OEM"]},
       realOnly:{type:"boolean"},inStockOnly:{type:"boolean"},maxPrice:{type:"number",minimum:0},
+      conditions:{type:"array",maxItems:5,items:{type:"string",enum:["new","refurbished","used","display","unknown"]}},
       sources:{type:"array",maxItems:32,items:{type:"string",minLength:1,maxLength:80}},
       selectedOfferIds:{type:"array",maxItems:500,items:{type:"string",minLength:1,maxLength:150}},
       titleIncludeAny:{type:"array",maxItems:32,items:{type:"string",minLength:1,maxLength:100}},

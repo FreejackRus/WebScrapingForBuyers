@@ -12,6 +12,17 @@ import { isSourceDisabled } from "../domain/source-policy.js";
 
 type Listener = (event: SearchEvent) => void;
 
+/** Rank and anomaly flag of each existing row, to detect a re-ranking by a later batch. */
+function rankState(offers: Offer[]): Map<string, string> {
+  return new Map(offers.map((offer) => [offer.id, `${offer.procurementRank ?? ""}|${offer.priceAnomaly ?? ""}`]));
+}
+
+function rankStateChanged(before: Map<string, string>, offers: Offer[]): boolean {
+  return offers.some(
+    (offer) => before.has(offer.id) && before.get(offer.id) !== `${offer.procurementRank ?? ""}|${offer.priceAnomaly ?? ""}`,
+  );
+}
+
 function lastGoodKey(source: string, product: Product): string {
   return `${source}\0${product.mpn}\0${product.model}`.toLocaleLowerCase("ru");
 }
@@ -113,9 +124,11 @@ export class SearchService {
           // Demo rows are labelled fixtures; real rows must positively look like equipment.
           const inScope = found.filter((offer) => offer.demo || isOfferInItScope(snapshot.product, offer));
           const offers = this.matchingQuery(snapshot, inScope);
+          const ranksBefore = rankState(snapshot.offers);
           snapshot.offers.push(...offers);
           flagPriceAnomalies(snapshot.offers);
           assignProcurementRanks(snapshot.offers);
+          const reranked = rankStateChanged(ranksBefore, snapshot.offers);
           // Cache before the query-intent filter: the next query for the same item may ask the opposite.
           const real = inScope.filter((offer) => !offer.demo);
           if (real.length > 0) {
@@ -133,16 +146,22 @@ export class SearchService {
             }),
           );
           this.emit(id, { type: "offers", data: structuredClone(offers) });
+          // Earlier rows got new ranks/anomaly flags: the client must not keep stale ones.
+          if (reranked) this.emit(id, { type: "snapshot", data: structuredClone(snapshot) });
           this.updateSource(snapshot, source.name, { source: source.name, status: "done" });
         } catch (error) {
           const message = error instanceof Error ? error.message : "Неизвестная ошибка";
           const cached = this.lastGoodReal.get(lastGoodKey(source.name, snapshot.product));
           if (cached && cached.length > 0) {
             const reused = this.matchingQuery(snapshot, structuredClone(cached));
+            const ranksBefore = rankState(snapshot.offers);
             snapshot.offers.push(...reused);
             flagPriceAnomalies(snapshot.offers);
             assignProcurementRanks(snapshot.offers);
             this.emit(id, { type: "offers", data: reused });
+            if (rankStateChanged(ranksBefore, snapshot.offers)) {
+              this.emit(id, { type: "snapshot", data: structuredClone(snapshot) });
+            }
           }
           this.updateSource(snapshot, source.name, {
             source: source.name,

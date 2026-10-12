@@ -32,7 +32,12 @@ describe("marketplace relevance (domain)", () => {
   it.each([
     ["Samsung 990 PRO 2TB", "SSD Samsung 990 Pro 2 ТБ NVMe", "strong"],
     ["Samsung 990 PRO 2TB", "SSD Samsung 990 Pro 1 ТБ NVMe", "drop"],
+    ["Samsung 990 PRO 2TB", "SSD Samsung 990 Pro 1ТБ, NVMe", "drop"],
+    ["Samsung 990 PRO 2TB", "SSD Samsung 990 Pro (1TB) NVMe", "drop"],
+    ["Samsung 990 PRO 2TB", "SSD Samsung 990 Pro, 2TB, NVMe", "strong"],
     ["GeForce RTX 4060 8GB", "Видеокарта MSI GeForce RTX4060 VENTUS 8 ГБ", "strong"],
+    ["GeForce RTX 4060 8GB", "Видеокарта MSI GeForce RTX 4060 8GB для ПК", "strong"],
+    ["GeForce RTX 4060 8GB", "Видеокарта Palit GeForce RTX4060 8 ГБ для компьютера", "strong"],
     ["GeForce RTX 4060 8GB", "Игровой ПК Ryzen 5 с GeForce RTX 4060 8GB", "drop"],
   ])("matches normalized variants for %s", (model, title, expected) => {
     const candidate = { id: model, brand: model.split(" ")[0]!, model, name: model, mpn: "", category: model.includes("RTX") ? "Видеокарты" : "SSD", characteristics: {} } as Product;

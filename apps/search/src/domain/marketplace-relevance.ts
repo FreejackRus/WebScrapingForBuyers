@@ -330,6 +330,42 @@ export function productIdentityTokens(product: Product): { strong: string[]; wea
  * «К380s». Rival SKUs (K120) and coffee/mice still drop. Graphite vs
  * Pale Grey MX Master 3S is the same model — keep it.
  */
+/** Capacities like «2TB», «1 ТБ,», «(1TB)», «512GB» in GB; punctuation is a boundary, not part of the unit. */
+const CAPACITY = /(?<![\p{L}\p{N}])(\d+(?:[.,]\d+)?)\s*(tb|тб|gb|гб)(?![\p{L}\p{N}])/giu;
+
+function capacitiesGb(text: string): number[] {
+  return [...text.matchAll(CAPACITY)].map((match) => {
+    const value = Number(match[1]!.replace(",", "."));
+    const unit = match[2]!.toLocaleLowerCase("ru");
+    return unit === "tb" || unit === "тб" ? value * 1000 : value;
+  });
+}
+
+function sameCapacity(left: number, right: number): boolean {
+  // 1 TB is sold both as 1000 GB and 1024 GB.
+  return Math.abs(left - right) < 1 || Math.abs(left * 1.024 - right) < 1 || Math.abs(right * 1.024 - left) < 1;
+}
+
+/** The query names a capacity and the title names only other capacities. */
+export function hasCapacityMismatch(model: string, title: string): boolean {
+  const requested = capacitiesGb(model);
+  if (requested.length === 0) return false;
+  const offered = capacitiesGb(title);
+  if (offered.length === 0) return false;
+  return !offered.some((size) => requested.some((wanted) => sameCapacity(size, wanted)));
+}
+
+/**
+ * A complete PC whose spec lists the GPU («Игровой ПК … RTX 4060»), not a
+ * card sold «для ПК / для компьютера». Decided by the product type, not by any
+ * mention of a computer.
+ */
+export function isReadyMadeComputer(titleHay: string): boolean {
+  if (/^[\s"'«(\[]*видеокарт/iu.test(titleHay)) return false;
+  const withoutTarget = titleHay.replace(/для\s+(?:игров[а-яё]*\s+)?(?:пк|компьютер[а-яё]*|системн[а-яё]*\s+блок[а-яё]*)/giu, " ");
+  return /(?:^|[^\p{L}])(?:пк|компьютер|системн[а-яё]*\s+блок|моноблок|неттоп|ноутбук)(?=$|[^\p{L}])/iu.test(withoutTarget);
+}
+
 export function assessMarketplaceOfferRelevance(
   title: string,
   offerMpn: string | undefined,
@@ -348,14 +384,8 @@ export function assessMarketplaceOfferRelevance(
   const strongHits = tokensIn(identityHay, strong);
   const weakHits = tokensIn(identityHay, weak);
   const familyCard = isProductFamilyCard(product, titleHay);
-  const requestedCapacity = product.model.match(/(?:^|\s)(\d+)\s*(tb|тб|gb|гб)(?:\s|$)/i);
-  const offeredCapacity = title.match(/(?:^|\s)(\d+)\s*(tb|тб|gb|гб)(?:\s|$)/i);
-  if (requestedCapacity && offeredCapacity) {
-    const requestedUnit = requestedCapacity[2]!.toLocaleLowerCase("ru").replace("тб", "tb").replace("гб", "gb");
-    const offeredUnit = offeredCapacity[2]!.toLocaleLowerCase("ru").replace("тб", "tb").replace("гб", "gb");
-    if (requestedCapacity[1] !== offeredCapacity[1] || requestedUnit !== offeredUnit) return { kind: "drop" };
-  }
-  if (/видеокарт/i.test(product.category) && /(?:игровой\s+)?(?:пк|компьютер|системн(?:ый|ого)\s+блок)/i.test(titleHay)) {
+  if (hasCapacityMismatch(product.model, title)) return { kind: "drop" };
+  if (/видеокарт/i.test(product.category) && isReadyMadeComputer(titleHay)) {
     return { kind: "drop" };
   }
   if (missesShortModelQualifier(product, identityHay)) return { kind: "drop" };

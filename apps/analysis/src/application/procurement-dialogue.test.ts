@@ -1,10 +1,13 @@
 import { describe, expect, it, vi } from "vitest";
 import type { Offer, SearchSnapshot } from "@peremena/contracts";
 import { analyzeSnapshot, answerCopilot } from "./analyze.js";
+import { filterOffers } from "./procurement-dialogue.js";
 const offer = (id: string, title: string, price: number, availability = "склад: более 50 шт."): Offer => ({id,title,price,availability,source:"NETLAB",seller:"NETLAB",priceCondition:"Обычная цена",currency:"RUB",match:"exact",condition:"new",url:`https://example.test/${id}`,fetchedAt:new Date(0).toISOString(),demo:false,assessment:{group:"match",reasons:["Модель совпадает"]}});
 const snapshot: SearchSnapshot = {id:"s",query:"12400F",product:{id:"p",name:"Процессор Intel 12400F",model:"12400F",brand:"Intel",mpn:"",category:"Процессоры",characteristics:{}},status:"complete",sources:[{source:"NETLAB",status:"done"}],offers:[offer("oem","Intel i5-12400F OEM",12000),offer("box","Intel i5-12400F BOX",14500),offer("unknown","Intel i5-12400F BOX",13500,"Неизвестно")]};
 const narrator = () => ({name:"test",summarize:vi.fn(async()=>({summary:"Выдуманная цена 1 ₽, в наличии 999 шт.",warnings:[]})),answer:vi.fn(async()=>({summary:"Найдено 100 товаров",warnings:[],intent:"search" as const,searchQuery:"ошибочная модель"}))});
 describe("reliable procurement dialogue",()=>{
+ it("applies condition filters during contextual refinement",()=>{const rows=[offer("new","Intel i5-12400F",12000),{...offer("used","Intel i5-12400F Б/У",10000),condition:"used" as const}];expect(filterOffers(rows,{conditions:["used"]}).map(row=>row.id)).toEqual(["used"])});
+ it("describes condition filters in current conditions",async()=>{const r=await analyzeSnapshot(snapshot,"какие фильтры сейчас?",undefined,{context:{tableFilter:{conditions:["used"]}}});expect(r.summary).toMatch(/б\/у/i)});
  it.each(["12400F","i5-12400F","процессор 12400F"])("launches %s without calling model",async query=>{const n=narrator();const r=await answerCopilot(`Привет, найди мне \`${query}\``,n);expect(r.searchQuery).toBe(query);expect(n.answer).not.toHaveBeenCalled();expect(r.summary).not.toMatch(/найдено/i)});
  it("preserves BOX while applying budget without model",async()=>{const n=narrator();const r=await analyzeSnapshot(snapshot,"до 15 тысяч",n,{context:{tableFilter:{titleIncludeAny:["BOX"],inStockOnly:true}}});expect(r.intent).toBe("filter");expect(r.selectedOfferIds).toEqual(["box"]);expect(r.tableFilter).toMatchObject({maxPrice:15000,inStockOnly:true,titleIncludeAny:["BOX"]});expect(n.summarize).not.toHaveBeenCalled();});
  it("BOX refines current results",async()=>{const r=await analyzeSnapshot(snapshot,"а BOX?");expect(r.intent).toBe("filter");expect(r.selectedOfferIds).toEqual(["unknown","box"]);expect(r.searchQuery).toBeUndefined()});

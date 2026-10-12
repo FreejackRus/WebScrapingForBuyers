@@ -1,4 +1,4 @@
-import { offerAvailabilityStatus, type AnalysisResult, type AnalyzeRequest, type Offer, type OfferTableFilter, type SearchSnapshot } from "@peremena/contracts";
+import { offerAvailabilityStatus, type AnalysisResult, type AnalyzeRequest, type Offer, type OfferTableFilter, type ProductCondition, type SearchSnapshot } from "@peremena/contracts";
 import { extractSearchQuery, parseMaxPrice, parseSources, wantsInStock } from "./prompt-intent.js";
 
 type Context = AnalyzeRequest["context"];
@@ -18,6 +18,7 @@ export function filterOffers(offers: Offer[], filter: OfferTableFilter = {}): Of
     .filter(o => !filter.sources?.length || filter.sources.some(s => o.source.toLocaleLowerCase("ru").includes(s.toLocaleLowerCase("ru"))))
     .filter(o => filter.maxPrice === undefined || o.price <= filter.maxPrice)
     .filter(o => !filter.inStockOnly || offerAvailabilityStatus(o) === "in_stock")
+    .filter(o => !filter.conditions?.length || filter.conditions.includes(o.condition ?? "unknown"))
     .filter(o => !filter.packaging || titleHas(o.title,filter.packaging))
     .filter(o => !filter.titleIncludeAny?.length || filter.titleIncludeAny.some(s => titleHas(o.title,s)))
     .filter(o => !filter.titleExcludeAny?.some(s => titleHas(o.title,s)));
@@ -139,11 +140,23 @@ function currentDialogueSummary(snapshot: SearchSnapshot, filter: OfferTableFilt
   if (filter.packaging) conditions.push(packagingLabel(filter.packaging));
   if (filter.maxPrice !== undefined) conditions.push(`до ${filter.maxPrice.toLocaleString("ru-RU")} ₽`);
   if (filter.inStockOnly) conditions.push("только подтверждённое наличие");
+  if (filter.conditions?.length) conditions.push(`состояние: ${filter.conditions.map(conditionLabel).join(", ")}`);
   if (filter.sources?.length) conditions.push(`поставщики: ${filter.sources.join(", ")}`);
   if (filter.titleIncludeAny?.length) conditions.push(`в названии: ${filter.titleIncludeAny.join(", ")}`);
   if (filter.titleExcludeAny?.length) conditions.push(`исключены: ${filter.titleExcludeAny.join(", ")}`);
   if (filter.selectedOfferIds?.length) conditions.push(`выбрано предложений: ${filter.selectedOfferIds.length}`);
   return `Ищем «${snapshot.product.name}». Условия: ${conditions.length ? conditions.join("; ") : "без дополнительных ограничений"}. ${snapshot.status === "running" ? "Сбор ещё идёт." : snapshot.status === "complete" ? "Сбор завершён." : "Сбор завершился с ошибкой."}${filter.packaging ? ` ${PACKAGING_NOTE}` : ""}`;
+}
+
+const CONDITION_LABEL: Record<ProductCondition, string> = {
+  new: "новый",
+  used: "б/у",
+  refurbished: "восстановленный",
+  display: "витринный",
+  unknown: "не указано",
+};
+function conditionLabel(value: ProductCondition): string {
+  return CONDITION_LABEL[value];
 }
 
 const PACKAGING_NOTE = "BOX/OEM — обозначение в названии товара. Комплект, кулер и гарантию уточняйте по карточке продавца.";

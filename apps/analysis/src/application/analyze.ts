@@ -14,12 +14,18 @@ import type {
   UserRole,
 } from "@peremena/contracts";
 
+const USED_WORDS = String.raw`(?:б\s*[\/.\\-]?\s*у|бывш[а-яё]*\s+в\s+употреб[а-яё]*)`;
+const USED_NEGATION = new RegExp(String.raw`(?:^|\s)(?:без|исключ[а-яё]*|убер[а-яё]*|кроме|не)\s+(?:(?:товар[а-яё]*|вариант[а-яё]*|предложени[а-яё]*)\s+)?${USED_WORDS}(?=\s|$|[,.!?])`, "u");
+const USED_POSITIVE = new RegExp(String.raw`(?:^|\s)${USED_WORDS}(?=\s|$|[,.!?])`, "u");
+
 function requestedConditions(normalized: string): ProductCondition[] {
+  // Negation first: «без б/у», «исключи б/у» must never select used goods.
+  if (USED_NEGATION.test(normalized)) return ["new"];
   if (/витрин|демо[- ]?образ/.test(normalized)) return ["display"];
-  if (/(?:^|\s)б\s*[\/.\\-]?\s*у(?:\s|$)|бывш[а-яё]*\s+в\s+употреб/.test(normalized)) return ["used"];
+  if (USED_POSITIVE.test(normalized)) return ["used"];
   if (/восстанов|refurb/.test(normalized)) return ["refurbished"];
   if (/неизвестн[а-яё]*\s+состояни/.test(normalized)) return ["unknown"];
-  if (/нов(ый|ые|ых)|без б\/у|исключ.*б\/у/.test(normalized)) return ["new"];
+  if (/нов(ый|ые|ых)/.test(normalized)) return ["new"];
   return [];
 }
 
