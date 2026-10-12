@@ -555,8 +555,16 @@ async function analyzeSnapshotRaw(
     }
   }
 
-  offers.sort((left, right) => left.price - right.price);
-  filters.push("Сортировка по возрастанию цены.");
+  offers.sort((left, right) =>
+    left.procurementRank != null && right.procurementRank != null
+      ? left.procurementRank - right.procurementRank
+      : left.price - right.price,
+  );
+  filters.push(
+    offers.length > 0 && offers.every((offer) => offer.procurementRank != null)
+      ? "Сортировка по серверному закупочному рангу."
+      : "Сортировка по возрастанию цены.",
+  );
 
   const requested = selectionLimit(normalized);
   const selected = intent === "filter" ? offers : offers.slice(0, requested);
