@@ -1,7 +1,11 @@
 import type { Offer } from "@peremena/contracts";
 
-/** Below this share of the median the price is treated as broken, not as a deal. */
-export const TOO_LOW_SHARE = 0.1;
+/**
+ * Below this share of the median the price is not a deal: a parser slip, a part or
+ * accessory sold under the product's name, or a bait listing («RTX 4070 Super» for
+ * 11 000 ₽ against a ~60 000 ₽ median). Real discounts stay above ~40%.
+ */
+export const TOO_LOW_SHARE = 0.35;
 /** With fewer comparable prices a median says nothing. */
 const MIN_COMPARABLE = 4;
 
@@ -12,7 +16,7 @@ function median(values: number[]): number {
 }
 
 /**
- * Marks offers whose price is below a tenth of the median for the same search.
+ * Marks offers whose price is below about a third of the median for the same search.
  *
  * Real discounts rarely go below ~30% of the typical price; parser slips land far
  * lower (Ozon "2 939 ₽" read as 2 ₽ in September 2026). The median is taken over

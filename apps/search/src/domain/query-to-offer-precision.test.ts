@@ -66,4 +66,26 @@ describe("typed query → offer precision", () => {
       expect(productFromQuery("rx 7800 xt", "query").category).toBe("Видеокарты");
     });
   });
+
+  describe("accessories sold under the device name", () => {
+    const offer = (title: string) => ({
+      id: "x", source: "T", seller: "T", title, price: 1000, priceCondition: "", currency: "RUB" as const,
+      availability: "В наличии", condition: "new" as const, match: "probable" as const, url: "https://t", fetchedAt: "", demo: false,
+    });
+    const assessed = (query: string, title: string) => assessOffer(productFromQuery(query, "query"), offer(title), query);
+
+    it.each([
+      ["видеокарта rtx 4070 super", "Радиатор для видеокарты PALIT RTX 4070 Super 4070 4070Ti"],
+      ["ибп apc back-ups 650", "Батарея для ИБП APC Back-UPS 650"],
+      ["lenovo legion go", "Защитное стекло для Lenovo Legion Go"],
+      ["процессор xeon e5-2697 v4", "Кулер для процессора Xeon E5-2697 v4"],
+    ])("drops %s ← %s", (query, title) => {
+      expect(assessed(query, title)).toBeNull();
+    });
+
+    it("keeps devices that mention an accessory later and accessories the buyer asked for", () => {
+      expect(assessed("ибп apc back-ups 650", "ИБП APC Back-UPS 650VA, 390 Вт, с аккумулятором")).not.toBeNull();
+      expect(assessed("кулер для процессора deepcool ak400", "Кулер для процессора DeepCool AK400")).not.toBeNull();
+    });
+  });
 });

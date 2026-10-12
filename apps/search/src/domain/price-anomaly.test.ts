@@ -23,11 +23,18 @@ function offer(id: string, price: number, extra: Partial<Offer> = {}): Offer {
 }
 
 describe("flagPriceAnomalies", () => {
-  it("flags parser-slip prices far below the median and keeps real deals", () => {
-    // Live 2026-09-29: Ozon "2 939 ₽" was read as 2 ₽.
-    const offers = [offer("a", 2), offer("b", 700), offer("c", 2_939), offer("d", 3_490), offer("e", 3_990)];
+  it("flags parser slips and bait prices far below the median and keeps real deals", () => {
+    // Live 2026-09-29: Ozon "2 939 ₽" was read as 2 ₽. «b» is under a quarter of the median.
+    const offers = [offer("a", 2), offer("b", 700), offer("deal", 1_400), offer("c", 2_939), offer("d", 3_490), offer("e", 3_990)];
     flagPriceAnomalies(offers);
-    expect(offers.filter((o) => o.priceAnomaly).map((o) => o.id)).toEqual(["a"]);
+    expect(offers.filter((o) => o.priceAnomaly).map((o) => o.id)).toEqual(["a", "b"]);
+  });
+
+  it("flags a bait GPU listing against the typical price", () => {
+    // Live 2026-10-12: «Видеокарта RTX 4070 SUPER i3-12100 — 11 007 ₽».
+    const offers = [offer("bait", 11_007), offer("a", 58_000), offer("b", 61_000), offer("c", 63_500), offer("d", 66_000)];
+    flagPriceAnomalies(offers);
+    expect(offers.filter((o) => o.priceAnomaly).map((o) => o.id)).toEqual(["bait"]);
   });
 
   it("measures the median on strong matches so cheap accessories do not hide a slip", () => {

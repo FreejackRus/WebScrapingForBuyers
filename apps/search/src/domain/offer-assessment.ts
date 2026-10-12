@@ -7,6 +7,19 @@ type Assessment = NonNullable<Offer["assessment"]>;
 const ORIGINAL = /(?:^|[^\p{L}])(?:оригинал\p{L}*|original|genuine|oem)(?=$|[^\p{L}])/iu;
 const COMPATIBLE = /(?:^|[^\p{L}])(?:не\s*оригинал\p{L}*|неоригинал\p{L}*|совместим\p{L}*|аналог\p{L}*|compatible|replacement)(?=$|[^\p{L}])/iu;
 const DEVICE_PART = /(?:^|[^\p{L}])(?:плата|форматер|печатающ\p{L}*\s+головк\p{L}*|ролик|шлейф|узел|запчаст\p{L}*|spare\s+part)(?=$|[^\p{L}])/iu;
+/**
+ * Parts and add-ons sold for a device: «Радиатор для видеокарты RTX 4070 Super», «Кулер для процессора»,
+ * «Блок питания для ноутбука». They name the model, but the buyer asked for the device itself.
+ */
+const ACCESSORY = /(?:^|[^\p{L}])(?:радиатор\p{L}*|кулер\p{L}*|вентилятор\p{L}*|система\s+охлажден\p{L}*|водоблок\p{L}*|термопрокладк\p{L}*|термопаст\p{L}*|бэкплейт\p{L}*|backplate|кронштейн\p{L}*|держател\p{L}*|подставк\p{L}*|блок\p{L}*\s+питани\p{L}*|зарядн\p{L}*|аккумулятор\p{L}*|батаре\p{L}*|чех(?:ол|л)\p{L}*|плёнк\p{L}*|пленк\p{L}*|защитн\p{L}*\s+стекл\p{L}*|райзер\p{L}*|riser|коробк\p{L}*\s+(?:от|для)|box\s+only)(?=$|[^\p{L}])/iu;
+const FOR_DEVICE = /(?:^|[^\p{L}])для\s+(?:видеокарт\p{L}*|процессор\p{L}*|ноутбук\p{L}*|консол\p{L}*|ибп|сервер\p{L}*|монитор\p{L}*|роутер\p{L}*|маршрутизатор\p{L}*|коммутатор\p{L}*)(?=$|[^\p{L}])/iu;
+
+/** Accessories are named first («Радиатор для …»); a device listing may mention one later («ИБП …, с аккумулятором»). */
+function isAccessoryFor(title: string, query: string): boolean {
+  const head = title.split(/\s+/).slice(0, 3).join(" ");
+  return (ACCESSORY.test(head) && !ACCESSORY.test(query)) || (FOR_DEVICE.test(title) && !FOR_DEVICE.test(query) && !/(?:^|\s)для(?=\s|$)/iu.test(query));
+}
+
 const THIRD_PARTY_BRANDS = /(?:^|[^\p{L}\p{N}])(?:nv[\s-]?print|hi[\s-]?black|cactus|sakura|easyprint|netproduct|colortek|katun|bion)(?=$|[^\p{L}\p{N}])/iu;
 
 function compact(value: string): string {
@@ -163,6 +176,7 @@ export function assessOffer(product: Product, offer: Offer, query: string): Offe
   // An exact article is the buyer's own choice of part: «302N494021» is a developer unit by design.
   const forIndex = offer.title.search(/(?:^|\s)для\s/iu);
   const partForDevice = forIndex >= 0 && identityIn(offer.title.slice(forIndex), product.mpn);
+  if (isAccessoryFor(offer.title, query) && identity !== "article") return null;
   if ((identity !== "article" || partForDevice) && ((DEVICE_PART.test(offer.title) && !DEVICE_PART.test(query)) || isUnrequestedConsumablePart(offer, query))) return null;
 
   const reasons = [identity === "article" ? "Артикул совпадает" : "Модель совпадает"];
