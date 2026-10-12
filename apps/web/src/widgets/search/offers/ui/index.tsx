@@ -1,4 +1,5 @@
-import { useState, type PointerEvent, type ReactNode } from "react";
+import { useEffect, useState, type PointerEvent, type ReactNode } from "react";
+import type { OfferTableFilter, ProductCondition } from "@peremena/contracts";
 import { useFilteredOffers, useOfferCard, useOfferColumns, useOfferTable } from "features/search";
 import { useAnalysisStore } from "entities/analysis";
 import { conditionLabels, matchLabels, PRICE_ANOMALY_HINT, PRICE_ANOMALY_LABEL } from "entities/offer";
@@ -24,6 +25,7 @@ export function OfferTable() {
   const tableFilter = useSearchStore((state) => state.tableFilter);
   const setTableFilter = useSearchStore((state) => state.setTableFilter);
   const snapshot = useSearchStore((state) => state.snapshot);
+  const [budgetDraft, setBudgetDraft] = useState(tableFilter?.maxPrice?.toString() ?? "");
   const snapshotTotal = snapshot?.offers.length ?? 0;
   const running = snapshot?.status === "running";
   const failedSources = snapshot?.sources.filter((source) => source.status === "error").length ?? 0;
@@ -31,6 +33,36 @@ export function OfferTable() {
   const recommended = selected[0];
   const from = total === 0 ? 0 : (page - 1) * pageSize + 1;
   const to = Math.min(page * pageSize, total);
+  const suppliers = [...new Set(snapshot?.offers.flatMap((offer) => [offer.source, offer.seller].filter(Boolean) as string[]) ?? [])]
+    .sort((left, right) => left.localeCompare(right, "ru"));
+  const budgetValue = Number(budgetDraft.replace(",", "."));
+  const budgetInvalid = budgetDraft.trim() !== "" && (!Number.isFinite(budgetValue) || budgetValue <= 0);
+
+  useEffect(() => setBudgetDraft(tableFilter?.maxPrice?.toString() ?? ""), [tableFilter?.maxPrice]);
+
+  const updateFilter = <K extends keyof OfferTableFilter>(key: K, value: OfferTableFilter[K] | undefined) => {
+    const next = { ...tableFilter };
+    if (value === undefined || value === false || (Array.isArray(value) && value.length === 0)) delete next[key];
+    else next[key] = value;
+    setTableFilter(Object.keys(next).length > 0 ? next : undefined);
+  };
+
+  const applyBudget = () => {
+    if (budgetDraft.trim() === "") updateFilter("maxPrice", undefined);
+    else if (!budgetInvalid) updateFilter("maxPrice", budgetValue);
+  };
+
+  const activeChips: Array<{ key: string; label: string; clear: () => void }> = [];
+  if (offerFilter) activeChips.push({ key: "text", label: `Поиск: ${offerFilter}`, clear: () => setOfferFilter("") });
+  if (tableFilter?.inStockOnly) activeChips.push({ key: "stock", label: "В наличии", clear: () => updateFilter("inStockOnly", undefined) });
+  if (tableFilter?.maxPrice != null) activeChips.push({ key: "price", label: `До ${money.format(tableFilter.maxPrice)}`, clear: () => updateFilter("maxPrice", undefined) });
+  tableFilter?.conditions?.forEach((condition) => activeChips.push({ key: `condition-${condition}`, label: conditionLabels[condition], clear: () => updateFilter("conditions", tableFilter.conditions?.filter((item) => item !== condition)) }));
+  tableFilter?.sources?.forEach((source) => activeChips.push({ key: `source-${source}`, label: `Поставщик: ${source}`, clear: () => updateFilter("sources", tableFilter.sources?.filter((item) => item !== source)) }));
+  if (tableFilter?.packaging) activeChips.push({ key: "packaging", label: `Комплектация: ${tableFilter.packaging}`, clear: () => updateFilter("packaging", undefined) });
+  if (tableFilter?.realOnly) activeChips.push({ key: "real", label: "Только реальные данные", clear: () => updateFilter("realOnly", undefined) });
+  tableFilter?.titleIncludeAny?.forEach((token) => activeChips.push({ key: `include-${token}`, label: `Из чата: содержит «${token}»`, clear: () => updateFilter("titleIncludeAny", tableFilter.titleIncludeAny?.filter((item) => item !== token)) }));
+  tableFilter?.titleExcludeAny?.forEach((token) => activeChips.push({ key: `exclude-${token}`, label: `Из чата: без «${token}»`, clear: () => updateFilter("titleExcludeAny", tableFilter.titleExcludeAny?.filter((item) => item !== token)) }));
+  if (tableFilter?.selectedOfferIds?.length) activeChips.push({ key: "selection", label: `Выбор из чата: ${tableFilter.selectedOfferIds.length}`, clear: () => updateFilter("selectedOfferIds", undefined) });
 
   const startResize = (key: OfferSortColumn, event: PointerEvent<HTMLSpanElement>) => {
     event.preventDefault();
@@ -64,12 +96,12 @@ export function OfferTable() {
       >
         {cell("source", (
           <>
-            {isBest && <span className="offer-best-badge">Лучший выбор</span>}
+            {isBest && <span className="offer-best-badge">Рекомендуемое</span>}
             <div className="source-name">
               <b>{offer.source}</b>
-              {offer.seller ? <span className="offer-seller"> · {offer.seller}</span> : null}
+              {offer.seller && offer.seller !== offer.source ? <span className="offer-seller"> · {offer.seller}</span> : null}
             </div>
-            <small className="offer-seller-desktop">{offer.seller}</small>
+            {offer.seller && offer.seller !== offer.source ? <small className="offer-seller-desktop">{offer.seller}</small> : null}
           </>
         ))}
         {cell("title", (
@@ -167,6 +199,33 @@ export function OfferTable() {
           </div>
         </div>
       </div>
+      <fieldset className="offer-filter-controls">
+        <legend className="sr-only">Фильтры предложений</legend>
+        <label className="offer-filter-check"><input type="checkbox" checked={tableFilter?.inStockOnly ?? false} onChange={(event) => updateFilter("inStockOnly", event.target.checked || undefined)} />Только в наличии</label>
+        <label>Максимальная цена
+          <input aria-invalid={budgetInvalid || undefined} inputMode="decimal" value={budgetDraft} onChange={(event) => setBudgetDraft(event.target.value)} onBlur={applyBudget} onKeyDown={(event) => { if (event.key === "Enter") applyBudget(); }} placeholder="Без ограничения" />
+        </label>
+        <label>Состояние товара
+          <select value={tableFilter?.conditions?.[0] ?? ""} onChange={(event) => updateFilter("conditions", event.target.value ? [event.target.value as ProductCondition] : undefined)}>
+            <option value="">Любое</option>
+            {Object.entries(conditionLabels).map(([value, label]) => <option key={value} value={value}>{label}</option>)}
+          </select>
+        </label>
+        <label>Поставщик
+          <select value={tableFilter?.sources?.[0] ?? ""} onChange={(event) => updateFilter("sources", event.target.value ? [event.target.value] : undefined)}>
+            <option value="">Все поставщики</option>
+            {suppliers.map((supplier) => <option key={supplier} value={supplier}>{supplier}</option>)}
+          </select>
+        </label>
+        <label>Комплектация
+          <select value={tableFilter?.packaging ?? ""} onChange={(event) => updateFilter("packaging", (event.target.value || undefined) as OfferTableFilter["packaging"])}>
+            <option value="">Любая</option><option value="BOX">BOX</option><option value="OEM">OEM</option>
+          </select>
+        </label>
+        <small className="offer-packaging-note">BOX — розничная упаковка; OEM — поставка производителя без обещания состава</small>
+        {budgetInvalid ? <small className="offer-filter-error" role="alert">Введите положительное число</small> : null}
+      </fieldset>
+      {activeChips.length > 0 && <div className="offer-filter-chips" aria-label="Активные фильтры">{activeChips.map((chip) => <button type="button" className="offer-filter-chip" key={chip.key} onClick={chip.clear}>{chip.label}<span aria-hidden="true">×</span><span className="sr-only"> — убрать</span></button>)}<button type="button" className="linkish" onClick={() => { setOfferFilter(""); setTableFilter(undefined); }}>Сбросить всё</button></div>}
       <label className="mobile-sort">
         Сортировка предложений
         <select
@@ -176,22 +235,18 @@ export function OfferTable() {
             selectSort(column ? { column: column as OfferSortColumn, direction: direction === "desc" ? "desc" : "asc" } : undefined);
           }}
         >
-          <option value="">По порядку загрузки</option>
+          <option value="">По соответствию и наличию</option>
           {columns.flatMap((column) => [
             <option key={`${column.key}:asc`} value={`${column.key}:asc`}>{column.label}: по возрастанию</option>,
             <option key={`${column.key}:desc`} value={`${column.key}:desc`}>{column.label}: по убыванию</option>,
           ])}
         </select>
       </label>
-      {tableFilter && (
+      {tableFilter && filtered.length !== snapshotTotal && (
         <div className="data-notice mixed" role="status">
           <span>
-            <strong>Фильтр активен по директиве AI-копайлота.</strong> В таблице{" "}
-            {filtered.length} из {snapshotTotal} строк.
+            В таблице <strong>{filtered.length} из {snapshotTotal}</strong> строк.
           </span>
-          <button type="button" className="linkish" onClick={() => setTableFilter(undefined)}>
-            Сбросить
-          </button>
         </div>
       )}
       <div className="table-wrap">

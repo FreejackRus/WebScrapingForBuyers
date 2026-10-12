@@ -1,10 +1,11 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { Offer } from "@peremena/contracts";
 
 import { nextOfferSort, sortOffers } from "entities/offer";
 import type { OfferSort, OfferSortColumn } from "entities/offer";
 
 import { useFilteredOffers } from "../filter-offers";
+import { useSearchStore } from "entities/search";
 
 export const OFFER_PAGE_SIZE = 8;
 
@@ -21,9 +22,13 @@ export function buildOfferTablePage(offers: Offer[], sort: OfferSort | undefined
 
 export function useOfferTable() {
   const filtered = useFilteredOffers();
+  const offerFilter = useSearchStore((state) => state.offerFilter);
+  const tableFilter = useSearchStore((state) => state.tableFilter);
   const [sort, setSort] = useState<OfferSort>();
   const [page, setPage] = useState(1);
   const tablePage = useMemo(() => buildOfferTablePage(filtered, sort, page), [filtered, sort, page]);
+
+  useEffect(() => setPage(1), [offerFilter, tableFilter]);
 
   return {
     ...tablePage,

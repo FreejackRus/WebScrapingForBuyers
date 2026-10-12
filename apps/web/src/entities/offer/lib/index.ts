@@ -16,6 +16,8 @@ export const conditionLabels: Record<Offer["condition"], string> = {
   new: "Новый товар",
   refurbished: "Восстановленный",
   used: "Б/у",
+  display: "Витринный",
+  unknown: "Состояние не указано",
 };
 
 export const matchRank: Record<Offer["match"], number> = {
@@ -45,12 +47,13 @@ export function applyTableFilter(offers: Offer[], filter?: OfferTableFilter) {
     if (filter.packaging && !new RegExp(`(?:^|[^a-z0-9])${filter.packaging}(?=$|[^a-z0-9])`,"iu").test(offer.title)) return false;
     if (filter.realOnly && offer.demo) return false;
     if (filter.sources?.length) {
-      const hay = offer.source.toLocaleLowerCase("ru");
+      const hay = `${offer.source} ${offer.seller ?? ""}`.toLocaleLowerCase("ru");
       const matched = filter.sources.some((source) => hay.includes(source.toLocaleLowerCase("ru")));
       if (!matched) return false;
     }
     if (filter.maxPrice != null && offer.price > filter.maxPrice) return false;
     if (filter.inStockOnly && offerAvailabilityStatus(offer) !== "in_stock") return false;
+    if (filter.conditions?.length && !filter.conditions.includes(offer.condition)) return false;
     if (filter.titleExcludeAny?.length) {
       const hay = offer.title.toLocaleLowerCase("ru");
       if (filter.titleExcludeAny.some((token) => hay.includes(token.toLocaleLowerCase("ru")))) {
@@ -91,13 +94,20 @@ function offerSortValue(offer: Offer, column: OfferSortColumn): string | number 
   if (column === "title") return offer.title;
   if (column === "match") return matchRank[offer.match];
   if (column === "price") return offer.price;
-  if (column === "availability") return offer.availability;
+  if (column === "availability") {
+    const statusRank = { in_stock: 0, on_order: 1, out_of_stock: 2, unknown: 3 } as const;
+    return statusRank[offerAvailabilityStatus(offer)];
+  }
   if (column === "conditions") return `${offer.delivery ?? ""} ${offer.warranty ?? ""}`;
   return Date.parse(offer.fetchedAt) || 0;
 }
 
 export function sortOffers(offers: Offer[], sort?: OfferSort) {
-  if (!sort) return offers;
+  if (!sort) {
+    return offers.some((offer) => offer.procurementRank != null)
+      ? [...offers].sort((left, right) => (left.procurementRank ?? Number.MAX_SAFE_INTEGER) - (right.procurementRank ?? Number.MAX_SAFE_INTEGER))
+      : offers;
+  }
   const sign = sort.direction === "asc" ? 1 : -1;
   return [...offers].sort((left, right) => {
     const a = offerSortValue(left, sort.column);

@@ -1,4 +1,4 @@
-import type { Offer, SearchSnapshot } from "@peremena/contracts";
+import type { Offer, OfferTableFilter, SearchSnapshot } from "@peremena/contracts";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it, vi } from "vitest";
 
@@ -53,6 +53,7 @@ const snapshot: SearchSnapshot = {
 };
 
 const openOffer = vi.fn();
+let mockTableFilter: OfferTableFilter | undefined;
 
 vi.mock("features/search", () => ({
   useFilteredOffers: () => rows,
@@ -98,7 +99,7 @@ vi.mock("entities/search", () => ({
     selector: (value: {
       offerFilter: string;
       setOfferFilter: () => void;
-      tableFilter: undefined;
+      tableFilter: OfferTableFilter | undefined;
       setTableFilter: () => void;
       snapshot: SearchSnapshot;
     }) => unknown,
@@ -106,7 +107,7 @@ vi.mock("entities/search", () => ({
     selector({
       offerFilter: "",
       setOfferFilter: vi.fn(),
-      tableFilter: undefined,
+      tableFilter: mockTableFilter,
       setTableFilter: vi.fn(),
       snapshot,
     }),
@@ -181,5 +182,30 @@ describe("OfferTable", () => {
       tablePage.reviewRows = [reviewOffer];
       tablePage.total = 1;
     }
+  });
+
+  it("offers stock, budget, condition, supplier and packaging filters without the chat", () => {
+    mockTableFilter = undefined;
+    const html = renderToStaticMarkup(<OfferTable />);
+    expect(html).toContain("Только в наличии");
+    expect(html).toContain("Максимальная цена");
+    expect(html).toContain("Состояние товара");
+    expect(html).toContain("Поставщик");
+    expect(html).toContain("Комплектация");
+    expect(html).toContain("BOX — розничная упаковка");
+    expect(html).toContain(">Wildberries</option>");
+    expect(html).toContain("По соответствию и наличию");
+    expect(html).not.toContain("offer-filter-chips");
+  });
+
+  it("shows each active condition as a removable chip", () => {
+    mockTableFilter = { inStockOnly: true, maxPrice: 15_000, conditions: ["new"], sources: ["Wildberries"], packaging: "BOX" };
+    const html = renderToStaticMarkup(<OfferTable />);
+    mockTableFilter = undefined;
+    expect(html).toContain("offer-filter-chips");
+    for (const label of ["В наличии", "До 15", "Новый товар", "Поставщик: Wildberries", "Комплектация: BOX", "Сбросить всё"]) {
+      expect(html).toContain(label);
+    }
+    expect(html.match(/class="offer-filter-chip"/g)).toHaveLength(5);
   });
 });

@@ -10,7 +10,10 @@ export function applyChatResult(result: AnalysisResult) {
     const fromResult = result.tableFilter;
     // Predicates remain open to matching rows arriving in later SSE batches.
     const dynamic = fromResult && Object.keys(fromResult).some(key => key !== "selectedOfferIds");
-    search.setTableFilter(dynamic ? fromResult : (fromResult ?? {selectedOfferIds:result.selectedOfferIds}));
+    const next = dynamic ? fromResult : (fromResult ?? { selectedOfferIds: result.selectedOfferIds });
+    const merged = { ...search.tableFilter, ...next };
+    if (merged.selectedOfferIds?.length === 0) delete merged.selectedOfferIds;
+    search.setTableFilter(Object.keys(merged).length > 0 ? merged : undefined);
   }
   // Never mirror arbitrary chat text into the search box — only explicit search intent.
   if (result.intent === "search" && result.searchQuery && result.searchQuery.trim().length >= 2) {
