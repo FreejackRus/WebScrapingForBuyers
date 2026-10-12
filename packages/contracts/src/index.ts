@@ -203,3 +203,16 @@ export interface SearchSourcesResponse {
   sources: string[];
   disabledSources?: DisabledSearchSource[];
 }
+
+/** Where a row comes from: a B2B distributor (invoice with VAT) or a retail marketplace. */
+export type OfferChannel = "marketplace" | "distributor";
+
+/** Source names of distributors, as adapters report them. Everything else is a marketplace. */
+export const DISTRIBUTOR_SOURCES: readonly string[] = [
+  "NETLAB", "OCS", "MERLION", "Treolan", "Марвел", "Servermall", "СРВТрейд", "Онлайнтрейд", "Регард", "Хардпрайс", "ТоргPC",
+];
+
+export function offerChannel(offer: Pick<Offer, "source">): OfferChannel {
+  const source = offer.source.trim().toLocaleLowerCase("ru");
+  return DISTRIBUTOR_SOURCES.some((name) => name.toLocaleLowerCase("ru") === source) ? "distributor" : "marketplace";
+}

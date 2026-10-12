@@ -1,6 +1,6 @@
 import ExcelJS from "exceljs";
 
-import type { SearchSnapshot } from "@peremena/contracts";
+import { offerChannel, type SearchSnapshot } from "@peremena/contracts";
 
 export async function exportSearch(snapshot: SearchSnapshot): Promise<Buffer> {
   const workbook = new ExcelJS.Workbook();
@@ -24,9 +24,10 @@ export async function exportSearch(snapshot: SearchSnapshot): Promise<Buffer> {
     { header: "Группа проверки", key: "assessmentGroup", width: 22 },
     { header: "Причины проверки", key: "assessmentReasons", width: 48 },
     { header: "Проверка карточки", key: "verification", width: 40 },
+    { header: "Тип поставщика", key: "channel", width: 16 },
   ];
   sheet.getRow(1).font = { bold: true };
-  sheet.autoFilter = "A1:Q1";
+  sheet.autoFilter = "A1:R1";
   sheet.views = [{ state: "frozen", ySplit: 1 }];
 
   for (const offer of snapshot.offers) {
@@ -37,6 +38,7 @@ export async function exportSearch(snapshot: SearchSnapshot): Promise<Buffer> {
       warranty: offer.warranty ?? "не указана",
       priceAnomaly: offer.priceAnomaly ? "Цена под сомнением" : "",
       verification: offer.verification?.note ?? "",
+      channel: offerChannel(offer) === "distributor" ? "Дистрибутор" : "Маркетплейс",
       demo: offer.demo ? "Да" : "Нет",
       assessmentGroup:
         offer.assessment?.group === "needs_review"

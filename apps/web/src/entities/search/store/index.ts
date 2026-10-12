@@ -1,4 +1,4 @@
-import type { DisabledSearchSource, OfferTableFilter, Product, SearchEvent, SearchHistoryEntry, SearchSnapshot } from "@peremena/contracts";
+import type { DisabledSearchSource, OfferChannel, OfferTableFilter, Product, SearchEvent, SearchHistoryEntry, SearchSnapshot } from "@peremena/contracts";
 import { create } from "zustand";
 
 import { searchApi } from "../api";
@@ -32,6 +32,8 @@ interface SearchState {
   snapshot: SearchSnapshot | undefined;
   offerFilter: string;
   tableFilter: OfferTableFilter | undefined;
+  /** Chosen table tab; undefined until the buyer picks one (then the busier tab is shown). */
+  offerChannel: OfferChannel | undefined;
   selectedOfferId: string | undefined;
   availableSources: string[];
   disabledSources: DisabledSearchSource[];
@@ -44,6 +46,7 @@ interface SearchState {
   setQuery: (query: string) => void;
   setOfferFilter: (value: string) => void;
   setTableFilter: (value: OfferTableFilter | undefined) => void;
+  setOfferChannel: (value: OfferChannel) => void;
   setSelectedSources: (sources: string[]) => void;
   loadSources: () => Promise<void>;
   loadHistory: () => Promise<void>;
@@ -63,6 +66,7 @@ export const useSearchStore = create<SearchState>((set, get) => ({
   snapshot: undefined,
   offerFilter: "",
   tableFilter: undefined,
+  offerChannel: undefined,
   selectedOfferId: undefined,
   availableSources: [],
   disabledSources: [],
@@ -75,6 +79,7 @@ export const useSearchStore = create<SearchState>((set, get) => ({
   setQuery: (query) => set({ query }),
   setOfferFilter: (offerFilter) => set({ offerFilter }),
   setTableFilter: (tableFilter) => set({ tableFilter }),
+  setOfferChannel: (offerChannel) => set({ offerChannel }),
   setSelectedSources: (selectedSources) => {
     const allowed = selectedSources.filter(name => !get().disabledSources.some(source => source.name === name));
     writeSelectedSources(allowed);
@@ -127,6 +132,7 @@ export const useSearchStore = create<SearchState>((set, get) => ({
       error: "",
       source: undefined,
       tableFilter: undefined,
+      offerChannel: undefined,
       selectedOfferId: undefined,
       suggesting: false,
     });
@@ -174,6 +180,7 @@ export const useSearchStore = create<SearchState>((set, get) => ({
       suggestions: [],
       offerFilter: "",
       tableFilter: initialFilter,
+      offerChannel: undefined,
       selectedOfferId: undefined,
       snapshot: undefined,
     });

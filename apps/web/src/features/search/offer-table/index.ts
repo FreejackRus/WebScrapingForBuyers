@@ -28,7 +28,8 @@ export function useOfferTable() {
   const [page, setPage] = useState(1);
   const tablePage = useMemo(() => buildOfferTablePage(filtered, sort, page), [filtered, sort, page]);
 
-  useEffect(() => setPage(1), [offerFilter, tableFilter]);
+  const offerChannel = useSearchStore((state) => state.offerChannel);
+  useEffect(() => setPage(1), [offerFilter, tableFilter, offerChannel]);
 
   return {
     ...tablePage,

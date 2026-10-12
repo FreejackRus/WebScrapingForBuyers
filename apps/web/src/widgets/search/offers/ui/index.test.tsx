@@ -55,8 +55,17 @@ const snapshot: SearchSnapshot = {
 const openOffer = vi.fn();
 let mockTableFilter: OfferTableFilter | undefined;
 
+let mockChannel: "marketplace" | "distributor" = "marketplace";
+const setChannel = vi.fn();
+
 vi.mock("features/search", () => ({
   useFilteredOffers: () => rows,
+  useChannelOffers: () => ({
+    channel: mockChannel,
+    counts: { marketplace: 2, distributor: 3 },
+    setChannel,
+    offers: mockChannel === "marketplace" ? rows : [],
+  }),
   useOfferTable: () => ({
     ...tablePage,
     page: 1,
@@ -207,5 +216,15 @@ describe("OfferTable", () => {
       expect(html).toContain(label);
     }
     expect(html.match(/class="offer-filter-chip"/g)).toHaveLength(5);
+  });
+});
+
+describe("offer channel tabs", () => {
+  it("shows marketplace and distributor tabs with counts", async () => {
+    mockChannel = "marketplace";
+    const html = renderToStaticMarkup(<OfferTable />);
+    expect(html).toContain('role="tablist"');
+    expect(html).toMatch(/aria-selected="true"[^>]*>Маркетплейсы <span class="offer-channel-count">2<\/span>/);
+    expect(html).toMatch(/Дистрибуторы <span class="offer-channel-count">3<\/span>/);
   });
 });

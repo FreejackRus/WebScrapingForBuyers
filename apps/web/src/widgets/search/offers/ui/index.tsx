@@ -1,6 +1,6 @@
 import { useEffect, useState, type PointerEvent, type ReactNode } from "react";
 import type { OfferTableFilter, ProductCondition } from "@peremena/contracts";
-import { useFilteredOffers, useOfferCard, useOfferColumns, useOfferTable } from "features/search";
+import { useChannelOffers, useFilteredOffers, useOfferCard, useOfferColumns, useOfferTable } from "features/search";
 import { useAnalysisStore } from "entities/analysis";
 import { conditionLabels, matchLabels, PRICE_ANOMALY_HINT, PRICE_ANOMALY_LABEL, verificationLabels } from "entities/offer";
 import type { OfferSortColumn } from "entities/offer";
@@ -26,14 +26,17 @@ export function OfferTable() {
   const setTableFilter = useSearchStore((state) => state.setTableFilter);
   const snapshot = useSearchStore((state) => state.snapshot);
   const [budgetDraft, setBudgetDraft] = useState(tableFilter?.maxPrice?.toString() ?? "");
-  const snapshotTotal = snapshot?.offers.length ?? 0;
+  const { channel, counts, setChannel, offers: channelOffers } = useChannelOffers();
+  const snapshotTotal = channelOffers.length;
+  const otherChannel = channel === "marketplace" ? "distributor" : "marketplace";
+  const channelNames = { marketplace: "Маркетплейсы", distributor: "Дистрибуторы" } as const;
   const running = snapshot?.status === "running";
   const failedSources = snapshot?.sources.filter((source) => source.status === "error").length ?? 0;
   const selected = useAnalysisStore((state) => state.analysis?.selectedOfferIds ?? emptySelected);
   const recommended = selected[0];
   const from = total === 0 ? 0 : (page - 1) * pageSize + 1;
   const to = Math.min(page * pageSize, total);
-  const suppliers = [...new Set(snapshot?.offers.flatMap((offer) => [offer.source, offer.seller].filter(Boolean) as string[]) ?? [])]
+  const suppliers = [...new Set(channelOffers.flatMap((offer) => [offer.source, offer.seller].filter(Boolean) as string[]))]
     .sort((left, right) => left.localeCompare(right, "ru"));
   const budgetValue = Number(budgetDraft.replace(",", "."));
   const budgetInvalid = budgetDraft.trim() !== "" && (!Number.isFinite(budgetValue) || budgetValue <= 0);
@@ -204,6 +207,24 @@ export function OfferTable() {
           </div>
         </div>
       </div>
+      <div className="offer-channel-tabs" role="tablist" aria-label="Тип поставщика">
+        {(["marketplace", "distributor"] as const).map((key) => (
+          <button
+            key={key}
+            type="button"
+            role="tab"
+            id={`offer-tab-${key}`}
+            aria-selected={channel === key}
+            className={channel === key ? "offer-channel-tab active" : "offer-channel-tab"}
+            onClick={() => setChannel(key)}
+          >
+            {channelNames[key]} <span className="offer-channel-count">{counts[key]}</span>
+          </button>
+        ))}
+        <span className="offer-channel-hint">
+          {channel === "distributor" ? "Счёт с НДС и закрывающие документы; цены — B2B или публичные цены сайта" : "Розничные цены площадок; оплата и документы — по условиям продавца"}
+        </span>
+      </div>
       <fieldset className="offer-filter-controls">
         <legend className="sr-only">Фильтры предложений</legend>
         <label className="offer-filter-check"><input type="checkbox" checked={tableFilter?.inStockOnly ?? false} onChange={(event) => updateFilter("inStockOnly", event.target.checked || undefined)} />Только в наличии</label>
@@ -303,9 +324,11 @@ export function OfferTable() {
         {total === 0 && (
           <div className="empty offers-empty" role="status">
             <span className="empty-mark" aria-hidden="true">{snapshotTotal > 0 ? "⌕" : running ? "…" : "—"}</span>
-            <h3>{reviewRows.length > 0 ? "Нет предложений без уточнений" : snapshotTotal > 0 ? "Нет предложений по этому фильтру" : running ? "Собираем предложения" : failedSources > 0 ? "Не удалось получить предложения" : "Предложения не найдены"}</h3>
+            <h3>{snapshotTotal === 0 && counts[otherChannel] > 0 ? `${channelNames[channel]}: предложений нет` : reviewRows.length > 0 ? "Нет предложений без уточнений" : snapshotTotal > 0 ? "Нет предложений по этому фильтру" : running ? "Собираем предложения" : failedSources > 0 ? "Не удалось получить предложения" : "Предложения не найдены"}</h3>
             <p>
-              {reviewRows.length > 0
+              {snapshotTotal === 0 && counts[otherChannel] > 0
+                ? `Найдено во вкладке «${channelNames[otherChannel]}»: ${counts[otherChannel]}.${running ? " Источники ещё отвечают." : ""}`
+                : reviewRows.length > 0
                 ? "Все найденные предложения требуют проверки. Разверните группу ниже, чтобы увидеть причины."
                 : snapshotTotal > 0
                 ? "Измените запрос в таблице или сбросьте фильтры — загруженные строки сохранены."
@@ -315,6 +338,11 @@ export function OfferTable() {
                     ? "Часть источников недоступна. Это не означает, что товара нет в продаже. Повторите поиск позже или уточните модель."
                     : "Сбор завершён. Уточните название, бренд или артикул в строке поиска."}
             </p>
+            {snapshotTotal === 0 && counts[otherChannel] > 0 && (
+              <button type="button" className="ghost" onClick={() => setChannel(otherChannel)}>
+                Открыть «{channelNames[otherChannel]}»
+              </button>
+            )}
             {snapshotTotal > 0 && (offerFilter || tableFilter) && (
               <button type="button" className="ghost" onClick={() => { setOfferFilter(""); setTableFilter(undefined); }}>
                 Сбросить все фильтры

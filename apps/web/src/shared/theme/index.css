@@ -362,6 +362,15 @@ th { position: relative; }
 .source-picker fieldset:disabled .source-chip { opacity: 0.6; pointer-events: none; }
 .offer-search input { width: min(320px, 100%); }
 /* Table filters: stock, budget, condition, supplier, packaging — no chat needed. */
+.offer-channel-tabs { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; margin: 12px 0 8px; }
+.offer-channel-tab {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 6px 14px;
+  border: 1px solid var(--line, #d9dee8); border-radius: 999px; background: transparent; color: inherit; font-weight: 600; cursor: pointer;
+}
+.offer-channel-tab.active { border-color: var(--brand); background: var(--brand-soft); color: var(--brand-dark); }
+.offer-channel-tab:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+.offer-channel-count { min-width: 22px; padding: 0 6px; border-radius: 999px; background: var(--surface-2, #eef1f6); font-size: 12px; text-align: center; }
+.offer-channel-hint { color: var(--muted); font-size: 12px; }
 .offer-filter-controls {
   display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px 14px;
   margin: 12px 0 0; padding: 10px 12px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--brand-50);
