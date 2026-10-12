@@ -1,7 +1,9 @@
 import { exportApi } from "features/export";
 import { useSearchStore } from "entities/search";
 import { useUserStore } from "entities/user";
+import { useChannelOffers } from "features/search";
 import { Metrics } from "widgets/search/metrics";
+import { PriceTrend } from "widgets/search/price-trend";
 import { OfferCard } from "widgets/search/offer-card";
 import { OfferTable } from "widgets/search/offers";
 import { SourceGrid } from "widgets/search/sources";
@@ -20,6 +22,7 @@ function useWorkspaceSnapshot() {
 
 export function SearchWorkspaceLead() {
   const { user, snapshot, error, offers, bestPublic, failedSources, settledSources } = useWorkspaceSnapshot();
+  const { channel } = useChannelOffers();
 
   return (
     <>
@@ -73,6 +76,7 @@ export function SearchWorkspaceLead() {
               settledSources={settledSources}
               sourceCount={snapshot.sources.length}
             />
+            <PriceTrend historyKey={snapshot.historyKey} complete={snapshot.status === "complete"} channel={channel} />
           </section>
           {user?.role === "admin" && <SourceGrid sources={snapshot.sources} role={user.role} />}
         </>

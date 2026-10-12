@@ -11,6 +11,8 @@ services:
       SEARCH_URL: http://search:3003
       ANALYSIS_URL: http://analysis:3004
       HISTORY_FILE: /data/search-history.json
+      WATCHLIST_FILE: /data/watchlist.json
+      WATCHLIST_CHECK_HOURS: ${WATCHLIST_CHECK_HOURS:-24}
     volumes:
       - gateway-data:/data
     depends_on:
@@ -79,6 +81,9 @@ services:
       HARDPRICE_API_TOKEN: ${HARDPRICE_API_TOKEN:-}
       SRVTRADE_API_TOKEN: ${SRVTRADE_API_TOKEN:-}
       TORGPC_API_TOKEN: ${TORGPC_API_TOKEN:-}
+      PRICE_HISTORY_FILE: /data/price-history.json
+    volumes:
+      - search-data:/data
     # No depends_on marketplace-mcp/chrome: `up --build search` must not
     # recreate the headed Chrome profile. Start chrome + MCP separately.
     networks:
@@ -224,6 +229,7 @@ volumes:
   vllm-models:
   chrome-headed:
   gateway-data:
+  search-data:
 
 networks:
   radar:

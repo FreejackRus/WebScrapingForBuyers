@@ -1,10 +1,12 @@
-import type { ChatTurn, SearchSnapshot, SessionUser } from "@peremena/contracts";
+import type { ChatTurn, Product, SearchSnapshot, SessionUser } from "@peremena/contracts";
 import { createService, fetchWithTimeout, isTimeoutError, serviceUrl } from "@peremena/service-kit";
 import type { FastifyReply, FastifyRequest } from "fastify";
 
 import { presentEvent, presentSnapshot } from "./present.js";
 import { SearchHistory } from "./search-history.js";
 import { UserCache } from "./user-cache.js";
+import { checkWatchItem, startWatchlistScheduler } from "./watchlist-checker.js";
+import { WatchlistStore, type NewWatch } from "./watchlist.js";
 
 const IDENTITY_TIMEOUT_MS = 5_000;
 const HEALTH_TIMEOUT_MS = 3_000;
@@ -14,7 +16,7 @@ const ANALYSIS_TIMEOUT_MS = 180_000;
 const EXPORT_TIMEOUT_MS = 60_000;
 const STREAM_CONNECT_TIMEOUT_MS = 10_000;
 
-export function buildGatewayApp(options: { logger?: boolean; history?: SearchHistory } = {}) {
+export function buildGatewayApp(options: { logger?: boolean; history?: SearchHistory; watchlist?: WatchlistStore; watchlistScheduler?: boolean } = {}) {
   const app = createService({ logger: options.logger ?? false, cookies: true });
   // HISTORY_FILE points at a mounted volume in production; without it history lives in memory only.
   const history = options.history ?? new SearchHistory(process.env.HISTORY_FILE);
@@ -22,6 +24,15 @@ export function buildGatewayApp(options: { logger?: boolean; history?: SearchHis
   const search = serviceUrl("SEARCH_URL", "http://127.0.0.1:3003");
   const analysis = serviceUrl("ANALYSIS_URL", "http://127.0.0.1:3004");
   const users = new UserCache();
+  // WATCHLIST_FILE: watched prices per user, on the same volume as the history.
+  const watchlist = options.watchlist ?? new WatchlistStore(process.env.WATCHLIST_FILE);
+  const stopWatchlist = options.watchlistScheduler === false
+    ? () => undefined
+    : startWatchlistScheduler(watchlist, search, { log: (entry) => app.log.info(entry) });
+  app.addHook("onClose", async () => {
+    stopWatchlist();
+    await watchlist.flush();
+  });
   // Debounced history writes must not be lost on shutdown.
   app.addHook("onClose", async () => {
     await history.flush();
@@ -104,6 +115,30 @@ export function buildGatewayApp(options: { logger?: boolean; history?: SearchHis
   app.delete<{ Params: { id: string } }>("/api/v1/history/:id", async (request, reply) => {
     const removed = request.currentUser ? history.remove(request.currentUser.id, request.params.id) : false;
     return removed ? { ok: true } : reply.code(404).send({ error: "Запись истории не найдена" });
+  });
+  app.get<{ Querystring: { key?: string } }>("/api/v1/price-history", async (request, reply) =>
+    proxyJson(search, `/price-history?key=${encodeURIComponent(String(request.query.key ?? ""))}`, request, reply),
+  );
+  app.get("/api/v1/watchlist", async (request) => ({
+    items: request.currentUser ? watchlist.list(request.currentUser.id) : [],
+  }));
+  app.post<{ Body: unknown }>("/api/v1/watchlist", async (request, reply) => {
+    const watch = parseNewWatch(request.body);
+    if (!watch) return reply.code(400).send({ error: "Неполные данные для отслеживания" });
+    const item = request.currentUser ? watchlist.add(request.currentUser.id, watch) : undefined;
+    if (!item) return reply.code(409).send({ error: "Список отслеживания заполнен: удалите ненужные позиции" });
+    return reply.code(201).send(item);
+  });
+  app.delete<{ Params: { id: string } }>("/api/v1/watchlist/:id", async (request, reply) => {
+    const removed = request.currentUser ? watchlist.remove(request.currentUser.id, request.params.id) : false;
+    return removed ? { ok: true } : reply.code(404).send({ error: "Позиция не найдена" });
+  });
+  app.post<{ Params: { id: string } }>("/api/v1/watchlist/:id/check", async (request, reply) => {
+    const userId = request.currentUser?.id;
+    const item = userId ? watchlist.get(userId, request.params.id) : undefined;
+    if (!userId || !item) return reply.code(404).send({ error: "Позиция не найдена" });
+    const checked = await checkWatchItem(watchlist, search, userId, item);
+    return checked ?? reply.code(404).send({ error: "Позиция не найдена" });
   });
   app.get<{ Params: { id: string } }>("/api/v1/searches/:id", async (request, reply) => {
     const result = await proxyJson(search, `/searches/${request.params.id}`, request, reply);
@@ -227,6 +262,29 @@ declare module "fastify" {
   interface FastifyRequest {
     currentUser?: SessionUser;
   }
+}
+
+/** Body of POST /watchlist: what the buyer saw in the offer card. */
+export function parseNewWatch(raw: unknown): NewWatch | undefined {
+  if (!raw || typeof raw !== "object") return undefined;
+  const body = raw as Record<string, unknown>;
+  const product = body.product as Record<string, unknown> | undefined;
+  const validProduct =
+    !!product &&
+    typeof product === "object" &&
+    ["id", "brand", "model", "name", "mpn", "category"].every((key) => typeof product[key] === "string") &&
+    !!product.characteristics &&
+    typeof product.characteristics === "object";
+  if (!validProduct) return undefined;
+  if (body.channel !== "marketplace" && body.channel !== "distributor") return undefined;
+  if (typeof body.price !== "number" || !Number.isFinite(body.price) || body.price <= 0) return undefined;
+  return {
+    query: typeof body.query === "string" ? body.query : String(product.name),
+    product: product as unknown as Product,
+    channel: body.channel,
+    price: body.price,
+    inStock: body.inStock === true,
+  };
 }
 
 /** The prompt plus who is asking, so analysis can tailor and sanitise its answer. */

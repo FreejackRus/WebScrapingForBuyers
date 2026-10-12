@@ -3,6 +3,7 @@ import { createService } from "@peremena/service-kit";
 import { SearchService } from "./application/search-service.js";
 import type { SourceAdapter } from "./domain/source-adapter.js";
 import { searchRoutes } from "./http/routes.js";
+import { PriceHistoryStore } from "./infrastructure/history/price-history-store.js";
 import { createDistributorSourcesFromEnv } from "./infrastructure/sources/b2b-distributor-adapter.js";
 import { createDemoSources } from "./infrastructure/sources/demo-source-adapter.js";
 import { mergeSourceFallbacks } from "./infrastructure/sources/fallback-source-adapter.js";
@@ -16,8 +17,13 @@ export function allowDemoSources(): boolean {
   return raw === "1" || raw === "true" || raw === "yes";
 }
 
-export function buildSearchApp(options: { sources?: SourceAdapter[]; logger?: boolean } = {}) {
+export function buildSearchApp(options: { sources?: SourceAdapter[]; logger?: boolean; priceHistory?: PriceHistoryStore } = {}) {
   const app = createService({ logger: options.logger ?? false });
+  // PRICE_HISTORY_FILE points at a volume in production; without it the series live in memory only.
+  const priceHistory = options.priceHistory ?? new PriceHistoryStore(process.env.PRICE_HISTORY_FILE);
+  app.addHook("onClose", async () => {
+    await priceHistory.flush();
+  });
   const realSources = mergeSourceFallbacks([
     createMarketplaceSourcesFromEnv(),
     createHttpMarketplaceSources(),
@@ -29,7 +35,8 @@ export function buildSearchApp(options: { sources?: SourceAdapter[]; logger?: bo
     : [];
   const sources = options.sources ?? [...realSources, ...demoSources];
   void app.register(searchRoutes, {
-    searchService: new SearchService(sources, undefined, undefined, undefined, options.sources ? [] : createCardVerifiersFromEnv()),
+    searchService: new SearchService(sources, undefined, undefined, undefined, options.sources ? [] : createCardVerifiersFromEnv(), priceHistory),
+    priceHistory,
     mode: realSources.length > 0 ? "hybrid" : demoSources.length > 0 ? "demo" : "hybrid",
   });
   return app;

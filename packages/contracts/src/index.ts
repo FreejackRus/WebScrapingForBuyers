@@ -79,6 +79,8 @@ export interface SearchSnapshot {
   status: "running" | "complete";
   offers: Offer[];
   sources: SourceState[];
+  /** Price-history series of this product (GET /price-history?key=); absent when not tracked. */
+  historyKey?: string;
 }
 
 /** One remembered search of one user; `product` lets the buyer repeat it exactly. */
@@ -250,4 +252,46 @@ export interface JustificationResponse {
   /** false when AI was unavailable and the memo is the deterministic template. */
   ai: boolean;
   provider: string;
+}
+
+/** Minimum prices of one channel in one completed search. null: no good rows (or none in stock). */
+export interface PriceChannelStats {
+  min: number | null;
+  inStockMin: number | null;
+  count: number;
+}
+
+/** One completed real search of a product, as a point of its price series. */
+export interface PriceHistoryPoint {
+  at: string;
+  query: string;
+  marketplace: PriceChannelStats;
+  distributor: PriceChannelStats;
+}
+
+export interface PriceHistory {
+  key: string;
+  points: PriceHistoryPoint[];
+}
+
+/** What changed since the buyer started watching a price. */
+export type WatchChange = "cheaper" | "pricier" | "back_in_stock" | "out_of_stock" | "same";
+
+export interface WatchPrice {
+  price: number;
+  inStock: boolean;
+  at: string;
+}
+
+/** One product a buyer watches in one channel; rechecked by the gateway on a schedule. */
+export interface WatchItem {
+  id: string;
+  createdAt: string;
+  query: string;
+  product: Product;
+  channel: OfferChannel;
+  baseline: WatchPrice;
+  last: WatchPrice | null;
+  change: WatchChange | null;
+  checkError?: string;
 }

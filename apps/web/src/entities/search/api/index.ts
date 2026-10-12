@@ -1,4 +1,4 @@
-import type { Product, SearchEvent, SearchHistoryEntry, SearchSnapshot, SearchSourcesResponse } from "@peremena/contracts";
+import type { PriceHistory, Product, SearchEvent, SearchHistoryEntry, SearchSnapshot, SearchSourcesResponse } from "@peremena/contracts";
 
 import { apiUrl, request } from "shared/api";
 
@@ -27,5 +27,6 @@ export const searchApi = {
     source.onerror = onError;
     return source;
   },
+  priceHistory: (key: string) => request<PriceHistory>(apiUrl(`/price-history?key=${encodeURIComponent(key)}`)),
   exportUrl: (searchId: string) => apiUrl(`/searches/${searchId}/export.xlsx`),
 };
