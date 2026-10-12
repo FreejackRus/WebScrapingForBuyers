@@ -64,6 +64,7 @@ describe("VllmAnalysisNarrator", () => {
       response_format: { type: "json_schema", json_schema: { strict: true } },
     });
     expect(requestBody.response_format.json_schema.schema).toMatchObject({ type: "object" });
+    expect(JSON.stringify(requestBody.response_format.json_schema.schema)).not.toContain("uniqueItems");
     expect(requestBody.messages.map((message: { role: string }) => message.role)).toEqual(["system", "user"]);
   });
 
@@ -89,6 +90,11 @@ describe("VllmAnalysisNarrator", () => {
     vi.stubGlobal("fetch", vi.fn(async () => completion({ summary: "я".repeat(70_000), warnings: [] })));
     await expect(new VllmAnalysisNarrator("http://vllm/v1", "qwen").answer({ prompt: "объясни" }))
       .rejects.toThrow("ответ локальной модели не прошёл проверку формата");
+  });
+
+  it("still rejects duplicate IDs when the grammar cannot enforce uniqueness", async () => {
+    vi.stubGlobal("fetch", vi.fn(async () => completion({ summary: "Выбрано.", warnings: [], offerIds: ["cpu", "cpu"] })));
+    await expect(new VllmAnalysisNarrator("http://vllm/v1", "qwen").answer({ prompt: "почему?", trustedContext })).rejects.toThrow();
   });
 
   it("reuses grounding validation for unknown offer IDs", async () => {
