@@ -192,6 +192,18 @@ export function buildGatewayApp(options: { logger?: boolean; history?: SearchHis
   app.post<{ Body: { prompt?: string; history?: unknown; context?: unknown } }>("/api/v1/copilot/chat", async (request, reply) =>
     proxyJson(analysis, "/chat", request, reply, userPrompt(request), ANALYSIS_TIMEOUT_MS),
   );
+  // Reliability panel (package D): connector canaries and search-quality scores are admin-only —
+  // error texts may carry hosts and tokens, same reason SourceState.message is hidden.
+  app.get("/api/v1/admin/sources/health", async (request, reply) =>
+    requireAdmin(request, reply) ?? proxyJson(search, "/health/sources", request, reply),
+  );
+  app.get("/api/v1/admin/quality", async (request, reply) =>
+    requireAdmin(request, reply) ?? proxyJson(search, "/quality", request, reply),
+  );
+  app.post("/api/v1/admin/quality/run", async (request, reply) =>
+    requireAdmin(request, reply) ?? proxyJson(search, "/quality/run", request, reply, {}),
+  );
+
   app.get<{ Params: { id: string } }>("/api/v1/searches/:id/export.xlsx", async (request, reply) => {
     let upstream: Response;
     try {
@@ -259,6 +271,13 @@ function userPrompt(request: FastifyRequest<{ Body: { prompt?: string; history?:
     ...(user?.role ? { userRole: user.role } : {}),
     ...(user?.login ? { userLogin: user.login } : {}),
   };
+}
+
+/** undefined for admins; otherwise the 403 body (reply code already set). */
+export function requireAdmin(request: FastifyRequest, reply: FastifyReply): { error: string } | undefined {
+  if (request.currentUser?.role === "admin") return undefined;
+  reply.code(403);
+  return { error: "Раздел доступен только администратору" };
 }
 
 function gatewayStatus(error: unknown): number {

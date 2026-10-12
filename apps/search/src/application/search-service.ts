@@ -95,6 +95,22 @@ export class SearchService {
     return structuredClone(snapshot);
   }
 
+  /**
+   * Runs a search to completion for internal checks (weekly quality eval). Goes straight to
+   * start(), never through any HTTP-level result cache, so the score reflects live sources.
+   */
+  async runUncached(query: string, product: Product, timeoutMs = 150_000): Promise<SearchSnapshot> {
+    const { id } = this.start(query, product);
+    const started = this.now();
+    for (;;) {
+      const snapshot = this.get(id);
+      if (!snapshot || snapshot.status !== "running" || this.now() - started > timeoutMs) {
+        return snapshot ?? { id, query, product, status: "complete", offers: [], sources: [] };
+      }
+      await new Promise((resolve) => setTimeout(resolve, 1_000));
+    }
+  }
+
   get(id: string): SearchSnapshot | undefined {
     const snapshot = this.searches.get(id);
     return snapshot ? structuredClone(snapshot) : undefined;
