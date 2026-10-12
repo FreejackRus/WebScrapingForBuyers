@@ -10,6 +10,9 @@ describe("marketplace offer deduplication", () => {
   it("removes duplicate cards with same URL despite different response IDs", async () => {
     expect(await citilink([{ ...item, id: "first" }, { ...item, id: "second" }]).search(product)).toHaveLength(1);
   });
+  it("preserves packaging variants with a shared card URL and price", async () => {
+    expect(await citilink([{ ...item, id: "oem" }, { ...item, id: "box", title: "Процессор Intel Core i5 12400F BOX" }]).search(product)).toHaveLength(2);
+  });
   it("preserves different sellers, URLs, and price variants", async () => {
     const offers = await citilink([item, { ...item, url: item.url.replace("123", "124") }, { ...item, seller: "Другой продавец" }, { ...item, price_rub: 14500 }]).search(product);
     expect(offers).toHaveLength(4);

@@ -18,6 +18,7 @@ describe("CPU result precision", () => {
     expect(product.category).toBe("Процессоры");
   });
   it.each([
+    "Игровой ПК: Intel Core i5-12400F + RTX 5060",
     "Игровой пк Intel Core i5 12400F + RTX 5060",
     "Системный блок Intel Core i5-12400F",
     "Компьютер Intel Core i5-12400F",
@@ -29,11 +30,13 @@ describe("CPU result precision", () => {
     "CPU Intel Core i5-12400F Alder Lake OEM CM8071504650609SRL5Z/CM8071504650608SRL5Z",
     "CPU Intel Core i5-12400F Alder Lake BOX (BX8071512400FSRL5Z/BX8071512400FSRL4W)",
     "Процессор Intel Core i5 12400F, OEM",
+    "Процессор Intel Core i5-12400F для ПК OEM",
+    "Процессор Intel Core i5-12400F OEM (код 12345)",
     "2026 Intel core i5 12400F oem Гарантия Новые",
   ])("retains a single processor %s", (title) => {
     expect(assessOffer(productFromQuery("12400F"), offer(title), "12400F")?.assessment?.group).toBe("match");
   });
-  it("does not turn a requested computer into a processor", () => {
-    expect(productFromQuery("Игровой ПК Intel Core i5-12400F").category).not.toBe("Процессоры");
+  it.each(["Игровой ПК Intel Core i5-12400F", "ПК Core i5-12400F"])("does not turn %s into a processor", (query) => {
+    expect(productFromQuery(query).category).toBe("Компьютеры");
   });
 });
