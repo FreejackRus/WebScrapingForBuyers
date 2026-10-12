@@ -3,6 +3,7 @@ import { createService, fetchWithTimeout, isTimeoutError, serviceUrl } from "@pe
 import type { FastifyReply, FastifyRequest } from "fastify";
 
 import { presentEvent, presentSnapshot } from "./present.js";
+import { BasketStore, MAX_BASKET_ITEMS, parseBasketOffer, parseQuantity } from "./basket-store.js";
 import { SearchHistory } from "./search-history.js";
 import { UserCache } from "./user-cache.js";
 import { checkWatchItem, startWatchlistScheduler } from "./watchlist-checker.js";
@@ -16,7 +17,7 @@ const ANALYSIS_TIMEOUT_MS = 180_000;
 const EXPORT_TIMEOUT_MS = 60_000;
 const STREAM_CONNECT_TIMEOUT_MS = 10_000;
 
-export function buildGatewayApp(options: { logger?: boolean; history?: SearchHistory; watchlist?: WatchlistStore; watchlistScheduler?: boolean } = {}) {
+export function buildGatewayApp(options: { logger?: boolean; history?: SearchHistory; watchlist?: WatchlistStore; watchlistScheduler?: boolean; basket?: BasketStore } = {}) {
   const app = createService({ logger: options.logger ?? false, cookies: true });
   // HISTORY_FILE points at a mounted volume in production; without it history lives in memory only.
   const history = options.history ?? new SearchHistory(process.env.HISTORY_FILE);
@@ -36,6 +37,11 @@ export function buildGatewayApp(options: { logger?: boolean; history?: SearchHis
   // Debounced history writes must not be lost on shutdown.
   app.addHook("onClose", async () => {
     await history.flush();
+  });
+  // BASKET_FILE: same volume as history; without it the basket lives in memory only.
+  const basket = options.basket ?? new BasketStore(process.env.BASKET_FILE);
+  app.addHook("onClose", async () => {
+    await basket.flush();
   });
 
   app.addHook("preHandler", async (request, reply) => {
@@ -265,6 +271,56 @@ export function buildGatewayApp(options: { logger?: boolean; history?: SearchHis
         upstream.headers.get("content-disposition") ?? `attachment; filename="offers.xlsx"`,
       )
       .send(bytes);
+  });
+
+  // ---------------------------------------------------------------- basket (корзина закупки)
+  const BASKET_BODY_LIMIT = 16 * 1024;
+  app.get("/api/v1/basket", async (request) => ({
+    items: request.currentUser ? basket.list(request.currentUser.id) : [],
+  }));
+  app.post<{ Body: { query?: unknown; quantity?: unknown; offer?: unknown } }>(
+    "/api/v1/basket",
+    { bodyLimit: BASKET_BODY_LIMIT },
+    async (request, reply) => {
+      const offer = parseBasketOffer(request.body?.offer);
+      const quantity = request.body?.quantity === undefined ? 1 : parseQuantity(request.body.quantity);
+      const query = typeof request.body?.query === "string" ? request.body.query.slice(0, 300) : "";
+      if (!request.currentUser || !offer || quantity === undefined) return reply.code(400).send({ error: "Некорректная позиция корзины" });
+      const result = basket.add(request.currentUser.id, { query, quantity, offer });
+      if ("error" in result) return reply.code(409).send({ error: `В корзине уже ${MAX_BASKET_ITEMS} позиций` });
+      return reply.code(201).send({ item: result.item, items: basket.list(request.currentUser.id) });
+    },
+  );
+  app.patch<{ Params: { id: string }; Body: { quantity?: unknown } }>(
+    "/api/v1/basket/:id",
+    { bodyLimit: 1024 },
+    async (request, reply) => {
+      const quantity = parseQuantity(request.body?.quantity);
+      if (!request.currentUser || quantity === undefined) return reply.code(400).send({ error: "Количество — целое число от 1 до 10 000" });
+      const item = basket.setQuantity(request.currentUser.id, request.params.id, quantity);
+      return item ? { item, items: basket.list(request.currentUser.id) } : reply.code(404).send({ error: "Позиция не найдена" });
+    },
+  );
+  app.delete<{ Params: { id: string } }>("/api/v1/basket/:id", async (request, reply) => {
+    const removed = request.currentUser ? basket.remove(request.currentUser.id, request.params.id) : false;
+    // JSON bodies (not 204): the web client always parses the answer.
+    if (!removed || !request.currentUser) return reply.code(404).send({ error: "Позиция не найдена" });
+    return { items: basket.list(request.currentUser.id) };
+  });
+  app.delete("/api/v1/basket", async (request) => {
+    if (request.currentUser) basket.clear(request.currentUser.id);
+    return { items: [] };
+  });
+  app.post("/api/v1/basket/justify", async (request, reply) => {
+    const items = request.currentUser ? basket.list(request.currentUser.id) : [];
+    if (items.length === 0) return reply.code(400).send({ error: "Корзина пуста" });
+    // Analysis accepts up to 50 lines; a larger basket is justified by its first 50.
+    return proxyJson(analysis, "/justify-basket", request, reply, { items: items.slice(0, 50) }, ANALYSIS_TIMEOUT_MS);
+  });
+  app.post<{ Body: { text?: unknown } }>("/api/v1/request/split", { bodyLimit: 16 * 1024 }, async (request, reply) => {
+    const text = typeof request.body?.text === "string" ? request.body.text.trim() : "";
+    if (text.length < 2 || text.length > 3_000) return reply.code(400).send({ error: "Текст заявки — от 2 до 3000 символов" });
+    return proxyJson(analysis, "/split-request", request, reply, { text }, ANALYSIS_TIMEOUT_MS);
   });
 
   return app;

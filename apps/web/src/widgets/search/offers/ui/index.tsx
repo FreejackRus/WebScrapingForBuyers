@@ -6,6 +6,8 @@ import { conditionLabels, matchLabels, PRICE_ANOMALY_HINT, PRICE_ANOMALY_LABEL, 
 import type { OfferSortColumn } from "entities/offer";
 import { useSearchStore } from "entities/search";
 import { fetchedTime, money } from "shared/lib";
+import { AddToBasketButton, BasketButton } from "widgets/basket";
+import { CompareBar, CompareCheckbox } from "widgets/search/compare";
 
 import { SearchNotices, shouldAutoReview } from "./search-notices";
 
@@ -194,6 +196,7 @@ export function OfferTable() {
         ))}
         {cell("fetched", <>{fetchedTime.format(new Date(offer.fetchedAt))}</>, "mono")}
         <td className="offer-action">
+          <CompareCheckbox offerId={offer.id} />
           <button
             type="button"
             className={`offer-cta${isBest ? " primary" : ""}`}
@@ -204,6 +207,7 @@ export function OfferTable() {
           >
             Карточка
           </button>
+          <AddToBasketButton offer={offer} compact />
         </td>
       </tr>
     );
@@ -225,6 +229,7 @@ export function OfferTable() {
               placeholder="Источник, продавец, товар…"
             />
           </label>
+          <BasketButton />
           <div className="column-menu-wrap">
             <button
               type="button"
@@ -404,6 +409,7 @@ export function OfferTable() {
           </div>
         )}
       </div>
+      <CompareBar />
       {reviewRows.length > 0 && (
         <details className="offer-review-group">
           <summary>Требует уточнения — {reviewRows.length}</summary>

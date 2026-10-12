@@ -15,6 +15,7 @@ import { analysisApi } from "entities/analysis";
 import { useSearchStore } from "entities/search";
 import { useOfferCard } from "features/search";
 import { fetchedTime, money } from "shared/lib";
+import { AddToBasketButton } from "widgets/basket";
 
 export function OfferCard() {
   const { offer, closeOffer } = useOfferCard();
@@ -187,6 +188,7 @@ export function OfferCard() {
             Открыть на площадке
           </a>
           <WatchButton offer={offer} />
+          <AddToBasketButton offer={offer} />
           <button type="button" className="ghost" onClick={closeOffer}>
             Закрыть
           </button>

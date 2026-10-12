@@ -13,6 +13,7 @@ services:
       HISTORY_FILE: /data/search-history.json
       WATCHLIST_FILE: /data/watchlist.json
       WATCHLIST_CHECK_HOURS: ${WATCHLIST_CHECK_HOURS:-24}
+      BASKET_FILE: /data/basket.json
     volumes:
       - gateway-data:/data
     depends_on:
