@@ -297,3 +297,53 @@ export interface WatchItem {
   change: WatchChange | null;
   checkError?: string;
 }
+
+// --- Reliability (package D): source canaries and the weekly search-quality score. ---
+
+export interface SourceCheck {
+  source: string;
+  ok: boolean;
+  rows: number;
+  ms: number;
+  checkedAt: string;
+  error?: string;
+}
+
+export interface SourceHealth {
+  source: string;
+  canary: string;
+  last?: SourceCheck;
+  lastSuccessAt?: string;
+  consecutiveFailures: number;
+  history: SourceCheck[];
+}
+
+export interface SourceHealthReport {
+  sources: SourceHealth[];
+  alerts: string[];
+  running: boolean;
+}
+
+export interface QualityFailedQuery {
+  query: string;
+  precision: number;
+  top: string[];
+}
+
+export interface QualityResult {
+  at: string;
+  cases: number;
+  marketplacePrecision: number;
+  distributorPrecision: number | null;
+  empty: number;
+  inStockShare: number;
+  perfect: number;
+  failedQueries: QualityFailedQuery[];
+  /** Non-empty when quality dropped against the previous run. */
+  alerts: string[];
+}
+
+export interface QualityReport {
+  results: QualityResult[];
+  running: boolean;
+}

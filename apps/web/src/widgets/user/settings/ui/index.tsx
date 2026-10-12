@@ -3,13 +3,14 @@ import { FormEvent, useState } from "react";
 import { logout } from "features/user";
 import { useAnalysisStore } from "entities/analysis";
 import { useUserStore } from "entities/user";
+import { SystemHealthPanel } from "widgets/admin";
 
 const roleLabels = {
   admin: "Администратор",
   manager: "Менеджер закупок",
 };
 
-type SettingsSection = "profile" | "ai" | "security";
+type SettingsSection = "profile" | "ai" | "security" | "system";
 
 export function UserSettings({ onBack }: { onBack: () => void }) {
   const user = useUserStore((state) => state.user);
@@ -80,6 +81,11 @@ export function UserSettings({ onBack }: { onBack: () => void }) {
           <button className={section === "security" ? "active" : ""} type="button" onClick={() => setSection("security")}>
             Безопасность
           </button>
+          {user.role === "admin" && (
+            <button className={section === "system" ? "active" : ""} type="button" onClick={() => setSection("system")}>
+              Состояние системы
+            </button>
+          )}
         </nav>
         <div className="settings-nav-note">
           <strong>{roleLabels[user.role]}</strong>
@@ -204,6 +210,7 @@ export function UserSettings({ onBack }: { onBack: () => void }) {
             </div>
           </section>
         )}
+        {section === "system" && user.role === "admin" && <SystemHealthPanel />}
       </div>
 
       <footer className="settings-savebar">

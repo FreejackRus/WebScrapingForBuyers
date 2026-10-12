@@ -1671,3 +1671,20 @@ textarea.chat-composer-input { resize: vertical; min-height: 60px; max-height: 1
 .watch-change { justify-self: start; padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; background: var(--canvas); color: var(--muted); }
 .watch-change--cheaper, .watch-change--back_in_stock { background: var(--success-soft); color: var(--success); }
 .watch-change--pricier, .watch-change--out_of_stock { background: #fdecea; color: var(--danger); }
+/* --- Состояние системы (admin reliability panel) --- */
+.system-alert ul { margin: 4px 0 0; padding-left: 18px; }
+.system-health h3 { margin: 4px 0 0; font-size: 15px; }
+.system-table-wrap { overflow-x: auto; }
+.system-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.system-table th, .system-table td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.system-table th { color: var(--muted); font-weight: 600; }
+.system-error { color: var(--danger); max-width: 280px; overflow-wrap: anywhere; }
+.status-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--muted); vertical-align: middle; }
+.status-dot.ok { background: var(--success); }
+.status-dot.warn { background: var(--warn); }
+.status-dot.error { background: var(--danger); }
+.quality-summary { display: grid; gap: 8px; }
+.quality-trend { color: var(--brand); }
+.quality-history { margin: 0; padding-left: 18px; color: var(--muted); font-size: 13px; columns: 2; }
+.quality-failed { font-size: 13px; display: grid; gap: 6px; }
+.quality-failed ul { color: var(--muted); }

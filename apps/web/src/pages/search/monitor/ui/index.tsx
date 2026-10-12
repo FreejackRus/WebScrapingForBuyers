@@ -1,4 +1,5 @@
 import { WorkspaceShell } from "composition/layer";
+import { AdminAlertBanner } from "widgets/admin";
 import { AnalysisChat } from "widgets/analysis";
 import { SearchCommand, SearchWorkspaceLead, SearchWorkspaceOffers } from "widgets/search";
 
@@ -7,7 +8,12 @@ export function Monitor() {
     <main id="main-content">
       <SearchCommand />
       <WorkspaceShell
-        lead={<SearchWorkspaceLead />}
+        lead={
+          <>
+            <AdminAlertBanner />
+            <SearchWorkspaceLead />
+          </>
+        }
         chat={<AnalysisChat />}
         offers={<SearchWorkspaceOffers />}
       />
