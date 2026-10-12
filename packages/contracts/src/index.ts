@@ -216,3 +216,38 @@ export function offerChannel(offer: Pick<Offer, "source">): OfferChannel {
   const source = offer.source.trim().toLocaleLowerCase("ru");
   return DISTRIBUTOR_SOURCES.some((name) => name.toLocaleLowerCase("ru") === source) ? "distributor" : "marketplace";
 }
+
+/**
+ * What the local AI read from a free-text request. Raw model output: the search service
+ * keeps only fields that are literally present in the typed text (see mergeUnderstanding).
+ */
+export interface QueryUnderstanding {
+  productType?: string;
+  brand?: string;
+  model?: string;
+  mpn?: string;
+  quantity?: number;
+  condition?: ProductCondition;
+  origin?: "original" | "compatible";
+}
+
+/** AI verdict on a row the deterministic checks sent to «требует уточнения». Advice, not a decision. */
+export interface OfferReviewItem {
+  offerId: string;
+  verdict: "fits" | "not_fit" | "unclear";
+  reason: string;
+}
+
+export interface OfferReviewResponse {
+  items: OfferReviewItem[];
+  /** Name of the model, or a note that AI was unavailable. */
+  provider: string;
+}
+
+/** Purchase justification memo for one chosen row. */
+export interface JustificationResponse {
+  text: string;
+  /** false when AI was unavailable and the memo is the deterministic template. */
+  ai: boolean;
+  provider: string;
+}

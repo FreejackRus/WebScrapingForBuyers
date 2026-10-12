@@ -176,6 +176,19 @@ export function buildGatewayApp(options: { logger?: boolean; history?: SearchHis
     async (request, reply) =>
       proxyJson(analysis, `/searches/${request.params.id}/analyze`, request, reply, userPrompt(request), ANALYSIS_TIMEOUT_MS),
   );
+  app.post<{ Params: { id: string } }>("/api/v1/searches/:id/review", async (request, reply) =>
+    proxyJson(analysis, `/searches/${encodeURIComponent(request.params.id)}/review`, request, reply, {}, ANALYSIS_TIMEOUT_MS),
+  );
+  app.post<{ Params: { id: string }; Body: { offerId?: unknown } }>("/api/v1/searches/:id/justify", async (request, reply) =>
+    proxyJson(
+      analysis,
+      `/searches/${encodeURIComponent(request.params.id)}/justify`,
+      request,
+      reply,
+      { offerId: typeof request.body?.offerId === "string" ? request.body.offerId : "" },
+      ANALYSIS_TIMEOUT_MS,
+    ),
+  );
   app.post<{ Body: { prompt?: string; history?: unknown; context?: unknown } }>("/api/v1/copilot/chat", async (request, reply) =>
     proxyJson(analysis, "/chat", request, reply, userPrompt(request), ANALYSIS_TIMEOUT_MS),
   );

@@ -8,12 +8,37 @@ function prefersReducedMotion(): boolean {
 }
 
 import { conditionLabels, matchLabels, PRICE_ANOMALY_HINT, PRICE_ANOMALY_LABEL, verificationLabels } from "entities/offer";
+import { analysisApi } from "entities/analysis";
+import { useSearchStore } from "entities/search";
 import { useOfferCard } from "features/search";
 import { fetchedTime, money } from "shared/lib";
 
 export function OfferCard() {
   const { offer, closeOffer } = useOfferCard();
   const [closing, setClosing] = useState(false);
+  const searchId = useSearchStore((state) => state.snapshot?.id);
+  const [memo, setMemo] = useState<{ offerId: string; text: string; note: string } | undefined>();
+  const [memoState, setMemoState] = useState<"idle" | "loading" | "error" | "copied">("idle");
+  const makeMemo = async () => {
+    if (!offer || !searchId) return;
+    setMemoState("loading");
+    try {
+      const result = await analysisApi.justify(searchId, offer.id);
+      setMemo({ offerId: offer.id, text: result.text, note: result.ai ? `Черновик ИИ (${result.provider}). Проверьте перед отправкой.` : `Шаблон: ${result.provider}.` });
+      setMemoState("idle");
+    } catch {
+      setMemoState("error");
+    }
+  };
+  const copyMemo = async () => {
+    if (!memo) return;
+    try {
+      await navigator.clipboard.writeText(memo.text);
+      setMemoState("copied");
+    } catch {
+      setMemoState("error");
+    }
+  };
   const closeTimerRef = useRef<number | undefined>(undefined);
 
   // The drawer leaves the way it came in. Escape is a keyboard action and closes instantly.
@@ -134,6 +159,25 @@ export function OfferCard() {
             <dd className="mono">{fetchedTime.format(new Date(offer.fetchedAt))}</dd>
           </div>
         </dl>
+
+        <section className="offer-memo" aria-label="Обоснование закупки">
+          {memo?.offerId === offer.id ? (
+            <>
+              <textarea readOnly value={memo.text} rows={10} aria-label="Текст обоснования" />
+              <div className="offer-memo-actions">
+                <button type="button" className="ghost" onClick={() => void copyMemo()}>
+                  {memoState === "copied" ? "Скопировано" : "Копировать"}
+                </button>
+                <small>{memo.note}</small>
+              </div>
+            </>
+          ) : (
+            <button type="button" className="ghost" disabled={memoState === "loading" || !searchId} onClick={() => void makeMemo()}>
+              {memoState === "loading" ? "Составляем обоснование…" : "Обоснование закупки"}
+            </button>
+          )}
+          {memoState === "error" ? <small className="offer-filter-error">Не удалось составить или скопировать текст.</small> : null}
+        </section>
 
         <footer className="offer-card-actions">
           <a className="offer-card-shop" href={offer.url} target="_blank" rel="noreferrer">

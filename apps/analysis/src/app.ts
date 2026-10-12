@@ -1,6 +1,7 @@
 import type { AnalyzeRequest, SearchSnapshot } from "@peremena/contracts";
 import { createService, fetchWithTimeout, serviceUrl } from "@peremena/service-kit";
 
+import { justifyPurchase, reviewOffers, understandQuery } from "./application/ai-tools.js";
 import { analyzeSnapshot, answerCopilot } from "./application/analyze.js";
 import type { AnalysisNarrator } from "./domain/analysis-narrator.js";
 import {
@@ -137,6 +138,48 @@ export function buildAnalysisApp(options: { narrator?: AnalysisNarrator; logger?
         ...(request.body.context ? { context: request.body.context } : {}),
         searchId: request.params.id,
       });
+    },
+  );
+
+  const loadSnapshot = async (id: string): Promise<SearchSnapshot | { status: number; error: string }> => {
+    let response: Response;
+    try {
+      response = await fetchWithTimeout(`${searchBase}/searches/${encodeURIComponent(id)}`, {}, 10_000);
+    } catch {
+      return { status: 502, error: "Сервис поиска недоступен" };
+    }
+    if (response.status === 404) return { status: 404, error: "Поиск не найден" };
+    if (!response.ok) return { status: 502, error: "Сервис поиска недоступен" };
+    return (await response.json()) as SearchSnapshot;
+  };
+
+  // Internal: the search service asks how to read a free-text request. Never blocks a search.
+  app.post<{ Body: { query: string } }>(
+    "/understand",
+    { schema: { body: { type: "object", required: ["query"], additionalProperties: false, properties: { query: { type: "string", minLength: 2, maxLength: 300 } } } } },
+    async (request) => {
+      try {
+        return { understanding: (await understandQuery(request.body.query, narrator)) ?? null };
+      } catch {
+        return { understanding: null };
+      }
+    },
+  );
+
+  app.post<{ Params: { id: string } }>("/searches/:id/review", async (request, reply) => {
+    const snapshot = await loadSnapshot(request.params.id);
+    if ("error" in snapshot) return reply.code(snapshot.status).send({ error: snapshot.error });
+    return reviewOffers(snapshot, narrator);
+  });
+
+  app.post<{ Params: { id: string }; Body: { offerId: string } }>(
+    "/searches/:id/justify",
+    { schema: { body: { type: "object", required: ["offerId"], additionalProperties: false, properties: { offerId: { type: "string", minLength: 1, maxLength: 120 } } } } },
+    async (request, reply) => {
+      const snapshot = await loadSnapshot(request.params.id);
+      if ("error" in snapshot) return reply.code(snapshot.status).send({ error: snapshot.error });
+      const memo = await justifyPurchase(snapshot, request.body.offerId, narrator);
+      return memo ?? reply.code(404).send({ error: "Предложение не найдено в этом поиске" });
     },
   );
 

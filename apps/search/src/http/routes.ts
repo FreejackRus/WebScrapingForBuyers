@@ -6,8 +6,10 @@ import type { SearchService } from "../application/search-service.js";
 import { findProduct } from "../domain/catalog.js";
 import { classifyQuery, isExplicitlyNonIt } from "../domain/it-scope.js";
 import { isProductPayload, productFromQuery } from "../domain/product-from-query.js";
+import { mergeUnderstanding, needsUnderstanding } from "../domain/query-understanding.js";
 import { isSourceDisabled, listDisabledSources } from "../domain/source-policy.js";
 import { suggestLiveProducts } from "../infrastructure/suggest/live-suggest.js";
+import { fetchUnderstanding } from "../infrastructure/understanding-client.js";
 
 const queryBodySchema = {
   type: "object",
@@ -55,15 +57,20 @@ export const searchRoutes: FastifyPluginAsync<{
       },
     },
     async (request, reply) => {
-      const product =
-        (isProductPayload(request.body.product)
-          ? request.body.product.characteristics.источник === "typed"
-            ? productFromQuery(request.body.product.name, "query")
-            : request.body.product
-          : undefined) ??
-        (request.body.productId ? findProduct(request.body.productId) : undefined) ??
+      const payload = isProductPayload(request.body.product) ? request.body.product : undefined;
+      const chosen =
+        (payload && payload.characteristics.источник !== "typed" ? payload : undefined) ??
+        (request.body.productId ? findProduct(request.body.productId) : undefined);
+      let product =
+        chosen ??
+        (payload ? productFromQuery(payload.name, "query") : undefined) ??
         (await suggestLiveProducts(request.body.query, 1))[0] ??
         productFromQuery(request.body.query, "query");
+      // A product the buyer typed (not picked from suggestions): let the local AI read a long or unclear request.
+      if (!chosen && needsUnderstanding(request.body.query, product)) {
+        const understanding = await fetchUnderstanding(request.body.query);
+        if (understanding) product = mergeUnderstanding(product, understanding, request.body.query);
+      }
       // The typed query is what lands in the history, so it is judged as well as the chosen product.
       if (classifyQuery(product) !== "ok" || isExplicitlyNonIt(request.body.query)) {
         return reply.code(422).send({

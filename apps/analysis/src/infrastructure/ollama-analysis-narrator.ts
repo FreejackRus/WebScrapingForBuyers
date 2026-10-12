@@ -542,6 +542,10 @@ export class OllamaAnalysisNarrator implements AnalysisNarrator {
     return answer;
   }
 
+  askJson(system: string, payload: unknown, schema: Record<string, unknown>): Promise<unknown> {
+    return this.chatJson(system, payload, schema);
+  }
+
   async filterRelevance(input: RelevanceFilterInput): Promise<RelevanceFilterResult> {
     const candidates = input.candidates.slice(0, MAX_RELEVANCE_ROWS).map((row) => ({
       id: row.id,

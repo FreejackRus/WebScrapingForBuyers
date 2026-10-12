@@ -1,7 +1,7 @@
 import { useEffect, useState, type PointerEvent, type ReactNode } from "react";
-import type { OfferTableFilter, ProductCondition } from "@peremena/contracts";
+import type { OfferReviewItem, OfferTableFilter, ProductCondition } from "@peremena/contracts";
 import { useChannelOffers, useFilteredOffers, useOfferCard, useOfferColumns, useOfferTable } from "features/search";
-import { useAnalysisStore } from "entities/analysis";
+import { analysisApi, useAnalysisStore } from "entities/analysis";
 import { conditionLabels, matchLabels, PRICE_ANOMALY_HINT, PRICE_ANOMALY_LABEL, verificationLabels } from "entities/offer";
 import type { OfferSortColumn } from "entities/offer";
 import { useSearchStore } from "entities/search";
@@ -14,6 +14,8 @@ function sortMark(active: boolean, direction?: "asc" | "desc") {
   return direction === "desc" ? "↓" : "↑";
 }
 
+const AI_VERDICT = { fits: "подходит", not_fit: "не подходит", unclear: "неясно" } as const;
+
 export function OfferTable() {
   const { rows, reviewRows, total, page, pageCount, pageSize, sort, setPage, cycleSort, selectSort } = useOfferTable();
   const { openOffer } = useOfferCard();
@@ -25,6 +27,20 @@ export function OfferTable() {
   const tableFilter = useSearchStore((state) => state.tableFilter);
   const setTableFilter = useSearchStore((state) => state.setTableFilter);
   const snapshot = useSearchStore((state) => state.snapshot);
+  const [aiReview, setAiReview] = useState<{ searchId: string; items: Record<string, OfferReviewItem>; provider: string } | undefined>();
+  const [aiReviewState, setAiReviewState] = useState<"idle" | "loading" | "error">("idle");
+  const reviewFor = (offerId: string) => (aiReview && aiReview.searchId === snapshot?.id ? aiReview.items[offerId] : undefined);
+  const runAiReview = async () => {
+    if (!snapshot) return;
+    setAiReviewState("loading");
+    try {
+      const result = await analysisApi.review(snapshot.id);
+      setAiReview({ searchId: snapshot.id, items: Object.fromEntries(result.items.map((item) => [item.offerId, item])), provider: result.provider });
+      setAiReviewState("idle");
+    } catch {
+      setAiReviewState("error");
+    }
+  };
   const [budgetDraft, setBudgetDraft] = useState(tableFilter?.maxPrice?.toString() ?? "");
   const { channel, counts, setChannel, offers: channelOffers } = useChannelOffers();
   const snapshotTotal = channelOffers.length;
@@ -113,6 +129,11 @@ export function OfferTable() {
             {offer.mpn && <small className="offer-mpn">{offer.mpn}</small>}
             {offer.assessment?.reasons.length ? (
               <small className="offer-assessment-reason">{offer.assessment.reasons.join(" · ")}</small>
+            ) : null}
+            {reviewFor(offer.id) ? (
+              <small className={`offer-ai-verdict offer-ai-verdict--${reviewFor(offer.id)!.verdict}`}>
+                ИИ: {AI_VERDICT[reviewFor(offer.id)!.verdict]} — {reviewFor(offer.id)!.reason}
+              </small>
             ) : null}
           </>
         ))}
@@ -354,6 +375,20 @@ export function OfferTable() {
       {reviewRows.length > 0 && (
         <details className="offer-review-group">
           <summary>Требует уточнения — {reviewRows.length}</summary>
+          <div className="offer-ai-review">
+            <button type="button" className="ghost" disabled={aiReviewState === "loading" || running} onClick={() => void runAiReview()}>
+              {aiReviewState === "loading" ? "ИИ разбирает строки…" : aiReview?.searchId === snapshot?.id ? "Разобрать заново" : "Разобрать с ИИ"}
+            </button>
+            <small>
+              {aiReviewState === "error"
+                ? "Не удалось получить разбор. Повторите позже."
+                : aiReview && aiReview.searchId === snapshot?.id
+                  ? `Подсказка модели (${aiReview.provider}). Решение остаётся за вами — откройте карточку перед закупкой.`
+                  : running
+                    ? "Дождитесь окончания сбора."
+                    : "Модель прочитает названия и скажет, какие строки похожи на нужный товар."}
+            </small>
+          </div>
           <div className="table-wrap">
             <table
               aria-label="Предложения, требующие уточнения"

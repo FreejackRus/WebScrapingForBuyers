@@ -91,4 +91,9 @@ export interface AnalysisNarrator {
    * Does not reorder by price — code still ranks. Fallback = keep all.
    */
   filterRelevance?(input: RelevanceFilterInput): Promise<RelevanceFilterResult>;
+  /**
+   * Optional: one bounded JSON answer under a strict schema (query understanding, row review,
+   * justification memo). Callers validate and ground the result; failures throw NarrationError.
+   */
+  askJson?(system: string, payload: unknown, schema: Record<string, unknown>): Promise<unknown>;
 }

@@ -43,6 +43,8 @@ services:
     environment:
       PORT: "3003"
       HOST: "0.0.0.0"
+      # Local LLM reads long/unclear typed requests (AI_QUERY_UNDERSTANDING=false turns it off).
+      ANALYSIS_URL: http://analysis:3004
       MARKETPLACE_MCP_URL: http://marketplace-mcp:8000/mcp
       MARKETPLACE_MCP_TOKEN: ${MCP_HTTP_AUTH_TOKEN:?Set MCP_HTTP_AUTH_TOKEN}
       MARKETPLACE_MCP_TENANT: ${MCP_HTTP_TENANT_ID:-peremena}
