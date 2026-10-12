@@ -73,6 +73,13 @@ const citilinkReal = offer({
 });
 
 describe("analyzeSnapshot", () => {
+  it("uses the server procurement rank when it is present", async () => {
+    const result = await analyzeSnapshot(snapshot([
+      offer({ id: "cheap", source: "TEST", price: 900, demo: false, procurementRank: 2 }),
+      offer({ id: "ranked", source: "TEST", price: 1_000, demo: false, procurementRank: 1 }),
+    ]), "Выбери лучшее предложение");
+    expect(result.selectedOfferIds).toEqual(["ranked"]);
+  });
   it.each([
     ["Оставь только товары с витрины", "display"],
     ["Оставь только б/у товары", "used"],
