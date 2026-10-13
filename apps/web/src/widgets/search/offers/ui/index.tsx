@@ -72,10 +72,10 @@ export function OfferTable() {
   const [budgetDraft, setBudgetDraft] = useState(tableFilter?.maxPrice?.toString() ?? "");
   const { channel, counts, setChannel, offers: channelOffers } = useChannelOffers();
   const snapshotTotal = channelOffers.length;
-  // Lowest price among exact, in-stock rows of this tab: the reference the buyer compares against.
+  // Lowest price among exact or probable in-stock rows of this tab: the reference the buyer compares against.
   const bestPrice = (() => {
     const prices = channelOffers
-      .filter((offer) => !offer.demo && offer.match === "exact" && offer.assessment?.group !== "needs_review" && offer.priceAnomaly !== "too_low" && !/нет в наличии|под заказ/iu.test(offer.availability))
+      .filter((offer) => !offer.demo && (offer.match === "exact" || offer.match === "probable") && offer.assessment?.group !== "needs_review" && offer.priceAnomaly !== "too_low" && !/нет в наличии|под заказ/iu.test(offer.availability))
       .map((offer) => offer.price);
     return prices.length ? Math.min(...prices) : undefined;
   })();
@@ -239,10 +239,10 @@ export function OfferTable() {
                 {offer.price < offer.previousPrice ? "↓" : "↑"} было {money.format(offer.previousPrice)}
               </small>
             ) : null}
-            {bestPrice !== undefined && offer.price === bestPrice && offer.match === "exact" && !nested ? (
-              <span className="offer-price-best" title="Самая низкая цена среди точных совпадений в наличии на этой вкладке">лучшая цена</span>
+            {bestPrice !== undefined && offer.price === bestPrice && (offer.match === "exact" || offer.match === "probable") && !nested ? (
+              <span className="offer-price-best" title="Самая низкая цена среди подходящих предложений в наличии на этой вкладке">лучшая цена</span>
             ) : priceGap(offer.price, bestPrice) !== undefined ? (
-              <small className="offer-price-gap" title={`Минимальная цена точного совпадения в наличии: ${money.format(bestPrice!)}`}>+{priceGap(offer.price, bestPrice)}% к лучшей</small>
+              <small className="offer-price-gap" title={`Лучшая цена подходящего предложения в наличии: ${money.format(bestPrice!)}`}>+{priceGap(offer.price, bestPrice)}% к лучшей</small>
             ) : null}
             {offer.priceAnomaly ? (
               <span className="price-anomaly" title={PRICE_ANOMALY_HINT}>{PRICE_ANOMALY_LABEL}</span>

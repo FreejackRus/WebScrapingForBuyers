@@ -1796,3 +1796,25 @@ input, select, textarea { background: var(--surface); color: var(--ink); }
 .onboarding-tips ol { margin: 0; padding-left: 20px; display: grid; gap: 4px; font-size: 13px; }
 .onboarding-tips kbd { padding: 0 4px; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); font-size: 12px; }
 .onboarding-tips-close { position: absolute; top: 8px; right: 8px; }
+
+/* Dark theme: component colours that are not tokens. */
+:root[data-theme="dark"] h1, :root[data-theme="dark"] h2, :root[data-theme="dark"] .command-copy h1, :root[data-theme="dark"] .product-summary h2, :root[data-theme="dark"] .copilot h2, :root[data-theme="dark"] .chat-panel h2 { color: var(--ink); }
+:root[data-theme="dark"] .eyebrow { color: var(--muted); opacity: 1; }
+:root[data-theme="dark"] .topbar { background: rgba(23, 27, 35, 0.86); box-shadow: 0 8px 24px -20px rgba(0, 0, 0, 0.8); }
+:root[data-theme="dark"] .search-empty-panel { background: linear-gradient(135deg, var(--surface) 55%, var(--brand-50)); }
+:root[data-theme="dark"] .copilot, :root[data-theme="dark"] .chat-panel { background: var(--surface); }
+:root[data-theme="dark"] .category-picker select { background: var(--surface); border-color: var(--line); }
+:root[data-theme="dark"] tr.selected, :root[data-theme="dark"] tr.recommended { background: var(--row-hi); }
+:root[data-theme="dark"] .metric.accent { box-shadow: none; }
+:root[data-theme="dark"] .theme-toggle { min-width: 36px; }
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="auto"] h1, :root[data-theme="auto"] h2, :root[data-theme="auto"] .command-copy h1, :root[data-theme="auto"] .product-summary h2, :root[data-theme="auto"] .copilot h2, :root[data-theme="auto"] .chat-panel h2 { color: var(--ink); }
+  :root[data-theme="auto"] .eyebrow { color: var(--muted); opacity: 1; }
+  :root[data-theme="auto"] .topbar { background: rgba(23, 27, 35, 0.86); box-shadow: 0 8px 24px -20px rgba(0, 0, 0, 0.8); }
+  :root[data-theme="auto"] .search-empty-panel { background: linear-gradient(135deg, var(--surface) 55%, var(--brand-50)); }
+  :root[data-theme="auto"] .copilot, :root[data-theme="auto"] .chat-panel { background: var(--surface); }
+  :root[data-theme="auto"] .category-picker select { background: var(--surface); border-color: var(--line); }
+  :root[data-theme="auto"] tr.selected, :root[data-theme="auto"] tr.recommended { background: var(--row-hi); }
+  :root[data-theme="auto"] .metric.accent { box-shadow: none; }
+  :root[data-theme="auto"] .theme-toggle { min-width: 36px; }
+}
