@@ -18,6 +18,21 @@ function sortMark(active: boolean, direction?: "asc" | "desc") {
   return direction === "desc" ? "↓" : "↑";
 }
 
+/** «1 предложение», «3 предложения», «12 предложений». */
+export function offersWord(count: number) {
+  const mod10 = count % 10, mod100 = count % 100;
+  if (mod10 === 1 && mod100 !== 11) return "предложение";
+  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return "предложения";
+  return "предложений";
+}
+
+/** Share above the lowest comparable price, rounded; undefined for the best price itself. */
+export function priceGap(price: number, best: number | undefined) {
+  if (!best || best <= 0 || price <= best) return undefined;
+  const percent = Math.round(((price - best) / best) * 100);
+  return percent >= 1 ? percent : undefined;
+}
+
 const AI_VERDICT = { fits: "подходит", not_fit: "не подходит", unclear: "неясно" } as const;
 
 export function OfferTable() {
@@ -57,6 +72,31 @@ export function OfferTable() {
   const [budgetDraft, setBudgetDraft] = useState(tableFilter?.maxPrice?.toString() ?? "");
   const { channel, counts, setChannel, offers: channelOffers } = useChannelOffers();
   const snapshotTotal = channelOffers.length;
+  // Lowest price among exact, in-stock rows of this tab: the reference the buyer compares against.
+  const bestPrice = (() => {
+    const prices = channelOffers
+      .filter((offer) => !offer.demo && offer.match === "exact" && offer.assessment?.group !== "needs_review" && offer.priceAnomaly !== "too_low" && !/нет в наличии|под заказ/iu.test(offer.availability))
+      .map((offer) => offer.price);
+    return prices.length ? Math.min(...prices) : undefined;
+  })();
+  const panelRef = useRef<HTMLElement>(null);
+  const filterRef = useRef<HTMLInputElement>(null);
+  const goToPage = (next: number) => {
+    setPage(next);
+    panelRef.current?.querySelector(".offer-channel-tabs")?.scrollIntoView({ block: "start", behavior: "smooth" });
+  };
+  // «/» focuses the table filter (as on most sites), Esc in it clears the text.
+  useEffect(() => {
+    const onKey = (event: KeyboardEvent) => {
+      const target = event.target as HTMLElement | null;
+      if (event.key !== "/" || event.ctrlKey || event.metaKey || event.altKey) return;
+      if (target && (target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/u.test(target.tagName))) return;
+      event.preventDefault();
+      filterRef.current?.focus();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
   const otherChannel = channel === "marketplace" ? "distributor" : "marketplace";
   const channelNames = { marketplace: "Маркетплейсы", distributor: "Дистрибуторы" } as const;
   const running = snapshot?.status === "running";
@@ -156,7 +196,7 @@ export function OfferTable() {
                 aria-expanded={expanded[offer.id] === true}
                 onClick={(event) => { event.stopPropagation(); setExpanded((state) => ({ ...state, [offer.id]: !state[offer.id] })); }}
               >
-                {expanded[offer.id] ? "Скрыть" : "Ещё"} {others.length} {others.length === 1 ? "предложение" : others.length < 5 ? "предложения" : "предложений"} этого товара
+                {expanded[offer.id] ? "Скрыть" : "Ещё"} {others.length} {offersWord(others.length)} этого товара
                 {expanded[offer.id] ? "" : Math.min(...prices) === Math.max(...prices) ? ` · ${money.format(prices[0]!)}` : ` · ${money.format(Math.min(...prices))}–${money.format(Math.max(...prices))}`}
               </button>
             ) : null}
@@ -177,6 +217,11 @@ export function OfferTable() {
           <>
             <b className="mono">{money.format(offer.price)}</b>
             {offer.oldPrice && <del className="mono">{money.format(offer.oldPrice)}</del>}
+            {bestPrice !== undefined && offer.price === bestPrice && offer.match === "exact" && !nested ? (
+              <span className="offer-price-best" title="Самая низкая цена среди точных совпадений в наличии на этой вкладке">лучшая цена</span>
+            ) : priceGap(offer.price, bestPrice) !== undefined ? (
+              <small className="offer-price-gap" title={`Минимальная цена точного совпадения в наличии: ${money.format(bestPrice!)}`}>+{priceGap(offer.price, bestPrice)}% к лучшей</small>
+            ) : null}
             {offer.priceAnomaly ? (
               <span className="price-anomaly" title={PRICE_ANOMALY_HINT}>{PRICE_ANOMALY_LABEL}</span>
             ) : null}
@@ -214,7 +259,7 @@ export function OfferTable() {
   };
 
   return (
-    <section className="panel offers-panel" aria-labelledby="offers-title" data-live={running ? "" : undefined}>
+    <section ref={panelRef} className="panel offers-panel" aria-labelledby="offers-title" data-live={running ? "" : undefined}>
       <div className="offers-toolbar">
         <div>
           <p className="eyebrow">Сравнение</p>
@@ -224,9 +269,12 @@ export function OfferTable() {
           <label className="offer-search">
             <span className="sr-only">Фильтр предложений</span>
             <input
+              ref={filterRef}
               value={offerFilter}
+              onKeyDown={(event) => { if (event.key === "Escape") { setOfferFilter(""); event.currentTarget.blur(); } }}
+              title="Горячая клавиша «/»; Esc — очистить"
               onChange={(event) => setOfferFilter(event.target.value)}
-              placeholder="Источник, продавец, товар…"
+              placeholder="Источник, продавец, товар…  ( / )"
             />
           </label>
           <BasketButton />
@@ -455,7 +503,7 @@ export function OfferTable() {
             Показано <strong>{from}–{to}</strong> из <strong>{total}</strong>{offerCount > total ? ` товаров (${offerCount} предложений)` : ""}
           </span>
           <div className="pager-buttons">
-            <button type="button" className="ghost" disabled={page <= 1} onClick={() => setPage(page - 1)}>
+            <button type="button" className="ghost" disabled={page <= 1} onClick={() => goToPage(page - 1)}>
               Предыдущая
             </button>
             <span className="pager-page">
@@ -465,7 +513,7 @@ export function OfferTable() {
               type="button"
               className="ghost"
               disabled={page >= pageCount}
-              onClick={() => setPage(page + 1)}
+              onClick={() => goToPage(page + 1)}
             >
               Следующая
             </button>
