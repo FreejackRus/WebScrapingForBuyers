@@ -16,3 +16,4 @@ export function initials(name: string) {
     .map((part) => part[0]?.toLocaleUpperCase("ru"))
     .join("");
 }
+export { applyTheme, nextTheme, readTheme, THEME_LABELS, type ThemeMode } from "./theme";

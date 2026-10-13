@@ -7,6 +7,7 @@ import { PriceTrend } from "widgets/search/price-trend";
 import { OfferCard } from "widgets/search/offer-card";
 import { OfferTable } from "widgets/search/offers";
 import { SourceGrid } from "widgets/search/sources";
+import { OnboardingTips } from "widgets/search/tips";
 
 function useWorkspaceSnapshot() {
   const user = useUserStore((state) => state.user);
@@ -90,6 +91,7 @@ export function SearchWorkspaceOffers() {
   if (!snapshot) return null;
   return (
     <>
+      <OnboardingTips />
       <OfferTable />
       <OfferCard />
     </>

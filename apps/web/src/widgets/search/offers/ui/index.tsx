@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type PointerEvent, type ReactNode } from "react";
 import type { OfferReviewItem, OfferTableFilter, ProductCondition } from "@peremena/contracts";
-import { encodeSearchLink, OFFER_PAGE_SIZES, useChannelOffers, useFilteredOffers, useOfferCard, useOfferColumns, useOfferTable } from "features/search";
+import { downloadOffersCsv, encodeSearchLink, previousPrice, readPriceMemory, savePriceMemory, type PriceMemory, OFFER_PAGE_SIZES, useChannelOffers, useFilteredOffers, useOfferCard, useOfferColumns, useOfferTable } from "features/search";
 import { analysisApi, useAnalysisStore } from "entities/analysis";
 import { conditionLabels, matchLabels, PRICE_ANOMALY_HINT, PRICE_ANOMALY_LABEL, titleSpecs, verificationLabels } from "entities/offer";
 import type { OfferSortColumn } from "entities/offer";
@@ -79,6 +79,16 @@ export function OfferTable() {
       .map((offer) => offer.price);
     return prices.length ? Math.min(...prices) : undefined;
   })();
+  // Prices of the previous search for this product, read before this search overwrites them.
+  const [memory, setMemory] = useState<{ searchId: string; value: PriceMemory | undefined }>();
+  useEffect(() => {
+    if (!snapshot || memory?.searchId === snapshot.id) return;
+    setMemory({ searchId: snapshot.id, value: readPriceMemory(snapshot.product) });
+  }, [snapshot?.id]);
+  useEffect(() => {
+    if (snapshot?.status === "complete" && memory?.searchId === snapshot.id) savePriceMemory(snapshot.product, snapshot.offers);
+  }, [snapshot?.status, snapshot?.id, memory?.searchId]);
+  const priceMemory = memory && memory.searchId === snapshot?.id ? memory.value : undefined;
   const [linkCopied, setLinkCopied] = useState(false);
   const copySearchLink = async () => {
     if (!snapshot) return;
@@ -228,6 +238,14 @@ export function OfferTable() {
           <>
             <b className="mono">{money.format(offer.price)}</b>
             {offer.oldPrice && <del className="mono">{money.format(offer.oldPrice)}</del>}
+            {previousPrice(priceMemory, offer) !== undefined ? (
+              <small
+                className={`offer-price-was offer-price-was--${offer.price < previousPrice(priceMemory, offer)! ? "down" : "up"}`}
+                title={`Цена в вашем прошлом поиске ${fetchedTime.format(new Date(priceMemory!.savedAt))}`}
+              >
+                {offer.price < previousPrice(priceMemory, offer)! ? "↓" : "↑"} было {money.format(previousPrice(priceMemory, offer)!)}
+              </small>
+            ) : null}
             {bestPrice !== undefined && offer.price === bestPrice && offer.match === "exact" && !nested ? (
               <span className="offer-price-best" title="Самая низкая цена среди точных совпадений в наличии на этой вкладке">лучшая цена</span>
             ) : priceGap(offer.price, bestPrice) !== undefined ? (
@@ -291,6 +309,16 @@ export function OfferTable() {
           {snapshot ? (
             <button type="button" className="ghost" onClick={() => void copySearchLink()} title="Ссылка откроет этот же поиск у коллеги (после входа)">
               {linkCopied ? "Ссылка скопирована" : "Ссылка на поиск"}
+            </button>
+          ) : null}
+          {filtered.length > 0 ? (
+            <button
+              type="button"
+              className="ghost"
+              title="CSV для Excel: строки текущей вкладки с учётом фильтров"
+              onClick={() => downloadOffersCsv(filtered.filter((offer) => offer.assessment?.group !== "needs_review"), (offer) => matchLabels[offer.match], snapshot?.product.name ?? "poisk")}
+            >
+              Таблица в CSV
             </button>
           ) : null}
           <BasketButton />

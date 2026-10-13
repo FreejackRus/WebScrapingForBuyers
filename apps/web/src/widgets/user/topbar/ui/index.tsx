@@ -1,14 +1,15 @@
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 
 import type { AppView } from "composition/settings";
 import { logout } from "features/user";
 import { useUserStore } from "entities/user";
-import { initials } from "shared/lib";
+import { applyTheme, initials, nextTheme, readTheme, THEME_LABELS } from "shared/lib";
 import { logoUrl } from "shared/config";
 
 export function Topbar({ view, onView, actions }: { view: AppView; onView: (view: AppView) => void; actions?: ReactNode }) {
   const user = useUserStore((state) => state.user);
   const health = useUserStore((state) => state.health);
+  const [theme, setTheme] = useState(readTheme);
   if (!user) return null;
   const isAdmin = user.role === "admin";
 
@@ -39,6 +40,14 @@ export function Topbar({ view, onView, actions }: { view: AppView; onView: (view
             </span>
           )}
           {actions}
+          <button
+            className="ghost theme-toggle"
+            type="button"
+            title="Переключить: системная → светлая → тёмная"
+            onClick={() => { const next = nextTheme(theme); applyTheme(next); setTheme(next); }}
+          >
+            {theme === "dark" ? "☾" : theme === "light" ? "☀" : "◐"}<span className="sr-only"> {THEME_LABELS[theme]}</span>
+          </button>
           <button
             className="ghost topbar-settings"
             type="button"
