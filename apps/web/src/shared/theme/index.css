@@ -1785,7 +1785,7 @@ td.offer-action .basket-add--compact { display: block; margin-top: 4px; font-siz
 }
 body { background: var(--canvas); color: var(--ink); }
 input, select, textarea { background: var(--surface); color: var(--ink); }
-.theme-toggle { white-space: nowrap; }
+.theme-toggle { white-space: nowrap; flex: 0 0 auto; min-width: 36px; padding-inline: 8px; }
 
 /* ---------------------------------------------------------------- first-run tips */
 .onboarding-tips {
