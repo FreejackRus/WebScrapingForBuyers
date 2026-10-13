@@ -1818,3 +1818,6 @@ input, select, textarea { background: var(--surface); color: var(--ink); }
   :root[data-theme="auto"] .metric.accent { box-shadow: none; }
   :root[data-theme="auto"] .theme-toggle { min-width: 36px; }
 }
+
+/* Narrow screens: the top bar is full; phones follow the system theme. */
+@media (max-width: 600px) { .theme-toggle { display: none; } }
