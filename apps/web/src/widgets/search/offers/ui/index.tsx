@@ -175,6 +175,8 @@ export function OfferTable() {
   const renderOfferRow = (offer: (typeof rows)[number], allowRecommendation: boolean, others: (typeof rows) = [], nested = false) => {
     const isBest = allowRecommendation && offer.id === recommended;
     const prices = others.map((other) => other.price);
+    // A folded group is judged by its cheapest listing: the lead row is chosen by rank, not price.
+    const groupPrice = Math.min(offer.price, ...prices);
     return (
       <tr
         key={offer.id}
@@ -239,8 +241,10 @@ export function OfferTable() {
                 {offer.price < offer.previousPrice ? "↓" : "↑"} было {money.format(offer.previousPrice)}
               </small>
             ) : null}
-            {bestPrice !== undefined && offer.price === bestPrice && (offer.match === "exact" || offer.match === "probable") && !nested ? (
-              <span className="offer-price-best" title="Самая низкая цена среди подходящих предложений в наличии на этой вкладке">лучшая цена</span>
+            {bestPrice !== undefined && groupPrice === bestPrice && (offer.match === "exact" || offer.match === "probable") && !nested ? (
+              <span className="offer-price-best" title="Самая низкая цена среди подходящих предложений в наличии на этой вкладке">
+                {groupPrice < offer.price ? `лучшая цена в группе: ${money.format(groupPrice)}` : "лучшая цена"}
+              </span>
             ) : priceGap(offer.price, bestPrice) !== undefined ? (
               <small className="offer-price-gap" title={`Лучшая цена подходящего предложения в наличии: ${money.format(bestPrice!)}`}>+{priceGap(offer.price, bestPrice)}% к лучшей</small>
             ) : null}
