@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type PointerEvent, type ReactNode } from "react";
-import type { OfferReviewItem, OfferTableFilter, ProductCondition } from "@peremena/contracts";
+import { offerAvailabilityStatus, type OfferReviewItem, type OfferTableFilter, type ProductCondition } from "@peremena/contracts";
 import { downloadOffersCsv, encodeSearchLink, OFFER_PAGE_SIZES, useChannelOffers, useFilteredOffers, useOfferCard, useOfferColumns, useOfferTable } from "features/search";
 import { analysisApi, useAnalysisStore } from "entities/analysis";
 import { conditionLabels, matchLabels, PRICE_ANOMALY_HINT, PRICE_ANOMALY_LABEL, titleSpecs, verificationLabels } from "entities/offer";
@@ -75,7 +75,7 @@ export function OfferTable() {
   // Lowest price among exact or probable in-stock rows of this tab: the reference the buyer compares against.
   const bestPrice = (() => {
     const prices = channelOffers
-      .filter((offer) => !offer.demo && (offer.match === "exact" || offer.match === "probable") && offer.assessment?.group !== "needs_review" && offer.priceAnomaly !== "too_low" && !/нет в наличии|под заказ/iu.test(offer.availability))
+      .filter((offer) => !offer.demo && (offer.match === "exact" || offer.match === "probable") && offer.assessment?.group !== "needs_review" && offer.priceAnomaly !== "too_low" && offerAvailabilityStatus(offer) === "in_stock")
       .map((offer) => offer.price);
     return prices.length ? Math.min(...prices) : undefined;
   })();
