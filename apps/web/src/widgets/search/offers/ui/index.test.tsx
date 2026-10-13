@@ -59,6 +59,8 @@ let mockChannel: "marketplace" | "distributor" = "marketplace";
 const setChannel = vi.fn();
 
 vi.mock("features/search", () => ({
+  OFFER_PAGE_SIZES: [8, 20, 50],
+  encodeSearchLink: () => "",
   useFilteredOffers: () => rows,
   useChannelOffers: () => ({
     channel: mockChannel,

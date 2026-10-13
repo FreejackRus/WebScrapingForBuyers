@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { useBootSession, useSearchHotkey } from "composition/hooks";
+import { useBootSession, useSearchHotkey, useSharedSearchLink } from "composition/hooks";
 import { AppShell, LoginShell } from "composition/layer";
 import type { AppView } from "composition/settings";
 import { useUserStore } from "entities/user";
@@ -14,6 +14,7 @@ export default function App() {
 
   useBootSession();
   useSearchHotkey();
+  useSharedSearchLink(Boolean(user));
 
   useEffect(() => {
     if (view !== "chat") return;

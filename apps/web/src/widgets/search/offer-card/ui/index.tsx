@@ -189,6 +189,7 @@ export function OfferCard() {
           </a>
           <WatchButton offer={offer} />
           <AddToBasketButton offer={offer} />
+          <CopyOfferButton offer={offer} />
           <button type="button" className="ghost" onClick={closeOffer}>
             Закрыть
           </button>
@@ -248,5 +249,33 @@ function OfferPhoto({ src, title }: { src: string | undefined; title: string }) 
       <span className="offer-card-photo-mark" aria-hidden="true">◇</span>
       <p>{src ? "Фото не загрузилось с площадки" : "Фото нет в данных предложения"}</p>
     </div>
+  );
+}
+
+/** Supplier, product, price and link as plain text — ready for an e-mail or a request form. */
+export function offerSummaryText(offer: Pick<Offer, "source" | "seller" | "title" | "price" | "priceCondition" | "availability" | "url">): string {
+  const seller = offer.seller && offer.seller !== offer.source ? ` (${offer.seller})` : "";
+  return [
+    `${offer.source}${seller}: ${offer.title}`,
+    `Цена: ${money.format(offer.price)}${offer.priceCondition ? ` (${offer.priceCondition})` : ""}; наличие: ${offer.availability}`,
+    offer.url,
+  ].join("\n");
+}
+
+function CopyOfferButton({ offer }: { offer: Offer }) {
+  const [copied, setCopied] = useState(false);
+  return (
+    <button
+      type="button"
+      className="ghost"
+      onClick={() => {
+        void navigator.clipboard.writeText(offerSummaryText(offer)).then(() => {
+          setCopied(true);
+          window.setTimeout(() => setCopied(false), 2000);
+        }, () => setCopied(false));
+      }}
+    >
+      {copied ? "Скопировано" : "Копировать"}
+    </button>
   );
 }

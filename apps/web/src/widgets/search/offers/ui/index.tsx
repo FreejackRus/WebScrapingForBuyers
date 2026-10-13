@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type PointerEvent, type ReactNode } from "react";
 import type { OfferReviewItem, OfferTableFilter, ProductCondition } from "@peremena/contracts";
-import { useChannelOffers, useFilteredOffers, useOfferCard, useOfferColumns, useOfferTable } from "features/search";
+import { encodeSearchLink, OFFER_PAGE_SIZES, useChannelOffers, useFilteredOffers, useOfferCard, useOfferColumns, useOfferTable } from "features/search";
 import { analysisApi, useAnalysisStore } from "entities/analysis";
 import { conditionLabels, matchLabels, PRICE_ANOMALY_HINT, PRICE_ANOMALY_LABEL, titleSpecs, verificationLabels } from "entities/offer";
 import type { OfferSortColumn } from "entities/offer";
@@ -36,7 +36,7 @@ export function priceGap(price: number, best: number | undefined) {
 const AI_VERDICT = { fits: "подходит", not_fit: "не подходит", unclear: "неясно" } as const;
 
 export function OfferTable() {
-  const { rows, grouped = {}, reviewRows, total, offerCount = total, page, pageCount, pageSize, sort, setPage, cycleSort, selectSort } = useOfferTable();
+  const { rows, grouped = {}, reviewRows, total, offerCount = total, page, pageCount, pageSize, setPageSize, sort, setPage, cycleSort, selectSort } = useOfferTable();
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
   const { openOffer } = useOfferCard();
   const { columns, visible, hidden, widthOf, toggle, setWidth, reset } = useOfferColumns();
@@ -79,6 +79,17 @@ export function OfferTable() {
       .map((offer) => offer.price);
     return prices.length ? Math.min(...prices) : undefined;
   })();
+  const [linkCopied, setLinkCopied] = useState(false);
+  const copySearchLink = async () => {
+    if (!snapshot) return;
+    try {
+      await navigator.clipboard.writeText(encodeSearchLink(window.location.href, snapshot.product, channel));
+      setLinkCopied(true);
+      window.setTimeout(() => setLinkCopied(false), 2000);
+    } catch {
+      setLinkCopied(false);
+    }
+  };
   const panelRef = useRef<HTMLElement>(null);
   const filterRef = useRef<HTMLInputElement>(null);
   const goToPage = (next: number) => {
@@ -277,6 +288,11 @@ export function OfferTable() {
               placeholder="Источник, продавец, товар…  ( / )"
             />
           </label>
+          {snapshot ? (
+            <button type="button" className="ghost" onClick={() => void copySearchLink()} title="Ссылка откроет этот же поиск у коллеги (после входа)">
+              {linkCopied ? "Ссылка скопирована" : "Ссылка на поиск"}
+            </button>
+          ) : null}
           <BasketButton />
           <div className="column-menu-wrap">
             <button
@@ -502,6 +518,12 @@ export function OfferTable() {
           <span>
             Показано <strong>{from}–{to}</strong> из <strong>{total}</strong>{offerCount > total ? ` товаров (${offerCount} предложений)` : ""}
           </span>
+          <label className="pager-size">
+            Строк на странице
+            <select value={pageSize} onChange={(event) => setPageSize(Number(event.target.value))}>
+              {OFFER_PAGE_SIZES.map((size) => <option key={size} value={size}>{size}</option>)}
+            </select>
+          </label>
           <div className="pager-buttons">
             <button type="button" className="ghost" disabled={page <= 1} onClick={() => goToPage(page - 1)}>
               Предыдущая
