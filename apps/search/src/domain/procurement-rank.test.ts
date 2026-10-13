@@ -61,3 +61,12 @@ describe("procurement rank", () => {
     expect(normalizeOfferCondition(offer("nl", { source: "NETLAB" }))).toBe("unknown");
   });
 });
+
+describe("Avito condition", async () => {
+  const { normalizeOfferCondition } = await import("./procurement-rank.js");
+  const row = (title: string) => ({ id: "a", source: "Авито", seller: "", title, price: 1, priceCondition: "", currency: "RUB" as const, availability: "", condition: "new" as const, match: "exact" as const, url: "", fetchedAt: "", demo: false });
+  it("is unknown unless the listing says new", () => {
+    expect(normalizeOfferCondition(row("Ибп APC Back-UPS 650"))).toBe("unknown");
+    expect(normalizeOfferCondition(row("Новые AMD Ryzen 5 5600 (OEM)"))).toBe("new");
+  });
+});

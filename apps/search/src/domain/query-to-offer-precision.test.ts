@@ -135,6 +135,13 @@ describe("typed query → offer precision", () => {
       expect(assessed("кабель hdmi 2м", "Кабель аудио-видео Buro HDMI (m)/HDMI (m) 2м. черный (BHP-HDMI-2.1-2)")).not.toBeNull();
     });
 
+    it("requires the product type for cartridges, UPS and cables, and drops adapters for a device", () => {
+      expect(assessed("картридж 5120", "Электромагнитный клапан SY SY3120/5120/SY7120/9120")).toBeNull();
+      expect(assessed("картридж 5120", "Картридж 5120 черный, 3000 стр.")).not.toBeNull();
+      expect(assessed("lenovo legion go", "Адаптер M.2(NGFF) NVME M-Key для Lenovo Legion Go")).toBeNull();
+      expect(assessed("ибп apc back-ups 650", "APC Back-UPS 650VA BX650MI-GR")).not.toBeNull();
+    });
+
     it("does not offer a drum unit for a cartridge query", () => {
       expect(assessed("картридж 5120", "Фотовал (OPC Drum) NVP для Pantum DL-420/5120 (P3010/P3020)")).toBeNull();
     });

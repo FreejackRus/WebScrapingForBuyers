@@ -24,7 +24,11 @@ export function normalizeOfferCondition(offer: Offer): ProductCondition {
   if (/refurb|восстанов/i.test(title)) return "refurbished";
   if (/витрин|демо[- ]?образ/i.test(title)) return "display";
   if (offer.condition !== "new") return offer.condition;
-  return offer.source.toLocaleUpperCase("ru") === "NETLAB" ? "unknown" : "new";
+  // NETLAB's price list and Avito listings do not state the condition; Avito is mostly private resale.
+  // Only an explicit «новый / new / запечатан» in the title makes an Avito row new.
+  const source = offer.source.toLocaleUpperCase("ru");
+  if (source === "АВИТО") return /(?:^|[^\p{L}])(?:нов(?:ый|ая|ое|ые|ых)|new|запечатан\p{L}*|в упаковке)(?=$|[^\p{L}])/iu.test(title) ? "new" : "unknown";
+  return source === "NETLAB" ? "unknown" : "new";
 }
 
 function compare(left: Offer, right: Offer): number {

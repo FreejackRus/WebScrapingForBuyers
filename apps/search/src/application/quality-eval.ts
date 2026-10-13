@@ -98,9 +98,23 @@ export function qualityAlerts(previous: QualityResult | undefined, current: Qual
 }
 
 /** When the next run is due: interval after the last one, but never sooner than `minDelayMs` after start. */
-export function nextRunDelay(last: QualityResult | undefined, intervalMs: number, now: number, minDelayMs: number): number {
+export function nextRunDelay(last: QualityResult | undefined, intervalMs: number, now: number, minDelayMs: number, quietHourUtc?: number): number {
   const due = last ? Date.parse(last.at) + intervalMs - now : 0;
-  return Math.max(minDelayMs, Number.isFinite(due) ? due : 0);
+  const delay = Math.max(minDelayMs, Number.isFinite(due) ? due : 0);
+  if (quietHourUtc === undefined) return delay;
+  // 30 searches in a row load the marketplaces; on 2026-10-12 a daytime run overlapped buyers' searches
+  // and Wildberries stopped answering. Move the run to the next quiet hour at or after the due time.
+  const at = new Date(now + delay);
+  const quiet = new Date(at);
+  quiet.setUTCHours(quietHourUtc, 0, 0, 0);
+  if (quiet.getTime() < at.getTime()) quiet.setUTCDate(quiet.getUTCDate() + 1);
+  return quiet.getTime() - now;
+}
+
+/** Quiet hour for the eval, UTC. Default 23:00 UTC = 02:00 Moscow; QUALITY_EVAL_HOUR_UTC=-1 disables. */
+export function qualityQuietHour(raw = process.env.QUALITY_EVAL_HOUR_UTC): number | undefined {
+  const hour = raw === undefined || raw.trim() === "" ? 23 : Number(raw);
+  return Number.isInteger(hour) && hour >= 0 && hour <= 23 ? hour : undefined;
 }
 
 /** Cases ship next to the compiled module (copied by the build) or come from the repo's eval/ in dev and tests. */
@@ -163,7 +177,7 @@ export class QualityEvaluator {
       }, Math.min(delay, 2 ** 31 - 1));
       this.timer.unref?.();
     };
-    tick(nextRunDelay(this.results.at(-1), intervalMs, this.now(), minDelayMs));
+    tick(nextRunDelay(this.results.at(-1), intervalMs, this.now(), minDelayMs, qualityQuietHour()));
   }
 
   stop(): void {

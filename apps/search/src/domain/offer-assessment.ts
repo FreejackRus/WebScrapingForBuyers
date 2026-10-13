@@ -12,7 +12,7 @@ const DEVICE_PART = /(?:^|[^\p{L}])(?:плата|форматер|печатаю
  * Parts and add-ons sold for a device: «Радиатор для видеокарты RTX 4070 Super», «Кулер для процессора»,
  * «Блок питания для ноутбука». They name the model, but the buyer asked for the device itself.
  */
-const ACCESSORY = /(?:^|[^\p{L}])(?:радиатор\p{L}*|кулер\p{L}*|вентилятор\p{L}*|система\s+охлажден\p{L}*|водоблок\p{L}*|термопрокладк\p{L}*|термопаст\p{L}*|бэкплейт\p{L}*|backplate|кронштейн\p{L}*|держател\p{L}*|подставк\p{L}*|блок\p{L}*\s+питани\p{L}*|зарядн\p{L}*|аккумулятор\p{L}*|батаре\p{L}*|чех(?:ол|л)\p{L}*|плёнк\p{L}*|пленк\p{L}*|защитн\p{L}*\s+стекл\p{L}*|райзер\p{L}*|riser|коробк\p{L}*\s+(?:от|для)|box\s+only)(?=$|[^\p{L}])/iu;
+const ACCESSORY = /(?:^|[^\p{L}])(?:адаптер\p{L}*|переходник\p{L}*|шлейф\p{L}*|салазк\p{L}*|радиатор\p{L}*|кулер\p{L}*|вентилятор\p{L}*|система\s+охлажден\p{L}*|водоблок\p{L}*|термопрокладк\p{L}*|термопаст\p{L}*|бэкплейт\p{L}*|backplate|кронштейн\p{L}*|держател\p{L}*|подставк\p{L}*|блок\p{L}*\s+питани\p{L}*|зарядн\p{L}*|аккумулятор\p{L}*|батаре\p{L}*|чех(?:ол|л)\p{L}*|плёнк\p{L}*|пленк\p{L}*|защитн\p{L}*\s+стекл\p{L}*|райзер\p{L}*|riser|коробк\p{L}*\s+(?:от|для)|box\s+only)(?=$|[^\p{L}])/iu;
 const FOR_DEVICE = /(?:^|[^\p{L}])для\s+(?:видеокарт\p{L}*|процессор\p{L}*|ноутбук\p{L}*|консол\p{L}*|ибп|сервер\p{L}*|монитор\p{L}*|роутер\p{L}*|маршрутизатор\p{L}*|коммутатор\p{L}*)(?=$|[^\p{L}])/iu;
 
 /** Accessories are named first («Радиатор для …»); a device listing may mention one later («ИБП …, с аккумулятором»). */
@@ -29,6 +29,12 @@ const INTERFACES: ReadonlyArray<[string, RegExp]> = [
 function interfaces(text: string): Set<string> {
   return new Set(INTERFACES.filter(([, pattern]) => pattern.test(text)).map(([name]) => name));
 }
+
+const TYPE_NAMED: ReadonlyArray<[RegExp, RegExp]> = [
+  [/картридж/iu, /картридж|тонер|toner|cartridge/iu],
+  [/(?:^|[^\p{L}])ибп(?=$|[^\p{L}])/iu, /ибп|(?<![a-z])ups(?![a-z])|back-?ups|бесперебойн/iu],
+  [/кабел/iu, /кабел|шнур|провод|cable|патч-?корд/iu],
+];
 
 const DRUM_UNIT = /(?:^|[^\p{L}])(?:фотовал\p{L}*|фотобарабан\p{L}*|драм[\s-]?картридж\p{L}*|drum|opc|блок\s+фотобарабан\p{L}*)(?=$|[^\p{L}])/iu;
 const THIRD_PARTY_BRANDS = /(?:^|[^\p{L}\p{N}])(?:nv[\s-]?print|hi[\s-]?black|cactus|sakura|easyprint|netproduct|colortek|katun|bion|parus|uniton|profiline|t2|static\s+control|qualicom|xiongcai|colouring|ink-?power)(?=$|[^\p{L}\p{N}])/iu;
@@ -246,6 +252,11 @@ export function assessOffer(product: Product, offer: Offer, query: string): Offe
   if (wantedDdr.size > 0) {
     const offeredDdr = memoryGeneration(`${offer.title} ${offer.mpn ?? ""}`);
     if ([...offeredDdr].some((generation) => !wantedDdr.has(generation))) return null;
+  }
+  // Some product types are named by every real listing; a number match alone is a different product
+  // («картридж 5120» ← «электромагнитный клапан SY5120»).
+  for (const [asked, named] of TYPE_NAMED) {
+    if (asked.test(query) && !named.test(offer.title)) return null;
   }
   // A drum unit is not the cartridge the buyer asked for.
   const head = offer.title.split(/\s+/).slice(0, 3).join(" ");

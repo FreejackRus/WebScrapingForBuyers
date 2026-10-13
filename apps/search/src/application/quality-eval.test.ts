@@ -77,3 +77,12 @@ describe("quality eval", () => {
     expect((await evaluator.report()).results).toHaveLength(1);
   });
 });
+
+describe("quiet hour", async () => {
+  const { nextRunDelay } = await import("./quality-eval.js");
+  it("moves a due run to the next quiet hour", () => {
+    const now = Date.parse("2026-10-13T10:00:00Z");
+    expect(new Date(now + nextRunDelay(undefined, 7 * 86_400_000, now, 600_000, 23)).toISOString()).toBe("2026-10-13T23:00:00.000Z");
+    expect(nextRunDelay(undefined, 7 * 86_400_000, now, 600_000)).toBe(600_000);
+  });
+});
