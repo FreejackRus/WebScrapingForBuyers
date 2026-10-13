@@ -23,6 +23,8 @@ export interface Offer {
   mpn?: string;
   price: number;
   oldPrice?: number;
+  /** Price of the same listing in the previous search of this product (any user), when it moved by ≥1 %. */
+  previousPrice?: number;
   priceCondition: string;
   currency: "RUB";
   availability: string;
@@ -83,6 +85,8 @@ export interface SearchSnapshot {
   cachedAt?: string;
   /** Price-history series of this product (GET /price-history?key=); absent when not tracked. */
   historyKey?: string;
+  /** When the previous search of this product finished; rows carry `previousPrice` relative to it. */
+  previousPricesAt?: string;
 }
 
 /** One remembered search of one user; `product` lets the buyer repeat it exactly. */
@@ -118,6 +122,8 @@ export interface OfferTableFilter {
   titleIncludeAny?: string[];
   /** Drop rows whose title contains any of these tokens (lowercase match). */
   titleExcludeAny?: string[];
+  /** Keep only rows that got cheaper since the previous search of this product. */
+  cheaperOnly?: boolean;
 }
 
 export type UserRole = "admin" | "manager";
@@ -267,6 +273,8 @@ export interface PriceChannelStats {
 export interface PriceHistoryPoint {
   at: string;
   query: string;
+  /** Listing prices of this search («source|url» → price); kept on the newest point only. */
+  offers?: Record<string, number>;
   marketplace: PriceChannelStats;
   distributor: PriceChannelStats;
 }

@@ -46,9 +46,34 @@ function channelStats(offers: Offer[], channel: OfferChannel): PriceChannelStats
   };
 }
 
+export const offerPriceKey = (offer: Pick<Offer, "source" | "url">) => `${offer.source}|${offer.url}`;
+
+/**
+ * Marks rows whose listing had another price in the previous search (≥1 % apart).
+ * Returns how many rows were marked.
+ */
+export function markPreviousPrices(offers: Offer[], previous: Record<string, number> | undefined): number {
+  let marked = 0;
+  for (const offer of offers) {
+    delete offer.previousPrice;
+    const before = previous?.[offerPriceKey(offer)];
+    if (!before || before <= 0 || offer.demo) continue;
+    if (Math.abs(offer.price - before) / before < 0.01) continue;
+    offer.previousPrice = before;
+    marked += 1;
+  }
+  return marked;
+}
+
 /** Point of a completed search, or undefined when it has no usable real rows (demo-only, empty). */
 export function priceHistoryPoint(query: string, offers: Offer[], at: string): PriceHistoryPoint | undefined {
   const good = offers.filter(isHistoryRow);
   if (good.length === 0) return undefined;
-  return { at, query, marketplace: channelStats(good, "marketplace"), distributor: channelStats(good, "distributor") };
+  return {
+    at,
+    query,
+    offers: Object.fromEntries(good.map((offer) => [offerPriceKey(offer), offer.price])),
+    marketplace: channelStats(good, "marketplace"),
+    distributor: channelStats(good, "distributor"),
+  };
 }

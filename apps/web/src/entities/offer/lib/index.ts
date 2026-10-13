@@ -54,6 +54,7 @@ export function applyTableFilter(offers: Offer[], filter?: OfferTableFilter) {
   return offers.filter((offer) => {
     if (filter.packaging && !new RegExp(`(?:^|[^a-z0-9])${filter.packaging}(?=$|[^a-z0-9])`,"iu").test(offer.title)) return false;
     if (filter.realOnly && offer.demo) return false;
+    if (filter.cheaperOnly && !(offer.previousPrice && offer.price < offer.previousPrice)) return false;
     if (filter.sources?.length) {
       const hay = `${offer.source} ${offer.seller ?? ""}`.toLocaleLowerCase("ru");
       const matched = filter.sources.some((source) => hay.includes(source.toLocaleLowerCase("ru")));

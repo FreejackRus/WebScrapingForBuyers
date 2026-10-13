@@ -38,3 +38,15 @@ describe("PriceHistoryStore", () => {
     expect(new PriceHistoryStore(file).get("k").points).toEqual([]);
   });
 });
+
+describe("latest listing prices", () => {
+  it("keeps listing prices on the newest point only and hides them from the series", async () => {
+    const { PriceHistoryStore } = await import("./price-history-store.js");
+    const store = new PriceHistoryStore();
+    const stats = { min: 1, inStockMin: 1, count: 1 };
+    store.append("k", { at: "2026-01-01", query: "q", offers: { a: 1 }, marketplace: stats, distributor: stats });
+    store.append("k", { at: "2026-01-02", query: "q", offers: { a: 2 }, marketplace: stats, distributor: stats });
+    expect(store.latestPrices("k")).toEqual({ at: "2026-01-02", prices: { a: 2 } });
+    expect(store.get("k").points.every((point) => point.offers === undefined)).toBe(true);
+  });
+});

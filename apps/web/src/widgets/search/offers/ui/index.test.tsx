@@ -61,9 +61,6 @@ const setChannel = vi.fn();
 vi.mock("features/search", () => ({
   OFFER_PAGE_SIZES: [8, 20, 50],
   downloadOffersCsv: () => undefined,
-  previousPrice: () => undefined,
-  readPriceMemory: () => undefined,
-  savePriceMemory: () => undefined,
   encodeSearchLink: () => "",
   useFilteredOffers: () => rows,
   useChannelOffers: () => ({

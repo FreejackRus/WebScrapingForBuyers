@@ -8,7 +8,7 @@ import { assessOffer } from "../domain/offer-assessment.js";
 import { withCatalogArticles } from "../domain/catalog-article.js";
 import { applyCardFacts, type CardVerifier } from "../domain/offer-verification.js";
 import { flagPriceAnomalies } from "../domain/price-anomaly.js";
-import { priceHistoryKey, priceHistoryPoint } from "../domain/price-history.js";
+import { markPreviousPrices, priceHistoryKey, priceHistoryPoint } from "../domain/price-history.js";
 import type { PriceHistoryStore } from "../infrastructure/history/price-history-store.js";
 import { assignProcurementRanks } from "../domain/procurement-rank.js";
 import type { SourceAdapter } from "../domain/source-adapter.js";
@@ -358,6 +358,10 @@ export class SearchService {
     if (!this.priceHistory) return;
     this.attachHistoryKey(snapshot);
     if (!snapshot.historyKey) return;
+    const previous = this.priceHistory.latestPrices(snapshot.historyKey);
+    delete snapshot.previousPricesAt;
+    markPreviousPrices(snapshot.offers, previous?.prices);
+    if (previous) snapshot.previousPricesAt = previous.at;
     const point = priceHistoryPoint(snapshot.query, snapshot.offers, new Date(this.now()).toISOString());
     if (point) this.priceHistory.append(snapshot.historyKey, point);
   }

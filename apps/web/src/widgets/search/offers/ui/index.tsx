@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type PointerEvent, type ReactNode } from "react";
 import type { OfferReviewItem, OfferTableFilter, ProductCondition } from "@peremena/contracts";
-import { downloadOffersCsv, encodeSearchLink, previousPrice, readPriceMemory, savePriceMemory, type PriceMemory, OFFER_PAGE_SIZES, useChannelOffers, useFilteredOffers, useOfferCard, useOfferColumns, useOfferTable } from "features/search";
+import { downloadOffersCsv, encodeSearchLink, OFFER_PAGE_SIZES, useChannelOffers, useFilteredOffers, useOfferCard, useOfferColumns, useOfferTable } from "features/search";
 import { analysisApi, useAnalysisStore } from "entities/analysis";
 import { conditionLabels, matchLabels, PRICE_ANOMALY_HINT, PRICE_ANOMALY_LABEL, titleSpecs, verificationLabels } from "entities/offer";
 import type { OfferSortColumn } from "entities/offer";
@@ -79,16 +79,8 @@ export function OfferTable() {
       .map((offer) => offer.price);
     return prices.length ? Math.min(...prices) : undefined;
   })();
-  // Prices of the previous search for this product, read before this search overwrites them.
-  const [memory, setMemory] = useState<{ searchId: string; value: PriceMemory | undefined }>();
-  useEffect(() => {
-    if (!snapshot || memory?.searchId === snapshot.id) return;
-    setMemory({ searchId: snapshot.id, value: readPriceMemory(snapshot.product) });
-  }, [snapshot?.id]);
-  useEffect(() => {
-    if (snapshot?.status === "complete" && memory?.searchId === snapshot.id) savePriceMemory(snapshot.product, snapshot.offers);
-  }, [snapshot?.status, snapshot?.id, memory?.searchId]);
-  const priceMemory = memory && memory.searchId === snapshot?.id ? memory.value : undefined;
+  const previousAt = snapshot?.previousPricesAt;
+  const cheaperCount = channelOffers.filter((offer) => offer.previousPrice && offer.price < offer.previousPrice).length;
   const [linkCopied, setLinkCopied] = useState(false);
   const copySearchLink = async () => {
     if (!snapshot) return;
@@ -148,6 +140,7 @@ export function OfferTable() {
   const activeChips: Array<{ key: string; label: string; clear: () => void }> = [];
   if (offerFilter) activeChips.push({ key: "text", label: `Поиск: ${offerFilter}`, clear: () => setOfferFilter("") });
   if (tableFilter?.inStockOnly) activeChips.push({ key: "stock", label: "В наличии", clear: () => updateFilter("inStockOnly", undefined) });
+  if (tableFilter?.cheaperOnly) activeChips.push({ key: "cheaper", label: "Подешевели", clear: () => updateFilter("cheaperOnly", undefined) });
   if (tableFilter?.maxPrice != null) activeChips.push({ key: "price", label: `До ${money.format(tableFilter.maxPrice)}`, clear: () => updateFilter("maxPrice", undefined) });
   tableFilter?.conditions?.forEach((condition) => activeChips.push({ key: `condition-${condition}`, label: conditionLabels[condition], clear: () => updateFilter("conditions", tableFilter.conditions?.filter((item) => item !== condition)) }));
   tableFilter?.sources?.forEach((source) => activeChips.push({ key: `source-${source}`, label: `Поставщик: ${source}`, clear: () => updateFilter("sources", tableFilter.sources?.filter((item) => item !== source)) }));
@@ -238,12 +231,12 @@ export function OfferTable() {
           <>
             <b className="mono">{money.format(offer.price)}</b>
             {offer.oldPrice && <del className="mono">{money.format(offer.oldPrice)}</del>}
-            {previousPrice(priceMemory, offer) !== undefined ? (
+            {offer.previousPrice ? (
               <small
-                className={`offer-price-was offer-price-was--${offer.price < previousPrice(priceMemory, offer)! ? "down" : "up"}`}
-                title={`Цена в вашем прошлом поиске ${fetchedTime.format(new Date(priceMemory!.savedAt))}`}
+                className={`offer-price-was offer-price-was--${offer.price < offer.previousPrice ? "down" : "up"}`}
+                title={previousAt ? `Цена в прошлом поиске этого товара, ${fetchedTime.format(new Date(previousAt))}` : "Цена в прошлом поиске этого товара"}
               >
-                {offer.price < previousPrice(priceMemory, offer)! ? "↓" : "↑"} было {money.format(previousPrice(priceMemory, offer)!)}
+                {offer.price < offer.previousPrice ? "↓" : "↑"} было {money.format(offer.previousPrice)}
               </small>
             ) : null}
             {bestPrice !== undefined && offer.price === bestPrice && offer.match === "exact" && !nested ? (
@@ -375,6 +368,12 @@ export function OfferTable() {
       <fieldset className="offer-filter-controls">
         <legend className="sr-only">Фильтры предложений</legend>
         <label className="offer-filter-check"><input type="checkbox" checked={tableFilter?.inStockOnly ?? false} onChange={(event) => updateFilter("inStockOnly", event.target.checked || undefined)} />Только в наличии</label>
+        {previousAt || tableFilter?.cheaperOnly ? (
+          <label className="offer-filter-check" title={previousAt ? `По сравнению с поиском ${fetchedTime.format(new Date(previousAt))}` : undefined}>
+            <input type="checkbox" checked={tableFilter?.cheaperOnly ?? false} onChange={(event) => updateFilter("cheaperOnly", event.target.checked || undefined)} />
+            Только подешевевшие{cheaperCount ? ` (${cheaperCount})` : ""}
+          </label>
+        ) : null}
         <label>Максимальная цена
           <input aria-invalid={budgetInvalid || undefined} inputMode="decimal" value={budgetDraft} onChange={(event) => setBudgetDraft(event.target.value)} onBlur={applyBudget} onKeyDown={(event) => { if (event.key === "Enter") applyBudget(); }} placeholder="Без ограничения" />
         </label>

@@ -6,4 +6,3 @@ export { startSearch } from "./start";
 export { useSuggest } from "./suggest";
 export { decodeSearchLink, encodeSearchLink } from "./share-link";
 export { downloadOffersCsv, offersTableCsv } from "./table-export";
-export { previousPrice, readPriceMemory, savePriceMemory, type PriceMemory } from "./price-memory";

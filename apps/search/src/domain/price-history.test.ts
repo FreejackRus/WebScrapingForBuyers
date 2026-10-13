@@ -43,7 +43,7 @@ describe("priceHistoryPoint", () => {
       offer({ price: 300, assessment: { group: "needs_review" } as NonNullable<Offer["assessment"]> }),
       offer({ price: 1500, source: "NETLAB" }),
     ], "2026-10-02T00:00:00.000Z");
-    expect(point).toEqual({
+    expect(point).toMatchObject({
       at: "2026-10-02T00:00:00.000Z",
       query: "q",
       marketplace: { min: 900, inStockMin: 1000, count: 2 },
@@ -52,5 +52,16 @@ describe("priceHistoryPoint", () => {
   });
   it("skips demo-only searches", () => {
     expect(priceHistoryPoint("q", [offer({ demo: true })], "x")).toBeUndefined();
+  });
+});
+
+describe("previous listing prices", () => {
+  it("marks only rows whose listing price moved by at least 1 %", async () => {
+    const { markPreviousPrices, offerPriceKey } = await import("./price-history.js");
+    const row = (url: string, price: number) => ({ id: url, source: "OZON", url, price } as import("@peremena/contracts").Offer);
+    const offers = [row("a", 900), row("b", 1_005), row("c", 500)];
+    const marked = markPreviousPrices(offers, { [offerPriceKey(row("a", 0))]: 1_000, [offerPriceKey(row("b", 0))]: 1_000 });
+    expect(marked).toBe(1);
+    expect(offers.map((offer) => offer.previousPrice)).toEqual([1_000, undefined, undefined]);
   });
 });

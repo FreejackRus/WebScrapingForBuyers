@@ -35,11 +35,19 @@ export class PriceHistoryStore {
   }
 
   get(key: string): PriceHistory {
-    return { key, points: structuredClone(this.series.get(key) ?? []) };
+    return { key, points: structuredClone(this.series.get(key) ?? []).map(({ offers: _offers, ...rest }) => rest) };
+  }
+
+  /** Listing prices of the newest point of this product, with its time. */
+  latestPrices(key: string): { at: string; prices: Record<string, number> } | undefined {
+    const last = this.series.get(key)?.at(-1);
+    return last?.offers ? { at: last.at, prices: { ...last.offers } } : undefined;
   }
 
   append(key: string, point: PriceHistoryPoint): void {
-    const points = [...(this.series.get(key) ?? []), structuredClone(point)].slice(-this.maxPoints);
+    // Listing prices are only needed for the next comparison: older points drop them.
+    const older = (this.series.get(key) ?? []).map(({ offers: _offers, ...rest }) => rest);
+    const points = [...older, structuredClone(point)].slice(-this.maxPoints);
     // Re-insert so the Map order is "least recently searched first": that one is dropped at the cap.
     this.series.delete(key);
     this.series.set(key, points);
