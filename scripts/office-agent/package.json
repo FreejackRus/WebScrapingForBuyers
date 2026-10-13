@@ -1,0 +1,8 @@
+{
+  "name": "price-radar-office-agent",
+  "private": true,
+  "type": "module",
+  "description": "Fetches Citilink search results from the office IP for the Price Radar server",
+  "scripts": { "start": "node citilink-agent.mjs" },
+  "dependencies": { "playwright-core": "1.55.1" }
+}

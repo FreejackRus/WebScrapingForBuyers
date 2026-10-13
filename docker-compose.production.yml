@@ -54,6 +54,11 @@ services:
       # Яндекс Маркет и Мегамаркет выключены 2026-10-07: SmartCaptcha / ServicePipe блокируют IP
       # сервера. Вернуть: добавить yandex_market,megamarket в оба списка (search и marketplace-mcp).
       MARKETPLACE_SOURCES: wildberries,ozon,dns,citilink,avito,aliexpress
+      # Ситилинк через офисный агент (scripts/office-agent): Qrator блокирует IP сервера.
+      # Агент приходит обратным SSH-туннелем на 127.0.0.1:18091 хоста, office-relay
+      # отдаёт его в сеть radar. Агент выключен → работает прежний MCP-коннектор.
+      CITILINK_AGENT_URL: ${CITILINK_AGENT_URL:-http://172.29.0.1:18091}
+      OFFICE_AGENT_TOKEN: ${OFFICE_AGENT_TOKEN:-}
       # Demo stubs off in production (ALLOW_DEMO_SOURCES must stay unset/false).
       ALLOW_DEMO_SOURCES: "false"
       # Reliability: hourly source canaries and weekly quality eval, stored on the search-data
@@ -230,6 +235,23 @@ services:
     networks:
       radar:
         ipv4_address: 172.29.0.10
+    restart: unless-stopped
+
+  # Reverse-tunnel endpoint of the office agent is bound to host loopback (sshd GatewayPorts=no);
+  # this relay exposes it on the radar bridge gateway only, never on a public interface.
+  office-relay:
+    image: peremena-price-radar-search:latest
+    network_mode: host
+    command:
+      - node
+      - -e
+      - >-
+        const net=require("node:net");
+        net.createServer((c)=>{const u=net.connect(18091,"127.0.0.1");
+        c.on("error",()=>u.destroy());u.on("error",()=>c.destroy());c.pipe(u).pipe(c);})
+        .listen(18091,"172.29.0.1",()=>console.log("office-relay 172.29.0.1:18091 -> 127.0.0.1:18091"));
+    depends_on:
+      - search
     restart: unless-stopped
 
 volumes:

@@ -11,6 +11,7 @@ import { productFromQuery } from "./domain/product-from-query.js";
 import { createDistributorSourcesFromEnv } from "./infrastructure/sources/b2b-distributor-adapter.js";
 import { createDemoSources } from "./infrastructure/sources/demo-source-adapter.js";
 import { mergeSourceFallbacks } from "./infrastructure/sources/fallback-source-adapter.js";
+import { createCitilinkAgentSources } from "./infrastructure/sources/citilink-agent-adapter.js";
 import { createHttpMarketplaceSources } from "./infrastructure/sources/http-marketplace-adapter.js";
 import { createCardVerifiersFromEnv } from "./infrastructure/sources/card-verifiers.js";
 import { createMarketplaceSourcesFromEnv } from "./infrastructure/sources/mcp-marketplace-adapter.js";
@@ -28,7 +29,9 @@ export function buildSearchApp(options: { sources?: SourceAdapter[]; logger?: bo
   app.addHook("onClose", async () => {
     await priceHistory.flush();
   });
+  // The office agent goes first for Ситилинк: the MCP connector is blocked from the server IP.
   const realSources = mergeSourceFallbacks([
+    createCitilinkAgentSources(),
     createMarketplaceSourcesFromEnv(),
     createHttpMarketplaceSources(),
     createDistributorSourcesFromEnv(),
