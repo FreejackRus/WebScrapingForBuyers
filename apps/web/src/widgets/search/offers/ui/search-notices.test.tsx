@@ -9,7 +9,7 @@ vi.mock("entities/search", () => ({
   useSearchStore: (selector: (state: unknown) => unknown) => selector({ snapshot: mockSnapshot, start }),
 }));
 
-const { SearchNotices, cachedNotice, pendingSourceNames, productForVariant, shouldAutoReview, variantArticles } = await import("./search-notices");
+const { SearchNotices, cachedNotice, pendingSourceNames, quietSourceNotes, productForVariant, shouldAutoReview, variantArticles } = await import("./search-notices");
 
 const product: Product = {
   id: "ssd",
@@ -79,5 +79,27 @@ describe("automatic AI review", () => {
     expect(shouldAutoReview(done, 9, undefined, new Set())).toBe(false);
     expect(shouldAutoReview(done, 3, "s1", new Set())).toBe(false);
     expect(shouldAutoReview(done, 3, undefined, new Set(["s1"]))).toBe(false);
+  });
+});
+
+describe("quietSourceNotes", () => {
+  const snapshot = (status: SearchSnapshot["status"]): SearchSnapshot => ({
+    id: "s", query: "K380", status, offers: [],
+    product: { id: "p", brand: "Logitech", model: "K380", name: "Logitech K380", mpn: "", category: "", characteristics: {} },
+    sources: [
+      { source: "Ozon", status: "done", outcome: "offers", found: 4, kept: 4 },
+      { source: "Servermall", status: "done", outcome: "nothing_found", found: 0, kept: 0 },
+      { source: "Wildberries", status: "done", outcome: "filtered_out", found: 38, kept: 0 },
+      { source: "СРВТрейд", status: "error", outcome: "timeout" },
+    ],
+  });
+
+  it("says in plain words why a source brought nothing, once the search is over", () => {
+    expect(quietSourceNotes(snapshot("complete"))).toEqual([
+      "Servermall — не нашёл такой товар",
+      "Wildberries — нашёл 38, но не та модель",
+      "СРВТрейд — не ответил вовремя",
+    ]);
+    expect(quietSourceNotes(snapshot("running"))).toEqual([]);
   });
 });

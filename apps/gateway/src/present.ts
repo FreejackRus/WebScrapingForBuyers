@@ -2,9 +2,13 @@ import type { SearchSnapshot, SessionUser, SourceState } from "@peremena/contrac
 
 function presentSource(source: SourceState, user?: SessionUser): SourceState {
   if (user?.role === "admin") return source;
+  // Outcome codes and counts carry no transport text; the raw message stays admin-only.
   return {
     source: source.source,
     status: source.status,
+    ...(source.outcome ? { outcome: source.outcome } : {}),
+    ...(source.found !== undefined ? { found: source.found } : {}),
+    ...(source.kept !== undefined ? { kept: source.kept } : {}),
   };
 }
 

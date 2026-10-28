@@ -28,6 +28,21 @@ export function pendingSourceNames(snapshot: SearchSnapshot | undefined): string
   return snapshot.sources.filter((source) => source.status === "pending" || source.status === "loading").map((source) => source.source);
 }
 
+/**
+ * After the search: sources that brought nothing, and why, in a manager's words.
+ * «Servermall — не нашёл такой товар», «Wildberries — нашёл 38, но не та модель».
+ */
+export function quietSourceNotes(snapshot: SearchSnapshot | undefined): string[] {
+  if (snapshot?.status !== "complete") return [];
+  return snapshot.sources.flatMap(({ source, outcome, found }) => {
+    if (outcome === "nothing_found") return [`${source} — не нашёл такой товар`];
+    if (outcome === "filtered_out") return [`${source} — нашёл ${found ?? 0}, но не та модель`];
+    if (outcome === "timeout") return [`${source} — не ответил вовремя`];
+    if (outcome === "unavailable" || outcome === "error") return [`${source} — временно недоступен`];
+    return [];
+  });
+}
+
 /** «Результаты от 14:05 (12 мин назад)» for a reused search. */
 export function cachedNotice(cachedAt: string, now: number = Date.now()): string {
   const at = new Date(cachedAt);
@@ -57,6 +72,7 @@ export function SearchNotices() {
   if (!snapshot) return null;
   const variants = variantArticles(snapshot.product);
   const pending = pendingSourceNames(snapshot);
+  const quiet = quietSourceNotes(snapshot);
   return (
     <>
       {snapshot.cachedAt ? (
@@ -72,6 +88,12 @@ export function SearchNotices() {
           <span>Ещё ищут: {pending.join(", ")}…</span>
           <small>Уже найденные предложения можно смотреть и использовать — новые строки добавятся сами.</small>
         </div>
+      ) : null}
+      {quiet.length > 0 ? (
+        <details className="data-notice search-quiet-notice">
+          <summary>Без предложений: {quiet.length} из {snapshot.sources.length} источников</summary>
+          <ul>{quiet.map((note) => <li key={note}>{note}</li>)}</ul>
+        </details>
       ) : null}
       {variants.length > 1 ? (
         <div className="search-variant-chooser" role="group" aria-label="Варианты товара">
