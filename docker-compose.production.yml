@@ -141,20 +141,27 @@ services:
       HF_HUB_DISABLE_TELEMETRY: "1"
       HF_HUB_OFFLINE: "1"
       TRANSFORMERS_OFFLINE: "1"
+      # The host is shared: GPU0 belongs to another project's inference.
+      # Default = GPU1 only. Back to both cards: VLLM_CUDA_DEVICES=0,1 + VLLM_TP=2
+      # + the FP8 checkpoint (Qwen/Qwen3.8-27B-FP8 @ 017b9c7af6b5689d5dd426a76e0bc077eb5ca20a).
+      CUDA_VISIBLE_DEVICES: ${VLLM_CUDA_DEVICES:-1}
     command:
-      - Qwen/Qwen3.8-27B-FP8
+      # AWQ INT4 (compressed-tensors), 21 GB: the same Qwen 3.8 27B on one 24 GB card.
+      - ${VLLM_CHECKPOINT:-cyankiwi/Qwen3.8-27B-AWQ-INT4}
       - --revision
-      - "017b9c7af6b5689d5dd426a76e0bc077eb5ca20a"
+      - ${VLLM_CHECKPOINT_REVISION:-e3a700906e6a73ba4290b1873dc2ba8198527ab5}
       - --served-model-name
       - ${VLLM_MODEL:-procurement-qwen3.8-27b}
       - --tensor-parallel-size
-      - "2"
+      - ${VLLM_TP:-1}
       - --max-model-len
       - "8192"
       - --max-num-seqs
-      - "4"
+      - ${VLLM_MAX_SEQS:-2}
       - --gpu-memory-utilization
-      - "0.90"
+      - ${VLLM_GPU_UTIL:-0.95}
+      # ~2 GB of KV headroom on one card: skip CUDA graph capture to keep it.
+      - --enforce-eager
       - --language-model-only
     volumes:
       - vllm-models:/root/.cache/huggingface

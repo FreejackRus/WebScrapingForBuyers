@@ -2108,3 +2108,44 @@ narrator кладёт в payload ≤ 6 реплик по 400 символов. �
 - Работа закупщика: сравнение 2–4 строк; корзина (gateway `BASKET_FILE`, `/api/v1/basket*`, CSV для Excel, `POST /justify-basket` с проверкой чисел); «Заявка списком» (`POST /split-request`, ИИ + разбор по строкам без ИИ).
 - Цены: история (search `PRICE_HISTORY_FILE`, volume `search-data`, `historyKey`, `/price-history`, спарклайн); «Слежу» (gateway `WATCHLIST_FILE`, проверка раз в `WATCHLIST_CHECK_HOURS`=24 ч, изменения цены/наличия).
 - Надёжность: канарейки источников каждый час (`SOURCE_MONITOR_*`, `/health/sources`), еженедельный замер качества (`QUALITY_*`, `/quality`, `SearchService.runUncached`), админ-раздел «Состояние системы» и баннер при алертах. Первая же проверка показала блокировку Ситилинка (Qrator, 429).
+
+### 2026-10-28 — состояние прода: ИИ без модели, vLLM на свободную GPU1
+
+**Найдено.** Прод на `c350da09` (13.10, после него в `main` только документация),
+все сервисы Up 2 недели. Но `AI_PROVIDER=vllm`, а контейнер
+`webscrapingforbuyers-vllm-1` остановлен штатно (Exited 0) 13.10 в 06:57 —
+с тех пор analysis обращается к `http://vllm:8000` в пустоту, ИИ у менеджеров
+не работает. Причина: сервер общий. На GPU0 18,5 GB занимает vLLM чужого
+проекта `vodc-assistant` (Qwen3-14B), а наш vLLM просил `TP=2` и 90% обеих
+карт. GPU1 свободна (71 MB).
+
+**Сервер (не код).**
+- По просьбе владельца остановлены (`docker compose stop`, контейнеры целы)
+  `medical-showcase` и `voronezh-standup`; `clinical-ai` и `vodc-assistant`
+  работают.
+- Диск: 26 GB → 85 GB свободно (`docker builder prune -af` — 63 GB кэша
+  сборки, `docker image prune -af` — образы без контейнеров). Тома и модели
+  Ollama не тронуты. Ещё ~59 GB — образы остановленных прогонов clinical-ai,
+  не удалялись (чужой проект).
+- SSH: ключ этой машины в `authorized_keys` сервера теперь с `command=...`
+  (обратный туннель офисного агента Ситилинка), поэтому команды по ключу не
+  выполняются — входить с `-o PubkeyAuthentication=no` по паролю из
+  `.env.server`. После серии входов сервер начал сбрасывать SSH — вероятно,
+  защита от частых подключений.
+
+**Решение: наш vLLM на одной GPU1.** Чекпоинт
+`cyankiwi/Qwen3.8-27B-AWQ-INT4` @ `e3a700906e6a73ba4290b1873dc2ba8198527ab5`
+(AWQ INT4, compressed-tensors, 21 GB), `CUDA_VISIBLE_DEVICES=1`, `TP=1`,
+`--gpu-memory-utilization 0.95`, `--max-num-seqs 2`, `--enforce-eager`
+(~2 GB под KV на 24 GB карте). Параметры вынесены в env (`VLLM_CHECKPOINT`,
+`VLLM_CHECKPOINT_REVISION`, `VLLM_CUDA_DEVICES`, `VLLM_TP`, `VLLM_MAX_SEQS`,
+`VLLM_GPU_UTIL`); возврат к FP8 на двух картах — без правки кода.
+`served-model-name` прежний, analysis не меняется.
+
+**Статус на момент записи.** Скачивание чекпоинта запущено на сервере
+(`docker run ... snapshot_download`, лог `/tmp/vllm-awq-download.log`) —
+завершение не подтверждено из-за отказа SSH. Новый vLLM ещё не запущен,
+проверки ИИ и источников не делались. Дальше: дождаться загрузки,
+`./scripts/deploy.sh origin/main` + `docker compose --profile vllm up -d vllm`,
+health vLLM, живые диалоги, проверка всех источников. Качество INT4 против
+FP8 — A/B `compare-models.ts`.
