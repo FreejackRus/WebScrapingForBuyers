@@ -59,7 +59,7 @@ function pricesOf(offer: Offer): number[] {
     .filter((value): value is number => typeof value === "number");
 }
 
-function sentenceOk(sentence: string, cited: Offer[]): boolean {
+function sentenceProblem(sentence: string, cited: Offer[]): string | undefined {
   const text = lower(sentence);
   // Which cited rows the sentence speaks about: the shop it names, otherwise an article from the title.
   const byShop = cited.filter((offer) => text.includes(lower(offer.source)) || text.includes(lower(offer.seller)));
@@ -74,12 +74,12 @@ function sentenceOk(sentence: string, cited: Offer[]): boolean {
   const justified: Array<[number, number]> = [];
   for (const match of sentence.matchAll(PRICE)) {
     const value = Number(digits(match[1]!));
-    if (!prices.includes(value) && !(named.length > 0 && differences.includes(value))) return false;
+    if (!prices.includes(value) && !(named.length > 0 && differences.includes(value))) return `цена ${value} не у названной карточки`;
     justified.push([match.index!, match.index! + match[0].length]);
   }
   for (const match of sentence.matchAll(PERCENT)) {
     const value = Number(match[1]);
-    if (!percents.some((percent) => Math.abs(percent - value) <= 1)) return false;
+    if (!percents.some((percent) => Math.abs(percent - value) <= 1)) return `процент ${value} не из цен`;
     justified.push([match.index!, match.index! + match[0].length]);
   }
   for (const match of sentence.matchAll(/\d+(?:[.,]\d+)?/gu)) {
@@ -89,25 +89,25 @@ function sentenceOk(sentence: string, cited: Offer[]): boolean {
     if (cited.some((offer) => rowText(offer).includes(value))) continue;
     // «3 предложения», «из 5 вариантов»: a count no larger than what was shown.
     if (Number(value) <= Math.max(cited.length, 1) && COUNT_WORD.test(sentence.slice(at + value.length))) continue;
-    return false;
+    return `число ${value} не из карточек`;
   }
 
   for (const aliases of SOURCE_ALIASES) {
     if (!aliases.some((name) => new RegExp(`(?:^|[^\\p{L}])${escape(name)}(?=$|[^\\p{L}])`, "iu").test(text))) continue;
-    if (!cited.some((offer) => aliases.some((name) => lower(`${offer.source} ${offer.seller}`).includes(name)))) return false;
+    if (!cited.some((offer) => aliases.some((name) => lower(`${offer.source} ${offer.seller}`).includes(name)))) return `источник ${aliases[0]} не процитирован`;
   }
 
   const about = named.length > 0 ? named : cited;
   for (const match of text.matchAll(/в\s+наличии/gu)) {
     if (NEGATION_BEFORE.test(text.slice(Math.max(0, match.index! - 20), match.index!))) continue;
-    if (!about.some((offer) => offerAvailabilityStatus(offer) === "in_stock")) return false;
+    if (!about.some((offer) => offerAvailabilityStatus(offer) === "in_stock")) return "«в наличии» без подтверждения";
   }
   for (const match of text.matchAll(/(?:^|[^\p{L}])нов(?:ый|ая|ое|ые)(?=$|[^\p{L}])/gu)) {
     if (NEGATION_BEFORE.test(text.slice(Math.max(0, match.index! - 20), match.index! + 1))) continue;
-    if (!about.some((offer) => offer.condition === "new")) return false;
+    if (!about.some((offer) => offer.condition === "new")) return "«новый» без подтверждения";
   }
-  if (/скидк/iu.test(text) && !cited.some((offer) => offer.oldPrice)) return false;
-  return true;
+  if (/скидк/iu.test(text) && !cited.some((offer) => offer.oldPrice)) return "скидка без старой цены";
+  return undefined;
 }
 
 /**
@@ -119,14 +119,25 @@ function sentenceOk(sentence: string, cited: Offer[]): boolean {
  * A refusal makes the caller answer with the deterministic text. URLs are added by the server.
  */
 export function validateGroundedNarration(summary: string, offerIds: string[] | undefined, allowed: Offer[]): boolean {
-  if (!summary.trim() || summary.length > 1800 || /(?:https?:|www\.|javascript:|\]\(|<|>)/iu.test(summary)) return false;
+  return groundedNarrationProblem(summary, offerIds, allowed) === undefined;
+}
+
+/** Why a narration is refused (for the server log), or undefined when it passes. */
+export function groundedNarrationProblem(summary: string, offerIds: string[] | undefined, allowed: Offer[]): string | undefined {
+  if (!summary.trim() || summary.length > 1800 || /(?:https?:|www\.|javascript:|\]\(|<|>)/iu.test(summary)) return "пусто, слишком длинно или ссылка";
   const ids = offerIds ?? [];
-  if (ids.length > 20 || new Set(ids).size !== ids.length || ids.some((id) => !allowed.some((offer) => offer.id === id))) return false;
+  if (ids.length > 20 || new Set(ids).size !== ids.length) return "повтор или избыток offerIds";
+  if (ids.some((id) => !allowed.some((offer) => offer.id === id))) return "offerIds вне отобранных строк";
   const cited = allowed.filter((offer) => ids.includes(offer.id));
-  if (isExtractive(summary, cited)) return true;
+  if (isExtractive(summary, cited)) return undefined;
   // Prose with no cited row (standalone chat, warnings) stays on the whitelist: nothing to check it against.
-  if (cited.length === 0) return false;
-  if (UNSUPPORTED_CLAIMS.test(summary)) return false;
+  if (cited.length === 0) return "свободный текст без процитированных строк";
+  const claim = summary.match(UNSUPPORTED_CLAIMS)?.[0];
+  if (claim) return `неподтверждаемое утверждение «${claim}»`;
   const sentences = normalize(summary).split(/(?<=[.!?…])\s+|\n+/u).filter(Boolean);
-  return sentences.every((sentence) => sentenceOk(sentence, cited));
+  for (const sentence of sentences) {
+    const problem = sentenceProblem(sentence, cited);
+    if (problem) return `${problem}: «${sentence.slice(0, 160)}»`;
+  }
+  return undefined;
 }
