@@ -241,6 +241,9 @@ export function buildGatewayApp(options: { logger?: boolean; history?: SearchHis
   app.get("/api/v1/admin/quality", async (request, reply) =>
     requireAdmin(request, reply) ?? proxyJson(search, "/quality", request, reply),
   );
+  app.get("/api/v1/admin/narration", async (request, reply) =>
+    requireAdmin(request, reply) ?? proxyJson(analysis, "/quality/narration", request, reply),
+  );
   app.post("/api/v1/admin/quality/run", async (request, reply) =>
     requireAdmin(request, reply) ?? proxyJson(search, "/quality/run", request, reply, {}),
   );

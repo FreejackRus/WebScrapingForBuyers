@@ -1,10 +1,12 @@
 import type { AnalysisNarrator, CopilotChatInput, TrustedNarrationContext } from "../domain/analysis-narrator.js";
 import { NarrationError } from "../domain/narration-error.js";
 import { groundedNarrationProblem } from "./grounded-narration.js";
+import { narrationStats } from "./narration-stats.js";
 
 /** Refuses the model's text and logs why (server log only: prices and titles, no user data). */
 function refuse(kind: "summary" | "answer", problem: string): never {
   console.warn(JSON.stringify({ msg: "narration_rejected", kind, problem }));
+  narrationStats.rejected(kind, problem);
   throw new NarrationError("invalid_response");
 }
 
@@ -18,7 +20,9 @@ function check<T extends { summary: string; offerIds?: string[]; warnings: strin
   const warnings = result.warnings.filter((warning) => groundedNarrationProblem(warning, [], []) === undefined);
   if (warnings.length < result.warnings.length) {
     console.warn(JSON.stringify({ msg: "narration_warning_dropped", kind, dropped: result.warnings.length - warnings.length }));
+    narrationStats.warningsDropped(result.warnings.length - warnings.length);
   }
+  narrationStats.accepted();
   return { ...result, warnings };
 }
 

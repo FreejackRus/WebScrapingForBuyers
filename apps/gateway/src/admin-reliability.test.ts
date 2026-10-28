@@ -25,7 +25,7 @@ function stub(role: "admin" | "manager") {
   return { app, upstream };
 }
 
-it.each(["/api/v1/admin/sources/health", "/api/v1/admin/quality"])("forbids %s to managers", async (url) => {
+it.each(["/api/v1/admin/sources/health", "/api/v1/admin/quality", "/api/v1/admin/narration"])("forbids %s to managers", async (url) => {
   const { app, upstream } = stub("manager");
   const response = await app.inject({ method: "GET", url, headers: { cookie: "pr_session=m" } });
   expect(response.statusCode).toBe(403);

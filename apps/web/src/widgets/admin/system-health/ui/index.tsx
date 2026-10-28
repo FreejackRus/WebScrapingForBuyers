@@ -1,15 +1,16 @@
-import type { QualityReport, SourceHealthReport } from "@peremena/contracts";
+import type { NarrationStats, QualityReport, SourceHealthReport } from "@peremena/contracts";
 import { useCallback, useEffect, useState } from "react";
 
 import { useUserStore } from "entities/user";
 
-import { adminAlerts, formatTime, percent, sourceTone, systemHealthApi, trendPoints } from "../lib";
+import { adminAlerts, formatTime, narrationSummary, percent, sourceTone, systemHealthApi, trendPoints } from "../lib";
 
 const toneLabel = { ok: "Работает", warn: "Сбой", error: "Не отвечает", unknown: "Нет данных" } as const;
 
 function useSystemHealth(enabled: boolean) {
   const [sources, setSources] = useState<SourceHealthReport>();
   const [quality, setQuality] = useState<QualityReport>();
+  const [narration, setNarration] = useState<NarrationStats>();
   const [error, setError] = useState("");
   const reload = useCallback(async () => {
     if (!enabled) return;
@@ -17,6 +18,8 @@ function useSystemHealth(enabled: boolean) {
       const [nextSources, nextQuality] = await Promise.all([systemHealthApi.sources(), systemHealthApi.quality()]);
       setSources(nextSources);
       setQuality(nextQuality);
+      // Optional: an older analysis service has no stats; the panel still shows the rest.
+      setNarration(await systemHealthApi.narration().catch(() => undefined));
       setError("");
     } catch (reason) {
       setError(reason instanceof Error ? reason.message : "Не удалось получить состояние системы");
@@ -25,7 +28,7 @@ function useSystemHealth(enabled: boolean) {
   useEffect(() => {
     void reload();
   }, [reload]);
-  return { sources, quality, error, reload, setQuality };
+  return { sources, quality, narration, error, reload, setQuality };
 }
 
 /** Admin-only banner on the search workspace when a source is down or search quality dropped. */
@@ -48,7 +51,7 @@ export function AdminAlertBanner() {
 
 /** «Состояние системы» section of the admin settings: source canaries and the weekly quality score. */
 export function SystemHealthPanel() {
-  const { sources, quality, error, reload, setQuality } = useSystemHealth(true);
+  const { sources, quality, narration, error, reload, setQuality } = useSystemHealth(true);
   const [starting, setStarting] = useState(false);
   const results = quality?.results ?? [];
   const last = results.at(-1);
@@ -124,6 +127,24 @@ export function SystemHealthPanel() {
             )}
           </tbody>
         </table>
+      </div>
+
+      <h3>Ответы ИИ</h3>
+      <div className="quality-summary">
+        <p>
+          {narrationSummary(narration)}
+          {narration ? ` — с ${formatTime(narration.since)}; отклонённые ответы заменяются текстом программы.` : ""}
+          {narration?.warningsDropped ? ` Отброшено предупреждений: ${narration.warningsDropped}.` : ""}
+        </p>
+        {narration && narration.recent.length > 0 && (
+          <ul className="narration-recent">
+            {narration.recent.map((item) => (
+              <li key={`${item.at}-${item.problem}`}>
+                {formatTime(item.at)} — {item.problem}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
 
       <h3>Качество поиска</h3>

@@ -343,6 +343,16 @@ export interface SourceHealth {
   history: SourceCheck[];
 }
 
+/** Live share of model explanations that passed the fact check, since the analysis service started. */
+export interface NarrationStats {
+  since: string;
+  accepted: number;
+  rejected: number;
+  warningsDropped: number;
+  /** Latest refusals, newest first; prices and titles only, no user data. */
+  recent: Array<{ at: string; kind: "summary" | "answer"; problem: string }>;
+}
+
 export interface SourceHealthReport {
   sources: SourceHealth[];
   alerts: string[];

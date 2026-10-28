@@ -4,6 +4,7 @@ import { createService, fetchWithTimeout, serviceUrl } from "@peremena/service-k
 import { justifyPurchase, reviewOffers, understandQuery } from "./application/ai-tools.js";
 import { analyzeSnapshot, answerCopilot } from "./application/analyze.js";
 import { justifyBasket, splitRequest } from "./application/basket-tools.js";
+import { narrationStats } from "./application/narration-stats.js";
 import type { AnalysisNarrator } from "./domain/analysis-narrator.js";
 import {
   keepAliveFromEnv,
@@ -70,6 +71,8 @@ export function buildAnalysisApp(options: { narrator?: AnalysisNarrator; logger?
   const app = createService({ logger: options.logger ?? false });
   const narrator = options.narrator ?? narratorFromEnv();
   const searchBase = serviceUrl("SEARCH_URL", "http://127.0.0.1:3003");
+
+  app.get("/quality/narration", async () => narrationStats.snapshot());
 
   app.get("/health", async () => ({
     status: "ok",

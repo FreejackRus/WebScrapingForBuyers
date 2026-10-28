@@ -1,4 +1,4 @@
-import type { QualityReport, QualityResult, SourceHealth, SourceHealthReport } from "@peremena/contracts";
+import type { NarrationStats, QualityReport, QualityResult, SourceHealth, SourceHealthReport } from "@peremena/contracts";
 
 import { request } from "shared/api";
 import { apiBase } from "shared/config";
@@ -6,6 +6,7 @@ import { apiBase } from "shared/config";
 export const systemHealthApi = {
   sources: () => request<SourceHealthReport>(`${apiBase}/admin/sources/health`),
   quality: () => request<QualityReport>(`${apiBase}/admin/quality`),
+  narration: () => request<NarrationStats>(`${apiBase}/admin/narration`),
   runQuality: () => request<QualityReport & { started: boolean }>(`${apiBase}/admin/quality/run`, { method: "POST", body: "{}" }),
 };
 
@@ -39,4 +40,12 @@ export function trendPoints(results: QualityResult[], width: number, height: num
   return results
     .map((result, index) => `${Math.round(index * step)},${Math.round(height - result.marketplacePrecision * height)}`)
     .join(" ");
+}
+
+/** «Принято 12 из 15 (80 %)» — the share of model explanations that passed the fact check. */
+export function narrationSummary(stats: NarrationStats | undefined): string {
+  if (!stats) return "Нет данных";
+  const total = stats.accepted + stats.rejected;
+  if (total === 0) return "Модель ещё не отвечала с момента запуска";
+  return `Принято ${stats.accepted} из ${total} (${Math.round((stats.accepted / total) * 100)} %)`;
 }
