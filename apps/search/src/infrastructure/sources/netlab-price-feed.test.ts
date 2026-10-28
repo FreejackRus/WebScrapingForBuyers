@@ -10,7 +10,9 @@ import {
   inflateFirstZipEntry,
   isNetlabCandidate,
   netlabAvailability,
+  netlabPriceTime,
   parseNetlabOffer,
+  toNetlabOffer,
 } from "./netlab-price-feed.js";
 
 // Trimmed copy of the live pricexml.zip markup (2026-10-07).
@@ -164,4 +166,21 @@ it.each(["12400F", "i5-12400F", "процессор 12400F"])("finds the CPU in 
 it("uses NETLAB's product type to exclude complete systems with the requested CPU", () => {
   const pc = parseNetlabOffer('<offer id="10"><name>NORBEL i5-12400F / 16GB / SSD</name><RussianName>[Компьютер] NORBEL i5-12400F</RussianName><priceR>100</priceR>')!;
   expect(isNetlabCandidate(pc, productFromQuery("12400F"))).toBe(false);
+});
+
+describe("NETLAB price list age", () => {
+  const item = parseNetlabOffer(XML.slice(XML.indexOf('<offer id="1001188"'), XML.indexOf("</offer>")))!;
+  const product = productFromQuery("Pantum TL-5120P", "query");
+  const feed = { usdRate: 85.71, date: "2026-10-29 00:07" };
+  const at = (moscow: string) => Date.parse(`${moscow}+03:00`);
+
+  it("reads the file date as Moscow time", () => {
+    expect(netlabPriceTime("2026-10-29 00:07")).toBe(Date.parse("2026-10-28T21:07:00Z"));
+    expect(netlabPriceTime("вчера")).toBeUndefined();
+  });
+
+  it("says when the price list is older than three hours", () => {
+    expect(toNetlabOffer(item, product, feed, "R", at("2026-10-29T02:00:00"))?.priceCondition).not.toMatch(/устарел/);
+    expect(toNetlabOffer(item, product, feed, "R", at("2026-10-29T04:00:00"))?.priceCondition).toMatch(/прайс 2026-10-29 00:07; прайс устарел/);
+  });
 });

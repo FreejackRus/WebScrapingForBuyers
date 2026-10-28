@@ -231,11 +231,23 @@ export function isNetlabCandidate(item: NetlabFeedItem, product: Product): boole
   return tokens.every((token) => words.has(token));
 }
 
+/** Older than this, the price list is called out as stale: NETLAB publishes it every hour. */
+export const NETLAB_STALE_PRICE_MS = 3 * 60 * 60_000;
+
+/** «2026-10-29 00:07» (Moscow time in the file) → epoch ms; undefined when unreadable. */
+export function netlabPriceTime(date: string): number | undefined {
+  const parts = /^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/.exec(date.trim());
+  if (!parts) return undefined;
+  const time = Date.parse(`${parts[1]}-${parts[2]}-${parts[3]}T${parts[4]}:${parts[5]}:00+03:00`);
+  return Number.isFinite(time) ? time : undefined;
+}
+
 export function toNetlabOffer(
   item: NetlabFeedItem,
   product: Product,
   feed: Pick<NetlabFeed, "usdRate" | "date">,
   column: NetlabPriceColumn,
+  now: number = Date.now(),
 ): Offer | undefined {
   const usd = item.prices[column];
   if (usd === undefined) return undefined;
@@ -254,6 +266,8 @@ export function toNetlabOffer(
             ? "probable"
             : "doubtful";
   const price = Math.round(usd * feed.usdRate);
+  const priceTime = netlabPriceTime(feed.date);
+  const stale = priceTime !== undefined && now - priceTime > NETLAB_STALE_PRICE_MS;
   return {
     id: `netlab-${createHash("sha256").update(`${item.id}:${column}:${price}`).digest("hex").slice(0, 10)}`,
     source: "NETLAB",
@@ -261,7 +275,7 @@ export function toNetlabOffer(
     title: item.name,
     ...(item.pn ? { mpn: item.pn } : {}),
     price,
-    priceCondition: `${NETLAB_PRICE_LABEL[column]}: $${usd} по курсу ${feed.usdRate} (прайс ${feed.date})`,
+    priceCondition: `${NETLAB_PRICE_LABEL[column]}: $${usd} по курсу ${feed.usdRate} (прайс ${feed.date}${stale ? "; прайс устарел — проверьте цену у NETLAB" : ""})`,
     currency: "RUB",
     availability: netlabAvailability(item),
     ...(item.warranty ? { warranty: item.warranty } : {}),
