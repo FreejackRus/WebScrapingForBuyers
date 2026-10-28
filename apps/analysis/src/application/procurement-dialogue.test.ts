@@ -16,6 +16,19 @@ describe("reliable procurement dialogue",()=>{
  it("does not invent warranty or BOX contents",async()=>{const n=narrator();const r=await analyzeSnapshot(snapshot,"какая гарантия и комплектация BOX?",n);expect(r.summary).toMatch(/не указан|нет сведений/i);expect(r.summary).not.toMatch(/лицензи|официальная гарантия/i);expect(n.summarize).not.toHaveBeenCalled()});
  it("asks clarification without a snapshot for contextual refinement",async()=>{const r=await answerCopilot("а BOX?");expect(r.clarificationQuestion).toBeTruthy();expect(r.searchQuery).toBeUndefined()});
  it("rejects invented facts in explanation",async()=>{const r=await analyzeSnapshot(snapshot,"сравни лучшие предложения",narrator());expect(r.summary).not.toMatch(/999|1 ₽/);});
+ it("«почему именно он?» explains the pick by the selection rule, not the cheapest row",async()=>{
+  // Live 2026-10-28, K380: best = WB 2 273 ₽ in stock; the answer listed five cheaper Avito rows of unknown stock.
+  const best={...offer("wb","Клавиатура Logitech K380",2273,"В наличии"),source:"Wildberries",procurementRank:0};
+  const cheap1={...offer("av1","Клавиатура Logitech K380",900,"Неизвестно"),source:"Авито",condition:"unknown" as const,procurementRank:1};
+  const cheap2={...offer("av2","Клавиатура Logitech K380",989,"Неизвестно"),source:"Авито",procurementRank:2};
+  const snap={...snapshot,offers:[cheap1,cheap2,best]};
+  const r=await analyzeSnapshot(snap,"а почему именно он?",undefined,{context:{selectedOfferIds:["wb","av1","av2"]}});
+  expect(r.selectedOfferIds).toEqual(["wb"]);
+  expect(r.summary).toMatch(/^Wildberries, 2\s273 ₽/u);
+  expect(r.summary).toMatch(/наличие подтверждено/);
+  expect(r.summary).toMatch(/Дешевле — 2 предложения \(от 900 ₽\): наличие не подтверждено/u);
+  expect(r.summary.split("\n")).toHaveLength(1);
+ });
  it("keeps partial collection explicit",async()=>{const r=await analyzeSnapshot({...snapshot,status:"running"},"почему этот?",undefined,{context:{selectedOfferIds:["box"]}});expect(r.warnings.join(" ")).toMatch(/сбор ещё идёт/i)});
 });
 describe("clarification and incremental results",()=>{

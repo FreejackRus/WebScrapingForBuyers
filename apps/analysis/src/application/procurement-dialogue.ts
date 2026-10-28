@@ -108,13 +108,48 @@ export function routeProcurementDialogue(snapshot: SearchSnapshot | undefined, p
     const ids = context?.selectedOfferIds?.length ? context.selectedOfferIds : current.selectedOfferIds;
     if(ids?.length) rows=rows.filter(o=>ids.includes(o.id));
     if(packaging) rows=rows.filter(o=>titleHas(o.title,packaging));
-    rows=rows.sort((a,b)=>a.price-b.price).slice(0,5);
+    // Same order as the pick itself: re-sorting by price made «почему он?» explain cheaper rows instead.
+    rows=rows.sort(selectionOrder).slice(0,5);
     if(!rows.length) return {...base("В текущих результатах нет подходящего предложения для объяснения. Уточните модель или фильтры."),warnings:collectionWarnings(snapshot)};
+    if(why && !detailQuestion && singularReference.test(text)){
+      const best=rows[0]!;
+      const pool=filterOffers(snapshot.offers,current).filter(o=>!o.demo);
+      return {...base(explainPick(best,pool),"explain"),selectedOfferIds:[best.id],citations:references([best]),appliedFilters:["Объяснение текущего выбора; фильтры сохранены."],warnings:collectionWarnings(snapshot)};
+    }
     const summary=detailQuestion ? rows.map(o=>`${o.title}: гарантия — ${o.warranty?.trim() || "не указана"}. Комплектация в данных предложения не указана; обозначение BOX/OEM не подтверждает содержимое коробки.`).join("\n")
       : rows.map(o=>`${o.title}: ${price(o)}; наличие по данным источника — ${o.availability}. ${o.assessment?.reasons.join("; ") || "Совпадение по данным карточки"}. Выбор основан на текущих условиях и цене; наличие требует подтверждения перед закупкой.`).join("\n");
     return {...base(summary,"explain"),selectedOfferIds:rows.map(o=>o.id),citations:references(rows),appliedFilters:["Объяснение текущего выбора; фильтры сохранены."],warnings:collectionWarnings(snapshot)};
   }
   return undefined;
+}
+/** «он», «этот», «именно он» point at one row: the first one in the pick. */
+const singularReference=/почему\s+(?:же\s+)?(?:именно\s+)?(?:он|этот|его|она|эта)(?=$|[^а-яё])|объясни\s+этот/iu;
+function selectionOrder(a: Offer, b: Offer): number {
+  return a.procurementRank != null && b.procurementRank != null ? a.procurementRank - b.procurementRank : a.price - b.price;
+}
+function rubles(value: number): string {return `${value.toLocaleString("ru-RU")} ₽`;}
+function offersWord(count: number): string {
+  const mod10=count%10, mod100=count%100;
+  const word=mod10===1&&mod100!==11 ? "предложение" : mod10>=2&&mod10<=4&&(mod100<12||mod100>14) ? "предложения" : "предложений";
+  return `${count} ${word}`;
+}
+/** The pick in the selection rule's own terms, and why the cheaper rows are below it. */
+function explainPick(best: Offer, pool: Offer[]): string {
+  const facts=[offerAvailabilityStatus(best)==="in_stock" ? "наличие подтверждено" : `наличие по данным источника — ${best.availability}`];
+  if(best.condition==="new") facts.push("новый товар");
+  if(best.match==="exact"||best.match==="probable") facts.push("модель совпадает");
+  const cheaper=pool.filter(o=>o.id!==best.id&&o.price<best.price);
+  let tail="";
+  if(cheaper.length){
+    const reasons=new Set<string>();
+    for(const o of cheaper){
+      if(offerAvailabilityStatus(o)!=="in_stock") reasons.add("наличие не подтверждено");
+      if(o.condition!=="new") reasons.add("состояние не указано или б/у");
+      if(o.match==="analog"||o.match==="doubtful") reasons.add("совпадение неточное");
+    }
+    tail=` Дешевле — ${offersWord(cheaper.length)} (от ${rubles(Math.min(...cheaper.map(o=>o.price)))}): ${[...reasons].join(", ")||"они ниже по совпадению с моделью"}. Если цена важнее, уточните их у продавца.`;
+  }
+  return `${best.source}, ${rubles(best.price)} — выбран первым: ${facts.join(", ")}.${tail} Наличие подтверждайте перед закупкой.`;
 }
 function collectionWarnings(snapshot: SearchSnapshot): string[] {return snapshot.status === "running" ? ["Сбор ещё идёт — ответ основан только на уже полученных предложениях."] : [];}
 
