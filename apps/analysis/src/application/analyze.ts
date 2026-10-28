@@ -72,8 +72,11 @@ function money(price: number) {
   return `${price.toLocaleString("ru-RU")} ₽`;
 }
 
+/** «Wildberries, 2 273 ₽» — the seller only when it differs from the shop («Ozon, 1 990 ₽, продавец ТехноМир»). */
 function offerLabel(offer: Offer) {
-  return `${offer.source}, ${money(offer.price)}, ${offer.seller}`;
+  const seller = offer.seller.trim();
+  const sameAsShop = !seller || seller.toLocaleLowerCase("ru").startsWith(offer.source.toLocaleLowerCase("ru"));
+  return sameAsShop ? `${offer.source}, ${money(offer.price)}` : `${offer.source}, ${money(offer.price)}, продавец ${seller}`;
 }
 
 function citationOf(offer: Offer): OfferCitation {
