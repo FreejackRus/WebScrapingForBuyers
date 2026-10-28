@@ -169,6 +169,15 @@ describe("presentMarketplaceError · Yandex SmartCaptcha handoff", () => {
   });
 });
 
+describe("marketplaceSearchQueries · unknown brand", () => {
+  it("never sends the «—» brand placeholder to a shop", () => {
+    const product = { ...g102, brand: "—", model: "чернила эпсон C13T673", name: "чернила эпсон C13T673", mpn: "C13T673" };
+    for (const kind of ["wb", "ozon", "avito", "citilink"] as const) {
+      for (const query of marketplaceSearchQueries(product, kind)) expect(query).not.toMatch(/—/);
+    }
+  });
+});
+
 describe("offers per source", () => {
   it("keeps up to 30 relevant offers from one marketplace answer", async () => {
     const items = Array.from({ length: 45 }, (_, i) => ({

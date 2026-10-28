@@ -609,8 +609,10 @@ export function createMarketplaceSourcesFromEnv(): SourceAdapter[] {
 
 export function marketplaceSearchQueries(product: Product, kind: MarketplaceKind): string[] {
   const name = collapseWs(product.name);
-  const brandModel = collapseWs([product.brand, product.model].filter(Boolean).join(" "));
-  const mpnBrandModel = collapseWs([product.mpn, product.brand, product.model].filter(Boolean).join(" "));
+  // «—» is the unknown-brand placeholder, not a word to search for («— чернила эпсон C13T673», 2026-10-28).
+  const brand = product.brand.trim() === "—" ? "" : product.brand;
+  const brandModel = collapseWs([brand, product.model].filter(Boolean).join(" "));
+  const mpnBrandModel = collapseWs([product.mpn, brand, product.model].filter(Boolean).join(" "));
   const mpn = collapseWs(product.mpn);
   const preferTitle = kind === "citilink" || kind === "wb" || kind === "avito";
   // WB/Avito: never lead with Pale Grey MPN. Title, then brand+model.
