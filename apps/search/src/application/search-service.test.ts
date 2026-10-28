@@ -384,3 +384,23 @@ describe("SearchService recent-result cache", () => {
     expect(off.service.start("q", product).cachedAt).toBeUndefined();
   });
 });
+
+describe("SearchService source outcome", () => {
+  it("tells «nothing found», «all filtered» and «no answer» apart", async () => {
+    const service = new SearchService([
+      source("Empty", async () => []),
+      source("Filtered", async () => { throw new Error("WB: нет подходящих карточек (38 отсеяны)."); }),
+      source("Down", async () => { throw new Error("connect ECONNREFUSED"); }),
+      source("Good", async () => [offer("Good")]),
+    ]);
+    const started = service.start("q", product);
+    await finish(service, started.id);
+    const outcome = Object.fromEntries(service.get(started.id)!.sources.map((state) => [state.source, [state.status, state.outcome, state.found]]));
+    expect(outcome).toEqual({
+      Empty: ["done", "nothing_found", 0],
+      Filtered: ["done", "filtered_out", 38],
+      Down: ["error", "error", undefined],
+      Good: ["done", "offers", 1],
+    });
+  });
+});

@@ -239,6 +239,14 @@ export class SearchService {
           });
         } catch (error) {
           const message = error instanceof Error ? error.message : "Неизвестная ошибка";
+          // «WB: нет подходящих карточек (38 отсеяны)»: the source answered, nothing was the model.
+          const filtered = message.match(/\((\d+) отсеяны\)/u);
+          if (filtered) {
+            this.updateSource(snapshot, source.name, {
+              source: source.name, status: "done", outcome: "filtered_out", found: Number(filtered[1]), kept: 0, message,
+            });
+            return;
+          }
           const cached = this.lastGoodReal.get(lastGoodKey(source.name, snapshot.product));
           if (cached && cached.length > 0) {
             const reused = this.matchingQuery(snapshot, structuredClone(cached));
