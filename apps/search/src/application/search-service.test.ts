@@ -1,7 +1,7 @@
 import type { Offer, Product } from "@peremena/contracts";
 import { describe, expect, it, vi } from "vitest";
 
-import type { SourceAdapter } from "../domain/source-adapter.js";
+import { type SourceAdapter, withRawFound } from "../domain/source-adapter.js";
 import { SearchService } from "./search-service.js";
 
 // Older tests repeat a search on purpose (last-good fallback); the cache has its own tests below.
@@ -402,5 +402,14 @@ describe("SearchService source outcome", () => {
       Down: ["error", "error", undefined],
       Good: ["done", "offers", 1],
     });
+  });
+});
+
+describe("SearchService raw counts", () => {
+  it("reports what the shop returned, not only what the adapter kept", async () => {
+    const service = new SearchService([source("Ozon", async () => withRawFound([offer("Ozon")], 12))]);
+    const started = service.start("q", product);
+    await finish(service, started.id);
+    expect(service.get(started.id)!.sources[0]).toMatchObject({ outcome: "offers", found: 12, kept: 1 });
   });
 });

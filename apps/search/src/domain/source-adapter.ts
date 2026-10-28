@@ -10,6 +10,22 @@ export interface SourceAdapter {
   articlesFor?(product: Product, query: string): Promise<string[]>;
 }
 
+const RAW_FOUND = Symbol("rawFound");
+
+/**
+ * Lets an adapter that drops rows itself (marketplace relevance) say how many the source
+ * really returned, so «найдено 38, подошло 4» stays true. Plain arrays report their length.
+ */
+export function withRawFound(offers: Offer[], found: number): Offer[] {
+  Object.defineProperty(offers, RAW_FOUND, { value: Math.max(found, offers.length), enumerable: false });
+  return offers;
+}
+
+export function rawFoundOf(offers: Offer[]): number {
+  const found = (offers as Offer[] & { [RAW_FOUND]?: number })[RAW_FOUND];
+  return typeof found === "number" ? found : offers.length;
+}
+
 /**
  * Most offers one source may add to a search table, after relevance sorting.
  * Raised from 12 on 2026-10-06: managers saw too few rows when only 2 sources answered.

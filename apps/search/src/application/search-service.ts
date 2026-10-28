@@ -12,7 +12,7 @@ import { flagPriceAnomalies } from "../domain/price-anomaly.js";
 import { markPreviousPrices, priceHistoryKey, priceHistoryPoint } from "../domain/price-history.js";
 import type { PriceHistoryStore } from "../infrastructure/history/price-history-store.js";
 import { assignProcurementRanks } from "../domain/procurement-rank.js";
-import type { SourceAdapter } from "../domain/source-adapter.js";
+import { rawFoundOf, type SourceAdapter } from "../domain/source-adapter.js";
 import { isSourceDisabled } from "../domain/source-policy.js";
 
 type Listener = (event: SearchEvent) => void;
@@ -233,8 +233,8 @@ export class SearchService {
           this.updateSource(snapshot, source.name, {
             source: source.name,
             status: "done",
-            outcome: offers.length > 0 ? "offers" : found.length > 0 ? "filtered_out" : "nothing_found",
-            found: found.length,
+            outcome: offers.length > 0 ? "offers" : rawFoundOf(found) > 0 ? "filtered_out" : "nothing_found",
+            found: rawFoundOf(found),
             kept: offers.length,
           });
         } catch (error) {

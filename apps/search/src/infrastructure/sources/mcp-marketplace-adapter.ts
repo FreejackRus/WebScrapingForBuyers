@@ -11,7 +11,7 @@ import {
   productIdentityTokens,
   tokensIn,
 } from "../../domain/marketplace-relevance.js";
-import { OFFERS_PER_SOURCE, type SourceAdapter } from "../../domain/source-adapter.js";
+import { OFFERS_PER_SOURCE, type SourceAdapter, withRawFound } from "../../domain/source-adapter.js";
 import { assertWbCatalogAllowed, noteWbRateLimited, presentWbRateLimited } from "./wb-rate-limit.js";
 
 // The relevance rules moved to the domain layer; re-exported so existing imports keep working.
@@ -335,6 +335,16 @@ export class McpMarketplaceAdapter implements SourceAdapter {
 
   async search(product: Product): Promise<Offer[]> {
     const leftover: JsonObject[] = [];
+    const offers = await this.collect(product, leftover);
+    const seen = new Set(leftover.map((item) => String(item.id ?? item.url ?? item.link ?? JSON.stringify(item))));
+    if (offers.length === 0 && seen.size > 0 && this.source.kind !== "citilink") {
+      // The shop answered; none of its rows is the requested model.
+      throw new Error(`${this.source.name}: нет подходящих карточек (${seen.size} отсеяны).`);
+    }
+    return withRawFound(offers, seen.size);
+  }
+
+  private async collect(product: Product, leftover: JsonObject[]): Promise<Offer[]> {
     try {
       if (this.source.kind === "wb") assertWbCatalogAllowed();
       const queries = marketplaceSearchQueries(product, this.source.kind);
