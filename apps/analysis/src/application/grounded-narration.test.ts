@@ -25,3 +25,40 @@ describe("grounded explanation, fail closed", () => {
     expect(groundedOfferFacts([offer]).join(" ")).toMatch(/Гарантия.*не указана/i);
   });
 });
+
+// Owner's approval 2026-10-28: free prose, every fact checked against the cited rows.
+describe("grounded explanation, fact by fact", () => {
+  const wb: Offer = { ...offer, id: "wb", source: "Wildberries", seller: "Wildberries", title: "Клавиатура Logitech K380 серая", price: 2273, availability: "В наличии", availabilityStatus: "in_stock", condition: "new" };
+  const avito: Offer = { ...offer, id: "avito", source: "Авито", seller: "Авито", title: "Клавиатура logitech k380", price: 989, availability: "Неизвестно", availabilityStatus: "unknown", condition: "unknown" };
+  const rows = [wb, avito];
+
+  it.each([
+    "Лучший вариант — Wildberries за 2 273 ₽: товар новый и в наличии. На Авито K380 дешевле, 989 ₽, но наличие не подтверждено.",
+    "Wildberries дороже Авито на 1 284 ₽, зато наличие подтверждено.",
+    "Разница между Wildberries и Авито — 57 %.",
+    "Сравнил 2 предложения: Wildberries надёжнее по наличию".replace("надёжнее", "лучше"),
+  ])("accepts %s", (summary) => {
+    expect(validateGroundedNarration(summary, ["wb", "avito"], rows)).toBe(true);
+  });
+
+  it.each([
+    ["price attached to the wrong shop", "На Авито K380 стоит 2 273 ₽."],
+    ["price nobody has", "Wildberries продаёт K380 за 1 990 ₽."],
+    ["shop that is not cited", "На Ozon K380 есть за 2 273 ₽."],
+    ["stock that is not confirmed", "На Авито K380 в наличии."],
+    ["a new item nobody claimed", "На Авито новая K380."],
+    ["delivery promise", "Wildberries привезёт K380 завтра."],
+    ["discount without an old price", "На Wildberries скидка на K380."],
+    ["invented quantity", "На Wildberries осталось 7 штук."],
+    ["wrong percentage", "Авито дешевле на 80 %."],
+  ])("rejects %s", (_reason, summary) => {
+    expect(validateGroundedNarration(summary, ["wb", "avito"], rows)).toBe(false);
+  });
+
+  it("allows facts only from cited rows", () => {
+    expect(validateGroundedNarration("Wildberries продаёт K380 за 2 273 ₽.", ["avito"], rows)).toBe(false);
+    expect(validateGroundedNarration("Наличие подтверждайте перед закупкой.", [], [])).toBe(false);
+    expect(validateGroundedNarration("Лучший вариант по цене — WB.", ["avito"], rows)).toBe(false);
+  });
+});
+

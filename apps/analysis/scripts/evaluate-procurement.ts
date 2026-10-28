@@ -35,6 +35,22 @@ await check("decimal compound budget",()=>answerCopilot("найди 12400F BOX, 
 await check("Cyrillic thousand",()=>analyzeSnapshot(snapshot,"до 15к",narrator),r=>assert.equal(r.tableFilter?.maxPrice,15000));
 await check("reset all conditions",()=>analyzeSnapshot(snapshot,"сбрось фильтры",narrator,{context:{tableFilter:{packaging:"BOX",maxPrice:15000,inStockOnly:true}}}),r=>assert.deepEqual(r.tableFilter,{realOnly:true}));
 await check("real model explanation",()=>analyzeSnapshot(snapshot,"Сравни лучшие предложения",narrator,{userRole:"admin"}),r=>{assert.deepEqual(r.selectedOfferIds,["oem","unknown","box"]);assert.ok(r.citations?.every(c=>snapshot.offers.some(o=>o.id===c.offerId&&o.url===c.url)));});
+// Mixed-shop dialogue (research 2026-10-28 §2.6): how often the model's own explanation passes the fact check.
+const shopRow=(id:string,source:string,price:number,status:"in_stock"|"unknown",condition:Offer["condition"]):Offer=>({id,title:`Клавиатура Logitech K380 ${id}`,source,seller:source,price,availability:status==="in_stock"?"В наличии":"Неизвестно",availabilityStatus:status,currency:"RUB",priceCondition:"Публичная цена",condition,match:"probable",fetchedAt:"2026-10-28T00:00:00Z",demo:false,url:`https://example.test/${id}`,assessment:{group:"match",reasons:["Модель совпадает"]}});
+const shops:SearchSnapshot={id:"fixture-shops",query:"Logitech K380",status:"complete",product:{id:"k380",name:"Клавиатура Logitech K380",model:"K380",brand:"Logitech",mpn:"",category:"Клавиатуры",characteristics:{}},sources:[{source:"Wildberries",status:"done"},{source:"Авито",status:"done"},{source:"Ozon",status:"done"}],offers:[shopRow("wb","Wildberries",2273,"in_stock","new"),shopRow("ozon","Ozon",2490,"in_stock","new"),shopRow("avito","Авито",989,"unknown","unknown"),shopRow("avito2","Авито",1000,"unknown","unknown")]};
+shops.offers.forEach((offer,index)=>{offer.procurementRank=index+1;});
+const modelProvider=isVllm?"vLLM":"Ollama";
+const dialogue:Array<{prompt:string;accepted:boolean;summary:string}>=[];
+for(const prompt of ["Сравни лучшие предложения","Чем Wildberries лучше Авито?","Какое самое дешёвое и стоит ли его брать?","Объясни выбор"]){
+  await check(`dialogue: ${prompt}`,()=>analyzeSnapshot(shops,prompt,narrator,{userRole:"admin"}),r=>{
+    for(const name of ["Яндекс","DNS","Ситилинк","Мегамаркет"])assert.ok(!r.summary.includes(name),`invented shop ${name}`);
+    assert.doesNotMatch(r.summary,/Авито[^.]*в наличии(?![^.]*не)/u);
+    dialogue.push({prompt,accepted:String(r.provider).startsWith(modelProvider),summary:r.summary});
+  });
+}
+const dialogueAccepted=dialogue.filter(item=>item.accepted).length;
+console.log(JSON.stringify({dialogue,dialogueAcceptedShare:dialogue.length?dialogueAccepted/dialogue.length:0},null,2));
+
 console.log(JSON.stringify({fixture:true,model,passed:results.length,modelCalls:calls,rawModelAnswers,groundedExplanationsAccepted:results.filter(result=>String(result.provider).startsWith(isVllm?"vLLM":"Ollama")).length,results},null,2));
 
 assert.ok(results.some(result=>String(result.provider).startsWith(isVllm?"vLLM":"Ollama")),"real model must produce at least one accepted grounded explanation");
