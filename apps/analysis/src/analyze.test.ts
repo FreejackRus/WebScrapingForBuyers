@@ -208,7 +208,7 @@ describe("analyzeSnapshot", () => {
       expect.arrayContaining([
         "В снимке поиска «MX Master»: 3 предложений.",
         "Сортировка по возрастанию цены.",
-        "Выбран 1 вариант: Wildberries, 8 990 ₽, Marketplace.",
+        "Выбран 1 вариант: Wildberries, 8 990 ₽, продавец Marketplace.",
       ]),
     );
     expect(result.appliedFilters.join("\n")).not.toMatch(/демо/i);
