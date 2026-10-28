@@ -1,3 +1,7 @@
+import type { Product } from "@peremena/contracts";
+
+import { productFromQuery } from "./product-from-query.js";
+
 /**
  * Article patterns with a wildcard: «С13Т673*4А» asks for every Epson ink colour at once
  * (buyer's request 2026-10-28). `*` stands for 1–4 letters/digits, `?` for exactly one.
@@ -83,4 +87,10 @@ export function wildcardArticleOf(product: { characteristics?: Record<string, un
 /** A product built from the fixed part, carrying the pattern for both relevance checks. */
 export function productForWildcard<T extends { characteristics: Record<string, string> }>(product: T, wildcard: WildcardArticle): T {
   return { ...product, characteristics: { ...product.characteristics, [WILDCARD_CHARACTERISTIC]: wildcard.pattern } };
+}
+
+/** The product a typed query searches for: the fixed part plus the pattern, or the query as is. */
+export function productForTypedQuery(query: string): Product {
+  const wildcard = parseWildcardArticle(query);
+  return wildcard ? productForWildcard(productFromQuery(wildcard.sourceQuery, "query"), wildcard) : productFromQuery(query, "query");
 }

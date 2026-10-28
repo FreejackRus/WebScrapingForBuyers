@@ -82,3 +82,12 @@ describe("wildcard search through the pipeline", async () => {
     }
   });
 });
+
+describe("productForTypedQuery", async () => {
+  const { productForTypedQuery } = await import("./wildcard-article.js");
+
+  it("builds the same wildcard product a typed search gets, and a plain one otherwise", () => {
+    expect(productForTypedQuery("чернила эпсон С13Т673*4А").characteristics[WILDCARD_CHARACTERISTIC]).toBe("C13T673*4A");
+    expect(productForTypedQuery("logitech k380").characteristics[WILDCARD_CHARACTERISTIC]).toBeUndefined();
+  });
+});

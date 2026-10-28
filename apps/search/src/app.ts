@@ -7,7 +7,7 @@ import { searchRoutes } from "./http/routes.js";
 import { PriceHistoryStore } from "./infrastructure/history/price-history-store.js";
 import { QualityEvaluator } from "./application/quality-eval.js";
 import { SourceMonitor } from "./application/source-monitor.js";
-import { productFromQuery } from "./domain/product-from-query.js";
+import { productForTypedQuery } from "./domain/wildcard-article.js";
 import { createDistributorSourcesFromEnv } from "./infrastructure/sources/b2b-distributor-adapter.js";
 import { createDemoSources } from "./infrastructure/sources/demo-source-adapter.js";
 import { mergeSourceFallbacks } from "./infrastructure/sources/fallback-source-adapter.js";
@@ -60,7 +60,8 @@ function registerReliability(app: ReturnType<typeof createService>, searchServic
     ...(process.env.SOURCE_MONITOR_FILE ? { file: process.env.SOURCE_MONITOR_FILE } : {}),
   });
   const quality = new QualityEvaluator(
-    async (query) => (await searchService.runUncached(query, productFromQuery(query, "query"))).offers,
+    // Same product as a typed search, wildcard included («С13Т673*4А»).
+    async (query) => (await searchService.runUncached(query, productForTypedQuery(query))).offers,
     undefined,
     process.env.QUALITY_FILE || undefined,
   );
