@@ -10,6 +10,7 @@
  *   GET /health                      → { ok, browser, cached, lastError, pausedUntil? }
  *   GET /citilink/search?q=…&limit=  → { query, fetchedAt, stale?, items: [{ id, title, url, price, clubPrice?, inStock }] }
  */
+import { readFileSync, writeFileSync } from "node:fs";
 import { createServer } from "node:http";
 import { homedir } from "node:os";
 import { join } from "node:path";
@@ -31,7 +32,27 @@ let lastError = "";
 let lastRunAt = 0;
 let blockedUntil = 0;
 let queue = Promise.resolve();
+// Survives restarts so the 429 fallback has something to answer with (plain search tiles, no user data).
+const CACHE_FILE = process.env.AGENT_CACHE_FILE ?? join(homedir(), ".cache", "price-radar-agent", "citilink-cache.json");
 const cache = new Map();
+try {
+  for (const [key, entry] of JSON.parse(readFileSync(CACHE_FILE, "utf8"))) {
+    if (Date.now() - entry.at < STALE_MS) cache.set(key, entry);
+  }
+} catch {
+  // No file yet or unreadable: start empty.
+}
+let saveTimer;
+function saveCache() {
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => {
+    try {
+      writeFileSync(CACHE_FILE, JSON.stringify([...cache]));
+    } catch (error) {
+      console.error(JSON.stringify({ msg: "office_agent_cache_save_failed", error: String(error?.message ?? error) }));
+    }
+  }, 2_000);
+}
 
 async function browser() {
   if (context) return context;
@@ -103,6 +124,7 @@ function run(query, limit) {
     const value = { query, fetchedAt: new Date().toISOString(), items };
     cache.set(key, { at: Date.now(), value });
     if (cache.size > 300) cache.delete(cache.keys().next().value);
+    saveCache();
     lastError = "";
     return value;
   }).catch((error) => {
