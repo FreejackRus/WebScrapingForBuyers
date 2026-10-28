@@ -11,7 +11,7 @@ const SOURCE_ALIASES = [
   { pattern: /(?<![a-zа-яё0-9])(яндекс|yandex)(?![a-zа-яё0-9])/i, name: "Яндекс Маркет" },
   { pattern: /(?<![a-zа-яё0-9])(dns|днс)(?![a-zа-яё0-9])/i, name: "DNS" },
   { pattern: /(?<![a-zа-яё0-9])(мегамаркет|megamarket)(?![a-zа-яё0-9])/i, name: "Мегамаркет" },
-  { pattern: /(?<![a-zа-яё0-9])(avito|авито)(?![a-zа-яё0-9])/i, name: "Avito" },
+  { pattern: /(?<![a-zа-яё0-9])(avito|авито)(?![a-zа-яё0-9])/i, name: "Авито" },
 ] as const;
 
 export function parseSources(normalized: string): string[] {

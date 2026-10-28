@@ -62,3 +62,13 @@ describe("grounded explanation, fact by fact", () => {
   });
 });
 
+describe("grounded explanation, rows named by a distinctive word", () => {
+  const ink = (id: string, colour: string, price: number): Offer => ({ ...offer, id, source: "NETLAB", seller: "NETLAB", title: `EPSON C13T673${id}4A Чернила для L800 (${colour}) 70 мл`, price });
+  const rows = [ink("2", "cyan", 1116), ink("4", "yellow", 1136), ink("3", "magenta", 1116)];
+
+  it("ties a price to the row whose title alone has the word", () => {
+    expect(validateGroundedNarration("Жёлтые (yellow) стоят 1 136 ₽.", ["2", "4", "3"], rows)).toBe(true);
+    expect(validateGroundedNarration("Cyan стоит 1 136 ₽.", ["2", "4", "3"], rows)).toBe(false);
+  });
+});
+

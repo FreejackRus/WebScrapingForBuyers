@@ -2,6 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 import type { Offer, SearchSnapshot } from "@peremena/contracts";
 import { analyzeSnapshot, answerCopilot } from "./analyze.js";
 import { filterOffers } from "./procurement-dialogue.js";
+import { parseSources } from "./prompt-intent.js";
 const offer = (id: string, title: string, price: number, availability = "склад: более 50 шт."): Offer => ({id,title,price,availability,source:"NETLAB",seller:"NETLAB",priceCondition:"Обычная цена",currency:"RUB",match:"exact",condition:"new",url:`https://example.test/${id}`,fetchedAt:new Date(0).toISOString(),demo:false,assessment:{group:"match",reasons:["Модель совпадает"]}});
 const snapshot: SearchSnapshot = {id:"s",query:"12400F",product:{id:"p",name:"Процессор Intel 12400F",model:"12400F",brand:"Intel",mpn:"",category:"Процессоры",characteristics:{}},status:"complete",sources:[{source:"NETLAB",status:"done"}],offers:[offer("oem","Intel i5-12400F OEM",12000),offer("box","Intel i5-12400F BOX",14500),offer("unknown","Intel i5-12400F BOX",13500,"Неизвестно")]};
 const narrator = () => ({name:"test",summarize:vi.fn(async()=>({summary:"Выдуманная цена 1 ₽, в наличии 999 шт.",warnings:[]})),answer:vi.fn(async()=>({summary:"Найдено 100 товаров",warnings:[],intent:"search" as const,searchQuery:"ошибочная модель"}))});
@@ -36,4 +37,5 @@ describe("clarification and incremental results",()=>{
  it("never starts raw ambiguous search after model clarification",async()=>{const n={name:"test",summarize:vi.fn(),answer:vi.fn(async()=>({summary:"Какой товар?",clarificationQuestion:"Какой товар?",warnings:[],intent:"help" as const}))};const r=await analyzeSnapshot(snapshot,"хочу найти замену",n);expect(r.clarificationQuestion).toBeTruthy();expect(r.searchQuery).toBeUndefined()});
  it("keeps predicates open for late matching offers",async()=>{const r=await analyzeSnapshot({...snapshot,status:"running",offers:[snapshot.offers[0]!] },"только в наличии");expect(r.tableFilter?.inStockOnly).toBe(true);expect(r.tableFilter?.selectedOfferIds).toBeUndefined()});
  it("recognizes Cyrillic supplier name",async()=>{const snap={...snapshot,offers:[{...snapshot.offers[0]!,source:"Wildberries"},snapshot.offers[1]!]};const r=await analyzeSnapshot(snap,"только вайлдберриз");expect(r.selectedOfferIds).toEqual(["oem"])});
+ it("keeps both shops in «Чем Wildberries лучше Авито?» (Avito rows are named «Авито»)",()=>{const rows=[{...offer("wb","Logitech K380",2273),source:"Wildberries"},{...offer("av","Logitech K380",989),source:"Авито"},{...offer("oz","Logitech K380",2490),source:"Ozon"}];expect(filterOffers(rows,{sources:parseSources("чем wildberries лучше авито?")}).map(row=>row.id)).toEqual(["wb","av"])});
 });

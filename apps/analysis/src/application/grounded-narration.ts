@@ -52,6 +52,9 @@ const escape = (text: string) => text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 /** Article-like words of a title («K380», «12400F», «C13T67324A») that point at that row. */
 const titleTokens = (offer: Offer) => (`${offer.title} ${offer.mpn ?? ""}`.match(/[\p{L}\d-]*\d[\p{L}\d-]*/gu) ?? [])
   .filter((token) => token.length >= 3 && /\p{L}/u.test(token)).map(lower);
+/** Letter words (≥4) of a row's title that no other cited row's title has: colours, series, variants. */
+const distinctiveWords = (offer: Offer, cited: Offer[]) => (lower(offer.title).match(/\p{L}{4,}/gu) ?? [])
+  .filter((word) => cited.every((other) => other === offer || !lower(other.title).includes(word)));
 const rowText = (offer: Offer) => lower([offer.title, offer.mpn, offer.availability, offer.delivery, offer.warranty, offer.priceCondition].filter(Boolean).join(" "));
 
 function pricesOf(offer: Offer): number[] {
@@ -63,7 +66,10 @@ function sentenceProblem(sentence: string, cited: Offer[]): string | undefined {
   const text = lower(sentence);
   // Which cited rows the sentence speaks about: the shop it names, otherwise an article from the title.
   const byShop = cited.filter((offer) => text.includes(lower(offer.source)) || text.includes(lower(offer.seller)));
-  const named = byShop.length > 0 ? byShop : cited.filter((offer) => titleTokens(offer).some((token) => text.includes(token)));
+  const byArticle = cited.filter((offer) => titleTokens(offer).some((token) => text.includes(token)));
+  // «yellow стоит 1 136 ₽»: a word only this row's title has points at it as well as an article does.
+  const byWord = cited.filter((offer) => distinctiveWords(offer, cited).some((word) => new RegExp(`(?:^|[^\\p{L}])${escape(word)}(?=$|[^\\p{L}])`, "iu").test(text)));
+  const named = byShop.length > 0 ? byShop : byArticle.length > 0 && byArticle.length < cited.length ? byArticle : byWord.length > 0 ? byWord : byArticle;
   const prices = named.flatMap(pricesOf);
   const all = cited.flatMap(pricesOf);
   const differences = all.flatMap((left) => all.map((right) => Math.abs(left - right))).filter((value) => value > 0);
