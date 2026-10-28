@@ -7,8 +7,8 @@
  * a reverse SSH tunnel (see install.sh). It returns plain search tiles; the server does the
  * relevance checks, ranking and everything else.
  *
- *   GET /health                      → { ok, browser, cached, lastError }
- *   GET /citilink/search?q=…&limit=  → { query, fetchedAt, items: [{ id, title, url, price, clubPrice?, inStock }] }
+ *   GET /health                      → { ok, browser, cached, lastError, pausedUntil? }
+ *   GET /citilink/search?q=…&limit=  → { query, fetchedAt, stale?, items: [{ id, title, url, price, clubPrice?, inStock }] }
  */
 import { createServer } from "node:http";
 import { homedir } from "node:os";
@@ -21,10 +21,15 @@ const CACHE_MS = Number(process.env.AGENT_CACHE_MINUTES ?? 20) * 60_000;
 const PACE_MS = Number(process.env.AGENT_PACE_MS ?? 2_500);
 const PROFILE = process.env.AGENT_PROFILE ?? join(homedir(), ".cache", "price-radar-agent", "chrome");
 const TOKEN = process.env.AGENT_TOKEN ?? "";
+// After Qrator's 429 the office IP stays out for a while: keep away instead of extending the block.
+const BACKOFF_MS = Number(process.env.AGENT_BACKOFF_MINUTES ?? 15) * 60_000;
+// An older answer for the same query beats none; it keeps its own fetchedAt, so the age is honest.
+const STALE_MS = Number(process.env.AGENT_STALE_HOURS ?? 24) * 3_600_000;
 
 let context;
 let lastError = "";
 let lastRunAt = 0;
+let blockedUntil = 0;
 let queue = Promise.resolve();
 const cache = new Map();
 
@@ -88,6 +93,10 @@ function run(query, limit) {
   const key = `${query.toLowerCase()}|${limit}`;
   const hit = cache.get(key);
   if (hit && Date.now() - hit.at < CACHE_MS) return Promise.resolve(hit.value);
+  const stale = hit && Date.now() - hit.at < STALE_MS ? { ...hit.value, stale: true } : undefined;
+  if (Date.now() < blockedUntil) {
+    return stale ? Promise.resolve(stale) : Promise.reject(new Error("citilink: пауза после HTTP 429"));
+  }
   // One search at a time: paced requests keep the office IP in good standing.
   const job = queue.then(async () => {
     const items = await searchCitilink(query, limit);
@@ -96,6 +105,11 @@ function run(query, limit) {
     if (cache.size > 300) cache.delete(cache.keys().next().value);
     lastError = "";
     return value;
+  }).catch((error) => {
+    lastError = String(error?.message ?? error);
+    if (/HTTP 429/.test(String(error?.message ?? error))) blockedUntil = Date.now() + BACKOFF_MS;
+    if (stale) return stale;
+    throw error;
   });
   queue = job.catch((error) => { lastError = String(error?.message ?? error); });
   return job;
@@ -108,7 +122,7 @@ const server = createServer(async (request, response) => {
     response.end(JSON.stringify(body));
   };
   if (TOKEN && request.headers["x-agent-token"] !== TOKEN) return send(401, { error: "unauthorized" });
-  if (url.pathname === "/health") return send(200, { ok: true, browser: Boolean(context), cached: cache.size, lastError });
+  if (url.pathname === "/health") return send(200, { ok: true, browser: Boolean(context), cached: cache.size, lastError, ...(Date.now() < blockedUntil ? { pausedUntil: new Date(blockedUntil).toISOString() } : {}) });
   if (url.pathname === "/citilink/search") {
     const query = (url.searchParams.get("q") ?? "").trim().slice(0, 200);
     const limit = Math.min(Math.max(Number(url.searchParams.get("limit")) || 20, 1), 40);
