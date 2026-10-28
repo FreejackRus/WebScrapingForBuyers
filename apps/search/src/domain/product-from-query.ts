@@ -75,6 +75,9 @@ const BRAND_SPELLINGS: Record<string, string> = {
   самсунг: "samsung", леново: "lenovo", асус: "asus", асер: "acer", эйсер: "acer", хуавей: "huawei",
   ксиаоми: "xiaomi", сяоми: "xiaomi", эппл: "apple", делл: "dell", кингстон: "kingston", интел: "intel",
   логитек: "logitech", логитеч: "logitech", пантум: "pantum", куосера: "kyocera", катюша: "katusha",
+  // Printer makers as buyers type them in Russian («чернила эпсон С13Т67324А», 2026-10-28).
+  эпсон: "epson", кэнон: "canon", канон: "canon", ксерокс: "xerox", бразер: "brother", бротер: "brother",
+  рико: "ricoh", шарп: "sharp", киосера: "kyocera", кьосера: "kyocera",
 };
 
 /** One canonical maker name for a brand string, or undefined when it is not a known maker. */
@@ -166,7 +169,7 @@ const CATEGORY_HINTS: CategoryHint[] = [
   { pattern: /кулер|охлажден|вентилятор[а-яё]* для (?:пк|корпус)/u, category: "Охлаждение ПК" },
   { pattern: /сервер|poweredge|proliant|thinksystem|rack(?![a-z])|стоечн/u, category: "Серверы" },
   { pattern: /ибп(?![а-яё])|ups(?![a-z0-9])|источник[а-яё]* бесперебойн/u, category: "ИБП" },
-  { pattern: /принтер|мфу(?![а-яё])|сканер|scanner|картридж|тонер/u, category: "Печать" },
+  { pattern: /принтер|мфу(?![а-яё])|сканер|scanner|картридж|тонер|чернил/u, category: "Печать" },
   { pattern: /коммутатор|switch(?![a-z])|маршрутиз|router|роутер|точк[а-яё]* доступа|access point|nas(?![a-z0-9])|mikrotik|ubiquiti|tp-link/u, category: "Сеть" },
   { pattern: /wi-?fi(?![a-z])/u, category: "Сеть", weak: true },
   { pattern: /док-станц|docking|dock(?![a-z])/u, category: "Док-станции" },

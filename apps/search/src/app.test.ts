@@ -82,6 +82,19 @@ describe("search", () => {
     expect(products.every((item) => item.characteristics.источник !== undefined)).toBe(true);
   });
 
+  it("suggests the wildcard pattern itself, without asking catalogue engines", async () => {
+    const fetchSpy = vi.fn(async () => new Response("{}", { status: 404 }));
+    vi.stubGlobal("fetch", fetchSpy);
+    const app = buildSearchApp({ sources: [new TestSource()] });
+    apps.push(app);
+    const response = await app.inject({ method: "POST", url: "/suggestions", payload: { query: "чернила эпсон С13Т673*4А" } });
+    const products = response.json().products as Product[];
+    expect(products).toHaveLength(1);
+    expect(products[0]?.name).toBe("чернила эпсон С13Т673*4А");
+    expect(products[0]?.characteristics.источник).toBe("typed");
+    expect(fetchSpy).not.toHaveBeenCalled();
+  });
+
   it("lists adapters and collects only the chosen sources", async () => {
     const other: SourceAdapter = {
       name: "Ozon",

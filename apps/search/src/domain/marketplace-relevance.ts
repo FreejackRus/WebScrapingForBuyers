@@ -1,5 +1,7 @@
 import type { Product } from "@peremena/contracts";
 
+import { matchesWildcardArticle, wildcardArticleOf } from "./wildcard-article.js";
+
 /**
  * Decides whether a marketplace listing is the product the buyer asked for.
  *
@@ -395,6 +397,11 @@ export function assessMarketplaceOfferRelevance(
   offerBrand?: string,
   offerSeller?: string,
 ): OfferRelevance {
+  // A wildcard search keeps exactly the listings whose article fits the pattern.
+  const wildcard = wildcardArticleOf(product);
+  if (wildcard) {
+    return matchesWildcardArticle(wildcard, `${title} ${offerMpn ?? ""} ${explicitUrl ?? ""}`) ? { kind: "strong" } : { kind: "drop" };
+  }
   const { strong, weak } = productIdentityTokens(product);
   const titleHay = `${title} ${offerMpn ?? ""} ${offerBrand ?? ""}`.toLocaleLowerCase("ru");
   const urlHay = (explicitUrl ?? "").toLocaleLowerCase("ru");

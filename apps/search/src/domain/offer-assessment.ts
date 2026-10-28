@@ -2,6 +2,7 @@ import type { Offer, Product } from "@peremena/contracts";
 
 import { isUnrequestedConsumablePart } from "./consumable-parts.js";
 import { brandsIn, canonicalBrand } from "./product-from-query.js";
+import { matchesWildcardArticle, wildcardArticleOf } from "./wildcard-article.js";
 
 type Assessment = NonNullable<Offer["assessment"]>;
 
@@ -232,7 +233,10 @@ function selectedFacts(product: Product): string {
 
 /** Conservatively classifies a row using product facts only; shop/seller names are never manufacturer evidence. */
 export function assessOffer(product: Product, offer: Offer, query: string): Offer | null {
-  const identity = matchedIdentity(product, `${offer.title} ${offer.mpn ?? ""}`);
+  // A wildcard search («C13T673*4A») is identified by the pattern alone: every match is an exact article.
+  const wildcard = wildcardArticleOf(product);
+  if (wildcard && !matchesWildcardArticle(wildcard, `${offer.title} ${offer.mpn ?? ""}`)) return null;
+  const identity = wildcard ? "article" : matchedIdentity(product, `${offer.title} ${offer.mpn ?? ""}`);
   if (!identity) return null;
   // An exact article is the buyer's own choice of part: «302N494021» is a developer unit by design.
   const forIndex = offer.title.search(/(?:^|\s)для\s/iu);

@@ -7,6 +7,7 @@ import { findProduct } from "../domain/catalog.js";
 import { classifyQuery, isExplicitlyNonIt } from "../domain/it-scope.js";
 import { isProductPayload, productFromQuery } from "../domain/product-from-query.js";
 import { mergeUnderstanding, needsUnderstanding } from "../domain/query-understanding.js";
+import { parseWildcardArticle, productForWildcard } from "../domain/wildcard-article.js";
 import { isSourceDisabled, listDisabledSources } from "../domain/source-policy.js";
 import { suggestLiveProducts } from "../infrastructure/suggest/live-suggest.js";
 import type { PriceHistoryStore } from "../infrastructure/history/price-history-store.js";
@@ -38,7 +39,15 @@ export const searchRoutes: FastifyPluginAsync<{
   app.post<{ Body: { query: string } }>(
     "/suggestions",
     { schema: { body: queryBodySchema } },
-    async (request) => ({ products: await suggestLiveProducts(request.body.query) }),
+    async (request) => {
+      // Catalogue engines would turn «С13Т673*4А» into one concrete article and lose the star;
+      // offer the pattern itself so Enter searches every colour.
+      if (parseWildcardArticle(request.body.query)) {
+        const typed = productFromQuery(request.body.query, "query");
+        return { products: [{ ...typed, characteristics: { источник: "typed" } }] };
+      }
+      return { products: await suggestLiveProducts(request.body.query) };
+    },
   );
 
   app.post<{ Body: { query: string; productId?: string; product?: ProductLike; sources?: string[]; fresh?: boolean } }>(
@@ -64,13 +73,16 @@ export const searchRoutes: FastifyPluginAsync<{
       const chosen =
         (payload && payload.characteristics.источник !== "typed" ? payload : undefined) ??
         (request.body.productId ? findProduct(request.body.productId) : undefined);
-      let product =
-        chosen ??
-        (payload ? productFromQuery(payload.name, "query") : undefined) ??
-        (await suggestLiveProducts(request.body.query, 1))[0] ??
-        productFromQuery(request.body.query, "query");
+      // «С13Т673*4А»: shops get the fixed part, the pattern then keeps every matching article.
+      const wildcard = chosen ? undefined : parseWildcardArticle(request.body.query);
+      let product = wildcard
+        ? productForWildcard(productFromQuery(wildcard.sourceQuery, "query"), wildcard)
+        : chosen ??
+          (payload ? productFromQuery(payload.name, "query") : undefined) ??
+          (await suggestLiveProducts(request.body.query, 1))[0] ??
+          productFromQuery(request.body.query, "query");
       // A product the buyer typed (not picked from suggestions): let the local AI read a long or unclear request.
-      if (!chosen && needsUnderstanding(request.body.query, product)) {
+      if (!chosen && !wildcard && needsUnderstanding(request.body.query, product)) {
         const understanding = await fetchUnderstanding(request.body.query);
         if (understanding) product = mergeUnderstanding(product, understanding, request.body.query);
       }
