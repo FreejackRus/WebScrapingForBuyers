@@ -70,6 +70,15 @@ export interface Offer {
 export interface SourceState {
   source: string;
   status: SourceStatus;
+  /**
+   * Why a finished source shows what it shows: offers — rows kept; nothing_found — the source
+   * had nothing; filtered_out — it answered, every row failed the model/IT checks;
+   * timeout / unavailable (cool-down after a block) / error — no answer.
+   */
+  outcome?: "offers" | "nothing_found" | "filtered_out" | "timeout" | "unavailable" | "error";
+  /** Rows the source returned and rows kept after the checks (done sources only). */
+  found?: number;
+  kept?: number;
   /** Admin-only raw transport text. Gateway strips this for managers. */
   message?: string;
 }

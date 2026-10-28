@@ -229,7 +229,13 @@ export class SearchService {
           this.emit(id, { type: "offers", data: structuredClone(offers) });
           // Earlier rows got new ranks/anomaly flags: the client must not keep stale ones.
           if (reranked) this.emit(id, { type: "snapshot", data: structuredClone(snapshot) });
-          this.updateSource(snapshot, source.name, { source: source.name, status: "done" });
+          this.updateSource(snapshot, source.name, {
+            source: source.name,
+            status: "done",
+            outcome: offers.length > 0 ? "offers" : found.length > 0 ? "filtered_out" : "nothing_found",
+            found: found.length,
+            kept: offers.length,
+          });
         } catch (error) {
           const message = error instanceof Error ? error.message : "Неизвестная ошибка";
           const cached = this.lastGoodReal.get(lastGoodKey(source.name, snapshot.product));
@@ -247,6 +253,9 @@ export class SearchService {
           this.updateSource(snapshot, source.name, {
             source: source.name,
             status: "error",
+            outcome: /не ответил за|timeout|aborted/i.test(message)
+              ? "timeout"
+              : /временно недоступен|проверка доступности/i.test(message) ? "unavailable" : "error",
             message:
               cached && cached.length > 0
                 ? `${message} Показаны последние удачные REAL-предложения.`
