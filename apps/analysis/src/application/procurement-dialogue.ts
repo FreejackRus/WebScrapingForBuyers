@@ -15,6 +15,7 @@ export function explicitSearchQuery(prompt: string): string | undefined {
 export function filterOffers(offers: Offer[], filter: OfferTableFilter = {}): Offer[] {
   return offers.filter(o => o.assessment?.group !== "needs_review" && o.priceAnomaly !== "too_low")
     .filter(o => !filter.realOnly || !o.demo)
+    .filter(o => !filter.modelKeys?.length || (o.modelKey !== undefined && filter.modelKeys.includes(o.modelKey)))
     .filter(o => !filter.sources?.length || filter.sources.some(s => o.source.toLocaleLowerCase("ru").includes(s.toLocaleLowerCase("ru"))))
     .filter(o => filter.maxPrice === undefined || o.price <= filter.maxPrice)
     .filter(o => !filter.inStockOnly || offerAvailabilityStatus(o) === "in_stock")

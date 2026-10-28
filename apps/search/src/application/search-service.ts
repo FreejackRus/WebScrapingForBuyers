@@ -5,6 +5,7 @@ import { offerAvailabilityStatus, offerChannel, type Offer, type Product, type S
 import { isUnrequestedConsumablePart } from "../domain/consumable-parts.js";
 import { isOfferInItScope } from "../domain/it-scope.js";
 import { assessOffer } from "../domain/offer-assessment.js";
+import { withGrouping } from "../domain/offer-grouping.js";
 import { withCatalogArticles } from "../domain/catalog-article.js";
 import { applyCardFacts, type CardVerifier } from "../domain/offer-verification.js";
 import { flagPriceAnomalies } from "../domain/price-anomaly.js";
@@ -345,10 +346,10 @@ export class SearchService {
   private matchingQuery(snapshot: SearchSnapshot, offers: Offer[]): Offer[] {
     return offers.flatMap((rawOffer) => {
       const offer = { ...rawOffer, availabilityStatus: offerAvailabilityStatus(rawOffer) };
-      if (offer.demo) return [offer];
+      if (offer.demo) return [withGrouping(snapshot.product, offer)];
       if (isUnrequestedConsumablePart(offer, snapshot.query)) return [];
       const assessed = assessOffer(snapshot.product, offer, snapshot.query);
-      return assessed ? [assessed] : [];
+      return assessed ? [withGrouping(snapshot.product, assessed)] : [];
     });
   }
 

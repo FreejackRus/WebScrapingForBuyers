@@ -35,6 +35,6 @@ describe("exportSearch", () => {
     expect(sheet.getRow(3).getCell(16).value).not.toEqual(expect.objectContaining({ formula: expect.anything() }));
     expect(sheet.getRow(4).getCell(15).value ?? "").toBe("");
     expect(sheet.getRow(4).getCell(16).value ?? "").toBe("");
-    expect(sheet.autoFilter).toBe("A1:R1");
+    expect(sheet.autoFilter).toBe("A1:T1");
   });
 });

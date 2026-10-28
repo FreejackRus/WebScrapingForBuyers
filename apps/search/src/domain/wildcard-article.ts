@@ -27,6 +27,11 @@ export interface WildcardArticle {
   regex: RegExp;
 }
 
+/** Upper case with Cyrillic look-alikes turned into Latin («С13Т» → «C13T»). */
+export function normaliseArticleText(text: string): string {
+  return normalise(text);
+}
+
 function normalise(text: string): string {
   return [...text.toLocaleUpperCase("ru")].map((ch) => LOOKALIKES[ch] ?? ch).join("");
 }
@@ -53,15 +58,20 @@ export function parseWildcardArticle(query: string): WildcardArticle | undefined
 
 /** True when a listing carries an article matching the pattern (separators and look-alikes ignored). */
 export function matchesWildcardArticle(wildcard: WildcardArticle, text: string): boolean {
+  return matchedWildcardArticle(wildcard, text) !== undefined;
+}
+
+/** The article in a listing that matches the pattern, e.g. «C13T67324A». */
+export function matchedWildcardArticle(wildcard: WildcardArticle, text: string): string | undefined {
   const words = normalise(text).split(/[^A-Z0-9]+/).filter(Boolean);
   for (let start = 0; start < words.length; start += 1) {
     let joined = "";
     for (let size = 0; size < MAX_JOINED_WORDS && start + size < words.length; size += 1) {
       joined += words[start + size];
-      if (wildcard.regex.test(joined)) return true;
+      if (wildcard.regex.test(joined)) return joined;
     }
   }
-  return false;
+  return undefined;
 }
 
 /** The pattern a product was searched with, if any. */

@@ -5,6 +5,7 @@ export {
   groupSameOffers,
   offerGroupKey,
   matchLabels,
+  modelGroups,
   nextOfferSort,
   PRICE_ANOMALY_HINT,
   PRICE_ANOMALY_LABEL,
@@ -12,4 +13,4 @@ export {
   titleSpecs,
   verificationLabels,
 } from "./lib";
-export type { OfferGroup, OfferSort, OfferSortColumn } from "./lib";
+export type { ModelGroup, OfferGroup, OfferSort, OfferSortColumn } from "./lib";

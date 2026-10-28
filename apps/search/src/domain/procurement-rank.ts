@@ -40,7 +40,7 @@ function compare(left: Offer, right: Offer): number {
     || AVAILABILITY[offerAvailabilityStatus(left)] - AVAILABILITY[offerAvailabilityStatus(right)]
     || CONDITION[left.condition] - CONDITION[right.condition]
     || packaging(left.title) - packaging(right.title)
-    || left.price - right.price
+    || (left.unitPrice ?? left.price) - (right.unitPrice ?? right.price)
     || left.id.localeCompare(right.id, "ru");
 }
 

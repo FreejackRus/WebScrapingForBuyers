@@ -63,6 +63,12 @@ export interface Offer {
     note: string;
     listedPrice?: number;
   };
+  /** Model this row is, by its article («K380S», «C13T67324A»); rows without a plain article have none. */
+  modelKey?: string;
+  /** Units in the listing when it is a set («комплект 4 шт»); absent for a single unit. */
+  packQuantity?: number;
+  /** `price / packQuantity`, rounded; ranking compares it instead of the whole-set price. */
+  unitPrice?: number;
   fetchedAt: string;
   demo: boolean;
 }
@@ -133,6 +139,8 @@ export interface OfferTableFilter {
   titleExcludeAny?: string[];
   /** Keep only rows that got cheaper since the previous search of this product. */
   cheaperOnly?: boolean;
+  /** Keep only rows of these models (`Offer.modelKey`). */
+  modelKeys?: string[];
 }
 
 export type UserRole = "admin" | "manager";

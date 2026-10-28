@@ -371,6 +371,12 @@ th { position: relative; }
 .offer-channel-tab:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
 .offer-channel-count { min-width: 22px; padding: 0 6px; border-radius: 999px; background: var(--surface-2, #eef1f6); font-size: 12px; text-align: center; }
 .offer-channel-hint { color: var(--muted); font-size: 12px; }
+.offer-models { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 8px 0; }
+.offer-models-label { color: var(--muted); font-size: 12px; }
+.offer-model { border: 1px solid var(--line, #d0d5dd); border-radius: 999px; background: transparent; color: inherit; padding: 4px 10px; font-size: 13px; cursor: pointer; }
+.offer-model.active { border-color: var(--brand); background: color-mix(in srgb, var(--brand) 12%, transparent); }
+.offer-model:focus-visible { outline: 2px solid var(--brand); outline-offset: 1px; }
+.offer-unit-price { display: block; color: var(--muted); }
 .offer-filter-controls {
   display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px 14px;
   margin: 12px 0 0; padding: 10px 12px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--brand-50);

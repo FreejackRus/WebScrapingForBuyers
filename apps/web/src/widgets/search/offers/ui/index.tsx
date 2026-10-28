@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type PointerEvent, type ReactNode } from "
 import { offerAvailabilityStatus, type OfferReviewItem, type OfferTableFilter, type ProductCondition } from "@peremena/contracts";
 import { downloadOffersCsv, encodeSearchLink, OFFER_PAGE_SIZES, useChannelOffers, useFilteredOffers, useOfferCard, useOfferColumns, useOfferTable } from "features/search";
 import { analysisApi, useAnalysisStore } from "entities/analysis";
-import { conditionLabels, matchLabels, PRICE_ANOMALY_HINT, PRICE_ANOMALY_LABEL, titleSpecs, verificationLabels } from "entities/offer";
+import { conditionLabels, matchLabels, modelGroups, PRICE_ANOMALY_HINT, PRICE_ANOMALY_LABEL, titleSpecs, verificationLabels } from "entities/offer";
 import type { OfferSortColumn } from "entities/offer";
 import { useSearchStore } from "entities/search";
 import { fetchedTime, money } from "shared/lib";
@@ -79,6 +79,7 @@ export function OfferTable() {
       .map((offer) => offer.price);
     return prices.length ? Math.min(...prices) : undefined;
   })();
+  const models = modelGroups(channelOffers);
   const previousAt = snapshot?.previousPricesAt;
   const cheaperCount = channelOffers.filter((offer) => offer.previousPrice && offer.price < offer.previousPrice).length;
   const [linkCopied, setLinkCopied] = useState(false);
@@ -148,6 +149,7 @@ export function OfferTable() {
   if (tableFilter?.realOnly) activeChips.push({ key: "real", label: "Только реальные данные", clear: () => updateFilter("realOnly", undefined) });
   tableFilter?.titleIncludeAny?.forEach((token) => activeChips.push({ key: `include-${token}`, label: `Из чата: содержит «${token}»`, clear: () => updateFilter("titleIncludeAny", tableFilter.titleIncludeAny?.filter((item) => item !== token)) }));
   tableFilter?.titleExcludeAny?.forEach((token) => activeChips.push({ key: `exclude-${token}`, label: `Из чата: без «${token}»`, clear: () => updateFilter("titleExcludeAny", tableFilter.titleExcludeAny?.filter((item) => item !== token)) }));
+  tableFilter?.modelKeys?.forEach((key) => activeChips.push({ key: `model-${key}`, label: `Модель: ${key}`, clear: () => updateFilter("modelKeys", tableFilter.modelKeys?.filter((item) => item !== key)) }));
   if (tableFilter?.selectedOfferIds?.length) activeChips.push({ key: "selection", label: `Выбор из чата: ${tableFilter.selectedOfferIds.length}`, clear: () => updateFilter("selectedOfferIds", undefined) });
 
   const startResize = (key: OfferSortColumn, event: PointerEvent<HTMLSpanElement>) => {
@@ -232,6 +234,9 @@ export function OfferTable() {
         {cell("price", (
           <>
             <b className="mono">{money.format(offer.price)}</b>
+            {offer.packQuantity && offer.unitPrice ? (
+              <small className="offer-unit-price" title={`Комплект: ${offer.packQuantity} шт.`}>{money.format(offer.unitPrice)} за шт.</small>
+            ) : null}
             {offer.oldPrice && <del className="mono">{money.format(offer.oldPrice)}</del>}
             {offer.previousPrice ? (
               <small
@@ -369,6 +374,25 @@ export function OfferTable() {
           {channel === "distributor" ? "Счёт с НДС и закрывающие документы; цены — B2B или публичные цены сайта" : "Розничные цены площадок; оплата и документы — по условиям продавца"}
         </span>
       </div>
+      {models.length > 0 ? (
+        <div className="offer-models" role="group" aria-label="Найдено несколько моделей — выберите нужную">
+          <span className="offer-models-label">Найдено несколько моделей:</span>
+          {models.map((model) => {
+            const active = tableFilter?.modelKeys?.includes(model.key) ?? false;
+            return (
+              <button
+                type="button"
+                key={model.key}
+                className={active ? "offer-model active" : "offer-model"}
+                aria-pressed={active}
+                onClick={() => updateFilter("modelKeys", active ? undefined : [model.key])}
+              >
+                <b>{model.key}</b> · {model.count} · от {money.format(model.fromPrice)}
+              </button>
+            );
+          })}
+        </div>
+      ) : null}
       <fieldset className="offer-filter-controls">
         <legend className="sr-only">Фильтры предложений</legend>
         <label className="offer-filter-check"><input type="checkbox" checked={tableFilter?.inStockOnly ?? false} onChange={(event) => updateFilter("inStockOnly", event.target.checked || undefined)} />Только в наличии</label>

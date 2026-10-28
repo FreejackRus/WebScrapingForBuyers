@@ -54,6 +54,7 @@ export function applyTableFilter(offers: Offer[], filter?: OfferTableFilter) {
   return offers.filter((offer) => {
     if (filter.packaging && !new RegExp(`(?:^|[^a-z0-9])${filter.packaging}(?=$|[^a-z0-9])`,"iu").test(offer.title)) return false;
     if (filter.realOnly && offer.demo) return false;
+    if (filter.modelKeys?.length && !(offer.modelKey && filter.modelKeys.includes(offer.modelKey))) return false;
     if (filter.cheaperOnly && !(offer.previousPrice && offer.price < offer.previousPrice)) return false;
     if (filter.sources?.length) {
       const hay = `${offer.source} ${offer.seller ?? ""}`.toLocaleLowerCase("ru");
@@ -81,6 +82,32 @@ export function applyTableFilter(offers: Offer[], filter?: OfferTableFilter) {
     }
     return true;
   });
+}
+
+export interface ModelGroup {
+  key: string;
+  count: number;
+  /** Lowest per-unit price among usable rows of this model. */
+  fromPrice: number;
+}
+
+/**
+ * Models found among the rows, largest first. Only worth showing when the result splits into
+ * 2–8 models: then the buyer picks one instead of reading a mixed list.
+ */
+export function modelGroups(offers: Offer[]): ModelGroup[] {
+  const groups = new Map<string, ModelGroup>();
+  for (const offer of offers) {
+    if (!offer.modelKey || offer.demo || offer.priceAnomaly === "too_low" || offer.assessment?.group === "needs_review") continue;
+    const price = offer.unitPrice ?? offer.price;
+    const group = groups.get(offer.modelKey);
+    if (group) {
+      group.count += 1;
+      group.fromPrice = Math.min(group.fromPrice, price);
+    } else groups.set(offer.modelKey, { key: offer.modelKey, count: 1, fromPrice: price });
+  }
+  const list = [...groups.values()].sort((left, right) => right.count - left.count || left.key.localeCompare(right.key));
+  return list.length >= 2 && list.length <= 8 ? list : [];
 }
 
 export function filterOffers(offers: Offer[], needle: string, tableFilter?: OfferTableFilter) {

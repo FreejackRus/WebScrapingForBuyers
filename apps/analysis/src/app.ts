@@ -39,6 +39,8 @@ const CONTEXT_SCHEMA = {
       selectedOfferIds:{type:"array",maxItems:500,items:{type:"string",minLength:1,maxLength:150}},
       titleIncludeAny:{type:"array",maxItems:32,items:{type:"string",minLength:1,maxLength:100}},
       titleExcludeAny:{type:"array",maxItems:32,items:{type:"string",minLength:1,maxLength:100}},
+      modelKeys:{type:"array",maxItems:32,items:{type:"string",minLength:1,maxLength:40}},
+      cheaperOnly:{type:"boolean"},
     }},
   },
 } as const;
