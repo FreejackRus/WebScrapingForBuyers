@@ -239,3 +239,18 @@ describe("offer assessment", () => {
     expect(assessOffer(product(), offer("Картридж Pantum TL-5120 3000 страниц"), query)?.assessment?.group).toBe("match");
   });
 });
+
+describe("model named only among compatible devices", () => {
+  it("sends «для Sharp AR-5015/5120» to review for «картридж 5120» and keeps «Картридж TL-5120»", async () => {
+    const { productFromQuery } = await import("./product-from-query.js");
+    const query = "картридж 5120";
+    const product = productFromQuery(query, "query");
+    const row = (title: string) => ({
+      id: title, source: "NETLAB", seller: "NETLAB", title, price: 900, priceCondition: "", currency: "RUB" as const,
+      availability: "В наличии", condition: "new" as const, match: "probable" as const, url: "https://www.netlab.ru/1",
+      fetchedAt: "2026-10-29T00:00:00Z", demo: false,
+    });
+    expect(assessOffer(product, row("T2 AR-016T Тонер-картридж для Sharp AR-5015/5120/5316, черный"), query)?.assessment?.group).toBe("needs_review");
+    expect(assessOffer(product, row("Картридж Pantum TL-5120 оригинальный"), query)?.assessment?.group).toBe("match");
+  });
+});

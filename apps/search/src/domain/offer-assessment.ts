@@ -96,7 +96,10 @@ function matchedIdentity(product: Product, title: string): "article" | "model" |
   const expectedDigits = expected.replace(/\D/g, "");
   // «SKC3000S» is the KC3000 itself (maker prefix/suffix), not a sibling model.
   const ownArticle = (article: string) => new RegExp(`^[a-z]${expected.replace(/[^a-z0-9]/g, "")}[a-z]{0,3}$`).test(article);
-  const rivals = articles(title).filter((article) => article !== expected && !expected.includes(article) && !ownArticle(article));
+  // Only the number typed («картридж 5120»): a maker prefix in front of it («TL-5120») is the same item;
+  // a suffix («12400F», «TL-5120X») still names a sibling model.
+  const prefixedNumber = (article: string) => /^\d+$/.test(expected) && new RegExp(`^[a-z]{1,4}${expected}$`).test(article);
+  const rivals = articles(title).filter((article) => article !== expected && !expected.includes(article) && !ownArticle(article) && !prefixedNumber(article));
   // A different article with the same digits is a sibling model («TL-5120X» vs «TL-5120»). Multi-word models
   // («Back-UPS 650») are not articles themselves, so the listing's own article («BX650MI») is no rival.
   const multiWordModel = expected !== mpn && (product.model.match(/[a-zа-яё0-9]+/giu)?.length ?? 0) > 1;
@@ -274,6 +277,12 @@ export function assessOffer(product: Product, offer: Offer, query: string): Offe
 
   const reasons = [identity === "article" ? "Артикул совпадает" : "Модель совпадает"];
   let group: Assessment["group"] = "match";
+  // «картридж 5120» ← «Тонер-картридж для Sharp AR-5015/5120/5316»: the number names a device the
+  // item fits, not the item (weekly quality 2026-10-26). Kept for review, never the best price.
+  if (identity === "model" && forIndex > 0 && !matchedIdentity(product, offer.title.slice(0, forIndex))) {
+    group = "needs_review";
+    reasons.push("Модель указана только в списке совместимых устройств");
+  }
   if (product.category === "Процессоры") {
     if (/(?:^|[\s,;])(?:пк|компьютер[а-яё]*|системн[а-яё]*\s+блок)(?=[\s,;:.!–—-]|$)/iu.test(offer.title.replace(/(?:^|\s)для\s+(?:пк|компьютер[а-яё]*)/giu, ""))) {
       group = "needs_review";
