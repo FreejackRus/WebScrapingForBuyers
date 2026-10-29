@@ -91,3 +91,25 @@ describe("productForTypedQuery", async () => {
     expect(productForTypedQuery("logitech k380").characteristics[WILDCARD_CHARACTERISTIC]).toBeUndefined();
   });
 });
+
+describe("third-party ink in a wildcard search", async () => {
+  const { assessOffer } = await import("./offer-assessment.js");
+  const { productForTypedQuery } = await import("./wildcard-article.js");
+  const query = "чернила эпсон С13Т673*4А";
+  const product = productForTypedQuery(query);
+  const row = (title: string, price: number) => ({
+    id: title, source: "NETLAB", seller: "NETLAB", title, price, priceCondition: "", currency: "RUB" as const,
+    availability: "В наличии", condition: "new" as const, match: "exact" as const, url: "https://www.netlab.ru/1",
+    fetchedAt: "2026-10-29T00:00:00Z", demo: false,
+  });
+
+  it("keeps NV Print «для Epson» as an analog behind Epson's own ink", () => {
+    expect(assessOffer(product, row("NV Print C13T67324A Чернила NV-INK-T6732C для Epson L800", 69), query)?.match).toBe("analog");
+    expect(assessOffer(product, row("EPSON C13T67324A Чернила для L800/1800 (cyan) 70 мл", 1116), query)?.match).toBe("exact");
+  });
+
+  it("does not demote it when the buyer asked for compatible ink", () => {
+    const compatible = "совместимые чернила эпсон С13Т673*4А";
+    expect(assessOffer(productForTypedQuery(compatible), row("NV Print C13T67324A Чернила NV-INK-T6732C для Epson L800", 69), compatible)?.match).toBe("exact");
+  });
+});

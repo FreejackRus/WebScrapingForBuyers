@@ -576,7 +576,11 @@ async function analyzeSnapshotRaw(
   );
 
   const requested = selectionLimit(normalized);
-  const selected = intent === "filter" ? offers : offers.slice(0, requested);
+  // «Чем Wildberries лучше Авито?»: the best row of each named shop, else the model only sees the first shop.
+  const perSource = sources.length > 1
+    ? sources.flatMap((source) => offers.filter((offer) => matchesSource(offer, [source])).slice(0, 1))
+    : [];
+  const selected = intent === "filter" ? offers : perSource.length > 1 ? perSource : offers.slice(0, requested);
   filters.push(
     selected.length === 0
       ? intent === "filter"

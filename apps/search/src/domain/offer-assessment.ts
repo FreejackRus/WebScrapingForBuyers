@@ -298,9 +298,13 @@ export function assessOffer(product: Product, offer: Offer, query: string): Offe
   } else if (wantedOrigin === "compatible" && offeredOrigin === "compatible") {
     reasons.push("Совместимость указана продавцом");
   }
+  // Nothing said about origin: a third-party «для Epson» item ranks after the maker's own, never as
+  // the best price (live 2026-10-29: NV Print ink at 70 ₽ was picked over Epson at 1 116 ₽).
+  const analog = !wantedOrigin && offeredOrigin === "compatible" && (offer.match === "exact" || offer.match === "probable");
+  if (analog) reasons.push("Совместимый товар стороннего производителя");
 
   const conditions = assessConditions(query, selectedFacts(product), offer.title, reasons);
   if (conditions === "reject") return null;
   if (conditions === "review") group = "needs_review";
-  return { ...offer, assessment: { group, reasons } };
+  return { ...offer, ...(analog ? { match: "analog" as const } : {}), assessment: { group, reasons } };
 }

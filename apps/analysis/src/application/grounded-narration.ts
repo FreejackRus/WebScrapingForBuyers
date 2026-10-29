@@ -52,9 +52,9 @@ const escape = (text: string) => text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 /** Article-like words of a title («K380», «12400F», «C13T67324A») that point at that row. */
 const titleTokens = (offer: Offer) => (`${offer.title} ${offer.mpn ?? ""}`.match(/[\p{L}\d-]*\d[\p{L}\d-]*/gu) ?? [])
   .filter((token) => token.length >= 3 && /\p{L}/u.test(token)).map(lower);
-/** Letter words (≥4) of a row's title that no other cited row's title has: colours, series, variants. */
+/** Letter words (≥4) of a row's title that not every cited title has: colours, series, variants. */
 const distinctiveWords = (offer: Offer, cited: Offer[]) => (lower(offer.title).match(/\p{L}{4,}/gu) ?? [])
-  .filter((word) => cited.every((other) => other === offer || !lower(other.title).includes(word)));
+  .filter((word) => cited.some((other) => !lower(other.title).includes(word)));
 const rowText = (offer: Offer) => lower([offer.title, offer.mpn, offer.availability, offer.delivery, offer.warranty, offer.priceCondition].filter(Boolean).join(" "));
 
 function pricesOf(offer: Offer): number[] {
@@ -62,12 +62,15 @@ function pricesOf(offer: Offer): number[] {
     .filter((value): value is number => typeof value === "number");
 }
 
-function sentenceProblem(sentence: string, cited: Offer[]): string | undefined {
+const NEGATED = /(?:^|[^\p{L}])(?:нет|отсутству\p{L}*|не\s+найден\p{L}*|не\s+нашл\p{L}*|не\s+представлен\p{L}*)(?=$|[^\p{L}])/iu;
+
+function sentenceProblem(sentence: string, cited: Offer[], shown: Offer[]): string | undefined {
   const text = lower(sentence);
   // Which cited rows the sentence speaks about: the shop it names, otherwise an article from the title.
   const byShop = cited.filter((offer) => text.includes(lower(offer.source)) || text.includes(lower(offer.seller)));
   const byArticle = cited.filter((offer) => titleTokens(offer).some((token) => text.includes(token)));
-  // «yellow стоит 1 136 ₽»: a word only this row's title has points at it as well as an article does.
+  // «yellow стоит 1 136 ₽», «magenta и cyan стоят 1 121 ₽»: words that some titles have and others do not
+  // point at those rows as well as an article does.
   const byWord = cited.filter((offer) => distinctiveWords(offer, cited).some((word) => new RegExp(`(?:^|[^\\p{L}])${escape(word)}(?=$|[^\\p{L}])`, "iu").test(text)));
   const named = byShop.length > 0 ? byShop : byArticle.length > 0 && byArticle.length < cited.length ? byArticle : byWord.length > 0 ? byWord : byArticle;
   const prices = named.flatMap(pricesOf);
@@ -80,7 +83,9 @@ function sentenceProblem(sentence: string, cited: Offer[]): string | undefined {
   const justified: Array<[number, number]> = [];
   for (const match of sentence.matchAll(PRICE)) {
     const value = Number(digits(match[1]!));
-    if (!prices.includes(value) && !(named.length > 0 && differences.includes(value))) return `цена ${value} не у названной карточки`;
+    // A difference is computed from the cited prices themselves («разница между ними — 137 ₽»).
+    const isDifference = differences.includes(value) && /разниц|дороже|дешевле|экономи|переплат|на\s*$/iu.test(sentence.slice(0, match.index!));
+    if (!prices.includes(value) && !isDifference) return `цена ${value} не у названной карточки`;
     justified.push([match.index!, match.index! + match[0].length]);
   }
   for (const match of sentence.matchAll(PERCENT)) {
@@ -100,7 +105,10 @@ function sentenceProblem(sentence: string, cited: Offer[]): string | undefined {
 
   for (const aliases of SOURCE_ALIASES) {
     if (!aliases.some((name) => new RegExp(`(?:^|[^\\p{L}])${escape(name)}(?=$|[^\\p{L}])`, "iu").test(text))) continue;
-    if (!cited.some((offer) => aliases.some((name) => lower(`${offer.source} ${offer.seller}`).includes(name)))) return `источник ${aliases[0]} не процитирован`;
+    const fromShop = (offer: Offer) => aliases.some((name) => lower(`${offer.source} ${offer.seller}`).includes(name));
+    // «Предложений Wildberries нет» is a fact when the shown rows really have none.
+    if (NEGATED.test(text) && !shown.some(fromShop)) continue;
+    if (!cited.some(fromShop)) return `источник ${aliases[0]} не процитирован`;
   }
 
   const about = named.length > 0 ? named : cited;
@@ -142,7 +150,7 @@ export function groundedNarrationProblem(summary: string, offerIds: string[] | u
   if (claim) return `неподтверждаемое утверждение «${claim}»`;
   const sentences = normalize(summary).split(/(?<=[.!?…])\s+|\n+/u).filter(Boolean);
   for (const sentence of sentences) {
-    const problem = sentenceProblem(sentence, cited);
+    const problem = sentenceProblem(sentence, cited, allowed);
     if (problem) return `${problem}: «${sentence.slice(0, 160)}»`;
   }
   return undefined;

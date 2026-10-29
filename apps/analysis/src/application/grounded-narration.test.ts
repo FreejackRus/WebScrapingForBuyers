@@ -72,3 +72,29 @@ describe("grounded explanation, rows named by a distinctive word", () => {
   });
 });
 
+describe("grounded explanation, live refusals of 2026-10-29", () => {
+  const ink = (id: string, colour: string, price: number): Offer => ({ ...offer, id, source: "NETLAB", seller: "NETLAB", title: `EPSON C13T673${id}4A Чернила для L800 (${colour}) 70 мл`, price });
+  const rows = [ink("1", "black", 1246), ink("2", "cyan", 1121), ink("3", "magenta", 1121), ink("5", "light cyan", 1121), ink("6", "light magenta", 1121)];
+  const ids = rows.map((row) => row.id);
+
+  it("accepts a price for a group named by shared words", () => {
+    expect(validateGroundedNarration("Остальные четыре (magenta, cyan, light cyan, light magenta) стоят 1 121 ₽.", ids, rows)).toBe(true);
+    expect(validateGroundedNarration("Black стоит 1 121 ₽.", ids, rows)).toBe(false);
+  });
+
+  it("accepts a difference of cited prices without naming the rows again", () => {
+    expect(validateGroundedNarration("Разница между этими двумя карточками составляет 125 ₽.", ids, rows)).toBe(true);
+    expect(validateGroundedNarration("Разница составляет 300 ₽.", ids, rows)).toBe(false);
+  });
+});
+
+describe("grounded explanation, a shop that is absent", () => {
+  const avito: Offer = { ...offer, id: "av", source: "Авито", seller: "Авито", title: "Чернила C13T67324A для Epson, sakura", price: 135 };
+
+  it("may say a shop has no offers only when none is shown", () => {
+    expect(validateGroundedNarration("Авито — 135 ₽. Предложений Wildberries нет.", ["av"], [avito])).toBe(true);
+    const wb: Offer = { ...avito, id: "wb", source: "Wildberries", seller: "Wildberries", price: 990 };
+    expect(validateGroundedNarration("Авито — 135 ₽. Предложений Wildberries нет.", ["av"], [avito, wb])).toBe(false);
+  });
+});
+
