@@ -9,6 +9,7 @@ type Assessment = NonNullable<Offer["assessment"]>;
 const ORIGINAL = /(?:^|[^\p{L}])(?:оригинал\p{L}*|original|genuine|oem)(?=$|[^\p{L}])/iu;
 const COMPATIBLE = /(?:^|[^\p{L}])(?:не\s*оригинал\p{L}*|неоригинал\p{L}*|совместим\p{L}*|аналог\p{L}*|compatible|replacement)(?=$|[^\p{L}])/iu;
 const DEVICE_PART = /(?:^|[^\p{L}])(?:плата|форматер|печатающ\p{L}*\s+головк\p{L}*|ролик|шлейф|узел|запчаст\p{L}*|spare\s+part)(?=$|[^\p{L}])/iu;
+const KEYBOARD_PART = /(?<!\p{L})(?:колпач(?:ок|ки|ка|ков)|кейкап\p{L}*|keycaps?|ножничн\p{L}*\s+(?:механизм\p{L}*|зажим\p{L}*|петл\p{L}*)|scissor\s+(?:clips?|hinges?))(?!\p{L})/iu;
 /**
  * Parts and add-ons sold for a device: «Радиатор для видеокарты RTX 4070 Super», «Кулер для процессора»,
  * «Блок питания для ноутбука». They name the model, but the buyer asked for the device itself.
@@ -241,6 +242,13 @@ export function assessOffer(product: Product, offer: Offer, query: string): Offe
   if (wildcard && !matchesWildcardArticle(wildcard, `${offer.title} ${offer.mpn ?? ""}`)) return null;
   const identity = wildcard ? "article" : matchedIdentity(product, `${offer.title} ${offer.mpn ?? ""}`);
   if (!identity) return null;
+  // A compatible model can also be copied into the part's article field.
+  if (KEYBOARD_PART.test(offer.title) && !KEYBOARD_PART.test(query) && !KEYBOARD_PART.test(product.name)) {
+    const partIndex = offer.title.search(KEYBOARD_PART);
+    const beforePart = offer.title.slice(0, partIndex);
+    const afterPart = offer.title.slice(partIndex);
+    if (!/(?<!\p{L})клавиатура(?!\p{L})|\bkeyboard\b.*\bwith\b/iu.test(beforePart) && /(?:^|\s)(?:для|for)\s/iu.test(afterPart)) return null;
+  }
   // An exact article is the buyer's own choice of part: «302N494021» is a developer unit by design.
   const forIndex = offer.title.search(/(?:^|\s)для\s/iu);
   const partForDevice = forIndex >= 0 && identityIn(offer.title.slice(forIndex), product.mpn);
