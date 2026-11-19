@@ -18,8 +18,8 @@ describe("applyCardFacts", () => {
   });
 
   it("takes the card price when it differs and keeps the listed one", () => {
-    const checked = applyCardFacts(row, { title: row.title, price: 24_268, priceBasis: "без Ozon Карты" }, product, query, at);
-    expect(checked).toMatchObject({ price: 24_268, verification: { status: "price_changed", listedPrice: 23_271 } });
+    const checked = applyCardFacts({ ...row, packQuantity: 2, unitPrice: 11_636 }, { title: row.title, price: 24_268, priceBasis: "без Ozon Карты" }, product, query, at);
+    expect(checked).toMatchObject({ price: 24_268, unitPrice: 12_134, verification: { status: "price_changed", listedPrice: 23_271 } });
     expect(checked.verification?.note).toContain("без Ozon Карты");
   });
 
@@ -36,7 +36,27 @@ describe("applyCardFacts", () => {
   });
 
   it("accepts a model named only in the characteristics", () => {
-    const checked = applyCardFacts(row, { title: "Монитор 23.8\" 2K IPS", specs: "Модель Dell P2423D", price: 23_271 }, product, query, at);
+    const checked = applyCardFacts(row, { title: "Монитор 23.8\" 2K IPS", specs: "Модель Dell P2423D", price: 23_271, available: true }, product, query, at);
     expect(checked.verification?.status).toBe("confirmed");
   });
+});
+
+it("reports a partial check and keeps unknown stock when only the price is observed", () => {
+  const checked = applyCardFacts({ ...row, availability: "Неизвестно", availabilityStatus: "unknown" },
+    { title: row.title, price: row.price }, product, query, at);
+  expect(checked.verification).toMatchObject({ status: "partial" });
+  expect(checked.verification?.note).toContain("наличие не подтверждено");
+  expect(checked.availabilityStatus).toBe("unknown");
+});
+
+it("updates unknown availability when the card reports stock", () => {
+  const checked = applyCardFacts({ ...row, availability: "Неизвестно", availabilityStatus: "unknown" },
+    { title: row.title, price: row.price, available: true }, product, query, at);
+  expect(checked).toMatchObject({ availabilityStatus: "in_stock", verification: { status: "confirmed" } });
+});
+
+it("does not use the listing article to confirm another model on the card", () => {
+  const labelled = { ...row, mpn: "P2423D" };
+  const checked = applyCardFacts(labelled, { title: "Монитор Dell P2723QE 27", price: 23_271, available: true }, {...product, mpn: "P2423D"}, query, at);
+  expect(checked.verification?.status).toBe("mismatch");
 });
