@@ -125,7 +125,7 @@ function historyOf(options: AnalyzeOptions): { history?: ChatTurn[] } {
 function tableFacts(offers: Offer[]): string[] {
   const review = offers.filter((offer) => offer.assessment?.group === "needs_review");
   const primary = offers.filter((offer) => offer.assessment?.group !== "needs_review");
-  const real = primary.filter((offer) => !offer.demo && offer.priceAnomaly !== "too_low");
+  const real = primary.filter((offer) => !offer.demo && hasCurrentOfferData(offer) && offer.priceAnomaly !== "too_low");
   const inStock = real.filter((offer) => offerAvailabilityStatus(offer) === "in_stock");
   const unknown = real.filter((offer) => /неизвестн|уточн/i.test(offer.availability));
   const cheapest = [...real].sort((a, b) => a.price - b.price)[0];
@@ -470,7 +470,7 @@ async function analyzeSnapshotRaw(
     filters.push(`Только источники ${sources.join(", ")} (${offers.length} из ${before}).`);
   }
   const inStockOnly = wantsInStock(normalized);
-  if (inStockOnly && !offers.some((offer) => offerAvailabilityStatus(offer) === "in_stock")) {
+  if (inStockOnly && !offers.some((offer) => hasCurrentOfferData(offer) && offerAvailabilityStatus(offer) === "in_stock")) {
     // Filtering to zero would blank the table and read like «nothing exists».
     // Say why instead and leave the table as it is.
     const bySource = new Map<string, number>();
@@ -493,7 +493,7 @@ async function analyzeSnapshotRaw(
   if (inStockOnly) {
     const before = offers.length;
     const unknown = offers.filter((offer) => /неизвестн|уточн/i.test(offer.availability)).length;
-    offers = offers.filter((offer) => offerAvailabilityStatus(offer) === "in_stock");
+    offers = offers.filter((offer) => hasCurrentOfferData(offer) && offerAvailabilityStatus(offer) === "in_stock");
     filters.push(`Только с подтверждённым наличием (${offers.length} из ${before}).`);
     if (unknown > 0) {
       warnings.push(
@@ -540,7 +540,7 @@ async function analyzeSnapshotRaw(
 
   const previousOffers = offers.filter((offer) => !hasCurrentOfferData(offer));
   if (previousOffers.length) {
-    warnings.push("Есть предложения из предыдущего сбора. Цена и наличие могли измениться.");
+    warnings.push("Есть предложения без актуального подтверждения цены и наличия.");
     if (intent !== "filter") offers = offers.filter((offer) => !previousOffers.includes(offer));
   }
 
@@ -609,7 +609,7 @@ async function analyzeSnapshotRaw(
             userName,
           )
       : !best
-        ? withGreeting(previousOffers.length ? "По этим условиям есть только данные предыдущего сбора. Обновите поиск, чтобы сравнить цены." : "По заданным критериям предложений не найдено.", userName)
+        ? withGreeting(previousOffers.length ? "По этим условиям нет предложений с актуальными данными. Обновите поиск, чтобы сравнить цены." : "По заданным критериям предложений не найдено.", userName)
         : withGreeting(
             `Лучший вариант: ${offerLabel(best)}. Отобрано предложений: ${selected.length}.`,
             userName,

@@ -41,3 +41,15 @@ describe("clarification and incremental results",()=>{
  it("«Чем Wildberries лучше Авито?» selects the best row of each shop",async()=>{const rows=[{...offer("wb1","Logitech K380",2273),source:"Wildberries",procurementRank:1},{...offer("wb2","Logitech K380",2410),source:"Wildberries",procurementRank:2},{...offer("av1","Logitech K380",989,"Неизвестно"),source:"Авито",procurementRank:3}];const r=await analyzeSnapshot({...snapshot,offers:rows},"Чем Wildberries лучше Авито?");expect(r.selectedOfferIds).toEqual(["wb1","av1"])});
 });
 
+
+it("keeps previous offers visible but does not promise their availability", async () => {
+  const saved: SearchSnapshot = {
+    ...snapshot,
+    offers: snapshot.offers.map((row) => ({ ...row, freshness: "cached" })),
+  };
+  expect(filterOffers(saved.offers, { inStockOnly: true })).toEqual([]);
+  const r = await analyzeSnapshot(saved, "почему этот?", undefined, { context: { selectedOfferIds: ["box"] } });
+  expect(r.summary).toContain("из предыдущего сбора");
+  expect(r.summary).not.toContain("наличие подтверждено");
+  expect(r.citations?.map((citation) => citation.offerId)).toEqual(["box"]);
+});
