@@ -1,3 +1,5 @@
+import { isCurrentComparableOffer, offerAvailabilityStatus } from "@peremena/contracts";
+
 import { exportApi } from "features/export";
 import { useSearchStore } from "entities/search";
 import { useUserStore } from "entities/user";
@@ -14,8 +16,9 @@ function useWorkspaceSnapshot() {
   const snapshot = useSearchStore((state) => state.snapshot);
   const error = useSearchStore((state) => state.error);
   const offers = snapshot?.offers ?? [];
-  const pricedOffers = offers.filter((offer) => !offer.demo && !offer.priceAnomaly && offer.assessment?.group !== "needs_review");
-  const bestPublic = [...pricedOffers].sort((left, right) => left.price - right.price)[0]?.price;
+  const pricedOffers = offers.filter((offer) => isCurrentComparableOffer(offer) && offerAvailabilityStatus(offer) === "in_stock");
+  const keys = new Set(pricedOffers.map((offer) => offer.comparisonKey));
+  const bestPublic = keys.size === 1 && !keys.has(undefined) ? Math.min(...pricedOffers.map((offer) => offer.price)) : undefined;
   const failedSources = snapshot?.sources.filter((source) => source.status === "error").length ?? 0;
   const settledSources = snapshot?.sources.filter((source) => source.status === "done" || source.status === "error").length ?? 0;
   return { user, snapshot, error, offers, bestPublic, failedSources, settledSources };
@@ -72,7 +75,8 @@ export function SearchWorkspaceLead() {
             <Metrics
               offerCount={offers.length}
               bestPublic={bestPublic}
-              running={snapshot.status === "running"}
+              running={snapshot.status === "running" && !error}
+              interrupted={snapshot.status === "running" && Boolean(error)}
               failedSources={failedSources}
               settledSources={settledSources}
               sourceCount={snapshot.sources.length}

@@ -1,4 +1,4 @@
-import { offerAvailabilityStatus, type AnalysisContext } from "@peremena/contracts";
+import { hasCurrentOfferData, offerAvailabilityStatus, type AnalysisContext } from "@peremena/contracts";
 import { routeProcurementDialogue, filterOffers } from "./procurement-dialogue.js";
 import { groundedNarrator } from "./grounded-narrator.js";
 import { NarrationError } from "../domain/narration-error.js";
@@ -538,6 +538,12 @@ async function analyzeSnapshotRaw(
     );
   }
 
+  const previousOffers = offers.filter((offer) => !hasCurrentOfferData(offer));
+  if (previousOffers.length) {
+    warnings.push("Есть предложения из предыдущего сбора. Цена и наличие могли измениться.");
+    if (intent !== "filter") offers = offers.filter((offer) => !previousOffers.includes(offer));
+  }
+
   // Soft-drop is for explain/pick-best. Filter intents keep all sources that match criteria.
   if (intent !== "filter") {
     const weakDrop = dropWeakMatchesWhenStrongerExist(offers);
@@ -592,16 +598,18 @@ async function analyzeSnapshotRaw(
   );
 
   const best = selected[0];
+  const bestIsCurrent = best && hasCurrentOfferData(best);
   const summary =
     intent === "filter"
       ? !best
         ? withGreeting("По заданным критериям предложений не найдено — таблица пустая.", userName)
         : withGreeting(
-            `Таблица отфильтрована. Лучший вариант: ${offerLabel(best)}. Показано строк: ${selected.length}.`,
+            bestIsCurrent ? `Таблица отфильтрована. Лучший вариант: ${offerLabel(best)}. Показано строк: ${selected.length}.`
+              : `Таблица отфильтрована. Показано строк: ${selected.length}. Для оценки цены обновите поиск.`,
             userName,
           )
       : !best
-        ? withGreeting("По заданным критериям предложений не найдено.", userName)
+        ? withGreeting(previousOffers.length ? "По этим условиям есть только данные предыдущего сбора. Обновите поиск, чтобы сравнить цены." : "По заданным критериям предложений не найдено.", userName)
         : withGreeting(
             `Лучший вариант: ${offerLabel(best)}. Отобрано предложений: ${selected.length}.`,
             userName,

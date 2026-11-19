@@ -133,6 +133,19 @@ export function OfferCard() {
             </div>
           ) : null}
           <div>
+            <dt>Регион предложения</dt>
+            <dd>{offer.region ?? "Не указан источником"}</dd>
+          </div>
+          <div>
+            <dt>Данные получены</dt>
+            <dd>
+              <time dateTime={offer.fetchedAt}>{new Date(offer.fetchedAt).toLocaleString("ru-RU")}</time>
+              {offer.freshness === "fallback" ? " · предыдущий ответ источника"
+                : offer.freshness === "cached" ? " · из кеша"
+                : offer.freshness === "unknown" ? " · свежесть не подтверждена" : ""}
+            </dd>
+          </div>
+          <div>
             <dt>Совпадение</dt>
             <dd>{matchLabels[offer.match]}</dd>
           </div>

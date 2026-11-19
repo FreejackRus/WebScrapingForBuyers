@@ -187,12 +187,12 @@ export const useSearchStore = create<SearchState>((set, get) => ({
     });
     try {
       const created = await searchApi.start(query || product.name, product, get().selectedSources, options?.fresh);
-      const next = searchApi.subscribe(
+      const next = created.status === "complete" ? undefined : searchApi.subscribe(
         created.id,
         (event) => get().applyEvent(event),
         () => {
           if (get().source?.readyState === EventSource.CLOSED) {
-            set({ error: "Соединение с потоком результатов закрыто." });
+            set({ error: "Сбор прерван. Повторите поиск, чтобы получить актуальные результаты." });
           }
         },
       );
@@ -215,7 +215,7 @@ export const useSearchStore = create<SearchState>((set, get) => ({
       set((current) => ({
         snapshot: mergeSnapshotOffers(current.snapshot, event.data),
       }));
-      if (event.type === "complete") get().source?.close();
+      if (event.type === "complete" || event.data.status === "complete") get().source?.close();
       return;
     }
     set((current) => {

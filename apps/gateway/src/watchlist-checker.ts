@@ -25,7 +25,7 @@ export async function runWatchSearch(searchUrl: string, item: WatchItem, options
   const query = (item.query || item.product.name).slice(0, 300);
   const created = await fetchWithTimeout(
     `${searchUrl}/searches`,
-    { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ query: query.length >= 2 ? query : item.product.name, product: searchProduct(item.product) }) },
+    { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ query: query.length >= 2 ? query : item.product.name, product: searchProduct(item.product), fresh: true }) },
     REQUEST_TIMEOUT_MS,
   );
   if (!created.ok) {

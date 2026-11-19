@@ -1,4 +1,4 @@
-import {
+import { hasCurrentOfferData,
   offerAvailabilityStatus,
   offerChannel,
   type Offer,
@@ -33,7 +33,7 @@ export function priceHistoryKey(product: Pick<Product, "mpn" | "brand" | "model"
 
 /** Rows whose price a buyer could actually act on: real, plausible, matching the request. */
 export function isHistoryRow(offer: Offer): boolean {
-  return !offer.demo && offer.priceAnomaly !== "too_low" && offer.assessment?.group !== "needs_review" && offer.price > 0;
+  return !offer.demo && hasCurrentOfferData(offer) && offer.priceAnomaly !== "too_low" && offer.assessment?.group !== "needs_review" && offer.price > 0;
 }
 
 function channelStats(offers: Offer[], channel: OfferChannel): PriceChannelStats {

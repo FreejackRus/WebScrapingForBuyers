@@ -543,6 +543,7 @@ export class McpMarketplaceAdapter implements SourceAdapter {
         : matchKind(title, offerMpn, product);
     const inStock = firstBoolean(item.in_stock, item.is_available);
     const delivery = firstString(item.delivery);
+    const region = firstString(item.region, item.city, this.source.kind === "avito" ? item.location : undefined);
     const imageUrl = marketplaceImageUrl(item);
     const digest = createHash("sha256")
       .update(`${this.source.name}:${sourceId}:${price}`)
@@ -566,6 +567,7 @@ export class McpMarketplaceAdapter implements SourceAdapter {
           ? firstString(item.availability_text)!
           : inStock === true ? "В наличии" : inStock === false ? "Нет в наличии" : firstString(item.stock) ?? "Неизвестно",
       ...(delivery ? { delivery } : {}),
+      ...(region ? { region: region.slice(0, 120) } : {}),
       condition: "new",
       match,
       url,

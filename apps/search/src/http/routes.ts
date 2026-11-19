@@ -69,6 +69,15 @@ export const searchRoutes: FastifyPluginAsync<{
       },
     },
     async (request, reply) => {
+      const selected = searchService.resolveSources(request.body.sources);
+      if (selected.length === 0) {
+        const error = request.body.sources?.some(isSourceDisabled)
+          ? "DNS временно недоступен. Выберите другой источник."
+          : request.body.sources?.length
+            ? "Нет выбранных источников"
+            : "Нет доступных источников для поиска";
+        return reply.code(400).send({ error });
+      }
       const payload = isProductPayload(request.body.product) ? request.body.product : undefined;
       const chosen =
         (payload && payload.characteristics.источник !== "typed" ? payload : undefined) ??
@@ -91,15 +100,6 @@ export const searchRoutes: FastifyPluginAsync<{
         return reply.code(422).send({
           error: "Price Radar ищет только IT-оборудование и комплектующие. Уточните запрос: тип устройства, бренд или артикул.",
         });
-      }
-      const selected = searchService.resolveSources(request.body.sources);
-      if (selected.length === 0) {
-        const error = request.body.sources?.some(isSourceDisabled)
-          ? "DNS временно недоступен. Выберите другой источник."
-          : request.body.sources?.length
-            ? "Нет выбранных источников"
-            : "Нет доступных источников для поиска";
-        return reply.code(400).send({ error });
       }
       return reply.code(201).send(searchService.start(request.body.query, product, request.body.sources, {
         ...(request.body.fresh ? { fresh: true } : {}),

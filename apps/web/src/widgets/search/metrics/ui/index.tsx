@@ -4,6 +4,7 @@ export function Metrics({
   offerCount,
   bestPublic,
   running,
+  interrupted,
   failedSources,
   settledSources,
   sourceCount,
@@ -11,6 +12,7 @@ export function Metrics({
   offerCount: number;
   bestPublic: number | undefined;
   running: boolean;
+  interrupted?: boolean;
   failedSources: number;
   settledSources: number;
   sourceCount: number;
@@ -26,14 +28,14 @@ export function Metrics({
     <section className="metrics" aria-label="Сводка">
       <Metric label="Предложений" value={String(offerCount)} />
       <Metric
-        label="Лучшая публичная"
+        label="Минимум в наличии"
         value={bestPublic != null ? money.format(bestPublic) : "—"}
-        hint={bestPublic == null ? "Цены пока не получены" : "Минимум среди загруженных"}
+        hint={bestPublic == null ? "См. цены по вариантам в таблице" : running ? "Предварительно, сбор идёт" : "Для одного сопоставимого варианта"}
         accent
       />
       <Metric
         label="Сбор"
-        value={running ? "Идёт" : failedSources > 0 ? "Есть ошибки" : "Завершён"}
+        value={interrupted ? "Прерван" : running ? "Идёт" : failedSources > 0 ? "Есть ошибки" : "Завершён"}
         hint={`${settledSources} из ${sourceCount} источников завершено${failedSources > 0 ? ` · ошибок: ${failedSources}` : ""}`}
       />
     </section>

@@ -48,6 +48,7 @@ export function buildGatewayApp(options: { logger?: boolean; history?: SearchHis
     const open =
       request.url === "/api/v1/health" ||
       request.url.startsWith("/api/v1/health?") ||
+      request.url.split("?", 1)[0] === "/api/v1/ready" ||
       request.url === "/api/v1/auth/login";
     if (open) return;
     let user: SessionUser | undefined;
@@ -70,6 +71,23 @@ export function buildGatewayApp(options: { logger?: boolean; history?: SearchHis
       mode: searchHealth.mode === "hybrid" ? "hybrid" : "demo",
       analysisProvider: analysisHealth.provider ?? "Детерминированный анализ",
     };
+  });
+
+  app.get("/api/v1/ready", async (_request, reply) => {
+    const probe = async (url: string) => {
+      try {
+        return (await getJson(`${url}/health`)).status === "ok" ? "ok" : "unavailable";
+      } catch {
+        return "unavailable";
+      }
+    };
+    const [identityStatus, searchStatus, analysisStatus] = await Promise.all([probe(identity), probe(search), probe(analysis)]);
+    const status = identityStatus !== "ok" || searchStatus !== "ok"
+      ? "unavailable" : analysisStatus !== "ok" ? "degraded" : "ok";
+    return reply.code(status === "ok" ? 200 : 503).send({
+      status,
+      services: { identity: identityStatus, search: searchStatus, analysis: analysisStatus },
+    });
   });
 
   app.post("/api/v1/auth/login", async (request, reply) =>
@@ -458,5 +476,6 @@ function cookieHeader(request: FastifyRequest): Record<string, string> {
 
 async function getJson(url: string) {
   const response = await fetchWithTimeout(url, {}, HEALTH_TIMEOUT_MS);
+  if (!response.ok) throw new Error(`Health check returned HTTP ${response.status}`);
   return (await response.json()) as Record<string, string>;
 }

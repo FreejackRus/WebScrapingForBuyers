@@ -27,9 +27,11 @@ export async function exportSearch(snapshot: SearchSnapshot): Promise<Buffer> {
     { header: "Тип поставщика", key: "channel", width: 16 },
     { header: "Модель", key: "modelKey", width: 16 },
     { header: "Цена за шт., ₽", key: "unitPrice", width: 14 },
+    { header: "Свежесть данных", key: "freshness", width: 28 },
+    { header: "Регион", key: "region", width: 24 },
   ];
   sheet.getRow(1).font = { bold: true };
-  sheet.autoFilter = "A1:T1";
+  sheet.autoFilter = "A1:V1";
   sheet.views = [{ state: "frozen", ySplit: 1 }];
 
   for (const offer of snapshot.offers) {
@@ -51,6 +53,9 @@ export async function exportSearch(snapshot: SearchSnapshot): Promise<Buffer> {
       assessmentReasons: offer.assessment?.reasons.join("; ") ?? "",
       modelKey: offer.modelKey ?? "",
       unitPrice: offer.unitPrice ?? "",
+      freshness: offer.freshness === "fallback" ? "Предыдущий ответ источника"
+        : offer.freshness === "cached" ? "Из кеша" : offer.freshness === "collected" ? "Текущий сбор" : "Не указана",
+      region: offer.region ?? "Не указан источником",
     });
   }
 

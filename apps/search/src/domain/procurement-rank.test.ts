@@ -70,3 +70,20 @@ describe("Avito condition", async () => {
     expect(normalizeOfferCondition(row("Новые AMD Ryzen 5 5600 (OEM)"))).toBe("new");
   });
 });
+
+it("ranks fresh offers and keeps different versions apart", () => {
+  const oem = offer("oem", { modelKey: "12400F", title: "Intel 12400F OEM" });
+  const box = offer("box", { modelKey: "12400F", title: "Intel 12400F BOX" });
+  const backup = offer("backup", { ...oem, id: "backup", price: 2000, freshness: "fallback" });
+  const board = offer("keyboard", { modelKey: "K380", mpn: "920-007566", title: "Клавиатура Logitech K380" });
+  const version = offer("keyboard-sku", { modelKey: "K380", title: "Клавиатура Logitech K380 920-007566" });
+  const bundle = offer("bundle", { modelKey: "K380", packQuantity: 2, title: "Клавиатура Logitech K380 920-007566 и мышь, комплект 2 шт" });
+  expect(order([backup, oem, box]).at(-1)).toBe("backup");
+  expect(oem.comparisonKey).toBeTruthy();
+  expect(oem.comparisonKey).toBe(backup.comparisonKey);
+  expect(box.comparisonKey).not.toBe(oem.comparisonKey);
+  assignProcurementRanks([board, version, bundle]);
+  expect(board.comparisonKey).toBeUndefined();
+  expect(version.comparisonKey).toBeTruthy();
+  expect(bundle.comparisonKey).toBeUndefined();
+});

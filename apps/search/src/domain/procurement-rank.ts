@@ -1,4 +1,4 @@
-import { offerAvailabilityStatus, type Offer, type ProductCondition } from "@peremena/contracts";
+import { hasCurrentOfferData, offerAvailabilityStatus, type Offer, type ProductCondition } from "@peremena/contracts";
 
 const AVAILABILITY = { in_stock: 0, unknown: 1, on_order: 2, out_of_stock: 3 } as const;
 /** The requested model first: exact/probable, then analogues, then doubtful cards. */
@@ -32,8 +32,8 @@ export function normalizeOfferCondition(offer: Offer): ProductCondition {
 }
 
 function compare(left: Offer, right: Offer): number {
-  const leftExcluded = Number(left.demo || left.priceAnomaly === "too_low" || left.assessment?.group === "needs_review");
-  const rightExcluded = Number(right.demo || right.priceAnomaly === "too_low" || right.assessment?.group === "needs_review");
+  const leftExcluded = Number(left.demo || !hasCurrentOfferData(left) || left.priceAnomaly === "too_low" || left.assessment?.group === "needs_review");
+  const rightExcluded = Number(right.demo || !hasCurrentOfferData(right) || right.priceAnomaly === "too_low" || right.assessment?.group === "needs_review");
   return leftExcluded - rightExcluded
     || Number(left.demo) - Number(right.demo)
     || MATCH[left.match] - MATCH[right.match]
@@ -45,6 +45,25 @@ function compare(left: Offer, right: Offer): number {
 }
 
 export function assignProcurementRanks(offers: Offer[]): void {
-  for (const offer of offers) offer.condition = normalizeOfferCondition(offer);
+  for (const offer of offers) {
+    offer.condition = normalizeOfferCondition(offer);
+    const keyboardArticle = /\blogitech\b.*\bK380S?\b/iu.test(offer.title)
+      ? offer.title.match(/\b920-\d{6}\b/u)?.[0] : undefined;
+    const article = keyboardArticle ?? offer.mpn?.trim().toUpperCase();
+    const articleInTitle = article && /^[A-Z0-9][A-Z0-9._-]{3,39}$/u.test(article)
+      && offer.title.toUpperCase().split(/[^A-Z0-9._-]+/u).includes(article);
+    const model = offer.modelKey;
+    const pack = packaging(offer.title);
+    const bundle = /(?:комплект|набор|клавиатура\s+и\s+мышь|keyboard\s+and\s+mouse)/iu.test(offer.title);
+    // A full article or explicit BOX/OEM identifies the version. A family name alone does not.
+    const identity = article && articleInTitle && article !== model && /[0-9]/.test(article)
+      ? article
+      : pack !== 2 ? model : undefined;
+    if (identity && !bundle) {
+      offer.comparisonKey = JSON.stringify([identity, pack, offer.condition, offer.packQuantity ?? 1, offer.region ?? null]);
+    } else {
+      delete offer.comparisonKey;
+    }
+  }
   [...offers].sort(compare).forEach((offer, index) => { offer.procurementRank = index + 1; });
 }

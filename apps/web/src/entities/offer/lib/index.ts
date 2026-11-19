@@ -1,4 +1,4 @@
-import { offerAvailabilityStatus, type Offer, type OfferTableFilter } from "@peremena/contracts";
+import { hasCurrentOfferData, offerAvailabilityStatus, type Offer, type OfferTableFilter } from "@peremena/contracts";
 
 export const matchLabels = {
   exact: "Точное",
@@ -62,7 +62,7 @@ export function applyTableFilter(offers: Offer[], filter?: OfferTableFilter) {
       if (!matched) return false;
     }
     if (filter.maxPrice != null && offer.price > filter.maxPrice) return false;
-    if (filter.inStockOnly && offerAvailabilityStatus(offer) !== "in_stock") return false;
+    if (filter.inStockOnly && (!hasCurrentOfferData(offer) || offerAvailabilityStatus(offer) !== "in_stock")) return false;
     if (filter.conditions?.length && !filter.conditions.includes(offer.condition)) return false;
     if (filter.titleExcludeAny?.length) {
       const hay = offer.title.toLocaleLowerCase("ru");
@@ -173,7 +173,8 @@ export function offerGroupKey(offer: Offer): string {
     .replace(/ё/g, "е")
     .replace(/[^a-zа-я0-9]+/giu, " ")
     .trim();
-  return `${words}|${offer.condition}`;
+  const identity = offer.comparisonKey ?? `${words}|${offer.condition}|${offer.region ?? ""}|${offer.mpn ?? ""}`;
+  return `${identity}|${offer.freshness ?? "collected"}`;
 }
 
 /** Groups an already ordered list; the first row of each item leads its group, so order is kept. */

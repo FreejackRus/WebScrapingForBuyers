@@ -283,7 +283,8 @@ export function toNetlabOffer(
     match,
     url: item.url,
     ...(item.picture ? { imageUrl: item.picture } : {}),
-    fetchedAt: new Date().toISOString(),
+    fetchedAt: new Date(priceTime ?? now).toISOString(),
+    ...(stale ? { freshness: "fallback" as const } : priceTime === undefined ? { freshness: "unknown" as const } : {}),
     demo: false,
   };
 }

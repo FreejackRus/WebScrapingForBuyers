@@ -78,11 +78,12 @@ export class CitilinkAgentAdapter implements SourceAdapter {
     } catch (error) {
       throw new Error(`Ситилинк: офисный агент недоступен (${error instanceof Error ? error.message : String(error)})`);
     }
-    const body = (await response.json().catch(() => ({}))) as { items?: CitilinkAgentItem[]; fetchedAt?: string; error?: string };
+    const body = (await response.json().catch(() => ({}))) as { items?: CitilinkAgentItem[]; fetchedAt?: string; cached?: boolean; stale?: boolean; error?: string };
     if (!response.ok) throw new Error(`Ситилинк: офисный агент ответил ${response.status}${body.error ? ` — ${body.error}` : ""}`);
     const fetchedAt = body.fetchedAt ?? new Date().toISOString();
     return (body.items ?? [])
       .flatMap((item) => toCitilinkOffer(item, product, fetchedAt) ?? [])
+      .map((offer): Offer => body.stale ? { ...offer, freshness: "fallback" } : body.cached ? { ...offer, freshness: "cached" } : offer)
       .sort(preferRelevantOffers)
       .slice(0, OFFERS_PER_SOURCE);
   }

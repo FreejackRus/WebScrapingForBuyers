@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type PointerEvent, type ReactNode } from "react";
-import { offerAvailabilityStatus, type OfferReviewItem, type OfferTableFilter, type ProductCondition } from "@peremena/contracts";
+import { isCurrentComparableOffer, offerAvailabilityStatus, type OfferReviewItem, type OfferTableFilter, type ProductCondition } from "@peremena/contracts";
 import { downloadOffersCsv, encodeSearchLink, OFFER_PAGE_SIZES, useChannelOffers, useFilteredOffers, useOfferCard, useOfferColumns, useOfferTable } from "features/search";
 import { analysisApi, useAnalysisStore } from "entities/analysis";
 import { conditionLabels, matchLabels, modelGroups, PRICE_ANOMALY_HINT, PRICE_ANOMALY_LABEL, titleSpecs, verificationLabels } from "entities/offer";
@@ -72,13 +72,12 @@ export function OfferTable() {
   const [budgetDraft, setBudgetDraft] = useState(tableFilter?.maxPrice?.toString() ?? "");
   const { channel, counts, setChannel, offers: channelOffers } = useChannelOffers();
   const snapshotTotal = channelOffers.length;
-  // Lowest price among exact or probable in-stock rows of this tab: the reference the buyer compares against.
-  const bestPrice = (() => {
-    const prices = channelOffers
-      .filter((offer) => !offer.demo && (offer.match === "exact" || offer.match === "probable") && offer.assessment?.group !== "needs_review" && offer.priceAnomaly !== "too_low" && offerAvailabilityStatus(offer) === "in_stock")
-      .map((offer) => offer.price);
-    return prices.length ? Math.min(...prices) : undefined;
-  })();
+  const bestByVariant = new Map<string, number>();
+  for (const offer of filtered) {
+    const key = offer.comparisonKey;
+    if (!key || !isCurrentComparableOffer(offer) || offerAvailabilityStatus(offer) !== "in_stock") continue;
+    bestByVariant.set(key, Math.min(offer.price, bestByVariant.get(key) ?? Infinity));
+  }
   const models = modelGroups(channelOffers);
   const previousAt = snapshot?.previousPricesAt;
   const cheaperCount = channelOffers.filter((offer) => offer.previousPrice && offer.price < offer.previousPrice).length;
@@ -113,7 +112,8 @@ export function OfferTable() {
   }, []);
   const otherChannel = channel === "marketplace" ? "distributor" : "marketplace";
   const channelNames = { marketplace: "Маркетплейсы", distributor: "Дистрибуторы" } as const;
-  const running = snapshot?.status === "running";
+  const searchError = useSearchStore((state) => state.error);
+  const running = snapshot?.status === "running" && !searchError;
   const failedSources = snapshot?.sources.filter((source) => source.status === "error").length ?? 0;
   const selected = useAnalysisStore((state) => state.analysis?.selectedOfferIds ?? emptySelected);
   const recommended = selected[0];
@@ -175,10 +175,14 @@ export function OfferTable() {
   };
 
   const renderOfferRow = (offer: (typeof rows)[number], allowRecommendation: boolean, others: (typeof rows) = [], nested = false) => {
-    const isBest = allowRecommendation && offer.id === recommended;
+    const eligible = isCurrentComparableOffer(offer) && offerAvailabilityStatus(offer) === "in_stock";
+    const isBest = allowRecommendation && eligible && offer.id === recommended;
+    const minimum = offer.comparisonKey ? bestByVariant.get(offer.comparisonKey) : undefined;
+    const bestPrice = eligible ? minimum : undefined;
     const prices = others.map((other) => other.price);
-    // A folded group is judged by its cheapest listing: the lead row is chosen by rank, not price.
-    const groupPrice = Math.min(offer.price, ...prices);
+    const groupPrice = Math.min(offer.price, ...others
+      .filter((other) => other.comparisonKey === offer.comparisonKey && isCurrentComparableOffer(other) && offerAvailabilityStatus(other) === "in_stock")
+      .map((other) => other.price));
     return (
       <tr
         key={offer.id}
@@ -247,7 +251,7 @@ export function OfferTable() {
               </small>
             ) : null}
             {bestPrice !== undefined && groupPrice === bestPrice && (offer.match === "exact" || offer.match === "probable") && !nested ? (
-              <span className="offer-price-best" title="Самая низкая цена среди подходящих предложений в наличии на этой вкладке">
+              <span className="offer-price-best" title="Самая низкая цена этого варианта среди текущих предложений в наличии">
                 {groupPrice < offer.price ? `лучшая цена в группе: ${money.format(groupPrice)}` : "лучшая цена"}
               </span>
             ) : priceGap(offer.price, bestPrice) !== undefined ? (
@@ -263,14 +267,23 @@ export function OfferTable() {
             ) : null}
           </>
         ), "price")}
-        {cell("availability", <>{offer.availability}</>)}
+        {cell("availability", (
+          <div className="offer-conditions">
+            <span>{offer.availability}</span>
+            <small>{offer.region ? `Регион: ${offer.region}` : "Регион не указан"}</small>
+            <small>Данные от <time dateTime={offer.fetchedAt}>{new Date(offer.fetchedAt).toLocaleString("ru-RU", { dateStyle: "short", timeStyle: "short" })}</time></small>
+            {offer.freshness === "fallback" ? <small>Предыдущий ответ источника</small>
+              : offer.freshness === "cached" ? <small>Из кеша</small>
+              : offer.freshness === "unknown" ? <small>Свежесть не подтверждена</small> : null}
+          </div>
+        ))}
         {cell("conditions", (
           <div className="offer-conditions">
             <span>{offer.delivery ?? "Доставка неизвестна"}</span>
             <small>{offer.warranty ?? "Гарантия не указана"}</small>
           </div>
         ))}
-        {cell("fetched", <>{fetchedTime.format(new Date(offer.fetchedAt))}</>, "mono")}
+        {cell("fetched", <time dateTime={offer.fetchedAt}>{new Date(offer.fetchedAt).toLocaleString("ru-RU", { dateStyle: "short", timeStyle: "short" })}</time>, "mono")}
         <td className="offer-action">
           <CompareCheckbox offerId={offer.id} />
           <button

@@ -70,7 +70,24 @@ export interface Offer {
   /** `price / packQuantity`, rounded; ranking compares it instead of the whole-set price. */
   unitPrice?: number;
   fetchedAt: string;
+  /** How this observation entered the current search, independent of stock verification. */
+  freshness?: "collected" | "cached" | "fallback" | "unknown";
+  /** Region reported by the source. Missing means the region is not known. */
+  region?: string;
+  /** Server-defined identity of offers eligible for comparison with one another. */
+  comparisonKey?: string;
   demo: boolean;
+}
+
+export function hasCurrentOfferData(offer: Pick<Offer, "freshness">): boolean {
+  return offer.freshness === undefined || offer.freshness === "collected";
+}
+
+export function isCurrentComparableOffer(offer: Offer): boolean {
+  return !offer.demo && hasCurrentOfferData(offer)
+    && (offer.match === "exact" || offer.match === "probable")
+    && offer.assessment?.group !== "needs_review" && !offer.priceAnomaly
+    && Number.isFinite(offer.price) && offer.price > 0;
 }
 
 export interface SourceState {

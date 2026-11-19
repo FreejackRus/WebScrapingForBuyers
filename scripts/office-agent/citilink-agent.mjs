@@ -113,7 +113,7 @@ async function searchCitilink(query, limit) {
 function run(query, limit) {
   const key = `${query.toLowerCase()}|${limit}`;
   const hit = cache.get(key);
-  if (hit && Date.now() - hit.at < CACHE_MS) return Promise.resolve(hit.value);
+  if (hit && Date.now() - hit.at < CACHE_MS) return Promise.resolve({ ...hit.value, cached: true });
   const stale = hit && Date.now() - hit.at < STALE_MS ? { ...hit.value, stale: true } : undefined;
   if (Date.now() < blockedUntil) {
     return stale ? Promise.resolve(stale) : Promise.reject(new Error("citilink: пауза после HTTP 429"));

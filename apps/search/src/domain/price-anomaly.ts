@@ -1,4 +1,4 @@
-import type { Offer } from "@peremena/contracts";
+import { hasCurrentOfferData, type Offer } from "@peremena/contracts";
 
 /**
  * Below this share of the median the price is not a deal: a parser slip, a part or
@@ -25,7 +25,7 @@ function median(values: number[]): number {
  * call because the median moves as sources arrive.
  */
 export function flagPriceAnomalies(offers: Offer[]): void {
-  const priced = offers.filter((offer) => !offer.demo && offer.price > 0);
+  const priced = offers.filter((offer) => !offer.demo && hasCurrentOfferData(offer) && offer.price > 0);
   const strong = priced.filter((offer) => offer.match === "exact" || offer.match === "probable");
   const basis = strong.length >= MIN_COMPARABLE ? strong : priced;
   const threshold = basis.length >= MIN_COMPARABLE ? median(basis.map((offer) => offer.price)) * TOO_LOW_SHARE : 0;

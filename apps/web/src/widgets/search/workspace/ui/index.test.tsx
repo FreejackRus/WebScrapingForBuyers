@@ -31,7 +31,7 @@ function offer(demo: boolean, price: number): Offer {
   return {
     id: `${demo}-${price}`, source: "Store", seller: "Seller", title: "Keyboard", price,
     priceCondition: "public", currency: "RUB", availability: "В наличии", condition: "new",
-    match: "exact", url: "https://example.com/product", fetchedAt: "2026-09-24T08:00:00Z", demo,
+    match: "exact", comparisonKey: "K380-920", url: "https://example.com/product", fetchedAt: "2026-09-24T08:00:00Z", demo,
   };
 }
 
@@ -57,14 +57,20 @@ describe("search workspace data states", () => {
   it("does not present non-public rows as the best public price", () => {
     state.snapshot!.offers = [offer(true, 100)];
     const html = renderToStaticMarkup(<SearchWorkspace />);
-    expect(html).toMatch(/Лучшая публичная<\/span><b class="mono">—<\/b>/);
+    expect(html).toMatch(/Минимум в наличии<\/span><b class="mono">—<\/b>/);
     expect(html).not.toMatch(/демо|DEMO|демонстрацион/i);
   });
 
-  it("shows best public price without demo banners", () => {
-    state.snapshot!.offers = [offer(false, 500)];
+  it("shows a comparable current price and ignores a cheaper previous answer", () => {
+    state.snapshot!.offers = [
+      { ...offer(false, 500), comparisonKey: "BOX", freshness: "collected" },
+      { ...offer(false, 100), comparisonKey: "BOX", freshness: "fallback" },
+    ];
     const html = renderToStaticMarkup(<SearchWorkspace />);
-    expect(html).toContain("Минимум среди загруженных");
+    expect(html).toMatch(/Минимум в наличии<\/span><b class="mono">500/);
+    expect(html).toContain("Предыдущий ответ источника");
+    state.snapshot!.offers.push({ ...offer(false, 400), comparisonKey: "OEM" });
+    expect(renderToStaticMarkup(<SearchWorkspace />)).toMatch(/Минимум в наличии<\/span><b class="mono">—<\/b>/);
     expect(html).not.toMatch(/демо|DEMO|демонстрацион|REAL/i);
   });
 
@@ -113,5 +119,5 @@ it("keeps collection progress visible after the first offer and removes it on co
 });
 it("keeps assembled PCs and unconfirmed model variants out of the best price",()=>{
  state.snapshot!.offers=[{...offer(false,100),assessment:{group:"needs_review",reasons:["Готовый ПК"]}},offer(false,500)];
- expect(renderToStaticMarkup(<SearchWorkspace/>)).toMatch(/Лучшая публичная<\/span><b class="mono">500/);
+ expect(renderToStaticMarkup(<SearchWorkspace/>)).toMatch(/Минимум в наличии<\/span><b class="mono">500/);
 });

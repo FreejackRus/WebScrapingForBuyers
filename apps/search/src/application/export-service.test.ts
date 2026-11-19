@@ -15,13 +15,15 @@ describe("exportSearch", () => {
       offers: [
         { id: "1", source: "A", seller: "A", title: "T1", price: 1, priceCondition: "Обычная цена", availability: "В наличии", url: "u", fetchedAt: "t", demo: false, priceAnomaly: "too_low", assessment: { group: "needs_review", reasons: ["Цена требует проверки", "Заявление продавца не является доказательством"] } },
         { id: "2", source: "B", seller: "B", title: "T2", price: 900, priceCondition: "Обычная цена", availability: "В наличии", url: "u", fetchedAt: "t", demo: true, assessment: { group: "match", reasons: ["=SUM(1,1)"] } },
-        { id: "3", source: "C", seller: "C", title: "T3", price: 950, priceCondition: "Обычная цена", availability: "В наличии", url: "u", fetchedAt: "t", demo: false },
+        { id: "3", source: "C", freshness: "fallback", region: "Воронеж", seller: "C", title: "T3", price: 950, priceCondition: "Обычная цена", availability: "В наличии", url: "u", fetchedAt: "t", demo: false },
       ],
     } as unknown as SearchSnapshot;
     const workbook = new ExcelJS.Workbook();
     await workbook.xlsx.load((await exportSearch(snapshot)) as unknown as ArrayBuffer);
     const sheet = workbook.getWorksheet("Предложения")!;
     expect(sheet.rowCount).toBe(4);
+    expect(sheet.getRow(4).getCell(21).value).toBe("Предыдущий ответ источника");
+    expect(sheet.getRow(4).getCell(22).value).toBe("Воронеж");
     expect(sheet.getRow(2).getCell(7).value).toBe("Цена под сомнением");
     expect(sheet.getRow(3).getCell(7).value ?? "").toBe("");
     expect(sheet.getRow(3).getCell(14).value).toBe("Да");
@@ -35,6 +37,6 @@ describe("exportSearch", () => {
     expect(sheet.getRow(3).getCell(16).value).not.toEqual(expect.objectContaining({ formula: expect.anything() }));
     expect(sheet.getRow(4).getCell(15).value ?? "").toBe("");
     expect(sheet.getRow(4).getCell(16).value ?? "").toBe("");
-    expect(sheet.autoFilter).toBe("A1:T1");
+    expect(sheet.autoFilter).toBe("A1:V1");
   });
 });

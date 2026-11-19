@@ -1,11 +1,11 @@
-import { offerAvailabilityStatus, offerChannel, type Offer, type OfferChannel, type WatchChange, type WatchPrice } from "@peremena/contracts";
+import { hasCurrentOfferData, offerAvailabilityStatus, offerChannel, type Offer, type OfferChannel, type WatchChange, type WatchPrice } from "@peremena/contracts";
 
 /** Below this relative move a price is "the same": sources round and jitter by a few roubles. */
 export const CHANGE_THRESHOLD = 0.02;
 
 /** Rows whose price a buyer could act on (same rule as the price history in search). */
 function isGoodRow(offer: Offer): boolean {
-  return !offer.demo && offer.priceAnomaly !== "too_low" && offer.assessment?.group !== "needs_review" && offer.price > 0;
+  return !offer.demo && hasCurrentOfferData(offer) && offer.priceAnomaly !== "too_low" && offer.assessment?.group !== "needs_review" && offer.price > 0;
 }
 
 /**

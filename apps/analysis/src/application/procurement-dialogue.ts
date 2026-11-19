@@ -1,4 +1,4 @@
-import { offerAvailabilityStatus, type AnalysisResult, type AnalyzeRequest, type Offer, type OfferTableFilter, type ProductCondition, type SearchSnapshot } from "@peremena/contracts";
+import { hasCurrentOfferData, offerAvailabilityStatus, type AnalysisResult, type AnalyzeRequest, type Offer, type OfferTableFilter, type ProductCondition, type SearchSnapshot } from "@peremena/contracts";
 import { extractSearchQuery, parseMaxPrice, parseSources, wantsInStock } from "./prompt-intent.js";
 
 type Context = AnalyzeRequest["context"];
@@ -18,7 +18,7 @@ export function filterOffers(offers: Offer[], filter: OfferTableFilter = {}): Of
     .filter(o => !filter.modelKeys?.length || (o.modelKey !== undefined && filter.modelKeys.includes(o.modelKey)))
     .filter(o => !filter.sources?.length || filter.sources.some(s => o.source.toLocaleLowerCase("ru").includes(s.toLocaleLowerCase("ru"))))
     .filter(o => filter.maxPrice === undefined || o.price <= filter.maxPrice)
-    .filter(o => !filter.inStockOnly || offerAvailabilityStatus(o) === "in_stock")
+    .filter(o => !filter.inStockOnly || (hasCurrentOfferData(o) && offerAvailabilityStatus(o) === "in_stock"))
     .filter(o => !filter.conditions?.length || filter.conditions.includes(o.condition ?? "unknown"))
     .filter(o => !filter.packaging || titleHas(o.title,filter.packaging))
     .filter(o => !filter.titleIncludeAny?.length || filter.titleIncludeAny.some(s => titleHas(o.title,s)))
@@ -100,9 +100,11 @@ export function routeProcurementDialogue(snapshot: SearchSnapshot | undefined, p
     const sources = parseSources(text.toLocaleLowerCase("ru"));
     if(sources.length) merged.sources = sources;
     const rows = filterOffers(snapshot.offers,merged).sort((a,b)=>a.price-b.price);
+    const lowestCurrent = rows.find(o=>!previousOffer(o));
+    const priceHint = lowestCurrent ? ` Минимальная цена текущего сбора: ${price(lowestCurrent)}.` : " Цены получены из предыдущего сбора.";
     // Absence of reported stock must not be mistaken for absence of the product.
     if(stock && rows.length === 0) return {...base("В текущих предложениях нет подтверждённого наличия по этим условиям. Неизвестный остаток и товары под заказ не считаются доступными; результаты сохранены."),warnings:collectionWarnings(snapshot)};
-    return {...base(rows.length ? `${merged.packaging ? `Упаковка: ${packagingLabel(merged.packaging)}. ` : ""}Фильтр применён. Подходящих предложений: ${rows.length}. Минимальная цена среди них: ${price(rows[0]!)}.${merged.packaging ? ` ${PACKAGING_NOTE}` : ""}` : `По заданным условиям предложений не найдено.${merged.packaging ? ` Упаковка: ${packagingLabel(merged.packaging)}. ${PACKAGING_NOTE}` : ""}`,"filter"),tableFilter:merged,selectedOfferIds:rows.map(o=>o.id),citations:references(rows),appliedFilters:["Условия применены к текущему товару; прежние ограничения сохранены."],warnings:[...collectionWarnings(snapshot), ...(stock && snapshot.offers.some(o=>offerAvailabilityStatus(o)==="unknown") ? ["Часть источников не сообщает наличие; такие предложения скрыты."] : [])]};
+    return {...base(rows.length ? `${merged.packaging ? `Упаковка: ${packagingLabel(merged.packaging)}. ` : ""}Фильтр применён. Подходящих предложений: ${rows.length}.${priceHint}${merged.packaging ? ` ${PACKAGING_NOTE}` : ""}` : `По заданным условиям предложений не найдено.${merged.packaging ? ` Упаковка: ${packagingLabel(merged.packaging)}. ${PACKAGING_NOTE}` : ""}`,"filter"),tableFilter:merged,selectedOfferIds:rows.map(o=>o.id),citations:references(rows),appliedFilters:["Условия применены к текущему товару; прежние ограничения сохранены."],warnings:[...collectionWarnings(snapshot), ...(stock && snapshot.offers.some(o=>offerAvailabilityStatus(o)==="unknown") ? ["Часть источников не сообщает наличие; такие предложения скрыты."] : [])]};
   }
   if (detailQuestion || why) {
     let rows=filterOffers(snapshot.offers,current).filter(o=>!o.demo);
@@ -112,20 +114,26 @@ export function routeProcurementDialogue(snapshot: SearchSnapshot | undefined, p
     // Same order as the pick itself: re-sorting by price made «почему он?» explain cheaper rows instead.
     rows=rows.sort(selectionOrder).slice(0,5);
     if(!rows.length) return {...base("В текущих результатах нет подходящего предложения для объяснения. Уточните модель или фильтры."),warnings:collectionWarnings(snapshot)};
+    if(why && !detailQuestion && previousOffer(rows[0]!)){
+      return {...base("Это предложение из предыдущего сбора. Обновите поиск, чтобы подтвердить цену и наличие.", "explain"),citations:references([rows[0]!]),warnings:collectionWarnings(snapshot)};
+    }
     if(why && !detailQuestion && singularReference.test(text)){
       const best=rows[0]!;
       const pool=filterOffers(snapshot.offers,current).filter(o=>!o.demo);
       return {...base(explainPick(best,pool),"explain"),selectedOfferIds:[best.id],citations:references([best]),appliedFilters:["Объяснение текущего выбора; фильтры сохранены."],warnings:collectionWarnings(snapshot)};
     }
     const summary=detailQuestion ? rows.map(o=>`${o.title}: гарантия — ${o.warranty?.trim() || "не указана"}. Комплектация в данных предложения не указана; обозначение BOX/OEM не подтверждает содержимое коробки.`).join("\n")
-      : rows.map(o=>`${o.title}: ${price(o)}; наличие по данным источника — ${o.availability}. ${o.assessment?.reasons.join("; ") || "Совпадение по данным карточки"}. Выбор основан на текущих условиях и цене; наличие требует подтверждения перед закупкой.`).join("\n");
+      : rows.map(o=>`${o.title}: ${price(o)}; наличие по данным ${previousOffer(o) ? "предыдущего сбора" : "источника"} — ${o.availability}. ${o.assessment?.reasons.join("; ") || "Совпадение по данным карточки"}. Выбор основан на текущих условиях и цене; наличие требует подтверждения перед закупкой.`).join("\n");
     return {...base(summary,"explain"),selectedOfferIds:rows.map(o=>o.id),citations:references(rows),appliedFilters:["Объяснение текущего выбора; фильтры сохранены."],warnings:collectionWarnings(snapshot)};
   }
   return undefined;
 }
 /** «он», «этот», «именно он» point at one row: the first one in the pick. */
 const singularReference=/почему\s+(?:же\s+)?(?:именно\s+)?(?:он|этот|его|она|эта)(?=$|[^а-яё])|объясни\s+этот/iu;
+function previousOffer(o: Offer): boolean { return !hasCurrentOfferData(o); }
 function selectionOrder(a: Offer, b: Offer): number {
+  const freshness = Number(previousOffer(a)) - Number(previousOffer(b));
+  if (freshness) return freshness;
   return a.procurementRank != null && b.procurementRank != null ? a.procurementRank - b.procurementRank : a.price - b.price;
 }
 function rubles(value: number): string {return `${value.toLocaleString("ru-RU")} ₽`;}
@@ -139,7 +147,7 @@ function explainPick(best: Offer, pool: Offer[]): string {
   const facts=[offerAvailabilityStatus(best)==="in_stock" ? "наличие подтверждено" : `наличие по данным источника — ${best.availability}`];
   if(best.condition==="new") facts.push("новый товар");
   if(best.match==="exact"||best.match==="probable") facts.push("модель совпадает");
-  const cheaper=pool.filter(o=>o.id!==best.id&&o.price<best.price);
+  const cheaper=pool.filter(o=>!previousOffer(o)&&o.id!==best.id&&o.price<best.price);
   let tail="";
   if(cheaper.length){
     const reasons=new Set<string>();

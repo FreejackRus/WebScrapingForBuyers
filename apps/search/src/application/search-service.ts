@@ -1,6 +1,6 @@
 import { randomUUID } from "node:crypto";
 
-import { offerAvailabilityStatus, offerChannel, type Offer, type Product, type SearchEvent, type SearchSnapshot, type SourceState } from "@peremena/contracts";
+import { hasCurrentOfferData, offerAvailabilityStatus, offerChannel, type Offer, type Product, type SearchEvent, type SearchSnapshot, type SourceState } from "@peremena/contracts";
 
 import { isUnrequestedConsumablePart } from "../domain/consumable-parts.js";
 import { isOfferInItScope } from "../domain/it-scope.js";
@@ -115,6 +115,10 @@ export class SearchService {
         id: randomUUID(),
         status: "complete",
         cachedAt: new Date(cached.finishedAt).toISOString(),
+        offers: cached.snapshot.offers.map((offer) => ({
+          ...structuredClone(offer),
+          freshness: offer.freshness === "fallback" ? "fallback" : "cached",
+        })),
       };
       this.searches.set(copy.id, copy);
       // Its own finish time stays the original one, so a copy never extends the cache life.
@@ -249,7 +253,7 @@ export class SearchService {
           }
           const cached = this.lastGoodReal.get(lastGoodKey(source.name, snapshot.product));
           if (cached && cached.length > 0) {
-            const reused = this.matchingQuery(snapshot, structuredClone(cached));
+            const reused = this.matchingQuery(snapshot, cached.map((offer) => ({ ...structuredClone(offer), freshness: "fallback" as const })));
             const ranksBefore = rankState(snapshot.offers);
             snapshot.offers.push(...reused);
             flagPriceAnomalies(snapshot.offers);
@@ -306,7 +310,7 @@ export class SearchService {
     const tried = new Set<string>();
     for (let round = 0; round < 3 && this.now() < deadline; round += 1) {
       const ranked = [...snapshot.offers]
-        .filter((offer) => !offer.demo && offer.priceAnomaly !== "too_low" && offer.assessment?.group !== "needs_review")
+        .filter((offer) => !offer.demo && hasCurrentOfferData(offer) && offer.priceAnomaly !== "too_low" && offer.assessment?.group !== "needs_review")
         .sort((a, b) => (a.procurementRank ?? Infinity) - (b.procurementRank ?? Infinity));
       // The table has a marketplace tab and a distributor tab: the buyer reads the top of each.
       const top = (["marketplace", "distributor"] as const).flatMap((channel) =>
@@ -353,7 +357,7 @@ export class SearchService {
    */
   private matchingQuery(snapshot: SearchSnapshot, offers: Offer[]): Offer[] {
     return offers.flatMap((rawOffer) => {
-      const offer = { ...rawOffer, availabilityStatus: offerAvailabilityStatus(rawOffer) };
+      const offer: Offer = { ...rawOffer, freshness: rawOffer.freshness ?? "collected", availabilityStatus: offerAvailabilityStatus(rawOffer) };
       if (offer.demo) return [withGrouping(snapshot.product, offer)];
       if (isUnrequestedConsumablePart(offer, snapshot.query)) return [];
       const assessed = assessOffer(snapshot.product, offer, snapshot.query);
