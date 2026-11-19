@@ -254,3 +254,13 @@ describe("model named only among compatible devices", () => {
     expect(assessOffer(product, row("Картридж Pantum TL-5120 оригинальный"), query)?.assessment?.group).toBe("match");
   });
 });
+
+it("keeps K380 keyboards and excludes key parts unless requested", () => {
+  const keyboard = product({ name: "Logitech K380", brand: "Logitech", model: "K380", mpn: "K380", category: "Клавиатуры" });
+  const query = "Logitech K380";
+  const accessory = "Замена совершенно новой клавишной колпачок для ключей ножничный зажим петля для Logitech K380 серая";
+  expect(assessOffer(keyboard, offer(accessory), query)).toBeNull();
+  expect(assessOffer(keyboard, offer("Колпачок для клавиатуры Logitech K380"), query)).toBeNull();
+  expect(assessOffer(keyboard, offer("Клавиатура Logitech K380 с запасными колпачками"), query)).not.toBeNull();
+  expect(assessOffer(keyboard, offer(accessory), "колпачок для Logitech K380")).not.toBeNull();
+});
