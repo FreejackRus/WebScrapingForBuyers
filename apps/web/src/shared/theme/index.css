@@ -596,7 +596,7 @@ body.offer-card-open { overflow: hidden; }
   background: var(--brand-soft); color: var(--brand-dark); font-size: 11px; font-weight: 600; white-space: nowrap;
 }
 .offer-verified--confirmed { background: var(--success-soft); color: var(--success); }
-.offer-verified--price_changed, .offer-verified--unavailable, .offer-verified--mismatch { background: var(--warn-soft); color: var(--warn); }
+.offer-verified--partial, .offer-verified--price_changed, .offer-verified--unavailable, .offer-verified--mismatch { background: var(--warn-soft); color: var(--warn); }
 .offer-ai-review { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 8px 0 4px; }
 .offer-ai-review small { color: var(--muted); font-size: 12px; }
 .offer-ai-verdict { display: block; margin-top: 4px; font-size: 12px; font-weight: 600; }

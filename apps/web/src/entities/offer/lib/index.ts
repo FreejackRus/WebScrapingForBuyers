@@ -14,6 +14,7 @@ export const PRICE_ANOMALY_HINT =
 
 /** Short badge for a top row re-checked on its product card. */
 export const verificationLabels: Record<NonNullable<Offer["verification"]>["status"], string> = {
+  partial: "Проверено частично",
   confirmed: "✓ Проверено",
   price_changed: "Цена обновлена",
   unavailable: "Нет в наличии",

@@ -37,11 +37,15 @@ export function applyCardFacts(offer: Offer, facts: CardFacts, product: Product,
     };
   }
   const cardText = [facts.title, facts.specs].filter(Boolean).join(" ");
-  // The card title alone, or with its characteristics, must still pass the query check.
-  const confirmsModel = !facts.title
-    || assessOffer(product, { ...offer, title: facts.title }, query) !== null
-    || assessOffer(product, { ...offer, title: cardText }, query) !== null;
-  if (!confirmsModel) {
+  // Fields from the search tile do not independently identify the product card.
+  const { mpn: _listingMpn, ...listing } = offer;
+  const assessed = [...new Set([facts.title, cardText])].flatMap((title) => {
+    if (!title) return [];
+    const result = assessOffer(product, { ...listing, title }, query);
+    return result ? [result] : [];
+  });
+  const confirmsModel = assessed.some((row) => row.assessment?.group === "match");
+  if (facts.title && assessed.length === 0) {
     const reasons = [...(offer.assessment?.reasons ?? []), "Карточка товара не подтверждает запрошенную модель"];
     return {
       ...offer,
@@ -50,18 +54,40 @@ export function applyCardFacts(offer: Offer, facts: CardFacts, product: Product,
     };
   }
   const basis = facts.priceBasis ? ` ${facts.priceBasis}` : "";
-  if (facts.price && facts.price > 0 && Math.abs(facts.price - offer.price) / offer.price > PRICE_TOLERANCE) {
-    return {
-      ...offer,
+  const price = facts.price !== undefined && Number.isFinite(facts.price) && facts.price > 0
+    ? Math.round(facts.price) : undefined;
+  const checked: Offer = {
+    ...offer,
+    ...(facts.available === true ? {
+      availability: "В наличии (по карточке)",
+      availabilityStatus: "in_stock" as const,
+    } : {}),
+    ...(price !== undefined ? {
+      price,
       ...(facts.priceCondition ? { priceCondition: facts.priceCondition } : {}),
-      price: Math.round(facts.price),
+      ...(offer.packQuantity ? { unitPrice: Math.round(price / offer.packQuantity) } : {}),
+    } : {}),
+  };
+  const unconfirmed = [
+    ...(price === undefined ? ["цена"] : []),
+    ...(facts.available !== true ? ["наличие"] : []),
+    ...(!confirmsModel ? ["модель"] : []),
+  ];
+  if (price !== undefined && Math.abs(price - offer.price) / offer.price > PRICE_TOLERANCE) {
+    const missing = unconfirmed.length ? `. Не подтверждены: ${unconfirmed.join(", ")}` : "";
+    return {
+      ...checked,
       verification: {
         status: "price_changed",
         checkedAt,
         listedPrice: offer.price,
-        note: `Цена на карточке ${money(facts.price)}${basis}; в выдаче была ${money(offer.price)}`,
+        note: `Цена на карточке ${money(price)}${basis}; в выдаче была ${money(offer.price)}${missing}`,
       },
     };
   }
-  return { ...offer, ...(facts.priceCondition && facts.price ? { priceCondition: facts.priceCondition } : {}), verification: { status: "confirmed", checkedAt, note: `Цена и наличие подтверждены на карточке${basis}` } };
+  if (unconfirmed.length) {
+    const note = unconfirmed.map((field) => field === "наличие" ? "наличие не подтверждено" : `${field} не подтверждена`).join(", ");
+    return { ...checked, verification: { status: "partial", checkedAt, note } };
+  }
+  return { ...checked, verification: { status: "confirmed", checkedAt, note: `Цена и наличие подтверждены на карточке${basis}` } };
 }

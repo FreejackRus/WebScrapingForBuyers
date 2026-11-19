@@ -53,12 +53,12 @@ export interface Offer {
   priceAnomaly?: "too_low";
   /**
    * Re-check of a top row on the product card itself, after collection.
-   * confirmed — price, stock and model hold; price_changed — the card asks another price
+   * confirmed — price, stock and model hold; partial — some facts are missing; price_changed — the card asks another price
    * (now in `price`, the listed one in `listedPrice`); unavailable — the card is out of stock;
    * mismatch — the card does not show the requested model.
    */
   verification?: {
-    status: "confirmed" | "price_changed" | "unavailable" | "mismatch";
+    status: "confirmed" | "partial" | "price_changed" | "unavailable" | "mismatch";
     checkedAt: string;
     note: string;
     listedPrice?: number;
