@@ -109,3 +109,14 @@ describe("UserCache", () => {
     expect(cache.get("b")).toBeUndefined();
   });
 });
+
+it("reports dependency readiness separately from gateway liveness", async () => {
+  const ok = await listen((_req, res) => {
+    res.setHeader("content-type", "application/json");
+    res.end(JSON.stringify({ status: "ok" }));
+  });
+  const base = await gateway({ identity: ok, search: "http://127.0.0.1:1" });
+  const ready = await fetch(`${base}/api/v1/ready`);
+  expect(ready.status).toBe(503);
+  expect(await ready.json()).toEqual({ status: "unavailable", services: { identity: "ok", search: "unavailable", analysis: "unavailable" } });
+});

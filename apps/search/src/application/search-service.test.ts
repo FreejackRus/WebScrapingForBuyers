@@ -204,6 +204,8 @@ describe("SearchService offer assessment", () => {
     const cached = service.start("Logitech K380", product);
     await finish(service, cached.id);
     expect(service.get(cached.id)!.offers[0]?.assessment).toEqual(freshAssessment);
+    expect(service.get(cached.id)!.offers[0]?.freshness).toBe("fallback");
+    expect(service.get(cached.id)!.offers[0]?.fetchedAt).toBe(raw.fetchedAt);
   });
 });
 
@@ -348,6 +350,8 @@ describe("SearchService recent-result cache", () => {
     expect(again.status).toBe("complete");
     expect(again.cachedAt).toBe(new Date(1_000_000).toISOString());
     expect(again.offers).toHaveLength(1);
+    expect(again.offers[0]?.freshness).toBe("cached");
+    expect(service.get(first.id)?.offers[0]?.freshness).toBe("collected");
     expect(service.get(again.id)?.cachedAt).toBeDefined();
     expect(calls()).toBe(1);
   });
