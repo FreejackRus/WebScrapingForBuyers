@@ -235,52 +235,71 @@ function selectedFacts(product: Product): string {
   return `${product.name} ${characteristics}`;
 }
 
+export const assessmentRejectionLabels = {
+  identity: "не совпадает модель или артикул",
+  part: "деталь или аксессуар вместо товара",
+  brand: "другой производитель",
+  specification: "другие характеристики или комплект",
+  origin: "не подходит оригинальность",
+  category: "другой тип товара",
+} as const;
+export type AssessmentRejection = keyof typeof assessmentRejectionLabels;
+
 /** Conservatively classifies a row using product facts only; shop/seller names are never manufacturer evidence. */
-export function assessOffer(product: Product, offer: Offer, query: string): Offer | null {
+export function assessOffer(
+  product: Product,
+  offer: Offer,
+  query: string,
+  onReject?: (reason: AssessmentRejection) => void,
+): Offer | null {
+  const reject = (reason: AssessmentRejection) => {
+    onReject?.(reason);
+    return null;
+  };
   // A wildcard search («C13T673*4A») is identified by the pattern alone: every match is an exact article.
   const wildcard = wildcardArticleOf(product);
-  if (wildcard && !matchesWildcardArticle(wildcard, `${offer.title} ${offer.mpn ?? ""}`)) return null;
+  if (wildcard && !matchesWildcardArticle(wildcard, `${offer.title} ${offer.mpn ?? ""}`)) return reject("identity");
   const identity = wildcard ? "article" : matchedIdentity(product, `${offer.title} ${offer.mpn ?? ""}`);
-  if (!identity) return null;
+  if (!identity) return reject("identity");
   // A compatible model can also be copied into the part's article field.
   if (KEYBOARD_PART.test(offer.title) && !KEYBOARD_PART.test(query) && !KEYBOARD_PART.test(product.name)) {
     const partIndex = offer.title.search(KEYBOARD_PART);
     const beforePart = offer.title.slice(0, partIndex);
     const afterPart = offer.title.slice(partIndex);
-    if (!/(?<!\p{L})клавиатура(?!\p{L})|\bkeyboard\b.*\bwith\b/iu.test(beforePart) && /(?:^|\s)(?:для|for)\s/iu.test(afterPart)) return null;
+    if (!/(?<!\p{L})клавиатура(?!\p{L})|\bkeyboard\b.*\bwith\b/iu.test(beforePart) && /(?:^|\s)(?:для|for)\s/iu.test(afterPart)) return reject("part");
   }
   // An exact article is the buyer's own choice of part: «302N494021» is a developer unit by design.
   const forIndex = offer.title.search(/(?:^|\s)для\s/iu);
   const partForDevice = forIndex >= 0 && identityIn(offer.title.slice(forIndex), product.mpn);
-  if (isAccessoryFor(offer.title, query) && identity !== "article") return null;
-  if ((identity !== "article" || partForDevice) && ((DEVICE_PART.test(offer.title) && !DEVICE_PART.test(query)) || isUnrequestedConsumablePart(offer, query))) return null;
+  if (isAccessoryFor(offer.title, query) && identity !== "article") return reject("part");
+  if ((identity !== "article" || partForDevice) && ((DEVICE_PART.test(offer.title) && !DEVICE_PART.test(query)) || isUnrequestedConsumablePart(offer, query))) return reject("part");
 
   // Another maker's product that merely shares the number: «D-Link DEM-CB50/M240» for «Logitech M240».
   const wantedBrand = canonicalBrand(product.brand);
   if (wantedBrand) {
     const named = brandsIn(offer.title);
-    if (named.size > 0 && !named.has(wantedBrand)) return null;
+    if (named.size > 0 && !named.has(wantedBrand)) return reject("brand");
   }
   // Memory generation is not interchangeable: DDR4 modules for a DDR5 request (live 2026-10-12, ranked first).
   const memoryGeneration = (text: string) => new Set([...text.matchAll(/(?<![a-zа-яё])ddr\s?(\d)(?!\d)/giu)].map((match) => match[1]));
   const wantedDdr = memoryGeneration(query);
   if (wantedDdr.size > 0) {
     const offeredDdr = memoryGeneration(`${offer.title} ${offer.mpn ?? ""}`);
-    if ([...offeredDdr].some((generation) => !wantedDdr.has(generation))) return null;
+    if ([...offeredDdr].some((generation) => !wantedDdr.has(generation))) return reject("specification");
   }
   // Some product types are named by every real listing; a number match alone is a different product
   // («картридж 5120» ← «электромагнитный клапан SY5120»).
   for (const [asked, named] of TYPE_NAMED) {
-    if (asked.test(query) && !named.test(offer.title)) return null;
+    if (asked.test(query) && !named.test(offer.title)) return reject("category");
   }
   // A drum unit is not the cartridge the buyer asked for.
   const head = offer.title.split(/\s+/).slice(0, 3).join(" ");
-  if (DRUM_UNIT.test(head) && !DRUM_UNIT.test(query)) return null;
+  if (DRUM_UNIT.test(head) && !DRUM_UNIT.test(query)) return reject("part");
 
   // «Кабель HDMI» is not an HDMI–DVI adapter: every interface in the title must be one the buyer named.
   if (product.category === "Кабели и адаптеры") {
     const asked = interfaces(query);
-    if (asked.size > 0 && [...interfaces(offer.title)].some((name) => !asked.has(name))) return null;
+    if (asked.size > 0 && [...interfaces(offer.title)].some((name) => !asked.has(name))) return reject("specification");
   }
 
   const reasons = [identity === "article" ? "Артикул совпадает" : "Модель совпадает"];
@@ -304,7 +323,7 @@ export function assessOffer(product: Product, offer: Offer, query: string): Offe
   }
   const wantedOrigin = requestedOrigin(query);
   const offeredOrigin = prefixedArticle(product, offer.title) ? "compatible" : originInTitle(offer.title);
-  if (wantedOrigin && offeredOrigin !== "unknown" && wantedOrigin !== offeredOrigin) return null;
+  if (wantedOrigin && offeredOrigin !== "unknown" && wantedOrigin !== offeredOrigin) return reject("origin");
   if (wantedOrigin === "original") {
     if (offeredOrigin === "original") {
       reasons.push("Продавец указывает оригинальность; подлинность не проверена");
@@ -321,7 +340,7 @@ export function assessOffer(product: Product, offer: Offer, query: string): Offe
   if (analog) reasons.push("Совместимый товар стороннего производителя");
 
   const conditions = assessConditions(query, selectedFacts(product), offer.title, reasons);
-  if (conditions === "reject") return null;
+  if (conditions === "reject") return reject("specification");
   if (conditions === "review") group = "needs_review";
   return { ...offer, ...(analog ? { match: "analog" as const } : {}), assessment: { group, reasons } };
 }

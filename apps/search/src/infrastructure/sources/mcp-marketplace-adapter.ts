@@ -11,6 +11,10 @@ import {
   productIdentityTokens,
   tokensIn,
 } from "../../domain/marketplace-relevance.js";
+import { isUnrequestedConsumablePart } from "../../domain/consumable-parts.js";
+import { isOfferInItScope } from "../../domain/it-scope.js";
+import { assessOffer } from "../../domain/offer-assessment.js";
+import { wildcardArticleOf } from "../../domain/wildcard-article.js";
 import { OFFERS_PER_SOURCE, type SourceAdapter, withRawFound } from "../../domain/source-adapter.js";
 import { assertWbCatalogAllowed, noteWbRateLimited, presentWbRateLimited } from "./wb-rate-limit.js";
 
@@ -323,6 +327,13 @@ export class MarketplaceMcpClient implements MarketplaceToolCaller {
   }
 }
 
+const ARTICLE_RETRY_TIMEOUT_MS = 20_000;
+
+type RetryOptions = {
+  signal: AbortSignal;
+  rankOffers: (left: Offer, right: Offer) => number;
+};
+
 export class McpMarketplaceAdapter implements SourceAdapter {
   readonly name: string;
 
@@ -333,9 +344,44 @@ export class McpMarketplaceAdapter implements SourceAdapter {
     this.name = source.name;
   }
 
-  async search(product: Product): Promise<Offer[]> {
+  async search(product: Product, signal?: AbortSignal, query = product.name): Promise<Offer[]> {
     const leftover: JsonObject[] = [];
-    const offers = await this.collect(product, leftover);
+    const attempted = new Set<string>();
+    let offers = await this.collect(product, leftover, attempted);
+    const article = product.mpn.trim();
+    const retryEligible = (this.source.kind === "ozon" || this.source.kind === "aliexpress")
+      && !signal?.aborted && !wildcardArticleOf(product)
+      && /^[A-Z0-9][A-Z0-9-]{4,39}$/iu.test(article) && /[A-Z]/iu.test(article) && /[0-9]/u.test(article)
+      && !attempted.has(article.toLocaleLowerCase("ru"));
+    if (retryEligible) {
+      const isExactMatch = (offer: Offer) => {
+        if (offer.match !== "exact" || !isOfferInItScope(product, offer) || isUnrequestedConsumablePart(offer, query)) return false;
+        const assessed = assessOffer(product, offer, query);
+        return assessed?.assessment?.group === "match" && assessed.match === "exact";
+      };
+      if (!offers.some(isExactMatch)) {
+        const matches = new Map<Offer, boolean>();
+        const priority = (offer: Offer) => {
+          if (!matches.has(offer)) matches.set(offer, isExactMatch(offer));
+          return Number(matches.get(offer));
+        };
+        const rankOffers = (left: Offer, right: Offer) => priority(right) - priority(left) || preferRelevantOffers(left, right);
+        const retryItems: JsonObject[] = [];
+        const retryTimeout = AbortSignal.timeout(ARTICLE_RETRY_TIMEOUT_MS);
+        const retrySignal = signal ? AbortSignal.any([signal, retryTimeout]) : retryTimeout;
+        try {
+          const additional = await this.retryArticle(article, product, retryItems, { signal: retrySignal, rankOffers });
+          leftover.push(...retryItems);
+          offers = mergeUniqueOffers(offers, additional).sort(rankOffers).slice(0, OFFERS_PER_SOURCE);
+          console.info(JSON.stringify({ msg: "marketplace_article_retry", source: this.source.kind, returned: additional.length }));
+        } catch (error) {
+          console.info(JSON.stringify({ msg: "marketplace_article_retry", source: this.source.kind, status: "failed" }));
+          if (!offers.length && !leftover.length) {
+            throw new Error(presentMarketplaceError(this.source.kind, error instanceof Error ? error.message : String(error)));
+          }
+        }
+      }
+    }
     const seen = new Set(leftover.map((item) => String(item.id ?? item.url ?? item.link ?? JSON.stringify(item))));
     if (offers.length === 0 && seen.size > 0 && this.source.kind !== "citilink") {
       // The shop answered; none of its rows is the requested model.
@@ -344,7 +390,22 @@ export class McpMarketplaceAdapter implements SourceAdapter {
     return withRawFound(offers, seen.size);
   }
 
-  private async collect(product: Product, leftover: JsonObject[]): Promise<Offer[]> {
+  private async retryArticle(article: string, product: Product, items: JsonObject[], options: RetryOptions): Promise<Offer[]> {
+    const { signal } = options;
+    signal.throwIfAborted();
+    let onAbort: () => void = () => undefined;
+    const deadline = new Promise<never>((_resolve, reject) => {
+      onAbort = () => reject(new Error("Повторный поиск по артикулу не ответил вовремя."));
+      signal.addEventListener("abort", onAbort, { once: true });
+    });
+    try {
+      return await Promise.race([this.fetchMappedOffers(article, product, items, () => undefined, 1, options), deadline]);
+    } finally {
+      signal.removeEventListener("abort", onAbort);
+    }
+  }
+
+  private async collect(product: Product, leftover: JsonObject[], attempted: Set<string>): Promise<Offer[]> {
     try {
       if (this.source.kind === "wb") assertWbCatalogAllowed();
       const queries = marketplaceSearchQueries(product, this.source.kind);
@@ -358,6 +419,7 @@ export class McpMarketplaceAdapter implements SourceAdapter {
       let avitoPowRetried = false;
       for (let index = 0; index < limit; index += 1) {
         const query = queries[index]!;
+        attempted.add(query.toLocaleLowerCase("ru"));
         try {
           const before = leftover.length;
           const offers = await this.fetchMappedOffers(query, product, leftover, (count) => {
@@ -436,11 +498,13 @@ export class McpMarketplaceAdapter implements SourceAdapter {
     leftover: JsonObject[],
     noteItems: (count: number) => void,
     page = 1,
+    retry?: RetryOptions,
   ): Promise<Offer[]> {
     const payload = await this.client.callTool(
       this.source.tool,
       marketplaceToolArguments(this.source.kind, query, { page, product }),
     );
+    retry?.signal.throwIfAborted();
     const blocked = marketplacePayloadBlockReason(payload);
     if (blocked) throw new Error(blocked);
     const items = marketplacePayloadItems(payload);
@@ -450,16 +514,16 @@ export class McpMarketplaceAdapter implements SourceAdapter {
     }
     leftover.push(...items);
     noteItems(items.length);
-    const offers = mergeUniqueOffers([], this.mapItems(items, product));
+    const offers = mergeUniqueOffers([], this.mapItems(items, product, retry?.rankOffers));
     this.logMap(query, items, offers);
     return offers;
   }
 
-  private mapItems(items: JsonObject[], product: Product): Offer[] {
+  private mapItems(items: JsonObject[], product: Product, rankOffers = preferRelevantOffers): Offer[] {
     return items
       .map((item, index) => this.toOffer(item, product, index))
       .filter((offer): offer is Offer => offer !== undefined)
-      .sort(preferRelevantOffers)
+      .sort(rankOffers)
       .slice(0, OFFERS_PER_SOURCE);
   }
 

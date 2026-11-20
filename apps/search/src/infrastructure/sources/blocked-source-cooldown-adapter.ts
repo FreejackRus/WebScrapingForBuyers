@@ -19,7 +19,7 @@ export class BlockedSourceCooldownAdapter implements SourceAdapter {
     this.name = source.name;
   }
 
-  async search(product: Product, signal?: AbortSignal): Promise<Offer[]> {
+  async search(product: Product, signal?: AbortSignal, query?: string): Promise<Offer[]> {
     const currentTime = this.now();
     if (currentTime < this.blockedUntil) {
       throw new Error(`${this.name}: источник временно недоступен; автоматическая проверка при следующем поиске.`);
@@ -32,7 +32,7 @@ export class BlockedSourceCooldownAdapter implements SourceAdapter {
     if (recoveryProbe) this.recoveryProbeInFlight = true;
 
     try {
-      const offers = await this.source.search(product, signal);
+      const offers = await this.source.search(product, signal, query);
       this.blockedUntil = 0;
       return offers;
     } catch (error) {

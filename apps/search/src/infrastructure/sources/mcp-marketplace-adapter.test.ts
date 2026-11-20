@@ -1394,6 +1394,41 @@ describe("plain article retry", () => {
     expect(empty.mock.calls.some(([, args]) => args.query === target.mpn)).toBe(false);
   });
 
+  it("retries when the first match does not establish the originality requested in the query", async () => {
+    const original = { ...card, id: "kyocera-original", title: `Оригинальный ${card.title}` };
+    const callTool = vi.fn<MarketplaceToolCaller["callTool"]>(async (_tool, args) => ({
+      items: [args.query === target.mpn ? original : card],
+    }));
+    const rows = await ali(callTool).search(target, undefined, `оригинальный ${target.name}`);
+    expect(rows.some((row) => row.title === original.title)).toBe(true);
+    expect(callTool.mock.calls.filter(([, args]) => args.query === target.mpn)).toHaveLength(1);
+  });
+
+  it("keeps an original card found by the retry even when the first page fills the limit", async () => {
+    const original = { ...card, id: "kyocera-original", title: `Оригинальный ${card.title}` };
+    const unverified = Array.from({ length: 30 }, (_, index) => ({
+      ...card, id: `initial-${index}`, url: `https://aliexpress.ru/item/${index}.html`,
+    }));
+    const callTool = vi.fn<MarketplaceToolCaller["callTool"]>(async (_tool, args) => ({
+      items: args.query === target.mpn ? [...unverified, original] : unverified,
+    }));
+    const rows = await ali(callTool).search(target, undefined, `оригинальный ${target.name}`);
+    expect(rows).toHaveLength(30);
+    expect(rows[0]?.title).toBe(original.title);
+  });
+
+  it("keeps initial cards when the collection deadline cancels the added attempt", async () => {
+    const controller = new AbortController();
+    const callTool = vi.fn<MarketplaceToolCaller["callTool"]>(async (_tool, args) => {
+      if (args.query !== target.mpn) return { items: [card] };
+      setTimeout(() => controller.abort(), 0);
+      // The runtime call may ignore cancellation; don't wait for its resolution.
+      return new Promise(() => undefined);
+    });
+    const rows = await ali(callTool).search(target, controller.signal, `оригинальный ${target.name}`);
+    expect(rows.map((row) => row.title)).toEqual([card.title]);
+  }, 500);
+
   it("does not turn a transport error into another request", async () => {
     const blocked = vi.fn<MarketplaceToolCaller["callTool"]>(async () => { throw new Error("HTTP 429"); });
     await expect(ali(blocked).search(target)).rejects.toThrow();

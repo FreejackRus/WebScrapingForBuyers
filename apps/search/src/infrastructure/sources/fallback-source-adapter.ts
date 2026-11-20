@@ -26,11 +26,11 @@ export class FallbackSourceAdapter implements SourceAdapter {
     private readonly adapters: SourceAdapter[],
   ) {}
 
-  async search(product: Product, signal?: AbortSignal): Promise<Offer[]> {
+  async search(product: Product, signal?: AbortSignal, query?: string): Promise<Offer[]> {
     const errors: string[] = [];
     for (const adapter of this.adapters) {
       try {
-        const offers = await adapter.search(product, signal);
+        const offers = await adapter.search(product, signal, query);
         if (offers.length > 0) return offers;
         // Live empty MCP is not a second catalog hit. After a stale
         // search-goods miss we already threw, so this path is live-empty.

@@ -4,7 +4,7 @@ import { hasCurrentOfferData, offerAvailabilityStatus, offerChannel, type Offer,
 
 import { isUnrequestedConsumablePart } from "../domain/consumable-parts.js";
 import { isOfferInItScope } from "../domain/it-scope.js";
-import { assessOffer } from "../domain/offer-assessment.js";
+import { assessOffer, assessmentRejectionLabels, type AssessmentRejection } from "../domain/offer-assessment.js";
 import { withGrouping } from "../domain/offer-grouping.js";
 import { withCatalogArticles } from "../domain/catalog-article.js";
 import { applyCardFacts, type CardVerifier } from "../domain/offer-verification.js";
@@ -203,13 +203,27 @@ export class SearchService {
         this.updateSource(snapshot, source.name, { source: source.name, status: "loading" });
         try {
           const found = await withDeadline(
-            source.search(snapshot.product, AbortSignal.timeout(this.sourceTimeoutMs)),
+            source.search(snapshot.product, AbortSignal.timeout(this.sourceTimeoutMs), snapshot.query),
             this.sourceTimeoutMs,
             source.name,
           );
           // Demo rows are labelled fixtures; real rows must positively look like equipment.
           const inScope = found.filter((offer) => offer.demo || isOfferInItScope(snapshot.product, offer));
-          const offers = this.matchingQuery(snapshot, inScope);
+          const rejected: Partial<Record<AssessmentRejection, number>> = {};
+          const offers = this.matchingQuery(snapshot, inScope, (reason) => {
+            rejected[reason] = (rejected[reason] ?? 0) + 1;
+          });
+          const rawFound = rawFoundOf(found);
+          const needsReview = offers.filter((offer) => offer.assessment?.group === "needs_review").length;
+          const diagnosis = [
+            ...(rawFound > found.length ? [`Подготовка карточек: ${rawFound - found.length}`] : []),
+            ...(found.length > inScope.length ? [`Вне IT-каталога: ${found.length - inScope.length}`] : []),
+            ...Object.entries(assessmentRejectionLabels).flatMap(([reason, label]) => {
+              const count = rejected[reason as AssessmentRejection];
+              return count ? [`${label}: ${count}`] : [];
+            }),
+            ...(needsReview ? [`Требуют уточнения: ${needsReview}`] : []),
+          ];
           const ranksBefore = rankState(snapshot.offers);
           snapshot.offers.push(...offers);
           flagPriceAnomalies(snapshot.offers);
@@ -229,6 +243,7 @@ export class SearchService {
               offers: offers.length,
               droppedByItScope: found.length - inScope.length,
               droppedByQueryIntent: inScope.length - offers.length,
+              rejected,
             }),
           );
           this.emit(id, { type: "offers", data: structuredClone(offers) });
@@ -237,9 +252,10 @@ export class SearchService {
           this.updateSource(snapshot, source.name, {
             source: source.name,
             status: "done",
-            outcome: offers.length > 0 ? "offers" : rawFoundOf(found) > 0 ? "filtered_out" : "nothing_found",
-            found: rawFoundOf(found),
+            outcome: offers.length > 0 ? "offers" : rawFound > 0 ? "filtered_out" : "nothing_found",
+            found: rawFound,
             kept: offers.length,
+            ...(diagnosis.length ? { message: `${diagnosis.join(" · ")}.` } : {}),
           });
         } catch (error) {
           const message = error instanceof Error ? error.message : "Неизвестная ошибка";
@@ -247,7 +263,7 @@ export class SearchService {
           const filtered = message.match(/\((\d+) отсеяны\)/u);
           if (filtered) {
             this.updateSource(snapshot, source.name, {
-              source: source.name, status: "done", outcome: "filtered_out", found: Number(filtered[1]), kept: 0, message,
+              source: source.name, status: "done", outcome: "filtered_out", found: Number(filtered[1]), kept: 0, message: `Подготовка карточек: ${Number(filtered[1])}.`,
             });
             return;
           }
@@ -355,12 +371,15 @@ export class SearchService {
    * What the typed query says beyond the product itself: «оригинальный» /
    * «совместимый», and no cartridge chips/toner unless asked for.
    */
-  private matchingQuery(snapshot: SearchSnapshot, offers: Offer[]): Offer[] {
+  private matchingQuery(snapshot: SearchSnapshot, offers: Offer[], onReject?: (reason: AssessmentRejection) => void): Offer[] {
     return offers.flatMap((rawOffer) => {
       const offer: Offer = { ...rawOffer, freshness: rawOffer.freshness ?? "collected", availabilityStatus: offerAvailabilityStatus(rawOffer) };
       if (offer.demo) return [withGrouping(snapshot.product, offer)];
-      if (isUnrequestedConsumablePart(offer, snapshot.query)) return [];
-      const assessed = assessOffer(snapshot.product, offer, snapshot.query);
+      if (isUnrequestedConsumablePart(offer, snapshot.query)) {
+        onReject?.("part");
+        return [];
+      }
+      const assessed = assessOffer(snapshot.product, offer, snapshot.query, onReject);
       return assessed ? [withGrouping(snapshot.product, assessed)] : [];
     });
   }
