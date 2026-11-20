@@ -1367,3 +1367,36 @@ it("preserves DNS store-specific availability instead of guessing from missing f
   const offers = await adapter.search(product);
   expect(offers[0]?.availability).toBe("В магазинах: нет. Под заказ: 15 октября");
 });
+
+describe("plain article retry", () => {
+  const target: Product = { ...product, brand: "Kyocera", model: "302N494021",
+    mpn: "302N494021", name: "Блок проявки Kyocera 302N494021", category: "Картриджи" };
+  const card = { title: "Блок проявки Kyocera 302N494021", price_rub: 12990, id: "kyocera-1" };
+  function ali(callTool: MarketplaceToolCaller["callTool"]) {
+    return new McpMarketplaceAdapter({ callTool }, { name: "AliExpress", kind: "aliexpress", tool: "aliexpress_search", host: "aliexpress.ru" });
+  }
+
+  it("tries the plain article once when the original formulations have no matching card", async () => {
+    const callTool = vi.fn<MarketplaceToolCaller["callTool"]>(async (_tool, args) => ({
+      items: args.query === target.mpn ? [card] : [],
+    }));
+    const rows = await ali(callTool).search(target);
+    expect(rows.map(row => row.title)).toEqual([card.title]);
+    expect(callTool.mock.calls.filter(([, args]) => args.query === target.mpn)).toHaveLength(1);
+  });
+
+  it("does not retry a successful exact match or an article wildcard", async () => {
+    const exact = vi.fn<MarketplaceToolCaller["callTool"]>(async () => ({ items: [card] }));
+    await ali(exact).search(target);
+    expect(exact).toHaveBeenCalledTimes(1);
+    const empty = vi.fn<MarketplaceToolCaller["callTool"]>(async () => ({ items: [] }));
+    await ali(empty).search({ ...target, characteristics: { "шаблон артикула": "302N49?021" } });
+    expect(empty.mock.calls.some(([, args]) => args.query === target.mpn)).toBe(false);
+  });
+
+  it("does not turn a transport error into another request", async () => {
+    const blocked = vi.fn<MarketplaceToolCaller["callTool"]>(async () => { throw new Error("HTTP 429"); });
+    await expect(ali(blocked).search(target)).rejects.toThrow();
+    expect(blocked).toHaveBeenCalledTimes(1);
+  });
+});

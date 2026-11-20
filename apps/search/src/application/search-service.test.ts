@@ -414,6 +414,6 @@ describe("SearchService raw counts", () => {
     const service = new SearchService([source("Ozon", async () => withRawFound([offer("Ozon")], 12))]);
     const started = service.start("q", product);
     await finish(service, started.id);
-    expect(service.get(started.id)!.sources[0]).toMatchObject({ outcome: "offers", found: 12, kept: 1 });
+    expect(service.get(started.id)!.sources[0]).toMatchObject({ outcome: "offers", found: 12, kept: 1, message: "Подготовка карточек: 11." });
   });
 });
