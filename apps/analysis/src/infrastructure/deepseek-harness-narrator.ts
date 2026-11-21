@@ -95,7 +95,8 @@ export async function runProcurementHarness(
     if (error instanceof NarrationError) throw error;
     throw new NarrationError("unavailable");
   } finally {
-    await ctx.fiber.dispose();
+    try { await ctx.fiber.dispose(); }
+    catch { throw new NarrationError("unavailable"); }
   }
 }
 
