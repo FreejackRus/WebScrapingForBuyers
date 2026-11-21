@@ -1,18 +1,20 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "code"
-community: "PageLike"
-location: "L81"
+community: "_RawCdpPage"
+location: "L687"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/PageLike
+  - community/_RawCdpPage
 ---
 
 # .evaluate()
 
 ## Connections
-- [[Any_26]] - `references` [EXTRACTED]
-- [[PageLike]] - `method` [EXTRACTED]
+- [[dot-_send()]] - `calls` [EXTRACTED]
+- [[Any_22]] - `references` [EXTRACTED]
+- [[_RawCdpPage]] - `method` [EXTRACTED]
+- [[_evaluate_expression()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/PageLike
+#graphify/code #graphify/EXTRACTED #community/_RawCdpPage

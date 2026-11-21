@@ -17,7 +17,7 @@ tags:
 - [[Invocation Variants]] - `contains` [EXTRACTED]
 - [[Operating Posture_1]] - `contains` [EXTRACTED]
 - [[Tone_1]] - `contains` [EXTRACTED]
-- [[Workflow]] - `contains` [EXTRACTED]
+- [[Workflow_2]] - `contains` [EXTRACTED]
 - [[prototypeSKILL]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/Prototyping_Variants

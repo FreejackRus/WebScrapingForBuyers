@@ -2,7 +2,7 @@
 source_file: "apps/search/src/http/routes.ts"
 type: "code"
 community: "product-from-query.ts"
-location: "L10"
+location: "L16"
 tags:
   - graphify/code
   - graphify/EXTRACTED

@@ -12,8 +12,8 @@ tags:
 # StorefrontDistributorAdapter
 
 ## Connections
-- [[dot-constructor()_5]] - `method` [EXTRACTED]
-- [[dot-search()_6]] - `method` [EXTRACTED]
+- [[dot-constructor()_3]] - `method` [EXTRACTED]
+- [[dot-search()]] - `method` [EXTRACTED]
 - [[SourceAdapter]] - `implements` [EXTRACTED]
 - [[b2b-distributor-adapter.ts]] - `imports` [EXTRACTED]
 - [[createDistributorSourcesFromEnv()]] - `calls` [EXTRACTED]

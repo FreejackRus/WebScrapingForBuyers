@@ -1,12 +1,12 @@
 ---
 source_file: "apps/identity/src/auth.test.ts"
 type: "code"
-community: "identity/src/app.ts"
+community: "LoginLimiter"
 location: "L42"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/identity/src/appts
+  - community/LoginLimiter
 ---
 
 # attempt()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[auth.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/identity/src/appts
+#graphify/code #graphify/EXTRACTED #community/LoginLimiter

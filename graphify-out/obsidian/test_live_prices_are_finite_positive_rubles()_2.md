@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_parser_live.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_parser_live.py"
 type: "code"
-community: "pathlib"
-location: "L61"
+community: "detmir-connector/tests/test_parser_live.py"
+location: "L52"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/detmir-connector/tests/test_parser_livepy
 ---
 
 # test_live_prices_are_finite_positive_rubles()
 
 ## Connections
-- [[The doctrine pinned by the audit waves, checked against live bytes.]] - `rationale_for` [EXTRACTED]
-- [[_payload()]] - `calls` [EXTRACTED]
-- [[megamarket-connectorteststest_parser_live.py]] - `contains` [EXTRACTED]
+- [[The doctrine pinned by the audit waves, checked against live bytes a Detsky…]] - `rationale_for` [EXTRACTED]
+- [[_load()_2]] - `calls` [EXTRACTED]
+- [[detmir-connectorteststest_parser_live.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pathlib
+#graphify/code #graphify/EXTRACTED #community/detmir-connector/tests/test_parser_livepy

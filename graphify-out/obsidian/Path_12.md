@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "taobao-connector/tests/test_shape_reference.py"
+community: "test_stdio_probe.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/taobao-connector/tests/test_shape_referencepy
+  - community/test_stdio_probepy
 ---
 
 # Path
 
 ## Connections
-- [[_extract()_10]] - `references` [EXTRACTED]
+- [[test_cleanup_stops_wrapper_and_its_child()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/taobao-connector/tests/test_shape_referencepy
+#graphify/code #graphify/EXTRACTED #community/test_stdio_probepy

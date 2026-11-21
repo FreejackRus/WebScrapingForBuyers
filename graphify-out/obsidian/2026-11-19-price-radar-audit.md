@@ -1,0 +1,18 @@
+---
+source_file: "docs/research/2026-11-19-price-radar-audit.md"
+type: "document"
+community: "Контекст проекта ПЕРЕМЕНА Price Radar"
+location: "L1"
+tags:
+  - graphify/document
+  - graphify/EXTRACTED
+  - community/Контекст_проекта_ПЕРЕМЕНА_Price_Radar
+---
+
+# 2026-11-19-price-radar-audit.md
+
+## Connections
+- [[PROJECT_CONTEXT]] - `references` [EXTRACTED]
+- [[Аудит Price Radar на 19 ноября 2026 года]] - `contains` [EXTRACTED]
+
+#graphify/document #graphify/EXTRACTED #community/Контекст_проекта_ПЕРЕМЕНА_Price_Radar

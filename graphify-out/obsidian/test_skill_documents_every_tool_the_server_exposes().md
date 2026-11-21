@@ -15,7 +15,7 @@ tags:
 - [[A tool the skill never mentions is a tool the agent will not reach for.]] - `rationale_for` [EXTRACTED]
 - [[_skill_dir()]] - `calls` [EXTRACTED]
 - [[_tool_names_in_source()]] - `calls` [EXTRACTED]
-- [[parametrize_11]] - `references` [EXTRACTED]
+- [[parametrize_3]] - `references` [EXTRACTED]
 - [[test_skills_parity.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_skill_dir

@@ -12,8 +12,8 @@ tags:
 # test_category_passes_region_from_settings()
 
 ## Connections
-- [[capture()_9]] - `contains` [EXTRACTED]
-- [[capture()_8]] - `indirect_call` [INFERRED]
+- [[capture()_10]] - `contains` [EXTRACTED]
+- [[capture()_9]] - `indirect_call` [INFERRED]
 - [[detmir-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/capture

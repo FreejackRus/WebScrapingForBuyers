@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_handoff_liveness_consistency.py"
 type: "code"
-community: "pytest"
+community: "transport/__init__.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pytest
+  - community/transport/__init__py
 ---
 
 # test_handoff_liveness_consistency.py
@@ -16,7 +16,7 @@ tags:
 - [[_call()]] - `contains` [EXTRACTED]
 - [[asyncio]] - `imports` [EXTRACTED]
 - [[blocked()]] - `contains` [EXTRACTED]
-- [[browser()]] - `contains` [EXTRACTED]
+- [[browser()_3]] - `contains` [EXTRACTED]
 - [[contextlib]] - `imports_from` [EXTRACTED]
 - [[pytest]] - `imports` [EXTRACTED]
 - [[test_a_live_lease_is_still_handed_out()]] - `contains` [EXTRACTED]
@@ -25,4 +25,4 @@ tags:
 - [[types_8]] - `imports_from` [EXTRACTED]
 - [[unittest_mock]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pytest
+#graphify/code #graphify/EXTRACTED #community/transport/__init__py

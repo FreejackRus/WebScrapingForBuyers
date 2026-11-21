@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/taobao-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/dns-connector/SKILL.md"
 type: "document"
-community: "Taobao Connector"
-location: "L14"
+community: "dns_selfcheck"
+location: "L13"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Taobao_Connector
+  - community/dns_selfcheck
 ---
 
 # When to use
 
 ## Connections
-- [[Taobao Connector_1]] - `contains` [EXTRACTED]
+- [[DNS-Shop Connector]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Taobao_Connector
+#graphify/document #graphify/EXTRACTED #community/dns_selfcheck

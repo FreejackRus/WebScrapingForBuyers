@@ -12,14 +12,13 @@ tags:
 # detmir_card()
 
 ## Connections
-- [[Added_17]] - `references` [INFERRED]
-- [[Context_11]] - `references` [EXTRACTED]
+- [[Added_11]] - `references` [INFERRED]
 - [[DetmirCardResponse]] - `uses` [INFERRED]
 - [[Detsky Mir — open JSON API, refused by address]] - `references` [INFERRED]
 - [[Fetch price, rating, stock and seller for one Detsky Mir product. Covers the…]] - `rationale_for` [EXTRACTED]
-- [[Field_10]] - `references` [EXTRACTED]
-- [[Fixed_15]] - `references` [INFERRED]
-- [[MetaOut_7]] - `uses` [INFERRED]
+- [[Field_4]] - `references` [EXTRACTED]
+- [[Fixed_19]] - `references` [INFERRED]
+- [[MetaOut_4]] - `uses` [INFERRED]
 - [[NotFoundError]] - `uses` [INFERRED]
 - [[ParserDriftError]] - `uses` [INFERRED]
 - [[TransportDownError]] - `uses` [INFERRED]
@@ -28,14 +27,14 @@ tags:
 - [[_parse_product()]] - `calls` [EXTRACTED]
 - [[_product_node()]] - `calls` [EXTRACTED]
 - [[_resolve_region()]] - `calls` [EXTRACTED]
-- [[default_3]] - `references` [EXTRACTED]
-- [[description_12]] - `references` [EXTRACTED]
+- [[default_2]] - `references` [EXTRACTED]
+- [[description_5]] - `references` [EXTRACTED]
 - [[detmir_connectorserver.py]] - `contains` [EXTRACTED]
 - [[detmir_selfcheck()]] - `calls` [EXTRACTED]
 - [[gt_1]] - `references` [EXTRACTED]
 - [[log_event()]] - `calls` [EXTRACTED]
-- [[max_length_9]] - `references` [EXTRACTED]
+- [[max_length_3]] - `references` [EXTRACTED]
 - [[raise_tool_error()]] - `calls` [EXTRACTED]
-- [[tool_11]] - `references` [EXTRACTED]
+- [[tool_4]] - `references` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/detmir_categories

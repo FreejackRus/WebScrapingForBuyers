@@ -17,6 +17,6 @@ tags:
 - [[blocked_then_ok()]] - `contains` [EXTRACTED]
 - [[failing_cdp()]] - `contains` [EXTRACTED]
 - [[ozon-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[scenario()_83]] - `contains` [EXTRACTED]
+- [[scenario()_81]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_fetch_composer_does_not_cache_a_block

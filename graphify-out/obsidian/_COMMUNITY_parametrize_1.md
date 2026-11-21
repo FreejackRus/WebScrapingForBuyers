@@ -1,23 +1,28 @@
 ---
 type: community
-cohesion: 0.25
-members: 8
+cohesion: 0.19
+members: 13
 ---
 
 # parametrize
 
-**Cohesion:** 0.25 - loosely connected
-**Members:** 8 nodes
+**Cohesion:** 0.19 - loosely connected
+**Members:** 13 nodes
 
 ## Members
-- [[A host with a scheme, port, credentials or path must never reach the dialer.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py
-- [[A typo'd port must not become a connection attempt to port 0 or 99999.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py
-- [[parametrize_15]] - code
-- [[test_a_malformed_host_falls_back_to_loopback()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py
-- [[test_a_nonsense_port_falls_back_to_the_default()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py
-- [[test_loopback_hosts_are_recognised()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py
-- [[test_setup_hint_names_the_shell_script_elsewhere()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py
-- [[test_the_valid_port_range_is_inclusive()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py
+- [[capture()_15]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py
+- [[capture()_16]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py
+- [[capture()_17]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py
+- [[parametrize_24]] - code
+- [[record()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py
+- [[snapshot_id()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py
+- [[test_disabled_or_invalid_duration_preserves_short_lifecycle()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py
+- [[test_other_endpoint_or_profile_never_adopts_retained_page()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py
+- [[test_other_session_operation_or_query_never_adopts_retained_page()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py
+- [[test_snapshot_cancellation_or_deadline_cleans_exact_page()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py
+- [[test_snapshot_keeps_exact_lease_deadline_page_and_returns_sanitized_origin()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py
+- [[test_snapshot_rechecks_original_host_policy_before_and_after_capture()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py
+- [[test_unavailable_snapshot_never_opens_or_captures()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py
 
 ## Live Query (requires Dataview plugin)
 
@@ -27,11 +32,15 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 5 edges to [[_COMMUNITY_test_chrome_cdp.py]]
+- 15 edges to [[_COMMUNITY_mcp-coreteststest_browser_handoff.py]]
+- 4 edges to [[_COMMUNITY_UpstreamTimeoutError]]
+- 3 edges to [[_COMMUNITY_test_snapshot_and_resume_cannot_overlap]]
+- 1 edge to [[_COMMUNITY_TransportDownError]]
+- 1 edge to [[_COMMUNITY_success]]
 
 ## Top bridge nodes
-- [[test_a_malformed_host_falls_back_to_loopback()]] - degree 3, connects to 1 community
-- [[test_a_nonsense_port_falls_back_to_the_default()]] - degree 3, connects to 1 community
-- [[test_loopback_hosts_are_recognised()]] - degree 2, connects to 1 community
-- [[test_setup_hint_names_the_shell_script_elsewhere()]] - degree 2, connects to 1 community
-- [[test_the_valid_port_range_is_inclusive()]] - degree 2, connects to 1 community
+- [[snapshot_id()]] - degree 7, connects to 3 communities
+- [[parametrize_24]] - degree 8, connects to 2 communities
+- [[test_snapshot_cancellation_or_deadline_cleans_exact_page()]] - degree 8, connects to 2 communities
+- [[test_unavailable_snapshot_never_opens_or_captures()]] - degree 5, connects to 2 communities
+- [[test_snapshot_keeps_exact_lease_deadline_page_and_returns_sanitized_origin()]] - degree 4, connects to 2 communities

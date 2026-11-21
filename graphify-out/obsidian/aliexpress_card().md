@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/src/aliexpress_connector/server.py"
 type: "code"
-community: "aliexpress_card"
+community: "aliexpress_connector/server.py"
 location: "L619"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/aliexpress_card
+  - community/aliexpress_connector/serverpy
 ---
 
 # aliexpress_card()
@@ -14,10 +14,9 @@ tags:
 ## Connections
 - [[AliCardResponse]] - `uses` [INFERRED]
 - [[BadRequestError]] - `uses` [INFERRED]
-- [[Context]] - `references` [EXTRACTED]
 - [[Fetch one AliExpress product card, rendered in the operator's Chrome. Review…]] - `rationale_for` [EXTRACTED]
-- [[Field]] - `references` [EXTRACTED]
-- [[MetaOut]] - `uses` [INFERRED]
+- [[Field_1]] - `references` [EXTRACTED]
+- [[MetaOut_1]] - `uses` [INFERRED]
 - [[NavBlocked]] - `uses` [INFERRED]
 - [[ParserDriftError]] - `uses` [INFERRED]
 - [[TransportDownError]] - `uses` [INFERRED]
@@ -27,12 +26,12 @@ tags:
 - [[_extract_item_id()]] - `calls` [EXTRACTED]
 - [[_is_punish()]] - `calls` [EXTRACTED]
 - [[aliexpress_connectorserver.py]] - `contains` [EXTRACTED]
-- [[description]] - `references` [EXTRACTED]
+- [[description_1]] - `references` [EXTRACTED]
 - [[log_event()]] - `calls` [EXTRACTED]
-- [[max_length]] - `references` [EXTRACTED]
-- [[min_length]] - `references` [EXTRACTED]
+- [[max_length_1]] - `references` [EXTRACTED]
+- [[min_length_1]] - `references` [EXTRACTED]
 - [[raise_tool_error()]] - `calls` [EXTRACTED]
-- [[tool]] - `references` [EXTRACTED]
-- [[Добавлено]] - `references` [INFERRED]
+- [[tool_1]] - `references` [EXTRACTED]
+- [[Добавлено_3]] - `references` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/aliexpress_card
+#graphify/code #graphify/EXTRACTED #community/aliexpress_connector/serverpy

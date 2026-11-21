@@ -1,23 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_search_extractor_dom.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_shape_reference.py"
 type: "code"
-community: "taobao-connector/tests/test_search_extractor_dom.py"
-location: "L45"
+community: "aliexpress-connector/tests/test_parser_live.py"
+location: "L15"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/taobao-connector/tests/test_search_extractor_dompy
+  - community/aliexpress-connector/tests/test_parser_livepy
 ---
 
 # _extract()
 
 ## Connections
 - [[JsdomUnavailable]] - `uses` [INFERRED]
+- [[Path_2]] - `references` [EXTRACTED]
+- [[aliexpress-connectorteststest_shape_reference.py]] - `contains` [EXTRACTED]
 - [[run_extractor()]] - `calls` [EXTRACTED]
-- [[taobao-connectorteststest_search_extractor_dom.py]] - `contains` [EXTRACTED]
-- [[test_a_hidden_price_is_none_never_zero()]] - `calls` [EXTRACTED]
-- [[test_items_carry_the_wire_shape()]] - `calls` [EXTRACTED]
-- [[test_search_extractor_reads_the_real_grid()]] - `calls` [EXTRACTED]
-- [[test_yuan_glued_price_is_read_from_the_card()]] - `calls` [EXTRACTED]
+- [[test_card_extractor_shape_matches_golden()]] - `calls` [EXTRACTED]
+- [[test_search_extractor_shape_matches_golden()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/taobao-connector/tests/test_search_extractor_dompy
+#graphify/code #graphify/EXTRACTED #community/aliexpress-connector/tests/test_parser_livepy

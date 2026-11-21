@@ -1,21 +1,21 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/server.py"
 type: "code"
-community: "_parse_search_items"
+community: "test_live_payload_contract.py"
 location: "L441"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_parse_search_items
+  - community/test_live_payload_contractpy
 ---
 
 # _parse_search_items()
 
 ## Connections
-- [[Any_2]] - `references` [EXTRACTED]
+- [[Any_15]] - `references` [EXTRACTED]
 - [[Best-effort extraction of items + total from a jsitems payload. The endpoint…]] - `rationale_for` [EXTRACTED]
 - [[_first_image_url()]] - `calls` [EXTRACTED]
-- [[_items()_3]] - `calls` [EXTRACTED]
+- [[_items()_2]] - `calls` [EXTRACTED]
 - [[_posted_at()]] - `calls` [EXTRACTED]
 - [[_search_smoke()_1]] - `calls` [EXTRACTED]
 - [[avito_connectorserver.py]] - `contains` [EXTRACTED]
@@ -26,4 +26,4 @@ tags:
 - [[test_the_parser_bindings_survive_in_the_reference_shape()]] - `calls` [INFERRED]
 - [[test_total_count_is_read_from_the_envelope()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_parse_search_items
+#graphify/code #graphify/EXTRACTED #community/test_live_payload_contractpy

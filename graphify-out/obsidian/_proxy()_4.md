@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/server.py"
 type: "code"
-community: "TransportDownError"
-location: "L129"
+community: "avito_connector/server.py"
+location: "L144"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/TransportDownError
+  - community/avito_connector/serverpy
 ---
 
 # _proxy()
 
 ## Connections
-- [[fetch()_4]] - `calls` [EXTRACTED]
-- [[proxy_from_env()]] - `calls` [INFERRED]
-- [[yandex_connectorserver.py]] - `contains` [EXTRACTED]
+- [[_fetch()_1]] - `calls` [EXTRACTED]
+- [[avito_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/TransportDownError
+#graphify/code #graphify/EXTRACTED #community/avito_connector/serverpy

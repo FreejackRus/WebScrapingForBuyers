@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py"
 type: "code"
-community: "json"
+community: "compare_connector/models_output.py"
 location: "L840"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/json
+  - community/compare_connector/models_outputpy
 ---
 
 # _run_source()
@@ -20,4 +20,4 @@ tags:
 - [[compare_connectorserver.py]] - `contains` [EXTRACTED]
 - [[compare_prices()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/json
+#graphify/code #graphify/EXTRACTED #community/compare_connector/models_outputpy

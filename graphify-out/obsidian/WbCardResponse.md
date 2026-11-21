@@ -12,9 +12,9 @@ tags:
 # WbCardResponse
 
 ## Connections
-- [[BaseModel_15]] - `inherits` [EXTRACTED]
-- [[card()_4]] - `calls` [EXTRACTED]
+- [[BaseModel]] - `inherits` [EXTRACTED]
 - [[card()_5]] - `calls` [EXTRACTED]
+- [[card()_6]] - `calls` [EXTRACTED]
 - [[fixture_card()]] - `calls` [EXTRACTED]
 - [[test_missing_requested_wb_row_does_not_use_another_price()]] - `uses` [INFERRED]
 - [[test_wb_fixture_color_survives_card_model_and_mcp_verification()]] - `uses` [INFERRED]

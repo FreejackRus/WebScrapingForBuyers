@@ -1,17 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
+source_file: "mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v1.3.0.md"
 type: "document"
-community: "SearchHistory"
-location: "L934"
+community: "v1.3.0 — MPStats и разбор аудита"
+location: "L155"
 tags:
   - graphify/document
-  - graphify/EXTRACTED
-  - community/SearchHistory
+  - graphify/INFERRED
+  - community/v130__MPStats_и_разбор_аудита
 ---
 
 # Fixed
 
 ## Connections
-- [[1.5.0 — 2026-08-16]] - `contains` [EXTRACTED]
+- [[classify_http_error()]] - `references` [INFERRED]
+- [[coerce_price()]] - `references` [INFERRED]
+- [[v1.3.0 — MPStats, and an audit's worth of fixes (English)]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/SearchHistory
+#graphify/document #graphify/INFERRED #community/v130__MPStats_и_разбор_аудита

@@ -1,16 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "compare_prices"
+community: "cian_search"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/compare_prices
+  - community/cian_search
 ---
 
 # tool
 
 ## Connections
-- [[marketplace_sources()]] - `references` [EXTRACTED]
+- [[cian_card()]] - `references` [EXTRACTED]
+- [[cian_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/compare_prices
+#graphify/code #graphify/EXTRACTED #community/cian_search

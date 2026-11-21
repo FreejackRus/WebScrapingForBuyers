@@ -1,22 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/src/dns_connector/models_output.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/models_output.py"
 type: "code"
-community: "dns_card"
-location: "L9"
+community: "cian_connector/server.py"
+location: "L15"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/dns_card
+  - community/cian_connector/serverpy
 ---
 
 # MetaOut
 
 ## Connections
-- [[DNS carries the shared envelope unchanged.]] - `rationale_for` [EXTRACTED]
 - [[MetaOutBase]] - `inherits` [EXTRACTED]
-- [[dns_card()]] - `uses` [INFERRED]
-- [[dns_connectormodels_output.py]] - `contains` [EXTRACTED]
-- [[dns_connectorserver.py]] - `imports` [EXTRACTED]
-- [[dns_search()]] - `uses` [INFERRED]
+- [[Validation metadata attached to every response.]] - `rationale_for` [EXTRACTED]
+- [[cian_card()]] - `uses` [INFERRED]
+- [[cian_connectormodels_output.py]] - `contains` [EXTRACTED]
+- [[cian_connectorserver.py]] - `imports` [EXTRACTED]
+- [[cian_search()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/dns_card
+#graphify/code #graphify/EXTRACTED #community/cian_connector/serverpy

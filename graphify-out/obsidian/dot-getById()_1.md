@@ -1,18 +1,18 @@
 ---
-source_file: "apps/identity/src/infrastructure/memory-auth-store.ts"
+source_file: "apps/identity/src/domain/auth-store.ts"
 type: "code"
-community: "memory-auth-store.ts"
-location: "L40"
+community: "AuthStore"
+location: "L10"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/memory-auth-storets
+  - community/AuthStore
 ---
 
 # .getById()
 
 ## Connections
-- [[MemoryAuthStore]] - `method` [EXTRACTED]
-- [[toSession()]] - `calls` [EXTRACTED]
+- [[AuthStore]] - `method` [EXTRACTED]
+- [[readSessionUser()]] - `calls` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/memory-auth-storets
+#graphify/code #graphify/EXTRACTED #community/AuthStore

@@ -12,9 +12,9 @@ tags:
 # always_blocked()
 
 ## Connections
-- [[scenario()_73]] - `indirect_call` [INFERRED]
 - [[scenario()_74]] - `indirect_call` [INFERRED]
 - [[scenario()_75]] - `indirect_call` [INFERRED]
+- [[scenario()_76]] - `indirect_call` [INFERRED]
 - [[test_fetch_composer_caches_a_successful_cdp_body()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/INFERRED #community/_patch_tier1

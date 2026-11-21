@@ -12,6 +12,6 @@ tags:
 # Resolve WB's proxy: explicit ``WB_PROXY`` first, then the standard vars.
 
 ## Connections
-- [[_proxy()_5]] - `rationale_for` [EXTRACTED]
+- [[_proxy()]] - `rationale_for` [EXTRACTED]
 
 #graphify/rationale #graphify/EXTRACTED #community/wb_connector/serverpy

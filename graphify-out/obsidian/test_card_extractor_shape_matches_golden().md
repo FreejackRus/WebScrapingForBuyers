@@ -12,7 +12,7 @@ tags:
 # test_card_extractor_shape_matches_golden()
 
 ## Connections
-- [[_extract()_8]] - `calls` [EXTRACTED]
+- [[_extract()]] - `calls` [EXTRACTED]
 - [[aliexpress-connectorteststest_shape_reference.py]] - `contains` [EXTRACTED]
 - [[shape_signature()]] - `calls` [EXTRACTED]
 

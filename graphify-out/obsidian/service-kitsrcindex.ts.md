@@ -1,12 +1,12 @@
 ---
 source_file: "packages/service-kit/src/index.ts"
 type: "code"
-community: "identity/src/http/routes.ts"
+community: "service-kit/src/index.ts"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/identity/src/http/routests
+  - community/service-kit/src/indexts
 ---
 
 # service-kit/src/index.ts
@@ -22,4 +22,4 @@ tags:
 - [[requiredEnv()]] - `contains` [EXTRACTED]
 - [[serviceUrl()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/identity/src/http/routests
+#graphify/code #graphify/EXTRACTED #community/service-kit/src/indexts

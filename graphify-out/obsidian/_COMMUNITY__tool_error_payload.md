@@ -13,7 +13,7 @@ members: 40
 - [[A 429 from v9 must raise, not silently degrade to the stale-id path.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[An empty list would claim the category has no products, which is false.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[The selector is appended to an outbound URL, so it is validated not trusted.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
-- [[_tool_error_payload()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[_tool_error_payload()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[fake_safe_get_text()_21]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[fake_safe_get_text()_22]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[fake_safe_get_text()_23]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
@@ -29,7 +29,7 @@ members: 40
 - [[no_wait()_25]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[no_wait()_26]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[no_wait()_27]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
-- [[raise_tool_error serializes a ConnectorError as JSON inside ToolError.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[raise_tool_error serializes a ConnectorError as JSON inside ToolError._1]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[scenario()_34]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[scenario()_35]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[scenario()_36]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
@@ -66,7 +66,7 @@ SORT file.name ASC
 - 1 edge to [[_COMMUNITY__RecordingPacer]]
 
 ## Top bridge nodes
-- [[_tool_error_payload()]] - degree 22, connects to 5 communities
+- [[_tool_error_payload()_1]] - degree 22, connects to 5 communities
 - [[test_category_products_rejects_an_unsafe_selector()]] - degree 5, connects to 2 communities
 - [[forbidden()_4]] - degree 6, connects to 1 community
 - [[test_wb_search_rate_limit_is_surfaced_not_masked_by_fallback()]] - degree 5, connects to 1 community

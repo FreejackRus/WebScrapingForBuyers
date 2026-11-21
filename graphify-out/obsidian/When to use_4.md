@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/yandex-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/detmir-connector/SKILL.md"
 type: "document"
-community: "Yandex Market Connector"
-location: "L15"
+community: "detmir_categories"
+location: "L16"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Yandex_Market_Connector
+  - community/detmir_categories
 ---
 
 # When to use
 
 ## Connections
-- [[Yandex Market Connector_1]] - `contains` [EXTRACTED]
+- [[Detsky Mir Connector_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Yandex_Market_Connector
+#graphify/document #graphify/EXTRACTED #community/detmir_categories

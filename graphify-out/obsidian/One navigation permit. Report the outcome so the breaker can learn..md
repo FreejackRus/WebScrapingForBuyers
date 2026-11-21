@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/cdp_budget.py"
 type: "rationale"
-community: "Slot"
+community: "NavigationBudget"
 location: "L92"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Slot
+  - community/NavigationBudget
 ---
 
 # One navigation permit. Report the outcome so the breaker can learn.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[Slot]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Slot
+#graphify/rationale #graphify/EXTRACTED #community/NavigationBudget

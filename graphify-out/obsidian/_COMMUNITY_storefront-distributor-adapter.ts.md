@@ -10,8 +10,8 @@ members: 27
 **Members:** 27 nodes
 
 ## Members
-- [[dot-constructor()_5]] - code - apps/search/src/infrastructure/sources/storefront-distributor-adapter.ts
-- [[dot-search()_6]] - code - apps/search/src/infrastructure/sources/storefront-distributor-adapter.ts
+- [[dot-constructor()_3]] - code - apps/search/src/infrastructure/sources/storefront-distributor-adapter.ts
+- [[dot-search()]] - code - apps/search/src/infrastructure/sources/storefront-distributor-adapter.ts
 - [[ENTITIES]] - code - apps/search/src/infrastructure/sources/storefront-distributor-adapter.ts
 - [[STOREFRONTS]] - code - apps/search/src/infrastructure/sources/storefront-distributor-adapter.ts
 - [[StorefrontCard]] - code - apps/search/src/infrastructure/sources/storefront-distributor-adapter.ts
@@ -28,7 +28,7 @@ members: 27
 - [[parseRubPrice()]] - code - apps/search/src/infrastructure/sources/storefront-distributor-adapter.ts
 - [[parseServermallSearch()]] - code - apps/search/src/infrastructure/sources/storefront-distributor-adapter.ts
 - [[parseSrvTradeSearch()]] - code - apps/search/src/infrastructure/sources/storefront-distributor-adapter.ts
-- [[server]] - code - apps/search/src/infrastructure/sources/storefront-distributor-adapter.test.ts
+- [[server_1]] - code - apps/search/src/infrastructure/sources/storefront-distributor-adapter.test.ts
 - [[smCard()]] - code - apps/search/src/infrastructure/sources/storefront-distributor-adapter.test.ts
 - [[splitCards()]] - code - apps/search/src/infrastructure/sources/storefront-distributor-adapter.ts
 - [[srvCard()]] - code - apps/search/src/infrastructure/sources/storefront-distributor-adapter.test.ts
@@ -46,16 +46,18 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 7 edges to [[_COMMUNITY_SourceAdapter]]
+- 5 edges to [[_COMMUNITY_SourceAdapter]]
 - 3 edges to [[_COMMUNITY_b2b-distributor-adapter.ts]]
+- 3 edges to [[_COMMUNITY_card-verifiers.ts]]
 - 3 edges to [[_COMMUNITY_mcp-marketplace-adapter.ts]]
 - 3 edges to [[_COMMUNITY_marketplace-relevance.ts]]
-- 2 edges to [[_COMMUNITY_packages_contracts_dist_index]]
-- 1 edge to [[_COMMUNITY_ref_vitest]]
+- 3 edges to [[_COMMUNITY_packages_contracts_dist_index]]
+- 1 edge to [[_COMMUNITY_packages_contracts_dist_index_product]]
+- 1 edge to [[_COMMUNITY_watchlist-checker.ts]]
 
 ## Top bridge nodes
-- [[storefront-distributor-adapter.ts]] - degree 33, connects to 5 communities
+- [[storefront-distributor-adapter.ts]] - degree 34, connects to 8 communities
 - [[StorefrontDistributorAdapter]] - degree 7, connects to 2 communities
 - [[storefront-distributor-adapter.test.ts]] - degree 13, connects to 1 community
-- [[dot-search()_6]] - degree 6, connects to 1 community
-- [[toStorefrontOffer()]] - degree 4, connects to 1 community
+- [[htmlText()]] - degree 7, connects to 1 community
+- [[dot-search()]] - degree 6, connects to 1 community

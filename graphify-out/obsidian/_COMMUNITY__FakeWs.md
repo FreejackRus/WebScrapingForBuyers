@@ -10,9 +10,9 @@ members: 13
 **Members:** 13 nodes
 
 ## Members
-- [[dot-__init__()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py
+- [[dot-__init__()_4]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py
 - [[dot-recv()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py
-- [[dot-send()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py
+- [[dot-send()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py
 - [[A 403 main document is a verdict open_page turns into NavBlocked.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py
 - [[An advertising iframe must not replace the marketplace's final URLstatus.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py
 - [[Replays canned CDP messages; records everything sent.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py

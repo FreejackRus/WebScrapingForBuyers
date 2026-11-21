@@ -1,27 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
+source_file: "mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v2.0.2.md"
 type: "document"
-community: "ssr.py"
-location: "L1060"
+community: "v2.0.2"
+location: "L5"
 tags:
   - graphify/document
-  - graphify/INFERRED
-  - community/ssrpy
+  - graphify/EXTRACTED
+  - community/v202
 ---
 
 # Fixed
 
 ## Connections
-- [[1.4.0 — 2026-08-08]] - `contains` [EXTRACTED]
-- [[_as_count()]] - `references` [INFERRED]
-- [[_as_price()]] - `references` [INFERRED]
-- [[_kopeck_to_rub()]] - `references` [INFERRED]
-- [[_posted_at()]] - `references` [INFERRED]
-- [[_to_int()]] - `references` [INFERRED]
-- [[_to_number()]] - `references` [INFERRED]
-- [[coerce_price()]] - `references` [INFERRED]
-- [[coerce_rating()]] - `references` [INFERRED]
-- [[parse_retry_after()]] - `references` [INFERRED]
-- [[wb_card()]] - `references` [INFERRED]
+- [[v2.0.2]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/INFERRED #community/ssrpy
+#graphify/document #graphify/EXTRACTED #community/v202

@@ -12,7 +12,7 @@ tags:
 # test_search_extractor_ignores_the_instalment_line()
 
 ## Connections
-- [[_extract()_11]] - `calls` [EXTRACTED]
+- [[_extract()_13]] - `calls` [EXTRACTED]
 - [[dns-connectorteststest_search_extractor_dom.py]] - `contains` [EXTRACTED]
 - [[«от 5 751 ₽ мес.» must never be mistaken for the price. This is the regression…]] - `rationale_for` [EXTRACTED]
 

@@ -1,19 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/e2e_stdio_check_docker.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/server.py"
 type: "code"
-community: "test_stdio_probe.py"
-location: "L46"
+community: "_cian_selfcheck_impl"
+location: "L981"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_stdio_probepy
+  - community/_cian_selfcheck_impl
 ---
 
 # _probe()
 
 ## Connections
-- [[StdioProbe]] - `uses` [INFERRED]
-- [[e2e_stdio_check_docker.py]] - `contains` [EXTRACTED]
-- [[probe()_1]] - `calls` [EXTRACTED]
+- [[_cian_selfcheck_impl()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_stdio_probepy
+#graphify/code #graphify/EXTRACTED #community/_cian_selfcheck_impl

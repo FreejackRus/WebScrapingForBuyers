@@ -13,8 +13,8 @@ tags:
 
 ## Connections
 - [[Return an opaque handle only for this exact live operation's lease. Liveness is…]] - `rationale_for` [EXTRACTED]
-- [[_attempt()]] - `calls` [EXTRACTED]
-- [[_cdp_render()]] - `calls` [EXTRACTED]
+- [[_attempt()_4]] - `calls` [EXTRACTED]
+- [[_cdp_render()_2]] - `calls` [EXTRACTED]
 - [[_expired()]] - `calls` [EXTRACTED]
 - [[_key()]] - `calls` [EXTRACTED]
 - [[browser_handoff.py]] - `contains` [EXTRACTED]

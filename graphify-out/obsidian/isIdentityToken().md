@@ -2,7 +2,7 @@
 source_file: "apps/search/src/domain/marketplace-relevance.ts"
 type: "code"
 community: "marketplace-relevance.ts"
-location: "L52"
+location: "L54"
 tags:
   - graphify/code
   - graphify/EXTRACTED

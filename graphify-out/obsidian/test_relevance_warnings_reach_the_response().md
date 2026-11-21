@@ -17,7 +17,7 @@ tags:
 - [[ozon()_2]] - `contains` [EXTRACTED]
 - [[ozon()_1]] - `indirect_call` [INFERRED]
 - [[stub_sources()]] - `calls` [EXTRACTED]
-- [[wb()_10]] - `contains` [EXTRACTED]
-- [[wb()_7]] - `indirect_call` [INFERRED]
+- [[wb()_11]] - `contains` [EXTRACTED]
+- [[wb()_8]] - `indirect_call` [INFERRED]
 
 #graphify/code #graphify/EXTRACTED #community/offer

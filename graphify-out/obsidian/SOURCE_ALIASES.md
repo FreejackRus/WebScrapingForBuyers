@@ -1,17 +1,17 @@
 ---
-source_file: "apps/analysis/src/application/prompt-intent.ts"
+source_file: "apps/analysis/src/application/grounded-narration.ts"
 type: "code"
-community: "analyze.ts"
-location: "L4"
+community: "grounded-narration.ts"
+location: "L36"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/analyzets
+  - community/grounded-narrationts
 ---
 
 # SOURCE_ALIASES
 
 ## Connections
-- [[prompt-intent.ts]] - `contains` [EXTRACTED]
+- [[grounded-narration.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/analyzets
+#graphify/code #graphify/EXTRACTED #community/grounded-narrationts

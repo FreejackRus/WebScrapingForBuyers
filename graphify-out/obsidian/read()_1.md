@@ -1,8 +1,8 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/server.py"
 type: "code"
 community: "TransportDownError"
-location: "L345"
+location: "L415"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[ParserDriftError]] - `calls` [EXTRACTED]
 - [[TransportDownError]] - `calls` [EXTRACTED]
-- [[_attempt()]] - `contains` [EXTRACTED]
+- [[_cdp_render()_2]] - `contains` [EXTRACTED]
 - [[raise_tool_error()]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/TransportDownError

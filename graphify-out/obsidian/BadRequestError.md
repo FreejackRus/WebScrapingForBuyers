@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
 type: "code"
-community: "json"
+community: "TransportDownError"
 location: "L98"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/json
+  - community/TransportDownError
 ---
 
 # BadRequestError
 
 ## Connections
-- [[dot-__init__()_32]] - `method` [EXTRACTED]
+- [[dot-__init__()_28]] - `method` [EXTRACTED]
 - [[ConnectorError]] - `inherits` [EXTRACTED]
 - [[_call_card_tool()]] - `uses` [INFERRED]
 - [[_numeric_card_id()]] - `uses` [INFERRED]
@@ -44,8 +44,8 @@ tags:
 - [[wb_category_products()]] - `uses` [INFERRED]
 - [[wb_questions()]] - `uses` [INFERRED]
 - [[wb_reviews()]] - `uses` [INFERRED]
-- [[wb_search()_2]] - `uses` [INFERRED]
+- [[wb_search()_1]] - `uses` [INFERRED]
 - [[yandex_card()]] - `uses` [INFERRED]
-- [[yandex_search()_1]] - `uses` [INFERRED]
+- [[yandex_search()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/json
+#graphify/code #graphify/INFERRED #community/TransportDownError

@@ -12,7 +12,7 @@ tags:
 # _canonical_product_path_from_input()
 
 ## Connections
-- [[Any_8]] - `references` [EXTRACTED]
+- [[Any_13]] - `references` [EXTRACTED]
 - [[_ozon_reviews_impl()]] - `calls` [EXTRACTED]
 - [[_search_tile_product_link()]] - `calls` [EXTRACTED]
 - [[ozon_card()]] - `calls` [EXTRACTED]

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/yandex-connector/SKILL.md"
 type: "document"
-community: "Yandex Market Connector"
+community: "yandex_card"
 location: "L1"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Yandex_Market_Connector
+  - community/yandex_card
 ---
 
 # dsh/skills/yandex-connector/SKILL.md
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[Yandex Market Connector]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Yandex_Market_Connector
+#graphify/document #graphify/EXTRACTED #community/yandex_card

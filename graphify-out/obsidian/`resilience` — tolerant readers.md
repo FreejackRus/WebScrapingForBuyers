@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/docs/ARCHITECTURE.md"
 type: "document"
-community: "coerce_price"
+community: "Architecture"
 location: "L94"
 tags:
   - graphify/document
   - graphify/INFERRED
-  - community/coerce_price
+  - community/Architecture
 ---
 
 # `resilience` — tolerant readers
@@ -17,4 +17,4 @@ tags:
 - [[coerce_price()]] - `references` [INFERRED]
 - [[shape_signature()]] - `references` [INFERRED]
 
-#graphify/document #graphify/INFERRED #community/coerce_price
+#graphify/document #graphify/INFERRED #community/Architecture

@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/megamarket-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/aliexpress-connector/SKILL.md"
 type: "document"
-community: "Megamarket Connector"
-location: "L27"
+community: "aliexpress_selfcheck"
+location: "L53"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Megamarket_Connector
+  - community/aliexpress_selfcheck
 ---
 
 # Gotchas
 
 ## Connections
-- [[Megamarket Connector]] - `contains` [EXTRACTED]
+- [[AliExpress connector_1]] - `contains` [EXTRACTED]
+- [[aliexpress_selfcheck()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Megamarket_Connector
+#graphify/document #graphify/EXTRACTED #community/aliexpress_selfcheck

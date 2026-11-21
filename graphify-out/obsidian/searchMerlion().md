@@ -12,7 +12,7 @@ tags:
 # searchMerlion()
 
 ## Connections
-- [[dot-search()_10]] - `calls` [EXTRACTED]
+- [[dot-search()_5]] - `calls` [EXTRACTED]
 - [[b2b-distributor-adapter.ts]] - `imports` [EXTRACTED]
 - [[candidateItemIds()]] - `calls` [EXTRACTED]
 - [[matchKind()_2]] - `calls` [EXTRACTED]

@@ -12,9 +12,9 @@ tags:
 # _FakeMCP
 
 ## Connections
-- [[dot-__init__()_18]] - `method` [EXTRACTED]
+- [[dot-__init__()_21]] - `method` [EXTRACTED]
 - [[dot-add_middleware()]] - `method` [EXTRACTED]
-- [[dot-run()]] - `method` [EXTRACTED]
+- [[dot-run()_1]] - `method` [EXTRACTED]
 - [[Minimal FastMCP stand-in that records the run() call instead of serving.]] - `rationale_for` [EXTRACTED]
 - [[test_run_server_does_not_warn_on_loopback()]] - `calls` [EXTRACTED]
 - [[test_run_server_http_passes_host_port_path()]] - `calls` [EXTRACTED]

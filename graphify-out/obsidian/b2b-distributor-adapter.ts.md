@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[ALIASES]] - `contains` [EXTRACTED]
 - [[B2bDistributorStubAdapter]] - `contains` [EXTRACTED]
-- [[DISTRIBUTORS_1]] - `contains` [EXTRACTED]
+- [[DISTRIBUTORS]] - `contains` [EXTRACTED]
 - [[DistributorKind]] - `contains` [EXTRACTED]
 - [[DistributorSpec]] - `contains` [EXTRACTED]
 - [[MerlionSourceAdapter]] - `contains` [EXTRACTED]

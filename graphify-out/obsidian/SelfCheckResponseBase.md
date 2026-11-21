@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/models.py"
 type: "code"
-community: "dns_card"
+community: "json"
 location: "L79"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/dns_card
+  - community/json
 ---
 
 # SelfCheckResponseBase
@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[AliSelfcheckResponse]] - `inherits` [EXTRACTED]
 - [[AvitoSelfcheckResponse]] - `inherits` [EXTRACTED]
-- [[BaseModel_5]] - `inherits` [EXTRACTED]
+- [[BaseModel_8]] - `inherits` [EXTRACTED]
 - [[CianSelfcheckResponse]] - `inherits` [EXTRACTED]
 - [[CitilinkSelfcheckResponse]] - `inherits` [EXTRACTED]
 - [[DetmirSelfcheckResponse]] - `inherits` [EXTRACTED]
@@ -28,4 +28,4 @@ tags:
 - [[YandexSelfcheckResponse]] - `inherits` [EXTRACTED]
 - [[models.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/dns_card
+#graphify/code #graphify/EXTRACTED #community/json

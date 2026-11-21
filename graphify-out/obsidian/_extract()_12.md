@@ -1,21 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_search_extractor_dom.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_shape_reference.py"
 type: "code"
-community: "citilink-connector/tests/test_search_extractor_dom.py"
-location: "L67"
+community: "lamoda-connector/tests/test_shape_reference.py"
+location: "L38"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/citilink-connector/tests/test_search_extractor_dompy
+  - community/lamoda-connector/tests/test_shape_referencepy
 ---
 
 # _extract()
 
 ## Connections
 - [[JsdomUnavailable]] - `uses` [INFERRED]
-- [[Run the connector's real extractor over the captured markup. Skips rather than…_1]] - `rationale_for` [EXTRACTED]
-- [[_items()_4]] - `calls` [EXTRACTED]
-- [[citilink-connectorteststest_search_extractor_dom.py]] - `contains` [EXTRACTED]
+- [[Path_17]] - `references` [EXTRACTED]
+- [[lamoda-connectorteststest_shape_reference.py]] - `contains` [EXTRACTED]
 - [[run_extractor()]] - `calls` [EXTRACTED]
+- [[test_live_search_shape_matches_the_selfcheck_registry()_1]] - `calls` [EXTRACTED]
+- [[test_search_payload_shape_matches_the_capture()_3]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/citilink-connector/tests/test_search_extractor_dompy
+#graphify/code #graphify/EXTRACTED #community/lamoda-connector/tests/test_shape_referencepy

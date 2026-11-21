@@ -10,12 +10,12 @@ members: 7
 **Members:** 7 nodes
 
 ## Members
-- [[__init__()_6]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py
+- [[__init__()_4]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py
 - [[debug()]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py
 - [[exploding_get()]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py
 - [[fake_cdp_fetch()]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py
 - [[info()]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py
-- [[no_wait()_38]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py
+- [[no_wait()_36]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py
 - [[test_fetch_debug_never_leaks_tier1_exception_secrets()]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py
 
 ## Live Query (requires Dataview plugin)

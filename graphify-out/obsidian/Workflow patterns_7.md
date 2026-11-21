@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/aliexpress-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md"
 type: "document"
-community: "AliExpress connector"
-location: "L31"
+community: "Wildberries Connector"
+location: "L46"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/AliExpress_connector
+  - community/Wildberries_Connector
 ---
 
 # Workflow patterns
 
 ## Connections
-- [[AliExpress connector_1]] - `contains` [EXTRACTED]
-- [[compare_prices()]] - `references` [INFERRED]
+- [[Wildberries Connector_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/AliExpress_connector
+#graphify/document #graphify/EXTRACTED #community/Wildberries_Connector

@@ -12,7 +12,7 @@ tags:
 # _budgeted_get_text()
 
 ## Connections
-- [[AsyncClient_3]] - `references` [EXTRACTED]
+- [[AsyncClient]] - `references` [EXTRACTED]
 - [[The shared path body cap, wall-clock budget, polite gate, bounded retries.]] - `rationale_for` [EXTRACTED]
 - [[_PoliteGate]] - `calls` [EXTRACTED]
 - [[_safe_get_text()]] - `calls` [EXTRACTED]

@@ -1,17 +1,18 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/storefront-distributor-adapter.ts"
+source_file: "apps/search/src/application/quality-eval.ts"
 type: "code"
-community: "storefront-distributor-adapter.ts"
-location: "L256"
+community: "quality-eval.ts"
+location: "L140"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/storefront-distributor-adapterts
+  - community/quality-evalts
 ---
 
 # .constructor()
 
 ## Connections
-- [[StorefrontDistributorAdapter]] - `method` [EXTRACTED]
+- [[dot-load()]] - `calls` [EXTRACTED]
+- [[QualityEvaluator]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/storefront-distributor-adapterts
+#graphify/code #graphify/EXTRACTED #community/quality-evalts

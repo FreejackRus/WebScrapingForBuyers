@@ -13,12 +13,11 @@ tags:
 
 ## Connections
 - [[CitilinkSelfcheckResponse]] - `uses` [INFERRED]
-- [[Context_9]] - `references` [EXTRACTED]
-- [[Gotchas_19]] - `references` [INFERRED]
-- [[Gotchas_20]] - `references` [INFERRED]
+- [[Gotchas_24]] - `references` [INFERRED]
+- [[Gotchas_25]] - `references` [INFERRED]
 - [[Structural drift canary for Citilink (tri-state). Renders one live search page…]] - `rationale_for` [EXTRACTED]
-- [[Tools available_13]] - `references` [INFERRED]
-- [[Tools available_14]] - `references` [INFERRED]
+- [[Tools available_16]] - `references` [INFERRED]
+- [[Tools available_17]] - `references` [INFERRED]
 - [[TransportDownError]] - `uses` [INFERRED]
 - [[_citilink_selfcheck_impl()]] - `calls` [EXTRACTED]
 - [[citilink_connectorserver.py]] - `contains` [EXTRACTED]

@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/avito-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/ozon-connector/SKILL.md"
 type: "document"
-community: "avito_connector/server.py"
-location: "L13"
+community: "Ozon Connector"
+location: "L20"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/avito_connector/serverpy
+  - community/Ozon_Connector
 ---
 
 # When to use
 
 ## Connections
-- [[Avito Connector]] - `contains` [EXTRACTED]
+- [[Ozon Connector_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/avito_connector/serverpy
+#graphify/document #graphify/EXTRACTED #community/Ozon_Connector

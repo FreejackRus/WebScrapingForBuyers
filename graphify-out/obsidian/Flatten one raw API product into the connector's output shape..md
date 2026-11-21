@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/server.py"
 type: "rationale"
-community: "_parse_product"
+community: "detmir_categories"
 location: "L249"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/_parse_product
+  - community/detmir_categories
 ---
 
 # Flatten one raw API product into the connector's output shape.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_parse_product()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/_parse_product
+#graphify/rationale #graphify/EXTRACTED #community/detmir_categories

@@ -1,21 +1,18 @@
 ---
-source_file: "apps/identity/package.json"
+source_file: "mcp-servers/ru-marketplace-mcp/package.json"
 type: "code"
-community: "identity/package.json"
-location: "L13"
+community: "ru-marketplace-mcp/package.json"
+location: "L7"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/identity/packagejson
+  - community/ru-marketplace-mcp/packagejson
 ---
 
 # dependencies
 
 ## Connections
-- [[@fastifycookie]] - `contains` [EXTRACTED]
-- [[@peremenacontracts_6]] - `contains` [EXTRACTED]
-- [[@peremenaservice-kit_6]] - `contains` [EXTRACTED]
-- [[fastify_6]] - `contains` [EXTRACTED]
-- [[identitypackage.json]] - `contains` [EXTRACTED]
+- [[jsdom]] - `contains` [EXTRACTED]
+- [[ru-marketplace-mcppackage.json]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/identity/packagejson
+#graphify/code #graphify/EXTRACTED #community/ru-marketplace-mcp/packagejson

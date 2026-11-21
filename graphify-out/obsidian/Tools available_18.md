@@ -1,22 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/wb-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/dns-connector/SKILL.md"
 type: "document"
-community: "wb_connector/server.py"
-location: "L19"
+community: "dns_selfcheck"
+location: "L17"
 tags:
   - graphify/document
-  - graphify/INFERRED
-  - community/wb_connector/serverpy
+  - graphify/EXTRACTED
+  - community/dns_selfcheck
 ---
 
 # Tools available
 
 ## Connections
-- [[Wildberries Connector]] - `contains` [EXTRACTED]
-- [[wb_card()]] - `references` [INFERRED]
-- [[wb_categories()]] - `references` [INFERRED]
-- [[wb_reviews()]] - `references` [INFERRED]
-- [[wb_root_info()]] - `references` [INFERRED]
-- [[wb_selfcheck()]] - `references` [INFERRED]
+- [[DNS-Shop Connector]] - `contains` [EXTRACTED]
+- [[dns_selfcheck()]] - `references` [INFERRED]
 
-#graphify/document #graphify/INFERRED #community/wb_connector/serverpy
+#graphify/document #graphify/EXTRACTED #community/dns_selfcheck

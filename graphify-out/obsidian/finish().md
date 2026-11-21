@@ -1,19 +1,19 @@
 ---
-source_file: "apps/search/src/application/search-service.test.ts"
+source_file: "apps/search/src/application/disabled-sources.test.ts"
 type: "code"
-community: "SearchService"
-location: "L31"
+community: "search-service.ts"
+location: "L18"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/SearchService
+  - graphify/INFERRED
+  - community/search-servicets
 ---
 
 # finish()
 
 ## Connections
+- [[dot-get()_5]] - `calls` [INFERRED]
 - [[dot-subscribe()]] - `calls` [INFERRED]
-- [[search-service.test.ts]] - `contains` [EXTRACTED]
-- [[titles()]] - `calls` [EXTRACTED]
+- [[applicationdisabled-sources.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/SearchService
+#graphify/code #graphify/INFERRED #community/search-servicets

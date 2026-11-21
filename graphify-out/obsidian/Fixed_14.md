@@ -1,20 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v2.2.0.md"
+source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
-community: "compare_prices"
-location: "L51"
+community: "Cross-Marketplace Price Comparison"
+location: "L270"
 tags:
   - graphify/document
-  - graphify/INFERRED
-  - community/compare_prices
+  - graphify/EXTRACTED
+  - community/Cross-Marketplace_Price_Comparison
 ---
 
 # Fixed
 
 ## Connections
-- [[compare_prices()]] - `references` [INFERRED]
-- [[marketplace_sources()]] - `references` [INFERRED]
-- [[taobao_selfcheck()]] - `references` [INFERRED]
-- [[v2.2.0]] - `contains` [EXTRACTED]
+- [[2.3.0 - 2026-09-13]] - `contains` [EXTRACTED]
+- [[yandex_card()]] - `references` [INFERRED]
 
-#graphify/document #graphify/INFERRED #community/compare_prices
+#graphify/document #graphify/EXTRACTED #community/Cross-Marketplace_Price_Comparison

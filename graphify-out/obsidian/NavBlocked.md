@@ -1,23 +1,23 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "code"
-community: "wb_connector/server.py"
+community: "citilink_card"
 location: "L482"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/wb_connector/serverpy
+  - community/citilink_card
 ---
 
 # NavBlocked
 
 ## Connections
-- [[dot-__init__()_24]] - `method` [EXTRACTED]
+- [[dot-__init__()_9]] - `method` [EXTRACTED]
 - [[A blockautherror status came back for the main document. Carries status and…]] - `rationale_for` [EXTRACTED]
 - [[How it behaves at runtime]] - `references` [INFERRED]
-- [[RuntimeError_3]] - `inherits` [EXTRACTED]
+- [[RuntimeError_2]] - `inherits` [EXTRACTED]
 - [[_attempt_live_capture()]] - `calls` [EXTRACTED]
-- [[_fetch()]] - `uses` [INFERRED]
+- [[_fetch()_1]] - `uses` [INFERRED]
 - [[_fetch_card()]] - `uses` [INFERRED]
 - [[_fetch_composer()]] - `uses` [INFERRED]
 - [[_fetch_html_cdp()]] - `uses` [INFERRED]
@@ -39,4 +39,4 @@ tags:
 - [[taobao_card()]] - `uses` [INFERRED]
 - [[taobao_search()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/wb_connector/serverpy
+#graphify/code #graphify/INFERRED #community/citilink_card

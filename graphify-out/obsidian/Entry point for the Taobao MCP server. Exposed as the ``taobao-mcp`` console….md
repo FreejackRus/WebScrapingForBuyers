@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/__main__.py"
 type: "rationale"
-community: "sys"
+community: "run_server"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/sys
+  - community/run_server
 ---
 
 # Entry point for the Taobao MCP server. Exposed as the ``taobao-mcp`` console…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[taobao_connector__main__.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/sys
+#graphify/rationale #graphify/EXTRACTED #community/run_server

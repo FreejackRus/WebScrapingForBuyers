@@ -1,20 +1,17 @@
 ---
-source_file: ""
+source_file: "apps/analysis/src/application/grounded-narrator.test.ts"
 type: "code"
-community: "taobao_connector/server.py"
+community: "analysis-narrator.ts"
+location: "L21"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/taobao_connector/serverpy
+  - community/analysis-narratorts
 ---
 
-# Context
+# context
 
 ## Connections
-- [[_cdp_render()]] - `references` [EXTRACTED]
-- [[_taobao_selfcheck_impl()]] - `references` [EXTRACTED]
-- [[taobao_card()]] - `references` [EXTRACTED]
-- [[taobao_search()]] - `references` [EXTRACTED]
-- [[taobao_selfcheck()]] - `references` [EXTRACTED]
+- [[grounded-narrator.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/taobao_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/analysis-narratorts

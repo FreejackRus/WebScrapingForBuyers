@@ -1,21 +1,18 @@
 ---
-source_file: "apps/search/src/domain/marketplace-relevance.ts"
+source_file: "apps/search/src/domain/offer-assessment.ts"
 type: "code"
-community: "marketplace-relevance.ts"
-location: "L85"
+community: "packages_contracts_dist_index_product"
+location: "L63"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/marketplace-relevancets
+  - community/packages_contracts_dist_index_product
 ---
 
 # tokensIn()
 
 ## Connections
-- [[assessMarketplaceOfferRelevance()]] - `calls` [EXTRACTED]
-- [[citilinkIdentityUrls()]] - `calls` [EXTRACTED]
-- [[identityTokenIn()]] - `calls` [EXTRACTED]
-- [[marketplace-relevance.ts]] - `contains` [EXTRACTED]
-- [[mcp-marketplace-adapter.ts]] - `imports` [EXTRACTED]
+- [[matchedIdentity()]] - `calls` [EXTRACTED]
+- [[offer-assessment.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/marketplace-relevancets
+#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index_product

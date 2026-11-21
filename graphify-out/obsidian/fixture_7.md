@@ -1,21 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "load"
+community: "Clock"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/load
+  - community/Clock
 ---
 
 # fixture
 
 ## Connections
-- [[card_no_rating()]] - `references` [EXTRACTED]
-- [[card_washer()]] - `references` [EXTRACTED]
-- [[search_iphone()]] - `references` [EXTRACTED]
-- [[search_kettle()]] - `references` [EXTRACTED]
-- [[search_telefon_zone()]] - `references` [EXTRACTED]
-- [[search_washer()]] - `references` [EXTRACTED]
+- [[Clock]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/load
+#graphify/code #graphify/EXTRACTED #community/Clock

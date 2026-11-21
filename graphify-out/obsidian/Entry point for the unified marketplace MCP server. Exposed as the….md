@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/src/marketplace_connector/__main__.py"
 type: "rationale"
-community: "test_dsh_bundle.py"
+community: "cmd_doctor"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/test_dsh_bundlepy
+  - community/cmd_doctor
 ---
 
 # Entry point for the unified marketplace MCP server. Exposed as the…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[marketplace_connector__main__.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/test_dsh_bundlepy
+#graphify/rationale #graphify/EXTRACTED #community/cmd_doctor

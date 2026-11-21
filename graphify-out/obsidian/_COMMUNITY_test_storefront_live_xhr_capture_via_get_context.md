@@ -36,7 +36,7 @@ SORT file.name ASC
 
 ## Connections to other communities
 - 2 edges to [[_COMMUNITY_test_storefront_search.py]]
-- 1 edge to [[_COMMUNITY_Authenticated transport driving your own Chrome]]
+- 1 edge to [[_COMMUNITY_goto]]
 - 1 edge to [[_COMMUNITY_test_wb_search_storefront_uses_captured_v18_products]]
 
 ## Top bridge nodes

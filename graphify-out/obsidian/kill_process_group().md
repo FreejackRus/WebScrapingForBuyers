@@ -12,7 +12,7 @@ tags:
 # kill_process_group()
 
 ## Connections
-- [[Fixed_11]] - `references` [INFERRED]
+- [[Fixed_22]] - `references` [INFERRED]
 - [[SIGKILL the process group led by ``pid``. POSIX only. ``os.killpg``,…]] - `rationale_for` [EXTRACTED]
 - [[`process` — cross-platform worker handling]] - `references` [INFERRED]
 - [[process.py]] - `contains` [EXTRACTED]

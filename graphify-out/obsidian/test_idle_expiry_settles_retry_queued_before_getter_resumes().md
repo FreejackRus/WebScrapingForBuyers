@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[UpstreamTimeoutError]] - `uses` [INFERRED]
-- [[call()]] - `calls` [EXTRACTED]
+- [[call()_1]] - `calls` [EXTRACTED]
 - [[capture_timeout()]] - `indirect_call` [INFERRED]
 - [[mcp-coreteststest_browser_handoff.py]] - `contains` [EXTRACTED]
 - [[put_at_deadline()]] - `indirect_call` [INFERRED]

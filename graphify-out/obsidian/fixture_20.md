@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "offline_cdp_probe"
+community: "browser"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/offline_cdp_probe
+  - community/browser
 ---
 
 # fixture
 
 ## Connections
-- [[offline_cdp_probe()]] - `references` [EXTRACTED]
+- [[browser()_2]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/offline_cdp_probe
+#graphify/code #graphify/EXTRACTED #community/browser

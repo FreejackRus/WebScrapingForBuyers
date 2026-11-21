@@ -1,17 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "citilink_card"
+community: "raise_tool_error"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/citilink_card
+  - community/raise_tool_error
 ---
 
 # description
 
 ## Connections
-- [[citilink_card()]] - `references` [EXTRACTED]
-- [[citilink_search()]] - `references` [EXTRACTED]
+- [[avito_card()]] - `references` [EXTRACTED]
+- [[avito_search()_1]] - `references` [EXTRACTED]
+- [[avito_seller()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/citilink_card
+#graphify/code #graphify/EXTRACTED #community/raise_tool_error

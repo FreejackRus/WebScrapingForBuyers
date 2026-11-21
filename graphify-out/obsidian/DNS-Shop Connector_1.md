@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/skills/dns-connector/SKILL.md"
 type: "document"
-community: "DNS-Shop Connector"
+community: "dns_selfcheck"
 location: "L6"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/DNS-Shop_Connector
+  - community/dns_selfcheck
 ---
 
 # DNS-Shop Connector
@@ -14,10 +14,10 @@ tags:
 ## Connections
 - [[A green selfcheck does NOT mean the data is right_1]] - `contains` [EXTRACTED]
 - [[DSH activation_18]] - `contains` [EXTRACTED]
-- [[Gotchas_8]] - `contains` [EXTRACTED]
+- [[Gotchas_27]] - `contains` [EXTRACTED]
 - [[The price on a DNS tile is not the smallest number on it_1]] - `contains` [EXTRACTED]
-- [[Tools available_2]] - `contains` [EXTRACTED]
-- [[When to use_9]] - `contains` [EXTRACTED]
+- [[Tools available_19]] - `contains` [EXTRACTED]
+- [[When to use_25]] - `contains` [EXTRACTED]
 - [[ru-marketplace-mcpskillsdns-connectorSKILL]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/DNS-Shop_Connector
+#graphify/document #graphify/EXTRACTED #community/dns_selfcheck

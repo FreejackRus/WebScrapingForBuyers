@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/detmir-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/wb-connector/SKILL.md"
 type: "document"
-community: "Detsky Mir Connector"
-location: "L16"
+community: "Wildberries Connector"
+location: "L11"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Detsky_Mir_Connector
+  - community/Wildberries_Connector
 ---
 
 # When to use
 
 ## Connections
-- [[Detsky Mir Connector]] - `contains` [EXTRACTED]
+- [[Wildberries Connector]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Detsky_Mir_Connector
+#graphify/document #graphify/EXTRACTED #community/Wildberries_Connector

@@ -12,10 +12,10 @@ tags:
 # recording()
 
 ## Connections
-- [[dot-answer()_1]] - `calls` [INFERRED]
-- [[dot-filterRelevance()_1]] - `calls` [INFERRED]
-- [[dot-summarize()_1]] - `calls` [INFERRED]
+- [[dot-answer()]] - `calls` [INFERRED]
+- [[dot-filterRelevance()]] - `calls` [INFERRED]
+- [[dot-summarize()]] - `calls` [INFERRED]
 - [[compare-models.ts]] - `contains` [EXTRACTED]
-- [[evaluate()_4]] - `calls` [EXTRACTED]
+- [[evaluate()_1]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/INFERRED #community/ollama-analysis-narratorts

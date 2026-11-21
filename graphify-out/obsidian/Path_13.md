@@ -1,17 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "test_dsh_bundle.py"
+community: "test_anti_bot_challenge_dom.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_dsh_bundlepy
+  - community/test_anti_bot_challenge_dompy
 ---
 
 # Path
 
 ## Connections
-- [[_dsh_command()]] - `references` [EXTRACTED]
-- [[_workspace_root()]] - `references` [EXTRACTED]
+- [[_extract()_8]] - `references` [EXTRACTED]
+- [[_grid_with_hidden_widget()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_dsh_bundlepy
+#graphify/code #graphify/EXTRACTED #community/test_anti_bot_challenge_dompy

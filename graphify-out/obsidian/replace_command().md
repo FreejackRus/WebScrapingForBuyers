@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[MonkeyPatch]] - `references` [EXTRACTED]
 - [[StdioProbe]] - `calls` [EXTRACTED]
-- [[run()_3]] - `indirect_call` [INFERRED]
+- [[run()_1]] - `indirect_call` [INFERRED]
 - [[start()]] - `indirect_call` [INFERRED]
 - [[test_all_probe_entrypoints_check_protocol()]] - `calls` [EXTRACTED]
 - [[test_all_probe_entrypoints_fail_on_silence()]] - `calls` [EXTRACTED]

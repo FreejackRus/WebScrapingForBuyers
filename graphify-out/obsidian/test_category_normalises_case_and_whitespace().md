@@ -13,8 +13,8 @@ tags:
 
 ## Connections
 - [[Case and stray whitespace are user slips, not attacks — normalise them. Slugs…]] - `rationale_for` [EXTRACTED]
-- [[capture()_8]] - `indirect_call` [INFERRED]
+- [[capture()_9]] - `indirect_call` [INFERRED]
 - [[detmir-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[parametrize_4]] - `references` [EXTRACTED]
+- [[parametrize_10]] - `references` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/error_payload

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py"
 type: "code"
-community: "test_the_largest_candidate_above_the_price_is_the_strikethrough"
+community: "prices_from_tile"
 location: "L200"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_the_largest_candidate_above_the_price_is_the_strikethrough
+  - community/prices_from_tile
 ---
 
 # test_the_largest_candidate_above_the_price_is_the_strikethrough()
@@ -16,4 +16,4 @@ tags:
 - [[prices_from_tile()]] - `calls` [EXTRACTED]
 - [[test_dom.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_the_largest_candidate_above_the_price_is_the_strikethrough
+#graphify/code #graphify/EXTRACTED #community/prices_from_tile

@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "useUserStore"
+community: "analysis/store/index.ts"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/useUserStore
+  - community/analysis/store/indexts
 ---
 
 # packages_contracts_dist_index_usersettings
@@ -16,4 +16,4 @@ tags:
 - [[typesindex.ts]] - `re_exports` [EXTRACTED]
 - [[userapiindex.ts]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/useUserStore
+#graphify/concept #graphify/EXTRACTED #community/analysis/store/indexts

@@ -12,7 +12,7 @@ tags:
 # test_shutdown_releases_all_pages()
 
 ## Connections
-- [[call()]] - `calls` [EXTRACTED]
+- [[call()_1]] - `calls` [EXTRACTED]
 - [[mcp-coreteststest_browser_handoff.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/mcp-core/tests/test_browser_handoffpy

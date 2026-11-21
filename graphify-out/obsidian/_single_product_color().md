@@ -12,7 +12,7 @@ tags:
 # _single_product_color()
 
 ## Connections
-- [[Any_27]] - `references` [EXTRACTED]
+- [[Any]] - `references` [EXTRACTED]
 - [[Keep only unambiguous typed color evidence, never infer it from a title.]] - `rationale_for` [EXTRACTED]
 - [[_card_item_dict()]] - `calls` [EXTRACTED]
 - [[_decode_mojibake()]] - `calls` [EXTRACTED]

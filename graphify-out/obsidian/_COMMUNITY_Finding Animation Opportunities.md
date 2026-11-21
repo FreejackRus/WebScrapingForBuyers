@@ -25,7 +25,7 @@ members: 17
 - [[The Gate]] - document - .agents/skills/find-animation-opportunities/SKILL.md
 - [[Tone_2]] - document - .agents/skills/find-animation-opportunities/SKILL.md
 - [[Where to Hunt]] - document - .agents/skills/find-animation-opportunities/SKILL.md
-- [[Workflow_1]] - document - .agents/skills/find-animation-opportunities/SKILL.md
+- [[Workflow_3]] - document - .agents/skills/find-animation-opportunities/SKILL.md
 - [[find-animation-opportunitiesSKILL]] - document - .agents/skills/find-animation-opportunities/SKILL.md
 
 ## Live Query (requires Dataview plugin)

@@ -1,23 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_card_extractor_dom.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_shape_reference.py"
 type: "code"
-community: "dns-connector/tests/test_card_extractor_dom.py"
-location: "L31"
+community: "domtest.py"
+location: "L27"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/dns-connector/tests/test_card_extractor_dompy
+  - community/domtestpy
 ---
 
 # _extract()
 
 ## Connections
 - [[JsdomUnavailable]] - `uses` [INFERRED]
-- [[dns-connectorteststest_card_extractor_dom.py]] - `contains` [EXTRACTED]
+- [[Path_3]] - `references` [EXTRACTED]
+- [[citilink-connectorteststest_shape_reference.py]] - `contains` [EXTRACTED]
 - [[run_extractor()]] - `calls` [EXTRACTED]
-- [[test_availability_is_read_from_the_avail_wrap()]] - `calls` [EXTRACTED]
-- [[test_card_extractor_reads_the_product_card()]] - `calls` [EXTRACTED]
-- [[test_card_mapping_produces_the_wire_shape()]] - `calls` [EXTRACTED]
-- [[test_the_instalment_line_is_never_the_card_price()]] - `calls` [EXTRACTED]
+- [[test_card_payload_shape_matches_the_capture()]] - `calls` [EXTRACTED]
+- [[test_search_payload_shape_matches_the_capture()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/dns-connector/tests/test_card_extractor_dompy
+#graphify/code #graphify/EXTRACTED #community/domtestpy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/dns-connector/SKILL.md"
 type: "document"
-community: "DNS-Shop Connector"
+community: "dns_selfcheck"
 location: "L1"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/DNS-Shop_Connector
+  - community/dns_selfcheck
 ---
 
 # dsh/skills/dns-connector/SKILL.md
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[DNS-Shop Connector]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/DNS-Shop_Connector
+#graphify/document #graphify/EXTRACTED #community/dns_selfcheck

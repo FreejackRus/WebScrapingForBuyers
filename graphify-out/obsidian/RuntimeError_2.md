@@ -1,16 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "HostRefusingError"
+community: "citilink_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/HostRefusingError
+  - community/citilink_card
 ---
 
 # RuntimeError
 
 ## Connections
-- [[HostRefusingError]] - `inherits` [EXTRACTED]
+- [[NavBlocked]] - `inherits` [EXTRACTED]
+- [[NavigationPolicyError]] - `inherits` [EXTRACTED]
+- [[_CdpConnectTimeout]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/HostRefusingError
+#graphify/code #graphify/EXTRACTED #community/citilink_card

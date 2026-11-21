@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cdp_budget.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_stealth.py"
 type: "code"
-community: "Clock"
-location: "L22"
+community: "test_chrome_cdp_stealth.py"
+location: "L168"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Clock
+  - community/test_chrome_cdp_stealthpy
 ---
 
 # .__init__()
 
 ## Connections
-- [[Clock]] - `method` [EXTRACTED]
+- [[_FakeEventInfo]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Clock
+#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_stealthpy

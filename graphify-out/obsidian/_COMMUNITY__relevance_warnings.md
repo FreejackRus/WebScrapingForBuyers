@@ -27,7 +27,7 @@ SORT file.name ASC
 ## Connections to other communities
 - 3 edges to [[_COMMUNITY_compare_prices]]
 - 3 edges to [[_COMMUNITY_json]]
-- 1 edge to [[_COMMUNITY_compare-connectorteststest_server.py]]
+- 1 edge to [[_COMMUNITY_MarketOffer]]
 
 ## Top bridge nodes
 - [[_relevance_warnings()]] - degree 6, connects to 3 communities

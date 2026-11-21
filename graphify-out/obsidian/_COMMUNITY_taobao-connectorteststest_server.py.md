@@ -48,7 +48,6 @@ SORT file.name ASC
 - 2 edges to [[_COMMUNITY_test_selfcheck_genuine_challenge_is_inconclusive_blocked]]
 - 2 edges to [[_COMMUNITY_test_selfcheck_runs_the_shape_canary_past_hidden_challenge_text]]
 - 2 edges to [[_COMMUNITY_test_selfcheck_title_less_wall_is_inconclusive_never_drift]]
-- 2 edges to [[_COMMUNITY_json]]
 - 1 edge to [[_COMMUNITY_test_login_wall_markers_body_text_branch]]
 - 1 edge to [[_COMMUNITY_test_login_wall_markers_are_gated_on_anchor_count]]
 - 1 edge to [[_COMMUNITY_test_the_card_navigates_a_rebuilt_item_base_url]]
@@ -59,9 +58,11 @@ SORT file.name ASC
 - 1 edge to [[_COMMUNITY_test_login_wall_markers_ignore_missing_and_garbage_fields]]
 - 1 edge to [[_COMMUNITY_test_anti_bot_challenge_is_gated_on_zero_items]]
 - 1 edge to [[_COMMUNITY_test_anti_bot_challenge_honors_the_legacy_marker_and_ignores_garbage]]
+- 1 edge to [[_COMMUNITY_json]]
 - 1 edge to [[_COMMUNITY_pytest]]
-- 1 edge to [[_COMMUNITY_test_card_extractor_live_dom.py]]
+- 1 edge to [[_COMMUNITY_transport__init__.py]]
+- 1 edge to [[_COMMUNITY_taobao-connectorteststest_shape_reference.py]]
 
 ## Top bridge nodes
-- [[taobao-connectorteststest_server.py]] - degree 46, connects to 22 communities
+- [[taobao-connectorteststest_server.py]] - degree 46, connects to 23 communities
 - [[_patch_render()]] - degree 25, connects to 8 communities

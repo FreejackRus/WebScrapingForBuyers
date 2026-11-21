@@ -12,7 +12,7 @@ tags:
 # fake_raw_page()
 
 ## Connections
-- [[scenario()_44]] - `indirect_call` [INFERRED]
+- [[scenario()_90]] - `indirect_call` [INFERRED]
 - [[test_storefront_reads_live_xhr_body_over_raw_cdp_when_playwright_cannot_attach()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_storefront_reads_live_xhr_body_over_raw_cdp_when_playwright_cannot_attach

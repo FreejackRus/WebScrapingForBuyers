@@ -1,17 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "taobao_connector/server.py"
+community: "aliexpress_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/taobao_connector/serverpy
+  - community/aliexpress_connector/serverpy
 ---
 
 # max_length
 
 ## Connections
-- [[taobao_card()]] - `references` [EXTRACTED]
-- [[taobao_search()]] - `references` [EXTRACTED]
+- [[aliexpress_card()]] - `references` [EXTRACTED]
+- [[aliexpress_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/taobao_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/aliexpress_connector/serverpy

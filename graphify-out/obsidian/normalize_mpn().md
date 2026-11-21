@@ -12,7 +12,7 @@ tags:
 # normalize_mpn()
 
 ## Connections
-- [[Any_28]] - `references` [EXTRACTED]
+- [[Any_27]] - `references` [EXTRACTED]
 - [[identity.py]] - `contains` [EXTRACTED]
 - [[identity_from_mapping()]] - `calls` [EXTRACTED]
 - [[match_product_identity()]] - `calls` [EXTRACTED]

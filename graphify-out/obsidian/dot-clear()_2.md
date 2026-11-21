@@ -1,18 +1,18 @@
 ---
-source_file: "apps/gateway/src/user-cache.ts"
+source_file: "apps/gateway/src/search-history.ts"
 type: "code"
-community: "gateway/src/app.ts"
-location: "L41"
+community: "SearchHistory"
+location: "L82"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/gateway/src/appts
+  - community/SearchHistory
 ---
 
 # .clear()
 
 ## Connections
-- [[UserCache]] - `method` [EXTRACTED]
-- [[buildGatewayApp()]] - `calls` [INFERRED]
+- [[dot-schedule()_4]] - `calls` [EXTRACTED]
+- [[SearchHistory]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/gateway/src/appts
+#graphify/code #graphify/EXTRACTED #community/SearchHistory

@@ -19,8 +19,8 @@ tags:
 - [[dot-reset()_3]] - `method` [EXTRACTED]
 - [[dot-rotation_hint()_1]] - `method` [EXTRACTED]
 - [[dot-should_rotate()]] - `method` [EXTRACTED]
-- [[dot-wait()_4]] - `method` [EXTRACTED]
-- [[Fixed_13]] - `references` [INFERRED]
+- [[dot-wait()_5]] - `method` [EXTRACTED]
+- [[Fixed_17]] - `references` [INFERRED]
 - [[Keeps one source's requests spaced out, and backs off when refused. One…]] - `rationale_for` [EXTRACTED]
 - [[_pacer()]] - `uses` [INFERRED]
 - [[pacing.py]] - `contains` [EXTRACTED]
@@ -28,7 +28,7 @@ tags:
 - [[test_a_nonsense_gap_does_not_crash_construction()]] - `uses` [INFERRED]
 - [[test_a_zero_rotation_threshold_does_not_fire_on_no_refusals()]] - `uses` [INFERRED]
 - [[test_an_error_delay_below_the_normal_gap_is_raised_to_it()]] - `uses` [INFERRED]
-- [[Исправлено_11]] - `references` [INFERRED]
-- [[Исправлено_1]] - `references` [INFERRED]
+- [[Исправлено_13]] - `references` [INFERRED]
+- [[Исправлено_18]] - `references` [INFERRED]
 
 #graphify/code #graphify/EXTRACTED #community/Pacer

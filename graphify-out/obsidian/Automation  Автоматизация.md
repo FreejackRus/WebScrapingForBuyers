@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/CONTRIBUTORS.md"
 type: "document"
-community: "ru-marketplace-mcp/README.md"
+community: "Contributors / Участники"
 location: "L23"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/ru-marketplace-mcp/READMEmd
+  - community/Contributors_/_Участники
 ---
 
 # Automation / Автоматизация
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[Contributors  Участники]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/ru-marketplace-mcp/READMEmd
+#graphify/document #graphify/EXTRACTED #community/Contributors_/_Участники

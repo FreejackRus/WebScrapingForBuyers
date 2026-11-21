@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "json"
+community: "chrome_cdp.py"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/json
+  - community/chrome_cdppy
 ---
 
 # playwright_async_api
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[chrome_cdp.py]] - `imports_from` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/json
+#graphify/concept #graphify/EXTRACTED #community/chrome_cdppy

@@ -2,7 +2,7 @@
 source_file: "apps/search/src/app.ts"
 type: "code"
 community: "SourceAdapter"
-location: "L13"
+location: "L20"
 tags:
   - graphify/code
   - graphify/EXTRACTED

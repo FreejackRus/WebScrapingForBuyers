@@ -1,18 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/server.py"
 type: "code"
-community: "open_page"
-location: "L419"
+community: "megamarket_connector/server.py"
+location: "L153"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/open_page
+  - community/megamarket_connector/serverpy
 ---
 
 # _attempt()
 
 ## Connections
-- [[_cdp_fetch_json()]] - `contains` [EXTRACTED]
-- [[open_page()_3]] - `calls` [EXTRACTED]
+- [[_cdp_post_json()_1]] - `contains` [EXTRACTED]
+- [[_polite_wait()_9]] - `calls` [EXTRACTED]
+- [[open_page()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/open_page
+#graphify/code #graphify/EXTRACTED #community/megamarket_connector/serverpy

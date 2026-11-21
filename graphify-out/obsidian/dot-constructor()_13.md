@@ -1,17 +1,17 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/b2b-distributor-adapter.ts"
+source_file: "apps/identity/src/infrastructure/memory-auth-store.ts"
 type: "code"
-community: "b2b-distributor-adapter.ts"
-location: "L122"
+community: "memory-auth-store.ts"
+location: "L22"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/b2b-distributor-adapterts
+  - community/memory-auth-storets
 ---
 
 # .constructor()
 
 ## Connections
-- [[B2bDistributorStubAdapter]] - `method` [EXTRACTED]
+- [[MemoryAuthStore]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/b2b-distributor-adapterts
+#graphify/code #graphify/EXTRACTED #community/memory-auth-storets

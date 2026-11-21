@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/lamoda-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/cian-connector/SKILL.md"
 type: "document"
-community: "Lamoda Connector"
+community: "Cian Connector"
 location: "L14"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Lamoda_Connector
+  - community/Cian_Connector
 ---
 
 # When to use
 
 ## Connections
-- [[Lamoda Connector_1]] - `contains` [EXTRACTED]
+- [[Cian Connector_1]] - `contains` [EXTRACTED]
+- [[compare_prices()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Lamoda_Connector
+#graphify/document #graphify/EXTRACTED #community/Cian_Connector

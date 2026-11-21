@@ -16,6 +16,6 @@ tags:
 - [[_run()_1]] - `calls` [EXTRACTED]
 - [[fake_fetch()_13]] - `contains` [EXTRACTED]
 - [[ozon-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[scenario()_65]] - `contains` [EXTRACTED]
+- [[scenario()_64]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_ozon_selfcheck_includes_runtime_identity

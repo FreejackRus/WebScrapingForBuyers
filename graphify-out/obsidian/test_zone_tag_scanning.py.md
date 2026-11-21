@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_zone_tag_scanning.py"
 type: "code"
-community: "ssr.py"
+community: "zone_snippets"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ssrpy
+  - community/zone_snippets
 ---
 
 # test_zone_tag_scanning.py
@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[A zone snippet whose attribute holds a raw '' must still be parsed (review…]] - `rationale_for` [EXTRACTED]
 - [[_tag()]] - `contains` [EXTRACTED]
-- [[json]] - `imports` [EXTRACTED]
+- [[json_1]] - `imports` [EXTRACTED]
 - [[ssr.py]] - `imports_from` [EXTRACTED]
 - [[test_a_plain_snippet_is_read()]] - `contains` [EXTRACTED]
 - [[test_a_quoted_angle_bracket_inside_the_payload_does_not_split_the_tag()]] - `contains` [EXTRACTED]
@@ -23,4 +23,4 @@ tags:
 - [[test_non_product_zones_are_still_ignored()]] - `contains` [EXTRACTED]
 - [[test_several_snippets_keep_their_document_order()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ssrpy
+#graphify/code #graphify/EXTRACTED #community/zone_snippets

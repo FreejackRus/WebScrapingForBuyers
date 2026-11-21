@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "code"
-community: "ozon_card"
+community: "citilink_card"
 location: "L416"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ozon_card
+  - community/citilink_card
 ---
 
 # cdp_setup_hint()
@@ -21,4 +21,4 @@ tags:
 - [[ozon_card()]] - `calls` [EXTRACTED]
 - [[probe_session()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ozon_card
+#graphify/code #graphify/EXTRACTED #community/citilink_card

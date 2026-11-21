@@ -12,7 +12,7 @@ tags:
 # _first_dict()
 
 ## Connections
-- [[Any_24]] - `references` [EXTRACTED]
+- [[Any_26]] - `references` [EXTRACTED]
 - [[First dict value in a collection, or an empty dict. Card collections are keyed…]] - `rationale_for` [EXTRACTED]
 - [[_empty_product_shell()]] - `calls` [EXTRACTED]
 - [[_rating_from_snippets()]] - `calls` [EXTRACTED]

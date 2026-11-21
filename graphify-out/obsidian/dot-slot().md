@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/cdp_budget.py"
 type: "code"
-community: "Slot"
+community: "NavigationBudget"
 location: "L227"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Slot
+  - community/NavigationBudget
 ---
 
 # .slot()
@@ -17,4 +17,4 @@ tags:
 - [[Permit held for the whole ``async with`` block. Convenience for callers whose…]] - `rationale_for` [EXTRACTED]
 - [[Slot]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Slot
+#graphify/code #graphify/EXTRACTED #community/NavigationBudget

@@ -15,7 +15,7 @@ tags:
 - [[2026-09-29 — деплой из git и фото WB  Ozon  AliExpress]] - `references` [INFERRED]
 - [[Compute basket CDN host. Probe range up to 28 for new SKUs.]] - `rationale_for` [EXTRACTED]
 - [[_basket_from_table()]] - `calls` [EXTRACTED]
-- [[get_settings()_11]] - `calls` [EXTRACTED]
+- [[get_settings()]] - `calls` [EXTRACTED]
 - [[log_event()]] - `calls` [EXTRACTED]
 - [[wb_connectorserver.py]] - `contains` [EXTRACTED]
 - [[wb_root_info()]] - `calls` [EXTRACTED]

@@ -14,8 +14,8 @@ tags:
 ## Connections
 - [[RELEASE_NOTES_v1.4.1]] - `contains` [EXTRACTED]
 - [[Гейт выпуска_1]] - `contains` [EXTRACTED]
-- [[Известные ограничения выпуска_1]] - `contains` [EXTRACTED]
-- [[Не проверено живо (честно)_1]] - `contains` [EXTRACTED]
+- [[Известные ограничения выпуска]] - `contains` [EXTRACTED]
+- [[Не проверено живо (честно)]] - `contains` [EXTRACTED]
 - [[Проверено живо (унаследовано от v1.4.0)]] - `contains` [EXTRACTED]
 - [[Что вошло в патч]] - `contains` [EXTRACTED]
 

@@ -1,17 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "test_dsh_bundle.py"
+community: "transport/__init__.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_dsh_bundlepy
+  - community/transport/__init__py
 ---
 
 # parametrize
 
 ## Connections
-- [[test_dsh_profile_flags_activate_exactly_the_requested_mount()]] - `references` [EXTRACTED]
-- [[test_the_vendor_gate_detects_every_drift_class()]] - `references` [EXTRACTED]
+- [[test_raw_cleanup_is_bounded_and_preserves_original_failure()]] - `references` [EXTRACTED]
+- [[test_raw_target_closed_after_every_postcreation_failure()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_dsh_bundlepy
+#graphify/code #graphify/EXTRACTED #community/transport/__init__py

@@ -12,7 +12,7 @@ tags:
 # normalize_model()
 
 ## Connections
-- [[Any_28]] - `references` [EXTRACTED]
+- [[Any_27]] - `references` [EXTRACTED]
 - [[_text()_1]] - `calls` [EXTRACTED]
 - [[_variants()]] - `calls` [EXTRACTED]
 - [[identity.py]] - `contains` [EXTRACTED]

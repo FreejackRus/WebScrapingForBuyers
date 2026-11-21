@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/composition/layer/MobileNav.tsx"
 type: "code"
-community: "App.tsx"
+community: "useUserStore"
 location: "L5"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Apptsx
+  - community/useUserStore
 ---
 
 # items
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[MobileNav.tsx]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Apptsx
+#graphify/code #graphify/EXTRACTED #community/useUserStore

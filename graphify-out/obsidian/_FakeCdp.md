@@ -12,11 +12,11 @@ tags:
 # _FakeCdp
 
 ## Connections
-- [[dot-__init__()_9]] - `references` [EXTRACTED]
-- [[dot-__init__()_10]] - `method` [EXTRACTED]
+- [[dot-__init__()_11]] - `references` [EXTRACTED]
+- [[dot-__init__()_12]] - `method` [EXTRACTED]
 - [[dot-detach()]] - `method` [EXTRACTED]
 - [[dot-new_browser_cdp_session()]] - `references` [EXTRACTED]
-- [[dot-send()_2]] - `method` [EXTRACTED]
+- [[dot-send()_1]] - `method` [EXTRACTED]
 - [[test_chrome_cdp_stealth.py]] - `contains` [EXTRACTED]
 - [[test_new_tab_creates_the_target_in_the_background_when_stealth_is_on()]] - `calls` [EXTRACTED]
 - [[test_new_tab_detaches_the_session_even_when_no_page_arrives()]] - `calls` [EXTRACTED]

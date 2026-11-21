@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "TransportDownError"
+community: "raise_tool_error"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/TransportDownError
+  - community/raise_tool_error
 ---
 
 # NoReturn
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[raise_tool_error()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/TransportDownError
+#graphify/code #graphify/EXTRACTED #community/raise_tool_error

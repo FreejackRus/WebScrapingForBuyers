@@ -1,20 +1,20 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/src/aliexpress_connector/server.py"
 type: "code"
-community: "aliexpress_card"
+community: "aliexpress_connector/server.py"
 location: "L364"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/aliexpress_card
+  - community/aliexpress_connector/serverpy
 ---
 
 # _https_image_url()
 
 ## Connections
-- [[Any]] - `references` [EXTRACTED]
+- [[Any_4]] - `references` [EXTRACTED]
 - [[Keep only a real https photo URL; lazy placeholders are data URIs.]] - `rationale_for` [EXTRACTED]
 - [[_item_from_payload()]] - `calls` [EXTRACTED]
 - [[aliexpress_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/aliexpress_card
+#graphify/code #graphify/EXTRACTED #community/aliexpress_connector/serverpy

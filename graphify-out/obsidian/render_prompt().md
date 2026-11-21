@@ -12,7 +12,7 @@ tags:
 # render_prompt()
 
 ## Connections
-- [[Any_29]] - `references` [EXTRACTED]
+- [[Any_28]] - `references` [EXTRACTED]
 - [[Render one case exactly as an evaluated model should see it. The case id is…]] - `rationale_for` [EXTRACTED]
 - [[model_routing_eval.py]] - `contains` [EXTRACTED]
 - [[render_prompts()]] - `calls` [EXTRACTED]

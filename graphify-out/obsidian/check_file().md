@@ -12,10 +12,10 @@ tags:
 # check_file()
 
 ## Connections
-- [[Path_4]] - `references` [EXTRACTED]
+- [[Path_9]] - `references` [EXTRACTED]
 - [[Return human-readable violations for one file.]] - `rationale_for` [EXTRACTED]
 - [[StdoutWriteVisitor]] - `calls` [EXTRACTED]
 - [[check_no_print.py]] - `contains` [EXTRACTED]
-- [[main()_4]] - `calls` [EXTRACTED]
+- [[main()_23]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/check_no_printpy

@@ -1,17 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_browser_handoff.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py"
 type: "code"
-community: "json"
-location: "L199"
+community: "capture"
+location: "L118"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/json
+  - graphify/INFERRED
+  - community/capture
 ---
 
 # capture()
 
 ## Connections
-- [[test_snapshot_rejects_other_session_and_unknown_handle_without_capture()]] - `contains` [EXTRACTED]
+- [[load()_1]] - `calls` [EXTRACTED]
+- [[test_search_builds_a_page_parameter_only_beyond_page_one()]] - `indirect_call` [INFERRED]
+- [[test_search_percent_encodes_cyrillic_queries()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/json
+#graphify/code #graphify/INFERRED #community/capture

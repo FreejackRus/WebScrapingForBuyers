@@ -1,24 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_card_extractor_dom.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_shape_reference.py"
 type: "code"
-community: "citilink-connector/tests/test_card_extractor_dom.py"
-location: "L40"
+community: "domtest.py"
+location: "L29"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/citilink-connector/tests/test_card_extractor_dompy
+  - community/domtestpy
 ---
 
 # _extract()
 
 ## Connections
 - [[JsdomUnavailable]] - `uses` [INFERRED]
-- [[citilink-connectorteststest_card_extractor_dom.py]] - `contains` [EXTRACTED]
+- [[Path_4]] - `references` [EXTRACTED]
+- [[dns-connectorteststest_shape_reference.py]] - `contains` [EXTRACTED]
 - [[run_extractor()]] - `calls` [EXTRACTED]
-- [[test_card_extractor_reads_the_product_card()_1]] - `calls` [EXTRACTED]
-- [[test_card_prices_are_the_products_own()]] - `calls` [EXTRACTED]
-- [[test_credit_and_bonus_amounts_are_not_price_candidates()]] - `calls` [EXTRACTED]
-- [[test_recommendation_prices_are_never_the_products()]] - `calls` [EXTRACTED]
-- [[test_split_glyph_price_survives_the_meta_attribute_disappearing()]] - `calls` [EXTRACTED]
+- [[test_card_payload_shape_matches_the_capture()_1]] - `calls` [EXTRACTED]
+- [[test_search_payload_shape_matches_the_capture()_1]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/citilink-connector/tests/test_card_extractor_dompy
+#graphify/code #graphify/EXTRACTED #community/domtestpy

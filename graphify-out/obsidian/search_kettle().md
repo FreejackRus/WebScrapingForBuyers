@@ -12,8 +12,8 @@ tags:
 # search_kettle()
 
 ## Connections
-- [[Fixed_10]] - `references` [INFERRED]
-- [[fixture_7]] - `references` [EXTRACTED]
+- [[Fixed_12]] - `references` [INFERRED]
+- [[fixture_14]] - `references` [EXTRACTED]
 - [[load()]] - `calls` [EXTRACTED]
 - [[test_ssr.py]] - `contains` [EXTRACTED]
 - [[Исправлено_9]] - `references` [INFERRED]

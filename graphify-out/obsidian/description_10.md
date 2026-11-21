@@ -1,18 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "compare_verify_offer"
+community: "yandex_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/compare_verify_offer
+  - community/yandex_card
 ---
 
 # description
 
 ## Connections
-- [[compare_browser_snapshot()]] - `references` [EXTRACTED]
-- [[compare_prices()]] - `references` [EXTRACTED]
-- [[compare_verify_offer()]] - `references` [EXTRACTED]
+- [[yandex_card()]] - `references` [EXTRACTED]
+- [[yandex_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/compare_verify_offer
+#graphify/code #graphify/EXTRACTED #community/yandex_card

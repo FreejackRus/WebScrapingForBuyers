@@ -12,9 +12,9 @@ tags:
 # _FakeResponse
 
 ## Connections
-- [[dot-__init__()_4]] - `method` [EXTRACTED]
-- [[dot-close()_2]] - `method` [EXTRACTED]
-- [[dot-get()]] - `calls` [EXTRACTED]
+- [[dot-__init__()_5]] - `method` [EXTRACTED]
+- [[dot-close()]] - `method` [EXTRACTED]
+- [[dot-get()_1]] - `calls` [EXTRACTED]
 - [[dot-iter_content()]] - `method` [EXTRACTED]
 - [[dot-json()]] - `method` [EXTRACTED]
 - [[dot-post()]] - `calls` [EXTRACTED]

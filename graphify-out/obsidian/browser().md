@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_handoff_liveness_consistency.py"
+source_file: "scripts/office-agent/citilink-agent.mjs"
 type: "code"
-community: "pytest"
-location: "L24"
+community: "citilink-agent.mjs"
+location: "L57"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pytest
+  - community/citilink-agentmjs
 ---
 
 # browser()
 
 ## Connections
-- [[fixture_10]] - `references` [EXTRACTED]
-- [[open_page()]] - `indirect_call` [INFERRED]
-- [[test_handoff_liveness_consistency.py]] - `contains` [EXTRACTED]
+- [[citilink-agent.mjs]] - `contains` [EXTRACTED]
+- [[searchCitilink()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pytest
+#graphify/code #graphify/EXTRACTED #community/citilink-agentmjs

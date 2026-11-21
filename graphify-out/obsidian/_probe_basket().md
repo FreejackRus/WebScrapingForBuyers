@@ -12,9 +12,9 @@ tags:
 # _probe_basket()
 
 ## Connections
-- [[AsyncClient_3]] - `references` [EXTRACTED]
+- [[AsyncClient]] - `references` [EXTRACTED]
 - [[Find the host serving ``nm_id``'s photo and cache it for its vol.]] - `rationale_for` [EXTRACTED]
-- [[Semaphore_1]] - `references` [EXTRACTED]
+- [[Semaphore]] - `references` [EXTRACTED]
 - [[_attach_image_urls()]] - `calls` [EXTRACTED]
 - [[_wb_image_path()]] - `calls` [EXTRACTED]
 - [[hit()]] - `contains` [EXTRACTED]

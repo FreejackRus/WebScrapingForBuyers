@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py"
 type: "code"
-community: "ssr.py"
+community: "Fixed"
 location: "L532"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ssrpy
+  - community/Fixed
 ---
 
 # _search_ozon()
@@ -20,4 +20,4 @@ tags:
 - [[_stock_from_label()]] - `calls` [EXTRACTED]
 - [[compare_connectorserver.py]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/ssrpy
+#graphify/code #graphify/EXTRACTED #community/Fixed

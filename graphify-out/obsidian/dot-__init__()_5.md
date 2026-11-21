@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py"
 type: "code"
 community: "_FakeResponse"
-location: "L464"
+location: "L444"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,6 +12,6 @@ tags:
 # .__init__()
 
 ## Connections
-- [[_FakeSession]] - `method` [EXTRACTED]
+- [[_FakeResponse]] - `method` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_FakeResponse

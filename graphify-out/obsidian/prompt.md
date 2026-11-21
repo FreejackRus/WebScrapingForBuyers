@@ -1,12 +1,12 @@
 ---
 source_file: "scripts/hooks/require-agent-preamble.mjs"
 type: "code"
-community: "SearchHistory"
+community: "watchlist-checker.ts"
 location: "L20"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/SearchHistory
+  - community/watchlist-checkerts
 ---
 
 # prompt
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[require-agent-preamble.mjs]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/SearchHistory
+#graphify/code #graphify/EXTRACTED #community/watchlist-checkerts

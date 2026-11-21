@@ -12,11 +12,10 @@ tags:
 # wb_selfcheck()
 
 ## Connections
-- [[Context_13]] - `references` [EXTRACTED]
-- [[Fixed_22]] - `references` [INFERRED]
+- [[Fixed]] - `references` [INFERRED]
 - [[Structural drift canary for WB (tri-state success  drift_detected …]] - `rationale_for` [EXTRACTED]
-- [[Tools available_18]] - `references` [INFERRED]
-- [[Tools available_19]] - `references` [INFERRED]
+- [[Tools available]] - `references` [INFERRED]
+- [[Tools available_1]] - `references` [INFERRED]
 - [[WbSelfCheckResponse]] - `uses` [INFERRED]
 - [[Wildberries]] - `references` [INFERRED]
 - [[_basket_for_sku()]] - `calls` [EXTRACTED]
@@ -24,14 +23,14 @@ tags:
 - [[_extract_price_rub()]] - `calls` [EXTRACTED]
 - [[_fresh_get_text()]] - `calls` [EXTRACTED]
 - [[_has_review_text()]] - `contains` [EXTRACTED]
-- [[_polite_wait()_9]] - `calls` [EXTRACTED]
+- [[_polite_wait()]] - `calls` [EXTRACTED]
 - [[_recover_search_ids()]] - `calls` [EXTRACTED]
 - [[_search_transport()]] - `calls` [EXTRACTED]
 - [[_search_via_storefront()]] - `calls` [EXTRACTED]
 - [[_wb_client()]] - `calls` [EXTRACTED]
-- [[get_settings()_11]] - `calls` [EXTRACTED]
+- [[get_settings()]] - `calls` [EXTRACTED]
 - [[log_event()]] - `calls` [EXTRACTED]
-- [[main()_9]] - `calls` [INFERRED]
+- [[main()_35]] - `calls` [INFERRED]
 - [[test_wb_selfcheck_reaches_a_verdict()]] - `calls` [INFERRED]
 - [[wb_connectorserver.py]] - `contains` [EXTRACTED]
 

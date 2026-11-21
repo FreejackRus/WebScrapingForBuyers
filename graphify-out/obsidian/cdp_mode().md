@@ -12,7 +12,7 @@ tags:
 # cdp_mode()
 
 ## Connections
-- [[fixture_5]] - `references` [EXTRACTED]
+- [[fixture_17]] - `references` [EXTRACTED]
 - [[test_cdp_transport.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_cdp_transportpy

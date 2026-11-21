@@ -12,7 +12,7 @@ members: 11
 ## Members
 - [[DNS-Shop MCP connector.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/dns-connector/src/dns_connector/__init__.py
 - [[Regression tests for the DNS card extractor on a captured card page. Captured…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_card_extractor_dom.py
-- [[_extract()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_card_extractor_dom.py
+- [[_extract()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_card_extractor_dom.py
 - [[dns-connectorteststest_card_extractor_dom.py]] - code - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_card_extractor_dom.py
 - [[dns_connector__init__.py]] - code - mcp-servers/ru-marketplace-mcp/packages/dns-connector/src/dns_connector/__init__.py
 - [[test_availability_fallback_reads_text_content_not_inner_text()]] - code - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_card_extractor_dom.py
@@ -39,4 +39,4 @@ SORT file.name ASC
 ## Top bridge nodes
 - [[dns-connectorteststest_card_extractor_dom.py]] - degree 11, connects to 3 communities
 - [[dns_connector__init__.py]] - degree 5, connects to 3 communities
-- [[_extract()_1]] - degree 7, connects to 1 community
+- [[_extract()_3]] - degree 7, connects to 1 community

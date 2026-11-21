@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[Seller answers contain literal newlines, which break single-line rendering.]] - `rationale_for` [EXTRACTED]
 - [[responder()_10]] - `contains` [EXTRACTED]
-- [[scenario()_54]] - `contains` [EXTRACTED]
+- [[scenario()_53]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_patch_questions

@@ -1,19 +1,23 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/models_output.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/models_output.py"
 type: "code"
-community: "ozon_connector/models_output.py"
-location: "L19"
+community: "avito_connector/server.py"
+location: "L14"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ozon_connector/models_outputpy
+  - community/avito_connector/serverpy
 ---
 
 # MetaOut
 
 ## Connections
+- [[Avito carries the shared envelope unchanged.]] - `rationale_for` [EXTRACTED]
 - [[MetaOutBase]] - `inherits` [EXTRACTED]
-- [[Ozon carries the shared envelope unchanged.]] - `rationale_for` [EXTRACTED]
-- [[ozon_connectormodels_output.py]] - `contains` [EXTRACTED]
+- [[avito_card()]] - `uses` [INFERRED]
+- [[avito_connectormodels_output.py]] - `contains` [EXTRACTED]
+- [[avito_connectorserver.py]] - `imports` [EXTRACTED]
+- [[avito_search()_1]] - `uses` [INFERRED]
+- [[avito_seller()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/ozon_connector/models_outputpy
+#graphify/code #graphify/EXTRACTED #community/avito_connector/serverpy

@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_review_regressions.py"
 type: "code"
-community: "test_review_regressions.py"
+community: "transport/__init__.py"
 location: "L24"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/test_review_regressionspy
+  - community/transport/__init__py
 ---
 
 # open_page()
 
 ## Connections
-- [[browser()_3]] - `indirect_call` [INFERRED]
+- [[browser()_4]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/test_review_regressionspy
+#graphify/code #graphify/INFERRED #community/transport/__init__py

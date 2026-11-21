@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/domain/price-anomaly.ts"
 type: "code"
-community: "packages_contracts_dist_index"
-location: "L8"
+community: "search-service.ts"
+location: "L12"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/packages_contracts_dist_index
+  - community/search-servicets
 ---
 
 # median()
@@ -15,4 +15,4 @@ tags:
 - [[flagPriceAnomalies()]] - `calls` [EXTRACTED]
 - [[price-anomaly.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index
+#graphify/code #graphify/EXTRACTED #community/search-servicets

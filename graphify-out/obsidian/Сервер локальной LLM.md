@@ -13,11 +13,12 @@ tags:
 
 ## Connections
 - [[AI_SERVER]] - `contains` [EXTRACTED]
-- [[Исходная рекомендация для MVP (vLLM, не внедрена)]] - `contains` [EXTRACTED]
-- [[Модель в проде (с 2026-10-06)]] - `contains` [EXTRACTED]
+- [[Историческая рекомендация для MVP (2026-09; параметры ниже не текущий прод)]] - `contains` [EXTRACTED]
+- [[Исходные установленные модели (2026-09-23)]] - `contains` [EXTRACTED]
 - [[Ограничения и проверка качества]] - `contains` [EXTRACTED]
 - [[Прежняя модель (2026-09-29 — 2026-10-05)]] - `contains` [EXTRACTED]
-- [[Уже установленные модели]] - `contains` [EXTRACTED]
+- [[Прежняя модель (2026-10-06 — 2026-10-12)]] - `contains` [EXTRACTED]
+- [[Текущий inference в проде (с 2026-10-12)]] - `contains` [EXTRACTED]
 - [[Характеристики]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/Сервер_локальной_LLM

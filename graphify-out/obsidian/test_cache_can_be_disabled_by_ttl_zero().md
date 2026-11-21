@@ -14,11 +14,11 @@ tags:
 ## Connections
 - [[TTLCache]] - `uses` [INFERRED]
 - [[WB_CACHE_TTL=0 means every read goes upstream.]] - `rationale_for` [EXTRACTED]
-- [[__aenter__()_12]] - `contains` [EXTRACTED]
-- [[__aexit__()_12]] - `contains` [EXTRACTED]
+- [[__aenter__()_11]] - `contains` [EXTRACTED]
+- [[__aexit__()_11]] - `contains` [EXTRACTED]
 - [[aiter_bytes()_4]] - `contains` [EXTRACTED]
-- [[no_wait()_35]] - `contains` [EXTRACTED]
-- [[scenario()_81]] - `contains` [EXTRACTED]
+- [[no_wait()_33]] - `contains` [EXTRACTED]
+- [[scenario()_80]] - `contains` [EXTRACTED]
 - [[stream()_8]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 

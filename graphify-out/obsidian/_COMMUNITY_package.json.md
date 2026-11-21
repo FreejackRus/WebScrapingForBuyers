@@ -1,13 +1,13 @@
 ---
 type: community
 cohesion: 0.10
-members: 20
+members: 21
 ---
 
 # package.json
 
 **Cohesion:** 0.10 - loosely connected
-**Members:** 20 nodes
+**Members:** 21 nodes
 
 ## Members
 - [[build_4]] - code - package.json
@@ -16,6 +16,7 @@ members: 20
 - [[dev_4]] - code - package.json
 - [[devDependencies_4]] - code - package.json
 - [[engines]] - code - package.json
+- [[evalsearch]] - code - package.json
 - [[name_5]] - code - package.json
 - [[node]] - code - package.json
 - [[package.json]] - code - package.json

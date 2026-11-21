@@ -15,9 +15,9 @@ tags:
 - [[TTLCache]] - `uses` [INFERRED]
 - [[compare-connectorteststest_browser_handoff.py]] - `contains` [EXTRACTED]
 - [[current_url()]] - `indirect_call` [INFERRED]
-- [[evaluate()_2]] - `contains` [EXTRACTED]
-- [[fixture_18]] - `references` [EXTRACTED]
-- [[open_page()_2]] - `indirect_call` [INFERRED]
+- [[evaluate()_3]] - `contains` [EXTRACTED]
+- [[fixture_13]] - `references` [EXTRACTED]
+- [[open_page()_1]] - `indirect_call` [INFERRED]
 - [[reveal()]] - `indirect_call` [INFERRED]
 - [[taobao()]] - `indirect_call` [INFERRED]
 

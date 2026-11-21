@@ -1,17 +1,20 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_raw_lifecycle.py"
+source_file: "scripts/office-agent/citilink-agent.mjs"
 type: "code"
-community: "test_chrome_cdp_raw_lifecycle.py"
-location: "L123"
+community: "citilink-agent.mjs"
+location: "L113"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_chrome_cdp_raw_lifecyclepy
+  - community/citilink-agentmjs
 ---
 
 # run()
 
 ## Connections
-- [[test_raw_cleanup_is_bounded_and_preserves_original_failure()]] - `contains` [EXTRACTED]
+- [[citilink-agent.mjs]] - `contains` [EXTRACTED]
+- [[saveCache()]] - `calls` [EXTRACTED]
+- [[searchCitilink()]] - `calls` [EXTRACTED]
+- [[server]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_raw_lifecyclepy
+#graphify/code #graphify/EXTRACTED #community/citilink-agentmjs

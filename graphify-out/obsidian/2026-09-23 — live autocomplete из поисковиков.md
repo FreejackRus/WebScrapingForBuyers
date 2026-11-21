@@ -5,7 +5,7 @@ community: "contracts/src/index.ts"
 location: "L575"
 tags:
   - graphify/document
-  - graphify/INFERRED
+  - graphify/EXTRACTED
   - community/contracts/src/indexts
 ---
 
@@ -13,7 +13,6 @@ tags:
 
 ## Connections
 - [[Product]] - `references` [INFERRED]
-- [[productFromQuery()]] - `references` [INFERRED]
 - [[Итерации]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/INFERRED #community/contracts/src/indexts
+#graphify/document #graphify/EXTRACTED #community/contracts/src/indexts

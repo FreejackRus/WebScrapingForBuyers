@@ -16,6 +16,7 @@ tags:
 - [[export-service.test.ts]] - `imports_from` [EXTRACTED]
 - [[exportSearch()]] - `contains` [EXTRACTED]
 - [[packages_contracts_dist_index]] - `imports_from` [EXTRACTED]
+- [[packages_contracts_dist_index_offerchannel]] - `imports` [EXTRACTED]
 - [[packages_contracts_dist_index_searchsnapshot]] - `imports` [EXTRACTED]
 - [[searchsrchttproutes.ts]] - `imports_from` [EXTRACTED]
 

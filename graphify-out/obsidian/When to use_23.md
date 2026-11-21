@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/taobao-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/citilink-connector/SKILL.md"
 type: "document"
-community: "Taobao Connector"
-location: "L14"
+community: "citilink_selfcheck"
+location: "L13"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Taobao_Connector
+  - community/citilink_selfcheck
 ---
 
 # When to use
 
 ## Connections
-- [[Taobao Connector]] - `contains` [EXTRACTED]
+- [[Citilink Connector_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Taobao_Connector
+#graphify/document #graphify/EXTRACTED #community/citilink_selfcheck

@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/ozon-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/avito-connector/SKILL.md"
 type: "document"
-community: "Ozon Connector"
-location: "L20"
+community: "raise_tool_error"
+location: "L13"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Ozon_Connector
+  - community/raise_tool_error
 ---
 
 # When to use
 
 ## Connections
-- [[Ozon Connector_1]] - `contains` [EXTRACTED]
+- [[Avito Connector_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Ozon_Connector
+#graphify/document #graphify/EXTRACTED #community/raise_tool_error

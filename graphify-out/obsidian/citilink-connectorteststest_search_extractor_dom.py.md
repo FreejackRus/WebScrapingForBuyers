@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Regression tests for the Citilink extractors on captured tile markup. Citilink…]] - `rationale_for` [EXTRACTED]
-- [[_extract()_12]] - `contains` [EXTRACTED]
+- [[_extract()_14]] - `contains` [EXTRACTED]
 - [[_items()_4]] - `contains` [EXTRACTED]
 - [[citilink_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[dom.py]] - `imports_from` [EXTRACTED]

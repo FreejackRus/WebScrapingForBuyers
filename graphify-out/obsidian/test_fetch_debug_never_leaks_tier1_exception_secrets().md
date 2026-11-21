@@ -12,12 +12,12 @@ tags:
 # test_fetch_debug_never_leaks_tier1_exception_secrets()
 
 ## Connections
-- [[__init__()_6]] - `contains` [EXTRACTED]
+- [[__init__()_4]] - `contains` [EXTRACTED]
 - [[avito-connectorteststest_server.py]] - `contains` [EXTRACTED]
 - [[debug()]] - `contains` [EXTRACTED]
 - [[exploding_get()]] - `indirect_call` [INFERRED]
 - [[fake_cdp_fetch()]] - `indirect_call` [INFERRED]
 - [[info()]] - `contains` [EXTRACTED]
-- [[no_wait()_38]] - `indirect_call` [INFERRED]
+- [[no_wait()_36]] - `indirect_call` [INFERRED]
 
 #graphify/code #graphify/EXTRACTED #community/test_fetch_debug_never_leaks_tier1_exception_secrets

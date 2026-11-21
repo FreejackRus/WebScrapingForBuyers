@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[responder()_11]] - `contains` [EXTRACTED]
-- [[scenario()_55]] - `contains` [EXTRACTED]
+- [[scenario()_54]] - `contains` [EXTRACTED]
 - [[take is capped at 30 upstream, so limit=45 must walk two pages.]] - `rationale_for` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 

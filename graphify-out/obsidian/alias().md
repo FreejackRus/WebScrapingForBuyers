@@ -1,21 +1,21 @@
 ---
 source_file: "apps/web/vite.config.ts"
 type: "code"
-community: "Detsky Mir Connector"
+community: "detmir_categories"
 location: "L6"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Detsky_Mir_Connector
+  - community/detmir_categories
 ---
 
 # alias()
 
 ## Connections
-- [[Gotchas]] - `references` [INFERRED]
-- [[Gotchas_1]] - `references` [INFERRED]
+- [[Gotchas_6]] - `references` [INFERRED]
+- [[Gotchas_7]] - `references` [INFERRED]
 - [[Tools]] - `references` [INFERRED]
 - [[Tools_1]] - `references` [INFERRED]
 - [[vite.config.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/Detsky_Mir_Connector
+#graphify/code #graphify/INFERRED #community/detmir_categories

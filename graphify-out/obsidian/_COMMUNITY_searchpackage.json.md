@@ -12,19 +12,19 @@ members: 30
 ## Members
 - [[@modelcontextprotocolsdk]] - code - apps/search/package.json
 - [[@modelcontextprotocolsdk_1]] - concept - apps/search/package.json
-- [[@peremenacontracts_4]] - code - apps/search/package.json
-- [[@peremenacontracts_5]] - concept - apps/search/package.json
-- [[@peremenaservice-kit_4]] - code - apps/search/package.json
-- [[@peremenaservice-kit_5]] - concept - apps/search/package.json
+- [[@peremenacontracts_3]] - code - apps/search/package.json
+- [[@peremenacontracts_4]] - concept - apps/search/package.json
+- [[@peremenaservice-kit_3]] - code - apps/search/package.json
+- [[@peremenaservice-kit_4]] - concept - apps/search/package.json
 - [[@typesnode_4]] - code - apps/search/package.json
 - [[@typesnode_5]] - concept - apps/search/package.json
 - [[build_2]] - code - apps/search/package.json
-- [[dependencies_2]] - code - apps/search/package.json
+- [[dependencies_1]] - code - apps/search/package.json
 - [[dev_2]] - code - apps/search/package.json
 - [[devDependencies_2]] - code - apps/search/package.json
 - [[exceljs]] - code - apps/search/package.json
-- [[fastify_4]] - code - apps/search/package.json
-- [[fastify_5]] - concept - apps/search/package.json
+- [[fastify_3]] - code - apps/search/package.json
+- [[fastify_4]] - concept - apps/search/package.json
 - [[name_3]] - code - apps/search/package.json
 - [[private_2]] - code - apps/search/package.json
 - [[scripts_2]] - code - apps/search/package.json
@@ -49,8 +49,8 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 1 edge to [[_COMMUNITY_mcp-marketplace-adapter.ts]]
 - 1 edge to [[_COMMUNITY_packages_contracts_dist_index]]
+- 1 edge to [[_COMMUNITY_mcp-marketplace-adapter.ts]]
 
 ## Top bridge nodes
 - [[searchpackage.json]] - degree 16, connects to 1 community

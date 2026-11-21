@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_compose_runtime.py"
 type: "code"
-community: "pytest"
+community: "transport/__init__.py"
 location: "L24"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pytest
+  - community/transport/__init__py
 ---
 
 # test_compose_service_passes_http_startup_auth_gate()
 
 ## Connections
-- [[parametrize_14]] - `references` [EXTRACTED]
+- [[parametrize_28]] - `references` [EXTRACTED]
 - [[test_compose_runtime.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pytest
+#graphify/code #graphify/EXTRACTED #community/transport/__init__py

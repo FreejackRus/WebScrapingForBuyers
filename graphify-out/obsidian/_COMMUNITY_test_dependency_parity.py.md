@@ -37,8 +37,10 @@ SORT file.name ASC
 
 ## Connections to other communities
 - 2 edges to [[_COMMUNITY_test_distribution_contract.py]]
+- 1 edge to [[_COMMUNITY_Контекст проекта ПЕРЕМЕНА Price Radar]]
 - 1 edge to [[_COMMUNITY_json]]
 - 1 edge to [[_COMMUNITY_pathlib]]
 
 ## Top bridge nodes
 - [[test_dependency_parity.py]] - degree 13, connects to 3 communities
+- [[test_the_mounts_table_was_read()]] - degree 5, connects to 1 community

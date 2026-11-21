@@ -13,8 +13,8 @@ members: 7
 - [[__aenter__()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 - [[__aexit__()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 - [[dead_fetch()]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
+- [[scenario()_66]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 - [[scenario()_67]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
-- [[scenario()_68]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 - [[test_cdp_fetch_json_times_out_open_page_and_releases_lock()]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 - [[test_ozon_search_zero_status_does_not_mention_cdp_setup()]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 

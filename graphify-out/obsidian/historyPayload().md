@@ -2,7 +2,7 @@
 source_file: "apps/analysis/src/infrastructure/ollama-analysis-narrator.ts"
 type: "code"
 community: "ollama-analysis-narrator.ts"
-location: "L248"
+location: "L327"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,8 +12,8 @@ tags:
 # historyPayload()
 
 ## Connections
-- [[dot-answer()_1]] - `calls` [EXTRACTED]
-- [[dot-summarize()_1]] - `calls` [EXTRACTED]
+- [[dot-answer()]] - `calls` [EXTRACTED]
+- [[dot-summarize()]] - `calls` [EXTRACTED]
 - [[clip()]] - `calls` [EXTRACTED]
 - [[ollama-analysis-narrator.ts]] - `contains` [EXTRACTED]
 

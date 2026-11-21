@@ -17,6 +17,6 @@ tags:
 - [[always_blocked()]] - `contains` [EXTRACTED]
 - [[ok_cdp()]] - `contains` [EXTRACTED]
 - [[ozon-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[scenario()_73]] - `contains` [EXTRACTED]
+- [[scenario()_74]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_patch_tier1

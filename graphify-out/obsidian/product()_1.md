@@ -1,17 +1,17 @@
 ---
-source_file: "apps/search/src/domain/offer-assessment.test.ts"
+source_file: "apps/gateway/src/search-history.test.ts"
 type: "code"
-community: "packages_contracts_dist_index"
-location: "L6"
+community: "watchlist-checker.ts"
+location: "L10"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/packages_contracts_dist_index
+  - community/watchlist-checkerts
 ---
 
 # product()
 
 ## Connections
-- [[offer-assessment.test.ts]] - `contains` [EXTRACTED]
+- [[search-history.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index
+#graphify/code #graphify/EXTRACTED #community/watchlist-checkerts

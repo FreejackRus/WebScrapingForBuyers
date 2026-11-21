@@ -12,7 +12,7 @@ tags:
 # make_client()
 
 ## Connections
-- [[AsyncClient_1]] - `references` [EXTRACTED]
+- [[AsyncClient_3]] - `references` [EXTRACTED]
 - [[test_body_cap_is_enforced()]] - `calls` [EXTRACTED]
 - [[test_client_error_is_not_retried()]] - `calls` [EXTRACTED]
 - [[test_error_bodies_are_truncated_by_default()]] - `calls` [EXTRACTED]

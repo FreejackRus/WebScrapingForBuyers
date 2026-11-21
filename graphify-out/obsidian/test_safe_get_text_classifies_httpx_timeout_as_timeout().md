@@ -12,7 +12,7 @@ tags:
 # test_safe_get_text_classifies_httpx_timeout_as_timeout()
 
 ## Connections
-- [[scenario()_86]] - `contains` [EXTRACTED]
+- [[scenario()_84]] - `contains` [EXTRACTED]
 - [[stream()_9]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 

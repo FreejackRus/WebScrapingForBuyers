@@ -1,18 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py"
 type: "code"
-community: "lamoda-connector/tests/test_server.py"
-location: "L54"
+community: "_no_cache"
+location: "L86"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/lamoda-connector/tests/test_serverpy
+  - community/_no_cache
 ---
 
 # _no_cache()
 
 ## Connections
-- [[fixture_25]] - `references` [EXTRACTED]
-- [[lamoda-connectorteststest_server.py]] - `contains` [EXTRACTED]
+- [[Every test starts with an empty cache a cached body from a previous case would…_1]] - `rationale_for` [EXTRACTED]
+- [[avito-connectorteststest_server.py]] - `contains` [EXTRACTED]
+- [[fixture_27]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/lamoda-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/_no_cache

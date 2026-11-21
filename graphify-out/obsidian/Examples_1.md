@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/examples/README.md"
 type: "document"
-community: "ru-marketplace-mcp/README.md"
+community: "examples/README.md"
 location: "L21"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/ru-marketplace-mcp/READMEmd
+  - community/examples/READMEmd
 ---
 
 # Examples
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[examplesREADME]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/ru-marketplace-mcp/READMEmd
+#graphify/document #graphify/EXTRACTED #community/examples/READMEmd

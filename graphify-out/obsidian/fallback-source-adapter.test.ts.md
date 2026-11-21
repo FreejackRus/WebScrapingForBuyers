@@ -15,11 +15,11 @@ tags:
 - [[FallbackSourceAdapter]] - `imports` [EXTRACTED]
 - [[SourceAdapter]] - `imports` [EXTRACTED]
 - [[fallback-source-adapter.ts]] - `imports_from` [EXTRACTED]
-- [[offer_1]] - `contains` [EXTRACTED]
+- [[offer_7]] - `contains` [EXTRACTED]
 - [[packages_contracts_dist_index]] - `imports_from` [EXTRACTED]
 - [[packages_contracts_dist_index_offer]] - `imports` [EXTRACTED]
 - [[packages_contracts_dist_index_product]] - `imports` [EXTRACTED]
-- [[product_3]] - `contains` [EXTRACTED]
+- [[product_10]] - `contains` [EXTRACTED]
 - [[ref_vitest]] - `imports_from` [EXTRACTED]
 - [[source-adapter.ts]] - `imports_from` [EXTRACTED]
 

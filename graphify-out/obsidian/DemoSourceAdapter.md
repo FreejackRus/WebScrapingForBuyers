@@ -12,8 +12,8 @@ tags:
 # DemoSourceAdapter
 
 ## Connections
-- [[dot-constructor()_3]] - `method` [EXTRACTED]
-- [[dot-search()_4]] - `method` [EXTRACTED]
+- [[dot-constructor()_22]] - `method` [EXTRACTED]
+- [[dot-search()_13]] - `method` [EXTRACTED]
 - [[SourceAdapter]] - `implements` [EXTRACTED]
 - [[createDemoSources()]] - `calls` [EXTRACTED]
 - [[demo-source-adapter.ts]] - `contains` [EXTRACTED]

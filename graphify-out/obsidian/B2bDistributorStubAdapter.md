@@ -12,8 +12,8 @@ tags:
 # B2bDistributorStubAdapter
 
 ## Connections
-- [[dot-constructor()_13]] - `method` [EXTRACTED]
-- [[dot-search()_9]] - `method` [EXTRACTED]
+- [[dot-constructor()_4]] - `method` [EXTRACTED]
+- [[dot-search()_1]] - `method` [EXTRACTED]
 - [[Servermall  Онлайнтрейд  Регард  Хардпрайс  СРВТрейд  ТоргPC]] - `references` [INFERRED]
 - [[SourceAdapter]] - `implements` [EXTRACTED]
 - [[b2b-distributor-adapter.ts]] - `contains` [EXTRACTED]

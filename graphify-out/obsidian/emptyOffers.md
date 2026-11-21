@@ -1,17 +1,17 @@
 ---
-source_file: "apps/web/src/features/search/filter-offers/index.ts"
+source_file: "apps/web/src/widgets/search/compare/ui/index.tsx"
 type: "code"
-community: "packages_contracts_dist_index"
-location: "L6"
+community: "compare/ui/index.tsx"
+location: "L9"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/packages_contracts_dist_index
+  - community/compare/ui/indextsx
 ---
 
 # emptyOffers
 
 ## Connections
-- [[filter-offersindex.ts]] - `contains` [EXTRACTED]
+- [[compareuiindex.tsx]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index
+#graphify/code #graphify/EXTRACTED #community/compare/ui/indextsx

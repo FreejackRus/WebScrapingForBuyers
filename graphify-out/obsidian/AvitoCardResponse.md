@@ -12,7 +12,7 @@ tags:
 # AvitoCardResponse
 
 ## Connections
-- [[BaseModel_11]] - `inherits` [EXTRACTED]
+- [[BaseModel_3]] - `inherits` [EXTRACTED]
 - [[avito_card()]] - `uses` [INFERRED]
 - [[avito_connectormodels_output.py]] - `contains` [EXTRACTED]
 - [[avito_connectorserver.py]] - `imports` [EXTRACTED]

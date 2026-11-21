@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/aliexpress-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/avito-connector/SKILL.md"
 type: "document"
-community: "AliExpress connector"
-location: "L16"
+community: "raise_tool_error"
+location: "L19"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/AliExpress_connector
+  - community/raise_tool_error
 ---
 
 # Tools available
 
 ## Connections
-- [[AliExpress connector]] - `contains` [EXTRACTED]
+- [[Avito Connector]] - `contains` [EXTRACTED]
+- [[avito_selfcheck()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/AliExpress_connector
+#graphify/document #graphify/EXTRACTED #community/raise_tool_error

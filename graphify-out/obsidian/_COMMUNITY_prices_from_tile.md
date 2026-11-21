@@ -1,36 +1,67 @@
 ---
 type: community
-cohesion: 0.10
-members: 21
+cohesion: 0.05
+members: 52
 ---
 
 # prices_from_tile
 
-**Cohesion:** 0.10 - loosely connected
-**Members:** 21 nodes
+**Cohesion:** 0.05 - loosely connected
+**Members:** 52 nodes
 
 ## Members
+- [[58 999 ₽54 999 must not become 5899954999.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
 - [[A dead listing at 0 would rank cheapest in every comparison.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
-- [[A payload cached before the split carries no glyph information.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_search_extractor_dom.py
-- [[Fail honest a bare number alone is not evidence of a price. Promoting it would…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_search_extractor_dom.py
-- [[Mirrors Citilink's shape bare old price, glyph-attached current price.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_search_extractor_dom.py
+- [[An old price under the current one is a drifted read, not a discount._1]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[Any_25]] - code
+- [[Citilink's strikethrough and DNS's `.product-buy__prev` are both bare.…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
 - [[Numeric payloads predate the text shape; they must not start reading null.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[Older payloads carry a flat candidate list. Its entries are weak — never the…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[One list of currency glyphs feeds HAS_GLYPH and the pixel check alike.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[One list, two consumers. Hand-writing the regex is how they drift apart.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
 - [[Return ``(price, old_price)`` for one extracted tile. Reads the shapes the…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/dom.py
+- [[Rouble signs for DNSCitilinkLamoda, both yuan glyphs for Taobao.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[Taobao renders 999¥  ¥129.00 with the glyph glued to the digits.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[Tests for the shared DOM-extraction layer. ``mcp_core.dom`` carries four…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[The same split-glyph shape as Citilink digits and ¥ rendered apart.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[Title of an extracted tile, or an honest None.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/dom.py
+- [[With several higher candidates the strikethrough is the LARGEST — picking the…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
 - [[Without glyph information there is no evidence which number is the price.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
-- [[_parsed()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/dom.py
+- [[`%` and `-` are markers; unescaped they would alter the regex's meaning.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[`closest()` tests the element itself first — the DNS tile bug in one call.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
 - [[`data-meta-price` is the site's own number no parsing, no ambiguity.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[innerText depends on layout, differs between tabs, and is absent in jsdom.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
 - [[old == price is a drifted read, not a discount — the same promise as the below-…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[price_meta is the site's own machine-readable number; price_rub is a…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
 - [[prices_from_tile()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/dom.py
+- [[test_a_bare_number_alone_is_never_promoted_to_price()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
 - [[test_a_broken_meta_attribute_falls_back_to_the_display_text()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
 - [[test_a_cache_entry_from_an_older_build_still_maps()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
 - [[test_a_flat_candidate_list_is_treated_as_weak()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[test_a_flat_candidate_list_still_feeds_the_strikethrough()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[test_a_strikethrough_below_the_price_is_dropped_not_reported()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
 - [[test_a_strikethrough_equal_to_the_price_is_dropped()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
-- [[test_a_tile_with_no_glyph_attached_candidate_reports_no_price()]] - code - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_search_extractor_dom.py
+- [[test_an_ambiguous_blob_is_refused_rather_than_concatenated()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
 - [[test_an_empty_tile_yields_no_price_and_no_crash()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
-- [[test_glyph_attached_candidate_wins_over_a_bare_number()]] - code - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_search_extractor_dom.py
-- [[test_legacy_flat_candidate_list_is_treated_as_weak()]] - code - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_search_extractor_dom.py
+- [[test_bare_number_above_the_price_becomes_the_strikethrough()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[test_dom.py]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[test_glyph_attached_number_is_the_price()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[test_meta_attribute_beats_a_numeric_price_rub_field()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[test_missing_title_is_none_not_empty_string()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[test_regex_punctuation_in_a_marker_cannot_change_the_pattern()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
 - [[test_the_exact_meta_attribute_wins_over_display_text()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[test_the_js_decoy_regex_is_generated_from_the_python_list()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[test_the_largest_candidate_above_the_price_is_the_strikethrough()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[test_the_price_glyph_list_covers_rouble_and_yuan()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[test_the_price_glyph_regex_is_generated_from_the_python_list()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[test_the_shared_helpers_expose_what_connectors_rely_on()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[test_the_shared_helpers_never_reintroduce_closest()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[test_the_shared_helpers_read_text_content_not_inner_text()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[test_title_passes_through_and_trims()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[test_yuan_glue_counts_as_a_price()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[test_yuan_glyph_in_a_sibling_element_counts_as_a_price()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
 - [[test_zero_is_not_a_price()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py
+- [[title_from_tile()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/dom.py
 
 ## Live Query (requires Dataview plugin)
 
@@ -40,29 +71,21 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 12 edges to [[_COMMUNITY_test_dom.py]]
 - 7 edges to [[_COMMUNITY_citilink-connectorteststest_search_extractor_dom.py]]
-- 3 edges to [[_COMMUNITY_taobao_connectorserver.py]]
+- 6 edges to [[_COMMUNITY_dom.py]]
+- 3 edges to [[_COMMUNITY_json]]
 - 2 edges to [[_COMMUNITY_coerce_price]]
-- 2 edges to [[_COMMUNITY_citilink-connectorteststest_card_extractor_dom.py]]
+- 2 edges to [[_COMMUNITY_citilink_card]]
 - 2 edges to [[_COMMUNITY_taobao-connectorteststest_card_extractor_dom.py]]
-- 1 edge to [[_COMMUNITY_citilink_connectormodels_output.py]]
-- 1 edge to [[_COMMUNITY_test_card_extractor_live_dom.py]]
-- 1 edge to [[_COMMUNITY_pytest]]
-- 1 edge to [[_COMMUNITY_lamoda_search]]
-- 1 edge to [[_COMMUNITY_test_yuan_glyph_in_a_sibling_element_counts_as_a_price]]
-- 1 edge to [[_COMMUNITY_test_an_ambiguous_blob_is_refused_rather_than_concatenated]]
-- 1 edge to [[_COMMUNITY_test_meta_attribute_beats_a_numeric_price_rub_field]]
-- 1 edge to [[_COMMUNITY_test_the_largest_candidate_above_the_price_is_the_strikethrough]]
-- 1 edge to [[_COMMUNITY_test_a_flat_candidate_list_still_feeds_the_strikethrough]]
-- 1 edge to [[_COMMUNITY_citilink_card]]
-- 1 edge to [[_COMMUNITY_title_from_tile]]
-- 1 edge to [[_COMMUNITY_json]]
+- 2 edges to [[_COMMUNITY_taobao_connectorserver.py]]
+- 2 edges to [[_COMMUNITY_lamoda_connectorserver.py]]
+- 1 edge to [[_COMMUNITY_aliexpress_connectorserver.py]]
+- 1 edge to [[_COMMUNITY_taobao_card]]
+- 1 edge to [[_COMMUNITY_test_resilience.py]]
+- 1 edge to [[_COMMUNITY_taobao-connectorteststest_shape_reference.py]]
 - 1 edge to [[_COMMUNITY_Adding a marketplace]]
 
 ## Top bridge nodes
-- [[prices_from_tile()]] - degree 42, connects to 19 communities
-- [[test_a_tile_with_no_glyph_attached_candidate_reports_no_price()]] - degree 3, connects to 1 community
-- [[test_glyph_attached_candidate_wins_over_a_bare_number()]] - degree 3, connects to 1 community
-- [[test_legacy_flat_candidate_list_is_treated_as_weak()]] - degree 3, connects to 1 community
-- [[test_a_cache_entry_from_an_older_build_still_maps()]] - degree 3, connects to 1 community
+- [[prices_from_tile()]] - degree 42, connects to 11 communities
+- [[title_from_tile()]] - degree 10, connects to 6 communities
+- [[test_dom.py]] - degree 29, connects to 2 communities

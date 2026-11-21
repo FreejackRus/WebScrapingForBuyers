@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_browser_handoff.py"
 type: "code"
-community: "json"
+community: "transport/__init__.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/json
+  - community/transport/__init__py
 ---
 
 # compare-connector/tests/test_browser_handoff.py
@@ -20,7 +20,7 @@ tags:
 - [[contextlib]] - `imports_from` [EXTRACTED]
 - [[fastmcp_3]] - `imports_from` [EXTRACTED]
 - [[fastmcp_exceptions]] - `imports_from` [EXTRACTED]
-- [[json]] - `imports` [EXTRACTED]
+- [[json_1]] - `imports` [EXTRACTED]
 - [[lamoda_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[pytest]] - `imports` [EXTRACTED]
 - [[subprocess]] - `imports` [EXTRACTED]
@@ -35,4 +35,4 @@ tags:
 - [[test_taobao_tools_resume_the_retained_page()]] - `contains` [EXTRACTED]
 - [[transport__init__.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/json
+#graphify/code #graphify/EXTRACTED #community/transport/__init__py

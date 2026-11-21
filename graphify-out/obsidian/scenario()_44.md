@@ -1,21 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "test_storefront_reads_live_xhr_body_over_raw_cdp_when_playwright_cannot_attach"
-location: "L359"
+community: "_patch_questions"
+location: "L1871"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/test_storefront_reads_live_xhr_body_over_raw_cdp_when_playwright_cannot_attach
+  - graphify/EXTRACTED
+  - community/_patch_questions
 ---
 
 # scenario()
 
 ## Connections
-- [[fake_raw_page()]] - `indirect_call` [INFERRED]
-- [[incompatible_playwright()_1]] - `indirect_call` [INFERRED]
-- [[no_wait()_34]] - `indirect_call` [INFERRED]
-- [[refetch_must_not_run()]] - `indirect_call` [INFERRED]
-- [[test_storefront_reads_live_xhr_body_over_raw_cdp_when_playwright_cannot_attach()]] - `contains` [EXTRACTED]
+- [[_patch_questions()]] - `calls` [EXTRACTED]
+- [[responder()_14]] - `indirect_call` [INFERRED]
+- [[test_category_item_shape_matches_wb_card()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/test_storefront_reads_live_xhr_body_over_raw_cdp_when_playwright_cannot_attach
+#graphify/code #graphify/EXTRACTED #community/_patch_questions

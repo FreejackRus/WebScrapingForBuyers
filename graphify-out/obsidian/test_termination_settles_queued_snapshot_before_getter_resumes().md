@@ -13,9 +13,9 @@ tags:
 
 ## Connections
 - [[UpstreamTimeoutError]] - `uses` [INFERRED]
-- [[call()]] - `calls` [EXTRACTED]
+- [[call()_1]] - `calls` [EXTRACTED]
 - [[mcp-coreteststest_browser_handoff.py]] - `contains` [EXTRACTED]
-- [[parametrize_29]] - `references` [EXTRACTED]
+- [[parametrize_24]] - `references` [EXTRACTED]
 - [[put_at_deadline()_1]] - `contains` [EXTRACTED]
 - [[put_at_deadline()]] - `indirect_call` [INFERRED]
 - [[record()_3]] - `contains` [EXTRACTED]

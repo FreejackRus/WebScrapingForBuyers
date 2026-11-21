@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
 community: "Changelog"
-location: "L714"
+location: "L645"
 tags:
   - graphify/document
   - graphify/EXTRACTED
@@ -12,6 +12,7 @@ tags:
 # Added
 
 ## Connections
-- [[2.0.0 — 2026-09-09]] - `contains` [EXTRACTED]
+- [[2.1.0 — 2026-09-09]] - `contains` [EXTRACTED]
+- [[compare_prices()]] - `references` [INFERRED]
 
 #graphify/document #graphify/EXTRACTED #community/Changelog

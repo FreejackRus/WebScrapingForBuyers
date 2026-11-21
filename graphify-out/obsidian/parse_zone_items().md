@@ -1,22 +1,22 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/ssr.py"
 type: "code"
-community: "ssr.py"
+community: "Any"
 location: "L353"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ssrpy
+  - community/Any
 ---
 
 # parse_zone_items()
 
 ## Connections
-- [[Any_24]] - `references` [EXTRACTED]
+- [[Any_26]] - `references` [EXTRACTED]
 - [[Search rows from the first-screen snippet payloads (no collections needed).…]] - `rationale_for` [EXTRACTED]
 - [[_absolute_url()]] - `calls` [EXTRACTED]
 - [[_additional_price()]] - `calls` [EXTRACTED]
-- [[_as_dict()_1]] - `calls` [EXTRACTED]
+- [[_as_dict()]] - `calls` [EXTRACTED]
 - [[_to_int()]] - `calls` [EXTRACTED]
 - [[_to_number()]] - `calls` [EXTRACTED]
 - [[_zone_shop_name()]] - `calls` [EXTRACTED]
@@ -25,4 +25,4 @@ tags:
 - [[ssr.py]] - `contains` [EXTRACTED]
 - [[zone_snippets()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ssrpy
+#graphify/code #graphify/EXTRACTED #community/Any

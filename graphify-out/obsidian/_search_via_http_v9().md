@@ -12,18 +12,17 @@ tags:
 # _search_via_http_v9()
 
 ## Connections
-- [[Any_27]] - `references` [EXTRACTED]
-- [[Context_13]] - `references` [EXTRACTED]
+- [[Any]] - `references` [EXTRACTED]
 - [[Legacy bare HTTP to search.wb.ru v9. Used when WB_SEARCH_TRANSPORT=http.]] - `rationale_for` [EXTRACTED]
 - [[RateLimitedError]] - `uses` [INFERRED]
 - [[_expect_json_object()]] - `calls` [EXTRACTED]
-- [[_polite_wait()_9]] - `calls` [EXTRACTED]
+- [[_polite_wait()]] - `calls` [EXTRACTED]
 - [[_products_from_search_payload()]] - `calls` [EXTRACTED]
 - [[_safe_get_text()]] - `calls` [EXTRACTED]
 - [[_wb_client()]] - `calls` [EXTRACTED]
 - [[log_event()]] - `calls` [EXTRACTED]
 - [[raise_tool_error()]] - `calls` [EXTRACTED]
 - [[wb_connectorserver.py]] - `contains` [EXTRACTED]
-- [[wb_search()_2]] - `calls` [EXTRACTED]
+- [[wb_search()_1]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

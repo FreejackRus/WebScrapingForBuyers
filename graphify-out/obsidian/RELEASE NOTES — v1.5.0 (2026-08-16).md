@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[RELEASE_NOTES_v1.5.0]] - `contains` [EXTRACTED]
-- [[Гейт выпуска_2]] - `contains` [EXTRACTED]
+- [[Гейт выпуска]] - `contains` [EXTRACTED]
 - [[Осталось непроверенным после v1.5.0]] - `contains` [EXTRACTED]
 - [[Что вошло в релиз]] - `contains` [EXTRACTED]
 

@@ -5,14 +5,15 @@ community: "PULL_REQUEST_TEMPLATE.md"
 location: "L28"
 tags:
   - graphify/document
-  - graphify/EXTRACTED
+  - graphify/INFERRED
   - community/PULL_REQUEST_TEMPLATEmd
 ---
 
 # Project gates
 
 ## Connections
+- [[Context]] - `references` [INFERRED]
 - [[PULL_REQUEST_TEMPLATE]] - `contains` [EXTRACTED]
 - [[log_event()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/PULL_REQUEST_TEMPLATEmd
+#graphify/document #graphify/INFERRED #community/PULL_REQUEST_TEMPLATEmd

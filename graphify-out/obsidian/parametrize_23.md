@@ -1,18 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "parametrize"
+community: "test_model_routing_eval_verdict.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/parametrize
+  - community/test_model_routing_eval_verdictpy
 ---
 
 # parametrize
 
 ## Connections
-- [[test_install_rejects_extra_arguments_and_unknown_flags()]] - `references` [EXTRACTED]
-- [[test_invalid_doctor_arguments_fail_before_any_checks()]] - `references` [EXTRACTED]
-- [[test_run_one_selfcheck_reads_dict_and_model_responses()]] - `references` [EXTRACTED]
+- [[test_the_report_exposes_the_new_fields()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/parametrize
+#graphify/code #graphify/EXTRACTED #community/test_model_routing_eval_verdictpy

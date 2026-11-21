@@ -12,7 +12,7 @@ tags:
 # StdoutWriteVisitor
 
 ## Connections
-- [[dot-__init__()_8]] - `method` [EXTRACTED]
+- [[dot-__init__()_16]] - `method` [EXTRACTED]
 - [[dot-visit_Call()]] - `method` [EXTRACTED]
 - [[Collects ``print(...)`` and ``sys.stdout.`` writes with line numbers.]] - `rationale_for` [EXTRACTED]
 - [[check_file()]] - `calls` [EXTRACTED]

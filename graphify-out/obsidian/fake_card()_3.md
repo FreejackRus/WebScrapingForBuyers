@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_identity_verification.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py"
 type: "code"
-community: "ProductIdentity"
-location: "L49"
+community: "aliexpress-connector/tests/test_server.py"
+location: "L225"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ProductIdentity
+  - community/aliexpress-connector/tests/test_serverpy
 ---
 
 # fake_card()
 
 ## Connections
-- [[test_wb_verification_uses_requested_row_not_first()]] - `contains` [EXTRACTED]
+- [[test_selfcheck_healthy_when_both_gates_pass()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ProductIdentity
+#graphify/code #graphify/EXTRACTED #community/aliexpress-connector/tests/test_serverpy

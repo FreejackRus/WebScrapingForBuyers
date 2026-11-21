@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_snapshot.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_browser_handoff.py"
 type: "code"
-community: "test_chrome_cdp_snapshot.py"
-location: "L24"
+community: "transport/__init__.py"
+location: "L199"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_chrome_cdp_snapshotpy
+  - community/transport/__init__py
 ---
 
 # capture()
 
 ## Connections
-- [[fixture_26]] - `references` [EXTRACTED]
-- [[test_chrome_cdp_snapshot.py]] - `contains` [EXTRACTED]
+- [[test_snapshot_rejects_other_session_and_unknown_handle_without_capture()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_snapshotpy
+#graphify/code #graphify/EXTRACTED #community/transport/__init__py

@@ -1,18 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "test_ozon_selfcheck_includes_runtime_identity"
-location: "L606"
+community: "test_cdp_fetch_json_times_out_open_page_and_releases_lock"
+location: "L351"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_ozon_selfcheck_includes_runtime_identity
+  - community/test_cdp_fetch_json_times_out_open_page_and_releases_lock
 ---
 
 # scenario()
 
 ## Connections
-- [[fake_fetch()]] - `indirect_call` [INFERRED]
-- [[test_reviews_marks_partial_when_later_page_fails()]] - `contains` [EXTRACTED]
+- [[test_cdp_fetch_json_times_out_open_page_and_releases_lock()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_ozon_selfcheck_includes_runtime_identity
+#graphify/code #graphify/EXTRACTED #community/test_cdp_fetch_json_times_out_open_page_and_releases_lock

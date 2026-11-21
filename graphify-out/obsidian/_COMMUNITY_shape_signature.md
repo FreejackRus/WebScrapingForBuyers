@@ -58,25 +58,24 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 7 edges to [[_COMMUNITY_resilience.py]]
-- 5 edges to [[_COMMUNITY_pathlib]]
+- 10 edges to [[_COMMUNITY_resilience.py]]
+- 4 edges to [[_COMMUNITY_domtest.py]]
 - 3 edges to [[_COMMUNITY_taobao-connectorteststest_shape_reference.py]]
-- 2 edges to [[_COMMUNITY_citilink-connectorteststest_card_extractor_dom.py]]
 - 2 edges to [[_COMMUNITY_aliexpress-connectorteststest_parser_live.py]]
-- 2 edges to [[_COMMUNITY_lamoda-connectorteststest_shape_reference.py]]
 - 2 edges to [[_COMMUNITY_diagnose_drift.py]]
-- 2 edges to [[_COMMUNITY_domtest.py]]
+- 2 edges to [[_COMMUNITY_lamoda-connectorteststest_shape_reference.py]]
 - 2 edges to [[_COMMUNITY_compare_prices]]
+- 2 edges to [[_COMMUNITY_pathlib]]
 - 1 edge to [[_COMMUNITY_test_search_parser_live.py]]
-- 1 edge to [[_COMMUNITY__parse_search_items]]
-- 1 edge to [[_COMMUNITY_cian-connectorteststest_server.py]]
-- 1 edge to [[_COMMUNITY_coerce_price]]
-- 1 edge to [[_COMMUNITY_avito-connectorteststest_server.py]]
+- 1 edge to [[_COMMUNITY_test_live_payload_contract.py]]
+- 1 edge to [[_COMMUNITY_cian-connectorteststest_shape_reference.py]]
+- 1 edge to [[_COMMUNITY_Architecture]]
 - 1 edge to [[_COMMUNITY_test_card_verification_records.py]]
+- 1 edge to [[_COMMUNITY_avito-connectorteststest_server.py]]
 - 1 edge to [[_COMMUNITY_json]]
 
 ## Top bridge nodes
-- [[shape_signature()]] - degree 43, connects to 12 communities
+- [[shape_signature()]] - degree 43, connects to 10 communities
 - [[yandex-connectorteststest_shape_reference.py]] - degree 10, connects to 3 communities
 - [[avito-connectorteststest_shape_reference.py]] - degree 9, connects to 3 communities
 - [[test_shape_signature.py]] - degree 12, connects to 1 community

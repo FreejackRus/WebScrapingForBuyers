@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "test_handoff_reporting.py"
+community: "test_chrome_cdp_snapshot.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_handoff_reportingpy
+  - community/test_chrome_cdp_snapshotpy
 ---
 
 # fixture
 
 ## Connections
-- [[browser()_4]] - `references` [EXTRACTED]
+- [[capture()_20]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_handoff_reportingpy
+#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_snapshotpy

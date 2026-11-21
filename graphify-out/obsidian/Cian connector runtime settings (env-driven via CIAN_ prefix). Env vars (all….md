@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/settings.py"
 type: "rationale"
-community: "pydantic"
+community: "cian_connector/settings.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/pydantic
+  - community/cian_connector/settingspy
 ---
 
 # Cian connector runtime settings (env-driven via CIAN_ prefix). Env vars (all…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[cian_connectorsettings.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/pydantic
+#graphify/rationale #graphify/EXTRACTED #community/cian_connector/settingspy

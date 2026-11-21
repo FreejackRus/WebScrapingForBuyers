@@ -1,19 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
+source_file: "apps/search/src/app.test.ts"
 type: "code"
-community: "search"
-location: "L89"
+community: "SourceAdapter"
+location: "L101"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/search
+  - graphify/EXTRACTED
+  - community/SourceAdapter
 ---
 
 # search()
 
 ## Connections
-- [[offer()_2]] - `calls` [EXTRACTED]
-- [[test_default_comparison_omits_deselected_sources_but_explicit_request_is_rejected()]] - `indirect_call` [INFERRED]
-- [[test_selected_missing_connector_still_makes_default_comparison_partial()]] - `indirect_call` [INFERRED]
+- [[app.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/search
+#graphify/code #graphify/EXTRACTED #community/SourceAdapter

@@ -15,8 +15,8 @@ tags:
 - [[A Plus-only price must not be presented as the cheapest available. Yandex's…]] - `rationale_for` [EXTRACTED]
 - [[compare-connectorteststest_server.py]] - `contains` [EXTRACTED]
 - [[stub_sources()]] - `calls` [EXTRACTED]
-- [[wb()_14]] - `contains` [EXTRACTED]
-- [[wb()_7]] - `indirect_call` [INFERRED]
+- [[wb()_15]] - `contains` [EXTRACTED]
+- [[wb()_8]] - `indirect_call` [INFERRED]
 - [[ya()_1]] - `contains` [EXTRACTED]
 - [[ya()]] - `indirect_call` [INFERRED]
 

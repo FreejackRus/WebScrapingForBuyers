@@ -1,22 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/models_output.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/models_output.py"
 type: "code"
-community: "cian_connector/server.py"
-location: "L15"
+community: "taobao_card"
+location: "L14"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/cian_connector/serverpy
+  - community/taobao_card
 ---
 
 # MetaOut
 
 ## Connections
 - [[MetaOutBase]] - `inherits` [EXTRACTED]
-- [[Validation metadata attached to every response.]] - `rationale_for` [EXTRACTED]
-- [[cian_card()]] - `uses` [INFERRED]
-- [[cian_connectormodels_output.py]] - `contains` [EXTRACTED]
-- [[cian_connectorserver.py]] - `imports` [EXTRACTED]
-- [[cian_search()]] - `uses` [INFERRED]
+- [[Taobao carries the shared envelope unchanged.]] - `rationale_for` [EXTRACTED]
+- [[taobao_card()]] - `uses` [INFERRED]
+- [[taobao_connectormodels_output.py]] - `contains` [EXTRACTED]
+- [[taobao_connectorserver.py]] - `imports` [EXTRACTED]
+- [[taobao_search()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/cian_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/taobao_card

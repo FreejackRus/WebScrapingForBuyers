@@ -13,10 +13,10 @@ tags:
 
 ## Connections
 - [[DSH activation_21]] - `contains` [EXTRACTED]
-- [[Gotchas_25]] - `contains` [EXTRACTED]
+- [[Gotchas_15]] - `contains` [EXTRACTED]
 - [[Privacy the profile address is opt-in_1]] - `contains` [EXTRACTED]
-- [[Tools available_17]] - `contains` [EXTRACTED]
-- [[When to use_25]] - `contains` [EXTRACTED]
+- [[Tools available_6]] - `contains` [EXTRACTED]
+- [[When to use_13]] - `contains` [EXTRACTED]
 - [[ru-marketplace-mcpskillsmegamarket-connectorSKILL]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/Megamarket_Connector

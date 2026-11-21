@@ -1,18 +1,18 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/netlab-client.ts"
+source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
 type: "code"
-community: "netlab-client.ts"
-location: "L199"
+community: "mcp-marketplace-adapter.ts"
+location: "L787"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/netlab-clientts
+  - community/mcp-marketplace-adapterts
 ---
 
 # matchKind()
 
 ## Connections
-- [[netlab-client.ts]] - `contains` [EXTRACTED]
-- [[searchNetlab()]] - `calls` [EXTRACTED]
+- [[dot-toOffer()]] - `calls` [EXTRACTED]
+- [[mcp-marketplace-adapter.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/netlab-clientts
+#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts

@@ -12,7 +12,7 @@ tags:
 # _anti_bot_challenge()
 
 ## Connections
-- [[Any_1]] - `references` [EXTRACTED]
+- [[Any_14]] - `references` [EXTRACTED]
 - [[True when the payload is an anti-bot challenge rather than a catalog. A real…]] - `rationale_for` [EXTRACTED]
 - [[_page_challenge_kind()]] - `calls` [EXTRACTED]
 - [[_taobao_selfcheck_impl()]] - `calls` [EXTRACTED]

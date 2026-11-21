@@ -1,19 +1,17 @@
 ---
-source_file: "docs/STITCH.md"
-type: "document"
-community: "Сервер локальной LLM"
+source_file: ".mcp.json"
+type: "code"
+community: "e2e_stdio_check.py"
 location: "L1"
 tags:
-  - graphify/document
+  - graphify/code
   - graphify/EXTRACTED
-  - community/Сервер_локальной_LLM
+  - community/e2e_stdio_checkpy
 ---
 
-# STITCH.md
+# stitch
 
 ## Connections
-- [[BRAND]] - `references` [EXTRACTED]
-- [[README]] - `references` [EXTRACTED]
-- [[Stitch + бренд PEREMENA]] - `contains` [EXTRACTED]
+- [[dot-mcp.json]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Сервер_локальной_LLM
+#graphify/code #graphify/EXTRACTED #community/e2e_stdio_checkpy

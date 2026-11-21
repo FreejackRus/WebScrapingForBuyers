@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
 type: "code"
-community: "ChallengeRequiredError"
-location: "L99"
+community: "TransportDownError"
+location: "L94"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ChallengeRequiredError
+  - community/TransportDownError
 ---
 
 # .__init__()
 
 ## Connections
-- [[dot-__init__()_33]] - `calls` [EXTRACTED]
-- [[BadRequestError]] - `method` [EXTRACTED]
+- [[dot-__init__()_29]] - `calls` [EXTRACTED]
+- [[ParserDriftError]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ChallengeRequiredError
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

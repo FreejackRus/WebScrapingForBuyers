@@ -19,6 +19,9 @@ tags:
 - [[configindex.ts]] - `imports_from` [EXTRACTED]
 - [[request()]] - `contains` [EXTRACTED]
 - [[searchapiindex.ts]] - `imports_from` [EXTRACTED]
+- [[store.ts]] - `imports_from` [EXTRACTED]
+- [[system-healthlibindex.ts]] - `imports_from` [EXTRACTED]
 - [[userapiindex.ts]] - `imports_from` [EXTRACTED]
+- [[watchlistapiindex.ts]] - `imports_from` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/analysis/store/indexts

@@ -12,6 +12,6 @@ tags:
 # WB carries the shared envelope unchanged.
 
 ## Connections
-- [[MetaOut_11]] - `rationale_for` [EXTRACTED]
+- [[MetaOut]] - `rationale_for` [EXTRACTED]
 
 #graphify/rationale #graphify/EXTRACTED #community/wb_connector/serverpy

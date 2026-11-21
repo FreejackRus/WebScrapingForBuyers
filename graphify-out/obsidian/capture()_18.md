@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_browser_handoff.py"
 type: "code"
-community: "mcp-core/tests/test_browser_handoff.py"
-location: "L582"
+community: "transport/__init__.py"
+location: "L171"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/mcp-core/tests/test_browser_handoffpy
+  - graphify/INFERRED
+  - community/transport/__init__py
 ---
 
 # capture()
 
 ## Connections
-- [[test_snapshot_rechecks_original_host_policy_before_and_after_capture()]] - `contains` [EXTRACTED]
+- [[test_snapshot_mcp_transmits_image_without_ending_or_extending_handoff()]] - `indirect_call` [INFERRED]
+- [[test_snapshot_rejects_other_session_and_unknown_handle_without_capture()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/mcp-core/tests/test_browser_handoffpy
+#graphify/code #graphify/INFERRED #community/transport/__init__py

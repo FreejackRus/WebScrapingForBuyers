@@ -14,7 +14,7 @@ members: 5
 - [[cm()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_open_page_budget_integration.py
 - [[factory()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_open_page_budget_integration.py
 - [[fake_browser()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_open_page_budget_integration.py
-- [[fixture_21]] - code
+- [[fixture_24]] - code
 
 ## Live Query (requires Dataview plugin)
 

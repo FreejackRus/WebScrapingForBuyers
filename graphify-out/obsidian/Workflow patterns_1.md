@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/detmir-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/aliexpress-connector/SKILL.md"
 type: "document"
-community: "Detsky Mir Connector"
-location: "L54"
+community: "aliexpress_selfcheck"
+location: "L31"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Detsky_Mir_Connector
+  - community/aliexpress_selfcheck
 ---
 
 # Workflow patterns
 
 ## Connections
-- [[Detsky Mir Connector_1]] - `contains` [EXTRACTED]
+- [[AliExpress connector]] - `contains` [EXTRACTED]
+- [[compare_prices()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Detsky_Mir_Connector
+#graphify/document #graphify/EXTRACTED #community/aliexpress_selfcheck

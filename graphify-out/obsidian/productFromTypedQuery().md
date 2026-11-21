@@ -2,7 +2,7 @@
 source_file: "apps/web/src/widgets/search/command/ui/index.tsx"
 type: "code"
 community: "command/ui/index.tsx"
-location: "L8"
+location: "L9"
 tags:
   - graphify/code
   - graphify/EXTRACTED

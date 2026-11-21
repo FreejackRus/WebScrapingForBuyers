@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[dot-__init__()_26]] - `method` [EXTRACTED]
 - [[A response body exceeded the configured byte cap and was abandoned.]] - `rationale_for` [EXTRACTED]
-- [[Exception_3]] - `inherits` [EXTRACTED]
+- [[Exception]] - `inherits` [EXTRACTED]
 - [[http_tier.py]] - `contains` [EXTRACTED]
 - [[read_capped_text()]] - `calls` [EXTRACTED]
 - [[transport__init__.py]] - `imports` [EXTRACTED]

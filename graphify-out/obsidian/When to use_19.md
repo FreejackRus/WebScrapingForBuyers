@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/citilink-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/lamoda-connector/SKILL.md"
 type: "document"
-community: "citilink_selfcheck"
-location: "L13"
+community: "Lamoda Connector"
+location: "L14"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/citilink_selfcheck
+  - community/Lamoda_Connector
 ---
 
 # When to use
 
 ## Connections
-- [[Citilink Connector]] - `contains` [EXTRACTED]
+- [[Lamoda Connector_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/citilink_selfcheck
+#graphify/document #graphify/EXTRACTED #community/Lamoda_Connector

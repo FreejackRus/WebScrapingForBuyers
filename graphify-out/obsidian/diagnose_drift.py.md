@@ -19,8 +19,8 @@ tags:
 - [[chrome_cdp.py]] - `imports_from` [EXTRACTED]
 - [[diagnose()]] - `contains` [EXTRACTED]
 - [[diagnose_megamarket()]] - `contains` [EXTRACTED]
-- [[json]] - `imports` [EXTRACTED]
-- [[main()_27]] - `contains` [EXTRACTED]
+- [[json_1]] - `imports` [EXTRACTED]
+- [[main()_6]] - `contains` [EXTRACTED]
 - [[resilience.py]] - `imports_from` [EXTRACTED]
 - [[urllib_parse]] - `imports` [EXTRACTED]
 

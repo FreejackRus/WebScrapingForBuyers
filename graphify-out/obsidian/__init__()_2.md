@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_stealth.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cache.py"
 type: "code"
-community: "test_chrome_cdp_stealth.py"
-location: "L260"
+community: "Clock"
+location: "L20"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_chrome_cdp_stealthpy
+  - community/Clock
 ---
 
 # __init__()
 
 ## Connections
-- [[dot-__init__()_11]] - `calls` [EXTRACTED]
-- [[test_new_tab_matches_distinct_targets_under_interleaved_creation()]] - `contains` [EXTRACTED]
+- [[clock()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_stealthpy
+#graphify/code #graphify/EXTRACTED #community/Clock

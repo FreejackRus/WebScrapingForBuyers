@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "pydantic"
+community: "functools"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pydantic
+  - community/functools
 ---
 
 # BaseSettings
 
 ## Connections
-- [[TaobaoSettings]] - `inherits` [EXTRACTED]
+- [[WBSettings]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pydantic
+#graphify/code #graphify/EXTRACTED #community/functools

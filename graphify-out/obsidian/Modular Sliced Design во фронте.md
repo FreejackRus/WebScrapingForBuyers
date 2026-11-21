@@ -1,12 +1,12 @@
 ---
 source_file: "docs/MSD.md"
 type: "document"
-community: "Сервер локальной LLM"
+community: "Modular Sliced Design во фронте"
 location: "L1"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Сервер_локальной_LLM
+  - community/Modular_Sliced_Design_во_фронте
 ---
 
 # Modular Sliced Design во фронте
@@ -17,4 +17,4 @@ tags:
 - [[Семантика папок]] - `contains` [EXTRACTED]
 - [[Слои]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Сервер_локальной_LLM
+#graphify/document #graphify/EXTRACTED #community/Modular_Sliced_Design_во_фронте

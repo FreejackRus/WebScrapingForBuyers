@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/docs/ANTI_BOT.md"
 type: "document"
-community: "Anti-bot reality, source by source"
+community: "aliexpress_selfcheck"
 location: "L15"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Anti-bot_reality_source_by_source
+  - community/aliexpress_selfcheck
 ---
 
 # Summary
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[Anti-bot reality, source by source]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Anti-bot_reality_source_by_source
+#graphify/document #graphify/EXTRACTED #community/aliexpress_selfcheck

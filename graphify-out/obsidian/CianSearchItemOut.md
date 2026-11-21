@@ -12,7 +12,7 @@ tags:
 # CianSearchItemOut
 
 ## Connections
-- [[BaseModel_6]] - `inherits` [EXTRACTED]
+- [[BaseModel_2]] - `inherits` [EXTRACTED]
 - [[cian_connectormodels_output.py]] - `contains` [EXTRACTED]
 - [[cian_connectorserver.py]] - `imports` [EXTRACTED]
 - [[cian_search()]] - `uses` [INFERRED]

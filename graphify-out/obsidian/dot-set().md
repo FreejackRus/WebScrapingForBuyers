@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py"
+source_file: "apps/gateway/src/user-cache.ts"
 type: "code"
-community: ".get"
-location: "L97"
+community: "resilience.test.ts"
+location: "L31"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/get
+  - community/resiliencetestts
 ---
 
 # .set()
 
 ## Connections
-- [[Hashable]] - `references` [EXTRACTED]
-- [[T]] - `references` [EXTRACTED]
-- [[TTLCache]] - `method` [EXTRACTED]
+- [[UserCache]] - `method` [EXTRACTED]
+- [[resolveUser()]] - `calls` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/get
+#graphify/code #graphify/EXTRACTED #community/resiliencetestts

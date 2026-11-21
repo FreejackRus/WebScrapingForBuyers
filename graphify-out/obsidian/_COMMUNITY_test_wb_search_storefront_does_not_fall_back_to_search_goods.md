@@ -12,7 +12,7 @@ members: 4
 ## Members
 - [[failing_storefront()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py
 - [[legacy()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py
-- [[scenario()_82]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py
+- [[scenario()_88]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py
 - [[test_wb_search_storefront_does_not_fall_back_to_search_goods()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py
 
 ## Live Query (requires Dataview plugin)
@@ -23,9 +23,10 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 3 edges to [[_COMMUNITY_TransportDownError]]
+- 2 edges to [[_COMMUNITY_TransportDownError]]
+- 1 edge to [[_COMMUNITY_raise_tool_error]]
 - 1 edge to [[_COMMUNITY_test_storefront_search.py]]
 
 ## Top bridge nodes
 - [[test_wb_search_storefront_does_not_fall_back_to_search_goods()]] - degree 5, connects to 2 communities
-- [[failing_storefront()]] - degree 4, connects to 1 community
+- [[failing_storefront()]] - degree 4, connects to 2 communities

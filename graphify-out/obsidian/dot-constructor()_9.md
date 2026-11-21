@@ -1,17 +1,17 @@
 ---
-source_file: "apps/identity/src/infrastructure/memory-auth-store.ts"
+source_file: "apps/search/src/infrastructure/sources/netlab-price-feed.ts"
 type: "code"
-community: "memory-auth-store.ts"
-location: "L22"
+community: "netlab-price-feed.ts"
+location: "L346"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/memory-auth-storets
+  - community/netlab-price-feedts
 ---
 
 # .constructor()
 
 ## Connections
-- [[MemoryAuthStore]] - `method` [EXTRACTED]
+- [[NetlabPriceFeedAdapter]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/memory-auth-storets
+#graphify/code #graphify/EXTRACTED #community/netlab-price-feedts

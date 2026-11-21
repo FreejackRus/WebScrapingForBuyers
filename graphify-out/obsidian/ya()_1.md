@@ -12,7 +12,7 @@ tags:
 # ya()
 
 ## Connections
-- [[offer()_2]] - `calls` [EXTRACTED]
+- [[offer()_5]] - `calls` [EXTRACTED]
 - [[test_subscription_prices_never_win_the_ranking()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/offer

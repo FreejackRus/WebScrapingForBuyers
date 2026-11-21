@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[e2e_stdio_check_docker.py]] - `contains` [EXTRACTED]
-- [[probe()_1]] - `calls` [EXTRACTED]
+- [[probe()_2]] - `calls` [EXTRACTED]
 - [[test_docker_probe_rejects_call_errors()]] - `calls` [EXTRACTED]
 - [[test_docker_probe_rejects_wrong_or_missing_versions()]] - `calls` [EXTRACTED]
 - [[test_docker_probe_requires_expected_version_before_starting()]] - `calls` [EXTRACTED]

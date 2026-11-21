@@ -15,6 +15,7 @@ tags:
 - [[downloadindex.ts]] - `re_exports` [EXTRACTED]
 - [[entitiessearchindex.ts]] - `re_exports` [EXTRACTED]
 - [[exportindex.ts]] - `re_exports` [EXTRACTED]
+- [[price-trenduiindex.tsx]] - `imports` [EXTRACTED]
 - [[searchapiindex.ts]] - `contains` [EXTRACTED]
 - [[searchstoreindex.ts]] - `imports` [EXTRACTED]
 - [[workspaceuiindex.tsx]] - `imports` [EXTRACTED]

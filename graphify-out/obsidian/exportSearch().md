@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/application/export-service.ts"
 type: "code"
-community: "packages_contracts_dist_index"
+community: "product-from-query.ts"
 location: "L5"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/packages_contracts_dist_index
+  - community/product-from-queryts
 ---
 
 # exportSearch()
@@ -17,4 +17,4 @@ tags:
 - [[searchsrchttproutes.ts]] - `imports` [EXTRACTED]
 - [[searchRoutes()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index
+#graphify/code #graphify/EXTRACTED #community/product-from-queryts

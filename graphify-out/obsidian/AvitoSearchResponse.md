@@ -12,7 +12,7 @@ tags:
 # AvitoSearchResponse
 
 ## Connections
-- [[BaseModel_11]] - `inherits` [EXTRACTED]
+- [[BaseModel_3]] - `inherits` [EXTRACTED]
 - [[avito_connectormodels_output.py]] - `contains` [EXTRACTED]
 - [[avito_connectorserver.py]] - `imports` [EXTRACTED]
 - [[avito_search()_1]] - `uses` [INFERRED]

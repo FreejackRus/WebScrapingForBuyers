@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Offline tests for the operator CLI. Selfchecks are monkeypatched out — doctor's…]] - `rationale_for` [EXTRACTED]
-- [[json]] - `imports` [EXTRACTED]
+- [[json_1]] - `imports` [EXTRACTED]
 - [[marketplace_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[offline_cdp_probe()]] - `contains` [EXTRACTED]
 - [[pathlib]] - `imports` [EXTRACTED]

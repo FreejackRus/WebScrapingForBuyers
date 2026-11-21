@@ -2,7 +2,7 @@
 source_file: "apps/web/src/widgets/search/sources/ui/index.tsx"
 type: "code"
 community: "workspace/ui/index.tsx"
-location: "L10"
+location: "L19"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,6 +12,7 @@ tags:
 # SourceGrid()
 
 ## Connections
+- [[outcomeNote()]] - `calls` [EXTRACTED]
 - [[sourcesindex.ts]] - `re_exports` [EXTRACTED]
 - [[sourcesuiindex.test.tsx]] - `imports` [EXTRACTED]
 - [[sourcesuiindex.tsx]] - `contains` [EXTRACTED]

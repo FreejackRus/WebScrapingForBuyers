@@ -12,7 +12,7 @@ tags:
 # test_extractor_failure_releases_retained_page()
 
 ## Connections
-- [[call()]] - `calls` [EXTRACTED]
+- [[call()_1]] - `calls` [EXTRACTED]
 - [[fail()_1]] - `indirect_call` [INFERRED]
 - [[mcp-coreteststest_browser_handoff.py]] - `contains` [EXTRACTED]
 

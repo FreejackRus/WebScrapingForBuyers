@@ -13,8 +13,8 @@ tags:
 
 ## Connections
 - [[dot-_note_event()]] - `calls` [EXTRACTED]
-- [[dot-close()_1]] - `calls` [EXTRACTED]
-- [[dot-evaluate()]] - `calls` [EXTRACTED]
+- [[dot-close()_2]] - `calls` [EXTRACTED]
+- [[dot-evaluate()_1]] - `calls` [EXTRACTED]
 - [[dot-response_body()]] - `calls` [EXTRACTED]
 - [[_RawCdpPage]] - `method` [EXTRACTED]
 

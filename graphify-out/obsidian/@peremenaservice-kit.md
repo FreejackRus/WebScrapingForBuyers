@@ -1,10 +1,10 @@
 ---
 source_file: "apps/analysis/package.json"
-type: "code"
+type: "concept"
 community: "analysis/package.json"
-location: "L15"
+location: "L24"
 tags:
-  - graphify/code
+  - graphify/concept
   - graphify/EXTRACTED
   - community/analysis/packagejson
 ---
@@ -12,6 +12,6 @@ tags:
 # @peremena/service-kit
 
 ## Connections
-- [[dependencies]] - `contains` [EXTRACTED]
+- [[analysispackage.json]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/analysis/packagejson
+#graphify/concept #graphify/EXTRACTED #community/analysis/packagejson

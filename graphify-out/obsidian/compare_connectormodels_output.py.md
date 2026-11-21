@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/models_output.py"
 type: "code"
-community: "compare-connector/tests/test_server.py"
+community: "compare_connector/models_output.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/compare-connector/tests/test_serverpy
+  - community/compare_connector/models_outputpy
 ---
 
 # compare_connector/models_output.py
@@ -23,4 +23,4 @@ tags:
 - [[identity.py]] - `imports_from` [EXTRACTED]
 - [[pydantic]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/compare-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/compare_connector/models_outputpy

@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[A page smaller than the cap means the pool is exhausted.]] - `rationale_for` [EXTRACTED]
 - [[responder()_15]] - `contains` [EXTRACTED]
-- [[scenario()_59]] - `contains` [EXTRACTED]
+- [[scenario()_58]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_patch_questions

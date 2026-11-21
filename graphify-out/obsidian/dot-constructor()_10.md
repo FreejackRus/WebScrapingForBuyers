@@ -1,17 +1,17 @@
 ---
-source_file: "apps/analysis/src/domain/narration-error.ts"
+source_file: "apps/analysis/src/application/narration-stats.ts"
 type: "code"
-community: "ollama-analysis-narrator.ts"
-location: "L20"
+community: "narration-stats.ts"
+location: "L9"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ollama-analysis-narratorts
+  - community/narration-statsts
 ---
 
 # .constructor()
 
 ## Connections
-- [[NarrationError]] - `method` [EXTRACTED]
+- [[NarrationStatsRecorder]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ollama-analysis-narratorts
+#graphify/code #graphify/EXTRACTED #community/narration-statsts

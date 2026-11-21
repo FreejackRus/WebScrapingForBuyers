@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[A deliberately heavy return model.]] - `rationale_for` [EXTRACTED]
-- [[BaseModel_13]] - `inherits` [EXTRACTED]
+- [[BaseModel_12]] - `inherits` [EXTRACTED]
 - [[named()]] - `calls` [EXTRACTED]
 - [[test_output_schema.py]] - `contains` [EXTRACTED]
 

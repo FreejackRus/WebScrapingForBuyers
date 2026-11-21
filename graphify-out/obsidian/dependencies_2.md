@@ -1,22 +1,21 @@
 ---
-source_file: "apps/search/package.json"
+source_file: "apps/identity/package.json"
 type: "code"
-community: "search/package.json"
+community: "identity/package.json"
 location: "L13"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/search/packagejson
+  - community/identity/packagejson
 ---
 
 # dependencies
 
 ## Connections
-- [[@modelcontextprotocolsdk]] - `contains` [EXTRACTED]
-- [[@peremenacontracts_4]] - `contains` [EXTRACTED]
-- [[@peremenaservice-kit_4]] - `contains` [EXTRACTED]
-- [[exceljs]] - `contains` [EXTRACTED]
-- [[fastify_4]] - `contains` [EXTRACTED]
-- [[searchpackage.json]] - `contains` [EXTRACTED]
+- [[@fastifycookie]] - `contains` [EXTRACTED]
+- [[@peremenacontracts_5]] - `contains` [EXTRACTED]
+- [[@peremenaservice-kit_5]] - `contains` [EXTRACTED]
+- [[fastify_5]] - `contains` [EXTRACTED]
+- [[identitypackage.json]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/search/packagejson
+#graphify/code #graphify/EXTRACTED #community/identity/packagejson

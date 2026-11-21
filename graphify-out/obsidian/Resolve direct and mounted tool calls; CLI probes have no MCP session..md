@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/runtime.py"
 type: "rationale"
-community: "taobao_connector/server.py"
+community: "taobao_card"
 location: "L43"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/taobao_connector/serverpy
+  - community/taobao_card
 ---
 
 # Resolve direct and mounted tool calls; CLI probes have no MCP session.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[current_mcp_session_id()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/taobao_connector/serverpy
+#graphify/rationale #graphify/EXTRACTED #community/taobao_card

@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/yandex-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/aliexpress-connector/SKILL.md"
 type: "document"
-community: "Yandex Market Connector"
-location: "L66"
+community: "aliexpress_selfcheck"
+location: "L53"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Yandex_Market_Connector
+  - community/aliexpress_selfcheck
 ---
 
 # Gotchas
 
 ## Connections
-- [[Yandex Market Connector]] - `contains` [EXTRACTED]
-- [[yandex_card()]] - `references` [INFERRED]
+- [[AliExpress connector]] - `contains` [EXTRACTED]
+- [[aliexpress_selfcheck()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Yandex_Market_Connector
+#graphify/document #graphify/EXTRACTED #community/aliexpress_selfcheck

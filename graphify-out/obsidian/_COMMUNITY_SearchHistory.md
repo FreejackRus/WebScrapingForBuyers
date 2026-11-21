@@ -1,51 +1,28 @@
 ---
 type: community
-cohesion: 0.07
-members: 36
+cohesion: 0.24
+members: 13
 ---
 
 # SearchHistory
 
-**Cohesion:** 0.07 - loosely connected
-**Members:** 36 nodes
+**Cohesion:** 0.24 - loosely connected
+**Members:** 13 nodes
 
 ## Members
-- [[dot-clear()]] - code - apps/gateway/src/search-history.ts
-- [[dot-constructor()_7]] - code - apps/gateway/src/search-history.ts
-- [[dot-drain()]] - code - apps/gateway/src/search-history.ts
-- [[dot-flush()]] - code - apps/gateway/src/search-history.ts
-- [[dot-list()]] - code - apps/gateway/src/search-history.ts
-- [[dot-load()]] - code - apps/gateway/src/search-history.ts
+- [[dot-clear()_2]] - code - apps/gateway/src/search-history.ts
+- [[dot-constructor()_25]] - code - apps/gateway/src/search-history.ts
+- [[dot-drain()_2]] - code - apps/gateway/src/search-history.ts
+- [[dot-flush()_2]] - code - apps/gateway/src/search-history.ts
+- [[dot-list()_1]] - code - apps/gateway/src/search-history.ts
+- [[dot-load()_5]] - code - apps/gateway/src/search-history.ts
 - [[dot-record()]] - code - apps/gateway/src/search-history.ts
-- [[dot-remove()]] - code - apps/gateway/src/search-history.ts
-- [[dot-schedule()]] - code - apps/gateway/src/search-history.ts
-- [[dot-write()]] - code - apps/gateway/src/search-history.ts
-- [[2026-10-04 — ревью агентами, параллельные исправления, правило для агентов]] - document - docs/PROJECT_CONTEXT.md
-- [[Added_12]] - document - mcp-servers/ru-marketplace-mcp/CHANGELOG.md
-- [[Changed_9]] - document - mcp-servers/ru-marketplace-mcp/CHANGELOG.md
-- [[DEFAULT_HISTORY_LIMIT]] - code - apps/gateway/src/search-history.ts
-- [[DEFAULT_SAVE_DEBOUNCE_MS]] - code - apps/gateway/src/search-history.ts
-- [[Fixed_16]] - document - mcp-servers/ru-marketplace-mcp/CHANGELOG.md
+- [[dot-remove()_1]] - code - apps/gateway/src/search-history.ts
+- [[dot-schedule()_4]] - code - apps/gateway/src/search-history.ts
+- [[dot-write()_2]] - code - apps/gateway/src/search-history.ts
 - [[SearchHistory]] - code - apps/gateway/src/search-history.ts
-- [[SearchRecord]] - code - apps/gateway/src/search-history.ts
-- [[1.5.0 — 2026-08-16]] - document - mcp-servers/ru-marketplace-mcp/CHANGELOG.md
-- [[dirs]] - code - apps/gateway/src/search-history.test.ts
 - [[isHistoryEntry()]] - code - apps/gateway/src/search-history.ts
-- [[normalizeQuery()]] - code - apps/gateway/src/search-history.ts
-- [[payload]] - code - scripts/hooks/require-agent-preamble.mjs
-- [[product()]] - code - apps/gateway/src/search-history.test.ts
-- [[prompt]] - code - scripts/hooks/require-agent-preamble.mjs
-- [[ref_node_fs]] - concept
-- [[ref_node_os]] - concept
-- [[ref_node_path]] - concept
-- [[require-agent-preamble.mjs]] - code - scripts/hooks/require-agent-preamble.mjs
-- [[search-history.test.ts]] - code - apps/gateway/src/search-history.test.ts
-- [[search-history.ts]] - code - apps/gateway/src/search-history.ts
-- [[tempFile()]] - code - apps/gateway/src/search-history.test.ts
-- [[Добавлено_13]] - document - mcp-servers/ru-marketplace-mcp/CHANGELOG.md
-- [[Добавлено_14]] - document - mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v1.5.0.md
-- [[Изменено_9]] - document - mcp-servers/ru-marketplace-mcp/CHANGELOG.md
-- [[Исправлено_14]] - document - mcp-servers/ru-marketplace-mcp/CHANGELOG.md
+- [[normalizeQuery()_1]] - code - apps/gateway/src/search-history.ts
 
 ## Live Query (requires Dataview plugin)
 
@@ -55,20 +32,12 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 3 edges to [[_COMMUNITY_gatewaysrcapp.ts]]
-- 3 edges to [[_COMMUNITY_history-routes.test.ts]]
-- 2 edges to [[_COMMUNITY_SourceAdapter]]
-- 2 edges to [[_COMMUNITY_packages_contracts_dist_index]]
-- 1 edge to [[_COMMUNITY_Changelog]]
-- 1 edge to [[_COMMUNITY_useSearchStore]]
-- 1 edge to [[_COMMUNITY_ref_vitest]]
-- 1 edge to [[_COMMUNITY_Итерации]]
-- 1 edge to [[_COMMUNITY_RELEASE NOTES — v1.5.0 (2026-08-16)]]
-- 1 edge to [[_COMMUNITY_compare-models.ts]]
+- 4 edges to [[_COMMUNITY_watchlist-checker.ts]]
+- 2 edges to [[_COMMUNITY_gatewaysrcapp.ts]]
+- 2 edges to [[_COMMUNITY_basket-routes.test.ts]]
+- 2 edges to [[_COMMUNITY_history-routes.test.ts]]
 
 ## Top bridge nodes
-- [[search-history.ts]] - degree 14, connects to 5 communities
-- [[search-history.test.ts]] - degree 11, connects to 3 communities
-- [[SearchHistory]] - degree 16, connects to 2 communities
-- [[1.5.0 — 2026-08-16]] - degree 7, connects to 1 community
-- [[ref_node_fs]] - degree 4, connects to 1 community
+- [[SearchHistory]] - degree 18, connects to 4 communities
+- [[isHistoryEntry()]] - degree 2, connects to 1 community
+- [[normalizeQuery()_1]] - degree 2, connects to 1 community

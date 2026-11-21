@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[findProduct()]] - `contains` [EXTRACTED]
-- [[normalize()_1]] - `contains` [EXTRACTED]
+- [[normalize()]] - `contains` [EXTRACTED]
 - [[packages_contracts_dist_index]] - `imports_from` [EXTRACTED]
 - [[packages_contracts_dist_index_product]] - `imports` [EXTRACTED]
 - [[products]] - `contains` [EXTRACTED]

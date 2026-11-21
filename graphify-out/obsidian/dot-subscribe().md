@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/application/search-service.ts"
 type: "code"
-community: "SearchService"
-location: "L81"
+community: "search-service.ts"
+location: "L179"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/SearchService
+  - graphify/INFERRED
+  - community/search-servicets
 ---
 
 # .subscribe()
@@ -14,5 +14,6 @@ tags:
 ## Connections
 - [[SearchService]] - `method` [EXTRACTED]
 - [[finish()]] - `calls` [INFERRED]
+- [[finish()_1]] - `calls` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/SearchService
+#graphify/code #graphify/INFERRED #community/search-servicets

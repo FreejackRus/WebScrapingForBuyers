@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/server.py"
 type: "code"
-community: "cian_connector/server.py"
+community: "Any"
 location: "L425"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/cian_connector/serverpy
+  - community/Any
 ---
 
 # _rooms()
 
 ## Connections
-- [[Any_7]] - `references` [EXTRACTED]
+- [[Any_29]] - `references` [EXTRACTED]
 - [[_offer_row()]] - `calls` [EXTRACTED]
 - [[cian_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/cian_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/Any

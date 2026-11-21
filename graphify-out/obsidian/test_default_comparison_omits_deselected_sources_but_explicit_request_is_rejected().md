@@ -13,6 +13,6 @@ tags:
 
 ## Connections
 - [[compare-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[search()_8]] - `indirect_call` [INFERRED]
+- [[search()_9]] - `indirect_call` [INFERRED]
 
 #graphify/code #graphify/EXTRACTED #community/search

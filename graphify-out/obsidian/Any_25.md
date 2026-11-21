@@ -1,16 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "domtest.py"
+community: "prices_from_tile"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/domtestpy
+  - community/prices_from_tile
 ---
 
 # Any
 
 ## Connections
-- [[run_extractor()]] - `references` [EXTRACTED]
+- [[prices_from_tile()]] - `references` [EXTRACTED]
+- [[title_from_tile()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/domtestpy
+#graphify/code #graphify/EXTRACTED #community/prices_from_tile

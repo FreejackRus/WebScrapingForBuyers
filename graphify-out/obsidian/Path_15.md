@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "domtest.py"
+community: "chrome_cdp.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/domtestpy
+  - community/chrome_cdppy
 ---
 
 # Path
 
 ## Connections
-- [[_extract()_13]] - `references` [EXTRACTED]
+- [[_default_profile_dir()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/domtestpy
+#graphify/code #graphify/EXTRACTED #community/chrome_cdppy

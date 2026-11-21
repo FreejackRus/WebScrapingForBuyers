@@ -11,10 +11,10 @@ members: 11
 
 ## Members
 - [[A partial route is not usable for assignment (protocol section 8).]] - rationale - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_model_routing_eval_verdict.py
-- [[Path_17]] - code
+- [[Path_14]] - code
 - [[The case-run verdict must be machine-checkable (independent review,…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_model_routing_eval_verdict.py
 - [[main() returns 0 only for a clean run — that is the whole point of ok.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_model_routing_eval_verdict.py
-- [[parametrize_35]] - code
+- [[parametrize_23]] - code
 - [[test_a_complete_clean_run_is_ok()]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_model_routing_eval_verdict.py
 - [[test_a_partial_run_is_not_ok_and_missing_counts_as_failed()]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_model_routing_eval_verdict.py
 - [[test_a_typo_in_an_answer_id_cannot_pass_silently()]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_model_routing_eval_verdict.py
@@ -30,12 +30,10 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 1 edge to [[_COMMUNITY_json]]
-- 1 edge to [[_COMMUNITY_subprocess]]
-- 1 edge to [[_COMMUNITY_sys]]
+- 3 edges to [[_COMMUNITY_json]]
 - 1 edge to [[_COMMUNITY_pytest]]
 - 1 edge to [[_COMMUNITY_model_routing_eval.py]]
 - 1 edge to [[_COMMUNITY_pathlib]]
 
 ## Top bridge nodes
-- [[test_model_routing_eval_verdict.py]] - degree 12, connects to 6 communities
+- [[test_model_routing_eval_verdict.py]] - degree 12, connects to 4 communities

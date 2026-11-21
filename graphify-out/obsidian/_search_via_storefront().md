@@ -1,19 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "code"
-community: "wb_connector/server.py"
+community: "citilink_card"
 location: "L1756"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/wb_connector/serverpy
+  - community/citilink_card
 ---
 
 # _search_via_storefront()
 
 ## Connections
-- [[Any_27]] - `references` [EXTRACTED]
-- [[Context_13]] - `references` [EXTRACTED]
+- [[Any]] - `references` [EXTRACTED]
 - [[NavBlocked]] - `uses` [INFERRED]
 - [[Open search.aspx in Chrome and capture the page's catalog XHR body. Matches…]] - `rationale_for` [EXTRACTED]
 - [[TransportDownError]] - `uses` [INFERRED]
@@ -27,7 +26,7 @@ tags:
 - [[log_event()]] - `calls` [EXTRACTED]
 - [[raise_tool_error()]] - `calls` [EXTRACTED]
 - [[wb_connectorserver.py]] - `contains` [EXTRACTED]
-- [[wb_search()_2]] - `calls` [EXTRACTED]
+- [[wb_search()_1]] - `calls` [EXTRACTED]
 - [[wb_selfcheck()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/citilink_card

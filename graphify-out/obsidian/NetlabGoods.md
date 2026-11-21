@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/netlab-client.ts"
 type: "code"
-community: "netlab-client.ts"
+community: "b2b-distributor-adapter.ts"
 location: "L33"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/netlab-clientts
+  - community/b2b-distributor-adapterts
 ---
 
 # NetlabGoods
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[netlab-client.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/netlab-clientts
+#graphify/code #graphify/EXTRACTED #community/b2b-distributor-adapterts

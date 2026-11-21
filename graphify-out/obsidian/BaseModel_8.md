@@ -1,21 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "ozon_connector/models_output.py"
+community: "json"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ozon_connector/models_outputpy
+  - community/json
 ---
 
 # BaseModel
 
 ## Connections
-- [[OzonCardResponse]] - `inherits` [EXTRACTED]
-- [[OzonReviewItemOut]] - `inherits` [EXTRACTED]
-- [[OzonReviewsResponse]] - `inherits` [EXTRACTED]
-- [[OzonSearchItemOut]] - `inherits` [EXTRACTED]
-- [[OzonSearchResponse]] - `inherits` [EXTRACTED]
-- [[OzonSellerOut]] - `inherits` [EXTRACTED]
+- [[MetaOutBase]] - `inherits` [EXTRACTED]
+- [[SelfCheckEntryBase]] - `inherits` [EXTRACTED]
+- [[SelfCheckResponseBase]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ozon_connector/models_outputpy
+#graphify/code #graphify/EXTRACTED #community/json

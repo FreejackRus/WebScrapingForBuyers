@@ -12,9 +12,9 @@ tags:
 # render_prompts()
 
 ## Connections
-- [[Any_29]] - `references` [EXTRACTED]
+- [[Any_28]] - `references` [EXTRACTED]
 - [[Map every case id to its rendered prompt (for orchestrators).]] - `rationale_for` [EXTRACTED]
-- [[main()_35]] - `calls` [EXTRACTED]
+- [[main()_36]] - `calls` [EXTRACTED]
 - [[model_routing_eval.py]] - `contains` [EXTRACTED]
 - [[render_prompt()]] - `calls` [EXTRACTED]
 

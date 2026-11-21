@@ -1,17 +1,17 @@
 ---
-source_file: ""
+source_file: "scripts/office-agent/package.json"
 type: "code"
-community: "TransportDownError"
+community: "office-agent/package.json"
+location: "L5"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/TransportDownError
+  - community/office-agent/packagejson
 ---
 
 # description
 
 ## Connections
-- [[yandex_card()]] - `references` [EXTRACTED]
-- [[yandex_search()_1]] - `references` [EXTRACTED]
+- [[office-agentpackage.json]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/TransportDownError
+#graphify/code #graphify/EXTRACTED #community/office-agent/packagejson

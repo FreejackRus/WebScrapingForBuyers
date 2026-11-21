@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[feedbacks.wb.ru answers any questions-ish path with a misleading empty stub.]] - `rationale_for` [EXTRACTED]
 - [[responder()_18]] - `contains` [EXTRACTED]
-- [[scenario()_62]] - `contains` [EXTRACTED]
+- [[scenario()_61]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_patch_questions

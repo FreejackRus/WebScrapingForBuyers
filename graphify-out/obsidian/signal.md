@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "process.py"
+community: "json"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/processpy
+  - community/json
 ---
 
 # signal
@@ -14,4 +14,4 @@ tags:
 - [[process.py]] - `imports` [EXTRACTED]
 - [[stdio_probe.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/processpy
+#graphify/concept #graphify/EXTRACTED #community/json

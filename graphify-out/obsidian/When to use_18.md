@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/avito-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/lamoda-connector/SKILL.md"
 type: "document"
-community: "avito_connector/server.py"
-location: "L13"
+community: "Lamoda Connector"
+location: "L14"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/avito_connector/serverpy
+  - community/Lamoda_Connector
 ---
 
 # When to use
 
 ## Connections
-- [[Avito Connector_1]] - `contains` [EXTRACTED]
+- [[Lamoda Connector]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/avito_connector/serverpy
+#graphify/document #graphify/EXTRACTED #community/Lamoda_Connector

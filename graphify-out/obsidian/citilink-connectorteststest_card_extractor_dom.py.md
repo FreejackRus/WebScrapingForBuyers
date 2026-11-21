@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_card_extractor_dom.py"
 type: "code"
-community: "citilink-connector/tests/test_card_extractor_dom.py"
+community: "dom.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/citilink-connector/tests/test_card_extractor_dompy
+  - community/dompy
 ---
 
 # citilink-connector/tests/test_card_extractor_dom.py
 
 ## Connections
 - [[Regression tests for the Citilink card extractor on a captured card page.…]] - `rationale_for` [EXTRACTED]
-- [[_extract()_2]] - `contains` [EXTRACTED]
+- [[_extract()_9]] - `contains` [EXTRACTED]
 - [[citilink_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[dom.py]] - `imports_from` [EXTRACTED]
 - [[domtest.py]] - `imports_from` [EXTRACTED]
@@ -26,4 +26,4 @@ tags:
 - [[test_recommendation_prices_are_never_the_products()]] - `contains` [EXTRACTED]
 - [[test_split_glyph_price_survives_the_meta_attribute_disappearing()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/citilink-connector/tests/test_card_extractor_dompy
+#graphify/code #graphify/EXTRACTED #community/dompy

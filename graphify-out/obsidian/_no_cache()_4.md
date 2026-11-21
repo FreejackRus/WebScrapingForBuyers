@@ -1,18 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_search_login_wall_live_dom.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py"
 type: "code"
-community: "test_search_login_wall_live_dom.py"
-location: "L35"
+community: "test_the_category_url_is_what_yields_a_collection"
+location: "L59"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_search_login_wall_live_dompy
+  - community/test_the_category_url_is_what_yields_a_collection
 ---
 
 # _no_cache()
 
 ## Connections
-- [[fixture_9]] - `references` [EXTRACTED]
-- [[test_search_login_wall_live_dom.py]] - `contains` [EXTRACTED]
+- [[_no_redirect()]] - `indirect_call` [INFERRED]
+- [[fixture_5]] - `references` [EXTRACTED]
+- [[megamarket-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_search_login_wall_live_dompy
+#graphify/code #graphify/EXTRACTED #community/test_the_category_url_is_what_yields_a_collection

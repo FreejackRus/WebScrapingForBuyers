@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/README.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/compare-prices/SKILL.md"
 type: "document"
-community: "English version"
-location: "L1058"
+community: "Cross-Marketplace Price Comparison"
+location: "L165"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/English_version
+  - community/Cross-Marketplace_Price_Comparison
 ---
 
 # Trust boundary
 
 ## Connections
-- [[English version]] - `contains` [EXTRACTED]
+- [[Cross-Marketplace Price Comparison]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/English_version
+#graphify/document #graphify/EXTRACTED #community/Cross-Marketplace_Price_Comparison

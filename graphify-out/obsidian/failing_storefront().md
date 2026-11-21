@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[TransportDownError]] - `calls` [INFERRED]
 - [[raise_tool_error()]] - `calls` [INFERRED]
-- [[scenario()_82]] - `indirect_call` [INFERRED]
+- [[scenario()_88]] - `indirect_call` [INFERRED]
 - [[test_wb_search_storefront_does_not_fall_back_to_search_goods()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/INFERRED #community/test_wb_search_storefront_does_not_fall_back_to_search_goods

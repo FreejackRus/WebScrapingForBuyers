@@ -1,17 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
+source_file: "mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v2.1.0.md"
 type: "document"
-community: "SearchHistory"
-location: "L925"
+community: "citilink_card"
+location: "L5"
 tags:
   - graphify/document
-  - graphify/EXTRACTED
-  - community/SearchHistory
+  - graphify/INFERRED
+  - community/citilink_card
 ---
 
 # Added
 
 ## Connections
-- [[1.5.0 — 2026-08-16]] - `contains` [EXTRACTED]
+- [[_check_final_host()]] - `references` [INFERRED]
+- [[compare_prices()]] - `references` [INFERRED]
+- [[v2.1.0]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/SearchHistory
+#graphify/document #graphify/INFERRED #community/citilink_card

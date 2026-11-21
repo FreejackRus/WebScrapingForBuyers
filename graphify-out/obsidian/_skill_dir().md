@@ -12,7 +12,7 @@ tags:
 # _skill_dir()
 
 ## Connections
-- [[Path_3]] - `references` [EXTRACTED]
+- [[Path]] - `references` [EXTRACTED]
 - [[test_every_connector_has_a_skill()]] - `calls` [EXTRACTED]
 - [[test_every_mounted_source_maps_to_a_skill()]] - `calls` [EXTRACTED]
 - [[test_skill_documents_every_tool_the_server_exposes()]] - `calls` [EXTRACTED]

@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "check_versions.py"
+community: "domtest.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/check_versionspy
+  - community/domtestpy
 ---
 
 # Path
 
 ## Connections
-- [[_scan()]] - `references` [EXTRACTED]
+- [[run_extractor()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/check_versionspy
+#graphify/code #graphify/EXTRACTED #community/domtestpy

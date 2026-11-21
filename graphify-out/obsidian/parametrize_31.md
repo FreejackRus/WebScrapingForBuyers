@@ -1,19 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "test_chrome_cdp_snapshot.py"
+community: "test_search_rejects_a_malformed_location_id"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_chrome_cdp_snapshotpy
+  - community/test_search_rejects_a_malformed_location_id
 ---
 
 # parametrize
 
 ## Connections
-- [[test_bad_image_payload_is_rejected()]] - `references` [EXTRACTED]
-- [[test_encoded_and_decoded_byte_limits()]] - `references` [EXTRACTED]
-- [[test_invalid_geometry_never_captures()]] - `references` [EXTRACTED]
-- [[test_invalid_jpeg_frame_dimensions()]] - `references` [EXTRACTED]
+- [[test_card_rejects_input_without_an_item_id()_1]] - `references` [EXTRACTED]
+- [[test_search_rejects_a_malformed_location_id()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_snapshotpy
+#graphify/code #graphify/EXTRACTED #community/test_search_rejects_a_malformed_location_id

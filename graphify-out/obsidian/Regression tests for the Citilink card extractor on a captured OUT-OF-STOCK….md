@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_card_out_of_stock_dom.py"
 type: "rationale"
-community: "pytest"
+community: "dom.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/pytest
+  - community/dompy
 ---
 
 # Regression tests for the Citilink card extractor on a captured OUT-OF-STOCK…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_card_out_of_stock_dom.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/pytest
+#graphify/rationale #graphify/EXTRACTED #community/dompy

@@ -12,11 +12,11 @@ tags:
 # test_warning_does_not_drop_valid_offer_and_is_isolated_per_request()
 
 ## Connections
-- [[MetaOut_11]] - `uses` [INFERRED]
+- [[MetaOut]] - `uses` [INFERRED]
 - [[WbCardItem]] - `uses` [INFERRED]
 - [[WbSearchResponse]] - `uses` [INFERRED]
-- [[search()_4]] - `contains` [EXTRACTED]
-- [[search()_2]] - `indirect_call` [INFERRED]
+- [[search()_6]] - `contains` [EXTRACTED]
+- [[search()_4]] - `indirect_call` [INFERRED]
 - [[test_source_warnings.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/INFERRED #community/test_card_verification_recordspy

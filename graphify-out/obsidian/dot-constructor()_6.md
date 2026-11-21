@@ -1,12 +1,12 @@
 ---
 source_file: "apps/identity/src/http/login-limiter.ts"
 type: "code"
-community: "identity/src/app.ts"
+community: "LoginLimiter"
 location: "L15"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/identity/src/appts
+  - community/LoginLimiter
 ---
 
 # .constructor()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[LoginLimiter]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/identity/src/appts
+#graphify/code #graphify/EXTRACTED #community/LoginLimiter

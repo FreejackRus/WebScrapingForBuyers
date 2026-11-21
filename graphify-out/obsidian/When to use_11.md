@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/cian-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md"
 type: "document"
-community: "Cian Connector"
-location: "L14"
+community: "Wildberries Connector"
+location: "L11"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Cian_Connector
+  - community/Wildberries_Connector
 ---
 
 # When to use
 
 ## Connections
-- [[Cian Connector]] - `contains` [EXTRACTED]
-- [[compare_prices()]] - `references` [INFERRED]
+- [[Wildberries Connector_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Cian_Connector
+#graphify/document #graphify/EXTRACTED #community/Wildberries_Connector

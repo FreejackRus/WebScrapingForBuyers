@@ -12,6 +12,6 @@ tags:
 # Every test starts with an empty cache: a cached body from a previous case would…
 
 ## Connections
-- [[_no_cache()_7]] - `rationale_for` [EXTRACTED]
+- [[_no_cache()_8]] - `rationale_for` [EXTRACTED]
 
 #graphify/rationale #graphify/EXTRACTED #community/_no_cache

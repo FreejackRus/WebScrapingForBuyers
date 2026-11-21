@@ -15,6 +15,8 @@ tags:
 - [[analysisapiindex.ts]] - `imports` [EXTRACTED]
 - [[searchapiindex.ts]] - `imports` [EXTRACTED]
 - [[sharedapiindex.ts]] - `contains` [EXTRACTED]
+- [[store.ts]] - `imports` [EXTRACTED]
 - [[userapiindex.ts]] - `imports` [EXTRACTED]
+- [[watchlistapiindex.ts]] - `imports` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/analysis/store/indexts

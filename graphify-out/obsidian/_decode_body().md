@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Decode a streamed body the way curl_cffi's ``resp.text`` would have. Streaming…]] - `rationale_for` [EXTRACTED]
-- [[_fetch()_1]] - `calls` [EXTRACTED]
+- [[_fetch()]] - `calls` [EXTRACTED]
 - [[wb_connectorserver.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
 community: "offer"
-location: "L229"
+location: "L365"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,7 +12,7 @@ tags:
 # wb()
 
 ## Connections
-- [[offer()_2]] - `calls` [EXTRACTED]
-- [[test_a_timeout_is_reported_as_a_timeout()]] - `contains` [EXTRACTED]
+- [[offer()_5]] - `calls` [EXTRACTED]
+- [[test_a_missing_connector_is_distinguished_from_a_block()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/offer

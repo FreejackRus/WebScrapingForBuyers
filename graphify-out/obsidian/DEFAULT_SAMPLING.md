@@ -1,12 +1,12 @@
 ---
 source_file: "apps/analysis/src/infrastructure/ollama-analysis-narrator.ts"
 type: "code"
-community: "compare-models.ts"
-location: "L267"
+community: "analysis/src/app.ts"
+location: "L346"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/compare-modelsts
+  - community/analysis/src/appts
 ---
 
 # DEFAULT_SAMPLING
@@ -16,4 +16,4 @@ tags:
 - [[narrator-config.test.ts]] - `imports` [EXTRACTED]
 - [[ollama-analysis-narrator.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/compare-modelsts
+#graphify/code #graphify/EXTRACTED #community/analysis/src/appts

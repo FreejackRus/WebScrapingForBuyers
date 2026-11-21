@@ -12,7 +12,6 @@ tags:
 # _fetch_html()
 
 ## Connections
-- [[Context_12]] - `references` [EXTRACTED]
 - [[GET a Yandex Market page and return its HTML, cached and retry-aware.]] - `rationale_for` [EXTRACTED]
 - [[NotFoundError]] - `uses` [INFERRED]
 - [[RateLimitedError]] - `uses` [INFERRED]
@@ -20,6 +19,6 @@ tags:
 - [[fetch()_4]] - `indirect_call` [INFERRED]
 - [[yandex_card()]] - `calls` [EXTRACTED]
 - [[yandex_connectorserver.py]] - `contains` [EXTRACTED]
-- [[yandex_search()_1]] - `calls` [EXTRACTED]
+- [[yandex_search()]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/TransportDownError

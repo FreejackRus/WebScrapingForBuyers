@@ -12,6 +12,7 @@ tags:
 # useUserStore
 
 ## Connections
+- [[AdminAlertBanner()]] - `calls` [EXTRACTED]
 - [[AnalysisChat()]] - `calls` [EXTRACTED]
 - [[AnalystPanel()]] - `calls` [EXTRACTED]
 - [[App()]] - `calls` [EXTRACTED]
@@ -26,6 +27,7 @@ tags:
 - [[featuresuserloginindex.ts]] - `imports` [EXTRACTED]
 - [[featuresusersettingsindex.ts]] - `imports` [EXTRACTED]
 - [[logoutindex.ts]] - `imports` [EXTRACTED]
+- [[system-healthuiindex.tsx]] - `imports` [EXTRACTED]
 - [[topbaruiindex.tsx]] - `imports` [EXTRACTED]
 - [[useBootSession.ts]] - `imports` [EXTRACTED]
 - [[useLogin()]] - `calls` [EXTRACTED]

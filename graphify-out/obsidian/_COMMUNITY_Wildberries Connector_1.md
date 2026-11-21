@@ -10,12 +10,12 @@ members: 7
 **Members:** 7 nodes
 
 ## Members
-- [[Sources of truth_1]] - document - mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md
+- [[Sources of truth_2]] - document - mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md
 - [[ToS note_1]] - document - mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md
-- [[Trust boundary_6]] - document - mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md
-- [[When to use_10]] - document - mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md
+- [[Trust boundary_8]] - document - mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md
+- [[When to use_11]] - document - mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md
 - [[Wildberries Connector_1]] - document - mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md
-- [[Workflow patterns_5]] - document - mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md
+- [[Workflow patterns_7]] - document - mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md
 - [[ru-marketplace-mcpskillswb-connectorSKILL]] - document - mcp-servers/ru-marketplace-mcp/skills/wb-connector/SKILL.md
 
 ## Live Query (requires Dataview plugin)

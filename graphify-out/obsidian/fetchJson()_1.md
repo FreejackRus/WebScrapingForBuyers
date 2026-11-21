@@ -1,20 +1,18 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/netlab-client.ts"
+source_file: "apps/search/src/infrastructure/suggest/live-suggest.ts"
 type: "code"
-community: "netlab-client.ts"
-location: "L47"
+community: "product-from-query.ts"
+location: "L64"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/netlab-clientts
+  - community/product-from-queryts
 ---
 
 # fetchJson()
 
 ## Connections
-- [[netlab-client.ts]] - `contains` [EXTRACTED]
-- [[netlabAuthenticate()]] - `calls` [EXTRACTED]
-- [[netlabGoodsByUid()]] - `calls` [EXTRACTED]
-- [[netlabGoodsSearch()]] - `calls` [EXTRACTED]
+- [[fetchEnginePhrases()]] - `calls` [EXTRACTED]
+- [[live-suggest.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/netlab-clientts
+#graphify/code #graphify/EXTRACTED #community/product-from-queryts

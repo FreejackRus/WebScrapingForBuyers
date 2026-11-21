@@ -2,7 +2,7 @@
 source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
 type: "code"
 community: "SourceAdapter"
-location: "L182"
+location: "L186"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,7 +12,7 @@ tags:
 # isMcpUnavailableError()
 
 ## Connections
-- [[dot-search()_5]] - `calls` [EXTRACTED]
+- [[dot-search()_14]] - `calls` [EXTRACTED]
 - [[fallback-source-adapter.ts]] - `imports` [EXTRACTED]
 - [[mcp-marketplace-adapter.ts]] - `contains` [EXTRACTED]
 

@@ -12,8 +12,8 @@ tags:
 # test_yandex_matching_variant_can_verify_price()
 
 ## Connections
-- [[card()_6]] - `contains` [EXTRACTED]
-- [[card()_5]] - `indirect_call` [INFERRED]
+- [[card()_7]] - `contains` [EXTRACTED]
+- [[card()_6]] - `indirect_call` [INFERRED]
 - [[test_card_verification_records.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_card_verification_recordspy

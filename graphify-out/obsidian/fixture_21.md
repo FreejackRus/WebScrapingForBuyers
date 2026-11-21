@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "fake_browser"
+community: "transport/__init__.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/fake_browser
+  - community/transport/__init__py
 ---
 
 # fixture
 
 ## Connections
-- [[fake_browser()]] - `references` [EXTRACTED]
+- [[browser()_3]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/fake_browser
+#graphify/code #graphify/EXTRACTED #community/transport/__init__py

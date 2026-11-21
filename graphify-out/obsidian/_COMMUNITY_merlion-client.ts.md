@@ -1,15 +1,16 @@
 ---
 type: community
-cohesion: 0.19
-members: 25
+cohesion: 0.17
+members: 27
 ---
 
 # merlion-client.ts
 
-**Cohesion:** 0.19 - loosely connected
-**Members:** 25 nodes
+**Cohesion:** 0.17 - loosely connected
+**Members:** 27 nodes
 
 ## Members
+- [[dot-search()_5]] - code - apps/search/src/infrastructure/sources/b2b-distributor-adapter.ts
 - [[MERLION_ENDPOINT_PROD]] - code - apps/search/src/infrastructure/sources/merlion-client.ts
 - [[MERLION_ENDPOINT_TEST]] - code - apps/search/src/infrastructure/sources/merlion-client.ts
 - [[MERLION_WSDL_PROD]] - code - apps/search/src/infrastructure/sources/merlion-client.ts
@@ -25,6 +26,7 @@ members: 25
 - [[intOf()]] - code - apps/search/src/infrastructure/sources/merlion-client.ts
 - [[matchKind()_2]] - code - apps/search/src/infrastructure/sources/merlion-client.ts
 - [[merlion-client.ts]] - code - apps/search/src/infrastructure/sources/merlion-client.ts
+- [[merlionConfigFromEnv()]] - code - apps/search/src/infrastructure/sources/merlion-client.ts
 - [[merlionDefaultShipmentMethod()]] - code - apps/search/src/infrastructure/sources/merlion-client.ts
 - [[merlionGetItems()]] - code - apps/search/src/infrastructure/sources/merlion-client.ts
 - [[merlionGetItemsAvail()]] - code - apps/search/src/infrastructure/sources/merlion-client.ts
@@ -45,9 +47,13 @@ SORT file.name ASC
 
 ## Connections to other communities
 - 5 edges to [[_COMMUNITY_b2b-distributor-adapter.ts]]
-- 3 edges to [[_COMMUNITY_SourceAdapter]]
 - 2 edges to [[_COMMUNITY_packages_contracts_dist_index]]
+- 1 edge to [[_COMMUNITY_SourceAdapter]]
+- 1 edge to [[_COMMUNITY_packages_contracts_dist_index_product]]
+- 1 edge to [[_COMMUNITY_watchlist-checker.ts]]
 
 ## Top bridge nodes
-- [[merlion-client.ts]] - degree 32, connects to 3 communities
+- [[merlion-client.ts]] - degree 32, connects to 5 communities
 - [[searchMerlion()]] - degree 9, connects to 1 community
+- [[dot-search()_5]] - degree 3, connects to 1 community
+- [[merlionConfigFromEnv()]] - degree 3, connects to 1 community

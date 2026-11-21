@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/shape_reference.py"
 type: "code"
-community: "json"
+community: "lamoda_connector/server.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/json
+  - community/lamoda_connector/serverpy
 ---
 
 # lamoda_connector/shape_reference.py
@@ -17,6 +17,6 @@ tags:
 - [[collections_abc]] - `imports_from` [EXTRACTED]
 - [[lamoda-connectorteststest_shape_reference.py]] - `imports_from` [EXTRACTED]
 - [[lamoda_connectorserver.py]] - `imports_from` [EXTRACTED]
-- [[missing_required_families()_1]] - `contains` [EXTRACTED]
+- [[missing_required_families()_2]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/json
+#graphify/code #graphify/EXTRACTED #community/lamoda_connector/serverpy

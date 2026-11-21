@@ -1,17 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "test_native_ozon_explicit_absence_survives_both_label_channels"
+community: "test_http_tier.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_native_ozon_explicit_absence_survives_both_label_channels
+  - community/test_http_tierpy
 ---
 
 # parametrize
 
 ## Connections
-- [[test_native_ozon_explicit_absence_survives_both_label_channels()]] - `references` [EXTRACTED]
-- [[test_native_yandex_distinct_sku_reaches_cheapest_comparable()]] - `references` [EXTRACTED]
+- [[test_gateway_statuses_are_retried()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_native_ozon_explicit_absence_survives_both_label_channels
+#graphify/code #graphify/EXTRACTED #community/test_http_tierpy

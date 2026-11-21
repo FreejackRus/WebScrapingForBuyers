@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/src/citilink_connector/settings.py"
 type: "rationale"
-community: "pydantic"
+community: "functools"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/pydantic
+  - community/functools
 ---
 
 # Citilink connector runtime settings (env-driven via CITILINK_ prefix).
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[citilink_connectorsettings.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/pydantic
+#graphify/rationale #graphify/EXTRACTED #community/functools

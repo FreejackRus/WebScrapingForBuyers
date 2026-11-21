@@ -1,20 +1,20 @@
 ---
 source_file: "apps/gateway/src/app.ts"
 type: "code"
-community: "gateway/src/app.ts"
-location: "L253"
+community: "resilience.test.ts"
+location: "L422"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/gateway/src/appts
+  - community/resiliencetestts
 ---
 
 # resolveUser()
 
 ## Connections
-- [[dot-get()_3]] - `calls` [INFERRED]
-- [[dot-set()_1]] - `calls` [INFERRED]
+- [[dot-get()]] - `calls` [INFERRED]
+- [[dot-set()]] - `calls` [INFERRED]
 - [[buildGatewayApp()]] - `calls` [EXTRACTED]
 - [[gatewaysrcapp.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/gateway/src/appts
+#graphify/code #graphify/EXTRACTED #community/resiliencetestts

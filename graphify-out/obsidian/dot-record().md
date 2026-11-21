@@ -12,8 +12,8 @@ tags:
 # .record()
 
 ## Connections
-- [[dot-schedule()]] - `calls` [EXTRACTED]
+- [[dot-schedule()_4]] - `calls` [EXTRACTED]
 - [[SearchHistory]] - `method` [EXTRACTED]
-- [[normalizeQuery()]] - `calls` [EXTRACTED]
+- [[normalizeQuery()_1]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/SearchHistory

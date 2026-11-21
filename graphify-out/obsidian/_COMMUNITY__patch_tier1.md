@@ -19,9 +19,9 @@ members: 17
 - [[ok_cdp()]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 - [[ok_cdp()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 - [[ok_cdp()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
-- [[scenario()_73]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 - [[scenario()_74]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 - [[scenario()_75]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
+- [[scenario()_76]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 - [[stealth_html()]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 - [[stealth_ok()]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 - [[test_fetch_composer_caches_a_successful_cdp_body()]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
@@ -39,9 +39,9 @@ SORT file.name ASC
 - 4 edges to [[_COMMUNITY_ozon-connectorteststest_server.py]]
 - 3 edges to [[_COMMUNITY__run]]
 - 2 edges to [[_COMMUNITY_test_cache_is_keyed_by_canonical_path_not_raw_input]]
-- 1 edge to [[_COMMUNITY_test_sources_run_concurrently]]
 - 1 edge to [[_COMMUNITY_test_fetch_composer_does_not_cache_a_block]]
 - 1 edge to [[_COMMUNITY_test_tier1_proxy_is_passed_as_an_argument_not_an_env_var]]
+- 1 edge to [[_COMMUNITY_test_sources_run_concurrently]]
 
 ## Top bridge nodes
 - [[_patch_tier1()]] - degree 10, connects to 5 communities

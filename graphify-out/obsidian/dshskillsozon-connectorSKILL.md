@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/ozon-connector/SKILL.md"
 type: "document"
-community: "Ozon Connector"
+community: "ozon_connector/server.py"
 location: "L1"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Ozon_Connector
+  - community/ozon_connector/serverpy
 ---
 
 # dsh/skills/ozon-connector/SKILL.md
 
 ## Connections
-- [[Ozon Connector_1]] - `contains` [EXTRACTED]
+- [[Ozon Connector]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Ozon_Connector
+#graphify/document #graphify/EXTRACTED #community/ozon_connector/serverpy

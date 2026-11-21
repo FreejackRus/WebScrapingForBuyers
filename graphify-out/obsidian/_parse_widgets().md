@@ -12,7 +12,7 @@ tags:
 # _parse_widgets()
 
 ## Connections
-- [[Any_8]] - `references` [EXTRACTED]
+- [[Any_13]] - `references` [EXTRACTED]
 - [[_price_str_to_float()]] - `calls` [EXTRACTED]
 - [[_smoke_card()]] - `calls` [EXTRACTED]
 - [[ozon_card()]] - `calls` [EXTRACTED]

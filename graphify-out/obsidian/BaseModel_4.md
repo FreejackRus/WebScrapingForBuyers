@@ -1,18 +1,21 @@
 ---
 source_file: ""
 type: "code"
-community: "dns_card"
+community: "ozon_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/dns_card
+  - community/ozon_connector/serverpy
 ---
 
 # BaseModel
 
 ## Connections
-- [[DnsCardResponse]] - `inherits` [EXTRACTED]
-- [[DnsSearchItemOut]] - `inherits` [EXTRACTED]
-- [[DnsSearchResponse]] - `inherits` [EXTRACTED]
+- [[OzonCardResponse]] - `inherits` [EXTRACTED]
+- [[OzonReviewItemOut]] - `inherits` [EXTRACTED]
+- [[OzonReviewsResponse]] - `inherits` [EXTRACTED]
+- [[OzonSearchItemOut]] - `inherits` [EXTRACTED]
+- [[OzonSearchResponse]] - `inherits` [EXTRACTED]
+- [[OzonSellerOut]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/dns_card
+#graphify/code #graphify/EXTRACTED #community/ozon_connector/serverpy

@@ -12,7 +12,7 @@ tags:
 # handoff_diagnostics()
 
 ## Connections
-- [[Any_16]] - `references` [EXTRACTED]
+- [[Any_1]] - `references` [EXTRACTED]
 - [[Read-only view of the lease registry — never opens, resumes or closes a tab.…]] - `rationale_for` [EXTRACTED]
 - [[_duration_s()]] - `calls` [EXTRACTED]
 - [[_expired()]] - `calls` [EXTRACTED]

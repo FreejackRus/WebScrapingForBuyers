@@ -15,7 +15,7 @@ tags:
 - [[dot-send()_4]] - `calls` [EXTRACTED]
 - [[0. Что проект уже делает (baseline, не изобретаем заново)]] - `references` [INFERRED]
 - [[5. Рекомендации для v2.4.0+ (ранжировано ценностьстоимостьриск)]] - `references` [INFERRED]
-- [[Any_26]] - `references` [EXTRACTED]
+- [[Any_22]] - `references` [EXTRACTED]
 - [[Capture only the current owned viewport through CDP. This deliberately avoids…]] - `rationale_for` [EXTRACTED]
 - [[PageLike]] - `references` [EXTRACTED]
 - [[_handoff_jpeg()]] - `calls` [EXTRACTED]

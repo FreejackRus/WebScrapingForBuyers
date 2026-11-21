@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/models_output.py"
 type: "rationale"
-community: "lamoda_search"
+community: "lamoda_connector/server.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/lamoda_search
+  - community/lamoda_connector/serverpy
 ---
 
 # Pydantic output models for the Lamoda MCP connector.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[lamoda_connectormodels_output.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/lamoda_search
+#graphify/rationale #graphify/EXTRACTED #community/lamoda_connector/serverpy

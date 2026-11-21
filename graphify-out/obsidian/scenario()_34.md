@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[_patch_questions()]] - `calls` [EXTRACTED]
-- [[_tool_error_payload()]] - `calls` [EXTRACTED]
+- [[_tool_error_payload()_1]] - `calls` [EXTRACTED]
 - [[forbidden()_4]] - `indirect_call` [INFERRED]
 - [[test_category_products_refuses_the_blackhole_shard_without_a_request()]] - `contains` [EXTRACTED]
 

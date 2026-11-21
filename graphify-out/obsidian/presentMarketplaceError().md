@@ -2,7 +2,7 @@
 source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
 type: "code"
 community: "mcp-marketplace-adapter.ts"
-location: "L106"
+location: "L110"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,7 +12,8 @@ tags:
 # presentMarketplaceError()
 
 ## Connections
-- [[dot-search()]] - `calls` [EXTRACTED]
+- [[dot-collect()]] - `calls` [EXTRACTED]
+- [[dot-search()_8]] - `calls` [EXTRACTED]
 - [[isAntibotTransportError()]] - `calls` [EXTRACTED]
 - [[isAvitoPowError()]] - `calls` [EXTRACTED]
 - [[isMegamarketWafError()]] - `calls` [EXTRACTED]

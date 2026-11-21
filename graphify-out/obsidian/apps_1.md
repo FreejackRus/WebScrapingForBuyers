@@ -1,17 +1,17 @@
 ---
-source_file: "apps/identity/src/auth.test.ts"
+source_file: "apps/gateway/src/resilience.test.ts"
 type: "code"
-community: "identity/src/app.ts"
-location: "L6"
+community: "resilience.test.ts"
+location: "L13"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/identity/src/appts
+  - community/resiliencetestts
 ---
 
 # apps
 
 ## Connections
-- [[auth.test.ts]] - `contains` [EXTRACTED]
+- [[resilience.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/identity/src/appts
+#graphify/code #graphify/EXTRACTED #community/resiliencetestts

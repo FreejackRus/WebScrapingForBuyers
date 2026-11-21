@@ -1,20 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "detmir_connector/server.py"
+community: "taobao_connector/models_output.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/detmir_connector/serverpy
+  - community/taobao_connector/models_outputpy
 ---
 
 # BaseModel
 
 ## Connections
-- [[DetmirCardResponse]] - `inherits` [EXTRACTED]
-- [[DetmirCategoriesResponse]] - `inherits` [EXTRACTED]
-- [[DetmirCategory]] - `inherits` [EXTRACTED]
-- [[DetmirListResponse]] - `inherits` [EXTRACTED]
-- [[DetmirProduct]] - `inherits` [EXTRACTED]
+- [[TaobaoCardResponse]] - `inherits` [EXTRACTED]
+- [[TaobaoSearchItemOut]] - `inherits` [EXTRACTED]
+- [[TaobaoSearchResponse]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/detmir_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/taobao_connector/models_outputpy

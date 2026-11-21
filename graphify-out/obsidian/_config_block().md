@@ -12,7 +12,7 @@ tags:
 # _config_block()
 
 ## Connections
-- [[Any_20]] - `references` [EXTRACTED]
+- [[Any_8]] - `references` [EXTRACTED]
 - [[The mcpServers block, one entry per source, plus a note on how it was built.…]] - `rationale_for` [EXTRACTED]
 - [[_workspace_root()]] - `calls` [EXTRACTED]
 - [[cli.py]] - `contains` [EXTRACTED]

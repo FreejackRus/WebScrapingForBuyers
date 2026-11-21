@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[Even successful doctor runs must not depend on a local Chrome session.]] - `rationale_for` [EXTRACTED]
 - [[fake_probe()]] - `indirect_call` [INFERRED]
-- [[fixture_20]] - `references` [EXTRACTED]
+- [[fixture_19]] - `references` [EXTRACTED]
 - [[test_cli.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/offline_cdp_probe

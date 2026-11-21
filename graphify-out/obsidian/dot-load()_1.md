@@ -1,20 +1,19 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/netlab-price-feed.ts"
+source_file: "apps/gateway/src/watchlist.ts"
 type: "code"
-community: "netlab-price-feed.ts"
-location: "L307"
+community: "WatchlistStore"
+location: "L117"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/netlab-price-feedts
+  - community/WatchlistStore
 ---
 
 # .load()
 
 ## Connections
-- [[dot-search()_8]] - `calls` [EXTRACTED]
-- [[NetlabPriceFeedAdapter]] - `method` [EXTRACTED]
-- [[createDistributorSourcesFromEnv()]] - `calls` [INFERRED]
-- [[downloadNetlabFeed()]] - `calls` [EXTRACTED]
+- [[dot-constructor()_8]] - `calls` [EXTRACTED]
+- [[WatchlistStore]] - `method` [EXTRACTED]
+- [[isWatchItem()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/netlab-price-feedts
+#graphify/code #graphify/EXTRACTED #community/WatchlistStore

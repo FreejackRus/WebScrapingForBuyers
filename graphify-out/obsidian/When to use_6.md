@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/marketplace/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/yandex-connector/SKILL.md"
 type: "document"
-community: "compare_prices"
-location: "L16"
+community: "yandex_card"
+location: "L15"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/compare_prices
+  - community/yandex_card
 ---
 
 # When to use
 
 ## Connections
-- [[Unified Marketplace Server_1]] - `contains` [EXTRACTED]
-- [[marketplace_sources()]] - `references` [INFERRED]
+- [[Yandex Market Connector_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/compare_prices
+#graphify/document #graphify/EXTRACTED #community/yandex_card

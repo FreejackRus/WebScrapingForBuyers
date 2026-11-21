@@ -13,13 +13,13 @@ tags:
 
 ## Connections
 - [[Reference shape signatures for the DNS extractors, pinned to the capture. The…]] - `rationale_for` [EXTRACTED]
-- [[_extract()_13]] - `contains` [EXTRACTED]
+- [[_extract()_2]] - `contains` [EXTRACTED]
 - [[dns_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[domtest.py]] - `imports_from` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]
 - [[pytest]] - `imports` [EXTRACTED]
 - [[resilience.py]] - `imports_from` [EXTRACTED]
-- [[test_card_payload_shape_matches_the_capture()_2]] - `contains` [EXTRACTED]
-- [[test_search_payload_shape_matches_the_capture()_3]] - `contains` [EXTRACTED]
+- [[test_card_payload_shape_matches_the_capture()_1]] - `contains` [EXTRACTED]
+- [[test_search_payload_shape_matches_the_capture()_1]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/domtestpy

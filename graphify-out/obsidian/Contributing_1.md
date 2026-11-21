@@ -12,7 +12,7 @@ tags:
 # Contributing
 
 ## Connections
-- [[Adding a marketplace_1]] - `contains` [EXTRACTED]
+- [[Adding a marketplace_2]] - `contains` [EXTRACTED]
 - [[Before you open a PR]] - `contains` [EXTRACTED]
 - [[CONTRIBUTING]] - `contains` [EXTRACTED]
 - [[Reporting a broken endpoint]] - `contains` [EXTRACTED]

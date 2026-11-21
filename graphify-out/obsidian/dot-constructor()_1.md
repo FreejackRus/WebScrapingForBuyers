@@ -1,17 +1,17 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
+source_file: "apps/analysis/src/infrastructure/deepseek-harness-narrator.ts"
 type: "code"
-community: "mcp-marketplace-adapter.ts"
-location: "L329"
+community: "analysis/package.json"
+location: "L27"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/mcp-marketplace-adapterts
+  - community/analysis/packagejson
 ---
 
 # .constructor()
 
 ## Connections
-- [[McpMarketplaceAdapter]] - `method` [EXTRACTED]
+- [[ProcurementAdapter]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts
+#graphify/code #graphify/EXTRACTED #community/analysis/packagejson

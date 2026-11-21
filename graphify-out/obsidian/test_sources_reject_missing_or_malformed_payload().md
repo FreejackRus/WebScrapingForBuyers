@@ -12,7 +12,7 @@ tags:
 # test_sources_reject_missing_or_malformed_payload()
 
 ## Connections
-- [[parametrize_25]] - `references` [EXTRACTED]
+- [[parametrize_30]] - `references` [EXTRACTED]
 - [[test_e2e_stdio_check.py]] - `contains` [EXTRACTED]
 - [[validate_sources()]] - `calls` [EXTRACTED]
 

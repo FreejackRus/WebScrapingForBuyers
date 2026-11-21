@@ -12,7 +12,7 @@ tags:
 # validate_bundle()
 
 ## Connections
-- [[Any_29]] - `references` [EXTRACTED]
+- [[Any_28]] - `references` [EXTRACTED]
 - [[Structural checks that make the bundle safe to score against.]] - `rationale_for` [EXTRACTED]
 - [[_norm()]] - `calls` [EXTRACTED]
 - [[load_bundle()]] - `calls` [EXTRACTED]

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/work/v2-research/security.md"
 type: "document"
-community: "get_browser"
+community: "chrome_cdp.py"
 location: "L59"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/get_browser
+  - community/chrome_cdppy
 ---
 
 # S3 — final-host redirect / browser SSRF boundary
@@ -15,4 +15,4 @@ tags:
 - [[_playwright_page()]] - `references` [INFERRED]
 - [[v2.0.0 Security  privacy research]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/get_browser
+#graphify/document #graphify/EXTRACTED #community/chrome_cdppy

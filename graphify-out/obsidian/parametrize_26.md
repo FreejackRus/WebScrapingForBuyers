@@ -1,17 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "test_search_rejects_a_malformed_location_id"
+community: "transport/__init__.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_search_rejects_a_malformed_location_id
+  - community/transport/__init__py
 ---
 
 # parametrize
 
 ## Connections
-- [[test_card_rejects_input_without_an_item_id()_1]] - `references` [EXTRACTED]
-- [[test_search_rejects_a_malformed_location_id()]] - `references` [EXTRACTED]
+- [[test_taobao_tools_resume_the_retained_page()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_search_rejects_a_malformed_location_id
+#graphify/code #graphify/EXTRACTED #community/transport/__init__py

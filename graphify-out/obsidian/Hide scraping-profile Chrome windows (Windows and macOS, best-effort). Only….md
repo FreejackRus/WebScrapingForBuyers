@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "rationale"
-community: "get_browser"
+community: "chrome_cdp.py"
 location: "L359"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/get_browser
+  - community/chrome_cdppy
 ---
 
 # Hide scraping-profile Chrome windows (Windows and macOS, best-effort). Only…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_hide_chrome_windows()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/get_browser
+#graphify/rationale #graphify/EXTRACTED #community/chrome_cdppy

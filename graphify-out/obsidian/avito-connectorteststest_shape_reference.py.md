@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[Reference shape signature of the REAL Avito ``jsitems`` payload.…]] - `rationale_for` [EXTRACTED]
 - [[avito_connector__init__.py]] - `imports_from` [EXTRACTED]
-- [[json]] - `imports` [EXTRACTED]
+- [[json_1]] - `imports` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]
 - [[resilience.py]] - `imports_from` [EXTRACTED]
 - [[test_live_payload_shape_matches_the_capture()]] - `contains` [EXTRACTED]

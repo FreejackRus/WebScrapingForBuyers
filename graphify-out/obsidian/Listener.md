@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/application/search-service.ts"
 type: "code"
-community: "packages_contracts_dist_index"
-location: "L11"
+community: "search-service.ts"
+location: "L18"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/packages_contracts_dist_index
+  - community/search-servicets
 ---
 
 # Listener
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[search-service.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index
+#graphify/code #graphify/EXTRACTED #community/search-servicets

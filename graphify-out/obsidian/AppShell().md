@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/composition/layer/AppShell.tsx"
 type: "code"
-community: "App.tsx"
-location: "L9"
+community: "useUserStore"
+location: "L10"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Apptsx
+  - community/useUserStore
 ---
 
 # AppShell()
@@ -19,4 +19,4 @@ tags:
 - [[layerindex.ts]] - `re_exports` [EXTRACTED]
 - [[useUserStore]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Apptsx
+#graphify/code #graphify/EXTRACTED #community/useUserStore

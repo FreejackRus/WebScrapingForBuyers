@@ -11,6 +11,6 @@ tags:
 # fixture
 
 ## Connections
-- [[_no_cache()_7]] - `references` [EXTRACTED]
+- [[_no_cache()_6]] - `references` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_no_cache

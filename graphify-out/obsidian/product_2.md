@@ -1,17 +1,17 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/blocked-source-cooldown-adapter.test.ts"
+source_file: "apps/search/src/infrastructure/sources/marketplace-deduplication.test.ts"
 type: "code"
-community: "SourceAdapter"
-location: "L7"
+community: "product-from-query.ts"
+location: "L5"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/SourceAdapter
+  - community/product-from-queryts
 ---
 
 # product
 
 ## Connections
-- [[blocked-source-cooldown-adapter.test.ts]] - `contains` [EXTRACTED]
+- [[marketplace-deduplication.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/SourceAdapter
+#graphify/code #graphify/EXTRACTED #community/product-from-queryts

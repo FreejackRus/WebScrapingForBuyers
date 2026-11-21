@@ -1,20 +1,18 @@
 ---
-source_file: "apps/identity/src/http/login-limiter.ts"
+source_file: "apps/search/src/domain/catalog.ts"
 type: "code"
-community: "identity/src/app.ts"
-location: "L55"
+community: "product-from-query.ts"
+location: "L71"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/identity/src/appts
+  - community/product-from-queryts
 ---
 
 # normalize()
 
 ## Connections
-- [[dot-recordFailure()]] - `calls` [EXTRACTED]
-- [[dot-reset()_2]] - `calls` [EXTRACTED]
-- [[dot-retryAfterSeconds()]] - `calls` [EXTRACTED]
-- [[login-limiter.ts]] - `contains` [EXTRACTED]
+- [[catalog.ts]] - `contains` [EXTRACTED]
+- [[suggestProducts()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/identity/src/appts
+#graphify/code #graphify/EXTRACTED #community/product-from-queryts

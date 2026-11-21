@@ -12,9 +12,9 @@ tags:
 # _page_challenge_kind()
 
 ## Connections
-- [[Any_1]] - `references` [EXTRACTED]
+- [[Any_14]] - `references` [EXTRACTED]
 - [[_anti_bot_challenge()]] - `calls` [EXTRACTED]
-- [[_cdp_render()]] - `indirect_call` [INFERRED]
+- [[_cdp_render()_2]] - `indirect_call` [INFERRED]
 - [[_login_wall_markers()]] - `calls` [EXTRACTED]
 - [[prices_from_tile()]] - `calls` [EXTRACTED]
 - [[taobao_connectorserver.py]] - `contains` [EXTRACTED]

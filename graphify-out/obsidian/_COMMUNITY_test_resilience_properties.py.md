@@ -1,13 +1,13 @@
 ---
 type: community
-cohesion: 0.10
-members: 30
+cohesion: 0.09
+members: 32
 ---
 
 # test_resilience_properties.py
 
-**Cohesion:** 0.10 - loosely connected
-**Members:** 30 nodes
+**Cohesion:** 0.09 - loosely connected
+**Members:** 32 nodes
 
 ## Members
 - [[24 088', '1 057' — thousands separators are unambiguous and must parse to the…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_resilience_properties.py
@@ -19,6 +19,7 @@ members: 30
 - [[No digits anywhere means no value — and 'no value' is None, never 0.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_resilience_properties.py
 - [[One poisoned cell degrades a field, never aborts the tool.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_resilience_properties.py
 - [[Property tests for the coercion helpers contracts about EVERY input. Example…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_resilience_properties.py
+- [[Regression for the hole the properties surfaced but their sampling never hit a…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_resilience_properties.py
 - [[The answer is always either one of the dict's own values or the default — a…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_resilience_properties.py
 - [[The first alias with a present value wins — even when it is an empty string,…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_resilience_properties.py
 - [[The whole contract in one property never raises, and the result is either None…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_resilience_properties.py
@@ -33,6 +34,7 @@ members: 30
 - [[test_coerce_price_dead_listing_inputs_are_none()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_resilience_properties.py
 - [[test_coerce_price_is_idempotent_on_its_own_results()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_resilience_properties.py
 - [[test_coerce_price_is_total_and_never_zero()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_resilience_properties.py
+- [[test_coerce_price_is_total_beyond_the_float_ceiling()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_resilience_properties.py
 - [[test_coerce_price_refuses_two_numbers_even_without_a_glyph_between_them()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_resilience_properties.py
 - [[test_first_present_all_absent_or_null_is_default()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_resilience_properties.py
 - [[test_first_present_is_total_and_never_invents()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_resilience_properties.py
@@ -50,9 +52,10 @@ SORT file.name ASC
 
 ## Connections to other communities
 - 10 edges to [[_COMMUNITY_coerce_price]]
-- 4 edges to [[_COMMUNITY_resilience.py]]
-- 3 edges to [[_COMMUNITY_flatten_text]]
-- 2 edges to [[_COMMUNITY_json]]
+- 6 edges to [[_COMMUNITY_test_resilience.py]]
+- 1 edge to [[_COMMUNITY_resilience.py]]
+- 1 edge to [[_COMMUNITY_wb-connectorteststest_parser_live.py]]
+- 1 edge to [[_COMMUNITY_json]]
 
 ## Top bridge nodes
 - [[test_resilience_properties.py]] - degree 21, connects to 4 communities

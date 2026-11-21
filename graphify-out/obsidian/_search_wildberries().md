@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py"
 type: "code"
-community: "_search_wildberries"
+community: "json"
 location: "L469"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_search_wildberries
+  - community/json
 ---
 
 # _search_wildberries()
@@ -19,4 +19,4 @@ tags:
 - [[_wb_product_url()]] - `calls` [EXTRACTED]
 - [[compare_connectorserver.py]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/_search_wildberries
+#graphify/code #graphify/EXTRACTED #community/json

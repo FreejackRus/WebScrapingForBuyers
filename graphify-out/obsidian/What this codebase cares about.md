@@ -12,6 +12,7 @@ tags:
 # What this codebase cares about
 
 ## Connections
+- [[Context]] - `references` [INFERRED]
 - [[Contributing_1]] - `contains` [EXTRACTED]
 - [[coerce_int()]] - `references` [INFERRED]
 - [[coerce_price()]] - `references` [INFERRED]

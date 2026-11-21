@@ -1,17 +1,17 @@
 ---
-source_file: "apps/web/src/widgets/search/command/ui/index.test.tsx"
+source_file: "apps/web/src/widgets/search/offer-card/ui/index.test.tsx"
 type: "code"
-community: "command/ui/index.tsx"
-location: "L4"
+community: "packages_contracts_dist_index"
+location: "L24"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/command/ui/indextsx
+  - community/packages_contracts_dist_index
 ---
 
 # state
 
 ## Connections
-- [[commanduiindex.test.tsx]] - `contains` [EXTRACTED]
+- [[offer-carduiindex.test.tsx]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/command/ui/indextsx
+#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index

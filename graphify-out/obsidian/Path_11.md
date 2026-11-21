@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "lamoda-connector/tests/test_shape_reference.py"
+community: "taobao-connector/tests/test_shape_reference.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/lamoda-connector/tests/test_shape_referencepy
+  - community/taobao-connector/tests/test_shape_referencepy
 ---
 
 # Path
 
 ## Connections
-- [[_extract()_9]] - `references` [EXTRACTED]
+- [[_extract()_5]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/lamoda-connector/tests/test_shape_referencepy
+#graphify/code #graphify/EXTRACTED #community/taobao-connector/tests/test_shape_referencepy

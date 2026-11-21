@@ -12,13 +12,12 @@ tags:
 # _taobao_selfcheck_impl()
 
 ## Connections
-- [[Context_2]] - `references` [EXTRACTED]
 - [[NavBlocked]] - `uses` [INFERRED]
 - [[TaobaoSelfcheckResponse]] - `calls` [EXTRACTED]
 - [[_anti_bot_challenge()]] - `calls` [EXTRACTED]
-- [[_cdp_render()]] - `calls` [EXTRACTED]
+- [[_cdp_render()_2]] - `calls` [EXTRACTED]
 - [[_login_wall_markers()]] - `calls` [EXTRACTED]
-- [[missing_required_families()]] - `calls` [EXTRACTED]
+- [[missing_required_families()_1]] - `calls` [EXTRACTED]
 - [[taobao_connectorserver.py]] - `contains` [EXTRACTED]
 - [[taobao_selfcheck()]] - `calls` [EXTRACTED]
 

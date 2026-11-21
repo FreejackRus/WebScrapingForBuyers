@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[StdioProbe]] - `uses` [INFERRED]
 - [[command()]] - `calls` [EXTRACTED]
-- [[parametrize_21]] - `references` [EXTRACTED]
+- [[parametrize_18]] - `references` [EXTRACTED]
 - [[test_stdio_probe.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_stdio_probepy

@@ -12,7 +12,7 @@ tags:
 # test_known_secret_shapes_are_scrubbed()
 
 ## Connections
-- [[parametrize_22]] - `references` [EXTRACTED]
+- [[parametrize_25]] - `references` [EXTRACTED]
 - [[redact_error_text()]] - `calls` [EXTRACTED]
 - [[test_redact.py]] - `contains` [EXTRACTED]
 

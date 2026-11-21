@@ -15,7 +15,7 @@ tags:
 - [[The route supports a product page, and working requests name that page. Lamoda…]] - `rationale_for` [EXTRACTED]
 - [[__aenter__()_1]] - `contains` [EXTRACTED]
 - [[__aexit__()_1]] - `contains` [EXTRACTED]
-- [[capture()_11]] - `indirect_call` [INFERRED]
+- [[capture()_12]] - `indirect_call` [INFERRED]
 - [[json()_1]] - `contains` [EXTRACTED]
 - [[lamoda-connectorteststest_server.py]] - `contains` [EXTRACTED]
 - [[post()_2]] - `contains` [EXTRACTED]

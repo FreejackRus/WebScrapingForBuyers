@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/ssr.py"
 type: "code"
-community: "ssr.py"
+community: "zone_snippets"
 location: "L74"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ssrpy
+  - community/zone_snippets
 ---
 
 # _iter_tags()
@@ -16,4 +16,4 @@ tags:
 - [[ssr.py]] - `contains` [EXTRACTED]
 - [[zone_snippets()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ssrpy
+#graphify/code #graphify/EXTRACTED #community/zone_snippets

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cdp_budget.py"
 type: "code"
-community: "HostRefusingError"
+community: "test_cdp_budget.py"
 location: "L120"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/HostRefusingError
+  - community/test_cdp_budgetpy
 ---
 
 # test_a_refusing_host_fails_fast_instead_of_queueing()
@@ -17,4 +17,4 @@ tags:
 - [[NavigationBudget]] - `uses` [INFERRED]
 - [[test_cdp_budget.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/HostRefusingError
+#graphify/code #graphify/EXTRACTED #community/test_cdp_budgetpy

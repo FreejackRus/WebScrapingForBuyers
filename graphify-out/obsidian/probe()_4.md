@@ -1,17 +1,20 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/e2e_stdio_check.py"
 type: "code"
-community: "test_helpers.py"
-location: "L2373"
+community: "e2e_stdio_check.py"
+location: "L87"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/test_helperspy
+  - graphify/EXTRACTED
+  - community/e2e_stdio_checkpy
 ---
 
 # probe()
 
 ## Connections
-- [[test_attach_image_urls_uses_a_probed_host_for_new_vols()]] - `indirect_call` [INFERRED]
+- [[e2e_stdio_check.py]] - `contains` [EXTRACTED]
+- [[main()_34]] - `calls` [EXTRACTED]
+- [[test_probe_checks_running_version()]] - `calls` [EXTRACTED]
+- [[validate_sources()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/test_helperspy
+#graphify/code #graphify/EXTRACTED #community/e2e_stdio_checkpy

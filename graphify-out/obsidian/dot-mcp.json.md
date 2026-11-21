@@ -13,6 +13,6 @@ tags:
 
 ## Connections
 - [[e2e_stdio_check.py]] - `imports_from` [EXTRACTED]
-- [[stitch_1]] - `contains` [EXTRACTED]
+- [[stitch]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/e2e_stdio_checkpy

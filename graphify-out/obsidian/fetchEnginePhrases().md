@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[duckDuckGoSuggestUrl()]] - `calls` [EXTRACTED]
-- [[fetchJson()]] - `calls` [EXTRACTED]
+- [[fetchJson()_1]] - `calls` [EXTRACTED]
 - [[googleSuggestUrl()]] - `calls` [EXTRACTED]
 - [[live-suggest.ts]] - `contains` [EXTRACTED]
 - [[parseSuggestList()]] - `calls` [EXTRACTED]

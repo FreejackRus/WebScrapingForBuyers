@@ -12,8 +12,8 @@ tags:
 # _rating_from_snippets()
 
 ## Connections
-- [[Any_24]] - `references` [EXTRACTED]
-- [[_as_dict()_1]] - `calls` [EXTRACTED]
+- [[Any_26]] - `references` [EXTRACTED]
+- [[_as_dict()]] - `calls` [EXTRACTED]
 - [[_first_dict()]] - `calls` [EXTRACTED]
 - [[parse_card()]] - `calls` [EXTRACTED]
 - [[ssr.py]] - `contains` [EXTRACTED]

@@ -16,5 +16,6 @@ tags:
 - [[_declared_dependencies()]] - `calls` [EXTRACTED]
 - [[_mounted_distributions()]] - `calls` [EXTRACTED]
 - [[test_dependency_parity.py]] - `contains` [EXTRACTED]
+- [[Воспроизводимость и ограничения]] - `references` [INFERRED]
 
 #graphify/code #graphify/EXTRACTED #community/test_dependency_paritypy

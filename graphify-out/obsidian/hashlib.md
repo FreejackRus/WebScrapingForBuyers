@@ -1,20 +1,21 @@
 ---
 source_file: ""
 type: "concept"
-community: "subprocess"
+community: "pathlib"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/subprocess
+  - community/pathlib
 ---
 
 # hashlib
 
 ## Connections
+- [[backup-state.py]] - `imports` [EXTRACTED]
 - [[browser_handoff.py]] - `imports` [EXTRACTED]
 - [[check_provenance.py]] - `imports` [EXTRACTED]
 - [[firewall_pow.py]] - `imports` [EXTRACTED]
 - [[mcp_wire.py]] - `imports` [EXTRACTED]
 - [[test_check_provenance_gate.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/subprocess
+#graphify/concept #graphify/EXTRACTED #community/pathlib

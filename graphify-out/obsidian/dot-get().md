@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py"
+source_file: "apps/gateway/src/user-cache.ts"
 type: "code"
-community: "_FakeResponse"
-location: "L469"
+community: "resilience.test.ts"
+location: "L21"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_FakeResponse
+  - community/resiliencetestts
 ---
 
 # .get()
 
 ## Connections
-- [[_FakeResponse]] - `calls` [EXTRACTED]
-- [[_FakeSession]] - `method` [EXTRACTED]
+- [[UserCache]] - `method` [EXTRACTED]
+- [[resolveUser()]] - `calls` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/_FakeResponse
+#graphify/code #graphify/EXTRACTED #community/resiliencetestts

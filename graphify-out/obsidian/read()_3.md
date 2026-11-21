@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py"
 type: "code"
-community: "TransportDownError"
-location: "L201"
+community: "test_snapshot_and_resume_cannot_overlap"
+location: "L562"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/TransportDownError
+  - community/test_snapshot_and_resume_cannot_overlap
 ---
 
 # read()
 
 ## Connections
-- [[_fetch_html_cdp()]] - `contains` [EXTRACTED]
-- [[fetch()_3]] - `indirect_call` [INFERRED]
+- [[blocked()_1]] - `calls` [EXTRACTED]
+- [[test_snapshot_and_resume_cannot_overlap()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/TransportDownError
+#graphify/code #graphify/EXTRACTED #community/test_snapshot_and_resume_cannot_overlap

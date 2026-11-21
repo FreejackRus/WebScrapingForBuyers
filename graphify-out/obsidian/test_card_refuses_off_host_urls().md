@@ -14,6 +14,6 @@ tags:
 ## Connections
 - [[citilink-connectorteststest_server.py]] - `contains` [EXTRACTED]
 - [[explode()]] - `indirect_call` [INFERRED]
-- [[parametrize]] - `references` [EXTRACTED]
+- [[parametrize_1]] - `references` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/citilink-connector/tests/test_serverpy

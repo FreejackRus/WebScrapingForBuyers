@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "ozon_connector/settings.py"
+community: "taobao_connector/settings.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ozon_connector/settingspy
+  - community/taobao_connector/settingspy
 ---
 
 # BaseSettings
 
 ## Connections
-- [[OzonSettings]] - `inherits` [EXTRACTED]
+- [[TaobaoSettings]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ozon_connector/settingspy
+#graphify/code #graphify/EXTRACTED #community/taobao_connector/settingspy

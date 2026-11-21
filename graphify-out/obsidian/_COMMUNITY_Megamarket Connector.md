@@ -10,11 +10,11 @@ members: 6
 **Members:** 6 nodes
 
 ## Members
-- [[Gotchas_3]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/megamarket-connector/SKILL.md
+- [[Gotchas_10]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/megamarket-connector/SKILL.md
 - [[Megamarket Connector]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/megamarket-connector/SKILL.md
 - [[Privacy the profile address is opt-in]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/megamarket-connector/SKILL.md
-- [[Tools available]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/megamarket-connector/SKILL.md
-- [[When to use_3]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/megamarket-connector/SKILL.md
+- [[Tools available_4]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/megamarket-connector/SKILL.md
+- [[When to use_7]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/megamarket-connector/SKILL.md
 - [[dshskillsmegamarket-connectorSKILL]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/megamarket-connector/SKILL.md
 
 ## Live Query (requires Dataview plugin)
@@ -25,9 +25,9 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 1 edge to [[_COMMUNITY_log_event]]
+- 1 edge to [[_COMMUNITY_megamarket_connectorserver.py]]
 - 1 edge to [[_COMMUNITY_compare_prices]]
 
 ## Top bridge nodes
 - [[Megamarket Connector]] - degree 6, connects to 1 community
-- [[Tools available]] - degree 2, connects to 1 community
+- [[Tools available_4]] - degree 2, connects to 1 community

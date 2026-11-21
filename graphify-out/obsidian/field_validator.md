@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "pydantic"
+community: "functools"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pydantic
+  - community/functools
 ---
 
 # field_validator
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[dot-_normalise_search_transport()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pydantic
+#graphify/code #graphify/EXTRACTED #community/functools

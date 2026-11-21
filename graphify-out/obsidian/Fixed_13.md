@@ -1,23 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
-community: "compare_prices"
-location: "L1831"
+community: "log_event"
+location: "L801"
 tags:
   - graphify/document
-  - graphify/INFERRED
-  - community/compare_prices
+  - graphify/EXTRACTED
+  - community/log_event
 ---
 
 # Fixed
 
 ## Connections
-- [[Pacer]] - `references` [INFERRED]
-- [[1.2.0 — 2026-07-28 (English)]] - `contains` [EXTRACTED]
-- [[citilink_card()]] - `references` [INFERRED]
-- [[compare_prices()]] - `references` [INFERRED]
-- [[dns_card()]] - `references` [INFERRED]
-- [[marketplace_sources()]] - `references` [INFERRED]
-- [[shape_signature()]] - `references` [INFERRED]
+- [[1.6.1 — 2026-09-09]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/INFERRED #community/compare_prices
+#graphify/document #graphify/EXTRACTED #community/log_event

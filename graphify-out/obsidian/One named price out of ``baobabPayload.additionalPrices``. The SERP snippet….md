@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/ssr.py"
 type: "rationale"
-community: "ssr.py"
+community: "Any"
 location: "L462"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/ssrpy
+  - community/Any
 ---
 
 # One named price out of ``baobabPayload.additionalPrices``. The SERP snippet…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_additional_price()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/ssrpy
+#graphify/rationale #graphify/EXTRACTED #community/Any

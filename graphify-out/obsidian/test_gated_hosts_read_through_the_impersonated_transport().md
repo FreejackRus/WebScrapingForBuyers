@@ -15,7 +15,7 @@ tags:
 - [[_clear_wb_cache()]] - `calls` [EXTRACTED]
 - [[fake_impersonated()_1]] - `contains` [EXTRACTED]
 - [[forbidden_budgeted()]] - `contains` [EXTRACTED]
-- [[parametrize_33]] - `references` [EXTRACTED]
+- [[parametrize_36]] - `references` [EXTRACTED]
 - [[scenario()_98]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 

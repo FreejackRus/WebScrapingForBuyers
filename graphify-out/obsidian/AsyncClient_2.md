@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "TransportDownError"
+community: "test_http_tier.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/TransportDownError
+  - community/test_http_tierpy
 ---
 
 # AsyncClient
@@ -15,4 +15,4 @@ tags:
 - [[get_text_budgeted()]] - `references` [EXTRACTED]
 - [[get_text_with_retries()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/TransportDownError
+#graphify/code #graphify/EXTRACTED #community/test_http_tierpy

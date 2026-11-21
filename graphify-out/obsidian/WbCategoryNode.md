@@ -12,7 +12,7 @@ tags:
 # WbCategoryNode
 
 ## Connections
-- [[BaseModel_15]] - `inherits` [EXTRACTED]
+- [[BaseModel]] - `inherits` [EXTRACTED]
 - [[One node of the WB catalog tree. ``shard`` and ``query`` together form the…]] - `rationale_for` [EXTRACTED]
 - [[_menu_node()]] - `calls` [EXTRACTED]
 - [[wb_categories()]] - `uses` [INFERRED]

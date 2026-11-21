@@ -1,17 +1,21 @@
 ---
-source_file: ".agents/skills/find-animation-opportunities/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/compare-prices/SKILL.md"
 type: "document"
-community: "Finding Animation Opportunities"
-location: "L105"
+community: "Cross-Marketplace Price Comparison"
+location: "L84"
 tags:
   - graphify/document
-  - graphify/EXTRACTED
-  - community/Finding_Animation_Opportunities
+  - graphify/INFERRED
+  - community/Cross-Marketplace_Price_Comparison
 ---
 
 # Workflow
 
 ## Connections
-- [[Finding Animation Opportunities]] - `contains` [EXTRACTED]
+- [[dot-retryable()]] - `references` [INFERRED]
+- [[Cross-Marketplace Price Comparison_1]] - `contains` [EXTRACTED]
+- [[compare_prices()]] - `references` [INFERRED]
+- [[compare_sources()]] - `references` [INFERRED]
+- [[compare_verify_offer()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Finding_Animation_Opportunities
+#graphify/document #graphify/INFERRED #community/Cross-Marketplace_Price_Comparison

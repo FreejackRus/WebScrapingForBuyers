@@ -2,7 +2,7 @@
 source_file: "apps/analysis/src/infrastructure/ollama-analysis-narrator.ts"
 type: "code"
 community: "compare-models.ts"
-location: "L253"
+location: "L332"
 tags:
   - graphify/code
   - graphify/EXTRACTED

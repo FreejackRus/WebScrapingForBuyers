@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_resilience.py"
 type: "rationale"
-community: "resilience.py"
+community: "test_resilience.py"
 location: "L220"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/resiliencepy
+  - community/test_resiliencepy
 ---
 
 # A key present with a null value is upstream saying "no data", not a value.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_first_present_treats_none_as_absent()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/resiliencepy
+#graphify/rationale #graphify/EXTRACTED #community/test_resiliencepy

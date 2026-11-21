@@ -12,8 +12,8 @@ tags:
 # FallbackSourceAdapter
 
 ## Connections
-- [[dot-constructor()_4]] - `method` [EXTRACTED]
-- [[dot-search()_5]] - `method` [EXTRACTED]
+- [[dot-constructor()_23]] - `method` [EXTRACTED]
+- [[dot-search()_14]] - `method` [EXTRACTED]
 - [[2026-09-23 — WB rate-limited MCP + HTTP double-hit]] - `references` [INFERRED]
 - [[SourceAdapter]] - `implements` [EXTRACTED]
 - [[fallback-source-adapter.test.ts]] - `imports` [EXTRACTED]

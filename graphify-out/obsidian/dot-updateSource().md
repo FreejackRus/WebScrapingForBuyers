@@ -1,19 +1,19 @@
 ---
 source_file: "apps/search/src/application/search-service.ts"
 type: "code"
-community: "SearchService"
-location: "L201"
+community: "search-service.ts"
+location: "L440"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/SearchService
+  - community/search-servicets
 ---
 
 # .updateSource()
 
 ## Connections
-- [[dot-collect()]] - `calls` [EXTRACTED]
+- [[dot-collect()_1]] - `calls` [EXTRACTED]
 - [[dot-emit()]] - `calls` [EXTRACTED]
 - [[SearchService]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/SearchService
+#graphify/code #graphify/EXTRACTED #community/search-servicets

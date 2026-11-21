@@ -12,7 +12,7 @@ tags:
 # _login_wall_markers()
 
 ## Connections
-- [[Any_1]] - `references` [EXTRACTED]
+- [[Any_14]] - `references` [EXTRACTED]
 - [[Which login-wall markers fired on an extractor payload. The extractor JS is…]] - `rationale_for` [EXTRACTED]
 - [[_login_wall()]] - `calls` [EXTRACTED]
 - [[_page_challenge_kind()]] - `calls` [EXTRACTED]

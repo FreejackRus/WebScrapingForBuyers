@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "StdioProbe"
+community: "json"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/StdioProbe
+  - community/json
 ---
 
 # collections
@@ -14,4 +14,4 @@ tags:
 - [[cache.py]] - `imports_from` [EXTRACTED]
 - [[stdio_probe.py]] - `imports_from` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/StdioProbe
+#graphify/concept #graphify/EXTRACTED #community/json

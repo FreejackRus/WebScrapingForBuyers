@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/detmir-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/compare-prices/SKILL.md"
 type: "document"
-community: "Detsky Mir Connector"
+community: "Cross-Marketplace Price Comparison"
 location: "L23"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Detsky_Mir_Connector
+  - community/Cross-Marketplace_Price_Comparison
 ---
 
 # When NOT to use
 
 ## Connections
-- [[Detsky Mir Connector_1]] - `contains` [EXTRACTED]
+- [[Cross-Marketplace Price Comparison_1]] - `contains` [EXTRACTED]
+- [[detmir_category()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Detsky_Mir_Connector
+#graphify/document #graphify/EXTRACTED #community/Cross-Marketplace_Price_Comparison

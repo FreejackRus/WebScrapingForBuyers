@@ -12,6 +12,6 @@ tags:
 # jsdom
 
 ## Connections
-- [[dependencies_4]] - `contains` [EXTRACTED]
+- [[dependencies_3]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/ru-marketplace-mcp/packagejson

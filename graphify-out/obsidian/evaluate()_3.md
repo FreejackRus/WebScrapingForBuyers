@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_browser_handoff.py"
 type: "code"
-community: "test_storefront_falls_back_to_raw_cdp_when_playwright_attach_times_out"
-location: "L255"
+community: "taobao"
+location: "L28"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_storefront_falls_back_to_raw_cdp_when_playwright_attach_times_out
+  - community/taobao
 ---
 
 # evaluate()
 
 ## Connections
-- [[test_storefront_falls_back_to_raw_cdp_when_playwright_attach_times_out()]] - `contains` [EXTRACTED]
+- [[browser()_1]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_storefront_falls_back_to_raw_cdp_when_playwright_attach_times_out
+#graphify/code #graphify/EXTRACTED #community/taobao

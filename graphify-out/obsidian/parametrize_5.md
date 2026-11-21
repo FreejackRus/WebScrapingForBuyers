@@ -1,16 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "get_text_budgeted"
+community: "test_card_verification_records.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/get_text_budgeted
+  - community/test_card_verification_recordspy
 ---
 
 # parametrize
 
 ## Connections
-- [[test_http_statuses_are_never_retried()]] - `references` [EXTRACTED]
+- [[test_ambiguous_or_wrong_record_never_verifies_price()]] - `references` [EXTRACTED]
+- [[test_invalid_observed_price_stays_unknown()]] - `references` [EXTRACTED]
+- [[test_numeric_card_identifier_does_not_pick_unrelated_digits()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/get_text_budgeted
+#graphify/code #graphify/EXTRACTED #community/test_card_verification_recordspy

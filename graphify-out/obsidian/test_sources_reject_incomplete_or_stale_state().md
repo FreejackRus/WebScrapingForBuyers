@@ -12,7 +12,7 @@ tags:
 # test_sources_reject_incomplete_or_stale_state()
 
 ## Connections
-- [[parametrize_25]] - `references` [EXTRACTED]
+- [[parametrize_30]] - `references` [EXTRACTED]
 - [[source_payload()]] - `calls` [EXTRACTED]
 - [[test_e2e_stdio_check.py]] - `contains` [EXTRACTED]
 - [[validate_sources()]] - `calls` [EXTRACTED]

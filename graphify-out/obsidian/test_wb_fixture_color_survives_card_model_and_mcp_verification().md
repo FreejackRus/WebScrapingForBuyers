@@ -15,7 +15,7 @@ tags:
 - [[WbCardItem]] - `uses` [INFERRED]
 - [[WbCardResponse]] - `uses` [INFERRED]
 - [[fixture_card()]] - `indirect_call` [INFERRED]
-- [[parametrize_37]] - `references` [EXTRACTED]
+- [[parametrize_6]] - `references` [EXTRACTED]
 - [[test_identity_verification.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/INFERRED #community/test_card_verification_recordspy

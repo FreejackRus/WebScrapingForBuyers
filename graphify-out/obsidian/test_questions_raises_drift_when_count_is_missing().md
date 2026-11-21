@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[A missing count means the contract changed; a zero count is legitimate.]] - `rationale_for` [EXTRACTED]
 - [[responder()_12]] - `contains` [EXTRACTED]
-- [[scenario()_56]] - `contains` [EXTRACTED]
+- [[scenario()_55]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_patch_questions

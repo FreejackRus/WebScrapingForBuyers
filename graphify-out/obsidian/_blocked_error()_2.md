@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/server.py"
 type: "code"
-community: "avito_connector/server.py"
-location: "L360"
+community: "megamarket_connector/server.py"
+location: "L204"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/avito_connector/serverpy
+  - community/megamarket_connector/serverpy
 ---
 
 # _blocked_error()
 
 ## Connections
 - [[TransportDownError]] - `uses` [INFERRED]
-- [[_raise_for_fetch_failure()_1]] - `calls` [EXTRACTED]
-- [[avito_connectorserver.py]] - `contains` [EXTRACTED]
+- [[_post()]] - `calls` [EXTRACTED]
+- [[megamarket_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/avito_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/megamarket_connector/serverpy

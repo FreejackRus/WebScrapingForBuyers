@@ -1,20 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_versions.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/diagnose_drift.py"
 type: "code"
-community: "check_versions.py"
-location: "L85"
+community: "diagnose_drift.py"
+location: "L291"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/check_versionspy
+  - community/diagnose_driftpy
 ---
 
 # main()
 
 ## Connections
-- [[Mismatch]] - `calls` [EXTRACTED]
-- [[_root_version()]] - `calls` [EXTRACTED]
-- [[check_versions.py]] - `contains` [EXTRACTED]
-- [[sweep()]] - `contains` [EXTRACTED]
+- [[diagnose()]] - `calls` [EXTRACTED]
+- [[diagnose_drift.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/check_versionspy
+#graphify/code #graphify/EXTRACTED #community/diagnose_driftpy

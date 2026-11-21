@@ -1,17 +1,16 @@
 ---
 type: community
-cohesion: 0.67
-members: 3
+cohesion: 1.00
+members: 2
 ---
 
 # _no_cache
 
-**Cohesion:** 0.67 - moderately connected
-**Members:** 3 nodes
+**Cohesion:** 1.00 - tightly connected
+**Members:** 2 nodes
 
 ## Members
-- [[Every test starts with an empty cache a cached body from a previous case would…_1]] - rationale - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py
-- [[_no_cache()_7]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py
+- [[_no_cache()_6]] - code - mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py
 - [[fixture_23]] - code
 
 ## Live Query (requires Dataview plugin)
@@ -22,7 +21,7 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 1 edge to [[_COMMUNITY_avito-connectorteststest_server.py]]
+- 1 edge to [[_COMMUNITY_lamoda-connectorteststest_server.py]]
 
 ## Top bridge nodes
-- [[_no_cache()_7]] - degree 3, connects to 1 community
+- [[_no_cache()_6]] - degree 2, connects to 1 community

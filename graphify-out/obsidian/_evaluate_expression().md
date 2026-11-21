@@ -12,7 +12,7 @@ tags:
 # _evaluate_expression()
 
 ## Connections
-- [[dot-evaluate()]] - `calls` [EXTRACTED]
+- [[dot-evaluate()_1]] - `calls` [EXTRACTED]
 - [[Wrap an expression the way Playwright's evaluate would run it. A string that…]] - `rationale_for` [EXTRACTED]
 - [[chrome_cdp.py]] - `contains` [EXTRACTED]
 

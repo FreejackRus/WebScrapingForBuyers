@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/server.py"
 type: "rationale"
-community: "log_event"
+community: "megamarket_connector/server.py"
 location: "L478"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/log_event
+  - community/megamarket_connector/serverpy
 ---
 
 # Build the search request the mobile API actually accepts. Every field here is…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_search_body()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/log_event
+#graphify/rationale #graphify/EXTRACTED #community/megamarket_connector/serverpy

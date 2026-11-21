@@ -12,12 +12,14 @@ tags:
 # monitor/ui/index.tsx
 
 ## Connections
+- [[AdminAlertBanner()]] - `imports` [EXTRACTED]
 - [[AnalysisChat()]] - `imports` [EXTRACTED]
 - [[Monitor()]] - `contains` [EXTRACTED]
 - [[SearchCommand()]] - `imports` [EXTRACTED]
 - [[SearchWorkspaceLead()]] - `imports` [EXTRACTED]
 - [[SearchWorkspaceOffers()]] - `imports` [EXTRACTED]
 - [[WorkspaceShell()]] - `imports` [EXTRACTED]
+- [[adminindex.ts]] - `imports_from` [EXTRACTED]
 - [[layerindex.ts]] - `imports_from` [EXTRACTED]
 - [[monitorindex.ts]] - `re_exports` [EXTRACTED]
 - [[widgetsanalysisindex.ts]] - `imports_from` [EXTRACTED]

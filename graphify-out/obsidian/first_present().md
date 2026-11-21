@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/resilience.py"
 type: "code"
-community: "resilience.py"
+community: "test_resilience.py"
 location: "L38"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/resiliencepy
+  - community/test_resiliencepy
 ---
 
 # first_present()
 
 ## Connections
-- [[Any_12]] - `references` [EXTRACTED]
+- [[Any_2]] - `references` [EXTRACTED]
 - [[Return the first alias key whose value is present (not Nonemissing). Multi-…]] - `rationale_for` [EXTRACTED]
 - [[resilience.py]] - `contains` [EXTRACTED]
 - [[test_first_present_all_absent_or_null_is_default()]] - `calls` [EXTRACTED]
@@ -24,4 +24,4 @@ tags:
 - [[test_first_present_uses_the_default_when_nothing_binds()]] - `calls` [EXTRACTED]
 - [[validate_review_block()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/resiliencepy
+#graphify/code #graphify/EXTRACTED #community/test_resiliencepy

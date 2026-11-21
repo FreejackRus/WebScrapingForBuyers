@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py"
 type: "rationale"
-community: "_search_wildberries"
+community: "json"
 location: "L470"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/_search_wildberries
+  - community/json
 ---
 
 # Adapt ``wb_search`` results. Fields are read as typed attributes on…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_search_wildberries()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/_search_wildberries
+#graphify/rationale #graphify/EXTRACTED #community/json

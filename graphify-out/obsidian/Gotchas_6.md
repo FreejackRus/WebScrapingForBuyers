@@ -1,18 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/marketplace/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/detmir-connector/SKILL.md"
 type: "document"
-community: "compare_prices"
-location: "L47"
+community: "detmir_categories"
+location: "L67"
 tags:
   - graphify/document
-  - graphify/EXTRACTED
-  - community/compare_prices
+  - graphify/INFERRED
+  - community/detmir_categories
 ---
 
 # Gotchas
 
 ## Connections
-- [[Unified Marketplace Server_1]] - `contains` [EXTRACTED]
-- [[marketplace_sources()]] - `references` [INFERRED]
+- [[Detsky Mir Connector]] - `contains` [EXTRACTED]
+- [[alias()]] - `references` [INFERRED]
+- [[detmir_categories()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/compare_prices
+#graphify/document #graphify/INFERRED #community/detmir_categories

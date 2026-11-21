@@ -1,22 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/models_output.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/models_output.py"
 type: "code"
-community: "lamoda_search"
-location: "L9"
+community: "ozon_connector/server.py"
+location: "L19"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/lamoda_search
+  - community/ozon_connector/serverpy
 ---
 
 # MetaOut
 
 ## Connections
-- [[Lamoda carries the shared envelope unchanged.]] - `rationale_for` [EXTRACTED]
 - [[MetaOutBase]] - `inherits` [EXTRACTED]
-- [[lamoda_card()]] - `uses` [INFERRED]
-- [[lamoda_connectormodels_output.py]] - `contains` [EXTRACTED]
-- [[lamoda_connectorserver.py]] - `imports` [EXTRACTED]
-- [[lamoda_search()]] - `uses` [INFERRED]
+- [[Ozon carries the shared envelope unchanged.]] - `rationale_for` [EXTRACTED]
+- [[ozon_connectormodels_output.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/lamoda_search
+#graphify/code #graphify/EXTRACTED #community/ozon_connector/serverpy

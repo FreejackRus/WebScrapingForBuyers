@@ -12,7 +12,7 @@ tags:
 # _parse_search_tile()
 
 ## Connections
-- [[Any_8]] - `references` [EXTRACTED]
+- [[Any_13]] - `references` [EXTRACTED]
 - [[Parse a single tileGridDesktop item (Ozon search result, Nov 2026 schema). Top-…]] - `rationale_for` [EXTRACTED]
 - [[_is_search_stock_label()]] - `calls` [EXTRACTED]
 - [[_search_items_from_payload()]] - `calls` [EXTRACTED]

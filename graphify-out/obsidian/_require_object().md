@@ -12,7 +12,7 @@ tags:
 # _require_object()
 
 ## Connections
-- [[Any_27]] - `references` [EXTRACTED]
+- [[Any]] - `references` [EXTRACTED]
 - [[Assert the non-error branch of ``_expect_json_object``. Reached only when the…]] - `rationale_for` [EXTRACTED]
 - [[ParserDriftError]] - `uses` [INFERRED]
 - [[raise_tool_error()]] - `calls` [EXTRACTED]

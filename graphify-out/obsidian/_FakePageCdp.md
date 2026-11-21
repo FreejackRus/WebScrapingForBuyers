@@ -12,10 +12,10 @@ tags:
 # _FakePageCdp
 
 ## Connections
-- [[dot-__init__()_13]] - `method` [EXTRACTED]
+- [[dot-__init__()_15]] - `method` [EXTRACTED]
 - [[dot-detach()_1]] - `method` [EXTRACTED]
 - [[dot-new_cdp_session()]] - `calls` [EXTRACTED]
-- [[dot-send()_3]] - `method` [EXTRACTED]
+- [[dot-send()_2]] - `method` [EXTRACTED]
 - [[new_cdp_session()]] - `calls` [EXTRACTED]
 - [[test_chrome_cdp_stealth.py]] - `contains` [EXTRACTED]
 

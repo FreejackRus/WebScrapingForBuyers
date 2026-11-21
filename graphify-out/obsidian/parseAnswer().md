@@ -2,7 +2,7 @@
 source_file: "apps/analysis/src/infrastructure/ollama-analysis-narrator.ts"
 type: "code"
 community: "ollama-analysis-narrator.ts"
-location: "L91"
+location: "L109"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,7 +12,7 @@ tags:
 # parseAnswer()
 
 ## Connections
-- [[dot-answer()_1]] - `indirect_call` [INFERRED]
+- [[dot-answer()]] - `indirect_call` [INFERRED]
 - [[NarrationError]] - `calls` [EXTRACTED]
 - [[boundedString()]] - `calls` [EXTRACTED]
 - [[object()]] - `calls` [EXTRACTED]

@@ -12,6 +12,6 @@ tags:
 # Phase 4 — Build the picker harness
 
 ## Connections
-- [[Workflow]] - `contains` [EXTRACTED]
+- [[Workflow_2]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/Prototyping_Variants

@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/compare-prices/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/lamoda-connector/SKILL.md"
 type: "document"
-community: "Cross-Marketplace Price Comparison"
-location: "L125"
+community: "Lamoda Connector"
+location: "L26"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Cross-Marketplace_Price_Comparison
+  - community/Lamoda_Connector
 ---
 
 # Gotchas
 
 ## Connections
-- [[Cross-Marketplace Price Comparison]] - `contains` [EXTRACTED]
-- [[detmir_category()]] - `references` [INFERRED]
+- [[Lamoda Connector_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Cross-Marketplace_Price_Comparison
+#graphify/document #graphify/EXTRACTED #community/Lamoda_Connector

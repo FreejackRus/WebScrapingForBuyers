@@ -10,7 +10,7 @@ members: 23
 **Members:** 23 nodes
 
 ## Members
-- [[Any_29]] - code
+- [[Any_28]] - code
 - [[Deterministic per-case verdict pass  wrong  forbidden  missing.]] - rationale - mcp-servers/ru-marketplace-mcp/scripts/model_routing_eval.py
 - [[Load and validate a case bundle; raise ValueError when it is unusable.]] - rationale - mcp-servers/ru-marketplace-mcp/scripts/model_routing_eval.py
 - [[Map every case id to its rendered prompt (for orchestrators).]] - rationale - mcp-servers/ru-marketplace-mcp/scripts/model_routing_eval.py
@@ -26,7 +26,7 @@ members: 23
 - [[evaluate()_5]] - code - mcp-servers/ru-marketplace-mcp/scripts/model_routing_eval.py
 - [[evaluate_answers()]] - code - mcp-servers/ru-marketplace-mcp/scripts/model_routing_eval.py
 - [[load_bundle()]] - code - mcp-servers/ru-marketplace-mcp/scripts/model_routing_eval.py
-- [[main()_35]] - code - mcp-servers/ru-marketplace-mcp/scripts/model_routing_eval.py
+- [[main()_36]] - code - mcp-servers/ru-marketplace-mcp/scripts/model_routing_eval.py
 - [[model_routing_eval.py]] - code - mcp-servers/ru-marketplace-mcp/scripts/model_routing_eval.py
 - [[render_prompt()]] - code - mcp-servers/ru-marketplace-mcp/scripts/model_routing_eval.py
 - [[render_prompts()]] - code - mcp-servers/ru-marketplace-mcp/scripts/model_routing_eval.py
@@ -43,13 +43,12 @@ SORT file.name ASC
 
 ## Connections to other communities
 - 3 edges to [[_COMMUNITY_mcp_wire.py]]
-- 2 edges to [[_COMMUNITY_json]]
+- 3 edges to [[_COMMUNITY_json]]
 - 1 edge to [[_COMMUNITY_test_model_routing_eval_verdict.py]]
-- 1 edge to [[_COMMUNITY_StdioProbe]]
-- 1 edge to [[_COMMUNITY_sys]]
+- 1 edge to [[_COMMUNITY_mcp_startup.py]]
 - 1 edge to [[_COMMUNITY_pathlib]]
 
 ## Top bridge nodes
-- [[model_routing_eval.py]] - degree 19, connects to 6 communities
+- [[model_routing_eval.py]] - degree 19, connects to 5 communities
 - [[evaluate()_5]] - degree 5, connects to 1 community
 - [[test_model_routing_matrix_is_complete()]] - degree 2, connects to 1 community

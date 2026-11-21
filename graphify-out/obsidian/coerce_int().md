@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[4. Write the tools]] - `references` [INFERRED]
 - [[Added]] - `references` [INFERRED]
-- [[Any_12]] - `references` [EXTRACTED]
+- [[Any_2]] - `references` [EXTRACTED]
 - [[Coerce int  float  grouped-string ('24 088', '1u2009057', '(15 374)') to…]] - `rationale_for` [EXTRACTED]
 - [[Fixed_1]] - `references` [INFERRED]
 - [[What this codebase cares about]] - `references` [INFERRED]
@@ -31,9 +31,9 @@ tags:
 - [[test_counts_parse()]] - `calls` [EXTRACTED]
 - [[test_counts_with_signs_or_ranges_are_ambiguous_and_none()]] - `calls` [EXTRACTED]
 - [[Добавлено_1]] - `references` [INFERRED]
-- [[Исправлено_1]] - `references` [INFERRED]
-- [[Исправлено_2]] - `references` [INFERRED]
-- [[Исправлено_3]] - `references` [INFERRED]
+- [[Исправлено_18]] - `references` [INFERRED]
+- [[Исправлено]] - `references` [INFERRED]
+- [[Исправлено_17]] - `references` [INFERRED]
 - [[Что важно в этой кодовой базе]] - `references` [INFERRED]
 
 #graphify/code #graphify/EXTRACTED #community/coerce_price

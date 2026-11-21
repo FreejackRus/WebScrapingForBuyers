@@ -17,13 +17,13 @@ members: 36
 - [[in_stock=False is ambiguous, so an unreported quantity must be visible.…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[json.loads admits Infinity by default, so a poisoned priceU cell can reach the…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[no_probe()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
-- [[no_wait()_36]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
-- [[no_wait()_37]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
-- [[probe()_4]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[no_wait()_34]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[no_wait()_35]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[probe()_5]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[scenario()_82]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[scenario()_83]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[scenario()_84]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[scenario()_85]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
-- [[scenario()_86]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
-- [[scenario()_87]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[stream()_9]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[test_attach_image_urls_uses_a_probed_host_for_new_vols()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[test_attach_image_urls_uses_the_table_and_skips_unknown_vols()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
@@ -72,10 +72,10 @@ SORT file.name ASC
 - 1 edge to [[_COMMUNITY_test_cache_can_be_disabled_by_ttl_zero]]
 - 1 edge to [[_COMMUNITY_pytest]]
 - 1 edge to [[_COMMUNITY_test_distribution_contract.py]]
-- 1 edge to [[_COMMUNITY_pydantic]]
+- 1 edge to [[_COMMUNITY_transport__init__.py]]
 - 1 edge to [[_COMMUNITY_pathlib]]
 
 ## Top bridge nodes
 - [[test_helpers.py]] - degree 114, connects to 19 communities
-- [[scenario()_87]] - degree 3, connects to 1 community
+- [[scenario()_85]] - degree 3, connects to 1 community
 - [[test_wb_selfcheck_null_roots_are_drift()]] - degree 3, connects to 1 community

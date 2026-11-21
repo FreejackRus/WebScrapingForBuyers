@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/megamarket-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/dns-connector/SKILL.md"
 type: "document"
-community: "Megamarket Connector"
-location: "L15"
+community: "dns_selfcheck"
+location: "L13"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Megamarket_Connector
+  - community/dns_selfcheck
 ---
 
 # When to use
 
 ## Connections
-- [[Megamarket Connector_1]] - `contains` [EXTRACTED]
+- [[DNS-Shop Connector_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Megamarket_Connector
+#graphify/document #graphify/EXTRACTED #community/dns_selfcheck

@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/test_stdio_probe.py"
 type: "code"
-community: "test_runtime.py"
-location: "L215"
+community: "test_stdio_probe.py"
+location: "L220"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_runtimepy
+  - community/test_stdio_probepy
 ---
 
 # run()
 
 ## Connections
-- [[test_run_server_treats_broken_pipe_as_clean_exit()]] - `contains` [EXTRACTED]
+- [[test_docker_timeout_attempts_container_removal()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_runtimepy
+#graphify/code #graphify/EXTRACTED #community/test_stdio_probepy

@@ -1,23 +1,26 @@
 ---
 source_file: ""
 type: "code"
-community: "_sync_curl_get"
+community: "resilience.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_sync_curl_get
+  - community/resiliencepy
 ---
 
 # Any
 
 ## Connections
-- [[_first_image_url()]] - `references` [EXTRACTED]
-- [[_open_curl_session()]] - `references` [EXTRACTED]
-- [[_parse_search_items()]] - `references` [EXTRACTED]
-- [[_posted_at()]] - `references` [EXTRACTED]
-- [[_read_capped_response()]] - `references` [EXTRACTED]
-- [[_session_xhr_get()]] - `references` [EXTRACTED]
-- [[_try_firewall_pow()]] - `references` [EXTRACTED]
-- [[_warmup_avito_session()]] - `references` [EXTRACTED]
+- [[_type_tag()]] - `references` [EXTRACTED]
+- [[_walk_shape()]] - `references` [EXTRACTED]
+- [[coerce_int()]] - `references` [EXTRACTED]
+- [[coerce_price()]] - `references` [EXTRACTED]
+- [[coerce_rating()]] - `references` [EXTRACTED]
+- [[deep_first()]] - `references` [EXTRACTED]
+- [[first_present()]] - `references` [EXTRACTED]
+- [[flatten_text()]] - `references` [EXTRACTED]
+- [[price_from_texts()]] - `references` [EXTRACTED]
+- [[selfcheck_entry()]] - `references` [EXTRACTED]
+- [[shape_signature()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_sync_curl_get
+#graphify/code #graphify/EXTRACTED #community/resiliencepy

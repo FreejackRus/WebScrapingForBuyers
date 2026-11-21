@@ -1,19 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
-community: "process.py"
-location: "L2222"
+community: "[2.2.0] — 2026-09-11"
+location: "L538"
 tags:
   - graphify/document
-  - graphify/INFERRED
-  - community/processpy
+  - graphify/EXTRACTED
+  - community/220__2026-09-11
 ---
 
 # Fixed
 
 ## Connections
-- [[1.0.0 — 2026-07-26]] - `contains` [EXTRACTED]
-- [[kill_process_group()]] - `references` [INFERRED]
-- [[terminate_process_tree()]] - `references` [INFERRED]
+- [[2.2.0 — 2026-09-11]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/INFERRED #community/processpy
+#graphify/document #graphify/EXTRACTED #community/220__2026-09-11

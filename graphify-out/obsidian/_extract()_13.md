@@ -1,22 +1,23 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_shape_reference.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_search_extractor_dom.py"
 type: "code"
-community: "domtest.py"
-location: "L29"
+community: "dns-connector/tests/test_search_extractor_dom.py"
+location: "L54"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/domtestpy
+  - community/dns-connector/tests/test_search_extractor_dompy
 ---
 
 # _extract()
 
 ## Connections
 - [[JsdomUnavailable]] - `uses` [INFERRED]
-- [[Path_15]] - `references` [EXTRACTED]
-- [[dns-connectorteststest_shape_reference.py]] - `contains` [EXTRACTED]
+- [[Run the connector's real extractor over the captured markup. Skips rather than…]] - `rationale_for` [EXTRACTED]
+- [[dns-connectorteststest_search_extractor_dom.py]] - `contains` [EXTRACTED]
 - [[run_extractor()]] - `calls` [EXTRACTED]
-- [[test_card_payload_shape_matches_the_capture()_2]] - `calls` [EXTRACTED]
-- [[test_search_payload_shape_matches_the_capture()_3]] - `calls` [EXTRACTED]
+- [[test_search_extractor_ignores_the_instalment_line()]] - `calls` [EXTRACTED]
+- [[test_search_extractor_reads_the_real_grid()_1]] - `calls` [EXTRACTED]
+- [[test_search_items_match_the_prices_on_the_page()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/domtestpy
+#graphify/code #graphify/EXTRACTED #community/dns-connector/tests/test_search_extractor_dompy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_zone_tag_scanning.py"
 type: "code"
-community: "ssr.py"
+community: "zone_snippets"
 location: "L55"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ssrpy
+  - community/zone_snippets
 ---
 
 # test_a_quoted_angle_bracket_inside_the_payload_does_not_split_the_tag()
@@ -16,4 +16,4 @@ tags:
 - [[test_zone_tag_scanning.py]] - `contains` [EXTRACTED]
 - [[zone_snippets()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ssrpy
+#graphify/code #graphify/EXTRACTED #community/zone_snippets

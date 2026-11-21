@@ -1,28 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_live_payload_contract.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_search_extractor_live_dom.py"
 type: "code"
-community: "test_live_payload_contract.py"
-location: "L40"
+community: "lamoda-connector/tests/test_shape_reference.py"
+location: "L36"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_live_payload_contractpy
+  - community/lamoda-connector/tests/test_shape_referencepy
 ---
 
 # _items()
 
 ## Connections
-- [[AvitoSearchItemOut]] - `uses` [INFERRED]
-- [[_parse_search_items()]] - `calls` [EXTRACTED]
-- [[_payload()_1]] - `calls` [EXTRACTED]
-- [[test_a_place_name_is_never_a_python_repr()]] - `calls` [EXTRACTED]
-- [[test_absent_seller_stays_none()]] - `calls` [EXTRACTED]
-- [[test_every_item_has_a_url()]] - `calls` [EXTRACTED]
-- [[test_live_payload_contract.py]] - `contains` [EXTRACTED]
-- [[test_live_payload_validates_at_all()]] - `calls` [EXTRACTED]
-- [[test_location_object_becomes_a_place_name()]] - `calls` [EXTRACTED]
-- [[test_missing_place_name_is_none_not_invented()]] - `calls` [EXTRACTED]
-- [[test_posted_at_is_iso_not_a_bare_epoch()]] - `calls` [EXTRACTED]
-- [[test_price_comes_from_price_detailed_value()]] - `calls` [EXTRACTED]
+- [[JsdomUnavailable]] - `uses` [INFERRED]
+- [[lamoda-connectorteststest_search_extractor_live_dom.py]] - `contains` [EXTRACTED]
+- [[run_extractor()]] - `calls` [EXTRACTED]
+- [[test_live_items_carry_the_wire_shape()]] - `calls` [EXTRACTED]
+- [[test_live_prices_survive_the_tile_noise()]] - `calls` [EXTRACTED]
+- [[test_live_titles_are_product_names_not_discount_badges()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_live_payload_contractpy
+#graphify/code #graphify/EXTRACTED #community/lamoda-connector/tests/test_shape_referencepy

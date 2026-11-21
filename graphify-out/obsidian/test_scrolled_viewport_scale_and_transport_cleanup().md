@@ -12,7 +12,7 @@ tags:
 # test_scrolled_viewport_scale_and_transport_cleanup()
 
 ## Connections
-- [[metrics()]] - `calls` [EXTRACTED]
+- [[metrics()_1]] - `calls` [EXTRACTED]
 - [[test_chrome_cdp_snapshot.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_snapshotpy

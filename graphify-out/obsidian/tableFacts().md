@@ -2,7 +2,7 @@
 source_file: "apps/analysis/src/application/analyze.ts"
 type: "code"
 community: "analyze.ts"
-location: "L100"
+location: "L125"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -16,7 +16,6 @@ tags:
 - [[2026-10-05 — разговор не стирает таблицу, наличие без пустой таблицы]] - `references` [INFERRED]
 - [[analyze.ts]] - `contains` [EXTRACTED]
 - [[analyzeSnapshotRaw()]] - `calls` [EXTRACTED]
-- [[isInStock()]] - `calls` [EXTRACTED]
 - [[offerLabel()]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/analyzets

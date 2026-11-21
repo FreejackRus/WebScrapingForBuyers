@@ -12,7 +12,7 @@ tags:
 # parseProduct()
 
 ## Connections
-- [[nested()]] - `calls` [EXTRACTED]
+- [[nested()_1]] - `calls` [EXTRACTED]
 - [[num()]] - `calls` [EXTRACTED]
 - [[ocs-client.ts]] - `contains` [EXTRACTED]
 - [[searchOcs()]] - `indirect_call` [INFERRED]

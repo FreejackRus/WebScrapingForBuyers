@@ -2,7 +2,7 @@
 source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
 type: "code"
 community: "mcp-marketplace-adapter.ts"
-location: "L499"
+location: "L573"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -21,12 +21,12 @@ tags:
 - [[firstBoolean()]] - `calls` [EXTRACTED]
 - [[firstPrice()]] - `calls` [EXTRACTED]
 - [[firstString()]] - `calls` [EXTRACTED]
-- [[isObject()]] - `calls` [EXTRACTED]
+- [[isObject()_1]] - `calls` [EXTRACTED]
 - [[marketplaceImageUrl()]] - `calls` [EXTRACTED]
 - [[marketplaceItemPrice()]] - `calls` [EXTRACTED]
 - [[marketplacePriceCondition()]] - `calls` [EXTRACTED]
 - [[marketplaceSearchUrl()]] - `calls` [EXTRACTED]
-- [[matchKind()]] - `calls` [EXTRACTED]
+- [[matchKind()_3]] - `calls` [EXTRACTED]
 - [[offerUrl()]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts

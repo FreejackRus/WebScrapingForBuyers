@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/test_stdio_probe.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py"
 type: "code"
-community: "test_stdio_probe.py"
-location: "L160"
+community: "test_runtime.py"
+location: "L204"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/test_stdio_probepy
+  - graphify/EXTRACTED
+  - community/test_runtimepy
 ---
 
 # run()
 
 ## Connections
-- [[replace_command()]] - `indirect_call` [INFERRED]
-- [[test_docker_timeout_attempts_container_removal()]] - `indirect_call` [INFERRED]
+- [[test_run_server_translates_keyboard_interrupt()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/test_stdio_probepy
+#graphify/code #graphify/EXTRACTED #community/test_runtimepy

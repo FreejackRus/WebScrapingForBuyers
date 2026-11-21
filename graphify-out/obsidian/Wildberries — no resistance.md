@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/docs/ANTI_BOT.md"
 type: "document"
-community: "Anti-bot reality, source by source"
+community: "yandex_card"
 location: "L127"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Anti-bot_reality_source_by_source
+  - community/yandex_card
 ---
 
 # Wildberries — no resistance
@@ -15,4 +15,4 @@ tags:
 - [[Shipped sources]] - `contains` [EXTRACTED]
 - [[wb_category_products()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Anti-bot_reality_source_by_source
+#graphify/document #graphify/EXTRACTED #community/yandex_card

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/settings.py"
 type: "code"
-community: "pydantic"
+community: "functools"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pydantic
+  - community/functools
 ---
 
 # lamoda_connector/settings.py
@@ -21,4 +21,4 @@ tags:
 - [[pydantic]] - `imports_from` [EXTRACTED]
 - [[pydantic_settings]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pydantic
+#graphify/code #graphify/EXTRACTED #community/functools

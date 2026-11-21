@@ -1,22 +1,22 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
 type: "code"
-community: "wb_connector/server.py"
+community: "TransportDownError"
 location: "L93"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/wb_connector/serverpy
+  - community/TransportDownError
 ---
 
 # ParserDriftError
 
 ## Connections
-- [[dot-__init__()_35]] - `method` [EXTRACTED]
+- [[dot-__init__()_32]] - `method` [EXTRACTED]
 - [[ConnectorError]] - `inherits` [EXTRACTED]
-- [[_cdp_render()_2]] - `uses` [INFERRED]
-- [[_cdp_render()_1]] - `uses` [INFERRED]
 - [[_cdp_render()]] - `uses` [INFERRED]
+- [[_cdp_render()_1]] - `uses` [INFERRED]
+- [[_cdp_render()_2]] - `uses` [INFERRED]
 - [[_cdp_render_search()_1]] - `uses` [INFERRED]
 - [[_fetch_json()]] - `uses` [INFERRED]
 - [[_graphql_card()]] - `uses` [INFERRED]
@@ -48,8 +48,8 @@ tags:
 - [[mcp_core__init__.py]] - `imports` [EXTRACTED]
 - [[megamarket_search()_1]] - `uses` [INFERRED]
 - [[ozon_card()]] - `uses` [INFERRED]
+- [[read()]] - `calls` [EXTRACTED]
 - [[read()_1]] - `calls` [EXTRACTED]
-- [[read()_2]] - `calls` [EXTRACTED]
 - [[taobao_card()]] - `uses` [INFERRED]
 - [[taobao_search()]] - `uses` [INFERRED]
 - [[wb_card()]] - `uses` [INFERRED]
@@ -58,8 +58,8 @@ tags:
 - [[wb_questions()]] - `uses` [INFERRED]
 - [[wb_reviews()]] - `uses` [INFERRED]
 - [[wb_root_info()]] - `uses` [INFERRED]
-- [[wb_search()_2]] - `uses` [INFERRED]
+- [[wb_search()_1]] - `uses` [INFERRED]
 - [[wb_seller()]] - `uses` [INFERRED]
 - [[yandex_card()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/wb_connector/serverpy
+#graphify/code #graphify/INFERRED #community/TransportDownError

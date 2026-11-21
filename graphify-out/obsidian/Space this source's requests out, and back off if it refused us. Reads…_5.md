@@ -1,12 +1,12 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/src/dns_connector/server.py"
 type: "rationale"
-community: "avito_connector/server.py"
-location: "L149"
+community: "dns_card"
+location: "L106"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/avito_connector/serverpy
+  - community/dns_card
 ---
 
 # Space this source's requests out, and back off if it refused us. Reads…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_polite_wait()_6]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/avito_connector/serverpy
+#graphify/rationale #graphify/EXTRACTED #community/dns_card

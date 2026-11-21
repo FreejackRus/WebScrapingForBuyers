@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py"
 type: "rationale"
-community: "ssr.py"
+community: "Fixed"
 location: "L372"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/ssrpy
+  - community/Fixed
 ---
 
 # Coerce a marketplace price into a float, or ``None`` when there isn't one.…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_as_price()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/ssrpy
+#graphify/rationale #graphify/EXTRACTED #community/Fixed

@@ -1,19 +1,19 @@
 ---
-source_file: "apps/gateway/src/history-routes.test.ts"
+source_file: "apps/gateway/src/resilience.test.ts"
 type: "code"
-community: "history-routes.test.ts"
-location: "L16"
+community: "resilience.test.ts"
+location: "L15"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/history-routestestts
+  - community/resiliencetestts
 ---
 
 # listen()
 
 ## Connections
-- [[history-routes.test.ts]] - `contains` [EXTRACTED]
+- [[gateway()]] - `calls` [EXTRACTED]
 - [[listen()]] - `calls` [EXTRACTED]
-- [[start()_1]] - `calls` [EXTRACTED]
+- [[resilience.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/history-routestestts
+#graphify/code #graphify/EXTRACTED #community/resiliencetestts

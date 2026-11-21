@@ -20,9 +20,9 @@ members: 23
 - [[blocked()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_handoff_reporting.py
 - [[blocked_stable()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_handoff_reporting.py
 - [[blocked_then_clear()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_handoff_reporting.py
-- [[browser()_4]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_handoff_reporting.py
+- [[browser()_5]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_handoff_reporting.py
 - [[call()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_handoff_reporting.py
-- [[fixture_28]] - code
+- [[fixture_29]] - code
 - [[open_page()_6]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_handoff_reporting.py
 - [[pending()_4]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_handoff_reporting.py
 - [[test_a_busy_page_explains_itself_and_hints_when_to_retry()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_handoff_reporting.py
@@ -42,12 +42,12 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 3 edges to [[_COMMUNITY_json]]
-- 2 edges to [[_COMMUNITY_pytest]]
-- 1 edge to [[_COMMUNITY_wb_connectorserver.py]]
-- 1 edge to [[_COMMUNITY_transport__init__.py]]
+- 3 edges to [[_COMMUNITY_transport__init__.py]]
+- 2 edges to [[_COMMUNITY_TransportDownError]]
+- 1 edge to [[_COMMUNITY_json]]
+- 1 edge to [[_COMMUNITY_pytest]]
 - 1 edge to [[_COMMUNITY_test_card_verification_records.py]]
 
 ## Top bridge nodes
-- [[test_handoff_reporting.py]] - degree 20, connects to 4 communities
+- [[test_handoff_reporting.py]] - degree 20, connects to 5 communities
 - [[test_an_unknown_handle_stays_opaque_but_an_expired_one_explains()]] - degree 5, connects to 1 community

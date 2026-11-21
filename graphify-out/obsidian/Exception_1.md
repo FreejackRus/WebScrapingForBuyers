@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "json"
+community: "TransportDownError"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/json
+  - community/TransportDownError
 ---
 
 # Exception
 
 ## Connections
-- [[ConnectorError]] - `inherits` [EXTRACTED]
+- [[_source_error()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/json
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

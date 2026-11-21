@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/test_e2e_stdio_check.py"
 type: "code"
-community: "test_storefront_reads_live_xhr_body_over_raw_cdp_when_playwright_cannot_attach"
-location: "L317"
+community: "e2e_stdio_check.py"
+location: "L57"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_storefront_reads_live_xhr_body_over_raw_cdp_when_playwright_cannot_attach
+  - community/e2e_stdio_checkpy
 ---
 
 # __init__()
 
 ## Connections
-- [[test_storefront_reads_live_xhr_body_over_raw_cdp_when_playwright_cannot_attach()]] - `contains` [EXTRACTED]
+- [[test_probe_checks_running_version()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_storefront_reads_live_xhr_body_over_raw_cdp_when_playwright_cannot_attach
+#graphify/code #graphify/EXTRACTED #community/e2e_stdio_checkpy

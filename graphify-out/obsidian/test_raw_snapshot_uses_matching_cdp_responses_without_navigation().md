@@ -12,7 +12,7 @@ tags:
 # test_raw_snapshot_uses_matching_cdp_responses_without_navigation()
 
 ## Connections
-- [[metrics()]] - `calls` [EXTRACTED]
+- [[metrics()_1]] - `calls` [EXTRACTED]
 - [[test_chrome_cdp_snapshot.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_snapshotpy

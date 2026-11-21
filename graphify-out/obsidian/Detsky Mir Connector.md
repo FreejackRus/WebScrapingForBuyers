@@ -1,25 +1,25 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/detmir-connector/SKILL.md"
 type: "document"
-community: "Detsky Mir Connector"
+community: "detmir_categories"
 location: "L6"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Detsky_Mir_Connector
+  - community/detmir_categories
 ---
 
 # Detsky Mir Connector
 
 ## Connections
 - [[DSH activation_4]] - `contains` [EXTRACTED]
-- [[Gotchas]] - `contains` [EXTRACTED]
+- [[Gotchas_6]] - `contains` [EXTRACTED]
 - [[There is no text search — this is important]] - `contains` [EXTRACTED]
 - [[Tools]] - `contains` [EXTRACTED]
-- [[Trust boundary]] - `contains` [EXTRACTED]
-- [[When NOT to use]] - `contains` [EXTRACTED]
-- [[When to use]] - `contains` [EXTRACTED]
-- [[Workflow patterns]] - `contains` [EXTRACTED]
+- [[Trust boundary_4]] - `contains` [EXTRACTED]
+- [[When NOT to use_2]] - `contains` [EXTRACTED]
+- [[When to use_3]] - `contains` [EXTRACTED]
+- [[Workflow patterns_3]] - `contains` [EXTRACTED]
 - [[dshskillsdetmir-connectorSKILL]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Detsky_Mir_Connector
+#graphify/document #graphify/EXTRACTED #community/detmir_categories

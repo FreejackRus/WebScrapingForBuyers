@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
 type: "code"
-community: "Authenticated transport: driving your own Chrome"
+community: "goto"
 location: "L185"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Authenticated_transport_driving_your_own_Chrome
+  - community/goto
 ---
 
 # goto()
@@ -18,4 +18,4 @@ tags:
 - [[Implementation constraints from the lifecycle audit]] - `references` [INFERRED]
 - [[test_storefront_live_xhr_capture_via_get_context()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/Authenticated_transport_driving_your_own_Chrome
+#graphify/code #graphify/INFERRED #community/goto

@@ -1,19 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_provenance.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/mcp_wire.py"
 type: "code"
-community: "subprocess"
-location: "L73"
+community: "mcp_wire.py"
+location: "L100"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/subprocess
+  - community/mcp_wirepy
 ---
 
 # main()
 
 ## Connections
-- [[check()]] - `calls` [EXTRACTED]
-- [[check_provenance.py]] - `contains` [EXTRACTED]
-- [[pins()]] - `calls` [EXTRACTED]
+- [[_check_gate()]] - `calls` [EXTRACTED]
+- [[_load_baseline()]] - `calls` [EXTRACTED]
+- [[_snapshot()]] - `calls` [EXTRACTED]
+- [[estimate_tokens()]] - `calls` [EXTRACTED]
+- [[fetch_tools()]] - `calls` [EXTRACTED]
+- [[mcp_wire.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/subprocess
+#graphify/code #graphify/EXTRACTED #community/mcp_wirepy

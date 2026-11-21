@@ -1,20 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
 type: "code"
-community: "_patch_tier1"
-location: "L858"
+community: "test_storefront_search.py"
+location: "L140"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_patch_tier1
+  - community/test_storefront_searchpy
 ---
 
 # scenario()
 
 ## Connections
-- [[_patch_tier1()]] - `calls` [EXTRACTED]
-- [[always_blocked()]] - `indirect_call` [INFERRED]
-- [[ok_cdp()]] - `indirect_call` [INFERRED]
-- [[test_fetch_composer_caches_a_successful_cdp_body()]] - `contains` [EXTRACTED]
+- [[empty_storefront()]] - `indirect_call` [INFERRED]
+- [[test_wb_search_storefront_empty_products_is_no_results()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_patch_tier1
+#graphify/code #graphify/EXTRACTED #community/test_storefront_searchpy

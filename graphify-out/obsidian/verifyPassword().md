@@ -12,8 +12,8 @@ tags:
 # verifyPassword()
 
 ## Connections
-- [[dot-authenticate()_1]] - `calls` [EXTRACTED]
-- [[dot-changePassword()_1]] - `calls` [EXTRACTED]
+- [[dot-authenticate()]] - `calls` [EXTRACTED]
+- [[dot-changePassword()]] - `calls` [EXTRACTED]
 - [[memory-auth-store.ts]] - `contains` [EXTRACTED]
 - [[scryptAsync]] - `calls` [EXTRACTED]
 

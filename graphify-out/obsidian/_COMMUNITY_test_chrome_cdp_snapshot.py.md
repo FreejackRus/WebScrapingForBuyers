@@ -12,13 +12,13 @@ members: 26
 ## Members
 - [[Viewport capture validation and bounded CDP lifetime, without a browser.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_snapshot.py
 - [[attach()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_snapshot.py
-- [[capture()_19]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_snapshot.py
+- [[capture()_20]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_snapshot.py
 - [[delayed()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_snapshot.py
 - [[detach()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_snapshot.py
-- [[fixture_26]] - code
+- [[fixture_28]] - code
 - [[jpeg()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_snapshot.py
-- [[metrics()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_snapshot.py
-- [[parametrize_31]] - code
+- [[metrics()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_snapshot.py
+- [[parametrize_35]] - code
 - [[pending()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_snapshot.py
 - [[record_timeout()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_snapshot.py
 - [[test_actual_pixels_remaining_oversize_are_rejected_after_one_retry()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_snapshot.py
@@ -46,9 +46,9 @@ SORT file.name ASC
 
 ## Connections to other communities
 - 2 edges to [[_COMMUNITY_json]]
-- 2 edges to [[_COMMUNITY_pytest]]
-- 1 edge to [[_COMMUNITY_transport__init__.py]]
+- 2 edges to [[_COMMUNITY_transport__init__.py]]
 - 1 edge to [[_COMMUNITY_firewall_pow.py]]
+- 1 edge to [[_COMMUNITY_pytest]]
 - 1 edge to [[_COMMUNITY_test_card_verification_records.py]]
 
 ## Top bridge nodes

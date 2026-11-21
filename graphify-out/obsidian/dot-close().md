@@ -1,19 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/stdio_probe.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py"
 type: "code"
-community: "StdioProbe"
-location: "L166"
+community: "_FakeResponse"
+location: "L459"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/StdioProbe
+  - community/_FakeResponse
 ---
 
 # .close()
 
 ## Connections
-- [[dot-__exit__()]] - `calls` [EXTRACTED]
-- [[dot-_close_pipe()]] - `calls` [EXTRACTED]
-- [[StdioProbe]] - `method` [EXTRACTED]
+- [[_FakeResponse]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/StdioProbe
+#graphify/code #graphify/EXTRACTED #community/_FakeResponse

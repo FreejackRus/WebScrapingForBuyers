@@ -1,17 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "cian_connector/server.py"
+community: "citilink_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/cian_connector/serverpy
+  - community/citilink_card
 ---
 
 # Field
 
 ## Connections
-- [[cian_card()]] - `references` [EXTRACTED]
-- [[cian_search()]] - `references` [EXTRACTED]
+- [[citilink_card()]] - `references` [EXTRACTED]
+- [[citilink_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/cian_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/citilink_card

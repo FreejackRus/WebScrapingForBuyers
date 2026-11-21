@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/src/aliexpress_connector/server.py"
 type: "rationale"
-community: "aliexpress_card"
+community: "aliexpress_connector/server.py"
 location: "L501"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/aliexpress_card
+  - community/aliexpress_connector/serverpy
 ---
 
 # (price, old_price) from the sticky-offer module, symmetric with tiles. The…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_card_prices()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/aliexpress_card
+#graphify/rationale #graphify/EXTRACTED #community/aliexpress_connector/serverpy

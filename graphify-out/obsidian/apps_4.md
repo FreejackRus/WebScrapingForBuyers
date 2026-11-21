@@ -1,17 +1,17 @@
 ---
-source_file: "apps/gateway/src/resilience.test.ts"
+source_file: "apps/search/src/app.test.ts"
 type: "code"
-community: "history-routes.test.ts"
-location: "L13"
+community: "SourceAdapter"
+location: "L47"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/history-routestestts
+  - community/SourceAdapter
 ---
 
 # apps
 
 ## Connections
-- [[resilience.test.ts]] - `contains` [EXTRACTED]
+- [[app.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/history-routestestts
+#graphify/code #graphify/EXTRACTED #community/SourceAdapter

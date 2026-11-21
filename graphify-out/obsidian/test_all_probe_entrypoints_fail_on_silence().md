@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[MonkeyPatch]] - `references` [EXTRACTED]
-- [[parametrize_21]] - `references` [EXTRACTED]
+- [[parametrize_18]] - `references` [EXTRACTED]
 - [[replace_command()]] - `calls` [EXTRACTED]
 - [[test_stdio_probe.py]] - `contains` [EXTRACTED]
 

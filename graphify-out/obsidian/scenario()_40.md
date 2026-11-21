@@ -12,7 +12,7 @@ tags:
 # scenario()
 
 ## Connections
-- [[_tool_error_payload()]] - `calls` [EXTRACTED]
+- [[_tool_error_payload()_1]] - `calls` [EXTRACTED]
 - [[forbidden_wait()]] - `indirect_call` [INFERRED]
 - [[test_wb_card_rejects_non_positive_nm_ids_before_network()]] - `contains` [EXTRACTED]
 

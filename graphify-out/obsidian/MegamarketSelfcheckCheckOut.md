@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/models_output.py"
 type: "code"
-community: "dns_card"
+community: "json"
 location: "L55"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/dns_card
+  - community/json
 ---
 
 # MegamarketSelfcheckCheckOut
@@ -15,4 +15,4 @@ tags:
 - [[SelfCheckEntryBase]] - `inherits` [EXTRACTED]
 - [[megamarket_connectormodels_output.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/dns_card
+#graphify/code #graphify/EXTRACTED #community/json

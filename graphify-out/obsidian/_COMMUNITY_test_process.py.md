@@ -10,10 +10,10 @@ members: 28
 **Members:** 28 nodes
 
 ## Members
-- [[dot-__init__()_29]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_process.py
+- [[dot-__init__()_39]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_process.py
 - [[dot-kill()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_process.py
 - [[dot-poll()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_process.py
-- [[dot-wait()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_process.py
+- [[dot-wait()_4]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_process.py
 - [[A failed killpg must degrade to proc.kill(), never propagate.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_process.py
 - [[A lowercase 'path' must not slip through the POSIX allowlist. Case-folding is…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_process.py
 - [[Minimal Popen stand-in that records how it was torn down.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_process.py
@@ -47,8 +47,9 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 2 edges to [[_COMMUNITY_json]]
+- 1 edge to [[_COMMUNITY_TransportDownError]]
+- 1 edge to [[_COMMUNITY_json]]
 - 1 edge to [[_COMMUNITY_pytest]]
 
 ## Top bridge nodes
-- [[test_process.py]] - degree 15, connects to 2 communities
+- [[test_process.py]] - degree 15, connects to 3 communities

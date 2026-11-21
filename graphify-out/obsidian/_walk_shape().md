@@ -12,7 +12,7 @@ tags:
 # _walk_shape()
 
 ## Connections
-- [[Any_12]] - `references` [EXTRACTED]
+- [[Any_2]] - `references` [EXTRACTED]
 - [[_type_tag()]] - `calls` [EXTRACTED]
 - [[_walk_shape()]] - `calls` [EXTRACTED]
 - [[resilience.py]] - `contains` [EXTRACTED]

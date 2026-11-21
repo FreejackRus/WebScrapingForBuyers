@@ -13,11 +13,11 @@ tags:
 
 ## Connections
 - [[DSH activation_3]] - `contains` [EXTRACTED]
-- [[Gotchas_19]] - `contains` [EXTRACTED]
+- [[Gotchas_24]] - `contains` [EXTRACTED]
 - [[Numbers in a tile that are not the price]] - `contains` [EXTRACTED]
 - [[Read the data-meta attributes, not the class names]] - `contains` [EXTRACTED]
-- [[Tools available_13]] - `contains` [EXTRACTED]
-- [[When to use_19]] - `contains` [EXTRACTED]
+- [[Tools available_16]] - `contains` [EXTRACTED]
+- [[When to use_22]] - `contains` [EXTRACTED]
 - [[Why the price used to come back null]] - `contains` [EXTRACTED]
 - [[dshskillscitilink-connectorSKILL]] - `contains` [EXTRACTED]
 

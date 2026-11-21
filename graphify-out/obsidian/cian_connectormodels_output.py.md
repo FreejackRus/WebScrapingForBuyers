@@ -20,7 +20,7 @@ tags:
 - [[CianSearchResponse]] - `contains` [EXTRACTED]
 - [[CianSelfcheckCheckOut]] - `contains` [EXTRACTED]
 - [[CianSelfcheckResponse]] - `contains` [EXTRACTED]
-- [[MetaOut_3]] - `contains` [EXTRACTED]
+- [[MetaOut_2]] - `contains` [EXTRACTED]
 - [[Typed responses for the Cian connector. Field descriptions are written for a…]] - `rationale_for` [EXTRACTED]
 - [[cian_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[models.py]] - `imports_from` [EXTRACTED]

@@ -1,17 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "test_card_rejects_non_numeric_ids"
+community: "test_main.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_card_rejects_non_numeric_ids
+  - community/test_mainpy
 ---
 
 # parametrize
 
 ## Connections
-- [[test_card_rejects_non_numeric_ids()]] - `references` [EXTRACTED]
-- [[test_search_rejects_too_short_queries()]] - `references` [EXTRACTED]
+- [[test_help_does_not_start_the_server()]] - `references` [EXTRACTED]
+- [[test_operator_subcommands_forward_their_arguments()]] - `references` [EXTRACTED]
+- [[test_unknown_argument_exits_with_error()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_card_rejects_non_numeric_ids
+#graphify/code #graphify/EXTRACTED #community/test_mainpy

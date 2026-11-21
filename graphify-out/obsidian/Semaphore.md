@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "NavigationBudget"
+community: "wb_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/NavigationBudget
+  - community/wb_connector/serverpy
 ---
 
 # Semaphore
 
 ## Connections
-- [[dot-_host_semaphore()]] - `references` [EXTRACTED]
+- [[_probe_basket()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/NavigationBudget
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

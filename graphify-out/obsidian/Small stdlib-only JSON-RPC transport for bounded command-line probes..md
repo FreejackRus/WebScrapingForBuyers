@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/stdio_probe.py"
 type: "rationale"
-community: "StdioProbe"
+community: "json"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/StdioProbe
+  - community/json
 ---
 
 # Small stdlib-only JSON-RPC transport for bounded command-line probes.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[stdio_probe.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/StdioProbe
+#graphify/rationale #graphify/EXTRACTED #community/json

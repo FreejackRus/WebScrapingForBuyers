@@ -1,18 +1,20 @@
 ---
 source_file: ""
 type: "code"
-community: "compare-connector/tests/test_server.py"
+community: "avito_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/compare-connector/tests/test_serverpy
+  - community/avito_connector/serverpy
 ---
 
 # BaseModel
 
 ## Connections
-- [[CompareResponse]] - `inherits` [EXTRACTED]
-- [[MarketOffer]] - `inherits` [EXTRACTED]
-- [[SourceOutcome]] - `inherits` [EXTRACTED]
+- [[AvitoCardResponse]] - `inherits` [EXTRACTED]
+- [[AvitoSearchItemOut]] - `inherits` [EXTRACTED]
+- [[AvitoSearchResponse]] - `inherits` [EXTRACTED]
+- [[AvitoSellerOut]] - `inherits` [EXTRACTED]
+- [[AvitoSellerResponse]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/compare-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/avito_connector/serverpy

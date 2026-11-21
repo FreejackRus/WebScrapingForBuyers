@@ -12,7 +12,7 @@ tags:
 # _WsLike
 
 ## Connections
-- [[dot-__init__()_40]] - `references` [EXTRACTED]
+- [[dot-__init__()_37]] - `references` [EXTRACTED]
 - [[dot-recv()_1]] - `method` [EXTRACTED]
 - [[dot-send()_4]] - `method` [EXTRACTED]
 - [[Protocol_1]] - `inherits` [EXTRACTED]

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "code"
-community: "json"
+community: "chrome_cdp.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/json
+  - community/chrome_cdppy
 ---
 
 # chrome_cdp.py
@@ -56,12 +56,12 @@ tags:
 - [[dns_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[get_browser()]] - `contains` [EXTRACTED]
 - [[get_context()]] - `contains` [EXTRACTED]
-- [[json]] - `imports` [EXTRACTED]
+- [[json_1]] - `imports` [EXTRACTED]
 - [[lamoda_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[math]] - `imports` [EXTRACTED]
 - [[megamarket_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[navigation_budget()]] - `imports` [EXTRACTED]
-- [[open_page()_3]] - `contains` [EXTRACTED]
+- [[open_page()]] - `contains` [EXTRACTED]
 - [[os]] - `imports` [EXTRACTED]
 - [[ozon_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]
@@ -81,4 +81,4 @@ tags:
 - [[websockets]] - `imports` [EXTRACTED]
 - [[yandex_connectorserver.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/json
+#graphify/code #graphify/EXTRACTED #community/chrome_cdppy

@@ -12,7 +12,7 @@ tags:
 # identity_from_mapping()
 
 ## Connections
-- [[Any_28]] - `references` [EXTRACTED]
+- [[Any_27]] - `references` [EXTRACTED]
 - [[Build identity evidence from typed upstream fields only. Free-form titles are…]] - `rationale_for` [EXTRACTED]
 - [[ProductIdentity]] - `calls` [EXTRACTED]
 - [[_field()]] - `calls` [EXTRACTED]

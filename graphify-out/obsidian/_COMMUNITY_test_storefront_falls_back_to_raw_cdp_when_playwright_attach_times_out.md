@@ -11,17 +11,17 @@ members: 13
 
 ## Members
 - [[Chrome 151+ must still use the raw-CDP Performance refetch path.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py
-- [[acquire()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py
-- [[evaluate()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py
+- [[acquire()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py
+- [[evaluate()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py
 - [[fake_open_page()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py
-- [[incompatible_playwright()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py
-- [[neutral()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py
-- [[no_wait()_33]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py
-- [[ok()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py
+- [[incompatible_playwright()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py
+- [[neutral()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py
+- [[no_wait()_29]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py
+- [[ok()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py
 - [[raw_live_unavailable()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py
-- [[refused()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py
-- [[release()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py
-- [[scenario()_79]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py
+- [[refused()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py
+- [[release()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py
+- [[scenario()_68]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py
 - [[test_storefront_falls_back_to_raw_cdp_when_playwright_attach_times_out()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py
 
 ## Live Query (requires Dataview plugin)
@@ -38,5 +38,5 @@ SORT file.name ASC
 
 ## Top bridge nodes
 - [[test_storefront_falls_back_to_raw_cdp_when_playwright_attach_times_out()]] - degree 14, connects to 1 community
-- [[scenario()_79]] - degree 5, connects to 1 community
-- [[incompatible_playwright()_1]] - degree 3, connects to 1 community
+- [[scenario()_68]] - degree 5, connects to 1 community
+- [[incompatible_playwright()]] - degree 3, connects to 1 community

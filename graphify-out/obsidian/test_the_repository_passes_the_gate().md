@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_check_provenance_gate.py"
 type: "code"
-community: "subprocess"
+community: "pathlib"
 location: "L17"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/subprocess
+  - community/pathlib
 ---
 
 # test_the_repository_passes_the_gate()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_check_provenance_gate.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/subprocess
+#graphify/code #graphify/EXTRACTED #community/pathlib

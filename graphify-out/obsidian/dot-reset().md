@@ -1,18 +1,18 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
+source_file: "apps/identity/src/http/login-limiter.ts"
 type: "code"
-community: "mcp-marketplace-adapter.ts"
-location: "L296"
+community: "LoginLimiter"
+location: "L50"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/mcp-marketplace-adapterts
+  - community/LoginLimiter
 ---
 
 # .reset()
 
 ## Connections
-- [[dot-callTool()]] - `calls` [EXTRACTED]
-- [[MarketplaceMcpClient]] - `method` [EXTRACTED]
+- [[LoginLimiter]] - `method` [EXTRACTED]
+- [[normalize()_1]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts
+#graphify/code #graphify/EXTRACTED #community/LoginLimiter

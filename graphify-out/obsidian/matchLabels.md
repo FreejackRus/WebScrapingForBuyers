@@ -12,6 +12,7 @@ tags:
 # matchLabels
 
 ## Connections
+- [[compareuiindex.tsx]] - `imports` [EXTRACTED]
 - [[offer-carduiindex.tsx]] - `imports` [EXTRACTED]
 - [[offerindex.ts]] - `re_exports` [EXTRACTED]
 - [[offerlibindex.ts]] - `contains` [EXTRACTED]

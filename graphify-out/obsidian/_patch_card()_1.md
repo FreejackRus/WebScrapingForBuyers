@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[aliexpress-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[fake_card()]] - `indirect_call` [INFERRED]
+- [[fake_card()_2]] - `indirect_call` [INFERRED]
 - [[test_card_accepts_a_bare_numeric_id()]] - `calls` [EXTRACTED]
 - [[test_card_current_price_first_in_sticky()]] - `calls` [EXTRACTED]
 - [[test_card_flags_drift_when_neither_title_nor_price()_3]] - `calls` [EXTRACTED]

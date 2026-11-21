@@ -1,16 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "decision_inspect"
+community: "detmir_categories"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/decision_inspect
+  - community/detmir_categories
 ---
 
 # description
 
 ## Connections
-- [[decision_inspect()]] - `references` [EXTRACTED]
+- [[detmir_card()]] - `references` [EXTRACTED]
+- [[detmir_categories()]] - `references` [EXTRACTED]
+- [[detmir_category()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/decision_inspect
+#graphify/code #graphify/EXTRACTED #community/detmir_categories

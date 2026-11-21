@@ -1,22 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/docs/DEPLOYMENT.md"
 type: "document"
-community: "Deployment"
+community: "ru-marketplace-mcp/README.md"
 location: "L1"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Deployment
+  - community/ru-marketplace-mcp/READMEmd
 ---
 
-# Deployment
+# DEPLOYMENT.md
 
 ## Connections
-- [[DEPLOYMENT_1]] - `contains` [EXTRACTED]
-- [[Docker]] - `contains` [EXTRACTED]
-- [[Honest limitations]] - `contains` [EXTRACTED]
-- [[Security posture]] - `contains` [EXTRACTED]
-- [[Transport selection]] - `contains` [EXTRACTED]
-- [[Unified source selection]] - `contains` [EXTRACTED]
+- [[CDP_SETUP]] - `references` [EXTRACTED]
+- [[Deployment_1]] - `contains` [EXTRACTED]
+- [[ru-marketplace-mcpREADME]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Deployment
+#graphify/document #graphify/EXTRACTED #community/ru-marketplace-mcp/READMEmd

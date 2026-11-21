@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "test_wb_search_storefront_uses_captured_v18_products"
-location: "L86"
+community: "test_cache_can_be_disabled_by_ttl_zero"
+location: "L1369"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/test_wb_search_storefront_uses_captured_v18_products
+  - graphify/EXTRACTED
+  - community/test_cache_can_be_disabled_by_ttl_zero
 ---
 
 # scenario()
 
 ## Connections
-- [[fake_storefront()]] - `indirect_call` [INFERRED]
-- [[no_wait()_34]] - `indirect_call` [INFERRED]
-- [[test_wb_search_storefront_uses_captured_v18_products()]] - `contains` [EXTRACTED]
+- [[TTLCache]] - `calls` [EXTRACTED]
+- [[no_wait()_2]] - `indirect_call` [INFERRED]
+- [[test_cache_can_be_disabled_by_ttl_zero()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/test_wb_search_storefront_uses_captured_v18_products
+#graphify/code #graphify/EXTRACTED #community/test_cache_can_be_disabled_by_ttl_zero

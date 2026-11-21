@@ -1,19 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/server.py"
 type: "code"
-community: "_fetch_composer"
+community: "ozon_connector/server.py"
 location: "L940"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_fetch_composer
+  - community/ozon_connector/serverpy
 ---
 
 # _ozon_reviews_impl()
 
 ## Connections
 - [[BadRequestError]] - `uses` [INFERRED]
-- [[Context_10]] - `references` [EXTRACTED]
 - [[OzonReviewsResponse]] - `calls` [EXTRACTED]
 - [[ParserDriftError]] - `uses` [INFERRED]
 - [[TransportDownError]] - `uses` [INFERRED]
@@ -29,4 +28,4 @@ tags:
 - [[ozon_reviews()]] - `calls` [EXTRACTED]
 - [[raise_tool_error()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_fetch_composer
+#graphify/code #graphify/EXTRACTED #community/ozon_connector/serverpy

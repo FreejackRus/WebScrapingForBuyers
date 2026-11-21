@@ -12,12 +12,12 @@ tags:
 # gateway/package.json
 
 ## Connections
-- [[@peremenacontracts_3]] - `imports` [EXTRACTED]
-- [[@peremenaservice-kit_3]] - `imports` [EXTRACTED]
+- [[@peremenacontracts_2]] - `imports` [EXTRACTED]
+- [[@peremenaservice-kit_2]] - `imports` [EXTRACTED]
 - [[@typesnode_3]] - `imports` [EXTRACTED]
-- [[dependencies_1]] - `contains` [EXTRACTED]
+- [[dependencies]] - `contains` [EXTRACTED]
 - [[devDependencies_1]] - `contains` [EXTRACTED]
-- [[fastify_3]] - `imports` [EXTRACTED]
+- [[fastify_2]] - `imports` [EXTRACTED]
 - [[name_1]] - `contains` [EXTRACTED]
 - [[private_1]] - `contains` [EXTRACTED]
 - [[scripts_1]] - `contains` [EXTRACTED]

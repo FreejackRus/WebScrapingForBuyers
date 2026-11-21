@@ -15,6 +15,6 @@ tags:
 - [[dot-_release()]] - `calls` [EXTRACTED]
 - [[dot-acquire()]] - `calls` [EXTRACTED]
 - [[NavigationBudget]] - `method` [EXTRACTED]
-- [[Semaphore]] - `references` [EXTRACTED]
+- [[Semaphore_1]] - `references` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/NavigationBudget

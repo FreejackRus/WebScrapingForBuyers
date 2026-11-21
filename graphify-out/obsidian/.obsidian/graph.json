@@ -1,7 +1,7 @@
 {
   "colorGroups": [
     {
-      "query": "tag:#community/mcp-marketplace-adapterts",
+      "query": "tag:#community/workspace/ui/indextsx",
       "color": {
         "a": 1,
         "rgb": 5142951
@@ -15,28 +15,28 @@
       }
     },
     {
-      "query": "tag:#community/cian_connector/serverpy",
+      "query": "tag:#community/yandex_card",
       "color": {
         "a": 1,
         "rgb": 14767961
       }
     },
     {
-      "query": "tag:#community/netlab-price-feedts",
+      "query": "tag:#community/merlion-clientts",
       "color": {
         "a": 1,
         "rgb": 7780274
       }
     },
     {
-      "query": "tag:#community/_fetch_composer",
+      "query": "tag:#community/system-health/ui/indextsx",
       "color": {
         "a": 1,
         "rgb": 5873999
       }
     },
     {
-      "query": "tag:#community/test_dsh_bundlepy",
+      "query": "tag:#community/megamarket_connector/serverpy",
       "color": {
         "a": 1,
         "rgb": 15583560
@@ -50,7 +50,7 @@
       }
     },
     {
-      "query": "tag:#community/workspace/ui/indextsx",
+      "query": "tag:#community/useSearchStore",
       "color": {
         "a": 1,
         "rgb": 16752039
@@ -71,7 +71,7 @@
       }
     },
     {
-      "query": "tag:#community/StdioProbe",
+      "query": "tag:#community/wb_connector/serverpy",
       "color": {
         "a": 1,
         "rgb": 5142951
@@ -127,7 +127,7 @@
       }
     },
     {
-      "query": "tag:#community/analyzetestts",
+      "query": "tag:#community/detmir_categories",
       "color": {
         "a": 1,
         "rgb": 10253663
@@ -148,14 +148,14 @@
       }
     },
     {
-      "query": "tag:#community/mcp_core",
+      "query": "tag:#community/compare_verify_offer",
       "color": {
         "a": 1,
         "rgb": 15896107
       }
     },
     {
-      "query": "tag:#community/Apptsx",
+      "query": "tag:#community/test_stdio_probepy",
       "color": {
         "a": 1,
         "rgb": 14767961
@@ -169,7 +169,7 @@
       }
     },
     {
-      "query": "tag:#community/mcp_wirepy",
+      "query": "tag:#community/netlab-price-feedts",
       "color": {
         "a": 1,
         "rgb": 5873999
@@ -190,35 +190,35 @@
       }
     },
     {
-      "query": "tag:#community/aliexpress-connector/tests/test_parser_livepy",
+      "query": "tag:#community/test_live_payload_contractpy",
       "color": {
         "a": 1,
         "rgb": 16752039
       }
     },
     {
-      "query": "tag:#community/test_stdio_probepy",
+      "query": "tag:#community/chrome_cdppy",
       "color": {
         "a": 1,
         "rgb": 10253663
       }
     },
     {
-      "query": "tag:#community/useUserStore",
+      "query": "tag:#community/taobao_connector/serverpy",
       "color": {
         "a": 1,
         "rgb": 12234924
       }
     },
     {
-      "query": "tag:#community/lamoda_search",
+      "query": "tag:#community/mcp-marketplace-adapterts",
       "color": {
         "a": 1,
         "rgb": 5142951
       }
     },
     {
-      "query": "tag:#community/dns-connector/tests/test_search_extractor_dompy",
+      "query": "tag:#community/StdioProbe",
       "color": {
         "a": 1,
         "rgb": 15896107
@@ -232,7 +232,7 @@
       }
     },
     {
-      "query": "tag:#community/\u0410\u0443\u0434\u0438\u0442_ru-marketplace-mcp_v120__\u043d\u0435\u0437\u0430\u0432\u0438\u0441\u0438\u043c\u0430\u044f_\u043f\u0435\u0440\u0435\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430",
+      "query": "tag:#community/card-verifiersts",
       "color": {
         "a": 1,
         "rgb": 7780274
@@ -253,14 +253,14 @@
       }
     },
     {
-      "query": "tag:#community/parse_retry_after",
+      "query": "tag:#community/SourceAdapter",
       "color": {
         "a": 1,
         "rgb": 11565729
       }
     },
     {
-      "query": "tag:#community/firewall_powpy",
+      "query": "tag:#community/functools",
       "color": {
         "a": 1,
         "rgb": 16752039
@@ -302,7 +302,7 @@
       }
     },
     {
-      "query": "tag:#community/UpstreamTimeoutError",
+      "query": "tag:#community/watchlist-checkerts",
       "color": {
         "a": 1,
         "rgb": 7780274
@@ -316,21 +316,21 @@
       }
     },
     {
-      "query": "tag:#community/detmir_categories",
+      "query": "tag:#community/test_output_schemapy",
       "color": {
         "a": 1,
         "rgb": 15583560
       }
     },
     {
-      "query": "tag:#community/transport/__init__py",
+      "query": "tag:#community/raw_browser",
       "color": {
         "a": 1,
         "rgb": 11565729
       }
     },
     {
-      "query": "tag:#community/test_live_payload_contractpy",
+      "query": "tag:#community/marketplace-connector/tests/test_serverpy",
       "color": {
         "a": 1,
         "rgb": 16752039
@@ -344,14 +344,14 @@
       }
     },
     {
-      "query": "tag:#community/b2b-distributor-adapterts",
+      "query": "tag:#community/basket/ui/indextsx",
       "color": {
         "a": 1,
         "rgb": 12234924
       }
     },
     {
-      "query": "tag:#community/prices_from_tile",
+      "query": "tag:#community/test_storefront_reads_live_xhr_body_over_raw_cdp_when_playwright_cannot_attach",
       "color": {
         "a": 1,
         "rgb": 5142951
@@ -372,7 +372,7 @@
       }
     },
     {
-      "query": "tag:#community/test_output_schemapy",
+      "query": "tag:#community/dns-connector/tests/test_search_extractor_dompy",
       "color": {
         "a": 1,
         "rgb": 7780274
@@ -386,7 +386,7 @@
       }
     },
     {
-      "query": "tag:#community/packages_contracts_dist_index",
+      "query": "tag:#community/PageLike",
       "color": {
         "a": 1,
         "rgb": 15583560
@@ -449,7 +449,7 @@
       }
     },
     {
-      "query": "tag:#community/TransportDownError",
+      "query": "tag:#community/processpy",
       "color": {
         "a": 1,
         "rgb": 5873999
@@ -463,7 +463,7 @@
       }
     },
     {
-      "query": "tag:#community/useSearchStore",
+      "query": "tag:#community/command/ui/indextsx",
       "color": {
         "a": 1,
         "rgb": 11565729
@@ -498,7 +498,7 @@
       }
     },
     {
-      "query": "tag:#community/compare-modelsts",
+      "query": "tag:#community/service-kit/src/indexts",
       "color": {
         "a": 1,
         "rgb": 15896107
@@ -512,14 +512,14 @@
       }
     },
     {
-      "query": "tag:#community/test_review_regressionspy",
+      "query": "tag:#community/resolve_image_delivery",
       "color": {
         "a": 1,
         "rgb": 7780274
       }
     },
     {
-      "query": "tag:#community/ChallengeRequiredError",
+      "query": "tag:#community/search-servicets",
       "color": {
         "a": 1,
         "rgb": 5873999
@@ -533,14 +533,14 @@
       }
     },
     {
-      "query": "tag:#community/test_resiliencepy",
+      "query": "tag:#community/SearchHistory",
       "color": {
         "a": 1,
         "rgb": 11565729
       }
     },
     {
-      "query": "tag:#community/ssrpy",
+      "query": "tag:#community/validateGroundedNarration",
       "color": {
         "a": 1,
         "rgb": 16752039
@@ -554,14 +554,14 @@
       }
     },
     {
-      "query": "tag:#community/domtestpy",
+      "query": "tag:#community/prices_from_tile",
       "color": {
         "a": 1,
         "rgb": 12234924
       }
     },
     {
-      "query": "tag:#community/citilink_card",
+      "query": "tag:#community/analysis/store/indexts",
       "color": {
         "a": 1,
         "rgb": 5142951
@@ -575,21 +575,21 @@
       }
     },
     {
-      "query": "tag:#community/merlion-clientts",
+      "query": "tag:#community/BasketStore",
       "color": {
         "a": 1,
         "rgb": 14767961
       }
     },
     {
-      "query": "tag:#community/CLAUDEmd",
+      "query": "tag:#community/analysis-narratorts",
       "color": {
         "a": 1,
         "rgb": 7780274
       }
     },
     {
-      "query": "tag:#community/PageLike",
+      "query": "tag:#community/analysis/src/appts",
       "color": {
         "a": 1,
         "rgb": 5873999
@@ -603,7 +603,7 @@
       }
     },
     {
-      "query": "tag:#community/wb_connector/serverpy",
+      "query": "tag:#community/Any",
       "color": {
         "a": 1,
         "rgb": 11565729
@@ -617,14 +617,14 @@
       }
     },
     {
-      "query": "tag:#community/analysis/store/indexts",
+      "query": "tag:#community/watchlist/ui/indextsx",
       "color": {
         "a": 1,
         "rgb": 10253663
       }
     },
     {
-      "query": "tag:#community/test_model_routing_eval_verdictpy",
+      "query": "tag:#community/citilink_selfcheck",
       "color": {
         "a": 1,
         "rgb": 12234924
@@ -645,7 +645,7 @@
       }
     },
     {
-      "query": "tag:#community/history-routestestts",
+      "query": "tag:#community/Any",
       "color": {
         "a": 1,
         "rgb": 14767961
@@ -673,7 +673,7 @@
       }
     },
     {
-      "query": "tag:#community/netlab-clientts",
+      "query": "tag:#community/dns_selfcheck",
       "color": {
         "a": 1,
         "rgb": 11565729
@@ -715,14 +715,14 @@
       }
     },
     {
-      "query": "tag:#community/SourceAdapter",
+      "query": "tag:#community/Wildberries_Connector",
       "color": {
         "a": 1,
         "rgb": 14767961
       }
     },
     {
-      "query": "tag:#community/_parse_search_items",
+      "query": "tag:#community/packages_contracts_dist_index_product",
       "color": {
         "a": 1,
         "rgb": 7780274
@@ -736,7 +736,7 @@
       }
     },
     {
-      "query": "tag:#community/subprocess",
+      "query": "tag:#community/coerce_price",
       "color": {
         "a": 1,
         "rgb": 15583560
@@ -764,14 +764,14 @@
       }
     },
     {
-      "query": "tag:#community/\u0412\u043d\u0435\u0448\u043d\u0438\u0435_\u043f\u043e\u0434\u0445\u043e\u0434\u044b_native_vision_challenge_UX_browser-\u0440\u0435\u0437\u0438\u043b\u044c\u0435\u043d\u0442\u043d\u043e\u0441\u0442\u044c",
+      "query": "tag:#community/aliexpress_selfcheck",
       "color": {
         "a": 1,
         "rgb": 12234924
       }
     },
     {
-      "query": "tag:#community/test_source_selectionpy",
+      "query": "tag:#community/resiliencepy",
       "color": {
         "a": 1,
         "rgb": 5142951
@@ -806,7 +806,7 @@
       }
     },
     {
-      "query": "tag:#community/parametrize",
+      "query": "tag:#community/firewall_powpy",
       "color": {
         "a": 1,
         "rgb": 15583560
@@ -820,35 +820,35 @@
       }
     },
     {
-      "query": "tag:#community/taobao-connector/tests/test_search_extractor_dompy",
+      "query": "tag:#community/useUserStore",
       "color": {
         "a": 1,
         "rgb": 16752039
       }
     },
     {
-      "query": "tag:#community/test_dompy",
+      "query": "tag:#community/test_search_login_wall_live_dompy",
       "color": {
         "a": 1,
         "rgb": 10253663
       }
     },
     {
-      "query": "tag:#community/chat/ui/indextsx",
+      "query": "tag:#community/_skill_dir",
       "color": {
         "a": 1,
         "rgb": 12234924
       }
     },
     {
-      "query": "tag:#community/aliexpress_card",
+      "query": "tag:#community/aliexpress_connector/serverpy",
       "color": {
         "a": 1,
         "rgb": 5142951
       }
     },
     {
-      "query": "tag:#community/taobao_connector/serverpy",
+      "query": "tag:#community/English_version",
       "color": {
         "a": 1,
         "rgb": 15896107
@@ -869,21 +869,21 @@
       }
     },
     {
-      "query": "tag:#community/_sync_curl_get",
+      "query": "tag:#community/test_card_verification_recordspy",
       "color": {
         "a": 1,
         "rgb": 5873999
       }
     },
     {
-      "query": "tag:#community/Detsky_Mir_Connector",
+      "query": "tag:#community/citilink-agentmjs",
       "color": {
         "a": 1,
         "rgb": 15583560
       }
     },
     {
-      "query": "tag:#community/English_version",
+      "query": "tag:#community/cian_connector/serverpy",
       "color": {
         "a": 1,
         "rgb": 11565729
@@ -918,7 +918,7 @@
       }
     },
     {
-      "query": "tag:#community/coerce_price",
+      "query": "tag:#community/taobao_card",
       "color": {
         "a": 1,
         "rgb": 15896107
@@ -946,14 +946,14 @@
       }
     },
     {
-      "query": "tag:#community/test_cdp_transportpy",
+      "query": "tag:#community/backup-statepy",
       "color": {
         "a": 1,
         "rgb": 15583560
       }
     },
     {
-      "query": "tag:#community/ru-marketplace-mcp",
+      "query": "tag:#community/MarketOffer",
       "color": {
         "a": 1,
         "rgb": 11565729
@@ -974,7 +974,7 @@
       }
     },
     {
-      "query": "tag:#community/selfcheck_entry",
+      "query": "tag:#community/ssrpy",
       "color": {
         "a": 1,
         "rgb": 12234924
@@ -1002,21 +1002,21 @@
       }
     },
     {
-      "query": "tag:#community/citilink_connector/models_outputpy",
+      "query": "tag:#community/mcp_wirepy",
       "color": {
         "a": 1,
         "rgb": 7780274
       }
     },
     {
-      "query": "tag:#community/NavigationBudget",
+      "query": "tag:#community/test_contractpy",
       "color": {
         "a": 1,
         "rgb": 5873999
       }
     },
     {
-      "query": "tag:#community/dns-connector/tests/test_card_extractor_dompy",
+      "query": "tag:#community/\u0410\u0443\u0434\u0438\u0442_ru-marketplace-mcp_v120__\u043d\u0435\u0437\u0430\u0432\u0438\u0441\u0438\u043c\u0430\u044f_\u043f\u0435\u0440\u0435\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430",
       "color": {
         "a": 1,
         "rgb": 15583560
@@ -1030,14 +1030,14 @@
       }
     },
     {
-      "query": "tag:#community/Slot",
+      "query": "tag:#community/cmd_doctor",
       "color": {
         "a": 1,
         "rgb": 16752039
       }
     },
     {
-      "query": "tag:#community/infra-leakts",
+      "query": "tag:#community/aliexpress-connector/tests/test_parser_livepy",
       "color": {
         "a": 1,
         "rgb": 10253663
@@ -1051,21 +1051,21 @@
       }
     },
     {
-      "query": "tag:#community/test_card_verification_recordspy",
+      "query": "tag:#community/b2b-distributor-adapterts",
       "color": {
         "a": 1,
         "rgb": 5142951
       }
     },
     {
-      "query": "tag:#community/ozon_card",
+      "query": "tag:#community/diagnose_driftpy",
       "color": {
         "a": 1,
         "rgb": 15896107
       }
     },
     {
-      "query": "tag:#community/identity/src/appts",
+      "query": "tag:#community/product-from-queryts",
       "color": {
         "a": 1,
         "rgb": 14767961
@@ -1079,7 +1079,7 @@
       }
     },
     {
-      "query": "tag:#community/test_distribution_contractpy",
+      "query": "tag:#community/identity/src/http/routests",
       "color": {
         "a": 1,
         "rgb": 5873999
@@ -1121,35 +1121,35 @@
       }
     },
     {
-      "query": "tag:#community/citilink-connector/tests/test_card_extractor_dompy",
+      "query": "tag:#community/quality-evalts",
       "color": {
         "a": 1,
         "rgb": 5142951
       }
     },
     {
-      "query": "tag:#community/Authenticated_transport_driving_your_own_Chrome",
+      "query": "tag:#community/LoginLimiter",
       "color": {
         "a": 1,
         "rgb": 15896107
       }
     },
     {
-      "query": "tag:#community/product-from-queryts",
+      "query": "tag:#community/basket-toolsts",
       "color": {
         "a": 1,
         "rgb": 14767961
       }
     },
     {
-      "query": "tag:#community/Tracker",
+      "query": "tag:#community/log_event",
       "color": {
         "a": 1,
         "rgb": 7780274
       }
     },
     {
-      "query": "tag:#community/load",
+      "query": "tag:#community/fake_selfcheck",
       "color": {
         "a": 1,
         "rgb": 5873999
@@ -1170,7 +1170,7 @@
       }
     },
     {
-      "query": "tag:#community/ref_vitest",
+      "query": "tag:#community/Cross-Marketplace_Price_Comparison",
       "color": {
         "a": 1,
         "rgb": 16752039
@@ -1184,21 +1184,21 @@
       }
     },
     {
-      "query": "tag:#community/command/ui/indextsx",
+      "query": "tag:#community/run_server",
       "color": {
         "a": 1,
         "rgb": 12234924
       }
     },
     {
-      "query": "tag:#community/taobao-connector/tests/test_card_extractor_dompy",
+      "query": "tag:#community/resiliencetestts",
       "color": {
         "a": 1,
         "rgb": 5142951
       }
     },
     {
-      "query": "tag:#community/test_chrome_cdp_raw_lifecyclepy",
+      "query": "tag:#community/domtestpy",
       "color": {
         "a": 1,
         "rgb": 15896107
@@ -1219,7 +1219,7 @@
       }
     },
     {
-      "query": "tag:#community/\u0421\u0435\u0440\u0432\u0435\u0440_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0439_LLM",
+      "query": "tag:#community/compare/ui/indextsx",
       "color": {
         "a": 1,
         "rgb": 5873999
@@ -1233,7 +1233,7 @@
       }
     },
     {
-      "query": "tag:#community/flatten_text",
+      "query": "tag:#community/test_dsh_bundlepy",
       "color": {
         "a": 1,
         "rgb": 11565729
@@ -1254,7 +1254,7 @@
       }
     },
     {
-      "query": "tag:#community/graphify_reference_extra_exports_and_benchmark",
+      "query": "tag:#community/success",
       "color": {
         "a": 1,
         "rgb": 12234924
@@ -1275,49 +1275,49 @@
       }
     },
     {
-      "query": "tag:#community/_skill_dir",
+      "query": "tag:#community/dns-connector/tests/test_card_extractor_dompy",
       "color": {
         "a": 1,
         "rgb": 14767961
       }
     },
     {
-      "query": "tag:#community/test_card_extractor_live_dompy",
+      "query": "tag:#community/megamarket-connector/tests/test_parser_livepy",
       "color": {
         "a": 1,
         "rgb": 7780274
       }
     },
     {
-      "query": "tag:#community/Adding_a_marketplace",
+      "query": "tag:#community/compare-modelsts",
       "color": {
         "a": 1,
         "rgb": 5873999
       }
     },
     {
-      "query": "tag:#community/resolve_transport",
+      "query": "tag:#community/test_resiliencepy",
       "color": {
         "a": 1,
         "rgb": 15583560
       }
     },
     {
-      "query": "tag:#community/check_no_printpy",
+      "query": "tag:#community/avito_connector/serverpy",
       "color": {
         "a": 1,
         "rgb": 11565729
       }
     },
     {
-      "query": "tag:#community/_RawCdpPage",
+      "query": "tag:#community/grounded-narrationts",
       "color": {
         "a": 1,
         "rgb": 16752039
       }
     },
     {
-      "query": "tag:#community/test_search_login_wall_live_dompy",
+      "query": "tag:#community/citilink_card",
       "color": {
         "a": 1,
         "rgb": 10253663
@@ -1338,7 +1338,7 @@
       }
     },
     {
-      "query": "tag:#community/Deployment",
+      "query": "tag:#community/zone_snippets",
       "color": {
         "a": 1,
         "rgb": 15896107
@@ -1359,14 +1359,14 @@
       }
     },
     {
-      "query": "tag:#community/check_test_countpy",
+      "query": "tag:#community/pathlib",
       "color": {
         "a": 1,
         "rgb": 5873999
       }
     },
     {
-      "query": "tag:#community/test_native_ozon_explicit_absence_survives_both_label_channels",
+      "query": "tag:#community/WatchlistStore",
       "color": {
         "a": 1,
         "rgb": 15583560
@@ -1380,21 +1380,21 @@
       }
     },
     {
-      "query": "tag:#community/dns_card",
+      "query": "tag:#community/cian_search",
       "color": {
         "a": 1,
         "rgb": 16752039
       }
     },
     {
-      "query": "tag:#community/test_storefront_reads_live_xhr_body_over_raw_cdp_when_playwright_cannot_attach",
+      "query": "tag:#community/check_no_printpy",
       "color": {
         "a": 1,
         "rgb": 10253663
       }
     },
     {
-      "query": "tag:#community/\u0416\u0438\u0432\u0430\u044f_\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430_\u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u043e\u0432",
+      "query": "tag:#community/dependencies",
       "color": {
         "a": 1,
         "rgb": 12234924
@@ -1422,7 +1422,7 @@
       }
     },
     {
-      "query": "tag:#community/fake_selfcheck",
+      "query": "tag:#community/graphify_reference_extra_exports_and_benchmark",
       "color": {
         "a": 1,
         "rgb": 7780274
@@ -1443,14 +1443,14 @@
       }
     },
     {
-      "query": "tag:#community/detmir_connector/settingspy",
+      "query": "tag:#community/Deep_Research_ru-marketplace-mcp_200",
       "color": {
         "a": 1,
         "rgb": 11565729
       }
     },
     {
-      "query": "tag:#community/pytest",
+      "query": "tag:#community/Tracker",
       "color": {
         "a": 1,
         "rgb": 16752039
@@ -1464,7 +1464,7 @@
       }
     },
     {
-      "query": "tag:#community/get_browser",
+      "query": "tag:#community/taobao-connector/tests/test_shape_referencepy",
       "color": {
         "a": 1,
         "rgb": 12234924
@@ -1478,14 +1478,14 @@
       }
     },
     {
-      "query": "tag:#community/Yandex_Market_Connector",
+      "query": "tag:#community/taobao-connector/tests/test_search_extractor_dompy",
       "color": {
         "a": 1,
         "rgb": 15896107
       }
     },
     {
-      "query": "tag:#community/\u0423\u0447\u0430\u0441\u0442\u0438\u0435_\u0432_\u043f\u0440\u043e\u0435\u043a\u0442\u0435",
+      "query": "tag:#community/v120__\u0448\u0435\u0441\u0442\u044c_\u043d\u043e\u0432\u044b\u0445_\u043c\u0430\u0440\u043a\u0435\u0442\u043f\u043b\u0435\u0439\u0441\u043e\u0432_\u0438_\u043e\u0434\u0438\u043d_\u043e\u0431\u0449\u0438\u0439_\u0441\u0435\u0440\u0432\u0435\u0440",
       "color": {
         "a": 1,
         "rgb": 14767961
@@ -1506,7 +1506,7 @@
       }
     },
     {
-      "query": "tag:#community/wb-connector/tests/test_parser_livepy",
+      "query": "tag:#community/test_mainpy",
       "color": {
         "a": 1,
         "rgb": 15583560
@@ -1562,14 +1562,14 @@
       }
     },
     {
-      "query": "tag:#community/test_storefront_searchpy",
+      "query": "tag:#community/taobao-connector/tests/test_card_extractor_dompy",
       "color": {
         "a": 1,
         "rgb": 7780274
       }
     },
     {
-      "query": "tag:#community/ozon_connector/serverpy",
+      "query": "tag:#community/CLAUDEmd",
       "color": {
         "a": 1,
         "rgb": 5873999
@@ -1604,7 +1604,7 @@
       }
     },
     {
-      "query": "tag:#community/processpy",
+      "query": "tag:#community/test_storefront_falls_back_to_raw_cdp_when_playwright_attach_times_out",
       "color": {
         "a": 1,
         "rgb": 12234924
@@ -1618,7 +1618,7 @@
       }
     },
     {
-      "query": "tag:#community/log_event",
+      "query": "tag:#community/2_\u0412\u044b\u0431\u0440\u0430\u043d\u043d\u044b\u0435_\u043f\u0440\u0438\u0451\u043c\u044b_\u043f\u043e_\u0443\u0431\u044b\u0432\u0430\u043d\u0438\u044e_\u043f\u043e\u043b\u044c\u0437\u044b",
       "color": {
         "a": 1,
         "rgb": 15896107
@@ -1632,14 +1632,14 @@
       }
     },
     {
-      "query": "tag:#community/pydantic",
+      "query": "tag:#community/price-trend/ui/indextsx",
       "color": {
         "a": 1,
         "rgb": 7780274
       }
     },
     {
-      "query": "tag:#community/sys",
+      "query": "tag:#community/wb-connector/tests/test_parser_livepy",
       "color": {
         "a": 1,
         "rgb": 5873999
@@ -1667,7 +1667,7 @@
       }
     },
     {
-      "query": "tag:#community/Yandex_Market_Connector",
+      "query": "tag:#community/marketplace_connector/__init__py",
       "color": {
         "a": 1,
         "rgb": 10253663
@@ -1702,14 +1702,14 @@
       }
     },
     {
-      "query": "tag:#community/test_anti_bot_challenge_dompy",
+      "query": "tag:#community/ozon_connector/serverpy",
       "color": {
         "a": 1,
         "rgb": 7780274
       }
     },
     {
-      "query": "tag:#community/test_registered_tools_are_stable",
+      "query": "tag:#community/_fetch_search",
       "color": {
         "a": 1,
         "rgb": 5873999
@@ -1758,14 +1758,14 @@
       }
     },
     {
-      "query": "tag:#community/Wildberries_Connector",
+      "query": "tag:#community/\u041a\u043e\u043d\u0442\u0435\u043a\u0441\u0442_\u043f\u0440\u043e\u0435\u043a\u0442\u0430_\u041f\u0415\u0420\u0415\u041c\u0415\u041d\u0410_Price_Radar",
       "color": {
         "a": 1,
         "rgb": 15896107
       }
     },
     {
-      "query": "tag:#community/test_sources_run_concurrently",
+      "query": "tag:#community/2026-10-12__\u0418\u0418-\u0444\u0443\u043d\u043a\u0446\u0438\u0438_v002_\u043f\u043e\u043d\u0438\u043c\u0430\u043d\u0438\u0435_\u0437\u0430\u043f\u0440\u043e\u0441\u0430_\u0440\u0430\u0437\u0431\u043e\u0440_\u0442\u0440\u0435\u0431\u0443\u0435\u0442_\u0443\u0442\u043e\u0447\u043d\u0435\u043d\u0438\u044f_\u043e\u0431\u043e\u0441\u043d\u043e\u0432\u0430\u043d\u0438\u0435_\u0437\u0430\u043a\u0443\u043f\u043a\u0438",
       "color": {
         "a": 1,
         "rgb": 14767961
@@ -1779,7 +1779,7 @@
       }
     },
     {
-      "query": "tag:#community/ozon_connector/models_outputpy",
+      "query": "tag:#community/test_anti_bot_challenge_dompy",
       "color": {
         "a": 1,
         "rgb": 5873999
@@ -1793,7 +1793,7 @@
       }
     },
     {
-      "query": "tag:#community/pages/user/indexts",
+      "query": "tag:#community/test_storefront_searchpy",
       "color": {
         "a": 1,
         "rgb": 11565729
@@ -1821,7 +1821,7 @@
       }
     },
     {
-      "query": "tag:#community/DNS-Shop_Connector",
+      "query": "tag:#community/\u0412\u043d\u0435\u0448\u043d\u0438\u0435_\u043f\u043e\u0434\u0445\u043e\u0434\u044b_native_vision_challenge_UX_browser-\u0440\u0435\u0437\u0438\u043b\u044c\u0435\u043d\u0442\u043d\u043e\u0441\u0442\u044c",
       "color": {
         "a": 1,
         "rgb": 5142951
@@ -1842,14 +1842,14 @@
       }
     },
     {
-      "query": "tag:#community/resiliencepy",
+      "query": "tag:#community/_avito_selfcheck_impl",
       "color": {
         "a": 1,
         "rgb": 7780274
       }
     },
     {
-      "query": "tag:#community/Anti-bot_reality_source_by_source",
+      "query": "tag:#community/dompy",
       "color": {
         "a": 1,
         "rgb": 5873999
@@ -1870,14 +1870,14 @@
       }
     },
     {
-      "query": "tag:#community/DNS-Shop_Connector",
+      "query": "tag:#community/test_model_routing_eval_verdictpy",
       "color": {
         "a": 1,
         "rgb": 16752039
       }
     },
     {
-      "query": "tag:#community/json",
+      "query": "tag:#community/_RawCdpPage",
       "color": {
         "a": 1,
         "rgb": 10253663
@@ -1926,7 +1926,7 @@
       }
     },
     {
-      "query": "tag:#community/v120__six_new_marketplaces_and_one_unified_server_English",
+      "query": "tag:#community/dns_card",
       "color": {
         "a": 1,
         "rgb": 15583560
@@ -1940,14 +1940,14 @@
       }
     },
     {
-      "query": "tag:#community/Deep_Research_ru-marketplace-mcp_200",
+      "query": "tag:#community/taobao",
       "color": {
         "a": 1,
         "rgb": 16752039
       }
     },
     {
-      "query": "tag:#community/SearchHistory",
+      "query": "tag:#community/NavigationBudget",
       "color": {
         "a": 1,
         "rgb": 10253663
@@ -1996,7 +1996,7 @@
       }
     },
     {
-      "query": "tag:#community/taobao",
+      "query": "tag:#community/parametrize",
       "color": {
         "a": 1,
         "rgb": 15583560
@@ -2010,7 +2010,7 @@
       }
     },
     {
-      "query": "tag:#community/lamoda-connector/tests/test_shape_referencepy",
+      "query": "tag:#community/Wildberries_Connector",
       "color": {
         "a": 1,
         "rgb": 16752039
@@ -2031,14 +2031,14 @@
       }
     },
     {
-      "query": "tag:#community/ozon_connector/settingspy",
+      "query": "tag:#community/Cian_Connector",
       "color": {
         "a": 1,
         "rgb": 5142951
       }
     },
     {
-      "query": "tag:#community/test_storefront_falls_back_to_raw_cdp_when_playwright_attach_times_out",
+      "query": "tag:#community/narration-statsts",
       "color": {
         "a": 1,
         "rgb": 15896107
@@ -2052,28 +2052,28 @@
       }
     },
     {
-      "query": "tag:#community/Wildberries_Connector",
+      "query": "tag:#community/basket-routestestts",
       "color": {
         "a": 1,
         "rgb": 7780274
       }
     },
     {
-      "query": "tag:#community/AnalysisNarrator",
+      "query": "tag:#community/load",
       "color": {
         "a": 1,
         "rgb": 5873999
       }
     },
     {
-      "query": "tag:#community/diagnose_driftpy",
+      "query": "tag:#community/Adding_a_marketplace",
       "color": {
         "a": 1,
         "rgb": 15583560
       }
     },
     {
-      "query": "tag:#community/131__2026-08-04",
+      "query": "tag:#community/Megamarket_Connector",
       "color": {
         "a": 1,
         "rgb": 11565729
@@ -2087,14 +2087,14 @@
       }
     },
     {
-      "query": "tag:#community/taobao-connector/tests/test_shape_referencepy",
+      "query": "tag:#community/_sync_curl_get",
       "color": {
         "a": 1,
         "rgb": 10253663
       }
     },
     {
-      "query": "tag:#community/\u042f\u043d\u0434\u0435\u043a\u0441_\u041c\u0430\u0440\u043a\u0435\u0442_\u0438_\u041c\u0435\u0433\u0430\u043c\u0430\u0440\u043a\u0435\u0442_\u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435_\u0441\u0431\u043e\u0440\u0430",
+      "query": "tag:#community/json",
       "color": {
         "a": 1,
         "rgb": 12234924
@@ -2115,7 +2115,7 @@
       }
     },
     {
-      "query": "tag:#community/detmir_connector/serverpy",
+      "query": "tag:#community/\u0422\u043e\u0447\u043d\u043e\u0441\u0442\u044c_\u043f\u043e\u0434\u0431\u043e\u0440\u0430__\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430_\u0440\u0435\u0430\u043b\u0438\u0437\u0430\u0446\u0438\u0438_2026-10-08",
       "color": {
         "a": 1,
         "rgb": 14767961
@@ -2136,21 +2136,21 @@
       }
     },
     {
-      "query": "tag:#community/test_an_overridden_gap_cannot_undercut_the_penalty",
+      "query": "tag:#community/packages_contracts_dist_index",
       "color": {
         "a": 1,
         "rgb": 15583560
       }
     },
     {
-      "query": "tag:#community/test_one_success_clears_the_count",
+      "query": "tag:#community/test_distribution_contractpy",
       "color": {
         "a": 1,
         "rgb": 11565729
       }
     },
     {
-      "query": "tag:#community/identity/src/http/routests",
+      "query": "tag:#community/Fixed",
       "color": {
         "a": 1,
         "rgb": 16752039
@@ -2164,21 +2164,21 @@
       }
     },
     {
-      "query": "tag:#community/compare_verify_offer",
+      "query": "tag:#community/basket-storets",
       "color": {
         "a": 1,
         "rgb": 12234924
       }
     },
     {
-      "query": "tag:#community/ozon_selfcheck",
+      "query": "tag:#community/history-routestestts",
       "color": {
         "a": 1,
         "rgb": 5142951
       }
     },
     {
-      "query": "tag:#community/Lamoda_Connector",
+      "query": "tag:#community/detmir-connector/tests/test_parser_livepy",
       "color": {
         "a": 1,
         "rgb": 15896107
@@ -2213,7 +2213,7 @@
       }
     },
     {
-      "query": "tag:#community/Contributing",
+      "query": "tag:#community/Architecture",
       "color": {
         "a": 1,
         "rgb": 11565729
@@ -2248,7 +2248,7 @@
       }
     },
     {
-      "query": "tag:#community/Security",
+      "query": "tag:#community/_cian_selfcheck_impl",
       "color": {
         "a": 1,
         "rgb": 15896107
@@ -2262,7 +2262,7 @@
       }
     },
     {
-      "query": "tag:#community/Lamoda_Connector",
+      "query": "tag:#community/RELEASE_NOTES__v150_2026-08-16",
       "color": {
         "a": 1,
         "rgb": 7780274
@@ -2276,14 +2276,14 @@
       }
     },
     {
-      "query": "tag:#community/v120__\u0448\u0435\u0441\u0442\u044c_\u043d\u043e\u0432\u044b\u0445_\u043c\u0430\u0440\u043a\u0435\u0442\u043f\u043b\u0435\u0439\u0441\u043e\u0432_\u0438_\u043e\u0434\u0438\u043d_\u043e\u0431\u0449\u0438\u0439_\u0441\u0435\u0440\u0432\u0435\u0440",
+      "query": "tag:#community/pytest",
       "color": {
         "a": 1,
         "rgb": 15583560
       }
     },
     {
-      "query": "tag:#community/Architecture",
+      "query": "tag:#community/YandexProduct",
       "color": {
         "a": 1,
         "rgb": 11565729
@@ -2297,7 +2297,7 @@
       }
     },
     {
-      "query": "tag:#community/Cian_Connector",
+      "query": "tag:#community/taobao_connector/models_outputpy",
       "color": {
         "a": 1,
         "rgb": 10253663
@@ -2325,63 +2325,63 @@
       }
     },
     {
-      "query": "tag:#community/_resume_note",
+      "query": "tag:#community/test_cdp_transportpy",
       "color": {
         "a": 1,
         "rgb": 14767961
       }
     },
     {
-      "query": "tag:#community/Ozon_Connector",
+      "query": "tag:#community/ru-marketplace-mcp",
       "color": {
         "a": 1,
         "rgb": 7780274
       }
     },
     {
-      "query": "tag:#community/_patch_page",
+      "query": "tag:#community/test_source_selectionpy",
       "color": {
         "a": 1,
         "rgb": 5873999
       }
     },
     {
-      "query": "tag:#community/_relevance_warnings",
+      "query": "tag:#community/office-agent/packagejson",
       "color": {
         "a": 1,
         "rgb": 15583560
       }
     },
     {
-      "query": "tag:#community/AliExpress_connector",
+      "query": "tag:#community/goto",
       "color": {
         "a": 1,
         "rgb": 11565729
       }
     },
     {
-      "query": "tag:#community/pathlib",
+      "query": "tag:#community/test_no_search_tool_is_exposed",
       "color": {
         "a": 1,
         "rgb": 16752039
       }
     },
     {
-      "query": "tag:#community/_posted_at",
+      "query": "tag:#community/Security",
       "color": {
         "a": 1,
         "rgb": 10253663
       }
     },
     {
-      "query": "tag:#community/AliExpress_connector",
+      "query": "tag:#community/compare_connector/models_outputpy",
       "color": {
         "a": 1,
         "rgb": 12234924
       }
     },
     {
-      "query": "tag:#community/_parse_product",
+      "query": "tag:#community/identity/src/appts",
       "color": {
         "a": 1,
         "rgb": 5142951
@@ -2395,14 +2395,14 @@
       }
     },
     {
-      "query": "tag:#community/detmir_selfcheck",
+      "query": "tag:#community/offers/ui/indextesttsx",
       "color": {
         "a": 1,
         "rgb": 14767961
       }
     },
     {
-      "query": "tag:#community/\u041a\u043e\u043d\u0442\u0435\u043a\u0441\u0442_\u043f\u0440\u043e\u0435\u043a\u0442\u0430_\u041f\u0415\u0420\u0415\u041c\u0415\u041d\u0410_Price_Radar",
+      "query": "tag:#community/_win_job_runnerpy",
       "color": {
         "a": 1,
         "rgb": 7780274
@@ -2437,28 +2437,28 @@
       }
     },
     {
-      "query": "tag:#community/230_-_2026-09-13",
+      "query": "tag:#community/offline_cdp_probe",
       "color": {
         "a": 1,
         "rgb": 10253663
       }
     },
     {
-      "query": "tag:#community/offline_cdp_probe",
+      "query": "tag:#community/eval-searchmjs",
       "color": {
         "a": 1,
         "rgb": 12234924
       }
     },
     {
-      "query": "tag:#community/avito_connector/serverpy",
+      "query": "tag:#community/raise_tool_error",
       "color": {
         "a": 1,
         "rgb": 5142951
       }
     },
     {
-      "query": "tag:#community/test_wb_search_storefront_uses_captured_v18_products",
+      "query": "tag:#community/test_sources_run_concurrently",
       "color": {
         "a": 1,
         "rgb": 15896107
@@ -2479,21 +2479,21 @@
       }
     },
     {
-      "query": "tag:#community/8\u0432_\u0421\u0432\u0435\u0440\u043a\u0430_\u0441_\u0432\u043d\u0435\u0448\u043d\u0438\u043c\u0438_\u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u0430\u043c\u0438",
+      "query": "tag:#community/browser",
       "color": {
         "a": 1,
         "rgb": 5873999
       }
     },
     {
-      "query": "tag:#community/PULL_REQUEST_TEMPLATEmd",
+      "query": "tag:#community/\u0423\u0447\u0430\u0441\u0442\u0438\u0435_\u0432_\u043f\u0440\u043e\u0435\u043a\u0442\u0435",
       "color": {
         "a": 1,
         "rgb": 15583560
       }
     },
     {
-      "query": "tag:#community/citilink_selfcheck",
+      "query": "tag:#community/v242__2026-09-19",
       "color": {
         "a": 1,
         "rgb": 11565729
@@ -2514,7 +2514,7 @@
       }
     },
     {
-      "query": "tag:#community/parametrize",
+      "query": "tag:#community/\u0411\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u043e\u0441\u0442\u044c",
       "color": {
         "a": 1,
         "rgb": 12234924
@@ -2542,14 +2542,14 @@
       }
     },
     {
-      "query": "tag:#community/RELEASE_NOTES__v150_2026-08-16",
+      "query": "tag:#community/RELEASE_NOTES__v140_2026-08-08",
       "color": {
         "a": 1,
         "rgb": 7780274
       }
     },
     {
-      "query": "tag:#community/title_from_tile",
+      "query": "tag:#community/transport/__init__py",
       "color": {
         "a": 1,
         "rgb": 5873999
@@ -2563,28 +2563,28 @@
       }
     },
     {
-      "query": "tag:#community/v200_Security_/_privacy_research",
+      "query": "tag:#community/search",
       "color": {
         "a": 1,
         "rgb": 11565729
       }
     },
     {
-      "query": "tag:#community/test_number_coercion",
+      "query": "tag:#community/Ozon_Connector",
       "color": {
         "a": 1,
         "rgb": 16752039
       }
     },
     {
-      "query": "tag:#community/\u0422\u043e\u0447\u043d\u043e\u0441\u0442\u044c_\u043f\u043e\u0434\u0431\u043e\u0440\u0430__\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430_\u0440\u0435\u0430\u043b\u0438\u0437\u0430\u0446\u0438\u0438_2026-10-08",
+      "query": "tag:#community/_no_cache",
       "color": {
         "a": 1,
         "rgb": 10253663
       }
     },
     {
-      "query": "tag:#community/Cross-Marketplace_Price_Comparison",
+      "query": "tag:#community/check_coverage_floorpy",
       "color": {
         "a": 1,
         "rgb": 12234924
@@ -2598,7 +2598,7 @@
       }
     },
     {
-      "query": "tag:#community/v242__2026-09-19",
+      "query": "tag:#community/v20_work_packages",
       "color": {
         "a": 1,
         "rgb": 15896107
@@ -2626,14 +2626,14 @@
       }
     },
     {
-      "query": "tag:#community/diagnose-chatgpt-callbackps1",
+      "query": "tag:#community/mcp_startuppy",
       "color": {
         "a": 1,
         "rgb": 15583560
       }
     },
     {
-      "query": "tag:#community/v180",
+      "query": "tag:#community/test_card_rejects_input_without_a_sku",
       "color": {
         "a": 1,
         "rgb": 11565729
@@ -2647,35 +2647,35 @@
       }
     },
     {
-      "query": "tag:#community/test_wb_search_storefront_does_not_fall_back_to_search_goods",
+      "query": "tag:#community/\u041f\u0435\u0440\u0435\u0445\u043e\u0434_Price_Radar_\u043d\u0430_vLLM",
       "color": {
         "a": 1,
         "rgb": 10253663
       }
     },
     {
-      "query": "tag:#community/HostRefusingError",
+      "query": "tag:#community/mcp_core",
       "color": {
         "a": 1,
         "rgb": 12234924
       }
     },
     {
-      "query": "tag:#community/open_page",
+      "query": "tag:#community/Stitch__\u0431\u0440\u0435\u043d\u0434_PEREMENA",
       "color": {
         "a": 1,
         "rgb": 5142951
       }
     },
     {
-      "query": "tag:#community/test_search_falls_back_to_ldjson_when_state_is_unreadable",
+      "query": "tag:#community/First_successful_marketplace_query",
       "color": {
         "a": 1,
         "rgb": 15896107
       }
     },
     {
-      "query": "tag:#community/test_shell_verdict_requires_the_product_page_id",
+      "query": "tag:#community/lamoda-connector/tests/test_shape_referencepy",
       "color": {
         "a": 1,
         "rgb": 14767961
@@ -2689,14 +2689,14 @@
       }
     },
     {
-      "query": "tag:#community/test_wildberries_adapter_tolerates_a_no_results_response",
+      "query": "tag:#community/test_selfcheck_graphql_down_is_inconclusive",
       "color": {
         "a": 1,
         "rgb": 5873999
       }
     },
     {
-      "query": "tag:#community/test_number_coercion_never_returns_or_raises_on_non_finite_values",
+      "query": "tag:#community/_relevance_warnings",
       "color": {
         "a": 1,
         "rgb": 15583560
@@ -2731,28 +2731,28 @@
       }
     },
     {
-      "query": "tag:#community/MarketplaceSourcesResponse",
+      "query": "tag:#community/mcp_core_transport",
       "color": {
         "a": 1,
         "rgb": 5142951
       }
     },
     {
-      "query": "tag:#community/test_wb_search_storefront_empty_products_is_no_results",
+      "query": "tag:#community/mcp_core_transport_cdp_budget",
       "color": {
         "a": 1,
         "rgb": 15896107
       }
     },
     {
-      "query": "tag:#community/test_no_search_tool_is_exposed",
+      "query": "tag:#community/wb_connector",
       "color": {
         "a": 1,
         "rgb": 14767961
       }
     },
     {
-      "query": "tag:#community/test_region_argument_overrides_the_environment",
+      "query": "tag:#community/merge_card_collections",
       "color": {
         "a": 1,
         "rgb": 7780274
@@ -2780,7 +2780,7 @@
       }
     },
     {
-      "query": "tag:#community/Taobao_Connector",
+      "query": "tag:#community/AuthStore",
       "color": {
         "a": 1,
         "rgb": 16752039
@@ -2801,7 +2801,7 @@
       }
     },
     {
-      "query": "tag:#community/mcp_core_transport",
+      "query": "tag:#community/DeepSeek_Harness_\u0432_\u043a\u043e\u043f\u0430\u0439\u043b\u043e\u0442\u0430_Price_Radar",
       "color": {
         "a": 1,
         "rgb": 5142951
@@ -2822,14 +2822,14 @@
       }
     },
     {
-      "query": "tag:#community/test_linux_candidates_prefer_a_resolved_path_over_a_guess",
+      "query": "tag:#community/Lamoda_Connector",
       "color": {
         "a": 1,
         "rgb": 7780274
       }
     },
     {
-      "query": "tag:#community/mcp_core_transport_cdp_budget",
+      "query": "tag:#community/\u0421\u0435\u0440\u0432\u0435\u0440_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0439_LLM",
       "color": {
         "a": 1,
         "rgb": 5873999
@@ -2843,7 +2843,7 @@
       }
     },
     {
-      "query": "tag:#community/v2_identity_and_offer_evidence",
+      "query": "tag:#community/procurement-dialoguets",
       "color": {
         "a": 1,
         "rgb": 11565729
@@ -2857,7 +2857,7 @@
       }
     },
     {
-      "query": "tag:#community/graphify_reference_transcribe_video_and_audio",
+      "query": "tag:#community/TransportDownError",
       "color": {
         "a": 1,
         "rgb": 10253663
@@ -2871,14 +2871,14 @@
       }
     },
     {
-      "query": "tag:#community/_mirror_rouble_price_into_native",
+      "query": "tag:#community/fake_browser",
       "color": {
         "a": 1,
         "rgb": 5142951
       }
     },
     {
-      "query": "tag:#community/fake_browser",
+      "query": "tag:#community/PULL_REQUEST_TEMPLATEmd",
       "color": {
         "a": 1,
         "rgb": 15896107
@@ -2899,21 +2899,21 @@
       }
     },
     {
-      "query": "tag:#community/Taobao_Connector",
+      "query": "tag:#community/v180",
       "color": {
         "a": 1,
         "rgb": 5873999
       }
     },
     {
-      "query": "tag:#community/test_root_check_handles_platforms_without_geteuid",
+      "query": "tag:#community/cian_connector/settingspy",
       "color": {
         "a": 1,
         "rgb": 15583560
       }
     },
     {
-      "query": "tag:#community/test_yuan_glyph_in_a_sibling_element_counts_as_a_price",
+      "query": "tag:#community/test_search_collections_prefers_the_richest_bundle",
       "color": {
         "a": 1,
         "rgb": 11565729
@@ -3060,7 +3060,7 @@
       }
     },
     {
-      "query": "tag:#community/test_an_ambiguous_blob_is_refused_rather_than_concatenated",
+      "query": "tag:#community/test_zone_search_reads_the_first_screen_when_collections_are_absent",
       "color": {
         "a": 1,
         "rgb": 16752039
@@ -3074,35 +3074,35 @@
       }
     },
     {
-      "query": "tag:#community/test_meta_attribute_beats_a_numeric_price_rub_field",
+      "query": "tag:#community/test_snapshot_and_resume_cannot_overlap",
       "color": {
         "a": 1,
         "rgb": 12234924
       }
     },
     {
-      "query": "tag:#community/repair-chatgpt-package-after-exitps1",
+      "query": "tag:#community/test_parse_search_still_falls_back_to_schema_org_when_zone_is_missing",
       "color": {
         "a": 1,
         "rgb": 5142951
       }
     },
     {
-      "query": "tag:#community/test_search_deduplicates_by_snippet",
+      "query": "tag:#community/taobao_connector/settingspy",
       "color": {
         "a": 1,
         "rgb": 15896107
       }
     },
     {
-      "query": "tag:#community/wb_connector",
+      "query": "tag:#community/\u041f\u0415\u0420\u0415\u041c\u0415\u041d\u0410_Price_Radar__MVP",
       "color": {
         "a": 1,
         "rgb": 14767961
       }
     },
     {
-      "query": "tag:#community/test_zone_search_takes_the_ids_from_the_offer_not_the_family",
+      "query": "tag:#community/\u041c\u0438\u043d\u0438-\u0431\u0440\u0435\u043d\u0434\u0431\u0443\u043a_PEREMENA_\u0434\u043b\u044f_Price_Radar",
       "color": {
         "a": 1,
         "rgb": 7780274
@@ -3116,7 +3116,7 @@
       }
     },
     {
-      "query": "tag:#community/Megamarket_Connector",
+      "query": "tag:#community/Headed_Chrome__VNC_\u043f\u0440\u043e\u0433\u0440\u0435\u0432_\u0430\u043d\u0442\u0438\u0431\u043e\u0442\u0430",
       "color": {
         "a": 1,
         "rgb": 15583560
@@ -3151,21 +3151,21 @@
       }
     },
     {
-      "query": "tag:#community/test_the_largest_candidate_above_the_price_is_the_strikethrough",
+      "query": "tag:#community/cian-connector/tests/test_shape_referencepy",
       "color": {
         "a": 1,
         "rgb": 5142951
       }
     },
     {
-      "query": "tag:#community/test_a_flat_candidate_list_still_feeds_the_strikethrough",
+      "query": "tag:#community/apps_web_src_features_analysis_index_applychatresult",
       "color": {
         "a": 1,
         "rgb": 15896107
       }
     },
     {
-      "query": "tag:#community/test_tier1_proxy_is_passed_as_an_argument_not_an_env_var",
+      "query": "tag:#community/Authenticated_transport_driving_your_own_Chrome",
       "color": {
         "a": 1,
         "rgb": 14767961
@@ -3179,21 +3179,21 @@
       }
     },
     {
-      "query": "tag:#community/test_zone_row_without_prices_reports_absent_not_zero",
+      "query": "tag:#community/Lamoda_Connector",
       "color": {
         "a": 1,
         "rgb": 5873999
       }
     },
     {
-      "query": "tag:#community/test_card_with_a_login_worded_product_name_parses_and_is_not_a_wall",
+      "query": "tag:#community/UpstreamTimeoutError",
       "color": {
         "a": 1,
         "rgb": 15583560
       }
     },
     {
-      "query": "tag:#community/_search_wildberries",
+      "query": "tag:#community/Modular_Sliced_Design_\u0432\u043e_\u0444\u0440\u043e\u043d\u0442\u0435",
       "color": {
         "a": 1,
         "rgb": 11565729
@@ -3207,21 +3207,21 @@
       }
     },
     {
-      "query": "tag:#community/test_parse_search_prefers_zone_rows_over_the_plus_only_fallback",
+      "query": "tag:#community/main",
       "color": {
         "a": 1,
         "rgb": 10253663
       }
     },
     {
-      "query": "tag:#community/test_card_survives_a_drifted_description_images_with_a_warning",
+      "query": "tag:#community/Contributing",
       "color": {
         "a": 1,
         "rgb": 12234924
       }
     },
     {
-      "query": "tag:#community/test_selfcheck_title_less_wall_is_inconclusive_never_drift",
+      "query": "tag:#community/Taobao_Connector",
       "color": {
         "a": 1,
         "rgb": 5142951
@@ -3235,21 +3235,21 @@
       }
     },
     {
-      "query": "tag:#community/apps_web_src_entities_offer_index_conditionlabels",
+      "query": "tag:#community/test_tier1_proxy_is_passed_as_an_argument_not_an_env_var",
       "color": {
         "a": 1,
         "rgb": 14767961
       }
     },
     {
-      "query": "tag:#community/apps_web_src_entities_offer_index_matchlabels",
+      "query": "tag:#community/_patch_page",
       "color": {
         "a": 1,
         "rgb": 7780274
       }
     },
     {
-      "query": "tag:#community/test_selfcheck_anti_bot_page_is_inconclusive",
+      "query": "tag:#community/Taobao_Connector",
       "color": {
         "a": 1,
         "rgb": 5873999
@@ -3270,7 +3270,7 @@
       }
     },
     {
-      "query": "tag:#community/test_selfcheck_genuine_challenge_is_inconclusive_blocked",
+      "query": "tag:#community/test_wb_search_storefront_does_not_fall_back_to_search_goods",
       "color": {
         "a": 1,
         "rgb": 16752039
@@ -3284,21 +3284,21 @@
       }
     },
     {
-      "query": "tag:#community/test_a_generic_failure_is_reported_as_error_not_blocked",
+      "query": "tag:#community/READMEmd",
       "color": {
         "a": 1,
         "rgb": 12234924
       }
     },
     {
-      "query": "tag:#community/OfferBatch",
+      "query": "tag:#community/Contributors_/_\u0423\u0447\u0430\u0441\u0442\u043d\u0438\u043a\u0438",
       "color": {
         "a": 1,
         "rgb": 5142951
       }
     },
     {
-      "query": "tag:#community/test_jitter_leaves_the_normal_gap_alone",
+      "query": "tag:#community/ref_vllm_analysis_narrator_js",
       "color": {
         "a": 1,
         "rgb": 15896107
@@ -3312,28 +3312,28 @@
       }
     },
     {
-      "query": "tag:#community/test_selfcheck_runs_the_shape_canary_past_hidden_challenge_text",
+      "query": "tag:#community/2026-10-09-conversation-controls-tddmd",
       "color": {
         "a": 1,
         "rgb": 7780274
       }
     },
     {
-      "query": "tag:#community/test_concurrent_callers_do_not_both_skip_the_gap",
+      "query": "tag:#community/test_the_card_reads_either_old_price_name",
       "color": {
         "a": 1,
         "rgb": 5873999
       }
     },
     {
-      "query": "tag:#community/test_a_zero_gap_disables_pacing",
+      "query": "tag:#community/test_search_row_describes_the_serp_offer_not_the_card_default",
       "color": {
         "a": 1,
         "rgb": 15583560
       }
     },
     {
-      "query": "tag:#community/test_selfcheck_cries_shape_drift_when_the_price_family_vanishes",
+      "query": "tag:#community/lamoda_connector/serverpy",
       "color": {
         "a": 1,
         "rgb": 11565729
@@ -3347,14 +3347,14 @@
       }
     },
     {
-      "query": "tag:#community/test_the_gap_can_be_overridden_per_call",
+      "query": "tag:#community/test_search_resolves_brand_and_seller_through_id_references",
       "color": {
         "a": 1,
         "rgb": 10253663
       }
     },
     {
-      "query": "tag:#community/apps_web_src_entities_analysis_index_useanalysisstore",
+      "query": "tag:#community/\u041e\u0444\u0438\u0441\u043d\u044b\u0439_\u0430\u0433\u0435\u043d\u0442_Price_Radar_\u0421\u0438\u0442\u0438\u043b\u0438\u043d\u043a",
       "color": {
         "a": 1,
         "rgb": 12234924
@@ -3368,94 +3368,108 @@
       }
     },
     {
-      "query": "tag:#community/search",
+      "query": "tag:#community/test_search_deduplicates_by_snippet",
       "color": {
         "a": 1,
         "rgb": 15896107
       }
     },
     {
-      "query": "tag:#community/apps_web_src_entities_search_index_usesearchstore",
+      "query": "tag:#community/test_card_extracts_the_star_distribution",
       "color": {
         "a": 1,
         "rgb": 14767961
       }
     },
     {
-      "query": "tag:#community/apps_web_src_entities_user_index_useuserstore",
+      "query": "tag:#community/test_card_without_ratings_returns_none_not_zero",
       "color": {
         "a": 1,
         "rgb": 7780274
       }
     },
     {
-      "query": "tag:#community/apps_web_src_features_search_index_usefilteredoffers",
+      "query": "tag:#community/examples/READMEmd",
       "color": {
         "a": 1,
         "rgb": 5873999
       }
     },
     {
-      "query": "tag:#community/SearchService",
+      "query": "tag:#community/test_shell_verdict_requires_the_product_page_id",
       "color": {
         "a": 1,
         "rgb": 15583560
       }
     },
     {
-      "query": "tag:#community/apps_web_src_features_search_index_useoffercard",
+      "query": "tag:#community/test_wb_search_storefront_uses_captured_v18_products",
       "color": {
         "a": 1,
         "rgb": 11565729
       }
     },
     {
-      "query": "tag:#community/apps_web_src_features_search_index_useoffercolumns",
+      "query": "tag:#community/\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430_DeepSeek_Harness_2026-11-22",
+      "color": {
+        "a": 1,
+        "rgb": 16752039
+      }
+    },
+    {
+      "query": "tag:#community/MarketplaceSourcesResponse",
       "color": {
         "a": 1,
         "rgb": 10253663
       }
     },
     {
-      "query": "tag:#community/apps_web_src_features_search_index_useoffertable",
+      "query": "tag:#community/test_windows_candidates_survive_missing_program_files_vars",
       "color": {
         "a": 1,
         "rgb": 12234924
       }
     },
     {
-      "query": "tag:#community/apps_web_src_widgets_search_metrics_index_metrics",
+      "query": "tag:#community/apps_web_src_entities_user_index_useuserstore",
       "color": {
         "a": 1,
         "rgb": 5142951
       }
     },
     {
-      "query": "tag:#community/apps_web_src_widgets_search_offer_card_index_offercard",
+      "query": "tag:#community/apps_web_src_features_search_index_startsearch",
       "color": {
         "a": 1,
         "rgb": 15896107
       }
     },
     {
-      "query": "tag:#community/test_search_collections_prefers_the_richest_bundle",
+      "query": "tag:#community/test_renamed_field_families_are_a_parser_question_not_a_shell",
       "color": {
         "a": 1,
         "rgb": 14767961
       }
     },
     {
-      "query": "tag:#community/apps_web_src_widgets_search_offers_index_offertable",
+      "query": "tag:#community/apps_web_src_widgets_search_metrics_index_metrics",
       "color": {
         "a": 1,
         "rgb": 7780274
       }
     },
     {
-      "query": "tag:#community/apps_web_src_widgets_search_sources_index_sourcegrid",
+      "query": "tag:#community/apps_web_src_widgets_search_offer_card_index_offercard",
       "color": {
         "a": 1,
         "rgb": 5873999
+      }
+    },
+    {
+      "query": "tag:#community/apps_web_src_widgets_search_offers_index_offertable",
+      "color": {
+        "a": 1,
+        "rgb": 15583560
       }
     },
     {
@@ -3480,6 +3494,13 @@
       }
     },
     {
+      "query": "tag:#community/apps_web_src_widgets_search_sources_index_sourcegrid",
+      "color": {
+        "a": 1,
+        "rgb": 12234924
+      }
+    },
+    {
       "query": "tag:#community/test_nav_fail_statuses_cover_blocks_and_gateway_errors",
       "color": {
         "a": 1,
@@ -3487,105 +3508,28 @@
       }
     },
     {
-      "query": "tag:#community/test_search_resolves_brand_and_seller_through_id_references",
-      "color": {
-        "a": 1,
-        "rgb": 5873999
-      }
-    },
-    {
-      "query": "tag:#community/test_port_probe_reports_false_when_nothing_listens",
-      "color": {
-        "a": 1,
-        "rgb": 16752039
-      }
-    },
-    {
-      "query": "tag:#community/test_candidates_never_contain_empty_entries",
-      "color": {
-        "a": 1,
-        "rgb": 10253663
-      }
-    },
-    {
-      "query": "tag:#community/test_search_row_describes_the_serp_offer_not_the_card_default",
-      "color": {
-        "a": 1,
-        "rgb": 7780274
-      }
-    },
-    {
-      "query": "tag:#community/test_search_rounds_float32_ratings",
-      "color": {
-        "a": 1,
-        "rgb": 5873999
-      }
-    },
-    {
-      "query": "tag:#community/test_card_extracts_the_star_distribution",
-      "color": {
-        "a": 1,
-        "rgb": 15583560
-      }
-    },
-    {
-      "query": "tag:#community/test_card_without_ratings_returns_none_not_zero",
-      "color": {
-        "a": 1,
-        "rgb": 11565729
-      }
-    },
-    {
-      "query": "tag:#community/test_card_survives_an_unparseable_page",
-      "color": {
-        "a": 1,
-        "rgb": 16752039
-      }
-    },
-    {
-      "query": "tag:#community/test_renamed_field_families_are_a_parser_question_not_a_shell",
-      "color": {
-        "a": 1,
-        "rgb": 10253663
-      }
-    },
-    {
-      "query": "tag:#community/test_merge_never_lets_an_empty_patch_clobber_real_data",
-      "color": {
-        "a": 1,
-        "rgb": 12234924
-      }
-    },
-    {
       "query": "tag:#community/test_search_collections_are_found_by_content_not_path",
-      "color": {
-        "a": 1,
-        "rgb": 5142951
-      }
-    },
-    {
-      "query": "tag:#community/test_zone_search_reads_the_first_screen_when_collections_are_absent",
       "color": {
         "a": 1,
         "rgb": 15896107
       }
     },
     {
-      "query": "tag:#community/test_zone_search_never_quotes_the_plus_price_as_the_everyday_price",
+      "query": "tag:#community/test_number_coercion_never_returns_or_raises_on_non_finite_values",
       "color": {
         "a": 1,
         "rgb": 14767961
       }
     },
     {
-      "query": "tag:#community/test_zone_search_reports_the_seller_only_when_the_page_ships_one",
+      "query": "tag:#community/test_zone_search_never_quotes_the_plus_price_as_the_everyday_price",
       "color": {
         "a": 1,
         "rgb": 7780274
       }
     },
     {
-      "query": "tag:#community/test_zone_snippets_ignore_tiles_that_are_not_offers",
+      "query": "tag:#community/test_zone_search_reports_the_seller_only_when_the_page_ships_one",
       "color": {
         "a": 1,
         "rgb": 5873999
@@ -3599,17 +3543,297 @@
       }
     },
     {
-      "query": "tag:#community/test_zone_undiscounted_row_treats_the_base_price_as_the_everyday_price",
+      "query": "tag:#community/test_zone_row_without_prices_reports_absent_not_zero",
       "color": {
         "a": 1,
         "rgb": 11565729
       }
     },
     {
-      "query": "tag:#community/test_parse_search_still_falls_back_to_schema_org_when_zone_is_missing",
+      "query": "tag:#community/test_port_probe_reports_false_when_nothing_listens",
       "color": {
         "a": 1,
         "rgb": 16752039
+      }
+    },
+    {
+      "query": "tag:#community/test_number_coercion",
+      "color": {
+        "a": 1,
+        "rgb": 10253663
+      }
+    },
+    {
+      "query": "tag:#community/test_zone_undiscounted_row_treats_the_base_price_as_the_everyday_price",
+      "color": {
+        "a": 1,
+        "rgb": 12234924
+      }
+    },
+    {
+      "query": "tag:#community/_price_unit",
+      "color": {
+        "a": 1,
+        "rgb": 5142951
+      }
+    },
+    {
+      "query": "tag:#community/test_search_falls_back_to_ldjson_when_state_is_unreadable",
+      "color": {
+        "a": 1,
+        "rgb": 15896107
+      }
+    },
+    {
+      "query": "tag:#community/test_jitter_leaves_the_normal_gap_alone",
+      "color": {
+        "a": 1,
+        "rgb": 14767961
+      }
+    },
+    {
+      "query": "tag:#community/test_an_overridden_gap_cannot_undercut_the_penalty",
+      "color": {
+        "a": 1,
+        "rgb": 7780274
+      }
+    },
+    {
+      "query": "tag:#community/test_zone_search_takes_the_ids_from_the_offer_not_the_family",
+      "color": {
+        "a": 1,
+        "rgb": 5873999
+      }
+    },
+    {
+      "query": "tag:#community/test_card_survives_an_unparseable_page",
+      "color": {
+        "a": 1,
+        "rgb": 15583560
+      }
+    },
+    {
+      "query": "tag:#community/test_one_success_clears_the_count",
+      "color": {
+        "a": 1,
+        "rgb": 11565729
+      }
+    },
+    {
+      "query": "tag:#community/test_merge_never_lets_an_empty_patch_clobber_real_data",
+      "color": {
+        "a": 1,
+        "rgb": 16752039
+      }
+    },
+    {
+      "query": "tag:#community/test_concurrent_callers_do_not_both_skip_the_gap",
+      "color": {
+        "a": 1,
+        "rgb": 10253663
+      }
+    },
+    {
+      "query": "tag:#community/test_a_zero_gap_disables_pacing",
+      "color": {
+        "a": 1,
+        "rgb": 12234924
+      }
+    },
+    {
+      "query": "tag:#community/test_the_gap_can_be_overridden_per_call",
+      "color": {
+        "a": 1,
+        "rgb": 5142951
+      }
+    },
+    {
+      "query": "tag:#community/installsh",
+      "color": {
+        "a": 1,
+        "rgb": 15896107
+      }
+    },
+    {
+      "query": "tag:#community/apps_web_src_entities_analysis_index_useanalysisstore",
+      "color": {
+        "a": 1,
+        "rgb": 14767961
+      }
+    },
+    {
+      "query": "tag:#community/test_parse_search_prefers_zone_rows_over_the_plus_only_fallback",
+      "color": {
+        "a": 1,
+        "rgb": 7780274
+      }
+    },
+    {
+      "query": "tag:#community/test_search_price_rub_is_the_cart_price_never_the_strike_through",
+      "color": {
+        "a": 1,
+        "rgb": 5873999
+      }
+    },
+    {
+      "query": "tag:#community/apps_web_src_entities_offer_index_conditionlabels",
+      "color": {
+        "a": 1,
+        "rgb": 15583560
+      }
+    },
+    {
+      "query": "tag:#community/apps_web_src_entities_offer_index_matchlabels",
+      "color": {
+        "a": 1,
+        "rgb": 11565729
+      }
+    },
+    {
+      "query": "tag:#community/apps_web_src_entities_offer_index_nextoffersort",
+      "color": {
+        "a": 1,
+        "rgb": 16752039
+      }
+    },
+    {
+      "query": "tag:#community/apps_web_src_entities_offer_index_offersort",
+      "color": {
+        "a": 1,
+        "rgb": 10253663
+      }
+    },
+    {
+      "query": "tag:#community/apps_web_src_entities_offer_index_offersortcolumn",
+      "color": {
+        "a": 1,
+        "rgb": 12234924
+      }
+    },
+    {
+      "query": "tag:#community/apps_web_src_entities_offer_index_price_anomaly_hint",
+      "color": {
+        "a": 1,
+        "rgb": 5142951
+      }
+    },
+    {
+      "query": "tag:#community/apps_web_src_entities_offer_index_price_anomaly_label",
+      "color": {
+        "a": 1,
+        "rgb": 15896107
+      }
+    },
+    {
+      "query": "tag:#community/apps_web_src_entities_offer_index_sortoffers",
+      "color": {
+        "a": 1,
+        "rgb": 14767961
+      }
+    },
+    {
+      "query": "tag:#community/apps_web_src_entities_search_index_usesearchstore",
+      "color": {
+        "a": 1,
+        "rgb": 7780274
+      }
+    },
+    {
+      "query": "tag:#community/apps_web_src_features_search_index_usefilteredoffers",
+      "color": {
+        "a": 1,
+        "rgb": 5873999
+      }
+    },
+    {
+      "query": "tag:#community/apps_web_src_features_search_index_useoffercard",
+      "color": {
+        "a": 1,
+        "rgb": 15583560
+      }
+    },
+    {
+      "query": "tag:#community/apps_web_src_features_search_index_useoffercolumns",
+      "color": {
+        "a": 1,
+        "rgb": 11565729
+      }
+    },
+    {
+      "query": "tag:#community/apps_web_src_features_search_index_useoffertable",
+      "color": {
+        "a": 1,
+        "rgb": 16752039
+      }
+    },
+    {
+      "query": "tag:#community/test_candidates_never_contain_empty_entries",
+      "color": {
+        "a": 1,
+        "rgb": 10253663
+      }
+    },
+    {
+      "query": "tag:#community/test_card_with_a_login_worded_product_name_parses_and_is_not_a_wall",
+      "color": {
+        "a": 1,
+        "rgb": 12234924
+      }
+    },
+    {
+      "query": "tag:#community/test_card_survives_a_drifted_description_images_with_a_warning",
+      "color": {
+        "a": 1,
+        "rgb": 5142951
+      }
+    },
+    {
+      "query": "tag:#community/test_selfcheck_title_less_wall_is_inconclusive_never_drift",
+      "color": {
+        "a": 1,
+        "rgb": 15896107
+      }
+    },
+    {
+      "query": "tag:#community/test_selfcheck_anti_bot_page_is_inconclusive",
+      "color": {
+        "a": 1,
+        "rgb": 14767961
+      }
+    },
+    {
+      "query": "tag:#community/test_selfcheck_genuine_challenge_is_inconclusive_blocked",
+      "color": {
+        "a": 1,
+        "rgb": 7780274
+      }
+    },
+    {
+      "query": "tag:#community/test_selfcheck_runs_the_shape_canary_past_hidden_challenge_text",
+      "color": {
+        "a": 1,
+        "rgb": 5873999
+      }
+    },
+    {
+      "query": "tag:#community/test_selfcheck_cries_shape_drift_when_the_price_family_vanishes",
+      "color": {
+        "a": 1,
+        "rgb": 15583560
+      }
+    },
+    {
+      "query": "tag:#community/test_zone_snippets_ignore_tiles_that_are_not_offers",
+      "color": {
+        "a": 1,
+        "rgb": 11565729
+      }
+    },
+    {
+      "query": "tag:#community/test_search_rounds_float32_ratings",
+      "color": {
+        "a": 1,
+        "rgb": 5873999
       }
     },
     {
@@ -3617,13 +3841,6 @@
       "color": {
         "a": 1,
         "rgb": 10253663
-      }
-    },
-    {
-      "query": "tag:#community/test_search_price_rub_is_the_cart_price_never_the_strike_through",
-      "color": {
-        "a": 1,
-        "rgb": 12234924
       }
     }
   ]

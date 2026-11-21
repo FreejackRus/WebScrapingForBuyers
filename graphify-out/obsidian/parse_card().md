@@ -12,9 +12,9 @@ tags:
 # parse_card()
 
 ## Connections
-- [[Any_24]] - `references` [EXTRACTED]
+- [[Any_26]] - `references` [EXTRACTED]
 - [[Parse a product page into a card, its rating breakdown and its reviews. Three…]] - `rationale_for` [EXTRACTED]
-- [[_as_dict()_1]] - `calls` [EXTRACTED]
+- [[_as_dict()]] - `calls` [EXTRACTED]
 - [[_empty_product_shell()]] - `calls` [EXTRACTED]
 - [[_first_dict()]] - `calls` [EXTRACTED]
 - [[_rating_from_snippets()]] - `calls` [EXTRACTED]

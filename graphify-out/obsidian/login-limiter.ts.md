@@ -1,12 +1,12 @@
 ---
 source_file: "apps/identity/src/http/login-limiter.ts"
 type: "code"
-community: "identity/src/app.ts"
+community: "LoginLimiter"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/identity/src/appts
+  - community/LoginLimiter
 ---
 
 # login-limiter.ts
@@ -17,6 +17,6 @@ tags:
 - [[auth.test.ts]] - `imports_from` [EXTRACTED]
 - [[identitysrcapp.ts]] - `imports_from` [EXTRACTED]
 - [[identitysrchttproutes.ts]] - `imports_from` [EXTRACTED]
-- [[normalize()]] - `contains` [EXTRACTED]
+- [[normalize()_1]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/identity/src/appts
+#graphify/code #graphify/EXTRACTED #community/LoginLimiter

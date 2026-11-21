@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[A connected browser or reverse proxy may expose a session JWT in a diagnostic.…]] - `rationale_for` [EXTRACTED]
-- [[parametrize_22]] - `references` [EXTRACTED]
+- [[parametrize_25]] - `references` [EXTRACTED]
 - [[redact_error_text()]] - `calls` [EXTRACTED]
 - [[test_redact.py]] - `contains` [EXTRACTED]
 

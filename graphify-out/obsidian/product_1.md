@@ -1,17 +1,17 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.test.ts"
+source_file: "apps/search/src/infrastructure/sources/netlab-client.test.ts"
 type: "code"
-community: "mcp-marketplace-adapter.ts"
-location: "L34"
+community: "b2b-distributor-adapter.ts"
+location: "L5"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/mcp-marketplace-adapterts
+  - community/b2b-distributor-adapterts
 ---
 
 # product
 
 ## Connections
-- [[mcp-marketplace-adapter.test.ts]] - `contains` [EXTRACTED]
+- [[netlab-client.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts
+#graphify/code #graphify/EXTRACTED #community/b2b-distributor-adapterts

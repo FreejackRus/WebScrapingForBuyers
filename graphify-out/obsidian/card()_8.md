@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_decision_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_card_verification_records.py"
 type: "code"
 community: "test_card_verification_records.py"
-location: "L25"
+location: "L123"
 tags:
   - graphify/code
-  - graphify/INFERRED
+  - graphify/EXTRACTED
   - community/test_card_verification_recordspy
 ---
 
 # card()
 
 ## Connections
-- [[test_decision_inspect_accepts_canonical_detmir_url()]] - `indirect_call` [INFERRED]
-- [[test_decision_inspect_rejects_stray_digits_in_wildberries_input()]] - `indirect_call` [INFERRED]
+- [[test_yandex_variant_mismatch_is_rejected_before_price_delta()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/test_card_verification_recordspy
+#graphify/code #graphify/EXTRACTED #community/test_card_verification_recordspy

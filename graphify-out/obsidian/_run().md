@@ -19,7 +19,7 @@ tags:
 - [[_key()]] - `references` [EXTRACTED]
 - [[browser_handoff.py]] - `contains` [EXTRACTED]
 - [[current_page_url()]] - `calls` [EXTRACTED]
-- [[open_page()_3]] - `calls` [EXTRACTED]
+- [[open_page()]] - `calls` [EXTRACTED]
 - [[read_with_handoff()]] - `calls` [EXTRACTED]
 - [[reveal_owned_page()]] - `calls` [EXTRACTED]
 

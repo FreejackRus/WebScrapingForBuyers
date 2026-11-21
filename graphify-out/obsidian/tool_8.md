@@ -1,17 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "lamoda_search"
+community: "yandex_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/lamoda_search
+  - community/yandex_card
 ---
 
 # tool
 
 ## Connections
-- [[lamoda_card()]] - `references` [EXTRACTED]
-- [[lamoda_search()]] - `references` [EXTRACTED]
+- [[yandex_card()]] - `references` [EXTRACTED]
+- [[yandex_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/lamoda_search
+#graphify/code #graphify/EXTRACTED #community/yandex_card

@@ -15,5 +15,6 @@ tags:
 - [[offer-carduiindex.tsx]] - `imports` [EXTRACTED]
 - [[offersuiindex.tsx]] - `imports` [EXTRACTED]
 - [[sharedlibindex.ts]] - `contains` [EXTRACTED]
+- [[watchlistuiindex.tsx]] - `imports` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/offers/ui/indextsx

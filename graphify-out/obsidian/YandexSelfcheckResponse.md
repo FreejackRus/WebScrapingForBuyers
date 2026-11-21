@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/models_output.py"
 type: "code"
-community: "TransportDownError"
+community: "json"
 location: "L146"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/TransportDownError
+  - community/json
 ---
 
 # YandexSelfcheckResponse
@@ -17,4 +17,4 @@ tags:
 - [[yandex_connectorserver.py]] - `imports` [EXTRACTED]
 - [[yandex_selfcheck()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/TransportDownError
+#graphify/code #graphify/EXTRACTED #community/json

@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "test_chrome_cdp_raw_lifecycle.py"
+community: "test_main.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_chrome_cdp_raw_lifecyclepy
+  - community/test_mainpy
 ---
 
 # fixture
 
 ## Connections
-- [[raw_browser()]] - `references` [EXTRACTED]
+- [[no_server_start()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_raw_lifecyclepy
+#graphify/code #graphify/EXTRACTED #community/test_mainpy

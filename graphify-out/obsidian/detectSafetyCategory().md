@@ -13,7 +13,9 @@ tags:
 
 ## Connections
 - [[analyze.ts]] - `imports` [EXTRACTED]
+- [[analyzeSnapshot()]] - `calls` [EXTRACTED]
 - [[analyzeSnapshotRaw()]] - `calls` [EXTRACTED]
+- [[answerCopilot()]] - `calls` [EXTRACTED]
 - [[answerCopilotRaw()]] - `calls` [EXTRACTED]
 - [[chat-safety.ts]] - `contains` [EXTRACTED]
 

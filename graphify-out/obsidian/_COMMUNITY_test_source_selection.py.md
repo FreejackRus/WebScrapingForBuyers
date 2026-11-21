@@ -22,7 +22,7 @@ members: 28
 - [[_reload_unified()]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_source_selection.py
 - [[_set()]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_source_selection.py
 - [[canonical()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/source_selection.py
-- [[fixture_3]] - code
+- [[fixture_18]] - code
 - [[importlib]] - concept
 - [[selected()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/source_selection.py
 - [[test_aliases_and_spacing_are_accepted()]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_source_selection.py
@@ -50,10 +50,10 @@ SORT file.name ASC
 - 6 edges to [[_COMMUNITY_json]]
 - 3 edges to [[_COMMUNITY_compare_prices]]
 - 2 edges to [[_COMMUNITY_2.2.0 — 2026-09-11]]
-- 1 edge to [[_COMMUNITY_test_dsh_bundle.py]]
-- 1 edge to [[_COMMUNITY_log_event]]
-- 1 edge to [[_COMMUNITY_pytest]]
+- 1 edge to [[_COMMUNITY_cmd_doctor]]
+- 1 edge to [[_COMMUNITY_compare_verify_offer]]
 - 1 edge to [[_COMMUNITY_test_card_verification_records.py]]
+- 1 edge to [[_COMMUNITY_pytest]]
 
 ## Top bridge nodes
 - [[selected()]] - degree 11, connects to 4 communities

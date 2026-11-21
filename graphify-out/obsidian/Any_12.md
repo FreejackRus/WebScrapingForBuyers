@@ -1,26 +1,21 @@
 ---
 source_file: ""
 type: "code"
-community: "resilience.py"
+community: "compare_verify_offer"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/resiliencepy
+  - community/compare_verify_offer
 ---
 
 # Any
 
 ## Connections
-- [[_type_tag()]] - `references` [EXTRACTED]
-- [[_walk_shape()]] - `references` [EXTRACTED]
-- [[coerce_int()]] - `references` [EXTRACTED]
-- [[coerce_price()]] - `references` [EXTRACTED]
-- [[coerce_rating()]] - `references` [EXTRACTED]
-- [[deep_first()]] - `references` [EXTRACTED]
-- [[first_present()]] - `references` [EXTRACTED]
-- [[flatten_text()]] - `references` [EXTRACTED]
-- [[price_from_texts()]] - `references` [EXTRACTED]
-- [[selfcheck_entry()]] - `references` [EXTRACTED]
-- [[shape_signature()]] - `references` [EXTRACTED]
+- [[_available_sources()]] - `references` [EXTRACTED]
+- [[_call_card_tool()]] - `references` [EXTRACTED]
+- [[_client_capabilities()]] - `references` [EXTRACTED]
+- [[_source_error()]] - `references` [EXTRACTED]
+- [[compare_sources()]] - `references` [EXTRACTED]
+- [[compare_verify_offer()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/resiliencepy
+#graphify/code #graphify/EXTRACTED #community/compare_verify_offer

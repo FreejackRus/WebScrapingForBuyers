@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
-community: "compare-connector/tests/test_server.py"
+community: "MarketOffer"
 location: "L980"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/compare-connector/tests/test_serverpy
+  - community/MarketOffer
 ---
 
 # test_duplicate_listings_are_collapsed()
@@ -16,4 +16,4 @@ tags:
 - [[One listing must not occupy two ranking slots. A marketplace returning the same…]] - `rationale_for` [EXTRACTED]
 - [[compare-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/compare-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/MarketOffer

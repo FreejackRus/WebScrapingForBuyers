@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/server.py"
 type: "rationale"
-community: "avito_connector/server.py"
+community: "raise_tool_error"
 location: "L321"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/avito_connector/serverpy
+  - community/raise_tool_error
 ---
 
 # Tier-1 first; CDP fallback on block/non-200. Returns (status, body, tier). Only…
 
 ## Connections
-- [[_fetch()]] - `rationale_for` [EXTRACTED]
+- [[_fetch()_1]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/avito_connector/serverpy
+#graphify/rationale #graphify/EXTRACTED #community/raise_tool_error

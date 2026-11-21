@@ -1,20 +1,19 @@
 ---
 source_file: ""
 type: "code"
-community: "_resume_note"
+community: "json"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_resume_note
+  - community/json
 ---
 
 # Any
 
 ## Connections
-- [[_payload_digest()]] - `references` [EXTRACTED]
-- [[_resume_note()]] - `references` [EXTRACTED]
-- [[handoff_diagnostics()]] - `references` [EXTRACTED]
-- [[read_with_handoff()]] - `references` [EXTRACTED]
-- [[snapshot_handoff()]] - `references` [EXTRACTED]
+- [[_cdp_render()]] - `references` [EXTRACTED]
+- [[_https_image_url()_1]] - `references` [EXTRACTED]
+- [[_is_qrator_wall()]] - `references` [EXTRACTED]
+- [[_search_item_from_tile()_1]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_resume_note
+#graphify/code #graphify/EXTRACTED #community/json

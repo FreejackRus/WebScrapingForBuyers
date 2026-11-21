@@ -12,12 +12,12 @@ tags:
 # MemoryAuthStore
 
 ## Connections
-- [[dot-authenticate()_1]] - `method` [EXTRACTED]
-- [[dot-changePassword()_1]] - `method` [EXTRACTED]
-- [[dot-constructor()_9]] - `method` [EXTRACTED]
+- [[dot-authenticate()]] - `method` [EXTRACTED]
+- [[dot-changePassword()]] - `method` [EXTRACTED]
+- [[dot-constructor()_13]] - `method` [EXTRACTED]
 - [[dot-fromEnv()]] - `calls` [EXTRACTED]
-- [[dot-getById()_1]] - `method` [EXTRACTED]
-- [[dot-updateSettings()_1]] - `method` [EXTRACTED]
+- [[dot-getById()]] - `method` [EXTRACTED]
+- [[dot-updateSettings()]] - `method` [EXTRACTED]
 - [[AuthStore]] - `implements` [EXTRACTED]
 - [[identitysrcapp.ts]] - `imports` [EXTRACTED]
 - [[memory-auth-store.ts]] - `contains` [EXTRACTED]

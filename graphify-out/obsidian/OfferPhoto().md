@@ -2,7 +2,7 @@
 source_file: "apps/web/src/widgets/search/offer-card/ui/index.tsx"
 type: "code"
 community: "offers/ui/index.tsx"
-location: "L146"
+location: "L243"
 tags:
   - graphify/code
   - graphify/EXTRACTED

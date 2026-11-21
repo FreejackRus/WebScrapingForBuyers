@@ -13,9 +13,10 @@ tags:
 
 ## Connections
 - [[McpMarketplaceAdapter]] - `imports` [EXTRACTED]
+- [[RealTestSource]] - `contains` [EXTRACTED]
 - [[SourceAdapter]] - `imports` [EXTRACTED]
 - [[TestSource]] - `contains` [EXTRACTED]
-- [[apps]] - `contains` [EXTRACTED]
+- [[apps_4]] - `contains` [EXTRACTED]
 - [[buildSearchApp()]] - `imports` [EXTRACTED]
 - [[mcp-marketplace-adapter.ts]] - `imports_from` [EXTRACTED]
 - [[mergeSnapshotOffers()]] - `contains` [EXTRACTED]
@@ -25,7 +26,7 @@ tags:
 - [[packages_contracts_dist_index_searchsnapshot]] - `imports` [EXTRACTED]
 - [[productPayload()]] - `contains` [EXTRACTED]
 - [[ref_vitest]] - `imports_from` [EXTRACTED]
-- [[search()]] - `contains` [EXTRACTED]
+- [[search()_8]] - `contains` [EXTRACTED]
 - [[searchsrcapp.ts]] - `imports_from` [EXTRACTED]
 - [[source-adapter.ts]] - `imports_from` [EXTRACTED]
 

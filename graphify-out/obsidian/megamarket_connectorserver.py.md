@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/server.py"
 type: "code"
-community: "log_event"
+community: "megamarket_connector/server.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/log_event
+  - community/megamarket_connector/serverpy
 ---
 
 # megamarket_connector/server.py
@@ -17,17 +17,17 @@ tags:
 - [[MegamarketSearchItemOut]] - `imports` [EXTRACTED]
 - [[MegamarketSearchResponse]] - `imports` [EXTRACTED]
 - [[MegamarketSelfcheckResponse]] - `imports` [EXTRACTED]
-- [[MetaOut_4]] - `imports` [EXTRACTED]
+- [[MetaOut_11]] - `imports` [EXTRACTED]
 - [[_address_cache_key()]] - `contains` [EXTRACTED]
 - [[_address_warnings()]] - `contains` [EXTRACTED]
-- [[_blocked_error()_1]] - `contains` [EXTRACTED]
+- [[_blocked_error()_2]] - `contains` [EXTRACTED]
 - [[_cdp_post_json()_1]] - `contains` [EXTRACTED]
-- [[_extract_item_id()_2]] - `contains` [EXTRACTED]
+- [[_extract_item_id()_3]] - `contains` [EXTRACTED]
 - [[_final_catalog_url()]] - `contains` [EXTRACTED]
 - [[_is_ip_block()]] - `contains` [EXTRACTED]
 - [[_megamarket_selfcheck_impl()]] - `contains` [EXTRACTED]
 - [[_parse_items()]] - `contains` [EXTRACTED]
-- [[_polite_wait()_4]] - `contains` [EXTRACTED]
+- [[_polite_wait()_9]] - `contains` [EXTRACTED]
 - [[_post()]] - `contains` [EXTRACTED]
 - [[_resolve_address_id()]] - `contains` [EXTRACTED]
 - [[_resolve_search_params()]] - `contains` [EXTRACTED]
@@ -41,7 +41,7 @@ tags:
 - [[fastmcp_3]] - `imports_from` [EXTRACTED]
 - [[fastmcp_server_middleware_error_handling]] - `imports_from` [EXTRACTED]
 - [[get_settings()_7]] - `imports` [EXTRACTED]
-- [[json]] - `imports` [EXTRACTED]
+- [[json_1]] - `imports` [EXTRACTED]
 - [[logging.py]] - `imports_from` [EXTRACTED]
 - [[mcp_core__init__.py]] - `imports_from` [EXTRACTED]
 - [[mcp_types]] - `imports_from` [EXTRACTED]
@@ -59,4 +59,4 @@ tags:
 - [[typing]] - `imports_from` [EXTRACTED]
 - [[urllib_parse]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/log_event
+#graphify/code #graphify/EXTRACTED #community/megamarket_connector/serverpy

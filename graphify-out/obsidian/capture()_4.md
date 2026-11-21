@@ -1,17 +1,20 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_server.py"
+source_file: "scripts/backup-state.py"
 type: "code"
-community: "capture"
-location: "L467"
+community: "backup-state.py"
+location: "L35"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/capture
+  - community/backup-statepy
 ---
 
 # capture()
 
 ## Connections
-- [[test_card_sends_the_region_as_a_filter_not_a_query_parameter()]] - `contains` [EXTRACTED]
+- [[backup-state.py]] - `contains` [EXTRACTED]
+- [[checksum()]] - `calls` [EXTRACTED]
+- [[main()_1]] - `calls` [EXTRACTED]
+- [[verified()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/capture
+#graphify/code #graphify/EXTRACTED #community/backup-statepy

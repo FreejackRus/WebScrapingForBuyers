@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "MarketplaceSourcesResponse"
+community: "test_output_schema.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/MarketplaceSourcesResponse
+  - community/test_output_schemapy
 ---
 
 # BaseModel
 
 ## Connections
-- [[MarketplaceSourcesResponse]] - `inherits` [EXTRACTED]
+- [[_Named]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/MarketplaceSourcesResponse
+#graphify/code #graphify/EXTRACTED #community/test_output_schemapy

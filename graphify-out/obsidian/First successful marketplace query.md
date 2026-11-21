@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/docs/QUICKSTART.md"
 type: "document"
-community: "decision_inspect"
+community: "First successful marketplace query"
 location: "L1"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/decision_inspect
+  - community/First_successful_marketplace_query
 ---
 
 # First successful marketplace query
@@ -20,4 +20,4 @@ tags:
 - [[If the client cannot connect]] - `contains` [EXTRACTED]
 - [[QUICKSTART_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/decision_inspect
+#graphify/document #graphify/EXTRACTED #community/First_successful_marketplace_query

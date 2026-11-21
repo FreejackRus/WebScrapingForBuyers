@@ -12,7 +12,7 @@ tags:
 # _stars_from_stats()
 
 ## Connections
-- [[Any_24]] - `references` [EXTRACTED]
+- [[Any_26]] - `references` [EXTRACTED]
 - [[_to_int()]] - `calls` [EXTRACTED]
 - [[parse_card()]] - `calls` [EXTRACTED]
 - [[ssr.py]] - `contains` [EXTRACTED]

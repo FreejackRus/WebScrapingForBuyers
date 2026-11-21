@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/server.py"
 type: "rationale"
-community: "cian_connector/server.py"
+community: "_fetch_search"
 location: "L261"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/cian_connector/serverpy
+  - community/_fetch_search
 ---
 
 # Run one search query over CDP. Returns (status, body, tier). Only JSON-shaped…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_fetch_search()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/cian_connector/serverpy
+#graphify/rationale #graphify/EXTRACTED #community/_fetch_search

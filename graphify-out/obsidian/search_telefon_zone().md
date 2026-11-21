@@ -12,7 +12,7 @@ tags:
 # search_telefon_zone()
 
 ## Connections
-- [[fixture_7]] - `references` [EXTRACTED]
+- [[fixture_14]] - `references` [EXTRACTED]
 - [[load()]] - `calls` [EXTRACTED]
 - [[test_ssr.py]] - `contains` [EXTRACTED]
 

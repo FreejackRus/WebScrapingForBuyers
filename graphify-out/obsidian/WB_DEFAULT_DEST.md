@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
 type: "code"
-community: "ref_vitest"
-location: "L40"
+community: "mcp-marketplace-adapter.ts"
+location: "L44"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ref_vitest
+  - community/mcp-marketplace-adapterts
 ---
 
 # WB_DEFAULT_DEST
@@ -15,4 +15,4 @@ tags:
 - [[http-marketplace-adapter.ts]] - `imports` [EXTRACTED]
 - [[mcp-marketplace-adapter.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ref_vitest
+#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts

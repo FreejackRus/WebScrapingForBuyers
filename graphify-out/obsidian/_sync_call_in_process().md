@@ -12,7 +12,7 @@ tags:
 # _sync_call_in_process()
 
 ## Connections
-- [[Any_8]] - `references` [EXTRACTED]
+- [[Any_13]] - `references` [EXTRACTED]
 - [[_SyncCallError]] - `calls` [EXTRACTED]
 - [[_SyncCallTimeout]] - `calls` [EXTRACTED]
 - [[_can_process_call()]] - `calls` [EXTRACTED]

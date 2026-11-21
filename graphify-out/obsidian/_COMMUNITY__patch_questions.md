@@ -22,7 +22,7 @@ members: 71
 - [[_question()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[_questions_payload()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[feedbacks.wb.ru answers any questions-ish path with a misleading empty stub.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
-- [[no_wait()_29]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[no_wait()_28]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[responder()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[responder()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[responder()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
@@ -42,6 +42,7 @@ members: 71
 - [[responder()_17]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[responder()_18]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[responder()_19]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[scenario()_44]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[scenario()_45]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[scenario()_46]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[scenario()_47]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
@@ -60,7 +61,6 @@ members: 71
 - [[scenario()_60]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[scenario()_61]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[scenario()_62]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
-- [[scenario()_63]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[take is capped at 30 upstream, so limit=45 must walk two pages.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[test_category_item_shape_matches_wb_card()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[test_category_products_honours_an_explicit_region()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py

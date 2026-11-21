@@ -10,10 +10,10 @@ members: 5
 **Members:** 5 nodes
 
 ## Members
-- [[Gotchas_23]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/taobao-connector/SKILL.md
+- [[Gotchas_22]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/taobao-connector/SKILL.md
 - [[Taobao Connector]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/taobao-connector/SKILL.md
-- [[Tools available_15]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/taobao-connector/SKILL.md
-- [[When to use_23]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/taobao-connector/SKILL.md
+- [[Tools available_14]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/taobao-connector/SKILL.md
+- [[When to use_20]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/taobao-connector/SKILL.md
 - [[dshskillstaobao-connectorSKILL]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/taobao-connector/SKILL.md
 
 ## Live Query (requires Dataview plugin)
@@ -24,10 +24,10 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 1 edge to [[_COMMUNITY_taobao_connectorserver.py]]
 - 1 edge to [[_COMMUNITY_identitysrchttproutes.ts]]
+- 1 edge to [[_COMMUNITY_raise_tool_error]]
 - 1 edge to [[_COMMUNITY_compare_prices]]
 
 ## Top bridge nodes
 - [[Taobao Connector]] - degree 6, connects to 2 communities
-- [[Tools available_15]] - degree 2, connects to 1 community
+- [[Tools available_14]] - degree 2, connects to 1 community

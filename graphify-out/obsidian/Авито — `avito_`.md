@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/README.md"
 type: "document"
-community: "ru-marketplace-mcp"
+community: "aliexpress_selfcheck"
 location: "L338"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/ru-marketplace-mcp
+  - community/aliexpress_selfcheck
 ---
 
 # Авито — `avito_*`
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[Инструменты]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/ru-marketplace-mcp
+#graphify/document #graphify/EXTRACTED #community/aliexpress_selfcheck

@@ -1,20 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/SECURITY.md"
+source_file: "mcp-servers/ru-marketplace-mcp/work/v2-research/security.md"
 type: "document"
-community: "Security"
+community: "chrome_cdp.py"
 location: "L1"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Security
+  - community/chrome_cdppy
 ---
 
-# SECURITY.md
+# security.md
 
 ## Connections
-- [[CDP_SETUP]] - `references` [EXTRACTED]
-- [[CODE_OF_CONDUCT]] - `references` [EXTRACTED]
-- [[Security_1]] - `contains` [EXTRACTED]
-- [[Безопасность]] - `contains` [EXTRACTED]
+- [[v2.0.0 Security  privacy research]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Security
+#graphify/document #graphify/EXTRACTED #community/chrome_cdppy

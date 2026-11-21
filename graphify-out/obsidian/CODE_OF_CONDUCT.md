@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/CODE_OF_CONDUCT.md"
 type: "document"
-community: "Security"
+community: "Безопасность"
 location: "L1"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Security
+  - community/Безопасность
 ---
 
 # CODE_OF_CONDUCT.md
 
 ## Connections
 - [[Contributor Covenant Code of Conduct]] - `contains` [EXTRACTED]
-- [[SECURITY]] - `references` [EXTRACTED]
+- [[SECURITY_2]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Security
+#graphify/document #graphify/EXTRACTED #community/Безопасность

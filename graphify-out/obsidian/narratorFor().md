@@ -14,6 +14,6 @@ tags:
 ## Connections
 - [[OllamaAnalysisNarrator]] - `calls` [EXTRACTED]
 - [[compare-models.ts]] - `contains` [EXTRACTED]
-- [[evaluate()_4]] - `calls` [EXTRACTED]
+- [[evaluate()_1]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/compare-modelsts

@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/test_e2e_stdio_check.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_raw_lifecycle.py"
 type: "code"
-community: "e2e_stdio_check.py"
-location: "L57"
+community: "raw_browser"
+location: "L21"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/e2e_stdio_checkpy
+  - community/raw_browser
 ---
 
 # __init__()
 
 ## Connections
-- [[test_probe_checks_running_version()]] - `contains` [EXTRACTED]
+- [[raw_browser()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/e2e_stdio_checkpy
+#graphify/code #graphify/EXTRACTED #community/raw_browser

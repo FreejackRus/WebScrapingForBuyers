@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/examples/avito_search.py"
 type: "rationale"
-community: "avito_connector/server.py"
+community: "json"
 location: "L2"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/avito_connector/serverpy
+  - community/json
 ---
 
 # Search Avito classifieds and show one seller's reputation. uv run python…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[avito_search.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/avito_connector/serverpy
+#graphify/rationale #graphify/EXTRACTED #community/json

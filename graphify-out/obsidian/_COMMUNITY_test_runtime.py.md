@@ -10,9 +10,9 @@ members: 44
 **Members:** 44 nodes
 
 ## Members
-- [[dot-__init__()_18]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py
+- [[dot-__init__()_21]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py
 - [[dot-add_middleware()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py
-- [[dot-run()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py
+- [[dot-run()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py
 - [[A blank port falls back to the default; a non-numeric one is an error.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py
 - [[A client vanishing mid-write on stdio is expected, not a failure.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py
 - [[A path without a leading slash is normalised rather than rejected.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py
@@ -29,9 +29,9 @@ members: 44
 - [[Tests for ``mcp_core.runtime`` — transport selection for the connectors. These…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py
 - [[The stdio path must pass transport='stdio' and no hostport kwargs. Passing…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py
 - [[_FakeMCP]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py
-- [[parametrize_19]] - code
-- [[run()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py
-- [[run()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py
+- [[parametrize_22]] - code
+- [[run()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py
+- [[run()_4]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py
 - [[test_blank_transport_is_stdio()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py
 - [[test_default_is_stdio_when_env_is_empty()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py
 - [[test_http_defaults_bind_to_loopback()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py
@@ -63,8 +63,9 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 2 edges to [[_COMMUNITY_json]]
+- 1 edge to [[_COMMUNITY_json]]
 - 1 edge to [[_COMMUNITY_pytest]]
+- 1 edge to [[_COMMUNITY_TransportDownError]]
 
 ## Top bridge nodes
-- [[test_runtime.py]] - degree 26, connects to 2 communities
+- [[test_runtime.py]] - degree 26, connects to 3 communities

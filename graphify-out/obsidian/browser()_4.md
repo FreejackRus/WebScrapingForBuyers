@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_handoff_reporting.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_review_regressions.py"
 type: "code"
-community: "test_handoff_reporting.py"
-location: "L23"
+community: "transport/__init__.py"
+location: "L18"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_handoff_reportingpy
+  - community/transport/__init__py
 ---
 
 # browser()
 
 ## Connections
-- [[fixture_28]] - `references` [EXTRACTED]
-- [[open_page()_6]] - `indirect_call` [INFERRED]
-- [[test_handoff_reporting.py]] - `contains` [EXTRACTED]
+- [[fixture_22]] - `references` [EXTRACTED]
+- [[open_page()_5]] - `indirect_call` [INFERRED]
+- [[test_review_regressions.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_handoff_reportingpy
+#graphify/code #graphify/EXTRACTED #community/transport/__init__py

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/src/dns_connector/server.py"
 type: "code"
-community: "dns_card"
+community: "dns_selfcheck"
 location: "L519"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/dns_card
+  - community/dns_selfcheck
 ---
 
 # dns_selfcheck()
@@ -14,12 +14,11 @@ tags:
 ## Connections
 - [[A green selfcheck does NOT mean the data is right]] - `references` [INFERRED]
 - [[A green selfcheck does NOT mean the data is right_1]] - `references` [INFERRED]
-- [[Context_3]] - `references` [EXTRACTED]
 - [[DNS — proof-of-work challenge]] - `references` [INFERRED]
 - [[DnsSelfcheckResponse]] - `uses` [INFERRED]
 - [[Structural drift canary for DNS-Shop (tri-state). Renders one live search page…]] - `rationale_for` [EXTRACTED]
-- [[Tools available_1]] - `references` [INFERRED]
-- [[Tools available_2]] - `references` [INFERRED]
+- [[Tools available_18]] - `references` [INFERRED]
+- [[Tools available_19]] - `references` [INFERRED]
 - [[TransportDownError]] - `uses` [INFERRED]
 - [[_dns_selfcheck_impl()]] - `calls` [EXTRACTED]
 - [[dns_connectorserver.py]] - `contains` [EXTRACTED]
@@ -27,4 +26,4 @@ tags:
 - [[raise_tool_error()]] - `calls` [EXTRACTED]
 - [[Вердикт conditional go]] - `references` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/dns_card
+#graphify/code #graphify/INFERRED #community/dns_selfcheck

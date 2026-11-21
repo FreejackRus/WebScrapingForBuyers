@@ -12,7 +12,7 @@ tags:
 # _SyncCallError
 
 ## Connections
-- [[RuntimeError_1]] - `inherits` [EXTRACTED]
+- [[RuntimeError_3]] - `inherits` [EXTRACTED]
 - [[_run_sync_bounded()]] - `calls` [EXTRACTED]
 - [[_sync_call_in_process()]] - `calls` [EXTRACTED]
 - [[ozon_connectorserver.py]] - `contains` [EXTRACTED]

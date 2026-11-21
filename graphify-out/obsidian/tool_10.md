@@ -1,18 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "avito_connector/server.py"
+community: "compare_prices"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/avito_connector/serverpy
+  - community/compare_prices
 ---
 
 # tool
 
 ## Connections
-- [[avito_card()]] - `references` [EXTRACTED]
-- [[avito_search()_1]] - `references` [EXTRACTED]
-- [[avito_seller()]] - `references` [EXTRACTED]
+- [[marketplace_sources()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/avito_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/compare_prices

@@ -13,10 +13,10 @@ tags:
 
 ## Connections
 - [[DSH activation_20]] - `contains` [EXTRACTED]
-- [[Gotchas_6]] - `contains` [EXTRACTED]
+- [[Gotchas_12]] - `contains` [EXTRACTED]
 - [[Operator CLI_1]] - `contains` [EXTRACTED]
-- [[Tools_5]] - `contains` [EXTRACTED]
-- [[When to use_6]] - `contains` [EXTRACTED]
+- [[Tools_7]] - `contains` [EXTRACTED]
+- [[When to use_9]] - `contains` [EXTRACTED]
 - [[compare_prices()]] - `references` [INFERRED]
 - [[compare_sources()]] - `references` [INFERRED]
 - [[marketplace_sources()]] - `references` [INFERRED]

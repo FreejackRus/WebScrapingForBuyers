@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/composition/hooks/index.ts"
 type: "code"
-community: "App.tsx"
+community: "useUserStore"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Apptsx
+  - community/useUserStore
 ---
 
 # hooks/index.ts
@@ -18,5 +18,7 @@ tags:
 - [[useBootSession.ts]] - `re_exports` [EXTRACTED]
 - [[useSearchHotkey()]] - `re_exports` [EXTRACTED]
 - [[useSearchHotkey.ts]] - `re_exports` [EXTRACTED]
+- [[useSharedSearchLink()]] - `re_exports` [EXTRACTED]
+- [[useSharedSearchLink.ts]] - `re_exports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Apptsx
+#graphify/code #graphify/EXTRACTED #community/useUserStore

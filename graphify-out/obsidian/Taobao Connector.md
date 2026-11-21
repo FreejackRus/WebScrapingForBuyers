@@ -13,9 +13,9 @@ tags:
 
 ## Connections
 - [[DSH activation_10]] - `contains` [EXTRACTED]
-- [[Gotchas_23]] - `contains` [EXTRACTED]
-- [[Tools available_15]] - `contains` [EXTRACTED]
-- [[When to use_23]] - `contains` [EXTRACTED]
+- [[Gotchas_22]] - `contains` [EXTRACTED]
+- [[Tools available_14]] - `contains` [EXTRACTED]
+- [[When to use_20]] - `contains` [EXTRACTED]
 - [[dshskillstaobao-connectorSKILL]] - `contains` [EXTRACTED]
 - [[sign()]] - `references` [INFERRED]
 

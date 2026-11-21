@@ -26,7 +26,7 @@ members: 38
 - [[explode()]] - code - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py
 - [[fake_render()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py
 - [[fixture_1]] - code
-- [[parametrize]] - code
+- [[parametrize_1]] - code
 - [[test_a_real_bare_id_is_accepted()]] - code - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py
 - [[test_an_id_never_carries_query_fragment_or_traversal()]] - code - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py
 - [[test_card_accepts_a_bare_product_id()]] - code - mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_server.py
@@ -58,8 +58,8 @@ SORT file.name ASC
 
 ## Connections to other communities
 - 1 edge to [[_COMMUNITY_pytest]]
-- 1 edge to [[_COMMUNITY_citilink-connectorteststest_card_extractor_dom.py]]
-- 1 edge to [[_COMMUNITY_json]]
+- 1 edge to [[_COMMUNITY_dom.py]]
+- 1 edge to [[_COMMUNITY_transport__init__.py]]
 
 ## Top bridge nodes
 - [[citilink-connectorteststest_server.py]] - degree 27, connects to 3 communities

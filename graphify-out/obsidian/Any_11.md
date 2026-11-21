@@ -1,22 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "log_event"
+community: "yandex_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/log_event
+  - community/yandex_card
 ---
 
 # Any
 
 ## Connections
-- [[_cdp_post_json()_1]] - `references` [EXTRACTED]
-- [[_is_ip_block()]] - `references` [EXTRACTED]
-- [[_parse_items()]] - `references` [EXTRACTED]
-- [[_post()]] - `references` [EXTRACTED]
-- [[_resolve_search_params()]] - `references` [EXTRACTED]
-- [[_scoped()]] - `references` [EXTRACTED]
-- [[_search_body()]] - `references` [EXTRACTED]
+- [[_cdp_challenge()]] - `references` [EXTRACTED]
+- [[_guard_values_drift()]] - `references` [EXTRACTED]
+- [[_to_product()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/log_event
+#graphify/code #graphify/EXTRACTED #community/yandex_card

@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "StdioProbe"
+community: "test_cdp_budget.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/StdioProbe
+  - community/test_cdp_budgetpy
 ---
 
 # RuntimeError
 
 ## Connections
-- [[ProbeError]] - `inherits` [EXTRACTED]
+- [[HostRefusingError]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/StdioProbe
+#graphify/code #graphify/EXTRACTED #community/test_cdp_budgetpy

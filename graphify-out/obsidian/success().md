@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py"
 type: "code"
-community: "mcp-core/tests/test_browser_handoff.py"
+community: "success"
 location: "L48"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/mcp-core/tests/test_browser_handoffpy
+  - community/success
 ---
 
 # success()
@@ -21,8 +21,8 @@ tags:
 - [[Reliability]] - `references` [INFERRED]
 - [[Selfchecks are tri-state]] - `references` [INFERRED]
 - [[The steps]] - `references` [INFERRED]
-- [[Tools available_4]] - `references` [INFERRED]
 - [[Tools available_5]] - `references` [INFERRED]
+- [[Tools available_11]] - `references` [INFERRED]
 - [[mcp-coreteststest_browser_handoff.py]] - `contains` [EXTRACTED]
 - [[test_cancel_during_success_cleanup_waits_for_exact_owned_close()]] - `indirect_call` [INFERRED]
 - [[test_capacity_does_not_evict_an_existing_handoff()]] - `indirect_call` [INFERRED]
@@ -38,4 +38,4 @@ tags:
 - [[Новое аналитика MPStats]] - `references` [INFERRED]
 - [[Только нужные площадки `MARKETPLACE_SOURCES`]] - `references` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/mcp-core/tests/test_browser_handoffpy
+#graphify/code #graphify/INFERRED #community/success

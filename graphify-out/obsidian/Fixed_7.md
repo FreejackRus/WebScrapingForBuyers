@@ -1,18 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
-community: "[2.2.0] — 2026-09-11"
-location: "L376"
+community: "Changelog"
+location: "L934"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/220__2026-09-11
+  - community/Changelog
 ---
 
 # Fixed
 
 ## Connections
-- [[2.2.0 — 2026-09-11]] - `contains` [EXTRACTED]
-- [[marketplace_sources()]] - `references` [INFERRED]
+- [[1.5.0 — 2026-08-16]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/220__2026-09-11
+#graphify/document #graphify/EXTRACTED #community/Changelog

@@ -46,14 +46,15 @@ SORT file.name ASC
 - 2 edges to [[_COMMUNITY_test_card_rejects_non_numeric_ids]]
 - 2 edges to [[_COMMUNITY_no_delay]]
 - 2 edges to [[_COMMUNITY_capture_1]]
-- 2 edges to [[_COMMUNITY_json]]
 - 1 edge to [[_COMMUNITY_TransportDownError]]
 - 1 edge to [[_COMMUNITY_test_card_verification_records.py]]
 - 1 edge to [[_COMMUNITY_test_distribution_contract.py]]
 - 1 edge to [[_COMMUNITY_pytest]]
+- 1 edge to [[_COMMUNITY_json]]
 - 1 edge to [[_COMMUNITY_pathlib]]
+- 1 edge to [[_COMMUNITY_transport__init__.py]]
 
 ## Top bridge nodes
-- [[yandex-connectorteststest_server.py]] - degree 52, connects to 13 communities
+- [[yandex-connectorteststest_server.py]] - degree 52, connects to 14 communities
 - [[_stub_parsed_items()]] - degree 9, connects to 1 community
 - [[test_search_flags_a_degraded_ldjson_fallback()]] - degree 3, connects to 1 community

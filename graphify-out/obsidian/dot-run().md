@@ -1,17 +1,20 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py"
+source_file: "apps/search/src/application/quality-eval.ts"
 type: "code"
-community: "test_runtime.py"
-location: "L32"
+community: "quality-eval.ts"
+location: "L161"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_runtimepy
+  - community/quality-evalts
 ---
 
 # .run()
 
 ## Connections
-- [[_FakeMCP]] - `method` [EXTRACTED]
+- [[dot-evaluate()]] - `calls` [EXTRACTED]
+- [[dot-schedule()]] - `calls` [EXTRACTED]
+- [[dot-trigger()]] - `calls` [EXTRACTED]
+- [[QualityEvaluator]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_runtimepy
+#graphify/code #graphify/EXTRACTED #community/quality-evalts

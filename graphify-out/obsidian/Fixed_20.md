@@ -1,17 +1,27 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v2.0.2.md"
+source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
-community: "v2.0.2"
-location: "L5"
+community: "Fixed"
+location: "L1060"
 tags:
   - graphify/document
-  - graphify/EXTRACTED
-  - community/v202
+  - graphify/INFERRED
+  - community/Fixed
 ---
 
 # Fixed
 
 ## Connections
-- [[v2.0.2]] - `contains` [EXTRACTED]
+- [[1.4.0 — 2026-08-08]] - `contains` [EXTRACTED]
+- [[_as_count()]] - `references` [INFERRED]
+- [[_as_price()]] - `references` [INFERRED]
+- [[_kopeck_to_rub()]] - `references` [INFERRED]
+- [[_posted_at()]] - `references` [INFERRED]
+- [[_to_int()]] - `references` [INFERRED]
+- [[_to_number()]] - `references` [INFERRED]
+- [[coerce_price()]] - `references` [INFERRED]
+- [[coerce_rating()]] - `references` [INFERRED]
+- [[parse_retry_after()]] - `references` [INFERRED]
+- [[wb_card()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/v202
+#graphify/document #graphify/INFERRED #community/Fixed

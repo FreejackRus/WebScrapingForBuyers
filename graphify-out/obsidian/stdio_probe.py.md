@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/stdio_probe.py"
 type: "code"
-community: "StdioProbe"
+community: "json"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/StdioProbe
+  - community/json
 ---
 
 # stdio_probe.py
@@ -17,12 +17,12 @@ tags:
 - [[StdioProbe]] - `contains` [EXTRACTED]
 - [[collections_1]] - `imports_from` [EXTRACTED]
 - [[e2e_stdio_check_docker.py]] - `imports_from` [EXTRACTED]
-- [[json]] - `imports` [EXTRACTED]
+- [[json_1]] - `imports` [EXTRACTED]
 - [[mcp_startup.py]] - `imports_from` [EXTRACTED]
 - [[mcp_wire.py]] - `imports_from` [EXTRACTED]
 - [[os]] - `imports` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]
-- [[queue]] - `imports` [EXTRACTED]
+- [[queue_1]] - `imports` [EXTRACTED]
 - [[signal]] - `imports` [EXTRACTED]
 - [[subprocess]] - `imports` [EXTRACTED]
 - [[sys]] - `imports` [EXTRACTED]
@@ -31,4 +31,4 @@ tags:
 - [[time_1]] - `imports` [EXTRACTED]
 - [[typing]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/StdioProbe
+#graphify/code #graphify/EXTRACTED #community/json

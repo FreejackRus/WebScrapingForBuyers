@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/server.py"
 type: "code"
-community: "log_event"
-location: "L204"
+community: "TransportDownError"
+location: "L313"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/log_event
+  - community/TransportDownError
 ---
 
 # _blocked_error()
 
 ## Connections
 - [[TransportDownError]] - `uses` [INFERRED]
-- [[_post()]] - `calls` [EXTRACTED]
-- [[megamarket_connectorserver.py]] - `contains` [EXTRACTED]
+- [[_raise_for_fetch_failure()_1]] - `calls` [EXTRACTED]
+- [[cian_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/log_event
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

@@ -12,7 +12,7 @@ tags:
 # DSH activation
 
 ## Connections
-- [[Ozon Connector_1]] - `contains` [EXTRACTED]
+- [[Ozon Connector]] - `contains` [EXTRACTED]
 - [[compare_prices()]] - `references` [INFERRED]
 - [[compare_sources()]] - `references` [INFERRED]
 - [[marketplace_sources()]] - `references` [INFERRED]

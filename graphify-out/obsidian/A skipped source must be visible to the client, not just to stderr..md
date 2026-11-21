@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_server.py"
 type: "rationale"
-community: "test_public_contract_snapshot.py"
+community: "marketplace-connector/tests/test_server.py"
 location: "L63"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/test_public_contract_snapshotpy
+  - community/marketplace-connector/tests/test_serverpy
 ---
 
 # A skipped source must be visible to the client, not just to stderr.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_marketplace_sources_reports_what_mounted()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/test_public_contract_snapshotpy
+#graphify/rationale #graphify/EXTRACTED #community/marketplace-connector/tests/test_serverpy

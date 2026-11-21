@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/settings.py"
 type: "code"
-community: "ozon_connector/settings.py"
+community: "functools"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ozon_connector/settingspy
+  - community/functools
 ---
 
 # ozon_connector/settings.py
@@ -15,10 +15,10 @@ tags:
 - [[Ozon connector runtime settings (env-driven via OZON_ prefix). Env vars (all…]] - `rationale_for` [EXTRACTED]
 - [[OzonSettings]] - `contains` [EXTRACTED]
 - [[functools]] - `imports_from` [EXTRACTED]
-- [[get_settings()_10]] - `contains` [EXTRACTED]
+- [[get_settings()_8]] - `contains` [EXTRACTED]
 - [[ozon-connectorteststest_settings_secrets.py]] - `imports_from` [EXTRACTED]
 - [[ozon_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[pydantic]] - `imports_from` [EXTRACTED]
 - [[pydantic_settings]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ozon_connector/settingspy
+#graphify/code #graphify/EXTRACTED #community/functools

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/cdp_budget.py"
 type: "rationale"
-community: "Slot"
+community: "NavigationBudget"
 location: "L100"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Slot
+  - community/NavigationBudget
 ---
 
 # The navigation produced a usable page: forget this host's refusals.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[dot-ok()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Slot
+#graphify/rationale #graphify/EXTRACTED #community/NavigationBudget

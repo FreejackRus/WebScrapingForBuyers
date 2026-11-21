@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/features/search/offer-table/index.test.ts"
 type: "code"
-community: "offers/ui/index.tsx"
+community: "packages_contracts_dist_index"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/offers/ui/indextsx
+  - community/packages_contracts_dist_index
 ---
 
 # offer-table/index.test.ts
@@ -19,4 +19,4 @@ tags:
 - [[packages_contracts_dist_index_offer]] - `imports` [EXTRACTED]
 - [[ref_vitest]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/offers/ui/indextsx
+#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
 type: "code"
-community: "TransportDownError"
+community: "raise_tool_error"
 location: "L140"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/TransportDownError
+  - community/raise_tool_error
 ---
 
 # raise_tool_error()
@@ -24,8 +24,8 @@ tags:
 - [[_ozon_reviews_impl()]] - `calls` [EXTRACTED]
 - [[_ozon_search_impl()]] - `calls` [EXTRACTED]
 - [[_post()]] - `calls` [EXTRACTED]
-- [[_raise_for_fetch_failure()_1]] - `calls` [EXTRACTED]
 - [[_raise_for_fetch_failure()]] - `calls` [EXTRACTED]
+- [[_raise_for_fetch_failure()_1]] - `calls` [EXTRACTED]
 - [[_require_object()]] - `calls` [EXTRACTED]
 - [[_resolve_region()]] - `calls` [EXTRACTED]
 - [[_search_via_http_v9()]] - `calls` [EXTRACTED]
@@ -73,8 +73,8 @@ tags:
 - [[ozon_reviews()]] - `calls` [EXTRACTED]
 - [[ozon_search()]] - `calls` [EXTRACTED]
 - [[ozon_selfcheck()]] - `calls` [EXTRACTED]
+- [[read()]] - `calls` [EXTRACTED]
 - [[read()_1]] - `calls` [EXTRACTED]
-- [[read()_2]] - `calls` [EXTRACTED]
 - [[taobao()]] - `calls` [EXTRACTED]
 - [[taobao_card()]] - `calls` [EXTRACTED]
 - [[taobao_search()]] - `calls` [EXTRACTED]
@@ -85,9 +85,9 @@ tags:
 - [[wb_questions()]] - `calls` [EXTRACTED]
 - [[wb_reviews()]] - `calls` [EXTRACTED]
 - [[wb_root_info()]] - `calls` [EXTRACTED]
-- [[wb_search()_2]] - `calls` [EXTRACTED]
+- [[wb_search()_1]] - `calls` [EXTRACTED]
 - [[wb_seller()]] - `calls` [EXTRACTED]
 - [[yandex_card()]] - `calls` [EXTRACTED]
-- [[yandex_search()_1]] - `calls` [EXTRACTED]
+- [[yandex_search()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/TransportDownError
+#graphify/code #graphify/EXTRACTED #community/raise_tool_error

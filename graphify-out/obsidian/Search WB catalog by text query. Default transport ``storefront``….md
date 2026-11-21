@@ -12,6 +12,6 @@ tags:
 # Search WB catalog by text query. Default transport ``storefront``…
 
 ## Connections
-- [[wb_search()_2]] - `rationale_for` [EXTRACTED]
+- [[wb_search()_1]] - `rationale_for` [EXTRACTED]
 
 #graphify/rationale #graphify/EXTRACTED #community/wb_connector/serverpy

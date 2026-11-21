@@ -1,22 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/src/citilink_connector/models_output.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/models_output.py"
 type: "code"
-community: "citilink_card"
+community: "lamoda_connector/server.py"
 location: "L9"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/citilink_card
+  - community/lamoda_connector/serverpy
 ---
 
 # MetaOut
 
 ## Connections
-- [[DNS carries the shared envelope unchanged._1]] - `rationale_for` [EXTRACTED]
+- [[Lamoda carries the shared envelope unchanged.]] - `rationale_for` [EXTRACTED]
 - [[MetaOutBase]] - `inherits` [EXTRACTED]
-- [[citilink_card()]] - `uses` [INFERRED]
-- [[citilink_connectormodels_output.py]] - `contains` [EXTRACTED]
-- [[citilink_connectorserver.py]] - `imports` [EXTRACTED]
-- [[citilink_search()]] - `uses` [INFERRED]
+- [[lamoda_card()]] - `uses` [INFERRED]
+- [[lamoda_connectormodels_output.py]] - `contains` [EXTRACTED]
+- [[lamoda_connectorserver.py]] - `imports` [EXTRACTED]
+- [[lamoda_search()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/citilink_card
+#graphify/code #graphify/EXTRACTED #community/lamoda_connector/serverpy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_search_extractor_dom.py"
 type: "rationale"
-community: "prices_from_tile"
+community: "citilink-connector/tests/test_search_extractor_dom.py"
 location: "L161"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/prices_from_tile
+  - community/citilink-connector/tests/test_search_extractor_dompy
 ---
 
 # A payload cached before the split carries no glyph information.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_legacy_flat_candidate_list_is_treated_as_weak()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/prices_from_tile
+#graphify/rationale #graphify/EXTRACTED #community/citilink-connector/tests/test_search_extractor_dompy

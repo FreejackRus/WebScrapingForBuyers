@@ -1,20 +1,27 @@
 ---
 source_file: ""
 type: "code"
-community: "citilink-connector/tests/test_server.py"
+community: "coerce_price"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/citilink-connector/tests/test_serverpy
+  - community/coerce_price
 ---
 
 # parametrize
 
 ## Connections
-- [[test_a_real_bare_id_is_accepted()]] - `references` [EXTRACTED]
-- [[test_an_id_never_carries_query_fragment_or_traversal()]] - `references` [EXTRACTED]
-- [[test_card_refuses_off_host_urls()]] - `references` [EXTRACTED]
-- [[test_extract_product_id_refuses_off_host_urls()]] - `references` [EXTRACTED]
-- [[test_real_product_urls_yield_their_id()]] - `references` [EXTRACTED]
+- [[test_a_leading_minus_means_a_discount_not_a_price()]] - `references` [EXTRACTED]
+- [[test_absent_counts_are_none_not_zero()]] - `references` [EXTRACTED]
+- [[test_bools_are_not_counts()]] - `references` [EXTRACTED]
+- [[test_coerce_int_survives_non_finite_floats()]] - `references` [EXTRACTED]
+- [[test_coerce_price_survives_non_finite_floats()]] - `references` [EXTRACTED]
+- [[test_coerce_rating_survives_non_finite_floats()]] - `references` [EXTRACTED]
+- [[test_counts_parse()]] - `references` [EXTRACTED]
+- [[test_counts_with_signs_or_ranges_are_ambiguous_and_none()]] - `references` [EXTRACTED]
+- [[test_flatten_text_gives_none_rather_than_a_guess()]] - `references` [EXTRACTED]
+- [[test_non_prices_are_none()]] - `references` [EXTRACTED]
+- [[test_real_prices_parse()]] - `references` [EXTRACTED]
+- [[test_zero_and_negative_are_not_prices()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/citilink-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/coerce_price

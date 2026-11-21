@@ -1,18 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "dns_card"
+community: "log_event"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/dns_card
+  - community/log_event
 ---
 
 # Any
 
 ## Connections
-- [[_cdp_render()_1]] - `references` [EXTRACTED]
-- [[_is_qrator_wall()_1]] - `references` [EXTRACTED]
-- [[_search_item_from_tile()_2]] - `references` [EXTRACTED]
+- [[log_event()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/dns_card
+#graphify/code #graphify/EXTRACTED #community/log_event

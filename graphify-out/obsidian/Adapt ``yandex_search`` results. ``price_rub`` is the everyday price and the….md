@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py"
 type: "rationale"
-community: "OfferBatch"
+community: "MarketOffer"
 location: "L502"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/OfferBatch
+  - community/MarketOffer
 ---
 
 # Adapt ``yandex_search`` results. ``price_rub`` is the everyday price and the…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_search_yandex()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/OfferBatch
+#graphify/rationale #graphify/EXTRACTED #community/MarketOffer

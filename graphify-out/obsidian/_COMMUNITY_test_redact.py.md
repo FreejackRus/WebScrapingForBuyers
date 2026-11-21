@@ -23,7 +23,7 @@ members: 38
 - [[The userinfo shape is userpass — it contains ''. A path-embedded '@' without…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_redact.py
 - [[_strip_userinfo()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/redact.py
 - [[hostportpath@ — the part between the first '' and the '' is a numeric port,…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_redact.py
-- [[parametrize_22]] - code
+- [[parametrize_25]] - code
 - [[redact_error_text()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/redact.py
 - [[redact_url()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/redact.py
 - [[test_a_bare_username_before_at_is_left_alone()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_redact.py
@@ -57,11 +57,12 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 5 edges to [[_COMMUNITY_json]]
+- 4 edges to [[_COMMUNITY_json]]
+- 1 edge to [[_COMMUNITY_TransportDownError]]
 - 1 edge to [[_COMMUNITY_pytest]]
 
 ## Top bridge nodes
 - [[test_redact.py]] - degree 24, connects to 2 communities
-- [[redact_error_text()]] - degree 20, connects to 1 community
+- [[redact_error_text()]] - degree 20, connects to 2 communities
 - [[redact_url()]] - degree 7, connects to 1 community
 - [[_strip_userinfo()]] - degree 3, connects to 1 community

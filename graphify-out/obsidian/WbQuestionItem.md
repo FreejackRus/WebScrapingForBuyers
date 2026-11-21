@@ -12,7 +12,7 @@ tags:
 # WbQuestionItem
 
 ## Connections
-- [[BaseModel_15]] - `inherits` [EXTRACTED]
+- [[BaseModel]] - `inherits` [EXTRACTED]
 - [[One buyer question, with the seller's answer when there is one.]] - `rationale_for` [EXTRACTED]
 - [[wb_connectormodels_output.py]] - `contains` [EXTRACTED]
 - [[wb_connectorserver.py]] - `imports` [EXTRACTED]

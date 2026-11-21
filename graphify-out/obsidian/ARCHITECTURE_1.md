@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[ARCHITECTURE]] - `contains` [EXTRACTED]
-- [[Adding a marketplace_2]] - `contains` [EXTRACTED]
+- [[Adding a marketplace_1]] - `contains` [EXTRACTED]
 - [[Connector anatomy]] - `contains` [EXTRACTED]
 - [[Cross-cutting rules]] - `contains` [EXTRACTED]
 - [[Layout]] - `contains` [EXTRACTED]

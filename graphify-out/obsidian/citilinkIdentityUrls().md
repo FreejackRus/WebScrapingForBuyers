@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
 type: "code"
-community: "marketplace-relevance.ts"
-location: "L640"
+community: "mcp-marketplace-adapter.ts"
+location: "L720"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/marketplace-relevancets
+  - community/mcp-marketplace-adapterts
 ---
 
 # citilinkIdentityUrls()
@@ -16,6 +16,6 @@ tags:
 - [[firstString()]] - `calls` [EXTRACTED]
 - [[mcp-marketplace-adapter.ts]] - `contains` [EXTRACTED]
 - [[productIdentityTokens()]] - `calls` [EXTRACTED]
-- [[tokensIn()]] - `calls` [EXTRACTED]
+- [[tokensIn()_1]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/marketplace-relevancets
+#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/cdp_budget.py"
 type: "rationale"
-community: "Slot"
+community: "NavigationBudget"
 location: "L107"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Slot
+  - community/NavigationBudget
 ---
 
 # The navigation was refused (4xx/5xx/block/auth) as reported by the caller. A…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[dot-refused()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Slot
+#graphify/rationale #graphify/EXTRACTED #community/NavigationBudget

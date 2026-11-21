@@ -13,5 +13,6 @@ tags:
 ## Connections
 - [[analysissrcapp.ts]] - `imports` [EXTRACTED]
 - [[gatewaysrcapp.ts]] - `imports` [EXTRACTED]
+- [[watchlist-checker.ts]] - `imports` [EXTRACTED]
 
 #graphify/concept #graphify/EXTRACTED #community/gateway/src/appts

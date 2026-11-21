@@ -12,7 +12,7 @@ tags:
 # isHistoryEntry()
 
 ## Connections
-- [[dot-load()]] - `indirect_call` [INFERRED]
+- [[dot-load()_5]] - `indirect_call` [INFERRED]
 - [[search-history.ts]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/SearchHistory

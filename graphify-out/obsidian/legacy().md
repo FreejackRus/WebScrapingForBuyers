@@ -12,7 +12,7 @@ tags:
 # legacy()
 
 ## Connections
-- [[scenario()_82]] - `indirect_call` [INFERRED]
+- [[scenario()_88]] - `indirect_call` [INFERRED]
 - [[test_wb_search_storefront_does_not_fall_back_to_search_goods()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_wb_search_storefront_does_not_fall_back_to_search_goods

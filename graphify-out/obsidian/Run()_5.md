@@ -1,17 +1,20 @@
 ---
-source_file: "tools/diagnose-chatgpt-callback.ps1"
+source_file: "scripts/eval-search.mjs"
 type: "code"
-community: "diagnose-chatgpt-callback.ps1"
-location: "L7"
+community: "eval-search.mjs"
+location: "L15"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/diagnose-chatgpt-callbackps1
+  - community/eval-searchmjs
 ---
 
-# Run()
+# run()
 
 ## Connections
-- [[diagnose-chatgpt-callback.ps1]] - `contains` [EXTRACTED]
+- [[eval-search.mjs]] - `contains` [EXTRACTED]
+- [[inStock()_1]] - `indirect_call` [INFERRED]
+- [[isDistributor()_1]] - `calls` [EXTRACTED]
+- [[sleep()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/diagnose-chatgpt-callbackps1
+#graphify/code #graphify/EXTRACTED #community/eval-searchmjs

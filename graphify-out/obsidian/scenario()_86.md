@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "test_helpers.py"
-location: "L243"
+community: "test_ozon_search_reports_actionable_cdp_block"
+location: "L420"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_helperspy
+  - community/test_ozon_search_reports_actionable_cdp_block
 ---
 
 # scenario()
 
 ## Connections
-- [[test_safe_get_text_classifies_httpx_timeout_as_timeout()]] - `contains` [EXTRACTED]
+- [[blocked_fetch()]] - `indirect_call` [INFERRED]
+- [[test_ozon_search_reports_actionable_cdp_block()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_helperspy
+#graphify/code #graphify/EXTRACTED #community/test_ozon_search_reports_actionable_cdp_block

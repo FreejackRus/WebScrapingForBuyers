@@ -1,12 +1,12 @@
 ---
 source_file: "apps/gateway/src/search-history.ts"
 type: "code"
-community: "SearchHistory"
+community: "watchlist-checker.ts"
 location: "L10"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/SearchHistory
+  - community/watchlist-checkerts
 ---
 
 # SearchRecord
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[search-history.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/SearchHistory
+#graphify/code #graphify/EXTRACTED #community/watchlist-checkerts

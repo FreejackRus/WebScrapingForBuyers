@@ -12,6 +12,6 @@ tags:
 # Phase 3 — Choose directions
 
 ## Connections
-- [[Workflow]] - `contains` [EXTRACTED]
+- [[Workflow_2]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/Prototyping_Variants

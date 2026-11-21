@@ -1,18 +1,18 @@
 ---
-source_file: "apps/gateway/src/search-history.ts"
+source_file: "apps/gateway/src/watchlist.ts"
 type: "code"
-community: "SearchHistory"
-location: "L138"
+community: "WatchlistStore"
+location: "L156"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/SearchHistory
+  - community/WatchlistStore
 ---
 
 # .write()
 
 ## Connections
 - [[dot-drain()]] - `calls` [EXTRACTED]
-- [[SearchHistory]] - `method` [EXTRACTED]
+- [[WatchlistStore]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/SearchHistory
+#graphify/code #graphify/EXTRACTED #community/WatchlistStore

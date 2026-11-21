@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/CONTRIBUTING.md"
+source_file: "mcp-servers/ru-marketplace-mcp/docs/ARCHITECTURE.md"
 type: "document"
-community: "Contributing"
-location: "L216"
+community: "Architecture"
+location: "L221"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Contributing
+  - community/Architecture
 ---
 
 # Adding a marketplace
 
 ## Connections
-- [[Contributing_1]] - `contains` [EXTRACTED]
+- [[Architecture_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Contributing
+#graphify/document #graphify/EXTRACTED #community/Architecture

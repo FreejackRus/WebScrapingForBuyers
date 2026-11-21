@@ -1,17 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "TransportDownError"
+community: "raise_tool_error"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/TransportDownError
+  - community/raise_tool_error
 ---
 
 # min_length
 
 ## Connections
-- [[yandex_card()]] - `references` [EXTRACTED]
-- [[yandex_search()_1]] - `references` [EXTRACTED]
+- [[lamoda_card()]] - `references` [EXTRACTED]
+- [[lamoda_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/TransportDownError
+#graphify/code #graphify/EXTRACTED #community/raise_tool_error

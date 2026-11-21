@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Fetch via curl_cffi, honouring ``_safe_get_text``'s (status, text, err)…]] - `rationale_for` [EXTRACTED]
-- [[_fetch()_1]] - `indirect_call` [INFERRED]
+- [[_fetch()]] - `indirect_call` [INFERRED]
 - [[_safe_get_text()]] - `calls` [EXTRACTED]
 - [[wb_connectorserver.py]] - `contains` [EXTRACTED]
 

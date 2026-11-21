@@ -15,6 +15,7 @@ tags:
 - [[_healthy_selfcheck_responder()]] - `indirect_call` [INFERRED]
 - [[_question()]] - `calls` [EXTRACTED]
 - [[_questions_payload()]] - `calls` [EXTRACTED]
+- [[scenario()_44]] - `indirect_call` [INFERRED]
 - [[scenario()_45]] - `indirect_call` [INFERRED]
 - [[scenario()_46]] - `indirect_call` [INFERRED]
 - [[scenario()_47]] - `indirect_call` [INFERRED]
@@ -33,7 +34,6 @@ tags:
 - [[scenario()_60]] - `indirect_call` [INFERRED]
 - [[scenario()_61]] - `indirect_call` [INFERRED]
 - [[scenario()_62]] - `indirect_call` [INFERRED]
-- [[scenario()_63]] - `indirect_call` [INFERRED]
 - [[test_questions_returns_pairs_and_marks_answered()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/INFERRED #community/_patch_questions

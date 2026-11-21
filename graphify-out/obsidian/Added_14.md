@@ -1,18 +1,22 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
-community: "compare_verify_offer"
-location: "L729"
+community: "compare_prices"
+location: "L345"
 tags:
   - graphify/document
-  - graphify/EXTRACTED
-  - community/compare_verify_offer
+  - graphify/INFERRED
+  - community/compare_prices
 ---
 
 # Added
 
 ## Connections
-- [[1.9.0 — 2026-09-09]] - `contains` [EXTRACTED]
-- [[compare_verify_offer()]] - `references` [INFERRED]
+- [[2.2.0 — 2026-09-11]] - `contains` [EXTRACTED]
+- [[ali()]] - `references` [INFERRED]
+- [[cian_card()]] - `references` [INFERRED]
+- [[cian_search()]] - `references` [INFERRED]
+- [[compare_prices()]] - `references` [INFERRED]
+- [[marketplace_sources()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/compare_verify_offer
+#graphify/document #graphify/INFERRED #community/compare_prices

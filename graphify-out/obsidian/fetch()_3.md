@@ -19,7 +19,7 @@ tags:
 - [[get_handoff_id()]] - `calls` [EXTRACTED]
 - [[log_event()]] - `calls` [EXTRACTED]
 - [[raise_tool_error()]] - `calls` [EXTRACTED]
-- [[read()_3]] - `indirect_call` [INFERRED]
+- [[read()_2]] - `indirect_call` [INFERRED]
 - [[read_with_handoff()]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/TransportDownError

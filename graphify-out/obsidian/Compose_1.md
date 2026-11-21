@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/docs/DEPLOYMENT.md"
+source_file: "docs/DISTRIBUTORS.md"
 type: "document"
-community: "Deployment"
-location: "L202"
+community: "SourceAdapter"
+location: "L238"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Deployment
+  - community/SourceAdapter
 ---
 
 # Compose
 
 ## Connections
-- [[Docker]] - `contains` [EXTRACTED]
+- [[Источники дистрибьюторы и маркетплейсы]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Deployment
+#graphify/document #graphify/EXTRACTED #community/SourceAdapter

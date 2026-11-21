@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/dom.py"
 type: "code"
-community: "prices_from_tile"
+community: "coerce_price"
 location: "L282"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/prices_from_tile
+  - community/coerce_price
 ---
 
 # _parsed()
@@ -15,4 +15,4 @@ tags:
 - [[coerce_price()]] - `calls` [EXTRACTED]
 - [[prices_from_tile()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/prices_from_tile
+#graphify/code #graphify/EXTRACTED #community/coerce_price

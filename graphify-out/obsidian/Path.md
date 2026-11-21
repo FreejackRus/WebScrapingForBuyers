@@ -1,16 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "StdioProbe"
+community: "_skill_dir"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/StdioProbe
+  - community/_skill_dir
 ---
 
 # Path
 
 ## Connections
-- [[measure()]] - `references` [EXTRACTED]
+- [[_frontmatter()]] - `references` [EXTRACTED]
+- [[_skill_dir()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/StdioProbe
+#graphify/code #graphify/EXTRACTED #community/_skill_dir

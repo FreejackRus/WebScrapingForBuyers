@@ -12,7 +12,7 @@ tags:
 # _handoff_jpeg()
 
 ## Connections
-- [[Any_26]] - `references` [EXTRACTED]
+- [[Any_22]] - `references` [EXTRACTED]
 - [[Read the encoded image dimensions, not CSS dimensions (which ignore DPR).]] - `rationale_for` [EXTRACTED]
 - [[capture_owned_viewport()]] - `calls` [EXTRACTED]
 - [[chrome_cdp.py]] - `contains` [EXTRACTED]

@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "avito_connector/server.py"
+community: "cian_search"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/avito_connector/serverpy
+  - community/cian_search
 ---
 
 # le
 
 ## Connections
-- [[avito_search()_1]] - `references` [EXTRACTED]
+- [[cian_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/avito_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/cian_search

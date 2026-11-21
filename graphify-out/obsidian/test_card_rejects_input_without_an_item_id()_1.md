@@ -13,6 +13,6 @@ tags:
 
 ## Connections
 - [[avito-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[parametrize_26]] - `references` [EXTRACTED]
+- [[parametrize_31]] - `references` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_search_rejects_a_malformed_location_id

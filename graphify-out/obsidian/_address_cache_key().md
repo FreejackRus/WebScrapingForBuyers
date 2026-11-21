@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/server.py"
 type: "code"
-community: "log_event"
+community: "megamarket_connector/server.py"
 location: "L101"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/log_event
+  - community/megamarket_connector/serverpy
 ---
 
 # _address_cache_key()
@@ -16,4 +16,4 @@ tags:
 - [[_resolve_address_id()]] - `calls` [EXTRACTED]
 - [[megamarket_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/log_event
+#graphify/code #graphify/EXTRACTED #community/megamarket_connector/serverpy

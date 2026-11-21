@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py"
 type: "code"
-community: "mcp-core/tests/test_browser_handoff.py"
+community: "browser"
 location: "L19"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/mcp-core/tests/test_browser_handoffpy
+  - community/browser
 ---
 
 # browser()
 
 ## Connections
-- [[fixture_24]] - `references` [EXTRACTED]
+- [[fixture_20]] - `references` [EXTRACTED]
 - [[mcp-coreteststest_browser_handoff.py]] - `contains` [EXTRACTED]
-- [[open_page()_4]] - `indirect_call` [INFERRED]
+- [[open_page()_3]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/mcp-core/tests/test_browser_handoffpy
+#graphify/code #graphify/EXTRACTED #community/browser

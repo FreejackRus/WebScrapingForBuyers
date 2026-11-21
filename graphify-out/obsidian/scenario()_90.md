@@ -1,18 +1,21 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
 type: "code"
-community: "test_ozon_search_reports_actionable_cdp_block"
-location: "L420"
+community: "test_storefront_reads_live_xhr_body_over_raw_cdp_when_playwright_cannot_attach"
+location: "L359"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/test_ozon_search_reports_actionable_cdp_block
+  - graphify/INFERRED
+  - community/test_storefront_reads_live_xhr_body_over_raw_cdp_when_playwright_cannot_attach
 ---
 
 # scenario()
 
 ## Connections
-- [[blocked_fetch()]] - `indirect_call` [INFERRED]
-- [[test_ozon_search_reports_actionable_cdp_block()]] - `contains` [EXTRACTED]
+- [[fake_raw_page()]] - `indirect_call` [INFERRED]
+- [[incompatible_playwright()]] - `indirect_call` [INFERRED]
+- [[no_wait()_37]] - `indirect_call` [INFERRED]
+- [[refetch_must_not_run()]] - `indirect_call` [INFERRED]
+- [[test_storefront_reads_live_xhr_body_over_raw_cdp_when_playwright_cannot_attach()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_ozon_search_reports_actionable_cdp_block
+#graphify/code #graphify/INFERRED #community/test_storefront_reads_live_xhr_body_over_raw_cdp_when_playwright_cannot_attach

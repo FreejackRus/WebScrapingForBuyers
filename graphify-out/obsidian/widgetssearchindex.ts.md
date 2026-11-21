@@ -12,7 +12,7 @@ tags:
 # widgets/search/index.ts
 
 ## Connections
-- [[Metrics()_1]] - `re_exports` [EXTRACTED]
+- [[Metrics()]] - `re_exports` [EXTRACTED]
 - [[OfferCard()]] - `re_exports` [EXTRACTED]
 - [[OfferTable()]] - `re_exports` [EXTRACTED]
 - [[SearchCommand()]] - `re_exports` [EXTRACTED]

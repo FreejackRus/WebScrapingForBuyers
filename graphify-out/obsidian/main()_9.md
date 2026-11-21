@@ -1,22 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/examples/health_check.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/__main__.py"
 type: "code"
-community: "sys"
-location: "L35"
+community: "run_server"
+location: "L20"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/sys
+  - graphify/EXTRACTED
+  - community/run_server
 ---
 
 # main()
 
 ## Connections
-- [[detmir_selfcheck()]] - `calls` [INFERRED]
-- [[health_check.py]] - `contains` [EXTRACTED]
-- [[ozon_selfcheck()]] - `calls` [INFERRED]
-- [[run_one()]] - `calls` [EXTRACTED]
-- [[wb_selfcheck()]] - `calls` [INFERRED]
-- [[yandex_selfcheck()]] - `calls` [INFERRED]
+- [[Run the server on the transport selected by the environment (stdio default)._2]] - `rationale_for` [EXTRACTED]
+- [[cian_connector__main__.py]] - `contains` [EXTRACTED]
+- [[run_server()]] - `calls` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/sys
+#graphify/code #graphify/EXTRACTED #community/run_server

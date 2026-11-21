@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Agent skills]] - `contains` [EXTRACTED]
-- [[Configuration_1]] - `contains` [EXTRACTED]
+- [[Configuration]] - `contains` [EXTRACTED]
 - [[Development]] - `contains` [EXTRACTED]
 - [[How this was built]] - `contains` [EXTRACTED]
 - [[License]] - `contains` [EXTRACTED]
@@ -21,7 +21,7 @@ tags:
 - [[Reliability]] - `contains` [EXTRACTED]
 - [[Thanks]] - `contains` [EXTRACTED]
 - [[The tools]] - `contains` [EXTRACTED]
-- [[Trust boundary_2]] - `contains` [EXTRACTED]
+- [[Trust boundary_1]] - `contains` [EXTRACTED]
 - [[What you get]] - `contains` [EXTRACTED]
 - [[ru-marketplace-mcpREADME]] - `contains` [EXTRACTED]
 

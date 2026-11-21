@@ -1,20 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "test_fetch_composer_does_not_cache_a_block"
-location: "L831"
+community: "test_helpers.py"
+location: "L1646"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_fetch_composer_does_not_cache_a_block
+  - community/test_helperspy
 ---
 
 # scenario()
 
 ## Connections
-- [[_patch_tier1()]] - `calls` [EXTRACTED]
-- [[blocked_then_ok()]] - `indirect_call` [INFERRED]
-- [[failing_cdp()]] - `indirect_call` [INFERRED]
-- [[test_fetch_composer_does_not_cache_a_block()]] - `contains` [EXTRACTED]
+- [[test_questions_is_registered_as_a_tool()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_fetch_composer_does_not_cache_a_block
+#graphify/code #graphify/EXTRACTED #community/test_helperspy

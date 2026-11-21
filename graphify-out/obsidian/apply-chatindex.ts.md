@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/features/analysis/apply-chat/index.ts"
 type: "code"
-community: "chat/ui/index.tsx"
+community: "useSearchStore"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/chat/ui/indextsx
+  - community/useSearchStore
 ---
 
 # apply-chat/index.ts
@@ -20,4 +20,4 @@ tags:
 - [[packages_contracts_dist_index_analysisresult]] - `imports` [EXTRACTED]
 - [[useSearchStore]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/chat/ui/indextsx
+#graphify/code #graphify/EXTRACTED #community/useSearchStore

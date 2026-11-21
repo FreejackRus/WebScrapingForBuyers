@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "_FakeCurlResponse"
-location: "L2007"
+community: "_RecordingPacer"
+location: "L2101"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_FakeCurlResponse
+  - community/_RecordingPacer
 ---
 
 # .__init__()
 
 ## Connections
-- [[_FakeCurlResponse]] - `method` [EXTRACTED]
+- [[_RecordingPacer]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_FakeCurlResponse
+#graphify/code #graphify/EXTRACTED #community/_RecordingPacer

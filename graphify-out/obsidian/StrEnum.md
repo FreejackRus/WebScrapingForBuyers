@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "json"
+community: "TransportDownError"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/json
+  - community/TransportDownError
 ---
 
 # StrEnum
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[ErrorCode]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/json
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

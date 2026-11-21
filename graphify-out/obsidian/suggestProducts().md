@@ -13,6 +13,6 @@ tags:
 
 ## Connections
 - [[catalog.ts]] - `contains` [EXTRACTED]
-- [[normalize()_1]] - `calls` [EXTRACTED]
+- [[normalize()]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/product-from-queryts

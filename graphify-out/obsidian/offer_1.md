@@ -1,17 +1,17 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/fallback-source-adapter.test.ts"
+source_file: "apps/analysis/src/infrastructure/vllm-analysis-narrator.test.ts"
 type: "code"
-community: "SourceAdapter"
-location: "L17"
+community: "analysis/package.json"
+location: "L9"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/SourceAdapter
+  - community/analysis/packagejson
 ---
 
 # offer
 
 ## Connections
-- [[fallback-source-adapter.test.ts]] - `contains` [EXTRACTED]
+- [[vllm-analysis-narrator.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/SourceAdapter
+#graphify/code #graphify/EXTRACTED #community/analysis/packagejson

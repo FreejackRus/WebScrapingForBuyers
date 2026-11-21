@@ -1,17 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "TransportDownError"
+community: "yandex_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/TransportDownError
+  - community/yandex_card
 ---
 
 # default
 
 ## Connections
 - [[yandex_card()]] - `references` [EXTRACTED]
-- [[yandex_search()_1]] - `references` [EXTRACTED]
+- [[yandex_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/TransportDownError
+#graphify/code #graphify/EXTRACTED #community/yandex_card

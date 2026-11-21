@@ -12,7 +12,7 @@ tags:
 # _can_process_call()
 
 ## Connections
-- [[Any_8]] - `references` [EXTRACTED]
+- [[Any_13]] - `references` [EXTRACTED]
 - [[_run_sync_bounded()]] - `calls` [EXTRACTED]
 - [[_sync_call_in_process()]] - `calls` [EXTRACTED]
 - [[ozon_connectorserver.py]] - `contains` [EXTRACTED]

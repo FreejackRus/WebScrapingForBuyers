@@ -12,6 +12,6 @@ tags:
 # Run the connector's real extractor over the captured markup. Skips rather than…
 
 ## Connections
-- [[_extract()_12]] - `rationale_for` [EXTRACTED]
+- [[_extract()_14]] - `rationale_for` [EXTRACTED]
 
 #graphify/rationale #graphify/EXTRACTED #community/citilink-connector/tests/test_search_extractor_dompy

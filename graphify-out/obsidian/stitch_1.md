@@ -1,17 +1,19 @@
 ---
-source_file: ".mcp.json"
-type: "code"
-community: "e2e_stdio_check.py"
+source_file: "docs/STITCH.md"
+type: "document"
+community: "Мини-брендбук PEREMENA для Price Radar"
 location: "L1"
 tags:
-  - graphify/code
+  - graphify/document
   - graphify/EXTRACTED
-  - community/e2e_stdio_checkpy
+  - community/Мини-брендбук_PEREMENA_для_Price_Radar
 ---
 
-# stitch
+# STITCH.md
 
 ## Connections
-- [[dot-mcp.json]] - `contains` [EXTRACTED]
+- [[BRAND]] - `references` [EXTRACTED]
+- [[README]] - `references` [EXTRACTED]
+- [[Stitch + бренд PEREMENA]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/e2e_stdio_checkpy
+#graphify/document #graphify/EXTRACTED #community/Мини-брендбук_PEREMENA_для_Price_Radar

@@ -1,20 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/stdio_probe.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp.py"
 type: "code"
-community: "StdioProbe"
-location: "L89"
+community: "_FakeWs"
+location: "L501"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/StdioProbe
+  - community/_FakeWs
 ---
 
 # .send()
 
 ## Connections
-- [[dot-initialize()]] - `calls` [EXTRACTED]
-- [[dot-list_tools()]] - `calls` [EXTRACTED]
-- [[ProbeError]] - `calls` [EXTRACTED]
-- [[StdioProbe]] - `method` [EXTRACTED]
+- [[_FakeWs]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/StdioProbe
+#graphify/code #graphify/EXTRACTED #community/_FakeWs

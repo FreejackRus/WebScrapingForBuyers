@@ -1,23 +1,24 @@
 ---
 type: community
-cohesion: 0.25
-members: 8
+cohesion: 0.22
+members: 9
 ---
 
 # Ozon Connector
 
-**Cohesion:** 0.25 - loosely connected
-**Members:** 8 nodes
+**Cohesion:** 0.22 - loosely connected
+**Members:** 9 nodes
 
 ## Members
-- [[Gotchas_14]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/ozon-connector/SKILL.md
-- [[Ozon Connector_1]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/ozon-connector/SKILL.md
-- [[Prerequisite_1]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/ozon-connector/SKILL.md
-- [[Source-of-truth caveat_1]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/ozon-connector/SKILL.md
-- [[Sources of truth_3]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/ozon-connector/SKILL.md
-- [[When to use_16]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/ozon-connector/SKILL.md
-- [[Workflow_5]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/ozon-connector/SKILL.md
-- [[dshskillsozon-connectorSKILL]] - document - mcp-servers/ru-marketplace-mcp/dsh/skills/ozon-connector/SKILL.md
+- [[Gotchas_19]] - document - mcp-servers/ru-marketplace-mcp/skills/ozon-connector/SKILL.md
+- [[Ozon Connector_1]] - document - mcp-servers/ru-marketplace-mcp/skills/ozon-connector/SKILL.md
+- [[Prerequisite_1]] - document - mcp-servers/ru-marketplace-mcp/skills/ozon-connector/SKILL.md
+- [[Source-of-truth caveat_1]] - document - mcp-servers/ru-marketplace-mcp/skills/ozon-connector/SKILL.md
+- [[Sources of truth_3]] - document - mcp-servers/ru-marketplace-mcp/skills/ozon-connector/SKILL.md
+- [[Tools available_11]] - document - mcp-servers/ru-marketplace-mcp/skills/ozon-connector/SKILL.md
+- [[When to use_17]] - document - mcp-servers/ru-marketplace-mcp/skills/ozon-connector/SKILL.md
+- [[Workflow_5]] - document - mcp-servers/ru-marketplace-mcp/skills/ozon-connector/SKILL.md
+- [[ru-marketplace-mcpskillsozon-connectorSKILL]] - document - mcp-servers/ru-marketplace-mcp/skills/ozon-connector/SKILL.md
 
 ## Live Query (requires Dataview plugin)
 
@@ -27,8 +28,10 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
+- 1 edge to [[_COMMUNITY_success]]
+- 1 edge to [[_COMMUNITY_ozon_connectorserver.py]]
 - 1 edge to [[_COMMUNITY_compare_prices]]
-- 1 edge to [[_COMMUNITY_ozon_selfcheck]]
 
 ## Top bridge nodes
-- [[Ozon Connector_1]] - degree 9, connects to 2 communities
+- [[Tools available_11]] - degree 3, connects to 2 communities
+- [[Ozon Connector_1]] - degree 9, connects to 1 community

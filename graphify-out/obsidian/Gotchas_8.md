@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/dns-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/yandex-connector/SKILL.md"
 type: "document"
-community: "DNS-Shop Connector"
-location: "L55"
+community: "yandex_card"
+location: "L66"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/DNS-Shop_Connector
+  - community/yandex_card
 ---
 
 # Gotchas
 
 ## Connections
-- [[DNS-Shop Connector_1]] - `contains` [EXTRACTED]
+- [[Yandex Market Connector]] - `contains` [EXTRACTED]
+- [[yandex_card()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/DNS-Shop_Connector
+#graphify/document #graphify/EXTRACTED #community/yandex_card

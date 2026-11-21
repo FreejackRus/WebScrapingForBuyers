@@ -17,7 +17,7 @@ members: 8
 - [[diagnose()]] - code - mcp-servers/ru-marketplace-mcp/scripts/diagnose_drift.py
 - [[diagnose_drift.py]] - code - mcp-servers/ru-marketplace-mcp/scripts/diagnose_drift.py
 - [[diagnose_megamarket()]] - code - mcp-servers/ru-marketplace-mcp/scripts/diagnose_drift.py
-- [[main()_27]] - code - mcp-servers/ru-marketplace-mcp/scripts/diagnose_drift.py
+- [[main()_6]] - code - mcp-servers/ru-marketplace-mcp/scripts/diagnose_drift.py
 
 ## Live Query (requires Dataview plugin)
 
@@ -27,14 +27,14 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 4 edges to [[_COMMUNITY_json]]
+- 3 edges to [[_COMMUNITY_json]]
+- 2 edges to [[_COMMUNITY_citilink_card]]
 - 2 edges to [[_COMMUNITY_shape_signature]]
-- 1 edge to [[_COMMUNITY_wb_connectorserver.py]]
-- 1 edge to [[_COMMUNITY_open_page]]
 - 1 edge to [[_COMMUNITY_resilience.py]]
-- 1 edge to [[_COMMUNITY_StdioProbe]]
+- 1 edge to [[_COMMUNITY_mcp_startup.py]]
+- 1 edge to [[_COMMUNITY_chrome_cdp.py]]
 
 ## Top bridge nodes
-- [[diagnose_drift.py]] - degree 11, connects to 3 communities
-- [[diagnose()]] - degree 7, connects to 3 communities
+- [[diagnose_drift.py]] - degree 11, connects to 4 communities
+- [[diagnose()]] - degree 7, connects to 2 communities
 - [[diagnose_megamarket()]] - degree 4, connects to 1 community

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/README.md"
 type: "document"
-community: "ru-marketplace-mcp"
+community: "aliexpress_selfcheck"
 location: "L422"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/ru-marketplace-mcp
+  - community/aliexpress_selfcheck
 ---
 
 # Сравнение цен — `compare_*`
@@ -15,4 +15,4 @@ tags:
 - [[compare_sources()]] - `references` [INFERRED]
 - [[Инструменты]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/ru-marketplace-mcp
+#graphify/document #graphify/EXTRACTED #community/aliexpress_selfcheck

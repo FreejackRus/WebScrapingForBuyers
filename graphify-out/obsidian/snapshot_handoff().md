@@ -12,7 +12,7 @@ tags:
 # snapshot_handoff()
 
 ## Connections
-- [[Any_16]] - `references` [EXTRACTED]
+- [[Any_1]] - `references` [EXTRACTED]
 - [[Capture a retained page in this session; never open or navigate a tab.]] - `rationale_for` [EXTRACTED]
 - [[HandoffBusyError]] - `calls` [EXTRACTED]
 - [[NotFoundError]] - `calls` [EXTRACTED]

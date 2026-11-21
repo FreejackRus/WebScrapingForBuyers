@@ -12,10 +12,10 @@ tags:
 # load_bundle()
 
 ## Connections
-- [[Any_29]] - `references` [EXTRACTED]
+- [[Any_28]] - `references` [EXTRACTED]
 - [[Load and validate a case bundle; raise ValueError when it is unusable.]] - `rationale_for` [EXTRACTED]
 - [[Path_18]] - `references` [EXTRACTED]
-- [[main()_35]] - `calls` [EXTRACTED]
+- [[main()_36]] - `calls` [EXTRACTED]
 - [[model_routing_eval.py]] - `contains` [EXTRACTED]
 - [[validate_bundle()]] - `calls` [EXTRACTED]
 

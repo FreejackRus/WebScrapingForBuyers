@@ -2,7 +2,7 @@
 source_file: "packages/contracts/src/index.ts"
 type: "code"
 community: "contracts/src/index.ts"
-location: "L151"
+location: "L226"
 tags:
   - graphify/code
   - graphify/EXTRACTED

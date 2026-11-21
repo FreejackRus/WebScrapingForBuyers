@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_pacing.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_no_print.py"
 type: "code"
-community: "FakeClock"
-location: "L18"
+community: "check_no_print.py"
+location: "L31"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/FakeClock
+  - community/check_no_printpy
 ---
 
 # .__init__()
 
 ## Connections
-- [[FakeClock]] - `method` [EXTRACTED]
+- [[StdoutWriteVisitor]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/FakeClock
+#graphify/code #graphify/EXTRACTED #community/check_no_printpy

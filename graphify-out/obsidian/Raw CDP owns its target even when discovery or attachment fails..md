@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_raw_lifecycle.py"
 type: "rationale"
-community: "test_chrome_cdp_raw_lifecycle.py"
+community: "transport/__init__.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/test_chrome_cdp_raw_lifecyclepy
+  - community/transport/__init__py
 ---
 
 # Raw CDP owns its target even when discovery or attachment fails.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_chrome_cdp_raw_lifecycle.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/test_chrome_cdp_raw_lifecyclepy
+#graphify/rationale #graphify/EXTRACTED #community/transport/__init__py

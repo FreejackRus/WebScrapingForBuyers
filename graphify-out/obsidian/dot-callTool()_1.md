@@ -1,19 +1,21 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
 type: "code"
-community: "mcp-marketplace-adapter.ts"
-location: "L239"
+community: "card-verifiers.ts"
+location: "L257"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/mcp-marketplace-adapterts
+  - graphify/EXTRACTED
+  - community/card-verifiersts
 ---
 
 # .callTool()
 
 ## Connections
-- [[dot-fetchCitilinkCards()]] - `calls` [INFERRED]
-- [[dot-fetchMappedOffers()]] - `calls` [INFERRED]
-- [[MarketplaceToolCaller]] - `method` [EXTRACTED]
+- [[dot-connect()]] - `calls` [EXTRACTED]
+- [[dot-invoke()]] - `calls` [EXTRACTED]
+- [[dot-reset()_2]] - `calls` [EXTRACTED]
+- [[MarketplaceMcpClient]] - `method` [EXTRACTED]
+- [[isMcpSessionLostError()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/mcp-marketplace-adapterts
+#graphify/code #graphify/EXTRACTED #community/card-verifiersts

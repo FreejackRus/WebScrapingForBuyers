@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/examples/avito_search.py"
+source_file: "mcp-servers/ru-marketplace-mcp/examples/compare_with_china.py"
 type: "code"
-community: "avito_connector/server.py"
-location: "L18"
+community: "compare_prices"
+location: "L19"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/avito_connector/serverpy
+  - community/compare_prices
 ---
 
 # main()
 
 ## Connections
-- [[avito_search()_1]] - `calls` [EXTRACTED]
-- [[avito_search.py]] - `contains` [EXTRACTED]
-- [[avito_seller()]] - `calls` [EXTRACTED]
+- [[compare_prices()]] - `calls` [EXTRACTED]
+- [[compare_with_china.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/avito_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/compare_prices

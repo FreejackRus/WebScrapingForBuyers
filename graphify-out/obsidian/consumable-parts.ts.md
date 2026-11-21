@@ -15,6 +15,7 @@ tags:
 - [[PART_WORDS]] - `contains` [EXTRACTED]
 - [[isUnrequestedConsumablePart()]] - `contains` [EXTRACTED]
 - [[leadingTitle()]] - `contains` [EXTRACTED]
+- [[mcp-marketplace-adapter.ts]] - `imports_from` [EXTRACTED]
 - [[offer-assessment.ts]] - `imports_from` [EXTRACTED]
 - [[origin-intent.test.ts]] - `imports_from` [EXTRACTED]
 - [[packages_contracts_dist_index]] - `imports_from` [EXTRACTED]

@@ -1,24 +1,24 @@
 ---
 source_file: "apps/gateway/src/user-cache.ts"
 type: "code"
-community: "gateway/src/app.ts"
+community: "resilience.test.ts"
 location: "L12"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/gateway/src/appts
+  - community/resiliencetestts
 ---
 
 # UserCache
 
 ## Connections
-- [[dot-clear()_2]] - `method` [EXTRACTED]
-- [[dot-constructor()_14]] - `method` [EXTRACTED]
-- [[dot-get()_3]] - `method` [EXTRACTED]
-- [[dot-set()_1]] - `method` [EXTRACTED]
+- [[dot-clear()]] - `method` [EXTRACTED]
+- [[dot-constructor()_7]] - `method` [EXTRACTED]
+- [[dot-get()]] - `method` [EXTRACTED]
+- [[dot-set()]] - `method` [EXTRACTED]
 - [[buildGatewayApp()]] - `calls` [EXTRACTED]
 - [[gatewaysrcapp.ts]] - `imports` [EXTRACTED]
 - [[resilience.test.ts]] - `imports` [EXTRACTED]
 - [[user-cache.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/gateway/src/appts
+#graphify/code #graphify/EXTRACTED #community/resiliencetestts

@@ -2,7 +2,7 @@
 source_file: "apps/analysis/src/application/analyze.ts"
 type: "code"
 community: "analyze.ts"
-location: "L268"
+location: "L299"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,8 +12,8 @@ tags:
 # analyzeSnapshotRaw()
 
 ## Connections
-- [[dot-answer()]] - `calls` [INFERRED]
-- [[dot-summarize()]] - `calls` [INFERRED]
+- [[dot-answer()_1]] - `calls` [INFERRED]
+- [[dot-summarize()_1]] - `calls` [INFERRED]
 - [[addressName()]] - `calls` [EXTRACTED]
 - [[analyze.ts]] - `contains` [EXTRACTED]
 - [[analyzeSnapshot()]] - `calls` [EXTRACTED]
@@ -31,16 +31,15 @@ tags:
 - [[extractSearchQuery()]] - `calls` [EXTRACTED]
 - [[historyOf()]] - `calls` [EXTRACTED]
 - [[isHelpRequest()]] - `calls` [EXTRACTED]
-- [[isInStock()]] - `calls` [EXTRACTED]
 - [[logSafetyIncident()]] - `calls` [EXTRACTED]
 - [[matchesSource()]] - `calls` [EXTRACTED]
-- [[money()]] - `calls` [EXTRACTED]
+- [[money()_2]] - `calls` [EXTRACTED]
 - [[narrationFailureMessage()]] - `calls` [EXTRACTED]
 - [[offerLabel()]] - `indirect_call` [INFERRED]
 - [[parseMaxPrice()]] - `calls` [EXTRACTED]
 - [[parseSources()]] - `calls` [EXTRACTED]
 - [[parseTitleFilterRules()]] - `calls` [EXTRACTED]
-- [[resolveChatIntent()]] - `calls` [EXTRACTED]
+- [[requestedConditions()]] - `calls` [EXTRACTED]
 - [[ruCount()]] - `calls` [EXTRACTED]
 - [[selectionLimit()]] - `calls` [EXTRACTED]
 - [[sourceLines()]] - `calls` [EXTRACTED]

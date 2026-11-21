@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/app/App.tsx"
 type: "code"
-community: "App.tsx"
+community: "useUserStore"
 location: "L10"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Apptsx
+  - community/useUserStore
 ---
 
 # App()
@@ -16,6 +16,7 @@ tags:
 - [[main.tsx]] - `imports` [EXTRACTED]
 - [[useBootSession()]] - `calls` [EXTRACTED]
 - [[useSearchHotkey()]] - `calls` [EXTRACTED]
+- [[useSharedSearchLink()]] - `calls` [EXTRACTED]
 - [[useUserStore]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Apptsx
+#graphify/code #graphify/EXTRACTED #community/useUserStore

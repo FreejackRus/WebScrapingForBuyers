@@ -1,20 +1,22 @@
 ---
 source_file: "apps/search/src/application/search-service.ts"
 type: "code"
-community: "SearchService"
-location: "L163"
+community: "search-service.ts"
+location: "L374"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/SearchService
+  - community/search-servicets
 ---
 
 # .matchingQuery()
 
 ## Connections
-- [[dot-collect()]] - `calls` [EXTRACTED]
+- [[dot-collect()_1]] - `calls` [EXTRACTED]
+- [[AssessmentRejection]] - `references` [EXTRACTED]
 - [[SearchService]] - `method` [EXTRACTED]
 - [[assessOffer()]] - `calls` [EXTRACTED]
 - [[isUnrequestedConsumablePart()]] - `calls` [EXTRACTED]
+- [[withGrouping()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/SearchService
+#graphify/code #graphify/EXTRACTED #community/search-servicets

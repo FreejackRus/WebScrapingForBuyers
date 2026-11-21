@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_review_regressions.py"
 type: "code"
-community: "test_review_regressions.py"
+community: "transport/__init__.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_review_regressionspy
+  - community/transport/__init__py
 ---
 
 # test_review_regressions.py
@@ -14,8 +14,8 @@ tags:
 ## Connections
 - [[Regressions for defects an independent multi-model review found in R3R4…]] - `rationale_for` [EXTRACTED]
 - [[asyncio]] - `imports` [EXTRACTED]
-- [[browser()_3]] - `contains` [EXTRACTED]
-- [[call()_1]] - `contains` [EXTRACTED]
+- [[browser()_4]] - `contains` [EXTRACTED]
+- [[call()]] - `contains` [EXTRACTED]
 - [[cdp_budget.py]] - `imports_from` [EXTRACTED]
 - [[contextlib]] - `imports_from` [EXTRACTED]
 - [[pytest]] - `imports` [EXTRACTED]
@@ -30,4 +30,4 @@ tags:
 - [[unittest_mock]] - `imports_from` [EXTRACTED]
 - [[vision_policy.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_review_regressionspy
+#graphify/code #graphify/EXTRACTED #community/transport/__init__py

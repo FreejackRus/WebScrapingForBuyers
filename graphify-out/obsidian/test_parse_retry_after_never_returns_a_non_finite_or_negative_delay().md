@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_http.py"
 type: "code"
-community: "parse_retry_after"
+community: "Fixed"
 location: "L13"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/parse_retry_after
+  - community/Fixed
 ---
 
 # test_parse_retry_after_never_returns_a_non_finite_or_negative_delay()
@@ -16,4 +16,4 @@ tags:
 - [[parse_retry_after()]] - `calls` [EXTRACTED]
 - [[test_http.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/parse_retry_after
+#graphify/code #graphify/EXTRACTED #community/Fixed

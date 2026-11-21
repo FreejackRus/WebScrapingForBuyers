@@ -1,16 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "decision_inspect"
+community: "taobao_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/decision_inspect
+  - community/taobao_card
 ---
 
 # max_length
 
 ## Connections
-- [[decision_inspect()]] - `references` [EXTRACTED]
+- [[taobao_card()]] - `references` [EXTRACTED]
+- [[taobao_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/decision_inspect
+#graphify/code #graphify/EXTRACTED #community/taobao_card

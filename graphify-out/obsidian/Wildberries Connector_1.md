@@ -13,13 +13,13 @@ tags:
 
 ## Connections
 - [[DSH activation_24]] - `contains` [EXTRACTED]
-- [[Gotchas_27]] - `contains` [EXTRACTED]
-- [[Sources of truth_1]] - `contains` [EXTRACTED]
+- [[Gotchas_1]] - `contains` [EXTRACTED]
+- [[Sources of truth_2]] - `contains` [EXTRACTED]
 - [[ToS note_1]] - `contains` [EXTRACTED]
-- [[Tools available_19]] - `contains` [EXTRACTED]
-- [[Trust boundary_6]] - `contains` [EXTRACTED]
-- [[When to use_10]] - `contains` [EXTRACTED]
-- [[Workflow patterns_5]] - `contains` [EXTRACTED]
+- [[Tools available_1]] - `contains` [EXTRACTED]
+- [[Trust boundary_8]] - `contains` [EXTRACTED]
+- [[When to use_11]] - `contains` [EXTRACTED]
+- [[Workflow patterns_7]] - `contains` [EXTRACTED]
 - [[ru-marketplace-mcpskillswb-connectorSKILL]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/Wildberries_Connector

@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/test_e2e_stdio_check.py"
 type: "code"
-community: "test_cache_can_be_disabled_by_ttl_zero"
-location: "L1355"
+community: "e2e_stdio_check.py"
+location: "L63"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_cache_can_be_disabled_by_ttl_zero
+  - community/e2e_stdio_checkpy
 ---
 
 # __aexit__()
 
 ## Connections
-- [[test_cache_can_be_disabled_by_ttl_zero()]] - `contains` [EXTRACTED]
+- [[test_probe_checks_running_version()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_cache_can_be_disabled_by_ttl_zero
+#graphify/code #graphify/EXTRACTED #community/e2e_stdio_checkpy

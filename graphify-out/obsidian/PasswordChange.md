@@ -12,7 +12,7 @@ tags:
 # PasswordChange
 
 ## Connections
-- [[dot-changePassword()_1]] - `references` [EXTRACTED]
+- [[dot-changePassword()]] - `references` [EXTRACTED]
 - [[auth-store.ts]] - `contains` [EXTRACTED]
 - [[memory-auth-store.ts]] - `imports` [EXTRACTED]
 

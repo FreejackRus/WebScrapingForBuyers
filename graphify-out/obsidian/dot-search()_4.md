@@ -1,17 +1,21 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/demo-source-adapter.ts"
+source_file: "apps/search/src/infrastructure/sources/netlab-price-feed.ts"
 type: "code"
-community: "SourceAdapter"
-location: "L24"
+community: "netlab-price-feed.ts"
+location: "L381"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/SourceAdapter
+  - community/netlab-price-feedts
 ---
 
 # .search()
 
 ## Connections
-- [[DemoSourceAdapter]] - `method` [EXTRACTED]
+- [[dot-load()_2]] - `calls` [EXTRACTED]
+- [[NetlabPriceFeedAdapter]] - `method` [EXTRACTED]
+- [[isNetlabCandidate()]] - `calls` [EXTRACTED]
+- [[preferRelevantOffers()]] - `indirect_call` [INFERRED]
+- [[toNetlabOffer()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/SourceAdapter
+#graphify/code #graphify/EXTRACTED #community/netlab-price-feedts

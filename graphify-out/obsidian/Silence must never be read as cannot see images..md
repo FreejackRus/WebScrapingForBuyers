@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_vision_policy.py"
 type: "rationale"
-community: "test_review_regressions.py"
+community: "resolve_image_delivery"
 location: "L39"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/test_review_regressionspy
+  - community/resolve_image_delivery
 ---
 
 # Silence must never be read as "cannot see images".
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_a_client_that_says_nothing_is_unknown_not_visionless()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/test_review_regressionspy
+#graphify/rationale #graphify/EXTRACTED #community/resolve_image_delivery

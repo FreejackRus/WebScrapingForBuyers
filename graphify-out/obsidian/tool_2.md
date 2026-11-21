@@ -1,18 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "ozon_card"
+community: "taobao_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ozon_card
+  - community/taobao_card
 ---
 
 # tool
 
 ## Connections
-- [[ozon_card()]] - `references` [EXTRACTED]
-- [[ozon_reviews()]] - `references` [EXTRACTED]
-- [[ozon_search()]] - `references` [EXTRACTED]
+- [[taobao_card()]] - `references` [EXTRACTED]
+- [[taobao_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ozon_card
+#graphify/code #graphify/EXTRACTED #community/taobao_card

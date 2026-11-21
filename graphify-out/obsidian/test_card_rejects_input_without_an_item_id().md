@@ -12,7 +12,7 @@ tags:
 # test_card_rejects_input_without_an_item_id()
 
 ## Connections
-- [[parametrize_18]] - `references` [EXTRACTED]
+- [[parametrize_21]] - `references` [EXTRACTED]
 - [[taobao-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_challenge_recovery_reads_browser_again_and_caches_only_success

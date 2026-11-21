@@ -1,17 +1,21 @@
 ---
 source_file: ""
 type: "code"
-community: "ozon_card"
+community: "wb_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ozon_card
+  - community/wb_connector/serverpy
 ---
 
 # default
 
 ## Connections
-- [[ozon_reviews()]] - `references` [EXTRACTED]
-- [[ozon_search()]] - `references` [EXTRACTED]
+- [[wb_card()]] - `references` [EXTRACTED]
+- [[wb_categories()]] - `references` [EXTRACTED]
+- [[wb_category_products()]] - `references` [EXTRACTED]
+- [[wb_questions()]] - `references` [EXTRACTED]
+- [[wb_reviews()]] - `references` [EXTRACTED]
+- [[wb_search()_1]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ozon_card
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

@@ -1,20 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/src/citilink_connector/server.py"
 type: "code"
-community: "cian_connector/server.py"
-location: "L147"
+community: "citilink_card"
+location: "L105"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/cian_connector/serverpy
+  - community/citilink_card
 ---
 
 # _polite_wait()
 
 ## Connections
-- [[Space this source's requests out, and back off if it refused us.]] - `rationale_for` [EXTRACTED]
-- [[_fetch_card()]] - `calls` [EXTRACTED]
-- [[_fetch_search()]] - `calls` [EXTRACTED]
-- [[cian_connectorserver.py]] - `contains` [EXTRACTED]
+- [[Space this source's requests out, and back off if it refused us. Reads…_3]] - `rationale_for` [EXTRACTED]
+- [[_cdp_render()]] - `calls` [EXTRACTED]
+- [[citilink_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/cian_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/citilink_card

@@ -1,16 +1,19 @@
 ---
 source_file: ""
 type: "code"
-community: "test_output_schema.py"
+community: "lamoda_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_output_schemapy
+  - community/lamoda_connector/serverpy
 ---
 
 # BaseModel
 
 ## Connections
-- [[_Named]] - `inherits` [EXTRACTED]
+- [[LamodaCardResponse]] - `inherits` [EXTRACTED]
+- [[LamodaSearchItemOut]] - `inherits` [EXTRACTED]
+- [[LamodaSearchResponse]] - `inherits` [EXTRACTED]
+- [[LamodaSizeOut]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_output_schemapy
+#graphify/code #graphify/EXTRACTED #community/lamoda_connector/serverpy

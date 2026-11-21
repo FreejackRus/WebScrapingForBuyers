@@ -1,17 +1,17 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/netlab-client.test.ts"
+source_file: "apps/web/src/widgets/search/offers/ui/search-notices.test.tsx"
 type: "code"
-community: "netlab-client.ts"
-location: "L5"
+community: "packages_contracts_dist_index"
+location: "L14"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/netlab-clientts
+  - community/packages_contracts_dist_index
 ---
 
 # product
 
 ## Connections
-- [[netlab-client.test.ts]] - `contains` [EXTRACTED]
+- [[search-notices.test.tsx]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/netlab-clientts
+#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index

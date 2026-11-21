@@ -12,7 +12,7 @@ tags:
 # search/store/history.test.ts
 
 ## Connections
-- [[api]] - `contains` [EXTRACTED]
+- [[api_2]] - `contains` [EXTRACTED]
 - [[entry()]] - `contains` [EXTRACTED]
 - [[packages_contracts_dist_index]] - `imports_from` [EXTRACTED]
 - [[packages_contracts_dist_index_searchhistoryentry]] - `imports` [EXTRACTED]

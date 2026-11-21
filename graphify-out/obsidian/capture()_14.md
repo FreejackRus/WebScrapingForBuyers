@@ -2,10 +2,10 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_server.py"
 type: "code"
 community: "capture"
-location: "L118"
+location: "L134"
 tags:
   - graphify/code
-  - graphify/INFERRED
+  - graphify/EXTRACTED
   - community/capture
 ---
 
@@ -13,7 +13,6 @@ tags:
 
 ## Connections
 - [[load()_1]] - `calls` [EXTRACTED]
-- [[test_search_builds_a_page_parameter_only_beyond_page_one()]] - `indirect_call` [INFERRED]
-- [[test_search_percent_encodes_cyrillic_queries()]] - `indirect_call` [INFERRED]
+- [[test_search_percent_encodes_cyrillic_queries()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/capture
+#graphify/code #graphify/EXTRACTED #community/capture

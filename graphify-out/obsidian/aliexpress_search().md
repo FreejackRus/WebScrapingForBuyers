@@ -1,21 +1,20 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/src/aliexpress_connector/server.py"
 type: "code"
-community: "aliexpress_card"
+community: "aliexpress_connector/server.py"
 location: "L534"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/aliexpress_card
+  - community/aliexpress_connector/serverpy
 ---
 
 # aliexpress_search()
 
 ## Connections
 - [[AliSearchResponse]] - `uses` [INFERRED]
-- [[Context]] - `references` [EXTRACTED]
-- [[Field]] - `references` [EXTRACTED]
-- [[MetaOut]] - `uses` [INFERRED]
+- [[Field_1]] - `references` [EXTRACTED]
+- [[MetaOut_1]] - `uses` [INFERRED]
 - [[NavBlocked]] - `uses` [INFERRED]
 - [[ParserDriftError]] - `uses` [INFERRED]
 - [[Search AliExpress, rendered in the operator's Chrome.  Return Format…]] - `rationale_for` [EXTRACTED]
@@ -26,13 +25,13 @@ tags:
 - [[_item_from_payload()]] - `calls` [EXTRACTED]
 - [[_tile_prices()]] - `calls` [EXTRACTED]
 - [[aliexpress_connectorserver.py]] - `contains` [EXTRACTED]
-- [[description]] - `references` [EXTRACTED]
+- [[description_1]] - `references` [EXTRACTED]
 - [[log_event()]] - `calls` [EXTRACTED]
-- [[max_length]] - `references` [EXTRACTED]
-- [[min_length]] - `references` [EXTRACTED]
+- [[max_length_1]] - `references` [EXTRACTED]
+- [[min_length_1]] - `references` [EXTRACTED]
 - [[raise_tool_error()]] - `calls` [EXTRACTED]
-- [[tool]] - `references` [EXTRACTED]
-- [[Добавлено]] - `references` [INFERRED]
+- [[tool_1]] - `references` [EXTRACTED]
+- [[Добавлено_3]] - `references` [INFERRED]
 - [[Матрица]] - `references` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/aliexpress_card
+#graphify/code #graphify/EXTRACTED #community/aliexpress_connector/serverpy

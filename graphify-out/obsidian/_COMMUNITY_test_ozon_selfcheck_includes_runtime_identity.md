@@ -14,9 +14,9 @@ members: 10
 - [[fake_fetch()_12]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 - [[fake_fetch()_13]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 - [[fake_fetch()_14]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
+- [[scenario()_63]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 - [[scenario()_64]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 - [[scenario()_65]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
-- [[scenario()_66]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 - [[test_card_and_reviews_accept_search_slug_product_url()]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 - [[test_ozon_selfcheck_includes_runtime_identity()]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
 - [[test_reviews_marks_partial_when_later_page_fails()]] - code - mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py
@@ -37,4 +37,4 @@ SORT file.name ASC
 - [[test_card_and_reviews_accept_search_slug_product_url()]] - degree 4, connects to 2 communities
 - [[test_reviews_marks_partial_when_later_page_fails()]] - degree 4, connects to 2 communities
 - [[_reviews_body()]] - degree 4, connects to 1 community
-- [[scenario()_64]] - degree 2, connects to 1 community
+- [[scenario()_63]] - degree 2, connects to 1 community

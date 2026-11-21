@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[999¥ is glyph-attached, so priceTextsIn keeps it as the price candidate.]] - `rationale_for` [EXTRACTED]
-- [[_extract()]] - `calls` [EXTRACTED]
+- [[_extract()_6]] - `calls` [EXTRACTED]
 - [[taobao-connectorteststest_search_extractor_dom.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/taobao-connector/tests/test_search_extractor_dompy

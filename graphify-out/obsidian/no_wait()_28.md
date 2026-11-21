@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "test_storefront_reads_live_xhr_body_over_raw_cdp_when_playwright_cannot_attach"
-location: "L356"
+community: "_patch_questions"
+location: "L1420"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_storefront_reads_live_xhr_body_over_raw_cdp_when_playwright_cannot_attach
+  - community/_patch_questions
 ---
 
 # no_wait()
 
 ## Connections
-- [[test_storefront_reads_live_xhr_body_over_raw_cdp_when_playwright_cannot_attach()]] - `contains` [EXTRACTED]
+- [[_patch_questions()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_storefront_reads_live_xhr_body_over_raw_cdp_when_playwright_cannot_attach
+#graphify/code #graphify/EXTRACTED #community/_patch_questions

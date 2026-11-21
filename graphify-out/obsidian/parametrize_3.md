@@ -1,19 +1,21 @@
 ---
 source_file: ""
 type: "code"
-community: "cian-connector/tests/test_server.py"
+community: "_skill_dir"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/cian-connector/tests/test_serverpy
+  - community/_skill_dir
 ---
 
 # parametrize
 
 ## Connections
-- [[test_extract_offer_id()]] - `references` [EXTRACTED]
-- [[test_price_unit_derivation()]] - `references` [EXTRACTED]
-- [[test_search_rejects_a_malformed_region()]] - `references` [EXTRACTED]
-- [[test_search_rejects_unknown_room_codes()]] - `references` [EXTRACTED]
+- [[test_every_connector_has_a_skill()]] - `references` [EXTRACTED]
+- [[test_skill_documents_every_tool_the_server_exposes()]] - `references` [EXTRACTED]
+- [[test_skill_frontmatter_matches_the_published_spec()]] - `references` [EXTRACTED]
+- [[test_skill_invents_no_tools()]] - `references` [EXTRACTED]
+- [[test_skill_states_the_price_null_boundary()]] - `references` [EXTRACTED]
+- [[test_tool_sections_offer_only_mcp_callable_names()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/cian-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/_skill_dir

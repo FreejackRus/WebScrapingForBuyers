@@ -19,5 +19,6 @@ tags:
 - [[identitysrcserver.ts]] - `imports_from` [EXTRACTED]
 - [[searchsrcapp.ts]] - `imports_from` [EXTRACTED]
 - [[searchsrcserver.ts]] - `imports_from` [EXTRACTED]
+- [[watchlist-checker.ts]] - `imports_from` [EXTRACTED]
 
 #graphify/concept #graphify/EXTRACTED #community/identity/src/appts

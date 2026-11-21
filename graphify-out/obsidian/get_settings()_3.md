@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/settings.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/src/citilink_connector/settings.py"
 type: "code"
-community: "pydantic"
-location: "L56"
+community: "functools"
+location: "L29"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pydantic
+  - community/functools
 ---
 
 # get_settings()
 
 ## Connections
-- [[CianSettings]] - `calls` [EXTRACTED]
-- [[cian_connectorserver.py]] - `imports` [EXTRACTED]
-- [[cian_connectorsettings.py]] - `contains` [EXTRACTED]
+- [[CitilinkSettings]] - `calls` [EXTRACTED]
+- [[citilink_connectorserver.py]] - `imports` [EXTRACTED]
+- [[citilink_connectorsettings.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pydantic
+#graphify/code #graphify/EXTRACTED #community/functools

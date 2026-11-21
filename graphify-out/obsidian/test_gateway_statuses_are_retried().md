@@ -17,7 +17,7 @@ tags:
 - [[handler()_17]] - `contains` [EXTRACTED]
 - [[handler()_19]] - `indirect_call` [INFERRED]
 - [[make_client()_1]] - `calls` [EXTRACTED]
-- [[parametrize_9]] - `references` [EXTRACTED]
+- [[parametrize_13]] - `references` [EXTRACTED]
 - [[test_http_tier.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_http_tierpy

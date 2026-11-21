@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/docs/ANTI_BOT.md"
 type: "document"
-community: "Anti-bot reality, source by source"
+community: "aliexpress_selfcheck"
 location: "L448"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Anti-bot_reality_source_by_source
+  - community/aliexpress_selfcheck
 ---
 
 # The Wildberries search trap
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[Traps and refusals worth their own section]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Anti-bot_reality_source_by_source
+#graphify/document #graphify/EXTRACTED #community/aliexpress_selfcheck

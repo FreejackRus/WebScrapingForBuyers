@@ -13,10 +13,10 @@ tags:
 
 ## Connections
 - [[Broadcast pages arrive out of order while all six callers are pending.]] - `rationale_for` [EXTRACTED]
-- [[__init__()_2]] - `contains` [EXTRACTED]
+- [[__init__()_1]] - `contains` [EXTRACTED]
 - [[new_browser_cdp_session()]] - `contains` [EXTRACTED]
 - [[new_cdp_session()]] - `contains` [EXTRACTED]
-- [[send()_1]] - `contains` [EXTRACTED]
+- [[send()]] - `contains` [EXTRACTED]
 - [[test_chrome_cdp_stealth.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_stealthpy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_handoff_liveness_consistency.py"
 type: "code"
-community: "pytest"
+community: "transport/__init__.py"
 location: "L44"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pytest
+  - community/transport/__init__py
 ---
 
 # _call()
@@ -17,4 +17,4 @@ tags:
 - [[test_an_idle_expired_lease_is_not_handed_out()]] - `calls` [EXTRACTED]
 - [[test_handoff_liveness_consistency.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pytest
+#graphify/code #graphify/EXTRACTED #community/transport/__init__py

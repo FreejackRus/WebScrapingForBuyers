@@ -11,8 +11,8 @@ tags:
 # parametrize
 
 ## Connections
-- [[test_ambiguous_or_wrong_record_never_verifies_price()]] - `references` [EXTRACTED]
-- [[test_invalid_observed_price_stays_unknown()]] - `references` [EXTRACTED]
-- [[test_numeric_card_identifier_does_not_pick_unrelated_digits()]] - `references` [EXTRACTED]
+- [[test_identity_is_verified_through_mcp_tool()]] - `references` [EXTRACTED]
+- [[test_wb_fixture_color_survives_card_model_and_mcp_verification()]] - `references` [EXTRACTED]
+- [[test_wb_verification_uses_requested_row_not_first()]] - `references` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_card_verification_recordspy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py"
 type: "rationale"
-community: "json"
+community: "raise_tool_error"
 location: "L1094"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/json
+  - community/raise_tool_error
 ---
 
 # Accept the source's numeric ID or canonical product path, never a stray digit.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_numeric_card_id()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/json
+#graphify/rationale #graphify/EXTRACTED #community/raise_tool_error

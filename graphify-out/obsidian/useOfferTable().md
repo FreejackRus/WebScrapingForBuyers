@@ -2,7 +2,7 @@
 source_file: "apps/web/src/features/search/offer-table/index.ts"
 type: "code"
 community: "offers/ui/index.tsx"
-location: "L22"
+location: "L38"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -18,6 +18,8 @@ tags:
 - [[nextOfferSort()]] - `calls` [EXTRACTED]
 - [[offer-tableindex.ts]] - `contains` [EXTRACTED]
 - [[offersuiindex.tsx]] - `imports` [EXTRACTED]
+- [[readPageSize()]] - `indirect_call` [INFERRED]
 - [[useFilteredOffers()]] - `calls` [EXTRACTED]
+- [[useSearchStore]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/offers/ui/indextsx

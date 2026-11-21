@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "code"
-community: "ChallengeRequiredError"
-location: "L64"
+community: "PageLike"
+location: "L605"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ChallengeRequiredError
+  - community/PageLike
 ---
 
 # .__init__()
 
 ## Connections
-- [[dot-__init__()_33]] - `calls` [EXTRACTED]
-- [[RateLimitedError]] - `method` [EXTRACTED]
+- [[_RawCdpPage]] - `method` [EXTRACTED]
+- [[_WsLike]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ChallengeRequiredError
+#graphify/code #graphify/EXTRACTED #community/PageLike

@@ -2,7 +2,7 @@
 source_file: "apps/web/src/pages/search/monitor/ui/index.tsx"
 type: "code"
 community: "workspace/ui/index.tsx"
-location: "L5"
+location: "L6"
 tags:
   - graphify/code
   - graphify/EXTRACTED

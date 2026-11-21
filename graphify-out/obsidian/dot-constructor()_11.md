@@ -1,17 +1,17 @@
 ---
-source_file: "apps/analysis/src/infrastructure/ollama-analysis-narrator.ts"
+source_file: "apps/search/src/infrastructure/sources/citilink-agent-adapter.ts"
 type: "code"
-community: "ollama-analysis-narrator.ts"
-location: "L295"
+community: "mcp-marketplace-adapter.ts"
+location: "L62"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ollama-analysis-narratorts
+  - community/mcp-marketplace-adapterts
 ---
 
 # .constructor()
 
 ## Connections
-- [[OllamaAnalysisNarrator]] - `method` [EXTRACTED]
+- [[CitilinkAgentAdapter]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ollama-analysis-narratorts
+#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts

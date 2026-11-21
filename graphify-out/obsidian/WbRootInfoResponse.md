@@ -12,7 +12,7 @@ tags:
 # WbRootInfoResponse
 
 ## Connections
-- [[BaseModel_15]] - `inherits` [EXTRACTED]
+- [[BaseModel]] - `inherits` [EXTRACTED]
 - [[wb_connectormodels_output.py]] - `contains` [EXTRACTED]
 - [[wb_connectorserver.py]] - `imports` [EXTRACTED]
 - [[wb_root_info()]] - `uses` [INFERRED]

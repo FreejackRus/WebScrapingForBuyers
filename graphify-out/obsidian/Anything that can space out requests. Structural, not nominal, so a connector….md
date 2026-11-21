@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/http_tier.py"
 type: "rationale"
-community: "get_text_budgeted"
+community: "transport/__init__.py"
 location: "L59"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/get_text_budgeted
+  - community/transport/__init__py
 ---
 
 # Anything that can space out requests. Structural, not nominal, so a connector…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[PoliteGate]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/get_text_budgeted
+#graphify/rationale #graphify/EXTRACTED #community/transport/__init__py

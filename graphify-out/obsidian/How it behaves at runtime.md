@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/docs/CDP_SETUP.md"
 type: "document"
-community: "Authenticated transport: driving your own Chrome"
+community: "goto"
 location: "L142"
 tags:
   - graphify/document
   - graphify/INFERRED
-  - community/Authenticated_transport_driving_your_own_Chrome
+  - community/goto
 ---
 
 # How it behaves at runtime
@@ -16,4 +16,4 @@ tags:
 - [[NavBlocked]] - `references` [INFERRED]
 - [[goto()]] - `references` [INFERRED]
 
-#graphify/document #graphify/INFERRED #community/Authenticated_transport_driving_your_own_Chrome
+#graphify/document #graphify/INFERRED #community/goto

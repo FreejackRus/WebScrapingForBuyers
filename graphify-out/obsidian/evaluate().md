@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Case]] - `references` [EXTRACTED]
-- [[main()_24]] - `calls` [EXTRACTED]
+- [[main()_3]] - `calls` [EXTRACTED]
 - [[route()]] - `calls` [EXTRACTED]
 - [[routing_eval.py]] - `contains` [EXTRACTED]
 - [[test_ops_gates.py]] - `imports` [EXTRACTED]

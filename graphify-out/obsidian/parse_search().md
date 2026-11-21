@@ -1,23 +1,23 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/ssr.py"
 type: "code"
-community: "ssr.py"
+community: "Any"
 location: "L569"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ssrpy
+  - community/Any
 ---
 
 # parse_search()
 
 ## Connections
-- [[Any_24]] - `references` [EXTRACTED]
+- [[Any_26]] - `references` [EXTRACTED]
 - [[Parse a search results page into products plus result metadata. Two prices are…]] - `rationale_for` [EXTRACTED]
 - [[_absolute_url()]] - `calls` [EXTRACTED]
 - [[_additional_price()]] - `calls` [EXTRACTED]
 - [[_amount_int()]] - `calls` [EXTRACTED]
-- [[_as_dict()_1]] - `calls` [EXTRACTED]
+- [[_as_dict()]] - `calls` [EXTRACTED]
 - [[_as_list()_1]] - `calls` [EXTRACTED]
 - [[_cart_price()]] - `calls` [EXTRACTED]
 - [[_first_dict()]] - `calls` [EXTRACTED]
@@ -30,6 +30,6 @@ tags:
 - [[merge_card_collections()]] - `calls` [EXTRACTED]
 - [[parse_zone_items()]] - `calls` [EXTRACTED]
 - [[ssr.py]] - `contains` [EXTRACTED]
-- [[yandex_search()_1]] - `calls` [EXTRACTED]
+- [[yandex_search()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ssrpy
+#graphify/code #graphify/EXTRACTED #community/Any

@@ -10,7 +10,7 @@ members: 4
 **Members:** 4 nodes
 
 ## Members
-- [[dot-__init__()_20]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[dot-__init__()_24]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[dot-iter_content()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[A curl_cffi response as the streaming reader sees it.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[_FakeCurlResponse]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py

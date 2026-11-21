@@ -1,21 +1,21 @@
 ---
-source_file: "apps/gateway/src/search-history.ts"
+source_file: "apps/search/src/application/quality-eval.ts"
 type: "code"
-community: "SearchHistory"
-location: "L111"
+community: "quality-eval.ts"
+location: "L168"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/SearchHistory
+  - community/quality-evalts
 ---
 
 # .schedule()
 
 ## Connections
-- [[dot-clear()]] - `calls` [EXTRACTED]
-- [[dot-drain()]] - `calls` [EXTRACTED]
-- [[dot-record()]] - `calls` [EXTRACTED]
-- [[dot-remove()]] - `calls` [EXTRACTED]
-- [[SearchHistory]] - `method` [EXTRACTED]
+- [[dot-run()]] - `calls` [EXTRACTED]
+- [[QualityEvaluator]] - `method` [EXTRACTED]
+- [[nextRunDelay()]] - `calls` [EXTRACTED]
+- [[qualityQuietHour()]] - `calls` [EXTRACTED]
+- [[registerReliability()]] - `calls` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/SearchHistory
+#graphify/code #graphify/EXTRACTED #community/quality-evalts

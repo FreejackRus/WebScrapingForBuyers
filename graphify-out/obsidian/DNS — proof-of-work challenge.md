@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/docs/ANTI_BOT.md"
 type: "document"
-community: "Anti-bot reality, source by source"
+community: "dns_selfcheck"
 location: "L372"
 tags:
   - graphify/document
   - graphify/INFERRED
-  - community/Anti-bot_reality_source_by_source
+  - community/dns_selfcheck
 ---
 
 # DNS — proof-of-work challenge
@@ -16,4 +16,4 @@ tags:
 - [[dns_selfcheck()]] - `references` [INFERRED]
 - [[selfcheck()]] - `references` [INFERRED]
 
-#graphify/document #graphify/INFERRED #community/Anti-bot_reality_source_by_source
+#graphify/document #graphify/INFERRED #community/dns_selfcheck

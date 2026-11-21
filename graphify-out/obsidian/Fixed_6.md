@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
-community: "ozon_card"
-location: "L801"
+community: "Changelog"
+location: "L677"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/ozon_card
+  - community/Changelog
 ---
 
 # Fixed
 
 ## Connections
-- [[1.6.1 — 2026-09-09]] - `contains` [EXTRACTED]
+- [[2.0.2 — 2026-09-09]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/ozon_card
+#graphify/document #graphify/EXTRACTED #community/Changelog

@@ -16,8 +16,8 @@ tags:
 - [[_verdict()]] - `calls` [EXTRACTED]
 - [[diagnose_drift.py]] - `contains` [EXTRACTED]
 - [[diagnose_megamarket()]] - `calls` [EXTRACTED]
-- [[main()_27]] - `calls` [EXTRACTED]
-- [[open_page()_3]] - `calls` [EXTRACTED]
+- [[main()_6]] - `calls` [EXTRACTED]
+- [[open_page()]] - `calls` [EXTRACTED]
 - [[shape_signature()]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/diagnose_driftpy

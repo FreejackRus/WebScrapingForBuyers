@@ -2,7 +2,7 @@
 source_file: "apps/web/src/widgets/search/metrics/ui/index.tsx"
 type: "code"
 community: "workspace/ui/index.tsx"
-location: "L36"
+location: "L46"
 tags:
   - graphify/code
   - graphify/EXTRACTED

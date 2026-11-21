@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[run_case()]] - `indirect_call` [INFERRED]
 - [[scenario()_92]] - `indirect_call` [INFERRED]
-- [[scenario()_76]] - `indirect_call` [INFERRED]
+- [[scenario()_77]] - `indirect_call` [INFERRED]
 - [[scenario()_38]] - `indirect_call` [INFERRED]
 - [[scenario()_39]] - `indirect_call` [INFERRED]
 - [[scenario()]] - `indirect_call` [INFERRED]
@@ -24,7 +24,7 @@ tags:
 - [[scenario()_2]] - `indirect_call` [INFERRED]
 - [[scenario()_3]] - `indirect_call` [INFERRED]
 - [[scenario()_4]] - `indirect_call` [INFERRED]
-- [[scenario()_87]] - `indirect_call` [INFERRED]
+- [[scenario()_85]] - `indirect_call` [INFERRED]
 - [[scenario()_43]] - `indirect_call` [INFERRED]
 - [[scenario()_5]] - `indirect_call` [INFERRED]
 - [[scenario()_6]] - `indirect_call` [INFERRED]

@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "test_model_routing_eval_verdict.py"
+community: "lamoda-connector/tests/test_shape_reference.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_model_routing_eval_verdictpy
+  - community/lamoda-connector/tests/test_shape_referencepy
 ---
 
 # Path
 
 ## Connections
-- [[test_the_runner_exit_code_follows_the_verdict()]] - `references` [EXTRACTED]
+- [[_extract()_12]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_model_routing_eval_verdictpy
+#graphify/code #graphify/EXTRACTED #community/lamoda-connector/tests/test_shape_referencepy

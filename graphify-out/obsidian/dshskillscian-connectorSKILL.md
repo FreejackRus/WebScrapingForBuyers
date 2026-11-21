@@ -12,6 +12,6 @@ tags:
 # dsh/skills/cian-connector/SKILL.md
 
 ## Connections
-- [[Cian Connector]] - `contains` [EXTRACTED]
+- [[Cian Connector_1]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/Cian_Connector

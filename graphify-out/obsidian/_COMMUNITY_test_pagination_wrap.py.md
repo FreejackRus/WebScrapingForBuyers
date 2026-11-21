@@ -20,7 +20,7 @@ members: 22
 - [[_clear_fingerprints()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_pagination_wrap.py
 - [[_products()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_pagination_wrap.py
 - [[`dest` changes both ranking and price, so a fingerprint cannot cross it.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_pagination_wrap.py
-- [[fixture_29]] - code
+- [[fixture_30]] - code
 - [[test_a_genuinely_different_page_is_not_flagged()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_pagination_wrap.py
 - [[test_a_repeated_page_is_recognised()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_pagination_wrap.py
 - [[test_a_short_page_has_no_fingerprint()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_pagination_wrap.py

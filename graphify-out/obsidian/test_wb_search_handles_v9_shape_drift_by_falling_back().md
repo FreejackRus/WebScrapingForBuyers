@@ -14,8 +14,8 @@ tags:
 ## Connections
 - [[If v9's response shape moves, the legacy path still answers.]] - `rationale_for` [EXTRACTED]
 - [[fake_safe_get_text()_27]] - `contains` [EXTRACTED]
-- [[no_wait()_36]] - `contains` [EXTRACTED]
-- [[scenario()_87]] - `contains` [EXTRACTED]
+- [[no_wait()_34]] - `contains` [EXTRACTED]
+- [[scenario()_85]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_helperspy

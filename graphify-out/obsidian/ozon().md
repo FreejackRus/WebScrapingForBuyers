@@ -12,7 +12,7 @@ tags:
 # ozon()
 
 ## Connections
-- [[offer()_2]] - `calls` [EXTRACTED]
+- [[offer()_5]] - `calls` [EXTRACTED]
 - [[test_comparison_exposes_like_for_like_candidate()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/offer

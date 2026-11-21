@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "cian_connector/server.py"
+community: "taobao_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/cian_connector/serverpy
+  - community/taobao_card
 ---
 
 # le
 
 ## Connections
-- [[cian_search()]] - `references` [EXTRACTED]
+- [[taobao_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/cian_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/taobao_card

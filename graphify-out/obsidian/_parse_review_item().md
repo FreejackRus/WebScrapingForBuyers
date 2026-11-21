@@ -12,7 +12,7 @@ tags:
 # _parse_review_item()
 
 ## Connections
-- [[Any_8]] - `references` [EXTRACTED]
+- [[Any_13]] - `references` [EXTRACTED]
 - [[Map one raw Ozon review object to our compact shape. Text fields are coerced to…]] - `rationale_for` [EXTRACTED]
 - [[_ozon_reviews_impl()]] - `calls` [EXTRACTED]
 - [[_text()]] - `contains` [EXTRACTED]

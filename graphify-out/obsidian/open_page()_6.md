@@ -12,6 +12,6 @@ tags:
 # open_page()
 
 ## Connections
-- [[browser()_4]] - `indirect_call` [INFERRED]
+- [[browser()_5]] - `indirect_call` [INFERRED]
 
 #graphify/code #graphify/INFERRED #community/test_handoff_reportingpy

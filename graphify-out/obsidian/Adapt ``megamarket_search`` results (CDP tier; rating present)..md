@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py"
 type: "rationale"
-community: "OfferBatch"
+community: "MarketOffer"
 location: "L634"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/OfferBatch
+  - community/MarketOffer
 ---
 
 # Adapt ``megamarket_search`` results (CDP tier; rating present).
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_search_megamarket()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/OfferBatch
+#graphify/rationale #graphify/EXTRACTED #community/MarketOffer

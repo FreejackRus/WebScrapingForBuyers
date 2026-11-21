@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/wb-rate-limit.ts"
 type: "code"
-community: "ref_vitest"
+community: "mcp-marketplace-adapter.ts"
 location: "L10"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ref_vitest
+  - community/mcp-marketplace-adapterts
 ---
 
 # noteWbRateLimited()
@@ -21,4 +21,4 @@ tags:
 - [[wb-rate-limit.ts]] - `contains` [EXTRACTED]
 - [[wbCooldownMs()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ref_vitest
+#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts

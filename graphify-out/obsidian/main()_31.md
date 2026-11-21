@@ -1,20 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/src/marketplace_connector/__main__.py"
+source_file: "mcp-servers/ru-marketplace-mcp/examples/avito_search.py"
 type: "code"
-community: "test_dsh_bundle.py"
-location: "L13"
+community: "raise_tool_error"
+location: "L18"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_dsh_bundlepy
+  - community/raise_tool_error
 ---
 
 # main()
 
 ## Connections
-- [[Run the server, or the installdoctor CLI when a subcommand is given.…]] - `rationale_for` [EXTRACTED]
-- [[main()_30]] - `calls` [EXTRACTED]
-- [[marketplace_connector__main__.py]] - `contains` [EXTRACTED]
-- [[run_server()]] - `calls` [INFERRED]
+- [[avito_search()_1]] - `calls` [EXTRACTED]
+- [[avito_search.py]] - `contains` [EXTRACTED]
+- [[avito_seller()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_dsh_bundlepy
+#graphify/code #graphify/EXTRACTED #community/raise_tool_error

@@ -2,7 +2,7 @@
 source_file: "apps/search/src/infrastructure/sources/netlab-price-feed.ts"
 type: "code"
 community: "netlab-price-feed.ts"
-location: "L79"
+location: "L82"
 tags:
   - graphify/code
   - graphify/EXTRACTED

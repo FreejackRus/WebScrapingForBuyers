@@ -1,8 +1,8 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py"
 type: "code"
 community: "_FakeResponse"
-location: "L523"
+location: "L464"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,6 +12,6 @@ tags:
 # .__init__()
 
 ## Connections
-- [[_FakeOzonItem]] - `method` [EXTRACTED]
+- [[_FakeSession]] - `method` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_FakeResponse

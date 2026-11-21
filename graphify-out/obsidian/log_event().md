@@ -12,7 +12,7 @@ tags:
 # log_event()
 
 ## Connections
-- [[Any_10]] - `references` [EXTRACTED]
+- [[Any_6]] - `references` [EXTRACTED]
 - [[Project gates]] - `references` [INFERRED]
 - [[What this codebase cares about]] - `references` [INFERRED]
 - [[_attach_image_urls()]] - `calls` [EXTRACTED]
@@ -25,7 +25,7 @@ tags:
 - [[_search_via_http_v9()]] - `calls` [EXTRACTED]
 - [[_search_via_search_goods()]] - `calls` [EXTRACTED]
 - [[_search_via_storefront()]] - `calls` [EXTRACTED]
-- [[_sync_curl_get()]] - `calls` [EXTRACTED]
+- [[_sync_curl_get()_1]] - `calls` [EXTRACTED]
 - [[_verify_storefront_capture()]] - `calls` [EXTRACTED]
 - [[_warn_if_exposed()]] - `calls` [EXTRACTED]
 - [[aliexpress_card()]] - `calls` [EXTRACTED]
@@ -55,7 +55,7 @@ tags:
 - [[lamoda_search()]] - `calls` [EXTRACTED]
 - [[lamoda_selfcheck()]] - `calls` [EXTRACTED]
 - [[logging.py]] - `contains` [EXTRACTED]
-- [[main()_30]] - `calls` [EXTRACTED]
+- [[main()_4]] - `calls` [EXTRACTED]
 - [[make_stderr_logger()]] - `calls` [EXTRACTED]
 - [[mcp_core__init__.py]] - `imports` [EXTRACTED]
 - [[megamarket_card()]] - `calls` [EXTRACTED]
@@ -77,11 +77,11 @@ tags:
 - [[wb_questions()]] - `calls` [EXTRACTED]
 - [[wb_reviews()]] - `calls` [EXTRACTED]
 - [[wb_root_info()]] - `calls` [EXTRACTED]
-- [[wb_search()_2]] - `calls` [EXTRACTED]
+- [[wb_search()_1]] - `calls` [EXTRACTED]
 - [[wb_selfcheck()]] - `calls` [EXTRACTED]
 - [[wb_seller()]] - `calls` [EXTRACTED]
 - [[yandex_card()]] - `calls` [EXTRACTED]
-- [[yandex_search()_1]] - `calls` [EXTRACTED]
+- [[yandex_search()]] - `calls` [EXTRACTED]
 - [[yandex_selfcheck()]] - `calls` [EXTRACTED]
 - [[Что важно в этой кодовой базе]] - `references` [INFERRED]
 

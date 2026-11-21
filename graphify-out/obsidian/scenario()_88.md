@@ -1,18 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
 type: "code"
-community: "test_wb_search_storefront_empty_products_is_no_results"
-location: "L140"
+community: "test_wb_search_storefront_does_not_fall_back_to_search_goods"
+location: "L114"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/test_wb_search_storefront_empty_products_is_no_results
+  - graphify/INFERRED
+  - community/test_wb_search_storefront_does_not_fall_back_to_search_goods
 ---
 
 # scenario()
 
 ## Connections
-- [[empty_storefront()]] - `indirect_call` [INFERRED]
-- [[test_wb_search_storefront_empty_products_is_no_results()]] - `contains` [EXTRACTED]
+- [[failing_storefront()]] - `indirect_call` [INFERRED]
+- [[legacy()]] - `indirect_call` [INFERRED]
+- [[test_wb_search_storefront_does_not_fall_back_to_search_goods()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_wb_search_storefront_empty_products_is_no_results
+#graphify/code #graphify/INFERRED #community/test_wb_search_storefront_does_not_fall_back_to_search_goods

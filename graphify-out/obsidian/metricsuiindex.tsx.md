@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Metric()]] - `contains` [EXTRACTED]
-- [[Metrics()_1]] - `contains` [EXTRACTED]
+- [[Metrics()]] - `contains` [EXTRACTED]
 - [[metricsindex.ts]] - `re_exports` [EXTRACTED]
 - [[money]] - `imports` [EXTRACTED]
 - [[sharedlibindex.ts]] - `imports_from` [EXTRACTED]

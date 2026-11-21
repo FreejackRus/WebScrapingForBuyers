@@ -1,12 +1,12 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/ozon-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/ozon-connector/SKILL.md"
 type: "document"
-community: "ozon_selfcheck"
+community: "ozon_connector/server.py"
 location: "L25"
 tags:
   - graphify/document
   - graphify/INFERRED
-  - community/ozon_selfcheck
+  - community/ozon_connector/serverpy
 ---
 
 # Tools available
@@ -16,4 +16,4 @@ tags:
 - [[ozon_selfcheck()]] - `references` [INFERRED]
 - [[success()]] - `references` [INFERRED]
 
-#graphify/document #graphify/INFERRED #community/ozon_selfcheck
+#graphify/document #graphify/INFERRED #community/ozon_connector/serverpy

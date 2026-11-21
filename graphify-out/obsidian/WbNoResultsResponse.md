@@ -12,17 +12,17 @@ tags:
 # WbNoResultsResponse
 
 ## Connections
-- [[BaseModel_15]] - `inherits` [EXTRACTED]
-- [[Gotchas_26]] - `references` [INFERRED]
-- [[Gotchas_27]] - `references` [INFERRED]
+- [[BaseModel]] - `inherits` [EXTRACTED]
+- [[Gotchas]] - `references` [INFERRED]
+- [[Gotchas_1]] - `references` [INFERRED]
 - [[Wildberries за последней страницей поиск отдаёт первую]] - `references` [INFERRED]
-- [[search()_3]] - `calls` [EXTRACTED]
+- [[search()_5]] - `calls` [EXTRACTED]
 - [[test_no_results_without_meta_is_not_invented_degradation()]] - `uses` [INFERRED]
 - [[test_wildberries_adapter_tolerates_a_no_results_response()]] - `uses` [INFERRED]
 - [[wb_connectormodels_output.py]] - `contains` [EXTRACTED]
 - [[wb_connectorserver.py]] - `imports` [EXTRACTED]
-- [[wb_search()_1]] - `calls` [INFERRED]
-- [[wb_search()_2]] - `uses` [INFERRED]
-- [[Исправлено_10]] - `references` [INFERRED]
+- [[wb_search()]] - `calls` [INFERRED]
+- [[wb_search()_1]] - `uses` [INFERRED]
+- [[Исправлено_4]] - `references` [INFERRED]
 
 #graphify/code #graphify/INFERRED #community/wb_connector/serverpy

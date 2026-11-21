@@ -12,7 +12,7 @@ tags:
 # _card_products_checked()
 
 ## Connections
-- [[Any_27]] - `references` [EXTRACTED]
+- [[Any]] - `references` [EXTRACTED]
 - [[_card_products()]] - `calls` [EXTRACTED]
 - [[_search_via_search_goods()]] - `calls` [EXTRACTED]
 - [[wb_card()]] - `calls` [EXTRACTED]

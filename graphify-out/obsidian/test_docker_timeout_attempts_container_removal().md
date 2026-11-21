@@ -15,8 +15,8 @@ tags:
 - [[MonkeyPatch]] - `references` [EXTRACTED]
 - [[main()_26]] - `calls` [EXTRACTED]
 - [[replace_command()]] - `calls` [EXTRACTED]
-- [[run()_4]] - `contains` [EXTRACTED]
-- [[run()_3]] - `indirect_call` [INFERRED]
+- [[run()_2]] - `contains` [EXTRACTED]
+- [[run()_1]] - `indirect_call` [INFERRED]
 - [[test_stdio_probe.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_stdio_probepy

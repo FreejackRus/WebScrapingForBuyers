@@ -1,21 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/server.py"
 type: "code"
-community: "wb_connector/server.py"
-location: "L1158"
+community: "ozon_connector/server.py"
+location: "L1337"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/wb_connector/serverpy
+  - community/ozon_connector/serverpy
 ---
 
 # _aggregate_offer_warnings()
 
 ## Connections
-- [[Roll per-item validation into connector-level warnings (systemic drift only).]] - `rationale_for` [EXTRACTED]
-- [[wb_card()]] - `calls` [EXTRACTED]
-- [[wb_category_products()]] - `calls` [EXTRACTED]
-- [[wb_connectorserver.py]] - `contains` [EXTRACTED]
-- [[wb_search()_2]] - `calls` [EXTRACTED]
+- [[Roll per-item validation into connector-level warnings. Reports the COUNT of…]] - `rationale_for` [EXTRACTED]
+- [[_ozon_search_impl()]] - `calls` [EXTRACTED]
+- [[ozon_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/ozon_connector/serverpy

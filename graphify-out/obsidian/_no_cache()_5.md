@@ -12,7 +12,7 @@ tags:
 # _no_cache()
 
 ## Connections
-- [[fixture_19]] - `references` [EXTRACTED]
+- [[fixture_15]] - `references` [EXTRACTED]
 - [[taobao-connectorteststest_server.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_no_cache

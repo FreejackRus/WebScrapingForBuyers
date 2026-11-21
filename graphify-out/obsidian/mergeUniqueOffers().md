@@ -2,7 +2,7 @@
 source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
 type: "code"
 community: "mcp-marketplace-adapter.ts"
-location: "L662"
+location: "L742"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,7 +12,9 @@ tags:
 # mergeUniqueOffers()
 
 ## Connections
-- [[dot-search()]] - `calls` [EXTRACTED]
+- [[dot-collect()]] - `calls` [EXTRACTED]
+- [[dot-fetchMappedOffers()]] - `calls` [EXTRACTED]
+- [[dot-search()_8]] - `calls` [EXTRACTED]
 - [[mcp-marketplace-adapter.ts]] - `contains` [EXTRACTED]
 - [[preferRelevantOffers()]] - `indirect_call` [INFERRED]
 

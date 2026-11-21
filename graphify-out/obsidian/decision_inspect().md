@@ -13,16 +13,16 @@ tags:
 
 ## Connections
 - [[2. Choose one server for your task]] - `references` [INFERRED]
-- [[Any_5]] - `references` [EXTRACTED]
-- [[Field_3]] - `references` [EXTRACTED]
+- [[Any_10]] - `references` [EXTRACTED]
+- [[Field_6]] - `references` [EXTRACTED]
 - [[Inspect one shortlisted offer, optionally including its reviews. This is…]] - `rationale_for` [EXTRACTED]
 - [[Middle profile and native vision]] - `references` [INFERRED]
 - [[_call_card_tool()]] - `calls` [EXTRACTED]
 - [[decision_server.py]] - `contains` [EXTRACTED]
-- [[default_1]] - `references` [EXTRACTED]
-- [[description_5]] - `references` [EXTRACTED]
-- [[max_length_2]] - `references` [EXTRACTED]
-- [[min_length_2]] - `references` [EXTRACTED]
-- [[tool_3]] - `references` [EXTRACTED]
+- [[default_3]] - `references` [EXTRACTED]
+- [[description_8]] - `references` [EXTRACTED]
+- [[max_length_5]] - `references` [EXTRACTED]
+- [[min_length_5]] - `references` [EXTRACTED]
+- [[tool_6]] - `references` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/decision_inspect

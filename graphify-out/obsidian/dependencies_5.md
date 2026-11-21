@@ -1,23 +1,18 @@
 ---
-source_file: "apps/web/package.json"
+source_file: "scripts/office-agent/package.json"
 type: "code"
-community: "web/package.json"
-location: "L12"
+community: "office-agent/package.json"
+location: "L7"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/web/packagejson
+  - community/office-agent/packagejson
 ---
 
 # dependencies
 
 ## Connections
-- [[@peremenacontracts_8]] - `contains` [EXTRACTED]
-- [[@vitejsplugin-react]] - `contains` [EXTRACTED]
-- [[react_1]] - `contains` [EXTRACTED]
-- [[react-dom_1]] - `contains` [EXTRACTED]
-- [[vite]] - `contains` [EXTRACTED]
-- [[webpackage.json]] - `contains` [EXTRACTED]
-- [[zustand]] - `contains` [EXTRACTED]
+- [[office-agentpackage.json]] - `contains` [EXTRACTED]
+- [[playwright-core]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/web/packagejson
+#graphify/code #graphify/EXTRACTED #community/office-agent/packagejson

@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[A canary read that cannot be answered from the cache. Every probe uses a fixed…]] - `rationale_for` [EXTRACTED]
-- [[AsyncClient_3]] - `references` [EXTRACTED]
+- [[AsyncClient]] - `references` [EXTRACTED]
 - [[_safe_get_text()]] - `calls` [EXTRACTED]
 - [[wb_connectorserver.py]] - `contains` [EXTRACTED]
 - [[wb_selfcheck()]] - `calls` [EXTRACTED]

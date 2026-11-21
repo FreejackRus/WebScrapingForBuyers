@@ -1,21 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "test_wb_search_storefront_uses_captured_v18_products"
-location: "L83"
+community: "test_helpers.py"
+location: "L736"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/test_wb_search_storefront_uses_captured_v18_products
+  - graphify/EXTRACTED
+  - community/test_helperspy
 ---
 
 # no_wait()
 
 ## Connections
-- [[scenario()_79]] - `indirect_call` [INFERRED]
-- [[scenario()_91]] - `indirect_call` [INFERRED]
-- [[scenario()_44]] - `indirect_call` [INFERRED]
-- [[scenario()_80]] - `indirect_call` [INFERRED]
-- [[test_wb_search_storefront_uses_captured_v18_products()]] - `contains` [EXTRACTED]
+- [[test_wb_search_handles_v9_shape_drift_by_falling_back()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/test_wb_search_storefront_uses_captured_v18_products
+#graphify/code #graphify/EXTRACTED #community/test_helperspy

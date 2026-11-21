@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "get_browser"
+community: "chrome_cdp.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/get_browser
+  - community/chrome_cdppy
 ---
 
 # BrowserContext
@@ -14,4 +14,4 @@ tags:
 - [[_new_tab()]] - `references` [EXTRACTED]
 - [[get_context()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/get_browser
+#graphify/code #graphify/EXTRACTED #community/chrome_cdppy

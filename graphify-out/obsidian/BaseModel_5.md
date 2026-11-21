@@ -1,18 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "dns_card"
+community: "json"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/dns_card
+  - community/json
 ---
 
 # BaseModel
 
 ## Connections
-- [[MetaOutBase]] - `inherits` [EXTRACTED]
-- [[SelfCheckEntryBase]] - `inherits` [EXTRACTED]
-- [[SelfCheckResponseBase]] - `inherits` [EXTRACTED]
+- [[CitilinkCardResponse]] - `inherits` [EXTRACTED]
+- [[CitilinkSearchItemOut]] - `inherits` [EXTRACTED]
+- [[CitilinkSearchResponse]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/dns_card
+#graphify/code #graphify/EXTRACTED #community/json

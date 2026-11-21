@@ -1,12 +1,12 @@
 ---
 source_file: "apps/analysis/src/application/infra-leak.ts"
 type: "code"
-community: "infra-leak.ts"
+community: "compare-models.ts"
 location: "L18"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/infra-leakts
+  - community/compare-modelsts
 ---
 
 # hasInfraLeak()
@@ -17,10 +17,10 @@ tags:
 - [[infra-leak.test.ts]] - `imports` [EXTRACTED]
 - [[infra-leak.ts]] - `contains` [EXTRACTED]
 - [[leakRe()]] - `calls` [EXTRACTED]
-- [[main()_33]] - `calls` [EXTRACTED]
+- [[main()_20]] - `calls` [EXTRACTED]
 - [[prompt-intent.ts]] - `imports` [EXTRACTED]
 - [[sanitizeAnalysisResult()]] - `calls` [EXTRACTED]
 - [[sanitizeCitation()]] - `calls` [EXTRACTED]
 - [[sanitizeUserFacingText()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/infra-leakts
+#graphify/code #graphify/EXTRACTED #community/compare-modelsts

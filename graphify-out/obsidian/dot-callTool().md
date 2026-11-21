@@ -2,20 +2,19 @@
 source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
 type: "code"
 community: "mcp-marketplace-adapter.ts"
-location: "L253"
+location: "L243"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
+  - graphify/INFERRED
   - community/mcp-marketplace-adapterts
 ---
 
 # .callTool()
 
 ## Connections
-- [[dot-connect()]] - `calls` [EXTRACTED]
-- [[dot-invoke()]] - `calls` [EXTRACTED]
-- [[dot-reset()]] - `calls` [EXTRACTED]
-- [[MarketplaceMcpClient]] - `method` [EXTRACTED]
-- [[isMcpSessionLostError()]] - `calls` [EXTRACTED]
+- [[dot-fetch()_1]] - `calls` [INFERRED]
+- [[dot-fetchCitilinkCards()]] - `calls` [INFERRED]
+- [[dot-fetchMappedOffers()]] - `calls` [INFERRED]
+- [[MarketplaceToolCaller]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts
+#graphify/code #graphify/INFERRED #community/mcp-marketplace-adapterts

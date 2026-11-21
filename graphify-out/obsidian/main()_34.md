@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/examples/seller_lookup.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/e2e_stdio_check.py"
 type: "code"
-community: "wb_connector/server.py"
-location: "L19"
+community: "e2e_stdio_check.py"
+location: "L132"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/wb_connector/serverpy
+  - community/e2e_stdio_checkpy
 ---
 
 # main()
 
 ## Connections
-- [[seller_lookup.py]] - `contains` [EXTRACTED]
-- [[wb_card()]] - `calls` [EXTRACTED]
-- [[wb_seller()]] - `calls` [EXTRACTED]
+- [[e2e_stdio_check.py]] - `contains` [EXTRACTED]
+- [[probe()_4]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/e2e_stdio_checkpy

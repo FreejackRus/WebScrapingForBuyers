@@ -1,23 +1,34 @@
 ---
 source_file: ""
 type: "code"
-community: "model_routing_eval.py"
+community: "Any"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/model_routing_evalpy
+  - community/Any
 ---
 
 # Any
 
 ## Connections
-- [[_load_answers()]] - `references` [EXTRACTED]
-- [[_slice_stats()]] - `references` [EXTRACTED]
-- [[evaluate_answers()]] - `references` [EXTRACTED]
-- [[load_bundle()]] - `references` [EXTRACTED]
-- [[render_prompt()]] - `references` [EXTRACTED]
-- [[render_prompts()]] - `references` [EXTRACTED]
-- [[score_case()]] - `references` [EXTRACTED]
-- [[validate_bundle()]] - `references` [EXTRACTED]
+- [[_address()]] - `references` [EXTRACTED]
+- [[_agent()]] - `references` [EXTRACTED]
+- [[_as_float()]] - `references` [EXTRACTED]
+- [[_b()]] - `references` [EXTRACTED]
+- [[_build_json_query()]] - `references` [EXTRACTED]
+- [[_cdp_post_json()]] - `references` [EXTRACTED]
+- [[_clean_url()]] - `references` [EXTRACTED]
+- [[_compose_title()]] - `references` [EXTRACTED]
+- [[_d()]] - `references` [EXTRACTED]
+- [[_fetch_search()]] - `references` [EXTRACTED]
+- [[_metro_rows()]] - `references` [EXTRACTED]
+- [[_offer_row()]] - `references` [EXTRACTED]
+- [[_parse_card()]] - `references` [EXTRACTED]
+- [[_parse_offers()]] - `references` [EXTRACTED]
+- [[_price_history()]] - `references` [EXTRACTED]
+- [[_price_of()]] - `references` [EXTRACTED]
+- [[_rooms()]] - `references` [EXTRACTED]
+- [[_s()]] - `references` [EXTRACTED]
+- [[_views()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/model_routing_evalpy
+#graphify/code #graphify/EXTRACTED #community/Any

@@ -2,7 +2,7 @@
 source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
 type: "code"
 community: "mcp-marketplace-adapter.ts"
-location: "L854"
+location: "L940"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,7 +12,7 @@ tags:
 # sizesPrice()
 
 ## Connections
-- [[isObject()]] - `calls` [EXTRACTED]
+- [[isObject()_1]] - `calls` [EXTRACTED]
 - [[kopeckPrice()]] - `calls` [EXTRACTED]
 - [[marketplaceItemPrice()]] - `calls` [EXTRACTED]
 - [[mcp-marketplace-adapter.ts]] - `contains` [EXTRACTED]

@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_search_offer_integrity.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_card_verification_records.py"
 type: "code"
-community: "test_native_ozon_explicit_absence_survives_both_label_channels"
-location: "L33"
+community: "YandexProduct"
+location: "L149"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/test_native_ozon_explicit_absence_survives_both_label_channels
+  - graphify/EXTRACTED
+  - community/YandexProduct
 ---
 
 # search()
 
 ## Connections
-- [[test_native_ozon_explicit_absence_survives_both_label_channels()]] - `indirect_call` [INFERRED]
-- [[test_native_ozon_stock_labels_cannot_fabricate_available_winner()]] - `indirect_call` [INFERRED]
-- [[test_native_wb_unknown_quantity_stays_unknown_in_comparison()]] - `indirect_call` [INFERRED]
+- [[YandexProduct]] - `calls` [EXTRACTED]
+- [[YandexSearchResponse]] - `calls` [EXTRACTED]
+- [[test_yandex_live_fixture_variant_survives_comparison()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/test_native_ozon_explicit_absence_survives_both_label_channels
+#graphify/code #graphify/EXTRACTED #community/YandexProduct

@@ -1,22 +1,23 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_shape_reference.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_anti_bot_challenge_dom.py"
 type: "code"
-community: "aliexpress-connector/tests/test_parser_live.py"
-location: "L15"
+community: "test_anti_bot_challenge_dom.py"
+location: "L57"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/aliexpress-connector/tests/test_parser_livepy
+  - community/test_anti_bot_challenge_dompy
 ---
 
 # _extract()
 
 ## Connections
 - [[JsdomUnavailable]] - `uses` [INFERRED]
-- [[Path_9]] - `references` [EXTRACTED]
-- [[aliexpress-connectorteststest_shape_reference.py]] - `contains` [EXTRACTED]
+- [[Path_13]] - `references` [EXTRACTED]
 - [[run_extractor()]] - `calls` [EXTRACTED]
-- [[test_card_extractor_shape_matches_golden()]] - `calls` [EXTRACTED]
-- [[test_search_extractor_shape_matches_golden()]] - `calls` [EXTRACTED]
+- [[test_a_genuine_challenge_page_reads_as_blocked()]] - `calls` [EXTRACTED]
+- [[test_a_healthy_grid_with_a_hidden_challenge_widget_is_not_blocked()]] - `calls` [EXTRACTED]
+- [[test_anti_bot_challenge_dom.py]] - `contains` [EXTRACTED]
+- [[test_script_text_cannot_fake_a_challenge()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/aliexpress-connector/tests/test_parser_livepy
+#graphify/code #graphify/EXTRACTED #community/test_anti_bot_challenge_dompy

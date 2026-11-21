@@ -13,13 +13,13 @@ tags:
 
 ## Connections
 - [[The real extractor against the LIVE login wall captured 2026-09-10. Taobao…]] - `rationale_for` [EXTRACTED]
-- [[_no_cache()_4]] - `contains` [EXTRACTED]
+- [[_no_cache()_2]] - `contains` [EXTRACTED]
 - [[_patch_render()_3]] - `contains` [EXTRACTED]
-- [[_tool_error_payload()_1]] - `contains` [EXTRACTED]
+- [[_tool_error_payload()]] - `contains` [EXTRACTED]
 - [[_wall_payload()]] - `contains` [EXTRACTED]
 - [[domtest.py]] - `imports_from` [EXTRACTED]
 - [[fastmcp_exceptions]] - `imports_from` [EXTRACTED]
-- [[json]] - `imports` [EXTRACTED]
+- [[json_1]] - `imports` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]
 - [[pytest]] - `imports` [EXTRACTED]
 - [[taobao_connector__init__.py]] - `imports_from` [EXTRACTED]

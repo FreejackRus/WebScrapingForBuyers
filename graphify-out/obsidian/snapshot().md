@@ -1,17 +1,17 @@
 ---
-source_file: "apps/analysis/src/analyze.test.ts"
+source_file: "apps/web/src/widgets/search/offers/ui/search-notices.test.tsx"
 type: "code"
-community: "analyze.test.ts"
-location: "L38"
+community: "packages_contracts_dist_index"
+location: "L24"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/analyzetestts
+  - community/packages_contracts_dist_index
 ---
 
 # snapshot()
 
 ## Connections
-- [[analyze.test.ts]] - `contains` [EXTRACTED]
+- [[search-notices.test.tsx]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/analyzetestts
+#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index

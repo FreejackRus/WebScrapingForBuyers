@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/src/dns_connector/server.py"
 type: "code"
-community: "avito_connector/server.py"
-location: "L148"
+community: "dns_card"
+location: "L105"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/avito_connector/serverpy
+  - community/dns_card
 ---
 
 # _polite_wait()
 
 ## Connections
 - [[Space this source's requests out, and back off if it refused us. Reads…_5]] - `rationale_for` [EXTRACTED]
-- [[_fetch()]] - `calls` [EXTRACTED]
-- [[avito_connectorserver.py]] - `contains` [EXTRACTED]
+- [[_cdp_render()_1]] - `calls` [EXTRACTED]
+- [[dns_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/avito_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/dns_card

@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/__main__.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_test_count.py"
 type: "code"
-community: "sys"
-location: "L21"
+community: "pathlib"
+location: "L70"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/sys
+  - community/pathlib
 ---
 
 # main()
 
 ## Connections
-- [[Run the server on the transport selected by the environment (stdio default)._12]] - `rationale_for` [EXTRACTED]
-- [[run_server()]] - `calls` [INFERRED]
-- [[yandex_connector__main__.py]] - `contains` [EXTRACTED]
+- [[_collected()]] - `calls` [EXTRACTED]
+- [[check_test_count.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/sys
+#graphify/code #graphify/EXTRACTED #community/pathlib

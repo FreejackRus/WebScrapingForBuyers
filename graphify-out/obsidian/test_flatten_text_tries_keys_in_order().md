@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_resilience.py"
 type: "code"
-community: "flatten_text"
+community: "test_resilience.py"
 location: "L170"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/flatten_text
+  - community/test_resiliencepy
 ---
 
 # test_flatten_text_tries_keys_in_order()
@@ -15,4 +15,4 @@ tags:
 - [[flatten_text()]] - `calls` [EXTRACTED]
 - [[test_resilience.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/flatten_text
+#graphify/code #graphify/EXTRACTED #community/test_resiliencepy

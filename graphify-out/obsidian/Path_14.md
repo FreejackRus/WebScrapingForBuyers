@@ -1,20 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "test_dsh_bundle.py"
+community: "test_model_routing_eval_verdict.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_dsh_bundlepy
+  - community/test_model_routing_eval_verdictpy
 ---
 
 # Path
 
 ## Connections
-- [[_assert_tree_matches()]] - `references` [EXTRACTED]
-- [[_file_state()]] - `references` [EXTRACTED]
-- [[_files()]] - `references` [EXTRACTED]
-- [[_tree_diff()]] - `references` [EXTRACTED]
-- [[test_the_vendor_gate_detects_every_drift_class()]] - `references` [EXTRACTED]
+- [[test_the_runner_exit_code_follows_the_verdict()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_dsh_bundlepy
+#graphify/code #graphify/EXTRACTED #community/test_model_routing_eval_verdictpy

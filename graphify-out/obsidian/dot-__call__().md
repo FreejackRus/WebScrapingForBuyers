@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cdp_budget.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/runtime.py"
 type: "code"
-community: "Clock"
-location: "L25"
+community: "run_server"
+location: "L124"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Clock
+  - community/run_server
 ---
 
 # .__call__()
 
 ## Connections
-- [[Clock]] - `method` [EXTRACTED]
+- [[BearerAuthMiddleware]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Clock
+#graphify/code #graphify/EXTRACTED #community/run_server

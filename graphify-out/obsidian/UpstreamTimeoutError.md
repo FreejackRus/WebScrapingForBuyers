@@ -12,7 +12,7 @@ tags:
 # UpstreamTimeoutError
 
 ## Connections
-- [[dot-__init__()_39]] - `method` [EXTRACTED]
+- [[dot-__init__()_36]] - `method` [EXTRACTED]
 - [[ConnectorError]] - `inherits` [EXTRACTED]
 - [[_run()]] - `calls` [EXTRACTED]
 - [[browser_handoff.py]] - `imports` [EXTRACTED]

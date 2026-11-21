@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/composition/hooks/useBootSession.ts"
 type: "code"
-community: "App.tsx"
+community: "useUserStore"
 location: "L6"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Apptsx
+  - community/useUserStore
 ---
 
 # useBootSession()
@@ -18,4 +18,4 @@ tags:
 - [[hooksindex.ts]] - `re_exports` [EXTRACTED]
 - [[useBootSession.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Apptsx
+#graphify/code #graphify/EXTRACTED #community/useUserStore

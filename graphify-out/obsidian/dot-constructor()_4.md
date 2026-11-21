@@ -1,18 +1,17 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/fallback-source-adapter.ts"
+source_file: "apps/search/src/infrastructure/sources/b2b-distributor-adapter.ts"
 type: "code"
-community: "SourceAdapter"
-location: "L24"
+community: "b2b-distributor-adapter.ts"
+location: "L122"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/SourceAdapter
+  - community/b2b-distributor-adapterts
 ---
 
 # .constructor()
 
 ## Connections
-- [[FallbackSourceAdapter]] - `method` [EXTRACTED]
-- [[SourceAdapter]] - `references` [EXTRACTED]
+- [[B2bDistributorStubAdapter]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/SourceAdapter
+#graphify/code #graphify/EXTRACTED #community/b2b-distributor-adapterts

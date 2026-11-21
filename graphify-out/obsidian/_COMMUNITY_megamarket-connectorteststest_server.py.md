@@ -57,12 +57,13 @@ SORT file.name ASC
 - 4 edges to [[_COMMUNITY__patch_page]]
 - 3 edges to [[_COMMUNITY_test_resolved_params_are_cached_per_query]]
 - 2 edges to [[_COMMUNITY_test_search_calls_url_parse_before_searching]]
-- 2 edges to [[_COMMUNITY_json]]
 - 1 edge to [[_COMMUNITY_test_a_dead_browser_does_not_break_the_search]]
 - 1 edge to [[_COMMUNITY_test_the_merchant_suffix_is_stripped_from_the_goods_id]]
-- 1 edge to [[_COMMUNITY_pathlib]]
+- 1 edge to [[_COMMUNITY_megamarket-connectorteststest_parser_live.py]]
+- 1 edge to [[_COMMUNITY_json]]
 - 1 edge to [[_COMMUNITY_pytest]]
+- 1 edge to [[_COMMUNITY_transport__init__.py]]
 
 ## Top bridge nodes
-- [[megamarket-connectorteststest_server.py]] - degree 63, connects to 10 communities
+- [[megamarket-connectorteststest_server.py]] - degree 63, connects to 11 communities
 - [[_patch_post()]] - degree 19, connects to 1 community

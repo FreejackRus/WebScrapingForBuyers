@@ -12,7 +12,6 @@ tags:
 # _dns_selfcheck_impl()
 
 ## Connections
-- [[Context_3]] - `references` [EXTRACTED]
 - [[DnsSelfcheckResponse]] - `calls` [EXTRACTED]
 - [[_cdp_render()_1]] - `calls` [EXTRACTED]
 - [[dns_connectorserver.py]] - `contains` [EXTRACTED]

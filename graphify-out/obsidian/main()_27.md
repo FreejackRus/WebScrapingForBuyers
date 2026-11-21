@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/diagnose_drift.py"
+source_file: "deploy/chrome/cdp-proxy.py"
 type: "code"
-community: "diagnose_drift.py"
-location: "L291"
+community: "cdp-proxy.py"
+location: "L132"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/diagnose_driftpy
+  - community/cdp-proxypy
 ---
 
 # main()
 
 ## Connections
-- [[diagnose()]] - `calls` [EXTRACTED]
-- [[diagnose_drift.py]] - `contains` [EXTRACTED]
+- [[cdp-proxy.py]] - `contains` [EXTRACTED]
+- [[handle_client()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/diagnose_driftpy
+#graphify/code #graphify/EXTRACTED #community/cdp-proxypy

@@ -1,20 +1,19 @@
 ---
-source_file: "apps/analysis/src/application/analyze.ts"
+source_file: "apps/analysis/src/application/basket-tools.ts"
 type: "code"
-community: "analyze.ts"
-location: "L49"
+community: "basket-tools.ts"
+location: "L17"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/analyzets
+  - community/basket-toolsts
 ---
 
 # money()
 
 ## Connections
-- [[analyze.ts]] - `contains` [EXTRACTED]
-- [[analyzeSnapshotRaw()]] - `calls` [EXTRACTED]
-- [[citationOf()]] - `calls` [EXTRACTED]
-- [[offerLabel()]] - `calls` [EXTRACTED]
+- [[basket-tools.ts]] - `contains` [EXTRACTED]
+- [[basketFacts()]] - `calls` [EXTRACTED]
+- [[basketTemplate()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/analyzets
+#graphify/code #graphify/EXTRACTED #community/basket-toolsts

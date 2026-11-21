@@ -1,18 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/e2e_stdio_check.py"
+source_file: "mcp-servers/ru-marketplace-mcp/examples/price_check.py"
 type: "code"
-community: "e2e_stdio_check.py"
-location: "L132"
+community: "compare_prices"
+location: "L19"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/e2e_stdio_checkpy
+  - community/compare_prices
 ---
 
 # main()
 
 ## Connections
-- [[e2e_stdio_check.py]] - `contains` [EXTRACTED]
-- [[probe()_3]] - `calls` [EXTRACTED]
+- [[compare_prices()]] - `calls` [EXTRACTED]
+- [[compare_sources()]] - `calls` [EXTRACTED]
+- [[price_check.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/e2e_stdio_checkpy
+#graphify/code #graphify/EXTRACTED #community/compare_prices

@@ -1,12 +1,12 @@
 ---
 source_file: "README.md"
 type: "document"
-community: "Сервер локальной LLM"
+community: "README.md"
 location: "L1"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Сервер_локальной_LLM
+  - community/READMEmd
 ---
 
 # README.md
@@ -14,8 +14,9 @@ tags:
 ## Connections
 - [[AI_SERVER]] - `references` [EXTRACTED]
 - [[CHROME_VNC]] - `references` [EXTRACTED]
+- [[DEEPSEEK_HARNESS]] - `references` [EXTRACTED]
 - [[MSD]] - `references` [EXTRACTED]
-- [[STITCH]] - `references` [EXTRACTED]
+- [[STITCH_1]] - `references` [EXTRACTED]
 - [[ПЕРЕМЕНА Price Radar — MVP]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Сервер_локальной_LLM
+#graphify/document #graphify/EXTRACTED #community/READMEmd

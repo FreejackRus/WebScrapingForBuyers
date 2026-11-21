@@ -1,19 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
-community: "ozon_connector/models_output.py"
-location: "L2130"
+community: "compare_verify_offer"
+location: "L698"
 tags:
   - graphify/document
-  - graphify/INFERRED
-  - community/ozon_connector/models_outputpy
+  - graphify/EXTRACTED
+  - community/compare_verify_offer
 ---
 
 # Fixed
 
 ## Connections
-- [[OzonSearchItemOut]] - `references` [INFERRED]
-- [[1.1.0 — 2026-07-26 (English)]] - `contains` [EXTRACTED]
-- [[detmir_card()]] - `references` [INFERRED]
+- [[2.0.1 — 2026-09-09]] - `contains` [EXTRACTED]
+- [[compare_verify_offer()]] - `references` [INFERRED]
 
-#graphify/document #graphify/INFERRED #community/ozon_connector/models_outputpy
+#graphify/document #graphify/EXTRACTED #community/compare_verify_offer

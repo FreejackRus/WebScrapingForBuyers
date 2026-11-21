@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/wb-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/detmir-connector/SKILL.md"
 type: "document"
-community: "Wildberries Connector"
-location: "L140"
+community: "detmir_categories"
+location: "L90"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Wildberries_Connector
+  - community/detmir_categories
 ---
 
 # Trust boundary
 
 ## Connections
-- [[Wildberries Connector]] - `contains` [EXTRACTED]
+- [[Detsky Mir Connector_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Wildberries_Connector
+#graphify/document #graphify/EXTRACTED #community/detmir_categories

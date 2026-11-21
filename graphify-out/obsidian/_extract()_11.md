@@ -1,23 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_search_extractor_dom.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_domtest_utf8.py"
 type: "code"
-community: "dns-connector/tests/test_search_extractor_dom.py"
-location: "L54"
+community: "pytest"
+location: "L29"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/dns-connector/tests/test_search_extractor_dompy
+  - community/pytest
 ---
 
 # _extract()
 
 ## Connections
 - [[JsdomUnavailable]] - `uses` [INFERRED]
-- [[Run the connector's real extractor over the captured markup. Skips rather than…]] - `rationale_for` [EXTRACTED]
-- [[dns-connectorteststest_search_extractor_dom.py]] - `contains` [EXTRACTED]
 - [[run_extractor()]] - `calls` [EXTRACTED]
-- [[test_search_extractor_ignores_the_instalment_line()]] - `calls` [EXTRACTED]
-- [[test_search_extractor_reads_the_real_grid()_1]] - `calls` [EXTRACTED]
-- [[test_search_items_match_the_prices_on_the_page()]] - `calls` [EXTRACTED]
+- [[test_broken_json_is_refused_loudly()]] - `calls` [EXTRACTED]
+- [[test_cyrillic_stderr_reaches_the_assertion_intact()]] - `calls` [EXTRACTED]
+- [[test_cyrillic_stdout_survives_the_run()]] - `calls` [EXTRACTED]
+- [[test_domtest_utf8.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/dns-connector/tests/test_search_extractor_dompy
+#graphify/code #graphify/EXTRACTED #community/pytest

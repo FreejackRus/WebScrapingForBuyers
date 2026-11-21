@@ -53,12 +53,12 @@ SORT file.name ASC
 - 1 edge to [[_COMMUNITY_test_fetch_composer_times_out_blocking_curl_and_falls_back_to_cdp]]
 - 1 edge to [[_COMMUNITY_test_sync_curl_get_closes_non_context_manager_response]]
 - 1 edge to [[_COMMUNITY_test_fetch_composer_does_not_cache_a_block]]
-- 1 edge to [[_COMMUNITY_test_tier1_proxy_is_passed_as_an_argument_not_an_env_var]]
 - 1 edge to [[_COMMUNITY_test_ozon_search_reports_actionable_cdp_block]]
+- 1 edge to [[_COMMUNITY_test_tier1_proxy_is_passed_as_an_argument_not_an_env_var]]
 - 1 edge to [[_COMMUNITY_test_search_parser_live.py]]
 - 1 edge to [[_COMMUNITY_test_distribution_contract.py]]
 - 1 edge to [[_COMMUNITY_pytest]]
-- 1 edge to [[_COMMUNITY_pydantic]]
+- 1 edge to [[_COMMUNITY_transport__init__.py]]
 - 1 edge to [[_COMMUNITY_pathlib]]
 
 ## Top bridge nodes

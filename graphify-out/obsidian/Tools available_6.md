@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/lamoda-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/megamarket-connector/SKILL.md"
 type: "document"
-community: "Lamoda Connector"
-location: "L18"
+community: "Megamarket Connector"
+location: "L19"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Lamoda_Connector
+  - community/Megamarket_Connector
 ---
 
 # Tools available
 
 ## Connections
-- [[Lamoda Connector]] - `contains` [EXTRACTED]
-- [[lamoda_selfcheck()]] - `references` [INFERRED]
+- [[Megamarket Connector_1]] - `contains` [EXTRACTED]
+- [[megamarket_selfcheck()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Lamoda_Connector
+#graphify/document #graphify/EXTRACTED #community/Megamarket_Connector

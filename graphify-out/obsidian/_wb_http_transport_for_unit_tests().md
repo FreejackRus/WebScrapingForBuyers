@@ -12,8 +12,8 @@ tags:
 # _wb_http_transport_for_unit_tests()
 
 ## Connections
-- [[fixture_11]] - `references` [EXTRACTED]
-- [[get_settings()_11]] - `calls` [INFERRED]
+- [[fixture_16]] - `references` [EXTRACTED]
+- [[get_settings()]] - `calls` [INFERRED]
 - [[wb-connectortestsconftest.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/pytest

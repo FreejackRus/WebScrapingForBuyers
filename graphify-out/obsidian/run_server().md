@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/runtime.py"
 type: "code"
-community: "sys"
+community: "run_server"
 location: "L218"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/sys
+  - community/run_server
 ---
 
 # run_server()
@@ -19,21 +19,21 @@ tags:
 - [[_warn_if_exposed()]] - `calls` [EXTRACTED]
 - [[decision_main()]] - `calls` [INFERRED]
 - [[log_event()]] - `calls` [EXTRACTED]
+- [[main()_7]] - `calls` [INFERRED]
+- [[main()_8]] - `calls` [INFERRED]
+- [[main()_9]] - `calls` [INFERRED]
 - [[main()_10]] - `calls` [INFERRED]
 - [[main()_11]] - `calls` [INFERRED]
 - [[main()_12]] - `calls` [INFERRED]
 - [[main()_13]] - `calls` [INFERRED]
 - [[main()_14]] - `calls` [INFERRED]
+- [[main()_5]] - `calls` [INFERRED]
 - [[main()_15]] - `calls` [INFERRED]
 - [[main()_16]] - `calls` [INFERRED]
 - [[main()_17]] - `calls` [INFERRED]
-- [[main()_31]] - `calls` [INFERRED]
 - [[main()_18]] - `calls` [INFERRED]
 - [[main()_19]] - `calls` [INFERRED]
-- [[main()_20]] - `calls` [INFERRED]
-- [[main()_21]] - `calls` [INFERRED]
-- [[main()_22]] - `calls` [INFERRED]
 - [[resolve_transport()]] - `calls` [EXTRACTED]
 - [[runtime.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/sys
+#graphify/code #graphify/INFERRED #community/run_server

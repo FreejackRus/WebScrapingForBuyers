@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "domtest.py"
+community: "mcp_startup.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/domtestpy
+  - community/mcp_startuppy
 ---
 
 # Path
 
 ## Connections
-- [[run_extractor()]] - `references` [EXTRACTED]
+- [[measure()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/domtestpy
+#graphify/code #graphify/EXTRACTED #community/mcp_startuppy

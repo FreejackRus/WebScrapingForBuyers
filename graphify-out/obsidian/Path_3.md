@@ -1,17 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "_skill_dir"
+community: "domtest.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_skill_dir
+  - community/domtestpy
 ---
 
 # Path
 
 ## Connections
-- [[_frontmatter()]] - `references` [EXTRACTED]
-- [[_skill_dir()]] - `references` [EXTRACTED]
+- [[_extract()_1]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_skill_dir
+#graphify/code #graphify/EXTRACTED #community/domtestpy

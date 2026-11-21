@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py"
 type: "rationale"
-community: "OfferBatch"
+community: "MarketOffer"
 location: "L684"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/OfferBatch
+  - community/MarketOffer
 ---
 
 # Adapt ``dns_search`` results (CDP tier; electronics, no ratings on tiles).
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_search_dns()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/OfferBatch
+#graphify/rationale #graphify/EXTRACTED #community/MarketOffer

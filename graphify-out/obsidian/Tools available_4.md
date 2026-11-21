@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/ozon-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/megamarket-connector/SKILL.md"
 type: "document"
-community: "ozon_selfcheck"
-location: "L25"
+community: "Megamarket Connector"
+location: "L19"
 tags:
   - graphify/document
-  - graphify/INFERRED
-  - community/ozon_selfcheck
+  - graphify/EXTRACTED
+  - community/Megamarket_Connector
 ---
 
 # Tools available
 
 ## Connections
-- [[Ozon Connector_1]] - `contains` [EXTRACTED]
-- [[ozon_selfcheck()]] - `references` [INFERRED]
-- [[success()]] - `references` [INFERRED]
+- [[Megamarket Connector]] - `contains` [EXTRACTED]
+- [[megamarket_selfcheck()]] - `references` [INFERRED]
 
-#graphify/document #graphify/INFERRED #community/ozon_selfcheck
+#graphify/document #graphify/EXTRACTED #community/Megamarket_Connector

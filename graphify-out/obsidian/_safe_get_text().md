@@ -12,7 +12,7 @@ tags:
 # _safe_get_text()
 
 ## Connections
-- [[AsyncClient_3]] - `references` [EXTRACTED]
+- [[AsyncClient]] - `references` [EXTRACTED]
 - [[GET with body cap, wall-clock budget, and bounded transient-network retry. Thin…]] - `rationale_for` [EXTRACTED]
 - [[_budgeted_get_text()]] - `calls` [EXTRACTED]
 - [[_fetch_first_json()]] - `calls` [EXTRACTED]

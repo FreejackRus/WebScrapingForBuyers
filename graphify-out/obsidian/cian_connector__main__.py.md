@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/__main__.py"
 type: "code"
-community: "sys"
+community: "run_server"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/sys
+  - community/run_server
 ---
 
 # cian_connector/__main__.py
 
 ## Connections
 - [[Entry point for the Cian MCP server. Exposed as the ``cian-mcp`` console…]] - `rationale_for` [EXTRACTED]
-- [[main()_12]] - `contains` [EXTRACTED]
+- [[main()_9]] - `contains` [EXTRACTED]
 - [[sys]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/sys
+#graphify/code #graphify/EXTRACTED #community/run_server

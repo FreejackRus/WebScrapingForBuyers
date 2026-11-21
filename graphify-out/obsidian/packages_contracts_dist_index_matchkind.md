@@ -11,6 +11,7 @@ tags:
 # packages_contracts_dist_index_matchkind
 
 ## Connections
+- [[citilink-agent-adapter.ts]] - `imports` [EXTRACTED]
 - [[demo-source-adapter.ts]] - `imports` [EXTRACTED]
 - [[http-marketplace-adapter.ts]] - `imports` [EXTRACTED]
 - [[mcp-marketplace-adapter.ts]] - `imports` [EXTRACTED]

@@ -12,9 +12,9 @@ tags:
 # _page_fingerprint()
 
 ## Connections
-- [[Any_27]] - `references` [EXTRACTED]
+- [[Any]] - `references` [EXTRACTED]
 - [[Identity of a result page the leading ids, in order. Order matters — WB re-…]] - `rationale_for` [EXTRACTED]
 - [[wb_connectorserver.py]] - `contains` [EXTRACTED]
-- [[wb_search()_2]] - `calls` [EXTRACTED]
+- [[wb_search()_1]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

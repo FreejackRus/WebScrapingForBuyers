@@ -12,9 +12,9 @@ tags:
 # parse_reviews()
 
 ## Connections
-- [[Any_24]] - `references` [EXTRACTED]
+- [[Any_26]] - `references` [EXTRACTED]
 - [[Extract the reviews embedded in a product page's state. Only the first ~13…]] - `rationale_for` [EXTRACTED]
-- [[_as_dict()_1]] - `calls` [EXTRACTED]
+- [[_as_dict()]] - `calls` [EXTRACTED]
 - [[_picture_url()]] - `calls` [EXTRACTED]
 - [[_to_int()]] - `calls` [EXTRACTED]
 - [[parse_card()]] - `calls` [EXTRACTED]

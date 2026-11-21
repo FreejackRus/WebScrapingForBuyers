@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/marketplace/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/compare-prices/SKILL.md"
 type: "document"
-community: "compare_prices"
-location: "L47"
+community: "Cross-Marketplace Price Comparison"
+location: "L125"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/compare_prices
+  - community/Cross-Marketplace_Price_Comparison
 ---
 
 # Gotchas
 
 ## Connections
-- [[Unified Marketplace Server]] - `contains` [EXTRACTED]
-- [[marketplace_sources()]] - `references` [INFERRED]
+- [[Cross-Marketplace Price Comparison_1]] - `contains` [EXTRACTED]
+- [[detmir_category()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/compare_prices
+#graphify/document #graphify/EXTRACTED #community/Cross-Marketplace_Price_Comparison

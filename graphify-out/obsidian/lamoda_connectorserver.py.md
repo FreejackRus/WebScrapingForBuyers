@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/server.py"
 type: "code"
-community: "json"
+community: "lamoda_connector/server.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/json
+  - community/lamoda_connector/serverpy
 ---
 
 # lamoda_connector/server.py
@@ -18,14 +18,14 @@ tags:
 - [[LamodaSearchResponse]] - `imports` [EXTRACTED]
 - [[LamodaSelfcheckResponse]] - `imports` [EXTRACTED]
 - [[LamodaSizeOut]] - `imports` [EXTRACTED]
-- [[MetaOut_6]] - `imports` [EXTRACTED]
+- [[MetaOut_10]] - `imports` [EXTRACTED]
 - [[_anti_bot_challenge()_1]] - `contains` [EXTRACTED]
 - [[_cdp_render_search()_1]] - `contains` [EXTRACTED]
 - [[_extract_sku()]] - `contains` [EXTRACTED]
 - [[_graphql_card()]] - `contains` [EXTRACTED]
 - [[_lamoda_selfcheck_impl()]] - `contains` [EXTRACTED]
-- [[_polite_wait()_5]] - `contains` [EXTRACTED]
-- [[_proxy()_1]] - `contains` [EXTRACTED]
+- [[_polite_wait()_8]] - `contains` [EXTRACTED]
+- [[_proxy()_5]] - `contains` [EXTRACTED]
 - [[_search_item_from_tile()_3]] - `contains` [EXTRACTED]
 - [[asyncio]] - `imports` [EXTRACTED]
 - [[browser_handoff.py]] - `imports_from` [EXTRACTED]
@@ -38,7 +38,7 @@ tags:
 - [[fastmcp_server_middleware_error_handling]] - `imports_from` [EXTRACTED]
 - [[get_settings()_6]] - `imports` [EXTRACTED]
 - [[httpx]] - `imports` [EXTRACTED]
-- [[json]] - `imports` [EXTRACTED]
+- [[json_1]] - `imports` [EXTRACTED]
 - [[lamoda_card()]] - `contains` [EXTRACTED]
 - [[lamoda_connectormodels_output.py]] - `imports_from` [EXTRACTED]
 - [[lamoda_connectorsettings.py]] - `imports_from` [EXTRACTED]
@@ -48,7 +48,7 @@ tags:
 - [[logging.py]] - `imports_from` [EXTRACTED]
 - [[mcp_core__init__.py]] - `imports_from` [EXTRACTED]
 - [[mcp_types]] - `imports_from` [EXTRACTED]
-- [[missing_required_families()_1]] - `imports` [EXTRACTED]
+- [[missing_required_families()_2]] - `imports` [EXTRACTED]
 - [[output_schema.py]] - `imports_from` [EXTRACTED]
 - [[pacing.py]] - `imports_from` [EXTRACTED]
 - [[pydantic]] - `imports_from` [EXTRACTED]
@@ -59,4 +59,4 @@ tags:
 - [[typing]] - `imports_from` [EXTRACTED]
 - [[urllib_parse]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/json
+#graphify/code #graphify/EXTRACTED #community/lamoda_connector/serverpy

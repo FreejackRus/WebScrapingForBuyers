@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/app/main.tsx"
 type: "code"
-community: "App.tsx"
+community: "useUserStore"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Apptsx
+  - community/useUserStore
 ---
 
 # main.tsx
@@ -14,8 +14,11 @@ tags:
 ## Connections
 - [[App()]] - `imports` [EXTRACTED]
 - [[App.tsx]] - `imports_from` [EXTRACTED]
+- [[applyTheme()]] - `imports` [EXTRACTED]
 - [[apps_web_src_shared_theme_index]] - `imports_from` [EXTRACTED]
 - [[react]] - `imports_from` [EXTRACTED]
 - [[react-dom]] - `imports_from` [EXTRACTED]
+- [[readTheme()]] - `imports` [EXTRACTED]
+- [[sharedlibindex.ts]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Apptsx
+#graphify/code #graphify/EXTRACTED #community/useUserStore

@@ -19,6 +19,7 @@ tags:
 - [[chatuiindex.tsx]] - `imports_from` [EXTRACTED]
 - [[copilotuiindex.tsx]] - `imports_from` [EXTRACTED]
 - [[logoutindex.ts]] - `imports_from` [EXTRACTED]
+- [[offer-carduiindex.tsx]] - `imports_from` [EXTRACTED]
 - [[offersuiindex.tsx]] - `imports_from` [EXTRACTED]
 - [[requestindex.ts]] - `imports_from` [EXTRACTED]
 - [[startindex.ts]] - `imports_from` [EXTRACTED]

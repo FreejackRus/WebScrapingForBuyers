@@ -12,6 +12,6 @@ tags:
 # typecheck
 
 ## Connections
-- [[scripts_6]] - `contains` [EXTRACTED]
+- [[scripts_7]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/web/packagejson

@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "citilink-connector/tests/test_card_extractor_dom.py"
+community: "aliexpress-connector/tests/test_parser_live.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/citilink-connector/tests/test_card_extractor_dompy
+  - community/aliexpress-connector/tests/test_parser_livepy
 ---
 
 # Path
 
 ## Connections
-- [[_extract()_3]] - `references` [EXTRACTED]
+- [[_extract()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/citilink-connector/tests/test_card_extractor_dompy
+#graphify/code #graphify/EXTRACTED #community/aliexpress-connector/tests/test_parser_livepy

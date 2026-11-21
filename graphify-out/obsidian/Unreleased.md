@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Changelog]] - `contains` [EXTRACTED]
-- [[Fixed_22]] - `contains` [EXTRACTED]
+- [[Fixed]] - `contains` [EXTRACTED]
 - [[Removed]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/Changelog

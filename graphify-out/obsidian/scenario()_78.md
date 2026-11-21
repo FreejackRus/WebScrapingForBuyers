@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "test_fetch_composer_times_out_blocking_curl_and_falls_back_to_cdp"
-location: "L377"
+community: "test_fetch_composer_reports_cdp_navigation_block_as_blocked"
+location: "L402"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/test_fetch_composer_times_out_blocking_curl_and_falls_back_to_cdp
+  - community/test_fetch_composer_reports_cdp_navigation_block_as_blocked
 ---
 
 # scenario()
 
 ## Connections
-- [[blocking_get()]] - `indirect_call` [INFERRED]
-- [[fake_cdp()]] - `indirect_call` [INFERRED]
-- [[test_fetch_composer_times_out_blocking_curl_and_falls_back_to_cdp()]] - `contains` [EXTRACTED]
+- [[blocked_cdp()]] - `indirect_call` [INFERRED]
+- [[blocked_get()]] - `indirect_call` [INFERRED]
+- [[test_fetch_composer_reports_cdp_navigation_block_as_blocked()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/test_fetch_composer_times_out_blocking_curl_and_falls_back_to_cdp
+#graphify/code #graphify/INFERRED #community/test_fetch_composer_reports_cdp_navigation_block_as_blocked

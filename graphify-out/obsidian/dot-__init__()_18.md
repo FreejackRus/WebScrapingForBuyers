@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_runtime.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cdp_budget.py"
 type: "code"
-community: "test_runtime.py"
-location: "L25"
+community: "Clock"
+location: "L22"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_runtimepy
+  - community/Clock
 ---
 
 # .__init__()
 
 ## Connections
-- [[_FakeMCP]] - `method` [EXTRACTED]
+- [[Clock]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_runtimepy
+#graphify/code #graphify/EXTRACTED #community/Clock

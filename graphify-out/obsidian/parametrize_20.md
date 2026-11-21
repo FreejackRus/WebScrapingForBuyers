@@ -1,16 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "json"
+community: "test_card_rejects_non_numeric_ids"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/json
+  - community/test_card_rejects_non_numeric_ids
 ---
 
 # parametrize
 
 ## Connections
-- [[test_taobao_tools_resume_the_retained_page()]] - `references` [EXTRACTED]
+- [[test_card_rejects_non_numeric_ids()]] - `references` [EXTRACTED]
+- [[test_search_rejects_too_short_queries()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/json
+#graphify/code #graphify/EXTRACTED #community/test_card_rejects_non_numeric_ids

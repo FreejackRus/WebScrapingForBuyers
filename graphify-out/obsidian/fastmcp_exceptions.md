@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "json"
+community: "transport/__init__.py"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/json
+  - community/transport/__init__py
 ---
 
 # fastmcp_exceptions
@@ -34,4 +34,4 @@ tags:
 - [[wb_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[yandex-connectorteststest_server.py]] - `imports_from` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/json
+#graphify/concept #graphify/EXTRACTED #community/transport/__init__py

@@ -18,5 +18,6 @@ tags:
 - [[looksLikeEquipment()]] - `calls` [EXTRACTED]
 - [[searchsrchttproutes.ts]] - `imports` [EXTRACTED]
 - [[searchRoutes()]] - `calls` [EXTRACTED]
+- [[wildcard-article.test.ts]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/product-from-queryts

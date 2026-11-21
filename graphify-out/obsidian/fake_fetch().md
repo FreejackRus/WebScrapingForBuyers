@@ -12,11 +12,11 @@ tags:
 # fake_fetch()
 
 ## Connections
-- [[scenario()_64]] - `indirect_call` [INFERRED]
+- [[scenario()_63]] - `indirect_call` [INFERRED]
 - [[scenario()_21]] - `indirect_call` [INFERRED]
-- [[scenario()_65]] - `indirect_call` [INFERRED]
+- [[scenario()_64]] - `indirect_call` [INFERRED]
 - [[scenario()_22]] - `indirect_call` [INFERRED]
-- [[scenario()_66]] - `indirect_call` [INFERRED]
+- [[scenario()_65]] - `indirect_call` [INFERRED]
 - [[scenario()_23]] - `indirect_call` [INFERRED]
 - [[scenario()_24]] - `indirect_call` [INFERRED]
 - [[scenario()_25]] - `indirect_call` [INFERRED]

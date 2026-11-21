@@ -1,12 +1,12 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/tests/test_card_out_of_stock_dom.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_search_extractor_dom.py"
 type: "code"
-community: "pytest"
-location: "L31"
+community: "taobao-connector/tests/test_search_extractor_dom.py"
+location: "L45"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pytest
+  - community/taobao-connector/tests/test_search_extractor_dompy
 ---
 
 # _extract()
@@ -14,9 +14,10 @@ tags:
 ## Connections
 - [[JsdomUnavailable]] - `uses` [INFERRED]
 - [[run_extractor()]] - `calls` [EXTRACTED]
-- [[test_a_recommendation_price_is_never_the_products()]] - `calls` [EXTRACTED]
-- [[test_card_out_of_stock_dom.py]] - `contains` [EXTRACTED]
-- [[test_out_of_stock_card_reports_no_price()]] - `calls` [EXTRACTED]
-- [[test_out_of_stock_is_read_from_the_page_text()]] - `calls` [EXTRACTED]
+- [[taobao-connectorteststest_search_extractor_dom.py]] - `contains` [EXTRACTED]
+- [[test_a_hidden_price_is_none_never_zero()]] - `calls` [EXTRACTED]
+- [[test_items_carry_the_wire_shape()]] - `calls` [EXTRACTED]
+- [[test_search_extractor_reads_the_real_grid()]] - `calls` [EXTRACTED]
+- [[test_yuan_glued_price_is_read_from_the_card()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pytest
+#graphify/code #graphify/EXTRACTED #community/taobao-connector/tests/test_search_extractor_dompy

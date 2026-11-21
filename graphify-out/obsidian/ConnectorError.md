@@ -1,23 +1,23 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
 type: "code"
-community: "json"
+community: "TransportDownError"
 location: "L31"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/json
+  - community/TransportDownError
 ---
 
 # ConnectorError
 
 ## Connections
-- [[dot-__init__()_19]] - `method` [EXTRACTED]
-- [[dot-to_dict()]] - `method` [EXTRACTED]
+- [[dot-__init__()_30]] - `method` [EXTRACTED]
+- [[dot-to_dict()_1]] - `method` [EXTRACTED]
 - [[AuthMissingError]] - `inherits` [EXTRACTED]
 - [[BadRequestError]] - `inherits` [EXTRACTED]
 - [[ChallengeRequiredError]] - `inherits` [EXTRACTED]
-- [[Exception_1]] - `inherits` [EXTRACTED]
+- [[Exception_2]] - `inherits` [EXTRACTED]
 - [[NotFoundError]] - `inherits` [EXTRACTED]
 - [[ParserDriftError]] - `inherits` [EXTRACTED]
 - [[PermissionDeniedError]] - `inherits` [EXTRACTED]
@@ -32,4 +32,4 @@ tags:
 - [[mcp_core__init__.py]] - `imports` [EXTRACTED]
 - [[raise_tool_error()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/json
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

@@ -10,7 +10,7 @@ members: 13
 **Members:** 13 nodes
 
 ## Members
-- [[dot-__init__()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/browser_handoff.py
+- [[dot-__init__()_22]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/browser_handoff.py
 - [[0. Что проект уже делает (baseline, не изобретаем заново)]] - document - mcp-servers/ru-marketplace-mcp/work/v23-research/external-approaches.md
 - [[1. Native-vision чтение маркетплейсов (скриншот вместо парсинга)]] - document - mcp-servers/ru-marketplace-mcp/work/v23-research/external-approaches.md
 - [[2. Captchachallenge UX в агентских инструментах]] - document - mcp-servers/ru-marketplace-mcp/work/v23-research/external-approaches.md
@@ -35,8 +35,8 @@ SORT file.name ASC
 - 3 edges to [[_COMMUNITY_browser_handoff.py]]
 - 2 edges to [[_COMMUNITY_PageLike]]
 - 1 edge to [[_COMMUNITY_TransportDownError]]
-- 1 edge to [[_COMMUNITY_Authenticated transport driving your own Chrome]]
-- 1 edge to [[_COMMUNITY_get_browser]]
+- 1 edge to [[_COMMUNITY_goto]]
+- 1 edge to [[_COMMUNITY_chrome_cdp.py]]
 
 ## Top bridge nodes
 - [[Внешние подходы native vision, challenge UX, browser-резильентность]] - degree 8, connects to 2 communities

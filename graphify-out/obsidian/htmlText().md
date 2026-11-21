@@ -12,10 +12,12 @@ tags:
 # htmlText()
 
 ## Connections
+- [[card-verifiers.ts]] - `imports` [EXTRACTED]
 - [[decodeEntities()]] - `calls` [EXTRACTED]
 - [[parseRubPrice()]] - `calls` [EXTRACTED]
 - [[parseServermallSearch()]] - `calls` [EXTRACTED]
 - [[parseSrvTradeSearch()]] - `calls` [EXTRACTED]
+- [[schemaOrgCardFacts()]] - `calls` [EXTRACTED]
 - [[storefront-distributor-adapter.ts]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/storefront-distributor-adapterts

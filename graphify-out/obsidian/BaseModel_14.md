@@ -1,19 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "TransportDownError"
+community: "MarketplaceSourcesResponse"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/TransportDownError
+  - community/MarketplaceSourcesResponse
 ---
 
 # BaseModel
 
 ## Connections
-- [[YandexCardResponse]] - `inherits` [EXTRACTED]
-- [[YandexProduct]] - `inherits` [EXTRACTED]
-- [[YandexReview]] - `inherits` [EXTRACTED]
-- [[YandexSearchResponse]] - `inherits` [EXTRACTED]
+- [[MarketplaceSourcesResponse]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/TransportDownError
+#graphify/code #graphify/EXTRACTED #community/MarketplaceSourcesResponse

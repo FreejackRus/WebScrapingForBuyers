@@ -11,6 +11,6 @@ tags:
 # fixture
 
 ## Connections
-- [[_no_cache()_2]] - `references` [EXTRACTED]
+- [[_no_cache()_3]] - `references` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/cian-connector/tests/test_serverpy

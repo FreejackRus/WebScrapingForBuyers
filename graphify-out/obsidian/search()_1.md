@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_source_warnings.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_search_offer_integrity.py"
 type: "code"
-community: "aliexpress_card"
-location: "L97"
+community: "test_card_verification_records.py"
+location: "L117"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/aliexpress_card
+  - community/test_card_verification_recordspy
 ---
 
 # search()
 
 ## Connections
-- [[test_coupon_warning_keeps_regular_price_and_does_not_claim_failure()]] - `contains` [EXTRACTED]
+- [[test_native_ozon_explicit_absence_survives_both_label_channels()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/aliexpress_card
+#graphify/code #graphify/EXTRACTED #community/test_card_verification_recordspy

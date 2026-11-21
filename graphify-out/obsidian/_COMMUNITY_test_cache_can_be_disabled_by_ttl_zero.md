@@ -11,11 +11,11 @@ members: 8
 
 ## Members
 - [[WB_CACHE_TTL=0 means every read goes upstream.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
-- [[__aenter__()_12]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
-- [[__aexit__()_12]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[__aenter__()_11]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[__aexit__()_11]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[aiter_bytes()_4]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
-- [[no_wait()_35]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
-- [[scenario()_81]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[no_wait()_33]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
+- [[scenario()_80]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[stream()_8]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[test_cache_can_be_disabled_by_ttl_zero()]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 
@@ -33,4 +33,4 @@ SORT file.name ASC
 
 ## Top bridge nodes
 - [[test_cache_can_be_disabled_by_ttl_zero()]] - degree 9, connects to 2 communities
-- [[scenario()_81]] - degree 3, connects to 2 communities
+- [[scenario()_80]] - degree 3, connects to 2 communities

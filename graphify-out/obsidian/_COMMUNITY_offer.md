@@ -1,30 +1,32 @@
 ---
 type: community
-cohesion: 0.08
-members: 46
+cohesion: 0.07
+members: 49
 ---
 
 # offer
 
-**Cohesion:** 0.08 - loosely connected
-**Members:** 46 nodes
+**Cohesion:** 0.07 - loosely connected
+**Members:** 49 nodes
 
 ## Members
 - [[A Plus price must not masquerade as the everyday price in the ranking. Live…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[A Plus-only price must not be presented as the cheapest available. Yandex's…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
+- [[Anti-bot blocks and ordinary bugs need different responses, so they differ.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[Found but no price' is information; dropping it would hide stock reality.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[Not installed' needs a different fix than 'refused us', so they differ.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[Replace the per-marketplace search implementations. ``SOURCES`` is patched…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[The core resilience promise three sources answering still beats nothing.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[The warning is useless if it does not travel with the comparison.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[degraded_yandex()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
-- [[offer()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
+- [[offer()_5]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[ozon()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[ozon()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[ozon()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[ozon()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[slow()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[stub_sources()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
+- [[test_a_generic_failure_is_reported_as_error_not_blocked()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[test_a_missing_connector_is_distinguished_from_a_block()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[test_a_timeout_is_reported_as_a_timeout()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[test_challenge_keeps_partial_results_and_recovers_only_failed_source()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
@@ -54,6 +56,7 @@ members: 46
 - [[wb()_13]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[wb()_14]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[wb()_15]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
+- [[wb()_16]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[ya()]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 - [[ya()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py
 
@@ -65,18 +68,17 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 18 edges to [[_COMMUNITY_compare-connectorteststest_server.py]]
+- 20 edges to [[_COMMUNITY_compare-connectorteststest_server.py]]
 - 3 edges to [[_COMMUNITY_test_all_requested_sources_missing_is_an_error]]
-- 2 edges to [[_COMMUNITY_parametrize]]
 - 2 edges to [[_COMMUNITY_taobao]]
 - 2 edges to [[_COMMUNITY_search]]
 - 2 edges to [[_COMMUNITY_test_sources_run_concurrently]]
-- 2 edges to [[_COMMUNITY_test_a_generic_failure_is_reported_as_error_not_blocked]]
-- 1 edge to [[_COMMUNITY_ChallengeRequiredError]]
+- 1 edge to [[_COMMUNITY_MarketOffer]]
+- 1 edge to [[_COMMUNITY_TransportDownError]]
 
 ## Top bridge nodes
-- [[stub_sources()]] - degree 20, connects to 5 communities
-- [[offer()_2]] - degree 25, connects to 4 communities
-- [[test_challenge_keeps_partial_results_and_recovers_only_failed_source()]] - degree 7, connects to 4 communities
-- [[wb()_7]] - degree 18, connects to 2 communities
+- [[offer()_5]] - degree 25, connects to 5 communities
+- [[stub_sources()]] - degree 20, connects to 3 communities
+- [[test_challenge_keeps_partial_results_and_recovers_only_failed_source()]] - degree 7, connects to 3 communities
+- [[wb()_8]] - degree 18, connects to 1 community
 - [[test_relevance_warnings_reach_the_response()]] - degree 7, connects to 1 community

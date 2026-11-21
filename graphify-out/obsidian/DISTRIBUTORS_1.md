@@ -1,17 +1,17 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/b2b-distributor-adapter.ts"
+source_file: "apps/search/src/application/quality-eval.ts"
 type: "code"
-community: "b2b-distributor-adapter.ts"
-location: "L36"
+community: "quality-eval.ts"
+location: "L30"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/b2b-distributor-adapterts
+  - community/quality-evalts
 ---
 
 # DISTRIBUTORS
 
 ## Connections
-- [[b2b-distributor-adapter.ts]] - `contains` [EXTRACTED]
+- [[quality-eval.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/b2b-distributor-adapterts
+#graphify/code #graphify/EXTRACTED #community/quality-evalts

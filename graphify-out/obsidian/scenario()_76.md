@@ -1,21 +1,21 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "_RecordingPacer"
-location: "L2178"
+community: "_patch_tier1"
+location: "L947"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/_RecordingPacer
+  - graphify/INFERRED
+  - community/_patch_tier1
 ---
 
 # scenario()
 
 ## Connections
-- [[_clear_wb_cache()]] - `calls` [EXTRACTED]
-- [[_tool_error_payload()]] - `calls` [EXTRACTED]
-- [[fake_safe_get_text()_2]] - `indirect_call` [INFERRED]
-- [[no_wait()_2]] - `indirect_call` [INFERRED]
-- [[test_a_refusal_streak_reaches_the_operator()]] - `contains` [EXTRACTED]
+- [[_patch_tier1()]] - `calls` [EXTRACTED]
+- [[always_blocked()]] - `indirect_call` [INFERRED]
+- [[ok_cdp()]] - `indirect_call` [INFERRED]
+- [[stealth_ok()]] - `indirect_call` [INFERRED]
+- [[test_fetch_composer_uses_scrapling_before_cdp()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_RecordingPacer
+#graphify/code #graphify/INFERRED #community/_patch_tier1

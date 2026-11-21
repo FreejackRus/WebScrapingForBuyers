@@ -12,10 +12,10 @@ tags:
 # toSession()
 
 ## Connections
-- [[dot-authenticate()_1]] - `calls` [EXTRACTED]
-- [[dot-changePassword()_1]] - `calls` [EXTRACTED]
-- [[dot-getById()_1]] - `calls` [EXTRACTED]
-- [[dot-updateSettings()_1]] - `calls` [EXTRACTED]
+- [[dot-authenticate()]] - `calls` [EXTRACTED]
+- [[dot-changePassword()]] - `calls` [EXTRACTED]
+- [[dot-getById()]] - `calls` [EXTRACTED]
+- [[dot-updateSettings()]] - `calls` [EXTRACTED]
 - [[memory-auth-store.ts]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/memory-auth-storets

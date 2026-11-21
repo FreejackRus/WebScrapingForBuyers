@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/widgets/analysis/chat/ui/index.test.tsx"
 type: "code"
-community: "command/ui/index.tsx"
+community: "useSearchStore"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/command/ui/indextsx
+  - community/useSearchStore
 ---
 
 # chat/ui/index.test.tsx
@@ -18,4 +18,4 @@ tags:
 - [[react-dom]] - `imports_from` [EXTRACTED]
 - [[ref_vitest]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/command/ui/indextsx
+#graphify/code #graphify/EXTRACTED #community/useSearchStore

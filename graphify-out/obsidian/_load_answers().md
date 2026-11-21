@@ -12,8 +12,8 @@ tags:
 # _load_answers()
 
 ## Connections
-- [[Any_29]] - `references` [EXTRACTED]
-- [[main()_35]] - `calls` [EXTRACTED]
+- [[Any_28]] - `references` [EXTRACTED]
+- [[main()_36]] - `calls` [EXTRACTED]
 - [[model_routing_eval.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/model_routing_evalpy

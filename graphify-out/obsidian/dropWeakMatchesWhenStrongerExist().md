@@ -1,12 +1,12 @@
 ---
 source_file: "apps/analysis/src/application/analyze.ts"
 type: "code"
-community: "analyze.test.ts"
-location: "L147"
+community: "analyze.ts"
+location: "L172"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/analyzetestts
+  - community/analyzets
 ---
 
 # dropWeakMatchesWhenStrongerExist()
@@ -16,4 +16,4 @@ tags:
 - [[analyze.ts]] - `contains` [EXTRACTED]
 - [[analyzeSnapshotRaw()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/analyzetestts
+#graphify/code #graphify/EXTRACTED #community/analyzets

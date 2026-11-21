@@ -12,7 +12,7 @@ tags:
 # test_search_payload_shape_matches_the_capture()
 
 ## Connections
-- [[_extract()_10]] - `calls` [EXTRACTED]
+- [[_extract()_5]] - `calls` [EXTRACTED]
 - [[shape_signature()]] - `calls` [EXTRACTED]
 - [[taobao-connectorteststest_shape_reference.py]] - `contains` [EXTRACTED]
 

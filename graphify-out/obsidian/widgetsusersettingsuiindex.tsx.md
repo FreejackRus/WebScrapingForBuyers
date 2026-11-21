@@ -13,7 +13,9 @@ tags:
 
 ## Connections
 - [[SettingsSection]] - `contains` [EXTRACTED]
+- [[SystemHealthPanel()]] - `imports` [EXTRACTED]
 - [[UserSettings()]] - `contains` [EXTRACTED]
+- [[adminindex.ts]] - `imports_from` [EXTRACTED]
 - [[entitiesanalysisindex.ts]] - `imports_from` [EXTRACTED]
 - [[entitiesuserindex.ts]] - `imports_from` [EXTRACTED]
 - [[featuresuserindex.ts]] - `imports_from` [EXTRACTED]

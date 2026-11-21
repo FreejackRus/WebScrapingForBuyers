@@ -12,6 +12,6 @@ tags:
 # ru-marketplace-mcp/skills/cian-connector/SKILL.md
 
 ## Connections
-- [[Cian Connector_1]] - `contains` [EXTRACTED]
+- [[Cian Connector]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/Cian_Connector

@@ -1,18 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "avito_connector/server.py"
+community: "compare_verify_offer"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/avito_connector/serverpy
+  - community/compare_verify_offer
 ---
 
 # description
 
 ## Connections
-- [[avito_card()]] - `references` [EXTRACTED]
-- [[avito_search()_1]] - `references` [EXTRACTED]
-- [[avito_seller()]] - `references` [EXTRACTED]
+- [[compare_browser_snapshot()]] - `references` [EXTRACTED]
+- [[compare_prices()]] - `references` [EXTRACTED]
+- [[compare_verify_offer()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/avito_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/compare_verify_offer

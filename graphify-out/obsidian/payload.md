@@ -1,17 +1,17 @@
 ---
-source_file: "scripts/hooks/require-agent-preamble.mjs"
+source_file: "apps/search/src/infrastructure/sources/card-verifiers.test.ts"
 type: "code"
-community: "SearchHistory"
-location: "L9"
+community: "card-verifiers.ts"
+location: "L6"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/SearchHistory
+  - community/card-verifiersts
 ---
 
 # payload
 
 ## Connections
-- [[require-agent-preamble.mjs]] - `contains` [EXTRACTED]
+- [[card-verifiers.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/SearchHistory
+#graphify/code #graphify/EXTRACTED #community/card-verifiersts

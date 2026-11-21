@@ -1,20 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/e2e_stdio_check.py"
+source_file: "apps/search/src/application/source-monitor.ts"
 type: "code"
-community: "e2e_stdio_check.py"
-location: "L87"
+community: "SourceAdapter"
+location: "L139"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/e2e_stdio_checkpy
+  - community/SourceAdapter
 ---
 
 # probe()
 
 ## Connections
-- [[e2e_stdio_check.py]] - `contains` [EXTRACTED]
-- [[main()_29]] - `calls` [EXTRACTED]
-- [[test_probe_checks_running_version()]] - `calls` [EXTRACTED]
-- [[validate_sources()]] - `calls` [EXTRACTED]
+- [[dot-round()]] - `calls` [EXTRACTED]
+- [[dot-search()_11]] - `calls` [INFERRED]
+- [[canaryFor()]] - `calls` [EXTRACTED]
+- [[productFromQuery()]] - `calls` [EXTRACTED]
+- [[source-monitor.test.ts]] - `imports` [EXTRACTED]
+- [[source-monitor.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/e2e_stdio_checkpy
+#graphify/code #graphify/EXTRACTED #community/SourceAdapter

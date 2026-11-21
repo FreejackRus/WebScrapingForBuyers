@@ -1,22 +1,22 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/models_output.py"
 type: "code"
-community: "ozon_connector/models_output.py"
+community: "ozon_connector/server.py"
 location: "L28"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ozon_connector/models_outputpy
+  - community/ozon_connector/serverpy
 ---
 
 # OzonCardResponse
 
 ## Connections
-- [[BaseModel_8]] - `inherits` [EXTRACTED]
-- [[card()_11]] - `calls` [EXTRACTED]
+- [[BaseModel_4]] - `inherits` [EXTRACTED]
+- [[card()_12]] - `calls` [EXTRACTED]
 - [[ozon_card()]] - `uses` [INFERRED]
 - [[ozon_connectormodels_output.py]] - `contains` [EXTRACTED]
 - [[ozon_connectorserver.py]] - `imports` [EXTRACTED]
 - [[test_ozon_verifies_regular_price_not_card_discount()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/ozon_connector/models_outputpy
+#graphify/code #graphify/EXTRACTED #community/ozon_connector/serverpy

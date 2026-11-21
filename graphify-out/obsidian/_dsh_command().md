@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Command fragments for one emitted dsh row. From a source checkout, ``uv run…]] - `rationale_for` [EXTRACTED]
-- [[Path_13]] - `references` [EXTRACTED]
+- [[Path_6]] - `references` [EXTRACTED]
 - [[_dsh_patch_block()]] - `calls` [EXTRACTED]
 - [[_yaml_double()]] - `calls` [EXTRACTED]
 - [[cli.py]] - `contains` [EXTRACTED]

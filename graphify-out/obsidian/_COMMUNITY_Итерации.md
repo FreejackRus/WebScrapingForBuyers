@@ -1,13 +1,13 @@
 ---
 type: community
 cohesion: 0.02
-members: 92
+members: 115
 ---
 
 # Итерации
 
 **Cohesion:** 0.02 - loosely connected
-**Members:** 92 nodes
+**Members:** 115 nodes
 
 ## Members
 - [[2026-09-23 — API Merlion  OCS  NetLab (исследование + клиенты)]] - document - docs/PROJECT_CONTEXT.md
@@ -19,7 +19,6 @@ members: 92
 - [[2026-09-23 — UX туннеля VNC пустой терминал это норма]] - document - docs/PROJECT_CONTEXT.md
 - [[2026-09-23 — VNC с консоли Ubuntu 24.04]] - document - docs/PROJECT_CONTEXT.md
 - [[2026-09-23 — VNC с рабочего компьютера]] - document - docs/PROJECT_CONTEXT.md
-- [[2026-09-23 — WB Готово без строк в таблице]] - document - docs/PROJECT_CONTEXT.md
 - [[2026-09-23 — WB пустая таблица и Citilink SSD]] - document - docs/PROJECT_CONTEXT.md
 - [[2026-09-23 — WB search-goods fallback ≠ search.aspx]] - document - docs/PROJECT_CONTEXT.md
 - [[2026-09-23 — headed Chrome вместо Alpine Headless]] - document - docs/PROJECT_CONTEXT.md
@@ -89,18 +88,42 @@ members: 92
 - [[2026-10-02 — разделение политики агентов]] - document - docs/PROJECT_CONTEXT.md
 - [[2026-10-04 — дизайн-проход поиск как главный элемент]] - document - docs/PROJECT_CONTEXT.md
 - [[2026-10-04 — премиальный визуальный проход (skills Эмиля Ковальски и apple-design)]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-04 — ревью агентами, параллельные исправления, правило для агентов]] - document - docs/PROJECT_CONTEXT.md
 - [[2026-10-05 — разговор не стирает таблицу, наличие без пустой таблицы]] - document - docs/PROJECT_CONTEXT.md
 - [[2026-10-06 — Qwen 3.8 27B в проде]] - document - docs/PROJECT_CONTEXT.md
 - [[2026-10-06 — инструкции Codex разделены на шесть файлов]] - document - docs/PROJECT_CONTEXT.md
 - [[2026-10-06 — настройка Qwen 3.8 параметры, память, простой язык]] - document - docs/PROJECT_CONTEXT.md
 - [[2026-10-06 — повторная проверка Яндекс Маркета и Мегамаркета без VNC]] - document - docs/PROJECT_CONTEXT.md
 - [[2026-10-07 — NETLAB по публичному прайс-листу; дистрибьюторы без лимита строк]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-07 — «оригинальный  совместимый» и чипы в выдаче картриджей]] - document - docs/PROJECT_CONTEXT.md
 - [[2026-10-07 — Яндекс Маркет и Мегамаркет выключены]] - document - docs/PROJECT_CONTEXT.md
 - [[2026-10-07 — автоматическое восстановление Wildberries и AliExpress после обновления Chrome]] - document - docs/PROJECT_CONTEXT.md
 - [[2026-10-07 — автономный выход для Яндекса и Мегамаркета без WireGuard]] - document - docs/PROJECT_CONTEXT.md
 - [[2026-10-07 — витрины дистрибьюторов без API СРВТрейд и Servermall]] - document - docs/PROJECT_CONTEXT.md
 - [[2026-10-07 — релевантность Lenovo Legion Go]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-08 — CPU shorthand, категории и ожидание сбора]] - document - docs/PROJECT_CONTEXT.md
 - [[2026-10-08 — Детерминированная точность подбора и отдельная группа уточнения]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-09 — Запуск поиска из чата и восстановление прода]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-09 — Надёжный диалог закупок на локальной Qwen]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-09 — Понятные обозначения упаковки]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-09 — Разговорное управление условиями закупки]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-12 — Вкладки «Маркетплейсы  Дистрибуторы»]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-12 — Замер качества поиска и правила против «мусора» в топе]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-12 — Миграция локального inference на vLLM]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-12 — Отключение DNS и точность CPU-предложений]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-12 — Руководство пользователя v0.0.2]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-12 — Состояние товара, ранжирование по модели и фильтры таблицы]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-12 — Точность вкладки «Дистрибуторы»]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-12 — Цена Ozon, совместимые расходники, категории с брендом]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-13 — v0.0.4 12 улучшений (4 пакета, параллельно в worktree)]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-28 — обзор агентных систем поиска и сравнения цен]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-28 — прод запущен на vLLM GPU1; «почему именно он» объясняет выбор]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-10-28 — состояние прода ИИ без модели, vLLM на свободную GPU1]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-11-19 — аудит архитектуры и работоспособности]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-11-19 — запчасти клавиатур в выдаче и проверка Ситилинка]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-11-19 — проверка карточек и следующий замер поиска]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-11-19 — свежесть предложений и готовность сервисов]] - document - docs/PROJECT_CONTEXT.md
+- [[2026-11-20 — повтор поиска по чистому артикулу]] - document - docs/PROJECT_CONTEXT.md
 - [[Итерации]] - document - docs/PROJECT_CONTEXT.md
 
 ## Live Query (requires Dataview plugin)
@@ -111,29 +134,35 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 4 edges to [[_COMMUNITY_SourceAdapter]]
-- 3 edges to [[_COMMUNITY_mcp-marketplace-adapter.ts]]
+- 4 edges to [[_COMMUNITY_search-service.ts]]
+- 3 edges to [[_COMMUNITY_SourceAdapter]]
 - 3 edges to [[_COMMUNITY_citilink_card]]
+- 2 edges to [[_COMMUNITY_mcp-marketplace-adapter.ts]]
 - 2 edges to [[_COMMUNITY_analyze.ts]]
-- 2 edges to [[_COMMUNITY_chatuiindex.tsx]]
+- 2 edges to [[_COMMUNITY_packages_contracts_dist_index_product]]
 - 2 edges to [[_COMMUNITY_contractssrcindex.ts]]
+- 2 edges to [[_COMMUNITY_CLAUDE]]
 - 2 edges to [[_COMMUNITY_marketplace-relevance.ts]]
 - 2 edges to [[_COMMUNITY_taobao]]
-- 2 edges to [[_COMMUNITY_SearchService]]
-- 1 edge to [[_COMMUNITY_compare_prices]]
-- 1 edge to [[_COMMUNITY_TransportDownError]]
+- 2 edges to [[_COMMUNITY_validateGroundedNarration]]
+- 2 edges to [[_COMMUNITY_useSearchStore]]
 - 1 edge to [[_COMMUNITY_wb_connectorserver.py]]
-- 1 edge to [[_COMMUNITY_infra-leak.ts]]
+- 1 edge to [[_COMMUNITY_yandex_card]]
+- 1 edge to [[_COMMUNITY_compare_prices]]
+- 1 edge to [[_COMMUNITY_aliexpress_selfcheck]]
 - 1 edge to [[_COMMUNITY_product-from-query.ts]]
-- 1 edge to [[_COMMUNITY__RawCdpPage]]
-- 1 edge to [[_COMMUNITY_SearchHistory]]
-- 1 edge to [[_COMMUNITY_identitysrchttproutes.ts]]
-- 1 edge to [[_COMMUNITY_ollama-analysis-narrator.ts]]
+- 1 edge to [[_COMMUNITY_log_event]]
+- 1 edge to [[_COMMUNITY_compare-models.ts]]
 - 1 edge to [[_COMMUNITY_Контекст проекта ПЕРЕМЕНА Price Radar]]
+- 1 edge to [[_COMMUNITY_2026-10-12 — ИИ-функции v0.0.2 понимание запроса, разбор «требует уточнения», обоснование закупки]]
+- 1 edge to [[_COMMUNITY_dns_card]]
+- 1 edge to [[_COMMUNITY_chrome_cdp.py]]
+- 1 edge to [[_COMMUNITY_ollama-analysis-narrator.ts]]
 - 1 edge to [[_COMMUNITY_gatewaysrcapp.ts]]
+- 1 edge to [[_COMMUNITY_service-kitsrcindex.ts]]
 
 ## Top bridge nodes
-- [[Итерации]] - degree 116, connects to 17 communities
+- [[Итерации]] - degree 146, connects to 22 communities
 - [[2026-09-23 — WB пустая таблица и Citilink SSD]] - degree 2, connects to 1 community
 - [[2026-09-24 — дистрибьюторы без API (повторная проверка)]] - degree 2, connects to 1 community
 - [[2026-09-25 — убраны платные источники]] - degree 2, connects to 1 community

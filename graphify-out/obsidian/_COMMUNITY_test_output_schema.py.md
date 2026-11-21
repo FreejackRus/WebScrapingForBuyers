@@ -11,8 +11,8 @@ members: 18
 
 ## Members
 - [[A deliberately heavy return model.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_output_schema.py
-- [[Any_21]] - code
-- [[BaseModel_13]] - code
+- [[Any_19]] - code
+- [[BaseModel_12]] - code
 - [[FastMCP_1]] - code
 - [[FastMCP_2]] - code
 - [[Re-write every registered tool's ``output_schema`` to the compact form. FastMCP…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/output_schema.py
@@ -37,11 +37,10 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 5 edges to [[_COMMUNITY_json]]
-- 1 edge to [[_COMMUNITY_pydantic]]
+- 6 edges to [[_COMMUNITY_json]]
 
 ## Top bridge nodes
-- [[test_output_schema.py]] - degree 11, connects to 2 communities
+- [[test_output_schema.py]] - degree 11, connects to 1 community
 - [[apply_compact_output_schemas()]] - degree 6, connects to 1 community
 - [[compact_output_schema()]] - degree 6, connects to 1 community
 - [[FastMCP_1]] - degree 2, connects to 1 community

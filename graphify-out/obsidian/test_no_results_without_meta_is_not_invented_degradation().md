@@ -13,8 +13,8 @@ tags:
 
 ## Connections
 - [[WbNoResultsResponse]] - `uses` [INFERRED]
-- [[search()_3]] - `contains` [EXTRACTED]
-- [[search()_2]] - `indirect_call` [INFERRED]
+- [[search()_5]] - `contains` [EXTRACTED]
+- [[search()_4]] - `indirect_call` [INFERRED]
 - [[test_source_warnings.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_card_verification_recordspy

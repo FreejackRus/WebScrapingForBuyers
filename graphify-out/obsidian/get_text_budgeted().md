@@ -15,7 +15,7 @@ tags:
 - [[dot-response()]] - `indirect_call` [INFERRED]
 - [[Added]] - `references` [INFERRED]
 - [[AsyncClient_2]] - `references` [EXTRACTED]
-- [[Changed_8]] - `references` [INFERRED]
+- [[Changed_2]] - `references` [INFERRED]
 - [[GET ``url`` under a hard wall-clock budget, returning ``(status, text, err)``.…]] - `rationale_for` [EXTRACTED]
 - [[PoliteGate]] - `references` [EXTRACTED]
 - [[_budgeted_get_text()]] - `calls` [INFERRED]
@@ -36,6 +36,6 @@ tags:
 - [[test_wall_clock_budget_bounds_a_single_slow_attempt()]] - `calls` [INFERRED]
 - [[transport__init__.py]] - `imports` [EXTRACTED]
 - [[Добавлено_1]] - `references` [INFERRED]
-- [[Изменено_8]] - `references` [INFERRED]
+- [[Изменено]] - `references` [INFERRED]
 
 #graphify/code #graphify/INFERRED #community/get_text_budgeted

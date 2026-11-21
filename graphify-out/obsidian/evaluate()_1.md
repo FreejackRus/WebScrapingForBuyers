@@ -1,17 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py"
+source_file: "apps/analysis/scripts/compare-models.ts"
 type: "code"
-community: "test_challenge_recovery_bypasses_failed_payload_cache"
-location: "L179"
+community: "compare-models.ts"
+location: "L136"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_challenge_recovery_bypasses_failed_payload_cache
+  - community/compare-modelsts
 ---
 
 # evaluate()
 
 ## Connections
-- [[test_challenge_recovery_bypasses_failed_payload_cache()]] - `contains` [EXTRACTED]
+- [[analyzeSnapshot()]] - `calls` [EXTRACTED]
+- [[answerCopilot()]] - `calls` [EXTRACTED]
+- [[compare-models.ts]] - `contains` [EXTRACTED]
+- [[main()_20]] - `calls` [EXTRACTED]
+- [[narratorFor()]] - `calls` [EXTRACTED]
+- [[recording()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_challenge_recovery_bypasses_failed_payload_cache
+#graphify/code #graphify/EXTRACTED #community/compare-modelsts

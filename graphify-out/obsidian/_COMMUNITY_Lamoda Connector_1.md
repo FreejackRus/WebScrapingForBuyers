@@ -10,10 +10,10 @@ members: 5
 **Members:** 5 nodes
 
 ## Members
-- [[Gotchas_12]] - document - mcp-servers/ru-marketplace-mcp/skills/lamoda-connector/SKILL.md
+- [[Gotchas_21]] - document - mcp-servers/ru-marketplace-mcp/skills/lamoda-connector/SKILL.md
 - [[Lamoda Connector_1]] - document - mcp-servers/ru-marketplace-mcp/skills/lamoda-connector/SKILL.md
-- [[Tools available_7]] - document - mcp-servers/ru-marketplace-mcp/skills/lamoda-connector/SKILL.md
-- [[When to use_14]] - document - mcp-servers/ru-marketplace-mcp/skills/lamoda-connector/SKILL.md
+- [[Tools available_13]] - document - mcp-servers/ru-marketplace-mcp/skills/lamoda-connector/SKILL.md
+- [[When to use_19]] - document - mcp-servers/ru-marketplace-mcp/skills/lamoda-connector/SKILL.md
 - [[ru-marketplace-mcpskillslamoda-connectorSKILL]] - document - mcp-servers/ru-marketplace-mcp/skills/lamoda-connector/SKILL.md
 
 ## Live Query (requires Dataview plugin)
@@ -24,9 +24,9 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 1 edge to [[_COMMUNITY_lamoda_search]]
+- 1 edge to [[_COMMUNITY_lamoda_connectorserver.py]]
 - 1 edge to [[_COMMUNITY_compare_prices]]
 
 ## Top bridge nodes
 - [[Lamoda Connector_1]] - degree 5, connects to 1 community
-- [[Tools available_7]] - degree 2, connects to 1 community
+- [[Tools available_13]] - degree 2, connects to 1 community

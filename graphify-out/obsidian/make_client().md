@@ -12,7 +12,7 @@ tags:
 # make_client()
 
 ## Connections
-- [[AsyncClient]] - `references` [EXTRACTED]
+- [[AsyncClient_1]] - `references` [EXTRACTED]
 - [[test_backoff_that_would_outlast_the_budget_is_not_taken()]] - `calls` [EXTRACTED]
 - [[test_body_cap_returns_error_instead_of_raising()]] - `calls` [EXTRACTED]
 - [[test_error_bodies_are_returned_in_full_for_the_caller_to_judge()]] - `calls` [EXTRACTED]

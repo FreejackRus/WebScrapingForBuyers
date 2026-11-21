@@ -15,7 +15,7 @@ members: 13
 - [[Extractor JS - Python mapping - TaobaoSearchItemOut wire shape.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_search_extractor_dom.py
 - [[Guard against a regression back to closest()innerTextparseFloatMath.min.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_search_extractor_dom.py
 - [[Regression tests for the Taobao search extractor on a modeled fixture. Taobao's…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_search_extractor_dom.py
-- [[_extract()]] - code - mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_search_extractor_dom.py
+- [[_extract()_6]] - code - mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_search_extractor_dom.py
 - [[taobao-connectorteststest_search_extractor_dom.py]] - code - mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_search_extractor_dom.py
 - [[test_a_hidden_price_is_none_never_zero()]] - code - mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_search_extractor_dom.py
 - [[test_items_carry_the_wire_shape()]] - code - mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_search_extractor_dom.py
@@ -33,10 +33,10 @@ SORT file.name ASC
 
 ## Connections to other communities
 - 3 edges to [[_COMMUNITY_domtest.py]]
+- 1 edge to [[_COMMUNITY_taobao-connectorteststest_shape_reference.py]]
 - 1 edge to [[_COMMUNITY_pytest]]
 - 1 edge to [[_COMMUNITY_pathlib]]
-- 1 edge to [[_COMMUNITY_test_card_extractor_live_dom.py]]
 
 ## Top bridge nodes
 - [[taobao-connectorteststest_search_extractor_dom.py]] - degree 11, connects to 4 communities
-- [[_extract()]] - degree 7, connects to 1 community
+- [[_extract()_6]] - degree 7, connects to 1 community

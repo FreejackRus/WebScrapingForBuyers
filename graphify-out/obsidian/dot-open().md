@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
 type: "code"
-community: "mcp-marketplace-adapter.ts"
-location: "L308"
+community: "card-verifiers.ts"
+location: "L312"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/mcp-marketplace-adapterts
+  - community/card-verifiersts
 ---
 
 # .open()
@@ -15,4 +15,4 @@ tags:
 - [[dot-connect()]] - `calls` [EXTRACTED]
 - [[MarketplaceMcpClient]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts
+#graphify/code #graphify/EXTRACTED #community/card-verifiersts

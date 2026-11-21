@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Regression tests for the DNS searchcard extractors, on a real captured DOM.…]] - `rationale_for` [EXTRACTED]
-- [[_extract()_11]] - `contains` [EXTRACTED]
+- [[_extract()_13]] - `contains` [EXTRACTED]
 - [[dns_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[domtest.py]] - `imports_from` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]

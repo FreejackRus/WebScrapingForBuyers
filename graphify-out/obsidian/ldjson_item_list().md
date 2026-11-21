@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/ssr.py"
 type: "code"
-community: "ssr.py"
+community: "Any"
 location: "L264"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ssrpy
+  - community/Any
 ---
 
 # ldjson_item_list()
 
 ## Connections
-- [[Any_24]] - `references` [EXTRACTED]
-- [[_as_dict()_1]] - `calls` [EXTRACTED]
+- [[Any_26]] - `references` [EXTRACTED]
+- [[_as_dict()]] - `calls` [EXTRACTED]
 - [[_iter_ldjson()]] - `calls` [EXTRACTED]
 - [[_to_int()]] - `calls` [EXTRACTED]
 - [[_to_number()]] - `calls` [EXTRACTED]
@@ -22,4 +22,4 @@ tags:
 - [[schema.org ``ItemList`` from a search page (first screen only).]] - `rationale_for` [EXTRACTED]
 - [[ssr.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ssrpy
+#graphify/code #graphify/EXTRACTED #community/Any

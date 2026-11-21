@@ -16,11 +16,11 @@ tags:
 - [[fake_runner()]] - `indirect_call` [INFERRED]
 - [[ozon-connectorteststest_server.py]] - `contains` [EXTRACTED]
 - [[scenario()_32]] - `calls` [EXTRACTED]
-- [[scenario()_73]] - `calls` [EXTRACTED]
-- [[scenario()_83]] - `calls` [EXTRACTED]
 - [[scenario()_74]] - `calls` [EXTRACTED]
-- [[scenario()_33]] - `calls` [EXTRACTED]
+- [[scenario()_81]] - `calls` [EXTRACTED]
 - [[scenario()_75]] - `calls` [EXTRACTED]
-- [[scenario()_89]] - `calls` [EXTRACTED]
+- [[scenario()_33]] - `calls` [EXTRACTED]
+- [[scenario()_76]] - `calls` [EXTRACTED]
+- [[scenario()_87]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_patch_tier1

@@ -1,17 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cdp_budget.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py"
 type: "code"
-community: "Tracker"
-location: "L35"
+community: "MarketOffer"
+location: "L448"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Tracker
+  - community/MarketOffer
 ---
 
 # .__init__()
 
 ## Connections
-- [[Tracker]] - `method` [EXTRACTED]
+- [[dot-__init__()_2]] - `calls` [EXTRACTED]
+- [[MarketOffer]] - `references` [EXTRACTED]
+- [[OfferBatch]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Tracker
+#graphify/code #graphify/EXTRACTED #community/MarketOffer

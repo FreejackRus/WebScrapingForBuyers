@@ -1,16 +1,19 @@
 ---
 source_file: ""
 type: "code"
-community: "test_model_routing_eval_verdict.py"
+community: "test_chrome_cdp_snapshot.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_model_routing_eval_verdictpy
+  - community/test_chrome_cdp_snapshotpy
 ---
 
 # parametrize
 
 ## Connections
-- [[test_the_report_exposes_the_new_fields()]] - `references` [EXTRACTED]
+- [[test_bad_image_payload_is_rejected()]] - `references` [EXTRACTED]
+- [[test_encoded_and_decoded_byte_limits()]] - `references` [EXTRACTED]
+- [[test_invalid_geometry_never_captures()]] - `references` [EXTRACTED]
+- [[test_invalid_jpeg_frame_dimensions()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_model_routing_eval_verdictpy
+#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_snapshotpy

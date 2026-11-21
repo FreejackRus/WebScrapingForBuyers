@@ -1,18 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "e2e_stdio_check.py"
+community: "test_redact.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/e2e_stdio_checkpy
+  - community/test_redactpy
 ---
 
 # parametrize
 
 ## Connections
-- [[test_probe_checks_running_version()]] - `references` [EXTRACTED]
-- [[test_sources_reject_incomplete_or_stale_state()]] - `references` [EXTRACTED]
-- [[test_sources_reject_missing_or_malformed_payload()]] - `references` [EXTRACTED]
+- [[test_known_secret_shapes_are_scrubbed()]] - `references` [EXTRACTED]
+- [[test_proxy_userinfo_never_survives_redaction()]] - `references` [EXTRACTED]
+- [[test_session_cookies_and_jwts_are_scrubbed()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/e2e_stdio_checkpy
+#graphify/code #graphify/EXTRACTED #community/test_redactpy

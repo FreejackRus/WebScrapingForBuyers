@@ -13,7 +13,9 @@ tags:
 
 ## Connections
 - [[AppView]] - `imports` [EXTRACTED]
+- [[THEME_LABELS]] - `imports` [EXTRACTED]
 - [[Topbar()]] - `contains` [EXTRACTED]
+- [[applyTheme()]] - `imports` [EXTRACTED]
 - [[compositionsettingsindex.ts]] - `imports_from` [EXTRACTED]
 - [[configindex.ts]] - `imports_from` [EXTRACTED]
 - [[entitiesuserindex.ts]] - `imports_from` [EXTRACTED]
@@ -21,6 +23,9 @@ tags:
 - [[initials()]] - `imports` [EXTRACTED]
 - [[logoUrl]] - `imports` [EXTRACTED]
 - [[logout()]] - `imports` [EXTRACTED]
+- [[nextTheme()]] - `imports` [EXTRACTED]
+- [[react]] - `imports_from` [EXTRACTED]
+- [[readTheme()]] - `imports` [EXTRACTED]
 - [[sharedlibindex.ts]] - `imports_from` [EXTRACTED]
 - [[topbarindex.ts]] - `re_exports` [EXTRACTED]
 - [[topbaruiindex.test.tsx]] - `imports_from` [EXTRACTED]

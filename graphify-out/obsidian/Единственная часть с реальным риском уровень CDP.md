@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/SECURITY.md"
 type: "document"
-community: "Security"
+community: "Безопасность"
 location: "L40"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Security
+  - community/Безопасность
 ---
 
 # Единственная часть с реальным риском: уровень CDP
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[Безопасность]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Security
+#graphify/document #graphify/EXTRACTED #community/Безопасность

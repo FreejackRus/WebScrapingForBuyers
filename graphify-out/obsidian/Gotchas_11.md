@@ -1,17 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/lamoda-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/marketplace/SKILL.md"
 type: "document"
-community: "Lamoda Connector"
-location: "L26"
+community: "compare_prices"
+location: "L47"
 tags:
   - graphify/document
-  - graphify/EXTRACTED
-  - community/Lamoda_Connector
+  - graphify/INFERRED
+  - community/compare_prices
 ---
 
 # Gotchas
 
 ## Connections
-- [[Lamoda Connector]] - `contains` [EXTRACTED]
+- [[Unified Marketplace Server]] - `contains` [EXTRACTED]
+- [[ali()]] - `references` [INFERRED]
+- [[marketplace_sources()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Lamoda_Connector
+#graphify/document #graphify/INFERRED #community/compare_prices

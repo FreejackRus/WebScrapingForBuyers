@@ -1,12 +1,12 @@
 ---
 source_file: "apps/analysis/src/app.ts"
 type: "code"
-community: "compare-models.ts"
-location: "L13"
+community: "analysis/src/app.ts"
+location: "L18"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/compare-modelsts
+  - community/analysis/src/appts
 ---
 
 # HISTORY_SCHEMA
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[analysissrcapp.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/compare-modelsts
+#graphify/code #graphify/EXTRACTED #community/analysis/src/appts

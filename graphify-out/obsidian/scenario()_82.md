@@ -1,19 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "test_wb_search_storefront_does_not_fall_back_to_search_goods"
-location: "L114"
+community: "test_helpers.py"
+location: "L1887"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/test_wb_search_storefront_does_not_fall_back_to_search_goods
+  - graphify/EXTRACTED
+  - community/test_helperspy
 ---
 
 # scenario()
 
 ## Connections
-- [[failing_storefront()]] - `indirect_call` [INFERRED]
-- [[legacy()]] - `indirect_call` [INFERRED]
-- [[test_wb_search_storefront_does_not_fall_back_to_search_goods()]] - `contains` [EXTRACTED]
+- [[test_category_products_is_registered_and_v1_tools_are_intact()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/test_wb_search_storefront_does_not_fall_back_to_search_goods
+#graphify/code #graphify/EXTRACTED #community/test_helperspy

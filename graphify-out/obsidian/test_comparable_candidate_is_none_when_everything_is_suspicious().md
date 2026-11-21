@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[compare-connectorteststest_server.py]] - `contains` [EXTRACTED]
 - [[stub_sources()]] - `calls` [EXTRACTED]
-- [[wb()_5]] - `contains` [EXTRACTED]
-- [[wb()_7]] - `indirect_call` [INFERRED]
+- [[wb()_6]] - `contains` [EXTRACTED]
+- [[wb()_8]] - `indirect_call` [INFERRED]
 
 #graphify/code #graphify/EXTRACTED #community/offer

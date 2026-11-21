@@ -1,18 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "open_page"
+community: "ozon_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/open_page
+  - community/ozon_connector/serverpy
 ---
 
 # RuntimeError
 
 ## Connections
-- [[NavBlocked]] - `inherits` [EXTRACTED]
-- [[NavigationPolicyError]] - `inherits` [EXTRACTED]
-- [[_CdpConnectTimeout]] - `inherits` [EXTRACTED]
+- [[_SyncCallError]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/open_page
+#graphify/code #graphify/EXTRACTED #community/ozon_connector/serverpy

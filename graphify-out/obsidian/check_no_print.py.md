@@ -20,7 +20,7 @@ tags:
 - [[ast]] - `imports` [EXTRACTED]
 - [[check_file()]] - `contains` [EXTRACTED]
 - [[collect_default_paths()]] - `contains` [EXTRACTED]
-- [[main()_4]] - `contains` [EXTRACTED]
+- [[main()_23]] - `contains` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]
 - [[sys]] - `imports` [EXTRACTED]
 

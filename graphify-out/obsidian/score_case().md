@@ -12,7 +12,7 @@ tags:
 # score_case()
 
 ## Connections
-- [[Any_29]] - `references` [EXTRACTED]
+- [[Any_28]] - `references` [EXTRACTED]
 - [[Deterministic per-case verdict pass  wrong  forbidden  missing.]] - `rationale_for` [EXTRACTED]
 - [[_norm()]] - `calls` [EXTRACTED]
 - [[evaluate_answers()]] - `calls` [EXTRACTED]

@@ -15,17 +15,17 @@ members: 34
 - [[The live grid lists the base price first; the current price is the smaller.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py
 - [[The pairing must not trust DOM order a base-first sticky ships current=min.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py
 - [[The sticky module lists the current price FIRST — opposite order to tiles.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py
-- [[_no_cache()_6]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py
+- [[_no_cache()_7]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py
 - [[_patch_card()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py
 - [[_patch_search()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py
 - [[aliexpress-connectorteststest_server.py]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py
-- [[fake_card()]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py
-- [[fake_card()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py
+- [[fake_card()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py
+- [[fake_card()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py
 - [[fake_render()_4]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py
 - [[fake_search()]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py
 - [[fake_search()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py
 - [[fake_search()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py
-- [[fixture_22]] - code
+- [[fixture_25]] - code
 - [[test_card_accepts_a_bare_numeric_id()]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py
 - [[test_card_current_price_first_in_sticky()]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py
 - [[test_card_flags_drift_when_neither_title_nor_price()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py
@@ -55,7 +55,7 @@ SORT file.name ASC
 ## Connections to other communities
 - 1 edge to [[_COMMUNITY_aliexpress-connectorteststest_parser_live.py]]
 - 1 edge to [[_COMMUNITY_pytest]]
-- 1 edge to [[_COMMUNITY_json]]
+- 1 edge to [[_COMMUNITY_transport__init__.py]]
 
 ## Top bridge nodes
 - [[aliexpress-connectorteststest_server.py]] - degree 24, connects to 3 communities

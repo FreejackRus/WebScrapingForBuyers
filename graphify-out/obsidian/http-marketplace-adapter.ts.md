@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/http-marketplace-adapter.ts"
 type: "code"
-community: "ref_vitest"
+community: "mcp-marketplace-adapter.ts"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ref_vitest
+  - community/mcp-marketplace-adapterts
 ---
 
 # http-marketplace-adapter.ts
@@ -41,4 +41,4 @@ tags:
 - [[wbCatalogPrice()]] - `contains` [EXTRACTED]
 - [[wbHttpSearchUrl()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ref_vitest
+#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts

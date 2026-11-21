@@ -1,17 +1,17 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_parser_live.py"
 type: "rationale"
-community: "pathlib"
+community: "detmir-connector/tests/test_parser_live.py"
 location: "L53"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/pathlib
+  - community/detmir-connector/tests/test_parser_livepy
 ---
 
 # The doctrine pinned by the audit waves, checked against live bytes: a Detsky…
 
 ## Connections
-- [[test_live_prices_are_finite_positive_rubles()_1]] - `rationale_for` [EXTRACTED]
+- [[test_live_prices_are_finite_positive_rubles()_2]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/pathlib
+#graphify/rationale #graphify/EXTRACTED #community/detmir-connector/tests/test_parser_livepy

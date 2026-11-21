@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "test_cdp_transport.py"
+community: "test_the_category_url_is_what_yields_a_collection"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_cdp_transportpy
+  - community/test_the_category_url_is_what_yields_a_collection
 ---
 
 # fixture
 
 ## Connections
-- [[cdp_mode()]] - `references` [EXTRACTED]
+- [[_no_cache()_4]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_cdp_transportpy
+#graphify/code #graphify/EXTRACTED #community/test_the_category_url_is_what_yields_a_collection

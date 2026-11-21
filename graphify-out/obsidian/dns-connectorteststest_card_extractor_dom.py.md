@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Regression tests for the DNS card extractor on a captured card page. Captured…]] - `rationale_for` [EXTRACTED]
-- [[_extract()_1]] - `contains` [EXTRACTED]
+- [[_extract()_3]] - `contains` [EXTRACTED]
 - [[dns_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[domtest.py]] - `imports_from` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]

@@ -12,7 +12,7 @@ tags:
 # degraded_yandex()
 
 ## Connections
-- [[offer()_2]] - `calls` [EXTRACTED]
+- [[offer()_5]] - `calls` [EXTRACTED]
 - [[test_degraded_yandex_rows_never_rank_with_a_subscription_price()]] - `indirect_call` [INFERRED]
 
 #graphify/code #graphify/EXTRACTED #community/offer

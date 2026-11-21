@@ -10,10 +10,10 @@ members: 8
 **Members:** 8 nodes
 
 ## Members
-- [[dot-get()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
+- [[dot-get()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
 - [[dot-get_or_fetch()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
 - [[dot-invalidate()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
-- [[dot-set()]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
+- [[dot-set()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
 - [[Hashable]] - code
 - [[Return a live value, or ``None`` on missexpiry.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
 - [[Return the cached value or await ``factory`` to produce it. A per-cache lock…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py
@@ -30,7 +30,7 @@ SORT file.name ASC
 - 4 edges to [[_COMMUNITY_TTLCache]]
 
 ## Top bridge nodes
-- [[dot-get()_1]] - degree 5, connects to 1 community
+- [[dot-get()_3]] - degree 5, connects to 1 community
 - [[dot-get_or_fetch()]] - degree 5, connects to 1 community
-- [[dot-set()]] - degree 3, connects to 1 community
+- [[dot-set()_1]] - degree 3, connects to 1 community
 - [[dot-invalidate()]] - degree 2, connects to 1 community

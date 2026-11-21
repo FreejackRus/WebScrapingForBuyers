@@ -12,10 +12,10 @@ tags:
 # _wb_client()
 
 ## Connections
-- [[AsyncClient_3]] - `references` [EXTRACTED]
+- [[AsyncClient]] - `references` [EXTRACTED]
 - [[Build WB's HTTP client. Kept as a helper so proxy resolution happens in exactly…]] - `rationale_for` [EXTRACTED]
 - [[_fetch_first_json()]] - `calls` [EXTRACTED]
-- [[_proxy()_5]] - `calls` [EXTRACTED]
+- [[_proxy()]] - `calls` [EXTRACTED]
 - [[_search_via_http_v9()]] - `calls` [EXTRACTED]
 - [[_search_via_search_goods()]] - `calls` [EXTRACTED]
 - [[wb_card()]] - `calls` [EXTRACTED]

@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "test_public_contract_snapshot.py"
+community: "test_pagination_wrap.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_public_contract_snapshotpy
+  - community/test_pagination_wrappy
 ---
 
 # fixture
 
 ## Connections
-- [[no_server_start()]] - `references` [EXTRACTED]
+- [[_clear_fingerprints()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_public_contract_snapshotpy
+#graphify/code #graphify/EXTRACTED #community/test_pagination_wrappy

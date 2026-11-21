@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/_win_job_runner.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/routing_eval.py"
 type: "code"
-community: "subprocess"
-location: "L55"
+community: "mcp_wire.py"
+location: "L77"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/subprocess
+  - community/mcp_wirepy
 ---
 
 # main()
 
 ## Connections
-- [[_ExtendedLimits]] - `calls` [EXTRACTED]
-- [[_win_job_runner.py]] - `contains` [EXTRACTED]
+- [[evaluate()]] - `calls` [EXTRACTED]
+- [[routing_eval.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/subprocess
+#graphify/code #graphify/EXTRACTED #community/mcp_wirepy

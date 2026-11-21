@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/__init__.py"
 type: "code"
-community: "test_card_extractor_live_dom.py"
+community: "taobao-connector/tests/test_shape_reference.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_card_extractor_live_dompy
+  - community/taobao-connector/tests/test_shape_referencepy
 ---
 
 # taobao_connector/__init__.py
@@ -23,4 +23,4 @@ tags:
 - [[test_card_extractor_live_dom.py]] - `imports_from` [EXTRACTED]
 - [[test_search_login_wall_live_dom.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_card_extractor_live_dompy
+#graphify/code #graphify/EXTRACTED #community/taobao-connector/tests/test_shape_referencepy

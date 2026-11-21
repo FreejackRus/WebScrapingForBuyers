@@ -15,7 +15,7 @@ tags:
 - [[Native parsermodel regressions for stock filtering and variant ranking.]] - `rationale_for` [EXTRACTED]
 - [[compare_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[html]] - `imports` [EXTRACTED]
-- [[json]] - `imports` [EXTRACTED]
+- [[json_1]] - `imports` [EXTRACTED]
 - [[ozon_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[ozon_connectormodels_output.py]] - `imports_from` [EXTRACTED]
 - [[pytest]] - `imports` [EXTRACTED]

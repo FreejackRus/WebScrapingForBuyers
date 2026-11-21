@@ -12,7 +12,7 @@ tags:
 # parseSrvTradeSearch()
 
 ## Connections
-- [[dot-search()_6]] - `calls` [EXTRACTED]
+- [[dot-search()]] - `calls` [EXTRACTED]
 - [[absoluteUrl()]] - `calls` [EXTRACTED]
 - [[firstMatch()]] - `calls` [EXTRACTED]
 - [[htmlText()]] - `calls` [EXTRACTED]

@@ -1,17 +1,20 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_stealth.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "code"
-community: "test_chrome_cdp_stealth.py"
-location: "L133"
+community: "citilink_card"
+location: "L1088"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_chrome_cdp_stealthpy
+  - community/citilink_card
 ---
 
 # .__init__()
 
 ## Connections
-- [[_FakeCdp]] - `method` [EXTRACTED]
+- [[dot-__init__()_9]] - `calls` [EXTRACTED]
+- [[dot-__init__()_10]] - `calls` [EXTRACTED]
+- [[Collection_1]] - `references` [EXTRACTED]
+- [[NavigationPolicyError]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_stealthpy
+#graphify/code #graphify/EXTRACTED #community/citilink_card

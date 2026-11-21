@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "ozon_connector/server.py"
+community: "domtest.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ozon_connector/serverpy
+  - community/domtestpy
 ---
 
 # RuntimeError
 
 ## Connections
-- [[_SyncCallError]] - `inherits` [EXTRACTED]
+- [[JsdomUnavailable]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ozon_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/domtestpy

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/src/citilink_connector/models_output.py"
 type: "code"
-community: "citilink_selfcheck"
+community: "json"
 location: "L53"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/citilink_selfcheck
+  - community/json
 ---
 
 # CitilinkSelfcheckResponse
@@ -18,4 +18,4 @@ tags:
 - [[citilink_connectorserver.py]] - `imports` [EXTRACTED]
 - [[citilink_selfcheck()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/citilink_selfcheck
+#graphify/code #graphify/EXTRACTED #community/json

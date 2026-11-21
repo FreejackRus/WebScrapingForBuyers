@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "rationale"
-community: "test_a_generic_failure_is_reported_as_error_not_blocked"
+community: "offer"
 location: "L336"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/test_a_generic_failure_is_reported_as_error_not_blocked
+  - community/offer
 ---
 
 # Anti-bot blocks and ordinary bugs need different responses, so they differ.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_a_generic_failure_is_reported_as_error_not_blocked()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/test_a_generic_failure_is_reported_as_error_not_blocked
+#graphify/rationale #graphify/EXTRACTED #community/offer

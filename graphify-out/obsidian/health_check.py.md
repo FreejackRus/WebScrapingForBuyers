@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/examples/health_check.py"
 type: "code"
-community: "sys"
+community: "main"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/sys
+  - community/main
 ---
 
 # health_check.py
@@ -14,8 +14,8 @@ tags:
 ## Connections
 - [[Run every connector's selfcheck and summarise what works from here. uv run…]] - `rationale_for` [EXTRACTED]
 - [[asyncio]] - `imports` [EXTRACTED]
-- [[main()_9]] - `contains` [EXTRACTED]
+- [[main()_35]] - `contains` [EXTRACTED]
 - [[run_one()]] - `contains` [EXTRACTED]
 - [[sys]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/sys
+#graphify/code #graphify/EXTRACTED #community/main

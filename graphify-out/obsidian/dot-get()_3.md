@@ -1,18 +1,21 @@
 ---
-source_file: "apps/gateway/src/user-cache.ts"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py"
 type: "code"
-community: "gateway/src/app.ts"
-location: "L21"
+community: ".get"
+location: "L78"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/gateway/src/appts
+  - community/get
 ---
 
 # .get()
 
 ## Connections
-- [[UserCache]] - `method` [EXTRACTED]
-- [[resolveUser()]] - `calls` [INFERRED]
+- [[dot-get_or_fetch()]] - `calls` [EXTRACTED]
+- [[Hashable]] - `references` [EXTRACTED]
+- [[Return a live value, or ``None`` on missexpiry.]] - `rationale_for` [EXTRACTED]
+- [[T]] - `references` [EXTRACTED]
+- [[TTLCache]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/gateway/src/appts
+#graphify/code #graphify/EXTRACTED #community/get

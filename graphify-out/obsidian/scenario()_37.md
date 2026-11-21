@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[_patch_questions()]] - `calls` [EXTRACTED]
-- [[_tool_error_payload()]] - `calls` [EXTRACTED]
+- [[_tool_error_payload()_1]] - `calls` [EXTRACTED]
 - [[forbidden()_4]] - `indirect_call` [INFERRED]
 - [[test_questions_rejects_an_out_of_range_limit()]] - `contains` [EXTRACTED]
 

@@ -1,19 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/server.py"
 type: "code"
-community: "detmir_selfcheck"
+community: "detmir_categories"
 location: "L659"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/detmir_selfcheck
+  - community/detmir_categories
 ---
 
 # detmir_selfcheck()
 
 ## Connections
-- [[Added_17]] - `references` [INFERRED]
-- [[Context_11]] - `references` [EXTRACTED]
+- [[Added_11]] - `references` [INFERRED]
 - [[DetmirSelfcheckEntry]] - `calls` [EXTRACTED]
 - [[DetmirSelfcheckResponse]] - `calls` [EXTRACTED]
 - [[Probe every Detsky Mir endpoint family and report a tri-state verdict.…]] - `rationale_for` [EXTRACTED]
@@ -24,8 +23,8 @@ tags:
 - [[detmir_category()]] - `calls` [EXTRACTED]
 - [[detmir_connectorserver.py]] - `contains` [EXTRACTED]
 - [[log_event()]] - `calls` [EXTRACTED]
-- [[main()_9]] - `calls` [INFERRED]
-- [[probe()_2]] - `contains` [EXTRACTED]
+- [[main()_35]] - `calls` [INFERRED]
+- [[probe()_1]] - `contains` [EXTRACTED]
 - [[test_detmir_selfcheck_reaches_a_verdict()]] - `calls` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/detmir_selfcheck
+#graphify/code #graphify/EXTRACTED #community/detmir_categories

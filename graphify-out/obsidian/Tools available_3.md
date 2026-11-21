@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/cian-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/aliexpress-connector/SKILL.md"
 type: "document"
-community: "Cian Connector"
-location: "L22"
+community: "aliexpress_selfcheck"
+location: "L16"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Cian_Connector
+  - community/aliexpress_selfcheck
 ---
 
 # Tools available
 
 ## Connections
-- [[Cian Connector]] - `contains` [EXTRACTED]
-- [[cian_selfcheck()]] - `references` [INFERRED]
+- [[AliExpress connector_1]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Cian_Connector
+#graphify/document #graphify/EXTRACTED #community/aliexpress_selfcheck

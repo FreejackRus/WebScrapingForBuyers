@@ -1,17 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "mcp_wire.py"
+community: "test_dsh_bundle.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/mcp_wirepy
+  - community/test_dsh_bundlepy
 ---
 
 # Path
 
 ## Connections
-- [[_load_baseline()]] - `references` [EXTRACTED]
-- [[fetch_tools()]] - `references` [EXTRACTED]
+- [[_dsh_command()]] - `references` [EXTRACTED]
+- [[_workspace_root()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/mcp_wirepy
+#graphify/code #graphify/EXTRACTED #community/test_dsh_bundlepy

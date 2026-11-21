@@ -13,9 +13,9 @@ tags:
 
 ## Connections
 - [[DSH activation_6]] - `contains` [EXTRACTED]
-- [[Gotchas_11]] - `contains` [EXTRACTED]
-- [[Tools available_6]] - `contains` [EXTRACTED]
-- [[When to use_13]] - `contains` [EXTRACTED]
+- [[Gotchas_20]] - `contains` [EXTRACTED]
+- [[Tools available_12]] - `contains` [EXTRACTED]
+- [[When to use_18]] - `contains` [EXTRACTED]
 - [[dshskillslamoda-connectorSKILL]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/Lamoda_Connector

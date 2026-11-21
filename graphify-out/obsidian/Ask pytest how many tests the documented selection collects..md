@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_test_count.py"
 type: "rationale"
-community: "check_test_count.py"
+community: "pathlib"
 location: "L42"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/check_test_countpy
+  - community/pathlib
 ---
 
 # Ask pytest how many tests the documented selection collects.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_collected()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/check_test_countpy
+#graphify/rationale #graphify/EXTRACTED #community/pathlib

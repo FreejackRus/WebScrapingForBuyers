@@ -2,7 +2,7 @@
 source_file: "apps/analysis/src/domain/analysis-narrator.ts"
 type: "code"
 community: "ollama-analysis-narrator.ts"
-location: "L48"
+location: "L60"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,7 +12,7 @@ tags:
 # RelevanceFilterInput
 
 ## Connections
-- [[dot-filterRelevance()_1]] - `references` [EXTRACTED]
+- [[dot-filterRelevance()]] - `references` [EXTRACTED]
 - [[analysis-narrator.ts]] - `contains` [EXTRACTED]
 - [[analyze.test.ts]] - `imports` [EXTRACTED]
 - [[ollama-analysis-narrator.ts]] - `imports` [EXTRACTED]

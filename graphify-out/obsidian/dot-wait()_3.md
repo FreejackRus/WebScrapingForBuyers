@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_process.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/http_tier.py"
 type: "code"
-community: "test_process.py"
-location: "L37"
+community: "transport/__init__.py"
+location: "L67"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_processpy
+  - community/transport/__init__py
 ---
 
 # .wait()
 
 ## Connections
-- [[_FakeProc]] - `method` [EXTRACTED]
+- [[PoliteGate]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_processpy
+#graphify/code #graphify/EXTRACTED #community/transport/__init__py

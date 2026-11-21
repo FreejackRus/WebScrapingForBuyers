@@ -1,25 +1,19 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
+source_file: "apps/analysis/src/application/basket-tools.ts"
 type: "code"
-community: "mcp-marketplace-adapter.ts"
-location: "L719"
+community: "basket-tools.ts"
+location: "L18"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/mcp-marketplace-adapterts
+  - community/basket-toolsts
 ---
 
 # isObject()
 
 ## Connections
-- [[dot-invoke()]] - `calls` [EXTRACTED]
-- [[dot-toOffer()]] - `calls` [EXTRACTED]
-- [[extractText()]] - `calls` [EXTRACTED]
-- [[imageCandidateUrl()]] - `calls` [EXTRACTED]
-- [[isWbSearchGoodsFallback()]] - `calls` [EXTRACTED]
-- [[marketplacePayloadItems()]] - `calls` [EXTRACTED]
-- [[mcp-marketplace-adapter.ts]] - `contains` [EXTRACTED]
-- [[parseConnectorError()]] - `calls` [EXTRACTED]
-- [[sizesPrice()]] - `calls` [EXTRACTED]
+- [[basket-tools.ts]] - `contains` [EXTRACTED]
+- [[justifyBasket()]] - `calls` [EXTRACTED]
+- [[splitRequest()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts
+#graphify/code #graphify/EXTRACTED #community/basket-toolsts

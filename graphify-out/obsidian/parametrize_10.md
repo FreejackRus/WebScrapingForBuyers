@@ -1,17 +1,19 @@
 ---
 source_file: ""
 type: "code"
-community: "test_chrome_cdp_raw_lifecycle.py"
+community: "error_payload"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_chrome_cdp_raw_lifecyclepy
+  - community/error_payload
 ---
 
 # parametrize
 
 ## Connections
-- [[test_raw_cleanup_is_bounded_and_preserves_original_failure()]] - `references` [EXTRACTED]
-- [[test_raw_target_closed_after_every_postcreation_failure()]] - `references` [EXTRACTED]
+- [[test_an_invalid_region_is_rejected_before_any_request()]] - `references` [EXTRACTED]
+- [[test_categories_rejects_non_numeric_parent()]] - `references` [EXTRACTED]
+- [[test_category_normalises_case_and_whitespace()]] - `references` [EXTRACTED]
+- [[test_category_rejects_non_slug_aliases()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_raw_lifecyclepy
+#graphify/code #graphify/EXTRACTED #community/error_payload

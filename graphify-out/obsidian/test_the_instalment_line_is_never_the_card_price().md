@@ -12,7 +12,7 @@ tags:
 # test_the_instalment_line_is_never_the_card_price()
 
 ## Connections
-- [[_extract()_1]] - `calls` [EXTRACTED]
+- [[_extract()_3]] - `calls` [EXTRACTED]
 - [[dns-connectorteststest_card_extractor_dom.py]] - `contains` [EXTRACTED]
 - [[«от 5 751 ₽ мес.» is the smallest number on the card — a body-scan minimum…]] - `rationale_for` [EXTRACTED]
 

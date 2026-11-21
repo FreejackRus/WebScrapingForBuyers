@@ -17,7 +17,7 @@ tags:
 - [[ARCHITECTURE]] - `references` [EXTRACTED]
 - [[CDP_SETUP]] - `references` [EXTRACTED]
 - [[CONTRIBUTORS]] - `references` [EXTRACTED]
-- [[DEPLOYMENT_1]] - `references` [EXTRACTED]
+- [[DEPLOYMENT]] - `references` [EXTRACTED]
 - [[English version]] - `contains` [EXTRACTED]
 - [[QUICKSTART_1]] - `references` [EXTRACTED]
 - [[RELEASE_NOTES_v2.4.2]] - `references` [EXTRACTED]

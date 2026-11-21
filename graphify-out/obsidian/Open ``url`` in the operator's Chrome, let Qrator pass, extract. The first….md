@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/src/dns_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/src/citilink_connector/server.py"
 type: "rationale"
-community: "dns_card"
-location: "L348"
+community: "citilink_card"
+location: "L308"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/dns_card
+  - community/citilink_card
 ---
 
 # Open ``url`` in the operator's Chrome, let Qrator pass, extract. The first…
 
 ## Connections
-- [[_cdp_render()_1]] - `rationale_for` [EXTRACTED]
+- [[_cdp_render()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/dns_card
+#graphify/rationale #graphify/EXTRACTED #community/citilink_card

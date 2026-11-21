@@ -12,7 +12,7 @@ tags:
 # _frontmatter()
 
 ## Connections
-- [[Path_3]] - `references` [EXTRACTED]
+- [[Path]] - `references` [EXTRACTED]
 - [[test_skill_frontmatter_matches_the_published_spec()]] - `calls` [EXTRACTED]
 - [[test_skills_parity.py]] - `contains` [EXTRACTED]
 

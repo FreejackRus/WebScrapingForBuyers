@@ -1,18 +1,28 @@
 ---
 source_file: ""
 type: "code"
-community: "aliexpress_card"
+community: "wb_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/aliexpress_card
+  - community/wb_connector/serverpy
 ---
 
 # BaseModel
 
 ## Connections
-- [[AliCardResponse]] - `inherits` [EXTRACTED]
-- [[AliSearchItemOut]] - `inherits` [EXTRACTED]
-- [[AliSearchResponse]] - `inherits` [EXTRACTED]
+- [[WbCardItem]] - `inherits` [EXTRACTED]
+- [[WbCardResponse]] - `inherits` [EXTRACTED]
+- [[WbCategoriesResponse]] - `inherits` [EXTRACTED]
+- [[WbCategoryNode]] - `inherits` [EXTRACTED]
+- [[WbCategoryProductsResponse]] - `inherits` [EXTRACTED]
+- [[WbNoResultsResponse]] - `inherits` [EXTRACTED]
+- [[WbQuestionItem]] - `inherits` [EXTRACTED]
+- [[WbQuestionsResponse]] - `inherits` [EXTRACTED]
+- [[WbReviewItem]] - `inherits` [EXTRACTED]
+- [[WbReviewsResponse]] - `inherits` [EXTRACTED]
+- [[WbRootInfoResponse]] - `inherits` [EXTRACTED]
+- [[WbSearchResponse]] - `inherits` [EXTRACTED]
+- [[WbSellerResponse]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/aliexpress_card
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

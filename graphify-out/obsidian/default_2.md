@@ -1,18 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "compare_verify_offer"
+community: "detmir_categories"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/compare_verify_offer
+  - community/detmir_categories
 ---
 
 # default
 
 ## Connections
-- [[compare_browser_snapshot()]] - `references` [EXTRACTED]
-- [[compare_prices()]] - `references` [EXTRACTED]
-- [[compare_verify_offer()]] - `references` [EXTRACTED]
+- [[detmir_card()]] - `references` [EXTRACTED]
+- [[detmir_categories()]] - `references` [EXTRACTED]
+- [[detmir_category()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/compare_verify_offer
+#graphify/code #graphify/EXTRACTED #community/detmir_categories

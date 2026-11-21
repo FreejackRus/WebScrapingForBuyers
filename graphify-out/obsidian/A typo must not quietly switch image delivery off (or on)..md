@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_vision_policy.py"
 type: "rationale"
-community: "test_review_regressions.py"
+community: "resolve_image_delivery"
 location: "L25"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/test_review_regressionspy
+  - community/resolve_image_delivery
 ---
 
 # A typo must not quietly switch image delivery off (or on).
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_an_operator_typo_falls_back_to_the_default()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/test_review_regressionspy
+#graphify/rationale #graphify/EXTRACTED #community/resolve_image_delivery

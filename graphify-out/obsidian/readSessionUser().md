@@ -12,7 +12,7 @@ tags:
 # readSessionUser()
 
 ## Connections
-- [[dot-getById()]] - `calls` [INFERRED]
+- [[dot-getById()_1]] - `calls` [INFERRED]
 - [[identitysrchttproutes.ts]] - `imports` [EXTRACTED]
 - [[identityRoutes()]] - `calls` [EXTRACTED]
 - [[requireUser()]] - `calls` [EXTRACTED]

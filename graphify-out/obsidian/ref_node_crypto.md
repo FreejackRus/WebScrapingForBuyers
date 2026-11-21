@@ -1,16 +1,19 @@
 ---
 source_file: ""
 type: "concept"
-community: "SourceAdapter"
+community: "watchlist-checker.ts"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/SourceAdapter
+  - community/watchlist-checkerts
 ---
 
 # ref_node_crypto
 
 ## Connections
+- [[basket-store.ts]] - `imports_from` [EXTRACTED]
+- [[citilink-agent-adapter.ts]] - `imports_from` [EXTRACTED]
+- [[deepseek-harness-narrator.ts]] - `imports_from` [EXTRACTED]
 - [[demo-source-adapter.ts]] - `imports_from` [EXTRACTED]
 - [[http-marketplace-adapter.ts]] - `imports_from` [EXTRACTED]
 - [[mcp-marketplace-adapter.ts]] - `imports_from` [EXTRACTED]
@@ -23,5 +26,6 @@ tags:
 - [[search-service.ts]] - `imports_from` [EXTRACTED]
 - [[session.ts]] - `imports_from` [EXTRACTED]
 - [[storefront-distributor-adapter.ts]] - `imports_from` [EXTRACTED]
+- [[watchlist.ts]] - `imports_from` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/SourceAdapter
+#graphify/concept #graphify/EXTRACTED #community/watchlist-checkerts

@@ -1,18 +1,20 @@
 ---
 source_file: "apps/search/src/application/search-service.ts"
 type: "code"
-community: "SearchService"
-location: "L35"
+community: "search-service.ts"
+location: "L59"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/SearchService
+  - community/search-servicets
 ---
 
 # withDeadline()
 
 ## Connections
-- [[dot-collect()]] - `calls` [EXTRACTED]
+- [[dot-collect()_1]] - `calls` [EXTRACTED]
+- [[dot-resolveArticles()]] - `calls` [EXTRACTED]
+- [[dot-verifyTop()]] - `calls` [EXTRACTED]
 - [[search-service.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/SearchService
+#graphify/code #graphify/EXTRACTED #community/search-servicets

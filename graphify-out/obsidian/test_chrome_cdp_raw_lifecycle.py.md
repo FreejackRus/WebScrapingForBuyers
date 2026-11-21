@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_raw_lifecycle.py"
 type: "code"
-community: "test_chrome_cdp_raw_lifecycle.py"
+community: "transport/__init__.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_chrome_cdp_raw_lifecyclepy
+  - community/transport/__init__py
 ---
 
 # test_chrome_cdp_raw_lifecycle.py
@@ -17,7 +17,7 @@ tags:
 - [[asyncio]] - `imports` [EXTRACTED]
 - [[contextlib]] - `imports_from` [EXTRACTED]
 - [[io]] - `imports_from` [EXTRACTED]
-- [[json]] - `imports` [EXTRACTED]
+- [[json_1]] - `imports` [EXTRACTED]
 - [[pytest]] - `imports` [EXTRACTED]
 - [[raw_browser()]] - `contains` [EXTRACTED]
 - [[test_raw_cleanup_is_bounded_and_preserves_original_failure()]] - `contains` [EXTRACTED]
@@ -27,4 +27,4 @@ tags:
 - [[types_8]] - `imports_from` [EXTRACTED]
 - [[urllib_request]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_raw_lifecyclepy
+#graphify/code #graphify/EXTRACTED #community/transport/__init__py

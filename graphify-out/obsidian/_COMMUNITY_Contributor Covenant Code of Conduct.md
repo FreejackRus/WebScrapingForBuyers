@@ -31,7 +31,7 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 1 edge to [[_COMMUNITY_Security]]
+- 1 edge to [[_COMMUNITY_Безопасность]]
 
 ## Top bridge nodes
 - [[Contributor Covenant Code of Conduct]] - degree 8, connects to 1 community

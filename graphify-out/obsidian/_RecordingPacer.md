@@ -12,7 +12,7 @@ tags:
 # _RecordingPacer
 
 ## Connections
-- [[dot-__init__()_17]] - `method` [EXTRACTED]
+- [[dot-__init__()_20]] - `method` [EXTRACTED]
 - [[dot-record_refusal()]] - `method` [EXTRACTED]
 - [[dot-record_success()]] - `method` [EXTRACTED]
 - [[dot-rotation_hint()]] - `method` [EXTRACTED]

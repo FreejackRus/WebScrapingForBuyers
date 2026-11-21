@@ -1,12 +1,12 @@
 ---
 source_file: ".codex/skills/graphify/references/transcribe.md"
 type: "document"
-community: "graphify reference: transcribe video and audio"
+community: "procurement-dialogue.ts"
 location: "L1"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/graphify_reference_transcribe_video_and_audio
+  - community/procurement-dialoguets
 ---
 
 # transcribe.md
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[graphify reference transcribe video and audio]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/graphify_reference_transcribe_video_and_audio
+#graphify/document #graphify/EXTRACTED #community/procurement-dialoguets

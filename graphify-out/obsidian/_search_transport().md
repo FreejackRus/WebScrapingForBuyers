@@ -13,9 +13,9 @@ tags:
 
 ## Connections
 - [[Current WB_SEARCH_TRANSPORT (storefronthttp). Re-reads settings for tests.]] - `rationale_for` [EXTRACTED]
-- [[get_settings()_11]] - `calls` [EXTRACTED]
+- [[get_settings()]] - `calls` [EXTRACTED]
 - [[wb_connectorserver.py]] - `contains` [EXTRACTED]
-- [[wb_search()_2]] - `calls` [EXTRACTED]
+- [[wb_search()_1]] - `calls` [EXTRACTED]
 - [[wb_selfcheck()]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

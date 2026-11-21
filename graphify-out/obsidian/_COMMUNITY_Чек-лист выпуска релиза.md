@@ -32,7 +32,7 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 2 edges to [[_COMMUNITY_mcp-coreteststest_browser_handoff.py]]
+- 2 edges to [[_COMMUNITY_success]]
 - 1 edge to [[_COMMUNITY_Аудит ru-marketplace-mcp v1.2.0 — независимая перепроверка]]
 
 ## Top bridge nodes

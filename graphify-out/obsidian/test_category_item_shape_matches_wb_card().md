@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[A category walk and a text search must be directly comparable.]] - `rationale_for` [EXTRACTED]
 - [[responder()_1]] - `contains` [EXTRACTED]
-- [[scenario()_45]] - `contains` [EXTRACTED]
+- [[scenario()_44]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_patch_questions

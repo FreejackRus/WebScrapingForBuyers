@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/application/search-service.ts"
 type: "code"
-community: "SearchService"
-location: "L184"
+community: "search-service.ts"
+location: "L422"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/SearchService
+  - community/search-servicets
 ---
 
 # .prune()
@@ -16,4 +16,4 @@ tags:
 - [[dot-start()]] - `calls` [EXTRACTED]
 - [[SearchService]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/SearchService
+#graphify/code #graphify/EXTRACTED #community/search-servicets

@@ -12,21 +12,29 @@ tags:
 # offer/index.ts
 
 ## Connections
+- [[ModelGroup]] - `re_exports` [EXTRACTED]
+- [[OfferGroup]] - `re_exports` [EXTRACTED]
 - [[OfferSort]] - `re_exports` [EXTRACTED]
 - [[OfferSortColumn]] - `re_exports` [EXTRACTED]
 - [[PRICE_ANOMALY_HINT]] - `re_exports` [EXTRACTED]
 - [[PRICE_ANOMALY_LABEL]] - `re_exports` [EXTRACTED]
 - [[applyTableFilter()]] - `re_exports` [EXTRACTED]
+- [[compareuiindex.tsx]] - `imports_from` [EXTRACTED]
 - [[conditionLabels]] - `re_exports` [EXTRACTED]
 - [[filter-offersindex.ts]] - `imports_from` [EXTRACTED]
 - [[filterOffers()]] - `re_exports` [EXTRACTED]
+- [[groupSameOffers()]] - `re_exports` [EXTRACTED]
 - [[matchLabels]] - `re_exports` [EXTRACTED]
+- [[modelGroups()]] - `re_exports` [EXTRACTED]
 - [[nextOfferSort()]] - `re_exports` [EXTRACTED]
 - [[offer-carduiindex.tsx]] - `imports_from` [EXTRACTED]
 - [[offer-columnsindex.ts]] - `imports_from` [EXTRACTED]
 - [[offer-tableindex.ts]] - `imports_from` [EXTRACTED]
 - [[offerlibindex.ts]] - `re_exports` [EXTRACTED]
+- [[offerGroupKey()]] - `re_exports` [EXTRACTED]
 - [[offersuiindex.tsx]] - `imports_from` [EXTRACTED]
 - [[sortOffers()]] - `re_exports` [EXTRACTED]
+- [[titleSpecs()]] - `re_exports` [EXTRACTED]
+- [[verificationLabels]] - `re_exports` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/offers/ui/indextsx

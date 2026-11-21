@@ -42,9 +42,9 @@ SORT file.name ASC
 ## Connections to other communities
 - 5 edges to [[_COMMUNITY_Pacer]]
 - 2 edges to [[_COMMUNITY_FakeClock]]
+- 2 edges to [[_COMMUNITY_test_jitter_leaves_the_normal_gap_alone]]
 - 2 edges to [[_COMMUNITY_test_an_overridden_gap_cannot_undercut_the_penalty]]
 - 2 edges to [[_COMMUNITY_test_one_success_clears_the_count]]
-- 2 edges to [[_COMMUNITY_test_jitter_leaves_the_normal_gap_alone]]
 - 2 edges to [[_COMMUNITY_test_concurrent_callers_do_not_both_skip_the_gap]]
 - 2 edges to [[_COMMUNITY_test_a_zero_gap_disables_pacing]]
 - 2 edges to [[_COMMUNITY_test_the_gap_can_be_overridden_per_call]]

@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
 type: "code"
-community: "OfferBatch"
-location: "L448"
+community: "TransportDownError"
+location: "L59"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/OfferBatch
+  - community/TransportDownError
 ---
 
 # .__init__()
 
 ## Connections
-- [[dot-__init__()_27]] - `calls` [EXTRACTED]
-- [[MarketOffer]] - `references` [EXTRACTED]
-- [[OfferBatch]] - `method` [EXTRACTED]
+- [[dot-__init__()_29]] - `calls` [EXTRACTED]
+- [[AuthMissingError]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/OfferBatch
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

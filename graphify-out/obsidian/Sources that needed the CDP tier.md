@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/docs/ANTI_BOT.md"
 type: "document"
-community: "Anti-bot reality, source by source"
+community: "dns_selfcheck"
 location: "L288"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Anti-bot_reality_source_by_source
+  - community/dns_selfcheck
 ---
 
 # Sources that needed the CDP tier
@@ -18,4 +18,4 @@ tags:
 - [[Lamoda — prices without discovery]] - `contains` [EXTRACTED]
 - [[Megamarket — clean API, hard block]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Anti-bot_reality_source_by_source
+#graphify/document #graphify/EXTRACTED #community/dns_selfcheck

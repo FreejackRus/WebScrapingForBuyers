@@ -1,17 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "title_from_tile"
+community: "CacheStats"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/title_from_tile
+  - community/CacheStats
 ---
 
 # Any
 
 ## Connections
-- [[prices_from_tile()]] - `references` [EXTRACTED]
-- [[title_from_tile()]] - `references` [EXTRACTED]
+- [[dot-as_dict()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/title_from_tile
+#graphify/code #graphify/EXTRACTED #community/CacheStats

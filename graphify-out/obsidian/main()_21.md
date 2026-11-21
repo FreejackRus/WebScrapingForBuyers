@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/__main__.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_provenance.py"
 type: "code"
-community: "sys"
-location: "L21"
+community: "pathlib"
+location: "L73"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/sys
+  - community/pathlib
 ---
 
 # main()
 
 ## Connections
-- [[Run the server on the transport selected by the environment (stdio default)._11]] - `rationale_for` [EXTRACTED]
-- [[run_server()]] - `calls` [INFERRED]
-- [[wb_connector__main__.py]] - `contains` [EXTRACTED]
+- [[check()_1]] - `calls` [EXTRACTED]
+- [[check_provenance.py]] - `contains` [EXTRACTED]
+- [[pins()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/sys
+#graphify/code #graphify/EXTRACTED #community/pathlib

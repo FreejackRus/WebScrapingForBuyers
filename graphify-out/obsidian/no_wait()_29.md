@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
 type: "code"
-community: "_patch_questions"
-location: "L1420"
+community: "test_storefront_falls_back_to_raw_cdp_when_playwright_attach_times_out"
+location: "L279"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_patch_questions
+  - community/test_storefront_falls_back_to_raw_cdp_when_playwright_attach_times_out
 ---
 
 # no_wait()
 
 ## Connections
-- [[_patch_questions()]] - `contains` [EXTRACTED]
+- [[test_storefront_falls_back_to_raw_cdp_when_playwright_attach_times_out()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_patch_questions
+#graphify/code #graphify/EXTRACTED #community/test_storefront_falls_back_to_raw_cdp_when_playwright_attach_times_out

@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_storefront_search.py"
 type: "code"
-community: "test_tier1_proxy_is_passed_as_an_argument_not_an_env_var"
-location: "L903"
+community: "test_wb_search_storefront_uses_captured_v18_products"
+location: "L86"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/test_tier1_proxy_is_passed_as_an_argument_not_an_env_var
+  - graphify/INFERRED
+  - community/test_wb_search_storefront_uses_captured_v18_products
 ---
 
 # scenario()
 
 ## Connections
-- [[_patch_tier1()]] - `calls` [EXTRACTED]
-- [[capturing_get()]] - `indirect_call` [INFERRED]
-- [[test_tier1_proxy_is_passed_as_an_argument_not_an_env_var()]] - `contains` [EXTRACTED]
+- [[fake_storefront()]] - `indirect_call` [INFERRED]
+- [[no_wait()_37]] - `indirect_call` [INFERRED]
+- [[test_wb_search_storefront_uses_captured_v18_products()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_tier1_proxy_is_passed_as_an_argument_not_an_env_var
+#graphify/code #graphify/INFERRED #community/test_wb_search_storefront_uses_captured_v18_products

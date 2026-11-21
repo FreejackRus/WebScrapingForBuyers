@@ -2,7 +2,7 @@
 source_file: "apps/search/src/domain/product-from-query.ts"
 type: "code"
 community: "product-from-query.ts"
-location: "L218"
+location: "L275"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,6 +12,7 @@ tags:
 # textTokens()
 
 ## Connections
+- [[brandsIn()]] - `calls` [EXTRACTED]
 - [[hasKnownBrand()]] - `calls` [EXTRACTED]
 - [[product-from-query.ts]] - `contains` [EXTRACTED]
 - [[withoutKnownBrands()]] - `calls` [EXTRACTED]

@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/netlab-client.ts"
 type: "code"
-community: "netlab-client.ts"
+community: "b2b-distributor-adapter.ts"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/netlab-clientts
+  - community/b2b-distributor-adapterts
 ---
 
 # netlab-client.ts
@@ -16,13 +16,13 @@ tags:
 - [[NetlabConfig]] - `contains` [EXTRACTED]
 - [[NetlabGoods]] - `contains` [EXTRACTED]
 - [[OFFERS_PER_SOURCE]] - `imports` [EXTRACTED]
-- [[asArray()_1]] - `contains` [EXTRACTED]
+- [[asArray()]] - `contains` [EXTRACTED]
 - [[b2b-distributor-adapter.test.ts]] - `imports_from` [EXTRACTED]
 - [[b2b-distributor-adapter.ts]] - `imports_from` [EXTRACTED]
-- [[baseOf()_1]] - `contains` [EXTRACTED]
-- [[fetchJson()_1]] - `contains` [EXTRACTED]
-- [[matchKind()_3]] - `contains` [EXTRACTED]
-- [[nested()_1]] - `contains` [EXTRACTED]
+- [[baseOf()]] - `contains` [EXTRACTED]
+- [[fetchJson()]] - `contains` [EXTRACTED]
+- [[matchKind()]] - `contains` [EXTRACTED]
+- [[nested()]] - `contains` [EXTRACTED]
 - [[netlab-client.test.ts]] - `imports_from` [EXTRACTED]
 - [[netlabAuthenticate()]] - `contains` [EXTRACTED]
 - [[netlabConfigFromEnv()]] - `contains` [EXTRACTED]
@@ -40,4 +40,4 @@ tags:
 - [[searchNetlab()]] - `contains` [EXTRACTED]
 - [[source-adapter.ts]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/netlab-clientts
+#graphify/code #graphify/EXTRACTED #community/b2b-distributor-adapterts

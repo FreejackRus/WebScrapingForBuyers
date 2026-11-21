@@ -1,19 +1,20 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/tests/test_server.py"
 type: "code"
-community: "test_cache_can_be_disabled_by_ttl_zero"
-location: "L1369"
+community: "test_fetch_composer_does_not_cache_a_block"
+location: "L831"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_cache_can_be_disabled_by_ttl_zero
+  - community/test_fetch_composer_does_not_cache_a_block
 ---
 
 # scenario()
 
 ## Connections
-- [[TTLCache]] - `calls` [EXTRACTED]
-- [[no_wait()_2]] - `indirect_call` [INFERRED]
-- [[test_cache_can_be_disabled_by_ttl_zero()]] - `contains` [EXTRACTED]
+- [[_patch_tier1()]] - `calls` [EXTRACTED]
+- [[blocked_then_ok()]] - `indirect_call` [INFERRED]
+- [[failing_cdp()]] - `indirect_call` [INFERRED]
+- [[test_fetch_composer_does_not_cache_a_block()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_cache_can_be_disabled_by_ttl_zero
+#graphify/code #graphify/EXTRACTED #community/test_fetch_composer_does_not_cache_a_block

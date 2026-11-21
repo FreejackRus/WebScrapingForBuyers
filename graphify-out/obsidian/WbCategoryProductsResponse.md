@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[A page of products from one catalog category. ``items`` uses the same shape as…]] - `rationale_for` [EXTRACTED]
-- [[BaseModel_15]] - `inherits` [EXTRACTED]
+- [[BaseModel]] - `inherits` [EXTRACTED]
 - [[wb_category_products()]] - `uses` [INFERRED]
 - [[wb_connectormodels_output.py]] - `contains` [EXTRACTED]
 - [[wb_connectorserver.py]] - `imports` [EXTRACTED]

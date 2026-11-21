@@ -2,7 +2,7 @@
 source_file: "apps/analysis/src/infrastructure/ollama-analysis-narrator.ts"
 type: "code"
 community: "ollama-analysis-narrator.ts"
-location: "L357"
+location: "L436"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,9 +12,9 @@ tags:
 # .narrateWithRussianRetry()
 
 ## Connections
-- [[dot-answer()_1]] - `calls` [EXTRACTED]
-- [[dot-chatJson()]] - `calls` [EXTRACTED]
-- [[dot-summarize()_1]] - `calls` [EXTRACTED]
+- [[dot-answer()]] - `calls` [EXTRACTED]
+- [[dot-chatJson()_1]] - `calls` [EXTRACTED]
+- [[dot-summarize()]] - `calls` [EXTRACTED]
 - [[NarrationError]] - `calls` [EXTRACTED]
 - [[OllamaAnalysisNarrator]] - `method` [EXTRACTED]
 - [[narrationNeedsRussianRetry()]] - `calls` [EXTRACTED]

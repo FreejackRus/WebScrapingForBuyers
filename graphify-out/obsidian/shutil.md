@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "json"
+community: "chrome_cdp.py"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/json
+  - community/chrome_cdppy
 ---
 
 # shutil
@@ -16,4 +16,4 @@ tags:
 - [[domtest.py]] - `imports` [EXTRACTED]
 - [[e2e_stdio_check.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/json
+#graphify/concept #graphify/EXTRACTED #community/chrome_cdppy

@@ -12,7 +12,7 @@ tags:
 # storefrontSearchUrl()
 
 ## Connections
-- [[dot-search()_6]] - `calls` [EXTRACTED]
+- [[dot-search()]] - `calls` [EXTRACTED]
 - [[storefront-distributor-adapter.test.ts]] - `imports` [EXTRACTED]
 - [[storefront-distributor-adapter.ts]] - `contains` [EXTRACTED]
 

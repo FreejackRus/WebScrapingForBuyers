@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/server.py"
 type: "code"
-community: "cian_connector/server.py"
+community: "_cian_selfcheck_impl"
 location: "L1016"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/cian_connector/serverpy
+  - community/_cian_selfcheck_impl
 ---
 
 # _record()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_cian_selfcheck_impl()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/cian_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/_cian_selfcheck_impl

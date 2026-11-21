@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_settings_secrets.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_settings_secrets.py"
 type: "rationale"
-community: "detmir_connector/settings.py"
+community: "functools"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/detmir_connector/settingspy
+  - community/functools
 ---
 
 # Secret hygiene for the proxy setting. The proxy URL may carry user:pass…
 
 ## Connections
-- [[detmir-connectorteststest_settings_secrets.py]] - `rationale_for` [EXTRACTED]
+- [[avito-connectorteststest_settings_secrets.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/detmir_connector/settingspy
+#graphify/rationale #graphify/EXTRACTED #community/functools

@@ -12,7 +12,7 @@ tags:
 # deep_first()
 
 ## Connections
-- [[Any_12]] - `references` [EXTRACTED]
+- [[Any_2]] - `references` [EXTRACTED]
 - [[JSONPath-shield find the first occurrence of any key in key_names at any…]] - `rationale_for` [EXTRACTED]
 - [[deep_first()]] - `calls` [EXTRACTED]
 - [[resilience.py]] - `contains` [EXTRACTED]

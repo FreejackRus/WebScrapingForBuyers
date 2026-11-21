@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/ssr.py"
 type: "rationale"
-community: "ssr.py"
+community: "Any"
 location: "L444"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/ssrpy
+  - community/Any
 ---
 
 # The price the snippet's cart button would actually charge.…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_cart_price()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/ssrpy
+#graphify/rationale #graphify/EXTRACTED #community/Any

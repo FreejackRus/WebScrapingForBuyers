@@ -12,7 +12,7 @@ tags:
 # ._start_readers()
 
 ## Connections
-- [[dot-__init__()]] - `calls` [EXTRACTED]
+- [[dot-__init__()_23]] - `calls` [EXTRACTED]
 - [[StdioProbe]] - `method` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/StdioProbe

@@ -1,17 +1,18 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/storefront-distributor-adapter.test.ts"
+source_file: "scripts/office-agent/citilink-agent.mjs"
 type: "code"
-community: "storefront-distributor-adapter.ts"
-location: "L68"
+community: "citilink-agent.mjs"
+location: "L140"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/storefront-distributor-adapterts
+  - community/citilink-agentmjs
 ---
 
 # server
 
 ## Connections
-- [[storefront-distributor-adapter.test.ts]] - `contains` [EXTRACTED]
+- [[citilink-agent.mjs]] - `contains` [EXTRACTED]
+- [[run()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/storefront-distributor-adapterts
+#graphify/code #graphify/EXTRACTED #community/citilink-agentmjs

@@ -1,20 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "parametrize"
+community: "pathlib"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/parametrize
+  - community/pathlib
 ---
 
 # parametrize
 
 ## Connections
-- [[test_a_malformed_host_falls_back_to_loopback()]] - `references` [EXTRACTED]
-- [[test_a_nonsense_port_falls_back_to_the_default()]] - `references` [EXTRACTED]
-- [[test_loopback_hosts_are_recognised()]] - `references` [EXTRACTED]
-- [[test_setup_hint_names_the_shell_script_elsewhere()]] - `references` [EXTRACTED]
-- [[test_the_valid_port_range_is_inclusive()]] - `references` [EXTRACTED]
+- [[test_successful_collection_returns_selected_count()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/parametrize
+#graphify/code #graphify/EXTRACTED #community/pathlib

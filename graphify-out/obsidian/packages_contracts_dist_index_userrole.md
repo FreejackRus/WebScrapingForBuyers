@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "analyze.test.ts"
+community: "analyze.ts"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/analyzetestts
+  - community/analyzets
 ---
 
 # packages_contracts_dist_index_userrole
@@ -18,4 +18,4 @@ tags:
 - [[prompt-intent.ts]] - `imports` [EXTRACTED]
 - [[sourcesuiindex.tsx]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/analyzetestts
+#graphify/concept #graphify/EXTRACTED #community/analyzets

@@ -15,7 +15,7 @@ tags:
 - [[Found but no price' is information; dropping it would hide stock reality.]] - `rationale_for` [EXTRACTED]
 - [[compare-connectorteststest_server.py]] - `contains` [EXTRACTED]
 - [[stub_sources()]] - `calls` [EXTRACTED]
-- [[wb()_15]] - `contains` [EXTRACTED]
-- [[wb()_7]] - `indirect_call` [INFERRED]
+- [[wb()_16]] - `contains` [EXTRACTED]
+- [[wb()_8]] - `indirect_call` [INFERRED]
 
 #graphify/code #graphify/EXTRACTED #community/offer

@@ -1,5 +1,5 @@
 ---
-source_file: "apps/search/src/domain/price-anomaly.test.ts"
+source_file: "apps/search/src/domain/cpu-result-precision.test.ts"
 type: "code"
 community: "packages_contracts_dist_index"
 location: "L6"
@@ -12,6 +12,6 @@ tags:
 # offer()
 
 ## Connections
-- [[price-anomaly.test.ts]] - `contains` [EXTRACTED]
+- [[cpu-result-precision.test.ts]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index

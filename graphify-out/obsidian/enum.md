@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "json"
+community: "TransportDownError"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/json
+  - community/TransportDownError
 ---
 
 # enum
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[errors.py]] - `imports_from` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/json
+#graphify/concept #graphify/EXTRACTED #community/TransportDownError

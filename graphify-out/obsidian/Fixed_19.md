@@ -1,18 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
-community: "[2.3.0] - 2026-09-13"
-location: "L270"
+community: "ozon_connector/server.py"
+location: "L2130"
 tags:
   - graphify/document
-  - graphify/EXTRACTED
-  - community/230_-_2026-09-13
+  - graphify/INFERRED
+  - community/ozon_connector/serverpy
 ---
 
 # Fixed
 
 ## Connections
-- [[2.3.0 - 2026-09-13]] - `contains` [EXTRACTED]
-- [[yandex_card()]] - `references` [INFERRED]
+- [[OzonSearchItemOut]] - `references` [INFERRED]
+- [[1.1.0 — 2026-07-26 (English)]] - `contains` [EXTRACTED]
+- [[detmir_card()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/230_-_2026-09-13
+#graphify/document #graphify/INFERRED #community/ozon_connector/serverpy

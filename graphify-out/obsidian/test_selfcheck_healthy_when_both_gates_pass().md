@@ -13,8 +13,8 @@ tags:
 
 ## Connections
 - [[aliexpress-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[fake_card()_1]] - `contains` [EXTRACTED]
-- [[fake_card()]] - `indirect_call` [INFERRED]
+- [[fake_card()_3]] - `contains` [EXTRACTED]
+- [[fake_card()_2]] - `indirect_call` [INFERRED]
 - [[fake_search()_1]] - `indirect_call` [INFERRED]
 
 #graphify/code #graphify/EXTRACTED #community/aliexpress-connector/tests/test_serverpy

@@ -12,8 +12,8 @@ tags:
 # _to_int()
 
 ## Connections
-- [[Any_24]] - `references` [EXTRACTED]
-- [[Fixed_21]] - `references` [INFERRED]
+- [[Any_26]] - `references` [EXTRACTED]
+- [[Fixed_20]] - `references` [INFERRED]
 - [[_stars_from_distribution()]] - `calls` [EXTRACTED]
 - [[_stars_from_stats()]] - `calls` [EXTRACTED]
 - [[_to_number()]] - `calls` [EXTRACTED]

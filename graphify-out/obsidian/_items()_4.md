@@ -12,7 +12,7 @@ tags:
 # _items()
 
 ## Connections
-- [[_extract()_12]] - `calls` [EXTRACTED]
+- [[_extract()_14]] - `calls` [EXTRACTED]
 - [[citilink-connectorteststest_search_extractor_dom.py]] - `contains` [EXTRACTED]
 - [[test_badges_bonuses_and_delivery_counts_are_never_prices()]] - `calls` [EXTRACTED]
 - [[test_exact_meta_price_attribute_is_preferred()]] - `calls` [EXTRACTED]

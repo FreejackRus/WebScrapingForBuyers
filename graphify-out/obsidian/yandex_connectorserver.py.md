@@ -25,7 +25,7 @@ tags:
 - [[_fetch_html_cdp()]] - `contains` [EXTRACTED]
 - [[_guard_parse_status()]] - `contains` [EXTRACTED]
 - [[_guard_values_drift()]] - `contains` [EXTRACTED]
-- [[_proxy()_4]] - `contains` [EXTRACTED]
+- [[_proxy()_3]] - `contains` [EXTRACTED]
 - [[_to_product()]] - `contains` [EXTRACTED]
 - [[asyncio]] - `imports` [EXTRACTED]
 - [[browser_handoff.py]] - `imports_from` [EXTRACTED]
@@ -53,7 +53,7 @@ tags:
 - [[yandex_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[yandex_connectormodels_output.py]] - `imports_from` [EXTRACTED]
 - [[yandex_connectorsettings.py]] - `imports_from` [EXTRACTED]
-- [[yandex_search()_1]] - `contains` [EXTRACTED]
+- [[yandex_search()]] - `contains` [EXTRACTED]
 - [[yandex_selfcheck()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/json

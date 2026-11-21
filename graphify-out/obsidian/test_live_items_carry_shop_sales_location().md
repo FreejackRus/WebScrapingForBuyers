@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_search_extractor_live_dom.py"
 type: "code"
-community: "test_card_extractor_live_dom.py"
+community: "domtest.py"
 location: "L93"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_card_extractor_live_dompy
+  - community/domtestpy
 ---
 
 # test_live_items_carry_shop_sales_location()
@@ -16,4 +16,4 @@ tags:
 - [[_items()_1]] - `calls` [EXTRACTED]
 - [[taobao-connectorteststest_search_extractor_live_dom.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_card_extractor_live_dompy
+#graphify/code #graphify/EXTRACTED #community/domtestpy

@@ -14,10 +14,10 @@ tags:
 ## Connections
 - [[ChallengeRequiredError]] - `uses` [INFERRED]
 - [[compare-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[parametrize_2]] - `references` [EXTRACTED]
+- [[parametrize_12]] - `references` [EXTRACTED]
 - [[stub_sources()]] - `calls` [EXTRACTED]
 - [[taobao()]] - `indirect_call` [INFERRED]
-- [[wb()_4]] - `contains` [EXTRACTED]
-- [[wb()_7]] - `indirect_call` [INFERRED]
+- [[wb()_5]] - `contains` [EXTRACTED]
+- [[wb()_8]] - `indirect_call` [INFERRED]
 
 #graphify/code #graphify/EXTRACTED #community/offer

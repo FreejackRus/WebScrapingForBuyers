@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_search_offer_integrity.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_source_warnings.py"
 type: "code"
-community: "test_native_ozon_explicit_absence_survives_both_label_channels"
-location: "L117"
+community: "test_card_verification_records.py"
+location: "L64"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_native_ozon_explicit_absence_survives_both_label_channels
+  - community/test_card_verification_recordspy
 ---
 
 # search()
 
 ## Connections
-- [[test_native_ozon_explicit_absence_survives_both_label_channels()]] - `contains` [EXTRACTED]
+- [[WbNoResultsResponse]] - `calls` [EXTRACTED]
+- [[test_no_results_without_meta_is_not_invented_degradation()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_native_ozon_explicit_absence_survives_both_label_channels
+#graphify/code #graphify/EXTRACTED #community/test_card_verification_recordspy

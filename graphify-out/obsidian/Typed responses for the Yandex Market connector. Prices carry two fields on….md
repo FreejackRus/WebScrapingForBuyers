@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/models_output.py"
 type: "rationale"
-community: "TransportDownError"
+community: "json"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/TransportDownError
+  - community/json
 ---
 
 # Typed responses for the Yandex Market connector. Prices carry two fields on…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[yandex_connectormodels_output.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/TransportDownError
+#graphify/rationale #graphify/EXTRACTED #community/json

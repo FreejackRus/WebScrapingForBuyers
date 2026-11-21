@@ -1,12 +1,12 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_card_extractor_dom.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_card_extractor_live_dom.py"
 type: "code"
-community: "taobao-connector/tests/test_card_extractor_dom.py"
-location: "L34"
+community: "taobao-connector/tests/test_shape_reference.py"
+location: "L30"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/taobao-connector/tests/test_card_extractor_dompy
+  - community/taobao-connector/tests/test_shape_referencepy
 ---
 
 # _extract()
@@ -14,9 +14,10 @@ tags:
 ## Connections
 - [[JsdomUnavailable]] - `uses` [INFERRED]
 - [[run_extractor()]] - `calls` [EXTRACTED]
-- [[taobao-connectorteststest_card_extractor_dom.py]] - `contains` [EXTRACTED]
-- [[test_card_extractor_reads_the_item_page()]] - `calls` [EXTRACTED]
-- [[test_the_coupon_price_is_never_the_price_or_the_strikethrough()]] - `calls` [EXTRACTED]
-- [[test_yuan_price_and_strikethrough_are_read()]] - `calls` [EXTRACTED]
+- [[test_card_extractor_live_dom.py]] - `contains` [EXTRACTED]
+- [[test_live_description_images_are_counted()]] - `calls` [EXTRACTED]
+- [[test_live_price_is_assembled_from_the_split_spans()]] - `calls` [EXTRACTED]
+- [[test_live_shop_and_sales_are_the_short_nodes_not_body_blobs()]] - `calls` [EXTRACTED]
+- [[test_live_title_is_the_product_name_not_a_widget_placeholder()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/taobao-connector/tests/test_card_extractor_dompy
+#graphify/code #graphify/EXTRACTED #community/taobao-connector/tests/test_shape_referencepy

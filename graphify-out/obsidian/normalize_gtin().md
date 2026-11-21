@@ -12,7 +12,7 @@ tags:
 # normalize_gtin()
 
 ## Connections
-- [[Any_28]] - `references` [EXTRACTED]
+- [[Any_27]] - `references` [EXTRACTED]
 - [[Return a valid GTIN-8121314, or empty for missinginvalid input.]] - `rationale_for` [EXTRACTED]
 - [[_text()_1]] - `calls` [EXTRACTED]
 - [[identity.py]] - `contains` [EXTRACTED]

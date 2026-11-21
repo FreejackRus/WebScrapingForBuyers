@@ -1,12 +1,12 @@
 ---
 source_file: "apps/analysis/src/analyze.test.ts"
 type: "code"
-community: "analyze.test.ts"
+community: "analysis-narrator.ts"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/analyzetestts
+  - community/analysis-narratorts
 ---
 
 # analyze.test.ts
@@ -24,16 +24,17 @@ tags:
 - [[citilinkReal]] - `contains` [EXTRACTED]
 - [[demoCheap]] - `contains` [EXTRACTED]
 - [[dropWeakMatchesWhenStrongerExist()]] - `imports` [EXTRACTED]
-- [[offer()_1]] - `contains` [EXTRACTED]
+- [[item()_1]] - `indirect_call` [INFERRED]
+- [[offer()_15]] - `contains` [EXTRACTED]
 - [[ollama-analysis-narrator.ts]] - `imports_from` [EXTRACTED]
 - [[packages_contracts_dist_index]] - `imports_from` [EXTRACTED]
 - [[packages_contracts_dist_index_offer]] - `imports` [EXTRACTED]
 - [[packages_contracts_dist_index_searchsnapshot]] - `imports` [EXTRACTED]
-- [[product_4]] - `contains` [EXTRACTED]
+- [[product_15]] - `contains` [EXTRACTED]
 - [[ref_vitest]] - `imports_from` [EXTRACTED]
 - [[resetSafetyCounters()]] - `calls` [EXTRACTED]
-- [[snapshot()]] - `contains` [EXTRACTED]
+- [[snapshot()_1]] - `contains` [EXTRACTED]
 - [[toExplanationRow()]] - `imports` [EXTRACTED]
 - [[wbReal]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/analyzetestts
+#graphify/code #graphify/EXTRACTED #community/analysis-narratorts

@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/wb-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/megamarket-connector/SKILL.md"
 type: "document"
-community: "Wildberries Connector"
-location: "L11"
+community: "Megamarket Connector"
+location: "L15"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Wildberries_Connector
+  - community/Megamarket_Connector
 ---
 
 # When to use
 
 ## Connections
-- [[Wildberries Connector]] - `contains` [EXTRACTED]
+- [[Megamarket Connector]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Wildberries_Connector
+#graphify/document #graphify/EXTRACTED #community/Megamarket_Connector

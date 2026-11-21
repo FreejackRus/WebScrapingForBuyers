@@ -2,7 +2,7 @@
 source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
 type: "code"
 community: "mcp-marketplace-adapter.ts"
-location: "L456"
+location: "L530"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,9 +12,9 @@ tags:
 # .logMap()
 
 ## Connections
+- [[dot-collect()]] - `calls` [EXTRACTED]
 - [[dot-fetchCitilinkCards()]] - `calls` [EXTRACTED]
 - [[dot-fetchMappedOffers()]] - `calls` [EXTRACTED]
-- [[dot-search()]] - `calls` [EXTRACTED]
 - [[McpMarketplaceAdapter]] - `method` [EXTRACTED]
 - [[firstString()]] - `calls` [EXTRACTED]
 

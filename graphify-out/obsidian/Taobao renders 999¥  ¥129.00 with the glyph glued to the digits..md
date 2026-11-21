@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py"
 type: "rationale"
-community: "test_dom.py"
+community: "prices_from_tile"
 location: "L93"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/test_dompy
+  - community/prices_from_tile
 ---
 
 # Taobao renders "999¥" / "¥129.00" with the glyph glued to the digits.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[test_yuan_glue_counts_as_a_price()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/test_dompy
+#graphify/rationale #graphify/EXTRACTED #community/prices_from_tile

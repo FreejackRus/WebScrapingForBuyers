@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py"
 type: "code"
-community: "test_the_category_url_is_what_yields_a_collection"
-location: "L59"
+community: "cian-connector/tests/test_server.py"
+location: "L46"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_the_category_url_is_what_yields_a_collection
+  - community/cian-connector/tests/test_serverpy
 ---
 
 # _no_cache()
 
 ## Connections
-- [[_no_redirect()]] - `indirect_call` [INFERRED]
-- [[fixture_6]] - `references` [EXTRACTED]
-- [[megamarket-connectorteststest_server.py]] - `contains` [EXTRACTED]
+- [[Every test starts with an empty cache a cached body from a previous case would…]] - `rationale_for` [EXTRACTED]
+- [[cian-connectorteststest_server.py]] - `contains` [EXTRACTED]
+- [[fixture_4]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_the_category_url_is_what_yields_a_collection
+#graphify/code #graphify/EXTRACTED #community/cian-connector/tests/test_serverpy

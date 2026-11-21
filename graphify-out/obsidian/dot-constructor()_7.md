@@ -1,18 +1,17 @@
 ---
-source_file: "apps/gateway/src/search-history.ts"
+source_file: "apps/gateway/src/user-cache.ts"
 type: "code"
-community: "SearchHistory"
-location: "L46"
+community: "resilience.test.ts"
+location: "L15"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/SearchHistory
+  - community/resiliencetestts
 ---
 
 # .constructor()
 
 ## Connections
-- [[dot-load()]] - `calls` [EXTRACTED]
-- [[SearchHistory]] - `method` [EXTRACTED]
+- [[UserCache]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/SearchHistory
+#graphify/code #graphify/EXTRACTED #community/resiliencetestts

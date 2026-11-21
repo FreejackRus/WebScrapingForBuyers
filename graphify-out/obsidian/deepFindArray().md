@@ -12,7 +12,7 @@ tags:
 # deepFindArray()
 
 ## Connections
-- [[asArray()]] - `calls` [EXTRACTED]
+- [[asArray()_1]] - `calls` [EXTRACTED]
 - [[deepFindArray()]] - `calls` [EXTRACTED]
 - [[ocs-client.ts]] - `contains` [EXTRACTED]
 - [[searchOcs()]] - `calls` [EXTRACTED]

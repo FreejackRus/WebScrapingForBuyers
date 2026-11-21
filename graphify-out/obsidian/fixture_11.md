@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "pytest"
+community: "test_storefront_search.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pytest
+  - community/test_storefront_searchpy
 ---
 
 # fixture
 
 ## Connections
-- [[_wb_http_transport_for_unit_tests()]] - `references` [EXTRACTED]
+- [[storefront_transport()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pytest
+#graphify/code #graphify/EXTRACTED #community/test_storefront_searchpy

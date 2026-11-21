@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "code"
-community: "get_browser"
+community: "chrome_cdp.py"
 location: "L358"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/get_browser
+  - community/chrome_cdppy
 ---
 
 # _hide_chrome_windows()
@@ -21,4 +21,4 @@ tags:
 - [[callback()]] - `indirect_call` [INFERRED]
 - [[chrome_cdp.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/get_browser
+#graphify/code #graphify/INFERRED #community/chrome_cdppy

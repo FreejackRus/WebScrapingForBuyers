@@ -1,18 +1,26 @@
 ---
-source_file: "apps/analysis/src/domain/analysis-narrator.ts"
+source_file: "apps/analysis/src/infrastructure/ollama-analysis-narrator.ts"
 type: "code"
-community: "AnalysisNarrator"
-location: "L74"
+community: "ollama-analysis-narrator.ts"
+location: "L455"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/AnalysisNarrator
+  - community/ollama-analysis-narratorts
 ---
 
 # .summarize()
 
 ## Connections
-- [[AnalysisNarrator]] - `method` [EXTRACTED]
-- [[analyzeSnapshotRaw()]] - `calls` [INFERRED]
+- [[dot-narrateWithRussianRetry()]] - `calls` [EXTRACTED]
+- [[AnalysisNarration]] - `references` [EXTRACTED]
+- [[OllamaAnalysisNarrator]] - `method` [EXTRACTED]
+- [[clip()]] - `calls` [EXTRACTED]
+- [[historyPayload()]] - `calls` [EXTRACTED]
+- [[parseNarration()]] - `indirect_call` [INFERRED]
+- [[recording()]] - `calls` [INFERRED]
+- [[toExplanationRow()]] - `calls` [EXTRACTED]
+- [[trustedContextPayload()]] - `calls` [EXTRACTED]
+- [[validateReturnedIds()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/AnalysisNarrator
+#graphify/code #graphify/EXTRACTED #community/ollama-analysis-narratorts

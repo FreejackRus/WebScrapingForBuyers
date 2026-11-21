@@ -16,6 +16,6 @@ tags:
 - [[detmir-connectorteststest_server.py]] - `contains` [EXTRACTED]
 - [[error_payload()]] - `calls` [EXTRACTED]
 - [[forbidden()]] - `indirect_call` [INFERRED]
-- [[parametrize_4]] - `references` [EXTRACTED]
+- [[parametrize_10]] - `references` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/error_payload

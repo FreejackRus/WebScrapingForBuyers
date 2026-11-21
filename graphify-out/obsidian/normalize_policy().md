@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/vision_policy.py"
 type: "code"
-community: "test_review_regressions.py"
+community: "resolve_image_delivery"
 location: "L55"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_review_regressionspy
+  - community/resolve_image_delivery
 ---
 
 # normalize_policy()
@@ -19,4 +19,4 @@ tags:
 - [[test_policy_accepts_the_three_documented_values()]] - `calls` [EXTRACTED]
 - [[vision_policy.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_review_regressionspy
+#graphify/code #graphify/EXTRACTED #community/resolve_image_delivery

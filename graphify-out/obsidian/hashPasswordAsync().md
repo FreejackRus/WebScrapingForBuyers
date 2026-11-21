@@ -12,7 +12,7 @@ tags:
 # hashPasswordAsync()
 
 ## Connections
-- [[dot-changePassword()_1]] - `calls` [EXTRACTED]
+- [[dot-changePassword()]] - `calls` [EXTRACTED]
 - [[memory-auth-store.ts]] - `contains` [EXTRACTED]
 - [[scryptAsync]] - `calls` [EXTRACTED]
 

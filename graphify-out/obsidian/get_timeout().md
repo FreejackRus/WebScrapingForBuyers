@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/http.py"
 type: "code"
-community: "json"
+community: "TransportDownError"
 location: "L11"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/json
+  - community/TransportDownError
 ---
 
 # get_timeout()
@@ -16,4 +16,4 @@ tags:
 - [[http.py]] - `contains` [EXTRACTED]
 - [[mcp_core__init__.py]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/json
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

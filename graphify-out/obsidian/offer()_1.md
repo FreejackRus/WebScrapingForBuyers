@@ -1,17 +1,17 @@
 ---
-source_file: "apps/analysis/src/analyze.test.ts"
+source_file: "apps/search/src/domain/offer-grouping.test.ts"
 type: "code"
-community: "analyze.test.ts"
-location: "L12"
+community: "packages_contracts_dist_index_product"
+location: "L10"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/analyzetestts
+  - community/packages_contracts_dist_index_product
 ---
 
 # offer()
 
 ## Connections
-- [[analyze.test.ts]] - `contains` [EXTRACTED]
+- [[offer-grouping.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/analyzetestts
+#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index_product

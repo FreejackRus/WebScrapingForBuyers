@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/cian-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/skills/yandex-connector/SKILL.md"
 type: "document"
-community: "Cian Connector"
-location: "L122"
+community: "yandex_card"
+location: "L66"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Cian_Connector
+  - community/yandex_card
 ---
 
 # Gotchas
 
 ## Connections
-- [[Cian Connector]] - `contains` [EXTRACTED]
+- [[Yandex Market Connector_1]] - `contains` [EXTRACTED]
+- [[yandex_card()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Cian_Connector
+#graphify/document #graphify/EXTRACTED #community/yandex_card

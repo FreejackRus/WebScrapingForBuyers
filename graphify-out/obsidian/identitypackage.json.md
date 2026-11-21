@@ -13,12 +13,12 @@ tags:
 
 ## Connections
 - [[@fastifycookie_1]] - `imports` [EXTRACTED]
-- [[@peremenacontracts_7]] - `imports` [EXTRACTED]
-- [[@peremenaservice-kit_7]] - `imports` [EXTRACTED]
+- [[@peremenacontracts_6]] - `imports` [EXTRACTED]
+- [[@peremenaservice-kit_6]] - `imports` [EXTRACTED]
 - [[@typesnode_7]] - `imports` [EXTRACTED]
-- [[dependencies_3]] - `contains` [EXTRACTED]
+- [[dependencies_2]] - `contains` [EXTRACTED]
 - [[devDependencies_3]] - `contains` [EXTRACTED]
-- [[fastify_7]] - `imports` [EXTRACTED]
+- [[fastify_6]] - `imports` [EXTRACTED]
 - [[name_4]] - `contains` [EXTRACTED]
 - [[private_3]] - `contains` [EXTRACTED]
 - [[scripts_3]] - `contains` [EXTRACTED]

@@ -12,7 +12,7 @@ tags:
 # test_number_coercion()
 
 ## Connections
-- [[parametrize_24]] - `references` [EXTRACTED]
+- [[parametrize_32]] - `references` [EXTRACTED]
 - [[test_ssr.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_number_coercion

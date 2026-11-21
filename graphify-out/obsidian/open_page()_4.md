@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_handoff_liveness_consistency.py"
 type: "code"
-community: "mcp-core/tests/test_browser_handoff.py"
-location: "L25"
+community: "transport/__init__.py"
+location: "L30"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/mcp-core/tests/test_browser_handoffpy
+  - community/transport/__init__py
 ---
 
 # open_page()
 
 ## Connections
-- [[browser()_2]] - `indirect_call` [INFERRED]
+- [[browser()_3]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/mcp-core/tests/test_browser_handoffpy
+#graphify/code #graphify/INFERRED #community/transport/__init__py

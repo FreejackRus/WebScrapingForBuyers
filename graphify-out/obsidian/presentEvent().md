@@ -2,7 +2,7 @@
 source_file: "apps/gateway/src/present.ts"
 type: "code"
 community: "gateway/src/app.ts"
-location: "L20"
+location: "L24"
 tags:
   - graphify/code
   - graphify/EXTRACTED

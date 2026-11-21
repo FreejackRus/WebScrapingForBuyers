@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/docs/LIVE_STATUS.md"
 type: "document"
-community: "Живая проверка источников"
+community: "success"
 location: "L58"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Живая_проверка_источников
+  - community/success
 ---
 
 # Штатные live-тесты
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[Живая проверка источников]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Живая_проверка_источников
+#graphify/document #graphify/EXTRACTED #community/success

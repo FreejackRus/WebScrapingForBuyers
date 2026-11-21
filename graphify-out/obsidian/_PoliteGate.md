@@ -12,7 +12,7 @@ tags:
 # _PoliteGate
 
 ## Connections
-- [[dot-wait()_5]] - `method` [EXTRACTED]
+- [[dot-wait()]] - `method` [EXTRACTED]
 - [[Adapter exposing WB's module-level polite gate as a ``RateLimiter``. Core's…]] - `rationale_for` [EXTRACTED]
 - [[_budgeted_get_text()]] - `calls` [EXTRACTED]
 - [[wb_connectorserver.py]] - `contains` [EXTRACTED]

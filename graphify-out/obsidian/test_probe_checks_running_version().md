@@ -12,13 +12,13 @@ tags:
 # test_probe_checks_running_version()
 
 ## Connections
-- [[__aenter__()_13]] - `contains` [EXTRACTED]
-- [[__aexit__()_13]] - `contains` [EXTRACTED]
-- [[__init__()_5]] - `contains` [EXTRACTED]
+- [[__aenter__()_12]] - `contains` [EXTRACTED]
+- [[__aexit__()_12]] - `contains` [EXTRACTED]
+- [[__init__()_3]] - `contains` [EXTRACTED]
 - [[initialize()]] - `contains` [EXTRACTED]
 - [[list_tools()]] - `contains` [EXTRACTED]
-- [[parametrize_25]] - `references` [EXTRACTED]
-- [[probe()_3]] - `calls` [EXTRACTED]
+- [[parametrize_30]] - `references` [EXTRACTED]
+- [[probe()_4]] - `calls` [EXTRACTED]
 - [[stdio()]] - `indirect_call` [INFERRED]
 - [[test_e2e_stdio_check.py]] - `contains` [EXTRACTED]
 

@@ -2,7 +2,7 @@
 source_file: "apps/search/src/http/routes.ts"
 type: "code"
 community: "product-from-query.ts"
-location: "L19"
+location: "L25"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -15,9 +15,16 @@ tags:
 - [[buildSearchApp()]] - `indirect_call` [INFERRED]
 - [[classifyQuery()]] - `calls` [EXTRACTED]
 - [[exportSearch()]] - `calls` [EXTRACTED]
+- [[fetchUnderstanding()]] - `calls` [EXTRACTED]
 - [[findProduct()]] - `calls` [EXTRACTED]
 - [[isExplicitlyNonIt()]] - `calls` [EXTRACTED]
 - [[isProductPayload()]] - `calls` [EXTRACTED]
+- [[isSourceDisabled()]] - `indirect_call` [INFERRED]
+- [[listDisabledSources()]] - `calls` [EXTRACTED]
+- [[mergeUnderstanding()]] - `calls` [EXTRACTED]
+- [[needsUnderstanding()]] - `calls` [EXTRACTED]
+- [[parseWildcardArticle()]] - `calls` [EXTRACTED]
+- [[productForWildcard()]] - `calls` [EXTRACTED]
 - [[productFromQuery()]] - `calls` [EXTRACTED]
 - [[searchsrcapp.ts]] - `imports` [EXTRACTED]
 - [[searchsrchttproutes.ts]] - `contains` [EXTRACTED]

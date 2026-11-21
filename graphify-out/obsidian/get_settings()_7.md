@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/settings.py"
 type: "code"
-community: "pydantic"
+community: "functools"
 location: "L48"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pydantic
+  - community/functools
 ---
 
 # get_settings()
@@ -16,4 +16,4 @@ tags:
 - [[megamarket_connectorserver.py]] - `imports` [EXTRACTED]
 - [[megamarket_connectorsettings.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pydantic
+#graphify/code #graphify/EXTRACTED #community/functools

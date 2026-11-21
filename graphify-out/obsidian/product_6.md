@@ -1,17 +1,17 @@
 ---
-source_file: "apps/gateway/src/history-routes.test.ts"
+source_file: "apps/web/src/entities/search/store/initial-filter.test.ts"
 type: "code"
-community: "history-routes.test.ts"
-location: "L25"
+community: "packages_contracts_dist_index"
+location: "L6"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/history-routestestts
+  - community/packages_contracts_dist_index
 ---
 
 # product
 
 ## Connections
-- [[history-routes.test.ts]] - `contains` [EXTRACTED]
+- [[initial-filter.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/history-routestestts
+#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index

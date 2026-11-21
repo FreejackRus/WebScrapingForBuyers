@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[Search limits apply to distinct sellable variants, not product families.]] - `rationale_for` [EXTRACTED]
 - [[html]] - `imports` [EXTRACTED]
-- [[json]] - `imports` [EXTRACTED]
+- [[json_1]] - `imports` [EXTRACTED]
 - [[pytest]] - `imports` [EXTRACTED]
 - [[test_zone_search_keeps_distinct_skus_and_dedupes_repeated_variant_before_limit()]] - `contains` [EXTRACTED]
 - [[yandex_connector__init__.py]] - `imports_from` [EXTRACTED]

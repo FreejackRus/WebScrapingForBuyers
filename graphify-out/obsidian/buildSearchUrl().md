@@ -12,7 +12,7 @@ tags:
 # buildSearchUrl()
 
 ## Connections
-- [[baseOf()]] - `calls` [EXTRACTED]
+- [[baseOf()_1]] - `calls` [EXTRACTED]
 - [[ocs-client.ts]] - `contains` [EXTRACTED]
 - [[searchOcs()]] - `calls` [EXTRACTED]
 

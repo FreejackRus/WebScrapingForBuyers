@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/models_output.py"
 type: "code"
-community: "dns_card"
+community: "ozon_connector/server.py"
 location: "L123"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/dns_card
+  - community/ozon_connector/serverpy
 ---
 
 # OzonSelfcheckCheckOut
@@ -16,4 +16,4 @@ tags:
 - [[SelfCheckEntryBase]] - `inherits` [EXTRACTED]
 - [[ozon_connectormodels_output.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/dns_card
+#graphify/code #graphify/EXTRACTED #community/ozon_connector/serverpy

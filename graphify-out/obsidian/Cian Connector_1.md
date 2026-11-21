@@ -1,5 +1,5 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/cian-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/cian-connector/SKILL.md"
 type: "document"
 community: "Cian Connector"
 location: "L6"
@@ -12,15 +12,15 @@ tags:
 # Cian Connector
 
 ## Connections
-- [[DSH activation_15]] - `contains` [EXTRACTED]
+- [[DSH activation_2]] - `contains` [EXTRACTED]
 - [[Filters what the search does and does not do_1]] - `contains` [EXTRACTED]
-- [[Gotchas_13]] - `contains` [EXTRACTED]
+- [[Gotchas_16]] - `contains` [EXTRACTED]
 - [[Long-term and daily are two markets, never one page_1]] - `contains` [EXTRACTED]
 - [[Region is an id, not a name_1]] - `contains` [EXTRACTED]
-- [[Tools available_8]] - `contains` [EXTRACTED]
+- [[Tools available_7]] - `contains` [EXTRACTED]
 - [[What a row carries and how to read it_1]] - `contains` [EXTRACTED]
 - [[What the source cannot do (and the connector does not pretend)_1]] - `contains` [EXTRACTED]
-- [[When to use_15]] - `contains` [EXTRACTED]
-- [[ru-marketplace-mcpskillscian-connectorSKILL]] - `contains` [EXTRACTED]
+- [[When to use_14]] - `contains` [EXTRACTED]
+- [[dshskillscian-connectorSKILL]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/Cian_Connector

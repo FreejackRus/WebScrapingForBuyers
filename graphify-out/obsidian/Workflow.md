@@ -1,23 +1,21 @@
 ---
-source_file: ".agents/skills/prototype/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/compare-prices/SKILL.md"
 type: "document"
-community: "Prototyping Variants"
-location: "L33"
+community: "Cross-Marketplace Price Comparison"
+location: "L84"
 tags:
   - graphify/document
-  - graphify/EXTRACTED
-  - community/Prototyping_Variants
+  - graphify/INFERRED
+  - community/Cross-Marketplace_Price_Comparison
 ---
 
 # Workflow
 
 ## Connections
-- [[Phase 1 — Scope]] - `contains` [EXTRACTED]
-- [[Phase 2 — Recon]] - `contains` [EXTRACTED]
-- [[Phase 3 — Choose directions]] - `contains` [EXTRACTED]
-- [[Phase 4 — Build the picker harness]] - `contains` [EXTRACTED]
-- [[Phase 5 — Verify and hand off]] - `contains` [EXTRACTED]
-- [[Phase 6 — Promote on selection]] - `contains` [EXTRACTED]
-- [[Prototyping Variants]] - `contains` [EXTRACTED]
+- [[dot-retryable()]] - `references` [INFERRED]
+- [[Cross-Marketplace Price Comparison]] - `contains` [EXTRACTED]
+- [[compare_prices()]] - `references` [INFERRED]
+- [[compare_sources()]] - `references` [INFERRED]
+- [[compare_verify_offer()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Prototyping_Variants
+#graphify/document #graphify/INFERRED #community/Cross-Marketplace_Price_Comparison

@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "test_chrome_cdp_snapshot.py"
+community: "raw_browser"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_chrome_cdp_snapshotpy
+  - community/raw_browser
 ---
 
 # fixture
 
 ## Connections
-- [[capture()_19]] - `references` [EXTRACTED]
+- [[raw_browser()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_snapshotpy
+#graphify/code #graphify/EXTRACTED #community/raw_browser

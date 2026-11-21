@@ -10,11 +10,11 @@ members: 11
 **Members:** 11 nodes
 
 ## Members
-- [[dot-__init__()_4]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py
 - [[dot-__init__()_5]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py
-- [[dot-close()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py
-- [[dot-close()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py
-- [[dot-get()]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py
+- [[dot-__init__()_6]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py
+- [[dot-close()]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py
+- [[dot-close()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py
+- [[dot-get()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py
 - [[dot-iter_content()]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py
 - [[dot-json()]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py
 - [[dot-post()]] - code - mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py

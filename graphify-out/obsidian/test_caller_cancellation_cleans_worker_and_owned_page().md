@@ -1,21 +1,21 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py"
 type: "code"
-community: "mcp-core/tests/test_browser_handoff.py"
+community: "test_snapshot_and_resume_cannot_overlap"
 location: "L186"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/mcp-core/tests/test_browser_handoffpy
+  - community/test_snapshot_and_resume_cannot_overlap
 ---
 
 # test_caller_cancellation_cleans_worker_and_owned_page()
 
 ## Connections
-- [[call()]] - `calls` [EXTRACTED]
+- [[call()_1]] - `calls` [EXTRACTED]
 - [[mcp-coreteststest_browser_handoff.py]] - `contains` [EXTRACTED]
-- [[parametrize_29]] - `references` [EXTRACTED]
-- [[pending()_2]] - `contains` [EXTRACTED]
-- [[pending()_1]] - `indirect_call` [INFERRED]
+- [[parametrize_24]] - `references` [EXTRACTED]
+- [[pending()_1]] - `contains` [EXTRACTED]
+- [[pending()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/mcp-core/tests/test_browser_handoffpy
+#graphify/code #graphify/EXTRACTED #community/test_snapshot_and_resume_cannot_overlap

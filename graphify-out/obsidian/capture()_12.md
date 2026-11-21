@@ -1,18 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_browser_handoff.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/tests/test_server.py"
 type: "code"
-community: "json"
-location: "L171"
+community: "test_the_graphql_request_carries_a_referer_for_the_sku"
+location: "L392"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/json
+  - community/test_the_graphql_request_carries_a_referer_for_the_sku
 ---
 
 # capture()
 
 ## Connections
-- [[test_snapshot_mcp_transmits_image_without_ending_or_extending_handoff()]] - `indirect_call` [INFERRED]
-- [[test_snapshot_rejects_other_session_and_unknown_handle_without_capture()]] - `indirect_call` [INFERRED]
+- [[test_the_graphql_request_carries_a_referer_for_the_sku()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/json
+#graphify/code #graphify/INFERRED #community/test_the_graphql_request_carries_a_referer_for_the_sku

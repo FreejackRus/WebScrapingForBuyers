@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[flagPriceAnomalies()]] - `imports` [EXTRACTED]
-- [[offer()_6]] - `contains` [EXTRACTED]
+- [[offer()_8]] - `contains` [EXTRACTED]
 - [[packages_contracts_dist_index]] - `imports_from` [EXTRACTED]
 - [[packages_contracts_dist_index_offer]] - `imports` [EXTRACTED]
 - [[price-anomaly.ts]] - `imports_from` [EXTRACTED]

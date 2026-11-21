@@ -10,8 +10,8 @@ members: 9
 **Members:** 9 nodes
 
 ## Members
-- [[dependencies_4]] - code - mcp-servers/ru-marketplace-mcp/package.json
-- [[description_4]] - code - mcp-servers/ru-marketplace-mcp/package.json
+- [[dependencies_3]] - code - mcp-servers/ru-marketplace-mcp/package.json
+- [[description_7]] - code - mcp-servers/ru-marketplace-mcp/package.json
 - [[jsdom]] - code - mcp-servers/ru-marketplace-mcp/package.json
 - [[jsdom_1]] - concept - mcp-servers/ru-marketplace-mcp/package.json
 - [[license_1]] - code - mcp-servers/ru-marketplace-mcp/package.json

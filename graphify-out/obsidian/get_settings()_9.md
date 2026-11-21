@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/settings.py"
 type: "code"
-community: "pydantic"
+community: "functools"
 location: "L85"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pydantic
+  - community/functools
 ---
 
 # get_settings()
@@ -16,4 +16,4 @@ tags:
 - [[yandex_connectorserver.py]] - `imports` [EXTRACTED]
 - [[yandex_connectorsettings.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pydantic
+#graphify/code #graphify/EXTRACTED #community/functools

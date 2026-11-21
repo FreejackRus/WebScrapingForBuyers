@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/tests/test_live.py"
 type: "code"
-community: "detmir_selfcheck"
+community: "pytest"
 location: "L11"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/detmir_selfcheck
+  - community/pytest
 ---
 
 # test_detmir_selfcheck_reaches_a_verdict()
@@ -15,4 +15,4 @@ tags:
 - [[detmir-connectorteststest_live.py]] - `contains` [EXTRACTED]
 - [[detmir_selfcheck()]] - `calls` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/detmir_selfcheck
+#graphify/code #graphify/EXTRACTED #community/pytest

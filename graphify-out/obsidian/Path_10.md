@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "test_stdio_probe.py"
+community: "check_versions.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_stdio_probepy
+  - community/check_versionspy
 ---
 
 # Path
 
 ## Connections
-- [[test_cleanup_stops_wrapper_and_its_child()]] - `references` [EXTRACTED]
+- [[_scan()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_stdio_probepy
+#graphify/code #graphify/EXTRACTED #community/check_versionspy

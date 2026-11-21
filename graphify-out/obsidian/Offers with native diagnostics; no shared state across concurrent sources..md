@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py"
 type: "rationale"
-community: "OfferBatch"
+community: "MarketOffer"
 location: "L446"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/OfferBatch
+  - community/MarketOffer
 ---
 
 # Offers with native diagnostics; no shared state across concurrent sources.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[OfferBatch]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/OfferBatch
+#graphify/rationale #graphify/EXTRACTED #community/MarketOffer

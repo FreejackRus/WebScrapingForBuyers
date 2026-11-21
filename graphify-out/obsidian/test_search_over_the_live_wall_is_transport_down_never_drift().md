@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[The real wall payload must produce TransportDownError with the log-in fix…]] - `rationale_for` [EXTRACTED]
 - [[_patch_render()_3]] - `calls` [EXTRACTED]
-- [[_tool_error_payload()_1]] - `calls` [EXTRACTED]
+- [[_tool_error_payload()]] - `calls` [EXTRACTED]
 - [[_wall_payload()]] - `calls` [EXTRACTED]
 - [[test_search_login_wall_live_dom.py]] - `contains` [EXTRACTED]
 

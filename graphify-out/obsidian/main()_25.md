@@ -1,19 +1,20 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/examples/price_check.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_versions.py"
 type: "code"
-community: "compare_prices"
-location: "L19"
+community: "check_versions.py"
+location: "L85"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/compare_prices
+  - community/check_versionspy
 ---
 
 # main()
 
 ## Connections
-- [[compare_prices()]] - `calls` [EXTRACTED]
-- [[compare_sources()]] - `calls` [EXTRACTED]
-- [[price_check.py]] - `contains` [EXTRACTED]
+- [[Mismatch]] - `calls` [EXTRACTED]
+- [[_root_version()]] - `calls` [EXTRACTED]
+- [[check_versions.py]] - `contains` [EXTRACTED]
+- [[sweep()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/compare_prices
+#graphify/code #graphify/EXTRACTED #community/check_versionspy

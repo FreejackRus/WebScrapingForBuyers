@@ -12,7 +12,7 @@ tags:
 # _file_state()
 
 ## Connections
-- [[Path_14]] - `references` [EXTRACTED]
+- [[Path_7]] - `references` [EXTRACTED]
 - [[_normalise()]] - `calls` [EXTRACTED]
 - [[_tree_diff()]] - `calls` [EXTRACTED]
 - [[test_dsh_bundle.py]] - `contains` [EXTRACTED]

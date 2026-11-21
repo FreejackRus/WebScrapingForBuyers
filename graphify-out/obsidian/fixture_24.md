@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "mcp-core/tests/test_browser_handoff.py"
+community: "fake_browser"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/mcp-core/tests/test_browser_handoffpy
+  - community/fake_browser
 ---
 
 # fixture
 
 ## Connections
-- [[browser()_2]] - `references` [EXTRACTED]
+- [[fake_browser()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/mcp-core/tests/test_browser_handoffpy
+#graphify/code #graphify/EXTRACTED #community/fake_browser

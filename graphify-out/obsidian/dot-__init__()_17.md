@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_cdp_budget.py"
 type: "code"
-community: "_RecordingPacer"
-location: "L2101"
+community: "Tracker"
+location: "L35"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_RecordingPacer
+  - community/Tracker
 ---
 
 # .__init__()
 
 ## Connections
-- [[_RecordingPacer]] - `method` [EXTRACTED]
+- [[Tracker]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_RecordingPacer
+#graphify/code #graphify/EXTRACTED #community/Tracker

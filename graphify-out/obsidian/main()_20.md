@@ -1,19 +1,21 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/__main__.py"
+source_file: "apps/analysis/scripts/compare-models.ts"
 type: "code"
-community: "sys"
-location: "L13"
+community: "compare-models.ts"
+location: "L181"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/sys
+  - community/compare-modelsts
 ---
 
 # main()
 
 ## Connections
-- [[Run the server on the transport selected by the environment (stdio default)._10]] - `rationale_for` [EXTRACTED]
-- [[run_server()]] - `calls` [INFERRED]
-- [[taobao_connector__main__.py]] - `contains` [EXTRACTED]
+- [[compare-models.ts]] - `contains` [EXTRACTED]
+- [[cyrillicShare()]] - `calls` [EXTRACTED]
+- [[evaluate()_1]] - `calls` [EXTRACTED]
+- [[hasInfraLeak()]] - `calls` [EXTRACTED]
+- [[percentile()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/sys
+#graphify/code #graphify/EXTRACTED #community/compare-modelsts

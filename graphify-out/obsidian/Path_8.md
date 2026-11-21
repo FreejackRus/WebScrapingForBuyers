@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "json"
+community: "pathlib"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/json
+  - community/pathlib
 ---
 
 # Path
 
 ## Connections
-- [[_default_profile_dir()]] - `references` [EXTRACTED]
+- [[pins()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/json
+#graphify/code #graphify/EXTRACTED #community/pathlib

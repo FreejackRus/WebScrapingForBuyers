@@ -1,8 +1,8 @@
 ---
-source_file: "apps/web/src/entities/offer/lib/table-filter.test.ts"
+source_file: "apps/search/src/domain/origin-intent.test.ts"
 type: "code"
 community: "packages_contracts_dist_index"
-location: "L6"
+location: "L7"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,6 +12,6 @@ tags:
 # offer()
 
 ## Connections
-- [[table-filter.test.ts]] - `contains` [EXTRACTED]
+- [[origin-intent.test.ts]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/models_output.py"
 type: "code"
-community: "dns_card"
+community: "taobao_connector/models_output.py"
 location: "L59"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/dns_card
+  - community/taobao_connector/models_outputpy
 ---
 
 # TaobaoSelfcheckCheckOut
@@ -16,4 +16,4 @@ tags:
 - [[Taobao sub-check entry.]] - `rationale_for` [EXTRACTED]
 - [[taobao_connectormodels_output.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/dns_card
+#graphify/code #graphify/EXTRACTED #community/taobao_connector/models_outputpy

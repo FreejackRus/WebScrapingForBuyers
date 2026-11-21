@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "test_stdio_probe.py"
+community: "json"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/test_stdio_probepy
+  - community/json
 ---
 
 # uuid
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[e2e_stdio_check_docker.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/test_stdio_probepy
+#graphify/concept #graphify/EXTRACTED #community/json

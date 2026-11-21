@@ -12,7 +12,7 @@ tags:
 # blocked_fetch()
 
 ## Connections
-- [[scenario()_90]] - `indirect_call` [INFERRED]
+- [[scenario()_86]] - `indirect_call` [INFERRED]
 - [[test_ozon_search_reports_actionable_cdp_block()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_ozon_search_reports_actionable_cdp_block

@@ -1,20 +1,20 @@
 ---
-source_file: "apps/analysis/package.json"
+source_file: "apps/gateway/package.json"
 type: "code"
-community: "analysis/package.json"
+community: "gateway/package.json"
 location: "L13"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/analysis/packagejson
+  - community/gateway/packagejson
 ---
 
 # dependencies
 
 ## Connections
-- [[@peremenacontracts]] - `contains` [EXTRACTED]
-- [[@peremenaservice-kit]] - `contains` [EXTRACTED]
-- [[analysispackage.json]] - `contains` [EXTRACTED]
-- [[fastify]] - `contains` [EXTRACTED]
+- [[@peremenacontracts_1]] - `contains` [EXTRACTED]
+- [[@peremenaservice-kit_1]] - `contains` [EXTRACTED]
+- [[fastify_1]] - `contains` [EXTRACTED]
+- [[gatewaypackage.json]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/analysis/packagejson
+#graphify/code #graphify/EXTRACTED #community/gateway/packagejson

@@ -12,8 +12,8 @@ tags:
 # ru-marketplace-mcp/package.json
 
 ## Connections
-- [[dependencies_4]] - `contains` [EXTRACTED]
-- [[description_4]] - `contains` [EXTRACTED]
+- [[dependencies_3]] - `contains` [EXTRACTED]
+- [[description_7]] - `contains` [EXTRACTED]
 - [[jsdom_1]] - `imports` [EXTRACTED]
 - [[license_1]] - `contains` [EXTRACTED]
 - [[name_7]] - `contains` [EXTRACTED]

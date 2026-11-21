@@ -12,7 +12,7 @@ tags:
 # netlabConfigFromEnv()
 
 ## Connections
-- [[dot-search()_11]] - `calls` [EXTRACTED]
+- [[dot-search()_2]] - `calls` [EXTRACTED]
 - [[b2b-distributor-adapter.ts]] - `imports` [EXTRACTED]
 - [[netlab-client.ts]] - `contains` [EXTRACTED]
 

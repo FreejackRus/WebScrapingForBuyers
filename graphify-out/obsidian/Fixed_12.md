@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v1.3.0.md"
+source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
-community: "v1.3.0 — MPStats и разбор аудита"
-location: "L155"
+community: "[2.2.0] — 2026-09-11"
+location: "L584"
 tags:
   - graphify/document
   - graphify/INFERRED
-  - community/v130__MPStats_и_разбор_аудита
+  - community/220__2026-09-11
 ---
 
 # Fixed
 
 ## Connections
-- [[classify_http_error()]] - `references` [INFERRED]
-- [[coerce_price()]] - `references` [INFERRED]
-- [[v1.3.0 — MPStats, and an audit's worth of fixes (English)]] - `contains` [EXTRACTED]
+- [[2.2.0 — 2026-09-11]] - `contains` [EXTRACTED]
+- [[compare_prices()]] - `references` [INFERRED]
+- [[search_kettle()]] - `references` [INFERRED]
 
-#graphify/document #graphify/INFERRED #community/v130__MPStats_и_разбор_аудита
+#graphify/document #graphify/INFERRED #community/220__2026-09-11

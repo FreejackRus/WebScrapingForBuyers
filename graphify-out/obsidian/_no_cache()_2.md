@@ -1,19 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/tests/test_search_login_wall_live_dom.py"
 type: "code"
-community: "cian-connector/tests/test_server.py"
-location: "L46"
+community: "test_search_login_wall_live_dom.py"
+location: "L35"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/cian-connector/tests/test_serverpy
+  - community/test_search_login_wall_live_dompy
 ---
 
 # _no_cache()
 
 ## Connections
-- [[Every test starts with an empty cache a cached body from a previous case would…]] - `rationale_for` [EXTRACTED]
-- [[cian-connectorteststest_server.py]] - `contains` [EXTRACTED]
-- [[fixture_4]] - `references` [EXTRACTED]
+- [[fixture_3]] - `references` [EXTRACTED]
+- [[test_search_login_wall_live_dom.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/cian-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/test_search_login_wall_live_dompy

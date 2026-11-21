@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[WbCardItem]] - `uses` [INFERRED]
 - [[WbCardResponse]] - `uses` [INFERRED]
-- [[card()_5]] - `indirect_call` [INFERRED]
+- [[card()_6]] - `indirect_call` [INFERRED]
 - [[test_card_verification_records.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/INFERRED #community/test_card_verification_recordspy

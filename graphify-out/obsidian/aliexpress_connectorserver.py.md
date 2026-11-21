@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/src/aliexpress_connector/server.py"
 type: "code"
-community: "json"
+community: "aliexpress_connector/server.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/json
+  - community/aliexpress_connector/serverpy
 ---
 
 # aliexpress_connector/server.py
@@ -17,7 +17,7 @@ tags:
 - [[AliSearchItemOut]] - `imports` [EXTRACTED]
 - [[AliSearchResponse]] - `imports` [EXTRACTED]
 - [[AliSelfcheckResponse]] - `imports` [EXTRACTED]
-- [[MetaOut]] - `imports` [EXTRACTED]
+- [[MetaOut_1]] - `imports` [EXTRACTED]
 - [[_aliexpress_selfcheck_impl()]] - `contains` [EXTRACTED]
 - [[_card_prices()]] - `contains` [EXTRACTED]
 - [[_cdp_card()]] - `contains` [EXTRACTED]
@@ -27,7 +27,7 @@ tags:
 - [[_https_image_url()]] - `contains` [EXTRACTED]
 - [[_is_punish()]] - `contains` [EXTRACTED]
 - [[_item_from_payload()]] - `contains` [EXTRACTED]
-- [[_polite_wait()]] - `contains` [EXTRACTED]
+- [[_polite_wait()_1]] - `contains` [EXTRACTED]
 - [[_scored_prices()]] - `contains` [EXTRACTED]
 - [[_tile_prices()]] - `contains` [EXTRACTED]
 - [[_unwrap_extract()]] - `contains` [EXTRACTED]
@@ -45,7 +45,7 @@ tags:
 - [[fastmcp_3]] - `imports_from` [EXTRACTED]
 - [[fastmcp_server_middleware_error_handling]] - `imports_from` [EXTRACTED]
 - [[get_settings()_1]] - `imports` [EXTRACTED]
-- [[json]] - `imports` [EXTRACTED]
+- [[json_1]] - `imports` [EXTRACTED]
 - [[logging.py]] - `imports_from` [EXTRACTED]
 - [[mcp_core__init__.py]] - `imports_from` [EXTRACTED]
 - [[mcp_types]] - `imports_from` [EXTRACTED]
@@ -57,4 +57,4 @@ tags:
 - [[typing]] - `imports_from` [EXTRACTED]
 - [[urllib_parse]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/json
+#graphify/code #graphify/EXTRACTED #community/aliexpress_connector/serverpy

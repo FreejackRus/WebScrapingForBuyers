@@ -12,7 +12,7 @@ tags:
 # _menu_node()
 
 ## Connections
-- [[Any_27]] - `references` [EXTRACTED]
+- [[Any]] - `references` [EXTRACTED]
 - [[Convert one raw menu entry into a bounded WbCategoryNode. ``budget`` is a…]] - `rationale_for` [EXTRACTED]
 - [[WbCategoryNode]] - `calls` [EXTRACTED]
 - [[_decode_mojibake()]] - `calls` [EXTRACTED]

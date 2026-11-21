@@ -1,20 +1,21 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
+source_file: "apps/search/src/application/quality-eval.ts"
 type: "code"
-community: "_RawCdpPage"
-location: "L687"
+community: "quality-eval.ts"
+location: "L187"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_RawCdpPage
+  - community/quality-evalts
 ---
 
 # .evaluate()
 
 ## Connections
-- [[dot-_send()]] - `calls` [EXTRACTED]
-- [[Any_26]] - `references` [EXTRACTED]
-- [[_RawCdpPage]] - `method` [EXTRACTED]
-- [[_evaluate_expression()]] - `calls` [EXTRACTED]
+- [[dot-run()]] - `calls` [EXTRACTED]
+- [[dot-save()]] - `calls` [EXTRACTED]
+- [[QualityEvaluator]] - `method` [EXTRACTED]
+- [[scoreCase()]] - `calls` [EXTRACTED]
+- [[summarize()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_RawCdpPage
+#graphify/code #graphify/EXTRACTED #community/quality-evalts

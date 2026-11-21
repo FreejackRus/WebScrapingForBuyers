@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/runtime.py"
 type: "rationale"
-community: "sys"
+community: "run_server"
 location: "L52"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/sys
+  - community/run_server
 ---
 
 # Release loaded CDP leases without requiring the optional browser extra.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[browser_handoff_lifespan()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/sys
+#graphify/rationale #graphify/EXTRACTED #community/run_server

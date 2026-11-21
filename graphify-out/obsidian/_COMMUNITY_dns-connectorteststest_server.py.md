@@ -24,7 +24,7 @@ members: 34
 - [[explode()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py
 - [[fake_render()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py
 - [[fixture_2]] - code
-- [[parametrize_1]] - code
+- [[parametrize_2]] - code
 - [[test_a_real_bare_id_is_accepted()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py
 - [[test_an_id_never_carries_query_fragment_or_traversal()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py
 - [[test_card_accepts_a_bare_product_id()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_server.py
@@ -55,7 +55,7 @@ SORT file.name ASC
 ## Connections to other communities
 - 1 edge to [[_COMMUNITY_pytest]]
 - 1 edge to [[_COMMUNITY_dns-connectorteststest_card_extractor_dom.py]]
-- 1 edge to [[_COMMUNITY_json]]
+- 1 edge to [[_COMMUNITY_transport__init__.py]]
 
 ## Top bridge nodes
 - [[dns-connectorteststest_server.py]] - degree 25, connects to 3 communities

@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/tests/test_search_extractor_dom.py"
 type: "rationale"
-community: "test_dom.py"
-location: "L136"
+community: "dns-connector/tests/test_search_extractor_dom.py"
+location: "L169"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/test_dompy
+  - community/dns-connector/tests/test_search_extractor_dompy
 ---
 
 # An "old" price under the current one is a drifted read, not a discount.
 
 ## Connections
-- [[test_a_strikethrough_below_the_price_is_dropped_not_reported()]] - `rationale_for` [EXTRACTED]
+- [[test_strikethrough_below_current_price_is_dropped()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/test_dompy
+#graphify/rationale #graphify/EXTRACTED #community/dns-connector/tests/test_search_extractor_dompy

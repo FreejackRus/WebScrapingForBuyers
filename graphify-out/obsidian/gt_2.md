@@ -1,19 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "wb_connector/server.py"
+community: "cian_search"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/wb_connector/serverpy
+  - community/cian_search
 ---
 
 # gt
 
 ## Connections
-- [[wb_questions()]] - `references` [EXTRACTED]
-- [[wb_reviews()]] - `references` [EXTRACTED]
-- [[wb_root_info()]] - `references` [EXTRACTED]
-- [[wb_seller()]] - `references` [EXTRACTED]
+- [[cian_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/cian_search

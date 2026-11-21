@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
-community: "_patch_page"
-location: "L897"
+community: "test_cache_can_be_disabled_by_ttl_zero"
+location: "L1352"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_patch_page
+  - community/test_cache_can_be_disabled_by_ttl_zero
 ---
 
 # __aenter__()
 
 ## Connections
-- [[_patch_page()]] - `contains` [EXTRACTED]
+- [[test_cache_can_be_disabled_by_ttl_zero()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_patch_page
+#graphify/code #graphify/EXTRACTED #community/test_cache_can_be_disabled_by_ttl_zero

@@ -12,7 +12,7 @@ tags:
 # test_strikethrough_below_current_price_is_dropped()
 
 ## Connections
-- [[An old price under the current one is a drifted read, not a discount._1]] - `rationale_for` [EXTRACTED]
+- [[An old price under the current one is a drifted read, not a discount.]] - `rationale_for` [EXTRACTED]
 - [[dns-connectorteststest_search_extractor_dom.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/dns-connector/tests/test_search_extractor_dompy

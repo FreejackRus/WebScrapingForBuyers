@@ -1,16 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "aliexpress-connector/tests/test_parser_live.py"
+community: "check_no_print.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/aliexpress-connector/tests/test_parser_livepy
+  - community/check_no_printpy
 ---
 
 # Path
 
 ## Connections
-- [[_extract()_8]] - `references` [EXTRACTED]
+- [[check_file()]] - `references` [EXTRACTED]
+- [[collect_default_paths()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/aliexpress-connector/tests/test_parser_livepy
+#graphify/code #graphify/EXTRACTED #community/check_no_printpy

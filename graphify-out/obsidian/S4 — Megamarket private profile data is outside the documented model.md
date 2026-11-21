@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/work/v2-research/security.md"
 type: "document"
-community: "v2.0.0 Security / privacy research"
+community: "chrome_cdp.py"
 location: "L69"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/v200_Security_/_privacy_research
+  - community/chrome_cdppy
 ---
 
 # S4 — Megamarket private profile data is outside the documented model
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[v2.0.0 Security  privacy research]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/v200_Security_/_privacy_research
+#graphify/document #graphify/EXTRACTED #community/chrome_cdppy

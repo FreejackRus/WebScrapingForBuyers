@@ -1,18 +1,23 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/server.py"
 type: "code"
-community: "open_page"
-location: "L220"
+community: "lamoda_connector/server.py"
+location: "L344"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/open_page
+  - community/lamoda_connector/serverpy
 ---
 
 # _attempt()
 
 ## Connections
-- [[_cdp_post_json()]] - `contains` [EXTRACTED]
-- [[open_page()_3]] - `calls` [EXTRACTED]
+- [[_anti_bot_challenge()_1]] - `calls` [EXTRACTED]
+- [[_cdp_render_search()_1]] - `contains` [EXTRACTED]
+- [[_polite_wait()_8]] - `calls` [EXTRACTED]
+- [[get_handoff_id()]] - `calls` [EXTRACTED]
+- [[open_page()]] - `calls` [EXTRACTED]
+- [[read()]] - `contains` [EXTRACTED]
+- [[read_with_handoff()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/open_page
+#graphify/code #graphify/EXTRACTED #community/lamoda_connector/serverpy

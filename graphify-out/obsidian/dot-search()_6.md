@@ -1,22 +1,20 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/storefront-distributor-adapter.ts"
+source_file: "apps/search/src/infrastructure/sources/citilink-agent-adapter.ts"
 type: "code"
-community: "storefront-distributor-adapter.ts"
-location: "L263"
+community: "mcp-marketplace-adapter.ts"
+location: "L68"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/storefront-distributor-adapterts
+  - community/mcp-marketplace-adapterts
 ---
 
 # .search()
 
 ## Connections
-- [[StorefrontDistributorAdapter]] - `method` [EXTRACTED]
-- [[parseSrvTradeSearch()]] - `calls` [EXTRACTED]
+- [[CitilinkAgentAdapter]] - `method` [EXTRACTED]
+- [[marketplaceSearchQueries()]] - `calls` [EXTRACTED]
 - [[preferRelevantOffers()]] - `indirect_call` [INFERRED]
-- [[storefrontQuery()]] - `calls` [EXTRACTED]
-- [[storefrontSearchUrl()]] - `calls` [EXTRACTED]
-- [[toStorefrontOffer()]] - `calls` [EXTRACTED]
+- [[toCitilinkOffer()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/storefront-distributor-adapterts
+#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts

@@ -2,7 +2,7 @@
 source_file: "apps/search/src/domain/price-anomaly.ts"
 type: "code"
 community: "packages_contracts_dist_index"
-location: "L4"
+location: "L8"
 tags:
   - graphify/code
   - graphify/EXTRACTED

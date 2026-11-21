@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/server.py"
 type: "rationale"
-community: "lamoda_search"
-location: "L126"
+community: "ozon_connector/server.py"
+location: "L260"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/lamoda_search
+  - community/ozon_connector/serverpy
 ---
 
 # Space this source's requests out, and back off if it refused us. Reads…
 
 ## Connections
-- [[_polite_wait()_5]] - `rationale_for` [EXTRACTED]
+- [[_polite_wait()_4]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/lamoda_search
+#graphify/rationale #graphify/EXTRACTED #community/ozon_connector/serverpy

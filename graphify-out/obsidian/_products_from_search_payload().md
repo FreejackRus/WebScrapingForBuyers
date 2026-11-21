@@ -12,7 +12,7 @@ tags:
 # _products_from_search_payload()
 
 ## Connections
-- [[Any_27]] - `references` [EXTRACTED]
+- [[Any]] - `references` [EXTRACTED]
 - [[Pull products + total from a search.wb.ru  storefront catalog JSON body.]] - `rationale_for` [EXTRACTED]
 - [[_capture_from_catalog_response()]] - `calls` [EXTRACTED]
 - [[_search_via_http_v9()]] - `calls` [EXTRACTED]

@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/models_output.py"
 type: "code"
-community: "ozon_connector/models_output.py"
+community: "ozon_connector/server.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ozon_connector/models_outputpy
+  - community/ozon_connector/serverpy
 ---
 
 # ozon_connector/models_output.py
 
 ## Connections
-- [[MetaOut_5]] - `contains` [EXTRACTED]
+- [[MetaOut_6]] - `contains` [EXTRACTED]
 - [[OzonCardResponse]] - `contains` [EXTRACTED]
 - [[OzonReviewItemOut]] - `contains` [EXTRACTED]
 - [[OzonReviewsResponse]] - `contains` [EXTRACTED]
@@ -29,4 +29,4 @@ tags:
 - [[test_search_offer_integrity.py]] - `imports_from` [EXTRACTED]
 - [[typing]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ozon_connector/models_outputpy
+#graphify/code #graphify/EXTRACTED #community/ozon_connector/serverpy

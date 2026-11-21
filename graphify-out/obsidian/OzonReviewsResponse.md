@@ -1,21 +1,21 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/models_output.py"
 type: "code"
-community: "ozon_connector/models_output.py"
+community: "ozon_connector/server.py"
 location: "L65"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ozon_connector/models_outputpy
+  - community/ozon_connector/serverpy
 ---
 
 # OzonReviewsResponse
 
 ## Connections
-- [[BaseModel_8]] - `inherits` [EXTRACTED]
+- [[BaseModel_4]] - `inherits` [EXTRACTED]
 - [[_ozon_reviews_impl()]] - `calls` [EXTRACTED]
 - [[ozon_connectormodels_output.py]] - `contains` [EXTRACTED]
 - [[ozon_connectorserver.py]] - `imports` [EXTRACTED]
 - [[ozon_reviews()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/ozon_connector/models_outputpy
+#graphify/code #graphify/EXTRACTED #community/ozon_connector/serverpy

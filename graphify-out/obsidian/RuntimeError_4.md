@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "domtest.py"
+community: "StdioProbe"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/domtestpy
+  - community/StdioProbe
 ---
 
 # RuntimeError
 
 ## Connections
-- [[JsdomUnavailable]] - `inherits` [EXTRACTED]
+- [[ProbeError]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/domtestpy
+#graphify/code #graphify/EXTRACTED #community/StdioProbe

@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py"
 type: "code"
 community: "_patch_questions"
-location: "L1486"
+location: "L1578"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -13,7 +13,8 @@ tags:
 
 ## Connections
 - [[_patch_questions()]] - `calls` [EXTRACTED]
+- [[_tool_error_payload()_1]] - `calls` [EXTRACTED]
 - [[responder()_14]] - `indirect_call` [INFERRED]
-- [[test_questions_paginates_past_the_upstream_take_cap()]] - `contains` [EXTRACTED]
+- [[test_questions_raises_drift_when_count_is_missing()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_patch_questions

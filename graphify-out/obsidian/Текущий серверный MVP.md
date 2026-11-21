@@ -1,12 +1,12 @@
 ---
 source_file: "README.md"
 type: "document"
-community: "SourceAdapter"
-location: "L87"
+community: "ПЕРЕМЕНА Price Radar — MVP"
+location: "L88"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/SourceAdapter
+  - community/ПЕРЕМЕНА_Price_Radar__MVP
 ---
 
 # Текущий серверный MVP
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[ПЕРЕМЕНА Price Radar — MVP]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/SourceAdapter
+#graphify/document #graphify/EXTRACTED #community/ПЕРЕМЕНА_Price_Radar__MVP

@@ -1,19 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_provenance.py"
+source_file: "apps/analysis/scripts/evaluate-procurement.ts"
 type: "code"
-community: "subprocess"
-location: "L45"
+community: "compare-models.ts"
+location: "L21"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/subprocess
+  - community/compare-modelsts
 ---
 
 # check()
 
 ## Connections
-- [[check_provenance.py]] - `contains` [EXTRACTED]
-- [[main()_2]] - `calls` [EXTRACTED]
-- [[pins()]] - `calls` [EXTRACTED]
+- [[evaluate-procurement.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/subprocess
+#graphify/code #graphify/EXTRACTED #community/compare-modelsts

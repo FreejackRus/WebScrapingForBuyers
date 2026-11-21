@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/server.py"
 type: "rationale"
-community: "log_event"
+community: "megamarket_connector/server.py"
 location: "L405"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/log_event
+  - community/megamarket_connector/serverpy
 ---
 
 # Ask Megamarket how to read its own search URL, then search with that. This is…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_resolve_search_params()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/log_event
+#graphify/rationale #graphify/EXTRACTED #community/megamarket_connector/serverpy

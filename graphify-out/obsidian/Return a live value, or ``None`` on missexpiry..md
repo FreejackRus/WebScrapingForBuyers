@@ -12,6 +12,6 @@ tags:
 # Return a live value, or ``None`` on miss/expiry.
 
 ## Connections
-- [[dot-get()_1]] - `rationale_for` [EXTRACTED]
+- [[dot-get()_3]] - `rationale_for` [EXTRACTED]
 
 #graphify/rationale #graphify/EXTRACTED #community/get

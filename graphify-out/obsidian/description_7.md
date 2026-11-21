@@ -1,17 +1,17 @@
 ---
-source_file: ""
+source_file: "mcp-servers/ru-marketplace-mcp/package.json"
 type: "code"
-community: "cian_connector/server.py"
+community: "ru-marketplace-mcp/package.json"
+location: "L4"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/cian_connector/serverpy
+  - community/ru-marketplace-mcp/packagejson
 ---
 
 # description
 
 ## Connections
-- [[cian_card()]] - `references` [EXTRACTED]
-- [[cian_search()]] - `references` [EXTRACTED]
+- [[ru-marketplace-mcppackage.json]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/cian_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/ru-marketplace-mcp/packagejson

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/server.py"
 type: "rationale"
-community: "cian_connector/server.py"
+community: "_price_unit"
 location: "L461"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/cian_connector/serverpy
+  - community/_price_unit
 ---
 
 # What one ``price_rub`` actually buys: the whole property, a month, a night.…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_price_unit()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/cian_connector/serverpy
+#graphify/rationale #graphify/EXTRACTED #community/_price_unit

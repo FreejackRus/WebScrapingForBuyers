@@ -13,7 +13,7 @@ members: 10
 - [[CDP transport for yandex_search render in the operator's Chrome, hand off…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_cdp_transport.py
 - [[cdp_mode()]] - code - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_cdp_transport.py
 - [[fake_handoff()]] - code - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_cdp_transport.py
-- [[fixture_5]] - code
+- [[fixture_17]] - code
 - [[read_with_handoff()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_cdp_transport.py
 - [[test_a_challenge_page_is_never_cached()]] - code - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_cdp_transport.py
 - [[test_a_rendered_results_page_goes_through_the_same_ssr_parser()]] - code - mcp-servers/ru-marketplace-mcp/packages/yandex-connector/tests/test_cdp_transport.py
@@ -29,10 +29,11 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 2 edges to [[_COMMUNITY_json]]
+- 1 edge to [[_COMMUNITY_test_card_verification_records.py]]
+- 1 edge to [[_COMMUNITY_json]]
 - 1 edge to [[_COMMUNITY_pytest]]
 - 1 edge to [[_COMMUNITY_pathlib]]
-- 1 edge to [[_COMMUNITY_test_card_verification_records.py]]
+- 1 edge to [[_COMMUNITY_transport__init__.py]]
 
 ## Top bridge nodes
-- [[test_cdp_transport.py]] - degree 12, connects to 4 communities
+- [[test_cdp_transport.py]] - degree 12, connects to 5 communities

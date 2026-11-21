@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/stdio_probe.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/cdp_budget.py"
 type: "code"
-community: "StdioProbe"
-location: "L29"
+community: "test_cdp_budget.py"
+location: "L76"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/StdioProbe
+  - community/test_cdp_budgetpy
 ---
 
 # .__init__()
 
 ## Connections
-- [[dot-_start_readers()]] - `calls` [EXTRACTED]
-- [[StdioProbe]] - `method` [EXTRACTED]
+- [[dot-__init__()_1]] - `calls` [EXTRACTED]
+- [[HostRefusingError]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/StdioProbe
+#graphify/code #graphify/EXTRACTED #community/test_cdp_budgetpy

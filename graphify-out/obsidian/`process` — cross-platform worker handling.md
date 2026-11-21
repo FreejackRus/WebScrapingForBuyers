@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/docs/ARCHITECTURE.md"
 type: "document"
-community: "Architecture"
+community: "process.py"
 location: "L120"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Architecture
+  - community/processpy
 ---
 
 # `process` — cross-platform worker handling
@@ -15,4 +15,4 @@ tags:
 - [[The shared runtime]] - `contains` [EXTRACTED]
 - [[kill_process_group()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Architecture
+#graphify/document #graphify/EXTRACTED #community/processpy

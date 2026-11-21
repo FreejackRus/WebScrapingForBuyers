@@ -1,20 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/cache.py"
 type: "code"
-community: "open_page"
-location: "L1088"
+community: "CacheStats"
+location: "L60"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/open_page
+  - community/CacheStats
 ---
 
 # .__init__()
 
 ## Connections
-- [[dot-__init__()_24]] - `calls` [EXTRACTED]
-- [[dot-__init__()_25]] - `calls` [EXTRACTED]
-- [[Collection_1]] - `references` [EXTRACTED]
-- [[NavigationPolicyError]] - `method` [EXTRACTED]
+- [[CacheStats]] - `calls` [EXTRACTED]
+- [[TTLCache]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/open_page
+#graphify/code #graphify/EXTRACTED #community/CacheStats

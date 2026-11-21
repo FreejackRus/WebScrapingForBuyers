@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[_capture_from_catalog_response()]] - `calls` [EXTRACTED]
 - [[_is_storefront_catalog_url()]] - `calls` [EXTRACTED]
-- [[_polite_wait()_9]] - `calls` [EXTRACTED]
+- [[_polite_wait()]] - `calls` [EXTRACTED]
 - [[_raw_cdp_page()]] - `calls` [EXTRACTED]
 - [[_search_via_storefront()]] - `contains` [EXTRACTED]
 - [[navigation_budget()]] - `calls` [EXTRACTED]

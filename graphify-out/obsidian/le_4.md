@@ -1,17 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "detmir_categories"
+community: "yandex_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/detmir_categories
+  - community/yandex_card
 ---
 
 # le
 
 ## Connections
-- [[detmir_categories()]] - `references` [EXTRACTED]
-- [[detmir_category()]] - `references` [EXTRACTED]
+- [[yandex_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/detmir_categories
+#graphify/code #graphify/EXTRACTED #community/yandex_card

@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "aliexpress-connector/tests/test_server.py"
+community: "transport/__init__.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/aliexpress-connector/tests/test_serverpy
+  - community/transport/__init__py
 ---
 
 # fixture
 
 ## Connections
-- [[_no_cache()_6]] - `references` [EXTRACTED]
+- [[browser()_4]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/aliexpress-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/transport/__init__py

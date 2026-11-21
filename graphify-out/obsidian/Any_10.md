@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "log_event"
+community: "decision_inspect"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/log_event
+  - community/decision_inspect
 ---
 
 # Any
 
 ## Connections
-- [[log_event()]] - `references` [EXTRACTED]
+- [[decision_inspect()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/log_event
+#graphify/code #graphify/EXTRACTED #community/decision_inspect

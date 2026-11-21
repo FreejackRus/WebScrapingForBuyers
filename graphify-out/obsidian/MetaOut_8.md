@@ -1,23 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/models_output.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/dns-connector/src/dns_connector/models_output.py"
 type: "code"
-community: "avito_connector/server.py"
-location: "L14"
+community: "json"
+location: "L9"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/avito_connector/serverpy
+  - community/json
 ---
 
 # MetaOut
 
 ## Connections
-- [[Avito carries the shared envelope unchanged.]] - `rationale_for` [EXTRACTED]
+- [[DNS carries the shared envelope unchanged._1]] - `rationale_for` [EXTRACTED]
 - [[MetaOutBase]] - `inherits` [EXTRACTED]
-- [[avito_card()]] - `uses` [INFERRED]
-- [[avito_connectormodels_output.py]] - `contains` [EXTRACTED]
-- [[avito_connectorserver.py]] - `imports` [EXTRACTED]
-- [[avito_search()_1]] - `uses` [INFERRED]
-- [[avito_seller()]] - `uses` [INFERRED]
+- [[dns_card()]] - `uses` [INFERRED]
+- [[dns_connectormodels_output.py]] - `contains` [EXTRACTED]
+- [[dns_connectorserver.py]] - `imports` [EXTRACTED]
+- [[dns_search()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/avito_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/json

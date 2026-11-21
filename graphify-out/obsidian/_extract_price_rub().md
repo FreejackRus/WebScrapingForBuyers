@@ -16,7 +16,7 @@ tags:
 - [[_card_item_dict()]] - `calls` [EXTRACTED]
 - [[_kopeck_to_rub()]] - `calls` [EXTRACTED]
 - [[wb_connectorserver.py]] - `contains` [EXTRACTED]
-- [[wb_search()_2]] - `calls` [EXTRACTED]
+- [[wb_search()_1]] - `calls` [EXTRACTED]
 - [[wb_selfcheck()]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

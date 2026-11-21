@@ -1,18 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "log_event"
+community: "json"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/log_event
+  - community/json
 ---
 
 # BaseModel
 
 ## Connections
-- [[MegamarketCardResponse]] - `inherits` [EXTRACTED]
-- [[MegamarketSearchItemOut]] - `inherits` [EXTRACTED]
-- [[MegamarketSearchResponse]] - `inherits` [EXTRACTED]
+- [[DnsCardResponse]] - `inherits` [EXTRACTED]
+- [[DnsSearchItemOut]] - `inherits` [EXTRACTED]
+- [[DnsSearchResponse]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/log_event
+#graphify/code #graphify/EXTRACTED #community/json

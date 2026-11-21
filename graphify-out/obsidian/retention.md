@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/application/search-service.test.ts"
 type: "code"
-community: "SearchService"
-location: "L42"
+community: "search-service.ts"
+location: "L45"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/SearchService
+  - community/search-servicets
 ---
 
 # retention
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[search-service.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/SearchService
+#graphify/code #graphify/EXTRACTED #community/search-servicets

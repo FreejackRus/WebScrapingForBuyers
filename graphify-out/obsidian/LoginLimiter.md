@@ -1,12 +1,12 @@
 ---
 source_file: "apps/identity/src/http/login-limiter.ts"
 type: "code"
-community: "identity/src/app.ts"
+community: "LoginLimiter"
 location: "L12"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/identity/src/appts
+  - community/LoginLimiter
 ---
 
 # LoginLimiter
@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[dot-constructor()_6]] - `method` [EXTRACTED]
 - [[dot-recordFailure()]] - `method` [EXTRACTED]
-- [[dot-reset()_2]] - `method` [EXTRACTED]
+- [[dot-reset()]] - `method` [EXTRACTED]
 - [[dot-retryAfterSeconds()]] - `method` [EXTRACTED]
 - [[auth.test.ts]] - `imports` [EXTRACTED]
 - [[identitysrcapp.ts]] - `imports` [EXTRACTED]
@@ -22,4 +22,4 @@ tags:
 - [[identityRoutes()]] - `calls` [EXTRACTED]
 - [[login-limiter.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/identity/src/appts
+#graphify/code #graphify/EXTRACTED #community/LoginLimiter

@@ -1,18 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "taobao_connector/server.py"
+community: "aliexpress_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/taobao_connector/serverpy
+  - community/aliexpress_connector/serverpy
 ---
 
 # BaseModel
 
 ## Connections
-- [[TaobaoCardResponse]] - `inherits` [EXTRACTED]
-- [[TaobaoSearchItemOut]] - `inherits` [EXTRACTED]
-- [[TaobaoSearchResponse]] - `inherits` [EXTRACTED]
+- [[AliCardResponse]] - `inherits` [EXTRACTED]
+- [[AliSearchItemOut]] - `inherits` [EXTRACTED]
+- [[AliSearchResponse]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/taobao_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/aliexpress_connector/serverpy

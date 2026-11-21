@@ -1,18 +1,17 @@
 ---
-source_file: "apps/search/src/application/search-service.ts"
+source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
 type: "code"
-community: "SearchService"
-location: "L49"
+community: "mcp-marketplace-adapter.ts"
+location: "L340"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/SearchService
+  - community/mcp-marketplace-adapterts
 ---
 
 # .constructor()
 
 ## Connections
-- [[SearchService]] - `method` [EXTRACTED]
-- [[SourceAdapter]] - `references` [EXTRACTED]
+- [[McpMarketplaceAdapter]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/SearchService
+#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts

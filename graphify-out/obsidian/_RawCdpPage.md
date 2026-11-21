@@ -12,11 +12,11 @@ tags:
 # _RawCdpPage
 
 ## Connections
-- [[dot-__init__()_40]] - `method` [EXTRACTED]
+- [[dot-__init__()_37]] - `method` [EXTRACTED]
 - [[dot-_note_event()]] - `method` [EXTRACTED]
 - [[dot-_send()]] - `method` [EXTRACTED]
-- [[dot-close()_1]] - `method` [EXTRACTED]
-- [[dot-evaluate()]] - `method` [EXTRACTED]
+- [[dot-close()_2]] - `method` [EXTRACTED]
+- [[dot-evaluate()_1]] - `method` [EXTRACTED]
 - [[dot-goto_and_status()]] - `method` [EXTRACTED]
 - [[dot-pump_events()]] - `method` [EXTRACTED]
 - [[dot-response_body()]] - `method` [EXTRACTED]

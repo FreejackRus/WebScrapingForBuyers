@@ -1,13 +1,13 @@
 ---
 type: community
 cohesion: 0.09
-members: 27
+members: 25
 ---
 
 # test_skills_parity.py
 
 **Cohesion:** 0.09 - loosely connected
-**Members:** 27 nodes
+**Members:** 25 nodes
 
 ## Members
 - [[A gate that cannot fail is worse than no gate at all._1]] - rationale - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_skills_parity.py
@@ -21,9 +21,7 @@ members: 27
 - [[Regression for the drift that prompted this file. DNS ids are 16 hex…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_skills_parity.py
 - [[Servers without skills are twelve endpoints nothing knows how to call. Two…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_skills_parity.py
 - [[The token lever from the dsh port 11 operator tools left the wire.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_skills_parity.py
-- [[True when the package's output models carry a floatNone price field — i.e. the…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_skills_parity.py
 - [[_connector_packages()]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_skills_parity.py
-- [[_has_nullable_price_field()]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_skills_parity.py
 - [[_mcp_registered_tools()]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_skills_parity.py
 - [[_names_offered_by_tool_sections()]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_skills_parity.py
 - [[test_full_only_skills_explain_dsh_activation()]] - code - mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_skills_parity.py
@@ -55,4 +53,3 @@ SORT file.name ASC
 ## Top bridge nodes
 - [[test_skills_parity.py]] - degree 28, connects to 5 communities
 - [[test_tool_sections_offer_only_mcp_callable_names()]] - degree 5, connects to 1 community
-- [[_has_nullable_price_field()]] - degree 3, connects to 1 community

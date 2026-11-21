@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "resolve_transport"
+community: "run_server"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/resolve_transport
+  - community/run_server
 ---
 
 # Transport
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[_parse_transport()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/resolve_transport
+#graphify/code #graphify/EXTRACTED #community/run_server

@@ -1,12 +1,12 @@
 ---
 source_file: "apps/web/src/composition/settings/index.ts"
 type: "code"
-community: "App.tsx"
+community: "useUserStore"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Apptsx
+  - community/useUserStore
 ---
 
 # composition/settings/index.ts
@@ -19,4 +19,4 @@ tags:
 - [[compositionindex.ts]] - `re_exports` [EXTRACTED]
 - [[topbaruiindex.tsx]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Apptsx
+#graphify/code #graphify/EXTRACTED #community/useUserStore

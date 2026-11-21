@@ -12,7 +12,7 @@ tags:
 # _FakeCurlResponse
 
 ## Connections
-- [[dot-__init__()_20]] - `method` [EXTRACTED]
+- [[dot-__init__()_24]] - `method` [EXTRACTED]
 - [[dot-iter_content()_1]] - `method` [EXTRACTED]
 - [[A curl_cffi response as the streaming reader sees it.]] - `rationale_for` [EXTRACTED]
 - [[scenario()_100]] - `calls` [EXTRACTED]

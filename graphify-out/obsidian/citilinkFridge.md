@@ -2,7 +2,7 @@
 source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.test.ts"
 type: "code"
 community: "mcp-marketplace-adapter.ts"
-location: "L332"
+location: "L341"
 tags:
   - graphify/code
   - graphify/EXTRACTED

@@ -12,14 +12,14 @@ tags:
 # The tools
 
 ## Connections
-- [[AliExpress — `aliexpress_`]] - `contains` [EXTRACTED]
+- [[AliExpress — `aliexpress_`_1]] - `contains` [EXTRACTED]
 - [[Avito — `avito_`]] - `contains` [EXTRACTED]
 - [[Cian — `cian_`]] - `contains` [EXTRACTED]
 - [[Cross-marketplace — `compare_`]] - `contains` [EXTRACTED]
 - [[Detsky Mir — `detmir_`]] - `contains` [EXTRACTED]
 - [[English version]] - `contains` [EXTRACTED]
 - [[Megamarket, Lamoda, DNS, Citilink]] - `contains` [EXTRACTED]
-- [[Ozon — `ozon_`]] - `contains` [EXTRACTED]
+- [[Ozon — `ozon_`_1]] - `contains` [EXTRACTED]
 - [[Taobao — `taobao_`_1]] - `contains` [EXTRACTED]
 - [[Wildberries — `wb_`_1]] - `contains` [EXTRACTED]
 - [[Yandex Market — `yandex_`]] - `contains` [EXTRACTED]

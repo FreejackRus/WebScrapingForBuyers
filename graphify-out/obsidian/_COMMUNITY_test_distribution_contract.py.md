@@ -31,10 +31,10 @@ SORT file.name ASC
 ## Connections to other communities
 - 2 edges to [[_COMMUNITY_test_dependency_parity.py]]
 - 1 edge to [[_COMMUNITY_ozon-connectorteststest_server.py]]
-- 1 edge to [[_COMMUNITY_json]]
-- 1 edge to [[_COMMUNITY_pathlib]]
 - 1 edge to [[_COMMUNITY_compare-connectorteststest_server.py]]
 - 1 edge to [[_COMMUNITY_check_no_print.py]]
+- 1 edge to [[_COMMUNITY_json]]
+- 1 edge to [[_COMMUNITY_pathlib]]
 - 1 edge to [[_COMMUNITY_e2e_stdio_check.py]]
 - 1 edge to [[_COMMUNITY_test_helpers.py]]
 - 1 edge to [[_COMMUNITY_detmir-connectorteststest_server.py]]

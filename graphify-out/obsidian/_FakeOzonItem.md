@@ -12,7 +12,7 @@ tags:
 # _FakeOzonItem
 
 ## Connections
-- [[dot-__init__()_6]] - `method` [EXTRACTED]
+- [[dot-__init__()_7]] - `method` [EXTRACTED]
 - [[Mirrors OzonSearchItemOut every value arrives as display text.]] - `rationale_for` [EXTRACTED]
 - [[compare-connectorteststest_server.py]] - `contains` [EXTRACTED]
 - [[ozon_search()_2]] - `calls` [EXTRACTED]

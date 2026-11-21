@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "pydantic"
+community: "functools"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/pydantic
+  - community/functools
 ---
 
 # BaseSettings
 
 ## Connections
-- [[MegamarketSettings]] - `inherits` [EXTRACTED]
+- [[OzonSettings]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/pydantic
+#graphify/code #graphify/EXTRACTED #community/functools

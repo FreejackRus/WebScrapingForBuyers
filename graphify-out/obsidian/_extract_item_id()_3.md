@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/server.py"
 type: "code"
-community: "avito_connector/server.py"
-location: "L393"
+community: "megamarket_connector/server.py"
+location: "L135"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/avito_connector/serverpy
+  - community/megamarket_connector/serverpy
 ---
 
 # _extract_item_id()
 
 ## Connections
-- [[Pull the numeric item id out of a slug, URL or bare digits. Item ids run 9-12…]] - `rationale_for` [EXTRACTED]
-- [[avito_card()]] - `calls` [EXTRACTED]
-- [[avito_connectorserver.py]] - `contains` [EXTRACTED]
+- [[Pull a goods id out of a megamarket.ru URL or a bare numeric id.]] - `rationale_for` [EXTRACTED]
+- [[megamarket_card()]] - `calls` [EXTRACTED]
+- [[megamarket_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/avito_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/megamarket_connector/serverpy

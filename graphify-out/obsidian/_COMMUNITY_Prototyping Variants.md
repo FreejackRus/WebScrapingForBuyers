@@ -29,7 +29,7 @@ members: 21
 - [[Styles]] - document - .agents/skills/prototype/PICKER.md
 - [[The Picker]] - document - .agents/skills/prototype/PICKER.md
 - [[Tone_1]] - document - .agents/skills/prototype/SKILL.md
-- [[Workflow]] - document - .agents/skills/prototype/SKILL.md
+- [[Workflow_2]] - document - .agents/skills/prototype/SKILL.md
 - [[prototypeSKILL]] - document - .agents/skills/prototype/SKILL.md
 
 ## Live Query (requires Dataview plugin)

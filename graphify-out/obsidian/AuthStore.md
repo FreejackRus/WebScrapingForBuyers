@@ -1,21 +1,21 @@
 ---
 source_file: "apps/identity/src/domain/auth-store.ts"
 type: "code"
-community: "memory-auth-store.ts"
+community: "AuthStore"
 location: "L8"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/memory-auth-storets
+  - community/AuthStore
 ---
 
 # AuthStore
 
 ## Connections
-- [[dot-authenticate()]] - `method` [EXTRACTED]
-- [[dot-changePassword()]] - `method` [EXTRACTED]
-- [[dot-getById()]] - `method` [EXTRACTED]
-- [[dot-updateSettings()]] - `method` [EXTRACTED]
+- [[dot-authenticate()_1]] - `method` [EXTRACTED]
+- [[dot-changePassword()_1]] - `method` [EXTRACTED]
+- [[dot-getById()_1]] - `method` [EXTRACTED]
+- [[dot-updateSettings()_1]] - `method` [EXTRACTED]
 - [[MemoryAuthStore]] - `implements` [EXTRACTED]
 - [[auth-store.ts]] - `contains` [EXTRACTED]
 - [[identitysrcapp.ts]] - `imports` [EXTRACTED]
@@ -23,4 +23,4 @@ tags:
 - [[memory-auth-store.ts]] - `imports` [EXTRACTED]
 - [[session.ts]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/memory-auth-storets
+#graphify/code #graphify/EXTRACTED #community/AuthStore

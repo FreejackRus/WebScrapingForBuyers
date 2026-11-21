@@ -12,8 +12,8 @@ tags:
 # AvitoSearchItemOut
 
 ## Connections
-- [[BaseModel_11]] - `inherits` [EXTRACTED]
-- [[_items()_3]] - `uses` [INFERRED]
+- [[BaseModel_3]] - `inherits` [EXTRACTED]
+- [[_items()_2]] - `uses` [INFERRED]
 - [[avito_connectormodels_output.py]] - `contains` [EXTRACTED]
 - [[avito_connectorserver.py]] - `imports` [EXTRACTED]
 - [[avito_search()]] - `calls` [INFERRED]

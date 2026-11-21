@@ -1,17 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "dns_card"
+community: "detmir_categories"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/dns_card
+  - community/detmir_categories
 ---
 
 # Field
 
 ## Connections
-- [[dns_card()]] - `references` [EXTRACTED]
-- [[dns_search()]] - `references` [EXTRACTED]
+- [[detmir_card()]] - `references` [EXTRACTED]
+- [[detmir_categories()]] - `references` [EXTRACTED]
+- [[detmir_category()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/dns_card
+#graphify/code #graphify/EXTRACTED #community/detmir_categories

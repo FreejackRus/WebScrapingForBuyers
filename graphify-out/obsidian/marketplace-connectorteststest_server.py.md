@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_server.py"
 type: "code"
-community: "test_public_contract_snapshot.py"
+community: "marketplace-connector/tests/test_server.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_public_contract_snapshotpy
+  - community/marketplace-connector/tests/test_serverpy
 ---
 
 # marketplace-connector/tests/test_server.py
@@ -22,4 +22,4 @@ tags:
 - [[test_the_mounted_count_matches_the_imported_sources()]] - `contains` [EXTRACTED]
 - [[test_tool_names_keep_their_source_prefixes()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_public_contract_snapshotpy
+#graphify/code #graphify/EXTRACTED #community/marketplace-connector/tests/test_serverpy

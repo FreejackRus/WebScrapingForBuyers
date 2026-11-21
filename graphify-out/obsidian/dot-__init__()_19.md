@@ -1,19 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_pacing.py"
 type: "code"
-community: "json"
-location: "L32"
+community: "FakeClock"
+location: "L18"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/json
+  - community/FakeClock
 ---
 
 # .__init__()
 
 ## Connections
-- [[dot-__init__()_33]] - `calls` [EXTRACTED]
-- [[ConnectorError]] - `method` [EXTRACTED]
-- [[ErrorCode]] - `references` [EXTRACTED]
+- [[FakeClock]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/json
+#graphify/code #graphify/EXTRACTED #community/FakeClock

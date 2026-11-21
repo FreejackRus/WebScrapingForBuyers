@@ -1,18 +1,17 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/blocked-source-cooldown-adapter.ts"
+source_file: "apps/analysis/src/infrastructure/vllm-analysis-narrator.ts"
 type: "code"
-community: "SourceAdapter"
-location: "L13"
+community: "analysis/package.json"
+location: "L25"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/SourceAdapter
+  - community/analysis/packagejson
 ---
 
 # .constructor()
 
 ## Connections
-- [[BlockedSourceCooldownAdapter]] - `method` [EXTRACTED]
-- [[SourceAdapter]] - `references` [EXTRACTED]
+- [[VllmAnalysisNarrator]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/SourceAdapter
+#graphify/code #graphify/EXTRACTED #community/analysis/packagejson

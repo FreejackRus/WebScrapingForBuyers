@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "analyze.test.ts"
+community: "analyze.ts"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/analyzetestts
+  - community/analyzets
 ---
 
 # packages_contracts_dist_index_chatintent
@@ -16,4 +16,4 @@ tags:
 - [[ollama-analysis-narrator.ts]] - `imports` [EXTRACTED]
 - [[prompt-intent.ts]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/analyzetestts
+#graphify/concept #graphify/EXTRACTED #community/analyzets

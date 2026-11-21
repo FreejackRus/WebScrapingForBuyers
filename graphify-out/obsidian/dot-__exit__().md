@@ -12,7 +12,7 @@ tags:
 # .__exit__()
 
 ## Connections
-- [[dot-close()]] - `calls` [EXTRACTED]
+- [[dot-close()_3]] - `calls` [EXTRACTED]
 - [[StdioProbe]] - `method` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/StdioProbe

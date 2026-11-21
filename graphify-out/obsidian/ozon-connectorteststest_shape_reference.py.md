@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Golden shape for the normalized Ozon composer search tiles.]] - `rationale_for` [EXTRACTED]
-- [[json]] - `imports` [EXTRACTED]
+- [[json_1]] - `imports` [EXTRACTED]
 - [[ozon_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]
 - [[resilience.py]] - `imports_from` [EXTRACTED]

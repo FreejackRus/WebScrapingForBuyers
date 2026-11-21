@@ -16,6 +16,7 @@ tags:
 - [[flagPriceAnomalies()]] - `contains` [EXTRACTED]
 - [[median()]] - `contains` [EXTRACTED]
 - [[packages_contracts_dist_index]] - `imports_from` [EXTRACTED]
+- [[packages_contracts_dist_index_hascurrentofferdata]] - `imports` [EXTRACTED]
 - [[packages_contracts_dist_index_offer]] - `imports` [EXTRACTED]
 - [[price-anomaly.test.ts]] - `imports_from` [EXTRACTED]
 - [[search-service.ts]] - `imports_from` [EXTRACTED]

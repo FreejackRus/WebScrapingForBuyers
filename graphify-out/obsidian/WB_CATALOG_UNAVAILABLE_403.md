@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
 type: "code"
-community: "ref_vitest"
-location: "L206"
+community: "mcp-marketplace-adapter.ts"
+location: "L210"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ref_vitest
+  - community/mcp-marketplace-adapterts
 ---
 
 # WB_CATALOG_UNAVAILABLE_403
@@ -17,4 +17,4 @@ tags:
 - [[mcp-marketplace-adapter.test.ts]] - `imports` [EXTRACTED]
 - [[mcp-marketplace-adapter.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ref_vitest
+#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts

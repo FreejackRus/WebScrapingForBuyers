@@ -12,7 +12,7 @@ tags:
 # _recover_search_ids()
 
 ## Connections
-- [[Any_27]] - `references` [EXTRACTED]
+- [[Any]] - `references` [EXTRACTED]
 - [[PURE recover numeric product ids from a search-goods response (no network).…]] - `rationale_for` [EXTRACTED]
 - [[_as_int()]] - `contains` [EXTRACTED]
 - [[_search_via_search_goods()]] - `calls` [EXTRACTED]

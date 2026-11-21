@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[card()_1]] - `contains` [EXTRACTED]
-- [[card()_5]] - `indirect_call` [INFERRED]
+- [[card()_6]] - `indirect_call` [INFERRED]
 - [[test_card_verification_records.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_card_verification_recordspy

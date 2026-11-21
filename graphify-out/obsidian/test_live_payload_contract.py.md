@@ -13,11 +13,11 @@ tags:
 
 ## Connections
 - [[Contract tests against a REAL ``jsitems`` response.…]] - `rationale_for` [EXTRACTED]
-- [[_items()_3]] - `contains` [EXTRACTED]
+- [[_items()_2]] - `contains` [EXTRACTED]
 - [[_payload()_1]] - `contains` [EXTRACTED]
 - [[avito_connectormodels_output.py]] - `imports_from` [EXTRACTED]
 - [[avito_connectorserver.py]] - `imports_from` [EXTRACTED]
-- [[json]] - `imports` [EXTRACTED]
+- [[json_1]] - `imports` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]
 - [[test_a_place_name_is_never_a_python_repr()]] - `contains` [EXTRACTED]
 - [[test_absent_seller_stays_none()]] - `contains` [EXTRACTED]

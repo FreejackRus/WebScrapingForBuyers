@@ -1,17 +1,17 @@
 ---
-source_file: "packages/service-kit/package.json"
+source_file: "apps/web/package.json"
 type: "code"
-community: "service-kit/package.json"
+community: "web/package.json"
 location: "L5"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/service-kit/packagejson
+  - community/web/packagejson
 ---
 
 # type
 
 ## Connections
-- [[service-kitpackage.json]] - `contains` [EXTRACTED]
+- [[webpackage.json]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/service-kit/packagejson
+#graphify/code #graphify/EXTRACTED #community/web/packagejson

@@ -1,10 +1,10 @@
 ---
 source_file: "apps/identity/package.json"
-type: "code"
+type: "concept"
 community: "identity/package.json"
 location: "L17"
 tags:
-  - graphify/code
+  - graphify/concept
   - graphify/EXTRACTED
   - community/identity/packagejson
 ---
@@ -12,6 +12,6 @@ tags:
 # fastify
 
 ## Connections
-- [[dependencies_3]] - `contains` [EXTRACTED]
+- [[identitypackage.json]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/identity/packagejson
+#graphify/concept #graphify/EXTRACTED #community/identity/packagejson

@@ -1,16 +1,17 @@
 ---
-source_file: ""
-type: "concept"
-community: "StdioProbe"
+source_file: "scripts/office-agent/citilink-agent.mjs"
+type: "code"
+community: "citilink-agent.mjs"
+location: "L34"
 tags:
-  - graphify/concept
+  - graphify/code
   - graphify/EXTRACTED
-  - community/StdioProbe
+  - community/citilink-agentmjs
 ---
 
 # queue
 
 ## Connections
-- [[stdio_probe.py]] - `imports` [EXTRACTED]
+- [[citilink-agent.mjs]] - `contains` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/StdioProbe
+#graphify/code #graphify/EXTRACTED #community/citilink-agentmjs

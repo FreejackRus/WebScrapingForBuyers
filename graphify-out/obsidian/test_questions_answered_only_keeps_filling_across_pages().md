@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[Filtering after fetching must not silently shrink the caller's result.]] - `rationale_for` [EXTRACTED]
 - [[responder()_9]] - `contains` [EXTRACTED]
-- [[scenario()_53]] - `contains` [EXTRACTED]
+- [[scenario()_52]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_patch_questions

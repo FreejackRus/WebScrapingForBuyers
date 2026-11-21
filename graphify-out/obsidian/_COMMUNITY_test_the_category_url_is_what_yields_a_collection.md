@@ -12,13 +12,13 @@ members: 13
 ## Members
 - [[Stand in for the CDP redirect probe the URL is already final.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py
 - [[The whole bug in one test same query, two URLs, two outcomes.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py
-- [[_no_cache()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py
+- [[_no_cache()_4]] - code - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py
 - [[_no_redirect()]] - code - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py
 - [[fake_post()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py
 - [[fake_post()_3]] - code - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py
 - [[fake_post()_4]] - code - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py
 - [[fake_post()_5]] - code - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py
-- [[fixture_6]] - code
+- [[fixture_5]] - code
 - [[test_search_maps_code7_to_transport_down()]] - code - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py
 - [[test_selfcheck_block_is_inconclusive()]] - code - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py
 - [[test_the_category_url_is_what_yields_a_collection()]] - code - mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/tests/test_server.py
@@ -40,5 +40,5 @@ SORT file.name ASC
 - [[_no_redirect()]] - degree 5, connects to 2 communities
 - [[fake_post()_2]] - degree 5, connects to 2 communities
 - [[test_the_category_url_is_what_yields_a_collection()]] - degree 6, connects to 1 community
-- [[_no_cache()_3]] - degree 3, connects to 1 community
+- [[_no_cache()_4]] - degree 3, connects to 1 community
 - [[test_search_maps_code7_to_transport_down()]] - degree 3, connects to 1 community

@@ -1,19 +1,22 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/wb-connector/src/wb_connector/server.py"
 type: "code"
-community: "test_http_tier.py"
-location: "L105"
+community: "wb_connector/server.py"
+location: "L334"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_http_tierpy
+  - community/wb_connector/serverpy
 ---
 
 # _proxy()
 
 ## Connections
-- [[detmir_connectorserver.py]] - `contains` [EXTRACTED]
-- [[fetch()_2]] - `calls` [EXTRACTED]
+- [[Resolve WB's proxy explicit ``WB_PROXY`` first, then the standard vars.]] - `rationale_for` [EXTRACTED]
+- [[_attach_image_urls()]] - `calls` [EXTRACTED]
+- [[_fetch()]] - `calls` [EXTRACTED]
+- [[_wb_client()]] - `calls` [EXTRACTED]
 - [[proxy_from_env()]] - `calls` [INFERRED]
+- [[wb_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_http_tierpy
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

@@ -2,7 +2,7 @@
 source_file: "apps/search/src/domain/marketplace-relevance.ts"
 type: "code"
 community: "marketplace-relevance.ts"
-location: "L76"
+location: "L78"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -18,6 +18,6 @@ tags:
 - [[marketplace-relevance.ts]] - `contains` [EXTRACTED]
 - [[missesShortModelQualifier()]] - `calls` [EXTRACTED]
 - [[tokenIn()]] - `calls` [EXTRACTED]
-- [[tokensIn()]] - `calls` [EXTRACTED]
+- [[tokensIn()_1]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/marketplace-relevancets

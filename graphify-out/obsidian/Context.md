@@ -1,21 +1,21 @@
 ---
-source_file: ""
+source_file: "apps/analysis/src/application/procurement-dialogue.ts"
 type: "code"
-community: "aliexpress_card"
+community: "coerce_price"
+location: "L4"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/aliexpress_card
+  - graphify/INFERRED
+  - community/coerce_price
 ---
 
 # Context
 
 ## Connections
-- [[_aliexpress_selfcheck_impl()]] - `references` [EXTRACTED]
-- [[_cdp_card()]] - `references` [EXTRACTED]
-- [[_cdp_render_search()]] - `references` [EXTRACTED]
-- [[aliexpress_card()]] - `references` [EXTRACTED]
-- [[aliexpress_search()]] - `references` [EXTRACTED]
-- [[aliexpress_selfcheck()]] - `references` [EXTRACTED]
+- [[Project gates]] - `references` [INFERRED]
+- [[What this codebase cares about]] - `references` [INFERRED]
+- [[procurement-dialogue.ts]] - `contains` [EXTRACTED]
+- [[stdout belongs to JSON-RPC]] - `references` [INFERRED]
+- [[Что важно в этой кодовой базе]] - `references` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/aliexpress_card
+#graphify/code #graphify/INFERRED #community/coerce_price

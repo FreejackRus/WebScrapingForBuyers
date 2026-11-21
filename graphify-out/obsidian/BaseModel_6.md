@@ -1,21 +1,20 @@
 ---
 source_file: ""
 type: "code"
-community: "cian_connector/server.py"
+community: "json"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/cian_connector/serverpy
+  - community/json
 ---
 
 # BaseModel
 
 ## Connections
-- [[CianAgentOut]] - `inherits` [EXTRACTED]
-- [[CianCardResponse]] - `inherits` [EXTRACTED]
-- [[CianMetroOut]] - `inherits` [EXTRACTED]
-- [[CianPriceChangeOut]] - `inherits` [EXTRACTED]
-- [[CianSearchItemOut]] - `inherits` [EXTRACTED]
-- [[CianSearchResponse]] - `inherits` [EXTRACTED]
+- [[DetmirCardResponse]] - `inherits` [EXTRACTED]
+- [[DetmirCategoriesResponse]] - `inherits` [EXTRACTED]
+- [[DetmirCategory]] - `inherits` [EXTRACTED]
+- [[DetmirListResponse]] - `inherits` [EXTRACTED]
+- [[DetmirProduct]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/cian_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/json

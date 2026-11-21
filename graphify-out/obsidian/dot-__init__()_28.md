@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/test_ci_concurrency.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
 type: "code"
-community: "test_ci_concurrency.py"
-location: "L100"
+community: "TransportDownError"
+location: "L99"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_ci_concurrencypy
+  - community/TransportDownError
 ---
 
 # .__init__()
 
 ## Connections
-- [[_Reader]] - `method` [EXTRACTED]
-- [[_tokenize()]] - `calls` [EXTRACTED]
+- [[dot-__init__()_29]] - `calls` [EXTRACTED]
+- [[BadRequestError]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_ci_concurrencypy
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

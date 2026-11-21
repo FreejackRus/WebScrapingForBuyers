@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/domain/offer-assessment.ts"
 type: "code"
-community: "packages_contracts_dist_index"
-location: "L12"
+community: "packages_contracts_dist_index_product"
+location: "L44"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/packages_contracts_dist_index
+  - community/packages_contracts_dist_index_product
 ---
 
 # compact()
@@ -14,6 +14,7 @@ tags:
 ## Connections
 - [[articles()]] - `indirect_call` [INFERRED]
 - [[matchedIdentity()]] - `calls` [EXTRACTED]
+- [[modelInArticle()]] - `calls` [EXTRACTED]
 - [[offer-assessment.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index
+#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index_product

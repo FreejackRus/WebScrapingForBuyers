@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/server.py"
 type: "code"
-community: "OfferBatch"
+community: "MarketOffer"
 location: "L445"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/OfferBatch
+  - community/MarketOffer
 ---
 
 # OfferBatch
 
 ## Connections
-- [[dot-__init__()_27]] - `method` [EXTRACTED]
+- [[dot-__init__()_2]] - `method` [EXTRACTED]
 - [[MarketOffer]] - `uses` [INFERRED]
 - [[Offers with native diagnostics; no shared state across concurrent sources.]] - `rationale_for` [EXTRACTED]
 - [[_search_aliexpress()]] - `calls` [EXTRACTED]
@@ -27,4 +27,4 @@ tags:
 - [[_search_yandex()]] - `calls` [EXTRACTED]
 - [[compare_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/OfferBatch
+#graphify/code #graphify/EXTRACTED #community/MarketOffer

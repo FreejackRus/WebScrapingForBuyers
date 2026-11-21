@@ -1,17 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "lamoda_search"
+community: "cian_search"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/lamoda_search
+  - community/cian_search
 ---
 
 # description
 
 ## Connections
-- [[lamoda_card()]] - `references` [EXTRACTED]
-- [[lamoda_search()]] - `references` [EXTRACTED]
+- [[cian_card()]] - `references` [EXTRACTED]
+- [[cian_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/lamoda_search
+#graphify/code #graphify/EXTRACTED #community/cian_search

@@ -13,14 +13,20 @@ tags:
 
 ## Connections
 - [[apply-chatindex.ts]] - `imports_from` [EXTRACTED]
+- [[basketuiindex.tsx]] - `imports_from` [EXTRACTED]
 - [[chatuiindex.tsx]] - `imports_from` [EXTRACTED]
 - [[commanduiindex.tsx]] - `imports_from` [EXTRACTED]
+- [[compareuiindex.tsx]] - `imports_from` [EXTRACTED]
 - [[copilotuiindex.tsx]] - `imports_from` [EXTRACTED]
 - [[downloadindex.ts]] - `re_exports` [EXTRACTED]
 - [[filter-offersindex.ts]] - `imports_from` [EXTRACTED]
 - [[logoutindex.ts]] - `imports_from` [EXTRACTED]
+- [[offer-carduiindex.tsx]] - `imports_from` [EXTRACTED]
+- [[offer-tableindex.ts]] - `imports_from` [EXTRACTED]
 - [[offersuiindex.tsx]] - `imports_from` [EXTRACTED]
 - [[open-offerindex.ts]] - `imports_from` [EXTRACTED]
+- [[price-trenduiindex.tsx]] - `imports_from` [EXTRACTED]
+- [[search-notices.tsx]] - `imports_from` [EXTRACTED]
 - [[searchapiindex.ts]] - `re_exports` [EXTRACTED]
 - [[searchstoreindex.ts]] - `re_exports` [EXTRACTED]
 - [[searchApi]] - `re_exports` [EXTRACTED]
@@ -28,6 +34,7 @@ tags:
 - [[suggestindex.ts]] - `imports_from` [EXTRACTED]
 - [[useBootSession.ts]] - `imports_from` [EXTRACTED]
 - [[useSearchStore]] - `re_exports` [EXTRACTED]
+- [[useSharedSearchLink.ts]] - `imports_from` [EXTRACTED]
 - [[workspaceuiindex.tsx]] - `imports_from` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/useSearchStore

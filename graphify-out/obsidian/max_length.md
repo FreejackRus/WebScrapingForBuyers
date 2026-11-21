@@ -1,17 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "aliexpress_card"
+community: "wb_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/aliexpress_card
+  - community/wb_connector/serverpy
 ---
 
 # max_length
 
 ## Connections
-- [[aliexpress_card()]] - `references` [EXTRACTED]
-- [[aliexpress_search()]] - `references` [EXTRACTED]
+- [[wb_categories()]] - `references` [EXTRACTED]
+- [[wb_category_products()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/aliexpress_card
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

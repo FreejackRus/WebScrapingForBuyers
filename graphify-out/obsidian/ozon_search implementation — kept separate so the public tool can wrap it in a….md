@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/server.py"
 type: "rationale"
-community: "_fetch_composer"
+community: "ozon_connector/server.py"
 location: "L1464"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/_fetch_composer
+  - community/ozon_connector/serverpy
 ---
 
 # ozon_search implementation — kept separate so the public tool can wrap it in a…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_ozon_search_impl()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/_fetch_composer
+#graphify/rationale #graphify/EXTRACTED #community/ozon_connector/serverpy

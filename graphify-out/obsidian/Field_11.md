@@ -1,17 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "TransportDownError"
+community: "raise_tool_error"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/TransportDownError
+  - community/raise_tool_error
 ---
 
 # Field
 
 ## Connections
-- [[yandex_card()]] - `references` [EXTRACTED]
-- [[yandex_search()_1]] - `references` [EXTRACTED]
+- [[avito_card()]] - `references` [EXTRACTED]
+- [[avito_search()_1]] - `references` [EXTRACTED]
+- [[avito_seller()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/TransportDownError
+#graphify/code #graphify/EXTRACTED #community/raise_tool_error

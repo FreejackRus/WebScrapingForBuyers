@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
 type: "code"
-community: "json"
+community: "TransportDownError"
 location: "L63"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/json
+  - community/TransportDownError
 ---
 
 # RateLimitedError
 
 ## Connections
-- [[dot-__init__()_37]] - `method` [EXTRACTED]
+- [[dot-__init__()_34]] - `method` [EXTRACTED]
 - [[ConnectorError]] - `inherits` [EXTRACTED]
 - [[_fetch_first_json()]] - `uses` [INFERRED]
 - [[_fetch_html()]] - `uses` [INFERRED]
@@ -30,4 +30,4 @@ tags:
 - [[wb_category_products()]] - `uses` [INFERRED]
 - [[wb_questions()]] - `uses` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/json
+#graphify/code #graphify/INFERRED #community/TransportDownError

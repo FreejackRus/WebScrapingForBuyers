@@ -13,9 +13,9 @@ tags:
 
 ## Connections
 - [[UpstreamTimeoutError]] - `uses` [INFERRED]
-- [[call()]] - `calls` [EXTRACTED]
+- [[call()_1]] - `calls` [EXTRACTED]
 - [[mcp-coreteststest_browser_handoff.py]] - `contains` [EXTRACTED]
-- [[pending()]] - `contains` [EXTRACTED]
-- [[pending()_1]] - `indirect_call` [INFERRED]
+- [[pending()_2]] - `contains` [EXTRACTED]
+- [[pending()]] - `indirect_call` [INFERRED]
 
 #graphify/code #graphify/EXTRACTED #community/UpstreamTimeoutError

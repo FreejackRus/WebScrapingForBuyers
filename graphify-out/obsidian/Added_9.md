@@ -1,21 +1,23 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
+source_file: "mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v2.2.0.md"
 type: "document"
-community: "compare_prices"
-location: "L345"
+community: "[2.2.0] — 2026-09-11"
+location: "L7"
 tags:
   - graphify/document
   - graphify/INFERRED
-  - community/compare_prices
+  - community/220__2026-09-11
 ---
 
 # Added
 
 ## Connections
-- [[2.2.0 — 2026-09-11]] - `contains` [EXTRACTED]
+- [[_mount_all()]] - `references` [INFERRED]
+- [[ali()]] - `references` [INFERRED]
 - [[cian_card()]] - `references` [INFERRED]
 - [[cian_search()]] - `references` [INFERRED]
 - [[compare_prices()]] - `references` [INFERRED]
 - [[marketplace_sources()]] - `references` [INFERRED]
+- [[v2.2.0]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/INFERRED #community/compare_prices
+#graphify/document #graphify/INFERRED #community/220__2026-09-11

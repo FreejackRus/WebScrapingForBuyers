@@ -1,18 +1,21 @@
 ---
 source_file: ""
 type: "code"
-community: "citilink_connector/models_output.py"
+community: "cian_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/citilink_connector/models_outputpy
+  - community/cian_connector/serverpy
 ---
 
 # BaseModel
 
 ## Connections
-- [[CitilinkCardResponse]] - `inherits` [EXTRACTED]
-- [[CitilinkSearchItemOut]] - `inherits` [EXTRACTED]
-- [[CitilinkSearchResponse]] - `inherits` [EXTRACTED]
+- [[CianAgentOut]] - `inherits` [EXTRACTED]
+- [[CianCardResponse]] - `inherits` [EXTRACTED]
+- [[CianMetroOut]] - `inherits` [EXTRACTED]
+- [[CianPriceChangeOut]] - `inherits` [EXTRACTED]
+- [[CianSearchItemOut]] - `inherits` [EXTRACTED]
+- [[CianSearchResponse]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/citilink_connector/models_outputpy
+#graphify/code #graphify/EXTRACTED #community/cian_connector/serverpy

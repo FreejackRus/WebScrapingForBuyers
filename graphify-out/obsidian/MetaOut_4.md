@@ -1,22 +1,23 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/megamarket-connector/src/megamarket_connector/models_output.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/models_output.py"
 type: "code"
-community: "log_event"
-location: "L9"
+community: "detmir_categories"
+location: "L15"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/log_event
+  - community/detmir_categories
 ---
 
 # MetaOut
 
 ## Connections
-- [[Megamarket carries the shared envelope unchanged.]] - `rationale_for` [EXTRACTED]
+- [[Detsky Mir flags cache hits so a caller can tell fresh data from a replay.]] - `rationale_for` [EXTRACTED]
 - [[MetaOutBase]] - `inherits` [EXTRACTED]
-- [[megamarket_card()]] - `uses` [INFERRED]
-- [[megamarket_connectormodels_output.py]] - `contains` [EXTRACTED]
-- [[megamarket_connectorserver.py]] - `imports` [EXTRACTED]
-- [[megamarket_search()_1]] - `uses` [INFERRED]
+- [[detmir_card()]] - `uses` [INFERRED]
+- [[detmir_categories()]] - `uses` [INFERRED]
+- [[detmir_category()]] - `uses` [INFERRED]
+- [[detmir_connectormodels_output.py]] - `contains` [EXTRACTED]
+- [[detmir_connectorserver.py]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/log_event
+#graphify/code #graphify/EXTRACTED #community/detmir_categories

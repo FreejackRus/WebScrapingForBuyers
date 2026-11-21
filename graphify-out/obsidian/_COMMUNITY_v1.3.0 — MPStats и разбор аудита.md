@@ -10,7 +10,7 @@ members: 13
 **Members:** 13 nodes
 
 ## Members
-- [[Fixed_12]] - document - mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v1.3.0.md
+- [[Fixed_16]] - document - mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v1.3.0.md
 - [[New MPStats analytics]] - document - mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v1.3.0.md
 - [[RELEASE_NOTES_v1.3.0]] - document - mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v1.3.0.md
 - [[So it stops happening]] - document - mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v1.3.0.md
@@ -33,12 +33,12 @@ SORT file.name ASC
 
 ## Connections to other communities
 - 2 edges to [[_COMMUNITY_coerce_price]]
-- 2 edges to [[_COMMUNITY_json]]
-- 1 edge to [[_COMMUNITY_mcp-coreteststest_browser_handoff.py]]
+- 2 edges to [[_COMMUNITY_TransportDownError]]
 - 1 edge to [[_COMMUNITY_wb_connectorserver.py]]
+- 1 edge to [[_COMMUNITY_success]]
 
 ## Top bridge nodes
-- [[Fixed_12]] - degree 3, connects to 2 communities
+- [[Fixed_16]] - degree 3, connects to 2 communities
 - [[Что чинилось]] - degree 3, connects to 2 communities
 - [[Новое аналитика MPStats]] - degree 2, connects to 1 community
 - [[Проверенность источников]] - degree 2, connects to 1 community

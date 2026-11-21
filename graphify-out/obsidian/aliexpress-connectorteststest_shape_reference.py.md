@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[Golden shapes for AliExpress's captured DOM extractors.]] - `rationale_for` [EXTRACTED]
-- [[_extract()_8]] - `contains` [EXTRACTED]
+- [[_extract()]] - `contains` [EXTRACTED]
 - [[aliexpress_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[domtest.py]] - `imports_from` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]

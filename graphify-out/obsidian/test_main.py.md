@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/tests/test_main.py"
 type: "code"
-community: "test_public_contract_snapshot.py"
+community: "test_main.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_public_contract_snapshotpy
+  - community/test_mainpy
 ---
 
 # test_main.py
@@ -24,4 +24,4 @@ tags:
 - [[test_unknown_argument_exits_with_error()]] - `contains` [EXTRACTED]
 - [[types_8]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_public_contract_snapshotpy
+#graphify/code #graphify/EXTRACTED #community/test_mainpy

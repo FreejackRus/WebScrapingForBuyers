@@ -1,12 +1,12 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/citilink-connector/src/citilink_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/server.py"
 type: "code"
-community: "citilink_selfcheck"
-location: "L105"
+community: "taobao_connector/server.py"
+location: "L112"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/citilink_selfcheck
+  - community/taobao_connector/serverpy
 ---
 
 # _polite_wait()
@@ -14,6 +14,6 @@ tags:
 ## Connections
 - [[Space this source's requests out, and back off if it refused us. Reads…_6]] - `rationale_for` [EXTRACTED]
 - [[_cdp_render()_2]] - `calls` [EXTRACTED]
-- [[citilink_connectorserver.py]] - `contains` [EXTRACTED]
+- [[taobao_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/citilink_selfcheck
+#graphify/code #graphify/EXTRACTED #community/taobao_connector/serverpy

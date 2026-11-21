@@ -1,19 +1,20 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/server.py"
 type: "code"
-community: "_fetch_composer"
-location: "L259"
+community: "lamoda_connector/server.py"
+location: "L125"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_fetch_composer
+  - community/lamoda_connector/serverpy
 ---
 
 # _polite_wait()
 
 ## Connections
 - [[Space this source's requests out, and back off if it refused us. Reads…_7]] - `rationale_for` [EXTRACTED]
-- [[_fetch_composer()]] - `calls` [EXTRACTED]
-- [[ozon_connectorserver.py]] - `contains` [EXTRACTED]
+- [[_attempt()_4]] - `calls` [EXTRACTED]
+- [[_graphql_card()]] - `calls` [EXTRACTED]
+- [[lamoda_connectorserver.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_fetch_composer
+#graphify/code #graphify/EXTRACTED #community/lamoda_connector/serverpy

@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
 community: "_FakeResponse"
-location: "L537"
+location: "L523"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,6 +12,6 @@ tags:
 # .__init__()
 
 ## Connections
-- [[_FakeResponse_1]] - `method` [EXTRACTED]
+- [[_FakeOzonItem]] - `method` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_FakeResponse

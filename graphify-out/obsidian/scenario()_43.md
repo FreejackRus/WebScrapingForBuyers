@@ -12,7 +12,7 @@ tags:
 # scenario()
 
 ## Connections
-- [[_tool_error_payload()]] - `calls` [EXTRACTED]
+- [[_tool_error_payload()_1]] - `calls` [EXTRACTED]
 - [[fake_safe_get_text()_2]] - `indirect_call` [INFERRED]
 - [[no_wait()_2]] - `indirect_call` [INFERRED]
 - [[test_wb_search_rate_limit_is_surfaced_not_masked_by_fallback()]] - `contains` [EXTRACTED]

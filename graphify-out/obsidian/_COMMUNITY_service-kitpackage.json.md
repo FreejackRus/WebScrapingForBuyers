@@ -16,16 +16,16 @@ members: 21
 - [[@typesnode_8]] - code - packages/service-kit/package.json
 - [[@typesnode_9]] - concept - packages/service-kit/package.json
 - [[build_8]] - code - packages/service-kit/package.json
-- [[dependencies_6]] - code - packages/service-kit/package.json
+- [[dependencies_7]] - code - packages/service-kit/package.json
 - [[devDependencies_6]] - code - packages/service-kit/package.json
 - [[fastify_9]] - code - packages/service-kit/package.json
 - [[fastify_10]] - concept - packages/service-kit/package.json
 - [[main_1]] - code - packages/service-kit/package.json
-- [[name_10]] - code - packages/service-kit/package.json
-- [[private_8]] - code - packages/service-kit/package.json
-- [[scripts_7]] - code - packages/service-kit/package.json
+- [[name_11]] - code - packages/service-kit/package.json
+- [[private_9]] - code - packages/service-kit/package.json
+- [[scripts_8]] - code - packages/service-kit/package.json
 - [[service-kitpackage.json]] - code - packages/service-kit/package.json
-- [[type_7]] - code - packages/service-kit/package.json
+- [[type_8]] - code - packages/service-kit/package.json
 - [[typecheck_7]] - code - packages/service-kit/package.json
 - [[types_7]] - code - packages/service-kit/package.json
 - [[typescript_12]] - code - packages/service-kit/package.json
@@ -40,7 +40,7 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 1 edge to [[_COMMUNITY_identitysrchttproutes.ts]]
+- 1 edge to [[_COMMUNITY_service-kitsrcindex.ts]]
 
 ## Top bridge nodes
 - [[service-kitpackage.json]] - degree 14, connects to 1 community

@@ -12,7 +12,8 @@ tags:
 # TestSource
 
 ## Connections
-- [[dot-search()_1]] - `method` [EXTRACTED]
+- [[dot-search()_10]] - `method` [EXTRACTED]
+- [[RealTestSource]] - `inherits` [EXTRACTED]
 - [[SourceAdapter]] - `implements` [EXTRACTED]
 - [[app.test.ts]] - `contains` [EXTRACTED]
 

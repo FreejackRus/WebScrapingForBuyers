@@ -2,7 +2,7 @@
 source_file: "apps/search/src/domain/product-from-query.ts"
 type: "code"
 community: "product-from-query.ts"
-location: "L240"
+location: "L303"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[cleanModelTokens()]] - `calls` [EXTRACTED]
-- [[collapseWs()_1]] - `calls` [EXTRACTED]
+- [[collapseWs()]] - `calls` [EXTRACTED]
 - [[enrichFromIcecat()]] - `calls` [EXTRACTED]
 - [[live-suggest.ts]] - `imports` [EXTRACTED]
 - [[product-from-query.test.ts]] - `imports` [EXTRACTED]

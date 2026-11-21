@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/models_output.py"
 type: "rationale"
-community: "dns_card"
+community: "taobao_connector/models_output.py"
 location: "L60"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/dns_card
+  - community/taobao_connector/models_outputpy
 ---
 
 # Taobao sub-check entry.
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[TaobaoSelfcheckCheckOut]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/dns_card
+#graphify/rationale #graphify/EXTRACTED #community/taobao_connector/models_outputpy

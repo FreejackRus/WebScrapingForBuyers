@@ -13,13 +13,13 @@ tags:
 
 ## Connections
 - [[Offline tests for the Lamoda connector. GraphQL and CDP rendering are…]] - `rationale_for` [EXTRACTED]
-- [[_no_cache()_8]] - `contains` [EXTRACTED]
+- [[_no_cache()_6]] - `contains` [EXTRACTED]
 - [[_patch_graphql()]] - `contains` [EXTRACTED]
 - [[_patch_graphql_response()]] - `contains` [EXTRACTED]
 - [[_patch_render()_4]] - `contains` [EXTRACTED]
 - [[contextlib]] - `imports_from` [EXTRACTED]
 - [[fastmcp_exceptions]] - `imports_from` [EXTRACTED]
-- [[json]] - `imports` [EXTRACTED]
+- [[json_1]] - `imports` [EXTRACTED]
 - [[lamoda_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[pytest]] - `imports` [EXTRACTED]
 - [[test_a_graphql_error_block_is_reported_verbatim()]] - `contains` [EXTRACTED]

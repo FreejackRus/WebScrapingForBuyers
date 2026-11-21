@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[The selector is appended to an outbound URL, so it is validated not trusted.]] - `rationale_for` [EXTRACTED]
 - [[forbidden()_3]] - `contains` [EXTRACTED]
-- [[parametrize_33]] - `references` [EXTRACTED]
+- [[parametrize_36]] - `references` [EXTRACTED]
 - [[scenario()_36]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 

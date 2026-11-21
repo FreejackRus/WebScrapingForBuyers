@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[assessMarketplaceOfferRelevance()]] - `imports` [EXTRACTED]
-- [[k380]] - `contains` [EXTRACTED]
+- [[k380_1]] - `contains` [EXTRACTED]
 - [[legionGo]] - `contains` [EXTRACTED]
 - [[marketplace-relevance.ts]] - `imports_from` [EXTRACTED]
 - [[packages_contracts_dist_index]] - `imports_from` [EXTRACTED]

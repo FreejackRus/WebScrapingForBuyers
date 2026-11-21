@@ -13,9 +13,11 @@ tags:
 
 ## Connections
 - [[dot-matchingQuery()]] - `calls` [EXTRACTED]
+- [[dot-search()_8]] - `calls` [EXTRACTED]
 - [[assessOffer()]] - `calls` [EXTRACTED]
 - [[consumable-parts.ts]] - `contains` [EXTRACTED]
 - [[leadingTitle()]] - `calls` [EXTRACTED]
+- [[mcp-marketplace-adapter.ts]] - `imports` [EXTRACTED]
 - [[offer-assessment.ts]] - `imports` [EXTRACTED]
 - [[origin-intent.test.ts]] - `imports` [EXTRACTED]
 - [[search-service.ts]] - `imports` [EXTRACTED]

@@ -1,17 +1,17 @@
 ---
-source_file: "apps/search/src/domain/it-scope.test.ts"
+source_file: "apps/search/src/domain/offer-assessment.test.ts"
 type: "code"
-community: "product-from-query.ts"
-location: "L15"
+community: "packages_contracts_dist_index_product"
+location: "L19"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/product-from-queryts
+  - community/packages_contracts_dist_index_product
 ---
 
 # offer()
 
 ## Connections
-- [[it-scope.test.ts]] - `contains` [EXTRACTED]
+- [[offer-assessment.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/product-from-queryts
+#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index_product

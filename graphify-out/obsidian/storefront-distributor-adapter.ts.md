@@ -23,6 +23,7 @@ tags:
 - [[assessMarketplaceOfferRelevance()]] - `imports` [EXTRACTED]
 - [[b2b-distributor-adapter.ts]] - `imports_from` [EXTRACTED]
 - [[browserHeaders]] - `contains` [EXTRACTED]
+- [[card-verifiers.ts]] - `imports_from` [EXTRACTED]
 - [[decodeEntities()]] - `contains` [EXTRACTED]
 - [[firstMatch()]] - `contains` [EXTRACTED]
 - [[htmlText()]] - `contains` [EXTRACTED]

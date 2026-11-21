@@ -12,7 +12,7 @@ tags:
 # test_the_report_exposes_the_new_fields()
 
 ## Connections
-- [[parametrize_35]] - `references` [EXTRACTED]
+- [[parametrize_23]] - `references` [EXTRACTED]
 - [[test_model_routing_eval_verdict.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_model_routing_eval_verdictpy

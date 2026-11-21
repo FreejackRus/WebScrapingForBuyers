@@ -12,6 +12,8 @@ tags:
 # PROJECT_CONTEXT.md
 
 ## Connections
+- [[2026-11-19-price-radar-audit]] - `references` [EXTRACTED]
+- [[STATE_RECOVERY]] - `references` [EXTRACTED]
 - [[Контекст проекта ПЕРЕМЕНА Price Radar]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/Контекст_проекта_ПЕРЕМЕНА_Price_Radar

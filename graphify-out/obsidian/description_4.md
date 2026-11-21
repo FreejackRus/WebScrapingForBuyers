@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/package.json"
+source_file: ""
 type: "code"
-community: "ru-marketplace-mcp/package.json"
-location: "L4"
+community: "log_event"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ru-marketplace-mcp/packagejson
+  - community/log_event
 ---
 
 # description
 
 ## Connections
-- [[ru-marketplace-mcppackage.json]] - `contains` [EXTRACTED]
+- [[ozon_card()]] - `references` [EXTRACTED]
+- [[ozon_reviews()]] - `references` [EXTRACTED]
+- [[ozon_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ru-marketplace-mcp/packagejson
+#graphify/code #graphify/EXTRACTED #community/log_event

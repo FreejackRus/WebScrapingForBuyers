@@ -12,7 +12,7 @@ tags:
 # narrationNeedsRussianRetry()
 
 ## Connections
-- [[dot-filterRelevance()_1]] - `calls` [EXTRACTED]
+- [[dot-filterRelevance()]] - `calls` [EXTRACTED]
 - [[dot-narrateWithRussianRetry()]] - `calls` [EXTRACTED]
 - [[looks-strongly-english.test.ts]] - `imports` [EXTRACTED]
 - [[looks-strongly-english.ts]] - `contains` [EXTRACTED]

@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
+source_file: "mcp-servers/ru-marketplace-mcp/docs/releases/RELEASE_NOTES_v2.2.0.md"
 type: "document"
-community: "SearchHistory"
-location: "L914"
+community: "[2.2.0] — 2026-09-11"
+location: "L33"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/SearchHistory
+  - community/220__2026-09-11
 ---
 
 # Changed
 
 ## Connections
-- [[1.5.0 — 2026-08-16]] - `contains` [EXTRACTED]
+- [[v2.2.0]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/SearchHistory
+#graphify/document #graphify/EXTRACTED #community/220__2026-09-11

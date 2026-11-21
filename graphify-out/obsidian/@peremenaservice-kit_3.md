@@ -1,17 +1,17 @@
 ---
-source_file: "apps/gateway/package.json"
-type: "concept"
-community: "gateway/package.json"
-location: "L15"
+source_file: "apps/search/package.json"
+type: "code"
+community: "search/package.json"
+location: "L16"
 tags:
-  - graphify/concept
+  - graphify/code
   - graphify/EXTRACTED
-  - community/gateway/packagejson
+  - community/search/packagejson
 ---
 
 # @peremena/service-kit
 
 ## Connections
-- [[gatewaypackage.json]] - `imports` [EXTRACTED]
+- [[dependencies_1]] - `contains` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/gateway/packagejson
+#graphify/code #graphify/EXTRACTED #community/search/packagejson

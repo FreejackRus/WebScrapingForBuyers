@@ -12,6 +12,6 @@ tags:
 # Return ``value`` when it is a dict, else an empty dict. SSR fields drift…
 
 ## Connections
-- [[_as_dict()_1]] - `rationale_for` [EXTRACTED]
+- [[_as_dict()]] - `rationale_for` [EXTRACTED]
 
 #graphify/rationale #graphify/EXTRACTED #community/ssrpy

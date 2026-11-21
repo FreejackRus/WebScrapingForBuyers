@@ -12,7 +12,7 @@ tags:
 # _capture_from_catalog_response()
 
 ## Connections
-- [[Any_27]] - `references` [EXTRACTED]
+- [[Any]] - `references` [EXTRACTED]
 - [[Build the storefront capture dict from a live Network response.]] - `rationale_for` [EXTRACTED]
 - [[_attempt_raw_live_capture()]] - `calls` [EXTRACTED]
 - [[_observe()]] - `calls` [EXTRACTED]

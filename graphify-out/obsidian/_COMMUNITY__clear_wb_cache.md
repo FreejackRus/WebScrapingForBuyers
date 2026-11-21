@@ -37,7 +37,7 @@ members: 54
 - [[iter_content()_1]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[no_wait()_40]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[no_wait()_41]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
-- [[parametrize_33]] - code
+- [[parametrize_36]] - code
 - [[scenario()_92]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[scenario()_93]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
 - [[scenario()_94]] - code - mcp-servers/ru-marketplace-mcp/packages/wb-connector/tests/test_helpers.py
@@ -86,6 +86,6 @@ SORT file.name ASC
 ## Top bridge nodes
 - [[_clear_wb_cache()]] - degree 29, connects to 4 communities
 - [[scenario()_100]] - degree 7, connects to 3 communities
-- [[parametrize_33]] - degree 7, connects to 2 communities
+- [[parametrize_36]] - degree 7, connects to 2 communities
 - [[test_refusals_reach_the_pacer_and_other_statuses_do_not()]] - degree 7, connects to 2 communities
 - [[test_a_transient_fault_is_not_counted_as_a_refusal()]] - degree 6, connects to 2 communities

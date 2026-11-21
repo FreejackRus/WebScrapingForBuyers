@@ -1,17 +1,18 @@
 ---
 source_file: ""
 type: "concept"
-community: "domtest.py"
+community: "backup-state.py"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/domtestpy
+  - community/backup-statepy
 ---
 
 # tempfile
 
 ## Connections
+- [[backup-state.py]] - `imports` [EXTRACTED]
 - [[domtest.py]] - `imports` [EXTRACTED]
 - [[ozon_connectorserver.py]] - `imports` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/domtestpy
+#graphify/concept #graphify/EXTRACTED #community/backup-statepy

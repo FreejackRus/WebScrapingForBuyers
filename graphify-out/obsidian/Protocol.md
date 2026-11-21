@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "get_text_budgeted"
+community: "transport/__init__.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/get_text_budgeted
+  - community/transport/__init__py
 ---
 
 # Protocol
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[PoliteGate]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/get_text_budgeted
+#graphify/code #graphify/EXTRACTED #community/transport/__init__py

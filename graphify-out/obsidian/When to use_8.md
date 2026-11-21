@@ -1,17 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/dns-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/marketplace/SKILL.md"
 type: "document"
-community: "DNS-Shop Connector"
-location: "L13"
+community: "compare_prices"
+location: "L16"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/DNS-Shop_Connector
+  - community/compare_prices
 ---
 
 # When to use
 
 ## Connections
-- [[DNS-Shop Connector]] - `contains` [EXTRACTED]
+- [[Unified Marketplace Server]] - `contains` [EXTRACTED]
+- [[marketplace_sources()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/DNS-Shop_Connector
+#graphify/document #graphify/EXTRACTED #community/compare_prices

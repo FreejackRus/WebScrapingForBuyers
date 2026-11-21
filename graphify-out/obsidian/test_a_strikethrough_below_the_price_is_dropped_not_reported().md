@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py"
 type: "code"
-community: "test_dom.py"
+community: "prices_from_tile"
 location: "L135"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_dompy
+  - community/prices_from_tile
 ---
 
 # test_a_strikethrough_below_the_price_is_dropped_not_reported()
 
 ## Connections
-- [[An old price under the current one is a drifted read, not a discount.]] - `rationale_for` [EXTRACTED]
+- [[An old price under the current one is a drifted read, not a discount._1]] - `rationale_for` [EXTRACTED]
 - [[prices_from_tile()]] - `calls` [EXTRACTED]
 - [[test_dom.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_dompy
+#graphify/code #graphify/EXTRACTED #community/prices_from_tile

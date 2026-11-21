@@ -13,6 +13,7 @@ tags:
 
 ## Connections
 - [[SourceGrid()]] - `contains` [EXTRACTED]
+- [[outcomeNote()]] - `contains` [EXTRACTED]
 - [[packages_contracts_dist_index]] - `imports_from` [EXTRACTED]
 - [[packages_contracts_dist_index_sourcestate]] - `imports` [EXTRACTED]
 - [[packages_contracts_dist_index_userrole]] - `imports` [EXTRACTED]

@@ -1,19 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/server.py"
 type: "code"
-community: "TransportDownError"
+community: "yandex_card"
 location: "L617"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/TransportDownError
+  - community/yandex_card
 ---
 
 # yandex_selfcheck()
 
 ## Connections
-- [[Added_17]] - `references` [INFERRED]
-- [[Context_12]] - `references` [EXTRACTED]
+- [[Added_11]] - `references` [INFERRED]
 - [[Probe Yandex Market's search and card pages and report a tri-state verdict.…]] - `rationale_for` [EXTRACTED]
 - [[Tools_2]] - `references` [INFERRED]
 - [[Tools_3]] - `references` [INFERRED]
@@ -21,10 +20,10 @@ tags:
 - [[YandexSelfcheckEntry]] - `calls` [EXTRACTED]
 - [[YandexSelfcheckResponse]] - `calls` [EXTRACTED]
 - [[log_event()]] - `calls` [EXTRACTED]
-- [[main()_9]] - `calls` [INFERRED]
+- [[main()_35]] - `calls` [INFERRED]
 - [[test_yandex_selfcheck_reaches_a_verdict()]] - `calls` [INFERRED]
 - [[yandex_card()]] - `calls` [EXTRACTED]
 - [[yandex_connectorserver.py]] - `contains` [EXTRACTED]
-- [[yandex_search()_1]] - `calls` [EXTRACTED]
+- [[yandex_search()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/TransportDownError
+#graphify/code #graphify/EXTRACTED #community/yandex_card

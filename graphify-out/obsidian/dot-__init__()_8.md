@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/check_no_print.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
-community: "check_no_print.py"
-location: "L31"
+community: "_FakeResponse"
+location: "L537"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/check_no_printpy
+  - community/_FakeResponse
 ---
 
 # .__init__()
 
 ## Connections
-- [[StdoutWriteVisitor]] - `method` [EXTRACTED]
+- [[_FakeResponse_1]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/check_no_printpy
+#graphify/code #graphify/EXTRACTED #community/_FakeResponse

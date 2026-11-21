@@ -1,19 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/__main__.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/__main__.py"
 type: "code"
-community: "sys"
+community: "run_server"
 location: "L21"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/sys
+  - community/run_server
 ---
 
 # main()
 
 ## Connections
-- [[Run the server on the transport selected by the environment (stdio default)._9]] - `rationale_for` [EXTRACTED]
-- [[ozon_connector__main__.py]] - `contains` [EXTRACTED]
+- [[Run the server on the transport selected by the environment (stdio default)._12]] - `rationale_for` [EXTRACTED]
 - [[run_server()]] - `calls` [INFERRED]
+- [[yandex_connector__main__.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/sys
+#graphify/code #graphify/EXTRACTED #community/run_server

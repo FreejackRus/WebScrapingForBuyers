@@ -2,7 +2,7 @@
 source_file: "apps/analysis/src/application/analyze.ts"
 type: "code"
 community: "analyze.ts"
-location: "L662"
+location: "L689"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,7 +12,8 @@ tags:
 # answerCopilotRaw()
 
 ## Connections
-- [[dot-answer()]] - `calls` [INFERRED]
+- [[dot-answer()_1]] - `calls` [INFERRED]
+- [[NarrationError]] - `calls` [EXTRACTED]
 - [[addressName()]] - `calls` [EXTRACTED]
 - [[analyze.ts]] - `contains` [EXTRACTED]
 - [[answerCopilot()]] - `calls` [EXTRACTED]
@@ -24,9 +25,11 @@ tags:
 - [[detectSafetyCategory()]] - `calls` [EXTRACTED]
 - [[extractSearchQuery()]] - `calls` [EXTRACTED]
 - [[historyOf()]] - `calls` [EXTRACTED]
+- [[isHelpRequest()]] - `calls` [EXTRACTED]
 - [[logSafetyIncident()]] - `calls` [EXTRACTED]
 - [[narrationFailureMessage()]] - `calls` [EXTRACTED]
 - [[resolveChatIntent()]] - `calls` [EXTRACTED]
+- [[validateGroundedNarration()]] - `calls` [EXTRACTED]
 - [[withGreeting()]] - `calls` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/analyzets

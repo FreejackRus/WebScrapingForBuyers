@@ -19,7 +19,7 @@ tags:
 - [[AvitoSelfcheckResponse]] - `contains` [EXTRACTED]
 - [[AvitoSellerOut]] - `contains` [EXTRACTED]
 - [[AvitoSellerResponse]] - `contains` [EXTRACTED]
-- [[MetaOut_8]] - `contains` [EXTRACTED]
+- [[MetaOut_5]] - `contains` [EXTRACTED]
 - [[Pydantic output models for the Avito MCP connector. Every tool returns a typed…]] - `rationale_for` [EXTRACTED]
 - [[avito_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[models.py]] - `imports_from` [EXTRACTED]

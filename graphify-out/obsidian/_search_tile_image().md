@@ -12,7 +12,7 @@ tags:
 # _search_tile_image()
 
 ## Connections
-- [[Any_8]] - `references` [EXTRACTED]
+- [[Any_13]] - `references` [EXTRACTED]
 - [[First gallery photo of a search tile tileImage.items.image.link (https only).]] - `rationale_for` [EXTRACTED]
 - [[_parse_search_tile()]] - `calls` [EXTRACTED]
 - [[ozon_connectorserver.py]] - `contains` [EXTRACTED]

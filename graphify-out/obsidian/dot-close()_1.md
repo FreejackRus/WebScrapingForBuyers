@@ -1,20 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/tests/test_server.py"
 type: "code"
-community: "_sync_curl_get"
-location: "L749"
+community: "_FakeResponse"
+location: "L487"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_sync_curl_get
+  - community/_FakeResponse
 ---
 
 # .close()
 
 ## Connections
-- [[dot-_send()]] - `calls` [EXTRACTED]
-- [[_RawCdpPage]] - `method` [EXTRACTED]
-- [[_read_capped_response()]] - `indirect_call` [INFERRED]
-- [[_sync_curl_get()]] - `indirect_call` [INFERRED]
+- [[_FakeSession]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/_sync_curl_get
+#graphify/code #graphify/EXTRACTED #community/_FakeResponse

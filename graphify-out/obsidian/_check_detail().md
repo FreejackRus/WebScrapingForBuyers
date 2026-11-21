@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/marketplace-connector/src/marketplace_connector/cli.py"
 type: "code"
-community: "test_dsh_bundle.py"
+community: "cmd_doctor"
 location: "L268"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_dsh_bundlepy
+  - community/cmd_doctor
 ---
 
 # _check_detail()
@@ -17,4 +17,4 @@ tags:
 - [[_run_one_selfcheck()]] - `calls` [EXTRACTED]
 - [[cli.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_dsh_bundlepy
+#graphify/code #graphify/EXTRACTED #community/cmd_doctor

@@ -1,10 +1,10 @@
 ---
 source_file: "apps/analysis/package.json"
-type: "code"
+type: "concept"
 community: "analysis/package.json"
-location: "L16"
+location: "L25"
 tags:
-  - graphify/code
+  - graphify/concept
   - graphify/EXTRACTED
   - community/analysis/packagejson
 ---
@@ -12,6 +12,6 @@ tags:
 # fastify
 
 ## Connections
-- [[dependencies]] - `contains` [EXTRACTED]
+- [[analysispackage.json]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/analysis/packagejson
+#graphify/concept #graphify/EXTRACTED #community/analysis/packagejson

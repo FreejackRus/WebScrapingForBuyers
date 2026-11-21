@@ -1,18 +1,20 @@
 ---
-source_file: "apps/gateway/src/search-history.ts"
+source_file: "apps/web/src/features/basket/lib.ts"
 type: "code"
-community: "SearchHistory"
-location: "L31"
+community: "basket/ui/index.tsx"
+location: "L22"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/SearchHistory
+  - community/basket/ui/indextsx
 ---
 
 # normalizeQuery()
 
 ## Connections
-- [[dot-record()]] - `calls` [EXTRACTED]
-- [[search-history.ts]] - `contains` [EXTRACTED]
+- [[featuresbasketindex.ts]] - `re_exports` [EXTRACTED]
+- [[lib.ts]] - `contains` [EXTRACTED]
+- [[store.ts]] - `imports` [EXTRACTED]
+- [[useBasketStore]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/SearchHistory
+#graphify/code #graphify/EXTRACTED #community/basket/ui/indextsx

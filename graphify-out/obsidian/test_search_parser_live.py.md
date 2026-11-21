@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[The Ozon search parse path against a LIVE captured composer payload.…]] - `rationale_for` [EXTRACTED]
 - [[_items()]] - `contains` [EXTRACTED]
-- [[json]] - `imports` [EXTRACTED]
+- [[json_1]] - `imports` [EXTRACTED]
 - [[ozon_connector__init__.py]] - `imports_from` [EXTRACTED]
 - [[pathlib]] - `imports_from` [EXTRACTED]
 - [[resilience.py]] - `imports_from` [EXTRACTED]

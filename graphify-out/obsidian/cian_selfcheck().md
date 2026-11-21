@@ -1,21 +1,20 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/cian-connector/src/cian_connector/server.py"
 type: "code"
-community: "cian_connector/server.py"
+community: "_cian_selfcheck_impl"
 location: "L947"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/cian_connector/serverpy
+  - community/_cian_selfcheck_impl
 ---
 
 # cian_selfcheck()
 
 ## Connections
 - [[CianSelfcheckResponse]] - `uses` [INFERRED]
-- [[Context_4]] - `references` [EXTRACTED]
 - [[Structural drift canary for Cian (tri-state success  drift_detected …]] - `rationale_for` [EXTRACTED]
-- [[Tools available_3]] - `references` [INFERRED]
+- [[Tools available_7]] - `references` [INFERRED]
 - [[Tools available_8]] - `references` [INFERRED]
 - [[TransportDownError]] - `uses` [INFERRED]
 - [[_cian_selfcheck_impl()]] - `calls` [EXTRACTED]
@@ -23,4 +22,4 @@ tags:
 - [[log_event()]] - `calls` [EXTRACTED]
 - [[raise_tool_error()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/cian_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/_cian_selfcheck_impl

@@ -14,8 +14,8 @@ tags:
 ## Connections
 - [[_v18_payload()]] - `calls` [EXTRACTED]
 - [[fake_storefront()]] - `contains` [EXTRACTED]
-- [[no_wait()_34]] - `contains` [EXTRACTED]
-- [[scenario()_80]] - `contains` [EXTRACTED]
+- [[no_wait()_37]] - `contains` [EXTRACTED]
+- [[scenario()_89]] - `contains` [EXTRACTED]
 - [[test_storefront_search.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_wb_search_storefront_uses_captured_v18_products

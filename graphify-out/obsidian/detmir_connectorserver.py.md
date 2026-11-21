@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/server.py"
 type: "code"
-community: "detmir_connector/server.py"
+community: "json"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/detmir_connector/serverpy
+  - community/json
 ---
 
 # detmir_connector/server.py
@@ -20,8 +20,8 @@ tags:
 - [[DetmirSelfcheckEntry]] - `imports` [EXTRACTED]
 - [[DetmirSelfcheckResponse]] - `imports` [EXTRACTED]
 - [[Detsky Mir MCP connector. The easiest of the Russian marketplaces to read…]] - `rationale_for` [EXTRACTED]
-- [[MetaOut_7]] - `imports` [EXTRACTED]
-- [[_as_dict()]] - `contains` [EXTRACTED]
+- [[MetaOut_4]] - `imports` [EXTRACTED]
+- [[_as_dict()_1]] - `contains` [EXTRACTED]
 - [[_as_list()]] - `contains` [EXTRACTED]
 - [[_body_error_status()]] - `contains` [EXTRACTED]
 - [[_fetch_json()]] - `contains` [EXTRACTED]
@@ -29,7 +29,7 @@ tags:
 - [[_parse_product()]] - `contains` [EXTRACTED]
 - [[_price_from()]] - `contains` [EXTRACTED]
 - [[_product_node()]] - `contains` [EXTRACTED]
-- [[_proxy()]] - `contains` [EXTRACTED]
+- [[_proxy()_1]] - `contains` [EXTRACTED]
 - [[_resolve_region()]] - `contains` [EXTRACTED]
 - [[cache.py]] - `imports_from` [EXTRACTED]
 - [[datetime]] - `imports` [EXTRACTED]
@@ -42,9 +42,9 @@ tags:
 - [[errors.py]] - `imports_from` [EXTRACTED]
 - [[fastmcp_3]] - `imports_from` [EXTRACTED]
 - [[fastmcp_server_middleware_error_handling]] - `imports_from` [EXTRACTED]
-- [[get_settings()]] - `imports` [EXTRACTED]
+- [[get_settings()_4]] - `imports` [EXTRACTED]
 - [[httpx]] - `imports` [EXTRACTED]
-- [[json]] - `imports` [EXTRACTED]
+- [[json_1]] - `imports` [EXTRACTED]
 - [[logging.py]] - `imports_from` [EXTRACTED]
 - [[mcp_core__init__.py]] - `imports_from` [EXTRACTED]
 - [[mcp_types]] - `imports_from` [EXTRACTED]
@@ -57,4 +57,4 @@ tags:
 - [[typing]] - `imports_from` [EXTRACTED]
 - [[urllib_parse]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/detmir_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/json

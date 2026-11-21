@@ -12,6 +12,6 @@ tags:
 # Avito carries the shared envelope unchanged.
 
 ## Connections
-- [[MetaOut_8]] - `rationale_for` [EXTRACTED]
+- [[MetaOut_5]] - `rationale_for` [EXTRACTED]
 
 #graphify/rationale #graphify/EXTRACTED #community/avito_connector/serverpy

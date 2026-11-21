@@ -1,18 +1,18 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/taobao-connector/src/taobao_connector/models_output.py"
 type: "code"
-community: "taobao_connector/server.py"
+community: "taobao_connector/models_output.py"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/taobao_connector/serverpy
+  - community/taobao_connector/models_outputpy
 ---
 
 # taobao_connector/models_output.py
 
 ## Connections
-- [[MetaOut_1]] - `contains` [EXTRACTED]
+- [[MetaOut_3]] - `contains` [EXTRACTED]
 - [[Pydantic output models for the Taobao MCP connector. Prices stay in yuan (CNY)…]] - `rationale_for` [EXTRACTED]
 - [[TaobaoCardResponse]] - `contains` [EXTRACTED]
 - [[TaobaoSearchItemOut]] - `contains` [EXTRACTED]
@@ -23,4 +23,4 @@ tags:
 - [[pydantic]] - `imports_from` [EXTRACTED]
 - [[taobao_connectorserver.py]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/taobao_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/taobao_connector/models_outputpy

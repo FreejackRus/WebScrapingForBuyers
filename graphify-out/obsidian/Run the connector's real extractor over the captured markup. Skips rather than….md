@@ -12,6 +12,6 @@ tags:
 # Run the connector's real extractor over the captured markup. Skips rather than…
 
 ## Connections
-- [[_extract()_11]] - `rationale_for` [EXTRACTED]
+- [[_extract()_13]] - `rationale_for` [EXTRACTED]
 
 #graphify/rationale #graphify/EXTRACTED #community/dns-connector/tests/test_search_extractor_dompy

@@ -1,19 +1,19 @@
 ---
 source_file: ""
 type: "code"
-community: "lamoda_search"
+community: "YandexProduct"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/lamoda_search
+  - community/YandexProduct
 ---
 
 # BaseModel
 
 ## Connections
-- [[LamodaCardResponse]] - `inherits` [EXTRACTED]
-- [[LamodaSearchItemOut]] - `inherits` [EXTRACTED]
-- [[LamodaSearchResponse]] - `inherits` [EXTRACTED]
-- [[LamodaSizeOut]] - `inherits` [EXTRACTED]
+- [[YandexCardResponse]] - `inherits` [EXTRACTED]
+- [[YandexProduct]] - `inherits` [EXTRACTED]
+- [[YandexReview]] - `inherits` [EXTRACTED]
+- [[YandexSearchResponse]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/lamoda_search
+#graphify/code #graphify/EXTRACTED #community/YandexProduct

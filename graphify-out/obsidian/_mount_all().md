@@ -12,13 +12,13 @@ tags:
 # _mount_all()
 
 ## Connections
-- [[Added_8]] - `references` [INFERRED]
-- [[Fixed_8]] - `references` [INFERRED]
+- [[Added_9]] - `references` [INFERRED]
+- [[Fixed_9]] - `references` [INFERRED]
 - [[Import each connector defensively and mount it. A connector that fails to…]] - `rationale_for` [EXTRACTED]
 - [[log_event()]] - `calls` [EXTRACTED]
 - [[marketplace_connectorserver.py]] - `contains` [EXTRACTED]
 - [[selected()]] - `calls` [EXTRACTED]
 - [[wanted()]] - `calls` [EXTRACTED]
-- [[Исправлено_7]] - `references` [INFERRED]
+- [[Исправлено_6]] - `references` [INFERRED]
 
 #graphify/code #graphify/EXTRACTED #community/220__2026-09-11

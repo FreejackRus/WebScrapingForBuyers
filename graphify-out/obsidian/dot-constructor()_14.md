@@ -1,17 +1,20 @@
 ---
-source_file: "apps/gateway/src/user-cache.ts"
+source_file: "apps/search/src/application/search-service.ts"
 type: "code"
-community: "gateway/src/app.ts"
-location: "L15"
+community: "card-verifiers.ts"
+location: "L93"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/gateway/src/appts
+  - community/card-verifiersts
 ---
 
 # .constructor()
 
 ## Connections
-- [[UserCache]] - `method` [EXTRACTED]
+- [[CardVerifier]] - `references` [EXTRACTED]
+- [[PriceHistoryStore]] - `references` [EXTRACTED]
+- [[SearchService]] - `method` [EXTRACTED]
+- [[SourceAdapter]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/gateway/src/appts
+#graphify/code #graphify/EXTRACTED #community/card-verifiersts

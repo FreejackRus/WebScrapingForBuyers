@@ -1,19 +1,19 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/server.py"
 type: "code"
-community: "_posted_at"
+community: "test_live_payload_contract.py"
 location: "L413"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/_posted_at
+  - community/test_live_payload_contractpy
 ---
 
 # _posted_at()
 
 ## Connections
-- [[Any_2]] - `references` [EXTRACTED]
-- [[Fixed_21]] - `references` [INFERRED]
+- [[Any_15]] - `references` [EXTRACTED]
+- [[Fixed_20]] - `references` [INFERRED]
 - [[Publication time as an ISO-8601 string, or an honest None. The live payload…]] - `rationale_for` [EXTRACTED]
 - [[_parse_search_items()]] - `calls` [EXTRACTED]
 - [[avito_card()]] - `calls` [EXTRACTED]
@@ -24,4 +24,4 @@ tags:
 - [[test_posted_at_refuses_junk()]] - `calls` [EXTRACTED]
 - [[Ключевые изменения выпуска]] - `references` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/_posted_at
+#graphify/code #graphify/EXTRACTED #community/test_live_payload_contractpy

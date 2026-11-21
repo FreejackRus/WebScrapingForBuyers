@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "code"
-community: "test_review_regressions.py"
+community: "resolve_image_delivery"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_review_regressionspy
+  - community/resolve_image_delivery
 ---
 
 # Policy
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[normalize_policy()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_review_regressionspy
+#graphify/code #graphify/EXTRACTED #community/resolve_image_delivery

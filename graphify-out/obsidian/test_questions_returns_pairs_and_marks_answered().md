@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[responder()_14]] - `contains` [EXTRACTED]
-- [[scenario()_58]] - `contains` [EXTRACTED]
+- [[scenario()_57]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_patch_questions

@@ -1,18 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "test_public_contract_snapshot.py"
+community: "ProductIdentity"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_public_contract_snapshotpy
+  - community/ProductIdentity
 ---
 
 # parametrize
 
 ## Connections
-- [[test_help_does_not_start_the_server()]] - `references` [EXTRACTED]
-- [[test_operator_subcommands_forward_their_arguments()]] - `references` [EXTRACTED]
-- [[test_unknown_argument_exits_with_error()]] - `references` [EXTRACTED]
+- [[test_gtin_rejects_malformed_values()]] - `references` [EXTRACTED]
+- [[test_non_latin_variant_conflicts_are_not_erased()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_public_contract_snapshotpy
+#graphify/code #graphify/EXTRACTED #community/ProductIdentity

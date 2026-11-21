@@ -2,7 +2,7 @@
 source_file: "apps/search/src/domain/product-from-query.ts"
 type: "code"
 community: "product-from-query.ts"
-location: "L92"
+location: "L142"
 tags:
   - graphify/code
   - graphify/EXTRACTED

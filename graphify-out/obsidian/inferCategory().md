@@ -2,7 +2,7 @@
 source_file: "apps/search/src/domain/product-from-query.ts"
 type: "code"
 community: "product-from-query.ts"
-location: "L203"
+location: "L260"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -16,10 +16,14 @@ tags:
 - [[categorize()]] - `calls` [EXTRACTED]
 - [[isItCategoryText()]] - `calls` [EXTRACTED]
 - [[isItOfferForProduct()]] - `calls` [EXTRACTED]
+- [[isNetlabCandidate()]] - `calls` [EXTRACTED]
 - [[it-scope.test.ts]] - `imports` [EXTRACTED]
 - [[it-scope.ts]] - `imports` [EXTRACTED]
+- [[mergeUnderstanding()]] - `calls` [EXTRACTED]
+- [[netlab-price-feed.ts]] - `imports` [EXTRACTED]
 - [[product-from-query.test.ts]] - `imports` [EXTRACTED]
 - [[product-from-query.ts]] - `contains` [EXTRACTED]
 - [[productFromQuery()]] - `calls` [EXTRACTED]
+- [[query-understanding.ts]] - `imports` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/product-from-queryts

@@ -1,18 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/routing_eval.py"
+source_file: "mcp-servers/ru-marketplace-mcp/examples/rating_breakdown.py"
 type: "code"
-community: "mcp_wire.py"
-location: "L77"
+community: "yandex_card"
+location: "L19"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/mcp_wirepy
+  - community/yandex_card
 ---
 
 # main()
 
 ## Connections
-- [[evaluate()]] - `calls` [EXTRACTED]
-- [[routing_eval.py]] - `contains` [EXTRACTED]
+- [[rating_breakdown.py]] - `contains` [EXTRACTED]
+- [[yandex_card()]] - `calls` [EXTRACTED]
+- [[yandex_search()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/mcp_wirepy
+#graphify/code #graphify/EXTRACTED #community/yandex_card

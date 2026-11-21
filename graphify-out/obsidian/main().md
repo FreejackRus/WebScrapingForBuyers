@@ -1,18 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/scripts/mcp_startup.py"
+source_file: "mcp-servers/ru-marketplace-mcp/examples/seller_lookup.py"
 type: "code"
-community: "StdioProbe"
-location: "L39"
+community: "wb_connector/server.py"
+location: "L19"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/StdioProbe
+  - community/wb_connector/serverpy
 ---
 
 # main()
 
 ## Connections
-- [[mcp_startup.py]] - `contains` [EXTRACTED]
-- [[measure()]] - `calls` [EXTRACTED]
+- [[seller_lookup.py]] - `contains` [EXTRACTED]
+- [[wb_card()]] - `calls` [EXTRACTED]
+- [[wb_seller()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/StdioProbe
+#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy

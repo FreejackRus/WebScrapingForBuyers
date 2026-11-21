@@ -24,7 +24,8 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
+- 1 edge to [[_COMMUNITY_coerce_price]]
 - 1 edge to [[_COMMUNITY_log_event]]
 
 ## Top bridge nodes
-- [[Project gates]] - degree 2, connects to 1 community
+- [[Project gates]] - degree 3, connects to 2 communities

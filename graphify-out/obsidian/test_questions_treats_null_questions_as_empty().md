@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[A product nobody has asked about returns questions null, not .]] - `rationale_for` [EXTRACTED]
 - [[responder()_17]] - `contains` [EXTRACTED]
-- [[scenario()_61]] - `contains` [EXTRACTED]
+- [[scenario()_60]] - `contains` [EXTRACTED]
 - [[test_helpers.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/_patch_questions

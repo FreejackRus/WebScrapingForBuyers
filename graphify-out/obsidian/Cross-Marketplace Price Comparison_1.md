@@ -12,13 +12,13 @@ tags:
 # Cross-Marketplace Price Comparison
 
 ## Connections
-- [[Gotchas_22]] - `contains` [EXTRACTED]
+- [[Gotchas_5]] - `contains` [EXTRACTED]
 - [[Reading the result correctly_1]] - `contains` [EXTRACTED]
-- [[Tools_7]] - `contains` [EXTRACTED]
-- [[Trust boundary_8]] - `contains` [EXTRACTED]
-- [[When NOT to use_3]] - `contains` [EXTRACTED]
-- [[When to use_22]] - `contains` [EXTRACTED]
-- [[Workflow_3]] - `contains` [EXTRACTED]
+- [[Tools_6]] - `contains` [EXTRACTED]
+- [[Trust boundary_3]] - `contains` [EXTRACTED]
+- [[When NOT to use_1]] - `contains` [EXTRACTED]
+- [[When to use_2]] - `contains` [EXTRACTED]
+- [[Workflow_1]] - `contains` [EXTRACTED]
 - [[ru-marketplace-mcpskillscompare-pricesSKILL]] - `contains` [EXTRACTED]
 
 #graphify/document #graphify/EXTRACTED #community/Cross-Marketplace_Price_Comparison

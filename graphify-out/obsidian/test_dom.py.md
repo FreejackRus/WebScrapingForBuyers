@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_dom.py"
 type: "code"
-community: "test_dom.py"
+community: "prices_from_tile"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_dompy
+  - community/prices_from_tile
 ---
 
 # test_dom.py
@@ -42,4 +42,4 @@ tags:
 - [[test_yuan_glyph_in_a_sibling_element_counts_as_a_price()]] - `contains` [EXTRACTED]
 - [[test_zero_is_not_a_price()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_dompy
+#graphify/code #graphify/EXTRACTED #community/prices_from_tile

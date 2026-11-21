@@ -12,7 +12,7 @@ tags:
 # createDistributorSourcesFromEnv()
 
 ## Connections
-- [[dot-load()_1]] - `calls` [INFERRED]
+- [[dot-load()_2]] - `calls` [INFERRED]
 - [[B2bDistributorStubAdapter]] - `calls` [EXTRACTED]
 - [[MerlionSourceAdapter]] - `calls` [EXTRACTED]
 - [[NetlabPriceFeedAdapter]] - `calls` [EXTRACTED]

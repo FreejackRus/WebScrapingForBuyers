@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[5a. If you read a rendered page, reuse the shared extractor]] - `references` [INFERRED]
-- [[Any_18]] - `references` [EXTRACTED]
+- [[Any_25]] - `references` [EXTRACTED]
 - [[Return ``(price, old_price)`` for one extracted tile. Reads the shapes the…]] - `rationale_for` [EXTRACTED]
 - [[_page_challenge_kind()]] - `calls` [EXTRACTED]
 - [[_parsed()]] - `contains` [EXTRACTED]

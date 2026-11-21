@@ -1,19 +1,26 @@
 ---
 source_file: ""
 type: "code"
-community: "lamoda_search"
+community: "ozon_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/lamoda_search
+  - community/ozon_connector/serverpy
 ---
 
 # Any
 
 ## Connections
-- [[_anti_bot_challenge()_1]] - `references` [EXTRACTED]
-- [[_cdp_render_search()_1]] - `references` [EXTRACTED]
-- [[_graphql_card()]] - `references` [EXTRACTED]
-- [[_search_item_from_tile()_3]] - `references` [EXTRACTED]
+- [[_can_process_call()]] - `references` [EXTRACTED]
+- [[_canonical_product_path_from_input()]] - `references` [EXTRACTED]
+- [[_parse_review_item()]] - `references` [EXTRACTED]
+- [[_parse_search_tile()]] - `references` [EXTRACTED]
+- [[_parse_widgets()]] - `references` [EXTRACTED]
+- [[_price_str_to_float()]] - `references` [EXTRACTED]
+- [[_run_sync_bounded()]] - `references` [EXTRACTED]
+- [[_search_items_from_payload()]] - `references` [EXTRACTED]
+- [[_search_tile_image()]] - `references` [EXTRACTED]
+- [[_sync_call_in_process()]] - `references` [EXTRACTED]
+- [[_ts_to_iso()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/lamoda_search
+#graphify/code #graphify/EXTRACTED #community/ozon_connector/serverpy

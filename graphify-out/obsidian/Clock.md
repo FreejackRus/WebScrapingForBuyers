@@ -12,13 +12,13 @@ tags:
 # Clock
 
 ## Connections
-- [[dot-__call__()]] - `method` [EXTRACTED]
-- [[dot-__init__()_14]] - `method` [EXTRACTED]
+- [[dot-__call__()_1]] - `method` [EXTRACTED]
+- [[dot-__init__()_18]] - `method` [EXTRACTED]
 - [[dot-advance()]] - `method` [EXTRACTED]
 - [[Clock]] - `calls` [EXTRACTED]
 - [[Controllable monotonic clock, so cooldowns pass in microseconds.]] - `rationale_for` [EXTRACTED]
 - [[clock()]] - `calls` [INFERRED]
-- [[fixture_13]] - `references` [EXTRACTED]
+- [[fixture_7]] - `references` [EXTRACTED]
 - [[test_cdp_budget.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/Clock

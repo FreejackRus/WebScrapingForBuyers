@@ -1,68 +1,88 @@
 ---
 type: community
-cohesion: 0.07
-members: 53
+cohesion: 0.05
+members: 73
 ---
 
 # packages_contracts_dist_index
 
-**Cohesion:** 0.07 - loosely connected
-**Members:** 53 nodes
+**Cohesion:** 0.05 - loosely connected
+**Members:** 73 nodes
 
 ## Members
-- [[Assessment]] - code - apps/search/src/domain/offer-assessment.ts
-- [[DEFAULT_RETENTION]] - code - apps/search/src/application/search-service.ts
-- [[DEFAULT_SOURCE_TIMEOUT_MS]] - code - apps/search/src/application/search-service.ts
-- [[Listener]] - code - apps/search/src/application/search-service.ts
+- [[AVAILABILITY]] - code - apps/search/src/domain/procurement-rank.ts
+- [[CHANGE_THRESHOLD]] - code - apps/gateway/src/watch-compare.ts
+- [[CONDITION]] - code - apps/search/src/domain/procurement-rank.ts
+- [[MATCH]] - code - apps/search/src/domain/procurement-rank.ts
 - [[PART_WORDS]] - code - apps/search/src/domain/consumable-parts.ts
 - [[THIRD_PARTY_BRANDS]] - code - apps/search/src/domain/origin-intent.ts
 - [[TOO_LOW_SHARE]] - code - apps/search/src/domain/price-anomaly.ts
-- [[articles()]] - code - apps/search/src/domain/offer-assessment.ts
-- [[assessConditions()]] - code - apps/search/src/domain/offer-assessment.ts
-- [[assessOffer()]] - code - apps/search/src/domain/offer-assessment.ts
-- [[capacities()]] - code - apps/search/src/domain/offer-assessment.ts
-- [[compact()]] - code - apps/search/src/domain/offer-assessment.ts
+- [[api]] - code - apps/web/src/entities/search/store/initial-filter.test.ts
+- [[assignProcurementRanks()]] - code - apps/search/src/domain/procurement-rank.ts
+- [[availability.test.ts]] - code - apps/search/src/domain/availability.test.ts
+- [[baseOffer]] - code - apps/web/src/features/search/offer-table/index.test.ts
+- [[compare()]] - code - apps/search/src/domain/procurement-rank.ts
 - [[consumable-parts.ts]] - code - apps/search/src/domain/consumable-parts.ts
-- [[emptyOffers]] - code - apps/web/src/features/search/filter-offers/index.ts
-- [[emptyOffers_1]] - code - apps/web/src/features/search/open-offer/index.ts
+- [[context_1]] - code - apps/analysis/src/infrastructure/narrator-grounding.test.ts
+- [[cpu-result-precision.test.ts]] - code - apps/search/src/domain/cpu-result-precision.test.ts
 - [[exceljs_1]] - concept - apps/search/package.json
 - [[export-service.test.ts]] - code - apps/search/src/application/export-service.test.ts
 - [[export-service.ts]] - code - apps/search/src/application/export-service.ts
-- [[exportSearch()]] - code - apps/search/src/application/export-service.ts
-- [[filter-offersindex.ts]] - code - apps/web/src/features/search/filter-offers/index.ts
-- [[flagPriceAnomalies()]] - code - apps/search/src/domain/price-anomaly.ts
+- [[grounded-narration.test.ts]] - code - apps/analysis/src/application/grounded-narration.test.ts
 - [[hasWord()]] - code - apps/search/src/domain/origin-intent.ts
-- [[identityIn()]] - code - apps/search/src/domain/offer-assessment.ts
+- [[initial-filter.test.ts]] - code - apps/web/src/entities/search/store/initial-filter.test.ts
+- [[isGoodRow()]] - code - apps/gateway/src/watch-compare.ts
 - [[isUnrequestedConsumablePart()]] - code - apps/search/src/domain/consumable-parts.ts
-- [[kitQuantity()]] - code - apps/search/src/domain/offer-assessment.ts
 - [[leadingTitle()]] - code - apps/search/src/domain/consumable-parts.ts
-- [[matchedIdentity()]] - code - apps/search/src/domain/offer-assessment.ts
 - [[matchesOriginIntent()]] - code - apps/search/src/domain/origin-intent.ts
-- [[median()]] - code - apps/search/src/domain/price-anomaly.ts
-- [[offer()_4]] - code - apps/search/src/domain/offer-assessment.test.ts
-- [[offer()_5]] - code - apps/search/src/domain/origin-intent.test.ts
-- [[offer()_6]] - code - apps/search/src/domain/price-anomaly.test.ts
-- [[offer()_7]] - code - apps/web/src/entities/offer/lib/table-filter.test.ts
-- [[offer-assessment.test.ts]] - code - apps/search/src/domain/offer-assessment.test.ts
-- [[offer-assessment.ts]] - code - apps/search/src/domain/offer-assessment.ts
+- [[mockReply()]] - code - apps/analysis/src/infrastructure/narrator-grounding.test.ts
+- [[model-groups.test.ts]] - code - apps/web/src/entities/offer/lib/model-groups.test.ts
+- [[narrator-grounding.test.ts]] - code - apps/analysis/src/infrastructure/narrator-grounding.test.ts
+- [[normalizeOfferCondition()]] - code - apps/search/src/domain/procurement-rank.ts
+- [[offer_3]] - code - apps/analysis/src/application/grounded-narration.test.ts
+- [[offer_4]] - code - apps/analysis/src/infrastructure/narrator-grounding.test.ts
+- [[offer_5]] - code - apps/web/src/widgets/search/offer-card/ui/index.test.tsx
+- [[offer()_6]] - code - apps/search/src/domain/cpu-result-precision.test.ts
+- [[offer()_7]] - code - apps/search/src/domain/origin-intent.test.ts
+- [[offer()_8]] - code - apps/search/src/domain/price-anomaly.test.ts
+- [[offer()_9]] - code - apps/search/src/domain/procurement-rank.test.ts
+- [[offer()_10]] - code - apps/web/src/widgets/search/workspace/ui/index.test.tsx
+- [[offer-carduiindex.test.tsx]] - code - apps/web/src/widgets/search/offer-card/ui/index.test.tsx
+- [[offer-tableindex.test.ts]] - code - apps/web/src/features/search/offer-table/index.test.ts
+- [[offer-verification.test.ts]] - code - apps/search/src/domain/offer-verification.test.ts
 - [[offerOrigin]] - code - apps/search/src/domain/origin-intent.ts
-- [[open-offerindex.ts]] - code - apps/web/src/features/search/open-offer/index.ts
+- [[order()]] - code - apps/search/src/domain/procurement-rank.test.ts
 - [[origin-intent.test.ts]] - code - apps/search/src/domain/origin-intent.test.ts
 - [[origin-intent.ts]] - code - apps/search/src/domain/origin-intent.ts
-- [[originInTitle()]] - code - apps/search/src/domain/offer-assessment.ts
 - [[originIntent]] - code - apps/search/src/domain/origin-intent.ts
 - [[packages_contracts_dist_index]] - concept
+- [[packages_contracts_dist_index_hascurrentofferdata]] - concept
 - [[packages_contracts_dist_index_offer]] - concept
-- [[pageYield()]] - code - apps/search/src/domain/offer-assessment.ts
+- [[packages_contracts_dist_index_offeravailabilitystatus]] - concept
+- [[packages_contracts_dist_index_offerchannel]] - concept
+- [[packages_contracts_dist_index_watchchange]] - concept
+- [[packages_contracts_dist_index_watchprice]] - concept
+- [[packaging()]] - code - apps/search/src/domain/procurement-rank.ts
 - [[pantum]] - code - apps/search/src/domain/origin-intent.test.ts
 - [[price-anomaly.test.ts]] - code - apps/search/src/domain/price-anomaly.test.ts
 - [[price-anomaly.ts]] - code - apps/search/src/domain/price-anomaly.ts
-- [[product()_1]] - code - apps/search/src/domain/offer-assessment.test.ts
-- [[requestedOrigin()]] - code - apps/search/src/domain/offer-assessment.ts
-- [[requestedPack()]] - code - apps/search/src/domain/offer-assessment.ts
-- [[search-service.ts]] - code - apps/search/src/application/search-service.ts
-- [[selectedFacts()]] - code - apps/search/src/domain/offer-assessment.ts
-- [[table-filter.test.ts]] - code - apps/web/src/entities/offer/lib/table-filter.test.ts
+- [[procurement-rank.test.ts]] - code - apps/search/src/domain/procurement-rank.test.ts
+- [[procurement-rank.ts]] - code - apps/search/src/domain/procurement-rank.ts
+- [[product_5]] - code - apps/search/src/domain/offer-verification.test.ts
+- [[product_6]] - code - apps/web/src/entities/search/store/initial-filter.test.ts
+- [[product_7]] - code - apps/web/src/widgets/search/offers/ui/search-notices.test.tsx
+- [[ref_vitest]] - concept
+- [[row]] - code - apps/search/src/domain/offer-verification.test.ts
+- [[row()_1]] - code - apps/gateway/src/watch-compare.test.ts
+- [[search-notices.test.tsx]] - code - apps/web/src/widgets/search/offers/ui/search-notices.test.tsx
+- [[snapshot()]] - code - apps/web/src/widgets/search/offers/ui/search-notices.test.tsx
+- [[start_4]] - code - apps/web/src/widgets/search/offers/ui/search-notices.test.tsx
+- [[state]] - code - apps/web/src/widgets/search/offer-card/ui/index.test.tsx
+- [[state_1]] - code - apps/web/src/widgets/search/workspace/ui/index.test.tsx
+- [[watch-compare.test.ts]] - code - apps/gateway/src/watch-compare.test.ts
+- [[watch-compare.ts]] - code - apps/gateway/src/watch-compare.ts
+- [[watchedPrice()]] - code - apps/gateway/src/watch-compare.ts
+- [[workspaceuiindex.test.tsx]] - code - apps/web/src/widgets/search/workspace/ui/index.test.tsx
 
 ## Live Query (requires Dataview plugin)
 
@@ -72,37 +92,56 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
+- 33 edges to [[_COMMUNITY_offersuiindex.tsx]]
+- 31 edges to [[_COMMUNITY_search-service.ts]]
+- 24 edges to [[_COMMUNITY_product-from-query.ts]]
 - 22 edges to [[_COMMUNITY_SourceAdapter]]
-- 17 edges to [[_COMMUNITY_product-from-query.ts]]
-- 17 edges to [[_COMMUNITY_offersuiindex.tsx]]
-- 10 edges to [[_COMMUNITY_SearchService]]
-- 9 edges to [[_COMMUNITY_analyze.test.ts]]
-- 9 edges to [[_COMMUNITY_useSearchStore]]
-- 8 edges to [[_COMMUNITY_ref_vitest]]
-- 5 edges to [[_COMMUNITY_workspaceuiindex.tsx]]
-- 5 edges to [[_COMMUNITY_analyze.ts]]
-- 4 edges to [[_COMMUNITY_analysisstoreindex.ts]]
-- 3 edges to [[_COMMUNITY_mcp-marketplace-adapter.ts]]
-- 3 edges to [[_COMMUNITY_commanduiindex.tsx]]
-- 3 edges to [[_COMMUNITY_b2b-distributor-adapter.ts]]
-- 3 edges to [[_COMMUNITY_gatewaysrcapp.ts]]
-- 2 edges to [[_COMMUNITY_storefront-distributor-adapter.ts]]
-- 2 edges to [[_COMMUNITY_marketplace-relevance.ts]]
-- 2 edges to [[_COMMUNITY_SearchHistory]]
-- 2 edges to [[_COMMUNITY_useUserStore]]
-- 2 edges to [[_COMMUNITY_netlab-price-feed.ts]]
-- 2 edges to [[_COMMUNITY_memory-auth-store.ts]]
-- 2 edges to [[_COMMUNITY_ollama-analysis-narrator.ts]]
-- 2 edges to [[_COMMUNITY_compare-models.ts]]
+- 20 edges to [[_COMMUNITY_packages_contracts_dist_index_product]]
+- 17 edges to [[_COMMUNITY_useSearchStore]]
+- 15 edges to [[_COMMUNITY_mcp-marketplace-adapter.ts]]
+- 15 edges to [[_COMMUNITY_watchlist-checker.ts]]
+- 15 edges to [[_COMMUNITY_analysis-narrator.ts]]
+- 10 edges to [[_COMMUNITY_procurement-dialogue.ts]]
+- 10 edges to [[_COMMUNITY_analysissrcapp.ts]]
+- 9 edges to [[_COMMUNITY_basketuiindex.tsx]]
+- 9 edges to [[_COMMUNITY_analysisstoreindex.ts]]
+- 8 edges to [[_COMMUNITY_workspaceuiindex.tsx]]
+- 8 edges to [[_COMMUNITY_analyze.ts]]
+- 7 edges to [[_COMMUNITY_ollama-analysis-narrator.ts]]
+- 7 edges to [[_COMMUNITY_card-verifiers.ts]]
+- 7 edges to [[_COMMUNITY_useUserStore]]
+- 7 edges to [[_COMMUNITY_b2b-distributor-adapter.ts]]
+- 7 edges to [[_COMMUNITY_watchlistuiindex.tsx]]
+- 6 edges to [[_COMMUNITY_price-trenduiindex.tsx]]
+- 6 edges to [[_COMMUNITY_gatewaysrcapp.ts]]
+- 5 edges to [[_COMMUNITY_grounded-narration.ts]]
+- 5 edges to [[_COMMUNITY_quality-eval.ts]]
+- 5 edges to [[_COMMUNITY_compareuiindex.tsx]]
+- 5 edges to [[_COMMUNITY_compare-models.ts]]
+- 4 edges to [[_COMMUNITY_analysispackage.json]]
+- 4 edges to [[_COMMUNITY_marketplace-relevance.ts]]
+- 4 edges to [[_COMMUNITY_system-healthuiindex.tsx]]
+- 3 edges to [[_COMMUNITY_storefront-distributor-adapter.ts]]
+- 3 edges to [[_COMMUNITY_basket-tools.ts]]
+- 3 edges to [[_COMMUNITY_netlab-price-feed.ts]]
+- 3 edges to [[_COMMUNITY_offersuiindex.test.tsx]]
+- 2 edges to [[_COMMUNITY_ru-marketplace-mcp]]
+- 2 edges to [[_COMMUNITY_wb_connectorserver.py]]
+- 2 edges to [[_COMMUNITY_resilience.test.ts]]
+- 2 edges to [[_COMMUNITY_narration-stats.ts]]
 - 2 edges to [[_COMMUNITY_merlion-client.ts]]
-- 2 edges to [[_COMMUNITY_netlab-client.ts]]
-- 1 edge to [[_COMMUNITY_chatuiindex.tsx]]
+- 2 edges to [[_COMMUNITY_memory-auth-store.ts]]
+- 2 edges to [[_COMMUNITY_commanduiindex.tsx]]
+- 1 edge to [[_COMMUNITY_validateGroundedNarration]]
 - 1 edge to [[_COMMUNITY_searchpackage.json]]
-- 1 edge to [[_COMMUNITY_infra-leak.ts]]
+- 1 edge to [[_COMMUNITY_LoginLimiter]]
+- 1 edge to [[_COMMUNITY_basket-routes.test.ts]]
+- 1 edge to [[_COMMUNITY_basket-store.ts]]
+- 1 edge to [[_COMMUNITY_history-routes.test.ts]]
 
 ## Top bridge nodes
-- [[packages_contracts_dist_index]] - degree 75, connects to 26 communities
-- [[packages_contracts_dist_index_offer]] - degree 40, connects to 16 communities
-- [[search-service.ts]] - degree 27, connects to 6 communities
-- [[offer-assessment.ts]] - degree 22, connects to 2 communities
-- [[assessOffer()]] - degree 11, connects to 2 communities
+- [[packages_contracts_dist_index]] - degree 146, connects to 39 communities
+- [[ref_vitest]] - degree 96, connects to 38 communities
+- [[packages_contracts_dist_index_offer]] - degree 76, connects to 24 communities
+- [[packages_contracts_dist_index_offeravailabilitystatus]] - degree 13, connects to 7 communities
+- [[packages_contracts_dist_index_offerchannel]] - degree 13, connects to 7 communities

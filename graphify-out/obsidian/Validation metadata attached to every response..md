@@ -12,6 +12,6 @@ tags:
 # Validation metadata attached to every response.
 
 ## Connections
-- [[MetaOut_3]] - `rationale_for` [EXTRACTED]
+- [[MetaOut_2]] - `rationale_for` [EXTRACTED]
 
 #graphify/rationale #graphify/EXTRACTED #community/cian_connector/serverpy

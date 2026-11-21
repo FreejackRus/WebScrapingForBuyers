@@ -1,23 +1,19 @@
 ---
-source_file: "apps/analysis/src/infrastructure/ollama-analysis-narrator.ts"
+source_file: "apps/analysis/src/infrastructure/deepseek-harness-narrator.ts"
 type: "code"
-community: "ollama-analysis-narrator.ts"
-location: "L305"
+community: "analysis/package.json"
+location: "L112"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ollama-analysis-narratorts
+  - community/analysis/packagejson
 ---
 
 # .chatJson()
 
 ## Connections
-- [[dot-filterRelevance()_1]] - `calls` [EXTRACTED]
-- [[dot-narrateWithRussianRetry()]] - `calls` [EXTRACTED]
-- [[NarrationError]] - `calls` [EXTRACTED]
-- [[OllamaAnalysisNarrator]] - `method` [EXTRACTED]
-- [[boundedString()]] - `calls` [EXTRACTED]
-- [[object()]] - `calls` [EXTRACTED]
-- [[readResponse()]] - `calls` [EXTRACTED]
+- [[dot-chatJson()]] - `calls` [EXTRACTED]
+- [[DeepseekHarnessNarrator]] - `method` [EXTRACTED]
+- [[runProcurementHarness()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ollama-analysis-narratorts
+#graphify/code #graphify/EXTRACTED #community/analysis/packagejson

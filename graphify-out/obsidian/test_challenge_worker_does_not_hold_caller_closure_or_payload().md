@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[__call__()_1]] - `contains` [EXTRACTED]
-- [[call()]] - `calls` [EXTRACTED]
+- [[call()_1]] - `calls` [EXTRACTED]
 - [[mcp-coreteststest_browser_handoff.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/mcp-core/tests/test_browser_handoffpy

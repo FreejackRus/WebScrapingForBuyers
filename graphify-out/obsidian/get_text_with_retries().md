@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/http_tier.py"
 type: "code"
-community: "TransportDownError"
+community: "test_http_tier.py"
 location: "L114"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/TransportDownError
+  - community/test_http_tierpy
 ---
 
 # get_text_with_retries()
@@ -31,4 +31,4 @@ tags:
 - [[test_transport_error_propagates_when_budget_exhausted()]] - `calls` [INFERRED]
 - [[transport__init__.py]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/TransportDownError
+#graphify/code #graphify/INFERRED #community/test_http_tierpy

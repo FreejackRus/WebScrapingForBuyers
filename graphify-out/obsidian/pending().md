@@ -1,17 +1,20 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_browser_handoff.py"
 type: "code"
-community: "UpstreamTimeoutError"
-location: "L173"
+community: "test_snapshot_and_resume_cannot_overlap"
+location: "L141"
 tags:
   - graphify/code
-  - graphify/EXTRACTED
-  - community/UpstreamTimeoutError
+  - graphify/INFERRED
+  - community/test_snapshot_and_resume_cannot_overlap
 ---
 
 # pending()
 
 ## Connections
-- [[test_deadline_cancels_extractor_and_closes()]] - `contains` [EXTRACTED]
+- [[blocked()_1]] - `calls` [EXTRACTED]
+- [[test_busy_initial_and_resume_never_open_duplicate()]] - `indirect_call` [INFERRED]
+- [[test_caller_cancellation_cleans_worker_and_owned_page()]] - `indirect_call` [INFERRED]
+- [[test_deadline_cancels_extractor_and_closes()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/UpstreamTimeoutError
+#graphify/code #graphify/INFERRED #community/test_snapshot_and_resume_cannot_overlap

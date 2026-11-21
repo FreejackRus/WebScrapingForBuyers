@@ -12,7 +12,7 @@ tags:
 # ._close_pipe()
 
 ## Connections
-- [[dot-close()]] - `calls` [EXTRACTED]
+- [[dot-close()_3]] - `calls` [EXTRACTED]
 - [[BinaryIO]] - `references` [EXTRACTED]
 - [[StdioProbe]] - `method` [EXTRACTED]
 

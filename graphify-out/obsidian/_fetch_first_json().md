@@ -12,11 +12,10 @@ tags:
 # _fetch_first_json()
 
 ## Connections
-- [[Context_13]] - `references` [EXTRACTED]
 - [[GET each URL in turn, returning the first parsed JSON body and its host. Mirror…]] - `rationale_for` [EXTRACTED]
 - [[RateLimitedError]] - `uses` [INFERRED]
 - [[TransportDownError]] - `uses` [INFERRED]
-- [[_polite_wait()_9]] - `calls` [EXTRACTED]
+- [[_polite_wait()]] - `calls` [EXTRACTED]
 - [[_safe_get_text()]] - `calls` [EXTRACTED]
 - [[_wb_client()]] - `calls` [EXTRACTED]
 - [[raise_tool_error()]] - `calls` [EXTRACTED]

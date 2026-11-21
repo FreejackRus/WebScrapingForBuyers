@@ -12,7 +12,7 @@ tags:
 # OcsSourceAdapter
 
 ## Connections
-- [[dot-search()_12]] - `method` [EXTRACTED]
+- [[dot-search()_3]] - `method` [EXTRACTED]
 - [[SourceAdapter]] - `implements` [EXTRACTED]
 - [[b2b-distributor-adapter.ts]] - `contains` [EXTRACTED]
 - [[createDistributorSourcesFromEnv()]] - `calls` [EXTRACTED]

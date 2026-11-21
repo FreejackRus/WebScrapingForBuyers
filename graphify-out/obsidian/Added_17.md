@@ -1,25 +1,28 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/CHANGELOG.md"
 type: "document"
-community: "detmir_categories"
-location: "L2176"
+community: "raise_tool_error"
+location: "L1767"
 tags:
   - graphify/document
   - graphify/INFERRED
-  - community/detmir_categories
+  - community/raise_tool_error
 ---
 
 # Added
 
 ## Connections
-- [[1.0.0 — 2026-07-26]] - `contains` [EXTRACTED]
-- [[compare_prices()]] - `references` [INFERRED]
-- [[compare_sources()]] - `references` [INFERRED]
-- [[detmir_card()]] - `references` [INFERRED]
-- [[detmir_categories()]] - `references` [INFERRED]
-- [[detmir_category()]] - `references` [INFERRED]
-- [[detmir_selfcheck()]] - `references` [INFERRED]
-- [[yandex_card()]] - `references` [INFERRED]
-- [[yandex_selfcheck()]] - `references` [INFERRED]
+- [[1.2.0 — 2026-07-28 (English)]] - `contains` [EXTRACTED]
+- [[avito_card()]] - `references` [INFERRED]
+- [[avito_selfcheck()]] - `references` [INFERRED]
+- [[avito_seller()]] - `references` [INFERRED]
+- [[lamoda_card()]] - `references` [INFERRED]
+- [[lamoda_search()]] - `references` [INFERRED]
+- [[lamoda_selfcheck()]] - `references` [INFERRED]
+- [[megamarket_card()]] - `references` [INFERRED]
+- [[megamarket_selfcheck()]] - `references` [INFERRED]
+- [[probe_session()]] - `references` [INFERRED]
+- [[taobao_card()]] - `references` [INFERRED]
+- [[taobao_selfcheck()]] - `references` [INFERRED]
 
-#graphify/document #graphify/INFERRED #community/detmir_categories
+#graphify/document #graphify/INFERRED #community/raise_tool_error

@@ -1,17 +1,17 @@
 ---
-source_file: "apps/search/src/domain/offer-assessment.test.ts"
+source_file: "apps/web/src/widgets/search/compare/ui/index.test.tsx"
 type: "code"
-community: "packages_contracts_dist_index"
-location: "L19"
+community: "compare/ui/index.tsx"
+location: "L9"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/packages_contracts_dist_index
+  - community/compare/ui/indextsx
 ---
 
 # offer()
 
 ## Connections
-- [[offer-assessment.test.ts]] - `contains` [EXTRACTED]
+- [[compareuiindex.test.tsx]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index
+#graphify/code #graphify/EXTRACTED #community/compare/ui/indextsx

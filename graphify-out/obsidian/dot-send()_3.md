@@ -1,17 +1,20 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/tests/test_chrome_cdp_stealth.py"
+source_file: "mcp-servers/ru-marketplace-mcp/scripts/stdio_probe.py"
 type: "code"
-community: "test_chrome_cdp_stealth.py"
-location: "L149"
+community: "StdioProbe"
+location: "L89"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_chrome_cdp_stealthpy
+  - community/StdioProbe
 ---
 
 # .send()
 
 ## Connections
-- [[_FakePageCdp]] - `method` [EXTRACTED]
+- [[dot-initialize()]] - `calls` [EXTRACTED]
+- [[dot-list_tools()]] - `calls` [EXTRACTED]
+- [[ProbeError]] - `calls` [EXTRACTED]
+- [[StdioProbe]] - `method` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_stealthpy
+#graphify/code #graphify/EXTRACTED #community/StdioProbe

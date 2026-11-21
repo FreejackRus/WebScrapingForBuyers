@@ -1,12 +1,12 @@
 ---
 source_file: "apps/search/src/infrastructure/sources/http-marketplace-adapter.test.ts"
 type: "code"
-community: "ref_vitest"
+community: "mcp-marketplace-adapter.ts"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ref_vitest
+  - community/mcp-marketplace-adapterts
 ---
 
 # http-marketplace-adapter.test.ts
@@ -14,7 +14,7 @@ tags:
 ## Connections
 - [[WB_CATALOG_UNAVAILABLE_403]] - `imports` [EXTRACTED]
 - [[WildberriesHttpAdapter]] - `imports` [EXTRACTED]
-- [[g102_1]] - `contains` [EXTRACTED]
+- [[g102]] - `contains` [EXTRACTED]
 - [[http-marketplace-adapter.ts]] - `imports_from` [EXTRACTED]
 - [[mcp-marketplace-adapter.ts]] - `imports_from` [EXTRACTED]
 - [[noteWbRateLimited()]] - `imports` [EXTRACTED]
@@ -26,4 +26,4 @@ tags:
 - [[wb-rate-limit.ts]] - `imports_from` [EXTRACTED]
 - [[wbHttpSearchUrl()]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ref_vitest
+#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts

@@ -1,17 +1,17 @@
 ---
-source_file: "apps/web/package.json"
+source_file: "scripts/office-agent/package.json"
 type: "code"
-community: "web/package.json"
-location: "L5"
+community: "office-agent/package.json"
+location: "L4"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/web/packagejson
+  - community/office-agent/packagejson
 ---
 
 # type
 
 ## Connections
-- [[webpackage.json]] - `contains` [EXTRACTED]
+- [[office-agentpackage.json]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/web/packagejson
+#graphify/code #graphify/EXTRACTED #community/office-agent/packagejson

@@ -12,7 +12,7 @@ tags:
 # DSH activation
 
 ## Connections
-- [[Cian Connector_1]] - `contains` [EXTRACTED]
+- [[Cian Connector]] - `contains` [EXTRACTED]
 - [[compare_prices()]] - `references` [INFERRED]
 - [[compare_sources()]] - `references` [INFERRED]
 - [[marketplace_sources()]] - `references` [INFERRED]

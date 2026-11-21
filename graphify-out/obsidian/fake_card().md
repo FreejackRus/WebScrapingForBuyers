@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_identity_verification.py"
 type: "code"
-community: "aliexpress-connector/tests/test_server.py"
-location: "L145"
+community: "test_card_verification_records.py"
+location: "L29"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/aliexpress-connector/tests/test_serverpy
+  - community/test_card_verification_recordspy
 ---
 
 # fake_card()
 
 ## Connections
-- [[_patch_card()_1]] - `indirect_call` [INFERRED]
-- [[test_selfcheck_healthy_when_both_gates_pass()]] - `indirect_call` [INFERRED]
+- [[test_identity_is_verified_through_mcp_tool()]] - `indirect_call` [INFERRED]
+- [[test_wb_verification_uses_requested_row_not_first()]] - `indirect_call` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/aliexpress-connector/tests/test_serverpy
+#graphify/code #graphify/INFERRED #community/test_card_verification_recordspy

@@ -12,7 +12,7 @@ tags:
 # DSH activation
 
 ## Connections
-- [[AliExpress connector_1]] - `contains` [EXTRACTED]
+- [[AliExpress connector]] - `contains` [EXTRACTED]
 - [[compare_prices()]] - `references` [INFERRED]
 - [[compare_sources()]] - `references` [INFERRED]
 - [[marketplace_sources()]] - `references` [INFERRED]

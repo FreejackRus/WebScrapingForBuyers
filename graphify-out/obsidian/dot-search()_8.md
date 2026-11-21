@@ -1,21 +1,27 @@
 ---
-source_file: "apps/search/src/infrastructure/sources/netlab-price-feed.ts"
+source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
 type: "code"
-community: "netlab-price-feed.ts"
-location: "L327"
+community: "mcp-marketplace-adapter.ts"
+location: "L347"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/netlab-price-feedts
+  - community/mcp-marketplace-adapterts
 ---
 
 # .search()
 
 ## Connections
-- [[dot-load()_1]] - `calls` [EXTRACTED]
-- [[NetlabPriceFeedAdapter]] - `method` [EXTRACTED]
-- [[isNetlabCandidate()]] - `calls` [EXTRACTED]
-- [[preferRelevantOffers()]] - `indirect_call` [INFERRED]
-- [[toNetlabOffer()]] - `calls` [EXTRACTED]
+- [[dot-collect()]] - `calls` [EXTRACTED]
+- [[dot-retryArticle()]] - `calls` [EXTRACTED]
+- [[McpMarketplaceAdapter]] - `method` [EXTRACTED]
+- [[assessOffer()]] - `calls` [EXTRACTED]
+- [[isOfferInItScope()]] - `calls` [EXTRACTED]
+- [[isUnrequestedConsumablePart()]] - `calls` [EXTRACTED]
+- [[mergeUniqueOffers()]] - `calls` [EXTRACTED]
+- [[preferRelevantOffers()]] - `calls` [EXTRACTED]
+- [[presentMarketplaceError()]] - `calls` [EXTRACTED]
+- [[wildcardArticleOf()]] - `calls` [EXTRACTED]
+- [[withRawFound()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/netlab-price-feedts
+#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts

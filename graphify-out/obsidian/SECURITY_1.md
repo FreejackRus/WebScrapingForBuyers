@@ -16,7 +16,7 @@ tags:
 - [[Other hardening in place]] - `contains` [EXTRACTED]
 - [[Prompt injection the boundary users must respect]] - `contains` [EXTRACTED]
 - [[Reporting a vulnerability]] - `contains` [EXTRACTED]
-- [[SECURITY]] - `contains` [EXTRACTED]
+- [[SECURITY_2]] - `contains` [EXTRACTED]
 - [[Supported versions]] - `contains` [EXTRACTED]
 - [[The one part that carries real risk the CDP tier]] - `contains` [EXTRACTED]
 - [[What this project does and does not touch]] - `contains` [EXTRACTED]

@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/models_output.py"
 type: "rationale"
-community: "ozon_connector/models_output.py"
+community: "ozon_connector/server.py"
 location: "L1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/ozon_connector/models_outputpy
+  - community/ozon_connector/serverpy
 ---
 
 # Pydantic output models for the Ozon MCP connector (Stage 2). Every tool returns…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[ozon_connectormodels_output.py]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/ozon_connector/models_outputpy
+#graphify/rationale #graphify/EXTRACTED #community/ozon_connector/serverpy

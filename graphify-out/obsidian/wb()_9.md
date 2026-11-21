@@ -2,7 +2,7 @@
 source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
 type: "code"
 community: "offer"
-location: "L492"
+location: "L210"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,6 +12,7 @@ tags:
 # wb()
 
 ## Connections
-- [[test_per_source_limit_is_passed_through()]] - `contains` [EXTRACTED]
+- [[offer()_5]] - `calls` [EXTRACTED]
+- [[test_one_source_failing_does_not_sink_the_comparison()]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/offer

@@ -1,12 +1,12 @@
 ---
 source_file: "apps/analysis/src/application/infra-leak.ts"
 type: "code"
-community: "infra-leak.ts"
+community: "compare-models.ts"
 location: "L51"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/infra-leakts
+  - community/compare-modelsts
 ---
 
 # sanitizeCitation()
@@ -17,4 +17,4 @@ tags:
 - [[sanitizeAnalysisResult()]] - `indirect_call` [INFERRED]
 - [[sanitizeUserFacingText()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/infra-leakts
+#graphify/code #graphify/EXTRACTED #community/compare-modelsts

@@ -1,17 +1,17 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/tests/test_decision_server.py"
 type: "code"
-community: "compare-connector/tests/test_server.py"
-location: "L78"
+community: "test_card_verification_records.py"
+location: "L34"
 tags:
   - graphify/code
-  - graphify/INFERRED
-  - community/compare-connector/tests/test_serverpy
+  - graphify/EXTRACTED
+  - community/test_card_verification_recordspy
 ---
 
 # card()
 
 ## Connections
-- [[test_megamarket_card_dispatch_uses_native_argument_in_both_profiles()]] - `indirect_call` [INFERRED]
+- [[test_decision_inspect_rejects_stray_digits_in_wildberries_input()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/INFERRED #community/compare-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/test_card_verification_recordspy

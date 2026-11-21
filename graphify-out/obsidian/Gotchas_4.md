@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/yandex-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/compare-prices/SKILL.md"
 type: "document"
-community: "Yandex Market Connector"
-location: "L66"
+community: "Cross-Marketplace Price Comparison"
+location: "L125"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Yandex_Market_Connector
+  - community/Cross-Marketplace_Price_Comparison
 ---
 
 # Gotchas
 
 ## Connections
-- [[Yandex Market Connector_1]] - `contains` [EXTRACTED]
-- [[yandex_card()]] - `references` [INFERRED]
+- [[Cross-Marketplace Price Comparison]] - `contains` [EXTRACTED]
+- [[detmir_category()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Yandex_Market_Connector
+#graphify/document #graphify/EXTRACTED #community/Cross-Marketplace_Price_Comparison

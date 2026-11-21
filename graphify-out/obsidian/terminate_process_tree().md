@@ -12,9 +12,9 @@ tags:
 # terminate_process_tree()
 
 ## Connections
-- [[Fixed_11]] - `references` [INFERRED]
+- [[Fixed_22]] - `references` [INFERRED]
 - [[Kill ``proc`` and any children it spawned, then close its pipes. Best-effort by…]] - `rationale_for` [EXTRACTED]
-- [[Popen]] - `references` [EXTRACTED]
+- [[Popen_1]] - `references` [EXTRACTED]
 - [[_sync_call_in_process()]] - `calls` [EXTRACTED]
 - [[is_windows()]] - `calls` [EXTRACTED]
 - [[kill_process_group()]] - `calls` [EXTRACTED]

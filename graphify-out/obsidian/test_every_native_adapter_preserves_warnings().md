@@ -12,8 +12,8 @@ tags:
 # test_every_native_adapter_preserves_warnings()
 
 ## Connections
-- [[parametrize_7]] - `references` [EXTRACTED]
-- [[search()_2]] - `indirect_call` [INFERRED]
+- [[parametrize_8]] - `references` [EXTRACTED]
+- [[search()_4]] - `indirect_call` [INFERRED]
 - [[test_source_warnings.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_card_verification_recordspy

@@ -12,6 +12,6 @@ tags:
 # Open ``url`` in the operator's Chrome, wait for client-side render, extract.…
 
 ## Connections
-- [[_cdp_render()]] - `rationale_for` [EXTRACTED]
+- [[_cdp_render()_2]] - `rationale_for` [EXTRACTED]
 
 #graphify/rationale #graphify/EXTRACTED #community/taobao_connector/serverpy

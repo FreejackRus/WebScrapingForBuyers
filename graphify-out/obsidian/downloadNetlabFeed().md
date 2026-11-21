@@ -2,7 +2,7 @@
 source_file: "apps/search/src/infrastructure/sources/netlab-price-feed.ts"
 type: "code"
 community: "netlab-price-feed.ts"
-location: "L182"
+location: "L186"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,7 +12,7 @@ tags:
 # downloadNetlabFeed()
 
 ## Connections
-- [[dot-load()_1]] - `calls` [EXTRACTED]
+- [[dot-load()_2]] - `calls` [EXTRACTED]
 - [[dot-push()]] - `calls` [EXTRACTED]
 - [[NetlabXmlCollector]] - `calls` [EXTRACTED]
 - [[inflateFirstZipEntry()]] - `calls` [EXTRACTED]

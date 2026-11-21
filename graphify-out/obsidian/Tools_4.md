@@ -1,18 +1,21 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/marketplace/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/compare-prices/SKILL.md"
 type: "document"
 community: "compare_prices"
-location: "L23"
+location: "L29"
 tags:
   - graphify/document
-  - graphify/EXTRACTED
+  - graphify/INFERRED
   - community/compare_prices
 ---
 
 # Tools
 
 ## Connections
-- [[Unified Marketplace Server]] - `contains` [EXTRACTED]
-- [[marketplace_sources()]] - `references` [INFERRED]
+- [[Cross-Marketplace Price Comparison]] - `contains` [EXTRACTED]
+- [[compare_prices()]] - `references` [INFERRED]
+- [[compare_sources()]] - `references` [INFERRED]
+- [[compare_verify_offer()]] - `references` [INFERRED]
+- [[source()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/compare_prices
+#graphify/document #graphify/INFERRED #community/compare_prices

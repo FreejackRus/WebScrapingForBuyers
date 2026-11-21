@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "lamoda-connector/tests/test_server.py"
+community: "aliexpress-connector/tests/test_server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/lamoda-connector/tests/test_serverpy
+  - community/aliexpress-connector/tests/test_serverpy
 ---
 
 # fixture
 
 ## Connections
-- [[_no_cache()_8]] - `references` [EXTRACTED]
+- [[_no_cache()_7]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/lamoda-connector/tests/test_serverpy
+#graphify/code #graphify/EXTRACTED #community/aliexpress-connector/tests/test_serverpy

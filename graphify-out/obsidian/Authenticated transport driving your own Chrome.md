@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[CDP_SETUP]] - `contains` [EXTRACTED]
-- [[Configuration]] - `contains` [EXTRACTED]
+- [[Configuration_1]] - `contains` [EXTRACTED]
 - [[How it behaves at runtime]] - `contains` [EXTRACTED]
 - [[Read this before you enable it]] - `contains` [EXTRACTED]
 - [[Setup]] - `contains` [EXTRACTED]

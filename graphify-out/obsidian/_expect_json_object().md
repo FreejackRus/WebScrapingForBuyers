@@ -12,7 +12,7 @@ tags:
 # _expect_json_object()
 
 ## Connections
-- [[Any_27]] - `references` [EXTRACTED]
+- [[Any]] - `references` [EXTRACTED]
 - [[Return ``(obj, None)`` for a JSON object, else ``(None, error_dict)``. Exactly…]] - `rationale_for` [EXTRACTED]
 - [[_search_via_http_v9()]] - `calls` [EXTRACTED]
 - [[_search_via_search_goods()]] - `calls` [EXTRACTED]

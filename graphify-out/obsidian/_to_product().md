@@ -1,20 +1,20 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/server.py"
 type: "code"
-community: "TransportDownError"
+community: "yandex_card"
 location: "L291"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/TransportDownError
+  - community/yandex_card
 ---
 
 # _to_product()
 
 ## Connections
-- [[Any_22]] - `references` [EXTRACTED]
+- [[Any_11]] - `references` [EXTRACTED]
 - [[YandexProduct]] - `calls` [EXTRACTED]
 - [[yandex_connectorserver.py]] - `contains` [EXTRACTED]
-- [[yandex_search()_1]] - `calls` [EXTRACTED]
+- [[yandex_search()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/TransportDownError
+#graphify/code #graphify/EXTRACTED #community/yandex_card

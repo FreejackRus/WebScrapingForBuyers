@@ -12,6 +12,6 @@ tags:
 # Pull the product id out of a dns-shop.ru product URL or a bare id. Host-checked…
 
 ## Connections
-- [[_extract_product_id()]] - `rationale_for` [EXTRACTED]
+- [[_extract_product_id()_1]] - `rationale_for` [EXTRACTED]
 
 #graphify/rationale #graphify/EXTRACTED #community/dns_card

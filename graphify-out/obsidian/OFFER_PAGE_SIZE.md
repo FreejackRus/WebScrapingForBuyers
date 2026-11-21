@@ -2,7 +2,7 @@
 source_file: "apps/web/src/features/search/offer-table/index.ts"
 type: "code"
 community: "offers/ui/index.tsx"
-location: "L9"
+location: "L10"
 tags:
   - graphify/code
   - graphify/EXTRACTED

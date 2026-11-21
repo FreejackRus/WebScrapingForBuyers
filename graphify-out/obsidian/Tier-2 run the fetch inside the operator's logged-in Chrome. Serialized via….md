@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/server.py"
 type: "rationale"
-community: "avito_connector/server.py"
+community: "citilink_card"
 location: "L268"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/avito_connector/serverpy
+  - community/citilink_card
 ---
 
 # Tier-2: run the fetch inside the operator's logged-in Chrome. Serialized via…
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[_cdp_fetch()]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/avito_connector/serverpy
+#graphify/rationale #graphify/EXTRACTED #community/citilink_card

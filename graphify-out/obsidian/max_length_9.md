@@ -1,18 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "detmir_categories"
+community: "raise_tool_error"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/detmir_categories
+  - community/raise_tool_error
 ---
 
 # max_length
 
 ## Connections
-- [[detmir_card()]] - `references` [EXTRACTED]
-- [[detmir_categories()]] - `references` [EXTRACTED]
-- [[detmir_category()]] - `references` [EXTRACTED]
+- [[avito_card()]] - `references` [EXTRACTED]
+- [[avito_search()_1]] - `references` [EXTRACTED]
+- [[avito_seller()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/detmir_categories
+#graphify/code #graphify/EXTRACTED #community/raise_tool_error

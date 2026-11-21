@@ -13,13 +13,13 @@ tags:
 
 ## Connections
 - [[@modelcontextprotocolsdk_1]] - `imports` [EXTRACTED]
-- [[@peremenacontracts_5]] - `imports` [EXTRACTED]
-- [[@peremenaservice-kit_5]] - `imports` [EXTRACTED]
+- [[@peremenacontracts_4]] - `imports` [EXTRACTED]
+- [[@peremenaservice-kit_4]] - `imports` [EXTRACTED]
 - [[@typesnode_5]] - `imports` [EXTRACTED]
-- [[dependencies_2]] - `contains` [EXTRACTED]
+- [[dependencies_1]] - `contains` [EXTRACTED]
 - [[devDependencies_2]] - `contains` [EXTRACTED]
 - [[exceljs_1]] - `imports` [EXTRACTED]
-- [[fastify_5]] - `imports` [EXTRACTED]
+- [[fastify_4]] - `imports` [EXTRACTED]
 - [[name_3]] - `contains` [EXTRACTED]
 - [[private_2]] - `contains` [EXTRACTED]
 - [[scripts_2]] - `contains` [EXTRACTED]

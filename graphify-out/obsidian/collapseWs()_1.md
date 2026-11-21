@@ -1,19 +1,18 @@
 ---
-source_file: "apps/search/src/domain/product-from-query.ts"
+source_file: "apps/search/src/infrastructure/sources/mcp-marketplace-adapter.ts"
 type: "code"
-community: "product-from-query.ts"
-location: "L147"
+community: "mcp-marketplace-adapter.ts"
+location: "L711"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/product-from-queryts
+  - community/mcp-marketplace-adapterts
 ---
 
 # collapseWs()
 
 ## Connections
-- [[product-from-query.ts]] - `contains` [EXTRACTED]
-- [[productFromQuery()]] - `calls` [EXTRACTED]
-- [[splitBrandModel()]] - `calls` [EXTRACTED]
+- [[marketplaceSearchQueries()]] - `calls` [EXTRACTED]
+- [[mcp-marketplace-adapter.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/product-from-queryts
+#graphify/code #graphify/EXTRACTED #community/mcp-marketplace-adapterts

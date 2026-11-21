@@ -1,18 +1,17 @@
 ---
 source_file: ""
 type: "code"
-community: "avito_connector/server.py"
+community: "dns_card"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/avito_connector/serverpy
+  - community/dns_card
 ---
 
 # min_length
 
 ## Connections
-- [[avito_card()]] - `references` [EXTRACTED]
-- [[avito_search()_1]] - `references` [EXTRACTED]
-- [[avito_seller()]] - `references` [EXTRACTED]
+- [[dns_card()]] - `references` [EXTRACTED]
+- [[dns_search()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/avito_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/dns_card

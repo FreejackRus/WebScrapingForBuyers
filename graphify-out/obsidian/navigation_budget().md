@@ -21,7 +21,7 @@ tags:
 - [[budget_snapshot()]] - `calls` [EXTRACTED]
 - [[cdp_budget.py]] - `contains` [EXTRACTED]
 - [[chrome_cdp.py]] - `imports` [EXTRACTED]
-- [[open_page()_3]] - `calls` [EXTRACTED]
+- [[open_page()]] - `calls` [EXTRACTED]
 - [[transport__init__.py]] - `imports` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/transport/__init__py

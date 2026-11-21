@@ -1,11 +1,11 @@
 ---
 source_file: ""
 type: "concept"
-community: "pydantic"
+community: "json"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/pydantic
+  - community/json
 ---
 
 # pydantic
@@ -64,4 +64,4 @@ tags:
 - [[yandex_connectorserver.py]] - `imports_from` [EXTRACTED]
 - [[yandex_connectorsettings.py]] - `imports_from` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/pydantic
+#graphify/concept #graphify/EXTRACTED #community/json

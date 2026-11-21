@@ -1,12 +1,12 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/transport/chrome_cdp.py"
 type: "code"
-community: "avito_connector/server.py"
+community: "raise_tool_error"
 location: "L550"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/avito_connector/serverpy
+  - community/raise_tool_error
 ---
 
 # _raw_page_count()
@@ -16,4 +16,4 @@ tags:
 - [[chrome_cdp.py]] - `contains` [EXTRACTED]
 - [[probe_session()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/avito_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/raise_tool_error

@@ -1,12 +1,12 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/skills/aliexpress-connector/SKILL.md"
+source_file: "mcp-servers/ru-marketplace-mcp/dsh/skills/aliexpress-connector/SKILL.md"
 type: "document"
-community: "AliExpress connector"
+community: "aliexpress_selfcheck"
 location: "L40"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/AliExpress_connector
+  - community/aliexpress_selfcheck
 ---
 
 # How failures come back
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[AliExpress connector]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/AliExpress_connector
+#graphify/document #graphify/EXTRACTED #community/aliexpress_selfcheck

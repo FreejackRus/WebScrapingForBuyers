@@ -1,23 +1,28 @@
 ---
 source_file: "apps/analysis/src/app.ts"
 type: "code"
-community: "compare-models.ts"
-location: "L27"
+community: "analysis/src/app.ts"
+location: "L75"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/compare-modelsts
+  - community/analysis/src/appts
 ---
 
 # buildAnalysisApp()
 
 ## Connections
-- [[OllamaAnalysisNarrator]] - `calls` [EXTRACTED]
 - [[analysissrcapp.ts]] - `contains` [EXTRACTED]
 - [[analysissrcserver.ts]] - `imports` [EXTRACTED]
 - [[analyzeSnapshot()]] - `calls` [EXTRACTED]
 - [[answerCopilot()]] - `calls` [EXTRACTED]
-- [[keepAliveFromEnv()]] - `calls` [EXTRACTED]
-- [[samplingFromEnv()]] - `calls` [EXTRACTED]
+- [[context-route.test.ts]] - `imports` [EXTRACTED]
+- [[justifyBasket()]] - `calls` [EXTRACTED]
+- [[justifyPurchase()]] - `calls` [EXTRACTED]
+- [[narratorFromEnv()]] - `calls` [EXTRACTED]
+- [[provider-config.test.ts]] - `imports` [EXTRACTED]
+- [[reviewOffers()]] - `calls` [EXTRACTED]
+- [[splitRequest()]] - `calls` [EXTRACTED]
+- [[understandQuery()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/compare-modelsts
+#graphify/code #graphify/EXTRACTED #community/analysis/src/appts

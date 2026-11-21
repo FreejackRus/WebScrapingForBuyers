@@ -1,28 +1,18 @@
 ---
 source_file: ""
 type: "code"
-community: "wb_connector/server.py"
+community: "megamarket_connector/server.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/wb_connector/serverpy
+  - community/megamarket_connector/serverpy
 ---
 
 # BaseModel
 
 ## Connections
-- [[WbCardItem]] - `inherits` [EXTRACTED]
-- [[WbCardResponse]] - `inherits` [EXTRACTED]
-- [[WbCategoriesResponse]] - `inherits` [EXTRACTED]
-- [[WbCategoryNode]] - `inherits` [EXTRACTED]
-- [[WbCategoryProductsResponse]] - `inherits` [EXTRACTED]
-- [[WbNoResultsResponse]] - `inherits` [EXTRACTED]
-- [[WbQuestionItem]] - `inherits` [EXTRACTED]
-- [[WbQuestionsResponse]] - `inherits` [EXTRACTED]
-- [[WbReviewItem]] - `inherits` [EXTRACTED]
-- [[WbReviewsResponse]] - `inherits` [EXTRACTED]
-- [[WbRootInfoResponse]] - `inherits` [EXTRACTED]
-- [[WbSearchResponse]] - `inherits` [EXTRACTED]
-- [[WbSellerResponse]] - `inherits` [EXTRACTED]
+- [[MegamarketCardResponse]] - `inherits` [EXTRACTED]
+- [[MegamarketSearchItemOut]] - `inherits` [EXTRACTED]
+- [[MegamarketSearchResponse]] - `inherits` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/wb_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/megamarket_connector/serverpy

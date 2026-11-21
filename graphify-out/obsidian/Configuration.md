@@ -1,17 +1,24 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/docs/CDP_SETUP.md"
+source_file: "mcp-servers/ru-marketplace-mcp/README.md"
 type: "document"
-community: "Authenticated transport: driving your own Chrome"
-location: "L129"
+community: "ru-marketplace-mcp"
+location: "L959"
 tags:
   - graphify/document
-  - graphify/EXTRACTED
-  - community/Authenticated_transport_driving_your_own_Chrome
+  - graphify/INFERRED
+  - community/ru-marketplace-mcp
 ---
 
 # Configuration
 
 ## Connections
-- [[Authenticated transport driving your own Chrome]] - `contains` [EXTRACTED]
+- [[English version]] - `contains` [EXTRACTED]
+- [[ali()]] - `references` [INFERRED]
+- [[citilink()]] - `references` [INFERRED]
+- [[compare()]] - `references` [INFERRED]
+- [[compare_prices()]] - `references` [INFERRED]
+- [[marketplace_sources()]] - `references` [INFERRED]
+- [[stdio()]] - `references` [INFERRED]
+- [[taobao()]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Authenticated_transport_driving_your_own_Chrome
+#graphify/document #graphify/INFERRED #community/ru-marketplace-mcp

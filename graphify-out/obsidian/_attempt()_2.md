@@ -1,18 +1,18 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/avito-connector/src/avito_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/ozon-connector/src/ozon_connector/server.py"
 type: "code"
-community: "avito_connector/server.py"
-location: "L275"
+community: "ozon_connector/server.py"
+location: "L419"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/avito_connector/serverpy
+  - community/ozon_connector/serverpy
 ---
 
 # _attempt()
 
 ## Connections
-- [[_cdp_fetch()]] - `contains` [EXTRACTED]
-- [[open_page()_3]] - `calls` [EXTRACTED]
+- [[_cdp_fetch_json()]] - `contains` [EXTRACTED]
+- [[open_page()]] - `calls` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/avito_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/ozon_connector/serverpy

@@ -1,18 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/lamoda-connector/src/lamoda_connector/server.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/detmir-connector/src/detmir_connector/server.py"
 type: "code"
-community: "lamoda_search"
-location: "L121"
+community: "test_http_tier.py"
+location: "L105"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/lamoda_search
+  - community/test_http_tierpy
 ---
 
 # _proxy()
 
 ## Connections
-- [[_graphql_card()]] - `calls` [EXTRACTED]
-- [[lamoda_connectorserver.py]] - `contains` [EXTRACTED]
+- [[detmir_connectorserver.py]] - `contains` [EXTRACTED]
+- [[fetch()_2]] - `calls` [EXTRACTED]
+- [[proxy_from_env()]] - `calls` [INFERRED]
 
-#graphify/code #graphify/EXTRACTED #community/lamoda_search
+#graphify/code #graphify/EXTRACTED #community/test_http_tierpy

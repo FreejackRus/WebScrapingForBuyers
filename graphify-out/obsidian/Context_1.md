@@ -1,16 +1,17 @@
 ---
-source_file: ""
+source_file: "apps/analysis/src/infrastructure/narrator-grounding.test.ts"
 type: "code"
-community: "taobao_connector/server.py"
+community: "packages_contracts_dist_index"
+location: "L6"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/taobao_connector/serverpy
+  - community/packages_contracts_dist_index
 ---
 
-# Context
+# context
 
 ## Connections
-- [[current_mcp_session_id()]] - `references` [EXTRACTED]
+- [[narrator-grounding.test.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/taobao_connector/serverpy
+#graphify/code #graphify/EXTRACTED #community/packages_contracts_dist_index

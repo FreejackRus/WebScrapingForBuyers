@@ -1,12 +1,12 @@
 ---
 source_file: "docs/CHROME_VNC.md"
 type: "document"
-community: "Сервер локальной LLM"
+community: "Headed Chrome + VNC (прогрев антибота)"
 location: "L1"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Сервер_локальной_LLM
+  - community/Headed_Chrome__VNC_прогрев_антибота
 ---
 
 # Headed Chrome + VNC (прогрев антибота)
@@ -20,4 +20,4 @@ tags:
 - [[Что не поможет]] - `contains` [EXTRACTED]
 - [[Яндекс Маркет SmartCaptcha через handoff]] - `contains` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Сервер_локальной_LLM
+#graphify/document #graphify/EXTRACTED #community/Headed_Chrome__VNC_прогрев_антибота

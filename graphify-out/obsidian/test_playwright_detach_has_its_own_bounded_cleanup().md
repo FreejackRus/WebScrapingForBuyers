@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[detach()]] - `indirect_call` [INFERRED]
-- [[metrics()]] - `calls` [EXTRACTED]
+- [[metrics()_1]] - `calls` [EXTRACTED]
 - [[test_chrome_cdp_snapshot.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_chrome_cdp_snapshotpy

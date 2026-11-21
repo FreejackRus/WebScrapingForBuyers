@@ -1,17 +1,19 @@
 ---
-source_file: "mcp-servers/ru-marketplace-mcp/packages/compare-connector/src/compare_connector/vision_policy.py"
+source_file: "mcp-servers/ru-marketplace-mcp/packages/mcp-core/src/mcp_core/errors.py"
 type: "code"
-community: "test_review_regressions.py"
-location: "L43"
+community: "TransportDownError"
+location: "L32"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_review_regressionspy
+  - community/TransportDownError
 ---
 
 # .__init__()
 
 ## Connections
-- [[ImageDelivery]] - `method` [EXTRACTED]
+- [[dot-__init__()_29]] - `calls` [EXTRACTED]
+- [[ConnectorError]] - `method` [EXTRACTED]
+- [[ErrorCode]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_review_regressionspy
+#graphify/code #graphify/EXTRACTED #community/TransportDownError

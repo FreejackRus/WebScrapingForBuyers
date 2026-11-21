@@ -13,12 +13,12 @@ members: 22
 - [[AliExpress MCP connector.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/src/aliexpress_connector/__init__.py
 - [[Golden shapes for AliExpress's captured DOM extractors.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_shape_reference.py
 - [[Parser-to-wire the DOM order (base, current) must yield current=min.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_parser_live.py
-- [[Path_9]] - code
+- [[Path_2]] - code
 - [[The REAL extractors run against the captured fixtures — not mocks. The offline…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_parser_live.py
 - [[The captured Realme tile shows an ae-pic CDN photo; it reaches the wire.]] - rationale - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_parser_live.py
 - [[The whole two-hop flow against the operator's Chrome. Excluded from CI (no…]] - rationale - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_parser_live.py
 - [[_cdp_alive()]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_parser_live.py
-- [[_extract()_8]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_shape_reference.py
+- [[_extract()]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_shape_reference.py
 - [[_run()_2]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_parser_live.py
 - [[aliexpress-connectorteststest_parser_live.py]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_parser_live.py
 - [[aliexpress-connectorteststest_shape_reference.py]] - code - mcp-servers/ru-marketplace-mcp/packages/aliexpress-connector/tests/test_shape_reference.py
@@ -52,5 +52,5 @@ SORT file.name ASC
 - [[aliexpress-connectorteststest_shape_reference.py]] - degree 9, connects to 4 communities
 - [[aliexpress-connectorteststest_parser_live.py]] - degree 11, connects to 3 communities
 - [[_run()_2]] - degree 7, connects to 1 community
-- [[_extract()_8]] - degree 6, connects to 1 community
+- [[_extract()]] - degree 6, connects to 1 community
 - [[aliexpress_connector__init__.py]] - degree 4, connects to 1 community

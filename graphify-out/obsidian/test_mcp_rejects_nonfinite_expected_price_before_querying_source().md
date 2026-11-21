@@ -12,8 +12,8 @@ tags:
 # test_mcp_rejects_nonfinite_expected_price_before_querying_source()
 
 ## Connections
-- [[card()_3]] - `contains` [EXTRACTED]
-- [[card()_5]] - `indirect_call` [INFERRED]
+- [[card()_4]] - `contains` [EXTRACTED]
+- [[card()_6]] - `indirect_call` [INFERRED]
 - [[test_card_verification_records.py]] - `contains` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/test_card_verification_recordspy

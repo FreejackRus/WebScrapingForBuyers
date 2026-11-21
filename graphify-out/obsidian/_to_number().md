@@ -1,20 +1,20 @@
 ---
 source_file: "mcp-servers/ru-marketplace-mcp/packages/yandex-connector/src/yandex_connector/ssr.py"
 type: "code"
-community: "ssr.py"
+community: "Any"
 location: "L293"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/ssrpy
+  - community/Any
 ---
 
 # _to_number()
 
 ## Connections
-- [[Any_24]] - `references` [EXTRACTED]
+- [[Any_26]] - `references` [EXTRACTED]
 - [[Coerce to a positive finite float, or None. Never 0 as a stand-in for missing,…]] - `rationale_for` [EXTRACTED]
-- [[Fixed_21]] - `references` [INFERRED]
+- [[Fixed_20]] - `references` [INFERRED]
 - [[_additional_price()]] - `calls` [EXTRACTED]
 - [[_amount_int()]] - `calls` [EXTRACTED]
 - [[_cart_price()]] - `calls` [EXTRACTED]
@@ -25,4 +25,4 @@ tags:
 - [[parse_zone_items()]] - `calls` [EXTRACTED]
 - [[ssr.py]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/ssrpy
+#graphify/code #graphify/EXTRACTED #community/Any

@@ -13,7 +13,7 @@ tags:
 
 ## Connections
 - [[A slice of the WB catalog tree. The full menu is ~800 KB, which is far too…]] - `rationale_for` [EXTRACTED]
-- [[BaseModel_15]] - `inherits` [EXTRACTED]
+- [[BaseModel]] - `inherits` [EXTRACTED]
 - [[wb_categories()]] - `uses` [INFERRED]
 - [[wb_connectormodels_output.py]] - `contains` [EXTRACTED]
 - [[wb_connectorserver.py]] - `imports` [EXTRACTED]

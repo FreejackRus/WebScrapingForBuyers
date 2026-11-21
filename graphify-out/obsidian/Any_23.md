@@ -1,16 +1,16 @@
 ---
 source_file: ""
 type: "code"
-community: "test_review_regressions.py"
+community: "process.py"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/test_review_regressionspy
+  - community/processpy
 ---
 
 # Any
 
 ## Connections
-- [[dot-as_dict()_1]] - `references` [EXTRACTED]
+- [[worker_process_kwargs()]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/test_review_regressionspy
+#graphify/code #graphify/EXTRACTED #community/processpy
