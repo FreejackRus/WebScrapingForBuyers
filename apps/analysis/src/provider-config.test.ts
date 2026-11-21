@@ -10,6 +10,28 @@ afterEach(async () => {
 });
 
 describe("analysis provider configuration", () => {
+  it("runs the local vLLM narrator through DeepSeek Harness when selected", async () => {
+    vi.stubEnv("AI_PROVIDER", "vllm");
+    vi.stubEnv("AI_HARNESS", "deepseek");
+    vi.stubEnv("VLLM_BASE_URL", "http://vllm:8000/v1");
+    vi.stubEnv("VLLM_MODEL", "Qwen/Qwen3");
+    const app = buildAnalysisApp();
+    apps.push(app);
+    expect((await app.inject({ method: "GET", url: "/health" })).json().provider)
+      .toBe("DeepSeek Harness · vLLM · Qwen/Qwen3");
+  });
+
+  it.each(["unknown", "pi"])("rejects unsupported harness %s", (harness) => {
+    vi.stubEnv("AI_HARNESS", harness);
+    expect(() => buildAnalysisApp()).toThrow(/AI_HARNESS/);
+  });
+
+  it("requires explicit local vLLM configuration for DeepSeek Harness", () => {
+    vi.stubEnv("AI_HARNESS", "deepseek");
+    vi.stubEnv("AI_PROVIDER", "ollama");
+    expect(() => buildAnalysisApp()).toThrow(/AI_HARNESS|AI_PROVIDER/);
+  });
+
   it("selects vLLM explicitly", async () => {
     vi.stubEnv("AI_PROVIDER", "vllm");
     vi.stubEnv("VLLM_BASE_URL", "http://vllm:8000/v1");
