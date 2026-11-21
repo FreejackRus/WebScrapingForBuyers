@@ -112,6 +112,8 @@ services:
       HOST: "0.0.0.0"
       SEARCH_URL: http://search:3003
       AI_PROVIDER: ${AI_PROVIDER:-ollama}
+      # Explicit opt-in; "direct" keeps the previous transport for rollback.
+      AI_HARNESS: ${AI_HARNESS:-direct}
       VLLM_BASE_URL: http://vllm:8000/v1
       VLLM_MODEL: ${VLLM_MODEL:-procurement-qwen3.8-27b}
       VLLM_API_KEY: ${VLLM_API_KEY:-}

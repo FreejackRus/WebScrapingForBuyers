@@ -31,6 +31,8 @@ export class VllmAnalysisNarrator extends OllamaAnalysisNarrator {
     system: string,
     userPayload: unknown,
     format: Record<string, unknown>,
+    signal?: AbortSignal,
+    extraHeaders: Record<string, string> = {},
   ): Promise<unknown> {
     const userContent = JSON.stringify(userPayload);
     if (userContent.length > MAX_CONTEXT_CHARS) throw new NarrationError("context_limit");
@@ -47,10 +49,11 @@ export class VllmAnalysisNarrator extends OllamaAnalysisNarrator {
       const response = await fetch(`${this.baseUrl.replace(/\/$/, "")}/chat/completions`, {
         method: "POST",
         headers: {
+          ...extraHeaders,
           "Content-Type": "application/json",
           ...(this.apiKey ? { Authorization: `Bearer ${this.apiKey}` } : {}),
         },
-        signal: AbortSignal.timeout(120_000),
+        signal: signal ? AbortSignal.any([signal, AbortSignal.timeout(120_000)]) : AbortSignal.timeout(120_000),
         body: JSON.stringify({
           model: this.model,
           stream: false,

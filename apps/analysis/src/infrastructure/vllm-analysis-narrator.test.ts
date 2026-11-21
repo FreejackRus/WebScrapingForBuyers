@@ -2,6 +2,7 @@ import type { Offer } from "@peremena/contracts";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { VllmAnalysisNarrator } from "./vllm-analysis-narrator.js";
+import { DeepseekHarnessNarrator } from "./deepseek-harness-narrator.js";
 
 afterEach(() => vi.unstubAllGlobals());
 
@@ -34,7 +35,7 @@ function completion(content: object, overrides: Record<string, unknown> = {}) {
   }));
 }
 
-describe("VllmAnalysisNarrator", () => {
+describe.each([VllmAnalysisNarrator, DeepseekHarnessNarrator])("local narrator %s", (Narrator) => {
   it("uses the OpenAI-compatible structured-output contract without thinking", async () => {
     let requestedUrl = "";
     let requestHeaders: Headers | undefined;
@@ -46,7 +47,7 @@ describe("VllmAnalysisNarrator", () => {
       return completion({ summary: "Выбрано предложение NETLAB.", warnings: [], offerIds: ["cpu"] });
     }));
 
-    const answer = await new VllmAnalysisNarrator("http://vllm:8000/v1/", "Qwen/Qwen3", "secret-key").answer({
+    const answer = await new Narrator("http://vllm:8000/v1/", "Qwen/Qwen3", "secret-key").answer({
       prompt: "почему этот?",
       trustedContext,
     });
@@ -76,12 +77,12 @@ describe("VllmAnalysisNarrator", () => {
     ["malformed choice", { choices: [] }],
   ])("rejects %s", async (_case, payload) => {
     vi.stubGlobal("fetch", vi.fn(async () => new Response(JSON.stringify(payload))));
-    await expect(new VllmAnalysisNarrator("http://vllm/v1", "qwen").answer({ prompt: "объясни" })).rejects.toThrow();
+    await expect(new Narrator("http://vllm/v1", "qwen").answer({ prompt: "объясни" })).rejects.toThrow();
   });
 
   it("keeps upstream secrets out of errors", async () => {
     vi.stubGlobal("fetch", vi.fn(async () => new Response("upstream leaked secret-key", { status: 500 })));
-    const error = await new VllmAnalysisNarrator("http://vllm/v1", "qwen", "secret-key")
+    const error = await new Narrator("http://vllm/v1", "qwen", "secret-key")
       .answer({ prompt: "объясни" })
       .catch((caught: unknown) => caught);
     expect(String(error)).not.toContain("secret-key");
@@ -90,18 +91,18 @@ describe("VllmAnalysisNarrator", () => {
 
   it("rejects a response body above the existing byte limit", async () => {
     vi.stubGlobal("fetch", vi.fn(async () => completion({ summary: "я".repeat(70_000), warnings: [] })));
-    await expect(new VllmAnalysisNarrator("http://vllm/v1", "qwen").answer({ prompt: "объясни" }))
+    await expect(new Narrator("http://vllm/v1", "qwen").answer({ prompt: "объясни" }))
       .rejects.toThrow("ответ локальной модели не прошёл проверку формата");
   });
 
   it("still rejects duplicate IDs when the grammar cannot enforce uniqueness", async () => {
     vi.stubGlobal("fetch", vi.fn(async () => completion({ summary: "Выбрано.", warnings: [], offerIds: ["cpu", "cpu"] })));
-    await expect(new VllmAnalysisNarrator("http://vllm/v1", "qwen").answer({ prompt: "почему?", trustedContext })).rejects.toThrow();
+    await expect(new Narrator("http://vllm/v1", "qwen").answer({ prompt: "почему?", trustedContext })).rejects.toThrow();
   });
 
   it("reuses grounding validation for unknown offer IDs", async () => {
     vi.stubGlobal("fetch", vi.fn(async () => completion({ summary: "Выбрано.", warnings: [], offerIds: ["invented"] })));
-    await expect(new VllmAnalysisNarrator("http://vllm/v1", "qwen").answer({
+    await expect(new Narrator("http://vllm/v1", "qwen").answer({
       prompt: "почему?",
       trustedContext,
     })).rejects.toThrow();

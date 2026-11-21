@@ -41,7 +41,10 @@ COPY --from=builder /app/apps/search/package.json ./apps/search/package.json
 EXPOSE 3003
 CMD ["node", "apps/search/dist/server.js"]
 
-FROM runtime AS analysis
+FROM node:24-alpine AS analysis
+WORKDIR /app
+ENV NODE_ENV=production
+COPY --from=runtime /app /app
 COPY --from=builder /app/apps/analysis/dist ./apps/analysis/dist
 COPY --from=builder /app/apps/analysis/package.json ./apps/analysis/package.json
 EXPOSE 3004

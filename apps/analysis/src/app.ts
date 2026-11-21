@@ -12,6 +12,7 @@ import {
   samplingFromEnv,
 } from "./infrastructure/ollama-analysis-narrator.js";
 import { VllmAnalysisNarrator } from "./infrastructure/vllm-analysis-narrator.js";
+import { DeepseekHarnessNarrator } from "./infrastructure/deepseek-harness-narrator.js";
 
 /** Earlier chat turns from the client; untrusted, bounded, context only. */
 const HISTORY_SCHEMA = {
@@ -48,10 +49,14 @@ const CONTEXT_SCHEMA = {
 
 function narratorFromEnv(): AnalysisNarrator | undefined {
   const provider = process.env.AI_PROVIDER?.trim().toLowerCase();
+  const harness = process.env.AI_HARNESS?.trim().toLowerCase();
+  if (harness && harness !== "direct" && harness !== "deepseek") throw new Error("Unsupported AI_HARNESS");
+  if (harness === "deepseek" && provider !== "vllm") throw new Error("AI_HARNESS=deepseek requires AI_PROVIDER=vllm");
   if (provider === "vllm") {
     if (!process.env.VLLM_BASE_URL) throw new Error("VLLM_BASE_URL is required when AI_PROVIDER=vllm");
     if (!process.env.VLLM_MODEL) throw new Error("VLLM_MODEL is required when AI_PROVIDER=vllm");
-    return new VllmAnalysisNarrator(process.env.VLLM_BASE_URL, process.env.VLLM_MODEL, process.env.VLLM_API_KEY);
+    const Narrator = harness === "deepseek" ? DeepseekHarnessNarrator : VllmAnalysisNarrator;
+    return new Narrator(process.env.VLLM_BASE_URL, process.env.VLLM_MODEL, process.env.VLLM_API_KEY);
   }
   if (provider && provider !== "ollama") throw new Error(`Unsupported AI_PROVIDER: ${provider}`);
   if (provider === "ollama" && (!process.env.OLLAMA_BASE_URL || !process.env.OLLAMA_MODEL)) {
