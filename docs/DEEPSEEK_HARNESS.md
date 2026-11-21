@@ -1,4 +1,4 @@
-# DeepSeek Harness в копайлoте Price Radar
+# DeepSeek Harness в копайлоте Price Radar
 
 ## Контур
 
