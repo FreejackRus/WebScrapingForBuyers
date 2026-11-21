@@ -49,6 +49,21 @@ describe("bounded procurement Harness", () => {
     expect(String(result)).not.toContain("upstream-secret-key");
   });
 
+  it("sanitizes a teardown error after releasing the request context", async () => {
+    const create = vi.spyOn(AgentLoop.prototype, "createAgent");
+    const result = runProcurementHarness("local-qwen", "Правила", {}, async () => {
+      const owner = create.mock.calls[0]![0];
+      const fiber = owner.fiber;
+      const dispose = fiber.dispose.bind(fiber);
+      vi.spyOn(fiber, "dispose").mockImplementation(async () => {
+        await dispose();
+        throw new Error("private-teardown-details");
+      });
+      return { summary: "Ответ" };
+    });
+    await expect(result).rejects.toMatchObject({ reason: "unavailable" });
+  });
+
   it("calls only the configured local model with the existing schema and no tools", async () => {
     let body: Record<string, any> = {};
     const request = vi.fn(async (url, init) => {
