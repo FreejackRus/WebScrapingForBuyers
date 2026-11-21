@@ -36,6 +36,12 @@ describe("bounded procurement Harness", () => {
     expect(complete).not.toHaveBeenCalled();
   });
 
+  it("does not invoke the model without a trusted system prompt", async () => {
+    const complete = vi.fn();
+    await expect(runProcurementHarness("local-qwen", "", {}, complete)).rejects.toBeInstanceOf(NarrationError);
+    expect(complete).not.toHaveBeenCalled();
+  });
+
   it.each(["timeout", "invalid_response", "incomplete"] as const)("preserves safe %s failure", async (reason) => {
     await expect(runProcurementHarness("local-qwen", "Правила", {}, async () => { throw new NarrationError(reason); }))
       .rejects.toMatchObject({ reason });

@@ -13,7 +13,8 @@
 
 ## Запуск
 
-Требуется Node.js 20+.
+Требуется Node.js 20+; для движка DeepSeek Harness — Node.js 24.9+.
+Подключение локальной модели и откат: [`docs/DEEPSEEK_HARNESS.md`](docs/DEEPSEEK_HARNESS.md).
 
 ```bash
 npm install
