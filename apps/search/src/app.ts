@@ -61,7 +61,7 @@ function registerReliability(app: ReturnType<typeof createService>, searchServic
   });
   const quality = new QualityEvaluator(
     // Same product as a typed search, wildcard included («С13Т673*4А»).
-    async (query) => (await searchService.runUncached(query, productForTypedQuery(query))).offers,
+    async (query, observe) => (await searchService.runUncached(query, productForTypedQuery(query), undefined, observe)).offers,
     undefined,
     process.env.QUALITY_FILE || undefined,
   );

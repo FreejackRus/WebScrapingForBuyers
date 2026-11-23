@@ -3,7 +3,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import type { Offer, QualityFailedQuery, QualityReport, QualityResult } from "@peremena/contracts";
+import { hasCurrentOfferData, type Offer, type QualityFailedQuery, type QualityReport, type QualityResult, type SourceState } from "@peremena/contracts";
 
 /**
  * TS port of scripts/eval-search.mjs: the same cases and the same top-3 scoring, run in-process
@@ -14,6 +14,7 @@ export interface QualityCase {
   query: string;
   top?: string;
   notTop?: string;
+  article?: boolean;
 }
 
 export interface CaseScore {
@@ -84,7 +85,7 @@ export function summarize(scores: CaseScore[], at: string, previous?: QualityRes
 }
 
 export function qualityAlerts(previous: QualityResult | undefined, current: QualityResult): string[] {
-  if (!previous) return [];
+  if (!previous || previous.cases !== current.cases) return [];
   const alerts: string[] = [];
   const drop = previous.marketplacePrecision - current.marketplacePrecision;
   if (drop >= PRECISION_DROP - 1e-9) {
@@ -128,8 +129,8 @@ export function loadQualityCases(file = process.env.QUALITY_CASES_FILE): Quality
   return found ? (JSON.parse(readFileSync(found, "utf8")) as QualityCase[]) : [];
 }
 
-/** Runs one query to completion, bypassing any search cache; returns the final offers. */
-export type QueryRunner = (query: string) => Promise<Offer[]>;
+/** Runs a fresh search, optionally observing the offers as they become visible. */
+export type QueryRunner = (query: string, observe?: (offers: Offer[], sources: SourceState[]) => void) => Promise<Offer[]>;
 
 export class QualityEvaluator {
   private results: QualityResult[] = [];
@@ -187,12 +188,42 @@ export class QualityEvaluator {
   private async evaluate(): Promise<QualityResult> {
     await this.loaded;
     const scores: CaseScore[] = [];
+    const articleQueries: NonNullable<QualityResult["articleCoverage"]>["queries"] = [];
     // Sequential on purpose: thirty parallel searches would trip marketplace rate limits.
     for (const testCase of this.cases()) {
-      const offers = await this.runner(testCase.query).catch(() => [] as Offer[]);
+      const want = testCase.article ? regex(testCase.top) : undefined;
+      const avoid = want ? regex(testCase.notTop) : undefined;
+      const started = this.now();
+      const firstMatch = new Map<string, number>();
+      let sources: SourceState[] = [];
+      const observe = want ? (offers: Offer[], currentSources: SourceState[]) => {
+        sources = currentSources;
+        const elapsed = Math.max(0, this.now() - started);
+        for (const offer of offers) {
+          // Adapters can copy the requested MPN into a row. Use evidence in the observed title.
+          if (!firstMatch.has(offer.source) && !offer.demo && hasCurrentOfferData(offer)
+            && offer.assessment?.group === "match" && want.test(offer.title) && !avoid?.test(offer.title)) {
+            firstMatch.set(offer.source, elapsed);
+          }
+        }
+      } : undefined;
+      const offers = await this.runner(testCase.query, observe).catch(() => [] as Offer[]);
       scores.push(scoreCase(testCase, offers));
+      if (want) articleQueries.push({
+        query: testCase.query,
+        sources: sources.map(({ source, outcome }) => ({
+          source,
+          firstMatchMs: firstMatch.get(source) ?? null,
+          ...(outcome ? { outcome } : {}),
+        })),
+      });
     }
     const result = summarize(scores, new Date(this.now()).toISOString(), this.results.at(-1));
+    if (articleQueries.length) result.articleCoverage = {
+      cases: articleQueries.length,
+      matchedQueries: articleQueries.filter(({ sources }) => sources.some(({ firstMatchMs }) => firstMatchMs !== null)).length,
+      queries: articleQueries,
+    };
     this.results = [...this.results, result].slice(-QUALITY_HISTORY);
     await this.save();
     return result;

@@ -2,7 +2,7 @@ import type { Offer, Product } from "@peremena/contracts";
 import { describe, expect, it, vi } from "vitest";
 
 import type { SourceAdapter } from "../../domain/source-adapter.js";
-import { FallbackSourceAdapter } from "./fallback-source-adapter.js";
+import { mergeSourceFallbacks, FallbackSourceAdapter } from "./fallback-source-adapter.js";
 
 const product: Product = {
   id: "test",
@@ -31,6 +31,16 @@ const offer: Offer = {
 };
 
 describe("FallbackSourceAdapter", () => {
+  it("shares the Citilink cooldown across callers after the office agent reports a limit", async () => {
+    const office = vi.fn<SourceAdapter["search"]>().mockRejectedValue(new Error("Ситилинк: офисный агент ответил 502 — HTTP 429"));
+    const mcp = vi.fn<SourceAdapter["search"]>().mockResolvedValue([]);
+    const [source] = mergeSourceFallbacks([[{ name: "Ситилинк", search: office }], [{ name: "Ситилинк", search: mcp }]]);
+    await expect(source!.search(product)).rejects.toThrow("429");
+    await expect(source!.search(product)).rejects.toThrow("временно недоступен");
+    expect(office).toHaveBeenCalledTimes(1);
+    expect(mcp).not.toHaveBeenCalled();
+  });
+
   it("uses the next adapter after a transport error", async () => {
     const failing: SourceAdapter = {
       name: "DNS",

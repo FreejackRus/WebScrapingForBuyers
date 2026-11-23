@@ -25,7 +25,8 @@ export class BlockedSourceCooldownAdapter implements SourceAdapter {
       throw new Error(`${this.name}: источник временно недоступен; автоматическая проверка при следующем поиске.`);
     }
 
-    const recoveryProbe = this.blockedUntil > 0;
+    const blockedAtStart = this.blockedUntil;
+    const recoveryProbe = blockedAtStart > 0;
     if (recoveryProbe && this.recoveryProbeInFlight) {
       throw new Error(`${this.name}: проверка доступности уже выполняется.`);
     }
@@ -33,11 +34,15 @@ export class BlockedSourceCooldownAdapter implements SourceAdapter {
 
     try {
       const offers = await this.source.search(product, signal, query);
-      this.blockedUntil = 0;
+      if (this.blockedUntil === blockedAtStart) this.blockedUntil = 0;
       return offers;
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
-      this.blockedUntil = this.isBlocked(message) ? this.now() + this.cooldownMs : 0;
+      if (this.isBlocked(message)) {
+        this.blockedUntil = this.now() + this.cooldownMs;
+      } else if (this.blockedUntil === blockedAtStart) {
+        this.blockedUntil = 0;
+      }
       throw error;
     } finally {
       if (recoveryProbe) this.recoveryProbeInFlight = false;

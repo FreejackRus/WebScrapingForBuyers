@@ -34,6 +34,14 @@ describe("source monitor", () => {
     expect(timedOut.error).toMatch(/Нет ответа/);
   });
 
+  it("does not report a cached or fallback response as a live result", async () => {
+    const source: SourceAdapter = {
+      name: "Ситилинк",
+      search: async () => [{ freshness: "cached" }, { freshness: "fallback" }] as Offer[],
+    };
+    expect(await probe(source, 1000)).toMatchObject({ ok: false, rows: 0, error: "Ответ из кеша, живой результат не подтверждён" });
+  });
+
   it("runs canaries sequentially, keeps 24 checks and persists them", async () => {
     const file = join(await mkdtemp(join(tmpdir(), "monitor-")), "m.json");
     const seen: string[] = [];

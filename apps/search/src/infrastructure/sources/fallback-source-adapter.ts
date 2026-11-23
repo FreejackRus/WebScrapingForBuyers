@@ -1,6 +1,7 @@
 import type { Offer, Product } from "@peremena/contracts";
 
 import type { SourceAdapter } from "../../domain/source-adapter.js";
+import { BlockedSourceCooldownAdapter } from "./blocked-source-cooldown-adapter.js";
 import {
   isAntibotTransportError,
   isMcpUnavailableError,
@@ -64,7 +65,10 @@ export function mergeSourceFallbacks(groups: SourceAdapter[][]): SourceAdapter[]
     adapters.push(source);
     byName.set(source.name, adapters);
   }
-  return [...byName].map(([name, adapters]) =>
-    adapters.length === 1 ? adapters[0]! : new FallbackSourceAdapter(name, adapters),
-  );
+  return [...byName].map(([name, adapters]) => {
+    const source = adapters.length === 1 ? adapters[0]! : new FallbackSourceAdapter(name, adapters);
+    return name === "Ситилинк"
+      ? new BlockedSourceCooldownAdapter(source, (message) => /\b429\b|rate[- ]limit|лимит запросов/iu.test(message))
+      : source;
+  });
 }

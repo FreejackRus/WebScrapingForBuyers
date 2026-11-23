@@ -59,6 +59,21 @@ describe("BlockedSourceCooldownAdapter", () => {
     await expect(first).resolves.toEqual([]);
   });
 
+  it("keeps a new cooldown when an older parallel request finishes successfully", async () => {
+    let finish: (offers: Offer[]) => void = () => undefined;
+    const search = vi.fn<SourceAdapter["search"]>()
+      .mockImplementationOnce(() => new Promise<Offer[]>((resolve) => { finish = resolve; }))
+      .mockRejectedValueOnce(new Error("blocked"));
+    const adapter = makeAdapter(search, () => 100);
+
+    const old = adapter.search(product);
+    await expect(adapter.search(product)).rejects.toThrow("blocked");
+    finish([]);
+    await expect(old).resolves.toEqual([]);
+    await expect(adapter.search(product)).rejects.toThrow("временно недоступен");
+    expect(search).toHaveBeenCalledTimes(2);
+  });
+
   it("does not cool down unrelated transport errors", async () => {
     const search = vi.fn<SourceAdapter["search"]>()
       .mockRejectedValueOnce(new Error("temporary network failure"))

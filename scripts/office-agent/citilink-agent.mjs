@@ -120,6 +120,10 @@ function run(query, limit) {
   }
   // One search at a time: paced requests keep the office IP in good standing.
   const job = queue.then(async () => {
+    if (Date.now() < blockedUntil) {
+      if (stale) return stale;
+      throw new Error("citilink: пауза после HTTP 429");
+    }
     const items = await searchCitilink(query, limit);
     const value = { query, fetchedAt: new Date().toISOString(), items };
     cache.set(key, { at: Date.now(), value });
@@ -129,7 +133,7 @@ function run(query, limit) {
     return value;
   }).catch((error) => {
     lastError = String(error?.message ?? error);
-    if (/HTTP 429/.test(String(error?.message ?? error))) blockedUntil = Date.now() + BACKOFF_MS;
+    if (lastError === "citilink HTTP 429") blockedUntil = Date.now() + BACKOFF_MS;
     if (stale) return stale;
     throw error;
   });

@@ -159,11 +159,17 @@ export class SearchService {
    * Runs a search to completion for internal checks (weekly quality eval). Goes straight to
    * start(), never through any HTTP-level result cache, so the score reflects live sources.
    */
-  async runUncached(query: string, product: Product, timeoutMs = 150_000): Promise<SearchSnapshot> {
+  async runUncached(
+    query: string,
+    product: Product,
+    timeoutMs = 150_000,
+    observe?: (offers: Offer[], sources: SourceState[]) => void,
+  ): Promise<SearchSnapshot> {
     const { id } = this.start(query, product, undefined, { fresh: true });
     const started = this.now();
     for (;;) {
       const snapshot = this.get(id);
+      if (snapshot) observe?.(snapshot.offers, snapshot.sources);
       if (!snapshot || snapshot.status !== "running" || this.now() - started > timeoutMs) {
         return snapshot ?? { id, query, product, status: "complete", offers: [], sources: [] };
       }

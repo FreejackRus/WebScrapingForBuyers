@@ -391,6 +391,14 @@ export interface QualityResult {
   inStockShare: number;
   perfect: number;
   failedQueries: QualityFailedQuery[];
+  articleCoverage?: {
+    cases: number;
+    matchedQueries: number;
+    queries: Array<{
+      query: string;
+      sources: Array<{ source: string; firstMatchMs: number | null; outcome?: SourceState["outcome"] }>;
+    }>;
+  };
   /** Non-empty when quality dropped against the previous run. */
   alerts: string[];
 }

@@ -44,6 +44,39 @@ describe("quality eval", () => {
     expect(qualityAlerts(undefined, base)).toEqual([]);
   });
 
+  it("measures the first fresh article match per source and counts misses", async () => {
+    let now = 0;
+    const exact = { ...offer("Kyocera 302N494021", "Ozon", 1), assessment: { group: "match" as const, reasons: [] } };
+    const stale = { ...exact, source: "AliExpress", freshness: "fallback" as const };
+    const wrong = { ...exact, source: "AliExpress", title: "Kyocera 302N494021X" };
+    const sources = [
+      { source: "Ozon", status: "done" as const },
+      { source: "AliExpress", status: "done" as const },
+    ];
+    const evaluator = new QualityEvaluator(
+      async (_query, observe) => {
+        now = 100;
+        observe?.([stale, wrong], sources);
+        now = 900;
+        observe?.([stale, wrong, exact], sources);
+        now = 1200;
+        observe?.([stale, wrong, exact], sources);
+        return [stale, wrong, exact];
+      },
+      () => [{ query: "302N494021", top: "\\b302N494021\\b", article: true }],
+      undefined,
+      () => now,
+    );
+    expect((await evaluator.run()).articleCoverage).toEqual({
+      cases: 1,
+      matchedQueries: 1,
+      queries: [{ query: "302N494021", sources: [
+        { source: "Ozon", firstMatchMs: 900 },
+        { source: "AliExpress", firstMatchMs: null },
+      ] }],
+    });
+  });
+
   it("schedules the first run no sooner than the minimum delay", () => {
     const week = 7 * 86_400_000;
     const now = Date.parse(base.at);

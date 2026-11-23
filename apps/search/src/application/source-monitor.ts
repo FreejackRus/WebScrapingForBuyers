@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
 
-import type { SourceCheck, SourceHealth, SourceHealthReport } from "@peremena/contracts";
+import { hasCurrentOfferData, type SourceCheck, type SourceHealth, type SourceHealthReport } from "@peremena/contracts";
 
 import type { SourceAdapter } from "../domain/source-adapter.js";
 import { productFromQuery } from "../domain/product-from-query.js";
@@ -150,14 +150,14 @@ export async function probe(source: SourceAdapter, timeoutMs: number, now: () =>
         }, timeoutMs);
       }),
     ]);
-    const rows = offers.length;
+    const rows = offers.filter((offer) => !offer.demo && hasCurrentOfferData(offer)).length;
     return {
       source: source.name,
       ok: rows > 0,
       rows,
       ms: now() - started,
       checkedAt: new Date(now()).toISOString(),
-      ...(rows === 0 ? { error: "Пустой ответ на контрольный запрос" } : {}),
+      ...(rows === 0 ? { error: offers.length ? "Ответ из кеша, живой результат не подтверждён" : "Пустой ответ на контрольный запрос" } : {}),
     };
   } catch (error) {
     return {
