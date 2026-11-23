@@ -328,10 +328,11 @@ export class MarketplaceMcpClient implements MarketplaceToolCaller {
 }
 
 const ARTICLE_RETRY_TIMEOUT_MS = 20_000;
+const AVITO_EXTRA_PAGE_TIMEOUT_MS = 20_000;
 
-type RetryOptions = {
+type OptionalFetch = {
   signal: AbortSignal;
-  rankOffers: (left: Offer, right: Offer) => number;
+  rankOffers?: (left: Offer, right: Offer) => number;
 };
 
 export class McpMarketplaceAdapter implements SourceAdapter {
@@ -347,7 +348,7 @@ export class McpMarketplaceAdapter implements SourceAdapter {
   async search(product: Product, signal?: AbortSignal, query = product.name): Promise<Offer[]> {
     const leftover: JsonObject[] = [];
     const attempted = new Set<string>();
-    let offers = await this.collect(product, leftover, attempted);
+    let offers = await this.collect(product, leftover, attempted, signal);
     const article = product.mpn.trim();
     const retryEligible = (this.source.kind === "ozon" || this.source.kind === "aliexpress")
       && !signal?.aborted && !wildcardArticleOf(product)
@@ -370,7 +371,7 @@ export class McpMarketplaceAdapter implements SourceAdapter {
         const retryTimeout = AbortSignal.timeout(ARTICLE_RETRY_TIMEOUT_MS);
         const retrySignal = signal ? AbortSignal.any([signal, retryTimeout]) : retryTimeout;
         try {
-          const additional = await this.retryArticle(article, product, retryItems, { signal: retrySignal, rankOffers });
+          const additional = await this.fetchOptionalOffers(article, product, retryItems, 1, { signal: retrySignal, rankOffers });
           leftover.push(...retryItems);
           offers = mergeUniqueOffers(offers, additional).sort(rankOffers).slice(0, OFFERS_PER_SOURCE);
           console.info(JSON.stringify({ msg: "marketplace_article_retry", source: this.source.kind, returned: additional.length }));
@@ -390,22 +391,24 @@ export class McpMarketplaceAdapter implements SourceAdapter {
     return withRawFound(offers, seen.size);
   }
 
-  private async retryArticle(article: string, product: Product, items: JsonObject[], options: RetryOptions): Promise<Offer[]> {
+  private async fetchOptionalOffers(
+    query: string, product: Product, items: JsonObject[], page: number, options: OptionalFetch,
+  ): Promise<Offer[]> {
     const { signal } = options;
     signal.throwIfAborted();
     let onAbort: () => void = () => undefined;
     const deadline = new Promise<never>((_resolve, reject) => {
-      onAbort = () => reject(new Error("Повторный поиск по артикулу не ответил вовремя."));
+      onAbort = () => reject(new Error("Дополнительный запрос не ответил вовремя."));
       signal.addEventListener("abort", onAbort, { once: true });
     });
     try {
-      return await Promise.race([this.fetchMappedOffers(article, product, items, () => undefined, 1, options), deadline]);
+      return await Promise.race([this.fetchMappedOffers(query, product, items, () => undefined, page, options), deadline]);
     } finally {
       signal.removeEventListener("abort", onAbort);
     }
   }
 
-  private async collect(product: Product, leftover: JsonObject[], attempted: Set<string>): Promise<Offer[]> {
+  private async collect(product: Product, leftover: JsonObject[], attempted: Set<string>, signal?: AbortSignal): Promise<Offer[]> {
     try {
       if (this.source.kind === "wb") assertWbCatalogAllowed();
       const queries = marketplaceSearchQueries(product, this.source.kind);
@@ -418,6 +421,7 @@ export class McpMarketplaceAdapter implements SourceAdapter {
       let wbHealthyItems = 0;
       let avitoPowRetried = false;
       for (let index = 0; index < limit; index += 1) {
+        if (this.source.kind === "avito") signal?.throwIfAborted();
         const query = queries[index]!;
         attempted.add(query.toLocaleLowerCase("ru"));
         try {
@@ -429,24 +433,24 @@ export class McpMarketplaceAdapter implements SourceAdapter {
           if (offers.length > 0) {
             if (
               this.source.kind === "avito" &&
+              !signal?.aborted &&
               offers.length < 12 &&
               pageItems > 0 &&
               pageItems <= AVITO_SMALL_PAGE
             ) {
+              const pageTimeout = AbortSignal.timeout(AVITO_EXTRA_PAGE_TIMEOUT_MS);
+              const pageSignal = signal ? AbortSignal.any([signal, pageTimeout]) : pageTimeout;
+              const pageRows: JsonObject[] = [];
+              const started = performance.now();
               try {
-                const more = await this.fetchMappedOffers(
-                  query,
-                  product,
-                  leftover,
-                  () => undefined,
-                  2,
-                );
+                const more = await this.fetchOptionalOffers(query, product, pageRows, 2, { signal: pageSignal });
+                leftover.push(...pageRows);
                 return mergeUniqueOffers(offers, more).slice(0, OFFERS_PER_SOURCE);
-              } catch (extraPageError) {
-                const extraRaw =
-                  extraPageError instanceof Error ? extraPageError.message : String(extraPageError);
-                if (isAntibotTransportError(extraRaw)) return offers;
-                throw extraPageError;
+              } catch {
+                console.info(JSON.stringify({
+                  msg: "avito_extra_page_skipped", ms: Math.round(performance.now() - started),
+                  outcome: pageSignal.aborted ? "deadline" : "upstream_error", retained: offers.length,
+                }));
               }
             }
             return offers;
@@ -463,13 +467,14 @@ export class McpMarketplaceAdapter implements SourceAdapter {
           }
         } catch (error) {
           const raw = error instanceof Error ? error.message : String(error);
-          if (this.source.kind === "avito" && isAvitoPowError(raw) && !avitoPowRetried) {
+          if (this.source.kind === "avito" && !signal?.aborted && isAvitoPowError(raw) && !avitoPowRetried) {
             // MCP 2.4.2 has no extra 439 flag: avito_search already opens
             // avito.ru/ then fetch(js/items). One more shot reuses warmed cookies.
             avitoPowRetried = true;
             this.logMap(query, [], []);
             const wait = avitoPowRetryDelayMs();
             if (wait > 0) await new Promise((resolve) => setTimeout(resolve, wait));
+            signal?.throwIfAborted();
             const offers = await this.fetchMappedOffers(query, product, leftover, () => undefined);
             if (offers.length > 0) return offers;
             throw new Error("Avito: пустой ответ после повторного avito_search. Повторите поиск один раз.");
@@ -498,13 +503,13 @@ export class McpMarketplaceAdapter implements SourceAdapter {
     leftover: JsonObject[],
     noteItems: (count: number) => void,
     page = 1,
-    retry?: RetryOptions,
+    optional?: OptionalFetch,
   ): Promise<Offer[]> {
     const payload = await this.client.callTool(
       this.source.tool,
       marketplaceToolArguments(this.source.kind, query, { page, product }),
     );
-    retry?.signal.throwIfAborted();
+    optional?.signal.throwIfAborted();
     const blocked = marketplacePayloadBlockReason(payload);
     if (blocked) throw new Error(blocked);
     const items = marketplacePayloadItems(payload);
@@ -514,7 +519,7 @@ export class McpMarketplaceAdapter implements SourceAdapter {
     }
     leftover.push(...items);
     noteItems(items.length);
-    const offers = mergeUniqueOffers([], this.mapItems(items, product, retry?.rankOffers));
+    const offers = mergeUniqueOffers([], this.mapItems(items, product, optional?.rankOffers));
     this.logMap(query, items, offers);
     return offers;
   }

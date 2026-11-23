@@ -126,6 +126,37 @@ describe("SearchService IT scope logging", () => {
 });
 
 describe("SearchService source deadline", () => {
+  it("publishes fast offers while Avito waits and caps Avito collection at forty seconds", async () => {
+    vi.useFakeTimers();
+    try {
+      const avito = source("Авито", () => new Promise<Offer[]>(() => undefined));
+      const fast = source("FAST", async () => [offer("FAST")]);
+      const service = new SearchService([avito, fast], undefined, Date.now, 120_000);
+      const { id } = service.start("q", product);
+      const events: string[] = [];
+      const unsubscribe = service.subscribe(id, (event) => {
+        if (event.type === "offers") events.push(...event.data.map((row) => row.source));
+      });
+      await vi.advanceTimersByTimeAsync(1);
+      expect(events).toEqual(["FAST"]);
+      expect(service.get(id)?.status).toBe("running");
+      await vi.advanceTimersByTimeAsync(39_999);
+      expect(service.get(id)?.status).toBe("complete");
+      expect(service.get(id)?.sources.find((source) => source.source === "Авито")?.outcome).toBe("timeout");
+      unsubscribe();
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it("reports a connector request timed out as a source timeout", async () => {
+    const avito = source("Авито", async () => { throw new Error("MCP error -32001: Request timed out"); });
+    const service = new SearchService([avito]);
+    const { id } = service.start("q", product);
+    await finish(service, id);
+    expect(service.get(id)?.sources[0]?.outcome).toBe("timeout");
+  });
+
   it("marks a hung source as failed and still completes the search", async () => {
     const hung = source("HUNG", () => new Promise<Offer[]>(() => undefined));
     const fast = source("FAST", async () => [offer("FAST")]);

@@ -1334,6 +1334,34 @@ describe("McpMarketplaceAdapter", () => {
     expect(offers).toHaveLength(3);
   });
 
+  it.each(["transport timeout", "source deadline"] as const)("keeps the first Avito page after %s on the extra page", async (failure) => {
+    const controller = new AbortController();
+    const callTool = vi.fn<MarketplaceToolCaller["callTool"]>(async (_name, args) => {
+      if (args.page === 2) {
+        if (failure === "transport timeout") throw new Error("Request timed out");
+        setTimeout(() => controller.abort(), 0);
+        return new Promise(() => undefined);
+      }
+      return { items: [{ title: "Клавиатура Logitech K380 Grey", price_rub: 2200, id: "k380" }] };
+    });
+    const adapter = new McpMarketplaceAdapter({ callTool }, { name: "Авито", tool: "avito_search", host: "avito.ru", kind: "avito" });
+    await expect(adapter.search(k380, controller.signal)).resolves.toHaveLength(1);
+    expect(callTool).toHaveBeenCalledTimes(2);
+  }, 500);
+
+  it("does not send the next Avito query after the source deadline", async () => {
+    const controller = new AbortController();
+    const callTool = vi.fn<MarketplaceToolCaller["callTool"]>()
+      .mockImplementationOnce(async () => {
+        controller.abort();
+        return { items: [] };
+      })
+      .mockResolvedValue({ items: [] });
+    const adapter = new McpMarketplaceAdapter({ callTool }, { name: "Авито", tool: "avito_search", host: "avito.ru", kind: "avito" });
+    await expect(adapter.search(k380, controller.signal)).rejects.toThrow();
+    expect(callTool).toHaveBeenCalledTimes(1);
+  });
+
   it("does not request Avito page 2 after a 439 on the extra page", async () => {
     process.env.AVITO_POW_RETRY_MS = "0";
     const callTool = vi.fn<MarketplaceToolCaller["callTool"]>(async (_name, args) => {

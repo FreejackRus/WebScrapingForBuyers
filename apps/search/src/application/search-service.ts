@@ -55,6 +55,7 @@ const VERIFY_CARD_TIMEOUT_MS = 12_000;
 
 /** One slow or hung source must not keep a whole search in "running" forever. */
 export const DEFAULT_SOURCE_TIMEOUT_MS = 120_000;
+const AVITO_SOURCE_TIMEOUT_MS = 40_000;
 
 function withDeadline<T>(work: Promise<T>, ms: number, label: string): Promise<T> {
   let timer: NodeJS.Timeout | undefined;
@@ -206,11 +207,20 @@ export class SearchService {
 
     await Promise.allSettled(
       sources.map(async (source) => {
+        const started = performance.now();
+        const timeoutMs = source.name === "Авито" ? Math.min(this.sourceTimeoutMs, AVITO_SOURCE_TIMEOUT_MS) : this.sourceTimeoutMs;
+        const finishSource = (state: SourceState) => {
+          console.info(JSON.stringify({
+            msg: "source_result", searchId: id, source: source.name, outcome: state.outcome,
+            ms: Math.round(performance.now() - started), budgetMs: timeoutMs, kept: state.kept,
+          }));
+          this.updateSource(snapshot, source.name, state);
+        };
         this.updateSource(snapshot, source.name, { source: source.name, status: "loading" });
         try {
           const found = await withDeadline(
-            source.search(snapshot.product, AbortSignal.timeout(this.sourceTimeoutMs), snapshot.query),
-            this.sourceTimeoutMs,
+            source.search(snapshot.product, AbortSignal.timeout(timeoutMs), snapshot.query),
+            timeoutMs,
             source.name,
           );
           // Demo rows are labelled fixtures; real rows must positively look like equipment.
@@ -255,7 +265,7 @@ export class SearchService {
           this.emit(id, { type: "offers", data: structuredClone(offers) });
           // Earlier rows got new ranks/anomaly flags: the client must not keep stale ones.
           if (reranked) this.emit(id, { type: "snapshot", data: structuredClone(snapshot) });
-          this.updateSource(snapshot, source.name, {
+          finishSource({
             source: source.name,
             status: "done",
             outcome: offers.length > 0 ? "offers" : rawFound > 0 ? "filtered_out" : "nothing_found",
@@ -268,7 +278,7 @@ export class SearchService {
           // «WB: нет подходящих карточек (38 отсеяны)»: the source answered, nothing was the model.
           const filtered = message.match(/\((\d+) отсеяны\)/u);
           if (filtered) {
-            this.updateSource(snapshot, source.name, {
+            finishSource({
               source: source.name, status: "done", outcome: "filtered_out", found: Number(filtered[1]), kept: 0, message: `Подготовка карточек: ${Number(filtered[1])}.`,
             });
             return;
@@ -285,10 +295,10 @@ export class SearchService {
               this.emit(id, { type: "snapshot", data: structuredClone(snapshot) });
             }
           }
-          this.updateSource(snapshot, source.name, {
+          finishSource({
             source: source.name,
             status: "error",
-            outcome: /не ответил за|timeout|aborted/i.test(message)
+            outcome: /не ответил за|timeout|timed\s*out|aborted/i.test(message)
               ? "timeout"
               : /временно недоступен|проверка доступности/i.test(message) ? "unavailable" : "error",
             message:
